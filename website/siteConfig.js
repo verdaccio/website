@@ -104,7 +104,7 @@ const siteConfig = {
   stylesheets: [
       '/css/code-blocks-buttons.css',
   ],
-  repoUrl: 'https://github.com/verdaccio/verdaccio',
+  repoUrl: 'https://github.com/verdaccio/website',
   cleanUrl: true,
   scrollToTop: true,
   scrollToTopOptions: {
