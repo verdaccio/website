@@ -8,6 +8,8 @@ Work in progress
 
 - Use `yarn`
 
+> go to `website` that include the docusaurus website
+
 # Scripts
 
 Start the dev server (browser will open)
