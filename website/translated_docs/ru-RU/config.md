@@ -60,7 +60,32 @@ auth:
     max_users: 1000
 ```
 
-### Веб интерфейс
+### Security
+
+<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+
+The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+
+The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+
+    security:
+      api:
+        legacy: true
+        jwt:
+          sign:
+            expiresIn: 29d
+          verify:
+            someProp: [value]
+       web:
+         sign:
+           expiresIn: 7d # 7 days by default
+         verify:
+            someProp: [value]
+    
+
+> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+
+### Web UI
 
 This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
 
@@ -72,9 +97,9 @@ web:
   scope:
 ```
 
-### Подключения
+### Uplinks
 
-Каналы — это способность системы получать пакетов из удаленных реестров, если эти пакеты не доступны локально. Читайте об этом в разделе [Каналы](uplinks.md).
+Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
 
 ```yaml
 uplinks:
@@ -82,9 +107,9 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Пакеты
+### Packages
 
-Секция пакеты позволяет пользователю контролировать доступ к пакетам. Читайте об этом в разделе [Пакеты](packages.md).
+Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
 
 ```yaml
 packages:
@@ -96,50 +121,50 @@ packages:
 
 ## Расширенные настройки
 
-### Публикация без подключения к сети
+### Offline Publish
 
-По умолчанию `verdaccio` не позволяет публиковать пакеты, если у клиента не подключения к сети. Это может быть изменено устновкой данного параметрв в *true*.
+By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
 
 ```yaml
 publish:
   allow_offline: false
 ```
 
-<small>Начиная с: <code>verdaccio@2.3.6</code> в связи <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
+<small>Since: <code>verdaccio@2.3.6</code> due <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
 
-### URL приствка
+### URL Prefix
 
 ```yaml
 url_prefix: https://dev.company.local/verdaccio/
 ```
 
-Начиная с: `verdaccio@2.3.6` в связи [#197](https://github.com/verdaccio/verdaccio/pull/197)
+Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
 
-### Максимальный размер
+### Max Body Size
 
-По умолчанию максимальный размер JSON документа `10 Мб`, если вы получаете ошибки типа `"request entity too large"`, то вы можете увеличить это значение.
+By default the maximum body size for a JSON document is `10mb`, if you run in errors as `"request entity too large"` you may increase this value.
 
 ```yaml
 max_body_size: 10mb
 ```
 
-### Рабочий порт
+### Listen Port
 
-`verdaccio` по умолчанию запускается на порту `4873`. Изменить порт можно при помощи [Интерфейса командной строки](cli.md) или в файле конфигурации. Следующие значения являются правильными.
+`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
 
 ```yaml
 listen:
-# - localhost:4873            # значение по умолчанию
-# - http://localhost:4873     # тоже самое
-# - 0.0.0.0:4873              # работа на всех адресах (INADDR_ANY)
-# - https://example.org:4873  # если нужно использовать https
+# - localhost:4873            # default value
+# - http://localhost:4873     # same thing
+# - 0.0.0.0:4873              # listen on all addresses (INADDR_ANY)
+# - https://example.org:4873  # if you want to use https
 # - "[::1]:4873"                # ipv6
 # - unix:/tmp/verdaccio.sock    # unix socket
 ```
 
 ### HTTPS
 
-Для включения `https` в `verdaccio` достаточно устанновить опцию `listen` в значение с протоколом *https://*. Читайте об этом в разделе [SSL](ssl.md).
+To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
 
 ```yaml
 https:
@@ -148,13 +173,13 @@ https:
     ca: ./path/verdaccio-csr.pem
 ```
 
-### Проксирование
+### Proxy
 
-Прокси сервера, это специально предназначенные сервера для передачи от удалённых серверов к локальным клиентам.
+Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
 #### http_proxy и https_proxy
 
-Если в вашей сети используется прокси, вы можете установить `X-Forwarded-For` заголовок использую следующие свойства.
+If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
 
 ```yaml
 http_proxy: http://something.local/
@@ -163,15 +188,15 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-Это свойство должно содержать разделённый через запятую список доменов, для которых прокси не будет использоваться.
+This variable should contain a comma-separated list of domain extensions proxy should not be used for.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
 ```
 
-### Уведомления
+### Notifications
 
-Уведомления для сторонних инструментов включаются очень просто через web hooks. Читайте об этом в разделе [Уведомления](notifications.md).
+Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -181,15 +206,15 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-> Для более детальной настройки, пожалуйста [загляните в исходнй код](https://github.com/verdaccio/verdaccio/tree/master/conf).
+> For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
 
-### Аудит
+### Audit
 
-<small>Начиная с: <code>verdaccio@3.0.0</code></small>
+<small>Since: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` это новая команда, добавленная в [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio имеет встроенный плагин для обработки этой команды.
+`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
 
-> Если это у вас вновь созданная конфигурация, то значение будет установлено по умолчанию. Если нет, вам необходимо добавить эти опции в ваши файл конфигурации
+> If you have a new installation it comes by default, otherwise you need to add the following props to your config file
 
 ```yaml
 middlewares:

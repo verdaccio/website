@@ -60,6 +60,31 @@ auth:
     max_users: 1000
 ```
 
+### Security
+
+<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+
+The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+
+The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+
+    security:
+      api:
+        legacy: true
+        jwt:
+          sign:
+            expiresIn: 29d
+          verify:
+            someProp: [value]
+       web:
+         sign:
+           expiresIn: 7d # 7 days by default
+         verify:
+            someProp: [value]
+    
+
+> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+
 ### Web UI
 
 This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
@@ -74,7 +99,7 @@ web:
 
 ### Uplinks
 
-Khi những gói không phải là cục bộ, uplinks cho phép hệ thống lấy các gói này từ một cơ quan đăng ký từ xa. Để biết thêm chi tiết về nội dung này, vui lòng đọc [ trang Uplink ](uplinks.md).
+Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
 
 ```yaml
 uplinks:
@@ -82,9 +107,9 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Các loại gói
+### Packages
 
-Các gói này cho phép người dùng kiểm soát quyền truy cập vào gói. Để biết thêm chi tiết về mô-đun này, vui lòng đọc [ trang gói ](packages.md).
+Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
 
 ```yaml
 packages:
@@ -96,9 +121,9 @@ packages:
 
 ## Cài đặt nâng cao
 
-### Phát hành ngoại tuyến
+### Offline Publish
 
-` verdaccio ` theo mặc định không cho phép khách hàng phát hành khi họ ngoại tuyến. Bạn có thể thay đổi cài đặt này bằng cách cài thành * true*.
+By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
 
 ```yaml
 publish:
@@ -107,7 +132,7 @@ publish:
 
 <small>Since: <code>verdaccio@2.3.6</code> due <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
 
-### Tiền tố URL
+### URL Prefix
 
 ```yaml
 url_prefix: https://dev.company.local/verdaccio/
@@ -115,17 +140,17 @@ url_prefix: https://dev.company.local/verdaccio/
 
 Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
 
-### Thuộc tính Max Body Size
+### Max Body Size
 
-Thuộc tính Maximum body size của tệp JSON mặc định là `10mb ` và bạn có thể tăng giá trị này nếu bạn gặp lỗi như `"đối tượng yêu cầu quá lớn"`.
+By default the maximum body size for a JSON document is `10mb`, if you run in errors as `"request entity too large"` you may increase this value.
 
 ```yaml
 max_body_size: 10mb
 ```
 
-### Cổng nghe
+### Listen Port
 
-`verdaccio ` được chạy mặc định trên cổng `4873 `. Cổng có thể được thay đổi thông qua [ cli ](cli.md) hoặc trong một tập tin cấu hình.
+`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
 
 ```yaml
 listen:
@@ -139,7 +164,7 @@ listen:
 
 ### HTTPS
 
-Để bật `https` trong `verdaccio`, chỉ cần sử dụng giao thức *https://* để đặt cờ `nghe `. Để biết thêm chi tiết về phần này, vui lòng đọc [ trang ssl ](ssl.md).
+To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
 
 ```yaml
 https:
@@ -150,11 +175,11 @@ https:
 
 ### Proxy
 
-Proxy là một máy chủ HTTP làm nhiệm vụ chuyển tiếp thông tin và kiểm soát tạo sự an toàn cho việc chuyển dữ liệu từ máy chủ từ xa đến máy khách.
+Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
 #### http_proxy and https_proxy
 
-Nếu bạn có một proxy trên mạng của mình, bạn có thể đặt tiêu đề `X-Forwarded-For` với các thuộc tính sau.
+If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
 
 ```yaml
 http_proxy: http://something.local/
@@ -163,15 +188,15 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-Biến này phải chứa danh sách các tiện ích mở rộng tên được phân cách bằng dấu phẩy không được proxy sử dụng.
+This variable should contain a comma-separated list of domain extensions proxy should not be used for.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
 ```
 
-### Những thông báo
+### Notifications
 
-Thật dễ dàng để bật thông báo cho các công cụ của bên thứ ba thông qua các móc nối web. Để biết thêm chi tiết về phần này, vui lòng đọc [ trang thông báo ](notifications.md).
+Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -181,15 +206,15 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-> Để biết thêm thông tin về cài đặt cấu hình, vui lòng [ kiểm tra mã nguồn ](https://github.com/verdaccio/verdaccio/tree/master/conf).
+> For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
 
-### Đánh giá
+### Audit
 
 <small>Since: <code>verdaccio@3.0.0</code></small>
 
-` kiểm tra npm ` là một lệnh mới được phát hành trong phiên bản [ npm 6.x ](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio bao gồm một plugin middleware tích hợp (plugin trung gian) để xử lý lệnh này.
+`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
 
-> Trong trường hợp bạn muốn cài đặt phiên bản mặc định mới, bạn cần thêm đoạn mã sau vào tệp cấu hình
+> If you have a new installation it comes by default, otherwise you need to add the following props to your config file
 
 ```yaml
 middlewares:

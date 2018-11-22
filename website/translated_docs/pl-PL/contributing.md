@@ -30,16 +30,16 @@ Od niedawna zaczęliśmy używać nowoczesnych technologii, takich jak `React` o
 
 ### I feel more confortable improving the stack
 
-Of course, we will be happy to help us improving the stack, you can upgrade dependencies as `eslint`, `stylelint`, `webpack`. You might merely improve the `webpack` configuration would be great. Wszelkie propozycje są mile widziane. Ponadto, jeśli masz doświadczenie z **Yeoman** możesz nam pomóc z [generatorem verdaccio](https://github.com/verdaccio/generator-verdaccio-plugin).
+Of course, we will be happy to help us improving the stack, you can upgrade dependencies as `eslint`, `stylelint`, `webpack`. Mógłbyś jedynie poprawić `konfigurację` pakietu internetowego, byłoby świetnie. Wszelkie propozycje są mile widziane. Ponadto, jeśli masz doświadczenie z **Yeoman** możesz nam pomóc z [generatorem verdaccio](https://github.com/verdaccio/generator-verdaccio-plugin).
 
 Tutaj jest kilka pomysłów:
 
 * Utwórz wspólne reguły eslint, które będą używane we wszystkich zależnościach lub wtyczkach
-* Improve Flow types definitions delivery
-* Moving to Webpack 4
-* Improve hot reload with Webpack
-* We use babel and webpack across all dependencies, why not a common preset?
-* Improve continous integration delivery
+* Ulepsz dostarczanie definicji typów Przepływu
+* Przejście do Pakietu Internetowego 4
+* Popraw szybkie ładowanie za pomocą Pakietu Internetowego
+* Używamy babel i pakietu internetowego we wszystkich zależnościach, czemu więc nie zastosować wspólnego ustawienia?
+* Popraw dostawę ciągłej integracji
 
 ### Robię świetne dokumentacje
 
@@ -47,11 +47,11 @@ Wiele współtwórców znajduje literówki i błędy gramatyczne, to również p
 
 ### Jestem projektantem
 
-We have a frontend website <http://www.verdaccio.org/> that will be happy to see your ideas.
+Mamy stronę frontendową <http://www.verdaccio.org/>, na której chętnie zobaczymy twoje pomysły.
 
 Nasza strona internetowa jest oparta o [Docusaurus](https://docusaurus.io/).
 
-### I am a DevOps
+### Jestem DevOps
 
 We have a widely popular Docker image <https://hub.docker.com/r/verdaccio/verdaccio/> that need maintenance and pretty likely huge improvements, we need your knowledge for the benefits of all users.
 

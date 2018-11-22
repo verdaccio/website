@@ -2,7 +2,7 @@
 id: uwierzytelnianie
 title: "Uwierzytelnianie"
 ---
-The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
+Uwierzytelnianie jest powiązane z auth [wtyczką](plugins.md), której używasz. Ograniczenia dotyczące pakietów są również obsługiwane przez [Dostęp do pakietu](packages.md).
 
 Uwierzytelnianie klienta jest obsługiwane przez samego klienta `npm`. Kiedy już zalogujesz się do aplikacji:
 
@@ -21,7 +21,7 @@ registry=http://localhost:5555/
 
 #### Anonimowa publikacja
 
-`verdaccio` pozwala włączyć anonimowe publikowania, aby to osiągnąć, musisz poprawnie ustawić swój <a [dostęp do pakietów](packages.md).
+`verdaccio`umożliwia włączenie anonimowego publikowania, aby to osiągnąć, musisz poprawnie ustawić swój [dostęp do pakietów](packages.md).
 
 Eg:
 
