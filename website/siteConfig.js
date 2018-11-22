@@ -59,10 +59,10 @@ const siteConfig = {
   tagline: 'A lightweight private npm proxy registry',
   url: 'https://verdaccio.org' /* your website url */,
   organizationName: 'verdaccio',
-  cname: 'verdaccio.org',
+  // cname: 'verdaccio.org',
   noIndex: false,
   baseUrl: '/' /* base url for your project */,
-  projectName: 'verdaccio',
+  projectName: 'website',
   headerLinks: [
     { doc: 'installation', label: 'Docs'},
     { href: "https://medium.com/verdaccio", label: 'Blog'},
@@ -104,7 +104,7 @@ const siteConfig = {
   stylesheets: [
       '/css/code-blocks-buttons.css',
   ],
-  repoUrl: 'https://github.com/verdaccio/website',
+  repoUrl: 'https://github.com/verdaccio/verdaccio',
   cleanUrl: true,
   scrollToTop: true,
   scrollToTopOptions: {
