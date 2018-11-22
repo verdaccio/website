@@ -1,5 +1,5 @@
 ---
-id: source-code
+id: kod źródłowy
 title: "Kod źródłowy"
 ---
 `verdaccio` is composed or multiple repositories you might contribute. Look into the **issues** tab whether there is a ticket waiting for you 
