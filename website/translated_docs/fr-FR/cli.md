@@ -22,3 +22,7 @@ Pour localiser le répertoire de base, nous nous appuyons sur **$XDG_DATA_HOME**
 ## Emplacement de stockage par défaut
 
 On utilise **$XDG_DATA_HOME**la variable d'environnement par défaut pour trouver le stockage par défaut qui [ devrait être identique ](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) de $HOME/ .local / share. Si vous utilisez un stockage personnalisé, cet emplacement est sans importance.
+
+## Default database file location
+
+The default database file location is in the storage location. Starting with version 4.0.0, the database file name will be **.verdaccio-db.json** for a new installation of Verdaccio. When upgrading an existing Verdaccio server, the file name will remain **.sinopia-db.json**.
