@@ -1,0 +1,33 @@
+aliases:
+ - &filter-only-master
+   branches:
+     only:
+       - master
+
+version: 2
+jobs:
+  build:
+  machine: true
+  branches:
+    ignore: gh-pages
+  steps:
+    - run: echo "Skipping tests on gh-pages branch"
+  deploy-website:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:8.11.1
+    steps:
+      - checkout
+      - run:
+          name: Deploying to GitHub Pages
+          command: |
+            cd website
+            yarn install
+            GIT_USER=verdacciobot USE_SSH=false yarn run publish-gh-pages
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - deploy-website:
+         filters: *filter-only-master
