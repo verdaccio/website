@@ -49,7 +49,7 @@ Uwierzytelnianie zakończone sukcesem.
      callback(null, groups);
     
 
-### Example
+### Przykład
 
 ```javascript
 function Auth(config, stuff) {
@@ -106,13 +106,13 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 Metoda zapewnia pełny dostęp do uwierzytelniania i przechowywania za pomocą `auth` i `storage`. `app` to ekspresowa aplikacja, która pozwala dodawać nowe punkty końcowe.
 
-> A pretty good example of middleware plugin is the [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) and [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
+> Całkiem dobry przykład wtyczki pośredniej to [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) i <a href = "https://github.com/ verdaccio / verdaccio-audit ">verdaccio-audit</a>.
 
 ### API
 
 ```js
-function register_middlewares(expressApp, authInstance, storageInstance) {
-   /* more stuff */
+funkcja register_middlewares(expressApp, authInstance, storageInstance) {
+   /* więcej rzeczy */
 }
 ```
 
@@ -120,7 +120,7 @@ Aby zarejestrować oprogramowanie pośrednie potrzebujemy obiekt z pojedynczą m
 
 ## Wtyczka magazynu danych
 
-Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), but, since `verdaccio@3.x` you can plug in a custom storage replacing the default behaviour.
+Verdaccio domyślnie używa wtyczki pamięci masowej do systemu plików [lokalnego magazynu](https://github.com/verdaccio/local-storage), ale od `verdaccio@3.x` możesz podłączyć niestandardową pamięć masową zastępując zachowanie domyślne.
 
 ### API
 
@@ -174,15 +174,15 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 }
 ```
 
-> API magazynu danych jest nadal w fazie eksperymentalnej i może się zmienić w następnej pomniejszej wersji. For further information about Storage API please follow the [types definitions in our official repository](https://github.com/verdaccio/flow-types).
+> API magazynu danych jest nadal w fazie eksperymentalnej i może się zmienić w następnej pomniejszej wersji. Aby uzyskać więcej informacji na temat Magazynu API, skorzystaj z [typów definicji w naszym oficjalnym repozytorium](https://github.com/verdaccio/flow-types).
 
 ### Przykłady wtyczek magazynu danych
 
 Poniższa lista wtyczek wdraża API magazynu danych oraz mogą być użyte jako przykład.
 
-* [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory)
-* [local-storage](https://github.com/verdaccio/local-storage)
-* [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)
-* [verdaccio-s3-storage](https://github.com/Remitly/verdaccio-s3-storage/tree/s3)
+* [pamięć-verdaccio](https://github.com/verdaccio/verdaccio-memory)
+* [magazyn-lokalny](https://github.com/verdaccio/local-storage)
+* [verdaccio-chmura-google](https://github.com/verdaccio/verdaccio-google-cloud)
+* [verdaccio-magazyn-s3](https://github.com/Remitly/verdaccio-s3-storage/tree/s3)
 
 > Chciałbyś współtworzyć ten projekt z nowymi wtyczkami magazynu danych? [Kliknij tutaj.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
