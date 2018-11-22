@@ -1,29 +1,29 @@
 ---
-id: plugins
+id: wtyczki
 title: "Wtyczki"
 ---
 Verdaccio jest aplikacją obsługującą wtyczki. Dzięki temu można rozszerzyć działanie aplikacji na wiele sposobów: wprowadzić nowe metody uwierzytelniania, dodawać punkty końcowe lub użyć niestandardowego magazynu danych.
 
 > Jeśli jesteś zainteresowany stworzeniem swojej własnej wtyczki, przeczytaj sekcję dotyczącą [programowania](dev-plugins.md).
 
-## Usage
+## Użycie
 
-### Installation
+### Instalacja
 
 ```bash
 $> npm install --global verdaccio-activedirectory
 ```
 
-`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
+`verdaccio` podobnie jak widelec sinopia ma wsteczną kompatybilność z wtyczkami, które są kompatybilne z `sinopia@1.4.0`. W takim przypadku instalacja jest taka sama.
 
     $> npm install --global sinopia-memory
     
 
-### Configuration
+### Konfiguracja
 
 Otwórz plik `config.yaml` i zaktualizuj sekcję `auth` następująco:
 
-The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
+Domyślna konfiguracja wygląda tak, ponieważ domyślnie używamy wbudowanej wtyczki `htpasswd`, którą można wyłączyć jedynie poprzez komentowanie następujących wierszy.
 
 ### Auth Plugin Configuration
 
@@ -33,7 +33,7 @@ The default configuration looks like this, due we use a build-in `htpasswd` plug
     #max_users: 1000
 ```
 
-and replacing them with (in case you decide to use a `ldap` plugin.
+i zastąpienie ich (w przypadku, gdy zdecydujesz się użyć wtyczki `ldap`).
 
 ```yaml
 auth:
@@ -45,7 +45,7 @@ auth:
 
 #### Multiple Auth plugins
 
-This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
+Jest to technicznie możliwe, nadając ważność kolejności wtyczek, ponieważ kwalifikacje zostaną rozstrzygnięte w kolejności.
 
 ```yaml
 auth:
@@ -68,11 +68,11 @@ middlewares:
     enabled: true
 ```
 
-> You might follow the [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) as base example.
+> Możesz uznać [środkową wtyczkę kontroli](https://github.com/verdaccio/verdaccio-audit) jako przykład podstawowy.
 
-### Store Plugin Configuration
+### Przechowuj Konfigurację Wtyczki
 
-This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
+Oto przykład konfiguracji wtyczki magazynu. Wszystkie wtyczki magazynu muszą być zdefiniowane w przestrzeni **store**.
 
 ```yaml
 store:
@@ -80,30 +80,30 @@ store:
     limit: 1000
 ```
 
-> If you define a custom store, the property **storage** in the configuration file will be ignored.
+> Jeśli zdefiniujesz niestandardowy magazyn, właściwość **storage** w pliku konfiguracyjnym zostanie zignorowana.
 
-## Legacy plugins
+## Starsze wtyczki
 
-### Sinopia Plugins
+### Wtyczki Sinopia
 
 (kompatybilne ze wszystkimi wersjami)
 
-* [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin for sinopia supporting an npm registry.
-* [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin for sinopia that keeps users in memory.
+* [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): wtyczka auth dla sinopii obsługujący rejestr npm.
+* [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): wtyczka auth dla sinopii, która przechowuje użytkowników w pamięci.
 * [sinopia-github-oauth-cli](https://www.npmjs.com/package/sinopia-github-oauth-cli).
-* [sinopia-crowd](https://www.npmjs.com/package/sinopia-crowd): auth plugin for sinopia supporting atlassian crowd.
-* [sinopia-activedirectory](https://www.npmjs.com/package/sinopia-activedirectory): Active Directory authentication plugin for sinopia.
-* [sinopia-github-oauth](https://www.npmjs.com/package/sinopia-github-oauth): authentication plugin for sinopia2, supporting github oauth web flow.
-* [sinopia-delegated-auth](https://www.npmjs.com/package/sinopia-delegated-auth): Sinopia authentication plugin that delegates authentication to another HTTP URL
-* [sinopia-altldap](https://www.npmjs.com/package/sinopia-altldap): Alternate LDAP Auth plugin for Sinopia
-* [sinopia-request](https://www.npmjs.com/package/sinopia-request): An easy and fully auth-plugin with configuration to use an external API.
-* [sinopia-htaccess-gpg-email](https://www.npmjs.com/package/sinopia-htaccess-gpg-email): Generate password in htaccess format, encrypt with GPG and send via MailGun API to users.
-* [sinopia-mongodb](https://www.npmjs.com/package/sinopia-mongodb): An easy and fully auth-plugin with configuration to use a mongodb database.
-* [sinopia-htpasswd](https://www.npmjs.com/package/sinopia-htpasswd): auth plugin for sinopia supporting htpasswd format.
-* [sinopia-leveldb](https://www.npmjs.com/package/sinopia-leveldb): a leveldb backed auth plugin for sinopia private npm.
-* [sinopia-gitlabheres](https://www.npmjs.com/package/sinopia-gitlabheres): Gitlab authentication plugin for sinopia.
-* [sinopia-gitlab](https://www.npmjs.com/package/sinopia-gitlab): Gitlab authentication plugin for sinopia
-* [sinopia-ldap](https://www.npmjs.com/package/sinopia-ldap): LDAP auth plugin for sinopia.
+* [sinopia-crowd](https://www.npmjs.com/package/sinopia-crowd): wtyczka auth dla sinopii obsługująca atlassian crowd.
+* [sinopia-activedirectory](https://www.npmjs.com/package/sinopia-activedirectory): wtyczka uwierzytelniająca Active Directory dla sinopii.
+* [sinopia-github-oauth](https://www.npmjs.com/package/sinopia-github-oauth): wtyczka uwierzytelniająca dla sinopii2, obsługująca przepływ dla sieci github oauth.
+* [sinopia-delegated-auth](https://www.npmjs.com/package/sinopia-delegated-auth): Wtyczka uwierzytelniająca Sinopii, która deleguje uwirzytelnienie do innego HTTP URL
+* [sinopia-altldap](https://www.npmjs.com/package/sinopia-altldap): Alternatywna wtyczka uwierzytelniająca LDAP dla Sinopii
+* [sinopia-request](https://www.npmjs.com/package/sinopia-request): Łatwa i w pełni autoryzująca wtyczka z konfiguracją do korzystania z zewnętrznego API.
+* [sinopia-htaccess-gpg-email](https://www.npmjs.com/package/sinopia-htaccess-gpg-email): Wygeneruj hasło w formacie htaccess, zaszyfruj za pomocą GPG i wyślij przez API MailGun do użytkowników.
+* [sinopia-mongodb](https://www.npmjs.com/package/sinopia-mongodb): Łatwa i w pełni autoryzująca wtyczka z konfiguracją do korzystania z bazy danych mongodb.
+* [sinopia-htpasswd](https://www.npmjs.com/package/sinopia-htpasswd): i wtyczka autoryzująca dla sinopii obsługująca format htpasswd.
+* [sinopia-leveldb](https://www.npmjs.com/package/sinopia-leveldb): wspierana przez leveldb wtyczka uwierzytelniająca dla prywatnego npm sinopii.
+* [sinopia-gitlabheres](https://www.npmjs.com/package/sinopia-gitlabheres): wtyczka uwierzytelniająca Gitlab dla sinopii.
+* [sinopia-gitlab](https://www.npmjs.com/package/sinopia-gitlab): wtyczka uwierzytelniająca Gitlab dla sinopii
+* [sinopia-ldap](https://www.npmjs.com/package/sinopia-ldap): wtyczka uwierzytelniająca LDAP dla sinopii.
 * [sinopia-github-oauth-env](https://www.npmjs.com/package/sinopia-github-oauth-env) Sinopia authentication plugin with github oauth web flow.
 
 > All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the modern verdaccio API and using the prefix as *verdaccio-xx-name*.
