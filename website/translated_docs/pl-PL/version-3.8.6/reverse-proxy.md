@@ -1,11 +1,11 @@
 ---
 id: version-3.8.6-reverse-proxy
 title: Reverse Proxy Setup
-original_id: reverse-proxy
+original_id: odwrotne proxy
 ---
 ## Apache
 
-Apache and mod_proxy should not decode/encode slashes and leave them as they are:
+Apache i mod_proxy nie powinny dekodować/kodować ukośników i pozostawić je takimi, jakimi są:
 
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
@@ -14,7 +14,7 @@ Apache and mod_proxy should not decode/encode slashes and leave them as they are
     </VirtualHost>
     
 
-### Configuration with SSL
+### Konfiguracja z SSL
 
 config.yaml
 
@@ -22,7 +22,7 @@ config.yaml
 url_prefix: https://npm.your.domain.com
 ```
 
-Apache virtual server configuration
+Konfiguracja wirtualnego serwera Apache
 
         apacheconfig
         <IfModule mod_ssl.c>
@@ -52,11 +52,11 @@ Apache virtual server configuration
     }
     
 
-## Run behind reverse proxy with different domain and port
+## Uruchom za odwrotnym proxy z inną domeną i portem
 
-If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like `http://127.0.0.1:4873/-/static`
+Jeśli uruchomisz verdaccio za odwrotnym proxy, możesz zauważyć, że cały plik zasobów służył jako relatywna ścieżka, np. `http://127.0.0.1:4873/-/static`
 
-To resolve this issue, you should send real domain and port to verdaccio with `Host` header
+Aby rozwiązać ten problem, należy wysłać realną domenę i port do verdaccio z nagłówkiem `Host`
 
 Nginx configure should look like this:
 
