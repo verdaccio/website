@@ -53,7 +53,7 @@ Nasza strona internetowa jest oparta o [Docusaurus](https://docusaurus.io/).
 
 ### Jestem DevOps
 
-We have a widely popular Docker image <https://hub.docker.com/r/verdaccio/verdaccio/> that need maintenance and pretty likely huge improvements, we need your knowledge for the benefits of all users.
+Mamy bardzo popularny obraz Docker, [https://hub.docker.com/r/verdaccio/verdaccio](https://hub.docker.com/r/verdaccio/verdaccio/) który wymaga konserwacji i najprawdopodobniej ogromnych ulepszeń, potrzebujemy twojej wiedzy dla korzyści wszystkich użytkowników.
 
 Wspieramy **Kubernetes**, **Puppet**, **Ansible** i **Chef** oraz potrzebujemy pomocy tych dziedzinach, nie krępuj się sprawdzić wszystkie repozytoria.
 
