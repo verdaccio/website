@@ -1,7 +1,7 @@
 ---
 id: version-3.8.6-authentification
-title: Authentification
-original_id: authentification
+title: 认证
+original_id: 认证
 ---
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
 
@@ -11,7 +11,7 @@ The client authentification is handled by `npm` client itself. Once you login to
 npm adduser --registry http://localhost:4873
 ```
 
-A token is generated in the `npm` configuration file hosted in your user home folder. For more information about `.npmrc` read the [official documentation](https://docs.npmjs.com/files/npmrc).
+`npm` 会将 Verdaccio 返回的 Token 保存在配置文件中，它存放于您的用户主目录下。 如需了解更多有关于 `npm 配置 (.npmrc)` 相关的内容，请查阅 [官方文档](https://docs.npmjs.com/files/npmrc).
 
 ```bash
 cat .npmrc
@@ -20,11 +20,11 @@ registry=http://localhost:5555/
 //registry.npmjs.org/:_authToken=secretNpmjsToken
 ```
 
-#### Anonymous publish
+#### 匿名发布包
 
-`verdaccio`allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
+`verdaccio` 允许启用匿名发布，要使用这个功能，必须设置正确的 [程序包访问权限](packages.md)。
 
-Eg:
+例如：
 
 ```yaml
   'my-company-*':
@@ -33,11 +33,11 @@ Eg:
     proxy: npmjs
 ```
 
-As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) until `npm@5.3.0` and all minor releases **won't allow you publish without a token**. However `yarn` has not such limitation.
+如 [Issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) 所述，截至 `npm@5.3.0` 你仍然 **无法在没有 Token 的情况下发布包**。 `yarn` 没有此限制。
 
-## Default htpasswd
+## 默认 htpasswd
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. As of version v3.0.x an [external plugin](https://github.com/verdaccio/verdaccio-htpasswd) is used by default. The v2.x version of this package still contains the built-in version of this plugin.
+为了简化安装，`verdaccio` 使用`htpasswd`基础上的插件。 到v3.0.x版本为止，默认使用[外部插件](https://github.com/verdaccio/verdaccio-htpasswd)。 此包的v2.x 版本仍然包含此插件的内置版本。
 
 ```yaml
 auth:
@@ -48,9 +48,9 @@ auth:
     #max_users: 1000
 ```
 
-| Property  | Type   | Required | Example    | Support | Description                              |
-| --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
-| file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
-| max_users | number | No       | 1000       | all     | set limit of users                       |
+| 属性        | 类型  | 必填 | 示例         | 支持   | 描述                     |
+| --------- | --- | -- | ---------- | ---- | ---------------------- |
+| 文件        | 字符串 | 是  | ./htpasswd | 任意路径 | 存储了加密认证信息的 htpasswd 文件 |
+| max_users | 数字  | 否  | 1000       | 任意路径 | 最大的用户数量                |
 
-In case to decide do not allow user to login, you can set `max_users: -1`.
+如果需要禁止新用户注册，可将配置修改为 `max_users: -1`.
