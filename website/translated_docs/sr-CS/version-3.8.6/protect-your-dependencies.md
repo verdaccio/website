@@ -1,13 +1,13 @@
 ---
 id: version-3.8.6-protect-your-dependencies
-title: Protecting packages
+title: Zaštita paketa
 original_id: protect-your-dependencies
 ---
-`verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages acces](packages).
+`verdaccio` Vam omogućava da publikujete. Kako biste u tome uspeli, neophodno je da ispravno podesite svoj [packages acces](packages).
 
-### Package configuration
+### Konfigurisanje paketa
 
-Let's see for instance the following set up. You have a set of dependencies what are prefixed with `my-company-*` and you need to protect them from anonymous or another logged user without right credentials.
+Pogledajmo navedena podešavanja kao primer. Potrebno je da podesite dependencies koje imaju prefiks u vidu `my-company-*` i treba da ih zaštitite od anonimnih ili drugih prijavljenih korisnika koji su bez odgovarajućih ovlašćenja (credentials).
 
 ```yaml
   'my-company-*':
@@ -16,9 +16,9 @@ Let's see for instance the following set up. You have a set of dependencies what
     proxy: npmjs
 ```
 
-With this configuration, basically we allow to groups **admin** and **teamA** to *publish* and **teamA** **teamB** **teamC** *access* to such dependencies.
+Sa navedenom konfiguracijom dozvoljavamo grupama **admin** i **teamA** da *publikuju* a grupama **teamA** **teamB** i **teamC** *pristup* do tih dependencies.
 
-### Use case: teamD try to access the dependency
+### Primer iz prakse: teamD pokušava da pristupi nekoj dependency
 
 So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
 
@@ -35,7 +35,7 @@ npm ERR! code E403
 npm ERR! 403 Forbidden: webpack-1@latest
 ```
 
-or with `yarn`
+ili sa `yarn`
 
 ```bash
 ➜ yarn add my-company-core
