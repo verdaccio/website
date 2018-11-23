@@ -107,7 +107,7 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Paquetes
 
 Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
 
