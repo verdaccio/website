@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-authentification
-title: Authentification
+title: Autentificación
 original_id: authentification
 ---
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
@@ -11,7 +11,7 @@ The client authentification is handled by `npm` client itself. Once you login to
 npm adduser --registry http://localhost:4873
 ```
 
-A token is generated in the `npm` configuration file hosted in your user home folder. For more information about `.npmrc` read the [official documentation](https://docs.npmjs.com/files/npmrc).
+Un toquen es generado en el archivo de configuración de `npm` alojado en el folder de usuario de tu máquina. Para mas información sobre `.npmrc`lea [la documentación oficial](https://docs.npmjs.com/files/npmrc).
 
 ```bash
 cat .npmrc
@@ -20,11 +20,11 @@ registry=http://localhost:5555/
 //registry.npmjs.org/:_authToken=secretNpmjsToken
 ```
 
-#### Anonymous publish
+#### Publicar anonimamente
 
-`verdaccio`allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
+`verdaccio` te permite habilitar publicar de manera anónima, para poder hacerlo necesitarás configurar correctamente tu [acceso a paquetes](packages.md).
 
-Eg:
+Por ejemplo:
 
 ```yaml
   'my-company-*':
@@ -33,11 +33,11 @@ Eg:
     proxy: npmjs
 ```
 
-As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) until `npm@5.3.0` and all minor releases **won't allow you publish without a token**. However `yarn` has not such limitation.
+Como se describe en [el ticket #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) hasta la versión de `pm@5.3.0` y todas las versiones menores **no permitirán publicar sin un token**. Sin embargo, `yarn` no tiene esa limitación.
 
-## Default htpasswd
+## Htpasswd por defecto
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. As of version v3.0.x an [external plugin](https://github.com/verdaccio/verdaccio-htpasswd) is used by default. The v2.x version of this package still contains the built-in version of this plugin.
+Para simplificar la instalación, `verdaccio` usa una extensión basada en `htpasswd`. A partir de la versión v3.0.x se usa una [extensión externa](https://github.com/verdaccio/verdaccio-htpasswd) por defecto. La versión v2.x de este paquete mantiene la versión integrada de esta extensión.
 
 ```yaml
 auth:
@@ -48,9 +48,9 @@ auth:
     #max_users: 1000
 ```
 
-| Property  | Type   | Required | Example    | Support | Description                              |
-| --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
-| file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
-| max_users | number | No       | 1000       | all     | set limit of users                       |
+| Propiedad | Tipo   | Requerido | Ejemplo    | Soporte | Descripción                                    |
+| --------- | ------ | --------- | ---------- | ------- | ---------------------------------------------- |
+| file      | string | Si        | ./htpasswd | all     | archivo que aloja las credenciales encriptadas |
+| max_users | number | No        | 1000       | all     | limita los usuarios que pueden registrarse     |
 
-In case to decide do not allow user to login, you can set `max_users: -1`.
+En caso que decidas no permitir más nuevos registros, puedes definir `max_users: -1`.
