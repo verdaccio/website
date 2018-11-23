@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-use-cases
-title: Use Cases
+title: 활용사례
 original_id: use-cases
 ---
 ## Using private packages
