@@ -1,13 +1,13 @@
 ---
 id: version-3.8.6-protect-your-dependencies
-title: Protecting packages
-original_id: protect-your-dependencies
+title: 保护 npm 包
+original_id: protect-your-dependencies（保护-依赖项）
 ---
-`verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages acces](packages).
+`verdaccio` 允许发布保护，为了要使用此功能，您将需要正确设置[包访问权限](packages)。
 
-### Package configuration
+### 包配置
 
-Let's see for instance the following set up. You have a set of dependencies what are prefixed with `my-company-*` and you need to protect them from anonymous or another logged user without right credentials.
+例如，让我们一起来看以下设置。 您有一组前缀为`my-company-*`的依赖项，您要保护它们不让匿名或另一个没有正确证书的已登录用户使用。
 
 ```yaml
   'my-company-*':
@@ -18,7 +18,7 @@ Let's see for instance the following set up. You have a set of dependencies what
 
 With this configuration, basically we allow to groups **admin** and **teamA** to *publish* and **teamA** **teamB** **teamC** *access* to such dependencies.
 
-### Use case: teamD try to access the dependency
+### 用例：teamD试着访问此依赖项
 
 So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
 
@@ -35,12 +35,12 @@ npm ERR! code E403
 npm ERR! 403 Forbidden: webpack-1@latest
 ```
 
-or with `yarn`
+或者用`yarn`
 
 ```bash
 ➜ yarn add my-company-core
 yarn add v0.24.6
 info No lockfile found.
 [1/4] 🔍  Resolving packages...
-error An unexpected error occurred: "http://localhost:5555/webpack-1: unregistered users are not allowed to access package my-company-core".
+错误出现意外错误: "http://localhost:5555/webpack-1: 不允许未注册用户访问my-company-core包"。
 ```
