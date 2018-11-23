@@ -21,9 +21,9 @@ All access restrictions defined to [protect your packages](protect-your-dependen
 
 ### Configuration
 
-| Property | Type    | Required | Example                        | Support | Description                                                                                                                                          |
-| -------- | ------- | -------- | ------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| enable   | boolean | No       | true/false                     | all     | allow to display the web interface                                                                                                                   |
-| title    | string  | No       | Verdaccio                      | all     | HTML head title description                                                                                                                          |
-| logo     | string  | No       | http://my.logo.domain/logo.png | all     | a URI where logo is located                                                                                                                          |
-| scope    | string  | No       | \\@myscope                   | all     | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
+| Property | Type    | Obrigatório | Exemplo                        | Support | Descrição                                                                                                                                            |
+| -------- | ------- | ----------- | ------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| enable   | boolean | Não         | true/false                     | all     | habilitar a interface web                                                                                                                            |
+| title    | string  | Não         | Verdaccio                      | all     | Título da página web                                                                                                                                 |
+| logo     | string  | Não         | http://my.logo.domain/logo.png | all     | URI onde o logo se encontra                                                                                                                          |
+| scope    | string  | Não         | \\@myscope                   | all     | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
