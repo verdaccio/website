@@ -17,11 +17,11 @@ logs:
 
 Use `SIGUSR2` to notify the application, the log-file was rotated and it needs to reopen it. Note: Rotating log stream is not supported in cluster mode. [See here](https://github.com/trentm/node-bunyan#stream-type-rotating-file)
 
-### Configuration
+### Cấu hình
 
-| Property | Type   | Required | Example                                        | Support | Description                                       |
-| -------- | ------ | -------- | ---------------------------------------------- | ------- | ------------------------------------------------- |
-| type     | string | No       | [stdout, file]                                 | all     | define the output                                 |
-| path     | string | No       | verdaccio.log                                  | all     | if type is file, define the location of that file |
-| format   | string | No       | [pretty, pretty-timestamped]                   | all     | output format                                     |
-| level    | string | No       | [fatal, error, warn, http, info, debug, trace] | all     | verbose level                                     |
+| Thuộc tính | Phương thức | Yêu cầu | Ví dụ                                          | Hỗ trợ | Miêu tả                                 |
+| ---------- | ----------- | ------- | ---------------------------------------------- | ------ | --------------------------------------- |
+| type       | chuỗi       | Không   | [stdout, file]                                 | tất cả | xác định đầu ra                         |
+| path       | chuỗi       | Không   | verdaccio.log                                  | tất cả | nếu là tệp, hãy xác định vị trí của tệp |
+| format     | chuỗi       | Không   | [pretty, pretty-timestamped]                   | tất cả | định dạng đầu ra                        |
+| level      | chuỗi       | Không   | [fatal, error, warn, http, info, debug, trace] | tất cả | mức độ chi tiết                         |
