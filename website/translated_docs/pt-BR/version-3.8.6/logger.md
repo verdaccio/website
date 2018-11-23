@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-logger
-title: Logger
+title: Logs
 original_id: logger
 ---
 As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
@@ -19,9 +19,9 @@ Use `SIGUSR2` to notify the application, the log-file was rotated and it needs t
 
 ### Configuration
 
-| Property | Type   | Required | Example                                        | Support | Description                                       |
-| -------- | ------ | -------- | ---------------------------------------------- | ------- | ------------------------------------------------- |
-| type     | string | No       | [stdout, file]                                 | all     | define the output                                 |
-| path     | string | No       | verdaccio.log                                  | all     | if type is file, define the location of that file |
-| format   | string | No       | [pretty, pretty-timestamped]                   | all     | output format                                     |
-| level    | string | No       | [fatal, error, warn, http, info, debug, trace] | all     | verbose level                                     |
+| Property | Type   | Obrigatório | Exemplo                                        | Support | Descrição                                         |
+| -------- | ------ | ----------- | ---------------------------------------------- | ------- | ------------------------------------------------- |
+| type     | string | Não         | [stdout, file]                                 | all     | define the output                                 |
+| path     | string | Não         | verdaccio.log                                  | all     | if type is file, define the location of that file |
+| format   | string | Não         | [pretty, pretty-timestamped]                   | all     | output format                                     |
+| level    | string | Não         | [fatal, error, warn, http, info, debug, trace] | all     | verbose level                                     |
