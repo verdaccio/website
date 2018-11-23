@@ -1,13 +1,13 @@
 ---
 id: version-3.8.6-server-configuration
-title: Server Configuration
+title: Configurazione del server
 original_id: server-configuration
 ---
-This is mostly basic linux server configuration stuff but I felt it important to document and share the steps I took to get verdaccio running permanently on my server. You will need root (or sudo) permissions for the following.
+Questa è principalmente la documentazione della configurazione di base per il server di linux ma credo sia importante documentare e condividere i passi che ho seguito per avviare permanentemente verdaccio sul mio server. Serviranno le autorizzazioni di root (o sudo) per quello che segue.
 
-## Running as a separate user
+## Gestire come utente separato
 
-First create the verdaccio user:
+Come prima cosa creare l'utente verdaccio:
 
 ```bash
 $ sudo adduser --system --gecos 'Verdaccio NPM mirror' --group --home /var/lib/verdaccio verdaccio
@@ -28,7 +28,7 @@ $ cd
 
 The `cd` command sends you to the home directory of the verdaccio user. Make sure you run verdaccio at least once to generate the config file. Edit it according to your needs.
 
-## Listening on all addresses
+## Ascolto di tutti gli indirizzi
 
 If you want to listen to every external address set the listen directive in the config to:
 
@@ -41,7 +41,7 @@ If you are running verdaccio in a Amazon EC2 Instance, [you will need set the li
 
 > Configure Apache or nginx? Please check out the [Reverse Proxy Setup](reverse-proxy.md)
 
-## Keeping verdaccio running forever
+## Mantenere verdaccio in funzione
 
 You can use node package called ['forever'](https://github.com/nodejitsu/forever) to keep verdaccio running all the time.
 
@@ -59,7 +59,7 @@ $ forever start `which verdaccio`
 
 You can check the documentation for more information on how to use forever.
 
-## Surviving server restarts
+## Durata dei riavvi del server
 
 You can use `crontab` and `forever` together to start verdaccio after a server reboot. When you're logged in as the verdaccio user do the following:
 
