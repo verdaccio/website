@@ -17,11 +17,11 @@ logs:
 
 Use `SIGUSR2` to notify the application, the log-file was rotated and it needs to reopen it. Note: Rotating log stream is not supported in cluster mode. [See here](https://github.com/trentm/node-bunyan#stream-type-rotating-file)
 
-### Configuration
+### Configuración
 
-| Property | Type   | Required | Example                                        | Support | Description                                       |
-| -------- | ------ | -------- | ---------------------------------------------- | ------- | ------------------------------------------------- |
-| type     | string | No       | [stdout, file]                                 | all     | define the output                                 |
-| path     | string | No       | verdaccio.log                                  | all     | if type is file, define the location of that file |
-| format   | string | No       | [pretty, pretty-timestamped]                   | all     | output format                                     |
-| level    | string | No       | [fatal, error, warn, http, info, debug, trace] | all     | verbose level                                     |
+| Propiedad | Tipo   | Requerido | Ejemplo                                        | Soporte | Descripción                                               |
+| --------- | ------ | --------- | ---------------------------------------------- | ------- | --------------------------------------------------------- |
+| type      | string | No        | [stdout, file]                                 | all     | define la salida                                          |
+| path      | string | No        | verdaccio.log                                  | all     | si el tipo es archivo, define la ubicación de ese archivo |
+| format    | string | No        | [pretty, pretty-timestamped]                   | all     | formato de salida                                         |
+| level     | string | No        | [fatal, error, warn, http, info, debug, trace] | all     | nivel verboso                                             |
