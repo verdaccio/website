@@ -1,15 +1,15 @@
 ---
 id: version-3.8.6-configuration
 title: Configuration File
-original_id: configuration
+original_id: konfigurisanje
 ---
-This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
+Ovaj fajl je osnova verdaccio-a. U okviru njega, možete vršiti izmene zadatih podešavanja, možete aktivirati plugin-e i spoljašnje resurse (features).
 
-A default configuration file is created the very first time you run `verdaccio`.
+Fajl "default configuration file" se kreira prilikom prvog pokretanja `verdaccio-a`.
 
-## Default Configuration
+## Podrazumevane postavke (Default Configuration)
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+Podrazumevane postavke podržavaju **scoped** pakete za sve korisnike, ali samo **autorizovanim korisnicima omogućavaju da publikuju**.
 
 ```yaml
 storage: ./storage
@@ -30,11 +30,11 @@ logs:
   - {type: stdout, format: pretty, level: http}
 ```
 
-## Sections
+## Sekcije
 
-The following sections explain what each property means and the different options.
+Sekcija u nastavku daje objašnjenja za svako svojstvo i opciju.
 
-### Storage
+### Memorija za skladištenje
 
 Is the location of the default storage. **Verdaccio is by default based on local file system**.
 
@@ -42,7 +42,7 @@ Is the location of the default storage. **Verdaccio is by default based on local
 storage: ./storage
 ```
 
-### Plugins
+### Plugini
 
 Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
 
@@ -50,9 +50,9 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Authentification
+### Autentifikacija
 
-The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
+Ovde se vrši podešavanje (set up). Podrazumevana auth je bazirana na `htpasswd` i već je ugrađena. Možete izvršiti modifikacije načina rada (behaviour) putem [plugin-a](plugins.md). Za više informacija o ovoj sekciji pročitajte [auth stranu](auth.md).
 
 ```yaml
 auth:
@@ -120,7 +120,7 @@ packages:
     proxy: npmjs
 ```
 
-## Advanced Settings
+## Napredna podešavanja
 
 ### Offline Publish
 
@@ -178,7 +178,7 @@ https:
 
 Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
-#### http_proxy and https_proxy
+#### http_proxy i https_proxy
 
 If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
 
@@ -195,7 +195,7 @@ This variable should contain a comma-separated list of domain extensions proxy s
 no_proxy: localhost,127.0.0.1
 ```
 
-### Notifications
+### Obaveštenja
 
 Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
