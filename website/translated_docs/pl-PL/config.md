@@ -83,11 +83,11 @@ Konfiguracja jest podzielona na dwie sekcje: `api` i `web`. Aby użyć JWT w `ap
             someProp: [value]
     
 
-> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+> Zdecydowanie zalecamy przejście do JWT, ponieważ starszy podpis (`aes192`) jest przestarzały i zniknie w przyszłych wersjach.
 
 ### Web UI
 
-This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
+Ta właściwość pozwala Ci zmienić wygląd internetowego interfejsu użytkownika. Więcej informacji na temat tej sekcji można znaleźć na stronie [web ui page](web.md).
 
 ```yaml
 web:
@@ -99,7 +99,7 @@ web:
 
 ### Uplinks
 
-Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
+Uplinks to zdolność systemu do pobierania pakietów ze zdalnych rejestrów, gdy pakiety te nie są dostępne lokalnie. Więcej informacji na temat tej sekcji można znaleźć na [stronie uplinks](uplinks.md).
 
 ```yaml
 uplinks:
@@ -107,9 +107,9 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Pakiety
 
-Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
+Pakiety pozwalają użytkownikowi kontrolować, w jaki sposób pakiety będą dostępne. Więcej informacji na temat tej sekcji można znaleźć na [stronie pakietów](packages.md).
 
 ```yaml
 packages:
@@ -121,9 +121,9 @@ packages:
 
 ## Ustawienia zaawansowane
 
-### Offline Publish
+### Publikowanie w trybie offline
 
-By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
+Domyślnie `verdaccio` nie pozwala na publikowanie w trybie offline, można to zmienić poprzez ustawienie tej właściwości na *true*.
 
 ```yaml
 publish:
@@ -164,7 +164,7 @@ listen:
 
 ### HTTPS
 
-To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
+To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. Więcej informacji o tej sekcji znajdziesz na [ssl page](ssl.md).
 
 ```yaml
 https:
@@ -175,11 +175,11 @@ https:
 
 ### Proxy
 
-Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
+Proxy to specjalne serwery HTTP stworzone do transferu danych z serwerów zdalnych do klientów lokalnych.
 
 #### http_proxy i https_proxy
 
-If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
+Jeśli posiadasz serwer proxy w swojej sieci możesz ustawić nagłówek `X-Forwarded-For` używając następujących właściwości.
 
 ```yaml
 http_proxy: http://something.local/
@@ -188,15 +188,15 @@ https_proxy: https://something.local/
 
 #### brak_proxy
 
-This variable should contain a comma-separated list of domain extensions proxy should not be used for.
+Ta zmienna powinna posiadać listę domen oddzieloną przecinkami, dla których proxy nie powinno być używane.
 
 ```yaml
-no_proxy: localhost,127.0.0.1
+brak_proxy: hostlokalny,127.0.0.1
 ```
 
-### Notifications
+### Powiadomienia
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Dostarczanie powiadomień do aplikacji zewnętrznych jest całkiem łatwe poprzez web hooks. Aby uzyskać więcej informacji o tej sekcji przeczytaj [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -206,15 +206,15 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-> For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
+> Bardziej szczegółowe ustawienia konfiguracji znajdziesz w [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
 
 ### Audit
 
 <small>Since: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`npm audit` to nowa komenda wydana razem z [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio zawiera wbudowany plugin oprogramowania pośredniego do obsługi tej komendy.
 
-> If you have a new installation it comes by default, otherwise you need to add the following props to your config file
+> Jeśli instalujesz aplikację od nowa, to posiada ona ustawienia domyślnie, w przeciwnym razie musisz dodać następujące właściwości do Twojego pliku konfiguracyjnego
 
 ```yaml
 middlewares:
