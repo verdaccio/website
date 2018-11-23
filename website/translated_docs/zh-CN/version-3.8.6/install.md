@@ -1,39 +1,39 @@
 ---
 id: version-3.8.6-installation
-title: Installation
+title: 安装
 original_id: installation
 ---
 Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
 
-#### Prerequisites
+#### 最低要求:
 
-1. Node higher than 
-    - For version `verdaccio@2.x` Node `v4.6.1` is the minimum supported version.
-    - For version `verdaccio@latest` Node `6.12.0` is the minimum supported version.
+1. Node.js 版本 
+    - 对于 `verdaccio@2.x` 版本，Node `v4.6.1` 是最低支持版本。
+    - 对于 `verdaccio@latest` 版本，Node `6.12.0` 是最低支持版本。
 2. npm `>=3.x` or `yarn`
-3. The web interface supports the `Chrome, Firefox, Edge, and IE9` browsers.
+3. Web 界面支持 `Chrome, Firefox, Edge, 和 IE9` 浏览器。
 
-## Installing the CLI
+## 安装CLI
 
-`verdaccio` must be installed globaly using either of the following methods:
+`verdaccio` 需要使用以下两种方法之一安装到全局环境：
 
-Using `npm`
+使用 `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-or using `yarn`
+或使用 `yarn`
 
 ```bash
 yarn global add verdaccio
 ```
 
-![install verdaccio](/svg/install_verdaccio.gif)
+![安装verdaccio](/svg/install_verdaccio.gif)
 
-## Basic Usage
+## 基本使用
 
-Once it has been installed, you only need to execute the CLI command:
+一旦安装后，您只需要执行命令：
 
 ```bash
 $> verdaccio
@@ -41,14 +41,14 @@ warn --- config file  - /home/.config/verdaccio/config.yaml
 warn --- http address - http://localhost:4873/ - verdaccio/3.0.1
 ```
 
-For more information about the CLI, please [read the cli section](cli.md).
+更多关于CLI的详细信息，请[阅读cli章节](cli.md)。
 
-## Docker Image
+## Docker 镜像
 
-`verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. For more information about how to install the official image, [read the docker section](docker.md).
+`verdaccio` 有官方 docker 镜像可以使用，在大多数情况下，默认配置已经足够了。 更多关于如何安装官方镜像的详细信息，请[阅读docker章节](docker.md)。
 
 ## Cloudron
 
-`verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
+`verdaccio` 可以使用 [Cloudron](https://cloudron.io) 一键安装
 
-[![Install](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
+[![安装](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
