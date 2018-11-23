@@ -3,11 +3,11 @@ id: version-3.8.6-uplinks
 title: Uplinks
 original_id: uplinks
 ---
-An *uplink* is a link with an external registry that provides acccess to external packages.
+Un *uplink* es un enlace a un registro externo que provee acceso a paquetes externos.
 
 ![Uplinks](/img/uplinks.png)
 
-### Usage
+### Uso
 
 ```yaml
 uplinks:
@@ -22,24 +22,24 @@ uplinks:
     url: http://localhost:55666/
 ```
 
-### Configuration
+### Configuración
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
 
-| Property     | Type    | Required | Example                                 | Support | Description                                                                                                                | Default     |
-| ------------ | ------- | -------- | --------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| url          | string  | Yes      | https://registry.npmjs.org/             | all     | The registry url                                                                                                           | npmjs       |
-| ca           | string  | No       | ~./ssl/client.crt'                      | all     | SSL path certificate                                                                                                       | No default  |
-| timeout      | string  | No       | 100ms                                   | all     | set new timeout for the request                                                                                            | 30s         |
-| maxage       | string  | No       | 10m                                     | all     | limit maximun failure request                                                                                              | 2m          |
-| fail_timeout | string  | No       | 10m                                     | all     | defines max time when a request becomes a failure                                                                          | 5m          |
-| max_fails    | number  | No       | 2                                       | all     | limite máximo de fallos de cada petición                                                                                   | 2           |
-| cache        | boolean | No       | [true,false]                            | >= 2.1  | cache all remote tarballs in storage                                                                                       | true        |
-| auth         | list    | No       | [see below](uplinks.md#auth-property)   | >= 2.5  | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | desactivado |
-| headers      | list    | No       | authorization: "Bearer SecretJWToken==" | all     | list of custom headers for the uplink                                                                                      | desactivado |
-| strict_ssl   | boolean | No       | [true,false]                            | >= 3.0  | If true, requires SSL certificates be valid.                                                                               | true        |
+| Propiedad    | Tipo    | Requerido | Ejemplo                               | Soporte | Descripción                                                                                                                       | Por Defecto |
+| ------------ | ------- | --------- | ------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| url          | string  | Si        | https://registry.npmjs.org/           | all     | El dominio del registro                                                                                                           | npmjs       |
+| ca           | string  | No        | ~./ssl/client.crt'                    | all     | Ubicación del certificado SSL                                                                                                     | Desactivado |
+| timeout      | string  | No        | 100ms                                 | all     | timeout por petición                                                                                                              | 30s         |
+| maxage       | string  | No        | 10m                                   | all     | limite máximo de fallos de cada petición                                                                                          | 2m          |
+| fail_timeout | string  | No        | 10m                                   | all     | define el tiempo máximo cuando una petición falla                                                                                 | 5m          |
+| max_fails    | number  | No        | 2                                     | all     | limite máximo de fallos de cada petición                                                                                          | 2           |
+| cache        | boolean | No        | [true,false]                          | >= 2.1  | cache all remote tarballs in storage                                                                                              | true        |
+| auth         | list    | No        | [ver abajo](uplinks.md#auth-property) | >= 2.5  | asigna el encabezado 'Autorización' [más información](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | desactivado |
+| headers      | list    | No        | ]]                                    | all     | listado de encabezados por uplink                                                                                                 | desactivado |
+| strict_ssl   | boolean | No        | [true,false]                          | >= 3.0  | Es verdadero, requiere que el certificado SSL sea válido.                                                                         | true        |
 
-#### Auth property
+#### Propiedad auth
 
 The `auth` property allows you to use an auth token with an uplink. Using the default environment variable:
 
@@ -52,7 +52,7 @@ uplinks:
       token_env: true # defaults to `process.env['NPM_TOKEN']`   
 ```
 
-or via a specified environment variable:
+o a través de una variable de entorno específica:
 
 ```yaml
 uplinks:
@@ -63,9 +63,9 @@ uplinks:
       token_env: FOO_TOKEN
 ```
 
-`token_env: FOO_TOKEN`internally will use `process.env['FOO_TOKEN']`
+`token_env: FOO_TOKEN` utilizará internamente `process.env['FOO_TOKEN']`
 
-or by directly specifying a token:
+o al especificar directamente un token:
 
 ```yaml
 uplinks:
@@ -76,9 +76,9 @@ uplinks:
       token: "token"
 ```
 
-> Note: `token` has priority over `token_env`
+> Nota: `token` tiene prioridad sobre `token_env`
 
-### You Must know
+### Debes saber
 
 * Uplinks must be registries compatible with the `npm` endpoints. Eg: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* and more.
 * Setting `cache` to false will help to save space in your hard drive. This will avoid store `tarballs` but [it will keep metadata in folders](https://github.com/verdaccio/verdaccio/issues/391).
