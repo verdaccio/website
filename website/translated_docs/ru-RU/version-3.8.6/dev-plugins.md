@@ -1,19 +1,19 @@
 ---
 id: version-3.8.6-dev-plugins
-title: Developing Plugins
+title: Разработка плагинов
 original_id: dev-plugins
 ---
-There are many ways to extend `verdaccio`, the kind of plugins supported are:
+Есть много способов расширить `verdaccio`, поддерживаются следующие типы плагинов:
 
-* Authentication plugins
-* Middleware plugins (since `v2.7.0`)
-* Storage plugins since (`v3.x`)
+* Плагин аутентификации
+* Middleware плагины (начиная с `v2.7.0`)
+* Плагины для хранения с (`v3.x`)
 
-> We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
+> Мы рекомендуем разрабатывать плагины с использованием [flow type definitions](https://github.com/verdaccio/flow-types).
 
-## Authentication Plugin
+## Плагин аутентификации
 
-Basically we have to return an object with a single method called `authenticate` that will recieve 3 arguments (`user, password, callback`).
+В основном мы должны возвращать объект с помощью одного метода, называемого `authenticate`, который должен принимать три аругмента (`user, password, callback`).
 
 ### API
 
@@ -27,15 +27,15 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> Необязательными являются только `adduser`, `allow_access` и `allow_publish`, verdaccio предоставляет запасной вариант в этих случаях.
 
 #### Callback
 
-Once the authentication has been executed there is 2 options to give a response to `verdaccio`.
+После того как аутентификация была выполнена, `verdaccio` может быть возвращено только два ответа.
 
 ###### OnError
 
-Either something bad happened or auth was unsuccessful.
+Либо что-то пошло не так, либо аутентификация была не удачной.
 
 ```flow
 callback(null, false)
@@ -43,21 +43,21 @@ callback(null, false)
 
 ###### OnSuccess
 
-The auth was successful.
+Аутентификация прошла успешно.
 
-`groups` is an array of strings where the user is part of.
+`groups` это массив строк с именами групп, в которых пользователь состоит.
 
      callback(null, groups);
     
 
-### Example
+### Пример
 
 ```javascript
 function Auth(config, stuff) {
   var self = Object.create(Auth.prototype);
   self._users = {};
 
-  // config for this module
+  // конфигурация для этого модуля
   self._config = config;
 
   // verdaccio logger
@@ -83,7 +83,7 @@ Auth.prototype.authenticate = function (user, password, callback) {
 module.exports = Auth;
 ```
 
-And the configuration will looks like:
+И конфигурация будет выглядеть как-то так:
 
 ```yaml
 auth:
@@ -93,9 +93,9 @@ auth:
 
 Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
 
-## Middleware Plugin
+## Middleware плагин
 
-Middleware plugins have the capability to modify the API layer, either adding new endpoints or intercepting requests.
+Middleware плагины могут менять API, добавляя конечные обработчики или перехватывая запросы.
 
 ```flow
 interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
@@ -107,21 +107,21 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
 
-> A pretty good example of middleware plugin is the [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) and [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
+> Очень хорошим примером middleware-плагина является [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) и [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
 ### API
 
 ```js
 function register_middlewares(expressApp, authInstance, storageInstance) {
-   /* more stuff */
+   /* реализация плагина */
 }
 ```
 
-To register a middleware we need an object with a single method called `register_middlewares` that will recieve 3 arguments (`expressApp, auth, storage`). *Auth* is the authentification instance and *storage* is also the main Storage instance that will give you have access to all to the storage actions.
+Для регистрации плагина, нам нужен объект с единственным методом, называемым `register_middlewares`, который принимает три аргумента (`expressApp, auth, storage`). *Auth* это экземпляр авторизации и *storage* так же является экземпляром главного хранилища, который предоставит доступ ко всем действиям над ним.
 
-## Storage Plugin
+## Плагин хранилища
 
-Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), but, since `verdaccio@3.x` you can plug in a custom storage replacing the default behaviour.
+По умолчанию Verdaccio использует плагин хранилища в файловой системе [local-storage](https://github.com/verdaccio/local-storage), но, начиная с `verdaccio@3.x` вы можете устновить свой плагин хранлища, заменив тем самым поведение по умолчанию.
 
 ### API
 
@@ -175,11 +175,11 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 }
 ```
 
-> The Storage API is still experimental and might change in the next minor versions. For further information about Storage API please follow the [types definitions in our official repository](https://github.com/verdaccio/flow-types).
+> API хранилища всё ещё остаётся экспериментальным и может измениться в следующих минорных версиях. Для получения актуальной информации о API Хранилища пожалуйста перейдите к [типам определённым в нашем репозитории](https://github.com/verdaccio/flow-types).
 
-### Storage Plugins Examples
+### Пример плагина хранилища
 
-The following list of plugins are implementing the Storage API and might be used them as example.
+Данный список плагинов реализует API Хранилища и может использоваться вами как пример.
 
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory)
 * [local-storage](https://github.com/verdaccio/local-storage)
