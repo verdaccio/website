@@ -1,6 +1,6 @@
 ---
 id: dev-plugins
-title: "Developing Plugins"
+title: "Criando Plugins"
 ---
 There are many ways to extend `verdaccio`, the kind of plugins supported are:
 
@@ -49,7 +49,7 @@ The auth was successful.
      callback(null, groups);
     
 
-### Example
+### Exemplo
 
 ```javascript
 function Auth(config, stuff) {

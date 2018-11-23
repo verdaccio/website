@@ -1,6 +1,6 @@
 ---
 id: logger
-title: "Logger"
+title: "로거"
 ---
 As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
 

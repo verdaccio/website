@@ -50,6 +50,6 @@ auth:
 | Właściwość | Typ         | Wymagane | Przykład   | Wsparcie  | Opis                                              |
 | ---------- | ----------- | -------- | ---------- | --------- | ------------------------------------------------- |
 | plik       | ciąg znaków | Tak      | ./htpasswd | wszystkie | plik, który udostępnia zaszyfrowane poświadczenia |
-| max_users  | numer       | Nie      | 1000       | all       | ustaw limit użytkowników                          |
+| max_users  | numer       | Nie      | 1000       | wszystkie | ustaw limit użytkowników                          |
 
 W przypadku, gdy będziesz chciał wyłączyć możliwość zalogowania się, ustaw `max_users: -1`.
