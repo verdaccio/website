@@ -1,11 +1,11 @@
 ---
 id: version-3.8.6-reverse-proxy
-title: Reverse Proxy Setup
+title: Configurazione di Proxy inverso
 original_id: reverse-proxy
 ---
 ## Apache
 
-Apache and mod_proxy should not decode/encode slashes and leave them as they are:
+Apache e mod_proxy non dovrebbero decodificare/codificare gli slash e dovrebbero lasciarli così come sono:
 
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
@@ -14,7 +14,7 @@ Apache and mod_proxy should not decode/encode slashes and leave them as they are
     </VirtualHost>
     
 
-### Configuration with SSL
+### Configurazione con SSL
 
 config.yaml
 
@@ -22,7 +22,7 @@ config.yaml
 url_prefix: https://npm.your.domain.com
 ```
 
-Apache virtual server configuration
+Configurazione del server virtuale Apache
 
         apacheconfig
         <IfModule mod_ssl.c>
@@ -52,13 +52,13 @@ Apache virtual server configuration
     }
     
 
-## Run behind reverse proxy with different domain and port
+## Avvio dietro al proxy inverso con dominio e porta differenti
 
-If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like `http://127.0.0.1:4873/-/static`
+Se esegui verdaccio dietro al proxy inverso, potresti notare che tutti i file risorsa funzionano come percorsi correlati, come ` http://127.0.0.1:4873/-/static `
 
-To resolve this issue, you should send real domain and port to verdaccio with `Host` header
+Per risolvere il problema, si dovrebbe inviare a verdaccio il dominio reale e la porta con l'intestazione `Host`
 
-Nginx configure should look like this:
+La configurazione di Nginx dovrebbe apparire così:
 
 ```nginx
 location / {
@@ -69,11 +69,11 @@ location / {
 }
 ```
 
-For this case, `url_prefix` should NOT set in verdaccio config
+In questo caso, `url_prefix` non dovrebbe essere impostato nella configurazione di verdaccio
 
 * * *
 
-or a sub-directory installation:
+o nell'installazione di una sotto cartella:
 
 ```nginx
 location ~ ^/verdaccio/(.*)$ {
@@ -84,6 +84,6 @@ location ~ ^/verdaccio/(.*)$ {
 }
 ```
 
-For this case, `url_prefix` should set to `/verdaccio/`
+In questo caso invece, `url_prefix` dovrebbe essere impostato su `/verdaccio/`
 
-> Note: There is a Slash after install path (`https://your-domain:port/verdaccio/`)!
+> Nota: C'è uno Slash dopo il percorso dell'installazione (`https://your-domain:port/verdaccio/`)!
