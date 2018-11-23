@@ -1,14 +1,14 @@
 ---
 id: version-3.8.6-build
-title: Build the source code
-original_id: build
+title: Tạo mã nguồn
+original_id: tạo
 ---
-Verdaccio relies on `yarn` instead `npm` to download dependencies.
+Để tải các gói phụ thuộc Verdaccio sử dụng `yarn` thay vì `npm`.
 
-*Note: the current build only will build with `➜ yarn@1.x`.
+*Xin lưu ý: Mã nguồn hiện tại chỉ có thể được tạo bởi `➜ yarn@1.x`.
 
 ```bash
   yarn install
 ```
 
-To see the complete list of scripts, [click here](https://github.com/verdaccio/verdaccio/wiki/Build-Source-Code).
+Để xem đầy đủ danh sách các tập lệnh, hãy [nhấp vào đây](https://github.com/verdaccio/verdaccio/wiki/Build-Source-Code).
