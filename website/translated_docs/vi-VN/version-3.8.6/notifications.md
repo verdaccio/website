@@ -147,13 +147,13 @@ You can acces to the package is being published with the keyword `{{publishedPac
     {{ publisher.name }} has published {{publishedPackage}}"}
     
 
-## Configuration
+## Cấu hình
 
-| Property            | Type         | Required | Support | Default | Description                                                                                  |
-| ------------------- | ------------ | -------- | ------- | ------- | -------------------------------------------------------------------------------------------- |
-| method              | string       | No       | all     |         | HTTP verb                                                                                    |
-| packagePattern      | string       | No       | all     |         | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | string       | No       | all     |         | Any flags to be used with the regular expression                                             |
-| headers             | array/object | Yes      | all     |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | string       | Yes      | all     |         | set the URL endpoint for this call                                                           |
-| content             | string       | Yes      | all     |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Thuộc tính          | Phương thức  | Yêu cầu | Hỗ trợ | Giá trị mặc định | Miêu tả                                                                                      |
+| ------------------- | ------------ | ------- | ------ | ---------------- | -------------------------------------------------------------------------------------------- |
+| method              | chuỗi        | Không   | tất cả |                  | HTTP verb                                                                                    |
+| packagePattern      | chuỗi        | Không   | tất cả |                  | Only run this notification if the package name matches the regular expression                |
+| packagePatternFlags | chuỗi        | Không   | tất cả |                  | Any flags to be used with the regular expression                                             |
+| headers             | array/object | Có      | tất cả |                  | If this endpoint requires specific headers, set them here as an array of key: value objects. |
+| endpoint            | chuỗi        | Có      | tất cả |                  | set the URL endpoint for this call                                                           |
+| content             | chuỗi        | Có      | tất cả |                  | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
