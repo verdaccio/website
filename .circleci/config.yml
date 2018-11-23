@@ -1,15 +1,17 @@
+version: 2
+
 aliases:
- - &filter-only-master
+  - &defaults
+    working_directory: ~/verdaccio
+  - &filter-only-master
    branches:
      only:
        - master
-
-version: 2
 jobs:
   deploy-website:
     docker:
       # specify the version you desire here
-      - image: circleci/node:8.11.1
+      - image: circleci/node:10
     steps:
       - checkout
       - run:
