@@ -1,13 +1,13 @@
 ---
 id: version-3.8.6-protect-your-dependencies
-title: Protecting packages
+title: Protection des paquets
 original_id: protect-your-dependencies
 ---
-`verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages acces](packages).
+`verdaccio` vous permet de protéger la publication. Pour ce faire, il est nécessaire de configurer correctement le [package acces](packages).
 
-### Package configuration
+### Configuration du paquet
 
-Let's see for instance the following set up. You have a set of dependencies what are prefixed with `my-company-*` and you need to protect them from anonymous or another logged user without right credentials.
+Voyons, par exemple, la configuration suivante. Vous avez une série de dépendances préfixées par `my-company - *` et vous devez les protéger contre les utilisateurs anonymes ou contre les autres utilisateurs connectés sans informations d'identification correctes.
 
 ```yaml
   'my-company-*':
@@ -16,9 +16,9 @@ Let's see for instance the following set up. You have a set of dependencies what
     proxy: npmjs
 ```
 
-With this configuration, basically we allow to groups **admin** and **teamA** to *publish* and **teamA** **teamB** **teamC** *access* to such dependencies.
+Avec cette configuration, en principe, nous permettons aux groupes **admin** et **teamA** de *publier*, et **teamA** **teamB** **teamC** d'*accéder* à de telles dépendences.
 
-### Use case: teamD try to access the dependency
+### Cas d'utilisation: teamD tente d'accéder à la dépendance
 
 So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
 
@@ -35,12 +35,12 @@ npm ERR! code E403
 npm ERR! 403 Forbidden: webpack-1@latest
 ```
 
-or with `yarn`
+ou avec `yarn`
 
 ```bash
 ➜ yarn add my-company-core
 yarn add v0.24.6
 info No lockfile found.
 [1/4] 🔍  Resolving packages...
-error An unexpected error occurred: "http://localhost:5555/webpack-1: unregistered users are not allowed to access package my-company-core".
+error Une erreur inattendue s'est produite: "http: // localhost: 5555 / webpack-1: les utilisateurs non enregistrés ne sont pas autorisés à accéder au paquet my-company-core".
 ```
