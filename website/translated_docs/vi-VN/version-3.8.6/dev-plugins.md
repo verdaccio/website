@@ -3,17 +3,17 @@ id: version-3.8.6-dev-plugins
 title: Developing Plugins
 original_id: dev-plugins
 ---
-There are many ways to extend `verdaccio`, the kind of plugins supported are:
+Có nhiều cách để mở rộng `verdaccio`. Các loại phần mềm bổ trợ là:
 
-* Authentication plugins
-* Middleware plugins (since `v2.7.0`)
-* Storage plugins since (`v3.x`)
+* Xác minh các phần mềm bổ trợ
+* Phần mềm bổ trợ Middleware (kể từ phiên bản `v2.7.0`)
+* Phần mềm bổ trợ lưu trữ từ phiên bản (` v3.x `)
 
-> We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
+> Chúng tôi khuyên bạn nên phát triển phần mềm bổ trợ bằng cách sử dụng [định nghĩa loại luồng ](https://github.com/verdaccio/flow-types) của chúng tôi.
 
-## Authentication Plugin
+## Xác minh phần mềm bổ trợ
 
-Basically we have to return an object with a single method called `authenticate` that will recieve 3 arguments (`user, password, callback`).
+Cơ bản chúng ta phải trả về một đối tượng với phương thức được gọi là `authenticate`, và sẽ nhận lại 3 tham số (`user, password, callback`).
 
 ### API
 
@@ -27,15 +27,15 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> Chỉ có các tùy chọn là `adduser`, ` allow_access` và `allow_publish` và verdaccio cung cấp chức năng dự phòng trong tất cả các tùy chọn này.
 
 #### Callback
 
-Once the authentication has been executed there is 2 options to give a response to `verdaccio`.
+Khi xác thực được thực hiện, có hai tùy chọn để trả lời `verdaccio`.
 
 ###### OnError
 
-Either something bad happened or auth was unsuccessful.
+Hiện lỗi này nghĩa là hoặc xảy ra lỗi hoặc xác thực không thành công.
 
 ```flow
 callback(null, false)
@@ -43,14 +43,14 @@ callback(null, false)
 
 ###### OnSuccess
 
-The auth was successful.
+Xác thực thành công.
 
-`groups` is an array of strings where the user is part of.
+`groups` là một tập hợp các chuỗi người dùng.
 
      callback(null, groups);
     
 
-### Example
+### Ví dụ
 
 ```javascript
 function Auth(config, stuff) {
@@ -83,7 +83,7 @@ Auth.prototype.authenticate = function (user, password, callback) {
 module.exports = Auth;
 ```
 
-And the configuration will looks like:
+Cấu hình sẽ trông như thế này:
 
 ```yaml
 auth:
@@ -93,9 +93,9 @@ auth:
 
 Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
 
-## Middleware Plugin
+## Phần mềm bổ trợ Middleware
 
-Middleware plugins have the capability to modify the API layer, either adding new endpoints or intercepting requests.
+Phần mềm bổ trợ Middleware có khả năng sửa đổi giao diện API để thêm các điểm cuối mới hoặc chặn các yêu cầu.
 
 ```flow
 interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
@@ -107,7 +107,7 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
 
-> A pretty good example of middleware plugin is the [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) and [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
+> Một ví dụ điển hình về phần mềm bổ trợ Middleware là [ sinopia-github-oauth ](https://github.com/soundtrackyourbrand/sinopia-github-oauth) và <a href = "https: // Github.com/verdaccio/verdaccio-audit">verdaccio-audit </a>.
 
 ### API
 
@@ -117,11 +117,11 @@ function register_middlewares(expressApp, authInstance, storageInstance) {
 }
 ```
 
-To register a middleware we need an object with a single method called `register_middlewares` that will recieve 3 arguments (`expressApp, auth, storage`). *Auth* is the authentification instance and *storage* is also the main Storage instance that will give you have access to all to the storage actions.
+Bằng cách sử dụng một cách thức duy nhất để đăng ký middleware là `register_middlewares`, chúng ta cần tìm một đối tượng có thể nhận được 3 tham số (` expressApp, auth, storage `) được gọi là. Lớp xác thực *Auth* và lớp lưu trữ chính *storage* cho phép bạn truy cập vào tất cả các hoạt động lưu trữ.
 
-## Storage Plugin
+## Phần mềm bổ trợ lưu trữ
 
-Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), but, since `verdaccio@3.x` you can plug in a custom storage replacing the default behaviour.
+Theo mặc định, Verdaccio sử dụng phần mềm bổ trợ lưu trữ hệ thống tệp [local-storage](https://github.com/verdaccio/local-storage), tuy nhiên, từ phiên bản `verdaccio@3.x ` bạn có thể chèn lưu trữ tùy chỉnh thay vì hành vi mặc định.
 
 ### API
 
@@ -175,11 +175,11 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 }
 ```
 
-> The Storage API is still experimental and might change in the next minor versions. For further information about Storage API please follow the [types definitions in our official repository](https://github.com/verdaccio/flow-types).
+> API lưu trữ vẫn đang trong quá trình chạy thử nghiệm và có thể sẽ được sửa đổi trong phiên bản tiếp theo. Để biết thêm thông tin về API lưu trữ, vui lòng truy cập [ và nhập định nghĩa trong kho lưu trữ chính thức của chúng tôi ](https://github.com/verdaccio/flow-types).
 
-### Storage Plugins Examples
+### Những ví dụ về phần mềm bổ trợ bộ nhớ
 
-The following list of plugins are implementing the Storage API and might be used them as example.
+Dưới đây là danh sách những phần mềm bổ trợ đang sử dụng API lưu trữ và có thể được sử dụng làm ví dụ.
 
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory)
 * [local-storage](https://github.com/verdaccio/local-storage)
