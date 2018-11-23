@@ -134,15 +134,15 @@ Opiszmy, czego chcemy w powyższym przykładzie:
 
 Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
 
-### Configuration
+### Konfiguracja
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Property | Type    | Required | Example        | Support  | Description                                 |
-| -------- | ------- | -------- | -------------- | -------- | ------------------------------------------- |
-| access   | string  | No       | $all           | all      | define groups allowed to access the package |
-| publish  | string  | No       | $authenticated | all      | define groups allowed to publish            |
-| proxy    | string  | Nie      | npmjs          | wszystko | limit look ups for specific uplink          |
-| magazyn  | boolean | Nie      | [prawda,fałsz] | wszystko | TODO                                        |
+| Właściwość | Typ         | Wymagane | Przykład       | Wsparcie  | Opis                                        |
+| ---------- | ----------- | -------- | -------------- | --------- | ------------------------------------------- |
+| access     | ciąg znaków | Nie      | $all           | wszystkie | define groups allowed to access the package |
+| publish    | ciąg znaków | Nie      | $authenticated | wszystkie | define groups allowed to publish            |
+| proxy      | ciąg znaków | Nie      | npmjs          | wszystko  | limit look ups for specific uplink          |
+| magazyn    | boolean     | Nie      | [prawda,fałsz] | wszystko  | TODO                                        |
 
 > Podkreślamy, że zalecamy niekorzystanie dłużej z **allow_access**/**allow_publish**i** proxy_access**, są one nieaktualne i wkrótce zostaną usunięte. Użyj skróconej wersji każdego z tych (**access**/**publish**/**proxy**).
