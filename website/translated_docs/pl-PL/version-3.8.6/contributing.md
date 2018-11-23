@@ -3,78 +3,78 @@ id: version-3.8.6-contributing
 title: Contributing Verdaccio
 original_id: contributing
 ---
-First of all 👏👏 thanks for visiting this page, for us means you are willing contribute to `verdaccio` and we are happy for that. Jumping into an unfamiliar code base is not easy but we are here to help you.
+First of all 👏👏 thanks for visiting this page, for us means you are willing contribute to `verdaccio` and we are happy for that. Zapoznanie się z obcą podstawą kodowania nie jest łatwe, ale jesteśmy tutaj, aby Ci z tym pomóc.
 
-## Comunication Channels
+## Kanały komunikacji
 
-If you are willing for asking, we use two channels for discussions:
+Jeżeli masz jakieś pytania, używamy dwóch kanałów do dyskusji:
 
-* [Public Discord channel](http://chat.verdaccio.org/)
+* [Publiczny kanał Discord](http://chat.verdaccio.org/)
 
-## Getting started
+## Pierwsze kroki
 
-As a first glance verdaccio is a single repository, but there are many ways you might contribute and a variety of technologies to practice.
+Na pierwszy rzut oka verdaccio jest pojedyńczym repozytorium, lecz jest wiele sposobów, dzięki którym możesz z nami współpracować i wiele technik do przećwiczenia.
 
-### Finding my spot
+### Znajdowanie swojej mocnej strony
 
-All we have different skills, so, let's see where you might feel comfortable.
+Wszyscy posiadamy różne umiejętności, więc zobaczmy w czym czujesz się komfortowo.
 
-### I know or I want to learn Node.js
+### Znam lub chcę się nauczyć Node.js
 
-Node.js is the base of `verdaccio`, we use libraries as `express`, `commander`, `request` or `async`. Verdaccio is basically a Rest API that create a communication with `npm` clients compatible, as `yarn`.
+Node.js jest podstawą `verdaccio`, używamy bibliotek takich jak `express`, `commander`, `request` lub `async`. Verdaccio to w zasadzie Rest API, które tworzy komunikację z `npm` klientami zgodnymi, jak `yarn`.
 
-We have a long [list of plugins](plugins.md) ready to be used and improved but at the same time [you might create your own](dev-plugins.md).
+Posiadamy długą [listę wtyczek](plugins.md) gotową do użycia oraz rozwijania, ale również możesz [stworzyć swoją własną](dev-plugins.md).
 
-### I would prefer to work in the User Interface
+### Wolę pracować w interfejsie użytkownika
 
 Recently we have moved to modern techonologies as `React` and `element-react`. We are looking forward to see new ideas how to improve the UI.
 
 ### I feel more confortable improving the stack
 
-Of course, we will be happy to help us improving the stack, you can upgrade dependencies as `eslint`, `stylelint`, `webpack`. You might merely improve the `webpack` configuration would be great. Any suggestion is very welcome. Furthermore whether you have experience with **Yeoman** you might help us with the [verdaccio generator](https://github.com/verdaccio/generator-verdaccio-plugin).
+Of course, we will be happy to help us improving the stack, you can upgrade dependencies as `eslint`, `stylelint`, `webpack`. Mógłbyś jedynie poprawić `konfigurację` pakietu internetowego, byłoby świetnie. Wszelkie propozycje są mile widziane. Ponadto, jeśli masz doświadczenie z **Yeoman** możesz nam pomóc z [generatorem verdaccio](https://github.com/verdaccio/generator-verdaccio-plugin).
 
-Here some ideas:
+Tutaj jest kilka pomysłów:
 
-* Create a common eslint rules to be used across all dependencies or plugins
-* Improve Flow types definitions delivery
-* Moving to Webpack 4
-* Improve hot reload with Webpack
-* We use babel and webpack across all dependencies, why not a common preset?
-* Improve continous integration delivery
+* Utwórz wspólne reguły eslint, które będą używane we wszystkich zależnościach lub wtyczkach
+* Ulepsz dostarczanie definicji typów Przepływu
+* Przejście do Pakietu Internetowego 4
+* Popraw szybkie ładowanie za pomocą Pakietu Internetowego
+* Używamy babel i pakietu internetowego we wszystkich zależnościach, czemu więc nie zastosować wspólnego ustawienia?
+* Popraw dostawę ciągłej integracji
 
-### I do great Documentation
+### Robię świetne dokumentacje
 
-Many contributors find typos and grammar issues, that also helps to improve the overall experience for troubleshooting.
+Wiele współtwórców znajduje literówki i błędy gramatyczne, to również przyczynia się do ogólnego wrażenia podczas rozwiązywania problemów.
 
-### I am a Designer
+### Jestem projektantem
 
-We have a frontend website <http://www.verdaccio.org/> that will be happy to see your ideas.
+Mamy stronę frontendową <http://www.verdaccio.org/>, na której chętnie zobaczymy twoje pomysły.
 
-Our website is based on [Docusaurus](https://docusaurus.io/).
+Nasza strona internetowa jest oparta o [Docusaurus](https://docusaurus.io/).
 
-### I am a DevOps
+### Jestem DevOps
 
-We have a widely popular Docker image <https://hub.docker.com/r/verdaccio/verdaccio/> that need maintenance and pretty likely huge improvements, we need your knowledge for the benefits of all users.
+Mamy bardzo popularny obraz Docker, [https://hub.docker.com/r/verdaccio/verdaccio](https://hub.docker.com/r/verdaccio/verdaccio/) który wymaga konserwacji i najprawdopodobniej ogromnych ulepszeń, potrzebujemy twojej wiedzy dla korzyści wszystkich użytkowników.
 
-We have support for **Kubernetes**, **Puppet**, **Ansible** and **Chef** and we need help in those fields, feel free to see all repositories.
+Wspieramy **Kubernetes**, **Puppet**, **Ansible** i **Chef** oraz potrzebujemy pomocy tych dziedzinach, nie krępuj się sprawdzić wszystkie repozytoria.
 
-### I can do translations
+### Mogę tłumaczyć
 
-Verdaccio aims to be multilingual, in order to achieve it **we have the awesome support** of [Crowdin](https://crowdin.com) that is an amazing platform for translations.
+Verdaccio chce być wielojęzyczny, w tym celu **mamy niesamowitą pomoc** ze strony serwisu [Crowdin](https://crowdin.com), który jest świetną platformą do tłumaczeń.
 
 <img src="https://d3n8a8pro7vhmx.cloudfront.net/uridu/pages/144/attachments/original/1485948891/Crowdin.png" width="400px" />
 
-We have setup a project where you can choose your favourite language, if you do not find your language feel free to request one [creating a ticket](https://github.com/verdaccio/verdaccio/issues/new).
+Przygotowaliśmy projekt, w którym możesz wybrać swój ulubiony język, jeśli nie znalazłeś tam swojego języka, nie wahaj się powiadomić nas o tym poprzez [wysłanie zgłoszenia](https://github.com/verdaccio/verdaccio/issues/new).
 
-[Go to Crowdin Verdaccio](https://crowdin.com/project/verdaccio)
+[Przejdź do Verdaccio na platformie Crowdin](https://crowdin.com/project/verdaccio)
 
-## I'm ready to contribute
+## Jestem gotowy do współtworzenia
 
-If you are thinking *"I've seen already the [repositories](repositories.md) and I'm willing to start right away"* then I have good news for you, that's the next step.
+Jeśli myślisz *"Widziałem już [repozytoria](repositories.md) i jestem gotów zacząć od razu"*, wtedy mam dla Ciebie dobrą wiadomość, która znajduje się w następnym kroku.
 
-You will need learn how to build, [we have prepared a guide just for that](build.md).
+Będziesz potrzebował nauczyć się budować, [przygotowaliśmy dla ciebie poradnik](build.md).
 
-Once you have played around with all scripts and you know how to use them, we are ready to go to the next step, run the [**Unit Test**](test.md).
+Gdy zapoznasz się ze wszystkimi skryptami i będziesz wiedział jak ich używać, będziesz gotów do następnego kroku, uruchom [**Test jednostek**](test.md).
 
 ## Full list of contributors. We want to see your face here !
 
