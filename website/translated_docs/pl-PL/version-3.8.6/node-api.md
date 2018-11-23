@@ -5,7 +5,7 @@ original_id: node-api
 ---
 Verdaccio can be invoqued programmatically. The node API was introduced after version `verdaccio@3.0.0-alpha.10`.
 
-## Usage
+## Użycie
 
 #### Programmatically
 
@@ -20,7 +20,7 @@ Verdaccio can be invoqued programmatically. The node API was introduced after ve
   });
 ```
 
-## Other implementations
+## Inne implementacje
 
 * [verdaccio-server](https://github.com/boringame/verdaccio-server) local npm registry proxy server
 
