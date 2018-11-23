@@ -1,7 +1,7 @@
 ---
 id: version-3.8.6-authentification
-title: Authentification
-original_id: authentification
+title: Autenticação
+original_id: autenticacao
 ---
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
 
@@ -48,9 +48,9 @@ auth:
     #max_users: 1000
 ```
 
-| Property  | Type   | Required | Example    | Support | Description                              |
-| --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
-| file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
-| max_users | number | No       | 1000       | all     | set limit of users                       |
+| Property  | Type   | Obrigatório | Exemplo    | Support | Descrição                                                    |
+| --------- | ------ | ----------- | ---------- | ------- | ------------------------------------------------------------ |
+| file      | string | Sim         | ./htpasswd | all     | arquivo onde ficam armazenadas as credenciais criptografadas |
+| max_users | number | Não         | 1000       | all     | define o limite de usuários                                  |
 
-In case to decide do not allow user to login, you can set `max_users: -1`.
+No caso de não permitir o login de usuário, você pode definir `max_users: -1`.
