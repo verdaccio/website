@@ -1,6 +1,6 @@
 ---
 id: dev-plugins
-title: "Developing Plugins"
+title: "플러그인 개발하기"
 ---
 There are many ways to extend `verdaccio`, the kind of plugins supported are:
 
