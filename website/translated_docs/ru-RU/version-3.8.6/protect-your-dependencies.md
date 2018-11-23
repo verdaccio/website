@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-protect-your-dependencies
-title: Protecting packages
+title: Защита пакетов
 original_id: protect-your-dependencies
 ---
 `verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages acces](packages).
