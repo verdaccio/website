@@ -1,28 +1,28 @@
 ---
 id: version-3.8.6-cli
-title: Command Line Tool
+title: Narzędzie wiersza poleceń
 original_id: cli
 ---
-The verdaccio CLI is your go start the application.
+Verdaccio CLI to Twój start, aby uruchomić aplikację.
 
-## Commands
+## Komendy
 
 ```bash
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Command            | Default                        | Example        | Description            |
-| ------------------ | ------------------------------ | -------------- | ---------------------- |
-| --listen \ **-l** | 4873                           | -p 7000        | http port              |
-| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | the configuration file |
+| Komenda            | Domyślne                       | Przykład       | Opis                |
+| ------------------ | ------------------------------ | -------------- | ------------------- |
+| --listen \ **-l** | 4873                           | -p 7000        | http port           |
+| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | plik konfiguracyjny |
 
-## Default config file location
+## Domyślna lokalizacja pliku konfiguracyjnego
 
-To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and Windows environment we look for [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
+Aby znaleźć katalog osobisty, polegamy na **$XDG_DATA_HOME** pierwszym wyborze i środowisku Windows, którego szukamy [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
-## Default storage location
+## Domyślna lokalizacja magazynu danych
 
-We use **$XDG_DATA_HOME** environment variable as default to locate the storage by default which [should be the same](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) as $HOME/.local/share. If you are using a custom storage, this location is irrelevant.
+Domyślnie używamy zmiennej środowiskowej **$XDG_DATA_HOME**, aby zlokalizować domyślny magazyn danych, który [powinien znajdować się](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) w $HOME/.local/share. Jeśli używasz niestandardowego magazynu danych, ta lokalizacja nie ma znaczenia.
 
 ## Default database file location
 
