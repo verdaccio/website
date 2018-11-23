@@ -50,4 +50,4 @@ For more information about the CLI, please [read the cli section](cli.md).
 
 `verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
 
-[![Install](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
+[![Instalación](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
