@@ -5,12 +5,12 @@ original_id: node-api
 ---
 Verdaccio can be invoqued programmatically. The node API was introduced after version `verdaccio@3.0.0-alpha.10`.
 
-## Usage
+## Utilisation
 
-#### Programmatically
+#### Par programme
 
 ```js
- import startServer from 'verdaccio';   
+ mport startServer from 'verdaccio';   
 
  startServer(configJsonFormat, 6000, store, '1.0.0', 'verdaccio',
     (webServer, addrs, pkgName, pkgVersion) => {
@@ -20,23 +20,23 @@ Verdaccio can be invoqued programmatically. The node API was introduced after ve
   });
 ```
 
-## Other implementations
+## Autres implémentations
 
-* [verdaccio-server](https://github.com/boringame/verdaccio-server) local npm registry proxy server
+* [verdaccio-server](https://github.com/boringame/verdaccio-server) registre local npm, serveur proxy
 
 ```js
-// js
-import * as verdaccioServer from "verdaccio-server";
-verdaccioServer.start();
-verdaccioServer.stop();
-verdaccioServer.list();
-verdaccioServer.stopAll();
-verdaccioServer.show();
-verdaccioServer.cli();
-// windows .net2
-verdaccioServer.serviceInstall();
-verdaccioServer.serviceUninstall();
-verdaccioServer.serviceStart();
-verdaccioServer.serviceStop();
-verdaccioServer.serviceRestart();
+js
+import * comme verdaccioServer de « verdaccio-serveur » ;
+verdaccioServer.start() ;
+verdaccioServer.stop() ;
+verdaccioServer.list() ;
+verdaccioServer.stopAll() ;
+verdaccioServer.show() ;
+verdaccioServer.cli() ;
+/ / windows .net2
+verdaccioServer.serviceInstall() ;
+verdaccioServer.serviceUninstall() ;
+verdaccioServer.serviceStart() ;
+verdaccioServer.serviceStop() ;
+verdaccioServer.serviceRestart() ;
 ```
