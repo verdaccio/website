@@ -1,15 +1,15 @@
 ---
 id: version-3.8.6-configuration
-title: Configuration File
+title: Archivo de Configuración
 original_id: configuration
 ---
-This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
+Este archivo es la piedra angular de verdaccio donde puedes modificar su comportamiento por defecto, activar plugins y características externas.
 
-A default configuration file is created the very first time you run `verdaccio`.
+Cuando ejecutas por primera vez ` verdaccio` se crea un archivo de configuración por defecto.
 
-## Default Configuration
+## Configuración por Defecto
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+La configuración por defecto tiene soporte para paquetes con **enfoque** y permite a los usuarios acceder a todos los paquetes pero solo **a los usuarios autentificados a publicarlos**.
 
 ```yaml
 storage: ./storage
@@ -30,11 +30,11 @@ logs:
   - {type: stdout, format: pretty, level: http}
 ```
 
-## Sections
+## Secciones
 
-The following sections explain what each property means and the different options.
+Las siguientes secciones explican que significa cada propiedad y todas sus diferentes opciones.
 
-### Storage
+### Almacenamiento
 
 Is the location of the default storage. **Verdaccio is by default based on local file system**.
 
@@ -42,7 +42,7 @@ Is the location of the default storage. **Verdaccio is by default based on local
 storage: ./storage
 ```
 
-### Plugins
+### Extensiones
 
 Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
 
@@ -50,9 +50,9 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Authentification
+### Autentificación
 
-The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
+La configuración de autentificación es definida aquí, por defecto la autentificación esta basada en `htpasswd` y es por defecto. Puedes modificar el comportamiento via [extensiones](plugins.md). Para mas información sobre esta sección lee [la página de autentificación](auth.md).
 
 ```yaml
 auth:
@@ -120,7 +120,7 @@ packages:
     proxy: npmjs
 ```
 
-## Advanced Settings
+## Configuración Avanzada
 
 ### Offline Publish
 
@@ -195,7 +195,7 @@ This variable should contain a comma-separated list of domain extensions proxy s
 no_proxy: localhost,127.0.0.1
 ```
 
-### Notifications
+### Notificaciones
 
 Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
