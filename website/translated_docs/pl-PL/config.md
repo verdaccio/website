@@ -64,9 +64,9 @@ auth:
 
 <small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-Blok zabezpieczeń umożliwia dostosowanie podpisu tokena. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+Blok zabezpieczeń umożliwia dostosowanie podpisu tokena. Aby włączyć [JWT (json web token)](https://jwt.io/) nowy podpis, należy dodać blok `jwt` do sekcji `api`, `web` używa domyślnie `jwt`.
 
-The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+Konfiguracja jest podzielona na dwie sekcje: `api` i `web`. Aby użyć JWT w `api`, należy go zdefiniować, w przeciwnym razie użyje podpisu starszego tokena (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
 
     security:
       api:
