@@ -3,11 +3,11 @@ id: version-3.8.6-server-configuration
 title: Server Configuration
 original_id: server-configuration
 ---
-This is mostly basic linux server configuration stuff but I felt it important to document and share the steps I took to get verdaccio running permanently on my server. You will need root (or sudo) permissions for the following.
+Ovo je najbazičnija konfiguracija za linux server ali nam se čini važnim da dokumentujemo i podelimo sa Vama sve korake kako bi verdaccio stalno radio na serveru. Biće Vam potrebne root (ili sudo) dozvole za navedeno.
 
-## Running as a separate user
+## Pokretanje, kao zaseban korisnik
 
-First create the verdaccio user:
+Najpre kreirajte verdaccio korisnika:
 
 ```bash
 $ sudo adduser --system --gecos 'Verdaccio NPM mirror' --group --home /var/lib/verdaccio verdaccio
@@ -28,7 +28,7 @@ $ cd
 
 The `cd` command sends you to the home directory of the verdaccio user. Make sure you run verdaccio at least once to generate the config file. Edit it according to your needs.
 
-## Listening on all addresses
+## Listening na svim adresama
 
 If you want to listen to every external address set the listen directive in the config to:
 
@@ -41,7 +41,7 @@ If you are running verdaccio in a Amazon EC2 Instance, [you will need set the li
 
 > Configure Apache or nginx? Please check out the [Reverse Proxy Setup](reverse-proxy.md)
 
-## Keeping verdaccio running forever
+## Kako da verdaccio radi neprekidno
 
 You can use node package called ['forever'](https://github.com/nodejitsu/forever) to keep verdaccio running all the time.
 
@@ -59,7 +59,7 @@ $ forever start `which verdaccio`
 
 You can check the documentation for more information on how to use forever.
 
-## Surviving server restarts
+## Preživljavanje resetovanja servera
 
 You can use `crontab` and `forever` together to start verdaccio after a server reboot. When you're logged in as the verdaccio user do the following:
 
