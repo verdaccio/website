@@ -1,14 +1,14 @@
 ---
 id: version-3.8.6-ansible
-title: Ansible
+title: Phần mềm nguồn mở ansible
 original_id: ansible
 ---
-We have a customised solution for `verdaccio` in our organization.
+Chúng tôi có một giải pháp tuỳ chỉnh cho `verdaccio` trong tổ chức của chúng tôi.
 
 <https://github.com/verdaccio/ansible-verdaccio>
 
-#### Other options
+#### Những lựa chọn khác
 
-* Ansible role for Gentoo users: [jirutka/ansible-role-sinopia](https://github.com/jirutka/ansible-role-sinopia).
-* Ansible role for Ubuntu users: [jagregory/sinopia-ansible](https://github.com/jagregory/sinopia-ansible).
-* ansible-verdaccio-role <https://github.com/refinery29/ansible-verdaccio-role>
+* Vai trò của phần mềm Ansible đối với người dùng Gentoo: [jirutka/ansible-role-sinopia](https://github.com/jirutka/ansible-role-sinopia).
+* Vai trò của phần mềm Ansible đối với người dùng Ubuntu: [jagregory/sinopia-ansible](https://github.com/jagregory/sinopia-ansible).
+* Vai trò của ansible-verdaccio <https://github.com/refinery29/ansible-verdaccio-role>
