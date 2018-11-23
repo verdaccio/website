@@ -3,30 +3,30 @@ id: version-3.8.6-iss-server
 title: Installing on IIS server
 original_id: iss-server
 ---
-These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) and [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
+Te instrukcje zostały napisane dla systemu Windows Server 2012, usługi IIS8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) oraz [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
 
 - Install IIS Install [iisnode](https://github.com/tjanczuk/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
-- Create a new folder in Explorer where you want to host verdaccio. For example `C:\verdaccio`. Save [package.json](#packagejson), [start.js](#startjs) and [web.config](#webconfig) in this folder.
-- Create a new site in Internet Information Services Manager. You can name it whatever you want. I'll call it verdaccio in these [instructions](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Specify the path to where you saved all files and a port number.
-- Go back to Explorer and give the user that runs the application pool modify rights to the folder you just created. If you've named the new site verdaccio and did not change the app pool, it's running under an ApplicationPoolIdentity and you should give the user IIS AppPool\verdaccio modify rights see instructions if you need help. (You can restrict access later if you want so that it only has modify rights on the iisnode and verdaccio\storage)
-- Start a command prompt and execute the commands below to download verdaccio:
+- Utwórz nowy folder w Eksploratorze, gdzie chcesz, aby znajdowało się verdaccio. Na przykład `C:\verdaccio`. Zapisz[package.json](#packagejson), [start.js](#startjs) oraz [web.config](#webconfig) w tym folderze.
+- Utwórz nową witrynę w Menedżerze Internetowych Usług Informacyjnych. Możesz ją nazwać jakkolwiek chcesz. Ja nazwę ją verdaccio w tych [instrukcjach](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Określ ścieżkę do lokalizacji, w której zapisałeś wszystkie pliki i numer portu.
+- Wróć do Eksploratora i daj użytkownikowi, który uruchamia pulę aplikacji, prawa do modyfikacji folderu, który został właśnie utworzony. Jeśli nazwałeś nową witrynę verdaccio i nie zmieniłeś puli aplikacji, działa ona pod ApplicationPoolIdentity i powinieneś dać użytkownikowi IIS AppPool\verdaccio uprawnienia modyfikacji, jeśli potrzebujesz pomocy, sprawdź instrukcje. (Możesz ograniczyć dostęp później, jeśli chcesz, aby miał on tylko uprawnienia modyfikacyjne do plików iisnode i verdaccio\magazyn)
+- Uruchom wiersz polecenia i wykonaj poniższe polecenia, aby pobrać verdaccio:
 
     cd c:\verdaccio
-    npm install
+    zainstaluj menedżer pakietów węzłowych
     
 
-- Make sure you have an inbound rule accepting TCP traffic to the port in Windows Firewall
+- Upewnij się, że w Zaporze systemu Windows masz regułę ruchu przychodzącego akceptującą ruch TCP przez dany port
 - Thats it! Now you can navigate to the host and port that you specified
 
-I wanted the `verdaccio` site to be the default site in IIS so I did the following:
+Chciałem, aby strona `verdaccio` była domyślną stroną w IIS, więc wykonałem następujące czynności:
 
-- I made sure the .npmrc file in `c:\users{yourname}` had the registry set to `"registry=http://localhost/"`
-- I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS
-- I set the bindings to "http", ip address "All Unassigned" on port 80, ok any warning or prompts
+- Upewniłem się, że plik .npmrc w `c:\users{yourname}` miał rejestr ustawiony jako `"registry=http://localhost/"`
+- Zatrzymałem "Domyślną witrynę sieci Web" i uruchomiłem tylko witrynę "verdaccio" w IIS
+- Ustawiłem powiązania na "http", adres ip na "Wszystkie nieprzypisane" na porcie 80 i obyło się bez żadnych ostrzeżeń lub monitów
 
-These instructions are based on [Host Sinopia in IIS on Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). I had to tweak my web config as per below but you may find the original from the for mentioned link works better
+Te instrukcje są oparte na [Host Sinopia w IISw systemie Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). I had to tweak my web config as per below but you may find the original from the for mentioned link works better
 
-A default configuration file will be created `c:\verdaccio\verdaccio\config.yaml`
+Domyślny plik konfiguracji zostanie utworzony `c:\verdaccio\verdaccio\config.yaml`
 
 ### package.json
 
@@ -98,7 +98,7 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 </configuration>
 ```
 
-### Troubleshooting
+### Rozwiązywanie problemów
 
-- **The web interface does not load when hosted with https as it tries to download scripts over http.**  
-    Make sure that you have correctly mentioned `url_prefix` in verdaccio config. Follow the [discussion](https://github.com/verdaccio/verdaccio/issues/622).
+- **Interfejs sieciowy nie ładuje się, gdy jest hostowany przez protokół https, ponieważ próbuje on pobrać skrypty za pomocą protokołu http.**  
+    Upewnij się, że poprawnie wskazałeś `url_prefix` w konfiguracji verdaccio. Śledź [dyskusję](https://github.com/verdaccio/verdaccio/issues/622).
