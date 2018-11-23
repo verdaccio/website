@@ -1,17 +1,17 @@
 ---
 id: version-3.8.6-notifications
-title: Notifications
-original_id: notifications
+title: Powiadomienia
+original_id: powiadomienia
 ---
 Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
 
-## Usage
+## Użycie
 
-An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
+Przykład z zaczepką **HipChat**, **Krok** i **Czat Google Hangouts**:
 
-> Verdaccio supports any API, feel free to ad more examples.
+> Verdaccio obsługuje dowolne API, zachęcamy do zamieszczania większej liczby przykładów.
 
-#### Single notification
+#### Pojedyncze powiadomienie
 
 ```yaml
 notify:
@@ -21,7 +21,7 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-#### Multiple notification
+#### Wiele powiadomień
 
 ```yaml
 notify:
@@ -42,7 +42,7 @@ notify:
      content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
 ```
 
-## Template
+## Szablon
 
 We use [Handlebars](https://handlebarsjs.com/) as main template engine.
 
@@ -55,9 +55,9 @@ We use [Handlebars](https://handlebarsjs.com/) as main template engine.
     {{ publisher.name }} has published {{publishedPackage}}"}
     
 
-### Properties
+### Właściwości
 
-List of properties accesible via template
+Lista właściwości dostępnych poprzez szablon
 
 * Metadata
 * Publisher (who is publishing)
@@ -118,9 +118,9 @@ Package metadata that the template has access
 
 ### Publisher
 
-You can access to the package publisher information in the `content` of a webhook using the `publisher` object.
+Możesz uzyskać dostęp do informacji o wydawcy pakietu w `content` wehbook za pomocą obiektu `publisher`.
 
-See below the `publisher` object type:
+Zobacz poniżej `publisher` typ obiektu:
 
     {
       name: string,
@@ -129,7 +129,7 @@ See below the `publisher` object type:
     }
     
 
-An example:
+Przykład:
 
     notify:
       method: POST
@@ -138,22 +138,22 @@ An example:
       content: '{"color":"green","message":"New package published: * {{ name }}*. Publisher name: * {{ publisher.name }} *.","notify":true,"message_format":"text"}'
     
 
-**Note:** it's not possible to get the publisher information if the `package.json` file already has the `publisher` property.
+**Note:** nie można uzyskać informacji o wydawcy, jeśli plik `package.json` ma już właściwość `publisher`.
 
 ### Package Published
 
-You can acces to the package is being published with the keyword `{{publishedPackage}}` as follows.
+Możesz uzyskać dostęp do pakietu, który jest publikowany wraz ze słowem kluczowym `{{publishedPackage}}` w następujący sposób.
 
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    {{ publisher.name }} opublikował {{publishedPackage}}"}
     
 
-## Configuration
+## Konfiguracja
 
-| Property            | Type         | Required | Support | Default | Description                                                                                  |
-| ------------------- | ------------ | -------- | ------- | ------- | -------------------------------------------------------------------------------------------- |
-| method              | string       | No       | all     |         | HTTP verb                                                                                    |
-| packagePattern      | string       | No       | all     |         | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | string       | No       | all     |         | Any flags to be used with the regular expression                                             |
-| headers             | array/object | Yes      | all     |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | string       | Yes      | all     |         | set the URL endpoint for this call                                                           |
-| content             | string       | Yes      | all     |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Właściwość             | Typ            | Wymagane | Wsparcie  | Domyślne | Opis                                                                                                           |
+| ---------------------- | -------------- | -------- | --------- | -------- | -------------------------------------------------------------------------------------------------------------- |
+| metoda                 | ciąg znaków    | Nie      | wszystkie |          | HTTP verb                                                                                                      |
+| packagePattern         | ciąg znaków    | Nie      | wszystkie |          | Uruchom to powiadomienie jedynie, jeśli nazwa pakietu pasuje do zwrotu regularnego                             |
+| flagi Wzorcowe pakietu | ciąg znaków    | Nie      | wszystkie |          | Wszelkie flagi używane z regularnym zwrotem                                                                    |
+| nagłówki               | tablica/obiekt | Tak      | wszystkie |          | Jeśli ten punkt końcowy wymaga określonych nagłówków, ustaw je tutaj według szyku klucza: obiekty wartościowe. |
+| punkt końcowy          | ciąg znaków    | Tak      | wszystkie |          | ustaw punkt końcowy adresu URL dla tego połączenia                                                             |
+| zawartość              | ciąg znaków    | Tak      | wszystkie |          | dowolne zwroty [Handlebar](https://handlebarsjs.com/)                                                          |
