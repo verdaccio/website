@@ -149,11 +149,11 @@ You can acces to the package is being published with the keyword `{{publishedPac
 
 ## Configuration
 
-| Property            | Type         | Required | Support | Default | Description                                                                                  |
-| ------------------- | ------------ | -------- | ------- | ------- | -------------------------------------------------------------------------------------------- |
-| method              | string       | No       | all     |         | HTTP verb                                                                                    |
-| packagePattern      | string       | No       | all     |         | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | string       | No       | all     |         | Any flags to be used with the regular expression                                             |
-| headers             | array/object | Yes      | all     |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | string       | Yes      | all     |         | set the URL endpoint for this call                                                           |
-| content             | string       | Yes      | all     |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Својство            | Тип          | Неопходно | Подршка | Default | Опис                                                                                         |
+| ------------------- | ------------ | --------- | ------- | ------- | -------------------------------------------------------------------------------------------- |
+| method              | string       | Не        | all     |         | HTTP verb                                                                                    |
+| packagePattern      | string       | Не        | all     |         | Only run this notification if the package name matches the regular expression                |
+| packagePatternFlags | string       | Не        | all     |         | Any flags to be used with the regular expression                                             |
+| headers             | array/object | Да        | all     |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
+| endpoint            | string       | Да        | all     |         | set the URL endpoint for this call                                                           |
+| content             | string       | Да        | all     |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
