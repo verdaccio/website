@@ -1,17 +1,17 @@
 ---
 id: version-3.8.6-logo
-title: Verdaccio Logotype
+title: Logotipo de Verdaccio
 original_id: logo
 ---
-The logotype was designed by **[Breno Rodrigues](https://github.com/rodriguesbreno)** which won the [contest](https://github.com/verdaccio/verdaccio/issues/237) ([last stage](https://github.com/verdaccio/verdaccio/issues/328)) and donated his work to this project.
+El logotipo fue diseñado por **[Breno Rodrigues](https://github.com/rodriguesbreno)** que gano el [concurso](https://github.com/verdaccio/verdaccio/issues/237) ([ultima fase](https://github.com/verdaccio/verdaccio/issues/328)) y donó su trabajo a este proyecto.
 
-> All logos are licensed under [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
+> Todos los logos estan licenciados bajo [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
 
-Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
+Especialmente gracias a *[@Lisapressmar](https://github.com/Lisapressmar)* por su contribución con multiples formatos y tamaños.
 
-## Symbols
+## Simbolos
 
-**With text**
+**Con texto**
 
 ![symbol tiny with text](/img/logo/symbol/png/logo-small-header-bottom.png)
 
@@ -23,7 +23,7 @@ Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her con
 
 ![symbol svg](/img/logo/symbol/svg/logo-small-header-bottom.svg)
 
-**No text**
+**Sin texto**
 
 ![symbol tiny](/img/logo/symbol/png/verdaccio-tiny.png)
 
@@ -47,7 +47,7 @@ Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her con
 
 ![symbol bw svg](/img/logo/symbol/svg/verdaccio-blackwhite.svg)
 
-## Banner
+## Pancarta
 
 ![banner small](/img/logo/banner/png/verdaccio-banner.png)
 
