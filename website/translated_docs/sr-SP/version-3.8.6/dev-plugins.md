@@ -50,7 +50,7 @@ The auth was successful.
      callback(null, groups);
     
 
-### Example
+### Пример
 
 ```javascript
 function Auth(config, stuff) {
