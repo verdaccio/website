@@ -1,6 +1,6 @@
 ---
 id: use-cases
-title: "Use Cases"
+title: "Примеры использования"
 ---
 ## Using private packages
 
