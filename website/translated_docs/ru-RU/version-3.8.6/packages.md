@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-packages
-title: Package Access
+title: Доступ к пакетам
 original_id: packages
 ---
 It's a series of contraints that allow or restrict access to the local storage based in specific criteria.
@@ -140,11 +140,11 @@ Be **aware that the order of your packages definitions is important and always u
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Property | Type    | Required | Example        | Support | Description                                 |
-| -------- | ------- | -------- | -------------- | ------- | ------------------------------------------- |
-| access   | string  | No       | $all           | all     | define groups allowed to access the package |
-| publish  | string  | No       | $authenticated | all     | define groups allowed to publish            |
-| proxy    | string  | No       | npmjs          | all     | limit look ups for specific uplink          |
-| storage  | boolean | No       | [true,false]   | all     | TODO                                        |
+| Свойство | Тип     | Обязательное | Пример         | Поддержка | Описание                                    |
+| -------- | ------- | ------------ | -------------- | --------- | ------------------------------------------- |
+| access   | string  | Нет          | $all           | все       | define groups allowed to access the package |
+| publish  | string  | Нет          | $authenticated | все       | define groups allowed to publish            |
+| proxy    | string  | Нет          | npmjs          | все       | limit look ups for specific uplink          |
+| storage  | boolean | Нет          | [true,false]   | все       | TODO                                        |
 
 > We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
