@@ -1,7 +1,7 @@
 ---
 id: version-3.8.6-authentification
-title: Authentification
-original_id: authentification
+title: Autentifikacija
+original_id: autentifikacija
 ---
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
 
@@ -11,7 +11,7 @@ The client authentification is handled by `npm` client itself. Once you login to
 npm adduser --registry http://localhost:4873
 ```
 
-A token is generated in the `npm` configuration file hosted in your user home folder. For more information about `.npmrc` read the [official documentation](https://docs.npmjs.com/files/npmrc).
+Token se generiše u fajlu za konfiguraciju `npm`, koji se nalazi u home folder-u korisnika. Kako biste saznali više o `.npmrc` pročitajte [zvaničnu dokumentaciju](https://docs.npmjs.com/files/npmrc).
 
 ```bash
 cat .npmrc
@@ -20,11 +20,11 @@ registry=http://localhost:5555/
 //registry.npmjs.org/:_authToken=secretNpmjsToken
 ```
 
-#### Anonymous publish
+#### Anonimno publikovanje
 
-`verdaccio`allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
+`verdaccio` Vam omogućava da pružite mogućnost anonimnog publikovanja. Kako biste uspeli u tome, potrebno je da podesite [packages access](packages.md).
 
-Eg:
+Primer:
 
 ```yaml
   'my-company-*':
@@ -33,11 +33,11 @@ Eg:
     proxy: npmjs
 ```
 
-As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) until `npm@5.3.0` and all minor releases **won't allow you publish without a token**. However `yarn` has not such limitation.
+Kao što je opisano, [on issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) sve dok `npm@5.3.0` i sve verzije ne budu usaglašene **neće Vam biti omogućeno da publikujete bez tokena**. Ipak, `yarn` nema ta ograničenja.
 
-## Default htpasswd
+## Podrazumevana htpasswd
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. As of version v3.0.x an [external plugin](https://github.com/verdaccio/verdaccio-htpasswd) is used by default. The v2.x version of this package still contains the built-in version of this plugin.
+Kako bi se pojednostavio setup, `verdaccio` koristi plugin baziran na `htpasswd`. Od verzije v3.0.x [eksterni plugin](https://github.com/verdaccio/verdaccio-htpasswd) se koristi kao podrazumevan. Verzija v2.x i dalje sadrži ugrađenu verziju ovog plugin-a.
 
 ```yaml
 auth:
@@ -48,9 +48,9 @@ auth:
     #max_users: 1000
 ```
 
-| Property  | Type   | Required | Example    | Support | Description                              |
-| --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
-| file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
-| max_users | number | No       | 1000       | all     | set limit of users                       |
+| Svojstvo  | Tip    | Neophodno | Primer     | Podrška | Opis                                   |
+| --------- | ------ | --------- | ---------- | ------- | -------------------------------------- |
+| file      | string | Da        | ./htpasswd | all     | file koji sadrži šifrovane credentials |
+| max_users | number | Ne        | 1000       | all     | podešava maksimalni broj korisnika     |
 
-In case to decide do not allow user to login, you can set `max_users: -1`.
+Ako se odlučite na to da ne dozvolite korisnicima da se prijave, možete podesiti `max_users: -1`.
