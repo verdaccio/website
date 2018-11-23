@@ -1,13 +1,13 @@
 ---
 id: version-3.8.6-protect-your-dependencies
-title: Protecting packages
+title: Protegiendo paquetes
 original_id: protect-your-dependencies
 ---
 `verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages acces](packages).
 
-### Package configuration
+### Configuración del paquete
 
-Let's see for instance the following set up. You have a set of dependencies what are prefixed with `my-company-*` and you need to protect them from anonymous or another logged user without right credentials.
+Veamos por ejemplo la siguiente configuración. Tienes un conjunto de dependencias con prefijo `my-company-*` y necesitas protegerlas de anónimos o de otro usuario registrado sin credenciales.
 
 ```yaml
   'my-company-*':
@@ -18,7 +18,7 @@ Let's see for instance the following set up. You have a set of dependencies what
 
 With this configuration, basically we allow to groups **admin** and **teamA** to *publish* and **teamA** **teamB** **teamC** *access* to such dependencies.
 
-### Use case: teamD try to access the dependency
+### Caso de Uso: teamD trata de acceder a la dependencia
 
 So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
 
@@ -35,12 +35,12 @@ npm ERR! code E403
 npm ERR! 403 Forbidden: webpack-1@latest
 ```
 
-or with `yarn`
+o con `yarn`
 
 ```bash
 ➜ yarn add my-company-core
 yarn add v0.24.6
 info No lockfile found.
 [1/4] 🔍  Resolving packages...
-error An unexpected error occurred: "http://localhost:5555/webpack-1: unregistered users are not allowed to access package my-company-core".
+error Ocurrió un error inesperado: "http://localhost:5555/webpack-1: no se les permite acceder al paquete my-company-core a usuarios no registrados".
 ```
