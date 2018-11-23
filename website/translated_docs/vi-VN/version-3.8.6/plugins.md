@@ -20,7 +20,7 @@ $> npm install --global verdaccio-activedirectory
     $> npm install --global sinopia-memory
     
 
-### Configuration
+### Cấu hình
 
 Open the `config.yaml` file and update the `auth` section as follows:
 
