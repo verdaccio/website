@@ -1,6 +1,6 @@
 ---
 id: reverse-proxy
-title: "Reverse Proxy Setup"
+title: "Configuração de Proxy Reverso"
 ---
 ## Apache
 
