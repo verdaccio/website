@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-notifications
-title: Notifications
+title: Уведомления
 original_id: notifications
 ---
 Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
@@ -149,11 +149,11 @@ You can acces to the package is being published with the keyword `{{publishedPac
 
 ## Configuration
 
-| Property            | Type         | Required | Support | Default | Description                                                                                  |
-| ------------------- | ------------ | -------- | ------- | ------- | -------------------------------------------------------------------------------------------- |
-| method              | string       | No       | all     |         | HTTP verb                                                                                    |
-| packagePattern      | string       | No       | all     |         | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | string       | No       | all     |         | Any flags to be used with the regular expression                                             |
-| headers             | array/object | Yes      | all     |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | string       | Yes      | all     |         | set the URL endpoint for this call                                                           |
-| content             | string       | Yes      | all     |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Свойство            | Тип          | Обязательное | Поддержка | По умолчанию | Описание                                                                                     |
+| ------------------- | ------------ | ------------ | --------- | ------------ | -------------------------------------------------------------------------------------------- |
+| method              | string       | Нет          | все       |              | HTTP verb                                                                                    |
+| packagePattern      | string       | Нет          | все       |              | Only run this notification if the package name matches the regular expression                |
+| packagePatternFlags | string       | Нет          | все       |              | Any flags to be used with the regular expression                                             |
+| headers             | array/object | Да           | все       |              | If this endpoint requires specific headers, set them here as an array of key: value objects. |
+| endpoint            | string       | Да           | все       |              | set the URL endpoint for this call                                                           |
+| content             | string       | Да           | все       |              | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
