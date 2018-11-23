@@ -1,11 +1,11 @@
 ---
 id: version-3.8.6-reverse-proxy
-title: Reverse Proxy Setup
-original_id: reverse-proxy
+title: 反向代理配置
+original_id: reverse-proxy（逆向代理服务器）
 ---
 ## Apache
 
-Apache and mod_proxy should not decode/encode slashes and leave them as they are:
+不要在Apache 和mod_proxy 解码/编码slashes（斜线），要让它们保持不变:
 
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
@@ -14,7 +14,7 @@ Apache and mod_proxy should not decode/encode slashes and leave them as they are
     </VirtualHost>
     
 
-### Configuration with SSL
+### 用SSL 配置
 
 config.yaml
 
@@ -22,7 +22,7 @@ config.yaml
 url_prefix: https://npm.your.domain.com
 ```
 
-Apache virtual server configuration
+Apache 虚拟服务器配置
 
         apacheconfig
         <IfModule mod_ssl.c>
@@ -52,16 +52,16 @@ Apache virtual server configuration
     }
     
 
-## Run behind reverse proxy with different domain and port
+## 在逆向代理服务器后运行用不同的域名和端口
 
-If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like `http://127.0.0.1:4873/-/static`
+如果您在逆向代理服务器后运行verdaccio，您可能会注意到所有源文件都起到相关路径的作用，如 `http://127.0.0.1:4873/-/static`
 
 To resolve this issue, you should send real domain and port to verdaccio with `Host` header
 
-Nginx configure should look like this:
+Nginx configure应该如下所示：
 
 ```nginx
-location / {
+ocation / {
     proxy_pass http://127.0.0.1:4873/;
     proxy_set_header Host            $host:$server_port;
     proxy_set_header X-Forwarded-For $remote_addr;
@@ -69,11 +69,11 @@ location / {
 }
 ```
 
-For this case, `url_prefix` should NOT set in verdaccio config
+在这个例子里，verdaccio config里不应该设置`url_prefix`
 
 * * *
 
-or a sub-directory installation:
+或者子-目录安装：
 
 ```nginx
 location ~ ^/verdaccio/(.*)$ {
@@ -84,6 +84,6 @@ location ~ ^/verdaccio/(.*)$ {
 }
 ```
 
-For this case, `url_prefix` should set to `/verdaccio/`
+在这个例子里， `url_prefix` 应该设置为`/verdaccio/`
 
 > Note: There is a Slash after install path (`https://your-domain:port/verdaccio/`)!
