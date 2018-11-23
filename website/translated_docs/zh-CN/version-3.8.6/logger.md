@@ -1,7 +1,7 @@
 ---
 id: version-3.8.6-logger
-title: Logger
-original_id: logger
+title: 日志
+original_id: 记录器
 ---
 As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
 
@@ -17,11 +17,11 @@ logs:
 
 Use `SIGUSR2` to notify the application, the log-file was rotated and it needs to reopen it. Note: Rotating log stream is not supported in cluster mode. [See here](https://github.com/trentm/node-bunyan#stream-type-rotating-file)
 
-### Configuration
+### 配置
 
-| Property | Type   | Required | Example                                        | Support | Description                                       |
-| -------- | ------ | -------- | ---------------------------------------------- | ------- | ------------------------------------------------- |
-| type     | string | No       | [stdout, file]                                 | all     | define the output                                 |
-| path     | string | No       | verdaccio.log                                  | all     | if type is file, define the location of that file |
-| format   | string | No       | [pretty, pretty-timestamped]                   | all     | output format                                     |
-| level    | string | No       | [fatal, error, warn, http, info, debug, trace] | all     | verbose level                                     |
+| 属性     | 类型  | 必填 | 示例                                             | 支持   | 描述                |
+| ------ | --- | -- | ---------------------------------------------- | ---- | ----------------- |
+| type   | 字符串 | 否  | [stdout, file]                                 | 任意路径 | 定义输出              |
+| path   | 字符串 | 否  | verdaccio.log                                  | 任意路径 | 如果类型为文件，请定义该文件的位置 |
+| format | 字符串 | 否  | [pretty, pretty-timestamped]                   | 任意路径 | 输出格式              |
+| level  | 字符串 | 否  | [fatal, error, warn, http, info, debug, trace] | 任意路径 | 详细级别              |
