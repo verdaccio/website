@@ -1,13 +1,13 @@
 ---
 id: version-3.8.6-server-configuration
-title: Server Configuration
-original_id: server-configuration
+title: 服务器配置
+original_id: server-configuration（服务器-配置）
 ---
-This is mostly basic linux server configuration stuff but I felt it important to document and share the steps I took to get verdaccio running permanently on my server. You will need root (or sudo) permissions for the following.
+这主要是一些基础的linux服务器配置信息，但是我觉得很重要来记录并分享我让verdaccio 在服务器上永久运行的步骤。 您将需要以下的根（或者sudo）权限。
 
-## Running as a separate user
+## 作为单独用户运行
 
-First create the verdaccio user:
+首先创建verdaccio 用户：
 
 ```bash
 $ sudo adduser --system --gecos 'Verdaccio NPM mirror' --group --home /var/lib/verdaccio verdaccio
@@ -28,7 +28,7 @@ $ cd
 
 The `cd` command sends you to the home directory of the verdaccio user. Make sure you run verdaccio at least once to generate the config file. Edit it according to your needs.
 
-## Listening on all addresses
+## 监听所有地址
 
 If you want to listen to every external address set the listen directive in the config to:
 
@@ -41,7 +41,7 @@ If you are running verdaccio in a Amazon EC2 Instance, [you will need set the li
 
 > Configure Apache or nginx? Please check out the [Reverse Proxy Setup](reverse-proxy.md)
 
-## Keeping verdaccio running forever
+## 让 verdaccio一直运行下去
 
 You can use node package called ['forever'](https://github.com/nodejitsu/forever) to keep verdaccio running all the time.
 
@@ -59,7 +59,7 @@ $ forever start `which verdaccio`
 
 You can check the documentation for more information on how to use forever.
 
-## Surviving server restarts
+## 存留服务器重启
 
 You can use `crontab` and `forever` together to start verdaccio after a server reboot. When you're logged in as the verdaccio user do the following:
 
