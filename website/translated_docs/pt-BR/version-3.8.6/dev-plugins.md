@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-dev-plugins
-title: Developing Plugins
+title: Criando Plugins
 original_id: dev-plugins
 ---
 There are many ways to extend `verdaccio`, the kind of plugins supported are:
@@ -50,7 +50,7 @@ The auth was successful.
      callback(null, groups);
     
 
-### Example
+### Exemplo
 
 ```javascript
 function Auth(config, stuff) {
