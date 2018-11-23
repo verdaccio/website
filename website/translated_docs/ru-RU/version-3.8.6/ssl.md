@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-ssl
-title: Set up the SSL Certificates
+title: Настройка SSL-сертификатов
 original_id: ssl
 ---
 Follow this instructions to configure a SSL certificate to serve NPM registry under HTTPS.
