@@ -1,13 +1,13 @@
 ---
 id: version-3.8.6-uplinks
 title: Uplinks
-original_id: uplinks
+original_id: uplinks（上行链路）
 ---
-An *uplink* is a link with an external registry that provides acccess to external packages.
+*上行链路* 是指可以访问到外部包的外部注册服务器地址。
 
 ![Uplinks](/img/uplinks.png)
 
-### Usage
+### 使用
 
 ```yaml
 uplinks:
@@ -22,24 +22,24 @@ uplinks:
     url: http://localhost:55666/
 ```
 
-### Configuration
+### 配置
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
 
-| Property     | Type    | Required | Example                                 | Support | Description                                                                                                                | Default    |
-| ------------ | ------- | -------- | --------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| url          | string  | Yes      | https://registry.npmjs.org/             | all     | The registry url                                                                                                           | npmjs      |
-| ca           | string  | No       | ~./ssl/client.crt'                      | all     | SSL path certificate                                                                                                       | No default |
-| timeout      | string  | No       | 100ms                                   | all     | set new timeout for the request                                                                                            | 30s        |
-| maxage       | string  | No       | 10m                                     | all     | limit maximun failure request                                                                                              | 2m         |
-| fail_timeout | string  | No       | 10m                                     | all     | defines max time when a request becomes a failure                                                                          | 5m         |
-| max_fails    | number  | No       | 2                                       | all     | limit maximun failure request                                                                                              | 2          |
-| cache        | boolean | No       | [true,false]                            | >= 2.1  | cache all remote tarballs in storage                                                                                       | true       |
-| auth         | list    | No       | [see below](uplinks.md#auth-property)   | >= 2.5  | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
-| headers      | list    | No       | authorization: "Bearer SecretJWToken==" | all     | list of custom headers for the uplink                                                                                      | disabled   |
-| strict_ssl   | boolean | No       | [true,false]                            | >= 3.0  | If true, requires SSL certificates be valid.                                                                               | true       |
+| 属性           | 类型      | 必填 | 示例                                      | 支持     | 描述                                                                                                          | 默认值   |
+| ------------ | ------- | -- | --------------------------------------- | ------ | ----------------------------------------------------------------------------------------------------------- | ----- |
+| url          | 字符串     | 是  | https://registry.npmjs.org/             | 任意路径   | 外部注册服务器URL                                                                                                  | npmjs |
+| ca           | 字符串     | 否  | ~./ssl/client.crt'                      | 任意路径   | SSL证书文件路径                                                                                                   | 无默认值  |
+| timeout      | 字符串     | 否  | 100ms                                   | 任意路径   | 为请求设置新的超时时间                                                                                                 | 30s   |
+| maxage       | 字符串     | 否  | 10m                                     | 任意路径   | 请求返回信息时效，在此时间内不会发起相同的请求                                                                                     | 2m    |
+| fail_timeout | 字符串     | 否  | 10m                                     | 任意路径   | 请求在连续失败超过指定次数后的最长等待重试时间                                                                                     | 5m    |
+| max_fails    | 数字      | 否  | 2                                       | 任意路径   | 请求返回信息时效，在此时间内不会发起相同的请求                                                                                     | 2     |
+| cache        | boolean | 否  | [true,false]                            | >= 2.1 | 缓存下载的远程tarball文件到本地                                                                                         | true  |
+| auth         | list    | 否  | [见下文](uplinks.md#auth-property)         | >= 2.5 | 指定“授权authorization”请求头的内容 [详情见](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | 禁用    |
+| headers      | list    | 否  | authorization: "Bearer SecretJWToken==" | 任意路径   | 上行链路请求的请求头header列表                                                                                          | 禁用    |
+| strict_ssl   | boolean | 否  | [true,false]                            | >= 3.0 | 为true时，会检测SSL证书的有效性                                                                                         | true  |
 
-#### Auth property
+#### Auth属性
 
 The `auth` property allows you to use an auth token with an uplink. Using the default environment variable:
 
@@ -52,7 +52,7 @@ uplinks:
       token_env: true # defaults to `process.env['NPM_TOKEN']`   
 ```
 
-or via a specified environment variable:
+或者使用一个指定的环境变量
 
 ```yaml
 uplinks:
@@ -63,9 +63,9 @@ uplinks:
       token_env: FOO_TOKEN
 ```
 
-`token_env: FOO_TOKEN`internally will use `process.env['FOO_TOKEN']`
+`token_env: FOO_TOKEN`内部将使用 `process.env['FOO_TOKEN']`
 
-or by directly specifying a token:
+或者直接指定令牌:
 
 ```yaml
 uplinks:
@@ -76,9 +76,9 @@ uplinks:
       token: "token"
 ```
 
-> Note: `token` has priority over `token_env`
+> 注意: `token`的优先级高于`token_env`
 
-### You Must know
+### 须知
 
 * Uplinks must be registries compatible with the `npm` endpoints. Eg: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* and more.
 * Setting `cache` to false will help to save space in your hard drive. This will avoid store `tarballs` but [it will keep metadata in folders](https://github.com/verdaccio/verdaccio/issues/391).
