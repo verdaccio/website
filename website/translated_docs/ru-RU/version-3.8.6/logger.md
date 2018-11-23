@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-logger
-title: Logger
+title: Логи
 original_id: logger
 ---
 As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
@@ -19,9 +19,9 @@ Use `SIGUSR2` to notify the application, the log-file was rotated and it needs t
 
 ### Configuration
 
-| Property | Type   | Required | Example                                        | Support | Description                                       |
-| -------- | ------ | -------- | ---------------------------------------------- | ------- | ------------------------------------------------- |
-| type     | string | No       | [stdout, file]                                 | all     | define the output                                 |
-| path     | string | No       | verdaccio.log                                  | all     | if type is file, define the location of that file |
-| format   | string | No       | [pretty, pretty-timestamped]                   | all     | output format                                     |
-| level    | string | No       | [fatal, error, warn, http, info, debug, trace] | all     | verbose level                                     |
+| Свойство | Тип    | Обязательное | Пример                                         | Поддержка | Описание                                          |
+| -------- | ------ | ------------ | ---------------------------------------------- | --------- | ------------------------------------------------- |
+| type     | string | Нет          | [stdout, file]                                 | все       | define the output                                 |
+| path     | string | Нет          | verdaccio.log                                  | все       | if type is file, define the location of that file |
+| format   | string | Нет          | [pretty, pretty-timestamped]                   | все       | output format                                     |
+| level    | string | Нет          | [fatal, error, warn, http, info, debug, trace] | все       | verbose level                                     |
