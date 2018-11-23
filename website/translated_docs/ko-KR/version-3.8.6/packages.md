@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-packages
-title: Package Access
+title: 패키지 접근
 original_id: packages
 ---
 It's a series of contraints that allow or restrict access to the local storage based in specific criteria.
