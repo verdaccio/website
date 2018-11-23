@@ -1,15 +1,15 @@
 ---
 id: version-3.8.6-configuration
-title: Configuration File
-original_id: configuration
+title: File di configurazione
+original_id: configurazione
 ---
-This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
+Questo file è il fondamento di verdaccio nel quale è possibile modificare il comportamento predefinito, attivare i plugin ed estendere le funzionalità.
 
-A default configuration file is created the very first time you run `verdaccio`.
+Un file di configurazione predefinito viene creato la prima volta che si esegue `verdaccio`.
 
-## Default Configuration
+## Configurazione predefinita
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+La configurazione predefinita dispone del supporto per pacchetti ** scoped** e permette a qualsiasi utente di accedere a tutti i pacchetti ma solo **agli utenti autenticati di pubblicare**.
 
 ```yaml
 storage: ./storage
@@ -30,11 +30,11 @@ logs:
   - {type: stdout, format: pretty, level: http}
 ```
 
-## Sections
+## Sezioni
 
-The following sections explain what each property means and the different options.
+Le sezioni seguenti spiegano cosa significa ogni proprietà e le diverse opzioni possibili.
 
-### Storage
+### Archiviazione
 
 Is the location of the default storage. **Verdaccio is by default based on local file system**.
 
@@ -42,7 +42,7 @@ Is the location of the default storage. **Verdaccio is by default based on local
 storage: ./storage
 ```
 
-### Plugins
+### Estensioni
 
 Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
 
@@ -50,9 +50,9 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Authentification
+### Autenticazione
 
-The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
+L'impostazione dell'autenticazione viene fatta qui, l'autenticazione predefinita è basata su `htpasswd` ed è incorporata. È possibile modificare questa condotta tramite [plugin](plugins.md). Per ulteriori informazioni su questa sezione leggere la [ pagina dell'autenticazione](auth.md).
 
 ```yaml
 auth:
@@ -98,7 +98,7 @@ web:
   scope:
 ```
 
-### Uplinks
+### Uplink
 
 Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
 
@@ -120,7 +120,7 @@ packages:
     proxy: npmjs
 ```
 
-## Advanced Settings
+## Impostazioni avanzate
 
 ### Offline Publish
 
@@ -195,7 +195,7 @@ This variable should contain a comma-separated list of domain extensions proxy s
 no_proxy: localhost,127.0.0.1
 ```
 
-### Notifications
+### Notifiche
 
 Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
