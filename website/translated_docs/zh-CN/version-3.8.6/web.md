@@ -7,7 +7,7 @@ original_id: webui
 
 <p align="center"><img src="https://github.com/verdaccio/verdaccio/blob/master/assets/gif/verdaccio_big_30.gif?raw=true"></p>
 
-Verdaccio has a web user interface to display only the private packages and can be customisable.
+Verdaccio 有可定制的 Web 界面用于管理私有包
 
 ```yaml
 web:
@@ -17,13 +17,13 @@ web:
   scope:
 ```
 
-All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
+所有访问限制设置可以参考 [保护包](protect-your-dependencies.md) 页面，这些规则也将应用于 Web 界面。
 
-### Configuration
+### 配置
 
-| Property | Type    | Required | Example                        | Support | Description                                                                                                                                          |
-| -------- | ------- | -------- | ------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| enable   | boolean | No       | true/false                     | all     | allow to display the web interface                                                                                                                   |
-| title    | string  | No       | Verdaccio                      | all     | HTML head title description                                                                                                                          |
-| logo     | string  | No       | http://my.logo.domain/logo.png | all     | a URI where logo is located                                                                                                                          |
-| scope    | string  | No       | \\@myscope                   | all     | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
+| 属性     | 类型      | 必填 | 示例                             | 支持   | 描述                                                                    |
+| ------ | ------- | -- | ------------------------------ | ---- | --------------------------------------------------------------------- |
+| enable | boolean | 否  | true/false                     | 任意路径 | 允许显示网页界面                                                              |
+| title  | 字符串     | 否  | Verdaccio                      | 任意路径 | HTML 页眉标题说明                                                           |
+| logo   | 字符串     | 否  | http://my.logo.domain/logo.png | 任意路径 | logo 位于的URI                                                           |
+| scope  | 字符串     | 否  | \\@myscope                   | 任意路径 | 如果要为特定模块作用域使用此registry，请指定该作用域，在webui指南页眉内设置它（注释：escape @ with \\@) |
