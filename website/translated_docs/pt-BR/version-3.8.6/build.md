@@ -1,14 +1,14 @@
 ---
 id: version-3.8.6-build
-title: Build the source code
+title: Utilizando a partir do código fonte
 original_id: build
 ---
-Verdaccio relies on `yarn` instead `npm` to download dependencies.
+Verdaccio depende do `yarn` ao invés do `npm` para gerir as suas dependências.
 
-*Note: the current build only will build with `➜ yarn@1.x`.
+*Nota: A build atual apenas compilará com `➜ yarn@1.x`.
 
 ```bash
   yarn install
 ```
 
-To see the complete list of scripts, [click here](https://github.com/verdaccio/verdaccio/wiki/Build-Source-Code).
+Para ver a lista completa de scripts, [acesse aqui](https://github.com/verdaccio/verdaccio/wiki/Build-Source-Code).
