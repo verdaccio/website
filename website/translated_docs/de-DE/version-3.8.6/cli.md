@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-cli
-title: Command Line Tool
+title: Befehlszeilen-Tool
 original_id: cli
 ---
 The verdaccio CLI is your go start the application.
