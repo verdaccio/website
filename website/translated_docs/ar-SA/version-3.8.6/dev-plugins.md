@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-dev-plugins
-title: Developing Plugins
+title: تطوير الإضافات
 original_id: dev-plugins
 ---
 There are many ways to extend `verdaccio`, the kind of plugins supported are:
