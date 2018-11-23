@@ -1,6 +1,6 @@
 ---
 id: reverse-proxy
-title: "Reverse Proxy Setup"
+title: "리버스 프록시 설정"
 ---
 ## Apache
 
