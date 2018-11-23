@@ -1,15 +1,15 @@
 ---
 id: version-3.8.6-configuration
-title: Configuration File
+title: Файл конфигурации
 original_id: configuration
 ---
-This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
+Этот файл является краеугольным камнем verdaccio. В нём вы можете изменить стандартное поведение, включить плагины и расширенные возможности.
 
-A default configuration file is created the very first time you run `verdaccio`.
+Стандартный файл конфигурации создаётся при самом первом запуске `verdaccio`.
 
-## Default Configuration
+## Стандартная конфигурация
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+Стандартная конфигурация поддерживает **область видимости (scope)** пакетов и позволяет любым пользователям получить доступ ко всем пакетам, но **только авторизованные пользователи могут публиковать пакеты**.
 
 ```yaml
 storage: ./storage
@@ -30,11 +30,11 @@ logs:
   - {type: stdout, format: pretty, level: http}
 ```
 
-## Sections
+## Разделы
 
-The following sections explain what each property means and the different options.
+Следующие разделы пояснят что означает каждое свойство и его различные опции.
 
-### Storage
+### Хранилище
 
 Is the location of the default storage. **Verdaccio is by default based on local file system**.
 
@@ -42,7 +42,7 @@ Is the location of the default storage. **Verdaccio is by default based on local
 storage: ./storage
 ```
 
-### Plugins
+### Плагины
 
 Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
 
@@ -50,9 +50,9 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Authentification
+### Аутентификация
 
-The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
+Настройка аутентификация делается здесь. По умолчанию аутентификация основана на `htpasswd` и является встроенной. Вы можете изменить это при помощи [плагинов](plugins.md). Читайте об этом в разделе [Аутентификация](auth.md).
 
 ```yaml
 auth:
@@ -120,7 +120,7 @@ packages:
     proxy: npmjs
 ```
 
-## Advanced Settings
+## Расширенные настройки
 
 ### Offline Publish
 
@@ -178,7 +178,7 @@ https:
 
 Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
-#### http_proxy and https_proxy
+#### http_proxy и https_proxy
 
 If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
 
@@ -195,7 +195,7 @@ This variable should contain a comma-separated list of domain extensions proxy s
 no_proxy: localhost,127.0.0.1
 ```
 
-### Notifications
+### Уведомления
 
 Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
