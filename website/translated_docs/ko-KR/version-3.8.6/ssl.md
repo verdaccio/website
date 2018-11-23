@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-ssl
-title: Set up the SSL Certificates
+title: SSL 인증서 설정하기
 original_id: ssl
 ---
 Follow this instructions to configure a SSL certificate to serve NPM registry under HTTPS.
