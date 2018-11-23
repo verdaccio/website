@@ -1,19 +1,19 @@
 ---
 id: version-3.8.6-dev-plugins
-title: Developing Plugins
+title: Desarrollando Extensiones
 original_id: dev-plugins
 ---
-There are many ways to extend `verdaccio`, the kind of plugins supported are:
+Existen muchas maneras de extender `verdaccio`, los tipos de extensiones soportados son:
 
-* Authentication plugins
-* Middleware plugins (since `v2.7.0`)
-* Storage plugins since (`v3.x`)
+* Extensiones de autenticación
+* Extensiones de Middleware (since `v2.7.0`)
+* Extensiones de Almacenamiento desde (`v3.x`)
 
-> We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
+> Nosotros reocmendados desarrollar extensiones usando nuestras [definiciones de tipado de Flow](https://github.com/verdaccio/flow-types).
 
-## Authentication Plugin
+## Extensión de Autenticación
 
-Basically we have to return an object with a single method called `authenticate` that will recieve 3 arguments (`user, password, callback`).
+Basicamente tenemos que retornar un objecto con un simple método llamado `authenticate`que recivirá 3 argumentos (`user, password, callback`).
 
 ### API
 
@@ -27,15 +27,15 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> Solamente `adduser`, `allow_access` and `allow_publish` son opcionales, verdaccio contiene una implementación interna en caso que no sean definidos.
 
 #### Callback
 
-Once the authentication has been executed there is 2 options to give a response to `verdaccio`.
+Una vez que la autenticación ha sido ejecutada habrá 2 argumentos que dara una respuesta a `verdaccio`.
 
 ###### OnError
 
-Either something bad happened or auth was unsuccessful.
+O bien algo malo paso o la autenticación no fue satisfactoria.
 
 ```flow
 callback(null, false)
@@ -43,14 +43,14 @@ callback(null, false)
 
 ###### OnSuccess
 
-The auth was successful.
+La autenticación fue satisfactoria.
 
-`groups` is an array of strings where the user is part of.
+`groups` es un array de cadenas de los cuales el usuario es parte.
 
      callback(null, groups);
     
 
-### Example
+### Ejemplo
 
 ```javascript
 function Auth(config, stuff) {
@@ -93,7 +93,7 @@ auth:
 
 Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
 
-## Middleware Plugin
+## Extensión de Middleware
 
 Middleware plugins have the capability to modify the API layer, either adding new endpoints or intercepting requests.
 
@@ -119,7 +119,7 @@ function register_middlewares(expressApp, authInstance, storageInstance) {
 
 To register a middleware we need an object with a single method called `register_middlewares` that will recieve 3 arguments (`expressApp, auth, storage`). *Auth* is the authentification instance and *storage* is also the main Storage instance that will give you have access to all to the storage actions.
 
-## Storage Plugin
+## Extensión de Almacenamiento
 
 Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), but, since `verdaccio@3.x` you can plug in a custom storage replacing the default behaviour.
 
