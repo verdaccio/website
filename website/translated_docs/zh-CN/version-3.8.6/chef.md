@@ -3,13 +3,13 @@ id: version-3.8.6-chef
 title: Chef Cookbook
 original_id: chef
 ---
-Using Chef Cookbook for Verdaccio
+Verdaccio使用Chef Cookbook
 
-For further information:
+详细信息：
 
 * <https://github.com/verdaccio/verdaccio-cookbook>
 * <https://supermarket.chef.io/cookbooks/verdaccio>
 
-> We are looking for contributors for this repository, if you are interested please notify the author via tickets.
+> 我们在寻找此资源库的贡献者，如果有兴趣请通过发票证方式通知作者。
 
-Author: [Keli Grubb](https://github.com/kgrubb) && Barthelemy Vessemont.
+作者: [Keli Grubb](https://github.com/kgrubb) && Barthelemy Vessemont。
