@@ -27,6 +27,6 @@ If you are using a custom storage, this location is irrelevant.
 
 ## Default database file location
 
-The default database file location is in the storage location. 
-Starting with version 4.0.0, the database file name will be **.verdaccio-db.json** for a new installation of Verdaccio. 
+The default database file location is in the storage location.
+Starting with version 4.0.0, the database file name will be **.verdaccio-db.json** for a new installation of Verdaccio.
 When upgrading an existing Verdaccio server, the file name will remain **.sinopia-db.json**.

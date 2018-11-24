@@ -48,10 +48,10 @@ uplinks:
     url: https://private-registry.domain.com/registry
     auth:
       type: bearer
-      token_env: true # defaults to `process.env['NPM_TOKEN']`   
+      token_env: true # defaults to `process.env['NPM_TOKEN']`
 ```
 
-or via a specified environment variable: 
+or via a specified environment variable:
 
 ```yaml
 uplinks:
