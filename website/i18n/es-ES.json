@@ -190,6 +190,18 @@
       },
       "version-3.8.6-windows": {
         "title": "Instalación como un Servicio de Windows"
+      },
+      "version-4.0.0-alpha.3-cli": {
+        "title": "Herramienta de Linea de Comando"
+      },
+      "version-4.0.0-alpha.3-configuration": {
+        "title": "Archivo de Configuración"
+      },
+      "version-4.0.0-alpha.3-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.0.0-alpha.3-what-is-verdaccio": {
+        "title": "Qué es Verdaccio?"
       }
     },
     "links": {
