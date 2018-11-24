@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-packages
-title: npm 包访问权限
+title: 包的访问
 original_id: packages
 ---
 这是一系列的约束，它基于特定条件允许或限制对本地存储的访问。
