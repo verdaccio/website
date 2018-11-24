@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-use-cases
-title: Casos de Uso
+title: Casos de Usos
 original_id: use-cases
 ---
 ## Uso de paquetes privados
