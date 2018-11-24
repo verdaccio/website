@@ -4,50 +4,211 @@
     "next": "Следующая",
     "previous": "Предыдущая",
     "tagline": "Verdaccio · Лёгкий приватный прокси для npm реестра",
-    "ansible": "Ансибл",
-    "authentification": "Аутентификация",
-    "build": "Сборка исходного кода",
-    "chef": "Поваренная книга шеф-повара",
-    "ci": "Непрерывная интеграция",
-    "cli": "Инструмент командной строки",
-    "configuration": "Файл конфигурации",
-    "contributing": "Содействие Verdaccio",
-    "dev-plugins": "Разработка плагинов",
-    "docker": "Docker",
-    "iss-server": "Установка на сервере IIS",
-    "installation": "Установка",
-    "kubernetes": "Kubernetes",
-    "logger": "Логи",
-    "logo": "Verdaccio Logotype",
-    "node-api": "Node API",
-    "notifications": "Уведомления",
-    "packages": "Доступ к пакетам",
-    "plugins": "Плагины",
-    "protect-your-dependencies": "Защита пакетов",
-    "puppet": "Puppet",
-    "source-code": "Исходный код",
-    "reverse-proxy": "Настройка обратного прокси-сервера",
-    "server-configuration": "Конфигурация сервера",
-    "ssl": "Настройка SSL-сертификатов",
-    "unit-testing": "Модульное тестирование",
-    "uplinks": "Uplinks",
-    "use-cases": "Примеры использования",
-    "webui": "Пользовательский Веб-Интерфейс2",
-    "what-is-verdaccio": "Что такое Verdaccio?",
-    "windows": "Установка в качестве службы Windows",
-    "Docs": "Документация",
-    "Blog": "Блог",
-    "Help": "Помощь",
-    "GitHub": "GitHub",
-    "Team": "Команда",
-    "Donate": "Пожертвования",
-    "Introduction": "Введение",
-    "Configuration": "Конфигурация",
-    "Server": "Сервер",
-    "Plugins": "Плагины",
-    "DevOps": "DevOps",
-    "Development": "Разработка",
-    "Guides": "Руководства"
+    "docs": {
+      "ansible": {
+        "title": "Ansible"
+      },
+      "authentification": {
+        "title": "Аутентификация"
+      },
+      "build": {
+        "title": "Сборка исходного кода"
+      },
+      "chef": {
+        "title": "Поваренная книга"
+      },
+      "ci": {
+        "title": "Непрерывная интеграция"
+      },
+      "cli": {
+        "title": "Инструмент командной строки"
+      },
+      "configuration": {
+        "title": "Файл конфигурации"
+      },
+      "contributing": {
+        "title": "Содействие Verdaccio"
+      },
+      "dev-plugins": {
+        "title": "Разработка плагинов"
+      },
+      "docker": {
+        "title": "Docker"
+      },
+      "iss-server": {
+        "title": "Установка на IIS сервер"
+      },
+      "installation": {
+        "title": "Installation"
+      },
+      "kubernetes": {
+        "title": "Kubernetes"
+      },
+      "logger": {
+        "title": "Логи"
+      },
+      "logo": {
+        "title": "Verdaccio Logotype"
+      },
+      "node-api": {
+        "title": "Node API"
+      },
+      "notifications": {
+        "title": "Уведомления"
+      },
+      "packages": {
+        "title": "Доступ к пакетам"
+      },
+      "plugins": {
+        "title": "Плагины"
+      },
+      "protect-your-dependencies": {
+        "title": "Защита пакетов"
+      },
+      "puppet": {
+        "title": "Puppet"
+      },
+      "source-code": {
+        "title": "Исходный код"
+      },
+      "reverse-proxy": {
+        "title": "Настройка обратного прокси-сервера"
+      },
+      "server-configuration": {
+        "title": "Конфигурация сервера"
+      },
+      "ssl": {
+        "title": "Настройка SSL-сертификатов"
+      },
+      "unit-testing": {
+        "title": "Модульное тестирование"
+      },
+      "uplinks": {
+        "title": "Uplinks"
+      },
+      "use-cases": {
+        "title": "Примеры использования"
+      },
+      "webui": {
+        "title": "Web User Interface"
+      },
+      "what-is-verdaccio": {
+        "title": "What is Verdaccio?"
+      },
+      "windows": {
+        "title": "Установка в качестве службы Windows"
+      },
+      "version-3.8.6-ansible": {
+        "title": "Ansible"
+      },
+      "version-3.8.6-authentification": {
+        "title": "Аутентификация"
+      },
+      "version-3.8.6-build": {
+        "title": "Сборка исходного кода"
+      },
+      "version-3.8.6-chef": {
+        "title": "Поваренная книга"
+      },
+      "version-3.8.6-ci": {
+        "title": "Непрерывная интеграция"
+      },
+      "version-3.8.6-cli": {
+        "title": "Инструмент командной строки"
+      },
+      "version-3.8.6-configuration": {
+        "title": "Файл конфигурации"
+      },
+      "version-3.8.6-contributing": {
+        "title": "Содействие Verdaccio"
+      },
+      "version-3.8.6-dev-plugins": {
+        "title": "Разработка плагинов"
+      },
+      "version-3.8.6-docker": {
+        "title": "Docker"
+      },
+      "version-3.8.6-iss-server": {
+        "title": "Установка на IIS сервер"
+      },
+      "version-3.8.6-installation": {
+        "title": "Installation"
+      },
+      "version-3.8.6-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-3.8.6-logger": {
+        "title": "Логи"
+      },
+      "version-3.8.6-logo": {
+        "title": "Verdaccio Logotype"
+      },
+      "version-3.8.6-node-api": {
+        "title": "Node API"
+      },
+      "version-3.8.6-notifications": {
+        "title": "Уведомления"
+      },
+      "version-3.8.6-packages": {
+        "title": "Доступ к пакетам"
+      },
+      "version-3.8.6-plugins": {
+        "title": "Плагины"
+      },
+      "version-3.8.6-protect-your-dependencies": {
+        "title": "Защита пакетов"
+      },
+      "version-3.8.6-puppet": {
+        "title": "Puppet"
+      },
+      "version-3.8.6-source-code": {
+        "title": "Исходный код"
+      },
+      "version-3.8.6-reverse-proxy": {
+        "title": "Настройка обратного прокси-сервера"
+      },
+      "version-3.8.6-server-configuration": {
+        "title": "Конфигурация сервера"
+      },
+      "version-3.8.6-ssl": {
+        "title": "Настройка SSL-сертификатов"
+      },
+      "version-3.8.6-unit-testing": {
+        "title": "Модульное тестирование"
+      },
+      "version-3.8.6-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-3.8.6-use-cases": {
+        "title": "Примеры использования"
+      },
+      "version-3.8.6-webui": {
+        "title": "Web User Interface"
+      },
+      "version-3.8.6-what-is-verdaccio": {
+        "title": "What is Verdaccio?"
+      },
+      "version-3.8.6-windows": {
+        "title": "Установка в качестве службы Windows"
+      }
+    },
+    "links": {
+      "Docs": "Docs",
+      "Blog": "Blog",
+      "Help": "Help",
+      "GitHub": "GitHub",
+      "Team": "Team",
+      "Donate": "Donate"
+    },
+    "categories": {
+      "Introduction": "Introduction",
+      "Configuration": "Configuration",
+      "Server": "Server",
+      "Plugins": "Плагины",
+      "DevOps": "DevOps",
+      "Development": "Development",
+      "Guides": "Guides"
+    }
   },
   "pages-strings": {
     "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Узнайте больше, используя [документацию на этом сайте]. (/ docs/en/installation.html)",
