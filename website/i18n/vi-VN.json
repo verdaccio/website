@@ -4,50 +4,211 @@
     "next": "Next",
     "previous": "Previous",
     "tagline": "Verdaccio · A lightweight private npm proxy registry",
-    "ansible": "Phần mềm nguồn mở ansible",
-    "authentification": "Authentification",
-    "build": "Tạo mã nguồn",
-    "chef": "Chef Cookbook",
-    "ci": "Tích hợp liên tục",
-    "cli": "Command Line Tool",
-    "configuration": "Configuration File",
-    "contributing": "Contributing Verdaccio",
-    "dev-plugins": "Developing Plugins",
-    "docker": "Docker",
-    "iss-server": "Installing on IIS server",
-    "installation": "Installation",
-    "kubernetes": "Kubernetes",
-    "logger": "Logger",
-    "logo": "Verdaccio Logotype",
-    "node-api": "Node API",
-    "notifications": "Notifications",
-    "packages": "Package Access",
-    "plugins": "Plugins",
-    "protect-your-dependencies": "Protecting packages",
-    "puppet": "Puppet",
-    "source-code": "Source Code",
-    "reverse-proxy": "Reverse Proxy Setup",
-    "server-configuration": "Server Configuration",
-    "ssl": "Set up the SSL Certificates",
-    "unit-testing": "Unit Testing",
-    "uplinks": "Uplinks",
-    "use-cases": "Use Cases",
-    "webui": "Web User Interface2",
-    "what-is-verdaccio": "What is Verdaccio?",
-    "windows": "Installing As a Windows Service",
-    "Docs": "Docs",
-    "Blog": "Blog",
-    "Help": "Help",
-    "GitHub": "GitHub",
-    "Team": "Team",
-    "Donate": "Donate",
-    "Introduction": "Introduction",
-    "Configuration": "Cấu hình",
-    "Server": "Server",
-    "Plugins": "Plugins",
-    "DevOps": "DevOps",
-    "Development": "Development",
-    "Guides": "Guides"
+    "docs": {
+      "ansible": {
+        "title": "Phần mềm nguồn mở ansible"
+      },
+      "authentification": {
+        "title": "Yêu cầu xác thực"
+      },
+      "build": {
+        "title": "Tạo mã nguồn"
+      },
+      "chef": {
+        "title": "Chef Cookbook"
+      },
+      "ci": {
+        "title": "Tích hợp liên tục"
+      },
+      "cli": {
+        "title": "Công cụ dòng lệnh Command line"
+      },
+      "configuration": {
+        "title": "Tệp cấu hình"
+      },
+      "contributing": {
+        "title": "Tham gia đóng góp Verdaccio"
+      },
+      "dev-plugins": {
+        "title": "Phát triển các phần mềm bổ trợ"
+      },
+      "docker": {
+        "title": "Docker"
+      },
+      "iss-server": {
+        "title": "Cài đặt trên máy chủ IIS"
+      },
+      "installation": {
+        "title": "Installation"
+      },
+      "kubernetes": {
+        "title": "Kubernetes"
+      },
+      "logger": {
+        "title": "Logger"
+      },
+      "logo": {
+        "title": "Verdaccio Logotype"
+      },
+      "node-api": {
+        "title": "Node API"
+      },
+      "notifications": {
+        "title": "Notifications"
+      },
+      "packages": {
+        "title": "Package Access"
+      },
+      "plugins": {
+        "title": "Plugins"
+      },
+      "protect-your-dependencies": {
+        "title": "Protecting packages"
+      },
+      "puppet": {
+        "title": "Puppet"
+      },
+      "source-code": {
+        "title": "Source Code"
+      },
+      "reverse-proxy": {
+        "title": "Reverse Proxy Setup"
+      },
+      "server-configuration": {
+        "title": "Server Configuration"
+      },
+      "ssl": {
+        "title": "Set up the SSL Certificates"
+      },
+      "unit-testing": {
+        "title": "Unit Testing"
+      },
+      "uplinks": {
+        "title": "Uplinks"
+      },
+      "use-cases": {
+        "title": "Use Cases"
+      },
+      "webui": {
+        "title": "Web User Interface"
+      },
+      "what-is-verdaccio": {
+        "title": "What is Verdaccio?"
+      },
+      "windows": {
+        "title": "Installing As a Windows Service"
+      },
+      "version-3.8.6-ansible": {
+        "title": "Phần mềm nguồn mở ansible"
+      },
+      "version-3.8.6-authentification": {
+        "title": "Yêu cầu xác thực"
+      },
+      "version-3.8.6-build": {
+        "title": "Tạo mã nguồn"
+      },
+      "version-3.8.6-chef": {
+        "title": "Chef Cookbook"
+      },
+      "version-3.8.6-ci": {
+        "title": "Tích hợp liên tục"
+      },
+      "version-3.8.6-cli": {
+        "title": "Công cụ dòng lệnh Command line"
+      },
+      "version-3.8.6-configuration": {
+        "title": "Tệp cấu hình"
+      },
+      "version-3.8.6-contributing": {
+        "title": "Tham gia đóng góp Verdaccio"
+      },
+      "version-3.8.6-dev-plugins": {
+        "title": "Phát triển các phần mềm bổ trợ"
+      },
+      "version-3.8.6-docker": {
+        "title": "Docker"
+      },
+      "version-3.8.6-iss-server": {
+        "title": "Cài đặt trên máy chủ IIS"
+      },
+      "version-3.8.6-installation": {
+        "title": "Installation"
+      },
+      "version-3.8.6-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-3.8.6-logger": {
+        "title": "Logger"
+      },
+      "version-3.8.6-logo": {
+        "title": "Verdaccio Logotype"
+      },
+      "version-3.8.6-node-api": {
+        "title": "Node API"
+      },
+      "version-3.8.6-notifications": {
+        "title": "Notifications"
+      },
+      "version-3.8.6-packages": {
+        "title": "Package Access"
+      },
+      "version-3.8.6-plugins": {
+        "title": "Plugins"
+      },
+      "version-3.8.6-protect-your-dependencies": {
+        "title": "Protecting packages"
+      },
+      "version-3.8.6-puppet": {
+        "title": "Puppet"
+      },
+      "version-3.8.6-source-code": {
+        "title": "Source Code"
+      },
+      "version-3.8.6-reverse-proxy": {
+        "title": "Reverse Proxy Setup"
+      },
+      "version-3.8.6-server-configuration": {
+        "title": "Server Configuration"
+      },
+      "version-3.8.6-ssl": {
+        "title": "Set up the SSL Certificates"
+      },
+      "version-3.8.6-unit-testing": {
+        "title": "Unit Testing"
+      },
+      "version-3.8.6-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-3.8.6-use-cases": {
+        "title": "Use Cases"
+      },
+      "version-3.8.6-webui": {
+        "title": "Web User Interface"
+      },
+      "version-3.8.6-what-is-verdaccio": {
+        "title": "What is Verdaccio?"
+      },
+      "version-3.8.6-windows": {
+        "title": "Installing As a Windows Service"
+      }
+    },
+    "links": {
+      "Docs": "Docs",
+      "Blog": "Blog",
+      "Help": "Help",
+      "GitHub": "GitHub",
+      "Team": "Team",
+      "Donate": "Donate"
+    },
+    "categories": {
+      "Introduction": "Introduction",
+      "Configuration": "Cấu hình",
+      "Server": "Server",
+      "Plugins": "Plugins",
+      "DevOps": "DevOps",
+      "Development": "Development",
+      "Guides": "Guides"
+    }
   },
   "pages-strings": {
     "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Learn more using the [documentation on this site.](/docs/en/installation.html)",
