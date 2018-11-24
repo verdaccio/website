@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-ssl
-title: 设置 SSL 证书
+title: 设置SSL 证书
 original_id: ssl
 ---
 依照这些说明来配置SSL 证书来服务HTTPS 下的NPM registry。
