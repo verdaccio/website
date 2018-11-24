@@ -94,7 +94,7 @@ const siteConfig = {
     apiKey: 'a8b4d117e513cd8d71d6a95e3d9d4a91',
     indexName: 'verdaccio'
   },
-  gaTrackingId: 'UA-2527438-21',
+  // gaTrackingId: 'UA-2527438-21',
   twitter: true,
   scripts: [
     'https://buttons.github.io/buttons.js',
