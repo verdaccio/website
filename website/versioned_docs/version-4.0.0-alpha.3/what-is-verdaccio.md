@@ -1,6 +1,7 @@
 ---
-id: what-is-verdaccio
-title: "What is Verdaccio?"
+id: version-4.0.0-alpha.3-what-is-verdaccio
+title: What is Verdaccio?
+original_id: what-is-verdaccio
 ---
 
 Verdaccio is a **lightweight private npm proxy registry** built in **Node.js**

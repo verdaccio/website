@@ -12,7 +12,7 @@ To pull the latest pre-built [docker image](https://hub.docker.com/r/verdaccio/v
 docker pull verdaccio/verdaccio
 ```
 
-![Docker pull](/svg/docker_verdaccio.gif)
+![Docker pull](assets/docker_verdaccio.gif)
 
 ## Tagged Versions
 
@@ -121,8 +121,8 @@ Docker will generate a named volume in which to store persistent application dat
             "Scope": "local"
         }
     ]
-    
-    
+
+
 
 ## Build your own Docker image
 
