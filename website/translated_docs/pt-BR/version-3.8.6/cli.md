@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-cli
-title: Utilitário da Linha de Comando
+title: Utilitário na Linha de Comando
 original_id: cli
 ---
 A linha de comando é por onde você pode controlar toda a sua instalação Verdaccio.

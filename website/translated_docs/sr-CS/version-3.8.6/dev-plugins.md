@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-dev-plugins
-title: Razvijanje Plugina
+title: Developing Plugins
 original_id: dev-plugins
 ---
 Ima mnogo načina da proširite `verdaccio`, tipovi podržanih plugin-a su:

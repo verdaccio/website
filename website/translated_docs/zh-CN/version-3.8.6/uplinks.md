@@ -1,11 +1,11 @@
 ---
 id: version-3.8.6-uplinks
-title: Uplinks
+title: 上行链路
 original_id: uplinks（上行链路）
 ---
 *上行链路* 是指可以访问到外部包的外部注册服务器地址。
 
-![Uplinks](/img/uplinks.png)
+![上行链路](/img/uplinks.png)
 
 ### 使用
 

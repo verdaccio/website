@@ -4,50 +4,223 @@
     "next": "Próximo",
     "previous": "Anterior",
     "tagline": "Um simples e eficiente registro privado para npm",
-    "ansible": "Ansible",
-    "authentification": "Autenticação",
-    "build": "Usando a partir do codigo fonte",
-    "chef": "Livro de receitas do Chef",
-    "ci": "Integração contínua",
-    "cli": "Utilitário da Linha de Comando",
-    "configuration": "Arquivo de Configuração",
-    "contributing": "Contribuindo com o Verdaccio",
-    "dev-plugins": "Criando Plugins",
-    "docker": "Docker",
-    "iss-server": "Instalando em um Servidor ISS",
-    "installation": "Instalação",
-    "kubernetes": "Kubernetes",
-    "logger": "Logs",
-    "logo": "Verdaccio Logotipo",
-    "node-api": "Api Node",
-    "notifications": "Notificações",
-    "packages": "Permissões dos Pacotes",
-    "plugins": "Plugins",
-    "protect-your-dependencies": "Protegendo seus pacotes",
-    "puppet": "Puppet",
-    "source-code": "Código Fonte",
-    "reverse-proxy": "Configuração de Proxy Reverso",
-    "server-configuration": "Configuração do Servidor",
-    "ssl": "Configurar SSL",
-    "unit-testing": "Unit Testing",
-    "uplinks": "Uplinks",
-    "use-cases": "Casos de uso",
-    "webui": "Web User Interface2",
-    "what-is-verdaccio": "O que é o Verdaccio?",
-    "windows": "Instalando como um Serviço no Windows",
-    "Docs": "Docs",
-    "Blog": "Blog",
-    "Help": "Ajuda",
-    "GitHub": "GitHub",
-    "Team": "Equipe",
-    "Donate": "Doação",
-    "Introduction": "Introdução",
-    "Configuration": "Configuração",
-    "Server": "Servidor",
-    "Plugins": "Plugins",
-    "DevOps": "DevOps",
-    "Development": "Desenvolvimento",
-    "Guides": "Tutoriais"
+    "docs": {
+      "ansible": {
+        "title": "Ansible"
+      },
+      "authentification": {
+        "title": "Autenticação"
+      },
+      "build": {
+        "title": "Utilizando a partir do código fonte"
+      },
+      "chef": {
+        "title": "Chef Cookbook"
+      },
+      "ci": {
+        "title": "Integração contínua"
+      },
+      "cli": {
+        "title": "Utilitário na Linha de Comando"
+      },
+      "configuration": {
+        "title": "Arquivo de Configuração"
+      },
+      "contributing": {
+        "title": "Contribuindo com o Verdaccio"
+      },
+      "dev-plugins": {
+        "title": "Criando Plugins"
+      },
+      "docker": {
+        "title": "Docker"
+      },
+      "iss-server": {
+        "title": "Instalando em um Servidor ISS"
+      },
+      "installation": {
+        "title": "Installation"
+      },
+      "kubernetes": {
+        "title": "Kubernetes"
+      },
+      "logger": {
+        "title": "Logs"
+      },
+      "logo": {
+        "title": "Verdaccio Logotype"
+      },
+      "node-api": {
+        "title": "Api Node"
+      },
+      "notifications": {
+        "title": "Notificações"
+      },
+      "packages": {
+        "title": "Permissões dos Pacotes"
+      },
+      "plugins": {
+        "title": "Plugins"
+      },
+      "protect-your-dependencies": {
+        "title": "Protegendo seus pacotes"
+      },
+      "puppet": {
+        "title": "Puppet"
+      },
+      "source-code": {
+        "title": "Código Fonte"
+      },
+      "reverse-proxy": {
+        "title": "Configuração de Proxy Reverso"
+      },
+      "server-configuration": {
+        "title": "Configuração do Servidor"
+      },
+      "ssl": {
+        "title": "Configurar SSL"
+      },
+      "unit-testing": {
+        "title": "Unit Testing"
+      },
+      "uplinks": {
+        "title": "Uplinks"
+      },
+      "use-cases": {
+        "title": "Casos de uso"
+      },
+      "webui": {
+        "title": "Web User Interface"
+      },
+      "what-is-verdaccio": {
+        "title": "O que é o Verdaccio?"
+      },
+      "windows": {
+        "title": "Instalando como um Serviço no Windows"
+      },
+      "version-3.8.6-ansible": {
+        "title": "Ansible"
+      },
+      "version-3.8.6-authentification": {
+        "title": "Autenticação"
+      },
+      "version-3.8.6-build": {
+        "title": "Utilizando a partir do código fonte"
+      },
+      "version-3.8.6-chef": {
+        "title": "Chef Cookbook"
+      },
+      "version-3.8.6-ci": {
+        "title": "Integração contínua"
+      },
+      "version-3.8.6-cli": {
+        "title": "Utilitário na Linha de Comando"
+      },
+      "version-3.8.6-configuration": {
+        "title": "Arquivo de Configuração"
+      },
+      "version-3.8.6-contributing": {
+        "title": "Contribuindo com o Verdaccio"
+      },
+      "version-3.8.6-dev-plugins": {
+        "title": "Criando Plugins"
+      },
+      "version-3.8.6-docker": {
+        "title": "Docker"
+      },
+      "version-3.8.6-iss-server": {
+        "title": "Instalando em um Servidor ISS"
+      },
+      "version-3.8.6-installation": {
+        "title": "Installation"
+      },
+      "version-3.8.6-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-3.8.6-logger": {
+        "title": "Logs"
+      },
+      "version-3.8.6-logo": {
+        "title": "Verdaccio Logotype"
+      },
+      "version-3.8.6-node-api": {
+        "title": "Api Node"
+      },
+      "version-3.8.6-notifications": {
+        "title": "Notificações"
+      },
+      "version-3.8.6-packages": {
+        "title": "Permissões dos Pacotes"
+      },
+      "version-3.8.6-plugins": {
+        "title": "Plugins"
+      },
+      "version-3.8.6-protect-your-dependencies": {
+        "title": "Protegendo seus pacotes"
+      },
+      "version-3.8.6-puppet": {
+        "title": "Puppet"
+      },
+      "version-3.8.6-source-code": {
+        "title": "Código Fonte"
+      },
+      "version-3.8.6-reverse-proxy": {
+        "title": "Configuração de Proxy Reverso"
+      },
+      "version-3.8.6-server-configuration": {
+        "title": "Configuração do Servidor"
+      },
+      "version-3.8.6-ssl": {
+        "title": "Configurar SSL"
+      },
+      "version-3.8.6-unit-testing": {
+        "title": "Unit Testing"
+      },
+      "version-3.8.6-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-3.8.6-use-cases": {
+        "title": "Casos de uso"
+      },
+      "version-3.8.6-webui": {
+        "title": "Web User Interface"
+      },
+      "version-3.8.6-what-is-verdaccio": {
+        "title": "O que é o Verdaccio?"
+      },
+      "version-3.8.6-windows": {
+        "title": "Instalando como um Serviço no Windows"
+      },
+      "version-4.0.0-alpha.3-cli": {
+        "title": "Utilitário na Linha de Comando"
+      },
+      "version-4.0.0-alpha.3-configuration": {
+        "title": "Arquivo de Configuração"
+      },
+      "version-4.0.0-alpha.3-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.0.0-alpha.3-what-is-verdaccio": {
+        "title": "O que é o Verdaccio?"
+      }
+    },
+    "links": {
+      "Docs": "Docs",
+      "Blog": "Blog",
+      "Help": "Help",
+      "GitHub": "GitHub",
+      "Team": "Team",
+      "Donate": "Donate"
+    },
+    "categories": {
+      "Introduction": "Introduction",
+      "Configuration": "Configuration",
+      "Server": "Server",
+      "Plugins": "Plugins",
+      "DevOps": "DevOps",
+      "Development": "Development",
+      "Guides": "Guides"
+    }
   },
   "pages-strings": {
     "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Saiba mais, acessando a [documentação.](/docs/en/installation.html)",

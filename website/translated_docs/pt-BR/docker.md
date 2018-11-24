@@ -12,7 +12,7 @@ Para fazer o pull do último pré-build[docker image](https://hub.docker.com/r/v
 docker pull verdaccio/verdaccio
 ```
 
-![Docker pull](/svg/docker_verdaccio.gif)
+![Docker pull](assets/docker_verdaccio.gif)
 
 ## Versões com Tags
 

@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-iss-server
-title: Installing on IIS server
+title: Cài đặt trên máy chủ IIS
 original_id: iss-server
 ---
 Những hướng dẫn này dành cho Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) và [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).

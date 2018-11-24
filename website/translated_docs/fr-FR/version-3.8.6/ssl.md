@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-ssl
-title: Configurer les Certificats SSL
+title: Configurez les Certificats SSL
 original_id: ssl
 ---
 Suivez ces instructions pour configurer un certificat SSL servant le registre NPM sous HTTPS.

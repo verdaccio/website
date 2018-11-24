@@ -4,7 +4,7 @@ title: "Uplinks"
 ---
 An *uplink* is a link with an external registry that provides acccess to external packages.
 
-![Uplinks](/img/uplinks.png)
+![Uplinks](assets/uplinks.png)
 
 ### Usage
 
@@ -48,7 +48,7 @@ uplinks:
     url: https://private-registry.domain.com/registry
     auth:
       type: bearer
-      token_env: true # defaults to `process.env['NPM_TOKEN']`   
+      token_env: true # defaults to `process.env['NPM_TOKEN']`
 ```
 
 or via a specified environment variable:

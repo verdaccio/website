@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-reverse-proxy
-title: 反向代理配置
+title: 逆向代理服务器设置
 original_id: reverse-proxy（逆向代理服务器）
 ---
 ## Apache

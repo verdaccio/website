@@ -81,7 +81,7 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
            expiresIn: 7d # 7 days by default
          verify:
             someProp: [value]
-    
+
 
 > We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
 
@@ -194,7 +194,7 @@ This variable should contain a comma-separated list of domain extensions proxy s
 no_proxy: localhost,127.0.0.1
 ```
 
-### Obaveštenja
+### Notifikacije
 
 Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 

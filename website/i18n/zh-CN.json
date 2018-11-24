@@ -4,50 +4,211 @@
     "next": "下一个",
     "previous": "上一个",
     "tagline": "Verdaccio · 一个轻量的私有npm proxy registry",
-    "ansible": "Ansible",
-    "authentification": "认证",
-    "build": "编译源代码",
-    "chef": "Chef Cookbook",
-    "ci": "持续集成",
-    "cli": "命令行工具",
-    "configuration": "配置文件",
-    "contributing": "参与贡献 Verdaccio",
-    "dev-plugins": "插件开发",
-    "docker": "Docker",
-    "iss-server": "在 IIS 上安装",
-    "installation": "安装",
-    "kubernetes": "Kubernetes",
-    "logger": "日志",
-    "logo": "Verdaccio 标识",
-    "node-api": "Node API",
-    "notifications": "通知",
-    "packages": "npm 包访问权限",
-    "plugins": "插件",
-    "protect-your-dependencies": "保护 npm 包",
-    "puppet": "Puppet",
-    "source-code": "源代码",
-    "reverse-proxy": "反向代理配置",
-    "server-configuration": "服务器配置",
-    "ssl": "设置 SSL 证书",
-    "unit-testing": "单元测试",
-    "uplinks": "Uplinks",
-    "use-cases": "使用场景",
-    "webui": "网页用户界面2",
-    "what-is-verdaccio": "什么是 Verdaccio？",
-    "windows": "作为 Windows 服务安装",
-    "Docs": "文档",
-    "Blog": "博客",
-    "Help": "帮助",
-    "GitHub": "GitHub",
-    "Team": "团队",
-    "Donate": "捐赠",
-    "Introduction": "介绍",
-    "Configuration": "配置",
-    "Server": "服务器",
-    "Plugins": "插件",
-    "DevOps": "DevOps",
-    "Development": "开发",
-    "Guides": "使用指南"
+    "docs": {
+      "ansible": {
+        "title": "Ansible"
+      },
+      "authentification": {
+        "title": "认证"
+      },
+      "build": {
+        "title": "创建源代码"
+      },
+      "chef": {
+        "title": "Chef Cookbook"
+      },
+      "ci": {
+        "title": "持续集成"
+      },
+      "cli": {
+        "title": "命令行工具"
+      },
+      "configuration": {
+        "title": "配置文件"
+      },
+      "contributing": {
+        "title": "参与Verdaccio贡献"
+      },
+      "dev-plugins": {
+        "title": "插件开发"
+      },
+      "docker": {
+        "title": "Docker"
+      },
+      "iss-server": {
+        "title": "IIS server上进行安装"
+      },
+      "installation": {
+        "title": "安装"
+      },
+      "kubernetes": {
+        "title": "Kubernetes"
+      },
+      "logger": {
+        "title": "记录器"
+      },
+      "logo": {
+        "title": "Verdaccio 标识"
+      },
+      "node-api": {
+        "title": "Node API"
+      },
+      "notifications": {
+        "title": "通知"
+      },
+      "packages": {
+        "title": "包的访问"
+      },
+      "plugins": {
+        "title": "插件"
+      },
+      "protect-your-dependencies": {
+        "title": "保护包"
+      },
+      "puppet": {
+        "title": "Puppet"
+      },
+      "source-code": {
+        "title": "源代码"
+      },
+      "reverse-proxy": {
+        "title": "逆向代理服务器设置"
+      },
+      "server-configuration": {
+        "title": "服务器配置"
+      },
+      "ssl": {
+        "title": "设置SSL 证书"
+      },
+      "unit-testing": {
+        "title": "单元测试"
+      },
+      "uplinks": {
+        "title": "上行链路"
+      },
+      "use-cases": {
+        "title": "使用案例"
+      },
+      "webui": {
+        "title": "Web User Interface"
+      },
+      "what-is-verdaccio": {
+        "title": "Verdaccio是什么？"
+      },
+      "windows": {
+        "title": "作为 Windows 服务安装"
+      },
+      "version-3.8.6-ansible": {
+        "title": "Ansible"
+      },
+      "version-3.8.6-authentification": {
+        "title": "认证"
+      },
+      "version-3.8.6-build": {
+        "title": "创建源代码"
+      },
+      "version-3.8.6-chef": {
+        "title": "Chef Cookbook"
+      },
+      "version-3.8.6-ci": {
+        "title": "持续集成"
+      },
+      "version-3.8.6-cli": {
+        "title": "命令行工具"
+      },
+      "version-3.8.6-configuration": {
+        "title": "配置文件"
+      },
+      "version-3.8.6-contributing": {
+        "title": "参与Verdaccio贡献"
+      },
+      "version-3.8.6-dev-plugins": {
+        "title": "插件开发"
+      },
+      "version-3.8.6-docker": {
+        "title": "Docker"
+      },
+      "version-3.8.6-iss-server": {
+        "title": "IIS server上进行安装"
+      },
+      "version-3.8.6-installation": {
+        "title": "安装"
+      },
+      "version-3.8.6-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-3.8.6-logger": {
+        "title": "记录器"
+      },
+      "version-3.8.6-logo": {
+        "title": "Verdaccio 标识"
+      },
+      "version-3.8.6-node-api": {
+        "title": "Node API"
+      },
+      "version-3.8.6-notifications": {
+        "title": "通知"
+      },
+      "version-3.8.6-packages": {
+        "title": "包的访问"
+      },
+      "version-3.8.6-plugins": {
+        "title": "插件"
+      },
+      "version-3.8.6-protect-your-dependencies": {
+        "title": "保护包"
+      },
+      "version-3.8.6-puppet": {
+        "title": "Puppet"
+      },
+      "version-3.8.6-source-code": {
+        "title": "源代码"
+      },
+      "version-3.8.6-reverse-proxy": {
+        "title": "逆向代理服务器设置"
+      },
+      "version-3.8.6-server-configuration": {
+        "title": "服务器配置"
+      },
+      "version-3.8.6-ssl": {
+        "title": "设置SSL 证书"
+      },
+      "version-3.8.6-unit-testing": {
+        "title": "单元测试"
+      },
+      "version-3.8.6-uplinks": {
+        "title": "上行链路"
+      },
+      "version-3.8.6-use-cases": {
+        "title": "使用案例"
+      },
+      "version-3.8.6-webui": {
+        "title": "Web User Interface"
+      },
+      "version-3.8.6-what-is-verdaccio": {
+        "title": "Verdaccio是什么？"
+      },
+      "version-3.8.6-windows": {
+        "title": "作为 Windows 服务安装"
+      }
+    },
+    "links": {
+      "Docs": "Docs",
+      "Blog": "Blog",
+      "Help": "Help",
+      "GitHub": "GitHub",
+      "Team": "Team",
+      "Donate": "Donate"
+    },
+    "categories": {
+      "Introduction": "Introduction",
+      "Configuration": "配置",
+      "Server": "Server",
+      "Plugins": "插件",
+      "DevOps": "DevOps",
+      "Development": "Development",
+      "Guides": "Guides"
+    }
   },
   "pages-strings": {
     "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "通过 [站内文档](/docs/en/installation.html) 了解更多信息",

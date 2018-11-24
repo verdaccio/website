@@ -42,7 +42,7 @@ Is the location of the default storage. **Verdaccio is by default based on local
 storage: ./storage
 ```
 
-### Extensiones
+### Plugins
 
 Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
 
@@ -50,7 +50,7 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Autentificación
+### Autenticación
 
 La configuración de autentificación es definida aquí, por defecto la autentificación esta basada en `htpasswd` y es por defecto. Puedes modificar el comportamiento via [extensiones](plugins.md). Para mas información sobre esta sección lee [la página de autentificación](auth.md).
 
@@ -108,7 +108,7 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Paquetes
 
 Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
 

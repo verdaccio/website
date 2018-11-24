@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-configuration
-title: Configuration File
+title: Fajl za konfigurisanje
 original_id: konfigurisanje
 ---
 Ovaj fajl je osnova verdaccio-a. U okviru njega, možete vršiti izmene zadatih podešavanja, možete aktivirati plugin-e i spoljašnje resurse (features).
@@ -42,7 +42,7 @@ Is the location of the default storage. **Verdaccio is by default based on local
 storage: ./storage
 ```
 
-### Plugini
+### Plugins
 
 Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
 
@@ -195,7 +195,7 @@ This variable should contain a comma-separated list of domain extensions proxy s
 no_proxy: localhost,127.0.0.1
 ```
 
-### Obaveštenja
+### Notifikacije
 
 Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 

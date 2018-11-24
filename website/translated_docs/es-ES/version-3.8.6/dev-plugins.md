@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-dev-plugins
-title: Desarrollando Extensiones
+title: Extensiones en Desarrollo
 original_id: dev-plugins
 ---
 Existen muchas maneras de extender `verdaccio`, los tipos de extensiones soportados son:

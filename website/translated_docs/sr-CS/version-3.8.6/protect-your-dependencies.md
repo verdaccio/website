@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-protect-your-dependencies
-title: Zaštita paketa
+title: Protecting packages
 original_id: protect-your-dependencies
 ---
 `verdaccio` Vam omogućava da publikujete. Kako biste u tome uspeli, neophodno je da ispravno podesite svoj [packages acces](packages).

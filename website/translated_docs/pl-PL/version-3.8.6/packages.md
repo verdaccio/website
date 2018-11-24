@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-packages
-title: Package Access
+title: Dostęp do Pakietu
 original_id: pakiety
 ---
 Jest to seria ograniczeń, która pozwala lub zabrania dostępu do pamięci lokalnej bazując na konkretnych kryteriach.

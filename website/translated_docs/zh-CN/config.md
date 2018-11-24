@@ -97,7 +97,7 @@ web:
   scope:
 ```
 
-### Uplinks
+### 上行链路
 
 Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
 

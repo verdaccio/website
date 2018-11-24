@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-use-cases
-title: 使用场景
+title: 使用案例
 original_id: use-cases（使用-案例）
 ---
 ## 使用私有包
