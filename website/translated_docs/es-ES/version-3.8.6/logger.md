@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-logger
-title: Logger
+title: Registrador
 original_id: logger
 ---
 As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
