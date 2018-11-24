@@ -2,54 +2,54 @@
 id: logo
 title: "Verdaccio 标识"
 ---
-此标识由赢得[制作比赛](https://github.com/verdaccio/verdaccio/issues/237)（最后阶段[](https://github.com/verdaccio/verdaccio/issues/328)）且将作品捐献给此项目的**[Breno Rodrigues](https://github.com/rodriguesbreno)**制作。</p> 
+The logotype was designed by **[Breno Rodrigues](https://github.com/rodriguesbreno)** which won the [contest](https://github.com/verdaccio/verdaccio/issues/237) ([last stage](https://github.com/verdaccio/verdaccio/issues/328)) and donated his work to this project.
 
 > 所有标识均使用[知识共享](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs)许可授权。
 
-特别感谢*[@Lisapressmar](https://github.com/Lisapressmar)*做出了多个不同格式及大小的图像。
+Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
 
 ## 标识
 
 **带文本**
 
-![带文本的小标识](/img/logo/symbol/png/logo-small-header-bottom.png)
+![带文本的小标识](assets/logo/symbol/png/logo-small-header-bottom.png)
 
-![带文本的中等标识](/img/logo/symbol/png/logo-small-header-bottom@2x.png)
+![带文本的中等标识](assets/logo/symbol/png/logo-small-header-bottom@2x.png)
 
-![带文本的大标识](/img/logo/symbol/png/logo-small-header-bottom@3x.png)
+![带文本的大标识](assets/logo/symbol/png/logo-small-header-bottom@3x.png)
 
 **SVG**
 
-![svg 标识](/img/logo/symbol/svg/logo-small-header-bottom.svg)
+![svg 标识](assets/logo/symbol/svg/logo-small-header-bottom.svg)
 
 **无文本**
 
-![小标识](/img/logo/symbol/png/verdaccio-tiny.png)
+![小标识](assets/logo/symbol/png/verdaccio-tiny.png)
 
-![中等标识](/img/logo/symbol/png/verdaccio-tiny@2x.png)
+![中等标识](assets/logo/symbol/png/verdaccio-tiny@2x.png)
 
-![大标识](/img/logo/symbol/png/verdaccio-tiny@3x.png)
+![大标识](assets/logo/symbol/png/verdaccio-tiny@3x.png)
 
 **SVG**
 
-![无文本 svg 格式标识](/img/logo/symbol/svg/verdaccio-tiny.svg)
+![无文本 svg 格式标识](assets/logo/symbol/svg/verdaccio-tiny.svg)
 
 ### 黑白
 
-![小 bw 标识](/img/logo/symbol/png/verdaccio-blackwhite.png)
+![小 bw 标识](assets/logo/symbol/png/verdaccio-blackwhite.png)
 
-![中等 bw 标识](/img/logo/symbol/png/verdaccio-blackwhite@2x.png)
+![中等 bw 标识](assets/logo/symbol/png/verdaccio-blackwhite@2x.png)
 
-![大 bw 标识](/img/logo/symbol/png/verdaccio-blackwhite@3x.png)
+![大 bw 标识](assets/logo/symbol/png/verdaccio-blackwhite@3x.png)
 
 **SVG**
 
-![svg bw 标识](/img/logo/symbol/svg/verdaccio-blackwhite.svg)
+![svg bw 标识](assets/logo/symbol/svg/verdaccio-blackwhite.svg)
 
 ## 横幅
 
-![小横幅](/img/logo/banner/png/verdaccio-banner.png)
+![小横幅](assets/logo/banner/png/verdaccio-banner.png)
 
-![中等横幅](/img/logo/banner/png/verdaccio-banner@2x.png)
+![中等横幅](assets/logo/banner/png/verdaccio-banner@2x.png)
 
-![大横幅](/img/logo/banner/png/verdaccio-banner@3x.png)
+![大横幅](assets/logo/banner/png/verdaccio-banner@3x.png)

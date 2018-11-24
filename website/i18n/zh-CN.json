@@ -190,6 +190,18 @@
       },
       "version-3.8.6-windows": {
         "title": "作为 Windows 服务安装"
+      },
+      "version-4.0.0-alpha.3-cli": {
+        "title": "命令行工具"
+      },
+      "version-4.0.0-alpha.3-configuration": {
+        "title": "配置文件"
+      },
+      "version-4.0.0-alpha.3-uplinks": {
+        "title": "上行链路"
+      },
+      "version-4.0.0-alpha.3-what-is-verdaccio": {
+        "title": "Verdaccio是什么？"
       }
     },
     "links": {

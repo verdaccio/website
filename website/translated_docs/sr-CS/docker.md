@@ -12,7 +12,7 @@ Kako biste povukli (pull) najnoviji pre-built [docker image](https://hub.docker.
 docker pull verdaccio/verdaccio
 ```
 
-![Docker pull](/svg/docker_verdaccio.gif)
+![Docker pull](assets/docker_verdaccio.gif)
 
 ## Tagged Versions
 

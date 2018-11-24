@@ -190,6 +190,18 @@
       },
       "version-3.8.6-windows": {
         "title": "Instalirajte kao Windows Service"
+      },
+      "version-4.0.0-alpha.3-cli": {
+        "title": "Command Line Tool"
+      },
+      "version-4.0.0-alpha.3-configuration": {
+        "title": "Fajl za konfigurisanje"
+      },
+      "version-4.0.0-alpha.3-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.0.0-alpha.3-what-is-verdaccio": {
+        "title": "Šta je Verdaccio?"
       }
     },
     "links": {
