@@ -13,13 +13,13 @@ Verdaccio est un **journal proxy npm léger et privé** écrit dans **Node.js**
     $> verdaccio
     
 
-![registry](svg/verdaccio_server.gif)
+![registry](assets/verdaccio_server.gif)
 
 ## Utilisation de Verdaccio
 
 L'utilisation de verdaccio avec n'importe quel gestionnaire de paquets de poste client est très simple.
 
-![registry](svg/npm_install.gif)
+![registry](assets/npm_install.gif)
 
 Vous pouvez utiliser un registre personnalisé ou le configurer de manière général pour tous vos projets
 

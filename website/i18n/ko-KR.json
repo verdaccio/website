@@ -190,6 +190,18 @@
       },
       "version-3.8.6-windows": {
         "title": "윈도우에서 설치"
+      },
+      "version-4.0.0-alpha.3-cli": {
+        "title": "명령행 도구"
+      },
+      "version-4.0.0-alpha.3-configuration": {
+        "title": "구성 파일"
+      },
+      "version-4.0.0-alpha.3-uplinks": {
+        "title": "업링크"
+      },
+      "version-4.0.0-alpha.3-what-is-verdaccio": {
+        "title": "What is Verdaccio?"
       }
     },
     "links": {

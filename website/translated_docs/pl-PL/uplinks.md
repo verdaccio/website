@@ -4,7 +4,7 @@ title: "Uplinks"
 ---
 An *uplink* is a link with an external registry that provides acccess to external packages.
 
-![Uplinks](/img/uplinks.png)
+![Uplinks](assets/uplinks.png)
 
 ### Użycie
 

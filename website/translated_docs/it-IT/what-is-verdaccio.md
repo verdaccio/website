@@ -13,13 +13,13 @@ Verdaccio è un **registro proxy npm leggero e privato** scritto in **Node.js**
     $> verdaccio
     
 
-![registry](svg/verdaccio_server.gif)
+![registry](assets/verdaccio_server.gif)
 
 ## Utilizzo di Verdaccio
 
 L'uso di verdaccio con qualsiasi gestore del pacchetto di nodi dei client è molto semplice.
 
-![registry](svg/npm_install.gif)
+![registry](assets/npm_install.gif)
 
 È possibile utilizzare un registro personalizzato oppure settarlo in generale per tutti i tuoi progetti
 

@@ -190,6 +190,18 @@
       },
       "version-3.8.6-windows": {
         "title": "Installing As a Windows Service"
+      },
+      "version-4.0.0-alpha.3-cli": {
+        "title": "Công cụ dòng lệnh Command line"
+      },
+      "version-4.0.0-alpha.3-configuration": {
+        "title": "Tệp cấu hình"
+      },
+      "version-4.0.0-alpha.3-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.0.0-alpha.3-what-is-verdaccio": {
+        "title": "What is Verdaccio?"
       }
     },
     "links": {
