@@ -187,7 +187,7 @@ class Index extends React.Component {
       .map((user, i) => {
         return (
           <a href={user.infoLink} key={i} target="_blank" rel="noopener">
-            <img src={user.image} alt={user.caption} title={user.caption} />
+            <img src={siteConfig.baseUrl + user.image} alt={user.caption} title={user.caption} />
           </a>
         );
       });
