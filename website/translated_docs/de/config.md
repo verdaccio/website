@@ -1,6 +1,6 @@
 ---
 id: configuration
-title: "Configuration File"
+title: "Konfigurationsdatei"
 ---
 This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
 
@@ -49,7 +49,7 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Authentification
+### Authentifizierung
 
 The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
 
@@ -194,7 +194,7 @@ This variable should contain a comma-separated list of domain extensions proxy s
 no_proxy: localhost,127.0.0.1
 ```
 
-### Notifications
+### Benachrichtigungen
 
 Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 

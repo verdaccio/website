@@ -1,10 +1,10 @@
 ---
 id: uplinks
-title: "Uplinks"
+title: "업링크"
 ---
 An *uplink* is a link with an external registry that provides acccess to external packages.
 
-![Uplinks](/img/uplinks.png)
+![업링크](/img/uplinks.png)
 
 ### Usage
 

@@ -107,7 +107,7 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Paquetes
 
 Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
 
@@ -194,7 +194,7 @@ This variable should contain a comma-separated list of domain extensions proxy s
 no_proxy: localhost,127.0.0.1
 ```
 
-### Notifications
+### Notificaciones
 
 Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 

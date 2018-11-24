@@ -50,4 +50,4 @@ warn --- http address - http://localhost:4873/ - verdaccio/3.0.1
 
 `verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
 
-[![Install](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
+[![Cài đặt](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)

@@ -1,6 +1,6 @@
 ---
 id: contributing
-title: "Contributing Verdaccio"
+title: "Verdaccio에 기여하기"
 ---
 First of all Jumping into an unfamiliar code base is not easy but we are here to help you.
 

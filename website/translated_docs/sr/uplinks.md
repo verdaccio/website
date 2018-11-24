@@ -25,18 +25,18 @@ uplinks:
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
 
-| Property     | Type    | Required | Example                                 | Support | Description                                                                                                                | Default    |
-| ------------ | ------- | -------- | --------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| url          | string  | Yes      | https://registry.npmjs.org/             | all     | The registry url                                                                                                           | npmjs      |
-| ca           | string  | No       | ~./ssl/client.crt'                      | all     | SSL path certificate                                                                                                       | No default |
-| timeout      | string  | No       | 100ms                                   | all     | set new timeout for the request                                                                                            | 30s        |
-| maxage       | string  | No       | 10m                                     | all     | limit maximun failure request                                                                                              | 2m         |
-| fail_timeout | string  | No       | 10m                                     | all     | defines max time when a request becomes a failure                                                                          | 5m         |
-| max_fails    | number  | No       | 2                                       | all     | limit maximun failure request                                                                                              | 2          |
-| cache        | boolean | No       | [true,false]                            | >= 2.1  | cache all remote tarballs in storage                                                                                       | true       |
-| auth         | list    | No       | [see below](uplinks.md#auth-property)   | >= 2.5  | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
-| headers      | list    | No       | authorization: "Bearer SecretJWToken==" | all     | list of custom headers for the uplink                                                                                      | disabled   |
-| strict_ssl   | boolean | No       | [true,false]                            | >= 3.0  | If true, requires SSL certificates be valid.                                                                               | true       |
+| Својство     | Тип     | Неопходно | Пример                                  | Подршка | Опис                                                                                                                       | Default    |
+| ------------ | ------- | --------- | --------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| url          | string  | Да        | https://registry.npmjs.org/             | all     | The registry url                                                                                                           | npmjs      |
+| ca           | string  | Не        | ~./ssl/client.crt'                      | all     | SSL path certificate                                                                                                       | No default |
+| timeout      | string  | Не        | 100ms                                   | all     | set new timeout for the request                                                                                            | 30s        |
+| maxage       | string  | Не        | 10m                                     | all     | limit maximun failure request                                                                                              | 2m         |
+| fail_timeout | string  | Не        | 10m                                     | all     | defines max time when a request becomes a failure                                                                          | 5m         |
+| max_fails    | number  | Не        | 2                                       | all     | limit maximun failure request                                                                                              | 2          |
+| cache        | boolean | Не        | [true,false]                            | >= 2.1  | cache all remote tarballs in storage                                                                                       | true       |
+| auth         | list    | Не        | [see below](uplinks.md#auth-property)   | >= 2.5  | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
+| headers      | list    | Не        | authorization: "Bearer SecretJWToken==" | all     | list of custom headers for the uplink                                                                                      | disabled   |
+| strict_ssl   | boolean | Не        | [true,false]                            | >= 3.0  | If true, requires SSL certificates be valid.                                                                               | true       |
 
 #### Auth property
 
@@ -79,7 +79,6 @@ uplinks:
 
 ### You Must know
 
-* Verdaccio does not use Basic Authentication since version `v2.3.0`. All tokens generated by verdaccio are based on JWT ([JSON Web Token](https://jwt.io/))
 * Uplinks must be registries compatible with the `npm` endpoints. Eg: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* and more.
 * Setting `cache` to false will help to save space in your hard drive. This will avoid store `tarballs` but [it will keep metadata in folders](https://github.com/verdaccio/verdaccio/issues/391).
 * Exceed with multiple uplinks might slow down the lookup of your packages due for each request a npm client does, verdaccio does 1 call for each uplink.
