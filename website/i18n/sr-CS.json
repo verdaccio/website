@@ -4,50 +4,211 @@
     "next": "Dalje",
     "previous": "Natrag",
     "tagline": "Verdaccio · A lightweight private npm proxy registry",
-    "ansible": "Ansible",
-    "authentification": "Autentifikacija",
-    "build": "Sagradi izvorni kod",
-    "chef": "Veliki Narodni Kuvar",
-    "ci": "Stalna Integracija",
-    "cli": "Command Line Tool",
-    "configuration": "Configuration File",
-    "contributing": "Doprinos razvoju Verdaccio-a",
-    "dev-plugins": "Razvijanje Plugina",
-    "docker": "Docker",
-    "iss-server": "Instaliranje na IIS server",
-    "installation": "Instalacija",
-    "kubernetes": "Kubernetes",
-    "logger": "Logger",
-    "logo": "Verdaccio Logotip",
-    "node-api": "Node API",
-    "notifications": "Obaveštenja",
-    "packages": "Package Access",
-    "plugins": "Plugini",
-    "protect-your-dependencies": "Zaštita paketa",
-    "puppet": "Puppet",
-    "source-code": "Izvorni kod",
-    "reverse-proxy": "Reverse Proxy Setup",
-    "server-configuration": "Server Configuration",
-    "ssl": "Podešavanje SSL Sertifikata",
-    "unit-testing": "Unit Testing",
-    "uplinks": "Uplinks",
-    "use-cases": "Use Cases",
-    "webui": "Web korisnički interfejs2",
-    "what-is-verdaccio": "Šta je Verdaccio?",
-    "windows": "Instalirajte kao Windows Service",
-    "Docs": "Docs",
-    "Blog": "Blog",
-    "Help": "Pomoć",
-    "GitHub": "GitHub",
-    "Team": "Tim",
-    "Donate": "Donirajte",
-    "Introduction": "Uvod",
-    "Configuration": "Konfigurisanje",
-    "Server": "Server",
-    "Plugins": "Plugini",
-    "DevOps": "DevOps",
-    "Development": "Development",
-    "Guides": "Uputstva"
+    "docs": {
+      "ansible": {
+        "title": "Ansible"
+      },
+      "authentification": {
+        "title": "Autentifikacija"
+      },
+      "build": {
+        "title": "Build the source code"
+      },
+      "chef": {
+        "title": "Chef Cookbook"
+      },
+      "ci": {
+        "title": "Continuous Integration"
+      },
+      "cli": {
+        "title": "Command Line Tool"
+      },
+      "configuration": {
+        "title": "Fajl za konfigurisanje"
+      },
+      "contributing": {
+        "title": "Doprinošenje Verdaccio-u"
+      },
+      "dev-plugins": {
+        "title": "Developing Plugins"
+      },
+      "docker": {
+        "title": "Docker"
+      },
+      "iss-server": {
+        "title": "Instaliranje na IIS server"
+      },
+      "installation": {
+        "title": "Instalacija"
+      },
+      "kubernetes": {
+        "title": "Kubernetes"
+      },
+      "logger": {
+        "title": "Logger"
+      },
+      "logo": {
+        "title": "Verdaccio Logotype"
+      },
+      "node-api": {
+        "title": "Node API"
+      },
+      "notifications": {
+        "title": "Notifikacije"
+      },
+      "packages": {
+        "title": "Package Access"
+      },
+      "plugins": {
+        "title": "Plugins"
+      },
+      "protect-your-dependencies": {
+        "title": "Protecting packages"
+      },
+      "puppet": {
+        "title": "Puppet"
+      },
+      "source-code": {
+        "title": "Source Code"
+      },
+      "reverse-proxy": {
+        "title": "Reverse Proxy Setup"
+      },
+      "server-configuration": {
+        "title": "Server Configuration"
+      },
+      "ssl": {
+        "title": "Podešavanje SSL Sertifikata"
+      },
+      "unit-testing": {
+        "title": "Unit Testing"
+      },
+      "uplinks": {
+        "title": "Uplinks"
+      },
+      "use-cases": {
+        "title": "Use Cases"
+      },
+      "webui": {
+        "title": "Web User Interface"
+      },
+      "what-is-verdaccio": {
+        "title": "Šta je Verdaccio?"
+      },
+      "windows": {
+        "title": "Instalirajte kao Windows Service"
+      },
+      "version-3.8.6-ansible": {
+        "title": "Ansible"
+      },
+      "version-3.8.6-authentification": {
+        "title": "Autentifikacija"
+      },
+      "version-3.8.6-build": {
+        "title": "Build the source code"
+      },
+      "version-3.8.6-chef": {
+        "title": "Chef Cookbook"
+      },
+      "version-3.8.6-ci": {
+        "title": "Continuous Integration"
+      },
+      "version-3.8.6-cli": {
+        "title": "Command Line Tool"
+      },
+      "version-3.8.6-configuration": {
+        "title": "Fajl za konfigurisanje"
+      },
+      "version-3.8.6-contributing": {
+        "title": "Doprinošenje Verdaccio-u"
+      },
+      "version-3.8.6-dev-plugins": {
+        "title": "Developing Plugins"
+      },
+      "version-3.8.6-docker": {
+        "title": "Docker"
+      },
+      "version-3.8.6-iss-server": {
+        "title": "Instaliranje na IIS server"
+      },
+      "version-3.8.6-installation": {
+        "title": "Instalacija"
+      },
+      "version-3.8.6-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-3.8.6-logger": {
+        "title": "Logger"
+      },
+      "version-3.8.6-logo": {
+        "title": "Verdaccio Logotype"
+      },
+      "version-3.8.6-node-api": {
+        "title": "Node API"
+      },
+      "version-3.8.6-notifications": {
+        "title": "Notifikacije"
+      },
+      "version-3.8.6-packages": {
+        "title": "Package Access"
+      },
+      "version-3.8.6-plugins": {
+        "title": "Plugins"
+      },
+      "version-3.8.6-protect-your-dependencies": {
+        "title": "Protecting packages"
+      },
+      "version-3.8.6-puppet": {
+        "title": "Puppet"
+      },
+      "version-3.8.6-source-code": {
+        "title": "Source Code"
+      },
+      "version-3.8.6-reverse-proxy": {
+        "title": "Reverse Proxy Setup"
+      },
+      "version-3.8.6-server-configuration": {
+        "title": "Server Configuration"
+      },
+      "version-3.8.6-ssl": {
+        "title": "Podešavanje SSL Sertifikata"
+      },
+      "version-3.8.6-unit-testing": {
+        "title": "Unit Testing"
+      },
+      "version-3.8.6-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-3.8.6-use-cases": {
+        "title": "Use Cases"
+      },
+      "version-3.8.6-webui": {
+        "title": "Web User Interface"
+      },
+      "version-3.8.6-what-is-verdaccio": {
+        "title": "Šta je Verdaccio?"
+      },
+      "version-3.8.6-windows": {
+        "title": "Instalirajte kao Windows Service"
+      }
+    },
+    "links": {
+      "Docs": "Docs",
+      "Blog": "Blog",
+      "Help": "Help",
+      "GitHub": "GitHub",
+      "Team": "Team",
+      "Donate": "Donate"
+    },
+    "categories": {
+      "Introduction": "Introduction",
+      "Configuration": "Konfigurisanje",
+      "Server": "Server",
+      "Plugins": "Plugins",
+      "DevOps": "DevOps",
+      "Development": "Development",
+      "Guides": "Guides"
+    }
   },
   "pages-strings": {
     "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Naučite više čitajući [dokumentaciju na sajtu.](/docs/en/installation.html)",
