@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-configuration
-title: Fichier de Configuration
+title: Fichier de configuration
 original_id: configuration
 ---
 Ce fichier est le pilier de verdaccio où vous pouvez modifier le comportement par défaut, activer les plugins et étendre les fonctionnalités.
