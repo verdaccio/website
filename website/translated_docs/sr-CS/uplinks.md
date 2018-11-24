@@ -4,7 +4,7 @@ title: "Uplinks"
 ---
 *uplink* je link koji sadrži external registry koji omogućava pristup do external packages.
 
-![Uplinks](/img/uplinks.png)
+![Uplinks](assets/uplinks.png)
 
 ### Kako se koristi
 
