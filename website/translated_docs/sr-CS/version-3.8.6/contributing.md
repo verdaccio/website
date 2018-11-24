@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-contributing
-title: Doprinos razvoju Verdaccio-a
+title: Doprinošenje Verdaccio-u
 original_id: doprinošenje
 ---
 First of all 👏👏 thanks for visiting this page, for us means you are willing contribute to `verdaccio` and we are happy for that. Plivanje u vodama nepoznatog koda nije lako, ali, mi smo tu da Vam pomognemo.
