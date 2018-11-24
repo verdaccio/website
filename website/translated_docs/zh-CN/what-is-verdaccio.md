@@ -13,13 +13,13 @@ Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry**
     $> verdaccio
     
 
-![registry](/svg/verdaccio_server.gif)
+![registry](svg/verdaccio_server.gif)
 
 ## 使用Verdaccio
 
 用任何节点包manager client使用 verdaccio是相当简单的。
 
-![registry](/svg/npm_install.gif)
+![registry](svg/npm_install.gif)
 
 您要么可以用定制registry全局设置所有项目
 
