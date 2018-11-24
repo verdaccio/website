@@ -190,6 +190,18 @@
       },
       "version-3.8.6-windows": {
         "title": "Als Windows-Dienst installieren"
+      },
+      "version-4.0.0-alpha.3-cli": {
+        "title": "Befehlszeilen-Tool"
+      },
+      "version-4.0.0-alpha.3-configuration": {
+        "title": "Konfigurationsdatei"
+      },
+      "version-4.0.0-alpha.3-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.0.0-alpha.3-what-is-verdaccio": {
+        "title": "What is Verdaccio?"
       }
     },
     "links": {
