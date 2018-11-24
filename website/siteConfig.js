@@ -61,7 +61,7 @@ const siteConfig = {
   organizationName: 'verdaccio',
   cname: 'hidden.verdaccio.org',
   noIndex: false,
-  baseUrl: '/' /* base url for your project */,
+  baseUrl: '' /* base url for your project */,
   projectName: 'website',
   headerLinks: [
     { doc: 'installation', label: 'Docs'},
