@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Docker · Verdaccio</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;div class=&quot;docker-count&quot;&gt;"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="Docker · Verdaccio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://verdaccio.github.io/website//website/index.html"/><meta property="og:description" content="&lt;div class=&quot;docker-count&quot;&gt;"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/website/img/favicon/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
-        document.addEventListener("DOMContentLoaded", function(){
+        document.addEventListener('DOMContentLoaded', function() {
           addBackToTop(
             {"zIndex":100}
           )
         });
-        </script><link rel="stylesheet" href="/website/css/prism.css"/><link rel="stylesheet" href="/website/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/website/zh-CN"><img class="logo" src="/website/img/logo/symbol/svg/verdaccio-tiny.svg" alt="Verdaccio"/><h2 class="headerTitleWithLogo">Verdaccio</h2></a><a href="/website/zh-CN/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/website/docs/zh-CN/next/installation" target="_self">文档</a></li><li class=""><a href="https://medium.com/verdaccio" target="_self">博客</a></li><li class=""><a href="/website/zh-CN/help" target="_self">帮助</a></li><li class=""><a href="https://github.com/verdaccio" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="/website/zh-CN/team" target="_self">团队</a></li><li class=""><a href="https://opencollective.com/verdaccio" target="_self">捐赠</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/website/img/language.svg"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/website/docs/en/next/docker">English</a></li><li><a href="/website/docs/es-ES/next/docker">Español</a></li><li><a href="/website/docs/fr-FR/next/docker">Français</a></li><li><a href="/website/docs/it-IT/next/docker">Italiano</a></li><li><a href="https://crowdin.com/project/verdaccio" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
+        </script><link rel="stylesheet" href="/website/css/prism.css"/><link rel="stylesheet" href="/website/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/website/zh-CN"><img class="logo" src="/website/img/logo/symbol/svg/verdaccio-tiny.svg" alt="Verdaccio"/><h2 class="headerTitleWithLogo">Verdaccio</h2></a><a href="/website/zh-CN/versions"><h3>next</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/website/docs/zh-CN/next/installation" target="_self">Docs</a></li><li class=""><a href="https://medium.com/verdaccio" target="_self">Blog</a></li><li class=""><a href="/website/zh-CN/help" target="_self">Help</a></li><li class=""><a href="https://github.com/verdaccio" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="/website/zh-CN/team" target="_self">Team</a></li><li class=""><a href="https://opencollective.com/verdaccio" target="_self">Donate</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/website/img/language.svg" alt="Languages icon"/>中文</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/website/docs/en/next/docker">English</a></li><li><a href="/website/docs/es-ES/next/docker">Español</a></li><li><a href="/website/docs/fr-FR/next/docker">Français</a></li><li><a href="/website/docs/it-IT/next/docker">Italiano</a></li><li><a href="https://crowdin.com/project/verdaccio" target="_blank" rel="noreferrer noopener">帮助翻译</a></li></ul></div></li><script>
         const languagesMenuItem = document.getElementById("languages-menu");
         const languagesDropDown = document.getElementById("languages-dropdown");
         languagesMenuItem.addEventListener("click", function(event) {
@@ -16,7 +16,7 @@
             languagesDropDown.className = "hide";
           }
         });
-      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>DevOps</span></h2></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">介绍</h3><ul><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/what-is-verdaccio">什么是 Verdaccio？</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/installation">安装</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/cli">命令行工具</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/logo">Verdaccio 标识</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">配置</h3><ul><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/configuration">配置文件</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/uplinks">Uplinks</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/packages">npm 包访问权限</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/authentification">认证</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/notifications">通知</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/logger">日志</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/webui">网页用户界面2</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">服务器</h3><ul><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/server-configuration">服务器配置</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/reverse-proxy">反向代理配置</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/ssl">设置 SSL 证书</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/windows">作为 Windows 服务安装</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/iss-server">在 IIS 上安装</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">插件</h3><ul><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/plugins">插件</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/dev-plugins">插件开发</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">DevOps</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/website/docs/zh-CN/next/docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/kubernetes">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/ansible">Ansible</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/puppet">Puppet</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/chef">Chef Cookbook</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/ci">持续集成</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">开发</h3><ul><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/build">编译源代码</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/contributing">参与贡献 Verdaccio</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/source-code">源代码</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/unit-testing">单元测试</a></li><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/node-api">Node API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">使用指南</h3><ul><li class="navListItem"><a class="navItem" href="/website/docs/zh-CN/next/protect-your-dependencies">保护 npm 包</a></li></ul></div></div></section></div><script>
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>DevOps</span></h2></div><div class="navGroups"></div></section></div><script>
             document.addEventListener('DOMContentLoaded', function() {
               createToggler('#navToggler', '#docsNav', 'docsSliderActive');
               createToggler('#tocToggler', 'body', 'tocActive');
@@ -32,6 +32,10 @@
                 var toggler = document.querySelector(togglerSelector);
                 var target = document.querySelector(targetSelector);
 
+                if (!toggler) {
+                  return;
+                }
+
                 toggler.onclick = function(event) {
                   event.preventDefault();
 
@@ -43,34 +47,34 @@
   ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 </div>
 <p>要下载(pull)最新的预先-创建的<a href="https://hub.docker.com/r/verdaccio/verdaccio/">docker镜像</a>：</p>
-<pre><code class="hljs css languages- bash">docker pull verdaccio/verdaccio
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio
 </code></pre>
 <p><img src="/svg/docker_verdaccio.gif" alt="Docker pull"></p>
 <h2><a class="anchor" aria-hidden="true" id="标记版本"></a><a href="#标记版本" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>标记版本</h2>
 <p>自版本<code>v2.x</code>开始，您可以通过<a href="https://hub.docker.com/r/verdaccio/verdaccio/tags/">标签</a>来下载(pull)docker镜像，具体操作如下:</p>
 <p>对于主版本：</p>
-<pre><code class="hljs css languages- bash">docker pull verdaccio/verdaccio:3
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:3
 </code></pre>
 <p>对于次版本：</p>
-<pre><code class="hljs css languages- bash">docker pull verdaccio/verdaccio:3.0
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:3.0
 </code></pre>
 <p>对于特定（补丁）版本：</p>
-<pre><code class="hljs css languages- bash">docker pull verdaccio/verdaccio:3.0.1
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:3.0.1
 </code></pre>
 <p>下一个主版本将使用 <code>beta</code>（主分支）版本。</p>
-<pre><code class="hljs css languages- bash">docker pull verdaccio/verdaccio:beta
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:beta
 </code></pre>
 <blockquote>
 <p>如果您对标签列表感兴趣，<a href="https://hub.docker.com/r/verdaccio/verdaccio/tags/"> 请访问 Docker 网站枢纽</a>。</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="用docker运行verdaccio"></a><a href="#用docker运行verdaccio" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>用Docker运行verdaccio</h2>
 <p>要运行docker 容器：</p>
-<pre><code class="hljs css languages- bash">docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+<pre><code class="hljs css language-bash">docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 </code></pre>
 <p>最后一个参数定义要使用的镜像。如果您还没有试的话，上面的代码将从dockerhub里下载(pull) 最新的预先创建的镜像。</p>
 <p>如果您已经用 <code>verdaccio</code>作为最后参数<a href="#build-your-own-docker-image">在本地创建一个镜像</a>。</p>
 <p>您可以用 <code>-v</code>来绑定安装 <code>conf</code>, <code>storage</code> 和<code>plugins</code>到主机文件系统中:</p>
-<pre><code class="hljs css languages- bash">V_PATH=/path/<span class="hljs-keyword">for</span>/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
+<pre><code class="hljs css language-bash">V_PATH=/path/<span class="hljs-keyword">for</span>/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
   -v <span class="hljs-variable">$V_PATH</span>/conf:/verdaccio/conf \
   -v <span class="hljs-variable">$V_PATH</span>/storage:/verdaccio/storage \
   -v <span class="hljs-variable">$V_PATH</span>/plugins:/verdaccio/plugins \
@@ -86,13 +90,13 @@
 <p>如果您希望在不同的端口获得verdaccio docker instance，比如 <code>docker run</code> 命令里的<code>5000</code>，请用 <code>-p 5000:4873</code>来取代<code>-p 4873:4873</code> 。</p>
 <p>从版本2.?.? 开始, 假如您需要指定<strong>docker 容器</strong>内的监听端口， 您可以通过提供额外的参数给<code>docker run</code>: <code>--env PORT=5000</code>来达成。这将更改docker容器显示的端口以及verdaccio监听的端口。</p>
 <p>当然您给出的<code>-p</code>参数数字必须吻合，因此，假设您希望它们全部都一样，这是您需要复制，黏贴和采用的代码：</p>
-<pre><code class="hljs css languages- bash">PORT=5000; docker run -it --rm --name verdaccio \
+<pre><code class="hljs css language-bash">PORT=5000; docker run -it --rm --name verdaccio \
   --env PORT -p <span class="hljs-variable">$PORT</span>:<span class="hljs-variable">$PORT</span>
   verdaccio/verdaccio
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="在docker中使用https"></a><a href="#在docker中使用https" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>在Docker中使用HTTPS</h3>
 <p>您可以配置 verdaccio 要监听的协议，类似于端口配置。 在 config.yaml里指定证书后，您必须用&quot;https&quot;覆盖<code>PROTOCOL</code> 环境变量中的默认值(&quot;http&quot;)。</p>
-<pre><code class="hljs css languages- bash">PROTOCOL=https; docker run -it --rm --name verdaccio \
+<pre><code class="hljs css language-bash">PROTOCOL=https; docker run -it --rm --name verdaccio \
   --env PROTOCOL -p 4873:4873
   verdaccio/verdaccio
 </code></pre>
@@ -101,7 +105,7 @@
 <li>获取<a href="https://github.com/docker/compose">docker-compose</a>的最新版本。</li>
 <li>创建并运行容器：</li>
 </ol>
-<pre><code class="hljs css languages- bash">$ docker-compose up --build
+<pre><code class="hljs css language-bash">$ docker-compose up --build
 </code></pre>
 <p>把<code>PORT=5000</code>作为以上命令的前缀来设置要使用（容器和主机二者）的端口。</p>
 <p>Docker将生成一个named volume（命名卷），它用于存储持久化应用程序数据。 您可以使用<code>docker inspect</code> 或者 <code>docker volume inspect</code> 来查看此volume（卷）的物理位置并编辑配置，比如：</p>
@@ -117,14 +121,14 @@
 ]
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="创建您自己的docker镜像"></a><a href="#创建您自己的docker镜像" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建您自己的Docker镜像</h2>
-<pre><code class="hljs css languages- bash">docker build -t verdaccio .
+<pre><code class="hljs css language-bash">docker build -t verdaccio .
 </code></pre>
 <p>还有一个创建docker image（镜像）的npm脚本，因此您还可以执行以下操作：</p>
-<pre><code class="hljs css languages- bash">npm run build:docker
+<pre><code class="hljs css language-bash">npm run build:docker
 </code></pre>
 <p>请注意：第一个镜像的创建要花费几分钟时间，因为它需要运行<code>npm install</code>，而且，当您任何时候更改任何没有列在<code>.dockerignore</code>里的文件，它也需要运行那么长的时间。</p>
 <p>如果您希望在rpi或兼容设备上使用docker镜像，也有现成的dockerfile。要创建 raspberry pi（树莓派）的docker镜像，请执行：</p>
-<pre><code class="hljs css languages- bash">npm run build:docker:rpi
+<pre><code class="hljs css language-bash">npm run build:docker:rpi
 </code></pre>
 <p>请注意，您需要在您的机器上安装 docker 来执行以上任何docker命令， docker 可执行程序应该在您的<code>$PATH</code>里。</p>
 <h2><a class="anchor" aria-hidden="true" id="docker示例"></a><a href="#docker示例" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker示例</h2>
@@ -143,7 +147,18 @@
 <li><a href="https://github.com/andru255/verdaccio-server">verdaccio-server</a></li>
 <li><a href="https://github.com/coldrye-docker/coldrye-debian-verdaccio">coldrye-debian-verdaccio</a> coldrye-debian-nodejs支持的verdaccio docker镜像。</li>
 </ul>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/website/docs/zh-CN/next/dev-plugins">← 插件开发</a><a class="docs-next button" href="/website/docs/zh-CN/next/kubernetes">Kubernetes →</a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/website/" class="nav-home"><img src="/website/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/website/docs/zh-CN/what-is-verdaccio.html">Getting Started</a><a href="/website/docs/zh-CN/docker.html">Docker</a><a href="/website/docs/zh-CN/configuration.html">Configuration</a><a href="/website/docs/zh-CN/logo">Logos</a></div><div><h5>Community</h5><a href="/website/zh-CN/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/website/docs/zh-CN/next/dev-plugins"><span class="arrow-prev">← </span><span>上一个</span></a><a class="docs-next button" href="/website/docs/zh-CN/next/kubernetes"><span>下一个</span><span class="arrow-next"> →</span></a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/website/" class="nav-home"><img src="/website/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/website/docs/zh-CN/what-is-verdaccio.html">Getting Started</a><a href="/website/docs/zh-CN/docker.html">Docker</a><a href="/website/docs/zh-CN/configuration.html">Configuration</a><a href="/website/docs/zh-CN/logo">Logos</a></div><div><h5>Community</h5><a href="/website/zh-CN/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
               var search = docsearch({
                 
                 apiKey: 'a8b4d117e513cd8d71d6a95e3d9d4a91',
