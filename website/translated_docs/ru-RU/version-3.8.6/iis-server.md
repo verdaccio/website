@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-iss-server
-title: Установка на сервере IIS
+title: Установка на IIS сервер
 original_id: iss-server
 ---
 Эта инструкция для Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) и [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
