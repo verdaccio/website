@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-iss-server
-title: 在 IIS 上安装
+title: IIS server上进行安装
 original_id: iss-server
 ---
 这些用法说明是为Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) 和[verdaccio 2.1.0](https://github.com/verdaccio/verdaccio)所写。
