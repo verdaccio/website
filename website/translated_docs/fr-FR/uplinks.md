@@ -48,7 +48,7 @@ uplinks:
     url: https://private-registry.domain.com/registry
     auth:
       type: bearer
-      token_env: true # defaults to `process.env['NPM_TOKEN']`   
+      token_env: true # defaults to `process.env['NPM_TOKEN']`
 ```
 
 ou par une variable environnementale spécifique:
