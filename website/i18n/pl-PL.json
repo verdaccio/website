@@ -4,50 +4,211 @@
     "next": "Następny",
     "previous": "Poprzedni",
     "tagline": "Verdaccio · A lightweight private npm proxy registry",
-    "ansible": "Ansible",
-    "authentification": "Uwierzytelnianie",
-    "build": "Stwórz kod źródłowy",
-    "chef": "Chef Cookbook",
-    "ci": "Ciągła integracja",
-    "cli": "Narzędzie wiersza poleceń",
-    "configuration": "Plik konfiguracyjny",
-    "contributing": "Contributing Verdaccio",
-    "dev-plugins": "Tworzenie wtyczek",
-    "docker": "Docker",
-    "iss-server": "Installing on IIS server",
-    "installation": "Instalacja",
-    "kubernetes": "Kubernetes",
-    "logger": "Logger",
-    "logo": "Logotyp Verdaccio",
-    "node-api": "Node API",
-    "notifications": "Powiadomienia",
-    "packages": "Package Access",
-    "plugins": "Wtyczki",
-    "protect-your-dependencies": "Protecting packages",
-    "puppet": "Puppet",
-    "source-code": "Kod źródłowy",
-    "reverse-proxy": "Reverse Proxy Setup",
-    "server-configuration": "Konfiguracja serwera",
-    "ssl": "Set up the SSL Certificates",
-    "unit-testing": "Unit Testing",
-    "uplinks": "Uplinks",
-    "use-cases": "Use Cases",
-    "webui": "Web User Interface2",
-    "what-is-verdaccio": "Co to jest Verdaccio?",
-    "windows": "Instalacja jako Usługa systemu Windows",
-    "Docs": "Docs",
-    "Blog": "Blog",
-    "Help": "Pomoc",
-    "GitHub": "GitHub",
-    "Team": "Team",
-    "Donate": "Donate",
-    "Introduction": "Introduction",
-    "Configuration": "Konfiguracja",
-    "Server": "Serwer",
-    "Plugins": "Wtyczki",
-    "DevOps": "DevOps",
-    "Development": "Development",
-    "Guides": "Poradniki"
+    "docs": {
+      "ansible": {
+        "title": "Ansible"
+      },
+      "authentification": {
+        "title": "Uwierzytelnianie"
+      },
+      "build": {
+        "title": "Stwórz kod źródłowy"
+      },
+      "chef": {
+        "title": "Chef Cookbook"
+      },
+      "ci": {
+        "title": "Ciągła integracja"
+      },
+      "cli": {
+        "title": "Narzędzie wiersza poleceń"
+      },
+      "configuration": {
+        "title": "Plik konfiguracyjny"
+      },
+      "contributing": {
+        "title": "Współtworzenie Verdaccio"
+      },
+      "dev-plugins": {
+        "title": "Tworzenie wtyczek"
+      },
+      "docker": {
+        "title": "Docker"
+      },
+      "iss-server": {
+        "title": "Installing on IIS server"
+      },
+      "installation": {
+        "title": "Instalacja"
+      },
+      "kubernetes": {
+        "title": "Kubernetes"
+      },
+      "logger": {
+        "title": "Rejestrator"
+      },
+      "logo": {
+        "title": "Logotyp Verdaccio"
+      },
+      "node-api": {
+        "title": "Node API"
+      },
+      "notifications": {
+        "title": "Powiadomienia"
+      },
+      "packages": {
+        "title": "Dostęp do Pakietu"
+      },
+      "plugins": {
+        "title": "Wtyczki"
+      },
+      "protect-your-dependencies": {
+        "title": "Protecting packages"
+      },
+      "puppet": {
+        "title": "Puppet"
+      },
+      "source-code": {
+        "title": "Kod źródłowy"
+      },
+      "reverse-proxy": {
+        "title": "Ustawienie Odwrotnego Proxy"
+      },
+      "server-configuration": {
+        "title": "Konfiguracja serwera"
+      },
+      "ssl": {
+        "title": "Set up the SSL Certificates"
+      },
+      "unit-testing": {
+        "title": "Unit Testing"
+      },
+      "uplinks": {
+        "title": "Uplinks"
+      },
+      "use-cases": {
+        "title": "Use Cases"
+      },
+      "webui": {
+        "title": "Web User Interface"
+      },
+      "what-is-verdaccio": {
+        "title": "Co to jest Verdaccio?"
+      },
+      "windows": {
+        "title": "Instalacja jako Usługa systemu Windows"
+      },
+      "version-3.8.6-ansible": {
+        "title": "Ansible"
+      },
+      "version-3.8.6-authentification": {
+        "title": "Uwierzytelnianie"
+      },
+      "version-3.8.6-build": {
+        "title": "Stwórz kod źródłowy"
+      },
+      "version-3.8.6-chef": {
+        "title": "Chef Cookbook"
+      },
+      "version-3.8.6-ci": {
+        "title": "Ciągła integracja"
+      },
+      "version-3.8.6-cli": {
+        "title": "Narzędzie wiersza poleceń"
+      },
+      "version-3.8.6-configuration": {
+        "title": "Plik konfiguracyjny"
+      },
+      "version-3.8.6-contributing": {
+        "title": "Współtworzenie Verdaccio"
+      },
+      "version-3.8.6-dev-plugins": {
+        "title": "Tworzenie wtyczek"
+      },
+      "version-3.8.6-docker": {
+        "title": "Docker"
+      },
+      "version-3.8.6-iss-server": {
+        "title": "Installing on IIS server"
+      },
+      "version-3.8.6-installation": {
+        "title": "Instalacja"
+      },
+      "version-3.8.6-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-3.8.6-logger": {
+        "title": "Rejestrator"
+      },
+      "version-3.8.6-logo": {
+        "title": "Logotyp Verdaccio"
+      },
+      "version-3.8.6-node-api": {
+        "title": "Node API"
+      },
+      "version-3.8.6-notifications": {
+        "title": "Powiadomienia"
+      },
+      "version-3.8.6-packages": {
+        "title": "Dostęp do Pakietu"
+      },
+      "version-3.8.6-plugins": {
+        "title": "Wtyczki"
+      },
+      "version-3.8.6-protect-your-dependencies": {
+        "title": "Protecting packages"
+      },
+      "version-3.8.6-puppet": {
+        "title": "Puppet"
+      },
+      "version-3.8.6-source-code": {
+        "title": "Kod źródłowy"
+      },
+      "version-3.8.6-reverse-proxy": {
+        "title": "Ustawienie Odwrotnego Proxy"
+      },
+      "version-3.8.6-server-configuration": {
+        "title": "Konfiguracja serwera"
+      },
+      "version-3.8.6-ssl": {
+        "title": "Set up the SSL Certificates"
+      },
+      "version-3.8.6-unit-testing": {
+        "title": "Unit Testing"
+      },
+      "version-3.8.6-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-3.8.6-use-cases": {
+        "title": "Use Cases"
+      },
+      "version-3.8.6-webui": {
+        "title": "Web User Interface"
+      },
+      "version-3.8.6-what-is-verdaccio": {
+        "title": "Co to jest Verdaccio?"
+      },
+      "version-3.8.6-windows": {
+        "title": "Instalacja jako Usługa systemu Windows"
+      }
+    },
+    "links": {
+      "Docs": "Docs",
+      "Blog": "Blog",
+      "Help": "Help",
+      "GitHub": "GitHub",
+      "Team": "Team",
+      "Donate": "Donate"
+    },
+    "categories": {
+      "Introduction": "Introduction",
+      "Configuration": "Konfiguracja",
+      "Server": "Server",
+      "Plugins": "Wtyczki",
+      "DevOps": "DevOps",
+      "Development": "Development",
+      "Guides": "Guides"
+    }
   },
   "pages-strings": {
     "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Learn more using the [documentation on this site.](/docs/en/installation.html)",
