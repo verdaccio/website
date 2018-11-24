@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-packages
-title: Acceso a paquetes
+title: Acceso a Paquetes
 original_id: packages
 ---
 Es una serie de restricciones que permiten o limitan el acceso al almacenamiento local basándose en criterios específicos.
