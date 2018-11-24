@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-configuration
-title: Configuration File
+title: Tệp cấu hình
 original_id: cấu hình
 ---
 Tệp này là một phần quan trọng của Verdaccio, đây là nơi bạn có thể sửa đổi hành vi mặc định, bật plugin và mở rộng các tính năng.
@@ -50,7 +50,7 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Authentification
+### Yêu cầu xác thực
 
 Cài đặt yêu cầu xác thực được thực hiện ở đây, sự xác thực mặc đình này chạy trên tệp tin` htpasswd ` và được tích hợp sẵn. Bạn có thể sửa đổi chế độ này bằng [ plugins ](plugins.md). Để biết thêm chi tiết về nội dung này, vui lòng đọc [ trang xác thực](auth.md).
 
