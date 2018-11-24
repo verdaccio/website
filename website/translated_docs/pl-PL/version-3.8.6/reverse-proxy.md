@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-reverse-proxy
-title: Reverse Proxy Setup
+title: Ustawienie Odwrotnego Proxy
 original_id: odwrotne proxy
 ---
 ## Apache
