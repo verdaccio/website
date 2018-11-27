@@ -81,7 +81,7 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
            expiresIn: 7d # 7 days by default
          verify:
             someProp: [value]
-
+    
 
 > We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
 
