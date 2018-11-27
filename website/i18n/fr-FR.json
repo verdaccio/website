@@ -5,14 +5,26 @@
     "previous": "Précédent",
     "tagline": "Verdaccio · Un journal proxy npm léger et privé",
     "docs": {
+      "amazon": {
+        "title": "Amazon Web Services"
+      },
       "ansible": {
         "title": "Ansible"
       },
       "authentification": {
         "title": "Authentification"
       },
+      "azure": {
+        "title": "Windows Azure"
+      },
+      "best": {
+        "title": "Best Practices"
+      },
       "build": {
         "title": "Générer le code source"
+      },
+      "caching": {
+        "title": "Caching strategies"
       },
       "chef": {
         "title": "Chef Cookbook"
@@ -35,6 +47,12 @@
       "docker": {
         "title": "Docker"
       },
+      "e2e": {
+        "title": "End to end testing"
+      },
+      "google-cloud": {
+        "title": "Google Cloud"
+      },
       "iss-server": {
         "title": "Installation sur le serveur IIS"
       },
@@ -43,6 +61,9 @@
       },
       "kubernetes": {
         "title": "Kubernetes"
+      },
+      "linking-registries": {
+        "title": "Linking Regiestries"
       },
       "logger": {
         "title": "Enregistreur"
@@ -73,6 +94,9 @@
       },
       "reverse-proxy": {
         "title": "Configuration du proxy inverse"
+      },
+      "scopes": {
+        "title": "Understanding Scopes"
       },
       "server-configuration": {
         "title": "Configuration du serveur"
