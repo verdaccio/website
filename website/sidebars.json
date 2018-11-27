@@ -4,7 +4,16 @@
       "what-is-verdaccio",
       "installation",
       "cli",
-      "logo"
+      "logo",
+      {
+        "type": "subcategory",
+        "label": "Uses Cases",
+        "ids": [
+          "e2e",
+          "caching",
+          "linking-registries"
+        ]
+      }
     ],
     "Configuration": [
       "configuration",
@@ -20,7 +29,16 @@
       "reverse-proxy",
       "ssl",
       "windows",
-      "iss-server"
+      "iss-server",
+      {
+        "type": "subcategory",
+        "label": "Cloud",
+        "ids": [
+          "azure",
+          "amazon",
+          "google-cloud"
+        ]
+      }
     ],
     "Plugins": [
       "plugins",
@@ -41,6 +59,10 @@
       "unit-testing",
       "node-api"
     ],
-    "Guides": ["protect-your-dependencies"]
+    "Guides": [
+      "best",
+      "protect-your-dependencies",
+      "scopes"
+    ]
   }
 }
