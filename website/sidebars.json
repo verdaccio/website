@@ -4,6 +4,7 @@
       "what-is-verdaccio",
       "installation",
       "cli",
+      "who-is-using",
       "logo",
       {
         "type": "subcategory",
@@ -47,10 +48,16 @@
     "DevOps": [
       "docker",
       "kubernetes",
-      "ansible",
-      "puppet",
-      "chef",
-      "ci"
+      "ci",
+      {
+        "type": "subcategory",
+        "label": "Tools",
+        "ids": [
+          "ansible",
+          "puppet",
+          "chef"
+        ]
+      }
     ],
     "Development": [
       "build",
