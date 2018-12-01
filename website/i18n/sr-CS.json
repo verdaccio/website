@@ -18,13 +18,13 @@
         "title": "Windows Azure"
       },
       "best": {
-        "title": "Best Practices"
+        "title": "Najbolje Prakse"
       },
       "build": {
         "title": "Build the source code"
       },
       "caching": {
-        "title": "Caching strategies"
+        "title": "Strategije za keširanje"
       },
       "chef": {
         "title": "Chef Cookbook"
@@ -48,7 +48,7 @@
         "title": "Docker"
       },
       "e2e": {
-        "title": "End to end testing"
+        "title": "Testiranje od A do Š (end to end)"
       },
       "google-cloud": {
         "title": "Google Cloud"
@@ -96,7 +96,7 @@
         "title": "Reverse Proxy Setup"
       },
       "scopes": {
-        "title": "Understanding Scopes"
+        "title": "Dublje razumevanje Scopes-a"
       },
       "server-configuration": {
         "title": "Server Configuration"
