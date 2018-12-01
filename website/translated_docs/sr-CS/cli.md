@@ -25,4 +25,4 @@ Koristimo **$XDG_CONFIG_HOME** environment variablu kao podrazumevanu kako bismo
 
 ## Podrazumevana lokacija baze podataka
 
-The default database file location is in the storage location. Starting with version 4.0.0, the database file name will be **.verdaccio-db.json** for a new installation of Verdaccio. When upgrading an existing Verdaccio server, the file name will remain **.sinopia-db.json**.
+Po pravilu, lokacija fajla baze podataka je podrazumevana lokacija za čuvanje (storage). Počevši od verzije 4.0.0, ime baze podataka će biti **.verdaccio-db.json** za novu instalaciju Verdaccio-a. Prilikom nadogradnje postojećeg Verdaccio servera, ime fajla će ostati **.sinopia-db.json**.
