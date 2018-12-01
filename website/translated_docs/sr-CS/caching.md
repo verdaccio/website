@@ -1,5 +1,5 @@
 ---
-id: caching
-title: "Caching strategies"
+id: keširanje
+title: "Strategije za keširanje"
 ---
 dsadsa
