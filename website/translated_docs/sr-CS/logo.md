@@ -6,7 +6,7 @@ Logotip je dizajnirao **[Breno Rodrigues](https://github.com/rodriguesbreno)** k
 
 > Svaki logo je licenciran pod [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
 
-Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
+Posebno se zahvaljujemo *[@Lisapressmar](https://github.com/Lisapressmar)* za njen doprinos u vidu slika raznih formata i veličina.
 
 ## Simboli
 
