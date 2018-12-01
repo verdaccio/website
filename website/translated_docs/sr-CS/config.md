@@ -150,7 +150,7 @@ max_body_size: 10mb
 
 ### Listen Port
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+`verdaccio` prema "fabričkim podešavanjima" radi na portu `4873`. Izmena porta se može obaviti preko [cli](cli.md) ili direktno u fajlu za konfigurisanje pri čemu su sledeće opcije validne:
 
 ```yaml
 listen:
@@ -164,7 +164,7 @@ listen:
 
 ### HTTPS
 
-To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
+Kako biste omogućili `https` u `verdaccio` dovoljno je da podesite `listen` flag sa protokolom *https://*. Više detalja možete naći na [ssl stranici](ssl.md).
 
 ```yaml
 https:
@@ -175,11 +175,11 @@ https:
 
 ### Proxy
 
-Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
+Proxies su HTTP serveri posebne namene dizajnirani da prenose podatke od udaljenih servera do lokalnih klijenata.
 
 #### http_proxy i https_proxy
 
-If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
+Ako imate proxy u svojoj mreži, možete podesiti `X-Forwarded-For` header koristeći sledeće unose za svojstva (properties).
 
 ```yaml
 http_proxy: http://something.local/
@@ -188,7 +188,7 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-This variable should contain a comma-separated list of domain extensions proxy should not be used for.
+Ova varijabla bi trebalo da sadrži comma-separated (polja odvojena zapetom) listu ekstenzija domena za koju proxy ne bi trebalo da se koristi.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
@@ -196,7 +196,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Notifikacije
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Dozvoljavanje notifikacija za alate napravljene od strane trećih lica je relativno jednostavno uz pomoć web hooks tehnike. Za više informacija o ovoj temi, pročitajte [notifications stranicu](notifications.md).
 
 ```yaml
 notify:
@@ -206,15 +206,15 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-> For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
+> Za detaljnije opcije podešavanja, molimo Vas da [pogledate source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
 
-### Audit
+### Audit (revizija)
 
-<small>Since: <code>verdaccio@3.0.0</code></small>
+<small>Počevši od verzije: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`npm audit` je nova komanda koja je uvedena u [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio, a koja uključuje ugrađeni middleware plugin sa kojim je moguće izvršiti datu komandu.
 
-> If you have a new installation it comes by default, otherwise you need to add the following props to your config file
+> Ako imate novu instalaciju, sve je već uključeno u okviru nje. U suprotnom, treba da dodate navedene dodatke (props) u Vaš config fajl
 
 ```yaml
 middlewares:
