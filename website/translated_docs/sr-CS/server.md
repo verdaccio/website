@@ -12,33 +12,33 @@ Najpre kreirajte verdaccio korisnika:
 $ sudo adduser --system --gecos 'Verdaccio NPM mirror' --group --home /var/lib/verdaccio verdaccio
 ```
 
-Or, in case you do not have `adduser`:
+U slučaju da nemate postojećeg korisnika potrebno je da ga dodate, `adduser`:
 
 ```bash
 $ sudo useradd --system --comment 'Verdaccio NPM mirror' --create-home --home-dir /var/lib/verdaccio --shell /sbin/nologin verdaccio
 ```
 
-You create a shell as the verdaccio user using the following command:
+Zatim kreirate shell kao verdaccio korisnik, putem sledeće komande:
 
 ```bash
 $ sudo su -s /bin/bash verdaccio
 $ cd
 ```
 
-The `cd` command sends you to the home directory of the verdaccio user. Make sure you run verdaccio at least once to generate the config file. Edit it according to your needs.
+Komanda `cd` šalje Vas do home direktorijuma verdaccio korisnika. Postarajte se da pokrenete verdaccio barem jednom kako biste generisali config fajl. Modifikujte ga prema svojim potrebama.
 
 ## Listening na svim adresama
 
-If you want to listen to every external address set the listen directive in the config to:
+Ako želite da osluškujete (listen to) svaku eksternu adresu, podesite listen direktivu na:
 
 ```yaml
-# you can specify listen address (or simply a port)
+# možete podesiti listen address (ili port)
 listen: 0.0.0.0:4873
 ```
 
-If you are running verdaccio in a Amazon EC2 Instance, [you will need set the listen in change your config file](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) as is described above.
+Ako imate pokrenut verdaccio u Amazon EC2 instanci, [moraćete da podesite listen u change your config file](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) kao što je prikazano u navedenom primeru.
 
-> Configure Apache or nginx? Please check out the [Reverse Proxy Setup](reverse-proxy.md)
+> Konfigurisanje Apache-a ili nginx? Molimo Vas da pogledate [Reverse Proxy Setup](reverse-proxy.md)
 
 ## Kako da verdaccio radi neprekidno
 
