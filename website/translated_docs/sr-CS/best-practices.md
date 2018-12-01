@@ -1,5 +1,5 @@
 ---
-id: best
-title: "Best Practices"
+id: najbolje
+title: "Najbolje Prakse"
 ---
 dsadsa
