@@ -213,7 +213,7 @@ notify:
 
 <small>Počevši od verzije: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` je nova komanda dostupna od verzije [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`npm audit` je nova komanda dostupna od verzije [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio uključuje i ugrađeni middleware plugin (pomoćni software) kako bi izvršio datu komandu.
 
 > Ako imate novu instalaciju, sve je već uključeno u okviru nje. U suprotnom, treba da dodate navedene dodatke (props) u Vaš config fajl
 
