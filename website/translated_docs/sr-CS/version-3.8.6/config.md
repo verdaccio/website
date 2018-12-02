@@ -36,7 +36,7 @@ Sekcija u nastavku daje objašnjenja za svako svojstvo i opciju.
 
 ### Memorija za skladištenje
 
-Is the location of the default storage. **Verdaccio is by default based on local file system**.
+Storage je lokacija u koju se smeštaju podaci. **Po pravilu, Verdaccio je baziran na local file system **.
 
 ```yaml
 storage: ./storage
@@ -61,13 +61,13 @@ auth:
     max_users: 1000
 ```
 
-### Security
+### Sigurnost
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Počevši od verzije: <code>verdaccio@4.0.0</code> paragraf <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+Sigurnosni blok Vam omogućava da prilagodite potpis za token (token signature). Kako biste [JWT (json web token) učinili aktivnim ](https://jwt.io/) novi potpis koji trebate za dodavanje bloka `jwt` u `api` sekciju, `web` po pravilu koristi `jwt`.
 
-The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+Konfiguracija je podeljena u dve sekcije, `api` i `web`. Kako biste koristili JWT u `api`, morate ga definisati, u suprotnom će koristiti nasleđeni potpis za token (legacy token signature) (`aes192`). Za JWT možete prilagoditi [potpis](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) i token [verifikaciju](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) upisivanjem parametara po svojoj želji.
 
     security:
       api:
@@ -84,9 +84,9 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
             someProp: [value]
     
 
-> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+> Jako Vam preporučujemo da se prebacite na JWT pošto je legacy signature (`aes192`) zastareo i neće ga biti u novijim verzijama.
 
-### Web UI
+### Web UI (korisnički interfejs)
 
 This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
 
@@ -100,7 +100,7 @@ web:
 
 ### Uplinks
 
-Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
+Uplinks pružaju mogućnost sistemu da hvata (fetch) pakete iz udaljenih registrija ako ti paketi nisu lokalno dostupni. Za više informacija o ovoj sekciji pročitajte na [uplinks stranici](uplinks.md).
 
 ```yaml
 uplinks:
@@ -108,7 +108,7 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Paketi
 
 Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
 
@@ -122,16 +122,16 @@ packages:
 
 ## Napredna podešavanja
 
-### Offline Publish
+### Publikovanje offline
 
-By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
+Prema zadatim podešavanjima, `verdaccio` ne dozvoljava publikovanje onda kada je klijent offline. Takav način rada (behavior), može da se promeni ako se parametri iz primera podese na *true*.
 
 ```yaml
 publish:
   allow_offline: false
 ```
 
-<small>Since: <code>verdaccio@2.3.6</code> due <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
+<small>Počevši od verzije: <code>verdaccio@2.3.6</code> član (due) <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
 
 ### URL Prefix
 
@@ -139,11 +139,11 @@ publish:
 url_prefix: https://dev.company.local/verdaccio/
 ```
 
-Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
+Počevši od verzije: `verdaccio@2.3.6` član [#197](https://github.com/verdaccio/verdaccio/pull/197)
 
-### Max Body Size
+### Maksimalna veličina body sekcije dokumenta
 
-By default the maximum body size for a JSON document is `10mb`, if you run in errors as `"request entity too large"` you may increase this value.
+Prema zadatim podešavanjima, maksimalna veličina za body JSON dokumenta je `10mb`. Ako dobijete grešku `"request entity too large"` mogli biste da povećate ovu vrednost.
 
 ```yaml
 max_body_size: 10mb
@@ -165,7 +165,7 @@ listen:
 
 ### HTTPS
 
-To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
+Kako biste omogućili `https` u `verdaccio` dovoljno je da podesite `listen` flag sa protokolom *https://*. Više detalja možete naći na [ssl stranici](ssl.md).
 
 ```yaml
 https:
@@ -176,11 +176,11 @@ https:
 
 ### Proxy
 
-Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
+Proxies su HTTP serveri posebne namene dizajnirani da prenose podatke od udaljenih servera do lokalnih klijenata.
 
 #### http_proxy i https_proxy
 
-If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
+Ako imate proxy u svojoj mreži, možete podesiti `X-Forwarded-For` header koristeći sledeće unose za svojstva (properties).
 
 ```yaml
 http_proxy: http://something.local/
@@ -189,7 +189,7 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-This variable should contain a comma-separated list of domain extensions proxy should not be used for.
+Ova varijabla bi trebalo da sadrži comma-separated (polja odvojena zapetom) listu ekstenzija domena za koju proxy ne bi trebalo da se koristi.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
@@ -207,15 +207,15 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-> For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
+> Za detaljnije opcije podešavanja, molimo Vas da [pogledate source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
 
-### Audit
+### Audit (revizija)
 
-<small>Since: <code>verdaccio@3.0.0</code></small>
+<small>Počevši od verzije: <code>verdaccio@3.0.0</code></small>
 
 `npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
 
-> If you have a new installation it comes by default, otherwise you need to add the following props to your config file
+> Ako imate novu instalaciju, sve je već uključeno u okviru nje. U suprotnom, treba da dodate navedene dodatke (props) u Vaš config fajl
 
 ```yaml
 middlewares:
