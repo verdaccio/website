@@ -61,7 +61,7 @@ Možete pogledati dokumentaciju za više informacija o tome kako da koristite pa
 
 ## Preživljavanje resetovanja servera
 
-Možete zajedno koristiti `crontab` i `forever` kako biste pokrenuli verdaccio postle ponovnog pokretanja servera (reboot). Kada ste prijavljeni kao verdaccio korisnik, uradite sledeće:
+Možete zajedno koristiti `crontab` i `forever` kako biste pokrenuli verdaccio posle ponovnog pokretanja servera (reboot). Kada ste prijavljeni kao verdaccio korisnik, uradite sledeće:
 
 ```bash
 $ crontab -e
