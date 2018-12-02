@@ -17,11 +17,11 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 ## Vị trí đường dẫn tệp cấu hình mặc định
 
-Để tìm thư mục chính, trước hết chúng ta chọn **$XDG_DATA_HOME**, sau đó tìm [biến môi trường APPDATA](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/) trong Window.
+To locate the home directory, we rely on **$XDG_CONFIG_HOME** as a first choice and Windows environment we look for [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
 ## Vị trí lưu trữ mặc định
 
-Chúng tôi sử dụng biến môi trường **$XDG_DATA_HOME **làm mặc định để tìm bộ nhớ theo mặc định, <a href = "https://askubuntu.com/questions/538526/is-home-local-share-the-default- Value-for-xdg-data-home-in-ubuntu-14-04 "> cũng giống như </a> $HOME/.local/share. Vị trí này sẽ không liên quan đến bạn nếu bạn đang sử dụng bộ nhớ tùy chỉnh.
+We use **$XDG_CONFIG_HOME** environment variable as default to locate the storage by default which [should be the same](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) as $HOME/.local/share. Vị trí này sẽ không liên quan đến bạn nếu bạn đang sử dụng bộ nhớ tùy chỉnh.
 
 ## Default database file location
 

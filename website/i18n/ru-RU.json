@@ -5,14 +5,26 @@
     "previous": "Предыдущая",
     "tagline": "Verdaccio · Лёгкий приватный прокси для npm реестра",
     "docs": {
+      "amazon": {
+        "title": "Amazon Web Services"
+      },
       "ansible": {
         "title": "Ansible"
       },
       "authentification": {
         "title": "Аутентификация"
       },
+      "azure": {
+        "title": "Windows Azure"
+      },
+      "best": {
+        "title": "Best Practices"
+      },
       "build": {
         "title": "Сборка исходного кода"
+      },
+      "caching": {
+        "title": "Caching strategies"
       },
       "chef": {
         "title": "Поваренная книга"
@@ -35,6 +47,12 @@
       "docker": {
         "title": "Docker"
       },
+      "e2e": {
+        "title": "End to end testing"
+      },
+      "google-cloud": {
+        "title": "Google Cloud"
+      },
       "iss-server": {
         "title": "Установка на IIS сервер"
       },
@@ -43,6 +61,9 @@
       },
       "kubernetes": {
         "title": "Kubernetes"
+      },
+      "linking-registries": {
+        "title": "Linking Regiestries"
       },
       "logger": {
         "title": "Логи"
@@ -73,6 +94,9 @@
       },
       "reverse-proxy": {
         "title": "Настройка обратного прокси-сервера"
+      },
+      "scopes": {
+        "title": "Understanding Scopes"
       },
       "server-configuration": {
         "title": "Конфигурация сервера"

@@ -5,14 +5,26 @@
     "previous": "Natrag",
     "tagline": "Verdaccio · A lightweight private npm proxy registry",
     "docs": {
+      "amazon": {
+        "title": "Amazon Web Services"
+      },
       "ansible": {
         "title": "Ansible"
       },
       "authentification": {
         "title": "Autentifikacija"
       },
+      "azure": {
+        "title": "Windows Azure"
+      },
+      "best": {
+        "title": "Najbolje Prakse"
+      },
       "build": {
         "title": "Build the source code"
+      },
+      "caching": {
+        "title": "Strategije za keširanje"
       },
       "chef": {
         "title": "Chef Cookbook"
@@ -35,6 +47,12 @@
       "docker": {
         "title": "Docker"
       },
+      "e2e": {
+        "title": "Testiranje od A do Š (end to end)"
+      },
+      "google-cloud": {
+        "title": "Google Cloud"
+      },
       "iss-server": {
         "title": "Instaliranje na IIS server"
       },
@@ -43,6 +61,9 @@
       },
       "kubernetes": {
         "title": "Kubernetes"
+      },
+      "linking-registries": {
+        "title": "Linking Regiestries"
       },
       "logger": {
         "title": "Logger"
@@ -73,6 +94,9 @@
       },
       "reverse-proxy": {
         "title": "Reverse Proxy Setup"
+      },
+      "scopes": {
+        "title": "Dublje razumevanje Scopes-a"
       },
       "server-configuration": {
         "title": "Server Configuration"
@@ -205,21 +229,21 @@
       }
     },
     "links": {
-      "Docs": "Docs",
+      "Docs": "Dokumenta",
       "Blog": "Blog",
-      "Help": "Help",
+      "Help": "Pomoć",
       "GitHub": "GitHub",
-      "Team": "Team",
-      "Donate": "Donate"
+      "Team": "Tim",
+      "Donate": "Donirajte"
     },
     "categories": {
-      "Introduction": "Introduction",
+      "Introduction": "Uvod",
       "Configuration": "Konfigurisanje",
       "Server": "Server",
       "Plugins": "Plugins",
       "DevOps": "DevOps",
       "Development": "Development",
-      "Guides": "Guides"
+      "Guides": "Uputstva"
     }
   },
   "pages-strings": {
