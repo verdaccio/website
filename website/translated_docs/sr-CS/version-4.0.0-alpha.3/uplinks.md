@@ -24,7 +24,7 @@ uplinks:
 
 ### Konfigurisanje
 
-You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
+Možete definisati mutiple uplinks, pri čemu svaki od njih mora imati jedinstveno ime (ključ, key). Mogu imati dva svojstva:
 
 | Svojstvo     | Tip     | Neophodno | Primer                                 | Podrška | Opis                                                                                                                               | Podrazumevano     |
 | ------------ | ------- | --------- | -------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
@@ -41,7 +41,7 @@ You can define mutiple uplinks and each of them must have an unique name (key). 
 
 #### Auth property
 
-The `auth` property allows you to use an auth token with an uplink. Using the default environment variable:
+Svojstvo `auth` Vam omogućava da koristite auth token sa uplink. Korišćenjem podrazumevane varijable okruženja (default environment variable):
 
 ```yaml
 uplinks:
