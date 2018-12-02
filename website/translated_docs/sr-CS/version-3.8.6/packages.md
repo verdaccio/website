@@ -94,7 +94,7 @@ Definisanje multiple access groups je relativno jednostavno, samo je potrebno da
 
 #### Blokiranje pristupa setu paketa
 
-If you want to block the acccess/publish to a specific group of packages. Just do not define `access` and `publish`.
+Ako želite da blokirate pristup/publikovanje nekoj grupi pakete. Najjednostavnije je da ne definišete `access` i `publish`.
 
 ```yaml
 packages:
