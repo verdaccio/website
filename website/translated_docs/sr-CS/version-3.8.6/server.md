@@ -51,7 +51,7 @@ Prvo instalirajte `forever` globalno:
 $ sudo npm install -g forever
 ```
 
-Make sure you've run verdaccio at least once to generate the config file and write down the created admin user. You can then use the following command to start verdaccio:
+Trebalo bi da makar jednom pokrenete verdaccio kako biste generisali config fajl i onda upišete kreiranog admin korisnika. Možete koristiti navedenu komandu kako biste pokrenuli verdaccio:
 
 ```bash
 $ forever start `which verdaccio`
@@ -61,18 +61,18 @@ Možete pogledati dokumentaciju za više informacija o tome kako da koristite pa
 
 ## Preživljavanje resetovanja servera
 
-You can use `crontab` and `forever` together to start verdaccio after a server reboot. When you're logged in as the verdaccio user do the following:
+Možete zajedno koristiti `crontab` i `forever` kako biste pokrenuli verdaccio postle ponovnog pokretanja servera (reboot). Kada ste prijavljeni kao verdaccio korisnik, uradite sledeće:
 
 ```bash
 $ crontab -e
 ```
 
-This might ask you to choose an editor. Pick your favorite and proceed. Add the following entry to the file:
+Možda ćete dobiti opciju da izaberete editor. Odaberite svoj omiljeni i nastavite. Dodajte navedeni unos u fajl:
 
     @reboot /usr/bin/forever start /usr/lib/node_modules/verdaccio/bin/verdaccio
     
 
-The locations may vary depending on your server setup. If you want to know where your files are you can use the 'which' command:
+Lokacije se mogu razlikovati u zavisnosti of Vaših podešavanja servera (setup). Ako želite da saznate gde se nalaze Vaši fajlovi, možete koristiti komandu 'which':
 
 ```bash
 $ which forever
@@ -81,7 +81,7 @@ $ which verdaccio
 
 ## Korišćenje systemd
 
-Instead of `forever` you can use `systemd` for starting verdaccio and keeping it running. Verdaccio installation has systemd unit, you only need to copy it:
+Umesto `forever` možete koristiti `systemd` za pokretanje verdaccio-a i njegov dalji rad. Verdaccio instalacija ima systemd jedinice, potrebno je samo da ih kopirate:
 
 ```bash
 $ sudo cp /usr/lib/node_modules/verdaccio/systemd/verdaccio.service /lib/systemd/system/ && sudo systemctl daemon-reload
