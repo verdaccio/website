@@ -61,7 +61,7 @@ auth:
 
 ### Middleware Plugin Configuration
 
-Ovde ćete naći primet za podešavanje middleware plugin-a. Svi middleware plugin-i moraju biti definisani u **middlewares** namespace.
+Ovde ćete naći primer za podešavanje middleware plugin-a. Svi middleware plugin-i moraju biti definisani u **middlewares** namespace.
 
 ```yaml
 middlewares:
