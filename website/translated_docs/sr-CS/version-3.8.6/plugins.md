@@ -15,7 +15,7 @@ Verdaccio je plugabilna aplikacija (težak život prevodioca...). Može se proš
 $> npm install --global verdaccio-activedirectory
 ```
 
-`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
+`verdaccio` je sinopia fork i poseduje backward compability sa pluginima koji su kompatibilni sa `sinopia@1.4.0`. U tom slučaju, instalacija je potpuno ista.
 
     $> npm install --global sinopia-memory
     
@@ -61,7 +61,7 @@ auth:
 
 ### Middleware Plugin Configuration
 
-This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
+Ovde ćete naći primet za podešavanje middleware plugin-a. Svi middleware plugin-i moraju biti definisani u **middlewares** namespace.
 
 ```yaml
 middlewares:
@@ -73,7 +73,7 @@ middlewares:
 
 ### Store Plugin Configuration
 
-This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
+Ovo je primer kako podesiti storage plugin. Svi middleware plugin-i moraju biti definisani u **store** namespace.
 
 ```yaml
 store:
@@ -141,4 +141,4 @@ store:
 
 ## Upozorenja (Caveats)
 
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
+> Na žalost, svi plugini nisu temeljno testirani i može se dogoditi da neki od njih uopšte ne rade. Molimo Vas da se javite vlasnicima plugin-a ako naiđete na neki problem.
