@@ -17,11 +17,11 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 ## Podrazumevana lokacija config file-a
 
-Kako bismo locirali home directory, oslanjamo se na **$XDG_CONFIG_HOME**. Kao prvi izbor za Windows okruženje, tražimo [APPDATA environment variablu](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
+Kako bismo locirali home directory, oslanjamo se na **$XDG_DATA_HOME** kao prvi izbor u Windows okruženju gde tragamo za [APPDATA environment variablom](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
 ## Podrazumevana lokacija za čuvanje
 
-Koristimo **$XDG_CONFIG_HOME** environment variablu kao podrazumevanu kako bismo locirali prostor za čuvanje podataka koji bi po pravilu [trebalo da bude isti](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) kao $HOME/.local/share. Ako koristite prilagođeno mesto za čuvanje podataka (custom storage,) onda je lokacija irelevantna.
+Koristimo **$XDG_DATA_HOME** environment variablu kao podrazumevano podešavanje kako bismo locirali podrazumevano mesto za čuvanje koje bi trebalo [da bude isto](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) kao $HOME/.local/share. Ako koristite prilagođeno mesto za čuvanje podataka (custom storage,) onda je lokacija irelevantna.
 
 ## Podrazumevana lokacija baze podataka
 
