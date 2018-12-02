@@ -16,7 +16,7 @@ Navedene instrukcije su pisane za Windows Server 2012, IIS 8, [Node.js 0.12.3](h
     
 
 - Postarajte se da imate dobro podešeno pravilo za prihvatanje TCP saobraćaja na port, u Windows Firewall
-- Thats it! Now you can navigate to the host and port that you specified
+- To je to! Sada možete da navigate do host-a i porta koje ste odredili
 
 Želeo sam da `verdaccio` sajt bude podrazumevani sajt u IIS i zato sam uradio sledeće:
 
