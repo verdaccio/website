@@ -44,7 +44,7 @@ storage: ./storage
 
 ### Plugins
 
-Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
+Ovo je lokacija direktorijuma plugina. Ova opcija je jako korisna za Docker/Kubernetes deployment.
 
 ```yaml
 plugins: ./plugins
@@ -88,7 +88,7 @@ Konfiguracija je podeljena u dve sekcije, `api` i `web`. Kako biste koristili JW
 
 ### Web UI (korisnički interfejs)
 
-This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
+Ovo svojstvo Vam omogućava da izmenite izgled i funkcionalnost Web korisničkog Interfejsa. Za više informacija o ovoj sekciji pročitajte [web ui stranu](web.md).
 
 ```yaml
 web:
@@ -110,7 +110,7 @@ uplinks:
 
 ### Paketi
 
-Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
+Pod Paketima (Packages) imate kontrolu nad time kako će se pristupati paketima. Za više informacija o ovoj sekciji, pročitajte na [packages stranici](packages.md).
 
 ```yaml
 packages:
@@ -151,7 +151,7 @@ max_body_size: 10mb
 
 ### Listen Port
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+`verdaccio` se po pravilu pokreće na port-u `4873`. Promena porta se može obaviti preko [cli](cli.md) ili u fajlu za konfigurisanje, a opcije iz navedenog primera su validne.
 
 ```yaml
 listen:
@@ -197,7 +197,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Notifikacije
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Davanje dozvola alatima drugih proizvođača (third-party) je relativno jednostavno putem tehnike web hooks. Za više informacija o ovoj sekciji, pročitajte na [notifications stranici](notifications.md).
 
 ```yaml
 notify:
@@ -213,7 +213,7 @@ notify:
 
 <small>Počevši od verzije: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`npm audit` je nova komanda dostupna od verzije [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
 
 > Ako imate novu instalaciju, sve je već uključeno u okviru nje. U suprotnom, treba da dodate navedene dodatke (props) u Vaš config fajl
 
