@@ -229,21 +229,21 @@
       }
     },
     "links": {
-      "Docs": "Docs",
+      "Docs": "Dokumenta",
       "Blog": "Blog",
-      "Help": "Help",
+      "Help": "Pomoć",
       "GitHub": "GitHub",
-      "Team": "Team",
-      "Donate": "Donate"
+      "Team": "Tim",
+      "Donate": "Donirajte"
     },
     "categories": {
-      "Introduction": "Introduction",
+      "Introduction": "Uvod",
       "Configuration": "Konfigurisanje",
       "Server": "Server",
       "Plugins": "Plugins",
       "DevOps": "DevOps",
       "Development": "Development",
-      "Guides": "Guides"
+      "Guides": "Uputstva"
     }
   },
   "pages-strings": {
