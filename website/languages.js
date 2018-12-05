@@ -152,7 +152,7 @@ const languages = [
     tag: 'sr-SP',
   },
   {
-    enabled: false,
+    enabled: true,
     name: 'Serbian',
     tag: 'sr-CS',
   },
