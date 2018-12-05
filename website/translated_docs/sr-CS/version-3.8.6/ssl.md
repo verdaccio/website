@@ -25,7 +25,7 @@ Jednom kada ažurite listen i probate ponovo da pokrenete verdaccio, pitaće Vas
 
 https: key: /Users/user/.config/verdaccio/verdaccio-key.pem cert: /Users/user/.config/verdaccio/verdaccio-cert.pem ca: /Users/user/.config/verdaccio/verdaccio-csr.pem
 
-    <br />Alternatively, if you have a certificate as `server.pfx` format, you can add the following configuration section. The passphrase is optional and only needed, if your certificate is encrypted.
+    <br />Druga opcija, ako imate sertifikat u`server.pfx` formata, možete dodati navedenu sekciju za konfiguraciju. Lozinka (passphrase) je opciona, i neophodna samo ako je Vaš sertifikat kodiran (encrypted).
     
     
 

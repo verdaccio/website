@@ -3,7 +3,7 @@ id: version-3.8.6-logger
 title: Logger
 original_id: logger
 ---
-As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
+Kao i svaka web aplikacija, verdaccio poseduje ugrađeni i prilagodivi logger. Možete definisati više tipova izlaznih podataka.
 
 ```yaml
 logs:
