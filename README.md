@@ -9,12 +9,23 @@ The original website remains on hold until this website refactoring is finished
 
 Once the final version is shipped, we will update GitHub domain configuration.
 
+# Documentation
 
-# Requirements
+Documentation files are hosted under `/docs` folder.
 
-- Use `yarn`
+# Translation
 
-> go to `website` that include the docusaurus website
+Verdaccio is powered by [crowdin](https://crowdin.com/project/verdaccio) platform that provides Verdaccio [a free open source license](https://crowdin.com/page/open-source-project-setup-request).
+
+If you are willing to translate and language is not available, feel free to requested either with a ticket or sending to [https://crowdin.com/profile/juanpicado](https://crowdin.com/profile/juanpicado)
+
+# Development
+
+Verdaccio website is based o [Docusaurus](https://docusaurus.io/).
+
+# Running website locally
+
+Go to `cd website` that include the docusaurus source code
 
 # Scripts
 
