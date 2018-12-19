@@ -3,7 +3,7 @@ id: version-3.8.6-contributing
 title: Doprinošenje Verdaccio-u
 original_id: doprinošenje
 ---
-First of all 👏👏 thanks for visiting this page, for us means you are willing contribute to `verdaccio` and we are happy for that. Plivanje u vodama nepoznatog koda nije lako, ali, mi smo tu da Vam pomognemo.
+Za početak 👏👏 hvala Vam što ste posetili ovu stranicu. A poseta znači da ste voljni da doprinesete projektu `verdaccio`, što nas čini jako srećnim. Plivanje u vodama nepoznatog koda nije lako, ali, mi smo tu da Vam pomognemo.
 
 ## Kanali za komunikaciju
 
@@ -27,7 +27,7 @@ Imamo dugačku [listu plugina](plugins.md) spremnu da se koristi i istovremeno u
 
 ### Voleo bih kada bih mogao da radim u User Interface-u
 
-Recently we have moved to modern techonologies as `React` and `element-react`. We are looking forward to see new ideas how to improve the UI.
+Nedavno smo prešli na moderne tehnologije poput `React` i `element-react`. Radujemo se novim idejama koje će pomoći u unapređivanju korisničkog interfejsa.
 
 ### Više mi prija da unapređujem Stack
 
@@ -76,6 +76,6 @@ Naučićete sve što je potrebno za rad jer [smo spremili uputstvo namenjeno upr
 
 Jednom kada isprobate sve moguće skripte i naučite kako da ih koristite, spremni ste da načinite sledeći korak, [**run Unit Test**](test.md).
 
-## Full list of contributors. We want to see your face here !
+## Kompletna lista saradnika. Želeli bismo da i Vas vidimo u ovom društvu!
 
 <a href="graphs/contributors"><img src="https://opencollective.com/verdaccio/contributors.svg?width=890&button=false" /></a>

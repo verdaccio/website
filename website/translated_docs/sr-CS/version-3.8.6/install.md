@@ -3,7 +3,7 @@ id: version-3.8.6-installation
 title: Instalacija
 original_id: instalacija
 ---
-Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
+Verdaccio je web aplikacija podesna za mnoge platforme. Da biste ga instalirali, potrebno je da ispunite neke preduslove.
 
 #### Preduslovi
 

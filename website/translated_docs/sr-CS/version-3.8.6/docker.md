@@ -53,7 +53,7 @@ Kako biste pokrenuli docker container:
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
+Poslednji argument definiše koji će image biti korišćen. Linija navedena u primeru povlači poslednji prebuilt image sa dockerhub-a, ako to već niste uradili.
 
 Ako imate [build an image locally](#build-your-own-docker-image) koristite `verdaccio` kao poslednji argument.
 
@@ -139,7 +139,7 @@ npm run build:docker
 
 Napomena: Prvi build može potrajati nekoliko minuta pošto mora da pokrene `npm install`, i ponovo će trajati dugo ako promenite bilo koji fajl koji nije izlistan u `.dockerignore`.
 
-If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
+Ako želite da koristite docker image na rpi ili kompatibilnom uređaju, postoji dostupni dockerfile. Kako biste napravili (build) docker image za Raspberry Pi, izvršite:
 
 ```bash
 npm run build:docker:rpi

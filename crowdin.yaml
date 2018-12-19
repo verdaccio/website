@@ -38,6 +38,7 @@ files:
         'ru': 'ru-RU'
         'sk': 'sk-SK'
         'sr': 'sr'
+        'sr-CS': 'sr-CS',
         'sv-SE': 'sv-SE'
         'tr': 'tr'
         'uk': 'uk'

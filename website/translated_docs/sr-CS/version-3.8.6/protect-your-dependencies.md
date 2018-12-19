@@ -20,14 +20,14 @@ Sa navedenom konfiguracijom dozvoljavamo grupama **admin** i **teamA** da *publi
 
 ### Primer iz prakse: teamD pokušava da pristupi nekoj dependency
 
-So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
+Znači, ako sam prijavljen kao **teamD**. Ne bi trebalo da imam pristup svim dependencies koje se podudaraju sa `my-company-*` paternom.
 
 ```bash
 ➜ npm whoami
 teamD
 ```
 
-I won't have access to such dependencies and also won't be visible via web for user **teamD**. If I try to access the following will happen.
+Neću imati pristup do takvih dependencies i neću biti vidljiv preko weba za korisnika iz **teamD**. Ako pokušam da pristupim, desiće se sledeće.
 
 ```bash
 ➜ npm install my-company-core

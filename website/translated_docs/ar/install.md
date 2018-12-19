@@ -6,7 +6,7 @@ Verdaccio is a multiplatform web application. To install it, you need a few prer
 
 #### Prerequisites
 
-1. Node higher than
+1. Node higher than 
     - For version `verdaccio@2.x` Node `v4.6.1` is the minimum supported version.
     - For version `verdaccio@latest` Node `6.12.0` is the minimum supported version.
 2. npm `>=3.x` or `yarn`
@@ -28,7 +28,7 @@ or using `yarn`
 yarn global add verdaccio
 ```
 
-![install verdaccio](assets/install_verdaccio.gif)
+![install verdaccio](/svg/install_verdaccio.gif)
 
 ## Basic Usage
 
