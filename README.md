@@ -19,22 +19,6 @@ Verdaccio is powered by [crowdin](https://crowdin.com/project/verdaccio) platfor
 
 If you are willing to translate and language is not available, feel free to requested either with a ticket or sending to [https://crowdin.com/profile/juanpicado](https://crowdin.com/profile/juanpicado)
 
-# Development
+# Contributing
 
-Verdaccio website is based o [Docusaurus](https://docusaurus.io/).
-
-# Running website locally
-
-Go to `cd website` that include the docusaurus source code
-
-# Scripts
-
-Start the dev server (browser will open)
-```
-yarn run start
-```
-
-Build the website on `build/` folder
-```
-yarn run build
-```
+`CONTRIBUTING.md`. Read the contribution guidelines before start.
