@@ -2,8 +2,11 @@
 id: docker
 title: Docker
 ---
+
 <div class="docker-count">
-  ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
+
+![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
+
 </div>
 
 Para descargar la última [imagen de Docker](https://hub.docker.com/r/verdaccio/verdaccio/):
