@@ -1,5 +1,10 @@
 # Verdaccio website
 
+[![backers](https://opencollective.com/verdaccio/tiers/backer/badge.svg?label=Backer&color=brightgreen)](https://opencollective.com/verdaccio)
+[![discord](https://img.shields.io/discord/388674437219745793.svg)](http://chat.verdaccio.org/)
+![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
+
+
 https://www.verdaccio.org
 
 🚸🚸 Work in progress, the current website is being deployed on [https://hidden.verdaccio.org/](https://hidden.verdaccio.org/)
