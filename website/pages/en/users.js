@@ -38,7 +38,7 @@ class Users extends React.Component {
               </translate>
             </p>
             <a
-              href="https://github.com/verdaccio/verdaccio/edit/master/website/siteConfig.js"
+              href="https://github.com/verdaccio/website/edit/master/website/siteConfig.js"
               className="button">
               <translate>
                 Add your company
