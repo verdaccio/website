@@ -53,10 +53,10 @@ We use [Handlebars](https://handlebarsjs.com/) as main template engine.
 
 ```
 # iterate all versions
-{{ name }}{{#each versions}} v{{version}}{{/each}}`"}
+{{ name }}{{#each versions}} v{{version}}{{/each}}
 
 # publisher and `dist-tag` package published
-{{ publisher.name }} has published {{publishedPackage}}"}
+{{ publisher.name }} has published {{ publishedPackage }}
 ```
 
 ### Properties
@@ -150,10 +150,10 @@ notify:
 
 ### Package Published
 
-You can acces to the package is being published with the keyword `{{publishedPackage}}` as follows.
+You can access to the package is being published with the keyword `{{publishedPackage}}` as follows.
 
 ```
-{{ publisher.name }} has published {{publishedPackage}}"}
+{{ publisher.name }} has published {{ publishedPackage }}
 ```
 
 ## Configuration
