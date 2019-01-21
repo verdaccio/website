@@ -3,27 +3,27 @@ id: version-4.0.0-alpha.3-cli
 title: Command Line Tool
 original_id: cli
 ---
-The verdaccio CLI is your go start the application.
+Verdaccio је Ваша почетна станица за покретање апликације.
 
-## Commands
+## Команде
 
 ```bash
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Command            | Default                        | Пример         | Опис                   |
-| ------------------ | ------------------------------ | -------------- | ---------------------- |
-| --listen \ **-l** | 4873                           | -p 7000        | http port              |
-| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | the configuration file |
+| Команда            | Подразумевано                  | Пример         | Опис                  |
+| ------------------ | ------------------------------ | -------------- | --------------------- |
+| --listen \ **-l** | 4873                           | -p 7000        | http порт             |
+| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | фајл за конфигурисање |
 
-## Default config file location
+## Подразумевана локација config file-a
 
-To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and Windows environment we look for [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
+Како бисмо лоцирали home directory, ослањамо се на **$XDG_DATA_HOME** као први избор у Windows окружењу где трагамо за [APPDATA environment variablom](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
-## Default storage location
+## Подразумевана локација за чување
 
-We use **$XDG_DATA_HOME** environment variable as default to locate the storage by default which [should be the same](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) as $HOME/.local/share. If you are using a custom storage, this location is irrelevant.
+Користимо **$XDG_DATA_HOME** environment варијаблу као подразумевано подешавање како бисмо лоцирали подразумевано место за чување које би требало [да буде исто](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) као $HOME/.local/share. Ако користите прилагођено место за чување података (custom storage), онда је локација ирелевантна.
 
-## Default database file location
+## Подразумевана локација базе података
 
-The default database file location is in the storage location. Starting with version 4.0.0, the database file name will be **.verdaccio-db.json** for a new installation of Verdaccio. When upgrading an existing Verdaccio server, the file name will remain **.sinopia-db.json**.
+По правилу, локација фајла базе података је подразумевана локација за чување (storage). Почевши од верзије 4.0.0, име базе података ће бити **.verdaccio-db.json** за нову инсталацију Verdaccio-a. Приликом надоградње постојећег Verdaccio сервера, име фајла ће остати **.sinopia-db.json**.
