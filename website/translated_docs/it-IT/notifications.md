@@ -48,10 +48,10 @@ Usiamo [Handlebars](https://handlebarsjs.com/) come template engine principale.
 ### Esempi di formato
 
     # iterate all versions
-    {{ name }}{{#each versions}} v{{version}}{{/each}}`"}
+    {{ name }}{{#each versions}} v{{version}}{{/each}}
     
     # publisher and `dist-tag` package published
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ### Proprietà
@@ -141,9 +141,9 @@ Un esempio:
 
 ### Pacchetto pubblicato
 
-Si può accedere al pacchetto che è stato pubblicato con la keyword `{{publishedPackage}}` come segue.
+You can access to the package is being published with the keyword `{{publishedPackage}}` as follows.
 
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ## Configurazione
