@@ -3,9 +3,9 @@ id: version-3.8.6-authentification
 title: Autenticazione
 original_id: autenticazione
 ---
-The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
+L'autenticazione è legata all'auth [plugin](plugins.md) che si sta utilizzando. Anche le restrizioni di pacchetto vengono gestite dal [Package Access](packages.md).
 
-The client authentification is handled by `npm` client itself. Once you login to the application:
+L'autenticazione del client viene gestita dal client del `npm` stesso. Una volta che si effettua il login all'applicazione:
 
 ```bash
 npm adduser --registry http://localhost:4873
@@ -43,8 +43,8 @@ Al fine di semplificare l'installazione, `verdaccio` utilizza un plugin basato s
 auth:
   htpasswd:
     file: ./htpasswd
-    # Maximum amount of users allowed to register, defaults to "+inf".
-    # You can set this to -1 to disable registration.
+    # Numero massimo di utenti ammessi alla registrazione, il valore predefinito è "+inf".
+    # Si può impostare su -1 per disabilitare la registrazione.
     #max_users: 1000
 ```
 
