@@ -2,13 +2,13 @@
 id: packages
 title: "Package Access"
 ---
-It's a series of contraints that allow or restrict access to the local storage based in specific criteria.
+Ово је серија контејнера која дозвољава или забрањује приступ до local storage на основу специфично дефинисаних критеријума.
 
-The security constraints remain on the shoulders of the plugin being used, by default `verdaccio` uses the [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). If you use a different plugin the behaviour might be different. The default plugin does not handle `allow_access` and `allow_publish` by itself, it uses an internal fallback in case the plugin is not ready for it.
+Сигурност пада на плећа plugina који се користи. По правилу, `verdaccio` користи [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Ако користите различит plugin, начин извршавања (behaviour) би такође могао бити промењен. Подразумевани plugin не руководи (handle) са `allow_access` и `allow_publish` самостално, већ користи интерни fallback у случају да не постоји спремни plugin.
 
-For more information about permissions visit [the authentification section in the wiki](auth.md).
+За више информација о дозволама, посетите [authentification секцију на wiki](auth.md).
 
-### Usage
+### Коришћење
 
 ```yalm
 packages:
@@ -31,7 +31,7 @@ packages:
     proxy: uplink2
 ```
 
-if none is specified, the default one remains
+ако ништа није прецизирано, остаје како је подразумевано
 
 ```yaml
 packages:
@@ -40,20 +40,20 @@ packages:
     publish: $authenticated
 ```
 
-The list of valid groups according the default plugins are
+Листа валидних група у складу са подразумеваним плугинима
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
 ```
 
-All users recieve all those set of permissions independently of is anonymous or not plus the groups provided by the plugin, in case of `htpasswd` return the username as a group. For instance, if you are logged as `npmUser` the list of groups will be.
+Сви корисници примају све наведено како би подесили овлашћења независно од тога јесу ли анонимна или више група није омогућено од стране плугина, а у случају да је тако `htpasswd` враћа username као групу. На пример, ако сте пријављени као `npmUser` листа група ће изгледати овако.
 
 ```js
 // groups without '$' are going to be deprecated eventually
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-If you want to protect specific set packages under your group, you need to do something like this. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recomend using a prefix for your packages, in that way it will be easier to protect them.
+Ако желите да заштитите специфични сет пакета у оквиру групе, потребно је да урадите овако нешто. Користимо `Regex` који покрива све `npmuser-` пакете са префиксима. We recommend using a prefix for your packages, in that way it will be easier to protect them.
 
 ```yaml
 packages:
@@ -62,7 +62,7 @@ packages:
     publish: npmuser
 ```
 
-Restart `verdaccio` and in your console try to install `npmuser-core`.
+Рестартујте `verdaccio` и у својој конзоли пробајте да инсталирате `npmuser-core`.
 
 ```bash
 $ npm install npmuser-core
@@ -74,11 +74,11 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 ```
 
-You can change the existing behaviour using a different plugin authentication. `verdaccio` just checks whether the user that tried to access or publish a specific package belongs to the right group.
+Можете променити постојећи behaviour коришћењем различите plugin аутентификације. `verdaccio` проверава да ли корисник који је покушао да приступи неком пакету или публикује пакет припада исправној групи корисника.
 
-#### Set multiple groups
+#### Подешавање мултиплих група
 
-Defining multiple access groups is fairly easy, just define them with a white space between them.
+Дефинисање multiple access groups је релативно једноставно, само је потребно да их дефинишете са размаком између.
 
 ```yaml
   'company-*':
@@ -91,23 +91,22 @@ Defining multiple access groups is fairly easy, just define them with a white sp
     proxy: server1
 ```
 
-#### Blocking access to set of packages
+#### Блокирање приступа сету пакета
 
-If you want to block the acccess/publish to a specific group of packages. Just do not define `access` and `publish`.
+Ако желите да блокирате приступ/публиковање специфичној групи пакета, само изоставите да дефинишете `access` и `publish`.
 
 ```yaml
 packages:
-  'old-*':
   '**':
     access: $all
     publish: $authenticated
 ```
 
-#### Blocking proxying a set of specific packages
+#### Блокирање proxying-а за сет специфичних пакета
 
-You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
+Можда ћете пожелети да блокирате један или више пакета од ухваћених (fetching) из удаљеног репозиторијума, али да истовремено дозволите другима да приступе различитим *uplinks-има*.
 
-Let's see the following example:
+Хајде да погледамо пример:
 
 ```yaml
 packages:
@@ -126,24 +125,24 @@ packages:
     proxy: npmjs
 ```
 
-Let's describe what we want with the above example:
+Хајде да видимо шта смо постигли у наведеном примеру:
 
-* I want to host my own `jquery` dependency but I need to avoid proxying it.
-* I want all dependencies that match with `my-company-*` but I need to avoid proxying them.
-* I want all dependencies that are in the `my-local-scope` scope but I need to avoid proxying them.
-* I want proxying for all the rest of the dependencies.
+* Желим да хостујем свој `jquery` dependency али истовремено желим да избегнем њено proxying-овање.
+* Желим све dependencies које се поклапају са `my-company-*` али уједно имам потребу да избегнем њихово proxying-овање.
+* Желим све dependencies које су у `my-local-scope` али уједно желим да избегнем њихово proxying-овање.
+* Желим да proxying-ујем све остале dependencies.
 
-Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
+**Будите свесни тога да је редослед дефинисања Ваших пакета важан, и још нешто, увек користите double wilcard**. Јер ако не будете тога свесни, `verdaccio` ће то учинити уместо Вас, што ће утицати Ваше dependencies.
 
-### Configuration
+### Конфигурисање
 
-You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
+Можете дефинисати мултипле `packages` при чему сваки од њих мора имати јединствени `Regex`. Синтакса је базирана на [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Својство | Тип     | Неопходно | Пример         | Подршка | Опис                                        |
-| -------- | ------- | --------- | -------------- | ------- | ------------------------------------------- |
-| access   | string  | Не        | $all           | all     | define groups allowed to access the package |
-| publish  | string  | Не        | $authenticated | all     | define groups allowed to publish            |
-| proxy    | string  | Не        | npmjs          | all     | limit look ups for specific uplink          |
-| storage  | boolean | Не        | [true,false]   | all     | TODO                                        |
+| Својство | Тип     | Неопходно | Пример         | Подршка | Опис                                             |
+| -------- | ------- | --------- | -------------- | ------- | ------------------------------------------------ |
+| access   | string  | Не        | $all           | all     | дефинише групе којима је дозвољен приступ пакету |
+| publish  | string  | Не        | $authenticated | all     | дефинише групе којима је дозвољено да публикују  |
+| proxy    | string  | Не        | npmjs          | all     | лимитира look ups за специфични uplink           |
+| storage  | boolean | Не        | [true,false]   | all     | TODO                                             |
 
-> We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
+> Наглашавамо да не препоручујемо да и даље користите **allow_access**/**allow_publish** и **proxy_access**, јер ће наведене ускоро бити уклоњене. Молимо Вас да уместо тога користите скраћене верзије (**access**/**publish**/**proxy**).
