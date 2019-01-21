@@ -9,7 +9,7 @@ Verdaccio 可以以编程方式调用。node API在版本`verdaccio@3.0.0-alpha.
 #### 编程
 
 ```js
- mport startServer from 'verdaccio';   
+ import startServer from 'verdaccio';   
 
  startServer(configJsonFormat, 6000, store, '1.0.0', 'verdaccio',
     (webServer, addrs, pkgName, pkgVersion) => {

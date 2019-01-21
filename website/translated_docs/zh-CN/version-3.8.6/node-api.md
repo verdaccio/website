@@ -10,7 +10,7 @@ Verdaccio can be invoqued programmatically. The node API was introduced after ve
 #### 编程
 
 ```js
- mport startServer from 'verdaccio';   
+ import startServer from 'verdaccio';   
 
  startServer(configJsonFormat, 6000, store, '1.0.0', 'verdaccio',
     (webServer, addrs, pkgName, pkgVersion) => {

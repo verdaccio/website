@@ -9,7 +9,7 @@ Verdaccio peut être invoqué par programme. Le node API a été introduit à pa
 #### Par programme
 
 ```js
- mport startServer from 'verdaccio';   
+ import startServer from 'verdaccio';   
 
  startServer(configJsonFormat, 6000, store, '1.0.0', 'verdaccio',
     (webServer, addrs, pkgName, pkgVersion) => {
