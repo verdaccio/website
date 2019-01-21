@@ -53,7 +53,7 @@ packages:
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-Ако желите да заштитите специфични сет пакета у оквиру групе, потребно је да урадите овако нешто. Користимо `Regex` који покрива све `npmuser-` пакете са префиксима. We recommend using a prefix for your packages, in that way it will be easier to protect them.
+Ако желите да заштитите специфични сет пакета у оквиру групе, потребно је да урадите овако нешто. Користимо `Regex` који покрива све `npmuser-` пакете са префиксима. Препоручујемо коришћење префикса за Ваше пакете, јер ћете их на тај начин лакше заштитити.
 
 ```yaml
 packages:
