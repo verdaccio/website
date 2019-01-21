@@ -53,7 +53,7 @@ Tous les utilisateurs reçoivent tous ces groupes d'autorisations, qu'ils soient
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-Si vous souhaitez protéger un ensemble spécifique de paquets au sein de votre groupe, vous devez procéder de la même manière. Utilisons un `Regex` qui couvre tous les paquets avec le préfixe `npmuser -`. Nous vous recommandons d'utiliser un préfixe pour vos paquets afin de faciliter leur protection.
+Si vous souhaitez protéger un ensemble spécifique de paquets au sein de votre groupe, vous devez procéder de la même manière. Utilisons un `Regex` qui couvre tous les paquets avec le préfixe `npmuser -`. We recommend using a prefix for your packages, in that way it will be easier to protect them.
 
 ```yaml
 packages:

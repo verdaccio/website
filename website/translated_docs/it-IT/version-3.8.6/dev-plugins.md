@@ -91,7 +91,7 @@ auth:
     file: ./htpasswd
 ```
 
-Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
+Dove `thpasswd` è il suffisso del nome del plugin. ad esempio: `verdaccio-htpasswd` e il resto del corpo sarebbero l parametri di configurazione del plugin.
 
 ## Plugin Middleware
 
@@ -105,7 +105,7 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 ### register_middlewares
 
-The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
+Il metodo fornisce l'accesso completo all'autenticazione e all'archiviazione tramite `auth` e `storage`. `app` è l'applicazione espressa che consente di aggiungere nuovi endpoint.
 
 > Un bell'esempio di plugin middleware è il [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) ed il [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
@@ -125,7 +125,7 @@ Verdaccio di default utilizza un'estensione di archiviazione del file system [lo
 
 ### API
 
-The storage API is a bit more complex, you will need to create a class that return a `IPluginStorage` implementation. Please see details bellow.
+L'API di archiviazione è un po' più complessa, è necessario creare una classe che restituisca un'implementazione `IPluginStorage`. Si prega di leggere i dettagli qui sotto.
 
 ```flow
 class LocalDatabase<IPluginStorage>{
@@ -186,4 +186,4 @@ Il seguente è un elenco di estensioni che utilizzano l'API di archiviazione e c
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)
 * [verdaccio-s3-storage](https://github.com/Remitly/verdaccio-s3-storage/tree/s3)
 
-> Are you willing to contribute with new Storage Plugins? [Click here.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
+> Sei disponibile a contribuire a nuovi Plugin di Archiviazione? [Clicca qui.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)

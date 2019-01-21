@@ -3,9 +3,9 @@ id: version-3.8.6-authentification
 title: Authentification
 original_id: authentification
 ---
-The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
+Аутентификација је везана за auth [plugin](plugins.md) који користите. Рестрикције које се односе на пакет се могу подесити (handle) преко [Package Access](packages.md).
 
-The client authentification is handled by `npm` client itself. Once you login to the application:
+Аутентификација клијента се обавља (handle) преко самог `npm` клијента. Након што се пријавите у апликацију:
 
 ```bash
 npm adduser --registry http://localhost:4873
@@ -37,14 +37,14 @@ registry=http://localhost:5555/
 
 ## Подразумевана htpasswd
 
-Како би се поједноставио setup, `verdaccio` use a plugin базиран на `htpasswd`. Од верзије v3.0.x [екстерни plugin](https://github.com/verdaccio/verdaccio-htpasswd) се користи као подразумеван. Верзија v2.x и даље садржи уграђену верзију овог plugin-а.
+Како би се поједноставио setup, `verdaccio` користи plugin базиран на `htpasswd`. Од верзије v3.0.x [екстерни plugin](https://github.com/verdaccio/verdaccio-htpasswd) се користи као подразумеван. Верзија v2.x и даље садржи уграђену верзију овог plugin-а.
 
 ```yaml
 auth:
   htpasswd:
     file: ./htpasswd
-    # Maximum amount of users allowed to register, defaults to "+inf".
-    # You can set this to -1 to disable registration.
+    # Максимални број корисника који могу да се региструју, фабрички је подешено на бесконачно "+inf".
+    # Ако хоћете да онемогућите регистрацију, подесите ово на -1.
     #max_users: 1000
 ```
 

@@ -53,7 +53,7 @@ Per avviare il contenitore Docker:
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
+L'ultimo argomento definisce quale immagine utilizzare. La riga precedente recupererà l'ultima immagine pre costruita da dockerhub, se non è già stato fatto.
 
 Se è stata [costruita un'immagine localmente](#build-your-own-docker-image) utilizzare `verdaccio` come ultimo argomento.
 
@@ -139,7 +139,7 @@ npm run build:docker
 
 Nota: Il primo build necessita di qualche minuto per creare perché ha bisogno di avviare `npm install`, e potrebbe impiegare lo stesso tempo ogni volta che si cambia un file che non sia elencato in `.dockerignore`.
 
-If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
+Se si desidera utilizzare l'immagine docker su un raspberry pi o su un dispositivo compatibile è inoltre disponibile un dockerfile. Per creare un'immagine docker per raspberry pi eseguire:
 
 ```bash
 npm run build:docker:rpi

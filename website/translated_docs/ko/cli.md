@@ -4,7 +4,7 @@ title: "명령행 도구"
 ---
 The verdaccio CLI is your go start the application.
 
-## Commands
+## 명령어
 
 ```bash
 verdaccio --listen 4000 --config ~./config.yaml

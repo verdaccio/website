@@ -60,13 +60,13 @@ auth:
     max_users: 1000
 ```
 
-### Security
+### Sicurezza
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>A partire da: <code>verdaccio@4.0.0</code> paragrafo <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+Il blocco di sicurezza consente di personalizzare la firma del token. Per abilitare la nuova firma di [JWT (json web token)](https://jwt.io/) è necessario aggiungere il blocco `jwt` alla sezione `api`, `web` utilizza di default `jwt`.
 
-The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+La configurazione è divisa in due sezioni, `api` e `web`. Per utilizzare JWT sull'`api`, è necessario definirlo, altrimenti si utilizzerà la firma del token ereditato (`aes192`). Per JWT è possibile personalizzare [la firma](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) e la [verifica](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) del token con le proprie configurazioni.
 
     security:
       api:
@@ -83,11 +83,11 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
             someProp: [value]
     
 
-> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+> Consigliamo caldamente di migrare su JWT poiché la firma ereditata (`aes192`) è deprecata e non sarà presente nelle versioni future.
 
-### Web UI
+### Interfaccia Utente Web
 
-This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
+Questa proprietà consente di modificare le caratteristiche dell'Interfaccia Utente web. Per ulteriori informazioni su questa sezione, leggere la [pagina dell'interfaccia utente web](web.md).
 
 ```yaml
 web:
@@ -99,7 +99,7 @@ web:
 
 ### Uplink
 
-Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
+Uplink è la capacità del sistema di recuperare i pacchetti da registri remoti quando quei pacchetti non sono disponibili localmente. Per ulteriori informazioni su questa sezione leggere la [ pagina degli uplink](uplinks.md).
 
 ```yaml
 uplinks:
@@ -107,9 +107,9 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Pacchetti
 
-Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
+La funzione "Pacchetti" consente all'utente di controllare come i pacchetti vengono resi accessibili. Per ulteriori informazioni su questa sezione leggere [la pagina dei pacchetti ](packages.md).
 
 ```yaml
 packages:
@@ -121,36 +121,36 @@ packages:
 
 ## Impostazioni avanzate
 
-### Offline Publish
+### Pubblicazione Non in Linea
 
-By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
+Per impostazione predefinita `verdaccio` non consente di pubblicare quando il client è offline, questa condotta può essere modificata impostandola su *true*.
 
 ```yaml
 publish:
   allow_offline: false
 ```
 
-<small>Since: <code>verdaccio@2.3.6</code> due <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
+<small>A partire da: <code>verdaccio@2.3.6</code> paragrafo <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
 
-### URL Prefix
+### Prefisso URL
 
 ```yaml
 url_prefix: https://dev.company.local/verdaccio/
 ```
 
-Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
+A partire da: `verdaccio@2.3.6` paragrafo [#197](https://github.com/verdaccio/verdaccio/pull/197)
 
-### Max Body Size
+### Dimensione Massima del Corpo
 
-By default the maximum body size for a JSON document is `10mb`, if you run in errors as `"request entity too large"` you may increase this value.
+Per impostazione predefinita la dimensione massima del corpo per un documento JSON è di `10mb`, se si incontrano errori come `"request entity too large"` si può aumentare questo valore.
 
 ```yaml
 max_body_size: 10mb
 ```
 
-### Listen Port
+### Porta in ascolto
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+`verdaccio` viene eseguito per impostazione predefinita nella porta `4873`. È possibile cambiare porta tramite [cli](cli.md) o nel file di configurazione, le seguenti opzioni sono valide.
 
 ```yaml
 listen:
@@ -164,7 +164,7 @@ listen:
 
 ### HTTPS
 
-To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
+Per abilitare `https` in `verdaccio` è sufficiente impostare il `listen` flag con il protocollo *https://*. Per ulteriori informazioni su questa sezione leggere la [ pagina del ssl](ssl.md).
 
 ```yaml
 https:
@@ -175,11 +175,11 @@ https:
 
 ### Proxy
 
-Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
+I proxy sono speciali Server HTTP progettati per trasferire dati da server remoti a client locali.
 
 #### http_proxy and https_proxy
 
-If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
+Se si ha un proxy nella propria rete è possibile impostare un'intestazione di `X-Forwarded-For` utilizzando le seguenti proprietà.
 
 ```yaml
 http_proxy: http://something.local/
@@ -188,7 +188,7 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-This variable should contain a comma-separated list of domain extensions proxy should not be used for.
+Questa variabile deve contenere un elenco di estensioni di dominio separate da virgole per cui il proxy non deve essere utilizzato.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
@@ -196,7 +196,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Notifiche
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Abilitare le notifiche di strumenti di terze parti è abbastanza facile via web hook. Per ulteriori informazioni su questa sezione leggere la [pagina delle notifiche](notifications.md).
 
 ```yaml
 notify:
@@ -206,15 +206,15 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-> For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
+> Per impostazioni di configurazione più dettagliate, si prega di [controllare il codice sorgente](https://github.com/verdaccio/verdaccio/tree/master/conf).
 
 ### Audit
 
-<small>Since: <code>verdaccio@3.0.0</code></small>
+<small>A partire da: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`npm audit` è un nuovo comando rilasciato con [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio include un plugin di middleware incorporato per gestire questo comando.
 
-> If you have a new installation it comes by default, otherwise you need to add the following props to your config file
+> Se si dispone di una nuova installazione viene fornito di default, altrimenti è necessario aggiungere le seguenti proprietà al file di configurazione
 
 ```yaml
 middlewares:

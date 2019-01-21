@@ -2,7 +2,7 @@
 id: iss-server
 title: "Instaliranje na IIS server"
 ---
-Navedene instrukcije su pisane za Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) i [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
+These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) and [verdaccio 2.7.4/3.10.1](https://github.com/verdaccio/verdaccio).
 
 - Install IIS Install [iisnode](https://github.com/tjanczuk/iisnode). Postarajte se da ste instalirali (Url Rewrite Module & node) kao što je objašnjeno u uputstvima za iisnode.
 - Napravite novi folder u Explorer-u, koji će biti host za verdaccio. Na primer `C:\verdaccio`. Usnimite [package.json](#packagejson), [start.js](#startjs) i [web.config](#webconfig) u ovaj folder.
@@ -23,7 +23,7 @@ Navedene instrukcije su pisane za Windows Server 2012, IIS 8, [Node.js 0.12.3](h
 - Stopirao sam "Default Web Site" i pokrenuo jedino "verdaccio" sajt u IIS
 - Podesio sam bindings na "http", ip address "All Unassigned" na port 80, ok any warning or prompts
 
-Date instrukcije se baziraju na [Host Sinopia in IIS on Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). Treba još da čačnem my web config kao što je navedeno ispod, ali možete se desiti da navedeni link zapravo radi bolje
+Date instrukcije se baziraju na [Host Sinopia in IIS on Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). Treba još da čačnem my web config kao što je navedeno ispod, ali može se desiti da navedeni link zapravo radi bolje
 
 Kreiraće se podrazumevana konfiguracija `c:\verdaccio\verdaccio\config.yaml`
 
@@ -42,6 +42,13 @@ Kreiraće se podrazumevana konfiguracija `c:\verdaccio\verdaccio\config.yaml`
 ```
 
 ### start.js
+
+```bash
+process.argv.push('-l', 'unix:' + process.env.PORT);
+require('./node_modules/verdaccio/build/lib/cli.js');
+```
+
+### Alternate start.js for Verdaccio versions < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);

@@ -1,80 +1,80 @@
 ---
-id: contributing
-title: "Contributing Verdaccio"
+id: доприношење
+title: "Доприношење Verdaccio-у"
 ---
-First of all Jumping into an unfamiliar code base is not easy but we are here to help you.
+First of all Пливање у водама непознатог кода није лако, али, ми смо ту да Вам помогнемо.
 
-## Comunication Channels
+## Канали за комуникацију
 
-If you are willing for asking, we use two channels for discussions:
+Ако сте вољни да питате, на располагању су два канала за дискусију:
 
-* [Public Discord channel](http://chat.verdaccio.org/)
+* [Јавни Discord канал](http://chat.verdaccio.org/)
 
-## Getting started
+## Хајде да почнемо
 
-As a first glance verdaccio is a single repository, but there are many ways you might contribute and a variety of technologies to practice.
+На први поглед, verdaccio је јединствени репозиторијум, али у пракси постоје многи начини да допринесете развоју и употребите технологију.
 
-### Finding my spot
+### Нађите своје место под сунцем
 
-All we have different skills, so, let's see where you might feel comfortable.
+Сви ми поседујемо различите вештине, хајде да откријемо где је коме удобно.
 
-### I know or I want to learn Node.js
+### Знам или желим да научим Node.js
 
-Node.js is the base of `verdaccio`, we use libraries as `express`, `commander`, `request` or `async`. Verdaccio is basically a Rest API that create a communication with `npm` clients compatible, as `yarn`.
+Node.js је основа `verdaccio`. Користимо библиотеке као на пример `express`, `commander`, `request` или `async`. Verdaccio је практично Rest API који успоставља комуникацију са `npm` клијент-компатибилним, као што је `yarn`.
 
-We have a long [list of plugins](plugins.md) ready to be used and improved but at the same time [you might create your own](dev-plugins.md).
+Имамо дугачку [листу plugina](plugins.md) спремну да се користи и истовремено унапређује, а ко зна, [можда се одлучите да направите и свој Plugin](dev-plugins.md).
 
-### I would prefer to work in the User Interface
+### Волео бих када бих могао да радим у User Interface-у
 
-Recently we have moved to modern techonologies as `React` and `element-react`. We are looking forward to see new ideas how to improve the UI.
+Недавно смо се пребацили на коришћење модерних технологија као што су `React` и `element-react`. Узбуђени смо због нових идеја и размишљања како да унапредимо UI.
 
-### I feel more confortable improving the stack
+### Више ми прија да унапређујем Stack
 
-Of course, we will be happy to help us improving the stack, you can upgrade dependencies as `eslint`, `stylelint`, `webpack`. You might merely improve the `webpack` configuration would be great. Any suggestion is very welcome. Furthermore whether you have experience with **Yeoman** you might help us with the [verdaccio generator](https://github.com/verdaccio/generator-verdaccio-plugin).
+Наравно да можете и били бисмо јако срећни ако бисте учествовали у унапређивању stack-а. Могли бисте на пример да побољшате dependencies као на пример `eslint`, `stylelint`, `webpack`. Чак и ако бисте могли само мало да побољшате `webpack` конфигурацију, то би било сјајно. Свака сугестија је добродошла. Осим тога, ако имате искуства са **Yeoman-ом** могли бисте да нам помогнете са [verdaccio генератором](https://github.com/verdaccio/generator-verdaccio-plugin).
 
-Here some ideas:
+Ево неких од идеја:
 
-* Create a common eslint rules to be used across all dependencies or plugins
-* Improve Flow types definitions delivery
-* Moving to Webpack 4
-* Improve hot reload with Webpack
-* We use babel and webpack across all dependencies, why not a common preset?
-* Improve continous integration delivery
+* Креирајте common eslint rules која ће се користити у свим dependencies или pluginima
+* Унапредите Flow types definitions delivery
+* Како прећи на Webpack 4
+* Унапредите hot reload са Webpack-ом
+* Пошто користимо babel и webpack у свим dependencies, зашто не бисмо имали заједнички preset?
+* Унапредите continous integration delivery
 
-### I do great Documentation
+### Сјајан сам у сређивању Документације
 
-Many contributors find typos and grammar issues, that also helps to improve the overall experience for troubleshooting.
+Многи сарадници имају дар за проналажење грешака у куцању и граматичких грешака, а то је јако важно јер подиже искуство коришћења на нови ниво.
 
-### I am a Designer
+### Ја сам Дизајнер
 
-We have a frontend website <http://www.verdaccio.org/> that will be happy to see your ideas.
+Frontend нашег вебсајта <http://www.verdaccio.org/> би био јако срећан да види и усвоји неку од Ваших идеја.
 
-Our website is based on [Docusaurus](https://docusaurus.io/).
+Иначе, наш сајт је базиран на [Docusaurus](https://docusaurus.io/).
 
-### I am a DevOps
+### Ја сам DevOps
 
-We have a widely popular Docker image <https://hub.docker.com/r/verdaccio/verdaccio/> that need maintenance and pretty likely huge improvements, we need your knowledge for the benefits of all users.
+Имамо веома популаран Docker image <https://hub.docker.com/r/verdaccio/verdaccio/> коме је потребно одржавање и прилично велика унапређења. Требамо Ваше знање, стављено у службу свих корисника.
 
-We have support for **Kubernetes**, **Puppet**, **Ansible** and **Chef** and we need help in those fields, feel free to see all repositories.
+Имамо подршку за **Kubernetes**, **Puppet**, **Ansible** и **Chef**. Потребна нам је помоћ за све то, тако да, слободно баците поглед на све наведене репозиторијуме.
 
-### I can do translations
+### Могао бих да радим Превођење
 
-Verdaccio aims to be multilingual, in order to achieve it **we have the awesome support** of [Crowdin](https://crowdin.com) that is an amazing platform for translations.
+Verdaccio стреми ка томе да буде доступан на што више језика. Како бисмо то постигли, **имамо апсолутно сјајну подршку** преко [Crowdin-а](https://crowdin.com), невероватно добре платформе за превођење.
 
 <img src="https://d3n8a8pro7vhmx.cloudfront.net/uridu/pages/144/attachments/original/1485948891/Crowdin.png" width="400px" />
 
-We have setup a project where you can choose your favourite language, if you do not find your language feel free to request one [creating a ticket](https://github.com/verdaccio/verdaccio/issues/new).
+Поставили смо пројекат тако да можете да одаберете свој омиљени језик, а ако га не пронађете на листи, слободно затражите да га додамо тако што ћете нам [послали поруку (ticket)](https://github.com/verdaccio/verdaccio/issues/new).
 
-[Go to Crowdin Verdaccio](https://crowdin.com/project/verdaccio)
+[Правац на Crowdin Verdaccio](https://crowdin.com/project/verdaccio)
 
-## I'm ready to contribute
+## Спреман сам да дам свој допринос
 
-If you are thinking *"I've seen already the [repositories](repositories.md) and I'm willing to start right away"* then I have good news for you, that's the next step.
+Ако Вам размишљање иде у смеру *"Већ сам видео [репозиторијуме](repositories.md) и спреман сам да одмах започнем посао"* имамо добру вест за Вас, јер то је следећи корак.
 
-You will need learn how to build, [we have prepared a guide just for that](build.md).
+Научићете све што је потребно за рад јер [смо спремили упутство намењено управо томе](build.md).
 
-Once you have played around with all scripts and you know how to use them, we are ready to go to the next step, run the [**Unit Test**](test.md).
+Једном када испробате све могуће скрипте и научите како да их користите, спремни сте да начините следећи корак, [**run Unit Test**](test.md).
 
-## Full list of contributors. We want to see your face here !
+## Листа свих сарадника. Волели бисмо да и Вас видимо овде !
 
 <a href="graphs/contributors"><img src="https://opencollective.com/verdaccio/contributors.svg?width=890&button=false" /></a>

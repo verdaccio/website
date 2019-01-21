@@ -53,7 +53,7 @@ Svi korisnici primaju sve navedeno kako bi podesili ovlašćenja nezavisno od to
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-Ako želite da zaštitite specifični set paketa u okviru grupe, potrebno je da uradite ovako nešto. Koristimo `Regex` koji pokriva sve `npmuser-` pakete sa prefiksima. Preporučujemo korišćenje prefiksa za Vaše pakete, jer ćete ih na taj način lakše zaštititi.
+Ako želite da zaštitite specifični set paketa u okviru grupe, potrebno je da uradite ovako nešto. Koristimo `Regex` koji pokriva sve `npmuser-` pakete sa prefiksima. We recommend using a prefix for your packages, in that way it will be easier to protect them.
 
 ```yaml
 packages:
@@ -137,7 +137,7 @@ Hajde da vidimo šta smo postigli u navedenom primeru:
 
 ### Konfigurisanje
 
-Možete definisati mutiple `packages` pri čemu svaki od njih mora imati jedinstveni `Regex`. Sintaksa je bazirana na [minimatch glob expressions](https://github.com/isaacs/minimatch).
+Možete definisati multiple `packages` pri čemu svaki od njih mora imati jedinstveni `Regex`. Sintaksa je bazirana na [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
 | Svojstvo | Tip     | Potrebno | Primer         | Podrška | Opis                                              |
 | -------- | ------- | -------- | -------------- | ------- | ------------------------------------------------- |

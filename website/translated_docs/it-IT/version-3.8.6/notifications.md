@@ -3,7 +3,7 @@ id: version-3.8.6-notifications
 title: Notifiche
 original_id: notifiche
 ---
-Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
+Notify fu creato principalmente per essere utilizzato con gli Incoming webhook di Slack, tuttavia consegnerà anche un semplice payload ad ogni endpoint. Al momento solo attivo per il comando `npm publish`.
 
 ## Utilizzo
 

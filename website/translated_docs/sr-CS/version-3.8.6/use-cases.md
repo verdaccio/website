@@ -25,7 +25,7 @@ Ovde postoje dve opcije:
     
     Ako želite da uradite to, trebalo bi da modifikujete svoj fajl za konfiguraciju tako da verdaccio prestane da traži zahteve od npmjs koji se odnose na taj paket. Dodajte poseban unos za ovaj paket u *config.yaml* i uklonite `npmjs` iz `proxy` liste i restartujte server.
     
-    Kada publikujete svoj paket lokalno, verovatno bi trebalo da otpočnete sa sa verzijom novijom od postojeće, tako da se izbegne konflikt sa postojećim paketom u cache-u.
+    Kada publikujete svoj paket lokalno, verovatno bi trebalo da otpočnete sa verzijom novijom od postojeće, tako da se izbegne konflikt sa postojećim paketom u cache-u.
 
 2. Ako želite da svoju verziju koristite samo privremeno, ali da se vratite na javnu čim se pojavi ažurirana.
     

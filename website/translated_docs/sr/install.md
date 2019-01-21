@@ -1,28 +1,28 @@
 ---
-id: installation
-title: "Installation"
+id: инсталација
+title: "Инсталација"
 ---
-Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
+Verdaccio је мулти-платформна веб апликација. Да бисте је инсталирали, потребно је да испуните неколико предуслова.
 
-#### Prerequisites
+#### Предуслови
 
-1. Node higher than 
-    - For version `verdaccio@2.x` Node `v4.6.1` is the minimum supported version.
-    - For version `verdaccio@latest` Node `6.12.0` is the minimum supported version.
-2. npm `>=3.x` or `yarn`
-3. The web interface supports the `Chrome, Firefox, Edge, and IE9` browsers.
+1. Node виши од 
+    - За верзију `verdaccio@2.x` Node `v4.6.1` је најстарија подржана верзија.
+    - За верзију `verdaccio@latest` Node `6.12.0` је најстарија подржана верзија.
+2. npm `>=3.x` или `yarn`
+3. Веб интерфејс подржава `Chrome, Firefox, Edge, и IE9` претраживаче.
 
-## Installing the CLI
+## Инсталација CLI
 
-`verdaccio` must be installed globaly using either of the following methods:
+`verdaccio` мора бити инсталиран глобално, коришћењем неке од наведених метода:
 
-Using `npm`
+Користи `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-or using `yarn`
+или користи `yarn`
 
 ```bash
 yarn global add verdaccio
@@ -30,9 +30,9 @@ yarn global add verdaccio
 
 ![install verdaccio](/svg/install_verdaccio.gif)
 
-## Basic Usage
+## Основна употреба
 
-Once it has been installed, you only need to execute the CLI command:
+Једном када се инсталира, све што треба је да извршите CLI команду:
 
 ```bash
 $> verdaccio
@@ -40,14 +40,14 @@ warn --- config file  - /home/.config/verdaccio/config.yaml
 warn --- http address - http://localhost:4873/ - verdaccio/3.0.1
 ```
 
-For more information about the CLI, please [read the cli section](cli.md).
+За додатне информације о CLI молимо Вас [да прочитате cli секцију](cli.md).
 
 ## Docker Image
 
-`verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. For more information about how to install the official image, [read the docker section](docker.md).
+`verdaccio` поседује званични docker image који можете користити, а у већини случајева, подразумевана конфигурација ради сасвим добро. За више информација о томе како да инсталирате official image, [прочитајте docker секцију](docker.md).
 
 ## Cloudron
 
-`verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
+`verdaccio` је такође доступан и као инсталација у само једном клику, на [Cloudron](https://cloudron.io)
 
-[![Install](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
+[![Инсталирање](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)

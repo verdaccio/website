@@ -3,11 +3,11 @@ id: version-3.8.6-uplinks
 title: Uplinks
 original_id: uplinks
 ---
-An *uplink* is a link with an external registry that provides acccess to external packages.
+*uplink* је линк који садржи external registry који омогућава приступ до external packages.
 
 ![Uplinks](/img/uplinks.png)
 
-### Usage
+### Коришћење
 
 ```yaml
 uplinks:
@@ -22,26 +22,26 @@ uplinks:
     url: http://localhost:55666/
 ```
 
-### Configuration
+### Конфигурисање
 
-You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
+Можете дефинисати мутипле uplinks, при чему сваки од њих мора имати јединствено име (кључ, key). Могу имати два својства:
 
-| Својство     | Тип     | Неопходно | Пример                                  | Подршка | Опис                                                                                                                       | Default    |
-| ------------ | ------- | --------- | --------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| url          | string  | Да        | https://registry.npmjs.org/             | all     | The registry url                                                                                                           | npmjs      |
-| ca           | string  | Не        | ~./ssl/client.crt'                      | all     | SSL path certificate                                                                                                       | No default |
-| timeout      | string  | Не        | 100ms                                   | all     | set new timeout for the request                                                                                            | 30s        |
-| maxage       | string  | Не        | 10m                                     | all     | limit maximun failure request                                                                                              | 2m         |
-| fail_timeout | string  | Не        | 10m                                     | all     | defines max time when a request becomes a failure                                                                          | 5m         |
-| max_fails    | number  | Не        | 2                                       | all     | limit maximun failure request                                                                                              | 2          |
-| cache        | boolean | Не        | [true,false]                            | >= 2.1  | cache all remote tarballs in storage                                                                                       | true       |
-| auth         | list    | Не        | [see below](uplinks.md#auth-property)   | >= 2.5  | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
-| headers      | list    | Не        | authorization: "Bearer SecretJWToken==" | all     | list of custom headers for the uplink                                                                                      | disabled   |
-| strict_ssl   | boolean | Не        | [true,false]                            | >= 3.0  | If true, requires SSL certificates be valid.                                                                               | true       |
+| Својство     | Тип     | Неопходно | Пример                                 | Подршка | Опис                                                                                                                             | Подразумевано     |
+| ------------ | ------- | --------- | -------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
+| url          | string  | Да        | https://registry.npmjs.org/            | all     | Url registry-а                                                                                                                   | npmjs             |
+| ca           | string  | Не        | ~./ssl/client.crt'                     | all     | Пут до SSL сертификата                                                                                                           | Нема ништа задато |
+| timeout      | string  | Не        | 100ms                                  | all     | подесите нови timeout за request                                                                                                 | 30s               |
+| maxage       | string  | Не        | 10m                                    | all     | лимитира максимални број неуспелих захтева                                                                                       | 2m                |
+| fail_timeout | string  | Не        | 10m                                    | all     | дефинише максимално време након којег захтев постаје неуспешан                                                                   | 5m                |
+| max_fails    | number  | Не        | 2                                      | all     | лимитира максимални број неуспелих захтева                                                                                       | 2                 |
+| cache        | boolean | Не        | [true,false]                           | >= 2.1  | кеширање свих tarballs из storage-а                                                                                              | true              |
+| auth         | list    | Не        | [види испод](uplinks.md#auth-property) | >= 2.5  | додељује заглавље 'Authorization' [више информација](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | онемогућено       |
+| headers      | list    | Не        | ауторизација: "Bearer SecretJWToken==" | all     | листа корисничких, прилагођених заглавља за uplink                                                                               | онемогућено       |
+| strict_ssl   | boolean | Не        | [true,false]                           | > = 3.0 | If true, захтева да SSL сертификат буде валидан.                                                                                 | true              |
 
 #### Auth property
 
-The `auth` property allows you to use an auth token with an uplink. Using the default environment variable:
+Својство `auth` Вам омогућава да користите auth токен са uplink. Коришћењем подразумеване варијабле окружења (default environment variable):
 
 ```yaml
 uplinks:
@@ -52,7 +52,7 @@ uplinks:
       token_env: true # defaults to `process.env['NPM_TOKEN']`   
 ```
 
-or via a specified environment variable:
+или преко дефинисане environment варијабле:
 
 ```yaml
 uplinks:
@@ -63,9 +63,9 @@ uplinks:
       token_env: FOO_TOKEN
 ```
 
-`token_env: FOO_TOKEN`internally will use `process.env['FOO_TOKEN']`
+`token_env: FOO_TOKEN`за интерну употребу користи `process.env['FOO_TOKEN']`
 
-or by directly specifying a token:
+или је директно дефинисано токеном:
 
 ```yaml
 uplinks:
@@ -76,11 +76,11 @@ uplinks:
       token: "token"
 ```
 
-> Note: `token` has priority over `token_env`
+> Напомена: `token` има приоритет над `token_env`
 
-### You Must know
+### Ваљало би знати
 
-* Uplinks must be registries compatible with the `npm` endpoints. Eg: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* and more.
-* Setting `cache` to false will help to save space in your hard drive. This will avoid store `tarballs` but [it will keep metadata in folders](https://github.com/verdaccio/verdaccio/issues/391).
-* Exceed with multiple uplinks might slow down the lookup of your packages due for each request a npm client does, verdaccio does 1 call for each uplink.
-* The (timeout, maxage and fail_timeout) format follow the [NGINX measurement units](http://nginx.org/en/docs/syntax.html)
+* Uplinks морају бити registries компатибилни са `npm` endpoints. Пример: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* и тако даље.
+* Подешавање `cache` на false, помоћи ће да се уштеди простор на хард диску. Тако се избегава чување `tarballs-а` али [ће metadata бити чувани у фолдерима](https://github.com/verdaccio/verdaccio/issues/391).
+* Претеривање са uplinks може успорити lookup Ваших packages-а јер сваки пут када npm client тражи захтев, verdaccio прави 1 повезивање за сваки uplink.
+* Формат за (timeout, maxage и fail_timeout) је усклађен са [NGINX јединицама мере](http://nginx.org/en/docs/syntax.html)

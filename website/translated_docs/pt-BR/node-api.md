@@ -2,7 +2,7 @@
 id: node-api
 title: "Api Node"
 ---
-Verdaccio pode ser inicializado de forma customizada através de um script utilizando a nova API implementada a partir da `verdaccio@3.0.0-alpha.10`.
+Verdaccio can be invoked programmatically. The node API was introduced after version `verdaccio@3.0.0-alpha.10`.
 
 ## Utilização
 

@@ -2,7 +2,7 @@
 id: iss-server
 title: "IIS server上进行安装"
 ---
-这些用法说明是为Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) 和[verdaccio 2.1.0](https://github.com/verdaccio/verdaccio)所写。
+These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) and [verdaccio 2.7.4/3.10.1](https://github.com/verdaccio/verdaccio).
 
 - 安装IIS Install [iisnode](https://github.com/tjanczuk/iisnode)。请确保您依照iisnode用法说明中所说的安装先决条件 (Url 重写模块 & 节点) 。
 - 在要承载verdaccio的资源管理器中创建一个新文件夹。 例如 `C:\verdaccio`。 在此文件夹里保存 [package.json](#packagejson), [start.js](#startjs) 和 [web.config](#webconfig) 。
@@ -42,6 +42,13 @@ title: "IIS server上进行安装"
 ```
 
 ### start.js
+
+```bash
+process.argv.push('-l', 'unix:' + process.env.PORT);
+require('./node_modules/verdaccio/build/lib/cli.js');
+```
+
+### Alternate start.js for Verdaccio versions < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);

@@ -3,7 +3,7 @@ id: version-3.8.6-node-api
 title: Node API
 original_id: node-api
 ---
-Verdaccio can be invoqued programmatically. The node API was introduced after version `verdaccio@3.0.0-alpha.10`.
+Verdaccio può essere invocato a livello di programmazione. Il nodo API è stato introdotto a partire dalla versione `verdaccio@3.0.0-alpha.10`.
 
 ## Utilizzo
 

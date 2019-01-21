@@ -24,7 +24,7 @@ Navedene instrukcije su pisane za Windows Server 2012, IIS 8, [Node.js 0.12.3](h
 - Stopirao sam "Default Web Site" i pokrenuo jedino "verdaccio" sajt u IIS
 - Podesio sam bindings na "http", ip address "All Unassigned" na port 80, ok any warning or prompts
 
-Date instrukcije se baziraju na [Host Sinopia in IIS on Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). Treba još da čačnem my web config kao što je navedeno ispod, ali možete se desiti da navedeni link zapravo radi bolje
+Date instrukcije se baziraju na [Host Sinopia in IIS on Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). Treba još da čačnem my web config kao što je navedeno ispod, ali može se desiti da navedeni link zapravo radi bolje
 
 Kreiraće se podrazumevana konfiguracija `c:\verdaccio\verdaccio\config.yaml`
 

@@ -94,7 +94,7 @@ Definisanje multiple access groups je relativno jednostavno, samo je potrebno da
 
 #### Blokiranje pristupa setu paketa
 
-Ako želite da blokirate pristup/publikovanje nekoj grupi pakete. Najjednostavnije je da ne definišete `access` i `publish`.
+Ako želite da blokirate pristup/publikovanje nekoj grupi paketa. Najjednostavnije je da ne definišete `access` i `publish`.
 
 ```yaml
 packages:
@@ -138,7 +138,7 @@ Hajde da vidimo šta smo postigli u navedenom primeru:
 
 ### Konfigurisanje
 
-Možete definisati mutiple `packages` pri čemu svaki od njih mora imati jedinstveni `Regex`. Sintaksa je bazirana na [minimatch glob expressions](https://github.com/isaacs/minimatch).
+Možete definisati multiple `packages` pri čemu svaki od njih mora imati jedinstveni `Regex`. Sintaksa je bazirana na [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
 | Svojstvo | Tip     | Neophodno | Primer         | Podrška | Opis                                              |
 | -------- | ------- | --------- | -------------- | ------- | ------------------------------------------------- |

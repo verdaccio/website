@@ -2,7 +2,7 @@
 id: iss-server
 title: "Установка на IIS сервер"
 ---
-Эта инструкция для Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) и [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
+These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) and [verdaccio 2.7.4/3.10.1](https://github.com/verdaccio/verdaccio).
 
 - Установите IIS установив [iisnode](https://github.com/tjanczuk/iisnode). Убедитесь, что у вас уже установлено всё необходимое (Url Rewrite Module & node) как того требует инструкция к iisnode.
 - Создайте новую директорию в Explorer, в которой вы хотите расположить verdaccio. Например `C:\verdaccio`. Сохраните [package.json](#packagejson), [start.js](#startjs) и [web.config](#webconfig) в эту директорию.
@@ -42,6 +42,13 @@ title: "Установка на IIS сервер"
 ```
 
 ### start.js
+
+```bash
+process.argv.push('-l', 'unix:' + process.env.PORT);
+require('./node_modules/verdaccio/build/lib/cli.js');
+```
+
+### Alternate start.js for Verdaccio versions < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);

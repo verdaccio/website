@@ -45,7 +45,7 @@ ALTERNATIVNI METOD: (WinSW paket je nedostajao kada je jedan od naših saradnika
 * Pokrenite servis 
     * `verdaccio-winsw.exe start`
 
-Izgleda da su neki od config komplikovaniji nego što smo očekivali, izgleda da se 'working directory' ignoriše, ali raducka i pored toga. Tako verdaccio instanca opstaje između restartovanja servera server, i sama sebe resetuje u slučaju pada nekog procesa vezanog za verdaccio.
+Izgleda da su neki od config komplikovaniji nego što smo očekivali, izgleda da se 'working directory' ignoriše, ali raducka i pored toga. Tako verdaccio instanca opstaje između restartovanja servera, i sama sebe resetuje u slučaju pada nekog procesa vezanog za verdaccio.
 
 ## Repozitorijumi
 

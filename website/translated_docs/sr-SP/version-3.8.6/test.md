@@ -3,4 +3,4 @@ id: version-3.8.6-unit-testing
 title: Unit Testing
 original_id: unit-testing
 ---
-Verdaccio has strong focus on unit testing and end to end testing. If you are willing to contribute, please refer to the following [guide for more information](https://github.com/verdaccio/verdaccio/wiki/Developing-new-tests).
+Verdaccio је веома фокусиран на квалитет и поузданост. Зато су ту тестови појединачних делова кода (unit testing) и свеобухватни тестови од А до Ш (end to end testing). Ако сте вољни да помогнете, молимо Вас да прочитате [наш водич](https://github.com/verdaccio/verdaccio/wiki/Developing-new-tests).
