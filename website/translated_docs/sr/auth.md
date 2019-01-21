@@ -36,7 +36,7 @@ registry=http://localhost:5555/
 
 ## Подразумевана htpasswd
 
-Како би се поједноставио setup, `verdaccio` use a plugin базиран на `htpasswd`. Од верзије v3.0.x [екстерни plugin](https://github.com/verdaccio/verdaccio-htpasswd) се користи као подразумеван. Верзија v2.x и даље садржи уграђену верзију овог plugin-а.
+Како би се поједноставио setup, `verdaccio` користи plugin базиран на `htpasswd`. Од верзије v3.0.x [екстерни plugin](https://github.com/verdaccio/verdaccio-htpasswd) се користи као подразумеван. Верзија v2.x и даље садржи уграђену верзију овог plugin-а.
 
 ```yaml
 auth:
