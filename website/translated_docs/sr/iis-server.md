@@ -48,7 +48,7 @@ process.argv.push('-l', 'unix:' + process.env.PORT);
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
-### Alternate start.js for Verdaccio versions < v3.0
+### Промените start.js за верзије Verdaccio-а < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);
@@ -107,4 +107,4 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 ### Проблеми (Troubleshooting)
 
 - **Web интерфејс се не учитава када је хостован са https пошто покушава да преузме скрипте преко http.**  
-    Проверите да ли сте исправно унели `url_prefix` у verdaccio config. Пратите[ discussion](https://github.com/verdaccio/verdaccio/issues/622).
+    Проверите да ли сте исправно унели `url_prefix` у verdaccio config. Пратите[дискусију](https://github.com/verdaccio/verdaccio/issues/622).
