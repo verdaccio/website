@@ -81,7 +81,7 @@
 <pre><code class="hljs css language-js"><span class="hljs-comment">// groups without '$' are going to be deprecated eventually</span>
 <span class="hljs-string">'$all'</span>, <span class="hljs-string">'$anonymous'</span>, <span class="hljs-string">'@all'</span>, <span class="hljs-string">'@anonymous'</span>, <span class="hljs-string">'all'</span>, <span class="hljs-string">'undefined'</span>, <span class="hljs-string">'anonymous'</span>, <span class="hljs-string">'npmUser'</span>
 </code></pre>
-<p>Ako želite da zaštitite specifični set paketa u okviru grupe, potrebno je da uradite ovako nešto. Koristimo <code>Regex</code> koji pokriva sve <code>npmuser-</code> pakete sa prefiksima. Preporučujemo korišćenje prefiksa za Vaše pakete, jer ćete ih na taj način lakše zaštititi.</p>
+<p>Ako želite da zaštitite specifični set paketa u okviru grupe, potrebno je da uradite ovako nešto. Koristimo <code>Regex</code> koji pokriva sve <code>npmuser-</code> pakete sa prefiksima. We recommend using a prefix for your packages, in that way it will be easier to protect them.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
   <span class="hljs-string">'npmuser-*'</span><span class="hljs-string">:</span>
 <span class="hljs-attr">    access:</span> <span class="hljs-string">npmuser</span>
@@ -143,7 +143,7 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 </ul>
 <p><strong>Budite svesni toga da je redosled definisanja Vaših paketa važan i još nešto, uvek koristite double wilcard</strong>. Jer ako ne budete toga svesni, <code>verdaccio</code> će to učiniti umesto Vas, što će uticati Vaše dependencies.</p>
 <h3><a class="anchor" aria-hidden="true" id="konfigurisanje"></a><a href="#konfigurisanje" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Konfigurisanje</h3>
-<p>Možete definisati mutiple <code>packages</code> pri čemu svaki od njih mora imati jedinstveni <code>Regex</code>. Sintaksa je bazirana na <a href="https://github.com/isaacs/minimatch">minimatch glob expressions</a>.</p>
+<p>Možete definisati multiple <code>packages</code> pri čemu svaki od njih mora imati jedinstveni <code>Regex</code>. Sintaksa je bazirana na <a href="https://github.com/isaacs/minimatch">minimatch glob expressions</a>.</p>
 <table>
 <thead>
 <tr><th>Svojstvo</th><th>Tip</th><th>Potrebno</th><th>Primer</th><th>Podrška</th><th>Opis</th></tr>
