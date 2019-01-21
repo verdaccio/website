@@ -2,7 +2,7 @@
 id: iss-server
 title: "Инсталирање на IIS server"
 ---
-These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) and [verdaccio 2.7.4/3.10.1](https://github.com/verdaccio/verdaccio).
+Дате инструкције су писане за Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) и [verdaccio 2.7.4/3.10.1](https://github.com/verdaccio/verdaccio).
 
 - Install IIS Install [iisnode](https://github.com/tjanczuk/iisnode). Постарајте се да сте инсталирали (Url Rewrite Module & node) као што је објашњено у упутствима за iisnode.
 - Направите нови фолдер у Explorer-у, који ће бити host за verdaccio. На пример `C:\verdaccio`. Уснимите [package.json](#packagejson), [start.js](#startjs) и [web.config](#webconfig) у овај фолдер.
