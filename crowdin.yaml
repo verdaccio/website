@@ -2,7 +2,8 @@ project_identifier_env: CROWDIN_VERDACCIO_PROJECT_ID
 api_key_env: CROWDIN_VERDACCIO_API_KEY
 base_path: './'
 preserve_hierarchy: true
-commit_message: 'docs(website): new translations'
+commit_message: 'docs(website): new translation for %original_file_name% in %language%'
+append_commit_message: false
 
 files:
   -
