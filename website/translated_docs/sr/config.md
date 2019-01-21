@@ -1,14 +1,14 @@
 ---
-id: configuration
-title: "Configuration File"
+id: конфигурисање
+title: "Фајл за конфигурисање"
 ---
-This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
+Овај фајл је основа verdaccio-a. У оквиру њега, можете вршити измене задатих подешавања, можете активирати plugin-е и спољашње ресурсе (features).
 
-A default configuration file is created the very first time you run `verdaccio`.
+Фајл "default configuration file" се креира приликом првог покретања `verdaccio-а`.
 
-## Default Configuration
+## Подразумеване поставке (Default Configuration)
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+Подразумеване поставке подржавају **scoped** пакете за све кориснике, али само **ауторизованим корисницима омогућавају да публикују**.
 
 ```yaml
 storage: ./storage
@@ -29,13 +29,13 @@ logs:
   - {type: stdout, format: pretty, level: http}
 ```
 
-## Sections
+## Секције
 
-The following sections explain what each property means and the different options.
+Секција у наставку даје објашњења за свако својство и опцију.
 
-### Storage
+### Меморија за складиштење
 
-Is the location of the default storage. **Verdaccio is by default based on local file system**.
+Је локација на којој се врши складиштење података. **Verdaccio је иницијално подешен као local file system**.
 
 ```yaml
 storage: ./storage
@@ -43,7 +43,7 @@ storage: ./storage
 
 ### Plugins
 
-Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
+Је локација plugin директоријума. Ово је корисно за deployment базиран на Docker/Kubernetes.
 
 ```yaml
 plugins: ./plugins
@@ -51,7 +51,7 @@ plugins: ./plugins
 
 ### Authentification
 
-The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
+Овде се врши подешавање (set up). Подразумевана auth је базирана на `htpasswd` и већ је уграђена. Можете извршити модификације начина рада (behaviour) путем [plugin-a](plugins.md). За више информација о овој секцији, прочитајте [auth страну](auth.md).
 
 ```yaml
 auth:
@@ -60,13 +60,13 @@ auth:
     max_users: 1000
 ```
 
-### Security
+### Сигурност
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Почевши од верзије: <code>verdaccio@4.0.0</code> параграф <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+Сигурносни блок Вам омогућава да прилагодите потпис за токен (token signature). Како бисте [JWT (json web token) учинили активним ](https://jwt.io/) нови потпис који требате за додавање блока `jwt` у `api` секцију, `web` по правилу користи `jwt`.
 
-The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+Конфигурација је подељена у две секције, `api` и `web`. Како бисте користили JWT у `api`, морате га дефинисати, у супротном ће користити наслеђени потпис за токен (legacy token signature) (`aes192`). За JWT можете прилагодити [потпис](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) и токен [верификацију](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) уписивањем параметара по својој жељи.
 
     security:
       api:
@@ -83,11 +83,11 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
             someProp: [value]
     
 
-> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+> Јако Вам препоручујемо да се пребаците на JWT пошто је legacy signature (`aes192`) застарео и неће га бити у новијим верзијама.
 
-### Web UI
+### Web UI (кориснички интерфејс)
 
-This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
+Ово својство Вам омогућава да модификујете изглед корисничког интерфејса. За више информација о овој секцији прочитајте [страницу web ui](web.md).
 
 ```yaml
 web:
@@ -99,7 +99,7 @@ web:
 
 ### Uplinks
 
-Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
+Uplinks пружају могућност систему да хвата (fetch) пакете из удаљених регистрија ако ти пакети нису локално доступни. За више информација о овој секцији прочитајте на [uplinks страници](uplinks.md).
 
 ```yaml
 uplinks:
@@ -107,9 +107,9 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Пакети
 
-Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
+Пакети (packages) дају могућност корисницима да контролишу како ће се приступати пакетима. За више детаља о овој секцији, прочитајте [packages страницу](packages.md).
 
 ```yaml
 packages:
@@ -119,38 +119,38 @@ packages:
     proxy: npmjs
 ```
 
-## Advanced Settings
+## Напредна подешавања
 
-### Offline Publish
+### Публиковање offline
 
-By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
+Према задатим подешавањима, `verdaccio` не дозвољава публиковање онда када је клијент offline. Такав начин рада (behavior), може да се промени ако се параметри из примера подесе на *true*.
 
 ```yaml
 publish:
   allow_offline: false
 ```
 
-<small>Since: <code>verdaccio@2.3.6</code> due <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
+<small>Почевши од верзије: <code>verdaccio@2.3.6</code> члан (due) <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
 
-### URL Prefix
+### URL Префикс
 
 ```yaml
 url_prefix: https://dev.company.local/verdaccio/
 ```
 
-Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
+Почевши од верзије: `verdaccio@2.3.6` члан [#197](https://github.com/verdaccio/verdaccio/pull/197)
 
-### Max Body Size
+### Максимална величина body секције документа
 
-By default the maximum body size for a JSON document is `10mb`, if you run in errors as `"request entity too large"` you may increase this value.
+Према задатим подешавањима, максимална величина за body JSON документа је `10mb`. Ако добијете грешку `"request entity too large"` могли бисте да повећате ову вредност.
 
 ```yaml
 max_body_size: 10mb
 ```
 
-### Listen Port
+### Listen Порт
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+`verdaccio` према "фабричким подешавањима" ради на порту `4873`. Измена порта се може обавити преко [cli](cli.md) или директно у фајлу за конфигурисање при чему су следеће опције валидне.
 
 ```yaml
 listen:
@@ -164,7 +164,7 @@ listen:
 
 ### HTTPS
 
-To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
+Како бисте омогућили `https` у `verdaccio` довољно је да подесите `listen` flag са протоколом *https://*. Више детаља можете наћи на [ssl страници](ssl.md).
 
 ```yaml
 https:
@@ -175,11 +175,11 @@ https:
 
 ### Proxy
 
-Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
+Proxies су HTTP сервери посебне намене дизајнирани да преносе податке од удаљених сервера до локалних клијената.
 
-#### http_proxy and https_proxy
+#### http_proxy i https_proxy
 
-If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
+Ако имате proxy у својој мрежи, можете подесити `X-Forwarded-For` header користећи следеће уносе за својствa (properties).
 
 ```yaml
 http_proxy: http://something.local/
@@ -188,15 +188,15 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-This variable should contain a comma-separated list of domain extensions proxy should not be used for.
+Ова варијабла би требало да садржи comma-separated (поља одвојена запетом) листу екстензија домена за коју proxy не би требало да се користи.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
 ```
 
-### Notifications
+### Нотификације
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Дозвољавање нотификација за алате направљене од стране трећих лица је релативно једноставно уз помоћ web hooks технике. За више информација о овој теми, прочитајте [notifications страницу](notifications.md).
 
 ```yaml
 notify:
@@ -206,15 +206,15 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-> For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
+> За детаљније опције подешавања, молимо Вас да [погледате source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
 
-### Audit
+### Audit (ревизија)
 
-<small>Since: <code>verdaccio@3.0.0</code></small>
+<small>Почевши од верзије: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`npm audit` је нова команда која је уведена у [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio, а која укључује уграђени middleware plugin са којим је могуће извршити дату команду.
 
-> If you have a new installation it comes by default, otherwise you need to add the following props to your config file
+> Ако имате нову инсталацију, све је већ укључено у оквиру ње. У супротном, треба да додате наведене додатке (props) у Ваш config фајл
 
 ```yaml
 middlewares:
