@@ -53,7 +53,7 @@ packages:
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-如果你想要保护你所在组的特定包，你需要做如下工作。 我们来使用一个包含所有前缀为`npmuser-`的包的`Regex`。 我们建议在包前使用前缀，通过这种方式更容易保护它们。
+如果你想要保护你所在组的特定包，你需要做如下工作。 我们来使用一个包含所有前缀为`npmuser-`的包的`Regex`。 We recommend using a prefix for your packages, in that way it will be easier to protect them.
 
 ```yaml
 packages:
