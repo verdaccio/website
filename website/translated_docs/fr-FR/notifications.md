@@ -48,10 +48,10 @@ Nous utilisons [Handlebars](https://handlebarsjs.com/) comme moteur de gabarit p
 ### Exemples de format
 
     # iterate all versions
-    {{ name }}{{#each versions}} v{{version}}{{/each}}`"}
+    {{ name }}{{#each versions}} v{{version}}{{/each}}
     
     # publisher and `dist-tag` package published
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ### Propriétés
@@ -141,9 +141,9 @@ Un exemple:
 
 ### Package Publié
 
-Vous pouvez accéder au package publié avec le mot clé `{{publishedPackage}}` comme suit.
+You can access to the package is being published with the keyword `{{publishedPackage}}` as follows.
 
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ## Configuration
