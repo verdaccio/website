@@ -3,59 +3,59 @@ id: version-3.8.6-kubernetes
 title: Kubernetes
 original_id: kubernetes
 ---
-You can find instructions to deploy Verdaccio on a Kubernetes cluster on the [verdaccio/docker-example](https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example) repository. However, the recommended method to install Verdaccio on a Kubernetes cluster is to use [Helm](https://helm.sh). Helm is a [Kubernetes](https://kubernetes.io) package manager which bring multiple advantages.
+Можете наћи упутства како да извршите deploy Verdaccio-a на Kubernetes кластер у [verdaccio/docker-example](https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example) репозиторијуму. Ипак, препоручујемо да инсталирате Verdaccio на Kubernetes кластер тако што ћете користити [Helm](https://helm.sh). Helm је [Kubernetes](https://kubernetes.io) package manager који доноси многе погодности.
 
 ## Helm
 
 ### Setup Helm
 
-If you haven't used Helm before, you need to setup the Helm controller called Tiller:
+Ако раније нисте користили Helm, потребно је да подесите Helm контролер звани Tiller:
 
 ```bash
 helm init
 ```
 
-### Install
+### Инсталирање
 
-Deploy the Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio) chart. In this example we use `npm` as release name:
+У борбени распоред поставите (шалим се, deploy) Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio) chart. У овом примеру користимо `npm` као име издања:
 
 ```bash
 helm install --name npm stable/verdaccio
 ```
 
-### Deploy a specific version
+### Постављање специфичне верзије (deploy)
 
 ```bash
 helm install --name npm --set image.tag=2.6.5 stable/verdaccio
 ```
 
-### Upgrading Verdaccio
+### Надограђивање Verdaccio-а
 
 ```bash
 helm upgrade npm stable/verdaccio
 ```
 
-### Uninstalling
+### Деинсталирање
 
 ```bash
 helm del --purge npm
 ```
 
-**Note:** this command delete all the resources, including packages that you may have previously published to the registry.
+**Напомена:** ова команда брише све ресурсе, укључујући и пакете који су можда раније објављени у регистрију.
 
-### Custom Verdaccio configuration
+### Корисничка конфигурација Verdaccio-а
 
-You can customize the Verdaccio configuration using a Kubernetes *configMap*.
+Можете подесити Verdaccio конфигурацију по својим жељама тако што ћете користити Kubernetes *configMap*.
 
-#### Prepare
+#### Припрема
 
-Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/full.yaml) and adapt it for your use case:
+Копирајте [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/full.yaml) и адаптирајте за своју сврху:
 
 ```bash
 wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/full.yaml -O config.yaml
 ```
 
-**Note:** Make sure you are using the right path for the storage that is used for persistency:
+**Напомена:** Проверите да ли користите исправан path за storage који се користи за persistency:
 
 ```yaml
 storage: /verdaccio/storage/data
@@ -64,17 +64,17 @@ auth:
     file: /verdaccio/storage/htpasswd
 ```
 
-#### Deploy the configMap
+#### Постављање configMap (deploy)
 
-Deploy the `configMap` to the cluster
+Поставите `configMap` на кластер
 
 ```bash
 kubectl create configmap verdaccio-config --from-file ./config.yaml
 ```
 
-#### Deploy Verdaccio
+#### Поставите Verdaccio
 
-Now you can deploy the Verdaccio Helm chart and specify which configuration to use:
+Сада можете поставити Verdaccio Helm chart и детаљно дефинисати конфигурацију која ће да се користи:
 
 ```bash
 helm install --name npm --set customConfigMap=verdaccio-config stable/verdaccio
@@ -82,6 +82,6 @@ helm install --name npm --set customConfigMap=verdaccio-config stable/verdaccio
 
 ## Rancher Support
 
-[Rancher](http://rancher.com/) is a complete container management platform that makes managing and using containers in production really easy.
+[Rancher](http://rancher.com/) је комплетна container management платформа која Вам омогућава да на лак и једноставан начин користите контејнере.
 
 * [verdaccio-rancher](https://github.com/lgaticaq/verdaccio-rancher)
