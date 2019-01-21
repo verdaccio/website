@@ -121,7 +121,7 @@ packages:
 
 ## 高级设置
 
-### Offline Publish
+### 离线发布
 
 By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
 
