@@ -47,11 +47,11 @@ notify:
 
 ### 格式范例
 
-    # 重复所有版本
-    {{ name }}{{#each versions}} v{{version}}{{/each}}`"}
+    # iterate all versions
+    {{ name }}{{#each versions}} v{{version}}{{/each}}
     
-    # 已发布的发表人和 `dist-tag` 包
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    # publisher and `dist-tag` package published
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ### 属性
@@ -141,9 +141,9 @@ notify:
 
 ### 已发布包
 
-您可以如以下所示用热词`{{publishedPackage}}` 来访问已经发布的包.
+You can access to the package is being published with the keyword `{{publishedPackage}}` as follows.
 
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ## 配置
