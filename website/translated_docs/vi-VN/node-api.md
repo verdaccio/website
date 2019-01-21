@@ -2,7 +2,7 @@
 id: node-api
 title: "Node API"
 ---
-Verdaccio đã xem như đã được lập trình. Còn API trên nền tảng node lại ra đời sau phiên bản `verdaccio@3.0.0-alpha.10`.
+Verdaccio can be invoked programmatically. The node API was introduced after version `verdaccio@3.0.0-alpha.10`.
 
 ## Cách sử dụng
 
