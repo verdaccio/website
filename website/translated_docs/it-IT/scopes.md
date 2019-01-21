@@ -1,5 +1,5 @@
 ---
 id: scopes
-title: "Understanding Scopes"
+title: "Comprensione degli Scope"
 ---
 dsadsa
