@@ -3,7 +3,7 @@ id: version-3.8.6-contributing
 title: Contribuendo a Verdaccio
 original_id: contributing
 ---
-First of all 👏👏 thanks for visiting this page, for us means you are willing contribute to `verdaccio` and we are happy for that. Saltare dentro a un code base sconosciuto non è facile, ma noi siamo qui per aiutarti.
+Prima di tutto 👏👏 grazie per aver visitato questa pagina, per noi significa che siete disposti a contribuire a `verdaccio` e siamo felici di questo. Saltare dentro a un code base sconosciuto non è facile, ma noi siamo qui per aiutarti.
 
 ## Canali di comunicazione
 
@@ -27,7 +27,7 @@ Abbiamo una lunga [lista di plugin](plugins.md) pronti per essere utilizzati e m
 
 ### Preferirei lavorare nell'Interfaccia Utente
 
-Recently we have moved to modern techonologies as `React` and `element-react`. We are looking forward to see new ideas how to improve the UI.
+Recentemente ci siamo spostati su tecnologie moderne come `React` e `element-react`. Siamo ansiosi di vedere nuove idee su come migliorare l'Interfaccia Utente.
 
 ### Mi sento più a mio agio a migliorare lo stack
 
@@ -76,6 +76,6 @@ Avrai bisogno di imparare a costruire un progetto, [abbiamo preparato una guida 
 
 Una volta che ti sei divertito con tutti gli script e hai capito come utilizzarli, siamo pronti per andare al passaggio successivo, eseguire l' [**Unit Test**](test.md).
 
-## Full list of contributors. We want to see your face here !
+## Elenco completo dei contributori. Vogliamo vedere la tua faccia qui!
 
 <a href="graphs/contributors"><img src="https://opencollective.com/verdaccio/contributors.svg?width=890&button=false" /></a>
