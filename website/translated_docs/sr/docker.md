@@ -6,7 +6,7 @@ title: Docker
   ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 </div>
 
-To pull the latest pre-built [docker image](https://hub.docker.com/r/verdaccio/verdaccio/):
+Како бисте привукли (pull) најновији pre-built [docker image](https://hub.docker.com/r/verdaccio/verdaccio/):
 
 ```bash
 docker pull verdaccio/verdaccio
@@ -16,47 +16,47 @@ docker pull verdaccio/verdaccio
 
 ## Tagged Versions
 
-Since version `v2.x` you can pull docker images by [tag](https://hub.docker.com/r/verdaccio/verdaccio/tags/), as follows:
+Почевши од верзије `v2.x` можете повући docker images преко [таг](https://hub.docker.com/r/verdaccio/verdaccio/tags/), и онда:
 
-For a major version:
+За главне верзије:
 
 ```bash
 docker pull verdaccio/verdaccio:3
 ```
 
-For a minor version:
+За подверзије:
 
 ```bash
 docker pull verdaccio/verdaccio:3.0
 ```
 
-For a specific (patch) version:
+За специфичну верзију (patch):
 
 ```bash
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next major release using the `beta` (master branch) version.
+За следећу главну верзију `beta` (master branch) верзију.
 
 ```bash
 docker pull verdaccio/verdaccio:beta
 ```
 
-> If you are interested on a list of tags, [please visit the Docker Hub website](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
+> Ако Вас занима листа тагова, [посетите Docker Hub вебсајт](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Running verdaccio using Docker
+## Покретање verdaccio коришћењем Docker-а
 
-To run the docker container:
+Како бисте покренули docker container:
 
 ```bash
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
+Последњи аргумент дефинише који image ће се користити. Линија изнад повлачи најновији prebuilt image са dockerhub-а, ако то већ нисте урадили.
 
-If you have [build an image locally](#build-your-own-docker-image) use `verdaccio` as the last argument.
+Ако употребљавате опцију [build an image locally](#build-your-own-docker-image) користите `verdaccio` као последњи аргумент.
 
-You can use `-v` to bind mount `conf`, `storage` and `plugins` to the hosts filesystem:
+Можете користити `-v` како бисте везали (bind) mount `conf`, `storage` и `plugins` за hosts filesystem:
 
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
@@ -66,21 +66,21 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
   verdaccio/verdaccio
 ```
 
-> Note: Verdaccio runs as a non-root user (uid=100, gid=101) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) is recommended over using bind mount.
+> Напомена: Verdaccio ради као non-root user (uid=100, gid=101) унутар container-а. Ако користите bind mount да прегазите задате поставке (override), онда морате да доделите mount directory правом кориснику. У наведеном примеру, морате да покренете `sudo chown -R 100:101 /opt/verdaccio`, у супротном ћете добити permission errors у runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) је препоручено уместо коришћења bind mount.
 
 ### Plugins
 
-Plugins can be installed in a separate directory and mounted using Docker or Kubernetes, however make sure you build plugins with native dependencies using the same base image as the Verdaccio Dockerfile.
+Plugins се могу инсталирати у посебном директоријуму и моунтовати коришћењем Docker-a Kubernetes. Ипак, постарајте се да "build" plugins са native dependencies коришћењем исте base image као Verdaccio Dockerfile-а.
 
-### Docker and custom port configuration
+### Docker и custom порт конфигурација
 
-Any `host:port` configured in `conf/config.yaml` under `listen` is currently ignored when using docker.
+Сваки `host:port` конфигурисан у `conf/config.yaml` под `listen` се тренутно игнорише док се користи docker.
 
-If you want to reach verdaccio docker instance under different port, lets say `5000` in your `docker run` command replace `-p 4873:4873` with `-p 5000:4873`.
+Ако желите да приступите verdaccio docker инстанци под различитим портом, рецимо `5000`, у Вашој `docker run` команди замените `-p 4873:4873` са `-p 5000:4873`.
 
-In case you need to specify which port to listen to **in the docker container**, since version 2.?.? you can do so by providing additional arguments to `docker run`: `--env PORT=5000` This changes which port the docker container exposes and the port verdaccio listens to.
+У случају да морате да одредите port to listen to **у docker контејнеру**, почевши од верзије 2.?.? то можете учинити тако што ћете унети додатне аргументе у `docker run`: `--env PORT=5000` Ово мења порт који излаже docker контејнер и порт који ће verdaccio слушати (listens to).
 
-Of course the numbers you give to `-p` paremeter need to match, so assuming you want them to all be the same this is what you could copy, paste and adopt:
+Наравно, неопходно је да се бројеви које сте задали као `-p` параметар подударају, тако да ако желите да се све подудара, можете да копирате, залепите и усвојите:
 
 ```bash
 PORT=5000; docker run -it --rm --name verdaccio \
@@ -88,9 +88,9 @@ PORT=5000; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-### Using HTTPS with Docker
+### Коришћење HTTPS са Docker-ом
 
-You can configure the protocol verdaccio is going to listen on, similarly to the port configuration. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
+Можете конфигурисати протокол који ће verdaccio слушати (listen on) и то на сличан начин као што сте подесили port configuration. Потребно је да замените задату вредност("http") у `PROTOCOL` environment варијабли са "https", након што сте одредили сертификате у config.yaml.
 
 ```bash
 PROTOCOL=https; docker run -it --rm --name verdaccio \
@@ -98,18 +98,18 @@ PROTOCOL=https; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-### Using docker-compose
+### Коришћење docker-compose
 
-1. Get the latest version of [docker-compose](https://github.com/docker/compose).
-2. Build and run the container:
+1. Набавите последњу верзију [docker-compose](https://github.com/docker/compose).
+2. Build и покрените контејнер:
 
 ```bash
 $ docker-compose up --build
 ```
 
-You can set the port to use (for both container and host) by prefixing the above command with `PORT=5000`.
+Можете подесити порт који ће се употребљавати (и за контејнер и за host) тако што ћете додати префикс `PORT=5000` команди из горњег примера.
 
-Docker will generate a named volume in which to store persistent application data. You can use `docker inspect` or `docker volume inspect` to reveal the physical location of the volume and edit the configuration, such as:
+Docker ће направити именовани volume у коме ће се чувати подаци за апликацију. Можете користити `docker inspect` или `docker volume inspect` како бисте открили физичку локацију volume-а и изменили конфигурацију, на пример:
 
     $ docker volume inspect verdaccio_verdaccio
     [
@@ -124,31 +124,31 @@ Docker will generate a named volume in which to store persistent application dat
     
     
 
-## Build your own Docker image
+## Направите свој сопствени Docker image
 
 ```bash
 docker build -t verdaccio .
 ```
 
-There is also an npm script for building the docker image, so you can also do:
+Постоји такође и npm script за building docker image-а, тако да можете да задате и овако:
 
 ```bash
 npm run build:docker
 ```
 
-Note: The first build takes some minutes to build because it needs to run `npm install`, and it will take that long again whenever you change any file that is not listed in `.dockerignore`.
+Напомена: Први build може потрајати неколико минута пошто мора да покрене `npm install`, и поново ће трајати дуго ако промените било који фајл који није излистан у `.dockerignore`.
 
-If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
+Ако желите да користите docker image на rpi или компатибилном уређају, постоји доступан dockerfile. Како бисте build docker image за raspberry pi извршите следећу команду:
 
 ```bash
 npm run build:docker:rpi
 ```
 
-Please note that for any of the above docker commands you need to have docker installed on your machine and the docker executable should be available on your `$PATH`.
+Примите к знању да за сваку docker команду морате имати на својој машини инсталиран docker заједно са docker executable која мора бити доступна на `$PATH`.
 
-## Docker Examples
+## Docker Примери
 
-There is a separate repository that hosts multiple configurations to compose Docker images with `verdaccio`, for instance, as reverse proxy:
+Постоји засебан репозиторијум који хостује мултипле конфигурације како би компоновао Docker images са `verdaccio`, на пример, reverse proxy:
 
 <https://github.com/verdaccio/docker-examples>
 
@@ -156,11 +156,11 @@ There is a separate repository that hosts multiple configurations to compose Doc
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
-* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Private NPM container that can backup to s3
+* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Приватни NPM контејнер који се може backup-овати на s3
 * [docker-verdaccio-ldap](https://github.com/snadn/docker-verdaccio-ldap)
 * [verdaccio-ldap](https://github.com/nathantreid/verdaccio-ldap)
 * [verdaccio-compose-local-bridge](https://github.com/shingtoli/verdaccio-compose-local-bridge)
 * [docker-verdaccio](https://github.com/Global-Solutions/docker-verdaccio)
 * [verdaccio-docker](https://github.com/idahobean/verdaccio-docker)
 * [verdaccio-server](https://github.com/andru255/verdaccio-server)
-* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) docker image providing verdaccio from coldrye-debian-nodejs.
+* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) docker image омогућава verdaccio из coldrye-debian-nodejs.
