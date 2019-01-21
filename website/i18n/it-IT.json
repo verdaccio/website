@@ -18,7 +18,7 @@
         "title": "Windows Azure"
       },
       "best": {
-        "title": "Best Practices"
+        "title": "Migliori Prassi"
       },
       "build": {
         "title": "Compilare il codice sorgente"
@@ -96,7 +96,7 @@
         "title": "Configurazione di Proxy inverso"
       },
       "scopes": {
-        "title": "Understanding Scopes"
+        "title": "Comprensione degli Scope"
       },
       "server-configuration": {
         "title": "Configurazione del server"
@@ -229,21 +229,21 @@
       }
     },
     "links": {
-      "Docs": "Docs",
+      "Docs": "Documenti",
       "Blog": "Blog",
-      "Help": "Help",
+      "Help": "Aiuto",
       "GitHub": "GitHub",
       "Team": "Team",
-      "Donate": "Donate"
+      "Donate": "Donazioni"
     },
     "categories": {
-      "Introduction": "Introduction",
+      "Introduction": "Introduzione",
       "Configuration": "Configurazione",
       "Server": "Server",
       "Plugins": "Plugin",
       "DevOps": "DevOps",
-      "Development": "Development",
-      "Guides": "Guides"
+      "Development": "Sviluppo",
+      "Guides": "Guide"
     }
   },
   "pages-strings": {
