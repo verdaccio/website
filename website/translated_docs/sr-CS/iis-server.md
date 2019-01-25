@@ -2,7 +2,7 @@
 id: iss-server
 title: "Instaliranje na IIS server"
 ---
-These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) and [verdaccio 2.7.4/3.10.1](https://github.com/verdaccio/verdaccio).
+Date instrukcije su pisane za Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) i [verdaccio 2.7.4/3.10.1](https://github.com/verdaccio/verdaccio).
 
 - Install IIS Install [iisnode](https://github.com/tjanczuk/iisnode). Postarajte se da ste instalirali (Url Rewrite Module & node) kao što je objašnjeno u uputstvima za iisnode.
 - Napravite novi folder u Explorer-u, koji će biti host za verdaccio. Na primer `C:\verdaccio`. Usnimite [package.json](#packagejson), [start.js](#startjs) i [web.config](#webconfig) u ovaj folder.
@@ -48,7 +48,7 @@ process.argv.push('-l', 'unix:' + process.env.PORT);
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
-### Alternate start.js for Verdaccio versions < v3.0
+### Promenite start.js za verzije Verdaccio-a < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);
@@ -107,4 +107,4 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 ### Problemi (Troubleshooting)
 
 - **Web interfejs se ne učitava kada je hostovan sa https pošto pokušava da preuzme skripte preko http.**  
-    Proverite da li ste ispravno uneli `url_prefix` u verdaccio config. Pratite [discussion](https://github.com/verdaccio/verdaccio/issues/622).
+    Proverite da li ste ispravno uneli `url_prefix` u verdaccio config. Pratite [diskusiju](https://github.com/verdaccio/verdaccio/issues/622).

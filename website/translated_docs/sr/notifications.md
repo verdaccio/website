@@ -47,10 +47,10 @@ notify:
 
 ### Примери за формате
 
-    # iterate all versions
+    # Пролази кроз све верзије
     {{ name }}{{#each versions}} v{{version}}{{/each}}
     
-    # publisher and `dist-tag` package published
+    # publisher и `dist-tag` package published
     {{ publisher.name }} has published {{ publishedPackage }}
     
 
@@ -141,7 +141,7 @@ Package metadata за које темплат има приступ
 
 ### Package Published
 
-You can access to the package is being published with the keyword `{{publishedPackage}}` as follows.
+Можете приступити опцији package is being published помоћу кључне речи `{{publishedPackage}}` на следећи начин.
 
     {{ publisher.name }} has published {{ publishedPackage }}
     
