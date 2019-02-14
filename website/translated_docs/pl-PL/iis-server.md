@@ -2,9 +2,9 @@
 id: iss-server
 title: "Installing on IIS server"
 ---
-These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) and [verdaccio 2.7.4/3.10.1](https://github.com/verdaccio/verdaccio).
+These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
-- Install IIS Install [iisnode](https://github.com/tjanczuk/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
+- Install IIS Install [iisnode](https://github.com/Azure/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
 - Utwórz nowy folder w Eksploratorze, gdzie chcesz, aby znajdowało się verdaccio. Na przykład `C:\verdaccio`. Zapisz[package.json](#packagejson), [start.js](#startjs) oraz [web.config](#webconfig) w tym folderze.
 - Utwórz nową witrynę w Menedżerze Internetowych Usług Informacyjnych. Możesz ją nazwać jakkolwiek chcesz. Ja nazwę ją verdaccio w tych [instrukcjach](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Określ ścieżkę do lokalizacji, w której zapisałeś wszystkie pliki i numer portu.
 - Wróć do Eksploratora i daj użytkownikowi, który uruchamia pulę aplikacji, prawa do modyfikacji folderu, który został właśnie utworzony. Jeśli nazwałeś nową witrynę verdaccio i nie zmieniłeś puli aplikacji, działa ona pod ApplicationPoolIdentity i powinieneś dać użytkownikowi IIS AppPool\verdaccio uprawnienia modyfikacji, jeśli potrzebujesz pomocy, sprawdź instrukcje. (Możesz ograniczyć dostęp później, jeśli chcesz, aby miał on tylko uprawnienia modyfikacyjne do plików iisnode i verdaccio\magazyn)
@@ -19,7 +19,6 @@ These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3]
 
 Chciałem, aby strona `verdaccio` była domyślną stroną w IIS, więc wykonałem następujące czynności:
 
-- Upewniłem się, że plik .npmrc w `c:\users{yourname}` miał rejestr ustawiony jako `"registry=http://localhost/"`
 - Zatrzymałem "Domyślną witrynę sieci Web" i uruchomiłem tylko witrynę "verdaccio" w IIS
 - Ustawiłem powiązania na "http", adres ip na "Wszystkie nieprzypisane" na porcie 80 i obyło się bez żadnych ostrzeżeń lub monitów
 
@@ -36,7 +35,7 @@ Domyślny plik konfiguracji zostanie utworzony `c:\verdaccio\verdaccio\config.ya
   "description": "Hosts verdaccio in iisnode",
   "main": "start.js",
   "dependencies": {
-    "verdaccio": "^2.1.0"
+    "verdaccio": "^3.11.0"
   }
 }
 ```
@@ -44,7 +43,7 @@ Domyślny plik konfiguracji zostanie utworzony `c:\verdaccio\verdaccio\config.ya
 ### start.js
 
 ```bash
-process.argv.push('-l', 'unix:' + process.env.PORT);
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
@@ -78,14 +77,16 @@ require('./node_modules/verdaccio/src/lib/cli.js');
         <!-- iisnode folder is where iisnode stores it's logs. These should
         never be rewritten -->
         <rule name="iisnode" stopProcessing="true">
-          <match url="iisnode*" />
-          <action type="None" />
+            <match url="iisnode*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="None" />
         </rule>
 
         <!-- Rewrite all other urls in order for verdaccio to handle these -->
         <rule name="verdaccio">
-          <match url="/*" />
-          <action type="Rewrite" url="start.js" />
+            <match url="/*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="Rewrite" url="start.js" />
         </rule>
       </rules>
     </rewrite>
