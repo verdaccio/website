@@ -2,9 +2,9 @@
 id: iss-server
 title: "Installazione sul server IIS"
 ---
-These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
+Queste istruzioni sono state scritte per Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) e [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
-- Install IIS Install [iisnode](https://github.com/Azure/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
+- Installare IIS e [iisnode](https://github.com/Azure/iisnode). Assicurarsi di installare i prerequisiti (Url Rewrite Module & node) come spiegato nelle istruzioni per iisnode.
 - Creare una nuova cartella in Explorer in cui si desidera ospitare verdaccio. Per esempio `C:\verdaccio`. Salvare in questa cartella [package.json](#packagejson), [start.js](#startjs) e [web.config](#webconfig).
 - Creare un nuovo sito su Internet Information Services Manager. È possibile nominarlo come si preferisce. In queste [istruzioni](http://www.iis.net/learn/manage/configuring-security/application-pool-identities) verrà chiamato verdaccio. Specificare il percorso in cui sono stati salvati i file ed il numero della porta.
 - Tornare indietro a Explorer e autorizzare l'utente che esegue il gruppo di applicazioni a poter modificare la cartella appena creata. Se si è nominato il nuovo sito verdaccio e non si è modificato il gruppo di applicazioni, allora questo sta funzionando grazie ad un'ApplicationPoolIdentity e si dovrebbe dare all'utente le autorizzazioni di poter modificare IIS AppPool\verdaccio, vedere le istruzioni in caso di aiuto. (Se si desidera è possibile restringere l'accesso successivamente, così che si abbiano solo le autorizzazioni per modificare su iisnode e verdaccio/storage)
@@ -74,15 +74,15 @@ require('./node_modules/verdaccio/src/lib/cli.js');
     <rewrite>
       <rules>
 
-        <!-- iisnode folder is where iisnode stores it's logs. These should
-        never be rewritten -->
+        <!-- iisnode folder is where iisnode stores it's logs. Queste non dovrebbero
+        mai essere riscritte -->
         <rule name="iisnode" stopProcessing="true">
             <match url="iisnode*" />
             <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
             <action type="None" />
         </rule>
 
-        <!-- Rewrite all other urls in order for verdaccio to handle these -->
+        <!-- Riscrivi tutte gli altri url affinché Verdaccio li gestisca -->
         <rule name="verdaccio">
             <match url="/*" />
             <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
@@ -91,8 +91,8 @@ require('./node_modules/verdaccio/src/lib/cli.js');
       </rules>
     </rewrite>
 
-    <!-- exclude node_modules directory and subdirectories from serving
-    by IIS since these are implementation details of node.js applications -->
+    <!-- escludere la directory node_modules e le sottodirectory dalla pubblicazione
+     da IIS poiché questi sono dettagli di implementazione delle applicazioni node.js -->
     <security>
       <requestFiltering>
         <hiddenSegments>
