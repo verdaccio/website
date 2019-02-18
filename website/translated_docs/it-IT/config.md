@@ -85,9 +85,20 @@ La configurazione è divisa in due sezioni, `api` e `web`. Per utilizzare JWT su
 
 > Consigliamo caldamente di migrare su JWT poiché la firma ereditata (`aes192`) è deprecata e non sarà presente nelle versioni future.
 
+### Server
+
+A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+
+> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+
+```yaml
+server:
+  keepAliveTimeout: 60
+```
+
 ### Interfaccia Utente Web
 
-Questa proprietà consente di modificare le caratteristiche dell'Interfaccia Utente web. Per ulteriori informazioni su questa sezione, leggere la [pagina dell'interfaccia utente web](web.md).
+This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
 
 ```yaml
 web:
@@ -109,7 +120,7 @@ uplinks:
 
 ### Pacchetti
 
-La funzione "Pacchetti" consente all'utente di controllare come i pacchetti vengono resi accessibili. Per ulteriori informazioni su questa sezione leggere [la pagina dei pacchetti ](packages.md).
+Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
 
 ```yaml
 packages:
@@ -150,7 +161,7 @@ max_body_size: 10mb
 
 ### Porta in ascolto
 
-`verdaccio` viene eseguito per impostazione predefinita nella porta `4873`. È possibile cambiare porta tramite [cli](cli.md) o nel file di configurazione, le seguenti opzioni sono valide.
+`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
 
 ```yaml
 listen:
@@ -196,7 +207,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Notifiche
 
-Abilitare le notifiche di strumenti di terze parti è abbastanza facile via web hook. Per ulteriori informazioni su questa sezione leggere la [pagina delle notifiche](notifications.md).
+Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -212,7 +223,7 @@ notify:
 
 <small>A partire da: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` è un nuovo comando rilasciato con [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio include un plugin di middleware incorporato per gestire questo comando.
+`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
 
 > Se si dispone di una nuova installazione viene fornito di default, altrimenti è necessario aggiungere le seguenti proprietà al file di configurazione
 
