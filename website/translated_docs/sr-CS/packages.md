@@ -139,11 +139,11 @@ Hajde da vidimo šta smo postigli u navedenom primeru:
 
 Možete definisati multiple `packages` pri čemu svaki od njih mora imati jedinstveni `Regex`. Sintaksa je bazirana na [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Svojstvo | Tip     | Potrebno | Primer         | Podrška | Opis                                                                      |
-| -------- | ------- | -------- | -------------- | ------- | ------------------------------------------------------------------------- |
-| access   | string  | No       | $all           | all     | definiše grupe kojima je dozvoljen pristup paketu                         |
-| publish  | string  | No       | $authenticated | all     | definiše grupe kojima je dozvoljeno da publikuju                          |
-| proxy    | string  | No       | npmjs          | all     | limitira look ups za specifični uplink                                    |
-| storage  | boolean | No       | string         | all     | it creates a subfolder whithin the storage folder for each package access |
+| Svojstvo | Tip     | Potrebno | Primer         | Podrška  | Opis                                                                      |
+| -------- | ------- | -------- | -------------- | -------- | ------------------------------------------------------------------------- |
+| access   | string  | No       | $all           | all      | definiše grupe kojima je dozvoljen pristup paketu                         |
+| publish  | string  | No       | $authenticated | all      | definiše grupe kojima je dozvoljeno da publikuju                          |
+| proxy    | string  | No       | npmjs          | all      | limitira look ups za specifični uplink                                    |
+| storage  | boolean | No       | string         | `>v4` | it creates a subfolder whithin the storage folder for each package access |
 
 > Naglašavamo da ne preporučujemo da i dalje koristite **allow_access**/**allow_publish** i **proxy_access**, jer će navedene uskoro biti uklonjene. Molimo Vas da umesto toga koristite skraćene verzije (**access**/**publish**/**proxy**).
