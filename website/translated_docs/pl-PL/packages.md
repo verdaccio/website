@@ -138,11 +138,11 @@ Be **aware that the order of your packages definitions is important and always u
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Właściwość | Typ         | Wymagane | Przykład       | Wsparcie  | Opis                                        |
-| ---------- | ----------- | -------- | -------------- | --------- | ------------------------------------------- |
-| access     | ciąg znaków | Nie      | $all           | wszystkie | define groups allowed to access the package |
-| publish    | ciąg znaków | Nie      | $authenticated | wszystkie | define groups allowed to publish            |
-| proxy      | ciąg znaków | Nie      | npmjs          | wszystko  | limit look ups for specific uplink          |
-| magazyn    | boolean     | Nie      | [prawda,fałsz] | wszystko  | TODO                                        |
+| Właściwość | Typ         | Wymagane | Przykład       | Wsparcie  | Opis                                                                      |
+| ---------- | ----------- | -------- | -------------- | --------- | ------------------------------------------------------------------------- |
+| access     | ciąg znaków | Nie      | $all           | wszystkie | define groups allowed to access the package                               |
+| publish    | ciąg znaków | Nie      | $authenticated | wszystkie | define groups allowed to publish                                          |
+| proxy      | ciąg znaków | Nie      | npmjs          | wszystko  | limit look ups for specific uplink                                        |
+| magazyn    | boolean     | Nie      | ciąg znaków    | wszystko  | it creates a subfolder whithin the storage folder for each package access |
 
 > Podkreślamy, że zalecamy niekorzystanie dłużej z **allow_access**/**allow_publish**i** proxy_access**, są one nieaktualne i wkrótce zostaną usunięte. Użyj skróconej wersji każdego z tych (**access**/**publish**/**proxy**).
