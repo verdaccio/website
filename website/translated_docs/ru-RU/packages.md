@@ -144,6 +144,6 @@ You can define mutiple `packages` and each of them must have an unique `Regex`. 
 | access   | string  | Нет          | $all           | все       | define groups allowed to access the package                               |
 | publish  | string  | Нет          | $authenticated | все       | define groups allowed to publish                                          |
 | proxy    | string  | Нет          | npmjs          | все       | limit look ups for specific uplink                                        |
-| storage  | boolean | Нет          | string         | все       | it creates a subfolder whithin the storage folder for each package access |
+| storage  | boolean | Нет          | string         | `>v4`  | it creates a subfolder whithin the storage folder for each package access |
 
 > We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
