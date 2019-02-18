@@ -144,6 +144,6 @@ Si possono definire `pacchetti` multipli ed ognuno di essi deve avere un `Regex`
 | accesso       | stringa            | No        | $all           | tutti    | definisce i gruppi autorizzati ad accedere al pacchetto                   |
 | pubblicazione | stringa            | No        | $authenticated | tutti    | definisce i gruppi autorizzati a pubblicare                               |
 | proxy         | stringa            | No        | npmjs          | tutti    | limita le ricerche di un uplink specifico                                 |
-| archiviazione | variabile booleana | No        | stringa        | tutti    | it creates a subfolder whithin the storage folder for each package access |
+| archiviazione | variabile booleana | No        | stringa        | `>v4` | it creates a subfolder whithin the storage folder for each package access |
 
 > Vogliamo rimarcare che non raccomandiamo più l'utilizzo di **allow_access**/**allow_publish** e **proxy_access** che sono superati e saranno presto rimossi, si prega di utilizzare invece la versione breve di ognuna di queste (**access**/**publish**/**proxy**).
