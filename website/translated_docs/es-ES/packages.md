@@ -139,11 +139,11 @@ Se **consciente que el orden de la definición de los paquetes es importante y s
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Propiedad | Tipo    | Requerido | Ejemplo        | Soporte | Descripción                                                |
-| --------- | ------- | --------- | -------------- | ------- | ---------------------------------------------------------- |
-| access    | string  | No        | $all           | all     | define que grupos estan permitidos para acceder al paquete |
-| publish   | string  | No        | $authenticated | all     | defini que grupos estan permitidos a publicar              |
-| proxy     | string  | No        | npmjs          | all     | limita las busquedas a un uplink específico                |
-| storage   | boolean | No        | [true,false]   | all     | TODO                                                       |
+| Propiedad | Tipo    | Requerido | Ejemplo        | Soporte | Descripción                                                               |
+| --------- | ------- | --------- | -------------- | ------- | ------------------------------------------------------------------------- |
+| access    | string  | No        | $all           | all     | define que grupos estan permitidos para acceder al paquete                |
+| publish   | string  | No        | $authenticated | all     | defini que grupos estan permitidos a publicar                             |
+| proxy     | string  | No        | npmjs          | all     | limita las busquedas a un uplink específico                               |
+| storage   | boolean | No        | string         | all     | it creates a subfolder whithin the storage folder for each package access |
 
 > Resaltamos que ya no recomendamos usar **allow_access**/**allow_publish** y **proxy_access**, estos son obsoletos y pronto serán removidos, por favor usar las versiones reducidas de estos (**access**/**publish**/**proxy**).
