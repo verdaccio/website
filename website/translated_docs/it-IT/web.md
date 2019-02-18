@@ -4,7 +4,7 @@ title: "Interfaccia utente web"
 ---
 
 
-<p align="center"><img src="https://github.com/verdaccio/verdaccio/blob/master/assets/gif/verdaccio_big_30.gif?raw=true"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png"></p>
 
 Verdaccio offre un'interfaccia web utente per mostrare solo i pacchetti privati e può essere personalizzata,.
 
@@ -13,7 +13,8 @@ web:
   enable: true
   title: Verdaccio
   logo: logo.png
-  scope:
+  gravatar: true | false
+  scope: @scope
 ```
 
 Tutte le restrizioni di accesso definite per [proteggere i pacchetti](protect-your-dependencies.md) si applicano anche all'interfaccia Web.
@@ -24,5 +25,6 @@ Tutte le restrizioni di accesso definite per [proteggere i pacchetti](protect-yo
 | --------- | ------------------ | --------- | ------------------------------ | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | enable    | variabile booleana | No        | vero/falso                     | tutti    | abilita l'interfaccia web                                                                                                                                                  |
 | title     | stringa            | No        | Verdaccio                      | tutti    | Descrizione del titolo HTML                                                                                                                                                |
+| gravatar  | variabile booleana | No        | vero                           | tutti    | Gravatars will be generated under the hood if this property is enabled                                                                                                     |
 | logo      | stringa            | No        | http://my.logo.domain/logo.png | tutti    | un URI in cui si trova il logo                                                                                                                                             |
 | scope     | stringa            | No        | \\@myscope                   | tutti    | Se si utilizza questo registro per uno specifico scope, definisci quello scope nelle istruzioni dell' intestazione dell'interfaccia web utente (nota: escape @ with \\@) |
