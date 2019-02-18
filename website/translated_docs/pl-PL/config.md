@@ -191,7 +191,7 @@ https_proxy: https://something.local/
 Ta zmienna powinna posiadać listę domen oddzieloną przecinkami, dla których proxy nie powinno być używane.
 
 ```yaml
-brak_proxy: hostlokalny,127.0.0.1
+no_proxy: localhost,127.0.0.1
 ```
 
 ### Powiadomienia

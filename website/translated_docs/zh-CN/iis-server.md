@@ -2,9 +2,9 @@
 id: iss-server
 title: "IIS server上进行安装"
 ---
-These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) and [verdaccio 2.7.4/3.10.1](https://github.com/verdaccio/verdaccio).
+These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
-- 安装IIS Install [iisnode](https://github.com/tjanczuk/iisnode)。请确保您依照iisnode用法说明中所说的安装先决条件 (Url 重写模块 & 节点) 。
+- Install IIS Install [iisnode](https://github.com/Azure/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
 - 在要承载verdaccio的资源管理器中创建一个新文件夹。 例如 `C:\verdaccio`。 在此文件夹里保存 [package.json](#packagejson), [start.js](#startjs) 和 [web.config](#webconfig) 。
 - 在因特网信息服务管理器中创建一个新站点。 您可以随意给它命名。 我将在这些[用法说明](http://www.iis.net/learn/manage/configuring-security/application-pool-identities)中称它为verdaccio。 指定保存所有文件和端口号的路径。
 - 返回到资源管理器中，把对您刚创建的文件夹的修改权限赋予给运行此应用程序池的用户。 如果您已命名此站点为verdaccio，并没有修改该应用程序池，它正在ApplicationPoolIdentity下运行，您就应该给用户 IIS AppPool\verdaccio修改权限。如果您需要帮助的话，请参照用法说明。 （如果需要，可以在日后限制访问，这样它只有 iisnode 和verdaccio\storage的修改权限）
@@ -19,7 +19,6 @@ These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3]
 
 我希望 `verdaccio`站点成为IIS中默认的站点，因此我执行了以下操作：
 
-- 我确定`c:\users{yourname}`里的.npmrc文件的registry已设置为 `"registry=http://localhost/"`
 - 我中止“默认网站”，并且只在IIS 里启动"verdaccio"站点
 - 我将端口80绑定设置为"http", ip 地址为"全部未定义"，ok 任何警告或提示。
 
@@ -36,7 +35,7 @@ These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3]
   "description": "Hosts verdaccio in iisnode",
   "main": "start.js",
   "dependencies": {
-    "verdaccio": "^2.1.0"
+    "verdaccio": "^3.11.0"
   }
 }
 ```
@@ -44,7 +43,7 @@ These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3]
 ### start.js
 
 ```bash
-process.argv.push('-l', 'unix:' + process.env.PORT);
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
@@ -75,10 +74,19 @@ require('./node_modules/verdaccio/src/lib/cli.js');
     <rewrite>
       <rules>
 
-        <!-- iisnode folder is where iisnode stores it's logs. <!-- Rewrite all other urls in order for verdaccio to handle these -->
+        <!-- iisnode folder is where iisnode stores it's logs. These should
+        never be rewritten -->
+        <rule name="iisnode" stopProcessing="true">
+            <match url="iisnode*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="None" />
+        </rule>
+
+        <!-- Rewrite all other urls in order for verdaccio to handle these -->
         <rule name="verdaccio">
-          <match url="/*" />
-          <action type="Rewrite" url="start.js" />
+            <match url="/*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="Rewrite" url="start.js" />
         </rule>
       </rules>
     </rewrite>
