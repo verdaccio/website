@@ -85,9 +85,20 @@ auth:
 
 > Јако Вам препоручујемо да се пребаците на JWT пошто је legacy signature (`aes192`) застарео и неће га бити у новијим верзијама.
 
+### Сервер
+
+A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+
+> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+
+```yaml
+server:
+  keepAliveTimeout: 60
+```
+
 ### Web UI (кориснички интерфејс)
 
-Ово својство Вам омогућава да модификујете изглед корисничког интерфејса. За више информација о овој секцији прочитајте [страницу web ui](web.md).
+This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
 
 ```yaml
 web:
@@ -109,7 +120,7 @@ uplinks:
 
 ### Пакети
 
-Пакети (packages) дају могућност корисницима да контролишу како ће се приступати пакетима. За више детаља о овој секцији, прочитајте [packages страницу](packages.md).
+Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
 
 ```yaml
 packages:
@@ -150,7 +161,7 @@ max_body_size: 10mb
 
 ### Listen Порт
 
-`verdaccio` према "фабричким подешавањима" ради на порту `4873`. Измена порта се може обавити преко [cli](cli.md) или директно у фајлу за конфигурисање при чему су следеће опције валидне.
+`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
 
 ```yaml
 listen:
@@ -196,7 +207,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Нотификације
 
-Дозвољавање нотификација за алате направљене од стране трећих лица је релативно једноставно уз помоћ web hooks технике. За више информација о овој теми, прочитајте [notifications страницу](notifications.md).
+Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -212,7 +223,7 @@ notify:
 
 <small>Почевши од верзије: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` је нова команда која је уведена у [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio, а која укључује уграђени middleware plugin са којим је могуће извршити дату команду.
+`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
 
 > Ако имате нову инсталацију, све је већ укључено у оквиру ње. У супротном, треба да додате наведене додатке (props) у Ваш config фајл
 
