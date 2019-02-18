@@ -139,11 +139,11 @@ Be **aware that the order of your packages definitions is important and always u
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Thuộc tính | Phương thức | Yêu cầu | Ví dụ          | Hỗ trợ | Miêu tả                                     |
-| ---------- | ----------- | ------- | -------------- | ------ | ------------------------------------------- |
-| access     | chuỗi       | Không   | $all           | tất cả | define groups allowed to access the package |
-| publish    | chuỗi       | Không   | $authenticated | tất cả | define groups allowed to publish            |
-| proxy      | chuỗi       | Không   | npmjs          | tất cả | limit look ups for specific uplink          |
-| storage    | boolean     | Không   | [true,false]   | tất cả | TODO                                        |
+| Thuộc tính | Phương thức | Yêu cầu | Ví dụ          | Hỗ trợ | Miêu tả                                                                   |
+| ---------- | ----------- | ------- | -------------- | ------ | ------------------------------------------------------------------------- |
+| access     | chuỗi       | Không   | $all           | tất cả | define groups allowed to access the package                               |
+| publish    | chuỗi       | Không   | $authenticated | tất cả | define groups allowed to publish                                          |
+| proxy      | chuỗi       | Không   | npmjs          | tất cả | limit look ups for specific uplink                                        |
+| storage    | boolean     | Không   | chuỗi          | tất cả | it creates a subfolder whithin the storage folder for each package access |
 
 > We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
