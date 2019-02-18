@@ -4,7 +4,7 @@ title: "Web User Interface"
 ---
 
 
-<p align="center"><img src="https://github.com/verdaccio/verdaccio/blob/master/assets/gif/verdaccio_big_30.gif?raw=true"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png"></p>
 
 Verdaccio поседује прилагодиви веб кориснички интерфејс који приказује само приватне пакете.
 
@@ -13,7 +13,8 @@ web:
   enable: true
   title: Verdaccio
   logo: logo.png
-  scope:
+  gravatar: true | false
+  scope: @scope
 ```
 
 Све рестрикције које се односе на приступ дефинисане су у оквиру  и такође ће се аплицирати и на веб интерфејс.</p> 
@@ -24,5 +25,6 @@ web:
 | -------- | ------- | --------- | ------------------------------ | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | enable   | boolean | Не        | true/false                     | all     | дозвољава приказ веб интерфејса                                                                                                                   |
 | title    | string  | Не        | Verdaccio                      | all     | Опис наслова HTML заглавља                                                                                                                        |
+| gravatar | boolean | Не        | true                           | all     | Gravatars will be generated under the hood if this property is enabled                                                                            |
 | logo     | string  | Не        | http://my.logo.domain/logo.png | all     | URL на коме се налази лого                                                                                                                        |
 | scope    | string  | Не        | \\@myscope                   | all     | Ако користите регистри за specific module scope, прецизирајте тај scope како бисте подесили webui instructions header (note: escape @ with \\@) |
