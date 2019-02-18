@@ -4,7 +4,7 @@ title: "Uplinks"
 ---
 Un *uplink* es un enlace a un registro externo que provee acceso a paquetes externos.
 
-![Uplinks](assets/uplinks.png)
+![Uplinks](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
 
 ### Uso
 
