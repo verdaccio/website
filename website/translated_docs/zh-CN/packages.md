@@ -139,11 +139,11 @@ packages:
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| 属性      | 类型      | 必须的 | 示例             | 支持  | 描述              |
-| ------- | ------- | --- | -------------- | --- | --------------- |
-| access  | string  | No  | $all           | all | 定义允许访问包的组       |
-| publish | string  | No  | $authenticated | all | 定义允许发布的组        |
-| proxy   | string  | No  | npmjs          | all | 针对特定的uplink限制查找 |
-| storage | boolean | No  | [true,false]   | all | TODO            |
+| 属性      | 类型      | 必须的 | 示例             | 支持  | 描述                                                                        |
+| ------- | ------- | --- | -------------- | --- | ------------------------------------------------------------------------- |
+| access  | string  | No  | $all           | all | 定义允许访问包的组                                                                 |
+| publish | string  | No  | $authenticated | all | 定义允许发布的组                                                                  |
+| proxy   | string  | No  | npmjs          | all | 针对特定的uplink限制查找                                                           |
+| storage | boolean | No  | 字符串            | all | it creates a subfolder whithin the storage folder for each package access |
 
 > 我们强烈建议不要再使用已被弃用的**allow_access**/**allow_publish** 和 **proxy_access**，它们很快就会被移除，请使用它们的精简版本 (**access**/**publish**/**proxy**) 。
