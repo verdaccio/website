@@ -101,4 +101,4 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 ### Problemi (Troubleshooting)
 
 - **Web interfejs se ne učitava kada je hostovan sa https pošto pokušava da preuzme skripte preko http.**  
-    Proverite da li ste ispravno uneli `url_prefix` u verdaccio config. Pratite [discussion](https://github.com/verdaccio/verdaccio/issues/622).
+    Proverite da li ste ispravno uneli `url_prefix` u verdaccio config. Pratite [diskusiju](https://github.com/verdaccio/verdaccio/issues/622).

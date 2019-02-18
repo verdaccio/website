@@ -2,9 +2,9 @@
 id: iss-server
 title: "Инсталирање на IIS server"
 ---
-Дате инструкције су писане за Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) и [verdaccio 2.7.4/3.10.1](https://github.com/verdaccio/verdaccio).
+These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
-- Install IIS Install [iisnode](https://github.com/tjanczuk/iisnode). Постарајте се да сте инсталирали (Url Rewrite Module & node) као што је објашњено у упутствима за iisnode.
+- Install IIS Install [iisnode](https://github.com/Azure/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
 - Направите нови фолдер у Explorer-у, који ће бити host за verdaccio. На пример `C:\verdaccio`. Уснимите [package.json](#packagejson), [start.js](#startjs) и [web.config](#webconfig) у овај фолдер.
 - Направите нови сајт у Internet Information Services Manager. Можете га назвати како Вам је воља. Зваћемо га verdaccio у овим [инструкцијама](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Одаберите path где ћете снимити све фајлове и број порта.
 - Вратите се у Explorer и у оквиру фолдера који сте управо креирали доделите права кориснику који покреће application pool. Ако сте именовали нови сајт као verdaccio и нисте променили app pool, он ради под ApplicationPoolIdentity и требало би да доделите права кориснику, IIS AppPool\verdaccio modify rights, погледајте инструкције ако Вам је потребна помоћ. (Касније ако пожелите, можете ограничити приступ, тако да права остају промењена само за iisnode и verdaccio\storage)
@@ -19,7 +19,6 @@ title: "Инсталирање на IIS server"
 
 Желео сам да `verdaccio` сајт буде подразумевани сајт у IIS и зато сам урадио следеће:
 
-- Постарао сам се да .npmrc file u `c:\users{yourname}` има регистри подешен на `"registry=http://localhost/"`
 - Стопирао сам "Default Web Site" и покренуо јединo "verdaccio" сајт у IIS
 - Подесио сам bindings на "http", ip address "All Unassigned" на port 80, ok any warning or prompts
 
@@ -36,7 +35,7 @@ title: "Инсталирање на IIS server"
   "description": "Hosts verdaccio in iisnode",
   "main": "start.js",
   "dependencies": {
-    "verdaccio": "^2.1.0"
+    "verdaccio": "^3.11.0"
   }
 }
 ```
@@ -44,7 +43,7 @@ title: "Инсталирање на IIS server"
 ### start.js
 
 ```bash
-process.argv.push('-l', 'unix:' + process.env.PORT);
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
@@ -78,14 +77,16 @@ require('./node_modules/verdaccio/src/lib/cli.js');
         <!-- iisnode folder is where iisnode stores it's logs. These should
         never be rewritten -->
         <rule name="iisnode" stopProcessing="true">
-          <match url="iisnode*" />
-          <action type="None" />
+            <match url="iisnode*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="None" />
         </rule>
 
         <!-- Rewrite all other urls in order for verdaccio to handle these -->
         <rule name="verdaccio">
-          <match url="/*" />
-          <action type="Rewrite" url="start.js" />
+            <match url="/*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="Rewrite" url="start.js" />
         </rule>
       </rules>
     </rewrite>
