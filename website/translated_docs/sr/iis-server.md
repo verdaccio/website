@@ -2,9 +2,9 @@
 id: iss-server
 title: "Инсталирање на IIS server"
 ---
-These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
+Наведене инструкције су писане за Windows Server 2016, IIS 10, Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) и [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
-- Install IIS Install [iisnode](https://github.com/Azure/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
+- Install IIS Install [iisnode](https://github.com/Azure/iisnode).. Постарајте се да сте инсталирали све што је потребно (Url Rewrite Module & node), као што је објашњено у упутствима за iisnode.
 - Направите нови фолдер у Explorer-у, који ће бити host за verdaccio. На пример `C:\verdaccio`. Уснимите [package.json](#packagejson), [start.js](#startjs) и [web.config](#webconfig) у овај фолдер.
 - Направите нови сајт у Internet Information Services Manager. Можете га назвати како Вам је воља. Зваћемо га verdaccio у овим [инструкцијама](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Одаберите path где ћете снимити све фајлове и број порта.
 - Вратите се у Explorer и у оквиру фолдера који сте управо креирали доделите права кориснику који покреће application pool. Ако сте именовали нови сајт као verdaccio и нисте променили app pool, он ради под ApplicationPoolIdentity и требало би да доделите права кориснику, IIS AppPool\verdaccio modify rights, погледајте инструкције ако Вам је потребна помоћ. (Касније ако пожелите, можете ограничити приступ, тако да права остају промењена само за iisnode и verdaccio\storage)
@@ -92,17 +92,6 @@ require('./node_modules/verdaccio/src/lib/cli.js');
     </rewrite>
 
     <!-- exclude node_modules directory and subdirectories from serving
-    by IIS since these are implementation details of node.js applications -->
-    <security>
-      <requestFiltering>
-        <hiddenSegments>
-          <add segment="node_modules" />
-        </hiddenSegments>
-      </requestFiltering>
-    </security>
-
-  </system.webServer>
-</configuration>
 ```
 
 ### Проблеми (Troubleshooting)
