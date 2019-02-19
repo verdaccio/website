@@ -140,11 +140,11 @@ Hajde da vidimo šta smo postigli u navedenom primeru:
 
 Možete definisati multiple `packages` pri čemu svaki od njih mora imati jedinstveni `Regex`. Sintaksa je bazirana na [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Svojstvo | Tip     | Neophodno | Primer         | Podrška  | Opis                                                                      |
-| -------- | ------- | --------- | -------------- | -------- | ------------------------------------------------------------------------- |
-| access   | string  | Ne        | $all           | all      | definiše grupe kojima je dozvoljen pristup paketu                         |
-| publish  | string  | Ne        | $authenticated | all      | definiše grupe kojima je dozvoljeno da publikuju                          |
-| proxy    | string  | Ne        | npmjs          | all      | limitira look ups za specifični uplink                                    |
-| storage  | boolean | Ne        | string         | `>v4` | it creates a subfolder whithin the storage folder for each package access |
+| Svojstvo | Tip     | Neophodno | Primer         | Podrška  | Opis                                                                |
+| -------- | ------- | --------- | -------------- | -------- | ------------------------------------------------------------------- |
+| access   | string  | Ne        | $all           | all      | definiše grupe kojima je dozvoljen pristup paketu                   |
+| publish  | string  | Ne        | $authenticated | all      | definiše grupe kojima je dozvoljeno da publikuju                    |
+| proxy    | string  | Ne        | npmjs          | all      | limitira look ups za specifični uplink                              |
+| storage  | boolean | Ne        | string         | `>v4` | kreira pod-folder unutrar storage foldera za svaki pristup paketima |
 
 > Naglašavamo da ne preporučujemo da i dalje koristite **allow_access**/**allow_publish** i **proxy_access**, jer će navedene uskoro biti uklonjene. Molimo Vas da umesto toga koristite skraćene verzije (**access**/**publish**/**proxy**).
