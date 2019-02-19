@@ -25,7 +25,7 @@ web:
 | enable        | boolean    | Не        | true/false                     | all      | дозвољава приказ веб интерфејса                                                                                                                   |
 | title         | string     | Не        | Verdaccio                      | all      | Опис наслова HTML заглавља                                                                                                                        |
 | gravatar      | boolean    | Не        | true                           | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                            |
-| sort_packages | [asc,desc] | Не        | asc                            | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                            |
+| sort_packages | [asc,desc] | Не        | asc                            | `>v4` | By default private packages are sorted by ascending                                                                                               |
 | logo          | string     | Не        | http://my.logo.domain/logo.png | all      | a URI where logo is located (header logo)                                                                                                         |
 | scope         | string     | Не        | \\@myscope                   | all      | Ако користите регистри за specific module scope, прецизирајте тај scope како бисте подесили webui instructions header (note: escape @ with \\@) |
 
