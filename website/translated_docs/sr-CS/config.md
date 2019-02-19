@@ -161,7 +161,7 @@ max_body_size: 10mb
 
 ### Listen Port
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+`verdaccio` prema "fabričkim podešavanjima" radi na portu `4873`. Izmena porta se može obaviti preko [cli](cli.md) ili direktno u fajlu za konfigurisanje, pri čemu su sledeće opcije validne.
 
 ```yaml
 listen:
@@ -207,7 +207,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Notifikacije
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Dozvoljavanje notifikacija za alate napravljene od strane trećih lica je relativno jednostavno uz pomoć web hooks tehnike. Za više informacija o ovoj temi, pročitajte [stranicu "notifications"](notifications.md).
 
 ```yaml
 notify:
@@ -223,7 +223,7 @@ notify:
 
 <small>Počevši od verzije: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`npm audit` je nova komanda koja je uvedena u [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio, a koja uključuje ugrađeni middleware plugin kojim je moguće izvršiti datu komandu.
 
 > Ako imate novu instalaciju, sve je već uključeno u okviru nje. U suprotnom, treba da dodate navedene dodatke (props) u Vaš config fajl
 
