@@ -30,4 +30,4 @@ Sve restrikcije koje se odnose na pristup definisane su u okviru  i takođe će 
 | logo          | string     | Ne        | http://my.logo.domain/logo.png | all      | URI gde se logo nalazi (logo za header)                                                                                                           |
 | scope         | string     | Ne        | \\@myscope                   | all      | Ako koristite registri za specific module scope, precizirajte taj scope kako biste podesili webui instructions header (note: escape @ with \\@) |
 
-> Препоручено је да лого буде димензија `40x40` пиксела.
+> Preporučeno je da logo bude dimenzija `40x40` piksela.
