@@ -25,7 +25,7 @@ Sve restrikcije koje se odnose na pristup definisane su u okviru  i takođe će 
 | enable        | boolean    | No        | true/false                     | all      | dozvoljava prikaz web interfejsa                                                                                                                  |
 | title         | string     | No        | Verdaccio                      | all      | opis naslova HTML zaglavlja                                                                                                                       |
 | gravatar      | boolean    | No        | true                           | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                            |
-| sort_packages | [asc,desc] | No        | asc                            | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                            |
+| sort_packages | [asc,desc] | No        | asc                            | `>v4` | By default private packages are sorted by ascending                                                                                               |
 | logo          | string     | Ne        | http://my.logo.domain/logo.png | all      | a URI where logo is located (header logo)                                                                                                         |
 | scope         | string     | Ne        | \\@myscope                   | all      | Ako koristite registri za specific module scope, precizirajte taj scope kako biste podesili webui instructions header (note: escape @ with \\@) |
 
