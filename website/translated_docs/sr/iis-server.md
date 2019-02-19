@@ -92,6 +92,17 @@ require('./node_modules/verdaccio/src/lib/cli.js');
     </rewrite>
 
     <!-- exclude node_modules directory and subdirectories from serving
+    by IIS since these are implementation details of node.js applications -->
+    <security>
+      <requestFiltering>
+        <hiddenSegments>
+          <add segment="node_modules" />
+        </hiddenSegments>
+      </requestFiltering>
+    </security>
+
+  </system.webServer>
+</configuration>
 ```
 
 ### Проблеми (Troubleshooting)
