@@ -21,6 +21,7 @@ admons:
     role: core
   - name: Priscila
     github: priscilawebdev
+    twitter: Priscil13949295
     role: core
 maintainers:
   - name: Verdaccio
