@@ -25,7 +25,7 @@ All access restrictions defined to [protect your packages](protect-your-dependen
 | enable        | boolean    | Нет          | true/false                     | все       | allow to display the web interface                                                                                                                   |
 | title         | string     | Нет          | Verdaccio                      | все       | HTML head title description                                                                                                                          |
 | gravatar      | boolean    | Нет          | true                           | `>v4`  | Gravatars will be generated under the hood if this property is enabled                                                                               |
-| sort_packages | [asc,desc] | Нет          | asc                            | `>v4`  | Gravatars will be generated under the hood if this property is enabled                                                                               |
+| sort_packages | [asc,desc] | Нет          | asc                            | `>v4`  | By default private packages are sorted by ascending                                                                                                  |
 | logo          | string     | Нет          | http://my.logo.domain/logo.png | все       | a URI where logo is located (header logo)                                                                                                            |
 | scope         | string     | Нет          | \\@myscope                   | все       | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
 
