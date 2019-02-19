@@ -24,9 +24,9 @@ web:
 | ------------- | ---------- | --------- | ------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | enable        | boolean    | Не        | true/false                     | all      | дозвољава приказ веб интерфејса                                                                                                                   |
 | title         | string     | Не        | Verdaccio                      | all      | Опис наслова HTML заглавља                                                                                                                        |
-| gravatar      | boolean    | Не        | true                           | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                            |
-| sort_packages | [asc,desc] | Не        | asc                            | `>v4` | By default private packages are sorted by ascending                                                                                               |
-| logo          | string     | Не        | http://my.logo.domain/logo.png | all      | a URI where logo is located (header logo)                                                                                                         |
+| gravatar      | boolean    | Не        | true                           | `>v4` | Gravatar-и ће бити генерисани у позадини, ако је ово својство омогућено                                                                           |
+| sort_packages | [asc,desc] | Не        | asc                            | `>v4` | По правилу, приватни пакети су сортирани по растућем редоследу                                                                                    |
+| logo          | string     | Не        | http://my.logo.domain/logo.png | all      | URI где се лого налази (лого за header)                                                                                                           |
 | scope         | string     | Не        | \\@myscope                   | all      | Ако користите регистри за specific module scope, прецизирајте тај scope како бисте подесили webui instructions header (note: escape @ with \\@) |
 
-> It is recommended the logo size has the following size `40x40` pixels.
+> Препоручено је да лого буде димензија `40x40` пиксела.
