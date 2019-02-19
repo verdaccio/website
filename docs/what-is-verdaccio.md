@@ -5,6 +5,9 @@ title: "What is Verdaccio?"
 
 Verdaccio is a **lightweight private npm proxy registry** built in **Node.js**
 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## What's a registry
 
 * A repository for packages that implements the **CommonJS Compliant Package Registry specification** for reading package info
@@ -54,4 +57,3 @@ Verdaccio cache all dependencies by demand and speed up installations in local o
 * It is 100% compatible with yarn, npm and pnpm
 * It was **forked** based on `sinopia@1.4.0` and 100% **backward compatible**.
 * Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
-
