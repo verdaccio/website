@@ -3,7 +3,7 @@ id: version-4.0.0-alpha.4-iss-server
 title: Инсталирање на IIS server
 original_id: iss-server
 ---
-These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
+Наведене инструкције су писане за Windows Server 2016, IIS 10, Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) и [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
 - Install IIS Install [iisnode](https://github.com/Azure/iisnode). Проверите да ли сте инсталирали све што је неопходно као предуслов (Url Rewrite Module & node), а што је дато у упутству за iisnode.
 - Направите нови фолдер у Explorer-у, који ће бити host за verdaccio. На пример `C:\verdaccio`. Уснимите [package.json](#packagejson), [start.js](#startjs) и [web.config](#webconfig) у овај фолдер.
@@ -93,17 +93,6 @@ require('./node_modules/verdaccio/src/lib/cli.js');
     </rewrite>
 
     <!-- exclude node_modules directory and subdirectories from serving
-    by IIS since these are implementation details of node.js applications -->
-    <security>
-      <requestFiltering>
-        <hiddenSegments>
-          <add segment="node_modules" />
-        </hiddenSegments>
-      </requestFiltering>
-    </security>
-
-  </system.webServer>
-</configuration>
 ```
 
 ### Проблеми (Troubleshooting)
