@@ -27,11 +27,11 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> Једини опциони су `adduser`, `allow_access`, `apiJWTmiddleware` и `allow_publish`. Verdaccio омогућава fallback у свим наведеним случајевима.
 
-#### apiJWTmiddleware method
+#### apiJWTmiddleware метод
 
-Since `v4.0.0`
+Од верзије `v4.0.0`
 
 `apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement his method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
