@@ -33,7 +33,7 @@ interface IPluginAuth extends IPlugin {
 
 Од верзије `v4.0.0`
 
-`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement his method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
+`apiJWTmiddleware` је уведен од [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) како би се омогућила потпуна контрола над управљањем токенима (token handler). Ако бисте прегазили тај метод, онемогућили бисте `login/adduser` подршку. Препоручујемо Вам да не користите наведени метод, осим ако то није апсолутно неопходно. Детаљни пример можете пронаћи [овде](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
@@ -97,7 +97,7 @@ auth:
     file: ./htpasswd
 ```
 
-Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
+При чему је `htpasswd` суфикс за име plugina. Пример: `verdaccio-htpasswd` и остатак body-ja садржаће параметре за конфигурисање plugin-a.
 
 ## Middleware Plugin
 
@@ -111,7 +111,7 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 ### register_middlewares
 
-The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
+Метод омогућава потпуни приступ до authentification и storage преко `auth` и `storage`. `app` је express апликација која Вам омогућава да додајете нове endpoints.
 
 > Прилично добри примери за middleware plugin су [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) и [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
@@ -131,7 +131,7 @@ Verdaccio по фабричким подешавањима користи file s
 
 ### API
 
-The storage API is a bit more complex, you will need to create a class that return a `IPluginStorage` implementation. Please see details bellow.
+За storage API, ствари су нешто компликованије, пошто ћете морати да креирате класу која враћа `IPluginStorage` имплементацију. Испод имате детаљно објашњење.
 
 ```flow
 class LocalDatabase<IPluginStorage>{
