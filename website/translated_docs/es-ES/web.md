@@ -25,7 +25,7 @@ Todo los accesos restringidos definidos para [proteger paquetes](protect-your-de
 | enable        | boolean    | No        | true/false                     | all      | habilita la interfaz web                                                                                                            |
 | title         | string     | No        | Verdaccio                      | all      | El título de la interfaz web                                                                                                        |
 | gravatar      | boolean    | No        | true                           | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                              |
-| sort_packages | [asc,desc] | No        | asc                            | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                              |
+| sort_packages | [asc,desc] | No        | asc                            | `>v4` | By default private packages are sorted by ascending                                                                                 |
 | logo          | string     | No        | http://my.logo.domain/logo.png | all      | a URI where logo is located (header logo)                                                                                           |
 | scope         | string     | No        | \\@myscope                   | all      | Si estas usando el registro por un scope specifico, define el @scope en el encabezado de la interfaz web (note: escapa @ con \\@) |
 
