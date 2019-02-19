@@ -22,11 +22,18 @@ interface IPluginAuth extends IPlugin {
   authenticate(user: string, password: string, cb: Callback): void;
   adduser(user: string, password: string, cb: Callback): void;
   allow_access(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
-  allow_publish(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
+  apiJWTmiddleware(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
+  allow_publish(helpers): void;
 }
 ```
 
-> Jedini opcioni su `adduser`, `allow_access` i `allow_publish` i verdaccio omogućava fallback u svim navedenim slučajevima.
+> Only `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+
+#### apiJWTmiddleware method
+
+Since `v4.0.0`
+
+`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement his method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
@@ -90,7 +97,7 @@ auth:
     file: ./htpasswd
 ```
 
-Pri čemu je `htpasswd` sufiks za ime plugina. Primer: `verdaccio-htpasswd` i ostatak body-ja sadržaće parametre za konfigurisanje plugin-a.
+Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
 
 ## Middleware Plugin
 
@@ -104,7 +111,7 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 ### register_middlewares
 
-Metod omogućava potpuni pristup do authentification i storage preko `auth` i `storage`. `app` je express aplikacija koja Vam omogućava da dodajete nove endpoints.
+The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
 
 > Prilično dobri primeri za middleware plugin su [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) i [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
@@ -124,7 +131,7 @@ Verdaccio po fabričkim podešavanjima koristi file system storage plugin [local
 
 ### API
 
-Za storage API, stvari su nešto komplikovanije, pošto ćete morati da kreirate klasu koja vraća `IPluginStorage` implementaciju. Ispod imate detaljno objašnjenje.
+The storage API is a bit more complex, you will need to create a class that return a `IPluginStorage` implementation. Please see details bellow.
 
 ```flow
 class LocalDatabase<IPluginStorage>{
