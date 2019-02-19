@@ -87,9 +87,9 @@ Konfiguracija je podeljena u dve sekcije, `api` i `web`. Kako biste koristili JW
 
 ### Server
 
-A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+Skup svojstava za menjanje ponašanja server aplikacije, posebno API-ja (Express.js).
 
-> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+> Možete zadati da HTTP/1.1 server održava vreme posle kojeg se budi za dolazne konekcije. Ako zadate vrednost 0, http server će se ponašati slično kao Node.js verzije starije od 8.0.0, koje nisu imale ugrađenu funkciju: keep-alive timeout. ZAOBILAŽENJE: Datim konfigurisanjem, možete zaobići sledeći problem: https://github.com/verdaccio/verdaccio/issues/301. Postavite na vrednost 0 u slučaju da 60 nije dovoljno.
 
 ```yaml
 server:
@@ -98,7 +98,7 @@ server:
 
 ### Web UI (korisnički interfejs)
 
-This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
+Ovo svojstvo Vam omogućava da modifikujete izgled korisničkog interfejsa. Za više informacija o ovoj sekciji, pročitajte [web ui stranicu](web.md).
 
 ```yaml
 web:
@@ -120,7 +120,7 @@ uplinks:
 
 ### Paketi
 
-Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
+Paketi (packages) daju mogućnost korisnicima da kontrolišu kako će se pristupati paketima. Za više detalja o ovoj sekciji, pročitajte [stranicu "paketi"/ packages](packages.md).
 
 ```yaml
 packages:
