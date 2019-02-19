@@ -4,16 +4,7 @@
       "what-is-verdaccio",
       "installation",
       "cli",
-      "logo",
-      {
-        "type": "subcategory",
-        "label": "Uses Cases",
-        "ids": [
-          "e2e",
-          "caching",
-          "linking-registries"
-        ]
-      }
+      "logo"
     ],
     "Configuration": [
       "configuration",
