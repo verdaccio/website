@@ -4,15 +4,7 @@
 [![discord](https://img.shields.io/discord/388674437219745793.svg)](http://chat.verdaccio.org/)
 ![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)
 
-
 https://www.verdaccio.org
-
-🚸🚸 Work in progress, the current website is being deployed on [https://hidden.verdaccio.org/](https://hidden.verdaccio.org/)
-
-The original website remains on hold until this website refactoring is finished
-[https://verdaccio.org/](https://verdaccio.org/)
-
-Once the final version is shipped, we will update GitHub domain configuration.
 
 # Documentation
 
