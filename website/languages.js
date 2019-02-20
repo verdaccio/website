@@ -52,7 +52,7 @@ const languages = [
     tag: 'el',
   },
   {
-    enabled: false,
+    enabled: true,
     name: 'Español',
     tag: 'es-ES',
   },
@@ -67,7 +67,7 @@ const languages = [
     tag: 'fi',
   },
   {
-    enabled: false,
+    enabled: true,
     name: 'Français',
     tag: 'fr-FR',
   },
@@ -87,7 +87,7 @@ const languages = [
     tag: 'id-ID',
   },
   {
-    enabled: false,
+    enabled: true,
     name: 'Italiano',
     tag: 'it-IT',
   },
@@ -152,7 +152,7 @@ const languages = [
     tag: 'sr-SP',
   },
   {
-    enabled: false,
+    enabled: true,
     name: 'Serbian',
     tag: 'sr-CS',
   },
@@ -177,7 +177,7 @@ const languages = [
     tag: 'vi-VN',
   },
   {
-    enabled: false,
+    enabled: true,
     name: '中文',
     tag: 'zh-CN',
   },
