@@ -33,7 +33,7 @@ interface IPluginAuth extends IPlugin {
 
 Од верзије `v4.0.0`
 
-`apiJWTmiddleware` је уведен од [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) како би се омогућила потпуна контрола над управљањем токенима (token handler). Ако бисте прегазили тај метод, онемогућили бисте `login/adduser` подршку. Препоручујемо Вам да не користите наведени метод, осим ако то није апсолутно неопходно. Детаљни пример можете пронаћи [овде](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
+`apiJWTmiddleware` је уведен од [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) како би се омогућила потпуна контрола над управљањем токенима (token handler). Ако бисте прегазили тај метод, онемогућили бисте `login/adduser` подршку. We recommend don't implement this method unless is totally necessary. Детаљни пример можете пронаћи [овде](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
