@@ -85,9 +85,20 @@ Konfiguracija je podeljena u dve sekcije, `api` i `web`. Kako biste koristili JW
 
 > Jako Vam preporučujemo da se prebacite na JWT pošto je legacy signature (`aes192`) zastareo i neće ga biti u novijim verzijama.
 
+### Server
+
+Skup svojstava za menjanje ponašanja server aplikacije, posebno API-ja (Express.js).
+
+> Možete zadati da HTTP/1.1 server održava vreme posle kojeg se budi za dolazne konekcije. Ako zadate vrednost 0, http server će se ponašati slično kao Node.js verzije starije od 8.0.0, koje nisu imale ugrađenu funkciju: keep-alive timeout. ZAOBILAŽENJE: Datim konfigurisanjem, možete zaobići sledeći problem: https://github.com/verdaccio/verdaccio/issues/301. Postavite na vrednost 0 u slučaju da 60 nije dovoljno.
+
+```yaml
+server:
+  keepAliveTimeout: 60
+```
+
 ### Web UI (korisnički interfejs)
 
-Ovo svojstvo Vam omogućava da modifikujete izgled korisničkog interfejsa. Za više informacija o ovoj sekciji pročitajte [stranicu web ui](web.md).
+Ovo svojstvo Vam omogućava da modifikujete izgled korisničkog interfejsa. Za više informacija o ovoj sekciji, pročitajte [web ui stranicu](web.md).
 
 ```yaml
 web:
@@ -109,7 +120,7 @@ uplinks:
 
 ### Paketi
 
-Paketi (packages) daju mogućnost korisnicima da kontrolišu kako će se pristupati paketima. Za više detalja o ovoj sekciji, pročitajte [packages stranicu](packages.md).
+Paketi (packages) daju mogućnost korisnicima da kontrolišu kako će se pristupati paketima. Za više detalja o ovoj sekciji, pročitajte [stranicu "paketi"/ packages](packages.md).
 
 ```yaml
 packages:
@@ -150,7 +161,7 @@ max_body_size: 10mb
 
 ### Listen Port
 
-`verdaccio` prema "fabričkim podešavanjima" radi na portu `4873`. Izmena porta se može obaviti preko [cli](cli.md) ili direktno u fajlu za konfigurisanje pri čemu su sledeće opcije validne:
+`verdaccio` prema "fabričkim podešavanjima" radi na portu `4873`. Izmena porta se može obaviti preko [cli](cli.md) ili direktno u fajlu za konfigurisanje, pri čemu su sledeće opcije validne.
 
 ```yaml
 listen:
@@ -196,7 +207,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Notifikacije
 
-Dozvoljavanje notifikacija za alate napravljene od strane trećih lica je relativno jednostavno uz pomoć web hooks tehnike. Za više informacija o ovoj temi, pročitajte [notifications stranicu](notifications.md).
+Dozvoljavanje notifikacija za alate napravljene od strane trećih lica je relativno jednostavno uz pomoć web hooks tehnike. Za više informacija o ovoj temi, pročitajte [stranicu "notifications"](notifications.md).
 
 ```yaml
 notify:
@@ -212,7 +223,7 @@ notify:
 
 <small>Počevši od verzije: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` je nova komanda koja je uvedena u [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio, a koja uključuje ugrađeni middleware plugin sa kojim je moguće izvršiti datu komandu.
+`npm audit` je nova komanda koja je uvedena u [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio, a koja uključuje ugrađeni middleware plugin kojim je moguće izvršiti datu komandu.
 
 > Ako imate novu instalaciju, sve je već uključeno u okviru nje. U suprotnom, treba da dodate navedene dodatke (props) u Vaš config fajl
 

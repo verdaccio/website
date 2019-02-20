@@ -97,8 +97,8 @@ store:
 * [sinopia-github-oauth](https://www.npmjs.com/package/sinopia-github-oauth): wtyczka uwierzytelniająca dla sinopii2, obsługująca przepływ dla sieci github oauth.
 * [sinopia-delegated-auth](https://www.npmjs.com/package/sinopia-delegated-auth): Wtyczka uwierzytelniająca Sinopii, która deleguje uwirzytelnienie do innego HTTP URL
 * [sinopia-altldap](https://www.npmjs.com/package/sinopia-altldap): Alternatywna wtyczka uwierzytelniająca LDAP dla Sinopii
-* [sinopia-request](https://www.npmjs.com/package/sinopia-request): Łatwa i w pełni autoryzująca wtyczka z konfiguracją do korzystania z zewnętrznego API.
-* [sinopia-htaccess-gpg-email](https://www.npmjs.com/package/sinopia-htaccess-gpg-email): Wygeneruj hasło w formacie htaccess, zaszyfruj za pomocą GPG i wyślij przez API MailGun do użytkowników.
+* [sinopia-request](https://www.npmjs.com/package/sinopia-request): Łatwa i w pełni uwierzytelniająca wtyczka z konfiguracją do korzystania z zewnętrznego API.
+* [sinopia-htaccess-gpg-email](https://www.npmjs.com/package/sinopia-htaccess-gpg-email): Generate password in htaccess format, encrypt with GPG and send via MailGun API to users.
 * [sinopia-mongodb](https://www.npmjs.com/package/sinopia-mongodb): Łatwa i w pełni autoryzująca wtyczka z konfiguracją do korzystania z bazy danych mongodb.
 * [sinopia-htpasswd](https://www.npmjs.com/package/sinopia-htpasswd): i wtyczka autoryzująca dla sinopii obsługująca format htpasswd.
 * [sinopia-leveldb](https://www.npmjs.com/package/sinopia-leveldb): wspierana przez leveldb wtyczka uwierzytelniająca dla prywatnego npm sinopii.

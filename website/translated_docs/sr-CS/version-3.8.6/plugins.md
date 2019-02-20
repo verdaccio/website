@@ -119,7 +119,7 @@ store:
 * [verdaccio-bitbucket-server](https://github.com/oeph/verdaccio-bitbucket-server): Bitbucket Server authentication plugin za verdaccio.
 * [verdaccio-ldap](https://www.npmjs.com/package/verdaccio-ldap): LDAP auth plugin za verdaccio.
 * [verdaccio-active-directory](https://github.com/nowhammies/verdaccio-activedirectory): Active Directory authentication plugin za verdaccio
-* [verdaccio-gitlab](https://github.com/bufferoverflow/verdaccio-gitlab): koristi GitLab Personal Access Token za authentifikaciju
+* [verdaccio-gitlab](https://github.com/bufferoverflow/verdaccio-gitlab): koristi GitLab Personal Access Token za autentifikaciju
 * [verdaccio-gitlab-ci](https://github.com/lab360-ch/verdaccio-gitlab-ci): Omogućava GitLab CI da authenticate protiv verdaccio.
 * [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): File plugin za Auth based on htpasswd (ugrađen), za verdaccio
 * [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Github oauth authentication plugin za verdaccio.

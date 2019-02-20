@@ -1,5 +1,5 @@
 ---
 id: e2e
-title: "End to end testing"
+title: "Тестирање од А до Ш (end to end)"
 ---
 dsadsa

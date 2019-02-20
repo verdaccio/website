@@ -23,10 +23,17 @@ interface IPluginAuth extends IPlugin {
   authenticate(user: string, password: string, cb: Callback): void;
   adduser(user: string, password: string, cb: Callback): void;
   allow_access(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
-  allow_publish(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
+  apiJWTmiddleware(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
+  allow_publish(helpers): void;
 }
 ```
-> Only `adduser`, `allow_access` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> Only `adduser`, `allow_access`, `apiJWTmiddleware`  and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+
+#### apiJWTmiddleware method
+
+Since `v4.0.0`
+
+`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 

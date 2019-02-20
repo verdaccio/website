@@ -1,5 +1,5 @@
 ---
-id: caching
-title: "Caching strategies"
+id: кеширање
+title: "Стратегија кеширања"
 ---
 dsadsa

@@ -2,9 +2,9 @@
 id: iss-server
 title: "Installazione sul server IIS"
 ---
-Queste istruzioni sono state scritte per Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) e [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
+Queste istruzioni sono state scritte per Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) e [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
-- Installare IIS e [iisnode](https://github.com/tjanczuk/iisnode). Assicurarsi di installare i prerequisiti (Url Rewrite Module & node) come spiegato nelle istruzioni per iisnode.
+- Installare IIS e [iisnode](https://github.com/Azure/iisnode). Assicurarsi di installare i prerequisiti (Url Rewrite Module & node) come spiegato nelle istruzioni per iisnode.
 - Creare una nuova cartella in Explorer in cui si desidera ospitare verdaccio. Per esempio `C:\verdaccio`. Salvare in questa cartella [package.json](#packagejson), [start.js](#startjs) e [web.config](#webconfig).
 - Creare un nuovo sito su Internet Information Services Manager. È possibile nominarlo come si preferisce. In queste [istruzioni](http://www.iis.net/learn/manage/configuring-security/application-pool-identities) verrà chiamato verdaccio. Specificare il percorso in cui sono stati salvati i file ed il numero della porta.
 - Tornare indietro a Explorer e autorizzare l'utente che esegue il gruppo di applicazioni a poter modificare la cartella appena creata. Se si è nominato il nuovo sito verdaccio e non si è modificato il gruppo di applicazioni, allora questo sta funzionando grazie ad un'ApplicationPoolIdentity e si dovrebbe dare all'utente le autorizzazioni di poter modificare IIS AppPool\verdaccio, vedere le istruzioni in caso di aiuto. (Se si desidera è possibile restringere l'accesso successivamente, così che si abbiano solo le autorizzazioni per modificare su iisnode e verdaccio/storage)
@@ -19,7 +19,6 @@ Queste istruzioni sono state scritte per Windows Server 2012, IIS 8, [Node.js 0.
 
 Desideravo che `verdaccio` fosse il sito di default su IIS, quindi ho intrapreso le seguenti azioni:
 
-- Mi sono assicurato che il file .nmprc in `c:\users{yourname}` avesse il registro configurato su `"registry=http://localhost/"`
 - Ho arrestato il "Sito Web predefinito" e ho avviato esclusivamente il sito "verdaccio" su IIS
 - Ho stabilito le connessioni a "http", indirizzo ip "All Unassigned" sulla porta 80, ok qualsiasi avvertenza o prompt
 
@@ -36,12 +35,19 @@ Verrà creato un file di configurazione predefinito `c:\verdaccio\verdaccio\conf
   "description": "Hosts verdaccio in iisnode",
   "main": "start.js",
   "dependencies": {
-    "verdaccio": "^2.1.0"
+    "verdaccio": "^3.11.0"
   }
 }
 ```
 
 ### start.js
+
+```bash
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+require('./node_modules/verdaccio/build/lib/cli.js');
+```
+
+### In Alternativa start.js per Verdaccio versioni < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);
@@ -68,23 +74,25 @@ require('./node_modules/verdaccio/src/lib/cli.js');
     <rewrite>
       <rules>
 
-        <!-- iisnode folder is where iisnode stores it's logs. These should
-        never be rewritten -->
+        <!-- iisnode folder is where iisnode stores it's logs. Queste non dovrebbero
+        mai essere riscritte -->
         <rule name="iisnode" stopProcessing="true">
-          <match url="iisnode*" />
-          <action type="None" />
+            <match url="iisnode*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="None" />
         </rule>
 
-        <!-- Rewrite all other urls in order for verdaccio to handle these -->
+        <!-- Riscrivi tutte gli altri url affinché Verdaccio li gestisca -->
         <rule name="verdaccio">
-          <match url="/*" />
-          <action type="Rewrite" url="start.js" />
+            <match url="/*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="Rewrite" url="start.js" />
         </rule>
       </rules>
     </rewrite>
 
-    <!-- exclude node_modules directory and subdirectories from serving
-    by IIS since these are implementation details of node.js applications -->
+    <!-- escludere la directory node_modules e le sottodirectory dalla pubblicazione
+     da IIS poiché questi sono dettagli di implementazione delle applicazioni node.js -->
     <security>
       <requestFiltering>
         <hiddenSegments>

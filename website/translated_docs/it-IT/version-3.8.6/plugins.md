@@ -3,7 +3,7 @@ id: version-3.8.6-plugins
 title: Plugin
 original_id: plugin
 ---
-Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
+Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, con nuovi metodi di autenticazione, aggiungendo endpoint o utilizzando un archivio personalizzato.
 
 > Se sei interessato a sviluppare il tuo plugin personale, leggi la sezione [sviluppo](dev-plugins.md).
 
@@ -15,7 +15,7 @@ Verdaccio is an plugabble aplication. It can be extended in many ways, either ne
 $> npm install --global verdaccio-activedirectory
 ```
 
-`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
+`verdaccio` essendo un fork di sinopia ha compatibilità con le versioni precedenti e con plugin che sono compatibili con `sinopia@1.4.0`. In questo caso l'installazione è la stessa.
 
     $> npm install --global sinopia-memory
     
@@ -61,7 +61,7 @@ auth:
 
 ### Configurazione del Plugin Middleware
 
-This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
+Questo è un esempio di come si configura un middleware plugin. Tutti i middleware plugin devono essere definiti nel **middlewares** namespace.
 
 ```yaml
 middlewares:
@@ -73,7 +73,7 @@ middlewares:
 
 ### Configurazione del Plugin Store
 
-This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
+Questo è un esempio di come si configura un plugin di archiviazione. Tutti i plugin di archiviazione devono essere definiti nello **store** namespace.
 
 ```yaml
 store:
@@ -141,4 +141,4 @@ store:
 
 ## Avvertenze
 
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
+> Non tutti questi plugin vengono testati assiduamente, alcuni di essi potrebbero anche non funzionare affatto. In caso si incontri qualsiasi problema, si prega di notificarlo al proprietario del plugin in questione.

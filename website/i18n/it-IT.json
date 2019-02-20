@@ -18,7 +18,7 @@
         "title": "Windows Azure"
       },
       "best": {
-        "title": "Best Practices"
+        "title": "Migliori Prassi"
       },
       "build": {
         "title": "Compilare il codice sorgente"
@@ -96,7 +96,7 @@
         "title": "Configurazione di Proxy inverso"
       },
       "scopes": {
-        "title": "Understanding Scopes"
+        "title": "Comprensione degli Scope"
       },
       "server-configuration": {
         "title": "Configurazione del server"
@@ -226,24 +226,81 @@
       },
       "version-4.0.0-alpha.3-what-is-verdaccio": {
         "title": "Cos'è Verdaccio?"
+      },
+      "version-4.0.0-alpha.4-amazon": {
+        "title": "Amazon Web Services"
+      },
+      "version-4.0.0-alpha.4-azure": {
+        "title": "Windows Azure"
+      },
+      "version-4.0.0-alpha.4-best": {
+        "title": "Migliori Prassi"
+      },
+      "version-4.0.0-alpha.4-caching": {
+        "title": "Caching strategies"
+      },
+      "version-4.0.0-alpha.4-configuration": {
+        "title": "File di configurazione"
+      },
+      "version-4.0.0-alpha.4-dev-plugins": {
+        "title": "Sviluppare Estensioni"
+      },
+      "version-4.0.0-alpha.4-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0-alpha.4-e2e": {
+        "title": "End to end testing"
+      },
+      "version-4.0.0-alpha.4-google-cloud": {
+        "title": "Google Cloud"
+      },
+      "version-4.0.0-alpha.4-iss-server": {
+        "title": "Installazione sul server IIS"
+      },
+      "version-4.0.0-alpha.4-linking-registries": {
+        "title": "Linking Regiestries"
+      },
+      "version-4.0.0-alpha.4-logo": {
+        "title": "Logo di Verdaccio"
+      },
+      "version-4.0.0-alpha.4-node-api": {
+        "title": "Node API"
+      },
+      "version-4.0.0-alpha.4-notifications": {
+        "title": "Notifiche"
+      },
+      "version-4.0.0-alpha.4-packages": {
+        "title": "Accesso al pacchetto"
+      },
+      "version-4.0.0-alpha.4-scopes": {
+        "title": "Comprensione degli Scope"
+      },
+      "version-4.0.0-alpha.4-uplinks": {
+        "title": "Uplink"
+      },
+      "version-4.0.0-alpha.4-webui": {
+        "title": "Interfaccia utente web"
+      },
+      "version-4.0.0-alpha.4-what-is-verdaccio": {
+        "title": "Cos'è Verdaccio?"
       }
     },
     "links": {
-      "Docs": "Docs",
+      "Docs": "Documenti",
       "Blog": "Blog",
-      "Help": "Help",
+      "Help": "Aiuto",
       "GitHub": "GitHub",
       "Team": "Team",
-      "Donate": "Donate"
+      "Donate": "Donazioni"
     },
     "categories": {
-      "Introduction": "Introduction",
+      "Introduction": "Introduzione",
       "Configuration": "Configurazione",
       "Server": "Server",
       "Plugins": "Plugin",
       "DevOps": "DevOps",
-      "Development": "Development",
-      "Guides": "Guides"
+      "Development": "Sviluppo",
+      "Guides": "Guide"
     }
   },
   "pages-strings": {

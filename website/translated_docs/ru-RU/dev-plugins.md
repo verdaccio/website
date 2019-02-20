@@ -22,11 +22,18 @@ interface IPluginAuth extends IPlugin {
   authenticate(user: string, password: string, cb: Callback): void;
   adduser(user: string, password: string, cb: Callback): void;
   allow_access(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
-  allow_publish(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
+  apiJWTmiddleware(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
+  allow_publish(helpers): void;
 }
 ```
 
-> Необязательными являются только `adduser`, `allow_access` и `allow_publish`, verdaccio предоставляет запасной вариант в этих случаях.
+> Only `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+
+#### apiJWTmiddleware method
+
+Since `v4.0.0`
+
+`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
@@ -90,7 +97,7 @@ auth:
     file: ./htpasswd
 ```
 
-Где `htpasswd` это суфикс имени плагина. Например: `verdaccio-htpasswd` и остальная часть тела должна быть конфигурацией плагина.
+Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
 
 ## Middleware плагин
 
@@ -104,7 +111,7 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 ### register_middlewares
 
-Метод предоставляет полный доступ к аутентификации и хранилищу через `auth` и `storage`. `app` это приложение express, которое позволяет добавлять новые обработчики запросов (так называемые endpoint).
+The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
 
 > Очень хорошим примером middleware-плагина является [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) и [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
@@ -124,7 +131,7 @@ function register_middlewares(expressApp, authInstance, storageInstance) {
 
 ### API
 
-API хранилища немного сложнее, вам потребуется создать класс, реализующий интерфейс `IPluginStorage`. Детали представлены ниже.
+The storage API is a bit more complex, you will need to create a class that return a `IPluginStorage` implementation. Please see details bellow.
 
 ```flow
 class LocalDatabase<IPluginStorage>{

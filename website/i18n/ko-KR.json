@@ -226,6 +226,63 @@
       },
       "version-4.0.0-alpha.3-what-is-verdaccio": {
         "title": "What is Verdaccio?"
+      },
+      "version-4.0.0-alpha.4-amazon": {
+        "title": "Amazon Web Services"
+      },
+      "version-4.0.0-alpha.4-azure": {
+        "title": "Windows Azure"
+      },
+      "version-4.0.0-alpha.4-best": {
+        "title": "Best Practices"
+      },
+      "version-4.0.0-alpha.4-caching": {
+        "title": "Caching strategies"
+      },
+      "version-4.0.0-alpha.4-configuration": {
+        "title": "구성 파일"
+      },
+      "version-4.0.0-alpha.4-dev-plugins": {
+        "title": "플러그인 개발하기"
+      },
+      "version-4.0.0-alpha.4-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0-alpha.4-e2e": {
+        "title": "End to end testing"
+      },
+      "version-4.0.0-alpha.4-google-cloud": {
+        "title": "Google Cloud"
+      },
+      "version-4.0.0-alpha.4-iss-server": {
+        "title": "IIS 서버에 설치하기"
+      },
+      "version-4.0.0-alpha.4-linking-registries": {
+        "title": "Linking Regiestries"
+      },
+      "version-4.0.0-alpha.4-logo": {
+        "title": "Verdaccio Logotype"
+      },
+      "version-4.0.0-alpha.4-node-api": {
+        "title": "Node API"
+      },
+      "version-4.0.0-alpha.4-notifications": {
+        "title": "알림"
+      },
+      "version-4.0.0-alpha.4-packages": {
+        "title": "패키지 접근"
+      },
+      "version-4.0.0-alpha.4-scopes": {
+        "title": "Understanding Scopes"
+      },
+      "version-4.0.0-alpha.4-uplinks": {
+        "title": "업링크"
+      },
+      "version-4.0.0-alpha.4-webui": {
+        "title": "Web User Interface"
+      },
+      "version-4.0.0-alpha.4-what-is-verdaccio": {
+        "title": "What is Verdaccio?"
       }
     },
     "links": {

@@ -53,7 +53,7 @@ packages:
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-如果你想要保护你所在组的特定包，你需要做如下工作。 我们来使用一个包含所有前缀为`npmuser-`的包的`Regex`。 我们建议在包前使用前缀，通过这种方式更容易保护它们。
+如果你想要保护你所在组的特定包，你需要做如下工作。 我们来使用一个包含所有前缀为`npmuser-`的包的`Regex`。 We recommend using a prefix for your packages, in that way it will be easier to protect them.
 
 ```yaml
 packages:
@@ -139,11 +139,11 @@ packages:
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| 属性      | 类型      | 必须的 | 示例             | 支持  | 描述              |
-| ------- | ------- | --- | -------------- | --- | --------------- |
-| access  | string  | No  | $all           | all | 定义允许访问包的组       |
-| publish | string  | No  | $authenticated | all | 定义允许发布的组        |
-| proxy   | string  | No  | npmjs          | all | 针对特定的uplink限制查找 |
-| storage | boolean | No  | [true,false]   | all | TODO            |
+| 属性      | 类型      | 必须的 | 示例             | 支持       | 描述                                                                        |
+| ------- | ------- | --- | -------------- | -------- | ------------------------------------------------------------------------- |
+| access  | string  | No  | $all           | all      | 定义允许访问包的组                                                                 |
+| publish | string  | No  | $authenticated | all      | 定义允许发布的组                                                                  |
+| proxy   | string  | No  | npmjs          | all      | 针对特定的uplink限制查找                                                           |
+| storage | boolean | No  | 字符串            | `>v4` | it creates a subfolder whithin the storage folder for each package access |
 
 > 我们强烈建议不要再使用已被弃用的**allow_access**/**allow_publish** 和 **proxy_access**，它们很快就会被移除，请使用它们的精简版本 (**access**/**publish**/**proxy**) 。

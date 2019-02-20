@@ -2,9 +2,9 @@
 id: iss-server
 title: "Auf IIS-Server installieren"
 ---
-These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) and [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
+These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
-- Install IIS Install [iisnode](https://github.com/tjanczuk/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
+- Install IIS Install [iisnode](https://github.com/Azure/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
 - Create a new folder in Explorer where you want to host verdaccio. For example `C:\verdaccio`. Save [package.json](#packagejson), [start.js](#startjs) and [web.config](#webconfig) in this folder.
 - Create a new site in Internet Information Services Manager. You can name it whatever you want. I'll call it verdaccio in these [instructions](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Specify the path to where you saved all files and a port number.
 - Go back to Explorer and give the user that runs the application pool modify rights to the folder you just created. If you've named the new site verdaccio and did not change the app pool, it's running under an ApplicationPoolIdentity and you should give the user IIS AppPool\verdaccio modify rights see instructions if you need help. (You can restrict access later if you want so that it only has modify rights on the iisnode and verdaccio\storage)
@@ -19,7 +19,6 @@ These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3]
 
 I wanted the `verdaccio` site to be the default site in IIS so I did the following:
 
-- I made sure the .npmrc file in `c:\users{yourname}` had the registry set to `"registry=http://localhost/"`
 - I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS
 - I set the bindings to "http", ip address "All Unassigned" on port 80, ok any warning or prompts
 
@@ -36,12 +35,19 @@ A default configuration file will be created `c:\verdaccio\verdaccio\config.yaml
   "description": "Hosts verdaccio in iisnode",
   "main": "start.js",
   "dependencies": {
-    "verdaccio": "^2.1.0"
+    "verdaccio": "^3.11.0"
   }
 }
 ```
 
 ### start.js
+
+```bash
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+require('./node_modules/verdaccio/build/lib/cli.js');
+```
+
+### Alternate start.js for Verdaccio versions < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);
@@ -71,14 +77,16 @@ require('./node_modules/verdaccio/src/lib/cli.js');
         <!-- iisnode folder is where iisnode stores it's logs. These should
         never be rewritten -->
         <rule name="iisnode" stopProcessing="true">
-          <match url="iisnode*" />
-          <action type="None" />
+            <match url="iisnode*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="None" />
         </rule>
 
         <!-- Rewrite all other urls in order for verdaccio to handle these -->
         <rule name="verdaccio">
-          <match url="/*" />
-          <action type="Rewrite" url="start.js" />
+            <match url="/*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="Rewrite" url="start.js" />
         </rule>
       </rules>
     </rewrite>

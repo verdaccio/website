@@ -47,11 +47,11 @@ Usamos [Handlebars](https://handlebarsjs.com/) como el motor del modelo principa
 
 ### Ejemplos de Formato
 
-    # iterar todas las versiones
-    {{ name }}{{#each versions}} v{{version}}{{/each}}`"}
+    # iterate all versions
+    {{ name }}{{#each versions}} v{{version}}{{/each}}
     
-    # publisher y el paquete `dist-tag` publicado
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    # publisher and `dist-tag` package published
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ### Propiedades
@@ -141,9 +141,9 @@ Un ejemplo:
 
 ### Paquete Publicado
 
-Puede acceder al paquete que está siendo publicado con el comando `{{publishedPackage}}` como a continuación.
+You can access to the package is being published with the keyword `{{publishedPackage}}` as follows.
 
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ## Configuración

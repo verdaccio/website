@@ -1,5 +1,5 @@
 ---
 id: scopes
-title: "Understanding Scopes"
+title: "Дубље разумевање Scopes-а"
 ---
 dsadsa

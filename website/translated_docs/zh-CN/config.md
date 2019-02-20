@@ -85,6 +85,17 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
 
 > We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
 
+### Server
+
+A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+
+> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+
+```yaml
+server:
+  keepAliveTimeout: 60
+```
+
 ### Web UI
 
 This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
@@ -121,7 +132,7 @@ packages:
 
 ## 高级设置
 
-### Offline Publish
+### 离线发布
 
 By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
 

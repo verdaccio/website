@@ -1,5 +1,5 @@
 ---
 id: best
-title: "Best Practices"
+title: "Migliori Prassi"
 ---
 dsadsa
