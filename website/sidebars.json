@@ -11,6 +11,7 @@
         "ids": [
           "e2e",
           "caching",
+          "github-actions",
           "linking-registries"
         ]
       }

@@ -50,6 +50,9 @@
       "e2e": {
         "title": "End to end testing"
       },
+      "github-actions": {
+        "title": "Github Actions"
+      },
       "google-cloud": {
         "title": "Google Cloud"
       },
@@ -118,6 +121,9 @@
       },
       "what-is-verdaccio": {
         "title": "What is Verdaccio?"
+      },
+      "who-is-using": {
+        "title": "Who is using Verdaccio?"
       },
       "windows": {
         "title": "Installing As a Windows Service"
