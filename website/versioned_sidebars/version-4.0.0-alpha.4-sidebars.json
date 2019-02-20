@@ -20,16 +20,7 @@
       "version-4.0.0-alpha.4-reverse-proxy",
       "version-4.0.0-alpha.4-ssl",
       "version-4.0.0-alpha.4-windows",
-      "version-4.0.0-alpha.4-iss-server",
-      {
-        "type": "subcategory",
-        "label": "Cloud",
-        "ids": [
-          "version-4.0.0-alpha.4-azure",
-          "version-4.0.0-alpha.4-amazon",
-          "version-4.0.0-alpha.4-google-cloud"
-        ]
-      }
+      "version-4.0.0-alpha.4-iss-server"
     ],
     "Plugins": [
       "version-4.0.0-alpha.4-plugins",
