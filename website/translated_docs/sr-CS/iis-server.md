@@ -2,9 +2,9 @@
 id: iss-server
 title: "Instaliranje na IIS server"
 ---
-These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
+Navedene instrukcije su pisane za Windows Server 2016, IIS 10, Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) i [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
-- Install IIS Install [iisnode](https://github.com/Azure/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
+- Install IIS Install [iisnode](https://github.com/Azure/iisnode).. Postarajte se da instalirate sve što je potrebno (Url Rewrite Module & node), kao što je objašnjeno u uputstvima za iisnode.
 - Napravite novi folder u Explorer-u, koji će biti host za verdaccio. Na primer `C:\verdaccio`. Usnimite [package.json](#packagejson), [start.js](#startjs) i [web.config](#webconfig) u ovaj folder.
 - Napravite novi sajt u Internet Information Services Manager. Možete ga nazvati kako Vam je volja. Zvaćemo ga verdaccio u ovim [instrukcijama](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Odredite path gde ćete snimiti sve fajlove i broj porta.
 - Vratite se u Explorer i u okviru foldera koji ste upravo kreirali dodelite prava korisniku koji pokreće application pool. Ako ste imenovali novi sajt kao verdaccio i niste promenili app pool, on radi pod ApplicationPoolIdentity i trebalo bi da dodelite prava korisniku, IIS AppPool\verdaccio modify rights, pogledajte instrukcije ako Vam je potrebna pomoć. (Kasnije ako poželite, možete ograničiti pristup, tako da prava ostaju promenjena samo za iisnode i verdaccio\storage)

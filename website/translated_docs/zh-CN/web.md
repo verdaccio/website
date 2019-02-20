@@ -25,7 +25,7 @@ web:
 | enable        | boolean    | No | true/false                     | all      | 允许显示网页界面                                                               |
 | title         | string     | No | Verdaccio                      | all      | HTML 页眉标题说明                                                            |
 | gravatar      | boolean    | No | true                           | `>v4` | Gravatars will be generated under the hood if this property is enabled |
-| sort_packages | [asc,desc] | No | asc                            | `>v4` | Gravatars will be generated under the hood if this property is enabled |
+| sort_packages | [asc,desc] | No | asc                            | `>v4` | By default private packages are sorted by ascending                    |
 | logo          | 字符串        | 否  | http://my.logo.domain/logo.png | 任意路径     | a URI where logo is located (header logo)                              |
 | scope         | 字符串        | 否  | \\@myscope                   | 任意路径     | 如果要为特定模块作用域使用此registry，请指定该作用域，在webui指南页眉内设置它（注释：escape @ with \\@)  |
 

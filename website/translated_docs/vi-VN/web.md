@@ -25,7 +25,7 @@ All access restrictions defined to [protect your packages](protect-your-dependen
 | enable        | boolean     | Không   | true/false                     | tất cả   | allow to display the web interface                                                                                                                   |
 | title         | chuỗi       | Không   | Verdaccio                      | tất cả   | HTML head title description                                                                                                                          |
 | gravatar      | boolean     | Không   | true                           | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                               |
-| sort_packages | [asc,desc]  | Không   | asc                            | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                               |
+| sort_packages | [asc,desc]  | Không   | asc                            | `>v4` | By default private packages are sorted by ascending                                                                                                  |
 | logo          | chuỗi       | Không   | http://my.logo.domain/logo.png | tất cả   | a URI where logo is located (header logo)                                                                                                            |
 | scope         | chuỗi       | Không   | \\@myscope                   | tất cả   | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
 

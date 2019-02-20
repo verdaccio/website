@@ -87,9 +87,9 @@ Konfiguracija je podeljena u dve sekcije, `api` i `web`. Kako biste koristili JW
 
 ### Server
 
-A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+Skup svojstava za menjanje ponašanja server aplikacije, posebno API-ja (Express.js).
 
-> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+> Možete zadati da HTTP/1.1 server održava vreme posle kojeg se budi za dolazne konekcije. Ako zadate vrednost 0, http server će se ponašati slično kao Node.js verzije starije od 8.0.0, koje nisu imale ugrađenu funkciju: keep-alive timeout. ZAOBILAŽENJE: Datim konfigurisanjem, možete zaobići sledeći problem: https://github.com/verdaccio/verdaccio/issues/301. Postavite na vrednost 0 u slučaju da 60 nije dovoljno.
 
 ```yaml
 server:
@@ -98,7 +98,7 @@ server:
 
 ### Web UI (korisnički interfejs)
 
-This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
+Ovo svojstvo Vam omogućava da modifikujete izgled korisničkog interfejsa. Za više informacija o ovoj sekciji, pročitajte [web ui stranicu](web.md).
 
 ```yaml
 web:
@@ -120,7 +120,7 @@ uplinks:
 
 ### Paketi
 
-Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
+Paketi (packages) daju mogućnost korisnicima da kontrolišu kako će se pristupati paketima. Za više detalja o ovoj sekciji, pročitajte [stranicu "paketi"/ packages](packages.md).
 
 ```yaml
 packages:
@@ -161,7 +161,7 @@ max_body_size: 10mb
 
 ### Listen Port
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+`verdaccio` prema "fabričkim podešavanjima" radi na portu `4873`. Izmena porta se može obaviti preko [cli](cli.md) ili direktno u fajlu za konfigurisanje, pri čemu su sledeće opcije validne.
 
 ```yaml
 listen:
@@ -207,7 +207,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Notifikacije
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Dozvoljavanje notifikacija za alate napravljene od strane trećih lica je relativno jednostavno uz pomoć web hooks tehnike. Za više informacija o ovoj temi, pročitajte [stranicu "notifications"](notifications.md).
 
 ```yaml
 notify:
@@ -223,7 +223,7 @@ notify:
 
 <small>Počevši od verzije: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`npm audit` je nova komanda koja je uvedena u [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio, a koja uključuje ugrađeni middleware plugin kojim je moguće izvršiti datu komandu.
 
 > Ako imate novu instalaciju, sve je već uključeno u okviru nje. U suprotnom, treba da dodate navedene dodatke (props) u Vaš config fajl
 
