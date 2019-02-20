@@ -25,7 +25,7 @@ Una volta aggiornato listen e avviato verdaccio di nuovo chiederà i certificati
 
 https: key: /Users/user/.config/verdaccio/verdaccio-key.pem cert: /Users/user/.config/verdaccio/verdaccio-cert.pem ca: /Users/user/.config/verdaccio/verdaccio-csr.pem
 
-    <br />Alternatively, if you have a certificate as `server.pfx` format, you can add the following configuration section. The passphrase is optional and only needed, if your certificate is encrypted.
+    <br />In alternativa, se si possiede un certificato formato `server.pfx', si può aggiungere la seguente configurazione. La passphrase è facoltativa e solo necessaria se il certificato è criptato.
     
     
 

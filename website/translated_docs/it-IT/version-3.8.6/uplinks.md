@@ -24,7 +24,7 @@ uplinks:
 
 ### Configurazione
 
-You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
+È possibile definire uplink multipli ed ognuno di essi deve avere un nome univoco (key). Possono avere due proprietà:
 
 | Proprietà    | Tipo               | Richiesto | Esempio                                  | Supporto | Descrizione                                                                                                                                     | Impostazione predefinita |
 | ------------ | ------------------ | --------- | ---------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
@@ -41,7 +41,7 @@ You can define mutiple uplinks and each of them must have an unique name (key). 
 
 #### Proprietà dell' auth
 
-The `auth` property allows you to use an auth token with an uplink. Using the default environment variable:
+La proprietà `auth` consente di usare un auth token con un uplink. Utilizzare la variabile d'ambiente predefinita:
 
 ```yaml
 uplinks:
@@ -80,7 +80,7 @@ uplinks:
 
 ### Da sapere
 
-* Uplinks must be registries compatible with the `npm` endpoints. Eg: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* and more.
-* Setting `cache` to false will help to save space in your hard drive. This will avoid store `tarballs` but [it will keep metadata in folders](https://github.com/verdaccio/verdaccio/issues/391).
-* Exceed with multiple uplinks might slow down the lookup of your packages due for each request a npm client does, verdaccio does 1 call for each uplink.
-* The (timeout, maxage and fail_timeout) format follow the [NGINX measurement units](http://nginx.org/en/docs/syntax.html)
+* Gli uplink devono essere registri compatibili con i `npm` endpoint. Per esempio: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* ed altri ancora.
+* Impostare la `cache` su false aiuterà a risparmiare spazio nel disco rigido. Ciò eviterà di archiviare i `tarballs` ma [terrà i metadata nelle cartelle](https://github.com/verdaccio/verdaccio/issues/391).
+* Eccedere con uplink multipli potrebbe rallentare la ricerca dei pacchetti poiché per ogni richiesta che un client npm inoltra, verdaccio, a sua volta, fa 1 chiamata a ciascun uplink.
+* Il format (timeout, maxage e fail_timeout) segue le [unità di misura NGINX](http://nginx.org/en/docs/syntax.html)

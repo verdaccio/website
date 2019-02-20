@@ -3,17 +3,17 @@ id: version-3.8.6-dev-plugins
 title: Developing Plugins
 original_id: dev-plugins
 ---
-There are many ways to extend `verdaccio`, the kind of plugins supported are:
+Има много начина да проширите `verdaccio`, типови подржаних plugin-а су:
 
 * Authentication plugins
-* Middleware plugins (since `v2.7.0`)
-* Storage plugins since (`v3.x`)
+* Middleware plugins (од верзије `v2.7.0`)
+* Storage plugins (од верзије `v3.x`)
 
-> We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
+> Препоручујемо developing plugins који користе наше [flow type дефиниције](https://github.com/verdaccio/flow-types).
 
 ## Authentication Plugin
 
-Basically we have to return an object with a single method called `authenticate` that will recieve 3 arguments (`user, password, callback`).
+У суштини треба да вратимо објекат коришћењем методе зване `authenticate` која прима 3 аргумента (`user, password, callback`).
 
 ### API
 
@@ -27,15 +27,15 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> Једини опциони су `adduser`, `allow_access` и `allow_publish` и verdaccio омогућава fallback у свим наведеним случајевима.
 
 #### Callback
 
-Once the authentication has been executed there is 2 options to give a response to `verdaccio`.
+Једном када се аутентификација изврши, на располагању су 2 опције које дају одговор `verdaccio-у`.
 
 ###### OnError
 
-Either something bad happened or auth was unsuccessful.
+Или се нешто лоше догодило или auth није била успешна.
 
 ```flow
 callback(null, false)
@@ -43,9 +43,9 @@ callback(null, false)
 
 ###### OnSuccess
 
-The auth was successful.
+Auth је успешно објављена.
 
-`groups` is an array of strings where the user is part of.
+`groups` чини низ стрингова у који спада корисник.
 
      callback(null, groups);
     
@@ -83,7 +83,7 @@ Auth.prototype.authenticate = function (user, password, callback) {
 module.exports = Auth;
 ```
 
-And the configuration will looks like:
+И на крају, конфигурација изгледа овако:
 
 ```yaml
 auth:
@@ -91,11 +91,11 @@ auth:
     file: ./htpasswd
 ```
 
-Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
+При чему је `htpasswd` суфикс за име плугина. пример: `verdaccio-htpasswd` и остатак body секције ће дати параметре за конфигурисање плугина.
 
 ## Middleware Plugin
 
-Middleware plugins have the capability to modify the API layer, either adding new endpoints or intercepting requests.
+Middleware plugins имају моћ да модификују API layer, било додавањем нових endpoints или intercepting захтева.
 
 ```flow
 interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
@@ -105,9 +105,9 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 ### register_middlewares
 
-The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
+Метод обезбеђује пуни приступ аутентификацији и простору за складиштење (storage) преко `auth` и `storage`. `app` је експрес апликација која Вам омогућава да додајете нове крајње тачке (endpoints).
 
-> A pretty good example of middleware plugin is the [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) and [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
+> Прилично добри примери за middleware plugin су [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) и [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
 ### API
 
@@ -117,15 +117,15 @@ function register_middlewares(expressApp, authInstance, storageInstance) {
 }
 ```
 
-To register a middleware we need an object with a single method called `register_middlewares` that will recieve 3 arguments (`expressApp, auth, storage`). *Auth* is the authentification instance and *storage* is also the main Storage instance that will give you have access to all to the storage actions.
+Како бисмо регистровали middleware, потребан нам је објекат са јединственим методом званим `register_middlewares` који ће примити 3 аргумента (`expressApp, auth, storage`). *Auth* jе инстанца за аутентификацију, а *storage* је такође главна инстанца за Storage која ће Вам дати приступ свим акцијама које се односе на storage.
 
 ## Storage Plugin
 
-Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), but, since `verdaccio@3.x` you can plug in a custom storage replacing the default behaviour.
+Verdaccio по фабричким подешавањима користи file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), али, почевши од верзије `verdaccio@3.x` можете убацити custom storage plugin и тако заменити постојећи начин извршавања (behaviour).
 
 ### API
 
-The storage API is a bit more complex, you will need to create a class that return a `IPluginStorage` implementation. Please see details bellow.
+За storage API, ствари су нешто компликованије, пошто ћете морати да креирате класу која враћа `IPluginStorage` имплементацију. Испод имате детаљно објашњење.
 
 ```flow
 class LocalDatabase<IPluginStorage>{
@@ -175,15 +175,15 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 }
 ```
 
-> The Storage API is still experimental and might change in the next minor versions. For further information about Storage API please follow the [types definitions in our official repository](https://github.com/verdaccio/flow-types).
+> Storage API је и даље у експерименталној фази и могуће је да ће претрпети неке измене у наредним верзијама. За више информација о Storage API молимо Вас да пратите [types дефиниције у нашем званичном репозиторијуму](https://github.com/verdaccio/flow-types).
 
-### Storage Plugins Examples
+### Примери за Storage Plugins
 
-The following list of plugins are implementing the Storage API and might be used them as example.
+Наведена листа plugina имплементује Storage API и можете их користити као примере.
 
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory)
 * [local-storage](https://github.com/verdaccio/local-storage)
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)
 * [verdaccio-s3-storage](https://github.com/Remitly/verdaccio-s3-storage/tree/s3)
 
-> Are you willing to contribute with new Storage Plugins? [Click here.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
+> Да ли бисте желели да допринесете развоју нових Storage Plugina? [Кликните овде.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)

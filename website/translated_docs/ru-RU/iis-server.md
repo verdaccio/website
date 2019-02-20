@@ -2,9 +2,9 @@
 id: iss-server
 title: "Установка на IIS сервер"
 ---
-Эта инструкция для Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) и [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
+These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
-- Установите IIS установив [iisnode](https://github.com/tjanczuk/iisnode). Убедитесь, что у вас уже установлено всё необходимое (Url Rewrite Module & node) как того требует инструкция к iisnode.
+- Install IIS Install [iisnode](https://github.com/Azure/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
 - Создайте новую директорию в Explorer, в которой вы хотите расположить verdaccio. Например `C:\verdaccio`. Сохраните [package.json](#packagejson), [start.js](#startjs) и [web.config](#webconfig) в эту директорию.
 - Создайте новый сайт c помощью Internet Information Services Manager. Можете назвать его как хотите. Я буду называть его verdaccio в этих [инструкциях](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Укажите путь к сохранённым файлам и номер порта.
 - Вернитесь в Explorer и дайте пользователю, который будет запускать приложение, права на изменение созданной вами ранее директории. Если вы назвали новый сайт verdaccio и не меняли пул приложения, он запустится под ApplicationPoolIdentity и вы должны дать пользователю IIS AppPool\verdaccio права на изменение, смотрите инструкцию, если вам требуется помощь. (Вы можете ограничить доступ позже, если вы хотите, чтобы права распространялись только на iisnode и verdaccio\storage)
@@ -19,7 +19,6 @@ title: "Установка на IIS сервер"
 
 Я хотел чтобы сайт `verdaccio` был сайтом по умолчанию в IIS, по этому я сделал так:
 
-- Я убедился что .npmrc файл, который находится в `c:\users\{yourname}`, содержит реестр установленный в `"registry=http://localhost/"`
 - Я остановил "Default Web Site" и просто запустил сайт "verdaccio" в IIS
 - Я установил привязку ip адреса "Всех неназначенных" к "http" на 80ый порт, чтобы избежать предупреждений или запросов
 
@@ -36,12 +35,19 @@ title: "Установка на IIS сервер"
   "description": "Hosts verdaccio in iisnode",
   "main": "start.js",
   "dependencies": {
-    "verdaccio": "^2.1.0"
+    "verdaccio": "^3.11.0"
   }
 }
 ```
 
 ### start.js
+
+```bash
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+require('./node_modules/verdaccio/build/lib/cli.js');
+```
+
+### Alternate start.js for Verdaccio versions < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);
@@ -71,14 +77,16 @@ require('./node_modules/verdaccio/src/lib/cli.js');
         <!-- iisnode folder is where iisnode stores it's logs. These should
         never be rewritten -->
         <rule name="iisnode" stopProcessing="true">
-          <match url="iisnode*" />
-          <action type="None" />
+            <match url="iisnode*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="None" />
         </rule>
 
         <!-- Rewrite all other urls in order for verdaccio to handle these -->
         <rule name="verdaccio">
-          <match url="/*" />
-          <action type="Rewrite" url="start.js" />
+            <match url="/*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="Rewrite" url="start.js" />
         </rule>
       </rules>
     </rewrite>

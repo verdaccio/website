@@ -6,7 +6,7 @@ Ima mnogo načina da proširite `verdaccio`, tipovi podržanih plugin-a su:
 
 * Authentication plugins
 * Middleware plugins (od verzije `v2.7.0`)
-* Storage plugins od verzije (`v3.x`)
+* Storage plugins (od verzije `v3.x`)
 
 > Preporučujemo developing plugins koji koriste naše [flow type definicije](https://github.com/verdaccio/flow-types).
 
@@ -22,11 +22,18 @@ interface IPluginAuth extends IPlugin {
   authenticate(user: string, password: string, cb: Callback): void;
   adduser(user: string, password: string, cb: Callback): void;
   allow_access(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
-  allow_publish(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
+  apiJWTmiddleware(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
+  allow_publish(helpers): void;
 }
 ```
 
-> Jedini opcioni su `adduser`, `allow_access` i `allow_publish` i verdaccio omogućava fallback u svim navedenim slučajevima.
+> Jedini opcioni su <0>adduser</0>, <0>allow_access</0>, <0>apiJWTmiddleware</0> i <0>allow_publish</0>. Verdaccio omogućava fallback u svim navedenim slučajevima.
+
+#### apiJWTmiddleware metod
+
+Od verzije `v4.0.0`
+
+`apiJWTmiddleware` je uveden od [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) kako bi se omogućila potpuna kontrola nad upravljanjem tokenima (token handler). Ako biste pregazili taj metod, onemogućili biste `login/adduser` podršku. We recommend don't implement this method unless is totally necessary. Detaljni primer možete pronaći [ovde](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 

@@ -226,6 +226,63 @@
       },
       "version-4.0.0-alpha.3-what-is-verdaccio": {
         "title": "What is Verdaccio?"
+      },
+      "version-4.0.0-alpha.4-amazon": {
+        "title": "Amazon Web Services"
+      },
+      "version-4.0.0-alpha.4-azure": {
+        "title": "Windows Azure"
+      },
+      "version-4.0.0-alpha.4-best": {
+        "title": "Best Practices"
+      },
+      "version-4.0.0-alpha.4-caching": {
+        "title": "Caching strategies"
+      },
+      "version-4.0.0-alpha.4-configuration": {
+        "title": "Configuration File"
+      },
+      "version-4.0.0-alpha.4-dev-plugins": {
+        "title": "Developing Plugins"
+      },
+      "version-4.0.0-alpha.4-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0-alpha.4-e2e": {
+        "title": "End to end testing"
+      },
+      "version-4.0.0-alpha.4-google-cloud": {
+        "title": "Google Cloud"
+      },
+      "version-4.0.0-alpha.4-iss-server": {
+        "title": "Installing on IIS server"
+      },
+      "version-4.0.0-alpha.4-linking-registries": {
+        "title": "Linking Regiestries"
+      },
+      "version-4.0.0-alpha.4-logo": {
+        "title": "Verdaccio Logotype"
+      },
+      "version-4.0.0-alpha.4-node-api": {
+        "title": "Node API"
+      },
+      "version-4.0.0-alpha.4-notifications": {
+        "title": "Notifications"
+      },
+      "version-4.0.0-alpha.4-packages": {
+        "title": "Package Access"
+      },
+      "version-4.0.0-alpha.4-scopes": {
+        "title": "Understanding Scopes"
+      },
+      "version-4.0.0-alpha.4-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.0.0-alpha.4-webui": {
+        "title": "Web User Interface"
+      },
+      "version-4.0.0-alpha.4-what-is-verdaccio": {
+        "title": "What is Verdaccio?"
       }
     },
     "links": {

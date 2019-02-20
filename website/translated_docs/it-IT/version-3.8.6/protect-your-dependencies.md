@@ -20,14 +20,14 @@ Con questa configurazione, si permette fondamentalmente di raggruppare **admin**
 
 ### Caso d'uso: teamD prova ad accedere alla dipendenza
 
-So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
+Quindi, ipotizziamo che io sia loggato come **teamD**. Non dovrei essere in grado di accedere a tutte le dipendenze che corrispondono col modello `my company-*`.
 
 ```bash
 ➜ npm whoami
 teamD
 ```
 
-I won't have access to such dependencies and also won't be visible via web for user **teamD**. If I try to access the following will happen.
+Non avrò accesso a tali dipendenze e non saranno nemmeno visibili per l'utente **teamD** via web. Se tentassi di accedere, accadrebbe il seguente evento.
 
 ```bash
 ➜ npm install my-company-core

@@ -43,7 +43,7 @@ function Versions(props) {
                   </a>
                 </td>
                 <td>
-                  <a href={`${repoUrl}/releases/tag/v${latestVersion}`}>
+                  <a href={`https://github.com/verdaccio/verdaccio/releases/tag/v${latestVersion}`}>
                     Release Notes
                   </a>
                 </td>

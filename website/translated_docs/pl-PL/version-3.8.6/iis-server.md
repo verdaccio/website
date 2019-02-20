@@ -12,7 +12,7 @@ Te instrukcje zostały napisane dla systemu Windows Server 2012, usługi IIS8, [
 - Uruchom wiersz polecenia i wykonaj poniższe polecenia, aby pobrać verdaccio:
 
     cd c:\verdaccio
-    zainstaluj menedżer pakietów węzłowych
+    npm install
     
 
 - Upewnij się, że w Zaporze systemu Windows masz regułę ruchu przychodzącego akceptującą ruch TCP przez dany port

@@ -30,16 +30,7 @@
       "reverse-proxy",
       "ssl",
       "windows",
-      "iss-server",
-      {
-        "type": "subcategory",
-        "label": "Cloud",
-        "ids": [
-          "azure",
-          "amazon",
-          "google-cloud"
-        ]
-      }
+      "iss-server"
     ],
     "Plugins": [
       "plugins",

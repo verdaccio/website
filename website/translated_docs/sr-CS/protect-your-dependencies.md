@@ -19,7 +19,7 @@ Sa navedenom konfiguracijom dozvoljavamo grupama **admin** i **teamA** da *publi
 
 ### Primer iz prakse: teamD pokušava da pristupi nekoj dependency
 
-Dale, prijavljen sam kao **teamD**. Ne bi trebalo da budem u mogućnosti da pristupim svim dependencies-ima koji sadrže `my-company-*` patern.
+Dalje, prijavljen sam kao **teamD**. Ne bi trebalo da budem u mogućnosti da pristupim svim dependencies-ima koji sadrže `my-company-*` patern.
 
 ```bash
 ➜ npm whoami

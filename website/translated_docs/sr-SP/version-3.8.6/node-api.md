@@ -3,9 +3,9 @@ id: version-3.8.6-node-api
 title: Node API
 original_id: node-api
 ---
-Verdaccio can be invoqued programmatically. The node API was introduced after version `verdaccio@3.0.0-alpha.10`.
+Verdaccio може бити позван преко програма (invoked programmatically). Node API је уведен од верзије `verdaccio@3.0.0-alpha.10`.
 
-## Usage
+## Коришћење
 
 #### Programmatically
 
@@ -20,7 +20,7 @@ Verdaccio can be invoqued programmatically. The node API was introduced after ve
   });
 ```
 
-## Other implementations
+## Остале имплементације
 
 * [verdaccio-server](https://github.com/boringame/verdaccio-server) local npm registry proxy server
 

@@ -5,7 +5,7 @@ original_id: reverse-proxy
 ---
 ## Apache
 
-Apache and mod_proxy should not decode/encode slashes and leave them as they are:
+Apache и mod_proxy не треба да decode/encode slashes, тако да је најбоље да оставите подешавања таква каква су:
 
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
@@ -14,7 +14,7 @@ Apache and mod_proxy should not decode/encode slashes and leave them as they are
     </VirtualHost>
     
 
-### Configuration with SSL
+### Конфигурисање са SSL
 
 config.yaml
 
@@ -22,7 +22,7 @@ config.yaml
 url_prefix: https://npm.your.domain.com
 ```
 
-Apache virtual server configuration
+Конфигурација Apache виртуал сервера
 
         apacheconfig
         <IfModule mod_ssl.c>
@@ -52,13 +52,13 @@ Apache virtual server configuration
     }
     
 
-## Run behind reverse proxy with different domain and port
+## Покрените behind reverse proxy са различитим доменом и портом
 
-If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like `http://127.0.0.1:4873/-/static`
+Ако покренете verdaccio behind reverse proxy, можда ћете приметити све resource фајлове сервиране као relaticve path, на пример `http://127.0.0.1:4873/-/static`
 
-To resolve this issue, you should send real domain and port to verdaccio with `Host` header
+Како бисте решили наведени проблем, требало би да пошаљете real domain и port до verdaccio-а са `Host` header-ом
 
-Nginx configure should look like this:
+Nginx конфигурисање би требало да изгледа овако:
 
 ```nginx
 location / {
@@ -69,11 +69,11 @@ location / {
 }
 ```
 
-For this case, `url_prefix` should NOT set in verdaccio config
+У овом случају, `url_prefix` НЕ треба да подешава verdaccio config
 
 * * *
 
-or a sub-directory installation:
+или, инсталација под-директоријума:
 
 ```nginx
 location ~ ^/verdaccio/(.*)$ {
@@ -84,6 +84,6 @@ location ~ ^/verdaccio/(.*)$ {
 }
 ```
 
-For this case, `url_prefix` should set to `/verdaccio/`
+У овом случају, `url_prefix` треба подесити на `/verdaccio/`
 
-> Note: There is a Slash after install path (`https://your-domain:port/verdaccio/`)!
+> Напомена: Постоји Slash после путање за инсталацију (`https://your-domain:port/verdaccio/`)!

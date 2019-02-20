@@ -29,14 +29,14 @@ METODO ALTERNATIVO: (il pacchetto WinSW non era presente quando ho provato a sca
     * Cartella di avvio: `c:\verdaccio`
     * Argomenti: `c:\verdaccio\node_modules\verdaccio\build\lib\cli.js -c c:\verdaccio\config.yaml`
     
-    You can adjust other service settings under other tabs as desired. When you are done, click Install service button
+    È possibile adattare configurazioni di servizio alternative sotto altre tab come si desidera. Una volta terminato, cliccare sul pulsante Install service
     
     * Avviare il servizio sc start verdaccio
 
 ## Utilizzo di WinSW
 
-* As of 2015-10-27, WinSW is no longer available at the below location. Please follow the Using NSSM instructions above.
-* Download [WinSW](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/) 
+* A partire dal 27/10/2015, WinSW non è più disponibile nella posizione seguente. Si prega di seguire le istruzioni sull'Utilizzo di NSSM scritte sopra.
+* Scarica [WinSW](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/) 
     * Collocare l'eseguibile (e.g. `winsw-1.9-bin.exe`) in questa cartella (`c:\verdaccio`) e rinominarlo `verdaccio-winsw.exe`
 * Creare un file di configurazione in `c:\verdaccio`, denominato `verdaccio-winsw.xml` con la seguente configurazione `xml verdaccio verdaccio verdaccio node c:\verdaccio\node_modules\verdaccio\src\lib\cli.js -c c:\verdaccio\config.yaml roll c:\verdaccio`.
 * Installare il servizio 

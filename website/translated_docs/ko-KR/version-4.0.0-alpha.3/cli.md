@@ -5,7 +5,7 @@ original_id: cli
 ---
 The verdaccio CLI is your go start the application.
 
-## Commands
+## 명령어
 
 ```bash
 verdaccio --listen 4000 --config ~./config.yaml

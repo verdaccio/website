@@ -22,11 +22,18 @@ interface IPluginAuth extends IPlugin {
   authenticate(user: string, password: string, cb: Callback): void;
   adduser(user: string, password: string, cb: Callback): void;
   allow_access(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
-  allow_publish(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
+  apiJWTmiddleware(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
+  allow_publish(helpers): void;
 }
 ```
 
-> Tylko `dduser`, `allow_access` i `allow_publish` są opcjonalne, verdaccio zapewnia cofnięcie we wszystkich tych przypadkach.
+> Only `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+
+#### apiJWTmiddleware method
+
+Since `v4.0.0`
+
+`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
@@ -90,7 +97,7 @@ auth:
     file: ./htpasswd
 ```
 
-Gdzie `htpasswd` jest przyrostkiem nazwy wtyczki. np: `verdaccio-htpasswd`, a reszta będzie parametrem konfiguracyjnym wtyczki.
+Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
 
 ## Wtyczka oprogramowania pośredniego
 
@@ -104,7 +111,7 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 ### register_middlewares
 
-Metoda zapewnia pełny dostęp do uwierzytelniania i przechowywania za pomocą `auth` i `storage`. `app` to ekspresowa aplikacja, która pozwala dodawać nowe punkty końcowe.
+The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
 
 > Całkiem dobry przykład wtyczki pośredniej to [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) i <a href = "https://github.com/ verdaccio / verdaccio-audit ">verdaccio-audit</a>.
 
@@ -124,7 +131,7 @@ Verdaccio domyślnie używa wtyczki pamięci masowej do systemu plików [lokalne
 
 ### API
 
-API magazynu danych jest trochę bardziej skomplikowane, będziesz musiał stworzyć klasę, która zwraca implementację `IPluginStorage`. Poniżej zapoznasz się ze szczegółami.
+The storage API is a bit more complex, you will need to create a class that return a `IPluginStorage` implementation. Please see details bellow.
 
 ```flow
 class LocalDatabase<IPluginStorage>{

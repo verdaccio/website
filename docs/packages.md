@@ -54,7 +54,7 @@ All users recieve all those set of permissions independently of is anonymous or 
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-If you want to protect specific set packages under your group, you need to do something like this. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recomend using a prefix for your packages, in that way it will be easier to protect them.
+If you want to protect specific set packages under your group, you need to do something like this. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.
 
 ```yaml
 packages:
@@ -145,6 +145,6 @@ Property | Type | Required | Example | Support | Description
 access | string | No | $all | all | define groups allowed to access the package
 publish | string | No | $authenticated | all | define groups allowed to publish
 proxy | string | No | npmjs | all | limit look ups for specific uplink
-storage | boolean | No | [true,false] | all | TODO
+storage | boolean | No | string | `>v4` | it creates a subfolder whithin the storage folder for each package access
 
 > We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).

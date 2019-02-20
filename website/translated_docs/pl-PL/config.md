@@ -85,9 +85,20 @@ Konfiguracja jest podzielona na dwie sekcje: `api` i `web`. Aby użyć JWT w `ap
 
 > Zdecydowanie zalecamy przejście do JWT, ponieważ starszy podpis (`aes192`) jest przestarzały i zniknie w przyszłych wersjach.
 
+### Server
+
+A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+
+> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+
+```yaml
+server:
+  keepAliveTimeout: 60
+```
+
 ### Web UI
 
-Ta właściwość pozwala Ci zmienić wygląd internetowego interfejsu użytkownika. Więcej informacji na temat tej sekcji można znaleźć na stronie [web ui page](web.md).
+This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
 
 ```yaml
 web:
@@ -109,7 +120,7 @@ uplinks:
 
 ### Pakiety
 
-Pakiety pozwalają użytkownikowi kontrolować, w jaki sposób pakiety będą dostępne. Więcej informacji na temat tej sekcji można znaleźć na [stronie pakietów](packages.md).
+Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
 
 ```yaml
 packages:
@@ -191,12 +202,12 @@ https_proxy: https://something.local/
 Ta zmienna powinna posiadać listę domen oddzieloną przecinkami, dla których proxy nie powinno być używane.
 
 ```yaml
-brak_proxy: hostlokalny,127.0.0.1
+no_proxy: localhost,127.0.0.1
 ```
 
 ### Powiadomienia
 
-Dostarczanie powiadomień do aplikacji zewnętrznych jest całkiem łatwe poprzez web hooks. Aby uzyskać więcej informacji o tej sekcji przeczytaj [notifications page](notifications.md).
+Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -212,7 +223,7 @@ notify:
 
 <small>Since: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` to nowa komenda wydana razem z [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio zawiera wbudowany plugin oprogramowania pośredniego do obsługi tej komendy.
+`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
 
 > Jeśli instalujesz aplikację od nowa, to posiada ona ustawienia domyślnie, w przeciwnym razie musisz dodać następujące właściwości do Twojego pliku konfiguracyjnego
 

@@ -71,7 +71,7 @@ Moguće je da ćete dobiti pitanje da odaberete editor. Odaberite svoj omiljeni 
     @reboot /usr/bin/forever start /usr/lib/node_modules/verdaccio/bin/verdaccio
     
 
-Lokacije mogu varirati u zavisnosti od podešavanja servera. Ako želite da saznate gde se nalaze Vaši fajlovi, možete koristiti comandu 'which':
+Lokacije mogu varirati u zavisnosti od podešavanja servera. Ako želite da saznate gde se nalaze Vaši fajlovi, možete koristiti komandu 'which':
 
 ```bash
 $ which forever

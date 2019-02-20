@@ -2,9 +2,9 @@
 id: iss-servidor
 title: "Instalación en servidor IIS"
 ---
-Estas instrucciones fueron escritas para Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) y [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
+These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
-- Instala IIS Instala [iisnode](https://github.com/tjanczuk/iisnode). Asegúrate de instalar los requerimientos (Url Rewrite Module & node) como se explicó en las instrucciones para iisnode.
+- Install IIS Install [iisnode](https://github.com/Azure/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
 - Crea una nueva carpeta en Explorer en donde deseas alojar a Verdaccio. Por ejemplo `C:\verdaccio`. Guardar [package.json](#packagejson), [start.js](#startjs) y [web.config](#webconfig) en esta carpeta.
 - Crea un nuevo sitio en Administrador de Servicios de Información de Internet. Puedes ponerle el nombre que quieras. Lo llamaré Verdaccio en estas [instrucciones](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Especifica la ruta en donde guardaste todos los archivos y un número de puerto.
 - Regresa a Explorer y otorgale al usuario que ejecuta el grupo de aplicaciones derechos para modificar la carpeta que acabas de crear. Si has nombrado el nuevo sitio verdaccio y no cambiaste el grupo de aplicaciones, está funcionado gracias a un ApplicationPoolIdentity y deberías otorgarle al usuario derechos para modificar IIS AppPool\verdaccio mira las instrucciones si necesitas ayuda. (Puede restringir el acceso más adelante si lo deseas para que así solo tenga derechos para modificar en el iisnode y verdaccio\storage)
@@ -19,7 +19,6 @@ Estas instrucciones fueron escritas para Windows Server 2012, IIS 8, [Node.js 0.
 
 Quería que la página `verdaccio` fuese la página predeterminada en IIS así que hice lo siguiente:
 
-- Me aseguré que el archivo .npmrc en `c:\users{yourname}` tuviese el registro configurado a `"registry=http://localhost/"`
 - Detuve el "Sitio Web Predeterminado" y solo empiezo el sitio "verdaccio" en IIS
 - Establecí los enlaces a "http", dirección de ip "All Unassigned" en el puerto 80, ok cualquier advertencia o carácter de comando
 
@@ -36,12 +35,19 @@ Un archivo de configuración predeterminado será creado `c:\verdaccio\verdaccio
   "description": "Hosts verdaccio in iisnode",
   "main": "start.js",
   "dependencies": {
-    "verdaccio": "^2.1.0"
+    "verdaccio": "^3.11.0"
   }
 }
 ```
 
 ### start.js
+
+```bash
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+require('./node_modules/verdaccio/build/lib/cli.js');
+```
+
+### Alternate start.js for Verdaccio versions < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);
@@ -71,14 +77,16 @@ require('./node_modules/verdaccio/src/lib/cli.js');
         <!-- iisnode folder is where iisnode stores it's logs. These should
         never be rewritten -->
         <rule name="iisnode" stopProcessing="true">
-          <match url="iisnode*" />
-          <action type="None" />
+            <match url="iisnode*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="None" />
         </rule>
 
         <!-- Rewrite all other urls in order for verdaccio to handle these -->
         <rule name="verdaccio">
-          <match url="/*" />
-          <action type="Rewrite" url="start.js" />
+            <match url="/*" />
+            <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+            <action type="Rewrite" url="start.js" />
         </rule>
       </rules>
     </rewrite>

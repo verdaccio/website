@@ -47,11 +47,11 @@ Koristimo [Handlebars](https://handlebarsjs.com/) kao main template engine.
 
 ### Primeri za formate
 
-    # iterate all versions
-    {{ name }}{{#each versions}} v{{version}}{{/each}}`"}
+    # Prolazi kroz sve verzije
+    {{ name }}{{#each versions}} v{{version}}{{/each}}
     
-    # publisher and `dist-tag` package published
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    # publisher i `dist-tag` package published
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ### Svojstva (Properties)
@@ -143,7 +143,7 @@ Primer:
 
 Možete pristupiti opciji package is being published pomoću ključne reči `{{publishedPackage}}` na sledeći način.
 
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ## Konfigurisanje

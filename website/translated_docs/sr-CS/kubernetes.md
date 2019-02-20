@@ -42,7 +42,7 @@ helm del --purge npm
 
 **Napomena:** ova komanda briše sve resurse, uključujući i pakete koji su možda ranije objavljeni u registriju.
 
-### Koristnička Konfiguracija Verdaccio-a
+### Korisnička Konfiguracija Verdaccio-a
 
 Možete podesiti Verdaccio konfiguraciju po svojim željama tako što ćete koristiti Kubernetes *configMap*.
 
