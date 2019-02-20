@@ -153,8 +153,13 @@ const languages = [
   },
   {
     enabled: true,
-    name: 'Serbian',
+    name: 'Serbian (Latin)',
     tag: 'sr-CS',
+  },
+  {
+    enabled: false,
+    name: 'Serbian (Latin)',
+    tag: 'sr',
   },
   {
     enabled: false,
