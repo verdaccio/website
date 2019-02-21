@@ -4,7 +4,20 @@
       "what-is-verdaccio",
       "installation",
       "cli",
-      "logo"
+      "who-is-using",
+      "logo",
+      "articles",
+      "talks",
+      {
+        "type": "subcategory",
+        "label": "Uses Cases",
+        "ids": [
+          "e2e",
+          "caching",
+          "github-actions",
+          "linking-remote-registry"
+        ]
+      }
     ],
     "Configuration": [
       "configuration",
@@ -29,10 +42,16 @@
     "DevOps": [
       "docker",
       "kubernetes",
-      "ansible",
-      "puppet",
-      "chef",
-      "ci"
+      "ci",
+      {
+        "type": "subcategory",
+        "label": "Tools",
+        "ids": [
+          "ansible",
+          "puppet",
+          "chef"
+        ]
+      }
     ],
     "Development": [
       "build",

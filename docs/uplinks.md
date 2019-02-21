@@ -30,7 +30,7 @@ Property | Type | Required | Example | Support | Description | Default
 url | string | Yes | https://registry.npmjs.org/ | all | The registry url | npmjs
 ca | string | No | ~./ssl/client.crt' | all | SSL path certificate | No default
 timeout | string | No | 100ms | all | set new timeout for the request | 30s
-maxage | string | No |10m | all | limit maximun failure request | 2m
+maxage | string | No |10m | all | the time threshold to the cache is valid | 2m
 fail_timeout | string | No |10m | all | defines max time when a request becomes a failure | 5m
 max_fails | number | No |2 | all | limit maximun failure request | 2
 cache | boolean | No |[true,false] | >= 2.1 | cache all remote tarballs in storage | true
