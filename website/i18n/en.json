@@ -11,6 +11,9 @@
       "ansible": {
         "title": "Ansible"
       },
+      "articles": {
+        "title": "Articles about Verdaccio"
+      },
       "authentification": {
         "title": "Authentification"
       },
@@ -65,8 +68,8 @@
       "kubernetes": {
         "title": "Kubernetes"
       },
-      "linking-registries": {
-        "title": "Linking Regiestries"
+      "linking-remote-registry": {
+        "title": "Linking a Remote Registry"
       },
       "logger": {
         "title": "Logger"

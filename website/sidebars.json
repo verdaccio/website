@@ -6,6 +6,7 @@
       "cli",
       "who-is-using",
       "logo",
+      "articles",
       {
         "type": "subcategory",
         "label": "Uses Cases",
@@ -13,7 +14,7 @@
           "e2e",
           "caching",
           "github-actions",
-          "linking-registries"
+          "linking-remote-registry"
         ]
       }
     ],
