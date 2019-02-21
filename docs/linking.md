@@ -72,3 +72,27 @@ Verdaccio supports multiples registries on the `proxy` field, the request will b
 fails, it will try with the next in the list and so on. 
 
 ## Offline Registry
+
+Having a full Offline Registry is completely possible, if you don't want any connectivity with external remotes you 
+can do the following.
+
+```yaml
+
+auth:
+  htpasswd:
+    file: ./htpasswd
+uplinks:
+packages:
+  '@my-company/*':
+    access: $all
+    publish: none
+  '@*/*':
+    access: $all
+    publish: $authenticated
+  '**':
+    access: $all
+    publish: $authenticated
+```
+
+Remote all `proxy` fields within each section of `packages`. The registry will became full offline.
+
