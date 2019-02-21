@@ -34,9 +34,13 @@ Par exemple :
 
 Comme décrit [ dans le cas N°212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500)jusqu'à`npm@5.3.0`et dans toutes les versions mineurs ** vous ne serez pas autorisés à publier sans jeton**. Cependant `yarn` n'a pas une telle limitation.
 
+## Understanding Groups
+
+//TODO: https://github.com/verdaccio/verdaccio/issues/1120
+
 ## Htpasswd par défaut
 
-Afin de simplifier la configuration, `verdaccio` utilise un plugin basé sur `htpasswd`. A partir de la version 3.0.x, le [ plugin externe ](https://github.com/verdaccio/verdaccio-htpasswd) est utilisé par défaut. La version v2.x de ce paquet contient toujours la version intégrée de ce plugin.
+Afin de simplifier la configuration, `verdaccio` utilise un plugin basé sur `htpasswd`. As of version v3.0.x an [external plugin](https://github.com/verdaccio/verdaccio-htpasswd) is used by default. La version v2.x de ce paquet contient toujours la version intégrée de ce plugin.
 
 ```yaml
 auth:
