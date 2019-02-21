@@ -9,7 +9,7 @@ a different strategy. Using of plugins you might use the cloud or any sort of da
  
 # Continuos Integration Tools
 
-
+Build on CI servers is a task that migh takes several times at a day. 
 
 
 # Strategies for faster builds 

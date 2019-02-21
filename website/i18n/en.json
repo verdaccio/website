@@ -12,7 +12,7 @@
         "title": "Ansible"
       },
       "articles": {
-        "title": "Articles about Verdaccio"
+        "title": "Articles/Videos about Verdaccio"
       },
       "authentification": {
         "title": "Authentification"
@@ -109,6 +109,9 @@
       },
       "ssl": {
         "title": "Set up the SSL Certificates"
+      },
+      "talks": {
+        "title": "Talks about Verdaccio"
       },
       "unit-testing": {
         "title": "Unit Testing"

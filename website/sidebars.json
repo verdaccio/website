@@ -7,6 +7,7 @@
       "who-is-using",
       "logo",
       "articles",
+      "talks",
       {
         "type": "subcategory",
         "label": "Uses Cases",
