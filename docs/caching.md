@@ -20,6 +20,8 @@ a proxy registry, Verdaccio cache all metadata and tarballs are downloaded by de
  
 
 # Strategies for faster builds 
+
+> We are looking for more strategies, feel free to share your experience in this field
  
 ## Avoid Caching tarballs
 
@@ -41,7 +43,7 @@ uplinks:
 uplinks:
   npmjs:
     url: https://registry.npmjs.org/
-    maxage: 10m
+    maxage: 30m
 ```
 
 Increasing the value of `maxage` in each `uplink` remotes will be asked less frequently. This might be a valid stragegy if

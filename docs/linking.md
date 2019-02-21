@@ -30,6 +30,7 @@ This approache is valid, but comes with several dissadventages:
 * One scope **cannot fetch from multiple registries**
 * Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
 
+See a full example [here](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
 
 ## Linking a Registry
 
