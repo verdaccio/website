@@ -31,9 +31,9 @@ You can define mutiple uplinks and each of them must have an unique name (key). 
 | url          | 字符串     | 是  | https://registry.npmjs.org/             | 任意路径   | 外部注册服务器URL                                                                                                  | npmjs |
 | ca           | 字符串     | 否  | ~./ssl/client.crt'                      | 任意路径   | SSL证书文件路径                                                                                                   | 无默认值  |
 | timeout      | 字符串     | 否  | 100ms                                   | 任意路径   | 为请求设置新的超时时间                                                                                                 | 30s   |
-| maxage       | 字符串     | 否  | 10m                                     | 任意路径   | 请求返回信息时效，在此时间内不会发起相同的请求                                                                                     | 2m    |
+| maxage       | 字符串     | 否  | 10m                                     | 任意路径   | 请求连续失败的最大次数限制                                                                                               | 2m    |
 | fail_timeout | 字符串     | 否  | 10m                                     | 任意路径   | 请求在连续失败超过指定次数后的最长等待重试时间                                                                                     | 5m    |
-| max_fails    | 数字      | 否  | 2                                       | 任意路径   | 请求返回信息时效，在此时间内不会发起相同的请求                                                                                     | 2     |
+| max_fails    | 数字      | 否  | 2                                       | 任意路径   | 请求连续失败的最大次数限制                                                                                               | 2     |
 | cache        | boolean | 否  | [true,false]                            | >= 2.1 | 缓存下载的远程tarball文件到本地                                                                                         | true  |
 | auth         | list    | 否  | [见下文](uplinks.md#auth-property)         | >= 2.5 | 指定“授权authorization”请求头的内容 [详情见](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | 禁用    |
 | headers      | list    | 否  | authorization: "Bearer SecretJWToken==" | 任意路径   | 上行链路请求的请求头header列表                                                                                          | 禁用    |
