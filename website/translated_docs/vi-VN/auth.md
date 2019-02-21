@@ -34,9 +34,13 @@ Ví dụ:
 
 Như đã giải thích trong phần [issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500), kể từ phiên bản `npm@5.3.0` và trong tất cả các phiên bản phụ khác ** bạn sẽ không được phép xuất bản gói mà không có một token nào**. Tuy nhiên đối với công cụ quản lý thư viện `yarn` thì không có yêu cầu này.
 
+## Understanding Groups
+
+//TODO: https://github.com/verdaccio/verdaccio/issues/1120
+
 ## Tự động tạo tập tin htpasswd
 
-Để đơn giản hóa quá trình cài đặt, `verdaccio` đã sử dụng plugin dựa trên tập tin `htpasswd`. [Plugin bên ngoài](https://github.com/verdaccio/verdaccio-htpasswd) đã được cài đặt mặc định trong phiên bản v3.0.x. V2.x của gói này vẫn chứa phiên bản tích hợp của plugin này.
+Để đơn giản hóa quá trình cài đặt, `verdaccio` đã sử dụng plugin dựa trên tập tin `htpasswd`. As of version v3.0.x an [external plugin](https://github.com/verdaccio/verdaccio-htpasswd) is used by default. V2.x của gói này vẫn chứa phiên bản tích hợp của plugin này.
 
 ```yaml
 auth:
