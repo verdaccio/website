@@ -85,6 +85,7 @@ We list the articles about Verdaccio, if you gave a talk, wrote a blog post or t
 
 * [Introduction to Verdaccio VueJS Meetup 2018](https://www.slideshare.net/juancarlospicado/introduction-to-verdaccio)
 * [Introduccion Verdaccio Vienna JS Meetup 2019](https://docs.google.com/presentation/d/1eam_OtXCQh5IVYyia2GHhxVD8tb37B0yIadVa8wxQSk/edit?usp=sharing)
+* [Cover Your Apps While Still Using npm](https://www.slideshare.net/TierneyCoren/cover-your-apps-while-still-using-npm)
 
 ## Related Videos
 
