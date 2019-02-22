@@ -1,6 +1,6 @@
 ---
 id: articles
-title: "Articles about Verdaccio"
+title: "Articles"
 ---
 We list the articles about Verdaccio, if you wrote a blog post or tutorial that mention Verdaccio, feel free to add it here.
 
