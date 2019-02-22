@@ -100,9 +100,9 @@
 <tr><td>url</td><td>字符串</td><td>是</td><td><a href="https://registry.npmjs.org/">https://registry.npmjs.org/</a></td><td>任意路径</td><td>外部注册服务器URL</td><td>npmjs</td></tr>
 <tr><td>ca</td><td>字符串</td><td>否</td><td>~./ssl/client.crt'</td><td>任意路径</td><td>SSL证书文件路径</td><td>无默认值</td></tr>
 <tr><td>timeout</td><td>字符串</td><td>否</td><td>100ms</td><td>任意路径</td><td>为请求设置新的超时时间</td><td>30s</td></tr>
-<tr><td>maxage</td><td>字符串</td><td>否</td><td>10m</td><td>任意路径</td><td>请求返回信息时效，在此时间内不会发起相同的请求</td><td>2m</td></tr>
+<tr><td>maxage</td><td>字符串</td><td>否</td><td>10m</td><td>任意路径</td><td>请求连续失败的最大次数限制</td><td>2m</td></tr>
 <tr><td>fail_timeout</td><td>字符串</td><td>否</td><td>10m</td><td>任意路径</td><td>请求在连续失败超过指定次数后的最长等待重试时间</td><td>5m</td></tr>
-<tr><td>max_fails</td><td>数字</td><td>否</td><td>2</td><td>任意路径</td><td>请求返回信息时效，在此时间内不会发起相同的请求</td><td>2</td></tr>
+<tr><td>max_fails</td><td>数字</td><td>否</td><td>2</td><td>任意路径</td><td>请求连续失败的最大次数限制</td><td>2</td></tr>
 <tr><td>cache</td><td>boolean</td><td>否</td><td>[true,false]</td><td>&gt;= 2.1</td><td>缓存下载的远程tarball文件到本地</td><td>true</td></tr>
 <tr><td>auth</td><td>list</td><td>否</td><td><a href="/docs/zh-CN/3.8.6/uplinks#auth-property">见下文</a></td><td>&gt;= 2.5</td><td>指定“授权authorization”请求头的内容 <a href="http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules">详情见</a></td><td>禁用</td></tr>
 <tr><td>headers</td><td>list</td><td>否</td><td>authorization: &quot;Bearer SecretJWToken==&quot;</td><td>任意路径</td><td>上行链路请求的请求头header列表</td><td>禁用</td></tr>
