@@ -12,7 +12,7 @@
         "title": "Ansible"
       },
       "articles": {
-        "title": "Articles about Verdaccio"
+        "title": "Articles"
       },
       "authentification": {
         "title": "Authentification"
@@ -69,7 +69,7 @@
         "title": "Logger"
       },
       "logo": {
-        "title": "Verdaccio Logotype"
+        "title": "Logotype"
       },
       "node-api": {
         "title": "Node API"
@@ -102,7 +102,7 @@
         "title": "Подешавање SSL Сертификата"
       },
       "talks": {
-        "title": "Talks about Verdaccio"
+        "title": "Talks"
       },
       "uplinks": {
         "title": "Uplinks"
