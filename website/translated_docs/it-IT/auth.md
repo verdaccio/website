@@ -34,9 +34,13 @@ Ad esempio:
 
 Come è descritto [nel caso #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) fino al `npm@5.3.0` e in tutte le versioni minori **non vi sarà permesso pubblicare senza un token **. Tuttavia `yarn` non ha tale limitazione.
 
+## Understanding Groups
+
+//TODO: https://github.com/verdaccio/verdaccio/issues/1120
+
 ## Impostazione predefinita htpasswd
 
-Al fine di semplificare l'installazione, `verdaccio` utilizza un plugin basato su `htpasswd`. A partire dalla versione v3.0.x un [plugin esterno](https://github.com/verdaccio/verdaccio-htpasswd) viene utilizzato come impostazione predefinita. La versione v2.x di questo pacchetto contiene ancora la versione incorporata di questo plugin.
+Al fine di semplificare l'installazione, `verdaccio` utilizza un plugin basato su `htpasswd`. As of version v3.0.x an [external plugin](https://github.com/verdaccio/verdaccio-htpasswd) is used by default. La versione v2.x di questo pacchetto contiene ancora la versione incorporata di questo plugin.
 
 ```yaml
 auth:

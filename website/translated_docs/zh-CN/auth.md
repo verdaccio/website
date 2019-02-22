@@ -34,9 +34,13 @@ registry=http://localhost:5555/
 
 如 [Issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) 所述，截至 `npm@5.3.0` 你仍然 **无法在没有 Token 的情况下发布包**。 `yarn` 没有此限制。
 
+## Understanding Groups
+
+//TODO: https://github.com/verdaccio/verdaccio/issues/1120
+
 ## 默认 htpasswd
 
-为了简化安装，`verdaccio` 使用`htpasswd`基础上的插件。 到v3.0.x版本为止，默认使用[外部插件](https://github.com/verdaccio/verdaccio-htpasswd)。 此包的v2.x 版本仍然包含此插件的内置版本。
+为了简化安装，`verdaccio` 使用`htpasswd`基础上的插件。 As of version v3.0.x an [external plugin](https://github.com/verdaccio/verdaccio-htpasswd) is used by default. 此包的v2.x 版本仍然包含此插件的内置版本。
 
 ```yaml
 auth:

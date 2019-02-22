@@ -27,7 +27,7 @@ Tutte le restrizioni di accesso definite per [proteggere i pacchetti](protect-yo
 | title         | stringa            | No        | Verdaccio                      | tutti    | Descrizione del titolo HTML                                                                                                                                                |
 | gravatar      | variabile booleana | No        | vero                           | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                                                     |
 | sort_packages | [asc,desc]         | No        | asc                            | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                                                     |
-| logo          | stringa            | No        | http://my.logo.domain/logo.png | tutti    | a URI where logo is located (header logo)                                                                                                                                  |
+| logo          | stringa            | No        | http://my.logo.domain/logo.png | tutti    | un URI in cui si trova il logo (logo intestazione)                                                                                                                         |
 | scope         | stringa            | No        | \\@myscope                   | tutti    | Se si utilizza questo registro per uno specifico scope, definisci quello scope nelle istruzioni dell' intestazione dell'interfaccia web utente (nota: escape @ with \\@) |
 
-> It is recommended the logo size has the following size `40x40` pixels.
+> Si raccomanda che la dimensione del logo sia di dimensione `40x40` pixel.

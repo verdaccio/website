@@ -30,7 +30,7 @@ uplinks:
 | url          | string  | 是   | https://registry.npmjs.org/             | 全部     | 外部注册服务器URL                                                                                                  | npmjs |
 | ca           | string  | 否   | ~./ssl/client.crt'                      | 全部     | SSL证书文件路径                                                                                                   | 无默认值  |
 | timeout      | string  | 否   | 100ms                                   | 全部     | 为请求设置新的超时时间                                                                                                 | 30s   |
-| maxage       | string  | 否   | 10m                                     | 全部     | 请求返回信息时效，在此时间内不会发起相同的请求                                                                                     | 2m    |
+| maxage       | string  | 否   | 10m                                     | 全部     | the time threshold to the cache is valid                                                                    | 2m    |
 | fail_timeout | string  | 否   | 10m                                     | 全部     | 请求在连续失败超过指定次数后的最长等待重试时间                                                                                     | 5m    |
 | max_fails    | number  | 否   | 2                                       | 全部     | 请求连续失败的最大次数限制                                                                                               | 2     |
 | cache        | boolean | 否   | [true,false]                            | >= 2.1 | 缓存下载的远程tarball文件到本地                                                                                         | true  |

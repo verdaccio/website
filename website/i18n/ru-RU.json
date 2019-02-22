@@ -11,6 +11,9 @@
       "ansible": {
         "title": "Ansible"
       },
+      "articles": {
+        "title": "Articles about Verdaccio"
+      },
       "authentification": {
         "title": "Аутентификация"
       },
@@ -50,6 +53,9 @@
       "e2e": {
         "title": "End to end testing"
       },
+      "github-actions": {
+        "title": "Github Actions"
+      },
       "google-cloud": {
         "title": "Google Cloud"
       },
@@ -62,8 +68,8 @@
       "kubernetes": {
         "title": "Kubernetes"
       },
-      "linking-registries": {
-        "title": "Linking Regiestries"
+      "linking-remote-registry": {
+        "title": "Linking a Remote Registry"
       },
       "logger": {
         "title": "Логи"
@@ -104,6 +110,9 @@
       "ssl": {
         "title": "Настройка SSL-сертификатов"
       },
+      "talks": {
+        "title": "Talks about Verdaccio"
+      },
       "unit-testing": {
         "title": "Модульное тестирование"
       },
@@ -118,6 +127,9 @@
       },
       "what-is-verdaccio": {
         "title": "What is Verdaccio?"
+      },
+      "who-is-using": {
+        "title": "Who is using Verdaccio?"
       },
       "windows": {
         "title": "Установка в качестве службы Windows"

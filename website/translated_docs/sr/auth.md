@@ -34,9 +34,13 @@ registry=http://localhost:5555/
 
 Као што је описано, [on issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) све док `npm@5.3.0` и све верзије не буду усаглашене **неће Вам бити омогућено да публикујете без токена**. Ипак, `yarn` нема таква ограничења.
 
+## Understanding Groups
+
+//TODO: https://github.com/verdaccio/verdaccio/issues/1120
+
 ## Подразумевана htpasswd
 
-Како би се поједноставио setup, `verdaccio` користи plugin базиран на `htpasswd`. Од верзије v3.0.x [екстерни plugin](https://github.com/verdaccio/verdaccio-htpasswd) се користи као подразумеван. Верзија v2.x и даље садржи уграђену верзију овог plugin-а.
+Како би се поједноставио setup, `verdaccio` користи plugin базиран на `htpasswd`. As of version v3.0.x an [external plugin](https://github.com/verdaccio/verdaccio-htpasswd) is used by default. Верзија v2.x и даље садржи уграђену верзију овог plugin-а.
 
 ```yaml
 auth:
