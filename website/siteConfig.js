@@ -87,6 +87,8 @@ const siteConfig = {
   // organizationName: 'deltice', // or set an env variable ORGANIZATION_NAME
   // projectName: 'test-site', // or set an env variable PROJECT_NAME
   usePrism: ['jsx'],
+  onPageNav: 'separate',
+  docsSideNavCollapsible: true,
   highlight: {
     theme: 'atom-one-dark',
   },
