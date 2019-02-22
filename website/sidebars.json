@@ -6,8 +6,6 @@
       "cli",
       "who-is-using",
       "logo",
-      "articles",
-      "talks",
       {
         "type": "subcategory",
         "label": "Uses Cases",
@@ -17,9 +15,17 @@
           "github-actions",
           "linking-remote-registry"
         ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Talks or Articles",
+        "ids": [
+          "articles",
+          "talks"
+        ]
       }
     ],
-    "Configuration": [
+    "Features": [
       "configuration",
       "uplinks",
       "packages",
@@ -35,9 +41,10 @@
       "windows",
       "iss-server"
     ],
-    "Plugins": [
+    "Development": [
       "plugins",
-      "dev-plugins"
+      "dev-plugins",
+      "node-api"
     ],
     "DevOps": [
       "docker",
@@ -52,13 +59,6 @@
           "chef"
         ]
       }
-    ],
-    "Development": [
-      "build",
-      "contributing",
-      "source-code",
-      "unit-testing",
-      "node-api"
     ],
     "Guides": [
       "best",
