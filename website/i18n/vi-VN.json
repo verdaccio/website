@@ -12,7 +12,7 @@
         "title": "Phần mềm nguồn mở ansible"
       },
       "articles": {
-        "title": "Articles about Verdaccio"
+        "title": "Articles"
       },
       "authentification": {
         "title": "Yêu cầu xác thực"
@@ -69,7 +69,7 @@
         "title": "Logger"
       },
       "logo": {
-        "title": "Verdaccio Logotype"
+        "title": "Logotype"
       },
       "node-api": {
         "title": "Node API"
@@ -102,7 +102,7 @@
         "title": "Set up the SSL Certificates"
       },
       "talks": {
-        "title": "Talks about Verdaccio"
+        "title": "Talks"
       },
       "uplinks": {
         "title": "Uplinks"
