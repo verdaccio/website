@@ -2,9 +2,7 @@
 id: docker
 title: Docker
 ---
-<div class="docker-count">
-  ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
-</div>
+![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
 Како бисте привукли (pull) најновији pre-built [docker image](https://hub.docker.com/r/verdaccio/verdaccio/):
 
@@ -52,7 +50,7 @@ docker pull verdaccio/verdaccio:beta
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-Последњи аргумент дефинише који image ће се користити. Линија изнад повлачи најновији prebuilt image са dockerhub-а, ако то већ нисте урадили.
+The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
 
 Ако употребљавате опцију [build an image locally](#build-your-own-docker-image) користите `verdaccio` као последњи аргумент.
 
@@ -111,18 +109,19 @@ $ docker-compose up --build
 
 Docker ће направити именовани volume у коме ће се чувати подаци за апликацију. Можете користити `docker inspect` или `docker volume inspect` како бисте открили физичку локацију volume-а и изменили конфигурацију, на пример:
 
-    $ docker volume inspect verdaccio_verdaccio
-    [
-        {
-            "Name": "verdaccio_verdaccio",
-            "Driver": "local",
-            "Mountpoint": "/var/lib/docker/volumes/verdaccio_verdaccio/_data",
-            "Labels": null,
-            "Scope": "local"
-        }
-    ]
-    
-    
+```bash
+$ docker volume inspect verdaccio_verdaccio
+[
+    {
+        "Name": "verdaccio_verdaccio",
+        "Driver": "local",
+        "Mountpoint": "/var/lib/docker/volumes/verdaccio_verdaccio/_data",
+        "Labels": null,
+        "Scope": "local"
+    }
+]
+
+```
 
 ## Направите свој сопствени Docker image
 
@@ -138,7 +137,7 @@ npm run build:docker
 
 Напомена: Први build може потрајати неколико минута пошто мора да покрене `npm install`, и поново ће трајати дуго ако промените било који фајл који није излистан у `.dockerignore`.
 
-Ако желите да користите docker image на rpi или компатибилном уређају, постоји доступан dockerfile. Како бисте build docker image за raspberry pi извршите следећу команду:
+If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
 
 ```bash
 npm run build:docker:rpi
