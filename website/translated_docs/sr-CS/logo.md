@@ -1,6 +1,6 @@
 ---
 id: logo
-title: "Verdaccio Logotype"
+title: "Logotype"
 ---
 Logotip je dizajnirao **[Breno Rodrigues](https://github.com/rodriguesbreno)** koji je osvojio [takmičenje](https://github.com/verdaccio/verdaccio/issues/237) ([završna faza](https://github.com/verdaccio/verdaccio/issues/328)) i posvetio svoj talenat našem projektu.
 
