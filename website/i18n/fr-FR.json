@@ -23,9 +23,6 @@
       "best": {
         "title": "Best Practices"
       },
-      "build": {
-        "title": "Générer le code source"
-      },
       "caching": {
         "title": "Caching strategies"
       },
@@ -40,9 +37,6 @@
       },
       "configuration": {
         "title": "Fichier de configuration"
-      },
-      "contributing": {
-        "title": "Contribuer à Verdaccio"
       },
       "dev-plugins": {
         "title": "Développement des Plugins"
@@ -95,9 +89,6 @@
       "puppet": {
         "title": "Puppet"
       },
-      "source-code": {
-        "title": "Code source"
-      },
       "reverse-proxy": {
         "title": "Configuration du proxy inverse"
       },
@@ -112,9 +103,6 @@
       },
       "talks": {
         "title": "Talks about Verdaccio"
-      },
-      "unit-testing": {
-        "title": "Test unitaire"
       },
       "uplinks": {
         "title": "Uplinks"
@@ -307,12 +295,13 @@
     },
     "categories": {
       "Introduction": "Introduction",
-      "Configuration": "Configuration",
+      "Features": "Features",
       "Server": "Server",
-      "Plugins": "Plugins",
-      "DevOps": "DevOps",
       "Development": "Development",
-      "Guides": "Guides"
+      "DevOps": "DevOps",
+      "Guides": "Guides",
+      "Configuration": "Configuration",
+      "Plugins": "Plugins"
     }
   },
   "pages-strings": {
