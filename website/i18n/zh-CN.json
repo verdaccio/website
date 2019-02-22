@@ -23,9 +23,6 @@
       "best": {
         "title": "Best Practices"
       },
-      "build": {
-        "title": "创建源代码"
-      },
       "caching": {
         "title": "Caching strategies"
       },
@@ -40,9 +37,6 @@
       },
       "configuration": {
         "title": "配置文件"
-      },
-      "contributing": {
-        "title": "参与Verdaccio贡献"
       },
       "dev-plugins": {
         "title": "插件开发"
@@ -95,9 +89,6 @@
       "puppet": {
         "title": "Puppet"
       },
-      "source-code": {
-        "title": "源代码"
-      },
       "reverse-proxy": {
         "title": "逆向代理服务器设置"
       },
@@ -112,9 +103,6 @@
       },
       "talks": {
         "title": "Talks about Verdaccio"
-      },
-      "unit-testing": {
-        "title": "单元测试"
       },
       "uplinks": {
         "title": "上行链路"
@@ -307,12 +295,13 @@
     },
     "categories": {
       "Introduction": "Introduction",
-      "Configuration": "配置",
+      "Features": "Features",
       "Server": "Server",
-      "Plugins": "插件",
-      "DevOps": "DevOps",
       "Development": "Development",
-      "Guides": "Guides"
+      "DevOps": "DevOps",
+      "Guides": "Guides",
+      "Configuration": "配置",
+      "Plugins": "插件"
     }
   },
   "pages-strings": {
