@@ -12,7 +12,7 @@
         "title": "Ansible"
       },
       "articles": {
-        "title": "Articles about Verdaccio"
+        "title": "Articles"
       },
       "authentification": {
         "title": "认证"
@@ -69,7 +69,7 @@
         "title": "记录器"
       },
       "logo": {
-        "title": "Verdaccio 标识"
+        "title": "Logotype"
       },
       "node-api": {
         "title": "Node API"
@@ -102,7 +102,7 @@
         "title": "设置SSL 证书"
       },
       "talks": {
-        "title": "Talks about Verdaccio"
+        "title": "Talks"
       },
       "uplinks": {
         "title": "上行链路"
