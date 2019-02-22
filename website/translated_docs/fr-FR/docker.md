@@ -2,9 +2,7 @@
 id: docker
 title: Docker
 ---
-<div class="docker-count">
-  ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
-</div>
+![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
 Pour télécharger la dernière [image docker](https://hub.docker.com/r/verdaccio/verdaccio/) prédéfinie:
 
@@ -52,7 +50,7 @@ Pour exécuter le conteneur de docker:
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-Le dernier argument définit quelle image doit être utilisée. La ligne ci-dessus téléchargera à partir du dockerhub la dernière image prédéfinie disponible, si celle-ci n'a pas encore été créée.
+The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
 
 Si vous avez [construit une image localement](#build-your-own-docker-image), utilisez `verdaccio` comme dernier argument.
 
@@ -111,18 +109,19 @@ Vous pouvez définir le port à utiliser (pour le conteneur et pour l'hôte) en 
 
 Docker générera un volume nommé dans lequel les données d'application persistantes seront stockées. Vous pouvez utiliser `docker inspect` ou `docker volume inspect` pour révéler l'emplacement physique du volume et modifier la configuration, comme:
 
-    $ docker volume inspect verdaccio_verdaccio
-    [
-        {
-            "Name": "verdaccio_verdaccio",
-            "Driver": "local",
-            "Mountpoint": "/var/lib/docker/volumes/verdaccio_verdaccio/_data",
-            "Labels": null,
-            "Scope": "local"
-        }
-    ]
-    
-    
+```bash
+$ docker volume inspect verdaccio_verdaccio
+[
+    {
+        "Name": "verdaccio_verdaccio",
+        "Driver": "local",
+        "Mountpoint": "/var/lib/docker/volumes/verdaccio_verdaccio/_data",
+        "Labels": null,
+        "Scope": "local"
+    }
+]
+
+```
 
 ## Créer votre propre image Docker
 
@@ -138,7 +137,7 @@ npm run build:docker
 
 Remarque: La première génération prend quelques minutes pour être créée car elle doit démarrer `npm install` et peut prendre le même temps chaque fois que vous modifiez un fichier ne figurant pas dans la liste `.dockerignore`.
 
-Si vous souhaitez utiliser l'image docker du menu fixe sur un périphérique rpi ou un périphérique compatible, un fichier docker est aussi disponible. Pour créer une image docker pour raspberry pi, exécutez:
+If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
 
 ```bash
 npm run build:docker
