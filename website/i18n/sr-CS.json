@@ -23,9 +23,6 @@
       "best": {
         "title": "Najbolje Prakse"
       },
-      "build": {
-        "title": "Build the source code"
-      },
       "caching": {
         "title": "Strategije za keširanje"
       },
@@ -40,9 +37,6 @@
       },
       "configuration": {
         "title": "Fajl za konfigurisanje"
-      },
-      "contributing": {
-        "title": "Doprinošenje Verdaccio-u"
       },
       "dev-plugins": {
         "title": "Developing Plugins"
@@ -95,9 +89,6 @@
       "puppet": {
         "title": "Puppet"
       },
-      "source-code": {
-        "title": "Source Code"
-      },
       "reverse-proxy": {
         "title": "Reverse Proxy Setup"
       },
@@ -112,9 +103,6 @@
       },
       "talks": {
         "title": "Talks about Verdaccio"
-      },
-      "unit-testing": {
-        "title": "Unit Testing"
       },
       "uplinks": {
         "title": "Uplinks"
@@ -307,12 +295,13 @@
     },
     "categories": {
       "Introduction": "Uvod",
-      "Configuration": "Konfigurisanje",
+      "Features": "Features",
       "Server": "Server",
-      "Plugins": "Plugins",
-      "DevOps": "DevOps",
       "Development": "Development",
-      "Guides": "Uputstva"
+      "DevOps": "DevOps",
+      "Guides": "Uputstva",
+      "Configuration": "Konfigurisanje",
+      "Plugins": "Plugins"
     }
   },
   "pages-strings": {
