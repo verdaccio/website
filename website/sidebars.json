@@ -18,7 +18,7 @@
       },
       {
         "type": "subcategory",
-        "label": "Talks or Articles",
+        "label": "Talks & Articles",
         "ids": [
           "articles",
           "talks"
@@ -62,8 +62,7 @@
     ],
     "Guides": [
       "best",
-      "protect-your-dependencies",
-      "scopes"
+      "protect-your-dependencies"
     ]
   }
 }

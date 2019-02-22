@@ -3,11 +3,8 @@ id: docker
 title: Docker
 ---
 
-<div class="docker-count">
-
 ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
-</div>
 
 To pull the latest pre-built [docker image](https://hub.docker.com/r/verdaccio/verdaccio/):
 
@@ -49,9 +46,11 @@ docker pull verdaccio/verdaccio:beta
 ## Running verdaccio using Docker
 
 To run the docker container:
+
 ```bash
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
+
 The last argument defines which image to use.
 The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
 
@@ -59,6 +58,7 @@ If you have [build an image locally](#build-your-own-docker-image) use `verdacci
 
 
 You can use `-v` to bind mount `conf`, `storage` and `plugins` to the hosts filesystem:
+
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
   -v $V_PATH/conf:/verdaccio/conf \
@@ -66,6 +66,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
   -v $V_PATH/plugins:/verdaccio/plugins \
   verdaccio/verdaccio
 ```
+
 >Note: Verdaccio runs as a non-root user (uid=100, gid=101) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) is recommended over using bind mount.
 
 ### Plugins
@@ -83,6 +84,7 @@ This changes which port the docker container exposes and the port verdaccio list
 
 Of course the numbers you give to `-p` paremeter need to match,
 so assuming you want them to all be the same this is what you could copy, paste and adopt:
+
 ```bash
 PORT=5000; docker run -it --rm --name verdaccio \
   --env PORT -p $PORT:$PORT
@@ -112,7 +114,7 @@ You can set the port to use (for both container and host) by prefixing the above
 
 Docker will generate a named volume in which to store persistent application data. You can use `docker inspect` or `docker volume inspect` to reveal the physical location of the volume and edit the configuration, such as:
 
-```
+```bash
 $ docker volume inspect verdaccio_verdaccio
 [
     {

@@ -1,6 +1,6 @@
 ---
 id: talks
-title: "Talks about Verdaccio"
+title: "Talks"
 ---
 
 We list the Talks about Verdaccio, if you gave a talk or you are about to give one about Verdaccio, feel free to add it here.

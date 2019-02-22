@@ -1,6 +1,6 @@
 ---
 id: logo
-title: "Verdaccio Logotype"
+title: "Logotype"
 ---
 
 The logotype was designed by __[Breno Rodrigues](https://github.com/rodriguesbreno)__ which
