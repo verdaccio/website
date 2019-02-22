@@ -28,7 +28,7 @@ o usando `yarn`
 yarn global add verdaccio
 ```
 
-![instalar verdaccio](/svg/install_verdaccio.gif)
+![instalar verdaccio](assets/install_verdaccio.gif)
 
 ## Uso Básico
 

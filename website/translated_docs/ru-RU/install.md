@@ -28,7 +28,7 @@ npm install -g verdaccio
 yarn global add verdaccio
 ```
 
-![установка verdaccio](/svg/install_verdaccio.gif)
+![установка verdaccio](assets/install_verdaccio.gif)
 
 ## Запуск
 
