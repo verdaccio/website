@@ -23,9 +23,6 @@
       "best": {
         "title": "Best Practices"
       },
-      "build": {
-        "title": "Build the source code"
-      },
       "caching": {
         "title": "Caching strategies"
       },
@@ -40,9 +37,6 @@
       },
       "configuration": {
         "title": "구성 파일"
-      },
-      "contributing": {
-        "title": "Verdaccio에 기여하기"
       },
       "dev-plugins": {
         "title": "플러그인 개발하기"
@@ -95,9 +89,6 @@
       "puppet": {
         "title": "Puppet"
       },
-      "source-code": {
-        "title": "소스코드"
-      },
       "reverse-proxy": {
         "title": "리버스 프록시 설정"
       },
@@ -112,9 +103,6 @@
       },
       "talks": {
         "title": "Talks about Verdaccio"
-      },
-      "unit-testing": {
-        "title": "유닛 테스트"
       },
       "uplinks": {
         "title": "업링크"
@@ -307,12 +295,13 @@
     },
     "categories": {
       "Introduction": "Introduction",
-      "Configuration": "Configuration",
+      "Features": "Features",
       "Server": "Server",
-      "Plugins": "플러그인",
-      "DevOps": "DevOps",
       "Development": "Development",
-      "Guides": "Guides"
+      "DevOps": "DevOps",
+      "Guides": "Guides",
+      "Configuration": "Configuration",
+      "Plugins": "플러그인"
     }
   },
   "pages-strings": {
