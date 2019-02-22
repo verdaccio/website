@@ -14,7 +14,20 @@ Documentation files are hosted under `/docs` folder.
 
 Verdaccio is powered by [crowdin](https://crowdin.com/project/verdaccio) platform that provides Verdaccio [a free open source license](https://crowdin.com/page/open-source-project-setup-request).
 
-If you are willing to translate and language is not available, feel free to requested either with a ticket or sending to [https://crowdin.com/profile/juanpicado](https://crowdin.com/profile/juanpicado)
+# How to help with translations
+
+1. Create an account at Crowdin [https://crowdin.com/project/verdaccio](https://crowdin.com/project/verdaccio) (It is free)
+2. Choose your language
+3. Choose a file
+4. Suggest a translation
+
+> Crowdin works with 2 sort of roles, Translator and Proofreader. All users are Translator by default. Any suggestion should be approved by a proofreader for each language.
+
+If you want to be a Proofreader send me a private message over Crowdin.
+
+If you are willing to translate and language is not available, feel free to requested either with a ticket.
+
+Privates messages here [https://crowdin.com/profile/juanpicado](https://crowdin.com/profile/juanpicado)
 
 # Contributing
 
