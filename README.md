@@ -25,7 +25,7 @@ Verdaccio is powered by [crowdin](https://crowdin.com/project/verdaccio) platfor
 
 If you want to be a Proofreader send me a private message over Crowdin.
 
-If you are willing to translate and language is not available, feel free to requested either with a ticket.
+If you are willing to translate and language is not available, feel free to requested with a ticket.
 
 Privates messages here [https://crowdin.com/profile/juanpicado](https://crowdin.com/profile/juanpicado)
 
