@@ -23,9 +23,6 @@
       "best": {
         "title": "Најбоља решења"
       },
-      "build": {
-        "title": "Build the source code"
-      },
       "caching": {
         "title": "Стратегија кеширања"
       },
@@ -40,9 +37,6 @@
       },
       "configuration": {
         "title": "Фајл за конфигурисање"
-      },
-      "contributing": {
-        "title": "Доприношење Verdaccio-у"
       },
       "dev-plugins": {
         "title": "Developing Plugins"
@@ -95,9 +89,6 @@
       "puppet": {
         "title": "Puppet"
       },
-      "source-code": {
-        "title": "Source Code"
-      },
       "reverse-proxy": {
         "title": "Reverse Proxy Setup"
       },
@@ -112,9 +103,6 @@
       },
       "talks": {
         "title": "Talks about Verdaccio"
-      },
-      "unit-testing": {
-        "title": "Unit Testing"
       },
       "uplinks": {
         "title": "Uplinks"
@@ -307,12 +295,13 @@
     },
     "categories": {
       "Introduction": "Увод",
-      "Configuration": "Конфигурисање",
+      "Features": "Features",
       "Server": "Сервер",
-      "Plugins": "Plugins",
-      "DevOps": "DevOps",
       "Development": "Development",
-      "Guides": "Упутства"
+      "DevOps": "DevOps",
+      "Guides": "Упутства",
+      "Configuration": "Конфигурисање",
+      "Plugins": "Plugins"
     }
   },
   "pages-strings": {
