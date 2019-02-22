@@ -29,6 +29,11 @@ If you are willing to translate and language is not available, feel free to requ
 
 Privates messages here [https://crowdin.com/profile/juanpicado](https://crowdin.com/profile/juanpicado)
 
+### Translation stats the last year
+
+![screen shot 2019-02-22 at 6 58 54 am](https://user-images.githubusercontent.com/558752/53222809-60835400-366f-11e9-9edb-f235b3e88c80.png)
+
+
 # Contributing
 
 `CONTRIBUTING.md`. Read the contribution guidelines before start.
