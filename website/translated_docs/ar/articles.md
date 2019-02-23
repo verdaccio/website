@@ -2,9 +2,9 @@
 id: articles
 title: "Articles"
 ---
-We list the articles about Verdaccio, if you wrote a blog post or tutorial that mention Verdaccio, feel free to add it here.
+We list the articles about Verdaccio, if you have written a blog post or tutorial that mention Verdaccio, feel free to add it here.
 
-> Do not hesistate to share your content with the community, we encorage you to speak about Verdaccio, we will share it with the community. https://github.com/verdaccio/website
+> Any language is allowed
 
 ## Core Team Articles
 
