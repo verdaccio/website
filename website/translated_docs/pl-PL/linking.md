@@ -14,7 +14,7 @@ You can link multiples registries, the following document will drive you through
 
 ## Using Asociating Scope
 
-The unique way to access multiple registries provided by *NPM* is the scope feature as folows:
+The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
 
     // .npmrc
     registry=htts://registry.npmjs.org
@@ -24,7 +24,7 @@ The unique way to access multiple registries provided by *NPM* is the scope feat
 This approache is valid, but comes with several dissadventages:
 
 * It **only works with scopes**
-* Scope must match, **no Regular Expressions are allowed** 
+* Scope must match, **no Regular Expressions are allowed**
 * One scope **cannot fetch from multiple registries**
 * Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
 
@@ -57,14 +57,14 @@ Add a `proxy` section to define the selected registry you want to proxy.
     server1:
       url: https://server1.registry.net/npm
     server2:
-      url: https://server2.registry.net/npm      
+      url: https://server2.registry.net/npm
 
     ... [truncated] ...
 
   'webpack':
     access: $all
     publish: $authenticated
-    proxy: server1 server2   
+    proxy: server1 server2
 ```
 
 Verdaccio supports multiples registries on the `proxy` field, the request will be resolved with the first in the list, if fails, it will try with the next in the list and so on.
