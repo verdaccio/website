@@ -2,9 +2,7 @@
 id: docker
 title: Docker
 ---
-<div class="docker-count">
-  ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
-</div>
+![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
 要下载(pull)最新的预先-创建的[docker镜像](https://hub.docker.com/r/verdaccio/verdaccio/)：
 
@@ -52,7 +50,7 @@ docker pull verdaccio/verdaccio:beta
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-最后一个参数定义要使用的镜像。如果您还没有试的话，上面的代码将从dockerhub里下载(pull) 最新的预先创建的镜像。
+The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
 
 如果您已经用 `verdaccio`作为最后参数[在本地创建一个镜像](#build-your-own-docker-image)。
 
@@ -111,18 +109,19 @@ $ docker-compose up --build
 
 Docker将生成一个named volume（命名卷），它用于存储持久化应用程序数据。 您可以使用`docker inspect` 或者 `docker volume inspect` 来查看此volume（卷）的物理位置并编辑配置，比如：
 
-    $ docker volume inspect verdaccio_verdaccio
-    [
-        {
-            "Name": "verdaccio_verdaccio",
-            "Driver": "local",
-            "Mountpoint": "/var/lib/docker/volumes/verdaccio_verdaccio/_data",
-            "Labels": null,
-            "Scope": "local"
-        }
-    ]
-    
-    
+```bash
+$ docker volume inspect verdaccio_verdaccio
+[
+    {
+        "Name": "verdaccio_verdaccio",
+        "Driver": "local",
+        "Mountpoint": "/var/lib/docker/volumes/verdaccio_verdaccio/_data",
+        "Labels": null,
+        "Scope": "local"
+    }
+]
+
+```
 
 ## 创建您自己的Docker镜像
 
@@ -138,7 +137,7 @@ npm run build:docker
 
 请注意：第一个镜像的创建要花费几分钟时间，因为它需要运行`npm install`，而且，当您任何时候更改任何没有列在`.dockerignore`里的文件，它也需要运行那么长的时间。
 
-如果您希望在rpi或兼容设备上使用docker镜像，也有现成的dockerfile。要创建 raspberry pi（树莓派）的docker镜像，请执行：
+If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
 
 ```bash
 npm run build:docker:rpi

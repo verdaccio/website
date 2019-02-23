@@ -2,9 +2,7 @@
 id: docker
 title: Docker
 ---
-<div class="docker-count">
-  ![alt Количество скачиваний](http://dockeri.co/image/verdaccio/verdaccio "Количество скачиваний")
-</div>
+![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
 Для скачивания последней версии [Docker образа](https://hub.docker.com/r/verdaccio/verdaccio/):
 
@@ -52,7 +50,7 @@ docker pull verdaccio/verdaccio:beta
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-Последний аргумент указывает на то, какой именно образ нужно использовать. Эта команда скачает последний образ из Docker Hub, если вы ещё не сделали этого ранее.
+The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
 
 Если этот образ [у вас уже скачан](#build-your-own-docker-image) используйте `verdaccio` в качестве последнего аргумента.
 
@@ -111,18 +109,19 @@ $ docker-compose up --build
 
 Docker сгенерирует именованный раздел, в котором будут храниться данные приложения. Вы можете использовать `docker inspect` или `docker volume inspect` для определения физического местоположения и изменения конфигурации, например:
 
-    $ docker volume inspect verdaccio_verdaccio
-    [
-        {
-            "Name": "verdaccio_verdaccio",
-            "Driver": "local",
-            "Mountpoint": "/var/lib/docker/volumes/verdaccio_verdaccio/_data",
-            "Labels": null,
-            "Scope": "local"
-        }
-    ]
-    
-    
+```bash
+$ docker volume inspect verdaccio_verdaccio
+[
+    {
+        "Name": "verdaccio_verdaccio",
+        "Driver": "local",
+        "Mountpoint": "/var/lib/docker/volumes/verdaccio_verdaccio/_data",
+        "Labels": null,
+        "Scope": "local"
+    }
+]
+
+```
 
 ## Сборка собственного Docker образа
 
@@ -138,7 +137,7 @@ npm run build:docker
 
 Примечание: Первая сборки может занять несколько минут, потому что нужно выполнить `npm install`, это будет занимать много времени, всякий раз, как вы измените, что либо, что не перечислено в `.dockerignore`.
 
-Если вам нужно использовать Docker образ на rpi или совместимом устройстве, то Dockerfile так же доступен. Для сборки Docker образа под raspberry pi выполните:
+If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
 
 ```bash
 npm run build:docker:rpi

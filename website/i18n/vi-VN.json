@@ -12,7 +12,7 @@
         "title": "Phần mềm nguồn mở ansible"
       },
       "articles": {
-        "title": "Articles about Verdaccio"
+        "title": "Articles"
       },
       "authentification": {
         "title": "Yêu cầu xác thực"
@@ -22,9 +22,6 @@
       },
       "best": {
         "title": "Best Practices"
-      },
-      "build": {
-        "title": "Tạo mã nguồn"
       },
       "caching": {
         "title": "Caching strategies"
@@ -40,9 +37,6 @@
       },
       "configuration": {
         "title": "Tệp cấu hình"
-      },
-      "contributing": {
-        "title": "Tham gia đóng góp Verdaccio"
       },
       "dev-plugins": {
         "title": "Phát triển các phần mềm bổ trợ"
@@ -75,7 +69,7 @@
         "title": "Logger"
       },
       "logo": {
-        "title": "Verdaccio Logotype"
+        "title": "Logotype"
       },
       "node-api": {
         "title": "Node API"
@@ -95,9 +89,6 @@
       "puppet": {
         "title": "Puppet"
       },
-      "source-code": {
-        "title": "Source Code"
-      },
       "reverse-proxy": {
         "title": "Reverse Proxy Setup"
       },
@@ -111,10 +102,7 @@
         "title": "Set up the SSL Certificates"
       },
       "talks": {
-        "title": "Talks about Verdaccio"
-      },
-      "unit-testing": {
-        "title": "Unit Testing"
+        "title": "Talks"
       },
       "uplinks": {
         "title": "Uplinks"
@@ -307,12 +295,13 @@
     },
     "categories": {
       "Introduction": "Introduction",
-      "Configuration": "Cấu hình",
+      "Features": "Features",
       "Server": "Server",
-      "Plugins": "Plugins",
-      "DevOps": "DevOps",
       "Development": "Development",
-      "Guides": "Guides"
+      "DevOps": "DevOps",
+      "Guides": "Guides",
+      "Configuration": "Cấu hình",
+      "Plugins": "Plugins"
     }
   },
   "pages-strings": {

@@ -2,9 +2,7 @@
 id: docker
 title: Docker
 ---
-<div class="docker-count">
-  ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
-</div>
+![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
 Để tải [hình ảnh docker mới nhất](https://hub.docker.com/r/verdaccio/verdaccio/):
 
@@ -51,7 +49,7 @@ Phiên bản chính tiếp theo sẽ sử dụng bản `beta</​​code> (maste
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-Tham số cuối cùng sẽ xác định hình ảnh nào cần được sử dụng. Nếu bạn chưa thử, mã trên sẽ giúp bạn tải hình ảnh mới nhất được tạo trước từ ​​dockerhub.
+The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
 
 Khi bạn muốn tạo [một bản sao cục bộ](#build-your-own-docker-image) hãy dùng `verdaccio` làm tham số cuối cùng.
 
@@ -110,18 +108,19 @@ Sử dụng `PORT=5000` làm tiền tố cho lệnh trên nhằm cài đặt c�
 
 Docker sẽ tạo ra một ổ đĩa có tên là lưu trữ dữ liệu ứng dụng liên tục. Bạn có thể sử dụng `docker inspect` hoặc `docker volume inspect` để xác định vị trí thực của ổ đĩa này và chỉnh sửa cấu hình, ví dụ như:
 
-    $ docker volume inspect verdaccio_verdaccio
-    [
-        {
-            "Name": "verdaccio_verdaccio",
-            "Driver": "local",
-            "Mountpoint": "/var/lib/docker/volumes/verdaccio_verdaccio/_data",
-            "Labels": null,
-            "Scope": "local"
-        }
-    ]
-    
-    
+```bash
+$ docker volume inspect verdaccio_verdaccio
+[
+    {
+        "Name": "verdaccio_verdaccio",
+        "Driver": "local",
+        "Mountpoint": "/var/lib/docker/volumes/verdaccio_verdaccio/_data",
+        "Labels": null,
+        "Scope": "local"
+    }
+]
+
+```
 
 ## Tạo hình ảnh Docker của riêng bạn
 
@@ -137,7 +136,7 @@ npm run build:docker
 
 Xin lưu ý rằng việc tạo hình ảnh đầu tiên mất vài phút vì nó cần phải chạy `npm install` và khi bạn thay đổi bất cứ điều gì vào bất kỳ lúc nào và không được liệt kê trong `.dockerignore` thì sẽ mất một thời gian dài để chạy các tập tin này.
 
-Nếu bạn muốn sử dụng hình ảnh docker trên một thiết bị rpi hoặc một thiết bị tương thích khác thì cũng cần một dockerfile được tạo sẵn trước đó. Để tạo một hình ảnh docker của Raspberry Pi, bạn cần thực hiện như sau:
+If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
 
 ```bash
 npm run build:docker:rpi

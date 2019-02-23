@@ -2,9 +2,7 @@
 id: docker
 title: Docker
 ---
-<div class="docker-count">
-  ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
-</div>
+![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
 Para descargar la última [imagen de Docker](https://hub.docker.com/r/verdaccio/verdaccio/):
 
@@ -52,7 +50,7 @@ Para ejecutar el contenedor docker:
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-El último argumento define cual imagen se usa. En la linea de abajo se descargará la ultima imagen desde Docker Hub, si no existía previamente.
+The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
 
 Si has [construido una imagen localmente](#build-your-own-docker-image) usa `verdaccio` como el último argumento.
 
@@ -111,18 +109,19 @@ Puedes definir el puerto a usar (para ambos el contenedor y el huesped) definien
 
 Docker generará un volumen con nombre que persistira con los datos de la aplicación. Puedes usar `docker inspect` o `docker volume inspect` para revelar la ubicación física del volumen y editar la configuración, de la siguiente manera:
 
-    $ docker volume inspect verdaccio_verdaccio
-    [
-        {
-            "Name": "verdaccio_verdaccio",
-            "Driver": "local",
-            "Mountpoint": "/var/lib/docker/volumes/verdaccio_verdaccio/_data",
-            "Labels": null,
-            "Scope": "local"
-        }
-    ]
-    
-    
+```bash
+$ docker volume inspect verdaccio_verdaccio
+[
+    {
+        "Name": "verdaccio_verdaccio",
+        "Driver": "local",
+        "Mountpoint": "/var/lib/docker/volumes/verdaccio_verdaccio/_data",
+        "Labels": null,
+        "Scope": "local"
+    }
+]
+
+```
 
 ## Construye tu propia imagen de Docker
 
