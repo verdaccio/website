@@ -3,16 +3,17 @@ id: talks
 title: "Talks"
 ---
 
-We list the Talks about Verdaccio, if you gave a talk or you are about to give one about Verdaccio, feel free to add it here.
+We list the talks about Verdaccio, if you gave a talk or you are about to give one about Verdaccio or that mention this project, feel free to add it here.
 
-> Do not hesistate to share your content with the community, we encorage you to speak about Verdaccio, we will share it with the community.
-> https://github.com/verdaccio/website
+> Do not hesistate to share your content with the community, we encorage you to speak about Verdaccio.
+> If need help how to start, information or resources, reach us in our [Chat at Discord](https://chat.verdaccio.org),
+> we will help you.
 
-## Talks
+## The latets Talk
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-> If you gave a talk about Verdaccio, feel free to include it in our list, the last talk is always highlighted 
+> The last shared talk is always highlighted here. We help you share your voice with the community.
 
 * [Vienna.js, Introduction to Verdaccio, January 2019](https://www.youtube.com/watch?v=hDIFKzmoCaA)
 * [#22 FloripaJS Live Stream, February 2019](https://www.youtube.com/watch?v=iOp70_svQ_M&feature=youtu.be&t=7578)
@@ -26,9 +27,7 @@ We list the Talks about Verdaccio, if you gave a talk or you are about to give o
 
 ## Future Talks
 
-> Future talks will be scheduled here
-
-* [Madrid Node.js Meetup](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/) 
+* [Madrid Node.js Meetup 5h March 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
 
 ## Related Videos
 

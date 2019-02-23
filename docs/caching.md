@@ -37,7 +37,7 @@ uplinks:
 
 ## Extending Cache Expiration Time
 
- Verdaccio by default waits 2 minutes to invalidate the cache metadata and fetch new information from the remote registry.
+ Verdaccio by default waits 2 minutes to invalidate the cache metadata before fetching new information from the remote registry.
 
 ```yaml
 uplinks:
