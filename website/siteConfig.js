@@ -66,6 +66,7 @@ const siteConfig = {
   headerLinks: [
     { doc: 'installation', label: 'Docs'},
     { href: "https://medium.com/verdaccio", label: 'Blog'},
+    { href: "https://twitter.com/verdaccio_npm", label: 'Twitter'},
     { page: 'help', label: 'Help'},
     { href: "https://github.com/verdaccio", label: "GitHub" },
     { search: true },

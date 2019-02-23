@@ -2,7 +2,7 @@
 .inner .projectIntro a {
   color: #1a1a1a;
   transition: all 0.25s ease-out;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .mainContainer .wrapper a:hover,

@@ -8,10 +8,13 @@ Verdaccio is a multiplatform web application. To install it, you need a few prer
 #### Prerequisites
 
 1. Node higher than
-    - For version `verdaccio@2.x` Node `v4.6.1` is the minimum supported version.
-    - For version `verdaccio@latest` Node `6.12.0` is the minimum supported version.
-2. npm `>=3.x` or `yarn`
-3. The web interface supports the `Chrome, Firefox, Edge, and IE9` browsers.
+    - For version `verdaccio@3.x` Node `v6.12` is the minimum supported version.
+    - For version `verdaccio@4.0.0-alpha.x` or `verdaccio@4.x` Node `8.x` (LTS "Carbon") is the minimum supported version.
+2. npm `>=4.x` or `yarn`
+  > We highly recommend use the latest Node Package Managers clients `> npm@5.x | yarn@1.x | pnpm@2.x`
+3. The web interface supports the `Chrome, Firefox, Edge, and IE11` browsers.
+
+> Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
 
 ## Installing the CLI
 
@@ -38,7 +41,7 @@ Once it has been installed, you only need to execute the CLI command:
 ```bash
 $> verdaccio
 warn --- config file  - /home/.config/verdaccio/config.yaml
-warn --- http address - http://localhost:4873/ - verdaccio/3.0.1
+warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 ```
 
 For more information about the CLI, please [read the cli section](cli.md).
