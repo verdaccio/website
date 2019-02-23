@@ -4,7 +4,7 @@ title: "Plik konfiguracyjny"
 ---
 Plik ten jest podstawą verdaccio, ponieważ to w nim możesz modyfikować domyślne zachowanie aplikacji, rozszerzać jej funkcje oraz włączać wtyczki.
 
-Domyślny plik konfiguracyjny jest tworzony, gdy po raz pierwszy uruchomisz `verdaccio`.
+A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
 ## Podstawowa konfiguracja
 
@@ -62,7 +62,7 @@ auth:
 
 ### Security
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
 Blok zabezpieczeń umożliwia dostosowanie podpisu tokena. Aby włączyć [JWT (json web token)](https://jwt.io/) nowy podpis, należy dodać blok `jwt` do sekcji `api`, `web` używa domyślnie `jwt`.
 

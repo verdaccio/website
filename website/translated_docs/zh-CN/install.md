@@ -7,10 +7,12 @@ Verdaccio 是一个跨平台的 Web 应用程序。在安装之前，您需要�
 #### 最低要求:
 
 1. Node.js 版本 
-    - 对于 `verdaccio@2.x` 版本，Node `v4.6.1` 是最低支持版本。
-    - 对于 `verdaccio@latest` 版本，Node `6.12.0` 是最低支持版本。
-2. npm `>=3.x` or `yarn`
-3. Web 界面支持 `Chrome, Firefox, Edge, 和 IE9` 浏览器。
+    - For version `verdaccio@3.x` Node `v6.12` is the minimum supported version.
+    - For version `verdaccio@4.0.0-alpha.x` or `verdaccio@4.x` Node `8.x` (LTS "Carbon") is the minimum supported version.
+2. npm `>=4.x` or `yarn` > We highly recommend use the latest Node Package Managers clients `> npm@5.x | yarn@1.x | pnpm@2.x`
+3. The web interface supports the `Chrome, Firefox, Edge, and IE11` browsers.
+
+> Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
 
 ## 安装CLI
 
@@ -37,7 +39,7 @@ yarn global add verdaccio
 ```bash
 $> verdaccio
 warn --- config file  - /home/.config/verdaccio/config.yaml
-warn --- http address - http://localhost:4873/ - verdaccio/3.0.1
+warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 ```
 
 更多关于CLI的详细信息，请[阅读cli章节](cli.md)。

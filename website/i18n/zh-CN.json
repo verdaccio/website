@@ -92,9 +92,6 @@
       "reverse-proxy": {
         "title": "逆向代理服务器设置"
       },
-      "scopes": {
-        "title": "Understanding Scopes"
-      },
       "server-configuration": {
         "title": "服务器配置"
       },
@@ -106,9 +103,6 @@
       },
       "uplinks": {
         "title": "上行链路"
-      },
-      "use-cases": {
-        "title": "使用案例"
       },
       "webui": {
         "title": "Web User Interface"
@@ -288,6 +282,7 @@
     "links": {
       "Docs": "Docs",
       "Blog": "Blog",
+      "Twitter": "Twitter",
       "Help": "Help",
       "GitHub": "GitHub",
       "Team": "Team",

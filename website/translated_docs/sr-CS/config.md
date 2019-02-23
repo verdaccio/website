@@ -4,7 +4,7 @@ title: "Fajl za konfigurisanje"
 ---
 Ovaj fajl je osnova verdaccio-a. U okviru njega, možete vršiti izmene zadatih podešavanja, možete aktivirati plugin-e i spoljašnje resurse (features).
 
-Fajl "default configuration file" se kreira prilikom prvog pokretanja `verdaccio-a`.
+A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
 ## Podrazumevane postavke (Default Configuration)
 
@@ -62,7 +62,7 @@ auth:
 
 ### Sigurnost
 
-<small>Počevši od verzije: <code>verdaccio@4.0.0</code> paragraf <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
 Sigurnosni blok Vam omogućava da prilagodite potpis za token (token signature). Kako biste [JWT (json web token) učinili aktivnim ](https://jwt.io/) novi potpis koji trebate za dodavanje bloka `jwt` u `api` sekciju, `web` po pravilu koristi `jwt`.
 

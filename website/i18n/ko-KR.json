@@ -92,9 +92,6 @@
       "reverse-proxy": {
         "title": "리버스 프록시 설정"
       },
-      "scopes": {
-        "title": "Understanding Scopes"
-      },
       "server-configuration": {
         "title": "서버 구성"
       },
@@ -106,9 +103,6 @@
       },
       "uplinks": {
         "title": "업링크"
-      },
-      "use-cases": {
-        "title": "활용사례"
       },
       "webui": {
         "title": "Web User Interface"
@@ -288,6 +282,7 @@
     "links": {
       "Docs": "Docs",
       "Blog": "Blog",
+      "Twitter": "Twitter",
       "Help": "Help",
       "GitHub": "GitHub",
       "Team": "Team",

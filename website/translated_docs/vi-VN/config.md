@@ -4,7 +4,7 @@ title: "Tệp cấu hình"
 ---
 Tệp này là một phần quan trọng của Verdaccio, đây là nơi bạn có thể sửa đổi hành vi mặc định, bật plugin và mở rộng các tính năng.
 
-Để cài tệp cấu hình mặc định đầu tiên, bạn chạy `verdaccio`.
+A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
 ## Cấu hình mặc định
 
@@ -62,7 +62,7 @@ auth:
 
 ### Security
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
 The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
 

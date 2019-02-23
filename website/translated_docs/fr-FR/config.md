@@ -4,7 +4,7 @@ title: "Fichier de configuration"
 ---
 Ce fichier est le pilier de verdaccio où vous pouvez modifier le comportement par défaut, activer les plugins et étendre les fonctionnalités.
 
-Un fichier de configuration par défaut est créé la première fois que vous exécutez `verdaccio`.
+A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
 ## Configuration par défaut
 
@@ -62,7 +62,7 @@ auth:
 
 ### Security
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
 The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
 
