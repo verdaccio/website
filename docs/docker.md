@@ -35,10 +35,17 @@ For a specific (patch) version:
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next major release using the `beta` (master branch) version.
+For the next master branch uses the `master` version.
 
 ```bash
-docker pull verdaccio/verdaccio:beta
+docker pull verdaccio/verdaccio:master
+```
+
+
+For the next major release using the `4.x-next` (4.x branch) version.
+
+```bash
+docker pull verdaccio/verdaccio:4.x-next
 ```
 
 > If you are interested on a list of tags, [please visit the Docker Hub website](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
