@@ -20,13 +20,13 @@ Sve restrikcije koje se odnose na pristup definisane su u okviru  i takođe će 
 
 ### Konfigurisanje
 
-| Svojstvo      | Tip        | Neophodno | Primer                         | Podrška  | Opis                                                                                                                                              |
-| ------------- | ---------- | --------- | ------------------------------ | -------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| enable        | boolean    | No        | true/false                     | all      | dozvoljava prikaz web interfejsa                                                                                                                  |
-| title         | string     | No        | Verdaccio                      | all      | opis naslova HTML zaglavlja                                                                                                                       |
-| gravatar      | boolean    | No        | true                           | `>v4` | Gravatar-i će biti generisani u pozadini, ako je ovo svojstvo omogućeno                                                                           |
-| sort_packages | [asc,desc] | No        | asc                            | `>v4` | Po pravilu, privatni paketi su sortirani po rastućem redosledu                                                                                    |
-| logo          | string     | Ne        | http://my.logo.domain/logo.png | all      | URI gde se logo nalazi (logo za header)                                                                                                           |
-| scope         | string     | Ne        | \\@myscope                   | all      | Ako koristite registri za specific module scope, precizirajte taj scope kako biste podesili webui instructions header (note: escape @ with \\@) |
+| Svojstvo      | Tip        | Neophodno | Primer                         | Podrška    | Opis                                                                                                                                              |
+| ------------- | ---------- | --------- | ------------------------------ | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| enable        | boolean    | No        | true/false                     | all        | dozvoljava prikaz web interfejsa                                                                                                                  |
+| title         | string     | No        | Verdaccio                      | all        | opis naslova HTML zaglavlja                                                                                                                       |
+| gravatar      | boolean    | No        | true                           | `>v4`   | Gravatar-i će biti generisani u pozadini, ako je ovo svojstvo omogućeno                                                                           |
+| sort_packages | [asc,desc] | No        | asc                            | `>v4`   | Po pravilu, privatni paketi su sortirani po rastućem redosledu                                                                                    |
+| logo          | string     | Ne        | http://my.logo.domain/logo.png | all        | URI gde se logo nalazi (logo za header)                                                                                                           |
+| scope         | string     | Ne        | \\@myscope                   | `>v3.x` | Ako koristite registri za specific module scope, precizirajte taj scope kako biste podesili webui instructions header (note: escape @ with \\@) |
 
 > Preporučeno je da logo bude dimenzija `40x40` piksela.
