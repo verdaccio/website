@@ -79,6 +79,12 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
 ### Plugins
 Plugins can be installed in a separate directory and mounted using Docker or Kubernetes, however make sure you build plugins with native dependencies using the same base image as the Verdaccio Dockerfile.
 
+```docker
+FROM verdaccio/verdaccio
+
+RUN npm install verdaccio-s3-storage
+```
+
 ### Docker and custom port configuration
 Any `host:port` configured in `conf/config.yaml` under `listen` is currently ignored when using docker.
 
@@ -149,13 +155,6 @@ npm run build:docker
 
 Note: The first build takes some minutes to build because it needs to run `npm install`,
 and it will take that long again whenever you change any file that is not listed in `.dockerignore`.
-
-If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available.
-To build the docker image for raspberry pi execute:
-
-```bash
-npm run build:docker:rpi
-```
 
 Please note that for any of the above docker commands you need to have docker installed on your machine and the docker executable should be available on your `$PATH`.
 
