@@ -34,10 +34,16 @@ docker pull verdaccio/verdaccio:3.0
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-За следећу главну верзију `beta` (master branch) верзију.
+For the next master branch uses the `master` version.
 
 ```bash
-docker pull verdaccio/verdaccio:beta
+docker pull verdaccio/verdaccio:master
+```
+
+For the next major release using the `4.x-next` (4.x branch) version.
+
+```bash
+docker pull verdaccio/verdaccio:4.x-next
 ```
 
 > Ако Вас занима листа тагова, [посетите Docker Hub вебсајт](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
@@ -69,6 +75,12 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
 ### Plugins
 
 Plugins се могу инсталирати у посебном директоријуму и моунтовати коришћењем Docker-a Kubernetes. Ипак, постарајте се да "build" plugins са native dependencies коришћењем исте base image као Verdaccio Dockerfile-а.
+
+```docker
+FROM verdaccio/verdaccio
+
+RUN npm install verdaccio-s3-storage
+```
 
 ### Docker и custom порт конфигурација
 
@@ -136,12 +148,6 @@ npm run build:docker
 ```
 
 Напомена: Први build може потрајати неколико минута пошто мора да покрене `npm install`, и поново ће трајати дуго ако промените било који фајл који није излистан у `.dockerignore`.
-
-If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
-
-```bash
-npm run build:docker:rpi
-```
 
 Примите к знању да за сваку docker команду морате имати на својој машини инсталиран docker заједно са docker executable која мора бити доступна на `$PATH`.
 

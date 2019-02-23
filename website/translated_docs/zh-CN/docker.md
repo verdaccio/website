@@ -34,10 +34,16 @@ docker pull verdaccio/verdaccio:3.0
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-下一个主版本将使用 `beta`（主分支）版本。
+For the next master branch uses the `master` version.
 
 ```bash
-docker pull verdaccio/verdaccio:beta
+docker pull verdaccio/verdaccio:master
+```
+
+For the next major release using the `4.x-next` (4.x branch) version.
+
+```bash
+docker pull verdaccio/verdaccio:4.x-next
 ```
 
 > 如果您对标签列表感兴趣，[ 请访问 Docker 网站枢纽](https://hub.docker.com/r/verdaccio/verdaccio/tags/)。
@@ -69,6 +75,12 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
 ### 插件
 
 插件可以在单独的目录里安装，并用Docker或者Kubernetes挂载，然而，请确保使用与Verdaccio Dockerfile相同的基镜像的本地依赖项来创建插件。
+
+```docker
+FROM verdaccio/verdaccio
+
+RUN npm install verdaccio-s3-storage
+```
 
 ### Docker和自定义端口配置
 
@@ -136,12 +148,6 @@ npm run build:docker
 ```
 
 请注意：第一个镜像的创建要花费几分钟时间，因为它需要运行`npm install`，而且，当您任何时候更改任何没有列在`.dockerignore`里的文件，它也需要运行那么长的时间。
-
-If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
-
-```bash
-npm run build:docker:rpi
-```
 
 请注意，您需要在您的机器上安装 docker 来执行以上任何docker命令， docker 可执行程序应该在您的`$PATH`里。
 
