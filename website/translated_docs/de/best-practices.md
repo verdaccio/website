@@ -102,9 +102,17 @@ Using **HTTPS** is a common recomendation, for such reason we recommend read the
 
 In `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
 
+```yaml
+security:
+  api:
+    jwt:
+      sign:
+        expiresIn: 15d
+        notBefore: 0
+  web:
+    sign:
+      expiresIn: 7d
 ```
-
-security: api: jwt: sign: expiresIn: 15d notBefore: 0 web: sign: expiresIn: 7d ```
 
 **Using this configuration will override the current system and you will be able to control how long the token will live**.
 
