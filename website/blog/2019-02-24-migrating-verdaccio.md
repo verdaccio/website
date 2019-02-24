@@ -18,12 +18,12 @@ Using as example UNIX environments, the local storage is located within `~/.loca
 
 We support only `sinopia@1.4.0` as minimum version, these are the steps:
 
-1. The folder `~/.local/share/sinopia` must be renamed to ~/.local/share/verdaccio`
-2. The folder `~/.config/sinopia` must be renamed to ~/.config/verdaccio`
+1. The folder `~/.local/share/sinopia` must be renamed to `~/.local/share/verdaccio`
+2. The folder `~/.config/sinopia` must be renamed to `~/.config/verdaccio`
 
 There is an aditional step, not required, but recommended:
 
-3. The file `~/.config/sinopia/storage/.sinopia-db.json` must be renamed to ~/.local/share/verdaccio/storage/.verdaccio-db.json`
+3. The file `~/.config/sinopia/storage/.sinopia-db.json` must be renamed to `~/.local/share/verdaccio/storage/.verdaccio-db.json`
 
 To find the Windows location, [check the following link](https://verdaccio.org/docs/en/cli#default-storage-location).
 
