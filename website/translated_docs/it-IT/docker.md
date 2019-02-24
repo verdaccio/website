@@ -34,10 +34,16 @@ Per una specifica (patch) versione:
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-Per la successiva maggiore release che utilizzi la versione `beta` (ramo master).
+For the next master branch uses the `master` version.
 
 ```bash
-docker pull verdaccio/verdaccio:beta
+docker pull verdaccio/verdaccio:master
+```
+
+For the next major release using the `4.x-next` (4.x branch) version.
+
+```bash
+docker pull verdaccio/verdaccio:4.x-next
 ```
 
 > Se si è interessati ad un elenco dei tag, [ si prega di visitare il sito Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
@@ -69,6 +75,12 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
 ### Estensioni
 
 I plugin possono essere installati in una cartella separata e montati utilizzando Docker o Kubernetes, ad ogni modo assicurarsi di costruire plugin con dipendenze native adoperando la stessa immagine di base del Dockerfile di Verdaccio.
+
+```docker
+FROM verdaccio/verdaccio
+
+RUN npm install verdaccio-s3-storage
+```
 
 ### Configurazione di Docker e della porta personalizzata
 
@@ -136,12 +148,6 @@ npm run build:docker
 ```
 
 Nota: Il primo build necessita di qualche minuto per creare perché ha bisogno di avviare `npm install`, e potrebbe impiegare lo stesso tempo ogni volta che si cambia un file che non sia elencato in `.dockerignore`.
-
-If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
-
-```bash
-npm run build:docker:rpi
-```
 
 Si prega di notare che per ognuno dei comandi docker sopra citati è necessario avere docker installato sul pc e l'eseguibile docker dovrebbe essere disponibile su `$PATH`.
 

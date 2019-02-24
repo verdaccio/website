@@ -92,9 +92,6 @@
       "reverse-proxy": {
         "title": "Reverse Proxy Setup"
       },
-      "scopes": {
-        "title": "Understanding Scopes"
-      },
       "server-configuration": {
         "title": "Server Configuration"
       },
@@ -106,9 +103,6 @@
       },
       "uplinks": {
         "title": "Uplinks"
-      },
-      "use-cases": {
-        "title": "Use Cases"
       },
       "webui": {
         "title": "Web User Interface"
@@ -288,6 +282,7 @@
     "links": {
       "Docs": "Docs",
       "Blog": "Blog",
+      "Twitter": "Twitter",
       "Help": "Help",
       "GitHub": "GitHub",
       "Team": "Team",
