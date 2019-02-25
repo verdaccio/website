@@ -135,6 +135,36 @@ Descriviamo quello che si desidera con l'esempio precedente:
 
 **Non dimenticare l'importanza dell'ordine dei pacchetti e di utilizzare sempre il doppio asterisco**. Poiché se non lo si include, `verdaccio` lo includerà per voi e questo inciderà sulla modalità con cui le dipendenze sono risolte.
 
+#### Unpublishing Packages
+
+The properly `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
+
+```yalm
+packages:
+  'jquery':
+    access: $all
+    publish: $all
+    unpublish: root
+  'my-company-*':
+    access: $all
+    publish: $authenticated
+    unpublish: 
+  '@my-local-scope/*':
+    access: $all
+    publish: $authenticated
+    # unpublish: property commented out
+  '**':
+    access: $all
+    publish: $authenticated
+    proxy: npmjs
+```
+
+In the previous example, the behaviour would be described:
+
+* all users can publish the `jquery` package, but only the user `root` would be able to unpublish any version.
+* only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
+* If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
+
 ### Configurazione
 
 Si possono definire `pacchetti` multipli ed ognuno di essi deve avere un `Regex` unico. La sintassi è basata su [ espressioni minimatch glob](https://github.com/isaacs/minimatch).

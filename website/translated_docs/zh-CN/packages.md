@@ -135,6 +135,36 @@ packages:
 
 **注意库定义的顺序很重要同时必须使用双通配符**。 因为如果你没有包含它，`verdaccio`会帮你来包含它，这样你的依赖库解析会受到影响。
 
+#### Unpublishing Packages
+
+The properly `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
+
+```yalm
+packages:
+  'jquery':
+    access: $all
+    publish: $all
+    unpublish: root
+  'my-company-*':
+    access: $all
+    publish: $authenticated
+    unpublish: 
+  '@my-local-scope/*':
+    access: $all
+    publish: $authenticated
+    # unpublish: property commented out
+  '**':
+    access: $all
+    publish: $authenticated
+    proxy: npmjs
+```
+
+In the previous example, the behaviour would be described:
+
+* all users can publish the `jquery` package, but only the user `root` would be able to unpublish any version.
+* only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
+* If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
+
 ### 配置
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).

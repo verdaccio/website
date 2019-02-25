@@ -135,6 +135,36 @@ Hajde da vidimo šta smo postigli u navedenom primeru:
 
 **Budite svesni toga da je redosled definisanja Vaših paketa važan i još nešto, uvek koristite double wilcard**. Jer ako ne budete toga svesni, `verdaccio` će to učiniti umesto Vas, što će uticati Vaše dependencies.
 
+#### Unpublishing Packages
+
+The properly `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
+
+```yalm
+packages:
+  'jquery':
+    access: $all
+    publish: $all
+    unpublish: root
+  'my-company-*':
+    access: $all
+    publish: $authenticated
+    unpublish: 
+  '@my-local-scope/*':
+    access: $all
+    publish: $authenticated
+    # unpublish: property commented out
+  '**':
+    access: $all
+    publish: $authenticated
+    proxy: npmjs
+```
+
+In the previous example, the behaviour would be described:
+
+* all users can publish the `jquery` package, but only the user `root` would be able to unpublish any version.
+* only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
+* If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
+
 ### Konfigurisanje
 
 Možete definisati multiple `packages` pri čemu svaki od njih mora imati jedinstveni `Regex`. Sintaksa je bazirana na [minimatch glob expressions](https://github.com/isaacs/minimatch).
