@@ -33,7 +33,9 @@ We list the articles about Verdaccio, if you have written a blog post or tutoria
 * [Host, Publish and Manage Private npm Packages with Verdaccio](http://allprowebdesigns.com/2017/01/host-publish-and-manage-private-npm-packages-with-verdaccio/)
 * [Setting Up a Private NPM Registry](https://gir.me.uk/posts/private-npm-registry.html)
 * [Testing NPM alpha / beta / rc packages](https://medium.com/@the1mills/testing-npm-alpha-beta-rc-packages-108b65eb03d2)
-
+* [Running a local npm repository on Windows Server using Verdaccio](https://robertwray.co.uk/blog/running-a-local-npm-repository-on-windows-server-using-verdaccio)
+* [https://medium.com/@tompape/kubernetes-private-npm-registry-fb5f450fa611](https://medium.com/@tompape/kubernetes-private-npm-registry-fb5f450fa611)
+* [Verdaccio examples for Google Cloud and K8s setups. https://github.com/papezt/verdaccio-examples](https://github.com/papezt/verdaccio-examples)
 
 ### Japanese
 
