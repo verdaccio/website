@@ -8,7 +8,7 @@ Some projects organize packages in multi-packages repositories or [monorepos](ht
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Such approach was really hard to achieve considering:
+Such approach has been really hard to achieve considering:
 
 * Populate canary packages on public services seems not to be a good idea
 * Some self-hosted OSS registries are too heavy
