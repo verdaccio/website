@@ -40,7 +40,7 @@ packages:
     publish: $authenticated
 ```
 
-Lista poprawnych grup zgodnie z domyślnymi wtyczkami to
+The list internal groups handled by `verdaccio` are:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
