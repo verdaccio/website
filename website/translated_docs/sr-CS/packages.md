@@ -40,7 +40,7 @@ packages:
     publish: $authenticated
 ```
 
-Lista validnih grupa u skladu sa podrazumevanim pluginima
+The list internal groups handled by `verdaccio` are:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'

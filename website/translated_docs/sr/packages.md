@@ -40,7 +40,7 @@ packages:
     publish: $authenticated
 ```
 
-Листа валидних група у складу са подразумеваним плугинима
+The list internal groups handled by `verdaccio` are:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'

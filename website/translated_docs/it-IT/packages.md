@@ -40,7 +40,7 @@ pacchetti:
     pubblicare: $authenticated
 ```
 
-La lista di gruppi validi a seconda dei plugin predefiniti è
+The list internal groups handled by `verdaccio` are:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'

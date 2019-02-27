@@ -45,7 +45,7 @@
         "title": "Docker"
       },
       "e2e": {
-        "title": "End to End testing"
+        "title": "Pruebas End to End"
       },
       "github-actions": {
         "title": "Github Actions"
