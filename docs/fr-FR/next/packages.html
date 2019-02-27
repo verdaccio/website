@@ -105,7 +105,7 @@
 <span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
 <span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
-<p>La liste des groupes valides selon les plugins par défaut sont</p>
+<p>The list internal groups handled by <code>verdaccio</code> are:</p>
 <pre><code class="hljs css language-js"><span class="hljs-string">'$all'</span>, <span class="hljs-string">'$anonymous'</span>, <span class="hljs-string">'@all'</span>, <span class="hljs-string">'@anonymous'</span>, <span class="hljs-string">'all'</span>, <span class="hljs-string">'undefined'</span>, <span class="hljs-string">'anonymous'</span>
 </code></pre>
 <p>Tous les utilisateurs reçoivent tous ces groupes d'autorisations, qu'ils soient anonymes ou non, plus les groupes fournis par le plug-in. Dans le cas <code>htpasswd</code>, rejetez le nom d'utilisateur en tant que groupe. Par exemple, si vous êtes connectés en tant que <code>npmUser</code>, la liste des noms sera.</p>

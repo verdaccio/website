@@ -105,7 +105,7 @@
 <span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
 <span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
-<p>根据默认插件设置，有效的组列表为</p>
+<p>The list internal groups handled by <code>verdaccio</code> are:</p>
 <pre><code class="hljs css language-js"><span class="hljs-string">'$all'</span>, <span class="hljs-string">'$anonymous'</span>, <span class="hljs-string">'@all'</span>, <span class="hljs-string">'@anonymous'</span>, <span class="hljs-string">'all'</span>, <span class="hljs-string">'undefined'</span>, <span class="hljs-string">'anonymous'</span>
 </code></pre>
 <p>如果<code>htpasswd</code> 返回用户名为组，所有用户，不管匿名与否，都会分别接到该组的权限以及插件提供的组。 例如，如果你以<code>npmUser</code>身份登录，组列表为。</p>
