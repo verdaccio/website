@@ -40,7 +40,7 @@ packages:
     publish: $authenticated
 ```
 
-根据默认插件设置，有效的组列表为
+The list internal groups handled by `verdaccio` are:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
