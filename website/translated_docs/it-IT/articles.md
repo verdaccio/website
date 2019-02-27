@@ -16,13 +16,13 @@ Riportiamo gli articoli relativi a Verdaccio, se hai scritto un post sul tuo blo
 * [La pazza storia di Verdaccio](https://medium.com/verdaccio/the-crazy-story-of-verdaccio-d35d924728bc)
 * [Release di Verdaccio 4 alpha 🚀](https://medium.com/verdaccio/verdaccio-4-alpha-release-400c7ed4884d)
 * [Verdaccio and deterministic lock files](https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e)
-* [Setting up Verdaccio on DigitalOcean](https://medium.com/verdaccio/setting-up-verdaccio-on-digitalocean-61b5d08e4f0d)
-* [How I learned React Js and how you can…](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
-* [How did I fall in the open source world…and that was a nice thing!](https://medium.com/@priscilawebdev/how-do-i-fall-in-the-open-source-world-and-that-was-a-nice-thing-b0e85d05490d)
+* [Configurazione di Verdaccio su DigitalOcean](https://medium.com/verdaccio/setting-up-verdaccio-on-digitalocean-61b5d08e4f0d)
+* [Come ho imparato React Js e come è possibile…](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
+* [Come sono finito nel mondo dell'open source...e come sia stata una gran bella cosa!](https://medium.com/@priscilawebdev/how-do-i-fall-in-the-open-source-world-and-that-was-a-nice-thing-b0e85d05490d)
 
-# Articles / Blogs / Tutorials (by Language)
+# Articoli / Blog / Tutorial (per Lingua)
 
-### Remarkable articles
+### Articoli rilevanti
 
 * [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
 * [Cover Your Apps While Still Using npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
