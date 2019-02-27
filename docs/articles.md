@@ -9,9 +9,18 @@ We list the articles about Verdaccio, if you have written a blog post or tutoria
 
 ## Core Team Articles
 
+* [An Introduction to Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
 * [Five use cases where a npm private proxy fits in your workflow](https://medium.com/@jotadeveloper/five-use-cases-where-a-npm-private-proxy-fits-in-your-workflow-632a81779c14)
 * [An Introduction to Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
 * [NPM Registry for your organisation](https://medium.com/@ayusharma.in/npm-registry-for-your-organisation-aeb8ea76144)
+* [Verdaccio 3 released 🎉!!](https://medium.com/verdaccio/verdaccio-3-released-feb06ef38558)
+* [The crazy story of Verdaccio](https://medium.com/verdaccio/the-crazy-story-of-verdaccio-d35d924728bc)
+* [Verdaccio 4 alpha release 🚀](https://medium.com/verdaccio/verdaccio-4-alpha-release-400c7ed4884d)
+* [Verdaccio and deterministic lock files](https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e)
+* [Setting up Verdaccio on DigitalOcean](https://medium.com/verdaccio/setting-up-verdaccio-on-digitalocean-61b5d08e4f0d)
+* [How I learned React Js and how you can…](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
+
+
 
 # Articles / Blogs / Tutorials (by Language)
 
@@ -23,11 +32,12 @@ We list the articles about Verdaccio, if you have written a blog post or tutoria
 * [Verdaccio - A lightweight npm proxy registry - Interview with Juan Picado](https://survivejs.com/blog/verdaccio-interview/)
 * [Host, Publish and Manage Private npm Packages with Verdaccio](https://www.sitepoint.com/private-npm-packages-verdaccio/)
 * [Free Private NPM with Verdaccio and AWS](https://medium.com/@odahcam/free-private-npm-with-verdaccio-and-aws-a88e6f0f4beb)
+* [Run your own Unity Package Server!](https://medium.com/@markushofer/run-your-own-unity-package-server-b4fe9995704e)
+* [Ways to have your private npm registry — and a final DIY solution](https://medium.com/engenharia-noalvo/ways-to-have-your-private-npm-registry-and-a-final-diy-solution-eed001a88e74)
 
 ### English
 
 * [Testing your npm package before releasing it using Verdaccio + ngrok](https://medium.com/strapi/testing-your-npm-package-before-releasing-it-using-verdaccio-ngrok-28e2832c850a)
-* [Ways to have your private npm registry — and a final DIY solution](https://medium.com/engenharia-noalvo/ways-to-have-your-private-npm-registry-and-a-final-diy-solution-eed001a88e74)
 * [Host your own private NPM repository with Verdaccio](https://medium.com/devopslinks/host-your-own-private-npm-repository-with-verdaccio-e8a3202b97c5)
 * [Local npm private registry with zero configuration](https://dev.to/iriskatastic/local-npm-private-registry-with-zero-configuration-njo)
 * [It depends. On the registry](https://blog.softwaremill.com/it-depends-on-the-registry-8fa9d9c5a3b)
@@ -37,6 +47,7 @@ We list the articles about Verdaccio, if you have written a blog post or tutoria
 * [Running a local npm repository on Windows Server using Verdaccio](https://robertwray.co.uk/blog/running-a-local-npm-repository-on-windows-server-using-verdaccio)
 * [Kubernetes private NPM registry](https://medium.com/@tompape/kubernetes-private-npm-registry-fb5f450fa611)
 * [Verdaccio examples for Google Cloud and K8s setups. https://github.com/papezt/verdaccio-examples](https://github.com/papezt/verdaccio-examples)
+* [Setting up a private NPM Registry Is Easier Than You Think](https://medium.com/@902Labs/setting-up-a-private-npm-registry-is-easier-than-you-think-455e1bd438f2)
 
 ### Japanese
 
@@ -51,6 +62,7 @@ We list the articles about Verdaccio, if you have written a blog post or tutoria
 * [npm 私服工具verdaccio 安装配置试用](http://www.cnblogs.com/rongfengliang/p/7811838.html)
 * [搭建私有npm镜像](http://www.blackcater.win/2018/03/01/%E6%90%AD%E5%BB%BA%E7%A7%81%E6%9C%89npm%E9%95%9C%E5%83%8F/)
 * [搭建离线npm私库——verdaccio](https://www.jishux.com/plus/view-765581-1.html)
+* [[筆記] 建立自己的 npm, 以npm Orgs跟Verdaccio為例](https://medium.com/@ceall8650/%E7%AD%86%E8%A8%98-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84-npm-%E4%BB%A5npm-orgs%E8%B7%9Fverdaccio%E7%82%BA%E4%BE%8B-cfb83b2307e6)
 
 
 ### French
