@@ -19,6 +19,7 @@ We list the articles about Verdaccio, if you have written a blog post or tutoria
 * [Verdaccio and deterministic lock files](https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e)
 * [Setting up Verdaccio on DigitalOcean](https://medium.com/verdaccio/setting-up-verdaccio-on-digitalocean-61b5d08e4f0d)
 * [How I learned React Js and how you can…](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
+* [How did I fall in the open source world…and that was a nice thing!](https://medium.com/@priscilawebdev/how-do-i-fall-in-the-open-source-world-and-that-was-a-nice-thing-b0e85d05490d)
 
 
 
