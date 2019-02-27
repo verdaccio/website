@@ -57,8 +57,8 @@ Let's recap:
 
 ## Default htpasswd
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. As of version v3.0.x an [external plugin](https://github.com/verdaccio/verdaccio-htpasswd)
-is used by default. The v2.x version of this package still contains the built-in version of this plugin.
+In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin
+is used by default.
 
 ```yaml
 auth:
