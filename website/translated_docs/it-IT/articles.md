@@ -27,7 +27,7 @@ Riportiamo gli articoli relativi a Verdaccio, se hai scritto un post sul tuo blo
 * [10 delle Migliori Pratiche per la Sicurezza di npm](https://snyk.io/blog/ten-npm-security-best-practices/)
 * [Cover Your Apps While Still Using npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
 * [Containerizing Node.js Applications with Docker](https://nodesource.com/blog/containerizing-node-js-applications-with-docker)
-* [Verdaccio - A lightweight npm proxy registry - Interview with Juan Picado](https://survivejs.com/blog/verdaccio-interview/)
+* [Verdaccio - Un registro proxy npm leggero - Intervista a Juan Picado](https://survivejs.com/blog/verdaccio-interview/)
 * [Host, Publish and Manage Private npm Packages with Verdaccio](https://www.sitepoint.com/private-npm-packages-verdaccio/)
 * [Free Private NPM with Verdaccio and AWS](https://medium.com/@odahcam/free-private-npm-with-verdaccio-and-aws-a88e6f0f4beb)
 * [Run your own Unity Package Server!](https://medium.com/@markushofer/run-your-own-unity-package-server-b4fe9995704e)
