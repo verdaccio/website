@@ -99,11 +99,11 @@ registry=http://localhost:5555/
 <h3><a class="anchor" aria-hidden="true" id="the-meaning-of-all-and-anonymous"></a><a href="#the-meaning-of-all-and-anonymous" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>The meaning of <code>$all</code> and <code>$anonymous</code></h3>
 <p>As you know <em>Verdaccio</em> uses the <code>htpasswd</code> by default. That plugin does not implement the methods <code>allow_access</code>, <code>allow_publish</code> and <code>allow_unpublish</code>. Thus, <em>Verdaccio</em> will handle that in the following way:</p>
 <ul>
-<li>If you are not logged in (you are anonymous), <code>$all</code> and <code>$anonymous</code> means exaclty the same.</li>
-<li>If you are logged in, <code>$anonymous</code> won't be part if your groups and <code>$all</code> will match any logged user. A new group <code>$authenticated</code> will be added to the list.</li>
+<li>If you are not logged in (you are anonymous), <code>$all</code> and <code>$anonymous</code> means exactly the same.</li>
+<li>If you are logged in, <code>$anonymous</code> won't be part of your groups and <code>$all</code> will match any logged user. A new group <code>$authenticated</code> will be added to the list.</li>
 </ul>
 <p>As a takeaway, <code>$all</code> <strong>will match all users, independently whether is logged or not</strong>.</p>
-<p><strong>The previous behaviour only apply to the default authentication plugin</strong>. If you are using a custom plugin and such plugin implements <code>allow_access</code>, <code>allow_publish</code> or <code>allow_unpublish</code>, the resolution of the acccess depends of the plugin itself. Verdaccio will only set the default groups.</p>
+<p><strong>The previous behavior only applies to the default authentication plugin</strong>. If you are using a custom plugin and such plugin implements <code>allow_access</code>, <code>allow_publish</code> or <code>allow_unpublish</code>, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.</p>
 <p>Let's recap:</p>
 <ul>
 <li><strong>logged</strong>: <code>$all</code>, <code>$authenticated</code>, + groups added by the plugin</li>
