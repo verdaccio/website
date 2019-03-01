@@ -23,6 +23,8 @@ title: "Who is using Verdaccio?"
 * [Aurelia Framework](https://github.com/aurelia)
 * [bit](https://github.com/teambit/bit)
 * [Hyperledger Composer](https://github.com/hyperledger/composer)
+* [Wix Yoshi](https://github.com/wix/yoshi)
+* [The AWS Cloud Development Kit](https://github.com/awslabs/aws-cdk)
 
 #### Readme Recomendations
 
