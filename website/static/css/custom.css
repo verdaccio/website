@@ -39,7 +39,7 @@
 }
 
 .tweets-section .twitter-tweet {
-  width: 440px !important;
+  width: 400px !important;
 }
 
 .tweets-section > div  .twitter-tweet {
@@ -114,6 +114,13 @@
     width: 300px !important;
   }
 
+  .hljs {
+    width: 340px !important;
+  }
+  
+  .btnClipboard {
+    display: none;
+  }
 }
 
 .member_section {
