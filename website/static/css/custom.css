@@ -38,6 +38,10 @@
    margin: 0 auto;
 }
 
+.tweets-section .twitter-tweet {
+  width: 440px !important;
+}
+
 .tweets-section > div  .twitter-tweet {
   margin: 0 auto !important;
 }
@@ -94,12 +98,22 @@
   .member_media_object {
     width: 100%
   }
+
+  .tweets-section .twitter-tweet {
+    width: 300px !important;
+  }
+
 }
 
 @media (min-width: 320px) and (max-width:480px) {
   .member_media_object {
     width: 100%
   }
+
+  .tweets-section .twitter-tweet {
+    width: 300px !important;
+  }
+
 }
 
 .member_section {
