@@ -144,6 +144,11 @@ class HomeSplash extends React.Component {
                 style={{marginTop: '8px'}}
               />
             </div>
+                <div>
+                <a href={"https://t.co/kqDtknO5d0"} target="_blank">
+                  📢 Fill our Survey "Verdaccio Community Feedback #1"
+                </a>
+                </div>
           </div>
         </div>
       </div>
