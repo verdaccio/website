@@ -10,7 +10,7 @@ With [GitHub Actions](https://github.com/features/actions) you can automate your
 ## Testing your packages
 
 Verdaccio provides a custom acttion for easy integration in your flow, you only add the following to your `main.workflow` in the step
-you cosindere the better for your flow.
+you consider the better for your flow.
 
 ```gha
 action "Publish Verdaccio" {
