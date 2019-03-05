@@ -277,6 +277,54 @@
       },
       "version-4.0.0-alpha.4-what-is-verdaccio": {
         "title": "What is Verdaccio?"
+      },
+      "version-4.0.0-alpha.5-articles": {
+        "title": "Articles"
+      },
+      "version-4.0.0-alpha.5-authentification": {
+        "title": "Authentification"
+      },
+      "version-4.0.0-alpha.5-best": {
+        "title": "Best Practices"
+      },
+      "version-4.0.0-alpha.5-caching": {
+        "title": "Caching strategies"
+      },
+      "version-4.0.0-alpha.5-configuration": {
+        "title": "Configuration File"
+      },
+      "version-4.0.0-alpha.5-dev-plugins": {
+        "title": "Developing Plugins"
+      },
+      "version-4.0.0-alpha.5-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0-alpha.5-e2e": {
+        "title": "End to End testing"
+      },
+      "version-4.0.0-alpha.5-github-actions": {
+        "title": "Github Actions"
+      },
+      "version-4.0.0-alpha.5-installation": {
+        "title": "Installation"
+      },
+      "version-4.0.0-alpha.5-linking-remote-registry": {
+        "title": "Linking a Remote Registry"
+      },
+      "version-4.0.0-alpha.5-packages": {
+        "title": "Package Access"
+      },
+      "version-4.0.0-alpha.5-talks": {
+        "title": "Talks"
+      },
+      "version-4.0.0-alpha.5-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.0.0-alpha.5-webui": {
+        "title": "Web User Interface"
+      },
+      "version-4.0.0-alpha.5-who-is-using": {
+        "title": "Who is using Verdaccio?"
       }
     },
     "links": {
