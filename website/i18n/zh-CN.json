@@ -277,6 +277,54 @@
       },
       "version-4.0.0-alpha.4-what-is-verdaccio": {
         "title": "Verdaccio是什么？"
+      },
+      "version-4.0.0-alpha.5-articles": {
+        "title": "Articles"
+      },
+      "version-4.0.0-alpha.5-authentification": {
+        "title": "认证"
+      },
+      "version-4.0.0-alpha.5-best": {
+        "title": "Best Practices"
+      },
+      "version-4.0.0-alpha.5-caching": {
+        "title": "Caching strategies"
+      },
+      "version-4.0.0-alpha.5-configuration": {
+        "title": "配置文件"
+      },
+      "version-4.0.0-alpha.5-dev-plugins": {
+        "title": "插件开发"
+      },
+      "version-4.0.0-alpha.5-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0-alpha.5-e2e": {
+        "title": "End to End testing"
+      },
+      "version-4.0.0-alpha.5-github-actions": {
+        "title": "Github Actions"
+      },
+      "version-4.0.0-alpha.5-installation": {
+        "title": "安装"
+      },
+      "version-4.0.0-alpha.5-linking-remote-registry": {
+        "title": "Linking a Remote Registry"
+      },
+      "version-4.0.0-alpha.5-packages": {
+        "title": "包的访问"
+      },
+      "version-4.0.0-alpha.5-talks": {
+        "title": "Talks"
+      },
+      "version-4.0.0-alpha.5-uplinks": {
+        "title": "上行链路"
+      },
+      "version-4.0.0-alpha.5-webui": {
+        "title": "Web User Interface"
+      },
+      "version-4.0.0-alpha.5-who-is-using": {
+        "title": "Who is using Verdaccio?"
       }
     },
     "links": {
