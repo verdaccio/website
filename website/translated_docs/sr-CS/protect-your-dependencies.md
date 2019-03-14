@@ -2,7 +2,7 @@
 id: protect-your-dependencies
 title: "Protecting packages"
 ---
-`verdaccio` Vam omogućava da publikujete. Kako biste u tome uspeli, neophodno je da ispravno podesite svoj [packages acces](packages).
+`verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
 
 ### Konfigurisanje paketa
 
