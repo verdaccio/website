@@ -52,6 +52,13 @@
       "ci",
       {
         "type": "subcategory",
+        "label": "Cloud",
+        "ids": [
+          "amazon"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "Tools",
         "ids": [
           "ansible",
