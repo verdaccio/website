@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.5-caching
+id: version-4.0.0-alpha.5-缓存
 title: Caching strategies
 original_id: caching
 ---
