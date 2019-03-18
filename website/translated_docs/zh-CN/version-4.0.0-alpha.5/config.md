@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.5-configuration
+id: version-4.0.0-alpha.5-配置文件
 title: 配置文件
 original_id: configuration
 ---
