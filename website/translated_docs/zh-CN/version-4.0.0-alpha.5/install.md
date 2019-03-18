@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.5-installation
+id: version-4.0.0-alpha.5-安装
 title: 安装
 original_id: installation
 ---
