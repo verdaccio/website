@@ -2,9 +2,9 @@
 id: who-is-using
 title: "谁在使用 Verdaccio?"
 ---
-### As a Business
+### 作为一个企业
 
-*If you are using Verdaccio in your bussiness and want to share your experience, let us know. 我们很乐意听取您的意见。*
+*如果您在企业中使用 Verdaccio 并希望分享您的体验，请告诉我们。 我们很乐意听取您的意见。*
 
 * [SheetJS](https://sheetjs.com/)
 
@@ -26,6 +26,6 @@ title: "谁在使用 Verdaccio?"
 * [Wix Yoshi](https://github.com/wix/yoshi)
 * [The AWS Cloud Development Kit](https://github.com/awslabs/aws-cdk)
 
-#### Readme Recomendations
+#### Readme 推荐
 
 * [react-native-cli](https://github.com/react-native-community/react-native-cli/blob/master/CONTRIBUTING.md)
