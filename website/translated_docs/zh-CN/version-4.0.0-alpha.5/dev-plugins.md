@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.5-插件开发
+id: version-4.0.0-alpha.5-dev-plugins
 title: 插件开发
 original_id: dev-plugins
 ---
