@@ -11,10 +11,11 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 
 ## The latets Talk
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/322006226" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
 > The last shared talk is always highlighted here. We help you share your voice with the community.
 
+* [Introducción a Verdaccio: gestión de paquetes privados, March 2019](https://vimeo.com/322006226)
 * [Vienna.js, Introduction to Verdaccio, January 2019](https://www.youtube.com/watch?v=hDIFKzmoCaA)
 * [#22 FloripaJS Live Stream, February 2019](https://www.youtube.com/watch?v=iOp70_svQ_M&feature=youtu.be&t=7578)
 * [FrankenJS Angular & Beyond - Enterprise-Architectures for huge Angular Apps by Manfred Steyer](https://youtu.be/dWdJkqhQFXU?t=613)
