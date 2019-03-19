@@ -9,7 +9,7 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 > If need help how to start, information or resources, reach us in our [Chat at Discord](https://chat.verdaccio.org),
 > we will help you.
 
-## The latets Talk
+## The latest Talk
 
 <iframe src="https://player.vimeo.com/video/322006226" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 
