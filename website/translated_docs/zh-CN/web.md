@@ -29,4 +29,4 @@ web:
 | logo          | 字符串        | 否  | http://my.logo.domain/logo.png | 任意路径       | logo 所在的 URI 路径（顶部 logo）                                               |
 | scope         | 字符串        | 否  | \\@myscope                   | `>v3.x` | 如果要为特定模块作用域使用此registry，请指定该作用域，在webui指南页眉内设置它（注释：escape @ with \\@)  |
 
-> It is recommended the logo size has the following size `40x40` pixels.
+> 建议 logo 尺寸为 `40x40` 像素。
