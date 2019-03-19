@@ -1,6 +1,6 @@
 ---
 id: version-4.0.0-alpha.4-webui
-title: Web User Interface
+title: Web 用户界面
 original_id: webui
 ---
 ![上行链路](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
@@ -27,7 +27,7 @@ web:
 | title         | 字符串        | 否  | Verdaccio                      | 任意路径     | HTML 页眉标题说明                                                            |
 | gravatar      | boolean    | 否  | true                           | `>v4` | Gravatars will be generated under the hood if this property is enabled |
 | sort_packages | [asc,desc] | 否  | asc                            | `>v4` | Gravatars will be generated under the hood if this property is enabled |
-| logo          | 字符串        | 否  | http://my.logo.domain/logo.png | 任意路径     | a URI where logo is located (header logo)                              |
+| logo          | 字符串        | 否  | http://my.logo.domain/logo.png | 任意路径     | logo 所在的 URI 路径（顶部 logo）                                               |
 | scope         | 字符串        | 否  | \\@myscope                   | 任意路径     | 如果要为特定模块作用域使用此registry，请指定该作用域，在webui指南页眉内设置它（注释：escape @ with \\@)  |
 
-> It is recommended the logo size has the following size `40x40` pixels.
+> 建议 logo 尺寸为 `40x40` 像素。
