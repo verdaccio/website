@@ -8,7 +8,7 @@ Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry**
 ## Registry是什么？
 
 * 包的资源库，它执行**CommonJS Compliant Package Registry specification** 来阅读包信息
-* 提供与npm clients **(yarn/npm/pnpm)**兼容的API
+* 提供与 npm clients **(yarn/npm/pnpm)** 兼容的API
 * 跟随Versioning语义兼容**(semver)**
 
     $> verdaccio

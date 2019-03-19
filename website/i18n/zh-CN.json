@@ -105,13 +105,13 @@
         "title": "上行链路"
       },
       "webui": {
-        "title": "Web User Interface"
+        "title": "Web 用户界面"
       },
       "what-is-verdaccio": {
         "title": "Verdaccio是什么？"
       },
       "who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "谁在使用 Verdaccio?"
       },
       "windows": {
         "title": "作为 Windows 服务安装"
@@ -201,7 +201,7 @@
         "title": "使用案例"
       },
       "version-3.8.6-webui": {
-        "title": "Web User Interface"
+        "title": "Web 用户界面"
       },
       "version-3.8.6-what-is-verdaccio": {
         "title": "Verdaccio是什么？"
@@ -273,7 +273,7 @@
         "title": "上行链路"
       },
       "version-4.0.0-alpha.4-webui": {
-        "title": "Web User Interface"
+        "title": "Web 用户界面"
       },
       "version-4.0.0-alpha.4-what-is-verdaccio": {
         "title": "Verdaccio是什么？"
@@ -321,10 +321,10 @@
         "title": "上行链路"
       },
       "version-4.0.0-alpha.5-webui": {
-        "title": "Web User Interface"
+        "title": "Web 用户界面"
       },
       "version-4.0.0-alpha.5-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "谁在使用 Verdaccio?"
       }
     },
     "links": {
