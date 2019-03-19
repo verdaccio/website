@@ -15,7 +15,7 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 
 > The last shared talk is always highlighted here. We help you share your voice with the community.
 
-* [Madrid Node.js Meetup - Introducción a Verdaccio: gestión de paquetes privados, March 2019](https://vimeo.com/322006226)
+* [Madrid Node.js Meetup - Introducción a Verdaccio: gestión de paquetes privados, March 2019](https://www.todojs.com/introduccion-a-verdaccio/)
 * [Vienna.js Meetuo - Introduction to Verdaccio, January 2019](https://www.youtube.com/watch?v=hDIFKzmoCaA)
 * [#22 FloripaJS Brazil Meetup, February 2019](https://www.youtube.com/watch?v=iOp70_svQ_M&feature=youtu.be&t=7578)
 * [FrankenJS Angular & Beyond - Enterprise-Architectures for huge Angular Apps by Manfred Steyer](https://youtu.be/dWdJkqhQFXU?t=613)
