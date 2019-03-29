@@ -10,9 +10,9 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-You can link multiples registries, the following document will drive you throught some helpful configurations.
+You can link multiple registries, the following document will drive you through some helpful configurations.
 
-## Using Asociating Scope
+## Using Associating Scope
 
 The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
 
@@ -21,7 +21,7 @@ The unique way to access multiple registries using the `.npmrc` is the scope fea
     @mycompany:registry=http://localhost:4873
     
 
-This approache is valid, but comes with several dissadventages:
+This approach is valid, but comes with several disadvantages:
 
 * It **only works with scopes**
 * Scope must match, **no Regular Expressions are allowed**
@@ -32,7 +32,7 @@ See a full example [here](https://stackoverflow.com/questions/54543979/npmrc-mul
 
 ## Linking a Registry
 
-Link a registry is fairly simple, first, define a new section in the `uplinks` section, note the order here is irrelevant.
+Linking a registry is fairly simple. First, define a new section in the `uplinks` section. Note, the order here is irrelevant.
 
 ```yaml
   uplinks:
@@ -50,7 +50,7 @@ Link a registry is fairly simple, first, define a new section in the `uplinks` s
 
 Add a `proxy` section to define the selected registry you want to proxy.
 
-## Linking Multiples Registry
+## Linking Multiple Registries
 
 ```yaml
   uplinks:
@@ -67,11 +67,11 @@ Add a `proxy` section to define the selected registry you want to proxy.
     proxy: server1 server2
 ```
 
-Verdaccio supports multiples registries on the `proxy` field, the request will be resolved with the first in the list, if fails, it will try with the next in the list and so on.
+Verdaccio supports multiple registries on the `proxy` field. The request will be resolved with the first in the list; if that fails, it will try with the next in the list and so on.
 
 ## Offline Registry
 
-Having a full Offline Registry is completely possible, if you don't want any connectivity with external remotes you can do the following.
+Having a full Offline Registry is completely possible. If you don't want any connectivity with external remotes you can do the following.
 
 ```yaml
 <br />auth:
@@ -90,4 +90,4 @@ packages:
     publish: $authenticated
 ```
 
-Remote all `proxy` fields within each section of `packages`. The registry will became full offline.
+Remove all `proxy` fields within each section of `packages`. The registry will became full offline.
