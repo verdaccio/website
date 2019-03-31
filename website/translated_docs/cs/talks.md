@@ -25,7 +25,7 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 
 * [Madrid Node.js Meetup 5h March 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
 
-## Related Videos
+## Související videa
 
 * [Local npm server](https://www.youtube.com/watch?v=vc2wMwcDKOE)
 * [Private NPM Registry (sinopia+docker)](https://www.youtube.com/watch?v=0TXTCrGaxKc)
