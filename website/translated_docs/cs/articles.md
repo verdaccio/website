@@ -2,29 +2,29 @@
 id: články
 title: "Články"
 ---
-We list the articles about Verdaccio, if you have written a blog post or tutorial that mention Verdaccio, feel free to add it here.
+Uvádíme články o Verdaccio, pokud jste napsali článek na blogu nebo návod který zmiňuje Verdaccio, neváhejte ho sem přidat.
 
-> Any language is allowed
+> Všechny jazyky jsou povoleny
 
-## Core Team Articles
+## Články hlavního týmu
 
-* [An Introduction to Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
-* [Five use cases where a npm private proxy fits in your workflow](https://medium.com/@jotadeveloper/five-use-cases-where-a-npm-private-proxy-fits-in-your-workflow-632a81779c14)
-* [An Introduction to Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
-* [NPM Registry for your organisation](https://medium.com/@ayusharma.in/npm-registry-for-your-organisation-aeb8ea76144)
-* [Verdaccio 3 released 🎉!!](https://medium.com/verdaccio/verdaccio-3-released-feb06ef38558)
-* [The crazy story of Verdaccio](https://medium.com/verdaccio/the-crazy-story-of-verdaccio-d35d924728bc)
-* [Verdaccio 4 alpha release 🚀](https://medium.com/verdaccio/verdaccio-4-alpha-release-400c7ed4884d)
+* [Úvod do Verdaccia](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
+* [Pět případů kdy použití soukromého npm proxy zapadá do Vašeho pracovního postupu](https://medium.com/@jotadeveloper/five-use-cases-where-a-npm-private-proxy-fits-in-your-workflow-632a81779c14)
+* [Úvod do Verdaccia](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
+* [NPM registr pro Vaší organizaci](https://medium.com/@ayusharma.in/npm-registry-for-your-organisation-aeb8ea76144)
+* [Verdaccio 3 vydán 🎉!!](https://medium.com/verdaccio/verdaccio-3-released-feb06ef38558)
+* [Divoký příběh Verdaccia](https://medium.com/verdaccio/the-crazy-story-of-verdaccio-d35d924728bc)
+* [Vydána alfa Verdaccia 4 🚀](https://medium.com/verdaccio/verdaccio-4-alpha-release-400c7ed4884d)
 * [Verdaccio and deterministic lock files](https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e)
-* [Setting up Verdaccio on DigitalOcean](https://medium.com/verdaccio/setting-up-verdaccio-on-digitalocean-61b5d08e4f0d)
-* [How I learned React Js and how you can…](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
-* [How did I fall in the open source world…and that was a nice thing!](https://medium.com/@priscilawebdev/how-do-i-fall-in-the-open-source-world-and-that-was-a-nice-thing-b0e85d05490d)
+* [Nastavení Verdaccia v DigitalOcean](https://medium.com/verdaccio/setting-up-verdaccio-on-digitalocean-61b5d08e4f0d)
+* [Jak jsem se naučil React Js a jak můžete…](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
+* [Jak jsem se dostal do světe open source... a bylo to úžasné!](https://medium.com/@priscilawebdev/how-do-i-fall-in-the-open-source-world-and-that-was-a-nice-thing-b0e85d05490d)
 
-# Articles / Blogs / Tutorials (by Language)
+# Články / Blogy / Návody (podle jazyku)
 
-### Remarkable articles
+### Zajímavé články
 
-* [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
+* [10 Bezpečnostních osvědčených postupů pro npm](https://snyk.io/blog/ten-npm-security-best-practices/)
 * [Cover Your Apps While Still Using npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
 * [Containerizing Node.js Applications with Docker](https://nodesource.com/blog/containerizing-node-js-applications-with-docker)
 * [Verdaccio - A lightweight npm proxy registry - Interview with Juan Picado](https://survivejs.com/blog/verdaccio-interview/)
