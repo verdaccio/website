@@ -135,7 +135,7 @@ $ docker volume inspect verdaccio_verdaccio
 
 ```
 
-## Build your own Docker image
+## Vytvořte si vlastní Docker obraz
 
 ```bash
 docker build -t verdaccio .
