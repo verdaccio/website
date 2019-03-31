@@ -8,19 +8,19 @@ Notify was built primarily to use with Slack's Incoming webhooks, but will also 
 
 Příklad pro **HipChat**, **Stride** a **Google Hangouts Chat**:
 
-> Verdaccio supports any API, feel free to ad more examples.
+> Verdaccio podporuje jakékoliv API, klidně přidejte další příklady.
 
-#### Single notification
+#### Jedno upozornění
 
 ```yaml
 notify:
   method: POST
   headers: [{'Content-Type': 'application/json'}]
   endpoint: https://usagge.hipchat.com/v2/room/3729485/notification?auth_token=mySecretToken
-  content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
+  content: '{"color":"green","message":"Publikován nový balíček: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-#### Multiple notification
+#### Více oznámení
 
 ```yaml
 notify:
@@ -28,22 +28,22 @@ notify:
     method: POST
     headers: [{'Content-Type': 'application/json'}]
     endpoint: https://chat.googleapis.com/v1/spaces/AAAAB_TcJYs/messages?key=myKey&token=myToken
-    content: '{"text":"New package published: `{{ name }}{{#each versions}} v{{version}}{{/each}}`"}'
+    content: '{"text":"Publikován nový balíček: `{{ name }}{{#each versions}} v{{version}}{{/each}}`"}'
   'example-hipchat':
      method: POST
      headers: [{'Content-Type': 'application/json'}]
      endpoint: https://usagge.hipchat.com/v2/room/3729485/notification?auth_token=mySecretToken
-     content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
+     content: '{"color":"green","message":"Publikován nový balíček: * {{ name }}*","notify":true,"message_format":"text"}'
   'example-stride':
      method: POST
      headers: [{'Content-Type': 'application/json'}, {'authorization': 'Bearer secretToken'}]
      endpoint: https://api.atlassian.com/site/{cloudId}/conversation/{conversationId}/message
-     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
+     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "Publikován nový balíček: * {{ name }}* Jméno vydavatele: * {{ publisher.name }}"}]}]}}'     
 ```
 
-## Template
+## Šablona
 
-We use [Handlebars](https://handlebarsjs.com/) as main template engine.
+Jako hlavní šablonovací engine používáme [Handlebars](https://handlebarsjs.com/).
 
 ### Format Examples
 
@@ -56,11 +56,11 @@ We use [Handlebars](https://handlebarsjs.com/) as main template engine.
 
 ### Properties
 
-List of properties accesible via template
+Seznam vlastností dostupných pomocí šablon
 
 * Metadata
-* Publisher (who is publishing)
-* Package Published (package@1.0.0)
+* Vydavatel (kdo publikuje)
+* Balíček publikován (package@1.0.0)
 
 ### Metadata
 
