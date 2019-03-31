@@ -2,7 +2,7 @@
 id: kubernetes
 title: "Kubernetes"
 ---
-You can find instructions to deploy Verdaccio on a Kubernetes cluster on the [verdaccio/docker-example](https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example) repository. However, the recommended method to install Verdaccio on a Kubernetes cluster is to use [Helm](https://helm.sh). Helm is a [Kubernetes](https://kubernetes.io) package manager which bring multiple advantages.
+Instrukce, jak nasadit Verdaccio do Kuberneter clusteru najdete v repozitáři [verdaccio/docker-example](https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example). Nicméně doporučená metoda instalace Verdaccia do Kubernetes clusteru je pomocí [Helm](https://helm.sh). Helm je balíčkový správce pro [Kubernetes](https://kubernetes.io) což přináší mnoho výhod.
 
 ## Helm
 
@@ -16,7 +16,7 @@ helm init
 
 ### Instalace
 
-Deploy the Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio) chart. In this example we use `npm` as release name:
+Nasazení Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio) grafu. V tomto příkladu použijeme `npm` jako název releasu:
 
 ```bash
 helm install --name npm stable/verdaccio
@@ -40,11 +40,11 @@ helm upgrade npm stable/verdaccio
 helm del --purge npm
 ```
 
-**Note:** this command delete all the resources, including packages that you may have previously published to the registry.
+**Poznámka:** tento příkaz odstraní všechny prostředky včetně balíčků, které jste dříve publikovali do registru.
 
 ### Vlastní konfigurace Verdaccia
 
-You can customize the Verdaccio configuration using a Kubernetes *configMap*.
+Můžete upravit konfiguraci Verdaccia pomocí Kubernetes *configMap*.
 
 #### Příprava
 
@@ -54,7 +54,7 @@ Zkopírujte [stávající konfigurace](https://github.com/verdaccio/verdaccio/bl
 wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/full.yaml -O config.yaml
 ```
 
-**Note:** Make sure you are using the right path for the storage that is used for persistency:
+**Poznámka:** Zkontrolujte, zda používáte správnou cestu pro ukládání, která slouží pro perzistenci dat:
 
 ```yaml
 storage: /verdaccio/storage/data
@@ -73,7 +73,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 
 #### Nasazení Verdaccia
 
-Nyní můžete nasadit Verdaccio Helm chart a specifikovat, jakou konfiguraci použít:
+Nyní můžete nasadit Verdaccio Helm graf a specifikovat, jakou konfiguraci použít:
 
 ```bash
 helm install --name npm --set customConfigMap=verdaccio-config stable/verdaccio
