@@ -40,14 +40,14 @@ Zvýšení hodnoty `maxage` v každém `uplink` způsobí snížení frekvence d
 
 ## Použití paměti místo pevného disku
 
-Někdy není ukládání do mezipaměti kritickým krokem, spíše než směrování balíků z různých registrů a dosažení rychlejších časů sestavení. There are two plugins that avoid write in a phisical hardrive at all using the memory.
+Někdy není ukládání do mezipaměti kritickým krokem, spíše než směrování balíků z různých registrů a dosažení rychlejších časů sestavení. Existují dva pluginy, které se vyhnou zápisu na fyzický pevný disk pomocí paměti.
 
 ```bash
   npm install -g verdaccio-auth-memory
   npm install -g verdaccio-memory
 ```
 
-The configuration looks like this
+Konfigurace vypadá takto
 
 ```yaml
 auth:
@@ -61,4 +61,4 @@ store:
     limit: 1000
 ```
 
-Remember, once the server is restarted the data is being lost, we recomend this setup in cases where you do not need to persist at all.
+Pamatujte si, že jakmile je server restartován, data jsou ztracena, doporučujeme toto nastavení v případech, kdy není mezipaměť nutná.
