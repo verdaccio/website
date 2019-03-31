@@ -2,15 +2,15 @@
 id: logger
 title: "Logger"
 ---
-As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
+Jako všechny webové aplikace má verdaccio přizpůsobitelný vestavěný logger. Můžete definovat různé typy výstupů.
 
 ```yaml
 logs:
-  # console output
+  # výstup konzole
   - {type: stdout, format: pretty, level: http}
-  # file output
+  # výstup souboru
   - {type: file, path: verdaccio.log, level: info}
-  # Rotating log stream. Options are passed directly to bunyan. See: https://github.com/trentm/node-bunyan#stream-type-rotating-file
+  # Střídající výstup logu. Možnosti jsou předány přímo do bunyan. Navštivte: https://github.com/trentm/node-bunyan#stream-type-rotating-file
   - {type: rotating-file, format: json, path: /path/to/log.jsonl, level: http, options: {period: 1d}}
 ```
 
@@ -18,9 +18,9 @@ Use `SIGUSR2` to notify the application, the log-file was rotated and it needs t
 
 ### Configuration
 
-| Property | Type   | Required | Example                                        | Support | Description                                       |
-| -------- | ------ | -------- | ---------------------------------------------- | ------- | ------------------------------------------------- |
-| type     | string | No       | [stdout, file]                                 | all     | define the output                                 |
-| path     | string | No       | verdaccio.log                                  | all     | if type is file, define the location of that file |
-| format   | string | No       | [pretty, pretty-timestamped]                   | all     | output format                                     |
-| level    | string | No       | [fatal, error, warn, http, info, debug, trace] | all     | verbose level                                     |
+| Property | Type   | Required | Example                                        | Support | Description                                     |
+| -------- | ------ | -------- | ---------------------------------------------- | ------- | ----------------------------------------------- |
+| typ      | string | No       | [stdout, file]                                 | all     | definovat výstup                                |
+| cesta    | string | No       | verdaccio.log                                  | all     | pokud je typ soubor, definujte umístění souboru |
+| formát   | string | No       | [pretty, pretty-timestamped]                   | all     | výstupní formát                                 |
+| úroveň   | string | No       | [fatal, error, warn, http, info, debug, trace] | all     | úroveň podrobností                              |
