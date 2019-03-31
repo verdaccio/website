@@ -36,32 +36,32 @@ As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/21
 
 ## Principy skupin
 
-### The meaning of `$all` and `$anonymous`
+### Význam `$all` a `$anonymous`
 
-As you know *Verdaccio* uses the `htpasswd` by default. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
+Jak víte, *Verdaccio* používá ve výchozím nastavení `htpasswd`. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
 
 * If you are not logged in (you are anonymous), `$all` and `$anonymous` means exactly the same.
 * If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
 
-As a takeaway, `$all` **will match all users, independently whether is logged or not**.
+Nastavení `$all` **bude odpovídat všem uživatelům, přihlášeným i nepřihlášeným**.
 
 **The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
 
-Let's recap:
+Rekapitulace:
 
-* **logged**: `$all`, `$authenticated`, + groups added by the plugin
-* **anonymous (logged out)**: `$all` and `$anonymous`.
+* **logged**: `$all`, `$authenticated`, + skupiny přidané doplňkem
+* **anonymous (odhlášený)**: `$all` a `$anonymous`.
 
 ## Default htpasswd
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
+Pro zjednodušení instalace, `verdaccio` používá doplněk založený na `htpasswd`. Od verze v3.0.x je používán `verdaccio-htpasswd` jako výchozí doplněk.
 
 ```yaml
 auth:
   htpasswd:
     file: ./htpasswd
-    # Maximum amount of users allowed to register, defaults to "+inf".
-    # You can set this to -1 to disable registration.
+    # Maximální množství uživatelů, kteří se mohou registrovat, výchozí nastaveno na "+inf".
+    # Můžete nastavit -1 pro zablokování registrací.
     #max_users: 1000
 ```
 
