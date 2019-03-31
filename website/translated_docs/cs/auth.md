@@ -4,7 +4,7 @@ title: "Autentizace"
 ---
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
 
-The client authentification is handled by `npm` client itself. Once you login to the application:
+Ověření klienta provádí sám klient `npm`. Jakmile se přihlásíte do aplikace:
 
 ```bash
 npm adduser --registry http://localhost:4873
@@ -19,9 +19,9 @@ registry=http://localhost:5555/
 //registry.npmjs.org/:_authToken=secretNpmjsToken
 ```
 
-#### Anonymous publish
+#### Anonymní publikování
 
-`verdaccio`allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
+`Verdaccio` Vám umožňuje nastavit anonymní publikování. Abyste toho dosáhli, budete muset správně nastavit svůj [přístup k balíčkům](packages.md).
 
 Např.:
 
@@ -38,14 +38,14 @@ As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/21
 
 ### Význam `$all` a `$anonymous`
 
-Jak víte, *Verdaccio* používá ve výchozím nastavení `htpasswd`. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
+Jak víte, *Verdaccio* používá ve výchozím nastavení `htpasswd`. Tento doplňek neimplementuje metody `allow_access`, `allow_publish` a `allow_unpublish`. Tím pádem bude *Verdaccio* řešit tyto případy následujícím způsobem:
 
-* If you are not logged in (you are anonymous), `$all` and `$anonymous` means exactly the same.
-* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
+* Pokud nejste přihlášení (jste anonymní), `$all` a `$anonymous` znamenají to samé.
+* Pokud jste přihlášení, `$anonymous` nebude součástí Vaší skupiny a `$all` bude odpovídat jakémukoliv přihlášenému uživateli. Nová skupina `$authenticated` bude přidána do seznamu.
 
 Nastavení `$all` **bude odpovídat všem uživatelům, přihlášeným i nepřihlášeným**.
 
-**The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
+**The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio nastaví pouze výchozí skupiny.
 
 Rekapitulace:
 
