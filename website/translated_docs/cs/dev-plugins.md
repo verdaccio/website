@@ -125,7 +125,7 @@ function register_middlewares(expressApp, authInstance, storageInstance) {
 
 To register a middleware we need an object with a single method called `register_middlewares` that will recieve 3 arguments (`expressApp, auth, storage`). *Auth* is the authentification instance and *storage* is also the main Storage instance that will give you have access to all to the storage actions.
 
-## Storage Plugin
+## Doplněk Úložiště
 
 Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), but, since `verdaccio@3.x` you can plug in a custom storage replacing the default behaviour.
 
@@ -183,7 +183,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 
 > The Storage API is still experimental and might change in the next minor versions. For further information about Storage API please follow the [types definitions in our official repository](https://github.com/verdaccio/flow-types).
 
-### Storage Plugins Examples
+### Příklady Doplňků Úložiště
 
 The following list of plugins are implementing the Storage API and might be used them as example.
 
