@@ -67,7 +67,7 @@ auth:
 
 | Property  | Type   | Required | Example    | Support | Description                              |
 | --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
-| file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
+| file      | string | Ano      | ./htpasswd | all     | file that host the encrypted credentials |
 | max_users | number | No       | 1000       | all     | set limit of users                       |
 
 In case to decide do not allow user to login, you can set `max_users: -1`.
