@@ -1,12 +1,12 @@
 ---
-id: notifications
-title: "Notifications"
+id: upozornění
+title: "Upozornění"
 ---
 Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
 
-## Usage
+## Použití
 
-An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
+Příklad pro **HipChat**, **Stride** a **Google Hangouts Chat**:
 
 > Verdaccio supports any API, feel free to ad more examples.
 
@@ -146,7 +146,7 @@ You can access to the package is being published with the keyword `{{publishedPa
     {{ publisher.name }} has published {{ publishedPackage }}
     
 
-## Configuration
+## Konfigurace
 
 | Property            | Type         | Required | Support | Default | Description                                                                                  |
 | ------------------- | ------------ | -------- | ------- | ------- | -------------------------------------------------------------------------------------------- |
