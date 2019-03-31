@@ -32,7 +32,7 @@ Odhadovaná cena malé instance za měsíc (v us-east-1): * ALB (1 LCU průměr)
 
 ## ECS
 
-You can deploy Verdaccio as a task with an [ECS Volume](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) for persistent storage.
+Verdaccio lze nasadit jako task v [ECS Volume](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) pro trvalé uložení.
 
 Poznámka: Fargate nepodporuje trvalé svazky, takže budete muset použít doplněk pro úložiště S3.
 
