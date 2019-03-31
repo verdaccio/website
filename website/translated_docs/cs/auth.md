@@ -2,7 +2,7 @@
 id: autentizace
 title: "Autentizace"
 ---
-The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
+Ověření je svázené s [doplňkem](plugins.md) pro ověření, který používáte. Omezení balíčků je též zpracování v [Přístupu k balíčkům](packages.md).
 
 Ověření klienta provádí sám klient `npm`. Jakmile se přihlásíte do aplikace:
 
@@ -10,7 +10,7 @@ Ověření klienta provádí sám klient `npm`. Jakmile se přihlásíte do apli
 npm adduser --registry http://localhost:4873
 ```
 
-A token is generated in the `npm` configuration file hosted in your user home folder. Pro více informací o `.npmrc` si přečtěte [oficiální dokumentaci](https://docs.npmjs.com/files/npmrc).
+Token je vygenerovaný v konfiguračním souboru `npm` hostovaném ve Vaší domovské složce uživatele. Pro více informací o `.npmrc` si přečtěte [oficiální dokumentaci](https://docs.npmjs.com/files/npmrc).
 
 ```bash
 cat .npmrc
@@ -45,7 +45,7 @@ Jak víte, *Verdaccio* používá ve výchozím nastavení `htpasswd`. Tento dop
 
 Nastavení `$all` **bude odpovídat všem uživatelům, přihlášeným i nepřihlášeným**.
 
-**The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio nastaví pouze výchozí skupiny.
+**Výše popsané chování se vztahuje pouze na výchozí doplněk pro ověřovaní**. Pokud používáte vlastní doplněk a tento doplněk implementuje použití `allow_access`, `allow_publish` nebo `allow_unpublish`, řešení přístupu závisí na plugin samotném. Verdaccio nastaví pouze výchozí skupiny.
 
 Rekapitulace:
 
