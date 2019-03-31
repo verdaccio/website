@@ -1,5 +1,5 @@
 ---
-id: installation
+id: instalace
 title: "Installation"
 ---
 Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
@@ -14,7 +14,7 @@ Verdaccio is a multiplatform web application. To install it, you need a few prer
 
 > Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
 
-## Installing the CLI
+## Instalace CLI
 
 `verdaccio` must be installed globaly using either of the following methods:
 
@@ -32,7 +32,7 @@ yarn global add verdaccio
 
 ![install verdaccio](assets/install_verdaccio.gif)
 
-## Basic Usage
+## Základní použití
 
 Once it has been installed, you only need to execute the CLI command:
 
