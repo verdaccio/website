@@ -64,9 +64,9 @@ auth:
 
 <small>Od: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-Blok zabezpečení umožňuje přizpůsobit podpis tokenu. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+Blok zabezpečení umožňuje přizpůsobit podpis tokenu. Chcete-li povolit nový [JWT (json webový token)](https://jwt.io/) podpis, je nutné přidat blok `jwt` do sekce `api`, `web` používá jako výchozí `jwt`.
 
-Konfigurace je rozdělena do dvou sekcí, `api` a `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+Konfigurace je rozdělena do dvou sekcí, `api` a `web`. Pro použití JWT v `api` musí být definován, jinak bude používat starší podpis tokenu (`aes192`). Pro JWT můžete přizpůsobit [ověření](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) [podpisu](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) a tokenu vlastními parametry.
 
     security:
       api:
@@ -83,13 +83,13 @@ Konfigurace je rozdělena do dvou sekcí, `api` a `web`. To use JWT on `api`, it
             someProp: [value]
     
 
-> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+> Doporučujeme přejít na JWT, protože starší podpis (`aes192`) je zastaralý a v budoucích verzích zmizí.
 
 ### Server
 
-A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+Sada vlastností ke změně chování serverové aplikace, konkrétně rozhraní API (Express.js).
 
-> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Nastavte na 0 v případě, že 60 není dostatečné.
+> Můžete nastavit, jak dlouho má server držet aktivní příchozí spojení v sekundách pro HTTP/1.1. Hodnota 0 způsobuje, že se http server chová podobně jako Node.js před verzí 8.0.0, která neměla časový limit pro zachování. Možné řešení: Prostřednictvím dané konfigurace můžete vyřešit následující problém https://github.com/verdaccio/verdaccio/issues/301. Nastavte na 0 v případě, že 60 není dostatečné.
 
 ```yaml
 server:
@@ -98,7 +98,7 @@ server:
 
 ### Web UI
 
-This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
+Tato vlastnost umožňuje změnit vzhled webového uživatelského rozhraní. Další informace o této části naleznete na stránce [web ui](web.md).
 
 ```yaml
 web:
@@ -120,7 +120,7 @@ uplinks:
 
 ### Packages
 
-Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
+Balíčky umožňují uživateli kontrolovat, jak budou balíčky zpřístupněny. Další informace o této sekci naleznete na [stránce balíků](packages.md).
 
 ```yaml
 packages:
