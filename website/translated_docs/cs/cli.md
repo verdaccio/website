@@ -2,7 +2,7 @@
 id: cli
 title: "Nástroj Příkazové Řádky"
 ---
-The verdaccio CLI is your go start the application.
+Chcete-li spustit aplikaci, použijte Verdaccio CLI.
 
 ## Příkazy
 
