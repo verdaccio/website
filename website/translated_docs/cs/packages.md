@@ -1,6 +1,6 @@
 ---
-id: packages
-title: "Package Access"
+id: balíčky
+title: "Přístup k balíčkům"
 ---
 It's a series of contraints that allow or restrict access to the local storage based in specific criteria.
 
@@ -8,7 +8,7 @@ The security constraints remain on the shoulders of the plugin being used, by de
 
 For more information about permissions visit [the authentification section in the wiki](auth.md).
 
-### Usage
+### Použití
 
 ```yalm
 packages:
@@ -165,7 +165,7 @@ In the previous example, the behaviour would be described:
 * only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
 * If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
 
-### Configuration
+### Konfigurace
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
