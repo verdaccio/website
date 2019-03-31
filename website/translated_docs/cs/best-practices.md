@@ -1,16 +1,16 @@
 ---
-id: best
-title: "Best Practices"
+id: osvědčené
+title: "Osvědčené postupy"
 ---
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+Následující příručka obsahuje seznam nejlepších praktických postupů, které obvykle doporučujeme všem uživatelům. Neberte tuto příručku jako povinnou, vyberte si podle svých potřeb.
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Své osvědčené postupy můžete sdílet s komunitou Verdaccio**.
 
-## Private Registry
+## Soukromý registr
 
 You can add users and manage which users can access which packages.
 
-It is recommended that you define a prefix for your private packages, for example `local-*` or scoped `@my-company/*`, so all your private things will look like this: `local-foo`. This way you can clearly separate public packages from private ones.
+Doporučujeme, abyste definovali předponu pro vaše soukromé balíčky, například `local-*` nebo `@my-company/*`, takže všechny vaše soukromé balíčky budou vypadat takto: `local-foo`. This way you can clearly separate public packages from private ones.
 
     yaml
       packages:
@@ -27,7 +27,7 @@ It is recommended that you define a prefix for your private packages, for exampl
           access: $all
           publish: $authenticated
 
-Always remember, **the order of packages access is important**, packages are mached always top to bottom.
+Vždy si pamatujte, že **pořadí přístupu k balíčkům je důležité**, balíčky jsou vždy porovnávány shora dolů.
 
 ### Using public packages from npmjs.org
 
@@ -69,11 +69,11 @@ There's two options here:
     
     This way your package will be used until its original maintainer updates his public package to `0.1.3`.
 
-## Security
+## Bezpečnost
 
 The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recomendations.
 
-### Package Access
+### Přístup k balíčkům
 
 By default all packages are you publish in Verdaccio are accessible for all public, we totally recommend protect your registry from external non authorized users updating `access` property to `$authenticated`.
 
