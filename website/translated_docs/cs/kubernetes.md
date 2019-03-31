@@ -14,7 +14,7 @@ If you haven't used Helm before, you need to setup the Helm controller called Ti
 helm init
 ```
 
-### Install
+### Instalace
 
 Deploy the Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio) chart. In this example we use `npm` as release name:
 
@@ -28,13 +28,13 @@ helm install --name npm stable/verdaccio
 helm install --name npm --set image.tag=2.6.5 stable/verdaccio
 ```
 
-### Upgrading Verdaccio
+### Aktualizace Verdaccia
 
 ```bash
 helm upgrade npm stable/verdaccio
 ```
 
-### Uninstalling
+### Odinstalace
 
 ```bash
 helm del --purge npm
