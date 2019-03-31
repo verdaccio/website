@@ -6,9 +6,9 @@ You can find instructions to deploy Verdaccio on a Kubernetes cluster on the [ve
 
 ## Helm
 
-### Setup Helm
+### Nastavení Helm
 
-If you haven't used Helm before, you need to setup the Helm controller called Tiller:
+Pokud jste ještě nepoužívali Help, budete muset nastavit ovladač pro Helm jménem Tiller:
 
 ```bash
 helm init
@@ -22,7 +22,7 @@ Deploy the Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/mas
 helm install --name npm stable/verdaccio
 ```
 
-### Deploy a specific version
+### Nasazení specifické verze
 
 ```bash
 helm install --name npm --set image.tag=2.6.5 stable/verdaccio
@@ -42,13 +42,13 @@ helm del --purge npm
 
 **Note:** this command delete all the resources, including packages that you may have previously published to the registry.
 
-### Custom Verdaccio configuration
+### Vlastní konfigurace Verdaccia
 
 You can customize the Verdaccio configuration using a Kubernetes *configMap*.
 
-#### Prepare
+#### Příprava
 
-Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/full.yaml) and adapt it for your use case:
+Zkopírujte [stávající konfigurace](https://github.com/verdaccio/verdaccio/blob/master/conf/full.yaml) a přizpůsobte ji pro váše použití:
 
 ```bash
 wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/full.yaml -O config.yaml
@@ -63,24 +63,24 @@ auth:
     file: /verdaccio/storage/htpasswd
 ```
 
-#### Deploy the configMap
+#### Nasazení configMap
 
-Deploy the `configMap` to the cluster
+Nasaďte `configMap` do clusteru
 
 ```bash
 kubectl create configmap verdaccio-config --from-file ./config.yaml
 ```
 
-#### Deploy Verdaccio
+#### Nasazení Verdaccia
 
-Now you can deploy the Verdaccio Helm chart and specify which configuration to use:
+Nyní můžete nasadit Verdaccio Helm chart a specifikovat, jakou konfiguraci použít:
 
 ```bash
 helm install --name npm --set customConfigMap=verdaccio-config stable/verdaccio
 ```
 
-## Rancher Support
+## Podpora Rancher
 
-[Rancher](http://rancher.com/) is a complete container management platform that makes managing and using containers in production really easy.
+[Rancher](http://rancher.com/) je platforma pro kompletní správu kontejnerů která nabízí velice jednoduchou správu a používání kontejnerá na produkci.
 
 * [verdaccio-rancher](https://github.com/lgaticaq/verdaccio-rancher)
