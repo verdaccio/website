@@ -1,10 +1,10 @@
 ---
-id: what-is-verdaccio
-title: "What is Verdaccio?"
+id: co-je-verdaccio
+title: "Co je Verdaccio?"
 ---
-Verdaccio is a **lightweight private npm proxy registry** built in **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+Verdaccio je **jednoduchý soukromý npm proxy registr** založená na **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-## What's a registry
+## Co je registr
 
 * A repository for packages that implements the **CommonJS Compliant Package Registry specification** for reading package info
 * Provide an API compatible with npm clients **(yarn/npm/pnpm)**
@@ -13,13 +13,13 @@ Verdaccio is a **lightweight private npm proxy registry** built in **Node.js** <
     $> verdaccio
     
 
-![registry](assets/verdaccio_server.gif)
+![registr](assets/verdaccio_server.gif)
 
-## Using Verdaccio
+## Pužívání Verdaccia
 
 Using verdaccio with any node package manager client is quite straightforward.
 
-![registry](assets/npm_install.gif)
+![registr](assets/npm_install.gif)
 
 You can use a custom registry either setting globally for all your projects
 
@@ -31,22 +31,22 @@ or by command line as argument `--registry` in npm (slightly different in yarn)
     npm install lodash --registry http://localhost:4873
     
 
-## Private
+## Soukromí
 
-All packages that you publish are private and only accessible based in your configuration.
+Všechny balíčky které publikujete jsou soukromé a dostupné pouze na základě Vaší konfigurace.
 
 ## Proxy
 
 Verdaccio cache all dependencies by demand and speed up installations in local or private networks.
 
-## Verdaccio in a nutshell
+## Verdaccio ve zkratce
 
-* It's a web app based on Node.js
-* It's a private npm registry
+* Webová aplikace založená na Node.js
+* Soukromý npm registr
 * It's a local network proxy
 * It's a Pluggable application
-* It's a fairly easy install and use
-* We offer Docker and Kubernetes support
-* It is 100% compatible with yarn, npm and pnpm
+* Jednoduchá na instalaci a použití
+* Nabízíme podporu pro Docker a Kubernetes
+* 100% kompatibilní s yarn, npm a pnpm
 * It was **forked** based on `sinopia@1.4.0` and 100% **backward compatible**.
 * Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
