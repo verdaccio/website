@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Další",
     "previous": "Předchozí",
-    "tagline": "A lightweight private npm proxy registry",
+    "tagline": "Jednoduchý soukromý npm proxy registr",
     "docs": {
       "amazon": {
         "title": "Amazon Web Services"
@@ -15,7 +15,7 @@
         "title": "Articles"
       },
       "authentification": {
-        "title": "Authentification"
+        "title": "Autentizace"
       },
       "azure": {
         "title": "Windows Azure"
@@ -96,7 +96,7 @@
         "title": "Server Configuration"
       },
       "ssl": {
-        "title": "Set up the SSL Certificates"
+        "title": "Nastavení SSL certifikátu"
       },
       "talks": {
         "title": "Talks"
@@ -120,7 +120,7 @@
         "title": "Ansible"
       },
       "version-3.8.6-authentification": {
-        "title": "Authentification"
+        "title": "Autentizace"
       },
       "version-3.8.6-build": {
         "title": "Build the source code"
@@ -189,7 +189,7 @@
         "title": "Server Configuration"
       },
       "version-3.8.6-ssl": {
-        "title": "Set up the SSL Certificates"
+        "title": "Nastavení SSL certifikátu"
       },
       "version-3.8.6-unit-testing": {
         "title": "Unit Testing"
@@ -282,7 +282,7 @@
         "title": "Articles"
       },
       "version-4.0.0-alpha.5-authentification": {
-        "title": "Authentification"
+        "title": "Autentizace"
       },
       "version-4.0.0-alpha.5-best": {
         "title": "Best Practices"
@@ -332,10 +332,10 @@
       "Notes": "Poznámky",
       "Blog": "Blog",
       "Twitter": "Twitter",
-      "Help": "Help",
+      "Help": "Pomoc",
       "GitHub": "GitHub",
       "Team": "Tým",
-      "Donate": "Donate"
+      "Donate": "Podpořit"
     },
     "categories": {
       "Introduction": "Úvod",
@@ -343,28 +343,28 @@
       "Server": "Server",
       "Development": "Vývoj",
       "DevOps": "DevOps",
-      "Guides": "Guides",
+      "Guides": "Návody",
       "Configuration": "Configuration",
       "Plugins": "Plugins"
     }
   },
   "pages-strings": {
-    "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Learn more using the [documentation on this site.](/docs/en/installation.html)",
-    "Browse Docs|no description given": "Browse Docs",
-    "Ask questions about the documentation and project|no description given": "Ask questions about the documentation and project",
-    "Join the community|no description given": "Join the community",
+    "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Zjištěte více pomocí [documentation on this site.](/docs/en/installation.html)",
+    "Browse Docs|no description given": "Procházet dokumentaci",
+    "Ask questions about the documentation and project|no description given": "Položit otázku o dokumentaci nebo projektu",
+    "Join the community|no description given": "Přidejte se ke komunitě",
     "Find out what's new with this project|no description given": "Zjistěte, co je nového v tomto projektu",
-    "Stay up to date|no description given": "Stay up to date",
-    "Need help?|no description given": "Need help?",
-    "This project is maintained by a dedicated group of people.|statement made to reader": "This project is maintained by a dedicated group of people.",
-    "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)|no description given": "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)",
-    "You can follow and contact us on|no description given": "You can follow and contact us on",
-    "and also you can chat with the Verdaccio community at|no description given": "and also you can chat with the Verdaccio community at",
-    "If the documentation is not enough help, you can try browsing into our|no description given": "If the documentation is not enough help, you can try browsing into our",
-    "This project is maintained by the Verdaccio community.|no description given": "This project is maintained by the Verdaccio community.",
-    "Get Started|no description given": "Get Started",
-    "Contribute|no description given": "Contribute",
-    "That’s it ! Enjoy your private package manager.|no description given": "That’s it ! Enjoy your private package manager.",
+    "Stay up to date|no description given": "Zůstaňte aktuální",
+    "Need help?|no description given": "Potřebujete pomoc?",
+    "This project is maintained by a dedicated group of people.|statement made to reader": "Tento projekt je spravovaný dedikovanou skupinou lidí.",
+    "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)|no description given": "Zjištěte více o Verdaccio pomocí [documentation on this site.](/docs/en/installation.html)",
+    "You can follow and contact us on|no description given": "Můžete nás sledovat a kontaktovat na",
+    "and also you can chat with the Verdaccio community at|no description given": "a také můžete chatovat s Verdaccio komunitou na",
+    "If the documentation is not enough help, you can try browsing into our|no description given": "Pokud v dokumentaci není informace, kterou hledáte, můžete se zkusit podívat na naše",
+    "This project is maintained by the Verdaccio community.|no description given": "Tento projekt je spravován komunitou Verdaccio.",
+    "Get Started|no description given": "Začít",
+    "Contribute|no description given": "Přispět",
+    "That’s it ! Enjoy your private package manager.|no description given": "To je vše! Užijte si svůj soukromý manažer balíčků.",
     "Many great developers are already enjoying Verdaccio, join the community!|no description given": "Many great developers are already enjoying Verdaccio, join the community!",
     "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.|no description given": "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.",
     "The most popular npm clients are supported|no description given": "The most popular npm clients are supported",
@@ -382,6 +382,6 @@
     "Add your company|no description given": "Přidat vaši firmu",
     "Help Translate|recruit community translators for your project": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
-    "Translate this Doc|recruitment message asking to translate the docs": "Translate"
+    "Translate this Doc|recruitment message asking to translate the docs": "Přeložte"
   }
 }
