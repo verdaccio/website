@@ -10,7 +10,7 @@ The client authentification is handled by `npm` client itself. Once you login to
 npm adduser --registry http://localhost:4873
 ```
 
-A token is generated in the `npm` configuration file hosted in your user home folder. For more information about `.npmrc` read the [official documentation](https://docs.npmjs.com/files/npmrc).
+A token is generated in the `npm` configuration file hosted in your user home folder. Pro více informací o `.npmrc` si přečtěte [oficiální dokumentaci](https://docs.npmjs.com/files/npmrc).
 
 ```bash
 cat .npmrc
@@ -23,7 +23,7 @@ registry=http://localhost:5555/
 
 `verdaccio`allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
 
-Eg:
+Např.:
 
 ```yaml
   'my-company-*':
@@ -34,7 +34,7 @@ Eg:
 
 As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) until `npm@5.3.0` and all minor releases **won't allow you publish without a token**.
 
-## Understanding Groups
+## Principy skupin
 
 ### The meaning of `$all` and `$anonymous`
 
@@ -65,9 +65,9 @@ auth:
     #max_users: 1000
 ```
 
-| Property  | Type   | Required | Example    | Support | Description                              |
-| --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
-| file      | string | Ano      | ./htpasswd | all     | file that host the encrypted credentials |
-| max_users | number | No       | 1000       | all     | set limit of users                       |
+| Vlastnost | Typ     | Požadované | Příklad    | Podpora | Popis                                               |
+| --------- | ------- | ---------- | ---------- | ------- | --------------------------------------------------- |
+| file      | řetězec | Ano        | ./htpasswd | všechny | soubor, který obsahuje šifrované přihlašovací údaje |
+| max_users | číslo   | Ne         | 1000       | všechny | nastavit limit uživatelů                            |
 
 In case to decide do not allow user to login, you can set `max_users: -1`.
