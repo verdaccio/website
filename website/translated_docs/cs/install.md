@@ -2,9 +2,9 @@
 id: instalace
 title: "Installation"
 ---
-Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
+Verdaccio je multiplatformová webová aplikace. Chcete-li jej nainstalovat, potřebujete splnit několik předpokladů.
 
-#### Prerequisites
+#### Předpoklady
 
 1. Verze Node vyšší než 
     - Pro verzi `verdaccio@3.x` je zapotřebí minimální verze Node `v6.12`.
@@ -34,7 +34,7 @@ yarn global add verdaccio
 
 ## Základní použití
 
-Once it has been installed, you only need to execute the CLI command:
+Po instalaci stačí provést CLI příkaz:
 
 ```bash
 $> verdaccio
