@@ -51,7 +51,7 @@ plugins: ./plugins
 
 ### Autentizace
 
-The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
+Ověření se nastavuje zde, výchozí ověření je na základě `htpasswd` a je vestavěné. Toto chování můžete zmenit v [doplňky](plugins.md). Pro více informací o této sekci si přečtěte [ověřovací stránka](auth.md).
 
 ```yaml
 auth:
@@ -60,13 +60,13 @@ auth:
     max_users: 1000
 ```
 
-### Security
+### Bezpečnost
 
-<small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Od: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
 The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
 
-The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+Konfigurace je rozdělena do dvou sekcí, `api` a `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
 
     security:
       api:
@@ -78,7 +78,7 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
             someProp: [value]
        web:
          sign:
-           expiresIn: 7d # 7 days by default
+           expiresIn: 7d # Výchozí hodnota 7 dní
          verify:
             someProp: [value]
     
@@ -89,7 +89,7 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
 
 A set of properties to modify the behavior of the server application, specifically the API (Express.js).
 
-> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Nastavte na 0 v případě, že 60 není dostatečné.
 
 ```yaml
 server:
@@ -130,7 +130,7 @@ packages:
     proxy: npmjs
 ```
 
-## Advanced Settings
+## Pokročilá Nastavení
 
 ### Offline Publish
 
@@ -188,7 +188,7 @@ https:
 
 Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
-#### http_proxy and https_proxy
+#### http_proxy a https_proxy
 
 If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
 
