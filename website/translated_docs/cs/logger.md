@@ -14,9 +14,9 @@ logs:
   - {type: rotating-file, format: json, path: /path/to/log.jsonl, level: http, options: {period: 1d}}
 ```
 
-Použijte `SIGUSR2` pro upozornění aplikace, že se vystřídal soubor logu a je třeba jej znovu otevřít. Poznámka: Střídající se výstup logu není podporován v režimu clusteru. [See here](https://github.com/trentm/node-bunyan#stream-type-rotating-file)
+Použijte `SIGUSR2` pro upozornění aplikace, že se vystřídal soubor logu a je třeba jej znovu otevřít. Poznámka: Střídající se výstup logu není podporován v režimu clusteru. [Navštivte zde](https://github.com/trentm/node-bunyan#stream-type-rotating-file)
 
-### Configuration
+### Konfigurace
 
 | Property | Type   | Required | Example                                        | Support | Description                                     |
 | -------- | ------ | -------- | ---------------------------------------------- | ------- | ----------------------------------------------- |
