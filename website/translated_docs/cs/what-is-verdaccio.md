@@ -26,7 +26,7 @@ You can use a custom registry either setting globally for all your projects
     npm set registry http://localhost:4873
     
 
-or by command line as argument `--registry` in npm (slightly different in yarn)
+nebo jako argument `--registry` v příkazové řádce v nmp (mírně odlišné v yarn)
 
     npm install lodash --registry http://localhost:4873
     
@@ -37,16 +37,16 @@ Všechny balíčky které publikujete jsou soukromé a dostupné pouze na zákla
 
 ## Proxy
 
-Verdaccio cache all dependencies by demand and speed up installations in local or private networks.
+Verdaccio ukládá do mezipaměti veškeré závislosti podle poptávky a zrychluje tím instalaci na lokálních a soukromých sítích.
 
 ## Verdaccio ve zkratce
 
 * Webová aplikace založená na Node.js
 * Soukromý npm registr
-* It's a local network proxy
+* Je to místní síťová proxy
 * It's a Pluggable application
 * Jednoduchá na instalaci a použití
 * Nabízíme podporu pro Docker a Kubernetes
 * 100% kompatibilní s yarn, npm a pnpm
-* It was **forked** based on `sinopia@1.4.0` and 100% **backward compatible**.
+* Byl **forked** z `sinopia@1.4.0` a je 100% **zpětně kompatibilní**.
 * Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
