@@ -18,9 +18,9 @@ Použijte `SIGUSR2` pro upozornění aplikace, že se vystřídal soubor logu a 
 
 ### Konfigurace
 
-| Property | Type   | Required | Example                                        | Support | Description                                     |
-| -------- | ------ | -------- | ---------------------------------------------- | ------- | ----------------------------------------------- |
-| typ      | string | No       | [stdout, file]                                 | all     | definovat výstup                                |
-| cesta    | string | No       | verdaccio.log                                  | all     | pokud je typ soubor, definujte umístění souboru |
-| formát   | string | No       | [pretty, pretty-timestamped]                   | all     | výstupní formát                                 |
-| úroveň   | string | No       | [fatal, error, warn, http, info, debug, trace] | all     | úroveň podrobností                              |
+| Vlastnost | Typ     | Požadované | Příklad                                        | Podpora | Popis                                           |
+| --------- | ------- | ---------- | ---------------------------------------------- | ------- | ----------------------------------------------- |
+| typ       | řetězec | Ne         | [stdout, file]                                 | všechny | definovat výstup                                |
+| cesta     | řetězec | Ne         | verdaccio.log                                  | všechny | pokud je typ soubor, definujte umístění souboru |
+| formát    | řetězec | Ne         | [pretty, pretty-timestamped]                   | všechny | výstupní formát                                 |
+| úroveň    | řetězec | Ne         | [fatal, error, warn, http, info, debug, trace] | všechny | úroveň podrobností                              |
