@@ -12,7 +12,7 @@
         "title": "Ansible"
       },
       "articles": {
-        "title": "Articles"
+        "title": "Články"
       },
       "authentification": {
         "title": "Autentizace"
@@ -21,10 +21,10 @@
         "title": "Windows Azure"
       },
       "best": {
-        "title": "Best Practices"
+        "title": "Osvědčené postupy"
       },
       "caching": {
-        "title": "Caching strategies"
+        "title": "Strategie ukládání do mezipaměti"
       },
       "chef": {
         "title": "Chef Cookbook"
@@ -33,10 +33,10 @@
         "title": "Continuous Integration"
       },
       "cli": {
-        "title": "Command Line Tool"
+        "title": "Nástroj Příkazové Řádky"
       },
       "configuration": {
-        "title": "Configuration File"
+        "title": "Konfigurační Soubor"
       },
       "dev-plugins": {
         "title": "Developing Plugins"
@@ -54,7 +54,7 @@
         "title": "Google Cloud"
       },
       "iss-server": {
-        "title": "Installing on IIS server"
+        "title": "Instalace na IIS serveru"
       },
       "installation": {
         "title": "Installation"
@@ -75,10 +75,10 @@
         "title": "Node API"
       },
       "notifications": {
-        "title": "Notifications"
+        "title": "Upozornění"
       },
       "packages": {
-        "title": "Package Access"
+        "title": "Přístup k balíčkům"
       },
       "plugins": {
         "title": "Plugins"
@@ -99,16 +99,16 @@
         "title": "Nastavení SSL certifikátu"
       },
       "talks": {
-        "title": "Talks"
+        "title": "Rozhovory"
       },
       "uplinks": {
         "title": "Uplinks"
       },
       "webui": {
-        "title": "Web User Interface"
+        "title": "Webové uživatelské rozhraní"
       },
       "what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Co je Verdaccio?"
       },
       "who-is-using": {
         "title": "Kdo používá Verdaccio?"
@@ -132,10 +132,10 @@
         "title": "Continuous Integration"
       },
       "version-3.8.6-cli": {
-        "title": "Command Line Tool"
+        "title": "Nástroj Příkazové Řádky"
       },
       "version-3.8.6-configuration": {
-        "title": "Configuration File"
+        "title": "Konfigurační Soubor"
       },
       "version-3.8.6-contributing": {
         "title": "Contributing Verdaccio"
@@ -147,7 +147,7 @@
         "title": "Docker"
       },
       "version-3.8.6-iss-server": {
-        "title": "Installing on IIS server"
+        "title": "Instalace na IIS serveru"
       },
       "version-3.8.6-installation": {
         "title": "Installation"
@@ -165,10 +165,10 @@
         "title": "Node API"
       },
       "version-3.8.6-notifications": {
-        "title": "Notifications"
+        "title": "Upozornění"
       },
       "version-3.8.6-packages": {
-        "title": "Package Access"
+        "title": "Přístup k balíčkům"
       },
       "version-3.8.6-plugins": {
         "title": "Plugins"
@@ -201,25 +201,25 @@
         "title": "Use Cases"
       },
       "version-3.8.6-webui": {
-        "title": "Web User Interface"
+        "title": "Webové uživatelské rozhraní"
       },
       "version-3.8.6-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Co je Verdaccio?"
       },
       "version-3.8.6-windows": {
         "title": "Instalovat jako Windows službu"
       },
       "version-4.0.0-alpha.3-cli": {
-        "title": "Command Line Tool"
+        "title": "Nástroj Příkazové Řádky"
       },
       "version-4.0.0-alpha.3-configuration": {
-        "title": "Configuration File"
+        "title": "Konfigurační Soubor"
       },
       "version-4.0.0-alpha.3-uplinks": {
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.3-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Co je Verdaccio?"
       },
       "version-4.0.0-alpha.4-amazon": {
         "title": "Amazon Web Services"
@@ -228,13 +228,13 @@
         "title": "Windows Azure"
       },
       "version-4.0.0-alpha.4-best": {
-        "title": "Best Practices"
+        "title": "Osvědčené postupy"
       },
       "version-4.0.0-alpha.4-caching": {
-        "title": "Caching strategies"
+        "title": "Strategie ukládání do mezipaměti"
       },
       "version-4.0.0-alpha.4-configuration": {
-        "title": "Configuration File"
+        "title": "Konfigurační Soubor"
       },
       "version-4.0.0-alpha.4-dev-plugins": {
         "title": "Developing Plugins"
@@ -249,7 +249,7 @@
         "title": "Google Cloud"
       },
       "version-4.0.0-alpha.4-iss-server": {
-        "title": "Installing on IIS server"
+        "title": "Instalace na IIS serveru"
       },
       "version-4.0.0-alpha.4-linking-registries": {
         "title": "Linking Regiestries"
@@ -261,10 +261,10 @@
         "title": "Node API"
       },
       "version-4.0.0-alpha.4-notifications": {
-        "title": "Notifications"
+        "title": "Upozornění"
       },
       "version-4.0.0-alpha.4-packages": {
-        "title": "Package Access"
+        "title": "Přístup k balíčkům"
       },
       "version-4.0.0-alpha.4-scopes": {
         "title": "Understanding Scopes"
@@ -273,25 +273,25 @@
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.4-webui": {
-        "title": "Web User Interface"
+        "title": "Webové uživatelské rozhraní"
       },
       "version-4.0.0-alpha.4-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Co je Verdaccio?"
       },
       "version-4.0.0-alpha.5-articles": {
-        "title": "Articles"
+        "title": "Články"
       },
       "version-4.0.0-alpha.5-authentification": {
         "title": "Autentizace"
       },
       "version-4.0.0-alpha.5-best": {
-        "title": "Best Practices"
+        "title": "Osvědčené postupy"
       },
       "version-4.0.0-alpha.5-caching": {
-        "title": "Caching strategies"
+        "title": "Strategie ukládání do mezipaměti"
       },
       "version-4.0.0-alpha.5-configuration": {
-        "title": "Configuration File"
+        "title": "Konfigurační Soubor"
       },
       "version-4.0.0-alpha.5-dev-plugins": {
         "title": "Developing Plugins"
@@ -312,16 +312,16 @@
         "title": "Linking a Remote Registry"
       },
       "version-4.0.0-alpha.5-packages": {
-        "title": "Package Access"
+        "title": "Přístup k balíčkům"
       },
       "version-4.0.0-alpha.5-talks": {
-        "title": "Talks"
+        "title": "Rozhovory"
       },
       "version-4.0.0-alpha.5-uplinks": {
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.5-webui": {
-        "title": "Web User Interface"
+        "title": "Webové uživatelské rozhraní"
       },
       "version-4.0.0-alpha.5-who-is-using": {
         "title": "Kdo používá Verdaccio?"
