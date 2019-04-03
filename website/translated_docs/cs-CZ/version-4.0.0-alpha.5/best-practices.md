@@ -1,17 +1,17 @@
 ---
 id: version-4.0.0-alpha.5-best
-title: Best Practices
-original_id: best
+title: Osvědčené postupy
+original_id: osvědčené
 ---
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+Následující příručka obsahuje seznam nejlepších praktických postupů, které obvykle doporučujeme všem uživatelům. Neberte tuto příručku jako povinnou, vyberte si podle svých potřeb.
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Své osvědčené postupy můžete sdílet s komunitou Verdaccio**.
 
-## Private Registry
+## Soukromý registr
 
 You can add users and manage which users can access which packages.
 
-It is recommended that you define a prefix for your private packages, for example `local-*` or scoped `@my-company/*`, so all your private things will look like this: `local-foo`. This way you can clearly separate public packages from private ones.
+Doporučujeme, abyste definovali předponu pro vaše soukromé balíčky, například `local-*` nebo `@my-company/*`, takže všechny vaše soukromé balíčky budou vypadat takto: `local-foo`. This way you can clearly separate public packages from private ones.
 
 ```yaml
   packages:
@@ -99,13 +99,13 @@ In that way, **nobody will take advance of your registry unless is authorized an
 
 ## Server
 
-### Secured Connections
+### Zabezpečená připojení
 
-Using **HTTPS** is a common recomendation, for such reason we recommend read the [SSL](ssl.md) section to make Verdaccio secure or using a HTTPS [reverse proxy](reverse-proxy.md) on top of Verdaccio.
+Používání ** HTTPS ** je běžným doporučením, z tohoto důvodu doporučujeme přečíst si sekci [SSL](ssl.md), abyste mohli Verdaccio zabezpečit nebo používat HTTPS[reverse proxy](reverse-proxy.md) nad Verdaccio.
 
-### Expiring Tokens
+### Platnost tokenů
 
-In `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+Ve `verdaccio@3.x` nemají tokeny datum vypršení platnosti. Z tohoto důvodu jsme přidali v další verzi "verdaccio@4.x" funkci JWT [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
@@ -119,8 +119,8 @@ security:
       expiresIn: 7d
 ```
 
-**Using this configuration will override the current system and you will be able to control how long the token will live**.
+**Použití této konfigurace přepíše současný systém a budete moci řídit, jak dlouho bude token platný**.
 
-Using JWT also improves the performance with authentication plugins, the old system will perform an unpackage and validating the credentials in each request, while JWT will rely on the token signature avoiding the overhead for the plugin.
+Použití JWT také zlepšuje výkon s autentizačními pluginy, starý systém bude provádět rozbalování a ověřování pověření v každém požadavku, zatímco JWT bude spoléhat na podpis tokenu, který se vyhne režii pro plugin.
 
-As a side note, at **npmjs the token never expires**.
+Mimo jiné, v **npmjs token nikdy nevyprší**.

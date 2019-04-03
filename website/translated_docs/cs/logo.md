@@ -2,45 +2,45 @@
 id: logo
 title: "Logotyp"
 ---
-The logotype was designed by **[Breno Rodrigues](https://github.com/rodriguesbreno)** which won the [contest](https://github.com/verdaccio/verdaccio/issues/237) ([last stage](https://github.com/verdaccio/verdaccio/issues/328)) and donated his work to this project.
+Logotyp byl navrhnut **[Breno Rodrigues](https://github.com/rodriguesbreno)**, který vyhrál ([poslední fázi](https://github.com/verdaccio/verdaccio/issues/328)) [soutěže](https://github.com/verdaccio/verdaccio/issues/237) a daroval své dílo tomuto projektu.
 
-> All logos are licensed under [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
+> Všechna loga podléhají licenci [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
 
-Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
+Zvláštní poděkování patří *[@Lisapressmar](https://github.com/Lisapressmar)* za její příspěvek s více formáty a velikostmi obrázků.
 
-## Symbols
+## Symboly
 
-**With text**
+**S textem**
 
-![symbol tiny with text](assets/logo/symbol/png/logo-small-header-bottom.png)
+![symbol malý s textem](assets/logo/symbol/png/logo-small-header-bottom.png)
 
-![symbol medium with text](assets/logo/symbol/png/logo-small-header-bottom@2x.png)
+![symbol střední s textem](assets/logo/symbol/png/logo-small-header-bottom@2x.png)
 
-![symbol big with text](assets/logo/symbol/png/logo-small-header-bottom@3x.png)
+![symbol velký s textem](assets/logo/symbol/png/logo-small-header-bottom@3x.png)
 
 **SVG**
 
 ![symbol svg](assets/logo/symbol/svg/logo-small-header-bottom.svg)
 
-**No text**
+**Bez textu**
 
-![symbol tiny](assets/logo/symbol/png/verdaccio-tiny.png)
+![symbol malý](assets/logo/symbol/png/verdaccio-tiny.png)
 
-![symbol medium](assets/logo/symbol/png/verdaccio-tiny@2x.png)
+![symbol střední](assets/logo/symbol/png/verdaccio-tiny@2x.png)
 
-![symbol big](assets/logo/symbol/png/verdaccio-tiny@3x.png)
+![symbol velký](assets/logo/symbol/png/verdaccio-tiny@3x.png)
 
 **SVG**
 
-![svg format symbol no text](assets/logo/symbol/svg/verdaccio-tiny.svg)
+![svg formát bez textu](assets/logo/symbol/svg/verdaccio-tiny.svg)
 
-### Black&White
+### Černobílé
 
-![symbol bw small](assets/logo/symbol/png/verdaccio-blackwhite.png)
+![symbol bw malý](assets/logo/symbol/png/verdaccio-blackwhite.png)
 
-![symbol bw medium](assets/logo/symbol/png/verdaccio-blackwhite@2x.png)
+![symbol bw střední](assets/logo/symbol/png/verdaccio-blackwhite@2x.png)
 
-![symbol bw big](assets/logo/symbol/png/verdaccio-blackwhite@3x.png)
+![symbol bw velký](assets/logo/symbol/png/verdaccio-blackwhite@3x.png)
 
 **SVG**
 
@@ -48,8 +48,8 @@ Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her con
 
 ## Banner
 
-![banner small](assets/logo/banner/png/verdaccio-banner.png)
+![banner malý](assets/logo/banner/png/verdaccio-banner.png)
 
-![banner medium](assets/logo/banner/png/verdaccio-banner@2x.png)
+![banner střední](assets/logo/banner/png/verdaccio-banner@2x.png)
 
-![banner big](assets/logo/banner/png/verdaccio-banner@3x.png)
+![banner velký](assets/logo/banner/png/verdaccio-banner@3x.png)

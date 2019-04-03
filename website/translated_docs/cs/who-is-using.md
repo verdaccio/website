@@ -1,16 +1,16 @@
 ---
-id: who-is-using
-title: "Who is using Verdaccio?"
+id: kdo-používá
+title: "Kdo používá Verdaccio?"
 ---
-### As a Business
+### K podnikání
 
-*If you are using Verdaccio in your bussiness and want to share your experience, let us know. We will happy to listen to you.*
+*Pokud ve Vaší firmě používáte Verdaccio a chcete se s námi podělit o svoji zkušenost, dejte nám vědět. Rádi si poslechneme váš názor.*
 
 * [SheetJS](https://sheetjs.com/)
 
-### Open Source Projects
+### Open Source Projekty
 
-> **Feel free to suggest other OSS are using Verdaccio.**
+> **Nebojte se navrhnout jiné OSS používající Verdaccio.**
 
 * [pnpm](https://pnpm.js.org/)
 * [create-react-app](https://facebook.github.io/create-react-app/)
@@ -26,6 +26,6 @@ title: "Who is using Verdaccio?"
 * [Wix Yoshi](https://github.com/wix/yoshi)
 * [The AWS Cloud Development Kit](https://github.com/awslabs/aws-cdk)
 
-#### Readme Recomendations
+#### Doporučené Readme
 
 * [react-native-cli](https://github.com/react-native-community/react-native-cli/blob/master/CONTRIBUTING.md)
