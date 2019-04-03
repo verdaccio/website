@@ -4,7 +4,7 @@ title: "Chef Cookbook"
 ---
 Použití Verdaccia s Chef Cookbook
 
-For further information:
+Další informace:
 
 * <https://github.com/verdaccio/verdaccio-cookbook>
 * <https://supermarket.chef.io/cookbooks/verdaccio>
