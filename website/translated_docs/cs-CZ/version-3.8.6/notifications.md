@@ -1,27 +1,27 @@
 ---
 id: version-3.8.6-notifications
-title: Notifications
-original_id: notifications
+title: Upozornění
+original_id: upozornění
 ---
 Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
 
-## Usage
+## Použití
 
-An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
+Příklad pro **HipChat**, **Stride** a **Google Hangouts Chat**:
 
-> Verdaccio supports any API, feel free to ad more examples.
+> Verdaccio podporuje jakékoliv API, klidně přidejte další příklady.
 
-#### Single notification
+#### Jedno upozornění
 
 ```yaml
 notify:
   method: POST
   headers: [{'Content-Type': 'application/json'}]
   endpoint: https://usagge.hipchat.com/v2/room/3729485/notification?auth_token=mySecretToken
-  content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
+  content: '{"color":"green","message":"Publikován nový balíček: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-#### Multiple notification
+#### Více oznámení
 
 ```yaml
 notify:
@@ -29,22 +29,22 @@ notify:
     method: POST
     headers: [{'Content-Type': 'application/json'}]
     endpoint: https://chat.googleapis.com/v1/spaces/AAAAB_TcJYs/messages?key=myKey&token=myToken
-    content: '{"text":"New package published: `{{ name }}{{#each versions}} v{{version}}{{/each}}`"}'
+    content: '{"text":"Publikován nový balíček: `{{ name }}{{#each versions}} v{{version}}{{/each}}`"}'
   'example-hipchat':
      method: POST
      headers: [{'Content-Type': 'application/json'}]
      endpoint: https://usagge.hipchat.com/v2/room/3729485/notification?auth_token=mySecretToken
-     content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
+     content: '{"color":"green","message":"Publikován nový balíček: * {{ name }}*","notify":true,"message_format":"text"}'
   'example-stride':
      method: POST
      headers: [{'Content-Type': 'application/json'}, {'authorization': 'Bearer secretToken'}]
      endpoint: https://api.atlassian.com/site/{cloudId}/conversation/{conversationId}/message
-     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
+     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "Publikován nový balíček: * {{ name }}* Jméno vydavatele: * {{ publisher.name }}"}]}]}}'     
 ```
 
-## Template
+## Šablona
 
-We use [Handlebars](https://handlebarsjs.com/) as main template engine.
+Jako hlavní šablonovací engine používáme [Handlebars](https://handlebarsjs.com/).
 
 ### Format Examples
 
@@ -57,11 +57,11 @@ We use [Handlebars](https://handlebarsjs.com/) as main template engine.
 
 ### Properties
 
-List of properties accesible via template
+Seznam vlastností dostupných pomocí šablon
 
 * Metadata
-* Publisher (who is publishing)
-* Package Published (package@1.0.0)
+* Vydavatel (kdo publikuje)
+* Balíček publikován (package@1.0.0)
 
 ### Metadata
 
@@ -147,13 +147,13 @@ You can acces to the package is being published with the keyword `{{publishedPac
     {{ publisher.name }} has published {{publishedPackage}}"}
     
 
-## Configuration
+## Konfigurace
 
-| Property            | Type         | Required | Support | Default | Description                                                                                  |
-| ------------------- | ------------ | -------- | ------- | ------- | -------------------------------------------------------------------------------------------- |
-| method              | string       | No       | all     |         | HTTP verb                                                                                    |
-| packagePattern      | string       | No       | all     |         | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | string       | No       | all     |         | Any flags to be used with the regular expression                                             |
-| headers             | array/object | Yes      | all     |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | string       | Yes      | all     |         | set the URL endpoint for this call                                                           |
-| content             | string       | Yes      | all     |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Vlastnost           | Typ          | Požadované | Podpora | Výchozí | Popis                                                                                        |
+| ------------------- | ------------ | ---------- | ------- | ------- | -------------------------------------------------------------------------------------------- |
+| method              | řetězec      | Ne         | všechny |         | HTTP verb                                                                                    |
+| packagePattern      | řetězec      | Ne         | všechny |         | Only run this notification if the package name matches the regular expression                |
+| packagePatternFlags | řetězec      | Ne         | všechny |         | Any flags to be used with the regular expression                                             |
+| headers             | array/object | Ano        | všechny |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
+| endpoint            | řetězec      | Ano        | všechny |         | set the URL endpoint for this call                                                           |
+| content             | řetězec      | Ano        | všechny |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |

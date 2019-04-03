@@ -1,25 +1,25 @@
 ---
 id: version-3.8.6-ssl
-title: Set up the SSL Certificates
+title: Nastavení SSL certifikátu
 original_id: ssl
 ---
-Follow this instructions to configure a SSL certificate to serve NPM registry under HTTPS.
+Následujte tyto instrukce k nastavení SSL certifikátu při použití NPM registru pod HTTPS.
 
-* Update the listen property in your `~/.config/verdaccio/config.yaml`:
+* Aktualizujte vlastnost `listen` ve vašem `~/.config/verdaccio/config.yaml`:
 
     listen: 'https://your.domain.com/'
     
 
-Once you update the listen and try to run verdaccio again will ask for certificates.
+Jakmile aktualizujete `listen` a pokusíte se spustit Verdaccio znovu, Verdaccio odešle žádost o certifikáty.
 
-* Generate your certificates
+* Vygenerovat certifikáty
 
      $ openssl genrsa -out /Users/user/.config/verdaccio/verdaccio-key.pem 2048
      $ openssl req -new -sha256 -key /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-csr.pem
      $ openssl x509 -req -in /Users/user/.config/verdaccio/verdaccio-csr.pem -signkey /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-cert.pem
      ````
     
-    * Edit your config file `/Users/user/.config/verdaccio/config.yaml` and add the following section
+    * Upravte svůj configurační soubor `/Users/user/.config/verdaccio/config.yaml` a přidejte následující sekce
     
     
 
@@ -31,16 +31,16 @@ https: key: /Users/user/.config/verdaccio/verdaccio-key.pem cert: /Users/user/.c
 
 https: pfx: /Users/user/.config/verdaccio/server.pfx passphrase: 'secret' ````
 
-More info on the `key`, `cert`, `ca`, `pfx` and `passphrase` arguments on the [Node documentation](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
+Více informací o `key`, `cert`, `ca`, `pfx` a `passphrase` argumentech na [dokumentace Node](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
 
-* Run `verdaccio` in your command line.
+* Spusťte `verdaccio` ve své příkazové rádce.
 
-* Open the browser and load `https://your.domain.com:port/`
+* Otevřete prohlížeč a načtěte `https://vase.domena.com:port/`
 
-This instructions are mostly valid under OSX and Linux, on Windows the paths will vary but, the steps are the same.
+Tyto instrukce jsou pro OSX a Linux, u Windows se mohou cesty lišit, ale postup je stejný.
 
 ## Docker
 
-If you are using the Docker image, you have to set the `PROTOCOL` environment variable to `https` as the `listen` argument is provided on the [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43), and thus ignored from your config file.
+Pokud používáte Docker obraz, musíte nastavit proměnnou prostředí `PROTOCOL` na hodnotu `https`, protože argument `listen` je k dispozici na adrese [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43), a tedy ignorován z konfiguračního souboru.
 
-You can also set the `PORT` environment variable if you are using a different port than `4873`.
+Proměnnou prostředí `POR ` můžete také nastavit, pokud používáte jiný port než `4873`.

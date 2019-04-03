@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-windows
-title: Installing As a Windows Service
+title: Instalovat jako Windows službu
 original_id: windows
 ---
 Loosely based upon the instructions found [here](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). I crafted the following and it provided me with a fully working verdaccio service installation:
@@ -47,6 +47,6 @@ ALTERNATIVE METHOD: (WinSW package was missing when I tried to download it)
 
 Some of the above config is more verbose than I had expected, it appears as though 'workingdirectory' is ignored, but other than that, this works for me and allows my verdaccio instance to persist between restarts of the server, and also restart itself should there be any crashes of the verdaccio process.
 
-## Repositories
+## Repozitáře
 
 * [verdaccio-deamon-windows](https://github.com/davidenke/verdaccio-deamon-windows)
