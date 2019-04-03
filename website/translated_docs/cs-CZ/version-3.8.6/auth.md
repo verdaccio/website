@@ -1,7 +1,7 @@
 ---
 id: version-3.8.6-authentification
-title: Authentification
-original_id: authentification
+title: Autentizace
+original_id: autentizace
 ---
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
 
@@ -11,7 +11,7 @@ The client authentification is handled by `npm` client itself. Once you login to
 npm adduser --registry http://localhost:4873
 ```
 
-A token is generated in the `npm` configuration file hosted in your user home folder. For more information about `.npmrc` read the [official documentation](https://docs.npmjs.com/files/npmrc).
+Token je vygenerovaný v konfiguračním souboru `npm` hostovaném ve Vaší domovské složce uživatele. Pro více informací o `.npmrc` si přečtěte [oficiální dokumentaci](https://docs.npmjs.com/files/npmrc).
 
 ```bash
 cat .npmrc
@@ -20,11 +20,11 @@ registry=http://localhost:5555/
 //registry.npmjs.org/:_authToken=secretNpmjsToken
 ```
 
-#### Anonymous publish
+#### Anonymní publikování
 
-`verdaccio`allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
+`Verdaccio` Vám umožňuje nastavit anonymní publikování. Abyste toho dosáhli, budete muset správně nastavit svůj [přístup k balíčkům](packages.md).
 
-Eg:
+Např.:
 
 ```yaml
   'my-company-*':
@@ -48,9 +48,9 @@ auth:
     #max_users: 1000
 ```
 
-| Property  | Type   | Required | Example    | Support | Description                              |
-| --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
-| file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
-| max_users | number | No       | 1000       | all     | set limit of users                       |
+| Vlastnost | Typ     | Požadované | Příklad    | Podpora | Popis                                               |
+| --------- | ------- | ---------- | ---------- | ------- | --------------------------------------------------- |
+| file      | řetězec | Ano        | ./htpasswd | všechny | soubor, který obsahuje šifrované přihlašovací údaje |
+| max_users | číslo   | Ne         | 1000       | všechny | nastavit limit uživatelů                            |
 
 In case to decide do not allow user to login, you can set `max_users: -1`.
