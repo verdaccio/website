@@ -1,29 +1,29 @@
 ---
 id: version-3.8.6-installation
 title: Installation
-original_id: installation
+original_id: instalace
 ---
 Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
 
-#### Prerequisites
+#### Předpoklady
 
-1. Node higher than 
+1. Verze Node vyšší než 
     - For version `verdaccio@2.x` Node `v4.6.1` is the minimum supported version.
     - For version `verdaccio@latest` Node `6.12.0` is the minimum supported version.
 2. npm `>=3.x` or `yarn`
 3. The web interface supports the `Chrome, Firefox, Edge, and IE9` browsers.
 
-## Installing the CLI
+## Instalace CLI
 
 `verdaccio` must be installed globaly using either of the following methods:
 
-Using `npm`
+Pomocí `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-or using `yarn`
+nebo pomocí `yarn`
 
 ```bash
 yarn global add verdaccio
@@ -31,9 +31,9 @@ yarn global add verdaccio
 
 ![install verdaccio](/svg/install_verdaccio.gif)
 
-## Basic Usage
+## Základní použití
 
-Once it has been installed, you only need to execute the CLI command:
+Po instalaci stačí provést CLI příkaz:
 
 ```bash
 $> verdaccio
@@ -51,4 +51,4 @@ For more information about the CLI, please [read the cli section](cli.md).
 
 `verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
 
-[![Install](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
+[![Instalace](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
