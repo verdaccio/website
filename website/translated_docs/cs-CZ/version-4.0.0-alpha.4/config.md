@@ -1,15 +1,15 @@
 ---
 id: version-4.0.0-alpha.4-configuration
-title: Configuration File
-original_id: configuration
+title: Konfigurační Soubor
+original_id: konfigurace
 ---
-This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
+Tento soubor je základní kámen verdaccia, kde můžete modifikovat výchozí chování, povolovat doplňky a rozšiřovat funkce.
 
 A default configuration file is created the very first time you run `verdaccio`.
 
-## Default Configuration
+## Výchozí Konfigurace
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+Výchozí konfigurace má podporu pro balíčky **s rozsahem** a umožňuje každému uživateli přístup ke všem balíčkům, ale pouze **ověřeným uživatelům k publikování**.
 
 ```yaml
 storage: ./storage
@@ -30,11 +30,11 @@ logs:
   - {type: stdout, format: pretty, level: http}
 ```
 
-## Sections
+## Sekce
 
-The following sections explain what each property means and the different options.
+Následující sekce vysvětlují co jaká vlastnost znamená a jaké má volby.
 
-### Storage
+### Úložiště
 
 Is the location of the default storage. **Verdaccio is by default based on local file system**.
 
@@ -50,9 +50,9 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Authentification
+### Autentizace
 
-The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
+Ověření se nastavuje zde, výchozí ověření je na základě `htpasswd` a je vestavěné. Toto chování můžete zmenit v [doplňky](plugins.md). Pro více informací o této sekci si přečtěte [ověřovací stránka](auth.md).
 
 ```yaml
 auth:
@@ -61,13 +61,13 @@ auth:
     max_users: 1000
 ```
 
-### Security
+### Bezpečnost
 
 <small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+Blok zabezpečení umožňuje přizpůsobit podpis tokenu. Chcete-li povolit nový [JWT (json webový token)](https://jwt.io/) podpis, je nutné přidat blok `jwt` do sekce `api`, `web` používá jako výchozí `jwt`.
 
-The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+Konfigurace je rozdělena do dvou sekcí, `api` a `web`. Pro použití JWT v `api` musí být definován, jinak bude používat starší podpis tokenu (`aes192`). Pro JWT můžete přizpůsobit [ověření](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) [podpisu](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) a tokenu vlastními parametry.
 
     security:
       api:
@@ -79,18 +79,18 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
             someProp: [value]
        web:
          sign:
-           expiresIn: 7d # 7 days by default
+           expiresIn: 7d # Výchozí hodnota 7 dní
          verify:
             someProp: [value]
     
 
-> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+> Doporučujeme přejít na JWT, protože starší podpis (`aes192`) je zastaralý a v budoucích verzích zmizí.
 
 ### Server
 
-A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+Sada vlastností ke změně chování serverové aplikace, konkrétně rozhraní API (Express.js).
 
-> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+> Můžete nastavit, jak dlouho má server držet aktivní příchozí spojení v sekundách pro HTTP/1.1. Hodnota 0 způsobuje, že se http server chová podobně jako Node.js před verzí 8.0.0, která neměla časový limit pro zachování. Možné řešení: Prostřednictvím dané konfigurace můžete vyřešit následující problém https://github.com/verdaccio/verdaccio/issues/301. Nastavte na 0 v případě, že 60 není dostatečné.
 
 ```yaml
 server:
@@ -131,7 +131,7 @@ packages:
     proxy: npmjs
 ```
 
-## Advanced Settings
+## Pokročilá Nastavení
 
 ### Offline Publish
 
@@ -189,7 +189,7 @@ https:
 
 Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
-#### http_proxy and https_proxy
+#### http_proxy a https_proxy
 
 If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
 
@@ -206,7 +206,7 @@ This variable should contain a comma-separated list of domain extensions proxy s
 no_proxy: localhost,127.0.0.1
 ```
 
-### Notifications
+### Upozornění
 
 Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
@@ -215,7 +215,7 @@ notify:
   method: POST
   headers: [{'Content-Type': 'application/json'}]
   endpoint: https://usagge.hipchat.com/v2/room/3729485/notification?auth_token=mySecretToken
-  content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
+  content: '{"color":"green","message":"Publikován nový balíček: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
 > For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
