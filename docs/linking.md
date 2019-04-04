@@ -19,7 +19,7 @@ The unique way to access multiple registries using the `.npmrc` is the scope fea
 
 ```
 // .npmrc
-registry=htts://registry.npmjs.org
+registry=https://registry.npmjs.org
 @mycompany:registry=http://localhost:4873
 ```
 
