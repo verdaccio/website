@@ -4,6 +4,13 @@ title: "Plugins"
 ---
 Verdaccio је апликација која подржава плугине. Може се проширивати на много начина, додавањем нових метода за аутентификацију, додавањем endpoints-а или коришћењем custom storage-а.
 
+There are 4 types of plugins:
+
+* Authentication
+* Middleware
+* Меморија за складиштење
+* UI Theme
+
 > Ако сте заинтересовани да развијете сопствени plugin, прочитајте [development](dev-plugins.md) секцију.
 
 ## Коришћење
@@ -14,7 +21,7 @@ Verdaccio је апликација која подржава плугине. М
 $> npm install --global verdaccio-activedirectory
 ```
 
-`verdaccio` је sinopia fork и поседује backward compability са плугинима који су компатибилни са `sinopia@1.4.0`. У том случају, инсталација је потпуно иста.
+`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
 
     $> npm install --global sinopia-memory
     
@@ -25,7 +32,7 @@ $> npm install --global verdaccio-activedirectory
 
 Подразумевана конфигурација изгледа овако, јер користимо уграђени `htpasswd` plugin као подразумеван, а који можете зауставити (disable) тако што ћете следеће линије претворити у коментар.
 
-### Auth Plugin Configuration
+### Authentication Configuration
 
 ```yaml
  htpasswd:
@@ -43,7 +50,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Auth плугини
+#### Multiple Authentication plugins
 
 Технички је изводиво, ако поставите да је редослед плугина важан, услед чега ће се credentials извршити по том поретку.
 
@@ -58,9 +65,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Plugin Configuration
+### Middleware Configuration
 
-Ово је пример који показује како треба да подесите middleware plugin. Сви middleware plugini морају бити дефинисани у **middlewares** namespace.
+This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
 
 ```yaml
 middlewares:
@@ -70,9 +77,9 @@ middlewares:
 
 > Можете пратити [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) као базични пример.
 
-### Store Plugin Configuration
+### Storage Configuration
 
-Ово је пример који показује како треба да подесите storage plugin. Сви storage plugini морају се дефинисати у **store** namespace.
+This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
 
 ```yaml
 store:
@@ -80,13 +87,33 @@ store:
     limit: 1000
 ```
 
-> Ако дефинишете custom store, својство **storage** у configuration фајлу ће бити игнорисано.
+### Theme Configuration
+
+Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+
+```bash
+<br />$> npm install --global verdaccio-theme-xxxx
+
+```
+
+> The plugin name prefix must start with `verdaccio-theme`, otherwise the pluging won't load.
+
+You can load only one theme at the time and pass through options if is need it.
+
+```yaml
+theme:
+  dark:
+    option1: foo
+    option2: bar
+```
 
 ## Традиционални плугини (Legacy plugins)
 
 ### Sinopia Plugins
 
 (компатибилни са свим верзијама)
+
+> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
 
 * [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin за sinopia који подржава npm registry.
 * [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin за sinopia који чува кориснике у меморији.
@@ -110,8 +137,6 @@ store:
 
 ## Verdaccio Plugins
 
-(компатибилно од верзије 2.1.x)
-
 ### Authorization Plugins
 
 * [verdaccio-bitbucket](https://github.com/idangozlan/verdaccio-bitbucket): Bitbucket authentication plugin за verdaccio.
@@ -132,12 +157,10 @@ store:
 
 ### Storage Plugins
 
-(компатибилни од верзије 3.x)
-
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Storage plugin за хостовање пакета у Memory
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin за хостовање пакета на **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin за хостовање пакета на **Google Cloud Storage**
 
 ## Упозорења (Caveats)
 
-> Сви наведени плугини нису детаљно тестирани и може се догодити да неки од њих уопште не раде. Ако наиђете на проблеме, молимо Вас да слободно пошаљете упит ауторима плугина.
+> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
