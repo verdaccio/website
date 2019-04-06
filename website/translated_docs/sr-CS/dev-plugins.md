@@ -183,7 +183,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 
 > Storage API je i dalje u eksperimentalnoj fazi i moguće je da će pretrpeti neke izmene u narednim verzijama. Za više informacija o Storage API molimo Vas da pratite [types definicije u našem zvaničnom repozitorijumu](https://github.com/verdaccio/flow-types).
 
-### Primeri za Storage Plugins
+### Storage Examples
 
 Navedena lista plugina implementuje Storage API i možete ih koristiti kao primere.
 
@@ -193,3 +193,23 @@ Navedena lista plugina implementuje Storage API i možete ih koristiti kao prime
 * [verdaccio-s3-storage](https://github.com/Remitly/verdaccio-s3-storage/tree/s3)
 
 > Da li ste voljni da date doprinos razvoju novih Storage Plugins? [Kliknite ovde.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
+
+## Theme Plugin
+
+The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
+
+### API
+
+```javascript
+const path = require('path');
+
+module.exports = (...arguments) => {
+  return path.join(__dirname, 'static');
+};
+```
+
+It is imporant that the name of the plugin **must start with `verdaccio-theme-` prefix**.
+
+### Theme Example
+
+* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): The default Verdaccio theme based in React.js.
