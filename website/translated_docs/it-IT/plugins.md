@@ -4,6 +4,13 @@ title: "Plugin"
 ---
 Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, o con nuovi metodi di autenticazione, aggiungendo endpoint o utilizzando un archivio personalizzato.
 
+There are 4 types of plugins:
+
+* Authentication
+* Middleware
+* Archiviazione
+* UI Theme
+
 > Se sei interessato a sviluppare il tuo plugin personale, leggi la sezione [sviluppo](dev-plugins.md).
 
 ## Utilizzo
@@ -14,7 +21,7 @@ Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, o con
 $> npm install --global verdaccio-activedirectory
 ```
 
-`verdaccio` essendo un fork di sinopia, ha compatibilità con le versioni precedenti e con plugin che sono compatibili con `sinopia@1.4.0`. In questo caso l'installazione è la stessa.
+`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
 
     $> npm install --global sinopia-memory
     
@@ -25,7 +32,7 @@ Aprire il file `config.yaml` e aggiornare la sezione `auth` come segue:
 
 La configurazione predefinita appare così, poiché usiamo un plugin `htpasswd` incorporato di default che si può disabilitare commentando le seguenti linee.
 
-### Configurazione del plugin Auth
+### Authentication Configuration
 
 ```yaml
  htpasswd:
@@ -43,7 +50,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Plugin Auth multipli
+#### Multiple Authentication plugins
 
 Questo è tecnicamente possibile, prestando importanza all'ordine del plugin, dato che le credenziali verranno risolte in ordine.
 
@@ -58,9 +65,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Configurazione del Plugin Middleware
+### Middleware Configuration
 
-Questo è un esempio di come si configura un plugin middleware. Tutti i plugin middleware devono essere definiti nel namespace **middlewares**.
+This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
 
 ```yaml
 middlewares:
@@ -70,9 +77,9 @@ middlewares:
 
 > Si potrebbe seguire il [plugin audit middle](https://github.com/verdaccio/verdaccio-audit) come esempio di base.
 
-### Configurazione del Plugin Store
+### Storage Configuration
 
-Questo è un esempio di come configurare un plugin di archiviazione. Tutti i plugin di archiviazione devono essere definiti nel namespace **store**.
+This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
 
 ```yaml
 store:
@@ -80,13 +87,33 @@ store:
     limit: 1000
 ```
 
-> Se si definisce uno store personalizzato, la proprietà di **archiviazione** nel file di configurazione verrà ignorata.
+### Theme Configuration
+
+Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+
+```bash
+<br />$> npm install --global verdaccio-theme-xxxx
+
+```
+
+> The plugin name prefix must start with `verdaccio-theme`, otherwise the pluging won't load.
+
+You can load only one theme at the time and pass through options if is need it.
+
+```yaml
+theme:
+  dark:
+    option1: foo
+    option2: bar
+```
 
 ## Plugin ereditati
 
 ### Plugin di Sinopia
 
 (compatibili con tutte le versioni)
+
+> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
 
 * [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): plugin auth per il supporto di sinopia a un registro npm.
 * [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): plugin auth per sinopia che mantiene gli utenti in memoria.
@@ -110,8 +137,6 @@ store:
 
 ## Plugin di Verdaccio
 
-(compatibile da 2.1.x)
-
 ### Plugin di autorizzazione
 
 * [verdaccio-bitbucket](https://github.com/idangozlan/verdaccio-bitbucket): plugin di autenticazione di Bitbucket per verdaccio.
@@ -132,12 +157,10 @@ store:
 
 ### Plugin di archiviazione
 
-(compatibile da 3.x)
-
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Plugin di archiviazione per ospitare pacchetti in Memoria
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Plugin di archiviazione per ospitare pacchetti **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Plugin di archiviazione per ospitare pacchetti **Google Cloud Storage**
 
 ## Avvertenze
 
-> Non tutti questi plugin vengono testati assiduamente, alcuni di essi potrebbero anche non funzionare affatto. In caso si incontri qualsiasi problema, si prega di notificarlo al proprietario del plugin in questione.
+> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
