@@ -98,7 +98,7 @@ By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use som
 
 ```bash
 
-$> npm install --global verdaccio-theme-xxxx
+$> npm install --global verdaccio-theme-dark
 
 ```
 
@@ -117,8 +117,6 @@ theme:
 ## Legacy plugins
 
 ### Sinopia Plugins
-
-(compatible all versions)
 
 > If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
 
