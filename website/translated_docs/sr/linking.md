@@ -17,7 +17,7 @@ You can link multiple registries, the following document will drive you through 
 The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
 
     // .npmrc
-    registry=htts://registry.npmjs.org
+    registry=https://registry.npmjs.org
     @mycompany:registry=http://localhost:4873
     
 

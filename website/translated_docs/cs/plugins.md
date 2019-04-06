@@ -4,6 +4,13 @@ title: "Plugins"
 ---
 Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
+There are 4 types of plugins:
+
+* Authentication
+* Middleware
+* Úložiště
+* UI Theme
+
 > If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
 
 ## Použití
@@ -25,7 +32,7 @@ Open the `config.yaml` file and update the `auth` section as follows:
 
 The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
 
-### Auth Plugin Configuration
+### Authentication Configuration
 
 ```yaml
  htpasswd:
@@ -43,7 +50,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Auth plugins
+#### Multiple Authentication plugins
 
 This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
 
@@ -58,7 +65,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Plugin Configuration
+### Middleware Configuration
 
 This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
 
@@ -70,7 +77,7 @@ middlewares:
 
 > You might follow the [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) as base example.
 
-### Store Plugin Configuration
+### Storage Configuration
 
 This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
 
@@ -80,13 +87,31 @@ store:
     limit: 1000
 ```
 
-> If you define a custom store, the property **storage** in the configuration file will be ignored.
+### Theme Configuration
+
+Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+
+```bash
+<br />$> npm install --global verdaccio-theme-dark
+
+```
+
+> The plugin name prefix must start with `verdaccio-theme`, otherwise the pluging won't load.
+
+You can load only one theme at the time and pass through options if is need it.
+
+```yaml
+theme:
+  dark:
+    option1: foo
+    option2: bar
+```
 
 ## Legacy plugins
 
 ### Sinopia Plugins
 
-(compatible all versions)
+> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
 
 * [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin for sinopia supporting an npm registry.
 * [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin for sinopia that keeps users in memory.
@@ -110,8 +135,6 @@ store:
 
 ## Verdaccio Plugins
 
-(compatible since 2.1.x)
-
 ### Authorization Plugins
 
 * [verdaccio-bitbucket](https://github.com/idangozlan/verdaccio-bitbucket): Bitbucket authentication plugin for verdaccio.
@@ -131,8 +154,6 @@ store:
 * [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): verdacci plugin for *npm profile* cli support and *npm profile set password* for *verdaccio-htpasswd* based authentificaton
 
 ### Storage Plugins
-
-(compatible since 3.x)
 
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Storage plugin to host packages in Memory
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**

@@ -183,7 +183,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 
 > API magazynu danych jest nadal w fazie eksperymentalnej i może się zmienić w następnej pomniejszej wersji. Aby uzyskać więcej informacji na temat Magazynu API, skorzystaj z [typów definicji w naszym oficjalnym repozytorium](https://github.com/verdaccio/flow-types).
 
-### Przykłady wtyczek magazynu danych
+### Storage Examples
 
 Poniższa lista wtyczek wdraża API magazynu danych oraz mogą być użyte jako przykład.
 
@@ -193,3 +193,23 @@ Poniższa lista wtyczek wdraża API magazynu danych oraz mogą być użyte jako 
 * [verdaccio-magazyn-s3](https://github.com/Remitly/verdaccio-s3-storage/tree/s3)
 
 > Chciałbyś współtworzyć ten projekt z nowymi wtyczkami magazynu danych? [Kliknij tutaj.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
+
+## Theme Plugin
+
+The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
+
+### API
+
+```javascript
+const path = require('path');
+
+module.exports = (...arguments) => {
+  return path.join(__dirname, 'static');
+};
+```
+
+It is imporant that the name of the plugin **must start with `verdaccio-theme-` prefix**.
+
+### Theme Example
+
+* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): The default Verdaccio theme based in React.js.

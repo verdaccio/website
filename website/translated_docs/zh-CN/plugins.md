@@ -4,6 +4,13 @@ title: "插件"
 ---
 Verdaccio是一个可插入式应用程序。它可以通过多种方式扩展，可以是新的认证方法，添加端点或者使用定制存储。
 
+There are 4 types of plugins:
+
+* Authentication
+* Middleware
+* 存储
+* UI Theme
+
 > 如果您感兴趣开发自己的插件，请阅读[开发](dev-plugins.md)部分。
 
 ## 用法
@@ -14,7 +21,7 @@ Verdaccio是一个可插入式应用程序。它可以通过多种方式扩展�
 $> npm install --global verdaccio-activedirectory
 ```
 
-作为一个sinopia的分支项目，`verdaccio`和兼容`sinopia@1.4.0`的插件具有向后兼容性。在这种情况下，安装方式相同。
+`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
 
     $> npm install --global sinopia-memory
     
@@ -25,7 +32,7 @@ $> npm install --global verdaccio-activedirectory
 
 默认配置如下所示，由于在默认情况下我们使用一个内置的`htpasswd`插件，我们可以通过注释下面几行代码来禁用它：
 
-### Auth插件配置
+### Authentication Configuration
 
 ```yaml
  htpasswd:
@@ -43,7 +50,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### 多个Auth插件
+#### Multiple Authentication plugins
 
 This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
 
@@ -58,9 +65,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### 中间件插件配置
+### Middleware Configuration
 
-这是一个如何设置中间件插件的示例。所有的中间件插件必须被定义在**middlewares**命名空间。
+This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
 
 ```yaml
 middlewares:
@@ -70,9 +77,9 @@ middlewares:
 
 > 您可以跟着[audit middle plugin（审核中间插件）](https://github.com/verdaccio/verdaccio-audit)的基本范例。
 
-### 存储插件配置
+### Storage Configuration
 
-这是一个如何设置存储插件的示例。所有的存储插件必须在**store**命名空间进行定义。
+This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
 
 ```yaml
 store:
@@ -80,13 +87,31 @@ store:
     limit: 1000
 ```
 
-> 如果您定义定制存储，配置文件中的**存储**属性将会被忽略。
+### Theme Configuration
+
+Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+
+```bash
+<br />$> npm install --global verdaccio-theme-dark
+
+```
+
+> The plugin name prefix must start with `verdaccio-theme`, otherwise the pluging won't load.
+
+You can load only one theme at the time and pass through options if is need it.
+
+```yaml
+theme:
+  dark:
+    option1: foo
+    option2: bar
+```
 
 ## 旧式插件
 
 ### Sinopia插件
 
-(兼容所有版本)
+> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
 
 * [sinopia-npm](https://www.npmjs.com/package/sinopia-npm)：支持npm注册表的sinopia认证插件。
 * [sinopia-memory](https://www.npmjs.com/package/sinopia-memory)：在内存中缓存用户的sinopia认证插件。
@@ -110,8 +135,6 @@ store:
 
 ## Verdaccio插件
 
-(兼容2.1.x及以后版本)
-
 ### 授权插件
 
 * [verdaccio-bitbucket](https://github.com/idangozlan/verdaccio-bitbucket)：verdaccio Bitbucket认证插件。
@@ -132,12 +155,10 @@ store:
 
 ### 存储插件
 
-(兼容自3.x及以后版本)
-
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory)在内存中装载包的存储插件
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage)在**Amazon S3**中存储包的存储插件
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)在**Google Cloud Storage**中存储包的存储插件
 
 ## 警告
 
-> 并不是所有这些插件都被持续测试过，其中有些可能根本无法正常工作。 如果您发现任何问题，请随时通知每个插件的所有者。
+> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
