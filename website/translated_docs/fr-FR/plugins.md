@@ -92,7 +92,7 @@ store:
 Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
 
 ```bash
-<br />$> npm install --global verdaccio-theme-xxxx
+<br />$> npm install --global verdaccio-theme-dark
 
 ```
 
@@ -110,8 +110,6 @@ theme:
 ## Plugins hérités
 
 ### Sinopia Plugins
-
-(compatible avec toutes les versions)
 
 > If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
 
