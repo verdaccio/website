@@ -183,7 +183,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 
 > L'API di archiviazione è ancora in via sperimentale e potrebbe cambiare nelle successive versioni minori. Per ulteriori informazioni sull'API di archiviazione si prega di seguire le [ definizioni dei tipi nel nostro archivio ufficiale](https://github.com/verdaccio/flow-types).
 
-### Esempi di Plugin di Archiviazione
+### Storage Examples
 
 Il seguente è un elenco di estensioni che utilizzano l'API di archiviazione e che potrebbero essere utilizzate come esempio.
 
@@ -193,3 +193,23 @@ Il seguente è un elenco di estensioni che utilizzano l'API di archiviazione e c
 * [verdaccio-s3-storage](https://github.com/Remitly/verdaccio-s3-storage/tree/s3)
 
 > Sei disposto a contribuire con nuovi Plugin di Archiviazione? [Clicca qui.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
+
+## Theme Plugin
+
+The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
+
+### API
+
+```javascript
+const path = require('path');
+
+module.exports = (...arguments) => {
+  return path.join(__dirname, 'static');
+};
+```
+
+It is imporant that the name of the plugin **must start with `verdaccio-theme-` prefix**.
+
+### Theme Example
+
+* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): The default Verdaccio theme based in React.js.
