@@ -4,7 +4,7 @@ title: "Who is using Verdaccio?"
 ---
 ### As a Business
 
-*If you are using Verdaccio in your bussiness and want to share your experience, let us know. We will happy to listen to you.*
+*If you are using Verdaccio in your business and want to share your experience, let us know. We will happy to listen to you.*
 
 * [SheetJS](https://sheetjs.com/)
 
