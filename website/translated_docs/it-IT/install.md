@@ -44,6 +44,18 @@ warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 
 Per ulteriori informazioni riguardo a CLI, si prega di [leggere la sezione cli](cli.md).
 
+You can set the registry by using the following command.
+
+```bash
+npm set registry http://localhost:4873/
+```
+
+or you can pass a `--registry` flag when needed.
+
+```bash
+npm install --registry http://localhost:4873
+```
+
 ## Immagine Docker
 
 `verdaccio` ha un'immagine docker ufficiale disponibile da utilizzare, ed in molti casi, la configurazione predefinita è sufficientemente buona. Per ulteriori informazioni su come installare l'immagine ufficiale, [leggere la sezione docker](docker.md).
