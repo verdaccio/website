@@ -44,6 +44,18 @@ warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 
 Za dodatne informacije o CLI molimo Vas [da pročitate cli sekciju](cli.md).
 
+You can set the registry by using the following command.
+
+```bash
+npm set registry http://localhost:4873/
+```
+
+or you can pass a `--registry` flag when needed.
+
+```bash
+npm install --registry http://localhost:4873
+```
+
 ## Docker Image
 
 `verdaccio` poseduje zvanični docker image koji možete koristiti, a u većini slučajeva, podrazumevana konfiguracija radi sasvim dobro. Za više informacija o tome kako da instalirate official image, [pročitajte docker sekciju](docker.md).
@@ -52,4 +64,4 @@ Za dodatne informacije o CLI molimo Vas [da pročitate cli sekciju](cli.md).
 
 `verdaccio` je takođe dostupan i kao instalacija u samo jednom kliku, na [Cloudron](https://cloudron.io)
 
-[![Instalacija](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
+[![Instaliranje](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
