@@ -3,6 +3,7 @@ id: version-3.8.6-puppet
 title: Puppet
 original_id: puppet
 ---
+
 Инсталација verdaccio-а за Debian, Ubuntu, Fedora, и RedHat.
 
 # Коришћење
