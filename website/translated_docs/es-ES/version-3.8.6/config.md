@@ -3,6 +3,7 @@ id: version-3.8.6-configuration
 title: Archivo de Configuración
 original_id: configuration
 ---
+
 Este archivo es la piedra angular de verdaccio donde puedes modificar su comportamiento por defecto, activar plugins y características externas.
 
 Cuando ejecutas por primera vez ` verdaccio` se crea un archivo de configuración por defecto.
