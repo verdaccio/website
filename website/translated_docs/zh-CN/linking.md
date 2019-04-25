@@ -2,6 +2,7 @@
 id: linking-remote-registry
 title: "Linking a Remote Registry"
 ---
+
 Verdaccio is a proxy and by default [links](uplinks.md) the public registry.
 
 ```yaml
