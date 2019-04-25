@@ -3,6 +3,7 @@ id: version-3.8.6-ssl
 title: Set up the SSL Certificates
 original_id: ssl
 ---
+
 Follow this instructions to configure a SSL certificate to serve NPM registry under HTTPS.
 
 * Update the listen property in your `~/.config/verdaccio/config.yaml`:
