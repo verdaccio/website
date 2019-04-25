@@ -2,6 +2,7 @@
 id: autenticacao
 title: "Autenticação"
 ---
+
 A autenticação está ligada ao [plugin](plugins.md) auth que você está utilizando. As restrições do pacote também são tratadas pelo [Package Access](packages.md).
 
 The client authentification is handled by `npm` client itself. Once you login to the application:
