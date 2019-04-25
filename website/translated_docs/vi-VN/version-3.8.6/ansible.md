@@ -3,6 +3,7 @@ id: version-3.8.6-ansible
 title: Phần mềm nguồn mở ansible
 original_id: ansible
 ---
+
 Chúng tôi có một giải pháp tuỳ chỉnh cho `verdaccio` trong tổ chức của chúng tôi.
 
 <https://github.com/verdaccio/ansible-verdaccio>
