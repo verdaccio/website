@@ -2,6 +2,7 @@
 id: cài đặt
 title: "Installation"
 ---
+
 Verdaccio là một ứng dụng web đa nền tảng. Bạn cần phải có một số điều kiện bắt buộc trước khi cài đặt.
 
 #### Những yêu cầu tối thiểu
