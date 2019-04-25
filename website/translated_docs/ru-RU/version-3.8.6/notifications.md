@@ -3,6 +3,7 @@ id: version-3.8.6-notifications
 title: Уведомления
 original_id: notifications
 ---
+
 Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
 
 ## Usage
