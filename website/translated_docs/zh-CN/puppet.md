@@ -2,6 +2,7 @@
 id: puppet
 title: "Puppet"
 ---
+
 在Debian、Ubuntu、Fedora和RedHat中安装verdaccio。
 
 # 用法
