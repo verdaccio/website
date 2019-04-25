@@ -3,6 +3,7 @@ id: version-3.8.6-server-configuration
 title: Configuración del Servidor
 original_id: server-configuration
 ---
+
 Esta materia es principalmente la configuración básica del servidor de linux pero me pareció importante documentar y compartir los pasos que tomé para obtener la ejecución de verdaccio permanentemente en mi servidor. Necesitará permisos de root (o sudo) para lo siguiente.
 
 ## Ejecutar como un usuario separado
