@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.7-plugins
 title: Plugins
 original_id: plugins
 ---
+
 Verdaccio je plugabilna aplikacija (težak život prevodioca...). Može se proširivati na mnogo načina, dodavanjem novih metoda za autentifikaciju, dodavanjem endpoints-a ili korišćenjem custom storage-a.
 
 There are 4 types of plugins:
