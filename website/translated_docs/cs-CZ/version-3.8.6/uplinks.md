@@ -3,6 +3,7 @@ id: version-3.8.6-uplinks
 title: Uplinks
 original_id: uplinks
 ---
+
 An *uplink* is a link with an external registry that provides acccess to external packages.
 
 ![Uplinks](/img/uplinks.png)
