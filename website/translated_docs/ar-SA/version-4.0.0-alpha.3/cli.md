@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.3-cli
 title: Command Line Tool
 original_id: cli
 ---
+
 The verdaccio CLI is your go start the application.
 
 ## Commands
