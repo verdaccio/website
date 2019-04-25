@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-installation
 title: Instalacija
 original_id: instalacija
 ---
+
 Verdaccio je web aplikacija podesna za mnoge platforme. Da biste ga instalirali, potrebno je da ispunite neke preduslove.
 
 #### Preduslovi
