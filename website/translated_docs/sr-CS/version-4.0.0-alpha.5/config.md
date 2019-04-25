@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-configuration
 title: Fajl za konfigurisanje
 original_id: konfigurisanje
 ---
+
 Ovaj fajl je osnova verdaccio-a. U okviru njega, možete vršiti izmene zadatih podešavanja, možete aktivirati plugin-e i spoljašnje resurse (features).
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
