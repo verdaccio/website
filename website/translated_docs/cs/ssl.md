@@ -2,6 +2,7 @@
 id: ssl
 title: "Nastavení SSL certifikátu"
 ---
+
 Následujte tyto instrukce k nastavení SSL certifikátu při použití NPM registru pod HTTPS.
 
 * Aktualizujte vlastnost `listen` ve vašem `~/.config/verdaccio/config.yaml`:
