@@ -3,6 +3,7 @@ id: version-3.8.6-ci
 title: Integración Continua
 original_id: ci
 ---
+
 Puedes usar verdaccio con la integración continua al inicio de sesión o al publicar. Al momento de usar el NPM para instalar un módulo privado en un entorno de integración continua por primera vez, un muro de ladrillos te golpeara rapidamente. El comando de inicio de sesión del NPM está diseñado para ser utilizado interactivamente. Esto causa un problema en IC, scripts, etc. Aquí se explica cómo usar el inicio de sesión NPM en diferentes plataformas de integración continua.
 
 - [Travis CI](https://remysharp.com/2015/10/26/using-travis-with-private-npm-deps)
