@@ -2,6 +2,7 @@
 id: plugins
 title: "插件"
 ---
+
 Verdaccio是一个可插入式应用程序。它可以通过多种方式扩展，可以是新的认证方法，添加端点或者使用定制存储。
 
 There are 4 types of plugins:
