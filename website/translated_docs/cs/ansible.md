@@ -2,6 +2,7 @@
 id: ansible
 title: "Ansible"
 ---
+
 V naší organizaci máme řešení na míru pro `verdaccio`.
 
 <https://github.com/verdaccio/ansible-verdaccio>
