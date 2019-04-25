@@ -2,6 +2,7 @@
 id: uwierzytelnianie
 title: "Uwierzytelnianie"
 ---
+
 Uwierzytelnianie jest powiązane z auth [wtyczką](plugins.md), której używasz. Ograniczenia dotyczące pakietów są również obsługiwane przez [Dostęp do pakietu](packages.md).
 
 Uwierzytelnianie klienta jest obsługiwane przez samego klienta `npm`. Kiedy już zalogujesz się do aplikacji:
