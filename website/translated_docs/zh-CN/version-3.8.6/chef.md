@@ -3,6 +3,7 @@ id: version-3.8.6-chef
 title: Chef Cookbook
 original_id: chef
 ---
+
 Verdaccio使用Chef Cookbook
 
 详细信息：
