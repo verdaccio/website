@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.3-cli
 title: Command Line Tool
 original_id: cli
 ---
+
 Verdaccio је Ваша почетна станица за покретање апликације.
 
 ## Команде
