@@ -3,6 +3,7 @@ id: version-3.8.6-logger
 title: Logger
 original_id: logger
 ---
+
 Come qualunque applicazione web, verdaccio dispone di un logger incorporato personalizzabile. È possibile definire più tipi di uscite.
 
 ```yaml
