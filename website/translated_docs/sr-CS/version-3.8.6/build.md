@@ -3,6 +3,7 @@ id: version-3.8.6-build
 title: Build the source code
 original_id: build
 ---
+
 Verdaccio se oslanja na `yarn` umesto na `npm` kako bi preuzeo dependencies.
 
 *Napomena: trenutni build će moći da radi samo sa build with `➜ yarn@1.x`.
