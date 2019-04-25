@@ -4,7 +4,6 @@ title: Web User Interface
 original_id: webui
 ---
 
-
 <p align="center"><img src="https://github.com/verdaccio/verdaccio/blob/master/assets/gif/verdaccio_big_30.gif?raw=true"></p>
 
 Verdaccio poseduje prilagodivi web korisnički interfejs koji prikazuje samo privatne pakete.
