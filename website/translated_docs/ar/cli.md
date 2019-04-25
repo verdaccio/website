@@ -2,6 +2,7 @@
 id: cli
 title: "Command Line Tool"
 ---
+
 The verdaccio CLI is your go start the application.
 
 ## Commands
