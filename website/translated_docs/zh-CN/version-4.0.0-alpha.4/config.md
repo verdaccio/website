@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-configuration
 title: 配置文件
 original_id: configuration
 ---
+
 此文件是 Verdaccio 的重要部分, 您可以在其中修改默认行为, 启用插件并扩展功能。
 
 一个默认的配置文件已经在您首次运行 ` Verdaccio ` 时创建。
