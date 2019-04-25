@@ -3,6 +3,7 @@ id: version-3.8.6-cli
 title: Outil de ligne de commande
 original_id: cli
 ---
+
 La CLI de Verdaccio est votre moyen de lancer l'application.
 
 ## Commandes
