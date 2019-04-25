@@ -2,6 +2,7 @@
 id: ansible
 title: "Ansible"
 ---
+
 我们团队有`verdaccio`的定制解决方案。
 
 <https://github.com/verdaccio/ansible-verdaccio>
