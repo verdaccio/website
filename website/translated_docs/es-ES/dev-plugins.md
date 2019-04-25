@@ -2,6 +2,7 @@
 id: dev-plugins
 title: "Extensiones en Desarrollo"
 ---
+
 Existen muchas maneras de extender `verdaccio`, los tipos de extensiones soportados son:
 
 * Extensiones de autenticación
