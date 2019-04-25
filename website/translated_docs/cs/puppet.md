@@ -2,6 +2,7 @@
 id: puppet
 title: "Puppet"
 ---
+
 Instalace Verdaccia na Debian, Ubuntu, Fedoru a RedHat.
 
 # Použití
