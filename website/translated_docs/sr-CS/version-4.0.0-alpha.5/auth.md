@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-authentification
 title: Autentifikacija
 original_id: autentifikacija
 ---
+
 Autentifikacija je vezana za auth [plugin](plugins.md) koji koristite. Restrikcije koje se odnose na paket se mogu podesiti (handle) preko [Package Access](packages.md).
 
 Autentifikacija klijenta se obavlja (handle) preko samog `npm` klijenta. Nakon što se prijavite u aplikaciju:
