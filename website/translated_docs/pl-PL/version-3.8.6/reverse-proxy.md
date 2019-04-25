@@ -3,6 +3,7 @@ id: version-3.8.6-reverse-proxy
 title: Ustawienie Odwrotnego Proxy
 original_id: odwrotne proxy
 ---
+
 ## Apache
 
 Apache i mod_proxy nie powinny dekodować/kodować ukośników i pozostawić je takimi, jakimi są:
