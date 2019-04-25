@@ -2,6 +2,7 @@
 id: installation
 title: "安装"
 ---
+
 Verdaccio 是一个跨平台的 Web 应用程序。在安装之前，您需要确保系统环境已满足以下条件。
 
 #### 最低要求:
