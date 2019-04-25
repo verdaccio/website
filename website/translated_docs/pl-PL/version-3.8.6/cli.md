@@ -3,6 +3,7 @@ id: version-3.8.6-cli
 title: Narzędzie wiersza poleceń
 original_id: cli
 ---
+
 Verdaccio CLI to Twój start, aby uruchomić aplikację.
 
 ## Komendy
