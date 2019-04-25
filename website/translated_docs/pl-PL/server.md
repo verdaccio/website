@@ -2,6 +2,7 @@
 id: server-configuration
 title: "Konfiguracja serwera"
 ---
+
 Jest to głównie podstawowa konfiguracja serwera linux, lecz myślę, że jest to ważne, aby udokumentować i udostępnić krok po kroku jak uruchomiłem na stałe verdaccio na moim serwerze. Będziesz musiał użyć uprawnień root (lub sudo) dla następujących.
 
 ## Running as a separate user
