@@ -3,6 +3,7 @@ id: version-3.8.6-build
 title: Tạo mã nguồn
 original_id: tạo
 ---
+
 Để tải các gói phụ thuộc Verdaccio sử dụng `yarn` thay vì `npm`.
 
 *Xin lưu ý: Mã nguồn hiện tại chỉ có thể được tạo bởi `➜ yarn@1.x`.
