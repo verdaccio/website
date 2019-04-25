@@ -3,6 +3,7 @@ id: version-3.8.6-reverse-proxy
 title: Configurazione di Proxy inverso
 original_id: reverse-proxy
 ---
+
 ## Apache
 
 Apache e mod_proxy non dovrebbero decodificare/codificare gli slash e dovrebbero lasciarli così come sono:
