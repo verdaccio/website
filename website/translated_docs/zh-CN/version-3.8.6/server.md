@@ -3,6 +3,7 @@ id: version-3.8.6-server-configuration
 title: 服务器配置
 original_id: server-configuration（服务器-配置）
 ---
+
 这主要是一些基础的linux服务器配置信息，但是我觉得很重要来记录并分享我让verdaccio 在服务器上永久运行的步骤。 您将需要以下的根（或者sudo）权限。
 
 ## 作为单独用户运行
