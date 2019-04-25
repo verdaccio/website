@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.3-what-is-verdaccio
 title: Шта је Verdaccio?
 original_id: шта-је-verdaccio
 ---
+
 Verdaccio је **lightweight private npm proxy registry** уграђен у **Node.js**
 
 ## Шта је registry
