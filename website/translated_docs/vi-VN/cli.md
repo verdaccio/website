@@ -2,6 +2,7 @@
 id: cli
 title: "Công cụ dòng lệnh Command line"
 ---
+
 Dòng lệnh CLI của Verdaccio là công cụ để bạn bắt đầu khởi động và kiểm soát ứng dụng này.
 
 ## Các lệnh
