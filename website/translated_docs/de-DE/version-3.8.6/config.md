@@ -3,6 +3,7 @@ id: version-3.8.6-configuration
 title: Konfigurationsdatei
 original_id: configuration
 ---
+
 This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
 
 A default configuration file is created the very first time you run `verdaccio`.
