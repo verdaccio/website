@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-dev-plugins
 title: Phát triển các phần mềm bổ trợ
 original_id: dev-plugins
 ---
+
 Có nhiều cách để mở rộng `verdaccio`. Các loại phần mềm bổ trợ là:
 
 * Xác minh các phần mềm bổ trợ
