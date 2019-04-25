@@ -3,6 +3,7 @@ id: version-3.8.6-contributing
 title: 参与Verdaccio贡献
 original_id: 贡献
 ---
+
 First of all 👏👏 thanks for visiting this page, for us means you are willing contribute to `verdaccio` and we are happy for that. 一头扎进不熟悉的代码库并不容易，但是我们会在此帮助你。
 
 ## 沟通频道
