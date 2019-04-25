@@ -2,6 +2,7 @@
 id: protect-your-dependencies
 title: "حماية الحُزم"
 ---
+
 `verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
 
 ### Package configuration
