@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-iss-server
 title: Installazione sul server IIS
 original_id: iss-server
 ---
+
 Queste istruzioni sono state scritte per Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) e [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
 - Installare IIS Install [iisnode](https://github.com/Azure/iisnode). Assicurarsi di installare i prerequisiti (Url Rewrite Module & node) come spiegato nelle istruzioni di iisnode.
