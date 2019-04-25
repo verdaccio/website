@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-configuration
 title: 配置文件
 original_id: configuration
 ---
+
 此文件是 Verdaccio 的重要部分, 您可以在其中修改默认行为, 启用插件并扩展功能。
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
