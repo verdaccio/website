@@ -3,6 +3,7 @@ id: version-3.8.6-logo
 title: Verdaccio 标识
 original_id: logo
 ---
+
 此标识由赢得[制作比赛](https://github.com/verdaccio/verdaccio/issues/237)（最后阶段[](https://github.com/verdaccio/verdaccio/issues/328)）且将作品捐献给此项目的**[Breno Rodrigues](https://github.com/rodriguesbreno)**制作。</p> 
 
 > 所有标识均使用[知识共享](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs)许可授权。
