@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-node-api
 title: Node API
 original_id: node-api
 ---
+
 Verdaccio can be invoked programmatically. The node API was introduced after version `verdaccio@3.0.0-alpha.10`.
 
 ## Usage
