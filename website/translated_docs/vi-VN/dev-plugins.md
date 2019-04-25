@@ -2,6 +2,7 @@
 id: dev-plugins
 title: "Phát triển các phần mềm bổ trợ"
 ---
+
 Có nhiều cách để mở rộng `verdaccio`. Các loại phần mềm bổ trợ là:
 
 * Xác minh các phần mềm bổ trợ
