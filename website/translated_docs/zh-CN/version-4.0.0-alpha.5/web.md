@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-webui
 title: Web 用户界面
 original_id: webui
 ---
+
 ![上行链路](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
 Verdaccio 有可定制的 Web 界面用于管理私有包
