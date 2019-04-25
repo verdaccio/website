@@ -3,6 +3,7 @@ id: version-3.8.6-dev-plugins
 title: Développement des Plugins
 original_id: dev-plugins
 ---
+
 Il existe plusieurs façons pour étendre `verdaccio`, les types de plugins pris en charge sont :
 
 * Plugins d’authentification
