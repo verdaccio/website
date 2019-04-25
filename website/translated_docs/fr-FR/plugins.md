@@ -2,6 +2,7 @@
 id: plugins
 title: "Plugins"
 ---
+
 Verdaccio est une application extensible. Il peut être étendu par de nombreuses manières, ou avec de nouvelles méthodes d'authentification, en ajoutant des points de terminaison ou en utilisant un archivage personnalisé.
 
 There are 4 types of plugins:
