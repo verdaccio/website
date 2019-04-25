@@ -3,7 +3,8 @@ id: version-3.8.6-kubernetes
 title: Kubernetes
 original_id: kubernetes
 ---
-You can find instructions to deploy Verdaccio on a Kubernetes cluster on the [verdaccio/docker-example](https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example) repository. However, the recommended method to install Verdaccio on a Kubernetes cluster is to use [Helm](https://helm.sh). Helm is a [Kubernetes](https://kubernetes.io) package manager which bring multiple advantages.
+
+ You can find instructions to deploy Verdaccio on a Kubernetes cluster on the [verdaccio/docker-example](https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example) repository. However, the recommended method to install Verdaccio on a Kubernetes cluster is to use [Helm](https://helm.sh). Helm is a [Kubernetes](https://kubernetes.io) package manager which bring multiple advantages.
 
 ## Helm
 
