@@ -3,6 +3,7 @@ id: version-3.8.6-use-cases
 title: Casos de Usos
 original_id: use-cases
 ---
+
 ## Uso de paquetes privados
 
 Puede agregar usuarios y administrar qué usuarios pueden acceder a cuáles paquetes.
