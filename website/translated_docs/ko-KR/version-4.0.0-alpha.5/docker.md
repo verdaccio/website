@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-docker
 title: Docker
 original_id: docker
 ---
+
 ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
 To pull the latest pre-built [docker image](https://hub.docker.com/r/verdaccio/verdaccio/):
