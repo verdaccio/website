@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-docker
 title: Docker
 original_id: docker
 ---
+
 <div class="docker-count">
   ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 </div>
