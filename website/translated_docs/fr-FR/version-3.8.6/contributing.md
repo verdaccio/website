@@ -3,6 +3,7 @@ id: version-3.8.6-contributing
 title: Contribuer à Verdaccio
 original_id: contribuant
 ---
+
 First of all 👏👏 thanks for visiting this page, for us means you are willing contribute to `verdaccio` and we are happy for that. Passer à une base de code inconnue n'est pas facile, mais nous sommes là pour vous aider.
 
 ## Canaux de communication
