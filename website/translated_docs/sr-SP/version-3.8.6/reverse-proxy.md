@@ -3,6 +3,7 @@ id: version-3.8.6-reverse-proxy
 title: Reverse Proxy Setup
 original_id: reverse-proxy
 ---
+
 ## Apache
 
 Apache и mod_proxy не треба да decode/encode slashes, тако да је најбоље да оставите подешавања таква каква су:
