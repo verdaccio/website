@@ -4,7 +4,6 @@ title: Web 用户界面
 original_id: webui
 ---
 
-
 <p align="center"><img src="https://github.com/verdaccio/verdaccio/blob/master/assets/gif/verdaccio_big_30.gif?raw=true"></p>
 
 Verdaccio 有可定制的 Web 界面用于管理私有包
