@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-caching
 title: Strategie ukládání do mezipaměti
 original_id: mezipaměť
 ---
+
 Verdaccio standardně ukládá všechny balíčky do složky `/storage`. Můžete se však rozhodnout, zda chcete použít jinou strategii. Pomocí doplňků můžete použít cloud nebo libovolnou databázi.
 
 ## Scénáře ukládání do mezipaměti
