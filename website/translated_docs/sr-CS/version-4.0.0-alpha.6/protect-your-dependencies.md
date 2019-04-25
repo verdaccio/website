@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.6-protect-your-dependencies
 title: Protecting packages
 original_id: protect-your-dependencies
 ---
+
 `verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
 
 ### Konfigurisanje paketa
