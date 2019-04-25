@@ -2,6 +2,7 @@
 id: osvědčené
 title: "Osvědčené postupy"
 ---
+
 Následující příručka obsahuje seznam nejlepších praktických postupů, které obvykle doporučujeme všem uživatelům. Neberte tuto příručku jako povinnou, vyberte si podle svých potřeb.
 
 **Své osvědčené postupy můžete sdílet s komunitou Verdaccio**.
