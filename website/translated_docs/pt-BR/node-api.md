@@ -2,6 +2,7 @@
 id: node-api
 title: "Api Node"
 ---
+
 Verdaccio can be invoked programmatically. The node API was introduced after version `verdaccio@3.0.0-alpha.10`.
 
 ## Utilização
