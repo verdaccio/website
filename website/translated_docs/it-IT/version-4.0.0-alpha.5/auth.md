@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-authentification
 title: Autenticazione
 original_id: autenticazione
 ---
+
 L'autenticazione è legata all'auth [plugin](plugins.md) che si sta utilizzando. Anche le restrizioni di pacchetto vengono gestite dal [Package Access](packages.md).
 
 L'autenticazione del client viene gestita dal client del `npm` stesso. Una volta che si effettua il login all'applicazione:
