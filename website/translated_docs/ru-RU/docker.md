@@ -2,6 +2,7 @@
 id: docker
 title: Docker
 ---
+
 ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
 Для скачивания последней версии [Docker образа](https://hub.docker.com/r/verdaccio/verdaccio/):
