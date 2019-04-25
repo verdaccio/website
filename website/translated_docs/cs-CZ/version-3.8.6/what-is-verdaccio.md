@@ -3,6 +3,7 @@ id: version-3.8.6-what-is-verdaccio
 title: Co je Verdaccio?
 original_id: co-je-verdaccio
 ---
+
 Verdaccio je **jednoduchý soukromý npm proxy registr** založená na **Node.js**
 
 ## Co je registr
