@@ -3,6 +3,7 @@ id: version-3.8.6-ci
 title: Tích hợp liên tục
 original_id: ci
 ---
+
 Khi đăng nhập hoặc phát hành, bạn có thể sử dụng verdaccio để tích hợp liên tục. Có thể bạn sẽ gặp sự cố ngay lập tức vào lần đầu tiên sử dụng NPM để chạy mô-đun chuyên dụng trong môi trường tích hợp liên tục. Lệnh đăng nhập NPM được tạo ra để tạo ra tính tương tác lẫn nhau khi sử dụng. Điều này có thể gây ra sự cố trong CI, tập lệnh, v. v. Dưới đây là cách sử dụng NPM để đăng nhập vào các nền tảng tích hợp liên tục khác nhau.
 
 - [Travis CI](https://remysharp.com/2015/10/26/using-travis-with-private-npm-deps)
