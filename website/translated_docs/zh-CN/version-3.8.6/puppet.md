@@ -3,6 +3,7 @@ id: version-3.8.6-puppet
 title: Puppet
 original_id: puppet
 ---
+
 在Debian、Ubuntu、Fedora和RedHat中安装verdaccio。
 
 # 使用
