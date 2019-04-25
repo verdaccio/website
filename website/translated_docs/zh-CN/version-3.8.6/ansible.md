@@ -3,6 +3,7 @@ id: version-3.8.6-ansible
 title: Ansible
 original_id: ansible
 ---
+
 我们团队有`verdaccio`的定制解决方案。
 
 <https://github.com/verdaccio/ansible-verdaccio>
