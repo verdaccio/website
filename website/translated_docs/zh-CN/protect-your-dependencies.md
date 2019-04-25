@@ -2,6 +2,7 @@
 id: protect-your-dependencies（保护-依赖项）
 title: "保护包"
 ---
+
 `verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
 
 ### 包配置
