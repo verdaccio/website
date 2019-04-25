@@ -3,6 +3,7 @@ id: version-3.8.6-logger
 title: Enregistreur
 original_id: enregistreur
 ---
+
 As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
 
 ```yaml
