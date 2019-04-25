@@ -2,6 +2,7 @@
 id: amazon
 title: "Amazon Web Services"
 ---
+
 Tento dokument popisuje několik postupů jak nasadit Verdaccio v AWS cloud.
 
 ## EC2
