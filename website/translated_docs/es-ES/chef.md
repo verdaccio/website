@@ -2,6 +2,7 @@
 id: chef
 title: "Libro de Cocina del Chef"
 ---
+
 Usando el Libro de Cocina del Chef para Verdaccio
 
 Para más información:
