@@ -2,6 +2,7 @@
 id: cli
 title: "Outil de ligne de commande"
 ---
+
 La CLI de Verdaccio est votre moyen de lancer l'application.
 
 ## Commandes
