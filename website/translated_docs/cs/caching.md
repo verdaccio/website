@@ -2,6 +2,7 @@
 id: mezipaměť
 title: "Strategie ukládání do mezipaměti"
 ---
+
 Verdaccio standardně ukládá všechny balíčky do složky `/storage`. Můžete se však rozhodnout, zda chcete použít jinou strategii. Pomocí doplňků můžete použít cloud nebo libovolnou databázi.
 
 ## Scénáře ukládání do mezipaměti
