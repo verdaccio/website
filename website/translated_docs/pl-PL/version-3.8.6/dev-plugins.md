@@ -3,6 +3,7 @@ id: version-3.8.6-dev-plugins
 title: Tworzenie wtyczek
 original_id: dev-plugins
 ---
+
 Istnieje wiele sposobów na rozszerzenie funkcjonalności `verdaccio`, wspierane są następujące rodzaje wtyczek:
 
 * Wtyczki uwierzytelniania
