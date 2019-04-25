@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.3-cli
 title: Nástroj Příkazové Řádky
 original_id: cli
 ---
+
 Chcete-li spustit aplikaci, použijte Verdaccio CLI.
 
 ## Příkazy
