@@ -3,6 +3,7 @@ id: version-3.8.6-what-is-verdaccio
 title: C'est quoi Verdaccio?
 original_id: what-is-verdaccio
 ---
+
 Verdaccio est un **journal proxy npm léger et privé** écrit dans **Node.js**
 
 ## Qu'est-ce qu'un journal
