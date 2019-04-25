@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-docker
 title: Docker
 original_id: docker
 ---
+
 <div class="docker-count">
   ![alt Количество скачиваний](http://dockeri.co/image/verdaccio/verdaccio "Количество скачиваний")
 </div>
