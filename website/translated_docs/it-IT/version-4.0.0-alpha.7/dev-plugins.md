@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.7-dev-plugins
 title: Sviluppare Estensioni
 original_id: dev-plugins
 ---
+
 Esistono diversi modi di ampliare `verdaccio`, i tipi di estensioni supportati sono:
 
 * Plugin di autenticazione
