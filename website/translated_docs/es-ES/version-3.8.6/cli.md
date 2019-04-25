@@ -3,6 +3,7 @@ id: version-3.8.6-cli
 title: Herramienta de Linea de Comando
 original_id: cli
 ---
+
 El CLI de verdaccio es la forma de iniciar la aplicación.
 
 ## Comandos
