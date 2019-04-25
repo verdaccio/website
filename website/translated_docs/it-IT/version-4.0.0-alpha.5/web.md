@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-webui
 title: Interfaccia utente web
 original_id: webui
 ---
+
 ![Uplink](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
 Verdaccio offre un'interfaccia web utente per mostrare solo i pacchetti privati e può essere personalizzata,.
