@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-notifications
 title: Нотификације
 original_id: нотификације
 ---
+
 Notify је примарно замишљен да се користи са Slack Incoming webhooks, али и да на једноставан начин достави потребно на сваку крајњу тачку (endpoint). Тренутно је активно само за `npm publish` команду.
 
 ## Коришћење
