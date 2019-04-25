@@ -2,6 +2,7 @@
 id: cli
 title: "Narzędzie wiersza poleceń"
 ---
+
 Verdaccio CLI to Twój start, aby uruchomić aplikację.
 
 ## Komendy
