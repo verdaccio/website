@@ -2,6 +2,7 @@
 id: reverse-proxy
 title: "Configuração de Proxy Reverso"
 ---
+
 ## Apache
 
 Apache and mod_proxy should not decode/encode slashes and leave them as they are:
