@@ -3,6 +3,7 @@ id: version-3.8.6-server-configuration
 title: Server Configuration
 original_id: server-configuration
 ---
+
 Ово је најбазичнија конфигурација за linux server али нам се чини важним да документујемо и поделимо са Вама све кораке како би verdaccio стално радио на серверу. Биће Вам потребне root (или sudo) дозволе за наведено.
 
 ## Покретање, као засебан корисник
