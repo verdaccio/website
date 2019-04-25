@@ -2,6 +2,7 @@
 id: најбоље
 title: "Најбоља решења"
 ---
+
 The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
 
 **Feel free to suggest your best practices with the Verdaccio community**.
