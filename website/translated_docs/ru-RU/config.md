@@ -2,6 +2,7 @@
 id: configuration
 title: "Файл конфигурации"
 ---
+
 Этот файл является краеугольным камнем verdaccio. В нём вы можете изменить стандартное поведение, включить плагины и расширенные возможности.
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
