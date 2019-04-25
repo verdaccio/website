@@ -2,6 +2,7 @@
 id: configuration
 title: "Arquivo de Configuração"
 ---
+
 This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
