@@ -2,6 +2,7 @@
 id: dev-plugins
 title: "تطوير الإضافات"
 ---
+
 There are many ways to extend `verdaccio`, the kind of plugins supported are:
 
 * Authentication plugins
