@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.3-configuration
 title: Tệp cấu hình
 original_id: cấu hình
 ---
+
 Tệp này là một phần quan trọng của Verdaccio, đây là nơi bạn có thể sửa đổi hành vi mặc định, bật plugin và mở rộng các tính năng.
 
 Để cài tệp cấu hình mặc định đầu tiên, bạn chạy `verdaccio`.
