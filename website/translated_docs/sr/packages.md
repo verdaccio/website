@@ -2,6 +2,7 @@
 id: packages
 title: "Package Access"
 ---
+
 Ово је серија контејнера која дозвољава или забрањује приступ до local storage на основу специфично дефинисаних критеријума.
 
 Сигурност пада на плећа plugina који се користи. По правилу, `verdaccio` користи [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Ако користите различит plugin, начин извршавања (behaviour) би такође могао бити промењен. Подразумевани plugin не руководи (handle) са `allow_access` и `allow_publish` самостално, већ користи интерни fallback у случају да не постоји спремни plugin.
