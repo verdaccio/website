@@ -3,6 +3,7 @@ id: version-4.0.0-beta.0-who-is-using
 title: Who is using Verdaccio?
 original_id: who-is-using
 ---
+
 ### As a Business
 
 *If you are using Verdaccio in your business and want to share your experience, let us know. We will happy to listen to you.*
