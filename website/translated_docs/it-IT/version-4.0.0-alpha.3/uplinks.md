@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.3-uplinks
 title: Uplink
 original_id: uplink
 ---
+
 Un *uplink* è un link ad un registro esterno che fornisce accesso ai pacchetti esterni.
 
 ![Uplink](/img/uplinks.png)
