@@ -15,6 +15,8 @@ Verdaccio je multi-platformna web aplikacija. Da biste je instalirali, potrebno 
 
 > Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
 
+<div id="codefund">''</div>
+
 ## Instalacija CLI
 
 `verdaccio` mora biti instaliran globalno, korišćenjem neke od navedenih metoda:
