@@ -15,6 +15,8 @@ Verdaccio je multiplatformová webová aplikace. Chcete-li jej nainstalovat, pot
 
 > Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
 
+<div id="codefund">''</div>
+
 ## Instalace CLI
 
 `verdaccio` must be installed globaly using either of the following methods:
