@@ -9,6 +9,8 @@ title: "Logotype"
 
 Посебно се захваљујемо *[@Lisapressmar](https://github.com/Lisapressmar)* за њен допринос у виду слика разних формата и величина.
 
+<div id="codefund">''</div>
+
 ## Симболи
 
 **Са текстом**
