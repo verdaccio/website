@@ -14,7 +14,7 @@ web:
   logo: logo.png
   primary_color: "#4b5e40"
   gravatar: true | false
-  scope: @scope
+  scope: \@scope
   sort_packages: asc | desc
 ```
 
@@ -22,14 +22,15 @@ web:
 
 ### Конфигурисање
 
-| Својство      | Тип        | Неопходно | Пример                         | Подршка    | Опис                                                                                                                                              |
-| ------------- | ---------- | --------- | ------------------------------ | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| enable        | boolean    | Не        | true/false                     | all        | дозвољава приказ веб интерфејса                                                                                                                   |
-| title         | string     | Не        | Verdaccio                      | all        | Опис наслова HTML заглавља                                                                                                                        |
-| gravatar      | boolean    | Не        | true                           | `>v4`   | Gravatar-и ће бити генерисани у позадини, ако је ово својство омогућено                                                                           |
-| sort_packages | [asc,desc] | Не        | asc                            | `>v4`   | По правилу, приватни пакети су сортирани по растућем редоследу                                                                                    |
-| logo          | string     | Не        | http://my.logo.domain/logo.png | all        | URI где се лого налази (лого за header)                                                                                                           |
-| primary_color | string     | Не        | "#4b5e40"                      | `>4`    | The primary color to use throughout the UI (header, etc)                                                                                          |
-| scope         | string     | Не        | \\@myscope                   | `>v3.x` | Ако користите регистри за specific module scope, прецизирајте тај scope како бисте подесили webui instructions header (note: escape @ with \\@) |
+| Својство      | Тип        | Неопходно | Пример                                                      | Подршка    | Опис                                                                                                                                              |
+| ------------- | ---------- | --------- | ----------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| enable        | boolean    | Не        | true/false                                                  | all        | дозвољава приказ веб интерфејса                                                                                                                   |
+| title         | string     | Не        | Verdaccio                                                   | all        | Опис наслова HTML заглавља                                                                                                                        |
+| gravatar      | boolean    | Не        | true                                                        | `>v4`   | Gravatar-и ће бити генерисани у позадини, ако је ово својство омогућено                                                                           |
+| sort_packages | [asc,desc] | Не        | asc                                                         | `>v4`   | По правилу, приватни пакети су сортирани по растућем редоследу                                                                                    |
+| logo          | string     | Не        | /local/path/to/my/logo.png  
+http://my.logo.domain/logo.png | all        | URI где се лого налази (лого за header)                                                                                                           |
+| primary_color | string     | Не        | "#4b5e40"                                                   | `>4`    | The primary color to use throughout the UI (header, etc)                                                                                          |
+| scope         | string     | Не        | \\@myscope                                                | `>v3.x` | Ако користите регистри за specific module scope, прецизирајте тај scope како бисте подесили webui instructions header (note: escape @ with \\@) |
 
 > Препоручено је да лого буде димензија `40x40` пиксела.
