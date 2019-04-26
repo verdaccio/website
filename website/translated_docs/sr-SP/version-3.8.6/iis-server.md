@@ -3,6 +3,7 @@ id: version-3.8.6-iss-server
 title: Инсталирање на IIS server
 original_id: iss-server
 ---
+
 Наведене инструкције су писане за Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) i [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
 
 - Инсталирајте IIS Install [iisnode](https://github.com/tjanczuk/iisnode). Проверите да ли сте инсталирали све што је неопходно као предуслов (Url Rewrite Module & node), а што је дато у упутству за iisnode.

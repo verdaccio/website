@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-installation
 title: Installazione
 original_id: installazione
 ---
+
 Verdaccio è un'applicazione web multipiattaforma. Per installarlo, sono necessari alcuni prerequisiti.
 
 #### Prerequisiti

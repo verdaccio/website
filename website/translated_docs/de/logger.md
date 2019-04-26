@@ -2,6 +2,7 @@
 id: logger
 title: "Logger"
 ---
+
 As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
 
 ```yaml

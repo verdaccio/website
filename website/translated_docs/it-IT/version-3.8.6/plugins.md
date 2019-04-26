@@ -3,6 +3,7 @@ id: version-3.8.6-plugins
 title: Plugin
 original_id: plugin
 ---
+
 Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, con nuovi metodi di autenticazione, aggiungendo endpoint o utilizzando un archivio personalizzato.
 
 > Se sei interessato a sviluppare il tuo plugin personale, leggi la sezione [sviluppo](dev-plugins.md).

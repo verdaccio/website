@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.7-plugins
 title: Plugin
 original_id: plugin
 ---
+
 Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, con nuovi metodi di autenticazione, aggiungendo endpoint o utilizzando un archivio personalizzato.
 
 There are 4 types of plugins:

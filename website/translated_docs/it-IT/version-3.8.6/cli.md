@@ -3,6 +3,7 @@ id: version-3.8.6-cli
 title: Strumento riga di comando
 original_id: cli
 ---
+
 Il CLI di verdaccio è la modalità per avviare l'applicazione.
 
 ## Comandi

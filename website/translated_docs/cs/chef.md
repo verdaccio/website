@@ -2,6 +2,7 @@
 id: chef
 title: "Chef Cookbook"
 ---
+
 Použití Verdaccia s Chef Cookbook
 
 Další informace:

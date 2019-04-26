@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-docker
 title: Docker
 original_id: docker
 ---
+
 ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
 Како бисте привукли (pull) најновији pre-built [docker image](https://hub.docker.com/r/verdaccio/verdaccio/):

@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-installation
 title: Installation
 original_id: cài đặt
 ---
+
 Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
 
 #### Những yêu cầu tối thiểu

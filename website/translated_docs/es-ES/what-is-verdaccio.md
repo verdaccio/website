@@ -2,6 +2,7 @@
 id: what-is-verdaccio
 title: "Qué es Verdaccio?"
 ---
+
 Verdacio es un **ligero registry privado y proxy**hecho en **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## Qué es un registro

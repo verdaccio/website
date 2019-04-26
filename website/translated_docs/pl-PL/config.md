@@ -2,6 +2,7 @@
 id: konfiguracja
 title: "Plik konfiguracyjny"
 ---
+
 Plik ten jest podstawą verdaccio, ponieważ to w nim możesz modyfikować domyślne zachowanie aplikacji, rozszerzać jej funkcje oraz włączać wtyczki.
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.

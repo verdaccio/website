@@ -4,7 +4,6 @@ title: Webové uživatelské rozhraní
 original_id: webui
 ---
 
-
 <p align="center"><img src="https://github.com/verdaccio/verdaccio/blob/master/assets/gif/verdaccio_big_30.gif?raw=true"></p>
 
 Verdaccio má webové uživatelské rozhraní pro zobrazení pouze soukromých balíčků a lze je přizpůsobit.

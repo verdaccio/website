@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-configuration
 title: Файл конфигурации
 original_id: configuration
 ---
+
 Этот файл является краеугольным камнем verdaccio. В нём вы можете изменить стандартное поведение, включить плагины и расширенные возможности.
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.

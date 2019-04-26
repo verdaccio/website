@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-authentification
 title: Autentizace
 original_id: autentizace
 ---
+
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
 
 The client authentification is handled by `npm` client itself. Once you login to the application:

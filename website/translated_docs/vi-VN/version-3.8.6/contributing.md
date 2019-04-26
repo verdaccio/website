@@ -3,6 +3,7 @@ id: version-3.8.6-contributing
 title: Tham gia đóng góp Verdaccio
 original_id: đóng góp
 ---
+
 First of all 👏👏 thanks for visiting this page, for us means you are willing contribute to `verdaccio` and we are happy for that. Để có thể sử dụng một cơ sở mã hoàn toàn mới là điều không hề dễ dàng, vì vậy chúng tôi luôn sẵn sàng giúp đỡ bạn.
 
 ## Kênh trao đổi

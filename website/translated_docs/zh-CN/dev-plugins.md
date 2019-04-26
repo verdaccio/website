@@ -2,6 +2,7 @@
 id: dev-plugins
 title: "插件开发"
 ---
+
 有很多种扩展 `verdaccio`的方法，支持的插件种类有：
 
 * 认证插件

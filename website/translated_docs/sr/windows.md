@@ -2,6 +2,7 @@
 id: windows
 title: "Инсталирајте као Windows Service"
 ---
+
 Угрубо базирано на упутствима која се могу пронаћи [овде](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). Направили смо пример verdaccio servis инсталације која ради као сат. Швајцарски:
 
 1. Креирајте директоријум за verdaccio 

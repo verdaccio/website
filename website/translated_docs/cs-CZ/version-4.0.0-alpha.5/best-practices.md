@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-best
 title: Osvědčené postupy
 original_id: osvědčené
 ---
+
 Následující příručka obsahuje seznam nejlepších praktických postupů, které obvykle doporučujeme všem uživatelům. Neberte tuto příručku jako povinnou, vyberte si podle svých potřeb.
 
 **Své osvědčené postupy můžete sdílet s komunitou Verdaccio**.

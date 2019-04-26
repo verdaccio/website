@@ -2,6 +2,7 @@
 id: authentification
 title: "Authentification"
 ---
+
 Аутентификација је везана за auth [plugin](plugins.md) који користите. Ограничења пакета су дефинисана преко [Package Access](packages.md).
 
 Аутентификацију клијента врши сам `npm` клијент. Након пријаве на апликацију:

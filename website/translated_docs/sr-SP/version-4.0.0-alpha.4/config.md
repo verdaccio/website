@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-configuration
 title: Фајл за конфигурисање
 original_id: конфигурисање
 ---
+
 Овај фајл је основа verdaccio-a. У оквиру њега, можете вршити измене задатих подешавања, можете активирати plugin-е и спољашње ресурсе (features).
 
 Фајл "default configuration file" се креира приликом првог покретања `verdaccio-а`.

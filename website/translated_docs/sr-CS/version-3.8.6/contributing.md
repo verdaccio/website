@@ -3,6 +3,7 @@ id: version-3.8.6-contributing
 title: Doprinošenje Verdaccio-u
 original_id: doprinošenje
 ---
+
 Za početak 👏👏 hvala Vam što ste posetili ovu stranicu. A poseta znači da ste voljni da doprinesete projektu `verdaccio`, što nas čini jako srećnim. Plivanje u vodama nepoznatog koda nije lako, ali, mi smo tu da Vam pomognemo.
 
 ## Kanali za komunikaciju

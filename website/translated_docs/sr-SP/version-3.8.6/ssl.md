@@ -3,6 +3,7 @@ id: version-3.8.6-ssl
 title: Подешавање SSL Сертификата
 original_id: ssl
 ---
+
 Пратите инструкције како да конфигуришете SSL сертификат који служи у NPM регистрију под HTTPS.
 
 * Ажурирајте својство listen у свом `~/.config/verdaccio/config.yaml`:

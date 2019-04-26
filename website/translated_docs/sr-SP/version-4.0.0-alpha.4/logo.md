@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-logo
 title: Verdaccio Logotype
 original_id: logo
 ---
+
 Логотип је дизајнирао **[Breno Rodrigues](https://github.com/rodriguesbreno)** који је освојио [такмичење](https://github.com/verdaccio/verdaccio/issues/237) ([завршна фаза](https://github.com/verdaccio/verdaccio/issues/328)) и посветио свој таленат нашем пројекту.
 
 > Сваки лого је лиценциран под [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).

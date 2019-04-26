@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.6-amazon
 title: Amazon Web Services
 original_id: amazon
 ---
+
 Tento dokument popisuje několik postupů jak nasadit Verdaccio v AWS cloud.
 
 ## EC2

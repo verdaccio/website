@@ -3,6 +3,7 @@ id: version-3.8.6-protect-your-dependencies
 title: 保护包
 original_id: protect-your-dependencies（保护-依赖项）
 ---
+
 `verdaccio` 允许发布保护，为了要使用此功能，您将需要正确设置[包访问权限](packages)。
 
 ### 包配置

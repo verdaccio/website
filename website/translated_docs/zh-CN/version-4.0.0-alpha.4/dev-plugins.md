@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-dev-plugins
 title: 插件开发
 original_id: dev-plugins
 ---
+
 有很多种扩展 `verdaccio`的方法，支持的插件种类有：
 
 * 认证插件

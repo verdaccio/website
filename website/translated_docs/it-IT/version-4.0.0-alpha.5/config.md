@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-configuration
 title: File di configurazione
 original_id: configurazione
 ---
+
 Questo file è il fondamento di verdaccio nel quale è possibile modificare il comportamento predefinito, attivare i plugin ed estendere le funzionalità.
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.

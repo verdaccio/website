@@ -2,6 +2,7 @@
 id: ssl
 title: "Podešavanje SSL Sertifikata"
 ---
+
 Pratite instrukcije kako da konfigurišete SSL sertifikat koji služi u NPM registriju pod HTTPS.
 
 * Ažurirajte svojstvo listen u svom `~/.config/verdaccio/config.yaml`:

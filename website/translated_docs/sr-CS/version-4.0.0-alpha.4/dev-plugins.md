@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-dev-plugins
 title: Developing Plugins
 original_id: dev-plugins
 ---
+
 Ima mnogo načina da proširite `verdaccio`, tipovi podržanih plugin-a su:
 
 * Authentication plugins

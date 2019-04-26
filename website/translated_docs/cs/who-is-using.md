@@ -2,6 +2,7 @@
 id: kdo-používá
 title: "Kdo používá Verdaccio?"
 ---
+
 ### K podnikání
 
 *If you are using Verdaccio in your business and want to share your experience, let us know. Rádi si poslechneme váš názor.*

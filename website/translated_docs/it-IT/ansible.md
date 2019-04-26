@@ -2,6 +2,7 @@
 id: ansible
 title: "Ansible"
 ---
+
 Abbiamo una soluzione personalizzata per `verdaccio` nella nostra organizzazione.
 
 <https://github.com/verdaccio/ansible-verdaccio>

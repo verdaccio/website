@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.6-amazon
 title: Amazon Web Services
 original_id: amazon
 ---
+
 This document describes several approaches for deploying Verdaccio in the AWS cloud.
 
 ## EC2

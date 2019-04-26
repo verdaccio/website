@@ -2,6 +2,7 @@
 id: autentifikacija
 title: "Autentifikacija"
 ---
+
 Autentifikacija je vezana za auth [plugin](plugins.md) koji koristite. Ograničenja paketa su definisana preko [Package Access](packages.md).
 
 Autentifikaciju klijenta vrši sam `npm` klijent. Nakon prijave na aplikaciju:

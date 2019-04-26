@@ -2,6 +2,7 @@
 id: dev-plugins
 title: "Developing Plugins"
 ---
+
 Има много начина да проширите `verdaccio`, типови подржаних plugin-а су:
 
 * Authentication plugins

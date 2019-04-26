@@ -3,6 +3,7 @@ id: version-3.8.6-iss-server
 title: Instalación en servidor IIS
 original_id: iss-servidor
 ---
+
 Estas instrucciones fueron escritas para Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) y [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
 
 - Install IIS Install [iisnode](https://github.com/tjanczuk/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.

@@ -2,6 +2,7 @@
 id: ansible
 title: "Phần mềm nguồn mở ansible"
 ---
+
 Chúng tôi có một giải pháp tuỳ chỉnh cho `verdaccio` trong tổ chức của chúng tôi.
 
 <https://github.com/verdaccio/ansible-verdaccio>

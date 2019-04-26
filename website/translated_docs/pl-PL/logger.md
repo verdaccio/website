@@ -2,6 +2,7 @@
 id: logger
 title: "Rejestrator"
 ---
+
 Jak każda aplikacja sieci web, verdaccio posiada wbudowany konfigurowalny rejestrator. Możesz określić wiele typów wyjść.
 
 ```yaml

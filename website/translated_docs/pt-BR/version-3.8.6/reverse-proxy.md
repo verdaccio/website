@@ -3,6 +3,7 @@ id: version-3.8.6-reverse-proxy
 title: Configuração de Proxy Reverso
 original_id: reverse-proxy
 ---
+
 ## Apache
 
 Apache and mod_proxy should not decode/encode slashes and leave them as they are:

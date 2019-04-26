@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-uplinks
 title: Uplink
 original_id: uplink
 ---
+
 Un *uplink* è un link ad un registro esterno che fornisce accesso ai pacchetti esterni.
 
 ![Uplink](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)

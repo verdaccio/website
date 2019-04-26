@@ -3,6 +3,7 @@ id: version-3.8.6-ci
 title: Integrazione continua
 original_id: ci
 ---
+
 Potete utilizzare verdaccio con integrazione continua mentre effettuate il login o pubblicate. Quando si usa NPM per installare un modulo privato in un ambiente di integrazione continua per la prima volta, si troverà subito un problema. Il comando di login NPM è progettato per essere utilizzato in modo interattivo. Questo causa un problema in CI, script, ecc. Qui trovate come utilizzare NPM per accedere a differenti piattaforme di integrazione continua.
 
 - [Travis CI](https://remysharp.com/2015/10/26/using-travis-with-private-npm-deps)

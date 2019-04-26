@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-notifications
 title: Powiadomienia
 original_id: powiadomienia
 ---
+
 Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
 
 ## Użycie

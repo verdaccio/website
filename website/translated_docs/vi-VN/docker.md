@@ -2,6 +2,7 @@
 id: docker
 title: Docker
 ---
+
 ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
 Để tải [hình ảnh docker mới nhất](https://hub.docker.com/r/verdaccio/verdaccio/):

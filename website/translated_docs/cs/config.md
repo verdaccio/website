@@ -2,6 +2,7 @@
 id: konfigurace
 title: "Konfigurační Soubor"
 ---
+
 Tento soubor je základní kámen verdaccia, kde můžete modifikovat výchozí chování, povolovat doplňky a rozšiřovat funkce.
 
 Výchozí konfigurační soubor `config.yaml` je vytvořen při prvním spuštění `verdaccia`.

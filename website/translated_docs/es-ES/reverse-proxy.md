@@ -2,6 +2,7 @@
 id: reverse-proxy
 title: "Configuración de Proxy Inverso"
 ---
+
 ## Apache
 
 Apache y mod_proxy no deberían decodificar/codificar barras y dejarlas como son:

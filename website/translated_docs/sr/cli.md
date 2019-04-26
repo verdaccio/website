@@ -2,6 +2,7 @@
 id: cli
 title: "Command Line Tool"
 ---
+
 Verdaccio је Ваша почетна станица за покретање апликације.
 
 ## Команде

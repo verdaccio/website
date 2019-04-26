@@ -3,6 +3,7 @@ id: version-3.8.6-uplinks
 title: Uplinks
 original_id: uplinks
 ---
+
 *uplink* je link koji sadrži external registry koji omogućava pristup do external packages.
 
 ![Uplinks](/img/uplinks.png)

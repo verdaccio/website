@@ -3,6 +3,7 @@ id: version-3.8.6-windows
 title: Instalacja jako Usługa systemu Windows
 original_id: windows
 ---
+
 Ogólnie, bazując na instrukcji podanej [tutaj](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). I crafted the following and it provided me with a fully working verdaccio service installation:
 
 1. Stwórz folder dla verdaccio 

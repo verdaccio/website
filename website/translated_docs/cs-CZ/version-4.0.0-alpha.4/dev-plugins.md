@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-dev-plugins
 title: Developing Plugins
 original_id: dev-plugins
 ---
+
 There are many ways to extend `verdaccio`, the kind of plugins supported are:
 
 * Authentication plugins

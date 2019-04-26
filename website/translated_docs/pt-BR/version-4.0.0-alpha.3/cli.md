@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.3-cli
 title: Utilitário na Linha de Comando
 original_id: cli
 ---
+
 A linha de comando é por onde você pode controlar toda a sua instalação Verdaccio.
 
 ## Comandos

@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.3-configuration
 title: Fichier de configuration
 original_id: configuration
 ---
+
 Ce fichier est le pilier de verdaccio où vous pouvez modifier le comportement par défaut, activer les plugins et étendre les fonctionnalités.
 
 Un fichier de configuration par défaut est créé la première fois que vous exécutez `verdaccio`.

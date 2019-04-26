@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-webui
 title: Webové uživatelské rozhraní
 original_id: webui
 ---
+
 ![Uplinks](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
 Verdaccio má webové uživatelské rozhraní pro zobrazení pouze soukromých balíčků a lze je přizpůsobit.

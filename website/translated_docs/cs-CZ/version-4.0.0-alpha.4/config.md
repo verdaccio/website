@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.4-configuration
 title: Konfigurační Soubor
 original_id: konfigurace
 ---
+
 Tento soubor je základní kámen verdaccia, kde můžete modifikovat výchozí chování, povolovat doplňky a rozšiřovat funkce.
 
 A default configuration file is created the very first time you run `verdaccio`.

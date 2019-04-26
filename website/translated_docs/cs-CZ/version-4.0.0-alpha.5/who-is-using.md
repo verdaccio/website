@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-who-is-using
 title: Kdo používá Verdaccio?
 original_id: kdo-používá
 ---
+
 ### K podnikání
 
 *Pokud ve Vaší firmě používáte Verdaccio a chcete se s námi podělit o svoji zkušenost, dejte nám vědět. Rádi si poslechneme váš názor.*

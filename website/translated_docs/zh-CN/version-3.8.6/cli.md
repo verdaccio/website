@@ -3,6 +3,7 @@ id: version-3.8.6-cli
 title: 命令行工具
 original_id: cli
 ---
+
 Verdaccio 命令行是启动和控制此应用的工具。
 
 ## 命令

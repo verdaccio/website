@@ -3,6 +3,7 @@ id: version-3.8.6-protect-your-dependencies
 title: Protezione dei pacchetti
 original_id: protect-your-dependencies
 ---
+
 `verdaccio` permette di proteggere la pubblicazione. Per ottenere ciò è necessario configurare correttamente l'[accesso ai pacchetti](packages).
 
 ### Configurazione del pacchetto

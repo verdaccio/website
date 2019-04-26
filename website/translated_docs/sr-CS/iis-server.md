@@ -2,6 +2,7 @@
 id: iss-server
 title: "Instaliranje na IIS server"
 ---
+
 Navedene instrukcije su pisane za Windows Server 2016, IIS 10, Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) i [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
 - Install IIS Install [iisnode](https://github.com/Azure/iisnode).. Postarajte se da instalirate sve što je potrebno (Url Rewrite Module & node), kao što je objašnjeno u uputstvima za iisnode.

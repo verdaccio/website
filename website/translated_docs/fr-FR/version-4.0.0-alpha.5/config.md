@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-configuration
 title: Fichier de configuration
 original_id: configuration
 ---
+
 Ce fichier est le pilier de verdaccio où vous pouvez modifier le comportement par défaut, activer les plugins et étendre les fonctionnalités.
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.

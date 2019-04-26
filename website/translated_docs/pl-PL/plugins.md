@@ -2,6 +2,7 @@
 id: wtyczki
 title: "Wtyczki"
 ---
+
 Verdaccio jest aplikacją obsługującą wtyczki. Dzięki temu można rozszerzyć działanie aplikacji na wiele sposobów: wprowadzić nowe metody uwierzytelniania, dodawać punkty końcowe lub użyć niestandardowego magazynu danych.
 
 There are 4 types of plugins:

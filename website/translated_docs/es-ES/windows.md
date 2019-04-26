@@ -2,6 +2,7 @@
 id: windows
 title: "Instalación como un Servicio de Windows"
 ---
+
 Basándome ligeramente en las instrucciones encontradas [aquí](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). Elaboré lo siguiente y me proporcionó un servicio de instalación de verdaccio totalmente funcional:
 
 1. Crear un directorio para Verdaccio 

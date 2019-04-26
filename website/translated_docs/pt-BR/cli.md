@@ -2,6 +2,7 @@
 id: cli
 title: "Utilitário na Linha de Comando"
 ---
+
 A linha de comando é por onde você pode controlar toda a sua instalação Verdaccio.
 
 ## Comandos

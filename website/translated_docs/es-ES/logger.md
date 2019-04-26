@@ -2,6 +2,7 @@
 id: logger
 title: "Registrador"
 ---
+
 Como cualquier aplicación web, verdaccio tiene un registrador personalizable integrado. Puedes definir varios tipos de salidas.
 
 ```yaml

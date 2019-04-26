@@ -3,6 +3,7 @@ id: version-3.8.6-logo
 title: Logo de Verdaccio
 original_id: logo
 ---
+
 Le logo a été conçu par [Breno Rodrigues](https://github.com/rodriguesbreno)</strong> qui a gagné la [compétition](https://github.com/verdaccio/verdaccio/issues/237) ([dernière étape](https://github.com/verdaccio/verdaccio/issues/328)) et a fait de son travail un don pour ce projet.
 
 > Tous les logos sont enregistrés sous la licence [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).

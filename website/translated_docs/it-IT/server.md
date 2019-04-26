@@ -2,6 +2,7 @@
 id: server-configuration
 title: "Configurazione del server"
 ---
+
 Questa è principalmente la documentazione della configurazione di base per il server di linux ma credo sia importante documentare e condividere i passi che ho seguito per avviare permanentemente verdaccio sul mio server. Serviranno le autorizzazioni di root (o sudo) per quello che segue.
 
 ## Gestire come utente separato

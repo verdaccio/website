@@ -2,6 +2,7 @@
 id: ci
 title: "Continuous Integration"
 ---
+
 Při přihlášení nebo publikování můžete použít verdaccio s continuous integration. Při prvním použití NPM k instalaci soukromého modulu v prostředí continuous integration je rychle zasažena cihlová zeď. Příkaz NPM login je určen k interaktivnímu použití. To způsobuje problém v CI, skriptech atd. Zde je návod, jak používat NPM login pro různé platformy pro continuous integration.
 
 - [Travis CI](https://remysharp.com/2015/10/26/using-travis-with-private-npm-deps)

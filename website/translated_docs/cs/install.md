@@ -2,6 +2,7 @@
 id: instalace
 title: "Installation"
 ---
+
 Verdaccio je multiplatformová webová aplikace. Chcete-li jej nainstalovat, potřebujete splnit několik předpokladů.
 
 #### Předpoklady

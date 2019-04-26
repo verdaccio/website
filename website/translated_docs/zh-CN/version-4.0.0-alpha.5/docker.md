@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-docker
 title: Docker
 original_id: docker
 ---
+
 ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
 要下载(pull)最新的预先-创建的[docker镜像](https://hub.docker.com/r/verdaccio/verdaccio/)：

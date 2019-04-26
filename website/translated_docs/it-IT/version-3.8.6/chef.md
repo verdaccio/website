@@ -3,6 +3,7 @@ id: version-3.8.6-chef
 title: Chef Cookbook
 original_id: chef
 ---
+
 Uso di Chef Cookbook per Verdaccio
 
 Per ulteriori informazioni:

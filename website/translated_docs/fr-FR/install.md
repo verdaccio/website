@@ -2,6 +2,7 @@
 id: installation
 title: "Installation"
 ---
+
 Verdaccio est une application Web multi-plateforme. Quelques conditions préalables sont requises pour son installation.
 
 #### Conditions préalables

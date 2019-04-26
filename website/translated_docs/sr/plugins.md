@@ -2,6 +2,7 @@
 id: plugins
 title: "Plugins"
 ---
+
 Verdaccio је апликација која подржава плугине. Може се проширивати на много начина, додавањем нових метода за аутентификацију, додавањем endpoints-а или коришћењем custom storage-а.
 
 There are 4 types of plugins:

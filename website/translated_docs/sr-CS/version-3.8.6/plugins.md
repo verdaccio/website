@@ -3,6 +3,7 @@ id: version-3.8.6-plugins
 title: Plugins
 original_id: plugins
 ---
+
 Verdaccio je plugabilna aplikacija (težak život prevodioca...). Može se proširivati na mnogo načina, dodavanjem novih metoda za autentifikaciju, dodavanjem endpoints-a ili korišćenjem custom storage-a.
 
 > Ako ste zainteresovani da razvijete sopstveni plugin, pročitajte [development](dev-plugins.md) sekciju.

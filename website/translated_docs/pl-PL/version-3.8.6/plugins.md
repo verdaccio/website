@@ -3,6 +3,7 @@ id: version-3.8.6-plugins
 title: Wtyczki
 original_id: wtyczki
 ---
+
 Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
 > Jeśli jesteś zainteresowany stworzeniem swojej własnej wtyczki, przeczytaj sekcję dotyczącą [programowania](dev-plugins.md).

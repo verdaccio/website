@@ -2,6 +2,7 @@
 id: chef
 title: "Chef Cookbook"
 ---
+
 Verdaccio使用Chef Cookbook
 
 要获得更多的信息：

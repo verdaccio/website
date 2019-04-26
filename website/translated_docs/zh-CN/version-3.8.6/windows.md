@@ -3,6 +3,7 @@ id: version-3.8.6-windows
 title: 作为 Windows 服务安装
 original_id: windows
 ---
+
 基于的非精确指南请见[这里](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service)。 我制作以下，它提供良好运行的verdaccio 服务安装：
 
 1. 为 verdaccio创建一个目录 

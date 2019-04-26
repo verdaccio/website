@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.3-what-is-verdaccio
 title: Cos'è Verdaccio?
 original_id: what-is-verdaccio
 ---
+
 Verdaccio è un **registro proxy npm leggero e privato** scritto in **Node.js**
 
 ## Cos'è un registro

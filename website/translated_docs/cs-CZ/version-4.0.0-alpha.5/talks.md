@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-talks
 title: Rozhovory
 original_id: rozhovory
 ---
+
 Vyjmenováváme rozhovory o Verdaccio, pokud jste dali rozhovor nebo se chystáte dát rozhovor o Verdaccio nebo hodláte zmínit tento projekt, neváhejte jej sem přidat.
 
 > Neváhejte se podělit o svůj obsah s komunitou, doporučujeme vám mluvit o Verdaccio. Pokud potřebujete pomoci s tím, jak začít, informace nebo zdroje, kontaktujte nás v našem [Chatu Discort](https://chat.verdaccio.org), pomůžeme vám.

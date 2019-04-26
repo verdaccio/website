@@ -3,6 +3,7 @@ id: version-3.8.6-configuration
 title: Fajl za konfigurisanje
 original_id: konfigurisanje
 ---
+
 Ovaj fajl je osnova verdaccio-a. U okviru njega, možete vršiti izmene zadatih podešavanja, možete aktivirati plugin-e i spoljašnje resurse (features).
 
 Fajl "default configuration file" se kreira prilikom prvog pokretanja `verdaccio-a`.

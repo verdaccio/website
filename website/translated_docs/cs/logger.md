@@ -2,6 +2,7 @@
 id: logger
 title: "Logger"
 ---
+
 Jako všechny webové aplikace má verdaccio přizpůsobitelný vestavěný logger. Můžete definovat různé typy výstupů.
 
 ```yaml

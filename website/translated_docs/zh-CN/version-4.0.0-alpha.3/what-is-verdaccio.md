@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.3-what-is-verdaccio
 title: Verdaccio是什么？
 original_id: what-is-verdaccio（verdaccio是什么）
 ---
+
 Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry**
 
 ## Registry是什么？

@@ -2,6 +2,7 @@
 id: windows
 title: "Als Windows-Dienst installieren"
 ---
+
 Loosely based upon the instructions found [here](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). I crafted the following and it provided me with a fully working verdaccio service installation:
 
 1. Create a directory for verdaccio 

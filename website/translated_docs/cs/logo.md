@@ -2,6 +2,7 @@
 id: logo
 title: "Logotyp"
 ---
+
 Logotyp byl navrhnut **[Breno Rodrigues](https://github.com/rodriguesbreno)**, který vyhrál ([poslední fázi](https://github.com/verdaccio/verdaccio/issues/328)) [soutěže](https://github.com/verdaccio/verdaccio/issues/237) a daroval své dílo tomuto projektu.
 
 > Všechna loga podléhají licenci [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).

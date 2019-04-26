@@ -3,6 +3,7 @@ id: version-3.8.6-chef
 title: Libro de Cocina del Chef
 original_id: chef
 ---
+
 Usando el Libro de Cocina del Chef para Verdaccio
 
 Para más información:

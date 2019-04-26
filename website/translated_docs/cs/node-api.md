@@ -2,6 +2,7 @@
 id: node-api
 title: "Node API"
 ---
+
 Verdaccio lze vyvolat programově. API bylo zavedeno po verzi `verdaccio@3.0.0-alpha.10`.
 
 ## Použití

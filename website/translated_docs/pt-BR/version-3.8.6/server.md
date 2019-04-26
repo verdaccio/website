@@ -3,6 +3,7 @@ id: version-3.8.6-server-configuration
 title: Configuração do Servidor
 original_id: server-configuration
 ---
+
 This is mostly basic linux server configuration stuff but I felt it important to document and share the steps I took to get verdaccio running permanently on my server. You will need root (or sudo) permissions for the following.
 
 ## Running as a separate user

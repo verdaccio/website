@@ -2,6 +2,7 @@
 id: ci
 title: "Continuous Integration"
 ---
+
 You may use verdaccio with continuous integration while login or publish. When using NPM to install a private module in a continuous integration environment for the first time, a brick wall is quickly hit. The NPM login command is designed to be used interactively. This causes an issue in CI, scripts, etc. Here’s how to use NPM login different continuous integration platforms.
 
 - [Travis CI](https://remysharp.com/2015/10/26/using-travis-with-private-npm-deps)

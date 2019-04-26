@@ -2,6 +2,7 @@
 id: cli
 title: "Command Line Tool"
 ---
+
 Verdaccio CLI je Vaša početna stanica za pokretanje aplikacije.
 
 ## Komande

@@ -3,6 +3,7 @@ id: version-4.0.0-alpha.5-github-actions
 title: Github Actions
 original_id: github-actions
 ---
+
 With [GitHub Actions](https://github.com/features/actions) you can automate your workflow, each GitHub Action performs a specific step in a process.
 
 ![actions](/img/github-actions.png)

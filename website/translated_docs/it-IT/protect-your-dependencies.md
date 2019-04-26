@@ -2,6 +2,7 @@
 id: protect-your-dependencies
 title: "Protezione dei pacchetti"
 ---
+
 `verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
 
 ### Configurazione del pacchetto

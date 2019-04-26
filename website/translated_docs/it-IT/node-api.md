@@ -2,6 +2,7 @@
 id: node-api
 title: "Node API"
 ---
+
 Verdaccio può essere invocato a livello di programmazione. Il nodo API è stato introdotto a partire dalla versione `verdaccio@3.0.0-alpha.10`.
 
 ## Utilizzo

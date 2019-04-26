@@ -2,6 +2,7 @@
 id: cli
 title: "Nástroj Příkazové Řádky"
 ---
+
 Chcete-li spustit aplikaci, použijte Verdaccio CLI.
 
 ## Příkazy

@@ -2,6 +2,7 @@
 id: puppet
 title: "Puppet"
 ---
+
 Installez verdaccio pour Debian, Ubuntu, Fedora, et RedHat.
 
 # Utilisation

@@ -3,6 +3,7 @@ id: version-3.8.6-puppet
 title: Puppet
 original_id: puppet
 ---
+
 Installez verdaccio pour Debian, Ubuntu, Fedora, et RedHat.
 
 # Utilisation

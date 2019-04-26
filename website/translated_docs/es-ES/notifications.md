@@ -2,6 +2,7 @@
 id: notifications
 title: "Notificaciones"
 ---
+
 Notify fué creado principalmente para usarse con los webhooks entrantes de Slack, pero también entregará una carga útil simple a cualquier endpoint. Actualmente sólo está activo para el comando `npm publish`.
 
 ## Uso
