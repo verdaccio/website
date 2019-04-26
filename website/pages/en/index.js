@@ -210,7 +210,7 @@ class Index extends React.Component {
               </translate>
           </MiddleTitle>
           <Container>
-            <div id="codefund"/>
+            <div id="codefund">''</div>
             <TweetsSection/>
           </Container>
           <MiddleTitle>
