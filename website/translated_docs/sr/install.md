@@ -15,6 +15,8 @@ Verdaccio је мулти-платформна веб апликација. Да
 
 > Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
 
+<div id="codefund">''</div>
+
 ## Инсталација CLI
 
 `verdaccio` мора бити инсталиран глобално, коришћењем неке од наведених метода:

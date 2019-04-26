@@ -15,6 +15,8 @@ Verdaccio est une application Web multi-plateforme. Quelques conditions préalab
 
 > Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
 
+<div id="codefund">''</div>
+
 ## En cours d'installation du CLI
 
 `verdaccio` doit être installé globalement en utilisant l'une des méthodes suivantes:
