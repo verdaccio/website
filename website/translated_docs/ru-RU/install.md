@@ -15,6 +15,8 @@ Verdaccio — мультиплатформенное веб-приложение
 
 > Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
 
+<div id="codefund">''</div>
+
 ## Установка инструмента командной строки
 
 `verdaccio` должен быть установлено глобально используя один из следующих способов:
