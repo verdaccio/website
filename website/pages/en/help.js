@@ -55,6 +55,7 @@ class Help extends React.Component {
             </p>
             <GridBlock contents={supportLinks} layout="fourColumn" />
           </div>
+          <div id="codefund">''</div>
         </Container>
       </div>
     );

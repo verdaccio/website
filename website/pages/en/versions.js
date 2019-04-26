@@ -27,6 +27,7 @@ function Versions(props) {
         <div className="post">
           <header className="postHeader">
             <h1>{siteConfig.title} Versions</h1>
+            <div id="codefund">''</div>
           </header>
           <h3 id="latest">Current version (Stable)</h3>
           <p>Latest version of Verdaccio.</p>
