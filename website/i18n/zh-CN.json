@@ -337,6 +337,18 @@
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-talks": {
         "title": "Talks"
+      },
+      "version-4.0.0-alpha.7/version-4.0.0-alpha.7-dev-plugins": {
+        "title": "插件开发"
+      },
+      "version-4.0.0-alpha.7/version-4.0.0-alpha.7-linking-remote-registry": {
+        "title": "Linking a Remote Registry"
+      },
+      "version-4.0.0-alpha.7/version-4.0.0-alpha.7-plugins": {
+        "title": "插件"
+      },
+      "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
+        "title": "谁在使用 Verdaccio?"
       }
     },
     "links": {
