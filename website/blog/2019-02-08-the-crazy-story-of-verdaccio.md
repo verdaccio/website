@@ -13,9 +13,11 @@ A few years ago in 2013, the main registry _(npmjs)_ was running for a while and
 
 The original objective was to create a Private registry and Cache to reduce latency between **npmjs** and the private registry. By that time **npmjs** was starting to [struggle with their own performance issues](https://blog.npmjs.org/post/97261727560/npm-inc-and-scalenpm) and be able to host private packages were _not supported yet_.
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Nobody needs private <a href="https://twitter.com/npmjs?ref_src=twsrc%5Etfw">@npmjs</a> packages more than npm, Inc.. We need it as much as you do. More.</p>&mdash; Laurie Voss (@seldo) <a href="https://twitter.com/seldo/status/475058595034181632?ref_src=twsrc%5Etfw">June 6, 2014</a></blockquote>
+
 <!--truncate-->
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Nobody needs private <a href="https://twitter.com/npmjs?ref_src=twsrc%5Etfw">@npmjs</a> packages more than npm, Inc.. We need it as much as you do. More.</p>&mdash; Laurie Voss (@seldo) <a href="https://twitter.com/seldo/status/475058595034181632?ref_src=twsrc%5Etfw">June 6, 2014</a></blockquote>
+<div id="codefund">''</div>
 
 In fact **, Sinopia was created before** [**the big npm fall**](https://nodejs.org/en/blog/npm/2013-outage-postmortem/#what-went-wrong-and-how-was-it-fixed) **of November 4th** and much after the first registry was running. That incident put on the spotlight that having a packages _proxy/cache_ registry in-house makes total sense, at the same time the project evolved adding interesting features as _scopes packages, search on UI, plugins, override public packages_ etc.
 

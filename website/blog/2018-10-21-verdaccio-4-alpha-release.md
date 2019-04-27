@@ -8,7 +8,11 @@ title: Verdaccio 4 alpha release
 
 Since a couple of months ago, **verdaccio@4.0.0** is under development, we want to give you a first update of the current list of features ready to be tested and incoming ones.
 
-![](https://cdn-images-1.medium.com/max/1024/1*GK9U1wZmB0JUN2XGhu5LjA.png)<figcaption>Verdaccio 4 UI based on material-ui</figcaption>
+![](https://cdn-images-1.medium.com/max/1024/1*GK9U1wZmB0JUN2XGhu5LjA.png)
+
+<!--truncate-->
+
+<div id="codefund">''</div>
 
 ### What’s new in Verdaccio 4 Alpha? 🐣
 

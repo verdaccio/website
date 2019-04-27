@@ -12,6 +12,8 @@ This time for simplicity I’ve chosen [DigitalOcean](https://www.digitalocean.c
 
 <!--truncate-->
 
+<div id="codefund">''</div>
+
 ### Create a Droplet
 
 ![](https://cdn-images-1.medium.com/max/1024/1*04T_T0af4mEZrJq4QBKKcQ.png)<figcaption>Choosing an image before creating a droplet</figcaption>

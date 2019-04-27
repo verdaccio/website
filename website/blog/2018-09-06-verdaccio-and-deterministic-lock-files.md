@@ -15,6 +15,8 @@ This is merely an issue that all package managers have to resolve, nowadays is n
 
 <!--truncate-->
 
+<div id="codefund">''</div>
+
 ### How does a lock file look like?
 
 Lock file looks different based on the package manager you are using, in the case of npm as an example looks like this

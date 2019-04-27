@@ -21,6 +21,8 @@ I’d recommend reading the following article before continue the reading.
 
 <!--truncate-->
 
+<div id="codefund">''</div>
+
 ### Context
 
 **Verdaccio 3** uses by default a token signature are based on [AES192 encryption](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), that has been a legacy implementation inherited by [Sinopia](https://www.npmjs.com/package/sinopia).

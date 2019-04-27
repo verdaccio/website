@@ -7,6 +7,8 @@ title: Verdaccio Migration Guides
 
 Verdaccio keeps backward compatibility with all versions since the first release `(v2.0.0)`, but there are some considerations you need to know before start a migration.
 
+<!--truncate-->
+
 <div id="codefund">''</div>
 
 ## Migrating from `sinopia@1.4.0` to Verdaccio 2.x/3.x
@@ -29,7 +31,6 @@ There is an aditional step, not required, but recommended:
 
 To find the Windows location, [check the following link](https://verdaccio.org/docs/en/cli#default-storage-location).
 
-<!--truncate-->
 
 ### Using Docker
 
