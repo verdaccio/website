@@ -1,0 +1,160 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>The crazy story of Verdaccio · Verdaccio</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="It’s not the first time that I’ve heard the following expression “Thanks for creating Verdaccio”, which actually flatters me, but is really hard to explain in a couple of words that **I haven’t created Verdaccio**. Perhaps I might be responsible for what is Verdaccio today, but that is a different story. Today I’d like to share the whole story behind this project and how I ended up working on it."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="The crazy story of Verdaccio · Verdaccio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://verdaccio.org//blog/2019/02/08/the-crazy-story-of-verdaccio"/><meta property="og:description" content="It’s not the first time that I’ve heard the following expression “Thanks for creating Verdaccio”, which actually flatters me, but is really hard to explain in a couple of words that **I haven’t created Verdaccio**. Perhaps I might be responsible for what is Verdaccio today, but that is a different story. Today I’d like to share the whole story behind this project and how I ended up working on it."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://verdaccio.org/blog/atom.xml" title="Verdaccio Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://verdaccio.org/blog/feed.xml" title="Verdaccio Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-2527438-21', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://codefund.app/properties/256/funder.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/logo/symbol/svg/verdaccio-tiny.svg" alt="Verdaccio"/><h2 class="headerTitleWithLogo">Verdaccio</h2></a><a href="/en/versions"><h3>4.0.0-beta.2</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/installation" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/blog/" target="_self">Notes</a></li><li class=""><a href="https://medium.com/verdaccio" target="_self">Blog</a></li><li class=""><a href="https://twitter.com/verdaccio_npm" target="_self">Twitter</a></li><li class=""><a href="/en/help" target="_self">Help</a></li><li class=""><a href="https://github.com/verdaccio" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="/en/team" target="_self">Team</a></li><li class=""><a href="https://opencollective.com/verdaccio" target="_self">Donate</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/es-ES">Español</a></li><li><a href="/fr-FR">Français</a></li><li><a href="/it-IT">Italiano</a></li><li><a href="/sr-CS">Serbian (Latin)</a></li><li><a href="/zh-CN">中文</a></li><li><a href="https://crowdin.com/project/verdaccio" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Recent Posts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4">Diving into JWT support for Verdaccio 4</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/02/24/migrating-verdaccio">Verdaccio Migration Guides</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/blog/2019/02/08/the-crazy-story-of-verdaccio">The crazy story of Verdaccio</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/11/19/setting-up-verdaccio-on-digitalocean">Setting up Verdaccio on DigitalOcean</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/10/21/verdaccio-4-alpha-release">Verdaccio 4 alpha release</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/02/08/the-crazy-story-of-verdaccio">The crazy story of Verdaccio</a></h1><p class="post-meta">February 8, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="https://twitter.com/jotadeveloper" target="_blank" rel="noreferrer noopener">Juan Picado</a></p><div class="authorPhoto"><a href="https://twitter.com/jotadeveloper" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/1122901551/picture/?height=200&amp;width=200" alt="Juan Picado"/></a></div></div></header><div><span><p>It’s not the first time that I’ve heard the following expression “Thanks for creating Verdaccio”, which actually flatters me, but is really hard to explain in a couple of words that <strong>I haven’t created Verdaccio</strong>. Perhaps I might be responsible for what is Verdaccio today, but that is a different story. Today I’d like to share the whole story behind this project and how I ended up working on it.</p>
+<h3><a class="anchor" aria-hidden="true" id="sinopia-the-origin"></a><a href="#sinopia-the-origin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sinopia “The Origin”</h3>
+<p>A few years ago in 2013, the main registry <em>(npmjs)</em> was running for a while and at the same time, <a href="https://github.com/rlidwka">Alex Kocharin</a> decided to create Sinopia.</p>
+<p>The original objective was to create a Private registry and Cache to reduce latency between <strong>npmjs</strong> and the private registry. By that time <strong>npmjs</strong> was starting to <a href="https://blog.npmjs.org/post/97261727560/npm-inc-and-scalenpm">struggle with their own performance issues</a> and be able to host private packages were <em>not supported yet</em>.</p>
+<!--truncate-->
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Nobody needs private <a href="https://twitter.com/npmjs?ref_src=twsrc%5Etfw">@npmjs</a> packages more than npm, Inc.. We need it as much as you do. More.</p>&mdash; Laurie Voss (@seldo) <a href="https://twitter.com/seldo/status/475058595034181632?ref_src=twsrc%5Etfw">June 6, 2014</a></blockquote>
+<p>In fact <strong>, Sinopia was created before</strong> <a href="https://nodejs.org/en/blog/npm/2013-outage-postmortem/#what-went-wrong-and-how-was-it-fixed"><strong>the big npm fall</strong></a> <strong>of November 4th</strong> and much after the first registry was running. That incident put on the spotlight that having a packages <em>proxy/cache</em> registry in-house makes total sense, at the same time the project evolved adding interesting features as <em>scopes packages, search on UI, plugins, override public packages</em> etc.</p>
+<p>It was clear the project was growing, but something happened in <strong>October 2015</strong> where is the date of the latest commit and Alex which is still the current owner decided do not reply to anyone anymore, the reasons are unknown and seem will remain like that forever <em>(he has recent activity in other projects)</em> and <strong>since is the unique owner the project remains frozen.</strong></p>
+<h3><a class="anchor" aria-hidden="true" id="post-sinopia-era"></a><a href="#post-sinopia-era" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Post-sinopia Era</h3>
+<p><img src="https://cdn-images-1.medium.com/max/779/1*t8GSq1qq6RC4iQsx1bYDgg.png" alt=""></p>
+<p>Early 2016 <a href="https://github.com/rlidwka/sinopia/issues/376">the Sinopia community started to wonder</a> why so that such good idea with good support just stopped for no reason.</p>
+<p>A few months later forks did not take long to appear. The most prominent forks were the following <em>(I’m aware there were much more than these)</em>:</p>
+<p><img src="https://cdn-images-1.medium.com/max/700/1*AlByG_WIbkxp6W9OH0JYzQ.png" alt=""></p>
+<ul>
+<li><a href="https://github.com/fl4re/sinopia"><strong>Sinopia2</strong></a>: Maybe the most affordable and updated fork which seems to be intended with the idea to merge some <a href="https://github.com/rlidwka/sinopia/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+is%3Aopen+dead#issuecomment-197239368">PR were in the queue</a>. Still, today seems on having some development but no further new features.</li>
+<li><a href="https://github.com/shimmerjs/sinopia"><strong>shimmerjs/sinopia</strong></a>: A try from IBM team contributors to provide sinopia with CouchDB support. They did a couple of releases but no much development since the fork <em>(this idea was a PR at Verdaccio for a long time but never was merged)</em>.</li>
+<li><a href="https://github.com/jdxcode/npm-register"><strong>npm-register</strong></a>: A inspired sinopia fork but created from scratch focused as to be hosted on PaaS services.</li>
+<li><strong>verdaccio</strong> : And here is where all started, the 0 km started on 5 April 2016 which the “baptism” by <a href="https://github.com/cuzzinz"><strong>cuzzinz</strong></a> suggesting the name that he read on Wikipedia.</li>
+</ul>
+<blockquote>
+<p>Since it will be a fork, follow the subject the original project used but a new “color.” …. verdaccio</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="verdaccio-as-fork"></a><a href="#verdaccio-as-fork" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verdaccio as fork</h3>
+<p>After a couple of months without anyone taking the wheel of the ship <a href="https://github.com/jmwilkinson">John Wilkinson</a> and <a href="https://github.com/trentearl">Trent Earl</a> created the Verdaccio organization on <strong>April 2016</strong>.</p>
+<p><img src="https://cdn-images-1.medium.com/max/797/1*AIbetKbnOhE9lVJIJO7ZnQ.png" alt=""><figcaption>Trend Earl announcing the fork of Sinopia</figcaption></p>
+<p>Originally the project was just another fork but soon started to receive the updates from the PR were in hold in <em>sinopia</em> for a long time and even changes committed on <em>Sinopia2</em>. There was a feeling of lack of commitment and confusion with all the forks, somehow this issue was well addressed by the Verdaccio authors providing a second breath to the project.</p>
+<p><strong>And here is where I came in.</strong> August 2016 is where I started to contribute as anyone else, my initial role was to fix the unit testing on Node 6 and stabilize the project in a couple of areas helping <em>Trend</em> to answer questions on the forum and work side to side to release the first stable version of Verdaccio <strong>v2.0.0</strong> which was the first try to put some order in the project.</p>
+<blockquote>
+<p>If you ask me why I decided to contribute Verdaccio. The reason is I liked the name.</p>
+</blockquote>
+<p>During the <em>fall of 2016</em> and beginning of 2017, we noticed more adoption and bug reports, but in February 2017 <strong>the original authors gave me the ownership of Verdaccio</strong> just before v2.1.1 release and they have stepped away of development and currently are just watcher. Nowadays I still feel super happy and grateful for the opportunity to drive this project.</p>
+<blockquote>
+<p>As a side note, in that time, my experience with Node.js was not far away from beginner level even if I had good JS background (I’m a front-end developer until today in my private work experience), I’ve never had the chance to work with Node.js in any workplace, funny huh 😅?. What I learnt about real Node.js development is 100% due Verdaccio and reading open source code.</p>
+</blockquote>
+<p>During early <strong>2017</strong> the project had only ~600 stars and I started to coordinate new contributions and a progressive migration to a modern codebase. I have to highlight the new ideas <a href="https://github.com/Meeeeow">Meeeeow</a> that brought to the project as semantic commits, the new UI based on React and other interesting things.</p>
+<p>When you fork a project GitHub <strong>reduces the visibility on Google and Github searches</strong> , for that reason <a href="https://github.com/verdaccio/verdaccio/issues/75#issuecomment-290631295">I asked Github about it</a>. They kindly removed the fork label that we had for 1 year in our main repository.</p>
+<p><img src="https://cdn-images-1.medium.com/max/301/1*EF5a7ODsYd3OLMWbVQk37A.png" alt=""><figcaption>The official logo provided by the community</figcaption></p>
+<p>2017 ended with a decent amount of stars (~1,200), thousands of downloads and a <a href="https://github.com/verdaccio/verdaccio/issues/328">new logo</a>, but still, <em>we were not able to do a major release</em>. There were too much to do and lack of knowledge in many areas.</p>
+<h4><a class="anchor" aria-hidden="true" id="docker"></a><a href="#docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker</h4>
+<p>By that time, Docker was new for me until I saw the first time the Dockerfile and was getting so many tickets related with such topic that forced me to learn really quick to be able to merge contributions which were Chinese for me, what did I do?. <strong>Go to Docker meetups and read books. Problem solved.</strong> Thankfully the community has a lot of knowledge to share in this area thus I had the opportunity to learn from amazing contributions. <strong>Nowadays Docker is the most popular way to use Verdaccio</strong> even over the <em>npm</em> installation.</p>
+<h3><a class="anchor" aria-hidden="true" id="2018-the-year"></a><a href="#2018-the-year" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2018 “the year”</h3>
+<p><img src="https://cdn-images-1.medium.com/max/804/1*77nCfVH9qaQbP1dBkAXBMg.png" alt=""><figcaption>Verdaccio overpass sinopia on stars December 2018</figcaption></p>
+<p>I have to admit 2018 was super crazy since the first month the project got really good news and advertised by someone really popular (yeah, that helps a lot) Thanks <a href="https://medium.com/u/a3a8af6addc1">Dan Abramov</a>. <strong>create-react-app</strong> started to use as E2E tooling, which was totally new for me that scenario and changed our perspective of this project, later on, followed by another projects as <strong>Storybook, pnpm, Eclipse Theia, Hyperledger or Modzilla Neutrino</strong>.</p>
+<p>At the same time, we released a <a href="https://verdaccio.org/">new website</a> at the beginning of the year which nowadays is insanely popular and has reduced the questions over Github being for users the first line of information, by the way, we were one of the early adopters of <strong>Docusaurus</strong>. Thanks to <a href="https://crowdin.com/project/verdaccio">Crowdin</a> that have provided a platform for translation and nowadays the community has released 7 full translations of our documentation.</p>
+<p><img src="https://cdn-images-1.medium.com/max/867/1*v-dZShJE4VVgF4fbKMtkBA.png" alt=""><figcaption>the rate of visits by country on google analytics</figcaption></p>
+<p>By that time a new contributor was getting super active since 2017, <a href="https://medium.com/u/ffdb15785e37">Ayush</a> which was using Verdaccio at work. In the beginning, his feedback was useful for real-time usage and nowadays <strong>he is also one of the authors for the success of this project in 2018</strong>.</p>
+<p>After some crazy months working really hard, we manage at May to <a href="https://dev.to/verdaccio/verdaccio-3-released--4m8d-temp-slug-2596361">release Verdaccio 3</a>. That gave us a small pause to rethink what to do as future steps and how to improve our community.</p>
+<p>Also, we have boarded <a href="https://medium.com/u/5609d55238ab">Sergio Herrera Guzmán</a> and <a href="https://medium.com/u/c1899129305b">Priscila Oliveira</a> that have demonstrated a lot of interest about Verdaccio contributing with awesome features as the new release pipeline and the new UI which will be released in 2019. <strong>The project currently has ~150 contributors and we are welcoming the new ones with open arms</strong>.</p>
+<p>I’ve seen <a href="https://github.com/verdaccio/verdaccio/wiki#articles">written articles about Verdaccio in multiple languages</a>, <a href="https://youtu.be/q4XmAy6_ucw">conference speakers recommending</a> the usage of Verdaccio, generous <a href="https://opencollective.com/verdaccio">donations</a> and our <a href="http://chat.verdaccio.org/">chat</a> at Discord more active than ever.</p>
+<p>To finish the story and ending 2018 we have created what we defined as the core team, a small group of developers trying to work together in <a href="https://dev.to/verdaccio/verdaccio-4-alpha-release-1d7p-temp-slug-4609102">the development of Verdaccio 4</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="current-status"></a><a href="#current-status" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Current Status</h3>
+<p>If you wonder how the “governance” works at Verdaccio, we do it in the following way. <strong>We have 4 owners</strong> (the founders, <a href="https://medium.com/u/a6a7b0f6a9e4">Juan Picado</a>, <a href="https://medium.com/u/ffdb15785e37">Ayush</a>) which we open communication when something important should take place and we ship an internal report every 6 months at GitHub teams threads. We have decided this structure in order to avoid what happened with Sinopia do not happen again. The development decisions are taking at the core team level based on democracy and common sense.</p>
+<p>The development communication happens over Discord and <strong>we started to encourage code reviews and open discussions about everything</strong>. For now, it works, but we are trying to evolve the process and improve it.</p>
+<p>Currently, we are working on improving the documentation and create a clean ecosystem of plugins, integrations and new ways to inform, teach new adopters about the usage of the registry and helping to board new contributors that want to be part of the development.</p>
+<h3><a class="anchor" aria-hidden="true" id="wrapping-up"></a><a href="#wrapping-up" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Wrapping Up</h3>
+<p>As you have read, Verdaccio is not a one author project. <strong>It’s a collaboration of many developers that decided don’t let this project die</strong>. I always like to think the following if you allow me <a href="https://en.wikipedia.org/wiki/Gettysburg_Address">to quote a simile famous words of Abraham Lincoln</a></p>
+<blockquote>
+<p>Verdaccio is a project of the community, by the community and for the community.</p>
+</blockquote>
+<p>I’m driving this project today, but does not means I’ll do it forever. I like to share responsibilities with others because <strong>nobody is working on Verdaccio full time</strong> as it happens with other open source projects.</p>
+<p><strong>We want this project alive, updated and as reliable, open source and free option for everybody</strong>. Following the principles of sinopia stablished as simplicity, zero configuration and with the possibility to extend it.</p>
+<p>Even if some initial developers are not contributing anymore <em>(all we have a life)</em>, I’m really grateful for the time they have invested and hoped they back in some point.</p>
+<h3><a class="anchor" aria-hidden="true" id="disclaimer"></a><a href="#disclaimer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Disclaimer</h3>
+<p>I’m telling this story based on my own research and all the information collected along the latest 2 years, comments, private chats, and social networks.</p>
+<hr>
+</span></div></div><div class="blogSocialSection"><div class="blogSocialSectionItem"><a href="https://twitter.com/share" class="twitter-share-button" data-text="The crazy story of Verdaccio" data-url="https://verdaccio.org//blog/2019/02/08/the-crazy-story-of-verdaccio" data-related="true" data-show-count="false">Tweet</a></div></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/what-is-verdaccio.html">Getting Started</a><a href="/docs/en/docker.html">Docker</a><a href="/docs/en/configuration.html">Configuration</a><a href="/docs/en/logo">Logos</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'a8b4d117e513cd8d71d6a95e3d9d4a91',
+                indexName: 'verdaccio',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

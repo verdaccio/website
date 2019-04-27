@@ -1,0 +1,159 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Diving into JWT support for Verdaccio 4 · Verdaccio</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="If you are already using [Verdaccio 4](https://github.com/verdaccio/verdaccio) you are can immediately use the new token signature support with JWT or [JSON Web Tokens](https://github.com/auth0/node-jsonwebtoken)."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Diving into JWT support for Verdaccio 4 · Verdaccio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://verdaccio.org//blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4"/><meta property="og:description" content="If you are already using [Verdaccio 4](https://github.com/verdaccio/verdaccio) you are can immediately use the new token signature support with JWT or [JSON Web Tokens](https://github.com/auth0/node-jsonwebtoken)."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://verdaccio.org/blog/atom.xml" title="Verdaccio Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://verdaccio.org/blog/feed.xml" title="Verdaccio Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-2527438-21', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://codefund.app/properties/256/funder.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/logo/symbol/svg/verdaccio-tiny.svg" alt="Verdaccio"/><h2 class="headerTitleWithLogo">Verdaccio</h2></a><a href="/en/versions"><h3>4.0.0-beta.2</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/installation" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/blog/" target="_self">Notes</a></li><li class=""><a href="https://medium.com/verdaccio" target="_self">Blog</a></li><li class=""><a href="https://twitter.com/verdaccio_npm" target="_self">Twitter</a></li><li class=""><a href="/en/help" target="_self">Help</a></li><li class=""><a href="https://github.com/verdaccio" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="/en/team" target="_self">Team</a></li><li class=""><a href="https://opencollective.com/verdaccio" target="_self">Donate</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/es-ES">Español</a></li><li><a href="/fr-FR">Français</a></li><li><a href="/it-IT">Italiano</a></li><li><a href="/sr-CS">Serbian (Latin)</a></li><li><a href="/zh-CN">中文</a></li><li><a href="https://crowdin.com/project/verdaccio" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Recent Posts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4">Diving into JWT support for Verdaccio 4</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/02/24/migrating-verdaccio">Verdaccio Migration Guides</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/02/08/the-crazy-story-of-verdaccio">The crazy story of Verdaccio</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/11/19/setting-up-verdaccio-on-digitalocean">Setting up Verdaccio on DigitalOcean</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/10/21/verdaccio-4-alpha-release">Verdaccio 4 alpha release</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4">Diving into JWT support for Verdaccio 4</a></h1><p class="post-meta">April 19, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="https://twitter.com/jotadeveloper" target="_blank" rel="noreferrer noopener">Juan Picado</a></p><div class="authorPhoto"><a href="https://twitter.com/jotadeveloper" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/1122901551/picture/?height=200&amp;width=200" alt="Juan Picado"/></a></div></div></header><div><span><p><img src="https://cdn-images-1.medium.com/max/1024/1*t9d16DIcJg_-dEg0X_qTWg.png" alt=""></p>
+<p>If you are already using <a href="https://github.com/verdaccio/verdaccio">Verdaccio 4</a> you are can immediately use the new token signature support with JWT or <a href="https://github.com/auth0/node-jsonwebtoken">JSON Web Tokens</a>.</p>
+<pre><code class="hljs"><span class="hljs-built_in">npm</span> install -g verdaccio@next
+</code></pre>
+<p>This article will explain what are the advantages of using JWT instead of the traditional or <em>legacy</em> token signature used by Verdaccio. But before that, we need to be int he same page about ** JWT.**</p>
+<p>I’d recommend reading the following article before continue the reading.</p>
+<p><a href="https://medium.com/vandium-software/5-easy-steps-to-understanding-json-web-tokens-jwt-1164c0adfcec">5 Easy Steps to Understanding JSON Web Tokens (JWT)</a></p>
+<!--truncate-->
+<h3><a class="anchor" aria-hidden="true" id="context"></a><a href="#context" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Context</h3>
+<p><strong>Verdaccio 3</strong> uses by default a token signature are based on <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES192 encryption</a>, that has been a legacy implementation inherited by <a href="https://www.npmjs.com/package/sinopia">Sinopia</a>.</p>
+<p>This token signature consists of the combination of user:password signed using a <strong>SALT secret key</strong>. Every time a resource is requested, the client package manager will send this token within the request if the user is logged in and will decrypt and send it through the authentication plugin to validate the credentials.</p>
+<p>This might create a bit of spamming due Verdaccio is a stateless RESTful API and it is likely no caching involved in the authentication process.</p>
+<p>This has been working fine so far, but, some <strong>users do not need to check credentials for every request</strong> , for such reason, we decided to ship on a new way to sign tokens giving a different set of rules the users can structure their authentication process.</p>
+<p><strong>JWT</strong> does not replace the current token signature system, thus, <strong>no breaking changes come on Verdaccio 4,</strong> both systems are completely different and by demand, but you need to decide to use only one of them.</p>
+<h3><a class="anchor" aria-hidden="true" id="setup"></a><a href="#setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Setup</h3>
+<p>By default, the <strong>AES192</strong> or <em>legacy</em> system is being used by default and we do not have plans to remove it.</p>
+<p>If you want to enable JWT, just add into your configuration file the new property security .</p>
+<pre><code class="hljs"><span class="hljs-attr">security:</span>
+<span class="hljs-attr">  api:</span>
+<span class="hljs-attr">    legacy:</span> <span class="hljs-literal">false</span>
+<span class="hljs-attr">    jwt:</span>
+<span class="hljs-attr">      sign:</span>
+<span class="hljs-attr">        expiresIn:</span> <span class="hljs-number">60</span><span class="hljs-string">d</span>
+<span class="hljs-attr">        notBefore:</span> <span class="hljs-number">1</span>
+<span class="hljs-attr">      verify:</span>
+<span class="hljs-attr">        algorithm:</span>
+<span class="hljs-attr">        expiresIn:</span>
+<span class="hljs-attr">        notBefore:</span>
+<span class="hljs-attr">        ignoreExpiration:</span>
+<span class="hljs-attr">        maxAge:</span>
+<span class="hljs-attr">        clockTimestamp:</span>
+<span class="hljs-attr">  web:</span>
+<span class="hljs-attr">    sign:</span>
+<span class="hljs-attr">      expiresIn:</span> <span class="hljs-number">7</span><span class="hljs-string">d</span>
+</code></pre>
+<h4><a class="anchor" aria-hidden="true" id="api-and-web"></a><a href="#api-and-web" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>api and web</h4>
+<p>The security section is composed by in two main sections. Each section will use same <em>JWT properties</em> but the configuration structure is different. The web section does not have to deal with <strong>legacy</strong> support, thus, will group <strong>sign</strong> and <strong>verify</strong> properties directly as children.</p>
+<p>While the <strong>api</strong> section contains a different level of properties, we will go through them in the next sections.</p>
+<h4><a class="anchor" aria-hidden="true" id="legacy"></a><a href="#legacy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>legacy</h4>
+<p>Legacy property means that <strong>explicitly you want to use the legacy token system signature</strong>. You might not like to do not remove the whole security section in order to disable JWT and for such reason, this property exists.</p>
+<blockquote>
+<p>The rule is simple, if <em>legacy</em> is <em>true</em>, will be enabled it even if the <em>jwt</em> exist. But, if you do not want to use <em>legacy</em> just do not declare it or just set it as <em>false</em> .</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="jwt"></a><a href="#jwt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>jwt</h4>
+<p>To enable <em>JWT</em> you need to append the property jwt within the api section.</p>
+<p>Similar as the <strong>web</strong> section inside of security also contains different options for <em>sign</em> and <em>verify</em>.</p>
+<h4><a class="anchor" aria-hidden="true" id="signature-and-verify"></a><a href="#signature-and-verify" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Signature and Verify</h4>
+<p>The options for <strong>sign</strong> or <strong>verify</strong> defined inside of either web or apiare well explained in the section by the <a href="https://github.com/auth0/node-jsonwebtoken#usage">jsonwebtoken</a> library from  <strong>Auth0</strong>.</p>
+<p>You can use them freely according to your needs, Verdaccio will just delegate whatever you define within such sections directly to the jsonwebtoken library.</p>
+<h3><a class="anchor" aria-hidden="true" id="legacy-vs-jwt"></a><a href="#legacy-vs-jwt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Legacy vs JWT</h3>
+<p>If you are happy with the current signature, we recommend keeping it, but if there are some differences you might need to know.</p>
+<p>If you are interested to <strong>expire tokens</strong> , use a <strong>different algorithm</strong> , JWT fits more in your needs.</p>
+<p>JWT also contains an immutable payload, meaning that, once the token is being signed, <strong>we store the list of assigned user groups within the payload</strong>. Thus, for each request the API does not verify credentials against the authentication provider, it just verifies whether the token is valid and provides access to the resource. It is important to highlight that the JWT <strong>payload does not contain sensitive information as email or password.</strong></p>
+<p>In the other side, if you are interested to have full control of the credentials, the <strong>legacy</strong> signature might be better for you. In such a case, it is important to remind <strong>the token delivered is the combination of sensitive information signed with a SALT key</strong> and the authentication provider will be hit for each resource requested.</p>
+<h3><a class="anchor" aria-hidden="true" id="conclusion"></a><a href="#conclusion" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusion</h3>
+<p>We have tried to provide different methods of the token signature according to your needs, the JWT looks promising and will be an optional feature for <strong>Verdaccio 4.</strong></p>
+<p>Let us your feedback, any concern or advice is very welcome.</p>
+<p><a href="https://github.com/verdaccio/verdaccio">verdaccio/verdaccio</a></p>
+<p>I would like to finish with a reminder that Verdaccio is a FOSS product which has as a unique backup the community of developers working in their spare time.</p>
+<p>If you are willing to support the project, feel free donate over OpenCollective.</p>
+<p><a href="https://opencollective.com/verdaccio">https://opencollective.com/verdaccio</a></p>
+<p><strong>Enjoy</strong> <a href="https://github.com/verdaccio/verdaccio"><strong>Verdaccio 4</strong></a> ** 🤓**</p>
+<p>Thanks, <a href="https://medium.com/u/34137e4bcaf7">Luiz Filipe Machado Barni</a> for the contribution to this article.</p>
+<hr>
+</span></div></div><div class="blogSocialSection"><div class="blogSocialSectionItem"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Diving into JWT support for Verdaccio 4" data-url="https://verdaccio.org//blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4" data-related="true" data-show-count="false">Tweet</a></div></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/what-is-verdaccio.html">Getting Started</a><a href="/docs/en/docker.html">Docker</a><a href="/docs/en/configuration.html">Configuration</a><a href="/docs/en/logo">Logos</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'a8b4d117e513cd8d71d6a95e3d9d4a91',
+                indexName: 'verdaccio',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
