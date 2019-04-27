@@ -29,6 +29,8 @@ There is an aditional step, not required, but recommended:
 
 To find the Windows location, [check the following link](https://verdaccio.org/docs/en/cli#default-storage-location).
 
+<!--truncate-->
+
 ### Using Docker
 
 This might depends of your own configuration, but, if you are using external volumes we recommend following the step 3 in the previous section.
