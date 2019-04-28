@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Следующая",
     "previous": "Предыдущая",
-    "tagline": "Verdaccio · Лёгкий приватный прокси для npm реестра",
+    "tagline": "Verdaccio · Лёгкий приватный проксирующий npm реестр",
     "docs": {
       "amazon": {
         "title": "Amazon Web Services"
@@ -45,7 +45,7 @@
         "title": "Docker"
       },
       "e2e": {
-        "title": "End to End testing"
+        "title": "End to End тестирование"
       },
       "github-actions": {
         "title": "Github Actions"
@@ -69,7 +69,7 @@
         "title": "Логи"
       },
       "logo": {
-        "title": "Logotype"
+        "title": "Логотип"
       },
       "node-api": {
         "title": "Node API"
@@ -108,10 +108,10 @@
         "title": "Web User Interface"
       },
       "what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Что такое Verdaccio?"
       },
       "who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Кто использует Verdaccio?"
       },
       "windows": {
         "title": "Установка в качестве службы Windows"
@@ -204,7 +204,7 @@
         "title": "Web User Interface"
       },
       "version-3.8.6/version-3.8.6-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Что такое Verdaccio?"
       },
       "version-3.8.6/version-3.8.6-windows": {
         "title": "Установка в качестве службы Windows"
@@ -219,7 +219,7 @@
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Что такое Verdaccio?"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-amazon": {
         "title": "Amazon Web Services"
@@ -276,7 +276,7 @@
         "title": "Web User Interface"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Что такое Verdaccio?"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-articles": {
         "title": "Articles"
@@ -300,7 +300,7 @@
         "title": "Docker"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-e2e": {
-        "title": "End to End testing"
+        "title": "End to End тестирование"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-github-actions": {
         "title": "Github Actions"
@@ -324,7 +324,7 @@
         "title": "Web User Interface"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Кто использует Verdaccio?"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-amazon": {
         "title": "Amazon Web Services"
@@ -348,7 +348,7 @@
         "title": "Плагины"
       },
       "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Кто использует Verdaccio?"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
         "title": "Installation"
