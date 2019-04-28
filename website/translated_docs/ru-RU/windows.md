@@ -3,19 +3,19 @@ id: windows
 title: "Установка в качестве службы Windows"
 ---
 
-Loosely based upon the instructions found [here](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). I crafted the following and it provided me with a fully working verdaccio service installation:
+Основано на инструкции, найденной [здесь](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). Я сделал следующее и получил полностью функциональный сервис verdaccio:
 
-1. Create a directory for verdaccio 
+1. Создайте папку для verdaccio 
     * mkdir `c:\verdaccio`
     * cd `c:\verdaccio`
-2. Install verdaccio locally (I ran into npm issues with global installs) 
+2. Установите verdaccio локально (у меня были проблемы при глобальной установке) 
     * npm install verdaccio
-3. Create your `config.yaml` file in this location `(c:\verdaccio\config.yaml)`
-4. Windows Service Setup
+3. Создайте свой `config.yaml` в этой папке `(c:\verdaccio\config.yaml)`
+4. Сконфигурируйте сервис Windows
 
-## Using NSSM
+## С помощью NSSM
 
-ALTERNATIVE METHOD: (WinSW package was missing when I tried to download it)
+АЛЬТЕРНАТИВНЫЙ МЕТОД: (пакета WinSW не было, когда я попытася скачать его)
 
 * Download [NSSM](https://www.nssm.cc/download/) and extract
 
