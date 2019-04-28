@@ -16,13 +16,13 @@ Verdaccio - это **"легкий" приватный проксирующий 
     $> verdaccio
     
 
-![registry](assets/verdaccio_server.gif)
+![реестр](assets/verdaccio_server.gif)
 
 ## Использование Verdaccio
 
 Использовать verdaccio вместо с любым пакетным менеджером - очень просто.
 
-![registry](assets/npm_install.gif)
+![реестр](assets/npm_install.gif)
 
 Вы можете сохранить ссылку на свой собственный репозиторий пакетов, установив глобальную настройку для всех проектов
 
@@ -51,5 +51,5 @@ Verdaccio кэширует все запрошенные зависимости 
 * Легко установить и использовать
 * Поддержка Docker и Kubernetes
 * 100% совместим с yarn, npm и pnpm
-* It was **forked** based on `sinopia@1.4.0` and 100% **backward compatible**.
-* Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
+* **Форк** проекта `sinopia@1.4.0`, на 100% **обратно совместим**.
+* Verdaccio означает **цвет зеленой краски для фресковой живописи, популярный в Средние Века**.
