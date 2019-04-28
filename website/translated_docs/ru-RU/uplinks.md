@@ -26,22 +26,22 @@ uplinks:
 
 Вы можете определить несколько аплинков и каждый из них должен иметь уникальное имя (ключ). Они могут иметь следующие свойства:
 
-| Свойство     | Тип     | Обязательное | Пример                                  | Поддержка | Описание                                                                                                                   | По умолчанию |
-| ------------ | ------- | ------------ | --------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| url          | string  | Да           | https://registry.npmjs.org/             | все       | URL репозитория                                                                                                            | npmjs        |
-| ca           | string  | Нет          | ~./ssl/client.crt'                      | все       | Путь к сертификату SSL                                                                                                     | нет значения |
-| timeout      | string  | Нет          | 100ms                                   | все       | Таймаут для запроса                                                                                                        | 30s          |
-| maxage       | string  | Нет          | 10m                                     | все       | Временный порог валидности кэша                                                                                            | 2m           |
-| fail_timeout | string  | Нет          | 10m                                     | все       | defines max time when a request becomes a failure                                                                          | 5m           |
-| max_fails    | number  | Нет          | 2                                       | все       | limit maximun failure request                                                                                              | 2            |
-| cache        | boolean | Нет          | [true,false]                            | >= 2.1    | cache all remote tarballs in storage                                                                                       | true         |
-| auth         | list    | Нет          | [see below](uplinks.md#auth-property)   | >= 2.5    | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled     |
-| headers      | list    | Нет          | authorization: "Bearer SecretJWToken==" | все       | list of custom headers for the uplink                                                                                      | disabled     |
-| strict_ssl   | boolean | Нет          | [true,false]                            | >= 3.0    | If true, requires SSL certificates be valid.                                                                               | true         |
+| Свойство     | Тип     | Обязательное | Пример                                  | Поддержка | Описание                                                                                                        | По умолчанию |
+| ------------ | ------- | ------------ | --------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------- | ------------ |
+| url          | string  | Да           | https://registry.npmjs.org/             | все       | URL репозитория                                                                                                 | npmjs        |
+| ca           | string  | Нет          | ~./ssl/client.crt'                      | все       | путь к сертификату SSL                                                                                          | нет значения |
+| timeout      | string  | Нет          | 100ms                                   | все       | таймаут для запроса                                                                                             | 30s          |
+| maxage       | string  | Нет          | 10m                                     | все       | временный порог валидности кэша                                                                                 | 2m           |
+| fail_timeout | string  | Нет          | 10m                                     | все       | время, через которое непрошедший запрос считается неудачным                                                     | 5m           |
+| max_fails    | number  | Нет          | 2                                       | все       | максимальное количество недачных запросов                                                                       | 2            |
+| cache        | boolean | Нет          | [true,false]                            | >= 2.1    | кэшировать tar-файлы пакетов или нет                                                                            | true         |
+| auth         | list    | Нет          | [см. ниже](uplinks.md#auth-property)    | >= 2.5    | хедер 'Authorization' [больше инфо](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled     |
+| headers      | list    | Нет          | authorization: "Bearer SecretJWToken==" | все       | список хедеров для аплинка                                                                                      | disabled     |
+| strict_ssl   | boolean | Нет          | [true,false]                            | >= 3.0    | если указан, то SSL сертификат будет проверяться на валидность                                                  | true         |
 
-#### Auth property
+#### Свойство Auth
 
-The `auth` property allows you to use an auth token with an uplink. Using the default environment variable:
+Свойство `auth` позволяет вам использовать токен авторизации для аплинка. Используя переменную окружения по умолчанию:
 
 ```yaml
 uplinks:
@@ -52,7 +52,7 @@ uplinks:
       token_env: true # defaults to `process.env['NPM_TOKEN']`
 ```
 
-or via a specified environment variable:
+или задав явно переменную окружения:
 
 ```yaml
 uplinks:
@@ -63,7 +63,7 @@ uplinks:
       token_env: FOO_TOKEN
 ```
 
-`token_env: FOO_TOKEN`internally will use `process.env['FOO_TOKEN']`
+`token_env: FOO_TOKEN` verdaccio-сервер будет использовать `process.env['FOO_TOKEN']`
 
 or by directly specifying a token:
 
