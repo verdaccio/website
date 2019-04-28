@@ -37,16 +37,16 @@ title: "Установка в качестве службы Windows"
 
 * На 2015-10-27, WinSW больше нет по указанному адресу. Пожалуйста, используйте инструкции под заголовком "С помощью NSSM" выше.
 * Скачайте [WinSW](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/) 
-    * Place the executable (e.g. `winsw-1.9-bin.exe`) into this folder (`c:\verdaccio`) and rename it to `verdaccio-winsw.exe`
-* Create a configuration file in `c:\verdaccio`, named `verdaccio-winsw.xml` with the following configuration `xml verdaccio verdaccio verdaccio node c:\verdaccio\node_modules\verdaccio\src\lib\cli.js -c c:\verdaccio\config.yaml roll c:\verdaccio`.
-* Install your service 
+    * Поместите исполняемый файл (т.е. `winsw-1.9-bin.exe`) в папку (`c:\verdaccio`) и переименуйте его в `verdaccio-winsw.exe`
+* Создайте конфигурационнный файл в `c:\verdaccio`, назвав его `verdaccio-winsw.xml`, со следующей конфигурацией `xml verdaccio verdaccio verdaccio node c:\verdaccio\node_modules\verdaccio\src\lib\cli.js -c c:\verdaccio\config.yaml roll c:\verdaccio`.
+* Инсталлируйте ваш сервис 
     * `cd c:\verdaccio`
     * `verdaccio-winsw.exe install`
-* Start your service 
+* Запустите ваш сервис 
     * `verdaccio-winsw.exe start`
 
-Some of the above config is more verbose than I had expected, it appears as though 'workingdirectory' is ignored, but other than that, this works for me and allows my verdaccio instance to persist between restarts of the server, and also restart itself should there be any crashes of the verdaccio process.
+Указанные выше конфиги оказались слежнее, чем я ожидал - например, 'workingdirectory' был проигнорирован, но, тем не менее, это заработало, и позволило моему verdaccio оставаться запущенным после перезапуска сервера, и так же рестартовать в случае крэша verdaccio.
 
-## Repositories
+## Ссылки
 
 * [verdaccio-deamon-windows](https://github.com/davidenke/verdaccio-deamon-windows)
