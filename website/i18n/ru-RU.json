@@ -358,22 +358,22 @@
       }
     },
     "links": {
-      "Docs": "Docs",
-      "Notes": "Notes",
-      "Blog": "Blog",
+      "Docs": "Документация",
+      "Notes": "Заметки",
+      "Blog": "Блог",
       "Twitter": "Twitter",
-      "Help": "Help",
+      "Help": "Помощь",
       "GitHub": "GitHub",
-      "Team": "Team",
-      "Donate": "Donate"
+      "Team": "Команда",
+      "Donate": "Пожертвовать"
     },
     "categories": {
-      "Introduction": "Introduction",
+      "Introduction": "Введение",
       "Features": "Features",
-      "Server": "Server",
-      "Development": "Development",
+      "Server": "Сервер",
+      "Development": "Разработка",
       "DevOps": "DevOps",
-      "Guides": "Guides",
+      "Guides": "Руководства",
       "Configuration": "Configuration",
       "Plugins": "Плагины"
     }
