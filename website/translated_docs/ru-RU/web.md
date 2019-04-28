@@ -3,7 +3,7 @@ id: webui
 title: "Веб-интерфейс пользователя"
 ---
 
-![Uplinks](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
+![Аплинки](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
 У Verdaccio есть веб-интерфейс, чтобы отображать информацию о приватных пакетах, он настраиваемый.
 
@@ -30,7 +30,7 @@ web:
 | sort_packages | [asc,desc] | Нет          | asc                                                         | `>v4`   | По умолчанию, приватные пакеты сортируются в прямом алфавитном порядке                                                                               |
 | logo          | string     | Нет          | /local/path/to/my/logo.png  
 http://my.logo.domain/logo.png | все        | URI логотипа (в шапке)                                                                                                                               |
-| primary_color | string     | Нет          | "#4b5e40"                                                   | `>4`    | The primary color to use throughout the UI (header, etc)                                                                                             |
+| primary_color | string     | Нет          | "#4b5e40"                                                   | `>4`    | Основной цвет UI (хедер и т.д.)                                                                                                                      |
 | scope         | string     | Нет          | \\@myscope                                                | `>v3.x` | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
 
-> It is recommended the logo size has the following size `40x40` pixels.
+> Рекомендованный размер логотипа `40x40` пикселей.
