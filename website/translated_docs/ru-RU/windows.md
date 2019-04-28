@@ -17,26 +17,26 @@ title: "Установка в качестве службы Windows"
 
 АЛЬТЕРНАТИВНЫЙ МЕТОД: (пакета WinSW не было, когда я попытася скачать его)
 
-* Download [NSSM](https://www.nssm.cc/download/) and extract
+* Скачайте [NSSM](https://www.nssm.cc/download/) и распакуйте его
 
-* Add the path that contains nssm.exe to the PATH
+* Добавьте путь к nssm.exe в PATH
 
-* Open an administrative command
+* Откройте окно командной строки как администратор
 
-* Run nssm install verdaccio At a minimum you must fill in the Application tab Path, Startup directory and Arguments fields. Assuming an install with node in the system path and a location of c:\verdaccio the below values will work:
+* Запустите `nssm install verdaccio`. Как минимум, вы должны заполнить Path на вкладке Application, Startup directory и поле Arguments. Предполагая, что вы указали путь к Node в системных путях и что вы установили verdaccio в папку c:\verdaccio, можно использовать следующие значения:
     
     * Path: `node`
     * Startup directory: `c:\verdaccio`
     * Arguments: `c:\verdaccio\node_modules\verdaccio\build\lib\cli.js -c c:\verdaccio\config.yaml`
     
-    You can adjust other service settings under other tabs as desired. When you are done, click Install service button
+    Вы можете поменять настройки других сервисов в других вкладках, если хотите. Когда вы закончите, нажмите кнопку Install service
     
-    * Start the service sc start verdaccio
+    * Запустите сервис sc start verdaccio
 
-## Using WinSW
+## С помощью WinSW
 
-* As of 2015-10-27, WinSW is no longer available at the below location. Please follow the Using NSSM instructions above.
-* Download [WinSW](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/) 
+* На 2015-10-27, WinSW больше нет по указанному адресу. Пожалуйста, используйте инструкции под заголовком "С помощью NSSM" выше.
+* Скачайте [WinSW](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/) 
     * Place the executable (e.g. `winsw-1.9-bin.exe`) into this folder (`c:\verdaccio`) and rename it to `verdaccio-winsw.exe`
 * Create a configuration file in `c:\verdaccio`, named `verdaccio-winsw.xml` with the following configuration `xml verdaccio verdaccio verdaccio node c:\verdaccio\node_modules\verdaccio\src\lib\cli.js -c c:\verdaccio\config.yaml roll c:\verdaccio`.
 * Install your service 
