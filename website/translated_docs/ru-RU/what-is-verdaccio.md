@@ -3,24 +3,24 @@ id: what-is-verdaccio
 title: "Что такое Verdaccio?"
 ---
 
-Verdaccio - это **"легкий" приватный прокси npm-репозитория**, построенный на основе**Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+Verdaccio - это **"легкий" приватный проксирующий npm-реестр**, построенный на основе**Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
 
 <div id="codefund">''</div>
 
-## What's a registry
+## Что значит реестр
 
-* A repository for packages that implements the **CommonJS Compliant Package Registry specification** for reading package info
-* Provide an API compatible with npm clients **(yarn/npm/pnpm)**
-* Follow the semantic Versioning compatible **(semver)**
+* Репозиторий для пакетов, который реализует **CommonJS Compliant Package Registry specification** для чтения информации о пакетах
+* Предоставляет API, совместимое с клиентскими приложениями npm **(yarn/npm/pnpm)**
+* Поддерживает семантическое версионирование **(semver)**
 
     $> verdaccio
     
 
 ![registry](assets/verdaccio_server.gif)
 
-## Using Verdaccio
+## Использование Verdaccio
 
-Using verdaccio with any node package manager client is quite straightforward.
+Использовать verdaccio вместо с любым пакетным менеджером - очень просто.
 
 ![registry](assets/npm_install.gif)
 
