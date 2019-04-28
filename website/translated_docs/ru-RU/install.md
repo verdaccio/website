@@ -10,16 +10,16 @@ Verdaccio — мультиплатформенное веб-приложение
 1. Версия Node 
     - Для `verdaccio@3.x`, минимальная поддерживаемая версия - это Node `v6.12`.
     - Для `verdaccio@4.0.0-alpha.x` или `verdaccio@4.x`, минимальная поддерживаемая версия - это Node `8.x` (LTS "Carbon").
-2. npm `>=4.x` or `yarn` > Рекомендуется использовать самые последние версии пакетных менеджеров `> npm@5.x | yarn@1.x | pnpm@2.x`
+2. npm `>=4.x` or `yarn` > Рекомендуется использовать последние версии пакетных менеджеров `> npm@5.x | yarn@1.x | pnpm@2.x`
 3. Веб-интерфейс поддерживает браузеры `Chrome, Firefox, Edge, и IE11`.
 
-> Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
+> Verdaccio будет поддерживать последние версии Node.js version в соответствии с рекомендациями [Node.js Release Working Group](https://github.com/nodejs/Release).
 
 <div id="codefund">''</div>
 
 ## Установка инструмента командной строки
 
-`verdaccio` должен быть установлено глобально используя один из следующих способов:
+`verdaccio` должен быть установлен глобально используя один из следующих способов:
 
 С использованием `npm`
 
@@ -37,7 +37,7 @@ yarn global add verdaccio
 
 ## Запуск
 
-После того как установка завершится, всё что вам нужно, это выполнить команду:
+После того как установка завершится, всё, что вам нужно, это выполнить команду:
 
 ```bash
 $> verdaccio
@@ -47,13 +47,13 @@ warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 
 Больше информации об инструментах командной строки [читайте в этом разделе](cli.md).
 
-You can set the registry by using the following command.
+Вы можете задать репозиторий следующей командой.
 
 ```bash
 npm set registry http://localhost:4873/
 ```
 
-or you can pass a `--registry` flag when needed.
+то же самое можно сделать флагом `--registry` при запуске.
 
 ```bash
 npm install --registry http://localhost:4873
