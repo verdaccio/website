@@ -3,7 +3,7 @@ id: cli
 title: "Инструмент командной строки"
 ---
 
-Инструмент командной строки verdaccio, это начало вашей работы с приложением.
+Инструмент командной строки verdaccio (verdaccio CLI) - это начало вашей работы с приложением.
 
 ## Команды
 
@@ -24,6 +24,6 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 Для определения местоположения хранилища, по умолчанию мы используем переменную окружения **$XDG_DATA_HOME**, которая [должна быть похожа](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) на $HOME/.local/share. Но, если вы используете своё место для хранилища, это не имеет значения.
 
-## Default database file location
+## Расположение базы данных по умолчанию
 
-The default database file location is in the storage location. Starting with version 4.0.0, the database file name will be **.verdaccio-db.json** for a new installation of Verdaccio. When upgrading an existing Verdaccio server, the file name will remain **.sinopia-db.json**.
+По умолчанию, расположение базы данных совпадает с расположением хранилища. Starting with version 4.0.0, the database file name will be **.verdaccio-db.json** for a new installation of Verdaccio. When upgrading an existing Verdaccio server, the file name will remain **.sinopia-db.json**.
