@@ -105,7 +105,7 @@
         "title": "Uplinks"
       },
       "webui": {
-        "title": "Web User Interface"
+        "title": "Веб-интерфейс пользователя"
       },
       "what-is-verdaccio": {
         "title": "Что такое Verdaccio?"
@@ -201,7 +201,7 @@
         "title": "Примеры использования"
       },
       "version-3.8.6/version-3.8.6-webui": {
-        "title": "Web User Interface"
+        "title": "Веб-интерфейс пользователя"
       },
       "version-3.8.6/version-3.8.6-what-is-verdaccio": {
         "title": "Что такое Verdaccio?"
@@ -273,7 +273,7 @@
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-webui": {
-        "title": "Web User Interface"
+        "title": "Веб-интерфейс пользователя"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-what-is-verdaccio": {
         "title": "Что такое Verdaccio?"
@@ -321,7 +321,7 @@
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-webui": {
-        "title": "Web User Interface"
+        "title": "Веб-интерфейс пользователя"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-who-is-using": {
         "title": "Кто использует Verdaccio?"
@@ -354,7 +354,7 @@
         "title": "Installation"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
-        "title": "Web User Interface"
+        "title": "Веб-интерфейс пользователя"
       }
     },
     "links": {
@@ -401,7 +401,7 @@
     "We have an official **Docker** image ready to use|no description given": "У нас есть официальный **Docker** образ готовый к использованию",
     "and **Kubernetes Helm** support for easy deployment|no description given": "и **Kubernetes Helm** поддерживается для простого развёртывания",
     "Making the DevOps work easy|no description given": "Делает работу DevOps проще",
-    "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio основан на плагинах, аутентификации, middleware и поддержке хранилищ. Просто выберите нужный или создайте свой.",
+    "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio поддерживает плагины, аутентификацию, middleware и хранилища. Просто выберите нужный плагин или создайте свой.",
     "Plugin Support|no description given": "Поддержка Плагинов",
     "Who's Using This?|no description given": "Кто это использует?",
     "This project is used by all these people|no description given": "Этот проект используется всеми этими людьми",
