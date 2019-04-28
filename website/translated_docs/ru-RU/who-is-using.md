@@ -1,15 +1,15 @@
 ---
 id: who-is-using
-title: "Who is using Verdaccio?"
+title: "Кто использует Verdaccio?"
 ---
 
-### As a Business
+### В бизнесе
 
-*If you are using Verdaccio in your business and want to share your experience, let us know. We will happy to listen to you.*
+*Если вы используете Verdaccio в своем бизнесе и хотите поделиться опытом использования, дайте нам знать. Мы будем счастливы вас выслушать.*
 
 * [SheetJS](https://sheetjs.com/)
 
-### Open Source Projects
+### Open Source проекты
 
 > **Feel free to suggest other OSS are using Verdaccio.**
 
