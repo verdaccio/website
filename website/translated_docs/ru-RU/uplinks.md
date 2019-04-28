@@ -1,11 +1,11 @@
 ---
 id: uplinks
-title: "Uplinks"
+title: "Аплинки"
 ---
 
-An *uplink* is a link with an external registry that provides acccess to external packages.
+*Аплинк* - это соединение с внешним репозиторием, через которое идет доступ к внешним пакетом.
 
-![Uplinks](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
+![Аплинки](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
 
 ### Usage
 
@@ -24,7 +24,7 @@ uplinks:
 
 ### Configuration
 
-You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
+Вы можете определить несколько аплинков и каждый из них должен иметь уникальное имя (ключ). Они могут иметь следующие свойства:
 
 | Свойство     | Тип     | Обязательное | Пример                                  | Поддержка | Описание                                                                                                                   | По умолчанию |
 | ------------ | ------- | ------------ | --------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------- | ------------ |
