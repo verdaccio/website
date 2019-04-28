@@ -65,7 +65,7 @@ uplinks:
 
 `token_env: FOO_TOKEN` verdaccio-сервер будет использовать `process.env['FOO_TOKEN']`
 
-or by directly specifying a token:
+или напрямую указав токен:
 
 ```yaml
 uplinks:
@@ -76,11 +76,11 @@ uplinks:
       token: "token"
 ```
 
-> Note: `token` has priority over `token_env`
+> Заметьте: `token` имеет приоритет над `token_env`
 
-### You Must know
+### Вы должны знать
 
-* Uplinks must be registries compatible with the `npm` endpoints. Eg: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* and more.
-* Setting `cache` to false will help to save space in your hard drive. This will avoid store `tarballs` but [it will keep metadata in folders](https://github.com/verdaccio/verdaccio/issues/391).
-* Exceed with multiple uplinks might slow down the lookup of your packages due for each request a npm client does, verdaccio does 1 call for each uplink.
-* The (timeout, maxage and fail_timeout) format follow the [NGINX measurement units](http://nginx.org/en/docs/syntax.html)
+* Аплинки должны быть репозиториями, которые совместимы с `npm` по эндпоинтам. Например: *verdaccio*, `sinopia@1.4.0`, *репозиторий npmjs registry*, *репозиторий yarn*, *JFrog*, *Nexus* и другие.
+* Установка `cache` в значение false позволит сохранить место на диске. Это позволит избежать хранения `tar-файлов`, но [сохранит метаданные пакетов](https://github.com/verdaccio/verdaccio/issues/391).
+* Увеличение числа аплинков может замедлить поиск пакетов, так как для каждого запроса пакета через клиентскую часть менеджера пакетов, verdaccio делает по 1 запросу во все аплинки.
+* Формат настроек (timeout, maxage and fail_timeout) следует документу [NGINX measurement units](http://nginx.org/en/docs/syntax.html)
