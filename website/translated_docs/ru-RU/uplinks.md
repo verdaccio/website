@@ -37,7 +37,7 @@ uplinks:
 | cache        | boolean | Нет          | [true,false]                            | >= 2.1    | кэшировать tar-файлы пакетов или нет                                                                            | true         |
 | auth         | list    | Нет          | [см. ниже](uplinks.md#auth-property)    | >= 2.5    | хедер 'Authorization' [больше инфо](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled     |
 | headers      | list    | Нет          | authorization: "Bearer SecretJWToken==" | все       | список хедеров для аплинка                                                                                      | disabled     |
-| strict_ssl   | boolean | Нет          | [true,false]                            | >= 3.0    | если указан, то SSL сертификат будет проверяться на валидность                                                  | true         |
+| strict_ssl   | boolean | Нет          | [true,false]                            | >= 3.0    | если true, то SSL сертификат будет проверяться на валидность.                                                   | true         |
 
 #### Свойство Auth
 
