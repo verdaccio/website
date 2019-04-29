@@ -3,7 +3,7 @@ id: what-is-verdaccio
 title: "Что такое Verdaccio?"
 ---
 
-Verdaccio - это **"легкий" приватный проксирующий npm-реестр**, построенный на основе**Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+Verdaccio - это **"легкий" приватный прокси для npm реестра**, построенный на основе**Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
 
 <div id="codefund">''</div>
 
@@ -38,7 +38,7 @@ Verdaccio - это **"легкий" приватный проксирующий 
 
 Все пакеты, которые вы опубликуете - приватные, и доступ к ним осуществляется в соотвествии с правами, опредёленными в конфигурации.
 
-## Проксирующий
+## Прокси
 
 Verdaccio кэширует все запрошенные зависимости и ускоряет установку пакетов в локальной или приватной сети.
 
