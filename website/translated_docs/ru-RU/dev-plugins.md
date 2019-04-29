@@ -197,7 +197,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 
 ## Плагин UI темы
 
-The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
+Этот плагин должен возвращать функцию, которая возвращает **строку**. Эта строка - абсолютный путь к корню пользовательского интерфеса.
 
 ### API
 
@@ -209,8 +209,8 @@ module.exports = (...arguments) => {
 };
 ```
 
-It is imporant that the name of the plugin **must start with `verdaccio-theme-` prefix**.
+Важно, что имя плагина **должно с префикса `verdaccio-theme-` начинаться**.
 
-### Theme Example
+### Пример темы
 
-* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): The default Verdaccio theme based in React.js.
+* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): Тема по умолчанию для Verdaccio, написана на React.js.
