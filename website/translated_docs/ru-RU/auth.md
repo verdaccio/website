@@ -42,16 +42,16 @@ registry=http://localhost:5555/
 Как вы знаете, *Verdaccio* использует `htpasswd` по умолчанию. Этот плагин не реализует методы `allow_access`, `allow_publish` и `allow_unpublish`. И *Verdaccio* будет действовать таким образом:
 
 * Если вы не залогинены (вы - аноним), `$all` and `$anonymous` означают одно и то же.
-* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
+* Если вы залогинены, `$anonymous` не будет в списке ваших групп, а `$all` будет у любого залогиненого пользователя. Так же, в список добавится новая группа `$authenticated`.
 
-As a takeaway, `$all` **will match all users, independently whether is logged or not**.
+В общем, `$all` **означает всех пользователей, независимо от того, залогинены они или нет**.
 
-**The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
+**Все описанное выше - только про плагин аутентификации по умолчанию**. Если вы используете кастомный плагин и этот плагин реализует `allow_access`, `allow_publish` или `allow_unpublish`, то разрешения будут зависет от этого вашего плагина. Verdaccio установит только группы по умолчанию.
 
-Let's recap:
+Отметим еще раз:
 
-* **logged**: `$all`, `$authenticated`, + groups added by the plugin
-* **anonymous (logged out)**: `$all` and `$anonymous`.
+* **залогиненные**: `$all`, `$authenticated`, + группы, добавленные плагином
+* **анонимы (не залогиненные)**: `$all` и `$anonymous`.
 
 ## Стандартный htpasswd
 
