@@ -195,7 +195,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 
 > Вы хотите добавить новый Плагин Хранилища? [Загляните сюда.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
 
-## Theme Plugin
+## Плагин UI темы
 
 The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
 
