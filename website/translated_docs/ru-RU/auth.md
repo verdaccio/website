@@ -3,15 +3,15 @@ id: authentification
 title: "Аутентификация"
 ---
 
-Аутентификация зависит от того [плагина](plugins.md), который вы используете. The package restrictions also is handled by the [Package Access](packages.md).
+Аутентификация зависит от того [плагина](plugins.md), который вы используете. Так же, есть возможность задать ограничения на пакеты через [доступ к пакетам](packages.md).
 
-Аутентификация клиента обрабатывается самим клиентом `npm`. В тот момент, когда вы выполняете вход в приложение:
+Аутентификация клиента выполняется самим клиентским приложением `npm`. Когда вы выполняете логин в приложение:
 
 ```bash
 npm adduser --registry http://localhost:4873
 ```
 
-Токен генерируется в файле конфигурации `npm`, расположенном в домашней директории пользователя. Больше информации о `.npmrc` читайте в [официальной документации](https://docs.npmjs.com/files/npmrc).
+В файле конфигурации `npm`, расположенном в домашней директории пользователя, генерируется токен. Больше информации о `.npmrc` читайте в [официальной документации](https://docs.npmjs.com/files/npmrc).
 
 ```bash
 cat .npmrc
@@ -20,7 +20,7 @@ registry=http://localhost:5555/
 //registry.npmjs.org/:_authToken=secretNpmjsToken
 ```
 
-#### Анонимная публицация
+#### Анонимная публикация
 
 `verdaccio` позволяет включить анонимную публикацию. Для того, чтобы сделать это вам нужно правильно настроить ваш [доступ к пакетам](packages.md).
 
@@ -35,13 +35,13 @@ registry=http://localhost:5555/
 
 Как описано в [issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) до `npm@5.3.0`, включая все минорные релизы, **не позволят вам публикацию без токенов**.
 
-## Understanding Groups
+## О группах
 
-### The meaning of `$all` and `$anonymous`
+### Как понимать `$all` и `$anonymous`
 
-As you know *Verdaccio* uses the `htpasswd` by default. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
+Как вы знаете, *Verdaccio* использует `htpasswd` по умолчанию. Этот плагин не реализует методы `allow_access`, `allow_publish` и `allow_unpublish`. И *Verdaccio* будет действовать таким образом:
 
-* If you are not logged in (you are anonymous), `$all` and `$anonymous` means exactly the same.
+* Если вы не залогинены (вы - аноним), `$all` and `$anonymous` означают одно и то же.
 * If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
 
 As a takeaway, `$all` **will match all users, independently whether is logged or not**.
