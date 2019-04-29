@@ -1,9 +1,9 @@
 ---
 id: talks
-title: "Talks"
+title: "Выступления"
 ---
 
-We list the talks about Verdaccio, if you gave a talk or you are about to give one about Verdaccio or that mention this project, feel free to add it here.
+Здесь мы перечисляем выступления, посвященные Verdaccio; если вы делали такое выступление или собираетесь, или упоминаете Verdaccio в своем выступлении, пожалуйста, добавьте его здесь.
 
 > Do not hesistate to share your content with the community, we encorage you to speak about Verdaccio. If need help how to start, information or resources, reach us in our [Chat at Discord](https://chat.verdaccio.org), we will help you.
 
