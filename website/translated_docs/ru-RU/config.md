@@ -61,13 +61,13 @@ auth:
     max_users: 1000
 ```
 
-### Security
+### Безопасность
 
-<small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Работает, начиная с <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+Этот блок позволяет кастомизировать авторизацию токенами. Чтобы включить авторизацию по [JWT (json web token)](https://jwt.io/), вам надо добавить блок `jwt` к разделу `api`, а раздел `web` успользует `jwt` по умолчанию.
 
-The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+Конфигурация разделена на две части, `api` и `web`. Чтобы использовать JWT в `api`, его надо прописать там в явном виде, иначе будут использоваться "старые" токены (`aes192`). Для JWT, вы можете кастомизировать свойства токена [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) и [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback), добавивив свои собственные поля.
 
     security:
       api:
