@@ -5,11 +5,11 @@ title: "Файл конфигурации"
 
 Этот файл является краеугольным камнем verdaccio. В нём вы можете изменить стандартное поведение, включить плагины и расширенные возможности.
 
-A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
+Файл конфигурации по умолчанию `config.yaml` будет создан, когда вы самый первый раз запустите `verdaccio`.
 
-## Стандартная конфигурация
+## Конфигурация по умолчанию
 
-Стандартная конфигурация поддерживает **область видимости (scope)** пакетов и позволяет любым пользователям получить доступ ко всем пакетам, но **только авторизованные пользователи могут публиковать пакеты**.
+Стандартная конфигурация поддерживает **scoped**-пакеты и позволяет любым пользователям получить доступ ко всем пакетам, но только **авторизованные пользователи могут публиковать пакеты**.
 
 ```yaml
 storage: ./storage
@@ -32,11 +32,11 @@ logs:
 
 ## Разделы
 
-Следующие разделы пояснят что означает каждое свойство и его различные опции.
+Следующие разделы пояснят, что каждое свойство означает, и какими дополнительными опциями обладает.
 
 ### Хранилище
 
-Местоположение хранилища по умолчанию. **По умолчанию Verdaccio определит исходя из локальной файловой системы**.
+Местоположение хранилища по умолчанию. **По умолчанию Verdaccio использует локальную файловую систему**.
 
 ```yaml
 storage: ./storage
@@ -86,7 +86,7 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
 
 > We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
 
-### Server
+### Сервер
 
 A set of properties to modify the behavior of the server application, specifically the API (Express.js).
 
@@ -109,7 +109,7 @@ web:
   scope:
 ```
 
-### Uplinks
+### Аплинки
 
 Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
 
@@ -185,7 +185,7 @@ https:
     ca: ./path/verdaccio-csr.pem
 ```
 
-### Proxy
+### Прокси
 
 Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
