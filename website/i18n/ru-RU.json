@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Следующая",
     "previous": "Предыдущая",
-    "tagline": "Verdaccio · Лёгкий приватный проксирующий npm реестр",
+    "tagline": "Verdaccio · Лёгкий приватный прокси для npm реестра",
     "docs": {
       "amazon": {
         "title": "Amazon Web Services"
@@ -99,10 +99,10 @@
         "title": "Настройка SSL-сертификатов"
       },
       "talks": {
-        "title": "Talks"
+        "title": "Выступления"
       },
       "uplinks": {
-        "title": "Uplinks"
+        "title": "Аплинки"
       },
       "webui": {
         "title": "Веб-интерфейс пользователя"
@@ -195,7 +195,7 @@
         "title": "Модульное тестирование"
       },
       "version-3.8.6/version-3.8.6-uplinks": {
-        "title": "Uplinks"
+        "title": "Аплинки"
       },
       "version-3.8.6/version-3.8.6-use-cases": {
         "title": "Примеры использования"
@@ -216,7 +216,7 @@
         "title": "Файл конфигурации"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-uplinks": {
-        "title": "Uplinks"
+        "title": "Аплинки"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-what-is-verdaccio": {
         "title": "Что такое Verdaccio?"
@@ -270,7 +270,7 @@
         "title": "Understanding Scopes"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-uplinks": {
-        "title": "Uplinks"
+        "title": "Аплинки"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-webui": {
         "title": "Веб-интерфейс пользователя"
@@ -315,10 +315,10 @@
         "title": "Доступ к пакетам"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-talks": {
-        "title": "Talks"
+        "title": "Выступления"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-uplinks": {
-        "title": "Uplinks"
+        "title": "Аплинки"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-webui": {
         "title": "Веб-интерфейс пользователя"
@@ -336,7 +336,7 @@
         "title": "Защита пакетов"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-talks": {
-        "title": "Talks"
+        "title": "Выступления"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-dev-plugins": {
         "title": "Разработка плагинов"
@@ -396,7 +396,7 @@
     "Contribute|no description given": "Содействовать",
     "That’s it ! Enjoy your private package manager.|no description given": "Ну вот! Наслаждайтесь вашим менеджером приватных пакетов.",
     "Many great developers are already enjoying Verdaccio, join the community!|no description given": "Множество отличных разработчиков уже присоединились к Verdaccio, Присоединяйтесь к сообществу!",
-    "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.|no description given": "**npm**, **yarn** и **pnpm** являются частью любой разработки и мы стараемся угнаться за последними обновлениями.",
+    "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.|no description given": "**npm**, **yarn** и **pnpm** являются частью любой разработки и мы следим за последними обновлениями.",
     "The most popular npm clients are supported|no description given": "Поддерижваются наиболее популярные клиенты npm",
     "We have an official **Docker** image ready to use|no description given": "У нас есть официальный **Docker** образ готовый к использованию",
     "and **Kubernetes Helm** support for easy deployment|no description given": "и **Kubernetes Helm** поддерживается для простого развёртывания",
@@ -405,7 +405,7 @@
     "Plugin Support|no description given": "Поддержка Плагинов",
     "Who's Using This?|no description given": "Кто это использует?",
     "This project is used by all these people|no description given": "Этот проект используется всеми этими людьми",
-    "More|no description given": "Больше",
+    "More|no description given": "Далее",
     "Users|no description given": "Пользователи",
     "This project is used by many folks|no description given": "Этот проект используется множеством людей",
     "Are you using this project? Do not be shy and add your company/project logo.|no description given": "Вы используете этот проект? Не стесняйся и добавь логитип проекта.",
