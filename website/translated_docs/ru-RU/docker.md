@@ -37,13 +37,13 @@ docker pull verdaccio/verdaccio:3.0
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next master branch uses the `master` version.
+Для следующей мастер-ветки используйте тэг `master`.
 
 ```bash
 docker pull verdaccio/verdaccio:master
 ```
 
-For the next major release using the `4.x-next` (4.x branch) version.
+Для следующего мажорного релиза используйте тэг `4.x-next` (для ветки 4.x).
 
 ```bash
 docker pull verdaccio/verdaccio:4.x-next
@@ -59,7 +59,7 @@ docker pull verdaccio/verdaccio:4.x-next
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
+Последний аргумент определяет, какой образ надо использовать. С помощью строчки выше вы скачаете самый последний образ с dockerhub'а, если вы еще этого не сделали.
 
 Если этот образ [у вас уже скачан](#build-your-own-docker-image) используйте `verdaccio` в качестве последнего аргумента.
 
