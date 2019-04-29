@@ -5,15 +5,15 @@ title: "Выступления"
 
 Здесь мы перечисляем выступления, посвященные Verdaccio; если вы делали такое выступление или собираетесь, или упоминаете Verdaccio в своем выступлении, пожалуйста, добавьте его здесь.
 
-> Do not hesistate to share your content with the community, we encorage you to speak about Verdaccio. If need help how to start, information or resources, reach us in our [Chat at Discord](https://chat.verdaccio.org), we will help you.
+> Не забывайте поделиться с комьюнити, мы любим, когда говорят о Verdaccio. Если вам нужны мысли тему "с чего начать", информация или материалы на эту тему, пишите нам в [чате в Discord](https://chat.verdaccio.org), и мы поможем.
 
-## The latest Talk <iframe src="https://player.vimeo.com/video/322006226" width="640" height="360" frameborder="0" allowfullscreen mark="crwd-mark"></iframe> 
+## Самые последние выступления <iframe src="https://player.vimeo.com/video/322006226" width="640" height="360" frameborder="0" allowfullscreen mark="crwd-mark"></iframe> 
 
-> The last shared talk is always highlighted here. We help you share your voice with the community.
+> Здесь перечислены последние выступления. Мы поможем вам сделать так, чтобы вас голос был услышал комьюнити.
 
-* [Madrid Node.js Meetup - Introducción a Verdaccio: gestión de paquetes privados, March 2019](https://www.todojs.com/introduccion-a-verdaccio/)
-* [Vienna.js Meetuo - Introduction to Verdaccio, January 2019](https://www.youtube.com/watch?v=hDIFKzmoCaA)
-* [#22 FloripaJS Brazil Meetup, February 2019](https://www.youtube.com/watch?v=iOp70_svQ_M&feature=youtu.be&t=7578)
+* [Madrid Node.js Meetup - Introducción a Verdaccio: gestión de paquetes privados, Март 2019](https://www.todojs.com/introduccion-a-verdaccio/)
+* [Vienna.js Meetuo - Introduction to Verdaccio, Январь 2019](https://www.youtube.com/watch?v=hDIFKzmoCaA)
+* [#22 FloripaJS Brazil Meetup, Февраль 2019](https://www.youtube.com/watch?v=iOp70_svQ_M&feature=youtu.be&t=7578)
 * [FrankenJS Angular & Beyond - Enterprise-Architectures for huge Angular Apps by Manfred Steyer](https://youtu.be/dWdJkqhQFXU?t=613)
 * [ngPoland 2017 - Manfred Steyer - Packages for Angular](https://youtu.be/3fMTdm7k_d0?t=662)
 * [Kamil Warpechowski: Jak zapanować nad wspólnym kodem w wielu projektach? [PL] - WarsawJS Meetup #44](https://www.youtube.com/watch?v=JIlQ468xfbU&feature=youtu.be&t=609)
@@ -22,11 +22,11 @@ title: "Выступления"
 * [Architectures for Huge Angular Based Enterprise #WeAreDevelopers2018](https://youtu.be/q4XmAy6_ucw?t=551)
 * [BxJS Weekly Ep. 13 - June 2, 2018 (javascript news podcast)](https://youtu.be/Xo8CzYGKXTs?list=PL_gX69xPLi-mqs5BJe-xPnOPT6K1Y5_ZQ&t=2732)
 
-## Future Talks
+## Будущие выступления
 
-* [Madrid Node.js Meetup 5h March 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
+* [Madrid Node.js Meetup, 5 марта 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
 
-## Related Videos
+## Видео
 
 * [Local npm server](https://www.youtube.com/watch?v=vc2wMwcDKOE)
 * [Private NPM Registry (sinopia+docker)](https://www.youtube.com/watch?v=0TXTCrGaxKc)
