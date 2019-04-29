@@ -84,13 +84,13 @@ auth:
             someProp: [value]
     
 
-> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+> Мы настоятельно рекомендем перейти на JWT, так как "старые" токены (`aes192`) устарели и исчезнут в следующих версиях.
 
 ### Сервер
 
-A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+Набор свойств, которые позволяют изменить поведение сервера, особенно это касается API (Express.js).
 
-> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+> Вы можете указать HTTP/1.1-серверу keep-alive таймаут в секундах, для входящих соединений. Если вы укажете 0, то сервер будет вести себя аналогично Node.js версии ниже 8.0.0, который не имел keep-alive таймаута. WORKAROUND: С помощью этой конфигурации вы можете обойти баг [#301](https://github.com/verdaccio/verdaccio/issues/301). Установить в 0 в случае 60 - недостаточно.
 
 ```yaml
 server:
