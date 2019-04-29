@@ -28,13 +28,13 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> Только `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` не обязательны, verdaccio предлагает поведение по умолчанию в этом случае.
 
-#### apiJWTmiddleware method
+#### Метод apiJWTmiddleware
 
-Since `v4.0.0`
+Начиная с `v4.0.0`
 
-`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
+`apiJWTmiddleware` был добавлен в [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227), чтобы иметь полный контроль при обработке токенов, и если вы его переопределите, то `login/adduser` может сломаться. Мы рекомендуем не имплементировать этот метод. Смотрите пример [здесь](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
@@ -98,7 +98,7 @@ auth:
     file: ./htpasswd
 ```
 
-Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
+Где `htpasswd` - это суффикс имени плагина. В данном случае, строчки ниже `htpasswd:` - это конфигурация для плагина `verdaccio-htpasswd`.
 
 ## Middleware плагин
 
