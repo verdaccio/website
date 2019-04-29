@@ -73,7 +73,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
   verdaccio/verdaccio
 ```
 
-> Примечание: Verdaccio, внутри контейнера, запускается не из под root (uid=100, gid=101), если вы используете монтирование каталогов, вам необходимо убедиться, что у пользователя, из контейнера, будет доступ к этим каталогам. В примере выше, вам нужно выполнить `sudo chown -R 100:101 /opt/verdaccio` иначе вы получите ошибку прав доступа во время запуска контейнера. Рекомендуется использовать [Docker разделы](https://docs.docker.com/storage/volumes/) при монтировании каталогов.
+> Примечание: внутри контейнера Verdaccio запускается не из под root (uid=100, gid=101), и если вы используете кастомное монтирование каталогов, вам необходимо убедиться, что у пользователя будет доступ к этим каталогам. В примере выше, вам нужно выполнить `sudo chown -R 100:101 /opt/verdaccio`, иначе вы получите ошибку прав доступа во время запуска контейнера. [Используйте docker разделы](https://docs.docker.com/storage/volumes/) при монтировании каталогов.
 
 ### Плагины
 
@@ -85,7 +85,7 @@ FROM verdaccio/verdaccio
 RUN npm install verdaccio-s3-storage
 ```
 
-### Docker и конфигурация пользовательского порта
+### Docker и кастомная конфигурация порта
 
 В настоящее время любой `host:port`, настроенный в `conf/config.yaml` в опции `listen` игнорируется при использовании Докер.
 
@@ -171,4 +171,4 @@ npm run build:docker
 * [docker-verdaccio](https://github.com/Global-Solutions/docker-verdaccio)
 * [verdaccio-docker](https://github.com/idahobean/verdaccio-docker)
 * [verdaccio-server](https://github.com/andru255/verdaccio-server)
-* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) docker образ предоставленный verdaccio от coldrye-debian-nodejs.
+* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) docker образ, предоставляющий verdaccio от coldrye-debian-nodejs.
