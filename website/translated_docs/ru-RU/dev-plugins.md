@@ -112,7 +112,7 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 ### register_middlewares
 
-The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
+Этот метод предоставляет полный доступ к аутентификации и хранилищу через `auth` and `storage`. `app` - это объект express, и вы можете добавить в него новые endpoints.
 
 > Очень хорошим примером middleware-плагина является [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) и [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
@@ -132,7 +132,7 @@ function register_middlewares(expressApp, authInstance, storageInstance) {
 
 ### API
 
-The storage API is a bit more complex, you will need to create a class that return a `IPluginStorage` implementation. Please see details bellow.
+API хранилища немного сложнее - вам нужно создать класс, который имплементирует `IPluginStorage`. Детали см. ниже.
 
 ```flow
 class LocalDatabase<IPluginStorage>{
@@ -184,7 +184,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 
 > API хранилища всё ещё остаётся экспериментальным и может измениться в следующих минорных версиях. Для получения актуальной информации о API Хранилища пожалуйста перейдите к [типам определённым в нашем репозитории](https://github.com/verdaccio/flow-types).
 
-### Storage Examples
+### Примеры хранилищ
 
 Данный список плагинов реализует API Хранилища и может использоваться вами как пример.
 
@@ -193,7 +193,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)
 * [verdaccio-s3-storage](https://github.com/Remitly/verdaccio-s3-storage/tree/s3)
 
-> Вы собираетесь способствовать разработке нового плагина хранилища? [Загляните сюда.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
+> Вы хотите добавить новый Плагин Хранилища? [Загляните сюда.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
 
 ## Theme Plugin
 
