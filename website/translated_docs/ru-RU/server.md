@@ -3,7 +3,7 @@ id: server-configuration
 title: "Конфигурация сервера"
 ---
 
-This is mostly basic linux server configuration stuff but I felt it important to document and share the steps I took to get verdaccio running permanently on my server. You will need root (or sudo) permissions for the following.
+Это в основном про конфигурацию сервера на linux, но я думаю, что важно записать и опубликовать шаги, которые я проделал, чтобы получить постоянно работающий сервер verdaccio. Вам понадобится рут или sudo-права.
 
 ## Running as a separate user
 
