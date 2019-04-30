@@ -39,19 +39,19 @@ listen: 0.0.0.0:4873
 
 Если вы запускаете verdaccio на инстансе Amazon EC2, [вам необходимо изменить listen в конфигурационном файле](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) так, как описано выше.
 
-> Configure Apache or nginx? Please check out the [Reverse Proxy Setup](reverse-proxy.md)
+> Конфигурируете Apache or nginx? Пожалуйста, посмотрите [Reverse Proxy Setup](reverse-proxy.md)
 
-## Keeping verdaccio running forever
+## Делаем так, чтобы verdaccio был запущен всегда
 
-You can use node package called ['forever'](https://github.com/nodejitsu/forever) to keep verdaccio running all the time.
+Вы можете использовать пакет под названием ['forever'](https://github.com/nodejitsu/forever), чтобы поддерживать verdaccio в запущенным состоянии.
 
-First install `forever` globally:
+Сначала, установите `forever` в глобальном режиме:
 
 ```bash
 $ sudo npm install -g forever
 ```
 
-Make sure you've run verdaccio at least once to generate the config file and write down the created admin user. You can then use the following command to start verdaccio:
+Убедитесь, что вы запустили verdaccio как минимум один раз, чтобы файл конфигурации сгенерировался и запишите созданного пользователя-администратора. Затем, вы можете использовать следующую команду для запуска verdaccio:
 
 ```bash
 $ forever start `which verdaccio`
