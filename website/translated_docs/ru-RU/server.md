@@ -87,4 +87,4 @@ $ which verdaccio
 $ sudo cp /usr/lib/node_modules/verdaccio/systemd/verdaccio.service /lib/systemd/system/ && sudo systemctl daemon-reload
 ```
 
-This unit assumes you have configuration in `/etc/verdaccio/config.yaml` and store data in `/var/lib/verdaccio`, so either move your files to those locations or edit the unit.
+Этот модуль предполагает, что конфигурационный файл находится в `/etc/verdaccio/config.yaml` и хранилище находится в `/var/lib/verdaccio`, так что или переместите ваши файлы по этим путям, или отредактируйте пути в модуле.
