@@ -33,7 +33,7 @@ title: "Amazon Web Services"
 
 ## ECS
 
-You can deploy Verdaccio as a task with an [ECS Volume](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) for persistent storage.
+Вы можете задеплоить Verdaccio в виде задачи с [ECS Volume](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) в качестве постоянного хранилища данных.
 
 Заметка: Fargate не поддерживает постоянное хранение данных, так что вам придется использовать S3 storage plugin.
 
