@@ -45,7 +45,7 @@
         "title": "Docker"
       },
       "e2e": {
-        "title": "End to End testing"
+        "title": "End to End тестирование"
       },
       "github-actions": {
         "title": "Github Actions"
@@ -69,7 +69,7 @@
         "title": "Логи"
       },
       "logo": {
-        "title": "Logotype"
+        "title": "Логотип"
       },
       "node-api": {
         "title": "Node API"
@@ -99,19 +99,19 @@
         "title": "Настройка SSL-сертификатов"
       },
       "talks": {
-        "title": "Talks"
+        "title": "Выступления"
       },
       "uplinks": {
-        "title": "Uplinks"
+        "title": "Аплинки"
       },
       "webui": {
-        "title": "Web User Interface"
+        "title": "Веб-интерфейс пользователя"
       },
       "what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Что такое Verdaccio?"
       },
       "who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Кто использует Verdaccio?"
       },
       "windows": {
         "title": "Установка в качестве службы Windows"
@@ -195,16 +195,16 @@
         "title": "Модульное тестирование"
       },
       "version-3.8.6/version-3.8.6-uplinks": {
-        "title": "Uplinks"
+        "title": "Аплинки"
       },
       "version-3.8.6/version-3.8.6-use-cases": {
         "title": "Примеры использования"
       },
       "version-3.8.6/version-3.8.6-webui": {
-        "title": "Web User Interface"
+        "title": "Веб-интерфейс пользователя"
       },
       "version-3.8.6/version-3.8.6-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Что такое Verdaccio?"
       },
       "version-3.8.6/version-3.8.6-windows": {
         "title": "Установка в качестве службы Windows"
@@ -216,10 +216,10 @@
         "title": "Файл конфигурации"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-uplinks": {
-        "title": "Uplinks"
+        "title": "Аплинки"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Что такое Verdaccio?"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-amazon": {
         "title": "Amazon Web Services"
@@ -270,13 +270,13 @@
         "title": "Understanding Scopes"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-uplinks": {
-        "title": "Uplinks"
+        "title": "Аплинки"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-webui": {
-        "title": "Web User Interface"
+        "title": "Веб-интерфейс пользователя"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Что такое Verdaccio?"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-articles": {
         "title": "Articles"
@@ -300,7 +300,7 @@
         "title": "Docker"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-e2e": {
-        "title": "End to End testing"
+        "title": "End to End тестирование"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-github-actions": {
         "title": "Github Actions"
@@ -315,16 +315,16 @@
         "title": "Доступ к пакетам"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-talks": {
-        "title": "Talks"
+        "title": "Выступления"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-uplinks": {
-        "title": "Uplinks"
+        "title": "Аплинки"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-webui": {
-        "title": "Web User Interface"
+        "title": "Веб-интерфейс пользователя"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Кто использует Verdaccio?"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-amazon": {
         "title": "Amazon Web Services"
@@ -336,7 +336,7 @@
         "title": "Защита пакетов"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-talks": {
-        "title": "Talks"
+        "title": "Выступления"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-dev-plugins": {
         "title": "Разработка плагинов"
@@ -348,32 +348,32 @@
         "title": "Плагины"
       },
       "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Кто использует Verdaccio?"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
         "title": "Installation"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
-        "title": "Web User Interface"
+        "title": "Веб-интерфейс пользователя"
       }
     },
     "links": {
-      "Docs": "Docs",
-      "Notes": "Notes",
-      "Blog": "Blog",
+      "Docs": "Документация",
+      "Notes": "Заметки",
+      "Blog": "Блог",
       "Twitter": "Twitter",
-      "Help": "Help",
+      "Help": "Помощь",
       "GitHub": "GitHub",
-      "Team": "Team",
-      "Donate": "Donate"
+      "Team": "Команда",
+      "Donate": "Пожертвовать"
     },
     "categories": {
-      "Introduction": "Introduction",
+      "Introduction": "Введение",
       "Features": "Features",
-      "Server": "Server",
-      "Development": "Development",
+      "Server": "Сервер",
+      "Development": "Разработка",
       "DevOps": "DevOps",
-      "Guides": "Guides",
+      "Guides": "Руководства",
       "Configuration": "Configuration",
       "Plugins": "Плагины"
     }
@@ -396,16 +396,16 @@
     "Contribute|no description given": "Содействовать",
     "That’s it ! Enjoy your private package manager.|no description given": "Ну вот! Наслаждайтесь вашим менеджером приватных пакетов.",
     "Many great developers are already enjoying Verdaccio, join the community!|no description given": "Множество отличных разработчиков уже присоединились к Verdaccio, Присоединяйтесь к сообществу!",
-    "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.|no description given": "**npm**, **yarn** и **pnpm** являются частью любой разработки и мы стараемся угнаться за последними обновлениями.",
+    "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.|no description given": "**npm**, **yarn** и **pnpm** являются частью любой разработки и мы следим за последними обновлениями.",
     "The most popular npm clients are supported|no description given": "Поддерижваются наиболее популярные клиенты npm",
     "We have an official **Docker** image ready to use|no description given": "У нас есть официальный **Docker** образ готовый к использованию",
     "and **Kubernetes Helm** support for easy deployment|no description given": "и **Kubernetes Helm** поддерживается для простого развёртывания",
     "Making the DevOps work easy|no description given": "Делает работу DevOps проще",
-    "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio основан на плагинах, аутентификации, middleware и поддержке хранилищ. Просто выберите нужный или создайте свой.",
+    "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio поддерживает плагины, аутентификацию, middleware и хранилища. Просто выберите нужный плагин или создайте свой.",
     "Plugin Support|no description given": "Поддержка Плагинов",
     "Who's Using This?|no description given": "Кто это использует?",
     "This project is used by all these people|no description given": "Этот проект используется всеми этими людьми",
-    "More|no description given": "Больше",
+    "More|no description given": "Далее",
     "Users|no description given": "Пользователи",
     "This project is used by many folks|no description given": "Этот проект используется множеством людей",
     "Are you using this project? Do not be shy and add your company/project logo.|no description given": "Вы используете этот проект? Не стесняйся и добавь логитип проекта.",
