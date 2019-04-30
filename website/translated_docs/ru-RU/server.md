@@ -57,31 +57,31 @@ $ sudo npm install -g forever
 $ forever start `which verdaccio`
 ```
 
-You can check the documentation for more information on how to use forever.
+Чтобы получить больше информации о том, как использовать forever, обратитесь к его документаии.
 
-## Surviving server restarts
+## Переживаем перезапуски сервера
 
-You can use `crontab` and `forever` together to start verdaccio after a server reboot. When you're logged in as the verdaccio user do the following:
+Вы можете использовать `crontab` и `forever` вместе, чтобы запустить verdaccio после перезагрузки сервера. Когда вы залогинены под пользователем verdaccio, сделайте следующее:
 
 ```bash
 $ crontab -e
 ```
 
-This might ask you to choose an editor. Pick your favorite and proceed. Add the following entry to the file:
+При этом вас могут попросить выбрать редактор. Выдерите свой любимый редактор и продолжайте - добавьте эти строчки в файл:
 
     @reboot /usr/bin/forever start /usr/lib/node_modules/verdaccio/bin/verdaccio
     
 
-The locations may vary depending on your server setup. If you want to know where your files are you can use the 'which' command:
+Пути к файлам могут отличаться в зависимости от ваших настроек. Если вы хотите узнать, где что лежит, вы можете использовать команду 'which':
 
 ```bash
 $ which forever
 $ which verdaccio
 ```
 
-## Using systemd
+## Используем systemd
 
-Instead of `forever` you can use `systemd` for starting verdaccio and keeping it running. Verdaccio installation has systemd unit, you only need to copy it:
+Вместо `forever` вы можете использовать `systemd` для старта verdaccio и поддержки его в запущенном состоянии. Установленный Verdaccio уже имеет модуль для systemd, вам нужно только скопировать его:
 
 ```bash
 $ sudo cp /usr/lib/node_modules/verdaccio/systemd/verdaccio.service /lib/systemd/system/ && sudo systemctl daemon-reload
