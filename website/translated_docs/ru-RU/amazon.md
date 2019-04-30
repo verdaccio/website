@@ -35,8 +35,8 @@ title: "Amazon Web Services"
 
 You can deploy Verdaccio as a task with an [ECS Volume](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) for persistent storage.
 
-Note: Fargate doesn't support persistent volumes, so you have to use the S3 storage plugin.
+Заметка: Fargate не поддерживает постоянное хранение данных, так что вам придется использовать S3 storage plugin.
 
 ## EKS
 
-See the documentation pages on [Kubernetes](kubernetes) and [Docker](docker).
+См. документацию на [Kubernetes](kubernetes) and [Docker](docker).
