@@ -3,7 +3,7 @@ id: amazon
 title: "Amazon Web Services"
 ---
 
-This document describes several approaches for deploying Verdaccio in the AWS cloud.
+Этот документ описывает несколько способов запустить Verdaccio в облаке AWS.
 
 ## EC2
 
