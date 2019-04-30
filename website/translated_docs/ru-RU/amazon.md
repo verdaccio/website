@@ -7,9 +7,9 @@ title: "Amazon Web Services"
 
 ## EC2
 
-[CloudFormation template for deploying this stack.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
+[Шаблон CloudFormation для этого стека.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
-Architecture:
+Архитектура:
 
     Clients
      |
@@ -27,9 +27,9 @@ Architecture:
     Elastic File System
     
 
-Architecture notes: * Deploy this stack into the region closest to your users for maximum performance. * We use an auto scaling group primarily for self-healing. The system requirements of Verdaccio are pretty low, so it's unlikely you'll need multiple instances to handle traffic load. * Because Amazon Linux 2 doesn't include Node, we run Verdaccio as a Docker image rather than natively on the instance. This is faster and more secure than relying on third party package sources for Node. * Elastic File System is cheap and stateful, and works across AZs. An alternative would be the [third-party S3 storage plugin](https://github.com/remitly/verdaccio-s3-storage). * For backup, use AWS Backup
+Заметки по архитектуре: * Выбирайте регион, который ближе к вашим пользователям - для максимальной производительности. * Мы используем auto scaling group, в основном для самовосстановления. Системные требования для Verdaccio невысоки, так что вам, скорее всего, не понадобится использовать несколько инстансов для обслуживания трафика. * Так как Amazon Linux 2 не включает в себя Node, мы запускаем Verdaccio как Docker-образ, а не устанавливаем его в инстансе. Это быстрее и безопаснее, чем полагаться на сторонние источники для установки Node. * Elastic File System дешева и сохраняет состояние, и работает между несколькими AZ. Как альтернативу, можно использовать [third-party S3 storage plugin](https://github.com/remitly/verdaccio-s3-storage). * Для бэкапа, используйте AWS Backup
 
-Estimated monthly cost for a small installation (in us-east-1): * ALB (1 LCU average): $22.265/mo * EC2 (t3.nano): $3.796/mo * EBS (8gb): $0.80/mo * EFS (5gb): $1.5/mo * Data transfer: (10gb): $0.9/mo * **TOTAL:** Under $30/mo
+Примерные месячные траты для небольшого инстанса (в us-east-1): * ALB (1 LCU average): $22.265/мес * EC2 (t3.nano): $3.796/мес * EBS (8gb): $0.80/мес * EFS (5gb): $1.5/мес * Передача данных: (10gb): $0.9/мес * **TOTAL:** Меньше $30/мес
 
 ## ECS
 
