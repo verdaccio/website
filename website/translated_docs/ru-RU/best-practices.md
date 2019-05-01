@@ -1,17 +1,17 @@
 ---
 id: best
-title: "Best Practices"
+title: "Лучшие практики"
 ---
 
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+Это руководство - список лучших практик, которые мы собрали, и которые рекомендуем всем пользователям. Не воспринимайте это руководство как высеченную в камне неделимую истину, вы можете использовать только пару пунктов, если так будет правильно для вас.
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Не стесняйтесь предлагать ваши лучшие практики комьюнити Verdaccio**.
 
-## Private Registry
+## Приватный репозиторий
 
-You can add users and manage which users can access which packages.
+Вы можете добавлять пользователей и определять, какие пользователи имеют доступ к пакетам.
 
-It is recommended that you define a prefix for your private packages, for example `local-*` or scoped `@my-company/*`, so all your private things will look like this: `local-foo`. This way you can clearly separate public packages from private ones.
+Мы рекомендуем определить для ваших приватных пакетов префикс, например `local-*`, или скоуп `@my-company/*`, так что все ваши приватные пакеты будут выглядеть примерно так: `local-foo`. Таким образом вы отделите публичные пакеты от приватных.
 
     yaml
       packages:
@@ -28,11 +28,11 @@ It is recommended that you define a prefix for your private packages, for exampl
           access: $all
           publish: $authenticated
 
-Always remember, **the order of packages access is important**, packages are mached always top to bottom.
+Помните, **порядок пакетов в списке доступа - важен**, потому что совпадения всегда ищутся сверху вниз.
 
-### Using public packages from npmjs.org
+### Использование публичных пакетов с npmjs.org
 
-If some package doesn't exist in the storage, server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from cache pretending that no other packages exist. **Verdaccio will download only what's needed (= requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
+Если какого-то пакета нет в хранилище, сервер попробует скачать его с npmjs.org. Если npmjs.org недоступен, то сервер будет брать пакеты из кэша, исходя из предположения, что других пакетов нет. **Verdaccio will download only what's needed (= requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
 
 **Example:**
 
@@ -70,7 +70,7 @@ There's two options here:
     
     This way your package will be used until its original maintainer updates his public package to `0.1.3`.
 
-## Security
+## Безопасность
 
 The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recomendations.
 
