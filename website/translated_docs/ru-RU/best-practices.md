@@ -93,15 +93,15 @@ title: "Лучшие практики"
 
 В этом случае, **никто не сможет пользоваться вашим реестром, пока не авторизуется, и приватные пакеты не будут показываться в интерфейса пользователя**.
 
-## Server
+## Сервер
 
-### Secured Connections
+### Защищенные соединения
 
-Using **HTTPS** is a common recomendation, for such reason we recommend read the [SSL](ssl.md) section to make Verdaccio secure or using a HTTPS [reverse proxy](reverse-proxy.md) on top of Verdaccio.
+Использовать **HTTPS** - это частая рекомендация, и мы рекомендуем прочитать раздел [SSL](ssl.md), чтобы включить защиту внутри Verdaccio, или использовать HTTPS [reverse proxy](reverse-proxy.md) поверх Verdaccio.
 
-### Expiring Tokens
+### Ограничения по времени для токенов
 
-In `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+В `verdaccio@3.x` токены не имеют ограничений по времени. Поэтому мы ввели в `verdaccio@4.x` новую фичу - JWT [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
