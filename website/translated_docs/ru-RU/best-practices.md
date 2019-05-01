@@ -32,21 +32,21 @@ title: "Лучшие практики"
 
 ### Использование публичных пакетов с npmjs.org
 
-Если какого-то пакета нет в хранилище, сервер попробует скачать его с npmjs.org. Если npmjs.org недоступен, то сервер будет брать пакеты из кэша, исходя из предположения, что других пакетов нет. **Verdaccio will download only what's needed (= requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
+Если какого-то пакета нет в хранилище, сервер попробует скачать его с npmjs.org. Если npmjs.org недоступен, то сервер будет брать пакеты из кэша, исходя из предположения, что других пакетов нет. **Verdaccio скачивает только то, что нужно (= то, что запросил пользователь)**, и эта информация кэшируется, так что когда клиент запросит то же самое второй раз, сервер вернёт требуемое, не запрашивая npmjs.org.
 
-**Example:**
+**Пример:**
 
-If you successfully request `express@4.0.1` from this server once, you'll able to do that again (with all it's dependencies) anytime even if npmjs.org is down. But say `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, this server would say that only `express@4.0.1` (= only what's in the cache) is published, but nothing else.
+Если вы запросили `express@4.0.1` с сервера и запрос был успешный, это означает, что вы сможете получить его снова (вместе со всеми зависимостями) в любое время, даже если npmjs.org не работает. Но, скажем, `express@4.0.0` не будет загружен, пока кто-нибудь его не запросит. И если npmjs.org недоступен, сервер будет отвечать, что только `express@4.0.1` (= только то, что в кэше) опубликован, и больше никих версий нет.
 
-### Override public packages
+### Переопределение публичных пакетов
 
-If you want to use a modified version of some public package `foo`, you can just publish it to your local server, so when your type `npm install foo`, **it'll consider installing your version**.
+Если вы хотите использовать модифицированную версию какого-либо публичного пакета `foo`, то просто опубликуйте его на вашем локальном сервере, и когда вы запустите команду `npm install foo`, **будет становлена именно ваша версия**.
 
-There's two options here:
+Возможны две ситуации:
 
-1. You want to create a separate **fork** and stop synchronizing with public version.
+1. Вы хотите создать отдельный **форк** и остановить синхронизацию с публичной версией.
     
-    If you want to do that, you should modify your configuration file so verdaccio won't make requests regarding this package to npmjs anymore. Add a separate entry for this package to `config.yaml` and remove `npmjs` from `proxy` list and restart the server.
+    Если вы хотите сделать это, вы должны изменить конфигурационный файл, так что verdaccio не будет больше делать запросы к npmjs. Add a separate entry for this package to `config.yaml` and remove `npmjs` from `proxy` list and restart the server.
     
     ```yaml
     packages:
