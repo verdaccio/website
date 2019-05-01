@@ -57,26 +57,26 @@ title: "Лучшие практики"
         # proxy:
     ```
     
-    When you publish your package locally, **you should probably start with version string higher than existing one**, so it won't conflict with existing package in the cache.
+    При этом, когда вы локально публикуете пакет, **рекомендуется повысить версию**, чтобы не было конфликта с версией, которая же есть в кэше.
 
-2. You want to temporarily use your version, but return to public one as soon as it's updated.
+2. Вы хотите временно использовать свою версию, но вернуться к публичному пакету, когда выйдет обновление.
     
-    In order to avoid version conflicts, **you should use a custom pre-release suffix of the next patch version**. For example, if a public package has version 0.1.2, you can upload `0.1.3-my-temp-fix`.
+    Чтобы избежать конфликта версий, **вам нужно использовать свой пре-релизный суффикс для следующей версии**. Например, если публичный пакет имел версию 0.1.2, вам нужно опубликовать `0.1.3-my-temp-fix`.
     
     ```bash
     npm version 0.1.3-my-temp-fix
     npm --publish --tag fix --registry http://localhost:4873
     ```
     
-    This way your package will be used until its original maintainer updates his public package to `0.1.3`.
+    В этом случае ваш пакет будет использоваться до тех пор, пока владелец пакета не опубликует версию `0.1.3`.
 
 ## Безопасность
 
-The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recomendations.
+Безопасность начинается с вашего окружения, и мы настоятельно рекомендуем прочитать **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** и последовать рекомендациям.
 
 ### Доступ к пакетам
 
-By default all packages are you publish in Verdaccio are accessible for all public, we totally recommend protect your registry from external non authorized users updating `access` property to `$authenticated`.
+По умолчанию все опубликованные в Verdaccio пакеты доступны всем, и мы настоятельно рекомендуем защитить ваш реестр от внешних неавторизированных пользователей, установив значение свойства `access` в `$authenticated`.
 
 ```yaml
   packages:
@@ -91,7 +91,7 @@ By default all packages are you publish in Verdaccio are accessible for all publ
       publish: $authenticated
    ```
 
-In that way, **nobody will take advance of your registry unless is authorized and private packages won't be displayed in the User Interface**.
+В этом случае, **никто не сможет пользоваться вашим реестром, пока не авторизуется, и приватные пакеты не будут показываться в интерфейса пользователя**.
 
 ## Server
 
