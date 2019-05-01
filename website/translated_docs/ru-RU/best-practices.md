@@ -115,8 +115,8 @@ security:
       expiresIn: 7d
 ```
 
-**Using this configuration will override the current system and you will be able to control how long the token will live**.
+**Использование этой конфигурации изменит текущее поведение сервера и вы сможете управлять временим жизни токенов**.
 
-Using JWT also improves the performance with authentication plugins, the old system will perform an unpackage and validating the credentials in each request, while JWT will rely on the token signature avoiding the overhead for the plugin.
+Использование JWT так же увеличивает производительность плагинов аутентификации, так как старая система производила распаковку и проверку credentials во время каждого запроса, тогда как JWT полагается на подпись токена, устраняя эти накладные расходы для плагина.
 
-As a side note, at **npmjs the token never expires**.
+В качестве примечания, **npmjs токены не имеют ограничений по времени**.
