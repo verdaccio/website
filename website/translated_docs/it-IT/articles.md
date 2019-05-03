@@ -7,7 +7,7 @@ Riportiamo gli articoli relativi a Verdaccio, se hai scritto un post sul tuo blo
 
 > È consentita qualsiasi lingua
 
-## Core Team Articles
+## Articoli del Core Team
 
 * [Un'Introduzione a Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
 * [Cinque casi in cui un proxy privato npm è adatto al tuo workflow](https://medium.com/@jotadeveloper/five-use-cases-where-a-npm-private-proxy-fits-in-your-workflow-632a81779c14)
@@ -16,7 +16,7 @@ Riportiamo gli articoli relativi a Verdaccio, se hai scritto un post sul tuo blo
 * [Verdaccio 3 rilasciato 🎉!!](https://medium.com/verdaccio/verdaccio-3-released-feb06ef38558)
 * [La pazza storia di Verdaccio](https://medium.com/verdaccio/the-crazy-story-of-verdaccio-d35d924728bc)
 * [Release di Verdaccio 4 alpha 🚀](https://medium.com/verdaccio/verdaccio-4-alpha-release-400c7ed4884d)
-* [Verdaccio and deterministic lock files](https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e)
+* [Verdaccio e i file di lock deterministici](https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e)
 * [Configurazione di Verdaccio su DigitalOcean](https://medium.com/verdaccio/setting-up-verdaccio-on-digitalocean-61b5d08e4f0d)
 * [Come ho imparato React Js e come è possibile…](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
 * [Come sono finito nel mondo dell'open source...e come sia stata una gran bella cosa!](https://medium.com/@priscilawebdev/how-do-i-fall-in-the-open-source-world-and-that-was-a-nice-thing-b0e85d05490d)

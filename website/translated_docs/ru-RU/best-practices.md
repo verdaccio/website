@@ -1,17 +1,17 @@
 ---
 id: best
-title: "Best Practices"
+title: "Лучшие практики"
 ---
 
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+Это руководство - список лучших практик, которые мы собрали, и которые рекомендуем всем пользователям. Не воспринимайте это руководство как высеченную в камне неделимую истину, вы можете использовать только пару пунктов, если так будет правильно для вас.
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Не стесняйтесь предлагать ваши лучшие практики комьюнити Verdaccio**.
 
-## Private Registry
+## Приватный репозиторий
 
-You can add users and manage which users can access which packages.
+Вы можете добавлять пользователей и определять, какие пользователи имеют доступ к пакетам.
 
-It is recommended that you define a prefix for your private packages, for example `local-*` or scoped `@my-company/*`, so all your private things will look like this: `local-foo`. This way you can clearly separate public packages from private ones.
+Мы рекомендуем определить для ваших приватных пакетов префикс, например `local-*`, или скоуп `@my-company/*`, так что все ваши приватные пакеты будут выглядеть примерно так: `local-foo`. Таким образом вы отделите публичные пакеты от приватных.
 
     yaml
       packages:
@@ -28,25 +28,25 @@ It is recommended that you define a prefix for your private packages, for exampl
           access: $all
           publish: $authenticated
 
-Always remember, **the order of packages access is important**, packages are mached always top to bottom.
+Помните, **порядок пакетов в списке доступа - важен**, потому что совпадения всегда ищутся сверху вниз.
 
-### Using public packages from npmjs.org
+### Использование публичных пакетов с npmjs.org
 
-If some package doesn't exist in the storage, server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from cache pretending that no other packages exist. **Verdaccio will download only what's needed (= requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
+Если какого-то пакета нет в хранилище, сервер попробует скачать его с npmjs.org. Если npmjs.org недоступен, то сервер будет брать пакеты из кэша, исходя из предположения, что других пакетов нет. **Verdaccio скачивает только то, что нужно (= то, что запросил пользователь)**, и эта информация кэшируется, так что когда клиент запросит то же самое второй раз, сервер вернёт требуемое, не запрашивая npmjs.org.
 
-**Example:**
+**Пример:**
 
-If you successfully request `express@4.0.1` from this server once, you'll able to do that again (with all it's dependencies) anytime even if npmjs.org is down. But say `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, this server would say that only `express@4.0.1` (= only what's in the cache) is published, but nothing else.
+Если вы запросили `express@4.0.1` с сервера и запрос был успешный, это означает, что вы сможете получить его снова (вместе со всеми зависимостями) в любое время, даже если npmjs.org не работает. Но, скажем, `express@4.0.0` не будет загружен, пока кто-нибудь его не запросит. И если npmjs.org недоступен, сервер будет отвечать, что только `express@4.0.1` (= только то, что в кэше) опубликован, и больше никих версий нет.
 
-### Override public packages
+### Переопределение публичных пакетов
 
-If you want to use a modified version of some public package `foo`, you can just publish it to your local server, so when your type `npm install foo`, **it'll consider installing your version**.
+Если вы хотите использовать модифицированную версию какого-либо публичного пакета `foo`, то просто опубликуйте его на вашем локальном сервере, и когда вы запустите команду `npm install foo`, **будет становлена именно ваша версия**.
 
-There's two options here:
+Возможны две ситуации:
 
-1. You want to create a separate **fork** and stop synchronizing with public version.
+1. Вы хотите создать отдельный **форк** и остановить синхронизацию с публичной версией.
     
-    If you want to do that, you should modify your configuration file so verdaccio won't make requests regarding this package to npmjs anymore. Add a separate entry for this package to `config.yaml` and remove `npmjs` from `proxy` list and restart the server.
+    Если вы хотите сделать это, то надо изменить конфигурационный файл так, чтобы verdaccio не делал больше запросы к npmjs. Добавьте отдельную запись для этого пакета в `config.yaml` и удалите `npmjs` из списка `proxy`, затем перезапустите сервер.
     
     ```yaml
     packages:
@@ -57,26 +57,26 @@ There's two options here:
         # proxy:
     ```
     
-    When you publish your package locally, **you should probably start with version string higher than existing one**, so it won't conflict with existing package in the cache.
+    При этом, когда вы локально публикуете пакет, **рекомендуется повысить версию**, чтобы не было конфликта с версией, которая же есть в кэше.
 
-2. You want to temporarily use your version, but return to public one as soon as it's updated.
+2. Вы хотите временно использовать свою версию, но вернуться к публичному пакету, когда выйдет обновление.
     
-    In order to avoid version conflicts, **you should use a custom pre-release suffix of the next patch version**. For example, if a public package has version 0.1.2, you can upload `0.1.3-my-temp-fix`.
+    Чтобы избежать конфликта версий, **вам нужно использовать свой пре-релизный суффикс для следующей версии**. Например, если публичный пакет имел версию 0.1.2, вам нужно опубликовать `0.1.3-my-temp-fix`.
     
     ```bash
     npm version 0.1.3-my-temp-fix
     npm --publish --tag fix --registry http://localhost:4873
     ```
     
-    This way your package will be used until its original maintainer updates his public package to `0.1.3`.
+    В этом случае ваш пакет будет использоваться до тех пор, пока владелец пакета не опубликует версию `0.1.3`.
 
-## Security
+## Безопасность
 
-The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recomendations.
+Безопасность начинается с вашего окружения, и мы настоятельно рекомендуем прочитать **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** и последовать рекомендациям.
 
 ### Доступ к пакетам
 
-By default all packages are you publish in Verdaccio are accessible for all public, we totally recommend protect your registry from external non authorized users updating `access` property to `$authenticated`.
+По умолчанию все опубликованные в Verdaccio пакеты доступны всем, и мы настоятельно рекомендуем защитить ваш реестр от внешних неавторизированных пользователей, установив значение свойства `access` в `$authenticated`.
 
 ```yaml
   packages:
@@ -91,17 +91,17 @@ By default all packages are you publish in Verdaccio are accessible for all publ
       publish: $authenticated
    ```
 
-In that way, **nobody will take advance of your registry unless is authorized and private packages won't be displayed in the User Interface**.
+В этом случае, **никто не сможет пользоваться вашим реестром, пока не авторизуется, и приватные пакеты не будут показываться в интерфейса пользователя**.
 
-## Server
+## Сервер
 
-### Secured Connections
+### Защищенные соединения
 
-Using **HTTPS** is a common recomendation, for such reason we recommend read the [SSL](ssl.md) section to make Verdaccio secure or using a HTTPS [reverse proxy](reverse-proxy.md) on top of Verdaccio.
+Использовать **HTTPS** - это частая рекомендация, и мы рекомендуем прочитать раздел [SSL](ssl.md), чтобы включить защиту внутри Verdaccio, или использовать HTTPS [reverse proxy](reverse-proxy.md) поверх Verdaccio.
 
-### Expiring Tokens
+### Ограничения по времени для токенов
 
-In `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+В `verdaccio@3.x` токены не имеют ограничений по времени. Поэтому мы ввели в `verdaccio@4.x` новую фичу - JWT [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
@@ -115,8 +115,8 @@ security:
       expiresIn: 7d
 ```
 
-**Using this configuration will override the current system and you will be able to control how long the token will live**.
+**Использование этой конфигурации изменит текущее поведение сервера и вы сможете управлять временим жизни токенов**.
 
-Using JWT also improves the performance with authentication plugins, the old system will perform an unpackage and validating the credentials in each request, while JWT will rely on the token signature avoiding the overhead for the plugin.
+Использование JWT так же увеличивает производительность плагинов аутентификации, так как старая система производила распаковку и проверку credentials во время каждого запроса, тогда как JWT полагается на подпись токена, устраняя эти накладные расходы для плагина.
 
-As a side note, at **npmjs the token never expires**.
+В качестве примечания, **npmjs токены не имеют ограничений по времени**.
