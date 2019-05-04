@@ -42,20 +42,20 @@ Come è descritto [nel caso #212](https://github.com/verdaccio/verdaccio/issues/
 Come è noto *Verdaccio* utilizza l'`htpasswd` di default. Quel plugin non implementa i metodi `allow_access`, `allow_publish` e `allow_unpublish`. Quindi, *Verdaccio* lo gestirà nella seguente maniera:
 
 * Se non si è loggati (si è anonimi), `$all` e `$anonymous` significano esattamente la stessa cosa.
-* Se si è loggati, `$anonymous` non sarà parte del gruppo e `$all` corrisponderà ad ogni utente loggato. Un nuovo gruppo `$authenticated` verrà aggiunto all'elenco.
+* Se si è loggati, `$anonymous` non sarà parte del gruppo e `$all` coinciderà con ogni utente loggato. Un nuovo gruppo `$authenticated` verrà aggiunto all'elenco.
 
-As a takeaway, `$all` **will match all users, independently whether is logged or not**.
+Il concetto chiave è che `$all` **coinciderà con tutti gli utenti, indipendentemente dal fatto che siano loggati o meno**.
 
-**The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
+**Il comportamento precedente si applica esclusivamente al plugin di autenticazione predefinito**. Se si sta utilizzando un plugin personalizzato e tale plugin implementa `allow_access`, `allow_publish` o `allow_unpublish`, la risoluzione dell'accesso dipende dal plugin stesso. Verdaccio imposterà esclusivamente i gruppi predefiniti.
 
-Let's recap:
+Ricapitolando:
 
-* **logged**: `$all`, `$authenticated`, + groups added by the plugin
-* **anonymous (logged out)**: `$all` and `$anonymous`.
+* **loggati**: `$all`, `$authenticated`, + gruppi aggiunti dal plugin
+* **anonimi (non loggati)**: `$all` e `$anonymous`.
 
 ## Impostazione predefinita htpasswd
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
+Per semplificare la configurazione, `verdaccio` utilizza un plugin basato su `htpasswd`. A partire dalla versione v3.0.x il plugin `verdaccio-htpasswd` viene utilizzato di default.
 
 ```yaml
 auth:
