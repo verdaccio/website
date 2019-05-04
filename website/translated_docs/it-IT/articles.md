@@ -3,7 +3,7 @@ id: articles
 title: "Articoli"
 ---
 
-Riportiamo gli articoli relativi a Verdaccio, se hai scritto un post sul tuo blog o un tutorial che menzioni Verdaccio, sentiti libero di aggiungerlo qui.
+Riportiamo gli articoli relativi a Verdaccio, se hai scritto un post sul tuo blog o un tutorial che menziona Verdaccio, sentiti libero di aggiungerlo qui.
 
 > È consentita qualsiasi lingua
 
