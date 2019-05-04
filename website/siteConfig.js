@@ -91,6 +91,7 @@ const siteConfig = {
   usePrism: ['jsx'],
   onPageNav: 'separate',
   docsSideNavCollapsible: true,
+  blogSidebarCount: 'ALL',
   highlight: {
     theme: 'atom-one-dark',
   },
