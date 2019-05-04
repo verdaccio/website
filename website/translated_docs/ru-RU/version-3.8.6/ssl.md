@@ -4,23 +4,23 @@ title: Настройка SSL-сертификатов
 original_id: ssl
 ---
 
-Follow this instructions to configure a SSL certificate to serve NPM registry under HTTPS.
+Следуйте инструкциям по конфигурации SSL сертификатов, чтобы получить NPM реестр с HTTPS.
 
-* Update the listen property in your `~/.config/verdaccio/config.yaml`:
+* Обновите свойство `listen` в вашем `~/.config/verdaccio/config.yaml`:
 
     listen: 'https://your.domain.com/'
     
 
-Once you update the listen and try to run verdaccio again will ask for certificates.
+Когда вы обновили `listen` и попытались запустить verdaccio снова, он запросит сертификаты.
 
-* Generate your certificates
+* Сгенерируйте ваши сертификаты
 
      $ openssl genrsa -out /Users/user/.config/verdaccio/verdaccio-key.pem 2048
      $ openssl req -new -sha256 -key /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-csr.pem
      $ openssl x509 -req -in /Users/user/.config/verdaccio/verdaccio-csr.pem -signkey /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-cert.pem
      ````
     
-    * Edit your config file `/Users/user/.config/verdaccio/config.yaml` and add the following section
+    * Отредактируйте ваш конфиг файл `/Users/user/.config/verdaccio/config.yaml` и добавьте следующий раздел
     
     
 
@@ -32,16 +32,16 @@ https: key: /Users/user/.config/verdaccio/verdaccio-key.pem cert: /Users/user/.c
 
 https: pfx: /Users/user/.config/verdaccio/server.pfx passphrase: 'secret' ````
 
-More info on the `key`, `cert`, `ca`, `pfx` and `passphrase` arguments on the [Node documentation](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
+Больше информации про аргументы `key`, `cert`, `ca`, `pfx` и `passphrase` содержится в [Node documentation](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
 
-* Run `verdaccio` in your command line.
+* Запустите `verdaccio` в командной строке.
 
-* Open the browser and load `https://your.domain.com:port/`
+* Откройте браузер и загрузите `https://your.domain.com:port/`
 
-This instructions are mostly valid under OSX and Linux, on Windows the paths will vary but, the steps are the same.
+Инструкция выше писалась для OSX и Linux, на Windows пути немного отличаются, но шаги - те же самые.
 
 ## Docker
 
-If you are using the Docker image, you have to set the `PROTOCOL` environment variable to `https` as the `listen` argument is provided on the [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43), and thus ignored from your config file.
+Если вы используете образ Docker, вам нужно установить переменную окружения `PROTOCOL` в значение `https`, так как аргумент `listen` используется в [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43), и, таким образом, будет проигнорирован в вашем конфиге.
 
-You can also set the `PORT` environment variable if you are using a different port than `4873`.
+Так же, вы можете установить переменную окружения `PORT`, если используете порт, отличный от `4873`.
