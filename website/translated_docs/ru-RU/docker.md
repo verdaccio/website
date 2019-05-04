@@ -37,13 +37,7 @@ docker pull verdaccio/verdaccio:3.0
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-Для следующей мастер-ветки используйте тэг `master`.
-
-```bash
-docker pull verdaccio/verdaccio:master
-```
-
-Для следующего мажорного релиза используйте тэг `4.x-next` (для ветки 4.x).
+For the next major release using the `4.x-next` (master) version.
 
 ```bash
 docker pull verdaccio/verdaccio:4.x-next
@@ -51,29 +45,42 @@ docker pull verdaccio/verdaccio:4.x-next
 
 > Если вас интересует весь список тегов, [посетите нашу страницу на сайте Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Запуск verdaccio с использованием Docker
+## Running Verdaccio using Docker
+
+> The following configuration is based on the Verdaccio 4 or the `4.x-next` tag.
 
 Запуск Docker контейнера:
 
 ```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
 ```
 
-Последний аргумент определяет, какой образ надо использовать. С помощью строчки выше вы скачаете самый последний образ с dockerhub'а, если вы еще этого не сделали.
+The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
 
 Если этот образ [у вас уже скачан](#build-your-own-docker-image) используйте `verdaccio` в качестве последнего аргумента.
 
 Вы можете использовать `-v` для того, что бы примонтировать каталоги `conf`, `storage` и `plugins` к основной (host) файловой системе:
 
 ```bash
-V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -p 4873:4873 \
   -v $V_PATH/conf:/verdaccio/conf \
   -v $V_PATH/storage:/verdaccio/storage \
   -v $V_PATH/plugins:/verdaccio/plugins \
-  verdaccio/verdaccio
+  verdaccio/verdaccio:4.x-next
 ```
 
-> Примечание: внутри контейнера Verdaccio запускается не из под root (uid=100, gid=101), и если вы используете кастомное монтирование каталогов, вам необходимо убедиться, что у пользователя будет доступ к этим каталогам. В примере выше, вам нужно выполнить `sudo chown -R 100:101 /opt/verdaccio`, иначе вы получите ошибку прав доступа во время запуска контейнера. [Используйте docker разделы](https://docs.docker.com/storage/volumes/) при монтировании каталогов.
+> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Используйте docker разделы](https://docs.docker.com/storage/volumes/) при монтировании каталогов.
+
+Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
+
+| Свойство              | default                | Описание                                           |
+| --------------------- | ---------------------- | -------------------------------------------------- |
+| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | the docker working directory                       |
+| VERDACCIO_USER_NAME | `verdaccio`            | the system user                                    |
+| VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
+| VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
+| VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
 
 ### Плагины
 
@@ -87,28 +94,26 @@ RUN npm install verdaccio-s3-storage
 
 ### Docker и кастомная конфигурация порта
 
-В настоящее время любой `host:port`, настроенный в `conf/config.yaml` в опции `listen` игнорируется при использовании Докер.
+Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
 
-Если вам необходимо чтобы docker-экземпляр verdaccio работал на другом порту, скажем на `5000`, в вашей `docker run` команде нужно заменить `-p 4873:4873` на `-p 5000:4873`.
-
-В том случае, когда вам нужно указать какой порт слушать **в docker контейнере**, начиная с версии 2.?.?, вы можете указать дополнительный аргумент в `docker run`: `--env PORT=5000` Это изменит порт, который docker контейнер будет слушать и порт, который будет слушать verdaccio.
-
-Разумеется, числа указываемые в параметре `-p` должны соответствовать, по этому предпологается, что все они должны быть одинаковыми и вы можете скопировать, вставить и запускать:
+If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
 
 ```bash
-PORT=5000; docker run -it --rm --name verdaccio \
-  --env PORT -p $PORT:$PORT
-  verdaccio/verdaccio
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -e "VERDACCIO_PORT=8080" -p 8080:8080 \  
+  verdaccio/verdaccio:4.x-next
 ```
+
+Of course the numbers you give to `-p` paremeter need to match.
 
 ### Использование HTTPS с Docker
 
 Вы можете настроить протокол, который verdaccio будет слушать, аналогично тому, как ранее конфигурировался порт. Необходмило переопределить значение по умолчанию ("http") переменной окружения `PROTOCOL` на "https", после того, как вы укажете сертификаты в config.yaml.
 
 ```bash
-PROTOCOL=https; docker run -it --rm --name verdaccio \
-  --env PROTOCOL -p 4873:4873
-  verdaccio/verdaccio
+docker run -it --rm --name verdaccio \
+  --env "VERDACCIO_PROTOCOL=https" -p 4873:4873
+  verdaccio/verdaccio:4.x-next
 ```
 
 ### Использование docker-compose
@@ -120,7 +125,29 @@ PROTOCOL=https; docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-Вы можете указать используемый порт (внутри контейнера и снаружи) дописав перед командой `PORT=5000`.
+You can set the port to use (for both container and host) by prefixing the above command with `VERDACCIO_PORT=5000`.
+
+```yaml
+version: '3.1'
+
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:4.x-next
+    container_name: "verdaccio"
+    networks:
+      - node-network
+    environment:
+      - VERDACCIO_PORT=4873
+    ports:
+      - "4873:4873"
+    volumes:
+      - "./storage:/verdaccio/storage"
+      - "./config:/verdaccio/conf"
+      - "./config:/verdaccio/conf"  
+networks:
+  node-network:
+    driver: bridge
+```
 
 Docker сгенерирует именованный раздел, в котором будут храниться данные приложения. Вы можете использовать `docker inspect` или `docker volume inspect` для определения физического местоположения и изменения конфигурации, например:
 
@@ -147,7 +174,7 @@ docker build -t verdaccio .
 Есть так же npm скрипт для сборки Docker образа, по этому вы можете выполнить:
 
 ```bash
-npm run build:docker
+yarn run build:docker
 ```
 
 Примечание: Первая сборки может занять несколько минут, потому что нужно выполнить `npm install`, это будет занимать много времени, всякий раз, как вы измените, что либо, что не перечислено в `.dockerignore`.
@@ -161,6 +188,8 @@ npm run build:docker
 <https://github.com/verdaccio/docker-examples>
 
 ## Пользовательские сборки
+
+> If you have made an image based on Verdaccio, feel free to add it to this list.
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
