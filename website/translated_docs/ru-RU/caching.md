@@ -41,14 +41,14 @@ uplinks:
 
 ## Использование памяти вместо диска
 
-Sometimes caching packages is not a critical step, rather than route packages from different registries and achiving faster build times. There are two plugins that avoid write in a phisical hardrive at all using the memory.
+Иногда сохранить пакеты не так важно, как получить их из разных репозиториев и ускорить сборку. Есть два плагина, которые позволяют избежать записи пакетов на диск, и хранить их в памяти.
 
 ```bash
   npm install -g verdaccio-auth-memory
   npm install -g verdaccio-memory
 ```
 
-The configuration looks like this
+Конфиграция выглядит примерно так
 
 ```yaml
 auth:
