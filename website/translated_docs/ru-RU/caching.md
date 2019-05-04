@@ -62,4 +62,4 @@ store:
     limit: 1000
 ```
 
-Remember, once the server is restarted the data is being lost, we recomend this setup in cases where you do not need to persist at all.
+Помните, что когда сервер будет перезапущен, все данные будут потеряны, поэтому мы рекомендуем этот вариант в случаях, когда вам вообще не нужно хранить пакеты.
