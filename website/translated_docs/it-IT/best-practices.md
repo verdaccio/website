@@ -1,6 +1,6 @@
 ---
 id: best
-title: "Migliori Prassi"
+title: "Migliori Pratiche"
 ---
 
 La guida seguente è un elenco delle migliore pratiche raccolte e che raccomandiamo solitamente a tutti gli utenti. Non considerare questa guida come obbligatoria, puoi selezionare qualcuna di esse a seconda delle tue esigenze.
