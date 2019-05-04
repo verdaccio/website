@@ -1,5 +1,5 @@
 ---
-id: articoli
+id: articles
 title: "Articoli"
 ---
 
@@ -10,7 +10,7 @@ Riportiamo gli articoli relativi a Verdaccio, se hai scritto un post sul tuo blo
 ## Articoli del Core Team
 
 * [Un'Introduzione a Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
-* [Cinque casi in cui un proxy privato npm è adatto al tuo workflow](https://medium.com/@jotadeveloper/five-use-cases-where-a-npm-private-proxy-fits-in-your-workflow-632a81779c14)
+* [Cinque casi d'uso in cui un proxy privato npm è adatto al tuo workflow](https://medium.com/@jotadeveloper/five-use-cases-where-a-npm-private-proxy-fits-in-your-workflow-632a81779c14)
 * [Un'Introduzione a Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
 * [Registro NPM per la tua organizzazione](https://medium.com/@ayusharma.in/npm-registry-for-your-organisation-aeb8ea76144)
 * [Verdaccio 3 rilasciato 🎉!!](https://medium.com/verdaccio/verdaccio-3-released-feb06ef38558)
