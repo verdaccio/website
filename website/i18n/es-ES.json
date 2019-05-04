@@ -105,13 +105,13 @@
         "title": "Uplinks"
       },
       "webui": {
-        "title": "Web User Interface"
+        "title": "Interfaz Web de Usuario"
       },
       "what-is-verdaccio": {
         "title": "Qué es Verdaccio?"
       },
       "who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Quien usa Verdaccio?"
       },
       "windows": {
         "title": "Instalación como un Servicio de Windows"
@@ -201,7 +201,7 @@
         "title": "Casos de Usos"
       },
       "version-3.8.6/version-3.8.6-webui": {
-        "title": "Web User Interface"
+        "title": "Interfaz Web de Usuario"
       },
       "version-3.8.6/version-3.8.6-what-is-verdaccio": {
         "title": "Qué es Verdaccio?"
@@ -273,7 +273,7 @@
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-webui": {
-        "title": "Web User Interface"
+        "title": "Interfaz Web de Usuario"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-what-is-verdaccio": {
         "title": "Qué es Verdaccio?"
@@ -321,10 +321,10 @@
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-webui": {
-        "title": "Web User Interface"
+        "title": "Interfaz Web de Usuario"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Quien usa Verdaccio?"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-amazon": {
         "title": "Amazon Web Services"
@@ -348,13 +348,13 @@
         "title": "Plugins"
       },
       "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Quien usa Verdaccio?"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
         "title": "Instalación"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
-        "title": "Web User Interface"
+        "title": "Interfaz Web de Usuario"
       }
     },
     "links": {
