@@ -3,7 +3,7 @@ id: authentification
 title: "Autenticazione"
 ---
 
-L'autenticazione è legata al [plugin](plugins.md) di autenticazione che si utilizza. Anche le restrizioni di pacchetto sono gestite dall'[Accesso al Pacchetto](packages.md).
+L'autenticazione è legata al [plugin](plugins.md) di autenticazione che si sta utilizzando. Anche le restrizioni di pacchetto sono gestite dall'[Accesso al Pacchetto](packages.md).
 
 L'autenticazione del client viene gestita dal `npm` client stesso. Una volta che si effettua il login all'applicazione:
 
@@ -44,14 +44,14 @@ Come è noto *Verdaccio* utilizza l'`htpasswd` di default. Quel plugin non imple
 * Se non si è loggati (si è anonimi), `$all` e `$anonymous` significano esattamente la stessa cosa.
 * Se si è loggati, `$anonymous` non sarà parte del gruppo e `$all` coinciderà con ogni utente loggato. Un nuovo gruppo `$authenticated` verrà aggiunto all'elenco.
 
-Il concetto chiave è che `$all` **coinciderà con tutti gli utenti, indipendentemente dal fatto che siano loggati o meno**.
+Il concetto chiave è che `$all` ** coinciderà con tutti gli utenti, indipendentemente dal fatto che siano loggati o meno**.
 
 **Il comportamento precedente si applica esclusivamente al plugin di autenticazione predefinito**. Se si sta utilizzando un plugin personalizzato e tale plugin implementa `allow_access`, `allow_publish` o `allow_unpublish`, la risoluzione dell'accesso dipende dal plugin stesso. Verdaccio imposterà esclusivamente i gruppi predefiniti.
 
 Ricapitolando:
 
 * **loggati**: `$all`, `$authenticated`, + gruppi aggiunti dal plugin
-* **anonimi (non loggati)**: `$all` e `$anonymous`.
+* **anonimi (disconnessi)**: `$all` e `$anonymous`.
 
 ## Impostazione predefinita htpasswd
 
