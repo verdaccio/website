@@ -8,9 +8,9 @@ original_id: configuration
 
 Стандартный файл конфигурации создаётся при самом первом запуске `verdaccio`.
 
-## Стандартная конфигурация
+## Конфигурация по умолчанию
 
-Стандартная конфигурация поддерживает **область видимости (scope)** пакетов и позволяет любым пользователям получить доступ ко всем пакетам, но **только авторизованные пользователи могут публиковать пакеты**.
+Стандартная конфигурация поддерживает **scoped**-пакеты и позволяет любым пользователям получить доступ ко всем пакетам, но только **авторизованные пользователи могут публиковать пакеты**.
 
 ```yaml
 storage: ./storage
@@ -33,7 +33,7 @@ logs:
 
 ## Разделы
 
-Следующие разделы пояснят что означает каждое свойство и его различные опции.
+Следующие разделы пояснят, что каждое свойство означает, и какими дополнительными опциями обладает.
 
 ### Хранилище
 
@@ -62,13 +62,13 @@ auth:
     max_users: 1000
 ```
 
-### Security
+### Безопасность
 
 <small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+Этот блок позволяет кастомизировать авторизацию токенами. Чтобы включить авторизацию по [JWT (json web token)](https://jwt.io/), вам надо добавить блок `jwt` к разделу `api`, а раздел `web` успользует `jwt` по умолчанию.
 
-The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+Конфигурация разделена на две части, `api` и `web`. Чтобы использовать JWT в `api`, его надо прописать там в явном виде, иначе будут использоваться "старые" токены (`aes192`). Для JWT, вы можете кастомизировать свойства токена [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) и [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback), добавивив свои собственные поля.
 
     security:
       api:
@@ -85,7 +85,7 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
             someProp: [value]
     
 
-> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+> Мы настоятельно рекомендем перейти на JWT, так как "старые" токены (`aes192`) устарели и исчезнут в следующих версиях.
 
 ### Web UI
 
@@ -99,7 +99,7 @@ web:
   scope:
 ```
 
-### Uplinks
+### Аплинки
 
 Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
 
@@ -175,7 +175,7 @@ https:
     ca: ./path/verdaccio-csr.pem
 ```
 
-### Proxy
+### Прокси
 
 Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
