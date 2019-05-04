@@ -16,9 +16,9 @@ Verdaccio кэширует все пакеты по умолчанию в пап
 
 > Мы ищем новые стратегии, не стесняйтесь делиться опытом на этом поле.
 
-## Avoid Caching tarballs
+## Отключение кэширования tar-файлов
 
-If you have a limited storage space, you might need to avoid cache tarballs, enabling `cache` false in each uplink will cache only metadata files.
+Если у вас не так много места, вам может понадобится отключение кэширования tar-файлов, установите `cache` в значение false для каждого аплинка, и только метаданные будут кэшироваться.
 
     uplinks:
       npmjs:
@@ -26,7 +26,7 @@ If you have a limited storage space, you might need to avoid cache tarballs, ena
         cache: false
     
 
-## Extending Cache Expiration Time
+## Увеличение времени жизни метаданных
 
 Verdaccio by default waits 2 minutes to invalidate the cache metadata before fetching new information from the remote registry.
 
