@@ -1,58 +1,58 @@
 ---
 id: logo
-title: "Logotype"
+title: "Логотип"
 ---
 
-The logotype was designed by **[Breno Rodrigues](https://github.com/rodriguesbreno)** which won the [contest](https://github.com/verdaccio/verdaccio/issues/237) ([last stage](https://github.com/verdaccio/verdaccio/issues/328)) and donated his work to this project.
+Логотип был разработан **[Breno Rodrigues](https://github.com/rodriguesbreno)**, который выиграл [конкурс](https://github.com/verdaccio/verdaccio/issues/237) ([последний этап](https://github.com/verdaccio/verdaccio/issues/328)) и передал свою работу проекту.
 
-> All logos are licensed under [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
+> Все логотипы распространяются под лицензией [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
 
-Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
+Отдельная благодарность *[@Lisapressmar](https://github.com/Lisapressmar)* за ее различные форматы и размеры логотипа.
 
 <div id="codefund">''</div>
 
-## Symbols
+## Логотип
 
-**With text**
+**С текстом**
 
-![symbol tiny with text](assets/logo/symbol/png/logo-small-header-bottom.png)
+![логотип маленький с текстом](assets/logo/symbol/png/logo-small-header-bottom.png)
 
-![symbol medium with text](assets/logo/symbol/png/logo-small-header-bottom@2x.png)
+![логотип средний с текстом](assets/logo/symbol/png/logo-small-header-bottom@2x.png)
 
-![symbol big with text](assets/logo/symbol/png/logo-small-header-bottom@3x.png)
-
-**SVG**
-
-![symbol svg](assets/logo/symbol/svg/logo-small-header-bottom.svg)
-
-**No text**
-
-![symbol tiny](assets/logo/symbol/png/verdaccio-tiny.png)
-
-![symbol medium](assets/logo/symbol/png/verdaccio-tiny@2x.png)
-
-![symbol big](assets/logo/symbol/png/verdaccio-tiny@3x.png)
+![логотип большой с текстом](assets/logo/symbol/png/logo-small-header-bottom@3x.png)
 
 **SVG**
 
-![svg format symbol no text](assets/logo/symbol/svg/verdaccio-tiny.svg)
+![логотип svg](assets/logo/symbol/svg/logo-small-header-bottom.svg)
 
-### Black&White
+**Без текста**
 
-![symbol bw small](assets/logo/symbol/png/verdaccio-blackwhite.png)
+![логотип маленький](assets/logo/symbol/png/verdaccio-tiny.png)
 
-![symbol bw medium](assets/logo/symbol/png/verdaccio-blackwhite@2x.png)
+![логотип средний](assets/logo/symbol/png/verdaccio-tiny@2x.png)
 
-![symbol bw big](assets/logo/symbol/png/verdaccio-blackwhite@3x.png)
+![логотип большой](assets/logo/symbol/png/verdaccio-tiny@3x.png)
 
 **SVG**
 
-![symbol bw svg](assets/logo/symbol/svg/verdaccio-blackwhite.svg)
+![логотип svg форматированный без текста](assets/logo/symbol/svg/verdaccio-tiny.svg)
 
-## Banner
+### Черно-белый
 
-![banner small](assets/logo/banner/png/verdaccio-banner.png)
+![логотип чб маленький](assets/logo/symbol/png/verdaccio-blackwhite.png)
 
-![banner medium](assets/logo/banner/png/verdaccio-banner@2x.png)
+![логотип чб средний](assets/logo/symbol/png/verdaccio-blackwhite@2x.png)
 
-![banner big](assets/logo/banner/png/verdaccio-banner@3x.png)
+![логотип чб большой](assets/logo/symbol/png/verdaccio-blackwhite@3x.png)
+
+**SVG**
+
+![логотип чб svg](assets/logo/symbol/svg/verdaccio-blackwhite.svg)
+
+## Баннер
+
+![баннер маленький](assets/logo/banner/png/verdaccio-banner.png)
+
+![баннер средний](assets/logo/banner/png/verdaccio-banner@2x.png)
+
+![баннер большой](assets/logo/banner/png/verdaccio-banner@3x.png)

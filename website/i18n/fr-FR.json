@@ -349,6 +349,12 @@
       },
       "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
         "title": "Who is using Verdaccio?"
+      },
+      "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
+        "title": "Installation"
+      },
+      "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
+        "title": "Interface d'Utilisateur Web"
       }
     },
     "links": {
