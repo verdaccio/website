@@ -37,13 +37,7 @@ docker pull verdaccio/verdaccio:3.0
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next master branch uses the `master` version.
-
-```bash
-docker pull verdaccio/verdaccio:master
-```
-
-For the next major release using the `4.x-next` (4.x branch) version.
+For the next major release using the `4.x-next` (master) version.
 
 ```bash
 docker pull verdaccio/verdaccio:4.x-next
@@ -51,12 +45,14 @@ docker pull verdaccio/verdaccio:4.x-next
 
 > Nếu bạn quan tâm đến danh sách thẻ, hãy [truy cập trang web Docker](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Sử dụng Docker để chạy verdaccio
+## Running Verdaccio using Docker
+
+> The following configuration is based on the Verdaccio 4 or the `4.x-next` tag.
 
 Để chạy vùng chứa docker:
 
 ```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
 ```
 
 The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
@@ -66,14 +62,25 @@ Khi bạn muốn tạo [một bản sao cục bộ](#build-your-own-docker-image
 Bạn có thể sử dụng `-v` để liên kết với `conf`, `storage` và `plugins` với hệ thống tệp host:
 
 ```bash
-V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -p 4873:4873 \
   -v $V_PATH/conf:/verdaccio/conf \
   -v $V_PATH/storage:/verdaccio/storage \
   -v $V_PATH/plugins:/verdaccio/plugins \
-  verdaccio/verdaccio
+  verdaccio/verdaccio:4.x-next
 ```
 
-> Lưu ý: Verdaccio chạy như một tài khoản non-root (uid = 100, gid = 101) bên trong vùng chứa. Nếu bạn sử dụng cài đặt bind để ghi đè lên các thiết lập mặc định, bạn cần đảm bảo thư mục cài đặt tương thích với tài khoản. Trong ví dụ trên, bạn sẽ chạy `sudo chown -R 100: 101/opt /verdaccio`, nếu không bạn sẽ nhận được cảnh báo lỗi quyền truy cập khi sử dụng. Chúng tôi khuyên bạn nên [ sử dụng khối lượng docker](https://docs.docker.com/storage/volumes/) thay vì cài đặt bắt buộc.
+> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. Chúng tôi khuyên bạn nên [ sử dụng khối lượng docker](https://docs.docker.com/storage/volumes/) thay vì cài đặt bắt buộc.
+
+Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
+
+| Thuộc tính            | default                | Miêu tả                                            |
+| --------------------- | ---------------------- | -------------------------------------------------- |
+| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | the docker working directory                       |
+| VERDACCIO_USER_NAME | `verdaccio`            | the system user                                    |
+| VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
+| VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
+| VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
 
 ### Những phần mềm bổ trợ
 
@@ -87,28 +94,26 @@ RUN npm install verdaccio-s3-storage
 
 ### Docker và cấu hình cổng tùy chỉnh
 
-Bất kỳ một `host: port` nào sử dụng cấu hình trong `conf / config.yaml` ở `listen` sẽ bị bỏ qua khi sử dụng docker.
+Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
 
-Nếu bạn muốn có bản sao của verdaccio docker trên một cổng khác, chẳng hạn như `5000` trong lệnh `docker run`, bạn cần thay thế `-p 4873: 4873` bằng `-p 5000: 4873`.
-
-Bắt đầu từ phiên bản 2.?.? sẽ cho phép bạn chỉ định cổng nghe trong **docker container**. bạn có thể thực hiện thao tác này bằng cách cung cấp các tham số bổ sung cho `docker run`: `--env ​​PORT=5000 `. Điều này sẽ thay đổi cổng được hiển thị bởi vùng chứa docker và cổng mà verdaccio sử dụng.
-
-Tất nhiên, những tham số `-p` bạn cung cấp phải khớp, vì vậy nếu bạn muốn tất cả chúng giống nhau, bạn chỉ cần sao chép, dán và sử dụng:
+If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
 
 ```bash
-PORT=5000; docker run -it --rm --name verdaccio \
-  --env PORT -p $PORT:$PORT
-  verdaccio/verdaccio
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -e "VERDACCIO_PORT=8080" -p 8080:8080 \  
+  verdaccio/verdaccio:4.x-next
 ```
+
+Of course the numbers you give to `-p` paremeter need to match.
 
 ### Sử dụng HTTPS trong Docker
 
 Bạn có thể cài đặt cấu hình giao thức tương tự như cấu hình cổng mà verdaccio sẽ sử dụng. Sau khi bạn xác định certificate trong config.yaml, bạn phải ghi đè giá trị mặc định ("http") trong biến môi trường ` PROTOCOL ` bằng "https".
 
 ```bash
-PROTOCOL=https; docker run -it --rm --name verdaccio \
-  --env PROTOCOL -p 4873:4873
-  verdaccio/verdaccio
+docker run -it --rm --name verdaccio \
+  --env "VERDACCIO_PROTOCOL=https" -p 4873:4873
+  verdaccio/verdaccio:4.x-next
 ```
 
 ### Sử dụng docker-compose
@@ -120,7 +125,29 @@ PROTOCOL=https; docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-Sử dụng `PORT=5000` làm tiền tố cho lệnh trên nhằm cài đặt cổng để sử dụng (cả vùng chứa và máy chủ lưu trữ).
+You can set the port to use (for both container and host) by prefixing the above command with `VERDACCIO_PORT=5000`.
+
+```yaml
+version: '3.1'
+
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:4.x-next
+    container_name: "verdaccio"
+    networks:
+      - node-network
+    environment:
+      - VERDACCIO_PORT=4873
+    ports:
+      - "4873:4873"
+    volumes:
+      - "./storage:/verdaccio/storage"
+      - "./config:/verdaccio/conf"
+      - "./config:/verdaccio/conf"  
+networks:
+  node-network:
+    driver: bridge
+```
 
 Docker sẽ tạo ra một ổ đĩa có tên là lưu trữ dữ liệu ứng dụng liên tục. Bạn có thể sử dụng `docker inspect` hoặc `docker volume inspect` để xác định vị trí thực của ổ đĩa này và chỉnh sửa cấu hình, ví dụ như:
 
@@ -147,7 +174,7 @@ docker build -t verdaccio .
 Ngoài ra còn có một script npm để tạo ra một hình ảnh docker, vì vậy bạn cũng có thể làm như sau:
 
 ```bash
-npm run build:docker
+yarn run build:docker
 ```
 
 Xin lưu ý rằng việc tạo hình ảnh đầu tiên mất vài phút vì nó cần phải chạy `npm install` và khi bạn thay đổi bất cứ điều gì vào bất kỳ lúc nào và không được liệt kê trong `.dockerignore` thì sẽ mất một thời gian dài để chạy các tập tin này.
@@ -161,6 +188,8 @@ Có một kho lưu trữ riêng biệt lưu nhiều cấu hình để tạo hìn
 <https://github.com/verdaccio/docker-examples>
 
 ## Tạo tùy chỉnh Docker
+
+> If you have made an image based on Verdaccio, feel free to add it to this list.
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
