@@ -37,13 +37,7 @@ docker pull verdaccio/verdaccio:3.0
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next master branch uses the `master` version.
-
-```bash
-docker pull verdaccio/verdaccio:master
-```
-
-For the next major release using the `4.x-next` (4.x branch) version.
+For the next major release using the `4.x-next` (master) version.
 
 ```bash
 docker pull verdaccio/verdaccio:4.x-next
@@ -51,12 +45,14 @@ docker pull verdaccio/verdaccio:4.x-next
 
 > Ако Вас занима листа тагова, [посетите Docker Hub вебсајт](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Покретање verdaccio коришћењем Docker-а
+## Running Verdaccio using Docker
+
+> The following configuration is based on the Verdaccio 4 or the `4.x-next` tag.
 
 Како бисте покренули docker container:
 
 ```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
 ```
 
 The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
@@ -66,14 +62,25 @@ The last argument defines which image to use. The above line will pull the lates
 Можете користити `-v` како бисте везали (bind) mount `conf`, `storage` и `plugins` за hosts filesystem:
 
 ```bash
-V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -p 4873:4873 \
   -v $V_PATH/conf:/verdaccio/conf \
   -v $V_PATH/storage:/verdaccio/storage \
   -v $V_PATH/plugins:/verdaccio/plugins \
-  verdaccio/verdaccio
+  verdaccio/verdaccio:4.x-next
 ```
 
-> Напомена: Verdaccio ради као non-root user (uid=100, gid=101) унутар container-а. Ако користите bind mount да прегазите задате поставке (override), онда морате да доделите mount directory правом кориснику. У наведеном примеру, морате да покренете `sudo chown -R 100:101 /opt/verdaccio`, у супротном ћете добити permission errors у runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) је препоручено уместо коришћења bind mount.
+> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) је препоручено уместо коришћења bind mount.
+
+Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
+
+| Својство              | default                | Опис                                               |
+| --------------------- | ---------------------- | -------------------------------------------------- |
+| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | the docker working directory                       |
+| VERDACCIO_USER_NAME | `verdaccio`            | the system user                                    |
+| VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
+| VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
+| VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
 
 ### Plugins
 
@@ -87,28 +94,26 @@ RUN npm install verdaccio-s3-storage
 
 ### Docker и custom порт конфигурација
 
-Сваки `host:port` конфигурисан у `conf/config.yaml` под `listen` се тренутно игнорише док се користи docker.
+Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
 
-Ако желите да приступите verdaccio docker инстанци под различитим портом, рецимо `5000`, у Вашој `docker run` команди замените `-p 4873:4873` са `-p 5000:4873`.
-
-У случају да морате да одредите port to listen to **у docker контејнеру**, почевши од верзије 2.?.? то можете учинити тако што ћете унети додатне аргументе у `docker run`: `--env PORT=5000` Ово мења порт који излаже docker контејнер и порт који ће verdaccio слушати (listens to).
-
-Наравно, неопходно је да се бројеви које сте задали као `-p` параметар подударају, тако да ако желите да се све подудара, можете да копирате, залепите и усвојите:
+If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
 
 ```bash
-PORT=5000; docker run -it --rm --name verdaccio \
-  --env PORT -p $PORT:$PORT
-  verdaccio/verdaccio
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -e "VERDACCIO_PORT=8080" -p 8080:8080 \  
+  verdaccio/verdaccio:4.x-next
 ```
+
+Of course the numbers you give to `-p` paremeter need to match.
 
 ### Коришћење HTTPS са Docker-ом
 
 Можете конфигурисати протокол који ће verdaccio слушати (listen on) и то на сличан начин као што сте подесили port configuration. Потребно је да замените задату вредност("http") у `PROTOCOL` environment варијабли са "https", након што сте одредили сертификате у config.yaml.
 
 ```bash
-PROTOCOL=https; docker run -it --rm --name verdaccio \
-  --env PROTOCOL -p 4873:4873
-  verdaccio/verdaccio
+docker run -it --rm --name verdaccio \
+  --env "VERDACCIO_PROTOCOL=https" -p 4873:4873
+  verdaccio/verdaccio:4.x-next
 ```
 
 ### Коришћење docker-compose
@@ -120,7 +125,29 @@ PROTOCOL=https; docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-Можете подесити порт који ће се употребљавати (и за контејнер и за host) тако што ћете додати префикс `PORT=5000` команди из горњег примера.
+You can set the port to use (for both container and host) by prefixing the above command with `VERDACCIO_PORT=5000`.
+
+```yaml
+version: '3.1'
+
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:4.x-next
+    container_name: "verdaccio"
+    networks:
+      - node-network
+    environment:
+      - VERDACCIO_PORT=4873
+    ports:
+      - "4873:4873"
+    volumes:
+      - "./storage:/verdaccio/storage"
+      - "./config:/verdaccio/conf"
+      - "./config:/verdaccio/conf"  
+networks:
+  node-network:
+    driver: bridge
+```
 
 Docker ће направити именовани volume у коме ће се чувати подаци за апликацију. Можете користити `docker inspect` или `docker volume inspect` како бисте открили физичку локацију volume-а и изменили конфигурацију, на пример:
 
@@ -147,7 +174,7 @@ docker build -t verdaccio .
 Постоји такође и npm script за building docker image-а, тако да можете да задате и овако:
 
 ```bash
-npm run build:docker
+yarn run build:docker
 ```
 
 Напомена: Први build може потрајати неколико минута пошто мора да покрене `npm install`, и поново ће трајати дуго ако промените било који фајл који није излистан у `.dockerignore`.
@@ -161,6 +188,8 @@ npm run build:docker
 <https://github.com/verdaccio/docker-examples>
 
 ## Docker Custom Builds
+
+> If you have made an image based on Verdaccio, feel free to add it to this list.
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
