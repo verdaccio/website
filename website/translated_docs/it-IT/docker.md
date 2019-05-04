@@ -37,13 +37,7 @@ Per una specifica (patch) versione:
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next master branch uses the `master` version.
-
-```bash
-docker pull verdaccio/verdaccio:master
-```
-
-For the next major release using the `4.x-next` (4.x branch) version.
+For the next major release using the `4.x-next` (master) version.
 
 ```bash
 docker pull verdaccio/verdaccio:4.x-next
@@ -51,12 +45,14 @@ docker pull verdaccio/verdaccio:4.x-next
 
 > Se si è interessati ad un elenco dei tag, [ si prega di visitare il sito Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Eseguire verdaccio utilizzando Docker
+## Running Verdaccio using Docker
+
+> The following configuration is based on the Verdaccio 4 or the `4.x-next` tag.
 
 Per avviare il contenitore Docker:
 
 ```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
 ```
 
 The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
@@ -66,14 +62,25 @@ Se è stata [costruita un'immagine localmente](#build-your-own-docker-image) uti
 È possibile utilizzare `-v` per montare `conf`, `storage` e `plugins` nel filesystem degli host:
 
 ```bash
-V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -p 4873:4873 \
   -v $V_PATH/conf:/verdaccio/conf \
   -v $V_PATH/storage:/verdaccio/storage \
   -v $V_PATH/plugins:/verdaccio/plugins \
-  verdaccio/verdaccio
+  verdaccio/verdaccio:4.x-next
 ```
 
-> Nota: Verdaccio viene eseguito all'interno del contenitore come un utente non-root (uid=100, gid=101), se si utilizza bind mount per non tener conto delle impostazioni predefinite, è necessario assicurarsi che la cartella di mount venga assegnata all'utente corretto. Nell'esempio precedente, è necessario eseguire `sudo chown -R 100:101 /opt/verdaccio` altrimenti si presenteranno errori di permesso durante l'esecuzione. Si consiglia di [utilizzare il volume di docker](https://docs.docker.com/storage/volumes/) al posto di bind mount.
+> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. Si consiglia di [utilizzare il volume di docker](https://docs.docker.com/storage/volumes/) al posto di bind mount.
+
+Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
+
+| Proprietà             | default                | Descrizione                                        |
+| --------------------- | ---------------------- | -------------------------------------------------- |
+| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | the docker working directory                       |
+| VERDACCIO_USER_NAME | `verdaccio`            | the system user                                    |
+| VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
+| VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
+| VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
 
 ### Estensioni
 
@@ -87,28 +94,26 @@ RUN npm install verdaccio-s3-storage
 
 ### Configurazione di Docker e della porta personalizzata
 
-Ogni `host:port` configurato in `conf/config.yaml` sotto a `listen` viene attualmente ignorato quando si utilizza docker.
+Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
 
-Se si desidera raggiungere l'istanza docker di verdaccio da una porta differente, diciamo `5000`, nel comando `docker run` sostituire `-p 4873:4873` con `-p 5000:4873`.
-
-Nel caso in cui sia necessario specificare quale porta ascoltare **nel contenitore docker**, dalla versione 2.?.? ciò è possibile fornendo argomenti supplementari a `docker run`: `--env PORT=5000` Questo sostituisce la porta che il contenitore docker offre e la porta che verdaccio ascolta.
-
-Naturalmente i numeri che vengono forniti al parametro `-p` devono combaciare, quindi, supponendo di volerli tutti uguali, questo è ciò che è possibile copiare, incollare ed adottare:
+If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
 
 ```bash
-PORT=5000; docker run -it --rm --name verdaccio \
-  --env PORT -p $PORT:$PORT
-  verdaccio/verdaccio
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -e "VERDACCIO_PORT=8080" -p 8080:8080 \  
+  verdaccio/verdaccio:4.x-next
 ```
+
+Of course the numbers you give to `-p` paremeter need to match.
 
 ### Utilizzare HTTPS con Docker
 
 È possibile configurare il protocollo che verdaccio andrà ad ascoltare, analogamente a come si configura la porta. È necessario sovrascrivere il valore predefinito ("http") della variabile ambientale del `PROTOCOL` con "https", dopo aver specificato i certificati nel config.yaml.
 
 ```bash
-PROTOCOL=https; docker run -it --rm --name verdaccio \
-  --env PROTOCOL -p 4873:4873
-  verdaccio/verdaccio
+docker run -it --rm --name verdaccio \
+  --env "VERDACCIO_PROTOCOL=https" -p 4873:4873
+  verdaccio/verdaccio:4.x-next
 ```
 
 ### Utilizzare docker-compose
@@ -120,7 +125,29 @@ PROTOCOL=https; docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-Si può definire la porta da utilizzare (sia per il contenitore che per l'host) anteponendo al comando precedente il prefisso `PORT=5000`.
+You can set the port to use (for both container and host) by prefixing the above command with `VERDACCIO_PORT=5000`.
+
+```yaml
+version: '3.1'
+
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:4.x-next
+    container_name: "verdaccio"
+    networks:
+      - node-network
+    environment:
+      - VERDACCIO_PORT=4873
+    ports:
+      - "4873:4873"
+    volumes:
+      - "./storage:/verdaccio/storage"
+      - "./config:/verdaccio/conf"
+      - "./config:/verdaccio/conf"  
+networks:
+  node-network:
+    driver: bridge
+```
 
 Docker genererà un volume nominato nel quale immagazzinare i dati persistenti dell'applicazione. È possibile utilizzare `docker inspect` o `docker volume inspect` per rivelare l'ubicazione fisica del volume e modificare la configurazione, in questo modo:
 
@@ -147,7 +174,7 @@ docker build -t verdaccio .
 Esiste inoltre uno script npm per creare l'immagine docker, quindi si può anche fare:
 
 ```bash
-npm run build:docker
+yarn run build:docker
 ```
 
 Nota: Il primo build necessita di qualche minuto per creare perché ha bisogno di avviare `npm install`, e potrebbe impiegare lo stesso tempo ogni volta che si cambia un file che non sia elencato in `.dockerignore`.
@@ -161,6 +188,8 @@ Esiste una cartella separata che ospita configurazioni multiple per comporre imm
 <https://github.com/verdaccio/docker-examples>
 
 ## Build personalizzati di Docker
+
+> If you have made an image based on Verdaccio, feel free to add it to this list.
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
