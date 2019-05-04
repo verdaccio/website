@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-webui
-title: Web User Interface
+title: Interfaz Web de Usuario
 original_id: webui
 ---
 
