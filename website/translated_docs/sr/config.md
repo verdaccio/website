@@ -147,7 +147,7 @@ publish:
 ### URL Префикс
 
 ```yaml
-url_prefix: https://dev.company.local/verdaccio/
+url_prefix: /verdaccio/
 ```
 
 Почевши од верзије: `verdaccio@2.3.6` члан [#197](https://github.com/verdaccio/verdaccio/pull/197)
