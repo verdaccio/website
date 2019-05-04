@@ -1,6 +1,6 @@
 ---
 id: version-4.0.0-alpha.5-e2e
-title: End to End testing
+title: End to End тестирование
 original_id: e2e
 ---
 

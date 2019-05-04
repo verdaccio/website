@@ -12,7 +12,7 @@ The client authentification is handled by `npm` client itself. Once you login to
 npm adduser --registry http://localhost:4873
 ```
 
-Токен генерируется в файле конфигурации `npm`, расположенном в домашней директории пользователя. Больше информации о `.npmrc` читайте в [официальной документации](https://docs.npmjs.com/files/npmrc).
+В файле конфигурации `npm`, расположенном в домашней директории пользователя, генерируется токен. Больше информации о `.npmrc` читайте в [официальной документации](https://docs.npmjs.com/files/npmrc).
 
 ```bash
 cat .npmrc
@@ -21,7 +21,7 @@ registry=http://localhost:5555/
 //registry.npmjs.org/:_authToken=secretNpmjsToken
 ```
 
-#### Анонимная публицация
+#### Анонимная публикация
 
 `verdaccio` позволяет включить анонимную публикацию. Для того, чтобы сделать это вам нужно правильно настроить ваш [доступ к пакетам](packages.md).
 
@@ -36,23 +36,23 @@ registry=http://localhost:5555/
 
 Как описано в [issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) до `npm@5.3.0`, включая все минорные релизы, **не позволят вам публикацию без токенов**.
 
-## Understanding Groups
+## О группах
 
-### The meaning of `$all` and `$anonymous`
+### Как понимать `$all` и `$anonymous`
 
-As you know *Verdaccio* uses the `htpasswd` by default. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
+Как вы знаете, *Verdaccio* использует `htpasswd` по умолчанию. Этот плагин не реализует методы `allow_access`, `allow_publish` и `allow_unpublish`. И *Verdaccio* будет действовать таким образом:
 
-* If you are not logged in (you are anonymous), `$all` and `$anonymous` means exactly the same.
+* Если вы не залогинены (вы - аноним), `$all` and `$anonymous` означают одно и то же.
 * If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
 
-As a takeaway, `$all` **will match all users, independently whether is logged or not**.
+В общем, `$all` **означает всех пользователей, независимо от того, залогинены они или нет**.
 
-**The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
+**Все описанное выше - только про плагин аутентификации по умолчанию**. Если вы используете кастомный плагин и этот плагин реализует `allow_access`, `allow_publish` или `allow_unpublish`, то разрешения будут зависет от этого вашего плагина. Verdaccio установит только группы по умолчанию.
 
-Let's recap:
+Отметим еще раз:
 
-* **logged**: `$all`, `$authenticated`, + groups added by the plugin
-* **anonymous (logged out)**: `$all` and `$anonymous`.
+* **залогиненные**: `$all`, `$authenticated`, + группы, добавленные плагином
+* **анонимы (не залогиненные)**: `$all` и `$anonymous`.
 
 ## Стандартный htpasswd
 
@@ -67,9 +67,9 @@ auth:
     #max_users: 1000
 ```
 
-| Свойство  | Тип    | Обязательное | Пример     | Поддержка | Описание                                 |
-| --------- | ------ | ------------ | ---------- | --------- | ---------------------------------------- |
-| file      | string | Да           | ./htpasswd | все       | файл, содержащий зашифрованные реквизиты |
-| max_users | number | Нет          | 1000       | все       | устанавливает ограничение пользователей  |
+| Свойство  | Тип    | Обязательное | Пример     | Поддержка | Описание                                      |
+| --------- | ------ | ------------ | ---------- | --------- | --------------------------------------------- |
+| file      | string | Да           | ./htpasswd | все       | файл, содержащий зашифрованные учетные данные |
+| max_users | number | Нет          | 1000       | все       | ограничение на количество пользователей       |
 
 Для того, чтобы запретить пользователям входить, вы можете установить `max_users: -1`.

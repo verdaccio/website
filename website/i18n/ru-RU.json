@@ -12,7 +12,7 @@
         "title": "Ansible"
       },
       "articles": {
-        "title": "Articles"
+        "title": "Статьи"
       },
       "authentification": {
         "title": "Аутентификация"
@@ -21,16 +21,16 @@
         "title": "Windows Azure"
       },
       "best": {
-        "title": "Best Practices"
+        "title": "Лучшие практики"
       },
       "caching": {
-        "title": "Caching strategies"
+        "title": "Стратегии кэширования"
       },
       "chef": {
         "title": "Поваренная книга"
       },
       "ci": {
-        "title": "Непрерывная интеграция"
+        "title": "Непрерывная интеграция (CI)"
       },
       "cli": {
         "title": "Инструмент командной строки"
@@ -129,7 +129,7 @@
         "title": "Поваренная книга"
       },
       "version-3.8.6/version-3.8.6-ci": {
-        "title": "Непрерывная интеграция"
+        "title": "Непрерывная интеграция (CI)"
       },
       "version-3.8.6/version-3.8.6-cli": {
         "title": "Инструмент командной строки"
@@ -228,10 +228,10 @@
         "title": "Windows Azure"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-best": {
-        "title": "Best Practices"
+        "title": "Лучшие практики"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-caching": {
-        "title": "Caching strategies"
+        "title": "Стратегии кэширования"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-configuration": {
         "title": "Файл конфигурации"
@@ -279,16 +279,16 @@
         "title": "Что такое Verdaccio?"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-articles": {
-        "title": "Articles"
+        "title": "Статьи"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-authentification": {
         "title": "Аутентификация"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-best": {
-        "title": "Best Practices"
+        "title": "Лучшие практики"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-caching": {
-        "title": "Caching strategies"
+        "title": "Стратегии кэширования"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-configuration": {
         "title": "Файл конфигурации"

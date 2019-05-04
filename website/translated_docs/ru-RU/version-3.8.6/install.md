@@ -8,7 +8,7 @@ Verdaccio is a multiplatform web application. To install it, you need a few prer
 
 #### Требования
 
-1. Node выше чем 
+1. Версия Node 
     - Для `verdaccio@2.x` Node `v4.6.1` минимальная допустимая версия.
     - Для `verdaccio@latest` Node `6.12.0` минимальная допустимая версия.
 2. npm `>=3.x` или `yarn`
@@ -16,15 +16,15 @@ Verdaccio is a multiplatform web application. To install it, you need a few prer
 
 ## Установка инструмента командной строки
 
-`verdaccio` должен быть установлено глобально используя один из следующих способов:
+`verdaccio` должен быть установлен глобально, использовав один из следующих путей:
 
-С использованием `npm`
+С помощью `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-или с использованием `yarn`
+или с помощью `yarn`
 
 ```bash
 yarn global add verdaccio
@@ -34,7 +34,7 @@ yarn global add verdaccio
 
 ## Запуск
 
-После того как установка завершится, всё что вам нужно, это выполнить команду:
+После того как установка завершится, всё, что вам нужно, это выполнить команду:
 
 ```bash
 $> verdaccio

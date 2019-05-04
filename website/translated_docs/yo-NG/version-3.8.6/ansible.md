@@ -4,12 +4,12 @@ title: Ansible
 original_id: ansible
 ---
 
-We have a customised solution for `verdaccio` in our organization.
+Ani ojutu to dayato mso ara wa fun <koodu>verdaccio</koodu> ni ile ise wa.
 
 <https://github.com/verdaccio/ansible-verdaccio>
 
-#### Other options
+#### Awon ona miiran
 
-* Ansible role for Gentoo users: [jirutka/ansible-role-sinopia](https://github.com/jirutka/ansible-role-sinopia).
-* Ansible role for Ubuntu users: [jagregory/sinopia-ansible](https://github.com/jagregory/sinopia-ansible).
-* ansible-verdaccio-role <https://github.com/refinery29/ansible-verdaccio-role>
+* Ise ti Ansible fun awon olumulo Gentoo: [jirutka/ansible-ise-sinopia](https://github.com/jirutka/ansible-role-sinopia).
+* Ise Ansible fun awon olumulo Ubuntu: [jagregory/sinopia-ansible](https://github.com/jagregory/sinopia-ansible).
+* ise-ansible-verdaccio <https://github.com/refinery29/ansible-verdaccio-role>

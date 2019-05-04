@@ -7,14 +7,14 @@ original_id: dev-plugins
 Есть много способов расширить `verdaccio`, поддерживаются следующие типы плагинов:
 
 * Плагин аутентификации
-* Middleware плагины (начиная с `v2.7.0`)
-* Плагины для хранения с (`v3.x`)
+* Middleware плагин (начиная с `v2.7.0`)
+* Плагин хранилища (начиная с `v3.x`)
 
 > Мы рекомендуем разрабатывать плагины с использованием [flow type definitions](https://github.com/verdaccio/flow-types).
 
 ## Плагин аутентификации
 
-В основном мы должны возвращать объект с помощью одного метода, называемого `authenticate`, который должен принимать три аругмента (`user, password, callback`).
+В целом, мы должны возвращать объект с помощью одного метода, называемого `authenticate`, который должен принимать три аругмента (`user, password, callback`).
 
 ### API
 
@@ -29,13 +29,13 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> Только `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` не обязательны, verdaccio предлагает поведение по умолчанию в этом случае.
 
-#### apiJWTmiddleware method
+#### Метод apiJWTmiddleware
 
-Since `v4.0.0`
+Начиная с `v4.0.0`
 
-`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
+`apiJWTmiddleware` был добавлен в [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227), чтобы иметь полный контроль при обработке токенов, и если вы его переопределите, то `login/adduser` может сломаться. Мы рекомендуем не имплементировать этот метод. Смотрите пример [здесь](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
@@ -185,7 +185,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 
 > API хранилища всё ещё остаётся экспериментальным и может измениться в следующих минорных версиях. Для получения актуальной информации о API Хранилища пожалуйста перейдите к [типам определённым в нашем репозитории](https://github.com/verdaccio/flow-types).
 
-### Storage Examples
+### Примеры хранилищ
 
 Данный список плагинов реализует API Хранилища и может использоваться вами как пример.
 
@@ -196,7 +196,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 
 > Are you willing to contribute with new Storage Plugins? [Click here.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
 
-## Theme Plugin
+## Плагин UI темы
 
 The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
 
@@ -210,8 +210,8 @@ module.exports = (...arguments) => {
 };
 ```
 
-It is imporant that the name of the plugin **must start with `verdaccio-theme-` prefix**.
+Важно, что имя плагина **должно с префикса `verdaccio-theme-` начинаться**.
 
-### Theme Example
+### Пример темы
 
-* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): The default Verdaccio theme based in React.js.
+* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): Тема по умолчанию для Verdaccio, написана на React.js.

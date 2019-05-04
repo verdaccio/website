@@ -4,27 +4,27 @@ title: Установка в качестве службы Windows
 original_id: windows
 ---
 
-Loosely based upon the instructions found [here](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). I crafted the following and it provided me with a fully working verdaccio service installation:
+Основано на инструкции, найденной [здесь](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). Я сделал следующее и получил полностью функциональный сервис verdaccio:
 
-1. Create a directory for verdaccio 
+1. Создайте папку для verdaccio 
     * mkdir `c:\verdaccio`
     * cd `c:\verdaccio`
-2. Install verdaccio locally (I ran into npm issues with global installs) 
+2. Установите verdaccio локально (у меня были проблемы при глобальной установке) 
     * npm install verdaccio
-3. Create your `config.yaml` file in this location `(c:\verdaccio\config.yaml)`
-4. Windows Service Setup
+3. Создайте свой `config.yaml` в этой папке `(c:\verdaccio\config.yaml)`
+4. Сконфигурируйте сервис Windows
 
-## Using NSSM
+## С помощью NSSM
 
-ALTERNATIVE METHOD: (WinSW package was missing when I tried to download it)
+АЛЬТЕРНАТИВНЫЙ МЕТОД: (пакета WinSW не было, когда я попытася скачать его)
 
-* Download [NSSM](https://www.nssm.cc/download/) and extract
+* Скачайте [NSSM](https://www.nssm.cc/download/) и распакуйте его
 
-* Add the path that contains nssm.exe to the PATH
+* Добавьте путь к nssm.exe в PATH
 
-* Open an administrative command
+* Откройте окно командной строки как администратор
 
-* Run nssm install verdaccio At a minimum you must fill in the Application tab Path, Startup directory and Arguments fields. Assuming an install with node in the system path and a location of c:\verdaccio the below values will work:
+* Запустите `nssm install verdaccio`. Как минимум, вы должны заполнить Path на вкладке Application, Startup directory и поле Arguments. Предполагая, что вы указали путь к Node в системных путях и что вы установили verdaccio в папку c:\verdaccio, можно использовать следующие значения:
     
     * Path: `node`
     * Startup directory: `c:\verdaccio`
@@ -32,22 +32,22 @@ ALTERNATIVE METHOD: (WinSW package was missing when I tried to download it)
     
     You can adjust other service settings under other tabs as desired. When you are done, click Install service button
     
-    * Start the service sc start verdaccio
+    * Запустите сервис sc start verdaccio
 
-## Using WinSW
+## С помощью WinSW
 
 * As of 2015-10-27, WinSW is no longer available at the below location. Please follow the Using NSSM instructions above.
 * Download [WinSW](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/) 
-    * Place the executable (e.g. `winsw-1.9-bin.exe`) into this folder (`c:\verdaccio`) and rename it to `verdaccio-winsw.exe`
-* Create a configuration file in `c:\verdaccio`, named `verdaccio-winsw.xml` with the following configuration `xml verdaccio verdaccio verdaccio node c:\verdaccio\node_modules\verdaccio\src\lib\cli.js -c c:\verdaccio\config.yaml roll c:\verdaccio`.
-* Install your service 
+    * Поместите исполняемый файл (т.е. `winsw-1.9-bin.exe`) в папку (`c:\verdaccio`) и переименуйте его в `verdaccio-winsw.exe`
+* Создайте конфигурационнный файл в `c:\verdaccio`, назвав его `verdaccio-winsw.xml`, со следующей конфигурацией `xml verdaccio verdaccio verdaccio node c:\verdaccio\node_modules\verdaccio\src\lib\cli.js -c c:\verdaccio\config.yaml roll c:\verdaccio`.
+* Инсталлируйте ваш сервис 
     * `cd c:\verdaccio`
     * `verdaccio-winsw.exe install`
-* Start your service 
+* Запустите ваш сервис 
     * `verdaccio-winsw.exe start`
 
-Some of the above config is more verbose than I had expected, it appears as though 'workingdirectory' is ignored, but other than that, this works for me and allows my verdaccio instance to persist between restarts of the server, and also restart itself should there be any crashes of the verdaccio process.
+Указанные выше конфиги оказались слежнее, чем я ожидал - например, 'workingdirectory' был проигнорирован, но, тем не менее, это заработало, и позволило моему verdaccio оставаться запущенным после перезапуска сервера, и так же рестартовать в случае крэша verdaccio.
 
-## Repositories
+## Ссылки
 
 * [verdaccio-deamon-windows](https://github.com/davidenke/verdaccio-deamon-windows)

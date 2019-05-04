@@ -1,18 +1,18 @@
 ---
 id: version-4.0.0-alpha.5-best
-title: Best Practices
+title: Лучшие практики
 original_id: best
 ---
 
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+Это руководство - список лучших практик, которые мы собрали, и которые рекомендуем всем пользователям. Не воспринимайте это руководство как высеченную в камне неделимую истину, вы можете использовать только пару пунктов, если так будет правильно для вас.
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Не стесняйтесь предлагать ваши лучшие практики комьюнити Verdaccio**.
 
-## Private Registry
+## Приватный репозиторий
 
 You can add users and manage which users can access which packages.
 
-It is recommended that you define a prefix for your private packages, for example `local-*` or scoped `@my-company/*`, so all your private things will look like this: `local-foo`. This way you can clearly separate public packages from private ones.
+Мы рекомендуем определить для ваших приватных пакетов префикс, например `local-*`, или скоуп `@my-company/*`, так что все ваши приватные пакеты будут выглядеть примерно так: `local-foo`. This way you can clearly separate public packages from private ones.
 
 ```yaml
   packages:
@@ -98,15 +98,15 @@ By default all packages are you publish in Verdaccio are accessible for all publ
 
 In that way, **nobody will take advance of your registry unless is authorized and private packages won't be displayed in the User Interface**.
 
-## Server
+## Сервер
 
-### Secured Connections
+### Защищенные соединения
 
-Using **HTTPS** is a common recomendation, for such reason we recommend read the [SSL](ssl.md) section to make Verdaccio secure or using a HTTPS [reverse proxy](reverse-proxy.md) on top of Verdaccio.
+Использовать **HTTPS** - это частая рекомендация, и мы рекомендуем прочитать раздел [SSL](ssl.md), чтобы включить защиту внутри Verdaccio, или использовать HTTPS [reverse proxy](reverse-proxy.md) поверх Verdaccio.
 
-### Expiring Tokens
+### Ограничения по времени для токенов
 
-In `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+В `verdaccio@3.x` токены не имеют ограничений по времени. Поэтому мы ввели в `verdaccio@4.x` новую фичу - JWT [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
@@ -120,8 +120,8 @@ security:
       expiresIn: 7d
 ```
 
-**Using this configuration will override the current system and you will be able to control how long the token will live**.
+**Использование этой конфигурации изменит текущее поведение сервера и вы сможете управлять временим жизни токенов**.
 
-Using JWT also improves the performance with authentication plugins, the old system will perform an unpackage and validating the credentials in each request, while JWT will rely on the token signature avoiding the overhead for the plugin.
+Использование JWT так же увеличивает производительность плагинов аутентификации, так как старая система производила распаковку и проверку credentials во время каждого запроса, тогда как JWT полагается на подпись токена, устраняя эти накладные расходы для плагина.
 
-As a side note, at **npmjs the token never expires**.
+В качестве примечания, **npmjs токены не имеют ограничений по времени**.

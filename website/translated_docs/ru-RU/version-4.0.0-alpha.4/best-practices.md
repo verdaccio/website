@@ -1,6 +1,6 @@
 ---
 id: version-4.0.0-alpha.4-best
-title: Best Practices
+title: Лучшие практики
 original_id: best
 ---
 

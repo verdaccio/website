@@ -1,54 +1,54 @@
 ---
 id: version-3.8.6-what-is-verdaccio
-title: What is Verdaccio?
+title: Что такое Verdaccio?
 original_id: what-is-verdaccio
 ---
 
-Verdaccio is a **lightweight private npm proxy registry** built in **Node.js**
+Verdaccio - это **"легкий" приватный прокси для npm реестра**, построенный на основе**Node.js**
 
-## What's a registry
+## Что значит реестр
 
-* A repository for packages that implements the **CommonJS Compliant Package Registry specification** for reading package info
-* Provide an API compatible with npm clients **(yarn/npm/pnpm)**
-* Follow the semantic Versioning compatible **(semver)**
+* Репозиторий для пакетов, который реализует **CommonJS Compliant Package Registry specification** для чтения информации о пакетах
+* Предоставляет API, совместимое с клиентскими приложениями npm **(yarn/npm/pnpm)**
+* Поддерживает семантическое версионирование **(semver)**
 
     $> verdaccio
     
 
-![registry](/svg/verdaccio_server.gif)
+![реестр](/svg/verdaccio_server.gif)
 
-## Using Verdaccio
+## Использование Verdaccio
 
-Using verdaccio with any node package manager client is quite straightforward.
+Использовать verdaccio вместо с любым пакетным менеджером - очень просто.
 
-![registry](/svg/npm_install.gif)
+![реестр](/svg/npm_install.gif)
 
-You can use a custom registry either setting globally for all your projects
+Вы можете сохранить ссылку на свой собственный репозиторий пакетов, установив глобальную настройку для всех проектов
 
     npm set registry http://localhost:4873
     
 
-or by command line as argument `--registry` in npm (slightly different in yarn)
+или передав аргумент командной строки `--registry` в npm (и немного по-другому в yarn)
 
     npm install lodash --registry http://localhost:4873
     
 
-## Private
+## Приватный
 
-All packages that you publish are private and only accessible based in your configuration.
+Все пакеты, которые вы опубликуете - приватные, и доступ к ним осуществляется в соотвествии с правами, опредёленными в конфигурации.
 
-## Proxy
+## Прокси
 
-Verdaccio cache all dependencies by demand and speed up installations in local or private networks.
+Verdaccio кэширует все запрошенные зависимости и ускоряет установку пакетов в локальной или приватной сети.
 
-## Verdaccio in a nutshell
+## Verdaccio в двух словах
 
-* It's a web app based on Node.js
-* It's a private npm registry
-* It's a local network proxy
-* It's a Pluggable application
-* It's a fairly easy install and use
-* We offer Docker and Kubernetes support
-* It is 100% compatible with yarn, npm and pnpm
-* It was **forked** based on `sinopia@1.4.0` and 100% **backward compatible**.
-* Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
+* Веб-приложение на Node
+* Приватный npm-реестр
+* Прокси для локальной сети
+* Возможно подключение плагинов
+* Легко установить и использовать
+* Поддержка Docker и Kubernetes
+* 100% совместим с yarn, npm и pnpm
+* **Форк** проекта `sinopia@1.4.0`, на 100% **обратно совместим**.
+* Verdaccio означает **цвет зеленой краски для фресковой живописи, популярный в Средние Века**.
