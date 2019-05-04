@@ -36,28 +36,28 @@ Se qualche pacchetto non esiste nell'archivio, il server proverà a recuperarlo 
 
 **Esempio:**
 
-If you successfully request `express@4.0.1` from this server once, you'll able to do that again (with all it's dependencies) anytime even if npmjs.org is down. But say `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, this server would say that only `express@4.0.1` (= only what's in the cache) is published, but nothing else.
+Se fai una richiesta `express@4.0.1` da questo server che va a buon fine una volta, sarà possibile farla un'altra volta (con tutte le sue dipendenze) in ogni momento, anche con npmjs.org non funzionante. Però diciamo che `express@4.0.0` non verrà scaricato fino a che non sia effettivamente necessario per qualcuno. E se npmjs.org è offline, questo server direbbe che solo `express@4.0.1` (= solo quello che è nella cache) viene pubblicato, ma nient'altro.
 
 ### Annullare pacchetti pubblici
 
-If you want to use a modified version of some public package `foo`, you can just publish it to your local server, so when your type `npm install foo`, **it'll consider installing your version**.
+Se desideri utilizzare una versione modificata di qualche pacchetto pubblico `foo`, puoi pubblicarla direttamente sul tuo server locale, così quando scrivi `npm install foo`, ** considererà di installare la tua versione**.
 
 Ci sono due opzioni qui:
 
-1. You want to create a separate **fork** and stop synchronizing with public version.
+1. Desideri creare un **fork** separato e interrompere la sincronizzazione con la versione pubblica.
     
-    Se si vuole fare ciò, si dovrebbe modificare il file di configurazione affinché verdaccio non faccia più richieste a npmjs riguardo a questi pacchetti. Add a separate entry for this package to `config.yaml` and remove `npmjs` from `proxy` list and restart the server.
+    Se si vuole fare ciò, si dovrebbe modificare il file di configurazione affinché verdaccio non faccia più richieste a npmjs riguardo a questi pacchetti. Aggiungi una voce separata per questo pacchetto a `config.yaml`, rimuovi `npmjs` dalla lista `proxy` e riavvia il server.
     
     ```yaml
     packages:
       '@my-company/*':
         access: $all
         publish: $authenticated
-        # comment it out or leave it empty
+        # commentalo o lascialo vuoto
         # proxy:
     ```
     
-    When you publish your package locally, **you should probably start with version string higher than existing one**, so it won't conflict with existing package in the cache.
+    Quando pubblichi il tuo pacchetto in locale, **dovresti probabilmente iniziare con la stringa di versione superiore a quella esistente**, così che non vada in conflitto con il pacchetto già esistente nella cache.
 
 2. Si vuole temporaneamente utilizzare la propria versione, ma tornare alla pubblica appena questa sia aggiorna,.
     
