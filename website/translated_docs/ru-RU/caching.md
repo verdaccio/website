@@ -28,7 +28,7 @@ Verdaccio кэширует все пакеты по умолчанию в пап
 
 ## Увеличение времени жизни метаданных
 
-Verdaccio by default waits 2 minutes to invalidate the cache metadata before fetching new information from the remote registry.
+По умолчанию, время жизни метаданных в кэше Verdaccio составляет 2 минуты, после чего метаданные будут снова запрошены из удаленного репозитория.
 
 ```yaml
 uplinks:
@@ -37,9 +37,9 @@ uplinks:
     maxage: 30m
 ```
 
-Increasing the value of `maxage` in each `uplink` remotes will be asked less frequently. This might be a valid stragegy if you don't update dependencies so often.
+Если увеличить значение `maxage` для каждого `аплинка`, удаленный репозиторий будет опрашиваться реже. Это может стать отличной стратегией, если ваши зависимсти обновляются не слишком часто.
 
-## Using the memory instead the hardrive
+## Использование памяти вместо диска
 
 Sometimes caching packages is not a critical step, rather than route packages from different registries and achiving faster build times. There are two plugins that avoid write in a phisical hardrive at all using the memory.
 
