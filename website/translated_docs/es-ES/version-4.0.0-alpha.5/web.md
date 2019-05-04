@@ -1,6 +1,6 @@
 ---
 id: version-4.0.0-alpha.5-webui
-title: Web User Interface
+title: Interfaz Web de Usuario
 original_id: webui
 ---
 
