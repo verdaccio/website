@@ -355,6 +355,27 @@
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
         "title": "Webové uživatelské rozhraní"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-articles": {
+        "title": "Články"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-configuration": {
+        "title": "Konfigurační Soubor"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-installation": {
+        "title": "Installation"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-logo": {
+        "title": "Logotyp"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-webui": {
+        "title": "Webové uživatelské rozhraní"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-what-is-verdaccio": {
+        "title": "Co je Verdaccio?"
       }
     },
     "links": {
