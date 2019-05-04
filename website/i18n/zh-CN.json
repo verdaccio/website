@@ -355,6 +355,27 @@
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
         "title": "Web 用户界面"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-articles": {
+        "title": "Articles"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-configuration": {
+        "title": "配置文件"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-installation": {
+        "title": "安装"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-logo": {
+        "title": "Logotype"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-webui": {
+        "title": "Web 用户界面"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-what-is-verdaccio": {
+        "title": "Verdaccio是什么？"
       }
     },
     "links": {
