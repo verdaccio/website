@@ -48,6 +48,8 @@ But we recommend the following considerations:
 
 ## Migrating from `verdaccio@3.x` to `verdaccio@4.x`
 
+[Here you can read](https://github.com/verdaccio/verdaccio/issues/836#issuecomment-408477496) more about summary o of changes by **Diego Louzán**. 
+
 ### Installation with `npm`
 
 There are no differences between both major releases if you install with `npm`. The migration should be clean and painless.
