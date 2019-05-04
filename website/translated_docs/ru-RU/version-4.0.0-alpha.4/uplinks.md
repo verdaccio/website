@@ -1,12 +1,12 @@
 ---
 id: version-4.0.0-alpha.4-uplinks
-title: Uplinks
+title: Аплинки
 original_id: uplinks
 ---
 
-An *uplink* is a link with an external registry that provides acccess to external packages.
+*Аплинк* - это соединение с внешним репозиторием, через которое идет доступ к внешним пакетом.
 
-![Uplinks](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
+![Аплинки](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
 
 ### Usage
 
@@ -27,20 +27,20 @@ uplinks:
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
 
-| Свойство     | Тип     | Обязательное | Пример                                  | Поддержка | Описание                                                                                                                   | По умолчанию |
-| ------------ | ------- | ------------ | --------------------------------------- | --------- | -------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| url          | string  | Да           | https://registry.npmjs.org/             | все       | The registry url                                                                                                           | npmjs        |
-| ca           | string  | Нет          | ~./ssl/client.crt'                      | все       | SSL path certificate                                                                                                       | No default   |
-| timeout      | string  | Нет          | 100ms                                   | все       | set new timeout for the request                                                                                            | 30s          |
-| maxage       | string  | Нет          | 10m                                     | все       | limit maximun failure request                                                                                              | 2m           |
-| fail_timeout | string  | Нет          | 10m                                     | все       | defines max time when a request becomes a failure                                                                          | 5m           |
-| max_fails    | number  | Нет          | 2                                       | все       | limit maximun failure request                                                                                              | 2            |
-| cache        | boolean | Нет          | [true,false]                            | >= 2.1    | cache all remote tarballs in storage                                                                                       | true         |
-| auth         | list    | Нет          | [see below](uplinks.md#auth-property)   | >= 2.5    | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled     |
-| headers      | list    | Нет          | authorization: "Bearer SecretJWToken==" | все       | list of custom headers for the uplink                                                                                      | disabled     |
-| strict_ssl   | boolean | Нет          | [true,false]                            | >= 3.0    | If true, requires SSL certificates be valid.                                                                               | true         |
+| Свойство     | Тип     | Обязательное | Пример                                  | Поддержка | Описание                                                                                                        | По умолчанию |
+| ------------ | ------- | ------------ | --------------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------- | ------------ |
+| url          | string  | Да           | https://registry.npmjs.org/             | все       | URL репозитория                                                                                                 | npmjs        |
+| ca           | string  | Нет          | ~./ssl/client.crt'                      | все       | путь к сертификату SSL                                                                                          | нет значения |
+| timeout      | string  | Нет          | 100ms                                   | все       | таймаут для запроса                                                                                             | 30s          |
+| maxage       | string  | Нет          | 10m                                     | все       | максимальное количество недачных запросов                                                                       | 2m           |
+| fail_timeout | string  | Нет          | 10m                                     | все       | время, через которое непрошедший запрос считается неудачным                                                     | 5m           |
+| max_fails    | number  | Нет          | 2                                       | все       | максимальное количество недачных запросов                                                                       | 2            |
+| cache        | boolean | Нет          | [true,false]                            | >= 2.1    | кэшировать tar-файлы пакетов или нет                                                                            | true         |
+| auth         | list    | Нет          | [см. ниже](uplinks.md#auth-property)    | >= 2.5    | хедер 'Authorization' [больше инфо](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled     |
+| headers      | list    | Нет          | authorization: "Bearer SecretJWToken==" | все       | список хедеров для аплинка                                                                                      | disabled     |
+| strict_ssl   | boolean | Нет          | [true,false]                            | >= 3.0    | если true, то SSL сертификат будет проверяться на валидность.                                                   | true         |
 
-#### Auth property
+#### Свойство Auth
 
 The `auth` property allows you to use an auth token with an uplink. Using the default environment variable:
 
@@ -53,7 +53,7 @@ uplinks:
       token_env: true # defaults to `process.env['NPM_TOKEN']`
 ```
 
-or via a specified environment variable:
+или задав явно переменную окружения:
 
 ```yaml
 uplinks:
@@ -64,9 +64,9 @@ uplinks:
       token_env: FOO_TOKEN
 ```
 
-`token_env: FOO_TOKEN`internally will use `process.env['FOO_TOKEN']`
+`token_env: FOO_TOKEN` verdaccio-сервер будет использовать `process.env['FOO_TOKEN']`
 
-or by directly specifying a token:
+или напрямую указав токен:
 
 ```yaml
 uplinks:
@@ -77,11 +77,11 @@ uplinks:
       token: "token"
 ```
 
-> Note: `token` has priority over `token_env`
+> Заметьте: `token` имеет приоритет над `token_env`
 
-### You Must know
+### Вы должны знать
 
-* Uplinks must be registries compatible with the `npm` endpoints. Eg: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* and more.
-* Setting `cache` to false will help to save space in your hard drive. This will avoid store `tarballs` but [it will keep metadata in folders](https://github.com/verdaccio/verdaccio/issues/391).
-* Exceed with multiple uplinks might slow down the lookup of your packages due for each request a npm client does, verdaccio does 1 call for each uplink.
-* The (timeout, maxage and fail_timeout) format follow the [NGINX measurement units](http://nginx.org/en/docs/syntax.html)
+* Аплинки должны быть репозиториями, которые совместимы с `npm` по эндпоинтам. Например: *verdaccio*, `sinopia@1.4.0`, *репозиторий npmjs registry*, *репозиторий yarn*, *JFrog*, *Nexus* и другие.
+* Установка `cache` в значение false позволит сохранить место на диске. Это позволит избежать хранения `tar-файлов`, но [сохранит метаданные пакетов](https://github.com/verdaccio/verdaccio/issues/391).
+* Увеличение числа аплинков может замедлить поиск пакетов, так как для каждого запроса пакета через клиентскую часть менеджера пакетов, verdaccio делает по 1 запросу во все аплинки.
+* Формат настроек (timeout, maxage and fail_timeout) следует документу [NGINX measurement units](http://nginx.org/en/docs/syntax.html)
