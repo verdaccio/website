@@ -3,11 +3,11 @@ id: caching
 title: "Стратегии кэширования"
 ---
 
-Verdaccio кэширует все пакеты по умолчанию в папку `/storage`. Но если вы хотите, вы можете использовать другие стратегии. Using of plugins you might use the cloud or any sort of database.
+Verdaccio кэширует все пакеты по умолчанию в папку `/storage`. Но если вы хотите, вы можете перейти на другие стратегии. С помощью плагинов вы можете использовать облако или любую базу данных.
 
-## Caching scenarios
+## Сценарии кэширования
 
-* Build a Node.js project on **Continous Integration** (Bamboo, GitLab, Jenkins, etc) servers is a task that might take several times at a day, does, the server will download tons of tarballs from the registry every time takes place. As usual, the CI tools clear the cache after each build and the process start over and over again. That is a waste of bandwidth and reduces the external traffic. **You can use Verdaccio for caching tarballs and metadata in our internal network and give a boost in your build time.**
+* Сборка Node.js-проекта в рамках **непрерывной интеграции** (Bamboo, GitLab, Jenkins, и т.д.) - это процесс, который может запускаться несколько раз в день, при этом загружая кучу tar-файлов из репозитория. Обычно, CI-инструменты очищают кэш после каждой сборки, и процесс загрузки каждый раз начинается заново. That is a waste of bandwidth and reduces the external traffic. **You can use Verdaccio for caching tarballs and metadata in our internal network and give a boost in your build time.**
 * **Latency and Connectivity**, not all countries enjoy a high-speed connection. For such reason cache packages locally in your network is really handy. Either if you are traveling, or have a weak connection, roaming or countries with strong Firewalls that might affect the user experience (eg: corrupting tarballs).
 * **Offline Mode**, all Node Package Managers nowadays uses their own internal cache, but it common that different projects might use different tools, which implies lock files and so on. Those tools are unable to share cache, the unique solution is centralized and relies on a proxy registry, Verdaccio cache all metadata and tarballs are downloaded by demand being able to share them across all your project.
 * Avoid that any remote registry suddenly returns *HTTP 404* error for tarballs were previously available a.k.a ([left-pad issue](https://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/)).
