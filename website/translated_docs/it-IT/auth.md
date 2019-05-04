@@ -1,11 +1,11 @@
 ---
-id: autenticazione
+id: authentification
 title: "Autenticazione"
 ---
 
-L'autenticazione è legata al [plugin](plugins.md) di autenticazione che si utilizza. Anche le restrizioni di pacchetto sono gestite dal [pacchetto accesso](packages.md).
+L'autenticazione è legata al [plugin](plugins.md) di autenticazione che si utilizza. Anche le restrizioni di pacchetto sono gestite dall'[Accesso al Pacchetto](packages.md).
 
-L'autenticazione del client viene gestito dal `npm` client stesso. Una volta che si effettua il login all'applicazione:
+L'autenticazione del client viene gestita dal `npm` client stesso. Una volta che si effettua il login all'applicazione:
 
 ```bash
 npm adduser --registry http://localhost:4873
@@ -35,40 +35,40 @@ Ad esempio:
 
 Come è descritto [nel caso #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) fino al `npm@5.3.0` e in tutte le versioni minori **non vi sarà permesso pubblicare senza un token **.
 
-## Understanding Groups
+## Comprensione dei Gruppi
 
-### The meaning of `$all` and `$anonymous`
+### Il significato di `$all` e `$anonymous`
 
-As you know *Verdaccio* uses the `htpasswd` by default. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
+Come è noto *Verdaccio* utilizza l'`htpasswd` di default. Quel plugin non implementa i metodi `allow_access`, `allow_publish` e `allow_unpublish`. Quindi, *Verdaccio* lo gestirà nella seguente maniera:
 
-* If you are not logged in (you are anonymous), `$all` and `$anonymous` means exactly the same.
-* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
+* Se non si è loggati (si è anonimi), `$all` e `$anonymous` significano esattamente la stessa cosa.
+* Se si è loggati, `$anonymous` non sarà parte del gruppo e `$all` coinciderà con ogni utente loggato. Un nuovo gruppo `$authenticated` verrà aggiunto all'elenco.
 
-As a takeaway, `$all` **will match all users, independently whether is logged or not**.
+Il concetto chiave è che `$all` **coinciderà con tutti gli utenti, indipendentemente dal fatto che siano loggati o meno**.
 
-**The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
+**Il comportamento precedente si applica esclusivamente al plugin di autenticazione predefinito**. Se si sta utilizzando un plugin personalizzato e tale plugin implementa `allow_access`, `allow_publish` o `allow_unpublish`, la risoluzione dell'accesso dipende dal plugin stesso. Verdaccio imposterà esclusivamente i gruppi predefiniti.
 
-Let's recap:
+Ricapitolando:
 
-* **logged**: `$all`, `$authenticated`, + groups added by the plugin
-* **anonymous (logged out)**: `$all` and `$anonymous`.
+* **loggati**: `$all`, `$authenticated`, + gruppi aggiunti dal plugin
+* **anonimi (non loggati)**: `$all` e `$anonymous`.
 
 ## Impostazione predefinita htpasswd
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
+Per semplificare la configurazione, `verdaccio` utilizza un plugin basato su `htpasswd`. A partire dalla versione v3.0.x il plugin `verdaccio-htpasswd` viene utilizzato di default.
 
 ```yaml
 auth:
   htpasswd:
     file: ./htpasswd
-    # Maximum amount of users allowed to register, defaults to "+inf".
-    # You can set this to -1 to disable registration.
+    # Numero massimo di utenti autorizzati a registrarsi, da quelli predefiniti a "+inf".
+    # È possibile impostarlo su -1 per disabilitare la registrazione.
     #max_users: 1000
 ```
 
-| Proprietà | Tipo    | Richiesto | Esempio      | Supporto | Descrizione                                    |
-| --------- | ------- | --------- | ------------ | -------- | ---------------------------------------------- |
-| file      | stringa | Sì        | . / htpasswd | tutti    | file che ospitano le credenziali crittografate |
-| max_users | numero  | No        | 1000         | tutti    | imposta limite di utenti                       |
+| Proprietà | Tipo    | Richiesto | Esempio      | Supporto | Descrizione                                  |
+| --------- | ------- | --------- | ------------ | -------- | -------------------------------------------- |
+| file      | stringa | Sì        | . / htpasswd | tutti    | file che ospita le credenziali crittografate |
+| max_users | numero  | No        | 1000         | tutti    | imposta limite di utenti                     |
 
 Nel caso si decida di non consentire all'utente di accedere, è possibile impostare `max_users: -1`.
