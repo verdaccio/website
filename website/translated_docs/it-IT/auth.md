@@ -1,6 +1,6 @@
 ---
 id: autenticazione
-title: "Autenticazione"
+title: "Authentification"
 ---
 
 L'autenticazione è legata al [plugin](plugins.md) di autenticazione che si utilizza. Anche le restrizioni di pacchetto sono gestite dal [pacchetto accesso](packages.md).
