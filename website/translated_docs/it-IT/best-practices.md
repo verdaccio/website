@@ -5,7 +5,7 @@ title: "Migliori Pratiche"
 
 La guida seguente è un elenco delle migliore pratiche raccolte e che raccomandiamo solitamente a tutti gli utenti. Non considerare questa guida come obbligatoria, puoi selezionare qualcuna di esse a seconda delle tue esigenze.
 
-**Suggerisci le tue migliori pratiche con la community di Verdaccio**.
+**Suggerisci le tue migliori pratiche alla community di Verdaccio**.
 
 ## Registro Privato
 
@@ -57,7 +57,7 @@ Ci sono due opzioni qui:
         # proxy:
     ```
     
-    Quando pubblichi il tuo pacchetto in locale, **dovresti probabilmente iniziare con la stringa di versione superiore a quella esistente**, così che non vada in conflitto con il pacchetto già esistente nella cache.
+    Quando pubblichi il tuo pacchetto in locale, **dovresti probabilmente iniziare con la stringa di versione superiore a quella esistente**, così che non vada in conflitto con il pacchetto esistente nella cache.
 
 2. Si vuole temporaneamente utilizzare la propria versione, ma tornare alla pubblica appena questa sia aggiorna,.
     
