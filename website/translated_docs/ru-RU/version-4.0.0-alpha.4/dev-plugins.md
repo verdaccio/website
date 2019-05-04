@@ -7,14 +7,14 @@ original_id: dev-plugins
 Есть много способов расширить `verdaccio`, поддерживаются следующие типы плагинов:
 
 * Плагин аутентификации
-* Middleware плагины (начиная с `v2.7.0`)
-* Плагины для хранения с (`v3.x`)
+* Middleware плагин (начиная с `v2.7.0`)
+* Плагин хранилища (начиная с `v3.x`)
 
 > Мы рекомендуем разрабатывать плагины с использованием [flow type definitions](https://github.com/verdaccio/flow-types).
 
 ## Плагин аутентификации
 
-В основном мы должны возвращать объект с помощью одного метода, называемого `authenticate`, который должен принимать три аругмента (`user, password, callback`).
+В целом, мы должны возвращать объект с помощью одного метода, называемого `authenticate`, который должен принимать три аругмента (`user, password, callback`).
 
 ### API
 
@@ -29,13 +29,13 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> Только `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` не обязательны, verdaccio предлагает поведение по умолчанию в этом случае.
 
-#### apiJWTmiddleware method
+#### Метод apiJWTmiddleware
 
-Since `v4.0.0`
+Начиная с `v4.0.0`
 
-`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement his method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
+`apiJWTmiddleware` был добавлен в [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227), чтобы иметь полный контроль при обработке токенов, и если вы его переопределите, то `login/adduser` может сломаться. We recommend don't implement his method unless is totally necessary. Смотрите пример [здесь](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
