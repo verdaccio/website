@@ -61,14 +61,14 @@ Per semplificare la configurazione, `verdaccio` utilizza un plugin basato su `ht
 auth:
   htpasswd:
     file: ./htpasswd
-    # Maximum amount of users allowed to register, defaults to "+inf".
-    # You can set this to -1 to disable registration.
+    # Numero massimo di utenti autorizzati a registrarsi, da quelli predefiniti a "+inf".
+    # È possibile impostarlo su -1 per disabilitare la registrazione.
     #max_users: 1000
 ```
 
-| Proprietà | Tipo    | Richiesto | Esempio      | Supporto | Descrizione                                    |
-| --------- | ------- | --------- | ------------ | -------- | ---------------------------------------------- |
-| file      | stringa | Sì        | . / htpasswd | tutti    | file che ospitano le credenziali crittografate |
-| max_users | numero  | No        | 1000         | tutti    | imposta limite di utenti                       |
+| Proprietà | Tipo    | Richiesto | Esempio      | Supporto | Descrizione                                  |
+| --------- | ------- | --------- | ------------ | -------- | -------------------------------------------- |
+| file      | stringa | Sì        | . / htpasswd | tutti    | file che ospita le credenziali crittografate |
+| max_users | numero  | No        | 1000         | tutti    | imposta limite di utenti                     |
 
 Nel caso si decida di non consentire all'utente di accedere, è possibile impostare `max_users: -1`.
