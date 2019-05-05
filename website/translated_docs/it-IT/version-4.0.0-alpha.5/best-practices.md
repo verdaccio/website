@@ -1,12 +1,12 @@
 ---
 id: version-4.0.0-alpha.5-best
-title: Migliori Prassi
+title: Migliori Pratiche
 original_id: best
 ---
 
 La guida seguente è un elenco delle migliore pratiche raccolte e che raccomandiamo solitamente a tutti gli utenti. Non considerare questa guida come obbligatoria, puoi selezionare qualcuna di esse a seconda delle tue esigenze.
 
-**Suggerisci le tue migliori pratiche con la community di Verdaccio**.
+**Suggerisci le tue migliori pratiche alla community di Verdaccio**.
 
 ## Registro Privato
 
