@@ -150,7 +150,7 @@ publish:
 url_prefix: /verdaccio/
 ```
 
-Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
+> We recommend use a subdirectory `/verdaccio/` instead a URI.
 
 ### Max Body Size
 
@@ -162,7 +162,7 @@ max_body_size: 10mb
 
 ### Listen Port
 
-`verdaccio` běží ve výchozím nastavení na portu `4873`. Změna portu může být provedena přes [cli](cli.md) nebo v konfiguračním souboru. Následující možnosti jsou:
+`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
 
 ```yaml
 listen:
@@ -208,7 +208,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Upozornění
 
-Povolení upozornění pro nástroje třetích stran je poměrně snadné prostřednictvím web hooks. Další informace o této části naleznete na [stránce oznámení](notifications.md).
+Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -224,7 +224,7 @@ notify:
 
 <small>Since: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` je nový příkaz vydaný v [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio obsahuje vestavěný middleware doplněk schopný zpracovat tento příkaz.
+`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
 
 > If you have a new installation it comes by default, otherwise you need to add the following props to your config file
 
