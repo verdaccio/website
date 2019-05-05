@@ -17,15 +17,15 @@ docker pull verdaccio/verdaccio
 
 ## Версии с меткой
 
-Начиная с версии `v2.x` вы можете скачать Docker образ [тег](https://hub.docker.com/r/verdaccio/verdaccio/tags/), так:
+Начиная с версии `v2.x` вы можете скачать Docker образ с помощью [метки](https://hub.docker.com/r/verdaccio/verdaccio/tags/), вот так:
 
-Для базовых версий:
+Мажорная версия:
 
 ```bash
 docker pull verdaccio/verdaccio:3
 ```
 
-Для минорной версии:
+Минорная версия:
 
 ```bash
 docker pull verdaccio/verdaccio:3.0
@@ -37,7 +37,7 @@ docker pull verdaccio/verdaccio:3.0
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next major release using the `4.x-next` (master) version.
+Будущий `4.x-next` (master) релиз.
 
 ```bash
 docker pull verdaccio/verdaccio:4.x-next
@@ -45,9 +45,9 @@ docker pull verdaccio/verdaccio:4.x-next
 
 > Если вас интересует весь список тегов, [посетите нашу страницу на сайте Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Running Verdaccio using Docker
+## Запускаем Verdaccio, используя Docker
 
-> The following configuration is based on the Verdaccio 4 or the `4.x-next` tag.
+> Указанная конфигурация использует Verdaccio 4 или метку `4.x-next`.
 
 Запуск Docker контейнера:
 
