@@ -150,7 +150,7 @@ publish:
 url_prefix: /verdaccio/
 ```
 
-A partire da: `verdaccio@2.3.6` paragrafo [#197](https://github.com/verdaccio/verdaccio/pull/197)
+> We recommend use a subdirectory `/verdaccio/` instead a URI.
 
 ### Dimensione Massima del Corpo
 
