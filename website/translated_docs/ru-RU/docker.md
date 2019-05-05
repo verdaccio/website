@@ -74,13 +74,13 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 Verdaccio 4 предоставляет новый набор переменных окружения для модификации прав доступа, порта и http-протокола. Вот полный список:
 
-| Свойство              | По умолчанию           | Описание                                           |
-| --------------------- | ---------------------- | -------------------------------------------------- |
-| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | the docker working directory                       |
-| VERDACCIO_USER_NAME | `verdaccio`            | the system user                                    |
-| VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
-| VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
-| VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
+| Свойство              | По умолчанию           | Описание                                                 |
+| --------------------- | ---------------------- | -------------------------------------------------------- |
+| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | рабочая папка докера                                     |
+| VERDACCIO_USER_NAME | `verdaccio`            | системный пользователь                                   |
+| VERDACCIO_USER_UID  | `10001`                | id юзера, который используется для задания прав на папки |
+| VERDACCIO_PORT        | `4873`                 | порт сервера Verdaccio                                   |
+| VERDACCIO_PROTOCOL    | `http`                 | http-протокол по умолчанию                               |
 
 ### Плагины
 
