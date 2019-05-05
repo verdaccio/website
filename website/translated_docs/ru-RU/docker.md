@@ -55,7 +55,7 @@ docker pull verdaccio/verdaccio:4.x-next
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
 ```
 
-The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
+Последний аргумент определяет, какой образ использовать. В результате выполнения команды будет скачан последний образ с dockerhub, если вы еще этого не сделали.
 
 Если этот образ [у вас уже скачан](#build-your-own-docker-image) используйте `verdaccio` в качестве последнего аргумента.
 
@@ -70,7 +70,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio:4.x-next
 ```
 
-> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Используйте docker разделы](https://docs.docker.com/storage/volumes/) при монтировании каталогов.
+> Примечание: внутри контейнера Verdaccio запускается не из под root (uid=10001), и если вы используете кастомное монтирование каталогов, вам необходимо убедиться, что у пользователя будет доступ к этим каталогам. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Используйте docker разделы](https://docs.docker.com/storage/volumes/) при монтировании каталогов.
 
 Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
 
