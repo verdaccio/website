@@ -21,7 +21,7 @@
         "title": "Windows Azure"
       },
       "best": {
-        "title": "Migliori Prassi"
+        "title": "Migliori Pratiche"
       },
       "caching": {
         "title": "Caching strategies"
@@ -228,7 +228,7 @@
         "title": "Windows Azure"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-best": {
-        "title": "Migliori Prassi"
+        "title": "Migliori Pratiche"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-caching": {
         "title": "Caching strategies"
@@ -285,7 +285,7 @@
         "title": "Autenticazione"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-best": {
-        "title": "Migliori Prassi"
+        "title": "Migliori Pratiche"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-caching": {
         "title": "Caching strategies"
