@@ -176,7 +176,7 @@ listen:
 
 ### HTTPS
 
-To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
+Чтобы включить `https` в `verdaccio`, достаточно добавить протокол *https://* в секции `listen`. Для получения большей информации, обратитесь на [страницу ssl](ssl.md).
 
 ```yaml
 https:
@@ -187,11 +187,11 @@ https:
 
 ### Прокси
 
-Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
+Прокси - это специализированные HTTP-сервера, предназначенные для передачи данных от удаленных серверов к локальным клиентам.
 
 #### http_proxy и https_proxy
 
-If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
+Если у вас есть прокси в вашей сети, вы модете установить хедер `X-Forwarded-For`, используя следующие свойства.
 
 ```yaml
 http_proxy: http://something.local/
@@ -200,7 +200,7 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-This variable should contain a comma-separated list of domain extensions proxy should not be used for.
+Эта переменная должна содержать список доменов, разделённых запятыми, для которых не нужно использовать прокси.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
@@ -208,7 +208,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Уведомления
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Включить уведомления для сторонных инструментов - довольно легко через web hooks. Для получения большей информации, обратитесь к [странице уведомлений](notifications.md).
 
 ```yaml
 notify:
@@ -218,13 +218,13 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-> For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
+> Для получения детальной информации по этой настройке, пожалуйста, [обратитесь к исходному коду](https://github.com/verdaccio/verdaccio/tree/master/conf).
 
-### Audit
+### Аудит
 
-<small>Since: <code>verdaccio@3.0.0</code></small>
+<small>С версии: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`npm audit` - это новая команда, появившаяся в [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio включает в себя middleware-плагин для обеспечения работоспособности ээтой команды.
 
 > If you have a new installation it comes by default, otherwise you need to add the following props to your config file
 
