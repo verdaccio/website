@@ -97,7 +97,7 @@ server:
   keepAliveTimeout: 60
 ```
 
-### Web UI
+### Веб-интерфейс
 
 Это свойство позволяет модифицировать внешний вид веб UI. Чтобы получить больше информации, почитайте страницу [web ui page](web.md).
 
@@ -119,7 +119,7 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Пакеты
 
 Это свойство позволяет пользователю управлять доступом к пакетам. Чтобы получить больше информации, почитайте страницу [packages page](packages.md).
 
@@ -133,36 +133,36 @@ packages:
 
 ## Расширенные настройки
 
-### Offline Publish
+### Публикация в офлайне
 
-By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
+По умолчанию, `verdaccio` не разрешает публиковать пакеты, когда клиент в оффлайне, но вы можете разрешить это, установив значение *true* для этой настройки.
 
 ```yaml
 publish:
   allow_offline: false
 ```
 
-<small>Since: <code>verdaccio@2.3.6</code> due <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
+<small>С версии: <code>verdaccio@2.3.6</code>, благодаря <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
 
-### URL Prefix
+### URL префикс
 
 ```yaml
 url_prefix: /verdaccio/
 ```
 
-> We recommend use a subdirectory `/verdaccio/` instead a URI.
+> Мы рекомендуем использовать подпапку `/verdaccio/` вместо URI.
 
-### Max Body Size
+### Максимальный размер сообщения
 
-By default the maximum body size for a JSON document is `10mb`, if you run in errors as `"request entity too large"` you may increase this value.
+По умолчанию, максимальный размер JSON-документа ограничен `10mb`, и если вы стали получать ошибки `"request entity too large"`, то вы можете увеличить это значение.
 
 ```yaml
 max_body_size: 10mb
 ```
 
-### Listen Port
+### Порт
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+По умолчанию, `verdaccio` запущен на порту `4873`. Изменить этот порт можно через [cli](cli.md) или в конфигурационном файле, например так:
 
 ```yaml
 listen:
