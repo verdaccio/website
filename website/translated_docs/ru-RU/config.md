@@ -99,7 +99,7 @@ server:
 
 ### Web UI
 
-Это своймодифицировать внешний вид веб UI. Чтобы получить больше информации, почитайте страницу [web ui page](web.md).
+Это свойство позволяет модифицировать внешний вид веб UI. Чтобы получить больше информации, почитайте страницу [web ui page](web.md).
 
 ```yaml
 web:
@@ -111,7 +111,7 @@ web:
 
 ### Аплинки
 
-Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
+Аплинки - это способ получать пакеты из удаленных репозиториев, когда пакетов нет в локальном хранилище. Чтобы получить больше информации, почитайте [страницу аплинков](uplinks.md).
 
 ```yaml
 uplinks:
