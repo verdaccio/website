@@ -1,4 +1,9 @@
-# Verdaccio 4 released today !!!
+---
+author: Ayush Sharma
+authorURL: https://twitter.com/ayusharma_
+authorFBID: 1122901551
+title: Verdaccio 4 released today !!!
+---
 
 #### Release name: Freedom
 
