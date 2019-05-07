@@ -7,7 +7,7 @@ title: The new docker image for Verdaccio 4
 
 Docker has been for Verdaccio a key part of his success, at the time of this writing we have more than 4 millions and growing rapidly. The image provides an easy installation and integration with other tools, as Kubernetes, or composing them with any other Docker image. 
 
-This article aims to describe what have changed and all the improvements and benefits you will enjoy migrating to latest version.
+This article will describe what has changed, all the improvements and benefits you will enjoy from migrating to the latest version.
 
 ## What’s new?
 
