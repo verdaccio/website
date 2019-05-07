@@ -7,7 +7,7 @@ title: Verdaccio 4 released today !!!
 
 #### Release name: Freedom
 
-Verdaccio is a free open source Javascript package proxy registry.  It is fully compatible with pnpm, yarn and npm package management clients. It follows the CommonJS compliant package  specifications. 
+Verdaccio is a free open source javascript package proxy registry. It is fully compatible with pnpm, yarn and npm package management clients. It follows the CommonJS compliant package specifications. 
 
 You can install and upgrade to the latest version by following commands:
 using **npm** 
@@ -25,12 +25,12 @@ or using **pnpm**
 yarn global add verdaccio@4.0.0
 ````
 
-You can find detailed installation instructions  [here](https://verdaccio.org/docs/en/installation)
+You can find detailed installation instructions [here](https://verdaccio.org/docs/en/installation)
 
 ## Why 'Freedom' ?
-Verdaccio originated from sinopia 3 years ago and since then verdaccio team maintaining and releasing major release every year. Since the fork, the project has evolved in many ways, making the project’s code base modern, easier to debug and more straightforward to contribute to by the community! 
+Verdaccio originated from [sinopia](https://github.com/rlidwka/sinopia) 3 years ago and since then verdaccio team maintaining and releasing major release every year. Since the fork, the project has evolved in many ways, making the project’s code base modern, easier to debug and more straightforward to contribute to by the community! 
 
-The name freedom holds a true meaning for version 4 release. The verdaccio is a strong community of many contributors and developers from across the world, providing an ideal platform for everyone to give control on their code. Also version 4 is free from tech debt of  legacy code and stands on design patterns of modern era which consist React, Typed plugin system, JWT, Docker & kubernetes.  We can call it Freedom in true sense. 
+The name freedom holds true meaning for version 4 release. Verdaccio is a strong community of many contributors and developers from across the world, providing an ideal platform for everyone to give control of their code. Also, version 4 is free from tech debt of legacy code and stands on design patterns of the modern era which consist React, Typed plugin system, JWT, Docker & kubernetes. We can call it Freedom in true sense.
 
 Let's take a quick look at the life cycle and development of verdaccio community:
 
@@ -62,6 +62,7 @@ Excited ?? Yes !!! Let's go !!
     - Eslint config
     - Typescript
     - React & Material UI
+    - Github actions
     - UI as a separate package
 
 ## <a id="new-ui"></a> New user interface
@@ -87,7 +88,7 @@ Also package sidebar shows *Author*, *Maintainers* and *Contributors* in differe
 ## <a id="router-api-ui"></a> New Router APIs
 Till, verdaccio@2 we have hash router implementation on frontend application routes. We faced a lot of problem with hash router in readme section. Readmes also uses (#) hash for the heading tags and anchor elements. 
 
-In verdaccio@3, we moves hash router to more cleaner look to browser router. ( No more hashes in URLs).
+In verdaccio@3, we moves hash router to more cleaner look to browser router. (No more hashes in URLs).
 
 
 ## <a id="new-npm-commands"></a> New commands
@@ -122,15 +123,43 @@ Check out more at https://docs.npmjs.com/cli/profile
 @juanpicado
 
 ## <a id="jwt-token"></a> JWT token
-@juanpicado
+
+Verdaccio@4 suppports JWT - [JSON Web Tokens](https://jwt.io/) for authentication process. Previos version of verdaccio used AES token generator. The new JWT token standardises the process and provides an additonal mechanism for token generation. Verdaccio 4 still support the AES token generator.
+
+[Click here for more information on new JWT tokens](https://medium.com/verdaccio/diving-into-jwt-support-for-verdaccio-4-88df2cf23ddc)
 
 ## <a id="docker-improvements"></a> Docker improvements
 @juanpicado
 
 ## <a id="remove-node-6"></a> Node 8 is minimum requirement
 
-Node JS 6 went to end of life on April 30, 2019. Verdaccio@4 will drop the support for node6 and node8  will be the minimum requirement.
+Node JS 6 went to end of life on April 30, 2019. Verdaccio@4 drops the support for node6 and node8 will be the minimum requirement.
 
+
+## <a id="tech-updates"></a> Tech updates
+
+Verdaccio 4 heavily relies on plugins and provides APIs for developers to build their own plugins. We introduced few major changes in development environment to adapt code modulatity, decolupling and typed system.
+
+Now the main verdaccio module is a powerful CLI to package management and a plugin system to introduce new functionalities. 
+
+### <a id=""></a> UI as a plugin
+
+Verdaccio provides an easy configuration system to enable / disable of web application. Verdaccio is used as E2E tooling system in many platforms and shipping UI along with verdaccio is a non-benifical overhead. So we separated the UI module and it's repository for easy development and mantainability. 
+
+You can find UI repository [here](https://github.com/verdaccio/ui). 
+
+### Github actions
+
+Currently, Github actions in beta and verdaccio used them for release automation. Now it is very easy to make the release for the development team. We aim to introduce actions at other place after their stable release. 
+
+### Meetup & conferences 
+
+Since verdaccio 3 release, Verdaccio contributors are actively participating in community interactions in conferences, meetup and on twitter. Some of the conference in which verdaccio gave its presence 
+
+- Dot Conference
+- React day, Berlin
+- JS Kongress, Munich
+- 
 
 
 
