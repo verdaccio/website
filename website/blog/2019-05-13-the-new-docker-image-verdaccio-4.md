@@ -24,7 +24,7 @@ To avoid mistakes we have renamed all environment variables being prefixed with 
 
 ### Support Arbitrary User IDs
 
-The previous image runs the container with the verdaccio user and group by default, being the UID created randomly within the image. Some users were experimenting issues since some environment requires usage of arbitrary user IDs for security reasons, for such reason we have introduced the environment variable `VERDACCIO_USER_ID` that allows that. 
+The previous image runs the container with the verdaccio user and group by default, being the UID created randomly within the image. Some users were experiencing issues since some environments require the usage of custom user IDs for security reasons. To support this, we have introduced the environment variable `VERDACCIO_USER_ID`.
 
 Furthermore, other optimizations can be possible, as for instance, define a different username using `VERDACCIO_USER_NAME` and such user won’t have permissions to log in by default.
 
