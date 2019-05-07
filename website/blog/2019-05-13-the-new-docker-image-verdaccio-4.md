@@ -41,7 +41,7 @@ To provide your own configuration file, the recommended way is using Docker volu
 [example volume]
 
 
-We force a specific uid **10001** for the run user, assign the root group to the locations that need to be written by the run user; if running in a normal environment, the specific id is used and permissions are correct; if running on a randomized uid environment like openshift, the non-existent user gets assigned the root group and allowed write access to relevant locations.
+We use the user ID **10001** for the run user and assign the root group to the locations that need to be written to by the run user. If running in a normal environment, the specific ID is used and permissions are correct. If running on a randomized user ID environment like openshift, the non-existent user gets assigned the root group and is allowed write access to relevant locations.
 
 The entrypoint will add the user to `/etc/passwd` in case the user is running as a random uid (openshift). That way, the typical tools like whoami and so can still work. 
 
