@@ -48,7 +48,7 @@ The entrypoint will add the user to `/etc/passwd` in case the user is running as
 
 ## Conclusions
 
-This new image has been tested in production for months and is quite stable, thus there is no fear to give it a try. We have improved in several areas, but still there are a lot to do and for that we need you. If you are DevOps do not hesitate to give us your feedback or contribute directly in discussions and future PRs to take the Verdaccio Docker image to the next level. We count on you.
+This new image has been tested in production for months and is quite stable, thus there is no need to worry about giving it a try. We have improved in several areas but there is still a lot to do and for that we need you. If you are DevOps do not hesitate to give us your feedback or contribute directly in discussions and future PRs to take the Verdaccio Docker image to the next level. We count on you.
 
 ## Contributions
 
