@@ -124,7 +124,7 @@ Check out more at https://docs.npmjs.com/cli/profile
 
 ## <a id="jwt-token"></a> JWT token
 
-Verdaccio@4 suppports JWT - [JSON Web Tokens](https://jwt.io/) for authentication process. Previos version of verdaccio used AES token generator. The new JWT token standardises the process and provides an additonal mechanism for token generation. Verdaccio 4 still support the AES token generator.
+Verdaccio suppports JWT - [JSON Web Tokens](https://jwt.io/) for authentication process. Previos version of verdaccio used `AES` token generator. The new JWT token standardises the process and provides an additonal mechanism for token generation. Verdaccio 4 still support the `AES` token generator.
 
 [Click here for more information on new JWT tokens](https://medium.com/verdaccio/diving-into-jwt-support-for-verdaccio-4-88df2cf23ddc)
 
@@ -133,7 +133,7 @@ Verdaccio@4 suppports JWT - [JSON Web Tokens](https://jwt.io/) for authenticatio
 
 ## <a id="remove-node-6"></a> Node 8 is minimum requirement
 
-Node JS 6 went to end of life on April 30, 2019. Verdaccio@4 drops the support for node6 and node8 will be the minimum requirement.
+NodeJS 6 went to end of life on April 30, 2019. Verdaccio@4 drops the support for node6 and node8 will be the minimum requirement.
 
 
 ## <a id="tech-updates"></a> Tech updates
@@ -156,10 +156,10 @@ Currently, Github actions in beta and verdaccio used them for release automation
 
 Since verdaccio 3 release, Verdaccio contributors are actively participating in community interactions in conferences, meetup and on twitter. Some of the conference in which verdaccio gave its presence 
 
-- Dot Conference
-- React day, Berlin
-- JS Kongress, Munich
-- JS Heroes [Small talk](https://twitter.com/jotadeveloper/status/1116314948962004992), [Presence](https://twitter.com/verdaccio_npm/status/1116608322700857344)
+- Dot Conference 2018, Paris
+- React day 2018, Berlin
+- JS Kongress 2019, Munich
+- JS Heroes 2019, Cluj Napoca ∙ [Small talk](https://twitter.com/jotadeveloper/status/1116314948962004992) ∙ [Presence](https://twitter.com/verdaccio_npm/status/1116608322700857344)
 - [ViennaJS Meetup](https://www.youtube.com/watch?v=hDIFKzmoCaA)
 - [Madrid NodeJS Meetup](https://www.todojs.com/introduccion-a-verdaccio/)
 
