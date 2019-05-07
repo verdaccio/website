@@ -32,7 +32,7 @@ Furthermore, other optimizations can be possible, as for instance, define a diff
 
 We have followed security recommendations removing write permissions to those locations do not need to be modified, avoiding any kind of modification with the default user provided. 
 
-For instance, the code is written to `/opt/verdaccio` the verdaccio run user cannot modify the compiled resources nor config, only the /verdaccio/storage volume. The image only assign executable permissions to the binary executable required to run verdaccio.
+For instance, the code written to `/opt/verdaccio`. The verdaccio run user cannot modify the compiled resources, nor config. Only the `/verdaccio/storage` volume. The image only assigns executable permissions to the binary executable required to run verdaccio.
 
 If you are not using volumes, the `VERDACCIO_USER_NAME` will have only permissions to write in the storage folder, the source code, the configuration and plugins will be read only.
 
