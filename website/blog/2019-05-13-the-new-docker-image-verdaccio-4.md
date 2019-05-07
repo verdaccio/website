@@ -44,8 +44,14 @@ If you are not using volumes, the `VERDACCIO_USER_NAME` will only have permissio
 
 To provide your own configuration file, the recommended way is using Docker volumes like so:
 
-[example volume]
-
+```bash
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -p 4873:4873 \
+  -v $V_PATH/conf:/verdaccio/conf \
+  -v $V_PATH/storage:/verdaccio/storage \
+  -v $V_PATH/plugins:/verdaccio/plugins \
+  verdaccio/verdaccio:4
+```
 
 We use the user ID **10001** for the run user and assign the root group to the locations that need to be written to by the run user. If running in a normal environment, the specific ID is used and permissions are correct. If running on a randomized user ID environment like openshift, the non-existent user gets assigned the root group and is allowed write access to relevant locations.
 
