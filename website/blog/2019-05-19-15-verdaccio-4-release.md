@@ -159,7 +159,10 @@ Since verdaccio 3 release, Verdaccio contributors are actively participating in 
 - Dot Conference
 - React day, Berlin
 - JS Kongress, Munich
-- 
+- JS Heroes [Small talk](https://twitter.com/jotadeveloper/status/1116314948962004992), [Presence](https://twitter.com/verdaccio_npm/status/1116608322700857344)
+- [ViennaJS Meetup](https://www.youtube.com/watch?v=hDIFKzmoCaA)
+- [Madrid NodeJS Meetup](https://www.todojs.com/introduccion-a-verdaccio/)
+
 
 
 
