@@ -28,7 +28,7 @@ The previous image runs the container with the verdaccio user and group by defau
 
 Furthermore, other optimizations can be possible, as for instance, define a different username using `VERDACCIO_USER_NAME` and such user won’t have permissions to log in by default.
 
-###Security
+### Security
 
 We have followed security recommendations removing write permissions to those locations do not need to be modified, avoiding any kind of modification with the default user provided. 
 
