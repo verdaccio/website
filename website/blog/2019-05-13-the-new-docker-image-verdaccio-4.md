@@ -30,7 +30,7 @@ Furthermore, other optimizations can be possible, as for instance, define a diff
 
 ### Security
 
-We have followed security recommendations removing write permissions to those locations do not need to be modified, avoiding any kind of modification with the default user provided. 
+We have followed security recommendations to remove write permissions to those locations that do not need to be modified for the default user. 
 
 For instance, the code written to `/opt/verdaccio`. The verdaccio run user cannot modify the compiled resources, nor config. Only the `/verdaccio/storage` volume. The image only assigns executable permissions to the binary executable required to run verdaccio.
 
