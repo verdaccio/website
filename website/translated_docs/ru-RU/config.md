@@ -226,7 +226,7 @@ notify:
 
 `npm audit` - это новая команда, появившаяся в [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio включает в себя middleware-плагин для обеспечения работоспособности ээтой команды.
 
-> If you have a new installation it comes by default, otherwise you need to add the following props to your config file
+> Если вы сделали новую установку, у вас это будет по умолчанию, в противном случае нужно добавить эти настройки самому в конфигурационный файл
 
 ```yaml
 middlewares:
