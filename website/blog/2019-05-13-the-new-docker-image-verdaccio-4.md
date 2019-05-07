@@ -36,7 +36,7 @@ For instance, the code written to `/opt/verdaccio`. The verdaccio run user canno
 
 If you are not using volumes, the `VERDACCIO_USER_NAME` will only have permissions to write in the storage folder and the source code. The configuration and plugins will be read only.
 
-To provide your own configuration file, the recommended way is using Docker volumes as follow.
+To provide your own configuration file, the recommended way is using Docker volumes like so:
 
 [example volume]
 
