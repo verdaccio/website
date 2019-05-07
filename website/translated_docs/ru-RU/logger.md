@@ -3,7 +3,7 @@ id: logger
 title: "Логи"
 ---
 
-As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
+Как любое веб-приложение, у verdaccio есть встроенный логгер. Вы можете указать несколько устройств вывода.
 
 ```yaml
 logs:
@@ -15,13 +15,13 @@ logs:
   - {type: rotating-file, format: json, path: /path/to/log.jsonl, level: http, options: {period: 1d}}
 ```
 
-Use `SIGUSR2` to notify the application, the log-file was rotated and it needs to reopen it. Note: Rotating log stream is not supported in cluster mode. [See here](https://github.com/trentm/node-bunyan#stream-type-rotating-file)
+Используйте `SIGUSR2` tдля того, чтобы уведомить приложение, что лог-файл был ротирован и его надо переоткрыть. Примечание: Ротация логов не поддерживается в кластерном режиме. [Смотрите здесь](https://github.com/trentm/node-bunyan#stream-type-rotating-file)
 
-### Configuration
+### Конфигурация
 
-| Свойство | Тип    | Обязательное | Пример                                         | Поддержка | Описание                                          |
-| -------- | ------ | ------------ | ---------------------------------------------- | --------- | ------------------------------------------------- |
-| type     | string | Нет          | [stdout, file]                                 | все       | define the output                                 |
-| path     | string | Нет          | verdaccio.log                                  | все       | if type is file, define the location of that file |
-| format   | string | Нет          | [pretty, pretty-timestamped]                   | все       | output format                                     |
-| level    | string | Нет          | [fatal, error, warn, http, info, debug, trace] | все       | verbose level                                     |
+| Свойство | Тип    | Обязательное | Пример                                         | Поддержка | Описание                                            |
+| -------- | ------ | ------------ | ---------------------------------------------- | --------- | --------------------------------------------------- |
+| type     | string | Нет          | [stdout, file]                                 | все       | определяет устройство вывода                        |
+| path     | string | Нет          | verdaccio.log                                  | все       | если type - это файл, то местоположение этого файла |
+| format   | string | Нет          | [pretty, pretty-timestamped]                   | все       | форматирование выходных данных                      |
+| level    | string | Нет          | [fatal, error, warn, http, info, debug, trace] | все       | уровень подробности логов                           |

@@ -37,13 +37,7 @@ Dla określonej (poprawka) wersji:
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next master branch uses the `master` version.
-
-```bash
-docker pull verdaccio/verdaccio:master
-```
-
-For the next major release using the `4.x-next` (4.x branch) version.
+For the next major release using the `4.x-next` (master) version.
 
 ```bash
 docker pull verdaccio/verdaccio:4.x-next
@@ -51,12 +45,14 @@ docker pull verdaccio/verdaccio:4.x-next
 
 > Jeśli interesuje Cię lista tagów, [odwiedź witrynę Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Uruchamianie verdaccio za pomocą Docker'a
+## Running Verdaccio using Docker
+
+> The following configuration is based on the Verdaccio 4 or the `4.x-next` tag.
 
 Aby uruchomić kontener dokowania:
 
 ```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
 ```
 
 The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
@@ -66,14 +62,25 @@ Jeśli masz [zbuduj obraz lokalnie](#build-your-own-docker-image), użyj `verdac
 Możesz użyć `-v` do związania uchwytu `conf`, `magazynu` i `dodatków` do systemu plików hostów:
 
 ```bash
-V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -p 4873:4873 \
   -v $V_PATH/conf:/verdaccio/conf \
   -v $V_PATH/storage:/verdaccio/storage \
   -v $V_PATH/plugins:/verdaccio/plugins \
-  verdaccio/verdaccio
+  verdaccio/verdaccio:4.x-next
 ```
 
-> Uwaga: Verdaccio działa jako użytkownik inny niż root (uid=100, gid=101) wewnątrz kontenera, jeśli używasz wiązania uchwytu do zastąpienia domyślnego, musisz upewnić się, że katalog uchwytu jest przypisany do właściwego użytkownika. W powyższym przykładzie musisz uruchomić `sudo chown -R 100: 101 /opt/verdaccio `, w przeciwnym razie doświadczysz błędów uprawnień w czasie operacji. [Zalecane jest użycie woluminu dokujacego](https://docs.docker.com/storage/volumes/) zamiast używania wiązania uchwytu.
+> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Zalecane jest użycie woluminu dokujacego](https://docs.docker.com/storage/volumes/) zamiast używania wiązania uchwytu.
+
+Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
+
+| Właściwość            | default                | Opis                                               |
+| --------------------- | ---------------------- | -------------------------------------------------- |
+| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | the docker working directory                       |
+| VERDACCIO_USER_NAME | `verdaccio`            | the system user                                    |
+| VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
+| VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
+| VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
 
 ### Wtyczki
 
@@ -87,28 +94,26 @@ RUN npm install verdaccio-s3-storage
 
 ### Docker and custom port configuration
 
-Any `host:port` configured in `conf/config.yaml` under `listen` is currently ignored when using docker.
+Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
 
-Jeśli chcesz dotrzeć do instancji verdaccio docker pod innym portem, powiedzmy `5000` w poleceniu `docker run` zamień `-p 4873:4873` za pomocą `-p 5000:4873`.
-
-W przypadku potrzeby określenia, który port chcesz odsłuchać **w kontenerze docker**, od wersji 2.?.? możesz to zrobić, podając dodatkowe argumenty do`uruchamianie docker`: `--env PORT=5000` To zmienia, który port kontenera docker odsłania i port verdaccio słucha.
-
-Oczywiście, liczby podane do parametru `-p` muszą być zgodne, więc zakładając, że chcesz, aby wszystkie były takie same, możesz skopiować, wkleić i zastosować:
+If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
 
 ```bash
-PORT=5000; docker run -it --rm --name verdaccio \
-  --env PORT -p $PORT:$PORT
-  verdaccio/verdaccio
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -e "VERDACCIO_PORT=8080" -p 8080:8080 \  
+  verdaccio/verdaccio:4.x-next
 ```
+
+Of course the numbers you give to `-p` paremeter need to match.
 
 ### Using HTTPS with Docker
 
 Możesz skonfigurować protokół verdaccio, którego verdaccio będzie nasłuchiwał, podobnie jak konfigurację portu. Musisz nadpisać wartość domyślną("http") zmiennej środowiskowej `PROTOCOL` na "https", po określeniu certyfikatów w pliku config.yaml.
 
 ```bash
-PROTOCOL=https; docker run -it --rm --name verdaccio \
-  --env PROTOCOL -p 4873:4873
-  verdaccio/verdaccio
+docker run -it --rm --name verdaccio \
+  --env "VERDACCIO_PROTOCOL=https" -p 4873:4873
+  verdaccio/verdaccio:4.x-next
 ```
 
 ### Using docker-compose
@@ -120,7 +125,29 @@ PROTOCOL=https; docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-Możesz ustawić port do użycia (zarówno dla kontenera jak i hosta), poprzedzając powyższe polecenie przez `PORT=5000`.
+You can set the port to use (for both container and host) by prefixing the above command with `VERDACCIO_PORT=5000`.
+
+```yaml
+version: '3.1'
+
+services:
+  verdaccio:
+    image: verdaccio/verdaccio:4.x-next
+    container_name: "verdaccio"
+    networks:
+      - node-network
+    environment:
+      - VERDACCIO_PORT=4873
+    ports:
+      - "4873:4873"
+    volumes:
+      - "./storage:/verdaccio/storage"
+      - "./config:/verdaccio/conf"
+      - "./config:/verdaccio/conf"  
+networks:
+  node-network:
+    driver: bridge
+```
 
 Docker wygeneruje nazwany wolumin, w którym będą przechowywane trwałe dane aplikacji. Możesz użyć`docker inspect` lub `docker volume inspect`, aby odsłonić fizyczną lokalizację woluminu i edytować konfigurację, taką jak:
 
@@ -147,7 +174,7 @@ docker build -t verdaccio .
 Istnieje również skrypt npm do budowania obrazu docker, więc możesz również:
 
 ```bash
-npm run build:docker
+yarn run build:docker
 ```
 
 Uwaga: Pierwsza kompilacja zajmuje kilka minut, ponieważ wymaga uruchomienia `npm install`, i zajmie to dużo czasu za każdym razem, gdy zmienisz dowolny plik, który nie jest wymieniony w `.dockerignore`.
@@ -161,6 +188,8 @@ Istnieje osobny magazyn, który obsługuje wiele konfiguracji do komponowania ob
 <https://github.com/verdaccio/docker-examples>
 
 ## Niestandardowe Kompilacje Docker'a
+
+> If you have made an image based on Verdaccio, feel free to add it to this list.
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)

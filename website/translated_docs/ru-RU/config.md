@@ -97,9 +97,9 @@ server:
   keepAliveTimeout: 60
 ```
 
-### Web UI
+### Веб-интерфейс
 
-Это своймодифицировать внешний вид веб UI. Чтобы получить больше информации, почитайте страницу [web ui page](web.md).
+Это свойство позволяет модифицировать внешний вид веб UI. Чтобы получить больше информации, почитайте страницу [web ui page](web.md).
 
 ```yaml
 web:
@@ -111,7 +111,7 @@ web:
 
 ### Аплинки
 
-Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
+Аплинки - это способ получать пакеты из удаленных репозиториев, когда пакетов нет в локальном хранилище. Чтобы получить больше информации, почитайте [страницу аплинков](uplinks.md).
 
 ```yaml
 uplinks:
@@ -119,7 +119,7 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Пакеты
 
 Это свойство позволяет пользователю управлять доступом к пакетам. Чтобы получить больше информации, почитайте страницу [packages page](packages.md).
 
@@ -133,36 +133,36 @@ packages:
 
 ## Расширенные настройки
 
-### Offline Publish
+### Публикация в офлайне
 
-By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
+По умолчанию, `verdaccio` не разрешает публиковать пакеты, когда клиент в оффлайне, но вы можете разрешить это, установив значение *true* для этой настройки.
 
 ```yaml
 publish:
   allow_offline: false
 ```
 
-<small>Since: <code>verdaccio@2.3.6</code> due <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
+<small>С версии: <code>verdaccio@2.3.6</code>, благодаря <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
 
-### URL Prefix
+### URL префикс
 
 ```yaml
-url_prefix: https://dev.company.local/verdaccio/
+url_prefix: /verdaccio/
 ```
 
-Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
+> Мы рекомендуем использовать подпапку `/verdaccio/` вместо URI.
 
-### Max Body Size
+### Максимальный размер сообщения
 
-By default the maximum body size for a JSON document is `10mb`, if you run in errors as `"request entity too large"` you may increase this value.
+По умолчанию, максимальный размер JSON-документа ограничен `10mb`, и если вы стали получать ошибки `"request entity too large"`, то вы можете увеличить это значение.
 
 ```yaml
 max_body_size: 10mb
 ```
 
-### Listen Port
+### Порт
 
-По умолчанию, `verdaccio` запускается на порту `4873`. Поменять порт можно через [cli](cli.md) или через конфигурационный файл, смотри примеры ниже.
+По умолчанию, `verdaccio` запущен на порту `4873`. Изменить этот порт можно через [cli](cli.md) или в конфигурационном файле, например так:
 
 ```yaml
 listen:
@@ -176,7 +176,7 @@ listen:
 
 ### HTTPS
 
-To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
+Чтобы включить `https` в `verdaccio`, достаточно добавить протокол *https://* в секции `listen`. Для получения большей информации, обратитесь на [страницу ssl](ssl.md).
 
 ```yaml
 https:
@@ -187,11 +187,11 @@ https:
 
 ### Прокси
 
-Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
+Прокси - это специализированные HTTP-сервера, предназначенные для передачи данных от удаленных серверов к локальным клиентам.
 
 #### http_proxy и https_proxy
 
-If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
+Если у вас есть прокси в вашей сети, вы модете установить хедер `X-Forwarded-For`, используя следующие свойства.
 
 ```yaml
 http_proxy: http://something.local/
@@ -200,7 +200,7 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-This variable should contain a comma-separated list of domain extensions proxy should not be used for.
+Эта переменная должна содержать список доменов, разделённых запятыми, для которых не нужно использовать прокси.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
@@ -208,7 +208,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Уведомления
 
-Включить уведомления для third-party tools - очень просто через web hooks. Чтобы получить больше информации, почитайте страницу [notifications page](notifications.md).
+Включить уведомления для сторонных инструментов - довольно легко через web hooks. Для получения большей информации, обратитесь к [странице уведомлений](notifications.md).
 
 ```yaml
 notify:
@@ -218,15 +218,15 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-> For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
+> Для получения детальной информации по этой настройке, пожалуйста, [обратитесь к исходному коду](https://github.com/verdaccio/verdaccio/tree/master/conf).
 
-### Audit
+### Аудит
 
-<small>Since: <code>verdaccio@3.0.0</code></small>
+<small>С версии: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` - это новая команда, появившаяся в [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio включает в себя middleware плагин для выполнения этой команды.
+`npm audit` - это новая команда, появившаяся в [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio включает в себя middleware-плагин для обеспечения работоспособности ээтой команды.
 
-> If you have a new installation it comes by default, otherwise you need to add the following props to your config file
+> Если вы сделали новую установку, у вас это будет по умолчанию, в противном случае нужно добавить эти настройки самому в конфигурационный файл
 
 ```yaml
 middlewares:

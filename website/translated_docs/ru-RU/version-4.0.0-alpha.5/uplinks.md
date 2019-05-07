@@ -23,7 +23,7 @@ uplinks:
     url: http://localhost:55666/
 ```
 
-### Configuration
+### Конфигурация
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
 

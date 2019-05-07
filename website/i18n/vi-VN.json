@@ -355,6 +355,27 @@
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
         "title": "Web User Interface"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-articles": {
+        "title": "Articles"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-configuration": {
+        "title": "Tệp cấu hình"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-installation": {
+        "title": "Installation"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-logo": {
+        "title": "Logotype"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-webui": {
+        "title": "Web User Interface"
+      },
+      "version-4.0.0-beta.5/version-4.0.0-beta.5-what-is-verdaccio": {
+        "title": "What is Verdaccio?"
       }
     },
     "links": {

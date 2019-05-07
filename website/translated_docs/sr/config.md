@@ -147,10 +147,10 @@ publish:
 ### URL Префикс
 
 ```yaml
-url_prefix: https://dev.company.local/verdaccio/
+url_prefix: /verdaccio/
 ```
 
-Почевши од верзије: `verdaccio@2.3.6` члан [#197](https://github.com/verdaccio/verdaccio/pull/197)
+> We recommend use a subdirectory `/verdaccio/` instead a URI.
 
 ### Максимална величина body секције документа
 
@@ -162,7 +162,7 @@ max_body_size: 10mb
 
 ### Listen Порт
 
-`verdaccio` према "фабричким подешавањима" ради на порту `4873`. Измена порта се може обавити преко [cli](cli.md) или директно у фајлу за конфигурисање, при чему су следеће опције валидне.
+`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
 
 ```yaml
 listen:
@@ -208,7 +208,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Нотификације
 
-Дозвољавање нотификација за алате направљене од стране трећих лица је релативно једноставно уз помоћ web hooks технике. За више информација о овој теми, прочитајте [страницу "notifications"](notifications.md).
+Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -224,7 +224,7 @@ notify:
 
 <small>Почевши од верзије: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` је нова команда која је уведена у [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio, а која укључује уграђени middleware plugin којим је могуће извршити дату команду.
+`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
 
 > Ако имате нову инсталацију, све је већ укључено у оквиру ње. У супротном, треба да додате наведене додатке (props) у Ваш config фајл
 

@@ -1,18 +1,18 @@
 ---
 id: version-4.0.0-alpha.5-best
-title: Migliori Prassi
+title: Migliori Pratiche
 original_id: best
 ---
 
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+La guida seguente è un elenco delle migliore pratiche raccolte e che raccomandiamo solitamente a tutti gli utenti. Non considerare questa guida come obbligatoria, puoi selezionare qualcuna di esse a seconda delle tue esigenze.
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Suggerisci le tue migliori pratiche alla community di Verdaccio**.
 
-## Private Registry
+## Registro Privato
 
 È possibile aggiungere utenti e gestire quali utenti possono accedere a quali pacchetti.
 
-It is recommended that you define a prefix for your private packages, for example `local-*` or scoped `@my-company/*`, so all your private things will look like this: `local-foo`. In questo modo si possono separare chiaramente i pacchetti pubblici da quelli privati.
+È raccomandabile definire un prefisso per i tuoi pacchetti privati, per esempio `local-*` o `@my-company/*` con scope, così che tutti i tuoi elementi privati appariranno così: `local-foo`. In questo modo si possono separare chiaramente i pacchetti pubblici da quelli privati.
 
 ```yaml
   packages:
