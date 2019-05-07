@@ -3,12 +3,12 @@ id: sise ijerisi
 title: "Sise ijerisi"
 ---
 
-The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
+A so sise ijerisi mo auth [ plugin](plugins.md) ta n mulo. an seto awon ihamo ti pali nipa ti [ Agbawole Pali](packages.md).
 
-The client authentification is handled by `npm` client itself. Once you login to the application:
+Eto ijerisi ti olubara lan kapa e nipa `npm` ti olubara fun ra ra e. Logan to ba te wole lori ero na:
 
 ```bash
-npm adduser --registry http://localhost:4873
+npm aropoolumulo --iforukosile http://localhost:4873
 ```
 
 A token is generated in the `npm` configuration file hosted in your user home folder. For more information about `.npmrc` read the [official documentation](https://docs.npmjs.com/files/npmrc).
