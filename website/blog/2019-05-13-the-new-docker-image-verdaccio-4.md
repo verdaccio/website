@@ -34,7 +34,7 @@ We have followed security recommendations to remove write permissions to those l
 
 For instance, the code written to `/opt/verdaccio`. The verdaccio run user cannot modify the compiled resources, nor config. Only the `/verdaccio/storage` volume. The image only assigns executable permissions to the binary executable required to run verdaccio.
 
-If you are not using volumes, the `VERDACCIO_USER_NAME` will have only permissions to write in the storage folder, the source code, the configuration and plugins will be read only.
+If you are not using volumes, the `VERDACCIO_USER_NAME` will only have permissions to write in the storage folder and the source code. The configuration and plugins will be read only.
 
 To provide your own configuration file, the recommended way is using Docker volumes as follow.
 
