@@ -148,7 +148,7 @@ You can access to the package is being published with the keyword `{{publishedPa
     {{ publisher.name }} has published {{ publishedPackage }}
     
 
-## Configuration
+## Конфигурация
 
 | Свойство            | Тип          | Обязательное | Поддержка | По умолчанию | Описание                                                                                     |
 | ------------------- | ------------ | ------------ | --------- | ------------ | -------------------------------------------------------------------------------------------- |
