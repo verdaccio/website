@@ -39,10 +39,10 @@ Come è descritto [nel caso #212](https://github.com/verdaccio/verdaccio/issues/
 
 ### Il significato di `$all` e `$anonymous`
 
-Come è noto *Verdaccio* utilizza l'`htpasswd` di default. Quel plugin non implementa i metodi `allow_access`, `allow_publish` e `allow_unpublish`. Quindi, *Verdaccio* lo gestirà nella seguente maniera:
+Come è noto *Verdaccio* utilizza il `htpasswd` di default. Quel plugin non implementa i metodi `allow_access`, `allow_publish` e `allow_unpublish`. Quindi, *Verdaccio* lo gestirà nella seguente maniera:
 
 * Se non si è loggati (si è anonimi), `$all` e `$anonymous` significano esattamente la stessa cosa.
-* Se si è loggati, `$anonymous` non sarà parte del gruppo e `$all` coinciderà con ogni utente loggato. Un nuovo gruppo `$authenticated` verrà aggiunto all'elenco.
+* Se si è loggati, `$anonymous` non sarà parte dei tuoi gruppi e `$all` coinciderà con ogni utente loggato. Un nuovo gruppo `$authenticated` verrà aggiunto all'elenco.
 
 Il concetto chiave è che `$all` ** coinciderà con tutti gli utenti, indipendentemente dal fatto che siano loggati o meno**.
 
