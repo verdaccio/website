@@ -20,7 +20,13 @@ The new image is three times smaller than the previous, around 150 MB instead 50
 
 To avoid mistakes we have renamed all environment variables being prefixed with VERDACCIO_. This will avoid future collisions and better understanding of the origin and usage of the variable. Here the full list of the new list of variables available in the new image.
 
-[table]
+Property | Default value | Description
+--- | --- | ---
+`VERDACCIO_APPDIR` | `/opt/verdaccio-build` | the docker working directory
+`VERDACCIO_USER_NAME` | `verdaccio` | the user to run the server
+`VERDACCIO_USER_UID` | `10001` | the user ID being
+`VERDACCIO_PORT` | `4873` | the verdaccio port
+`VERDACCIO_PROTOCOL` | `http` | the default web scheme
 
 ### Support Arbitrary User IDs
 
