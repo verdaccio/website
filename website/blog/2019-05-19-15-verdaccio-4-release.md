@@ -114,13 +114,22 @@ npm profile set [--json|--parseable] <property> <value>
 npm profile set password
 ```
 
-Check out more at https://docs.npmjs.com/cli/profile
-
-### <a id="npm-token"></a> npm token
-@jaunpicado
+Check out more at [https://docs.npmjs.com/cli/profile](https://docs.npmjs.com/cli/profile)
 
 ## <a id="plugins"></a> Plugins
-@juanpicado
+
+### UI Theme Plugin
+
+We have seen the new UI comes full of new features, but perhaps you need some specific customization and decide to using built your own User Interface. For such reason, we have introduced a new sort of plugin that allows you to override the default UI, for instance:
+
+```yaml
+theme:
+  dark:
+    option1: foo
+    option2: bar
+```
+
+Check out more at [https://verdaccio.org/docs/en/plugins#theme-configuration](https://verdaccio.org/docs/en/plugins#theme-configuration)
 
 ## <a id="jwt-token"></a> JWT token
 
