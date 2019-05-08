@@ -14,8 +14,8 @@ title: "Puppet"
 
 В обоих вариантах вам надо сделать вызов "class nodejs {}" в вашем puppet-скрипте, потому что модуль puppet-verdaccio только выставляет требование на модуль nodejs, так что у вас появляется гибкость в выборе способа установки nodejs. Чтобы получить больше информации для варианта с Master-Agent-mode, прокрутите вниз.
 
-For further information:
+Для получения дальнейшей информации:
 
 <https://github.com/verdaccio/puppet-verdaccio>
 
-> We are looking for active contributors for this integration, if you are interested [refers to this ticket](https://github.com/verdaccio/puppet-verdaccio/issues/11).
+> Мы ищем активных контрибьюторов для этого раздела, если вы заинтересовались, [посмотрите этот тикет](https://github.com/verdaccio/puppet-verdaccio/issues/11).
