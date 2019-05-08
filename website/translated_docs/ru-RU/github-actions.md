@@ -18,8 +18,8 @@ action "Publish Verdaccio" {
 }
 ```
 
-The action will perform a `npm publish` and if the publishing finish succesfully will allow to continue to the next step, otherwise will fails. If there is any issue publishing a package you will notice using this action.
+Этот экшн сделает `npm publish` и если публикация пройдет успешно, позволит переход в следующий шаг, в противном случае пометит шаг как неудачный. При возникновении проблем во время пбликации, экшн известит вас об этом.
 
-Within the image uses `verdaccio-auth-memory` and `verdaccio-memory` plugins to handle authentification and storage to speed up the process.
+Внутри использется docker-образ с плагинами `verdaccio-auth-memory` и `verdaccio-memory` (аутентификация и хранилище) для ускорения процесса.
 
-If you want to know more about the action, [visit our repository](https://github.com/verdaccio/github-actions) dedicated for GitHub Actions.
+Если хотите узнать больше про экшны, [посетите репозиторий](https://github.com/verdaccio/github-actions), выделенный под GitHub Actions.
