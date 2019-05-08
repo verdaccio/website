@@ -49,9 +49,9 @@ uplinks:
 
 ```
 
-Add a `proxy` section to define the selected registry you want to proxy.
+Во-вторых, добавьте строчку `proxy`, чтобы определить, какой репозиторий вы хотите использовать.
 
-## Linking Multiple Registries
+## Связь с несколькими репозиториями
 
 ```yaml
   uplinks:
@@ -68,11 +68,11 @@ Add a `proxy` section to define the selected registry you want to proxy.
     proxy: server1 server2
 ```
 
-Verdaccio supports multiple registries on the `proxy` field. The request will be resolved with the first in the list; if that fails, it will try with the next in the list and so on.
+В Verdaccio можно указать несколько репозиториев в поле `proxy`. Первым отправится запрос в первый репозиторий; если он будет недачным, будет отправлен запрос во второй, и так далее.
 
-## Offline Registry
+## Оффлайновый репозиторий
 
-Having a full Offline Registry is completely possible. If you don't want any connectivity with external remotes you can do the following.
+Можно сделать репозиторий полностью оффлайновым. Если вы не хотите никаких соединений с удаленными репозиториями, можно сделать так.
 
 ```yaml
 <br />auth:
@@ -91,4 +91,4 @@ packages:
     publish: $authenticated
 ```
 
-Remove all `proxy` fields within each section of `packages`. The registry will became full offline.
+Удалите все строчки с полем `proxy` в каждом блоке секции `packages`. Реестр станет полностью оффлайновым.
