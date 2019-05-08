@@ -39,7 +39,7 @@ Apache и `mod_proxy` **не должны кодировать/декодиро�
 
 # Nginx
 
-The following snipped is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
+Конфигурация ниже - это целиком конфигурация из примеров для `docker`, которую можно протестировать в [репозитории примеров для Docker](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
 
     upstream verdaccio_v4 {
         server verdaccio_relative_path_v4:4873;
@@ -91,7 +91,7 @@ The following snipped is a full `docker` example can be tested in our [Docker ex
     }
     
 
-## SSL example
+## Пример для SSL
 
     server {
         listen 80;
@@ -132,11 +132,11 @@ The following snipped is a full `docker` example can be tested in our [Docker ex
     }
     
 
-## Run behind reverse proxy with different domain and port
+## Запуск за reverse proxy с другими доменом и портом
 
-### Sub-directory
+### Префикс
 
-If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise you would need something like this in your `config.yaml`.
+Если вы испольузете данные домен-порт только для Verdaccio, вам не нужен определять `url_prefix`, а в противном случе, нам нужна следующая строчка в `config.yaml`.
 
 ```yaml
 url_prefix: /sub_directory/
