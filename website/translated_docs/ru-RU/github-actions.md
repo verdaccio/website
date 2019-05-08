@@ -3,13 +3,13 @@ id: github-actions
 title: "Github Actions"
 ---
 
-With [GitHub Actions](https://github.com/features/actions) you can automate your workflow, each GitHub Action performs a specific step in a process.
+С помощью [GitHub Actions](https://github.com/features/actions) вы можете автоматизировать свою работу, каждый экшн из GitHub Action выполняет определенный шаг.
 
 ![actions](/img/github-actions.png)
 
-## Testing your packages
+## Тестирование пакетов
 
-Verdaccio provides a custom acttion for easy integration in your flow, you only add the following to your `main.workflow` in the step you consider the better for your flow.
+Verdaccio предоставляет несколько кастомных экшнов для интеграции в ваш цикл, вам нужно только добавить следующие строчки в нужный шаг в `main.workflow`.
 
 ```gha
 action "Publish Verdaccio" {
