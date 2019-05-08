@@ -22,18 +22,18 @@ uplinks:
     @mycompany:registry=http://localhost:4873
     
 
-This approach is valid, but comes with several disadvantages:
+Этот способ вполне годный, но есть несколько минусов:
 
-* It **only works with scopes**
-* Scope must match, **no Regular Expressions are allowed**
-* One scope **cannot fetch from multiple registries**
-* Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
+* Работает **только для scope**
+* Учитывается только полное совпадение имени scope, **никаких регулярных выражений**
+* Один scope **не может иметь связь с несколькими репозиториями**
+* Токены/пароли **должны быть опеределны в ** `.npmrc`.
 
-See a full example [here](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
+Полный пример смотрите [здесь](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
 
-## Linking a Registry
+## Связь с репозиторием
 
-Linking a registry is fairly simple. First, define a new section in the `uplinks` section. Note, the order here is irrelevant.
+Добавить связь с новым репозиторием очень просто. Во-первых, добавьте новый блок в секции `uplinks`. Помните, порядок имеет значение.
 
 ```yaml
   uplinks:
