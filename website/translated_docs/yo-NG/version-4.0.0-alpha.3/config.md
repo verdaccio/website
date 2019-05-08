@@ -51,7 +51,7 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Authentification
+### Sise ijerisi
 
 The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
 
