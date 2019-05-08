@@ -142,11 +142,11 @@ Apache и `mod_proxy` **не должны кодировать/декодиро�
 url_prefix: /sub_directory/
 ```
 
-If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like `http://127.0.0.1:4873/-/static`
+Если вы запускаете verdaccio за reverse proxy, вы заметите, что все ресурсные файлы запрашиваются по абсолютному пути, например `http://127.0.0.1:4873/-/static`
 
-To resolve this issue, **you should send real domain and port to verdaccio with `Host` header**
+Чтобы решить эту проблему, **вам нужно послать реальный домен и порт для verdaccio с помощью хедера `Host` **
 
-Nginx configure should look like this:
+Nginx-конфигурация должна выглядеть примерно так:
 
 ```nginx
 location / {
@@ -157,7 +157,7 @@ location / {
 }
 ```
 
-For this case, `url_prefix` should **NOT** set in verdaccio config
+В этом случае, `url_prefix` **НЕ НУЖНО** использовать конфигурации verdaccio
 
 * * *
 
