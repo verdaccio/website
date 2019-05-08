@@ -18,7 +18,7 @@ The new image is three times smaller than the previous, shrinking down from 500M
 
 ### Environment Variables
 
-To avoid mistakes we have renamed all environment variables being prefixed with VERDACCIO_. This will avoid future collisions and better understanding of the origin and usage of the variable. Here the full list of the new list of variables available in the new image.
+To avoid mistakes we have renamed all environment variables to be prefixed with `VERDACCIO_`. This will avoid future collisions and give a better understanding of the origin of the variable. Here is the full list of the new variables available in the new image.
 
 Property | Default value | Description
 --- | --- | ---
