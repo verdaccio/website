@@ -1,9 +1,9 @@
 ---
 id: linking-remote-registry
-title: "Linking a Remote Registry"
+title: "Связь с удалённым репозиторием"
 ---
 
-Verdaccio is a proxy and by default [links](uplinks.md) the public registry.
+Verdaccio - это прокси, и по умолчанию у него есть [связь](uplinks.md) с публичным репозиторием.
 
 ```yaml
 uplinks:
@@ -11,11 +11,11 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-You can link multiple registries, the following document will drive you through some helpful configurations.
+У вас может быть связь с несколькими репозиториями, и в этом документе вы найдете несколько полезных конфигураций.
 
-## Using Associating Scope
+## Используем scope
 
-The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
+Единственный способ для доступа к нескольким репозиториям, использующийся в `.npmrc`, это разделение по scope, например:
 
     // .npmrc
     registry=https://registry.npmjs.org
