@@ -161,7 +161,7 @@ location / {
 
 * * *
 
-or a sub-directory installation:
+или, в случае использования подпапки в URL:
 
 ```nginx
 location ~ ^/verdaccio/(.*)$ {
@@ -172,6 +172,6 @@ location ~ ^/verdaccio/(.*)$ {
 }
 ```
 
-For this case, `url_prefix` should set to `/verdaccio/`
+В этом случае, `url_prefix` должен быть равен `/verdaccio/`
 
-> Note: There is a Slash after install path (`https://your-domain:port/verdaccio/`)!
+> Примечание: Слэш после пути - обязателен (`https://your-domain:port/verdaccio/`)!
