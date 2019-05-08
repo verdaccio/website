@@ -14,7 +14,7 @@ This article will describe what has changed, all the improvements and benefits y
 
 ### Keep it small
 
-The new image is three times smaller than the previous, around 150 MB instead 500MB, that’s all. We have optimized using [Multi Stage build](https://medium.com/capital-one-tech/multi-stage-builds-and-dockerfile-b5866d9e2f84), this allow us to exclude dependencies and assets are not required for the runtime.  
+The new image is three times smaller than the previous, shrinking down from 500MB to 150MB. We achieved this level of optimization by using [multi-stage build](https://medium.com/capital-one-tech/multi-stage-builds-and-dockerfile-b5866d9e2f84) which allows excluding dependencies and assets not required for the runtime.  
 
 ### Environment Variables
 
