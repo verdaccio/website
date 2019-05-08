@@ -1,13 +1,13 @@
 ---
 id: reverse-proxy
-title: "Настройка обратного прокси-сервера"
+title: "Настройка reverse proxy"
 ---
 
-Using a reverse proxy is a common practice. The following configurations are the most recommended and used ones.
+Использрвание reverse proxy является обычной практикой. Конфигурация ниже - рекомендованная, и наиболее часто используется.
 
 # Apache
 
-Apache and `mod_proxy` should **not decode/encode slashes** and leave them as they are:
+Apache и `mod_proxy` **не должны кодировать/декодировать слэши**, то есть нужно просто ничего не делать (со слэшами):
 
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
@@ -16,9 +16,9 @@ Apache and `mod_proxy` should **not decode/encode slashes** and leave them as th
     </VirtualHost>
     
 
-### Configuration with SSL
+### Конфигурация с SSL
 
-Apache virtual server configuration
+Конфигурация виртуального сервера Apache
 
         apacheconfig
         <IfModule mod_ssl.c>
