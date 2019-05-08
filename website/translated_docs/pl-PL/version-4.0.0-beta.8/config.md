@@ -1,16 +1,16 @@
 ---
-id: version-4.0.0-alpha.4-configuration
-title: Configuration File
-original_id: configuration
+id: version-4.0.0-beta.8-configuration
+title: Plik konfiguracyjny
+original_id: konfiguracja
 ---
 
-This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
+Plik ten jest podstawą verdaccio, ponieważ to w nim możesz modyfikować domyślne zachowanie aplikacji, rozszerzać jej funkcje oraz włączać wtyczki.
 
-A default configuration file is created the very first time you run `verdaccio`.
+A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
-## Default Configuration
+## Podstawowa konfiguracja
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+Domyślna konfiguracja obsługuje pakiety **o zakresie** i umożliwia każdemu użytkownikowi dostęp do wszystkich pakietów, ale tylko **uwierzytelnionych użytkowników do publikowania**.
 
 ```yaml
 storage: ./storage
@@ -31,11 +31,11 @@ logs:
   - {type: stdout, format: pretty, level: http}
 ```
 
-## Sections
+## Sekcje
 
-The following sections explain what each property means and the different options.
+Poniższe sekcje wyjaśniają, co oznacza każda właściwość i różne opcje.
 
-### Storage
+### Magazyn danych
 
 Is the location of the default storage. **Verdaccio is by default based on local file system**.
 
@@ -43,7 +43,7 @@ Is the location of the default storage. **Verdaccio is by default based on local
 storage: ./storage
 ```
 
-### Plugins
+### Wtyczki
 
 Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
 
@@ -51,9 +51,9 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Sise ijerisi
+### Uwierzytelnianie
 
-The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
+Uwierzytelnianie jest wykonywane tutaj, podstawowe uwierzytelnianie jest oparte o `htpasswd` i jest wbudowane w aplikację. Możesz modyfikować jego zachowanie poprzez [wtyczki](plugins.md). Więcej informacji o tej sekcji znajdziesz na [stronie dotyczącej uwierzytelniania](auth.md).
 
 ```yaml
 auth:
@@ -64,11 +64,11 @@ auth:
 
 ### Security
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+Blok zabezpieczeń umożliwia dostosowanie podpisu tokena. Aby włączyć [JWT (json web token)](https://jwt.io/) nowy podpis, należy dodać blok `jwt` do sekcji `api`, `web` używa domyślnie `jwt`.
 
-The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+Konfiguracja jest podzielona na dwie sekcje: `api` i `web`. Aby użyć JWT w `api`, należy go zdefiniować, w przeciwnym razie użyje podpisu starszego tokena (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
 
     security:
       api:
@@ -85,7 +85,7 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
             someProp: [value]
     
 
-> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+> Zdecydowanie zalecamy przejście do JWT, ponieważ starszy podpis (`aes192`) jest przestarzały i zniknie w przyszłych wersjach.
 
 ### Server
 
@@ -112,7 +112,7 @@ web:
 
 ### Uplinks
 
-Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
+Uplinks to zdolność systemu do pobierania pakietów ze zdalnych rejestrów, gdy pakiety te nie są dostępne lokalnie. Więcej informacji na temat tej sekcji można znaleźć na [stronie uplinks](uplinks.md).
 
 ```yaml
 uplinks:
@@ -120,7 +120,7 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Pakiety
 
 Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
 
@@ -132,11 +132,11 @@ packages:
     proxy: npmjs
 ```
 
-## Advanced Settings
+## Ustawienia zaawansowane
 
-### Offline Publish
+### Publikowanie w trybie offline
 
-By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
+Domyślnie `verdaccio` nie pozwala na publikowanie w trybie offline, można to zmienić poprzez ustawienie tej właściwości na *true*.
 
 ```yaml
 publish:
@@ -148,10 +148,10 @@ publish:
 ### URL Prefix
 
 ```yaml
-url_prefix: https://dev.company.local/verdaccio/
+url_prefix: /verdaccio/
 ```
 
-Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
+> We recommend use a subdirectory `/verdaccio/` instead a URI.
 
 ### Max Body Size
 
@@ -177,7 +177,7 @@ listen:
 
 ### HTTPS
 
-To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
+To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. Więcej informacji o tej sekcji znajdziesz na [ssl page](ssl.md).
 
 ```yaml
 https:
@@ -188,26 +188,26 @@ https:
 
 ### Proxy
 
-Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
+Proxy to specjalne serwery HTTP stworzone do transferu danych z serwerów zdalnych do klientów lokalnych.
 
-#### http_proxy and https_proxy
+#### http_proxy i https_proxy
 
-If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
+Jeśli posiadasz serwer proxy w swojej sieci możesz ustawić nagłówek `X-Forwarded-For` używając następujących właściwości.
 
 ```yaml
 http_proxy: http://something.local/
 https_proxy: https://something.local/
 ```
 
-#### no_proxy
+#### brak_proxy
 
-This variable should contain a comma-separated list of domain extensions proxy should not be used for.
+Ta zmienna powinna posiadać listę domen oddzieloną przecinkami, dla których proxy nie powinno być używane.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
 ```
 
-### Notifications
+### Powiadomienia
 
 Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 
@@ -219,7 +219,7 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-> For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
+> Bardziej szczegółowe ustawienia konfiguracji znajdziesz w [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
 
 ### Audit
 
@@ -227,7 +227,7 @@ notify:
 
 `npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
 
-> If you have a new installation it comes by default, otherwise you need to add the following props to your config file
+> Jeśli instalujesz aplikację od nowa, to posiada ona ustawienia domyślnie, w przeciwnym razie musisz dodać następujące właściwości do Twojego pliku konfiguracyjnego
 
 ```yaml
 middlewares:

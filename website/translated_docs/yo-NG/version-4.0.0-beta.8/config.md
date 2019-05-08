@@ -1,12 +1,12 @@
 ---
-id: version-3.8.6-configuration
+id: version-4.0.0-beta.8-configuration
 title: Configuration File
 original_id: configuration
 ---
 
 This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
 
-A default configuration file is created the very first time you run `verdaccio`.
+A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
 ## Default Configuration
 
@@ -64,7 +64,7 @@ auth:
 
 ### Security
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
 The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
 
@@ -86,6 +86,17 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
     
 
 > We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+
+### Server
+
+A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+
+> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+
+```yaml
+server:
+  keepAliveTimeout: 60
+```
 
 ### Web UI
 
@@ -137,10 +148,10 @@ publish:
 ### URL Prefix
 
 ```yaml
-url_prefix: https://dev.company.local/verdaccio/
+url_prefix: /verdaccio/
 ```
 
-Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
+> We recommend use a subdirectory `/verdaccio/` instead a URI.
 
 ### Max Body Size
 

@@ -1,16 +1,16 @@
 ---
-id: version-3.8.6-configuration
-title: Configuration File
+id: version-4.0.0-beta.8-configuration
+title: Archivo de Configuración
 original_id: configuration
 ---
 
-This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
+Este archivo es la piedra angular de verdaccio donde puedes modificar su comportamiento por defecto, activar plugins y características externas.
 
-A default configuration file is created the very first time you run `verdaccio`.
+A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
-## Default Configuration
+## Configuración por Defecto
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+La configuración por defecto tiene soporte para paquetes con **enfoque** y permite a los usuarios acceder a todos los paquetes pero solo **a los usuarios autentificados a publicarlos**.
 
 ```yaml
 storage: ./storage
@@ -31,11 +31,11 @@ logs:
   - {type: stdout, format: pretty, level: http}
 ```
 
-## Sections
+## Secciones
 
-The following sections explain what each property means and the different options.
+Las siguientes secciones explican que significa cada propiedad y todas sus diferentes opciones.
 
-### Storage
+### Almacenamiento
 
 Is the location of the default storage. **Verdaccio is by default based on local file system**.
 
@@ -51,9 +51,9 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Sise ijerisi
+### Autenticación
 
-The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
+La configuración de autentificación es definida aquí, por defecto la autentificación esta basada en `htpasswd` y es por defecto. Puedes modificar el comportamiento via [extensiones](plugins.md). Para mas información sobre esta sección lee [la página de autentificación](auth.md).
 
 ```yaml
 auth:
@@ -64,7 +64,7 @@ auth:
 
 ### Security
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
 The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
 
@@ -86,6 +86,17 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
     
 
 > We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+
+### Server
+
+A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+
+> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+
+```yaml
+server:
+  keepAliveTimeout: 60
+```
 
 ### Web UI
 
@@ -109,7 +120,7 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Paquetes
 
 Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
 
@@ -121,7 +132,7 @@ packages:
     proxy: npmjs
 ```
 
-## Advanced Settings
+## Configuración Avanzada
 
 ### Offline Publish
 
@@ -137,10 +148,10 @@ publish:
 ### URL Prefix
 
 ```yaml
-url_prefix: https://dev.company.local/verdaccio/
+url_prefix: /verdaccio/
 ```
 
-Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
+> We recommend use a subdirectory `/verdaccio/` instead a URI.
 
 ### Max Body Size
 
@@ -196,7 +207,7 @@ This variable should contain a comma-separated list of domain extensions proxy s
 no_proxy: localhost,127.0.0.1
 ```
 
-### Notifications
+### Notificaciones
 
 Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 

@@ -1,16 +1,16 @@
 ---
-id: version-3.8.6-configuration
-title: Configuration File
+id: version-4.0.0-beta.8-configuration
+title: Файл конфигурации
 original_id: configuration
 ---
 
-This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
+Этот файл является краеугольным камнем verdaccio. В нём вы можете изменить стандартное поведение, включить плагины и расширенные возможности.
 
-A default configuration file is created the very first time you run `verdaccio`.
+Файл конфигурации по умолчанию `config.yaml` будет создан, когда вы самый первый раз запустите `verdaccio`.
 
-## Default Configuration
+## Конфигурация по умолчанию
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+Стандартная конфигурация поддерживает **scoped**-пакеты и позволяет любым пользователям получить доступ ко всем пакетам, но только **авторизованные пользователи могут публиковать пакеты**.
 
 ```yaml
 storage: ./storage
@@ -31,11 +31,11 @@ logs:
   - {type: stdout, format: pretty, level: http}
 ```
 
-## Sections
+## Разделы
 
-The following sections explain what each property means and the different options.
+Следующие разделы пояснят, что каждое свойство означает, и какими дополнительными опциями обладает.
 
-### Storage
+### Хранилище
 
 Is the location of the default storage. **Verdaccio is by default based on local file system**.
 
@@ -43,7 +43,7 @@ Is the location of the default storage. **Verdaccio is by default based on local
 storage: ./storage
 ```
 
-### Plugins
+### Плагины
 
 Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
 
@@ -51,9 +51,9 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Sise ijerisi
+### Аутентификация
 
-The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
+Настройка аутентификация делается здесь. По умолчанию аутентификация основана на `htpasswd` и является встроенной. Вы можете изменить это при помощи [плагинов](plugins.md). Читайте об этом в разделе [Аутентификация](auth.md).
 
 ```yaml
 auth:
@@ -62,13 +62,13 @@ auth:
     max_users: 1000
 ```
 
-### Security
+### Безопасность
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Работает, начиная с <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+Этот блок позволяет кастомизировать авторизацию токенами. Чтобы включить авторизацию по [JWT (json web token)](https://jwt.io/), вам надо добавить блок `jwt` к разделу `api`, а раздел `web` успользует `jwt` по умолчанию.
 
-The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+Конфигурация разделена на две части, `api` и `web`. Чтобы использовать JWT в `api`, его надо прописать там в явном виде, иначе будут использоваться "старые" токены (`aes192`). Для JWT, вы можете кастомизировать свойства токена [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) и [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback), добавивив свои собственные поля.
 
     security:
       api:
@@ -85,7 +85,18 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
             someProp: [value]
     
 
-> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+> Мы настоятельно рекомендем перейти на JWT, так как "старые" токены (`aes192`) устарели и исчезнут в следующих версиях.
+
+### Сервер
+
+Набор свойств, которые позволяют изменить поведение сервера, особенно это касается API (Express.js).
+
+> Вы можете указать HTTP/1.1-серверу keep-alive таймаут в секундах, для входящих соединений. Если вы укажете 0, то сервер будет вести себя аналогично Node.js версии ниже 8.0.0, который не имел keep-alive таймаута. WORKAROUND: С помощью этой конфигурации вы можете обойти баг [#301](https://github.com/verdaccio/verdaccio/issues/301). Установить в 0 в случае 60 - недостаточно.
+
+```yaml
+server:
+  keepAliveTimeout: 60
+```
 
 ### Web UI
 
@@ -99,7 +110,7 @@ web:
   scope:
 ```
 
-### Uplinks
+### Аплинки
 
 Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
 
@@ -121,7 +132,7 @@ packages:
     proxy: npmjs
 ```
 
-## Advanced Settings
+## Расширенные настройки
 
 ### Offline Publish
 
@@ -137,10 +148,10 @@ publish:
 ### URL Prefix
 
 ```yaml
-url_prefix: https://dev.company.local/verdaccio/
+url_prefix: /verdaccio/
 ```
 
-Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
+> Мы рекомендуем использовать подпапку `/verdaccio/` вместо URI.
 
 ### Max Body Size
 
@@ -175,11 +186,11 @@ https:
     ca: ./path/verdaccio-csr.pem
 ```
 
-### Proxy
+### Прокси
 
 Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
-#### http_proxy and https_proxy
+#### http_proxy и https_proxy
 
 If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
 
@@ -196,7 +207,7 @@ This variable should contain a comma-separated list of domain extensions proxy s
 no_proxy: localhost,127.0.0.1
 ```
 
-### Notifications
+### Уведомления
 
 Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
 

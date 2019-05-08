@@ -1,16 +1,16 @@
 ---
-id: version-3.8.6-configuration
-title: Configuration File
+id: version-4.0.0-beta.8-configuration
+title: Fichier de configuration
 original_id: configuration
 ---
 
-This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
+Ce fichier est le pilier de verdaccio où vous pouvez modifier le comportement par défaut, activer les plugins et étendre les fonctionnalités.
 
-A default configuration file is created the very first time you run `verdaccio`.
+A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
-## Default Configuration
+## Configuration par défaut
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+La configuration par défaut a un support pour les packs **portée(scoped)** et permet à tout utilisateur à accéder à tous les packs, mais seuls **les utilisateurs authentifiés qui peuvent publier**.
 
 ```yaml
 storage: ./storage
@@ -33,14 +33,14 @@ logs:
 
 ## Sections
 
-The following sections explain what each property means and the different options.
+Les sections suivantes expliquent ce que signifie chaque propriété et les différentes options.
 
-### Storage
+### Stockage
 
 Is the location of the default storage. **Verdaccio is by default based on local file system**.
 
 ```yaml
-storage: ./storage
+stockage: ./stockage
 ```
 
 ### Plugins
@@ -51,9 +51,9 @@ Is the location of the plugin directory. Useful for Docker/Kubernetes based depl
 plugins: ./plugins
 ```
 
-### Sise ijerisi
+### Authentification
 
-The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
+Le paramètre d'authentification est défini ici, l'authentification par défaut est basée sur `htpasswd` et est intégrée. Vous pouvez modifier ce comportement via les[plugins](plugins.md). Pour plus d'informations sur cette section, consultez la [ page d'authentification ](auth.md).
 
 ```yaml
 auth:
@@ -64,7 +64,7 @@ auth:
 
 ### Security
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
 The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
 
@@ -86,6 +86,17 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
     
 
 > We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+
+### Server
+
+A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+
+> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+
+```yaml
+server:
+  keepAliveTimeout: 60
+```
 
 ### Web UI
 
@@ -121,7 +132,7 @@ packages:
     proxy: npmjs
 ```
 
-## Advanced Settings
+## Paramètres avancés
 
 ### Offline Publish
 
@@ -137,10 +148,10 @@ publish:
 ### URL Prefix
 
 ```yaml
-url_prefix: https://dev.company.local/verdaccio/
+url_prefix: /verdaccio/
 ```
 
-Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
+> We recommend use a subdirectory `/verdaccio/` instead a URI.
 
 ### Max Body Size
 

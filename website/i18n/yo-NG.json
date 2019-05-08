@@ -15,7 +15,7 @@
         "title": "Articles"
       },
       "authentification": {
-        "title": "Authentification"
+        "title": "Sise ijerisi"
       },
       "azure": {
         "title": "Windows Azure"
@@ -120,7 +120,7 @@
         "title": "Ansible"
       },
       "version-3.8.6/version-3.8.6-authentification": {
-        "title": "Authentification"
+        "title": "Sise ijerisi"
       },
       "version-3.8.6/version-3.8.6-build": {
         "title": "Build the source code"
@@ -282,7 +282,7 @@
         "title": "Articles"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-authentification": {
-        "title": "Authentification"
+        "title": "Sise ijerisi"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-best": {
         "title": "Best Practices"
