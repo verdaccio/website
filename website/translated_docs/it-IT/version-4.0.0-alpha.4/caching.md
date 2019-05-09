@@ -1,6 +1,6 @@
 ---
 id: version-4.0.0-alpha.4-caching
-title: Caching strategies
+title: Strategie di caching
 original_id: caching
 ---
 
