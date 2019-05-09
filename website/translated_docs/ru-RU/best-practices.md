@@ -72,7 +72,7 @@ title: "Лучшие практики"
 
 ## Безопасность
 
-Безопасность начинается с вашего окружения, и мы настоятельно рекомендуем прочитать **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** и последовать рекомендациям.
+The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recommendation.
 
 ### Доступ к пакетам
 
