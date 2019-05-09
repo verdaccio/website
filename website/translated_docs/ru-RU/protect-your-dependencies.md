@@ -3,11 +3,11 @@ id: protect-your-dependencies
 title: "Защита пакетов"
 ---
 
-`verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
+`verdaccio` позволяет ограничить права на публикацию, с тем, чтобы достичь правильного распределения [прав на пакеты](packages).
 
-### Package configuration
+### Конфигурирование доступа к пакетам
 
-Let's see for instance the following set up. You have a set of dependencies what are prefixed with `my-company-*` and you need to protect them from anonymous or another logged user without right credentials.
+Рассмотрим пример. У вас есть набор пакетов с префиксом `my-company-*` и вам нужно ограничить к доступ к ним, для анонимных пользователей, или для аутентифицированных пользователей без нужных прав.
 
 ```yaml
   'my-company-*':
@@ -16,18 +16,18 @@ Let's see for instance the following set up. You have a set of dependencies what
     proxy: npmjs
 ```
 
-With this configuration, basically we allow to groups **admin** and **teamA** to *publish* and **teamA** **teamB** **teamC** *access* to such dependencies.
+В этой конфигурации, мы разрешили группам **admin** и **teamA** *публикацию* и группам **teamA** **teamB** **teamC** *доступ* к этим пакетам.
 
-### Use case: teamD try to access the dependency
+### Use case: teamD пробует получить доступ к пакету
 
-So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
+Итак, если я залогинен как **teamD**, у меня не должно быть доступа к пакетам, удовлетворяющем паттерну `my-company-*`.
 
 ```bash
 ➜ npm whoami
 teamD
 ```
 
-I won't have access to such dependencies and also won't be visible via web for user **teamD**. If I try to access the following will happen.
+У меня нет доступа к этим пакетам и, так же, они не должны быть видны через веб-интерфейс для пользователя **teamD**. Если я попытаюсь усчтановить этот пакет, произойдет следующее.
 
 ```bash
 ➜ npm install my-company-core
@@ -35,7 +35,7 @@ npm ERR! code E403
 npm ERR! 403 Forbidden: webpack-1@latest
 ```
 
-or with `yarn`
+или, если использовать `yarn`
 
 ```bash
 ➜ yarn add my-company-core
