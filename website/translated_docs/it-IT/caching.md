@@ -7,7 +7,7 @@ Verdaccio memorizza nella cache di default tutti i pacchetti nella cartella `/st
 
 ## Scenari di caching
 
-* Build a Node.js project on **Continous Integration** (Bamboo, GitLab, Jenkins, etc) servers is a task that might take several times at a day, thus, the server will download tons of tarballs from the registry every time takes place. Come al solito, i tool di CI puliscono la cache dopo ogni build e il processo ricomincia nuovamente ogni volta. Ciò è uno spreco di banda e riduce il traffico esterno. **È possibile utilizzare Verdaccio per memorizzare nella cache tarball e metadati nella rete interna e per dare un impulso in fase di build.**
+* Costruire un progetto Node.js su server di **Continous Integration** (Bamboo, GitLab, Jenkins, ecc.) è un'attività che può essere eseguita diverse volte al giorno, perciò il server effettuerà il download dal registro di un gran numero di tarball ogni volta che questo avviene. Come al solito, i tool di CI puliscono la cache dopo ogni build e il processo ricomincia nuovamente ogni volta. Ciò è uno spreco di banda e riduce il traffico esterno. **È possibile utilizzare Verdaccio per memorizzare nella cache tarball e metadati nella rete interna e per dare un impulso in fase di build.**
 * **Latenza e Connettività**, non tutti i paesi godono di una connessione ad alta velocità. Per questo motivo memorizzare nella cache i pacchetti locali nella rete è decisamente comodo. Se si sta viaggiando o si ha una connessione debole, roaming o in paesi con Firewall resistenti che potrebbero incidere sull'esperienza dell'utente (es: corruzione di tarball).
 * **Modalità Offline**, tutti i Node Package Manager oggigiorno utilizzano la loro cache interna, ma è comune che progetti differenti possano usare tool differenti, che comprendono file di lock e così via. Quei tool non sono in grado di condividere la cache, l'unica soluzione è centralizzata e si basa su un registro proxy, Verdaccio memorizza nella cache tutti i metadati e i tarball vengono scaricati su richiesta riuscendo a condividerli in tutto il progetto.
 * Evitare che qualsiasi registro remoto restituisca improvvisamente l'errore *HTTP 404* per i tarball che erano disponibili in precedenza (conosciuto anche come [left-pad issue](https://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/)).
@@ -62,4 +62,4 @@ store:
     limit: 1000
 ```
 
-Remember, once the server is restarted the data is being lost, we recomend this setup in cases where you do not need to persist at all.
+Ricorda, una volta che il server viene riavviato i dati vengono persi, raccomandiamo questa configurazione in casi in cui non sia necessario che continui a funzionare.
