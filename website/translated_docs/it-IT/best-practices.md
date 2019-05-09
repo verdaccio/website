@@ -91,17 +91,17 @@ Di default tutti i pacchetti che pubblichi su Verdaccio sono accessibili a chiun
       publish: $authenticated
    ```
 
-In that way, **nobody will take advance of your registry unless is authorized and private packages won't be displayed in the User Interface**.
+In questo modo, **nessuno sarà in grado di utilizzare il registro fino a quando non sarà autorizzato e i pacchetti privati non verranno visualizzati nell'Interfaccia Utente**.
 
 ## Server
 
 ### Secured Connections
 
-Using **HTTPS** is a common recomendation, for such reason we recommend read the [SSL](ssl.md) section to make Verdaccio secure or using a HTTPS [reverse proxy](reverse-proxy.md) on top of Verdaccio.
+L'utilizzo di **HTTPS** è una raccomandazione comune, per questa ragione raccomandiamo di leggere la sezione [SSL](ssl.md) per rendere Verdaccio sicuro o di utilizzare HTTPS [reverse proxy](reverse-proxy.md) su Verdaccio.
 
-### Expiring Tokens
+### Token in scadenza
 
-In `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+In `verdaccio@3.x` i token non hanno data di scadenza. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
