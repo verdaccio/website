@@ -46,29 +46,29 @@ Bu a se mo *Verdaccio* nlo awon `htpasswd` ni aiyipada. Plugini na ko gbe se awo
 
 Bi amu rele, `$all` ** yio jomo gbogbo awon olumulo, leyokokan yalanwon se agbewole tabi won ko se**.
 
-** ise tele je fun ijerisi aiyipada plugini**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
+** ise tele je fun ijerisi aiyipada plugini**. Ti o ban lo plugini eleyi ti o ba ini e mu ti plugini na wan gbese awon `fayegba_igbaniwole`, `fayegba_igbajade` tabi `fayegba_aitigbejade`, ibi ti a paju de si fun igbaniwole da lori plugini na gangan. Verdaccio akan seto awon akojo alaiyipada nikan.
 
-Let's recap:
+Ejeki a gbeyewo gbogbo oun tati ko:
 
-* **logged**: `$all`, `$authenticated`, + groups added by the plugin
-* **anonymous (logged out)**: `$all` and `$anonymous`.
-
-## Default htpasswd
-
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
-
-```yaml
-auth:
-  htpasswd:
-    file: ./htpasswd
-    # Maximum amount of users allowed to register, defaults to "+inf".
-    # You can set this to -1 to disable registration.
-    #max_users: 1000
-```
-
-| Property  | Type   | Required | Example    | Support | Description                              |
-| --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
-| file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
-| max_users | number | No       | 1000       | all     | set limit of users                       |
-
-In case to decide do not allow user to login, you can set `max_users: -1`.
+* **gbawole**: `$all`. `$authenticated` + awon akojo ti a fikun nipase plugini na
+* **aidanimo (igbejade): `$all` ati `$anonymous`.</li> </ul> 
+    
+    ## Default htpasswd
+    
+    In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
+    
+    ```yaml
+    auth:
+      htpasswd:
+        file: ./htpasswd
+        # Maximum amount of users allowed to register, defaults to "+inf".
+        # You can set this to -1 to disable registration.
+        #max_users: 1000
+    ```
+    
+    | Property  | Type   | Required | Example    | Support | Description                              |
+    | --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
+    | file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
+    | max_users | number | No       | 1000       | all     | set limit of users                       |
+    
+    In case to decide do not allow user to login, you can set `max_users: -1`.
