@@ -3,9 +3,9 @@ id: caching
 title: "Strategie di caching"
 ---
 
-Verdaccio caches all packages by default into the `/storage` folder. But you can decide whether you want to follow a different strategy. Using of plugins you might use the cloud or any sort of database.
+Verdaccio memorizza nella cache di default tutti i pacchetti nella cartella `/storage`. Tuttavia si può decidere di voler seguire una strategia differente. Utilizzando i plugin si potrebbe usare il cloud o qualsiasi tipo di database.
 
-## Caching scenarios
+## Scenari di caching
 
 * Build a Node.js project on **Continous Integration** (Bamboo, GitLab, Jenkins, etc) servers is a task that might take several times at a day, does, the server will download tons of tarballs from the registry every time takes place. As usual, the CI tools clear the cache after each build and the process start over and over again. That is a waste of bandwidth and reduces the external traffic. **You can use Verdaccio for caching tarballs and metadata in our internal network and give a boost in your build time.**
 * **Latency and Connectivity**, not all countries enjoy a high-speed connection. For such reason cache packages locally in your network is really handy. Either if you are traveling, or have a weak connection, roaming or countries with strong Firewalls that might affect the user experience (eg: corrupting tarballs).
