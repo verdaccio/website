@@ -56,6 +56,7 @@ Excited ?? Yes !!! Let's go !!
 - [Plugins](#plugins)
 - [Drop node 6 support, minimum requirement node 8](#remove-node-6)
 - [Update notification](#notification-banner)
+- [Unpublish packages role](#unpublish)
 - [JWT token](#jwt-token)
 - [Docker improvements](#docker-improvements)
 - [Tech updates](#tech-updates)
