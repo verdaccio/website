@@ -101,7 +101,7 @@ L'utilizzo di **HTTPS** è una raccomandazione comune, per questa ragione raccom
 
 ### Token in scadenza
 
-In `verdaccio@3.x` i token non hanno data di scadenza. Per questo motivo, nel prossimo `verdaccio@4.x`, abbiamo introdotto la funzionalità JTW [PR#896] (https://github.com/verdaccio/verdaccio/pull/896)
+In `verdaccio@3.x` i token non hanno data di scadenza. Per questo motivo, nel prossimo `verdaccio@4.x`, abbiamo introdotto la funzionalità JWT [PR#896] (https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
@@ -115,7 +115,7 @@ security:
       expiresIn: 7d
 ```
 
-**Using this configuration will override the current system and you will be able to control how long the token will live**.
+**L'utilizzo di questa configurazione sovrascriverà il sistema corrente e sarai in grado di controllare per quanto tempo il token sarà valido**.
 
 Using JWT also improves the performance with authentication plugins, the old system will perform an unpackage and validating the credentials in each request, while JWT will rely on the token signature avoiding the overhead for the plugin.
 
