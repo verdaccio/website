@@ -119,4 +119,4 @@ security:
 
 Utilizzare JWT migliora inoltre la prestazione con i plugin di autenticazione, il vecchio sistema realizzerà una decompressione e convaliderà le credenziali in ciascuna richiesta, mentre JWT si baserà sulla firma del token evitando l'overhead per il plugin.
 
-As a side note, at **npmjs the token never expires**.
+Come nota a margine, in **npmjs il token non scade mai**.
