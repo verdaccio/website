@@ -101,7 +101,7 @@ L'utilizzo di **HTTPS** è una raccomandazione comune, per questa ragione raccom
 
 ### Token in scadenza
 
-In `verdaccio@3.x` i token non hanno data di scadenza. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+In `verdaccio@3.x` i token non hanno data di scadenza. Per questo motivo, nel prossimo `verdaccio@4.x`, abbiamo introdotto la funzionalità JTW [PR#896] (https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
