@@ -27,17 +27,17 @@ registry=http://localhost:5555/
 Bi apeere:
 
 ```yaml
-  'my-company-*':
-    access: $anonymous
-    publish: $anonymous
-    proxy: npmjs
+  'ile-ise mi-*':
+     igbaniwole: $anonymous
+    igbejade: $anonymous
+    asoju: npmjs
 ```
 
 As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) until `npm@5.3.0` and all minor releases **won't allow you publish without a token**.
 
-## Understanding Groups
+## Imo oye awon Akojo
 
-### The meaning of `$all` and `$anonymous`
+### Itunmo ti `$all` ati `$anonymous`
 
 As you know *Verdaccio* uses the `htpasswd` by default. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
 
