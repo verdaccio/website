@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-installation
-title: Installation
+title: Установка
 original_id: installation
 ---
 
