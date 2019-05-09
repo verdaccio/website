@@ -1,10 +1,10 @@
 ---
 id: version-4.0.0-alpha.7-linking-remote-registry
-title: Linking a Remote Registry
+title: Связь с удалённым репозиторием
 original_id: linking-remote-registry
 ---
 
-Verdaccio is a proxy and by default [links](uplinks.md) the public registry.
+Verdaccio - это прокси, и по умолчанию у него есть [связь](uplinks.md) с публичным репозиторием.
 
 ```yaml
 uplinks:
@@ -12,29 +12,29 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-You can link multiple registries, the following document will drive you through some helpful configurations.
+У вас может быть связь с несколькими репозиториями, и в этом документе вы найдете несколько полезных конфигураций.
 
-## Using Associating Scope
+## Используем scope
 
-The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
+Единственный способ для доступа к нескольким репозиториям, использующийся в `.npmrc`, это разделение по scope, например:
 
     // .npmrc
     registry=https://registry.npmjs.org
     @mycompany:registry=http://localhost:4873
     
 
-This approach is valid, but comes with several disadvantages:
+Этот способ вполне годный, но есть несколько минусов:
 
-* It **only works with scopes**
-* Scope must match, **no Regular Expressions are allowed**
-* One scope **cannot fetch from multiple registries**
-* Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
+* Работает **только для scope**
+* Учитывается только полное совпадение имени scope, **никаких регулярных выражений**
+* Один scope **не может иметь связь с несколькими репозиториями**
+* Токены/пароли **должны быть опеределны в ** `.npmrc`.
 
-See a full example [here](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
+Полный пример смотрите [здесь](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
 
-## Linking a Registry
+## Связь с репозиторием
 
-Linking a registry is fairly simple. First, define a new section in the `uplinks` section. Note, the order here is irrelevant.
+Добавить связь с новым репозиторием очень просто. Во-первых, добавьте новый блок в секции `uplinks`. Помните, порядок имеет значение.
 
 ```yaml
   uplinks:
@@ -50,9 +50,9 @@ Linking a registry is fairly simple. First, define a new section in the `uplinks
 
 ```
 
-Add a `proxy` section to define the selected registry you want to proxy.
+Во-вторых, добавьте строчку `proxy`, чтобы определить, какой репозиторий вы хотите использовать.
 
-## Linking Multiple Registries
+## Связь с несколькими репозиториями
 
 ```yaml
   uplinks:
@@ -69,11 +69,11 @@ Add a `proxy` section to define the selected registry you want to proxy.
     proxy: server1 server2
 ```
 
-Verdaccio supports multiple registries on the `proxy` field. The request will be resolved with the first in the list; if that fails, it will try with the next in the list and so on.
+В Verdaccio можно указать несколько репозиториев в поле `proxy`. Первым отправится запрос в первый репозиторий; если он будет недачным, будет отправлен запрос во второй, и так далее.
 
-## Offline Registry
+## Оффлайновый репозиторий
 
-Having a full Offline Registry is completely possible. If you don't want any connectivity with external remotes you can do the following.
+Можно сделать репозиторий полностью оффлайновым. Если вы не хотите никаких соединений с удаленными репозиториями, можно сделать так.
 
 ```yaml
 <br />auth:
@@ -92,4 +92,4 @@ packages:
     publish: $authenticated
 ```
 
-Remove all `proxy` fields within each section of `packages`. The registry will became full offline.
+Удалите все строчки с полем `proxy` в каждом блоке секции `packages`. Реестр станет полностью оффлайновым.
