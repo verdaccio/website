@@ -72,7 +72,7 @@ Ci sono due opzioni qui:
 
 ## Sicurezza
 
-La sicurezza inizia nel tuo ambiente, per questo raccomandiamo assolutamente di leggere **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** e di seguire le raccomandazioni.
+The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recommendation.
 
 ### Accesso al pacchetto
 
