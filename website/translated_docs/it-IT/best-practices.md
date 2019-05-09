@@ -76,7 +76,7 @@ La sicurezza inizia nel tuo ambiente, per questo raccomandiamo assolutamente di 
 
 ### Accesso al pacchetto
 
-Di default tutti i pacchetti che pubblichi su Verdaccio sono accessibili a tutto il pubblico, raccomandiamo vivamente di proteggere il tuo registro da utenti esterni non autorizzati che aggiornano la proprietà `access` a `$authenticated`.
+Di default tutti i pacchetti che pubblichi su Verdaccio sono accessibili a chiunque, ti raccomandiamo vivamente di proteggere il tuo registro da utenti esterni non autorizzati che aggiornano la proprietà `access` a `$authenticated`.
 
 ```yaml
   packages:
