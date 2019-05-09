@@ -99,7 +99,7 @@ Verdaccio позволяет заменить веб-интерфейс, и мы
 
 > Имя плагина должно начинаться с `verdaccio-theme`, иначе плагин не будет загружен.
 
-You can load only one theme at the time and pass through options if is need it.
+Вы можете загрузить только одну тему. Так же, можно передать параметры в тему.
 
 ```yaml
 theme:
@@ -108,21 +108,21 @@ theme:
     option2: bar
 ```
 
-## Legacy plugins
+## Устаревшие плагины
 
-### Sinopia Plugins
+### Плагины Sinopia
 
-> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
+> Если вы используете плагин sinopia, помните, что все они - deprecated и могут перестать работать в будущем.
 
-* [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin for sinopia supporting an npm registry.
-* [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin for sinopia that keeps users in memory.
+* [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): плагин аутентификации для sinopia, поддерживающий репозиторий npm.
+* [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): плагин аутентификации для sinopia, который хранит пользователей в памяти.
 * [sinopia-github-oauth-cli](https://www.npmjs.com/package/sinopia-github-oauth-cli).
-* [sinopia-crowd](https://www.npmjs.com/package/sinopia-crowd): auth plugin for sinopia supporting atlassian crowd.
-* [sinopia-activedirectory](https://www.npmjs.com/package/sinopia-activedirectory): Active Directory authentication plugin for sinopia.
-* [sinopia-github-oauth](https://www.npmjs.com/package/sinopia-github-oauth): authentication plugin for sinopia2, supporting github oauth web flow.
-* [sinopia-delegated-auth](https://www.npmjs.com/package/sinopia-delegated-auth): Sinopia authentication plugin that delegates authentication to another HTTP URL
-* [sinopia-altldap](https://www.npmjs.com/package/sinopia-altldap): Alternate LDAP Auth plugin for Sinopia
-* [sinopia-request](https://www.npmjs.com/package/sinopia-request): An easy and fully auth-plugin with configuration to use an external API.
+* [sinopia-crowd](https://www.npmjs.com/package/sinopia-crowd): плагин аутентификации для sinopia, для поддержки atlassian crowd.
+* [sinopia-activedirectory](https://www.npmjs.com/package/sinopia-activedirectory): плагин аутентификации для sinopia, для поддержки Active Directory.
+* [sinopia-github-oauth](https://www.npmjs.com/package/sinopia-github-oauth): плагин аутентификации для sinopia2, для поддержки github oauth web flow.
+* [sinopia-delegated-auth](https://www.npmjs.com/package/sinopia-delegated-auth): плагин аутентификации для sinopia, который делегирует аутентификацию по другому HTTP URL
+* [sinopia-altldap](https://www.npmjs.com/package/sinopia-altldap): альтернативный плагин аутентификации для sinopia, для поддержки LDAP
+* [sinopia-request](https://www.npmjs.com/package/sinopia-request): плагин аутентификации для аутентификации через внешнее API.
 * [sinopia-htaccess-gpg-email](https://www.npmjs.com/package/sinopia-htaccess-gpg-email): Generate password in htaccess format, encrypt with GPG and send via MailGun API to users.
 * [sinopia-mongodb](https://www.npmjs.com/package/sinopia-mongodb): An easy and fully auth-plugin with configuration to use a mongodb database.
 * [sinopia-htpasswd](https://www.npmjs.com/package/sinopia-htpasswd): auth plugin for sinopia supporting htpasswd format.
