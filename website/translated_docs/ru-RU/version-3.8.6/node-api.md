@@ -8,7 +8,7 @@ Verdaccio can be invoqued programmatically. The node API was introduced after ve
 
 ## Usage
 
-#### Programmatically
+#### Программно
 
 ```js
  import startServer from 'verdaccio';   
@@ -21,9 +21,9 @@ Verdaccio can be invoqued programmatically. The node API was introduced after ve
   });
 ```
 
-## Other implementations
+## Другие способы
 
-* [verdaccio-server](https://github.com/boringame/verdaccio-server) local npm registry proxy server
+* [verdaccio-server](https://github.com/boringame/verdaccio-server) 
 
 ```js
 // js
