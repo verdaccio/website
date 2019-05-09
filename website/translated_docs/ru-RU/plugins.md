@@ -66,7 +66,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Конфигурация middleware
+### Конфигурирование middleware
 
 Это пример того, как надо настраивать middleware-плагин. Все middleware-плагины должны быть определены в секции **middlewares**.
 
@@ -76,11 +76,11 @@ middlewares:
     enabled: true
 ```
 
-> You might follow the [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) as base example.
+> В качестве примера, можно посмотреть на [middleware-плагин для audit](https://github.com/verdaccio/verdaccio-audit).
 
-### Storage Configuration
+### Конфигрирование хранилища
 
-This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
+Это пример того, как нужно настраивать плагин хранилища. Все плагины хранилища должны быть определены в секции **store**.
 
 ```yaml
 store:
@@ -88,16 +88,16 @@ store:
     limit: 1000
 ```
 
-### Theme Configuration
+### Конфигурирование UI темы
 
-Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+Verdaccio позволяет заменить веб-интерфейс, и мы называем это **UI темой**. По умолчанию, используется `@verdaccio/ui-theme`, который включен в поставку, но вы можете использовать что-нибудь другое, установив свой плагин.
 
 ```bash
 <br />$> npm install --global verdaccio-theme-dark
 
 ```
 
-> The plugin name prefix must start with `verdaccio-theme`, otherwise the pluging won't load.
+> Имя плагина должно начинаться с `verdaccio-theme`, иначе плагин не будет загружен.
 
 You can load only one theme at the time and pass through options if is need it.
 
