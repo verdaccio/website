@@ -3,37 +3,37 @@ id: plugins
 title: "Плагины"
 ---
 
-Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
+Verdaccio поддерживает плагины. Плагины позволяют расширить функциональность Verdaccio разными способами - добавить методы аутентификации, добавить эндпоинты или создать своё хранилище.
 
-There are 4 types of plugins:
+Есть 4 типа плагинов:
 
-* Authentication
+* Аутентификация
 * Middleware
 * Хранилище
-* UI Theme
+* UI тема
 
-> If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
+> Если вам нужно разработать свой плагин, почитайте секцию [разработка](dev-plugins.md).
 
-## Usage
+## Использование
 
-### Installation
+### Установка
 
 ```bash
 $> npm install --global verdaccio-activedirectory
 ```
 
-`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
+`verdaccio`, как форк sinopia, совместим с плагинами для `sinopia@1.4.0`. Установка таких плагинов - аналогична.
 
     $> npm install --global sinopia-memory
     
 
 ### Конфигурация
 
-Open the `config.yaml` file and update the `auth` section as follows:
+Откройте файл `config.yaml` и измените секцию `auth` так, как указано ниже:
 
-The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
+Дефолтная конфигурация выглядит так, потому что мы, по умолчанию, используем встроенный плагин `htpasswd`, который вы можете отключить, просто закомментировав строчку.
 
-### Authentication Configuration
+### Конфигурирование аутентификации
 
 ```yaml
  htpasswd:
@@ -41,7 +41,7 @@ The default configuration looks like this, due we use a build-in `htpasswd` plug
     #max_users: 1000
 ```
 
-and replacing them with (in case you decide to use a `ldap` plugin.
+заменяем на (в случае, когда вы решили использовать плагин `ldap`.
 
 ```yaml
 auth:
@@ -51,9 +51,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Authentication plugins
+#### Несколько плагинов аутентификации
 
-This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
+Это технически возможно, но плагины надо расположить а правильном порядке, так как проверка кредов будет производиться по очереди.
 
 ```yaml
 auth:
@@ -66,9 +66,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Configuration
+### Конфигурирование middleware
 
-This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
+Это пример того, как надо настраивать middleware-плагин. Все middleware-плагины должны быть определены в секции **middlewares**.
 
 ```yaml
 middlewares:
@@ -76,11 +76,11 @@ middlewares:
     enabled: true
 ```
 
-> You might follow the [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) as base example.
+> В качестве примера, можно посмотреть на [middleware-плагин для audit](https://github.com/verdaccio/verdaccio-audit).
 
-### Storage Configuration
+### Конфигрирование хранилища
 
-This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
+Это пример того, как нужно настраивать плагин хранилища. Все плагины хранилища должны быть определены в секции **store**.
 
 ```yaml
 store:
@@ -88,18 +88,18 @@ store:
     limit: 1000
 ```
 
-### Theme Configuration
+### Конфигурирование UI темы
 
-Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+Verdaccio позволяет заменить веб-интерфейс, и мы называем это **UI темой**. По умолчанию, используется `@verdaccio/ui-theme`, который включен в поставку, но вы можете использовать что-нибудь другое, установив свой плагин.
 
 ```bash
 <br />$> npm install --global verdaccio-theme-dark
 
 ```
 
-> The plugin name prefix must start with `verdaccio-theme`, otherwise the pluging won't load.
+> Имя плагина должно начинаться с `verdaccio-theme`, иначе плагин не будет загружен.
 
-You can load only one theme at the time and pass through options if is need it.
+Вы можете загрузить только одну тему. Так же, можно передать параметры в тему.
 
 ```yaml
 theme:
@@ -108,58 +108,58 @@ theme:
     option2: bar
 ```
 
-## Legacy plugins
+## Устаревшие плагины
 
-### Sinopia Plugins
+### Плагины Sinopia
 
-> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
+> Если вы используете плагин sinopia, помните, что все они - deprecated и могут перестать работать в будущем.
 
-* [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin for sinopia supporting an npm registry.
-* [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin for sinopia that keeps users in memory.
+* [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): плагин аутентификации для sinopia, поддерживающий репозиторий npm.
+* [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): плагин аутентификации для sinopia, который хранит пользователей в памяти.
 * [sinopia-github-oauth-cli](https://www.npmjs.com/package/sinopia-github-oauth-cli).
-* [sinopia-crowd](https://www.npmjs.com/package/sinopia-crowd): auth plugin for sinopia supporting atlassian crowd.
-* [sinopia-activedirectory](https://www.npmjs.com/package/sinopia-activedirectory): Active Directory authentication plugin for sinopia.
-* [sinopia-github-oauth](https://www.npmjs.com/package/sinopia-github-oauth): authentication plugin for sinopia2, supporting github oauth web flow.
-* [sinopia-delegated-auth](https://www.npmjs.com/package/sinopia-delegated-auth): Sinopia authentication plugin that delegates authentication to another HTTP URL
-* [sinopia-altldap](https://www.npmjs.com/package/sinopia-altldap): Alternate LDAP Auth plugin for Sinopia
-* [sinopia-request](https://www.npmjs.com/package/sinopia-request): An easy and fully auth-plugin with configuration to use an external API.
-* [sinopia-htaccess-gpg-email](https://www.npmjs.com/package/sinopia-htaccess-gpg-email): Generate password in htaccess format, encrypt with GPG and send via MailGun API to users.
-* [sinopia-mongodb](https://www.npmjs.com/package/sinopia-mongodb): An easy and fully auth-plugin with configuration to use a mongodb database.
-* [sinopia-htpasswd](https://www.npmjs.com/package/sinopia-htpasswd): auth plugin for sinopia supporting htpasswd format.
-* [sinopia-leveldb](https://www.npmjs.com/package/sinopia-leveldb): a leveldb backed auth plugin for sinopia private npm.
-* [sinopia-gitlabheres](https://www.npmjs.com/package/sinopia-gitlabheres): Gitlab authentication plugin for sinopia.
-* [sinopia-gitlab](https://www.npmjs.com/package/sinopia-gitlab): Gitlab authentication plugin for sinopia
-* [sinopia-ldap](https://www.npmjs.com/package/sinopia-ldap): LDAP auth plugin for sinopia.
-* [sinopia-github-oauth-env](https://www.npmjs.com/package/sinopia-github-oauth-env) Sinopia authentication plugin with github oauth web flow.
+* [sinopia-crowd](https://www.npmjs.com/package/sinopia-crowd): плагин аутентификации для sinopia, для поддержки atlassian crowd.
+* [sinopia-activedirectory](https://www.npmjs.com/package/sinopia-activedirectory): плагин аутентификации для sinopia, для поддержки Active Directory.
+* [sinopia-github-oauth](https://www.npmjs.com/package/sinopia-github-oauth): плагин аутентификации для sinopia2, для поддержки github oauth web flow.
+* [sinopia-delegated-auth](https://www.npmjs.com/package/sinopia-delegated-auth): плагин аутентификации для sinopia, который делегирует аутентификацию по другому HTTP URL
+* [sinopia-altldap](https://www.npmjs.com/package/sinopia-altldap): альтернативный плагин аутентификации для sinopia, для поддержки LDAP
+* [sinopia-request](https://www.npmjs.com/package/sinopia-request): плагин аутентификации для аутентификации через внешнее API.
+* [sinopia-htaccess-gpg-email](https://www.npmjs.com/package/sinopia-htaccess-gpg-email): Генерирует пароль в формате htaccess, шифрует с помощью GPG и посылает его пользователям через MailGun API.
+* [sinopia-mongodb](https://www.npmjs.com/package/sinopia-mongodb): плагин аутентификации, использует mongodb.
+* [sinopia-htpasswd](https://www.npmjs.com/package/sinopia-htpasswd): плагин аутентификации для sinopia, поддерживает формат htpasswd.
+* [sinopia-leveldb](https://www.npmjs.com/package/sinopia-leveldb): плагин аутентификации для sinopia, использует leveldb.
+* [sinopia-gitlabheres](https://www.npmjs.com/package/sinopia-gitlabheres): плагин аутентификации для sinopia, использует Gitlab.
+* [sinopia-gitlab](https://www.npmjs.com/package/sinopia-gitlab): плагин аутентификации для sinopia, использует Gitlab
+* [sinopia-ldap](https://www.npmjs.com/package/sinopia-ldap): плагин аутентификации для sinopia, использует LDAP.
+* [sinopia-github-oauth-env](https://www.npmjs.com/package/sinopia-github-oauth-env) плагин аутентификации для sinopia, использует github oauth web flow.
 
-> All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the modern verdaccio API and using the prefix as *verdaccio-xx-name*.
+> Все плагины sinopia совместимы со всеми будущими версиями verdaccio. Тем не менее, мы очень хотели бы, чтобы контрибьюторы мигрировали на современный verdaccio API и использовали префикс *verdaccio-xx-name*.
 
-## Verdaccio Plugins
+## Плагины Verdaccio
 
-### Authorization Plugins
+### Плагины аутентификации
 
-* [verdaccio-bitbucket](https://github.com/idangozlan/verdaccio-bitbucket): Bitbucket authentication plugin for verdaccio.
-* [verdaccio-bitbucket-server](https://github.com/oeph/verdaccio-bitbucket-server): Bitbucket Server authentication plugin for verdaccio.
-* [verdaccio-ldap](https://www.npmjs.com/package/verdaccio-ldap): LDAP auth plugin for verdaccio.
-* [verdaccio-active-directory](https://github.com/nowhammies/verdaccio-activedirectory): Active Directory authentication plugin for verdaccio
-* [verdaccio-gitlab](https://github.com/bufferoverflow/verdaccio-gitlab): use GitLab Personal Access Token to authenticate
-* [verdaccio-gitlab-ci](https://github.com/lab360-ch/verdaccio-gitlab-ci): Enable GitLab CI to authenticate against verdaccio.
-* [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): Auth based on htpasswd file plugin (built-in) for verdaccio
-* [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Github oauth authentication plugin for verdaccio.
-* [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): GitHub OAuth plugin for the verdaccio login button.
+* [verdaccio-bitbucket](https://github.com/idangozlan/verdaccio-bitbucket): аутентификационный плагин для использования Bitbucket.
+* [verdaccio-bitbucket-server](https://github.com/oeph/verdaccio-bitbucket-server): аутентификационный плагин для использования Bitbucket Server.
+* [verdaccio-ldap](https://www.npmjs.com/package/verdaccio-ldap):аутентификационный плагин для использования LDAP.
+* [verdaccio-active-directory](https://github.com/nowhammies/verdaccio-activedirectory): аутентификационный плагин для использования Active Directory
+* [verdaccio-gitlab](https://github.com/bufferoverflow/verdaccio-gitlab): аутентификационный плагин для использования GitLab Personal Access Token
+* [verdaccio-gitlab-ci](https://github.com/lab360-ch/verdaccio-gitlab-ci): аутентификационный плагин для использования GitLab CI.
+* [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): аутентификационный плагин для использования файла htpasswd (встроенный)
+* [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): аутентификационный плагин для использования Github oauth.
+* [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): аутентификационный плагин для использования GitHub OAuth plugin.
 
-### Middleware Plugins
+### Плагины Middleware
 
-* [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): verdaccio plugin for *npm audit* cli support (built-in) (compatible since 3.x)
+* [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): плагин для поддержки команды *npm audit* (встроенный) (начиная с версии 3.x)
 
-* [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): verdacci plugin for *npm profile* cli support and *npm profile set password* for *verdaccio-htpasswd* based authentificaton
+* [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): плагин для команд *npm profile* и *npm profile set password* для аутентификации через *verdaccio-htpasswd*
 
-### Storage Plugins
+### Плагины хранилища
 
-* [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Storage plugin to host packages in Memory
-* [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
-* [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
+* [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) плагин хранилища для хранения пакетов в памяти
+* [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) плагин хранилища для хранения пакетов в **Amazon S3**
+* [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) плагин хранилища для хранения пакетов в **Google Cloud Storage**
 
-## Caveats
+## Предостережение
 
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
+> Не все плагины были протестированы в рамках непрерывной интеграции, и некоторые могут вообще не работать. Если вы нашли баг, пожалуйста, известите владельца плагина.
