@@ -39,14 +39,14 @@ As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/21
 
 ### Itunmo ti `$all` ati `$anonymous`
 
-As you know *Verdaccio* uses the `htpasswd` by default. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
+Bu a se mo *Verdaccio* nlo awon `htpasswd` ni aiyipada. Plugini na ko gbe se awon ona no `fayefun_igbawole`,`fayegba_igbejade` ati `fayegba_ako ti gbejade`. Ni eleyi, *Verdaccio* yio kapa re ni awon ona yi:
 
-* If you are not logged in (you are anonymous), `$all` and `$anonymous` means exactly the same.
-* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
+* Ti o ba ti se agbawole (ako da o mo), `$all` ati `<code>$anonymous` tunmo si ikan kanna.
+* Ti o ba ti se agbawole, `$anonymous` koni je ara akojonre at `$all` yio jo mo olumulo yio wu to ba je to ba se agbawole. Akojo titun kan `$authenticated` a je afikun si atojo na.
 
-As a takeaway, `$all` **will match all users, independently whether is logged or not**.
+Bi amu rele, `$all` ** yio jomo gbogbo awon olumulo, leyokokan yalanwon se agbewole tabi won ko se**.
 
-**The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
+** ise tele je fun ijerisi aiyipada plugini**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
 
 Let's recap:
 
