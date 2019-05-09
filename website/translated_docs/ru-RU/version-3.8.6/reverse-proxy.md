@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-reverse-proxy
-title: Настройка обратного прокси-сервера
+title: Настройка reverse proxy
 original_id: reverse-proxy
 ---
 
@@ -15,7 +15,7 @@ Apache and mod_proxy should not decode/encode slashes and leave them as they are
     </VirtualHost>
     
 
-### Configuration with SSL
+### Конфигурация с SSL
 
 config.yaml
 
@@ -23,7 +23,7 @@ config.yaml
 url_prefix: https://npm.your.domain.com
 ```
 
-Apache virtual server configuration
+Конфигурация виртуального сервера Apache
 
         apacheconfig
         <IfModule mod_ssl.c>
@@ -87,4 +87,4 @@ location ~ ^/verdaccio/(.*)$ {
 
 For this case, `url_prefix` should set to `/verdaccio/`
 
-> Note: There is a Slash after install path (`https://your-domain:port/verdaccio/`)!
+> Примечание: Слэш после пути - обязателен (`https://your-domain:port/verdaccio/`)!
