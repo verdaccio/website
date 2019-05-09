@@ -18,7 +18,7 @@ Verdaccio memorizza nella cache di default tutti i pacchetti nella cartella `/st
 
 ## Evitare Caching tarball
 
-If you have a limited storage space, you might need to avoid cache tarballs, enabling `cache` false in each uplink will cache only metadata files.
+Se si ha a disposizione uno spazio di archiviazione limitato, si dovrebbero evitare tarball di cache, abilitando `cache` false in ciascun uplink si memorizzeranno nella cache esclusivamente file di metadati.
 
     uplinks:
       npmjs:
@@ -26,9 +26,9 @@ If you have a limited storage space, you might need to avoid cache tarballs, ena
         cache: false
     
 
-## Extending Cache Expiration Time
+## Estensione della Data di scadenza della Cache
 
-Verdaccio by default waits 2 minutes to invalidate the cache metadata before fetching new information from the remote registry.
+Verdaccio di default attende 2 minuti per invalidare i metadati della cache prima di recuperare nuove informazioni dal registro remoto.
 
 ```yaml
 uplinks:
@@ -37,9 +37,9 @@ uplinks:
     maxage: 30m
 ```
 
-Increasing the value of `maxage` in each `uplink` remotes will be asked less frequently. This might be a valid stragegy if you don't update dependencies so often.
+Incrementando il valore di `maxage` in ciascun `uplink`, i remoti verranno chiesti con minore frequenza. Questa potrebbe essere una strategia valida se non si aggiornano le dipendenze così spesso.
 
-## Using the memory instead the hardrive
+## Utilizzare la memoria invece dell'hardrive
 
 Sometimes caching packages is not a critical step, rather than route packages from different registries and achiving faster build times. There are two plugins that avoid write in a phisical hardrive at all using the memory.
 
