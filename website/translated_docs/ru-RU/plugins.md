@@ -3,37 +3,37 @@ id: plugins
 title: "Плагины"
 ---
 
-Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
+Verdaccio поддерживает плагины. Плагины позволяют расширить функциональность Verdaccio разными способами - добавить методы аутентификации, добавить эндпоинты или создать своё хранилище.
 
-There are 4 types of plugins:
+Есть 4 типа плагинов:
 
-* Authentication
+* Аутентификация
 * Middleware
 * Хранилище
-* UI Theme
+* UI тема
 
-> If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
+> Если вам нужно разработать свой плагин, почитайте секцию [разработка](dev-plugins.md).
 
-## Usage
+## Использование
 
-### Installation
+### Установка
 
 ```bash
 $> npm install --global verdaccio-activedirectory
 ```
 
-`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
+`verdaccio`, как форк sinopia, совместим с плагинами для `sinopia@1.4.0`. Установка таких плагинов - аналогична.
 
     $> npm install --global sinopia-memory
     
 
 ### Конфигурация
 
-Open the `config.yaml` file and update the `auth` section as follows:
+Откройте файл `config.yaml` и измените секцию `auth` так, как указано ниже:
 
-The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
+Дефолтная конфигурация выглядит так, потому что мы, по умолчанию, используем встроенный плагин `htpasswd`, который вы можете отключить, просто закомментировав строчку.
 
-### Authentication Configuration
+### Конфигурирование аутентификации
 
 ```yaml
  htpasswd:
@@ -41,7 +41,7 @@ The default configuration looks like this, due we use a build-in `htpasswd` plug
     #max_users: 1000
 ```
 
-and replacing them with (in case you decide to use a `ldap` plugin.
+заменяем на (в случае, когда вы решили использовать плагин `ldap`.
 
 ```yaml
 auth:
@@ -51,9 +51,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Authentication plugins
+#### Несколько плагинов аутентификации
 
-This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
+Это технически возможно, но плагины надо расположить а правильном порядке, так как проверка кредов будет производиться по очереди.
 
 ```yaml
 auth:
@@ -66,9 +66,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Configuration
+### Конфигурация middleware
 
-This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
+Это пример того, как надо настраивать middleware-плагин. Все middleware-плагины должны быть определены в секции **middlewares**.
 
 ```yaml
 middlewares:
