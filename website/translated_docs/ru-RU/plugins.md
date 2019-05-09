@@ -160,6 +160,6 @@ theme:
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) плагин хранилища для хранения пакетов в **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) плагин хранилища для хранения пакетов в **Google Cloud Storage**
 
-## Caveats
+## Предостережение
 
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
+> Не все плагины были протестированы в рамках непрерывной интеграции, и некоторые могут вообще не работать. Если вы нашли баг, пожалуйста, известите владельца плагина.
