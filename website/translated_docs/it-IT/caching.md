@@ -41,14 +41,14 @@ Incrementando il valore di `maxage` in ciascun `uplink`, i remoti verranno chies
 
 ## Utilizzare la memoria invece dell'hardrive
 
-Sometimes caching packages is not a critical step, rather than route packages from different registries and achiving faster build times. There are two plugins that avoid write in a phisical hardrive at all using the memory.
+A volte non è un passaggio fondamentale memorizzare nella cache pacchetti, ma piuttosto pacchetti di route da registri differenti e accelerare le fasi di build. Sono disponibili due plugin per evitare del tutto di scrivere su un hardrive fisico utilizzando la memoria.
 
 ```bash
   npm install -g verdaccio-auth-memory
   npm install -g verdaccio-memory
 ```
 
-The configuration looks like this
+La configurazione appare come questa
 
 ```yaml
 auth:
