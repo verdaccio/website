@@ -1,6 +1,6 @@
 ---
 id: version-4.0.0-beta.8-reverse-proxy
-title: Настройка обратного прокси-сервера
+title: Настройка reverse proxy
 original_id: reverse-proxy
 ---
 
@@ -8,7 +8,7 @@ Using a reverse proxy is a common practice. The following configurations are the
 
 # Apache
 
-Apache and `mod_proxy` should **not decode/encode slashes** and leave them as they are:
+Apache и `mod_proxy` **не должны кодировать/декодировать слэши**, то есть нужно просто ничего не делать (со слэшами):
 
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
@@ -17,9 +17,9 @@ Apache and `mod_proxy` should **not decode/encode slashes** and leave them as th
     </VirtualHost>
     
 
-### Configuration with SSL
+### Конфигурация с SSL
 
-Apache virtual server configuration
+Конфигурация виртуального сервера Apache
 
         apacheconfig
         <IfModule mod_ssl.c>
@@ -40,7 +40,7 @@ Apache virtual server configuration
 
 # Nginx
 
-The following snipped is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
+Конфигурация ниже - это целиком конфигурация из примеров для `docker`, которую можно протестировать в [репозитории примеров для Docker](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
 
     upstream verdaccio_v4 {
         server verdaccio_relative_path_v4:4873;
@@ -92,7 +92,7 @@ The following snipped is a full `docker` example can be tested in our [Docker ex
     }
     
 
-## SSL example
+## Пример для SSL
 
     server {
         listen 80;
@@ -135,9 +135,9 @@ The following snipped is a full `docker` example can be tested in our [Docker ex
 
 ## Run behind reverse proxy with different domain and port
 
-### Sub-directory
+### Префикс
 
-If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise you would need something like this in your `config.yaml`.
+Если вы испольузете данные домен-порт только для Verdaccio, вам не нужен определять `url_prefix`, а в противном случе, нам нужна следующая строчка в `config.yaml`.
 
 ```yaml
 url_prefix: /sub_directory/
@@ -145,7 +145,7 @@ url_prefix: /sub_directory/
 
 If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like `http://127.0.0.1:4873/-/static`
 
-To resolve this issue, **you should send real domain and port to verdaccio with `Host` header**
+Чтобы решить эту проблему, **вам нужно послать реальный домен и порт для verdaccio с помощью хедера `Host` **
 
 Nginx configure should look like this:
 
@@ -158,7 +158,7 @@ location / {
 }
 ```
 
-For this case, `url_prefix` should **NOT** set in verdaccio config
+В этом случае, `url_prefix` **НЕ НУЖНО** использовать конфигурации verdaccio
 
 * * *
 
@@ -175,4 +175,4 @@ location ~ ^/verdaccio/(.*)$ {
 
 For this case, `url_prefix` should set to `/verdaccio/`
 
-> Note: There is a Slash after install path (`https://your-domain:port/verdaccio/`)!
+> Примечание: Слэш после пути - обязателен (`https://your-domain:port/verdaccio/`)!
