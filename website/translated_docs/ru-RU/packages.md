@@ -5,11 +5,11 @@ title: "Доступ к пакетам"
 
 Это набор ограничений, которые разрешают или запрещают доступ к локальному хранилищу по определенному критерию.
 
-Ограничения реализуются плагинами, по умолчанию `verdaccio` использует [плагин htpasswd](https://github.com/verdaccio/verdaccio-htpasswd). Если вы используете другой плагин, то детали могут отличаться. The default plugin does not handle `allow_access` and `allow_publish` by itself, it uses an internal fallback in case the plugin is not ready for it.
+Ограничения реализуются плагинами, по умолчанию `verdaccio` использует [плагин htpasswd](https://github.com/verdaccio/verdaccio-htpasswd). Если вы используете другой плагин, то детали могут отличаться. Плагин по умолчанию не реализует `allow_access` and `allow_publish`, использется встроенная реализация, которая включается именно в такой ситуации - когда плагин не реализовал эти методы.
 
-For more information about permissions visit [the authentification section in the wiki](auth.md).
+Для более детальной информации о разрешениях, обратитесь к [странице аутентификации в вики](auth.md).
 
-### Usage
+### Использование
 
 ```yalm
 packages:
@@ -32,7 +32,7 @@ packages:
     proxy: uplink2
 ```
 
-if none is specified, the default one remains
+если не задано никаких правил, остается правило по умолчанию
 
 ```yaml
 packages:
@@ -41,20 +41,20 @@ packages:
     publish: $authenticated
 ```
 
-The list internal groups handled by `verdaccio` are:
+Вот список внутренних групп, используемых `verdaccio`:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
 ```
 
-All users recieve all those set of permissions independently of is anonymous or not plus the groups provided by the plugin, in case of `htpasswd` return the username as a group. For instance, if you are logged as `npmUser` the list of groups will be.
+Все пользователи получают этот набор групп, независимо от того, аутентифицированы они или нет, плюс группы из плагина, в случае плагина `htpasswd` он вернет имя пользователя в качестве группы. Например, если вы залогинились как `npmUser`, у вас будут вот такие группы.
 
 ```js
-// groups without '$' are going to be deprecated eventually
+// группы без '$' будут отмечены как deprecated когда-нибудь
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-If you want to protect specific set packages under your group, you need to do something like this. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.
+Если вы хотите разрешить доступ к некоторому набору пакетов только членам своей группы, вам нужно делать так. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.
 
 ```yaml
 packages:
