@@ -99,7 +99,7 @@ server:
 
 ### Interfaccia Utente Web
 
-This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
+Questa proprietà consente di modificare le caratteristiche dell'interfaccia utente web. Per ulteriori informazioni su questa sezione, leggere la [pagina dell'interfaccia utente web](web.md).
 
 ```yaml
 web:
@@ -121,7 +121,7 @@ uplinks:
 
 ### Pacchetti
 
-Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
+La funzione "Pacchetti" consente all'utente di controllare come i pacchetti vengono resi accessibili. Per ulteriori informazioni su questa sezione leggere la [pagina dei pacchetti](packages.md).
 
 ```yaml
 packages:
@@ -150,7 +150,7 @@ publish:
 url_prefix: /verdaccio/
 ```
 
-> We recommend use a subdirectory `/verdaccio/` instead a URI.
+> Raccomandiamo l'utilizzo di una sottodirectory `verdaccio` al posto di un URI.
 
 ### Dimensione Massima del Corpo
 
