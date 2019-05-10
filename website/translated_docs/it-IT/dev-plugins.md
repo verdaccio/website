@@ -28,13 +28,13 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> Solamente `adduser`, `allow_access`, `apiJWTmiddleware` e `allow_publish` sono facoltativi, verdaccio fornisce una soluzione di ripiego in tutti questi casi.
 
 #### apiJWTmiddleware method
 
-Since `v4.0.0`
+A partire da `v4.0.0`
 
-`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
+`apiJWTmiddleware` è stato introdotto su [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) allo scopo di avere pieno controllo del gestore dei token; sovrascrivere questo metodo disabiliterà il supporto di `login/adduser`. Raccomandiamo di non implementare questo metodo a meno che non sia assolutamente necessario. Vedi un esempio completo [qui](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
@@ -98,7 +98,7 @@ auth:
     file: ./htpasswd
 ```
 
-Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
+Dove `htpasswd` è il suffisso del nome del plugin. es: `verdaccio-htpasswd` e il resto del corpo coinciderebbe con i parametri di configurazione del plugin.
 
 ## Plugin Middleware
 
@@ -112,7 +112,7 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 ### register_middlewares
 
-The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
+Il metodo fornisce un accesso completo all'autenticazione ed all'archiviazione tramite `auth` and `storage`. `app` è l'applicazione rapida che permette l'aggiunta di nuovi endpoint.
 
 > Un bell'esempio di plugin middleware è il [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) ed il [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
@@ -132,7 +132,7 @@ Verdaccio di default utilizza un'estensione di archiviazione del file system [lo
 
 ### API
 
-The storage API is a bit more complex, you will need to create a class that return a `IPluginStorage` implementation. Please see details bellow.
+L'API di archiviazione è un po' più complessa, è necessario creare una classe che restituisca un'implementazione `IPluginStorage`. Si prega di leggere i dettagli qui sotto.
 
 ```flow
 class LocalDatabase<IPluginStorage>{
@@ -184,7 +184,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 
 > L'API di archiviazione è ancora in via sperimentale e potrebbe cambiare nelle successive versioni minori. Per ulteriori informazioni sull'API di archiviazione si prega di seguire le [ definizioni dei tipi nel nostro archivio ufficiale](https://github.com/verdaccio/flow-types).
 
-### Storage Examples
+### Esempi di Archiviazione
 
 Il seguente è un elenco di estensioni che utilizzano l'API di archiviazione e che potrebbero essere utilizzate come esempio.
 
