@@ -160,10 +160,10 @@ packages:
     proxy: npmjs
 ```
 
-In the previous example, the behaviour would be described:
+В примере выше, было описано такое поведение:
 
-* all users can publish the `jquery` package, but only the user `root` would be able to unpublish any version.
-* only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
+* все пользователи могут публиковать пакет `jquery`, но только пользователь `root` может удалять любые версии.
+* только аутентифицированные пользователи могут публиковать покаты `my-company-*`, но **никто не может удалять их**.
 * If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
 
 ### Конфигурация
