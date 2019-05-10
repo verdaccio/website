@@ -54,7 +54,7 @@ packages:
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-Если вы хотите разрешить доступ к некоторому набору пакетов только членам своей группы, вам нужно делать так. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.
+Если вы хотите разрешить доступ к некоторому набору пакетов только членам своей группы, вам нужно делать так. Давайте будем использовать `regex`, который выберет все пакеты с префиксом `npmuser-`. Мы рекомендем использовать префикс для ваших пакетов, так проще всего настраивать разграничение прав.
 
 ```yaml
 packages:
@@ -63,7 +63,7 @@ packages:
     publish: npmuser
 ```
 
-Restart `verdaccio` and in your console try to install `npmuser-core`.
+Перезапустите `verdaccio` и попробуйте установить `npmuser-core` через консоль.
 
 ```bash
 $ npm install npmuser-core
@@ -75,11 +75,11 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 ```
 
-You can change the existing behaviour using a different plugin authentication. `verdaccio` just checks whether the user that tried to access or publish a specific package belongs to the right group.
+Вы можете изменить описанное поведение, используя другой плагин аутентификации. `verdaccio` всего лишь проверяет, входит ли пользователь, который пытается загрузить или опубликовать пакет, в правильную группу.
 
-#### Set multiple groups
+#### Установка нескольких групп
 
-Defining multiple access groups is fairly easy, just define them with a white space between them.
+Указать несколько групп - очень просто, нужно просто записать их через пробел.
 
 ```yaml
   'company-*':
@@ -92,9 +92,9 @@ Defining multiple access groups is fairly easy, just define them with a white sp
     proxy: server1
 ```
 
-#### Blocking access to set of packages
+#### Блокировка доступа к набору пакетов
 
-If you want to block the acccess/publish to a specific group of packages. Just do not define `access` and `publish`.
+Если вы хотите заблокировать доступ и публикацию для определённой группы пакетов, просто удалите строчки `access` и `publish`.
 
 ```yaml
 packages:
