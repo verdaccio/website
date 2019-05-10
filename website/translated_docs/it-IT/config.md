@@ -162,7 +162,7 @@ max_body_size: 10mb
 
 ### Porta in ascolto
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+`verdaccio` viene eseguito per impostazione predefinita nella porta `4873`. È possibile cambiare la porta tramite [cli](cli.md) o nel file di configurazione, le seguenti opzioni sono valide.
 
 ```yaml
 listen:
@@ -208,7 +208,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Notifiche
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Abilitare le notifiche di strumenti di terze parti tramite web hook è abbastanza facile. Per ulteriori informazioni su questa sezione leggere la [pagina delle notifiche](notifications.md).
 
 ```yaml
 notify:
@@ -224,7 +224,7 @@ notify:
 
 <small>A partire da: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`npm audit` è un nuovo comando rilasciato con [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio include un plugin di middleware incorporato per gestire questo comando.
 
 > Se si dispone di una nuova installazione viene fornito di default, altrimenti è necessario aggiungere le seguenti proprietà al file di configurazione
 
