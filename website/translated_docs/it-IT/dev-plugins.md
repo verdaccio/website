@@ -197,7 +197,7 @@ Il seguente è un elenco di estensioni che utilizzano l'API di archiviazione e c
 
 ## Theme Plugin
 
-The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
+Il plugin deve restituire una funzione che restituisca una **stringa**. La stringa dovrebbe essere l'ubicazione completa della root dell'interfaccia utente.
 
 ### API
 
@@ -209,8 +209,8 @@ module.exports = (...arguments) => {
 };
 ```
 
-It is imporant that the name of the plugin **must start with `verdaccio-theme-` prefix**.
+È importante che il nome del plugin **deve iniziare con `verdaccio-theme-` prefix**.
 
-### Theme Example
+### Esempio di Theme
 
 * [@verdaccio/ui-theme](https://github.com/verdaccio/ui): The default Verdaccio theme based in React.js.
