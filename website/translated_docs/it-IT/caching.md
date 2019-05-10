@@ -16,9 +16,9 @@ Verdaccio di default memorizza nella cache tutti i pacchetti nella cartella `/st
 
 > Siamo alla ricerca di ulteriori strategie, condividi la tua esperienza in questo campo
 
-## Evitare Caching tarball
+## Evitare il Caching di tarball
 
-Se si ha a disposizione uno spazio di archiviazione limitato, si dovrebbero evitare tarball di cache, abilitando `cache` false in ciascun uplink si memorizzeranno nella cache esclusivamente file di metadati.
+Se si ha a disposizione uno spazio di archiviazione limitato, si dovrebbe evitare di memorizzare nella cache tarball; abilitando false su `cache` in ciascun uplink si memorizzeranno nella cache esclusivamente file di metadati.
 
     uplinks:
       npmjs:
@@ -26,7 +26,7 @@ Se si ha a disposizione uno spazio di archiviazione limitato, si dovrebbero evit
         cache: false
     
 
-## Estensione della Data di scadenza della Cache
+## Estensione della Data di Scadenza della Cache
 
 Verdaccio di default attende 2 minuti per invalidare i metadati della cache prima di recuperare nuove informazioni dal registro remoto.
 
@@ -37,11 +37,11 @@ uplinks:
     maxage: 30m
 ```
 
-Incrementando il valore di `maxage` in ciascun `uplink`, i remoti verranno chiesti con minore frequenza. Questa potrebbe essere una strategia valida se non si aggiornano le dipendenze così spesso.
+Incrementando il valore di `maxage` in ciascun `uplink`, i remoti verranno interrogati con minore frequenza. Questa potrebbe essere una strategia valida se non si aggiornano le dipendenze così spesso.
 
 ## Utilizzare la memoria invece dell'hardrive
 
-A volte non è un passaggio fondamentale memorizzare nella cache pacchetti, ma piuttosto pacchetti di route da registri differenti e accelerare le fasi di build. Sono disponibili due plugin per evitare del tutto di scrivere su un hardrive fisico utilizzando la memoria.
+A volte non è un passaggio fondamentale memorizzare nella cache pacchetti, quanto memorizzare pacchetti di route da registri differenti e accelerare le fasi di build. Sono disponibili due plugin per evitare del tutto di scrivere su un hardrive fisico utilizzando la memoria.
 
 ```bash
   npm install -g verdaccio-auth-memory
