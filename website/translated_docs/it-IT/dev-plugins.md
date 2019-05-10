@@ -213,4 +213,4 @@ module.exports = (...arguments) => {
 
 ### Esempio di Theme
 
-* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): The default Verdaccio theme based in React.js.
+* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): Il tema di default di Verdaccio costruito su React.js.
