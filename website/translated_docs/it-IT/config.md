@@ -5,9 +5,9 @@ title: "File di configurazione"
 
 Questo file è il fondamento di verdaccio nel quale è possibile modificare il comportamento predefinito, attivare i plugin ed estendere le funzionalità.
 
-Un file di configurazione `config.yaml` predefinito viene creato la prima volta che si esegue `verdaccio`.
+La prima volta in assoluto che si esegue `verdaccio` viene creato un file di configurazione `config.yaml` predefinito.
 
-## Configurazione predefinita
+## Configurazione Predefinita
 
 La configurazione predefinita dispone del supporto per pacchetti ** scoped** e permette a qualsiasi utente di accedere a tutti i pacchetti ma solo **agli utenti autenticati di pubblicare**.
 
@@ -90,7 +90,7 @@ La configurazione è divisa in due sezioni, `api` e `web`. Per utilizzare JWT su
 
 Un insieme di proprietà per modificare il comportamento dell'applicazione del server, specificamente l'API (Express.js).
 
-> È possibile specificare il timeout dello HTTP/1.1 server keep alive in secondi per le connessioni entranti. Un valore pari a 0 rende il comportamento del server http simile a quello delle versioni di Node.js precedenti alla 8.0.0, le quali non avevano un timeout keep-alive. WORKAROUND: Tramite la configurazione specificata è possibile risolvere i seguenti problemi https://github.com/verdaccio/verdaccio/issues/301. Impostare su 0 in caso 60 non sia sufficiente.
+> È possibile specificare il timeout del server HTTP/1.1 keep alive in secondi per le connessioni entranti. Un valore pari a 0 rende il comportamento del server http simile a quello delle versioni di Node.js precedenti alla 8.0.0, le quali non avevano un timeout keep-alive. WORKAROUND: Tramite la configurazione specificata è possibile risolvere i seguenti problemi https://github.com/verdaccio/verdaccio/issues/301. Impostare su 0 in caso 60 non sia sufficiente.
 
 ```yaml
 server:
@@ -99,7 +99,7 @@ server:
 
 ### Interfaccia Utente Web
 
-Questa proprietà consente di modificare le caratteristiche dell'interfaccia utente web. Per ulteriori informazioni su questa sezione, leggere la [pagina dell'interfaccia utente web](web.md).
+Questa proprietà consente di modificare le caratteristiche dell'interfaccia utente web. Per ulteriori informazioni su questa sezione leggere la [pagina dell'interfaccia utente web](web.md).
 
 ```yaml
 web:
@@ -131,7 +131,7 @@ packages:
     proxy: npmjs
 ```
 
-## Impostazioni avanzate
+## Impostazioni Avanzate
 
 ### Pubblicazione Non in Linea
 
