@@ -134,11 +134,11 @@ packages:
 * Я хочу хранить пакеты из скоупа `my-local-scope`, и мне нужно запретить проксирование для них.
 * Я хочу проксирование для всех остальных пакетов.
 
-**Учтите, что порядок правил важен, и всегда добавляейте правило для двух звездочек**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
+**Учтите, что порядок правил важен, и всегда добавляейте правило для двух звездочек**. Потому что если его не будет, то `verdaccio` сам добавит его, что может повлиять на способ разрешения ваших зависимостей.
 
-#### Unpublishing Packages
+#### Удаление опубликованных пакетов
 
-The properly `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
+Свойство `publish` определеяет разрешения для команд `npm publish` и `npm unpublish`. Но, если вы хотите задать разрешение отдельно, можно использовать свойтство `unpublish` в секции доступа к пакетам, например:
 
 ```yalm
 packages:
