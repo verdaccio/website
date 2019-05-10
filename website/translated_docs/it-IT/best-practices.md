@@ -95,11 +95,11 @@ In questo modo, **nessuno sarà in grado di utilizzare il registro fino a quando
 
 ## Server
 
-### Secured Connections
+### Connessioni Assicurate
 
-L'utilizzo di **HTTPS** è una raccomandazione comune, per questa ragione raccomandiamo di leggere la sezione [SSL](ssl.md) per rendere Verdaccio sicuro o di utilizzare HTTPS [reverse proxy](reverse-proxy.md) su Verdaccio.
+L'utilizzo di **HTTPS** è una raccomandazione comune, per questa ragione raccomandiamo di leggere la sezione [SSL](ssl.md) per rendere Verdaccio sicuro o di utilizzare un HTTPS [reverse proxy](reverse-proxy.md) su Verdaccio.
 
-### Token in scadenza
+### Token in Scadenza
 
 In `verdaccio@3.x` i token non hanno data di scadenza. Per questo motivo, nel prossimo `verdaccio@4.x`, abbiamo introdotto la funzionalità JWT [PR#896] (https://github.com/verdaccio/verdaccio/pull/896)
 
@@ -117,6 +117,6 @@ security:
 
 **L'utilizzo di questa configurazione sovrascriverà il sistema corrente e sarai in grado di controllare per quanto tempo il token sarà valido**.
 
-Utilizzare JWT migliora inoltre la prestazione con i plugin di autenticazione, il vecchio sistema realizzerà una decompressione e convaliderà le credenziali in ciascuna richiesta, mentre JWT si baserà sulla firma del token evitando l'overhead per il plugin.
+Utilizzare JWT migliora inoltre la prestazione con i plugin di autenticazione, il vecchio sistema realizzerà una decompressione e convaliderà le credenziali in ciascuna richiesta, mentre JWT dipenderà dalla firma del token evitando l'overhead per il plugin.
 
 Come nota a margine, in **npmjs il token non scade mai**.
