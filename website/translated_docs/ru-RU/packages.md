@@ -164,17 +164,17 @@ packages:
 
 * все пользователи могут публиковать пакет `jquery`, но только пользователь `root` может удалять любые версии.
 * только аутентифицированные пользователи могут публиковать покаты `my-company-*`, но **никто не может удалять их**.
-* If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
+* Если `unpublish` закомментировать, то доступ будет определяяться свойством `publish`.
 
 ### Конфигурация
 
-You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
+Вы можете определить несколько наборов `пакетов` и для каждого из них должен быть задан уникальный `regex`. Синтаксис базируется на [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Свойство | Тип     | Обязательное | Пример         | Поддержка | Описание                                                                  |
-| -------- | ------- | ------------ | -------------- | --------- | ------------------------------------------------------------------------- |
-| access   | string  | Нет          | $all           | все       | define groups allowed to access the package                               |
-| publish  | string  | Нет          | $authenticated | все       | define groups allowed to publish                                          |
-| proxy    | string  | Нет          | npmjs          | все       | limit look ups for specific uplink                                        |
-| storage  | boolean | Нет          | string         | `>v4`  | it creates a subfolder whithin the storage folder for each package access |
+| Свойство | Тип     | Обязательное | Пример         | Поддержка | Описание                                                   |
+| -------- | ------- | ------------ | -------------- | --------- | ---------------------------------------------------------- |
+| access   | string  | Нет          | $all           | все       | определяет группы, которым можно скачать этот пакет        |
+| publish  | string  | Нет          | $authenticated | все       | определяет группы, которым можно публиковать этот пакет    |
+| proxy    | string  | Нет          | npmjs          | все       | определяет аплинки для этого пакета                        |
+| storage  | boolean | Нет          | string         | `>v4`  | определяет подпапку в хранилище для этого пакета (пакетов) |
 
-> We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
+> Хочется отдельно отметить, что мы рекомендуем не использовать **allow_access**/**allow_publish** и **proxy_access**, они - deprecated и скоро будут удалены, пожалуйста, используйте короткие версии (**access**/**publish**/**proxy**).
