@@ -104,11 +104,11 @@ packages:
     publish: $authenticated
 ```
 
-#### Blocking proxying a set of specific packages
+#### Запрещение проксирования для набора пакетов
 
-You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
+Вы можете захотеть запретить, для одного или нескольких пакетов, получение из удаленного репозитория, но, в то же время, разрешить остальным пакетом доступ к *аплинкам*.
 
-Let's see the following example:
+Рассмотрим следующий пример:
 
 ```yaml
 packages:
@@ -127,14 +127,14 @@ packages:
     proxy: npmjs
 ```
 
-Let's describe what we want with the above example:
+Опишем, что мы хотели в примере выше:
 
-* I want to host my own `jquery` dependency but I need to avoid proxying it.
-* I want all dependencies that match with `my-company-*` but I need to avoid proxying them.
-* I want all dependencies that are in the `my-local-scope` scope but I need to avoid proxying them.
-* I want proxying for all the rest of the dependencies.
+* Я хочу хранить свой собственный пакет `jquery`, и мне нужно запретить проксирование для него.
+* Я хочу хранить пакеты, удовлетворяющие паттерну `my-company-*`, и мне нужно запретить проксирование для них.
+* Я хочу хранить пакеты из скоупа `my-local-scope`, и мне нужно запретить проксирование для них.
+* Я хочу проксирование для всех остальных пакетов.
 
-Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
+**Учтите, что порядок правил важен, и всегда добавляейте правило для двух звездочек**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
 
 #### Unpublishing Packages
 
