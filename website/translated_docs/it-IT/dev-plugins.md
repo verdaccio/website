@@ -98,7 +98,7 @@ auth:
     file: ./htpasswd
 ```
 
-Dove `htpasswd` è il suffisso del nome del plugin. es: `verdaccio-htpasswd` e il resto del corpo coinciderebbe con i parametri di configurazione del plugin.
+In cui `htpasswd` è il suffisso del nome del plugin. es: `verdaccio-htpasswd` e il resto del corpo coinciderebbe con i parametri di configurazione del plugin.
 
 ## Plugin Middleware
 
@@ -112,7 +112,7 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 ### register_middlewares
 
-Il metodo fornisce un accesso completo all'autenticazione ed all'archiviazione tramite `auth` and `storage`. `app` è l'applicazione rapida che permette l'aggiunta di nuovi endpoint.
+Il metodo fornisce un accesso completo all'autenticazione e all'archiviazione tramite `auth` e `storage`. `app` è l'applicazione rapida che permette l'aggiunta di nuovi endpoint.
 
 > Un bell'esempio di plugin middleware è il [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) ed il [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
@@ -182,7 +182,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 }
 ```
 
-> L'API di archiviazione è ancora in via sperimentale e potrebbe cambiare nelle successive versioni minori. Per ulteriori informazioni sull'API di archiviazione si prega di seguire le [ definizioni dei tipi nel nostro archivio ufficiale](https://github.com/verdaccio/flow-types).
+> L'API di archiviazione è ancora in via sperimentale e potrebbe cambiare nelle successive versioni minori. Per ulteriori informazioni sull'API di Archiviazione si prega di seguire le [ definizioni dei tipi nel nostro repository ufficiale](https://github.com/verdaccio/flow-types).
 
 ### Esempi di Archiviazione
 
@@ -209,8 +209,8 @@ module.exports = (...arguments) => {
 };
 ```
 
-È importante che il nome del plugin **deve iniziare con `verdaccio-theme-` prefix**.
+È importante che il nome del plugin **deve iniziare con il prefisso `verdaccio-theme-`**.
 
-### Esempio di Theme
+### Esempio di Tema
 
 * [@verdaccio/ui-theme](https://github.com/verdaccio/ui): Il tema di default di Verdaccio costruito su React.js.
