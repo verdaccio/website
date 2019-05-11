@@ -8,7 +8,7 @@ original_id: uplinks
 
 ![Аплинки](/img/uplinks.png)
 
-### Usage
+### Использование
 
 ```yaml
 uplinks:
