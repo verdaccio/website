@@ -45,16 +45,19 @@ Excited ?? Yes !!! Let's go !!
 ## So what's changed ? TL;DR
 - [New User Interface](#new-ui)
     - [New search Process](#new-search-process)
-    - [Package card](#package-card)
+    - [Packages](#package-card)
+    - [Registry information](#register-info)
     - [Detailed Page](#detailed-page)
     - [Package sidebar](#package-sidebar)
-- [New Router APIs](#router-api) 
+- [New Router APIs](#router-api)
+- [Improvements in package access](#package-access)
+- [Disable Gravatar](#disable-gravatar)
 - [New commands](#new-npm-commands)
     - [npm star](#npm-start)
     - [npm profile](#npm-profile)
     - [npm token](#npm-token)
 - [Plugins](#plugins)
-- [Drop node 6 support, minimum requirement node 8](#remove-node-6)
+- [Drop node 6 / npm 3 support](#remove-node-6)
 - [Update notification](#notification-banner)
 - [Unpublish packages role](#unpublish)
 - [JWT token](#jwt-token)
@@ -73,8 +76,15 @@ Version 4 comes with a new shiny appealing user interface, providing more detail
 ### <a id="new-search-process"></a> New search Process
 In version 3, verdaccio has a limited search functionality and it was all on web ui. Verdaccio 4 provides fast and quick search results from backend.
 
-### <a id="packages-card"></a> Package card
+### <a id="register-info"></a> Registry information 
+Registry infromation is now easily accessible. 
+
+// @TODO https://github.com/verdaccio/verdaccio/pull/1178
+
+### <a id="packages-card"></a> Packages 
 Now package card provides more information about a package, easy to open issues and read the documentation without navigating into package details. 
+
+**Order**: Verdaccio@4 has a basic support for package ordering from `config.yaml`. The package list can be sorted ascending & descending. [Find out more](https://verdaccio.org/docs/en/webui#configuration)
 
 ### <a id="detailed-package"></a> Detailed Page
 We have detailed package in a more categorized manner for readme, dependencies, version and uplinks. 
@@ -85,12 +95,21 @@ Package sidebar includes most relevant information from package metadata. You ca
 
 Also package sidebar shows *Author*, *Maintainers* and *Contributors* in different sections. When you click on anyone one of the avatar, you'll be able to contact that person via email.
 
+// @TODO add https://github.com/verdaccio/verdaccio/pull/1177
 
 ## <a id="router-api-ui"></a> New Router APIs
 Till, verdaccio@2 we have hash router implementation on frontend application routes. We faced a lot of problem with hash router in readme section. Readmes also uses (#) hash for the heading tags and anchor elements. 
 
 In verdaccio@3, we moves hash router to more cleaner look to browser router. (No more hashes in URLs).
 
+## <a id="package-access"></a> Improvements in package access
+
+Verdaccio@4 improves the package management by additing access layer for publish & unpublish. Now you can have restrictions to some of users for publish and unpiblish flow. [Find out more](https://verdaccio.org/docs/en/packages )
+
+## <a id="disable-gravatar"></a> Disable Gravatar
+Verdaccio uses [Gravatar](https://en.gravatar.com) to show author, conctributors and maintainers images. Now, gravatar support can be disabled from verdaccio `config.yaml`. 
+
+// @TODO: document this https://github.com/verdaccio/verdaccio/pull/1177
 
 ## <a id="new-npm-commands"></a> New commands
 
@@ -125,11 +144,15 @@ Verdaccio suppports JWT - [JSON Web Tokens](https://jwt.io/) for authentication 
 [Click here for more information on new JWT tokens](https://medium.com/verdaccio/diving-into-jwt-support-for-verdaccio-4-88df2cf23ddc)
 
 ## <a id="docker-improvements"></a> Docker improvements
+- https://github.com/verdaccio/verdaccio/pull/845
 @juanpicado
 
-## <a id="remove-node-6"></a> Node 8 is minimum requirement
+## <a id="remove-node-6"></a> Drop Node 6 / npm 3 support
 
-NodeJS 6 went to end of life on April 30, 2019. Verdaccio@4 drops the support for node6 and node8 will be the minimum requirement.
+NodeJS 6 went to end of life on April 30, 2019. Verdaccio@4 drops the support for node6 & npm 2. Now on, node 8 &  will be the minimum requirement. verdaccio@4 also checks for the minimum node version. https://github.com/verdaccio/verdaccio/pull/968 
+
+## Plugins
+Verdaccio extendes it functionalities with a set of plugins. You can find detailed information in plugins [documentation](https://verdaccio.org/docs/en/plugins#verdaccio-plugins)
 
 
 ## <a id="tech-updates"></a> Tech updates
@@ -138,26 +161,29 @@ Verdaccio 4 heavily relies on plugins and provides APIs for developers to build 
 
 Now the main verdaccio module is a powerful CLI to package management and a plugin system to introduce new functionalities. 
 
+### <a id=""></a> Verdaccio babel preset
+As babel@7 released in 2018, verdaccio team updated babel dependencies to the latest by creating [@verdaccio/babel-preset](https://github.com/verdaccio/babel-preset)
+
 ### <a id=""></a> UI as a plugin
 
 Verdaccio provides an easy configuration system to enable / disable of web application. Verdaccio is used as E2E tooling system in many platforms and shipping UI along with verdaccio is a non-benifical overhead. So we separated the UI module and it's repository for easy development and mantainability. 
 
-You can find UI repository [here](https://github.com/verdaccio/ui). 
+You can find UI repository [here](https://github.com/verdaccio/ui).
 
-### Github actions
+### <a id=""></a> Github actions
 
 Currently, Github actions in beta and verdaccio used them for release automation. Now it is very easy to make the release for the development team. We aim to introduce actions at other place after their stable release. 
 
-### Meetup & conferences 
+### <a id=""></a> Meetup & conferences 
 
-Since verdaccio 3 release, Verdaccio contributors are actively participating in community interactions in conferences, meetup and on twitter. Some of the conference in which verdaccio gave its presence 
+Since verdaccio 3 release, Verdaccio contributors are actively participating in community activities, conferences, meetup and on twitter. 
 
-- Dot Conference 2018, Paris
-- React day 2018, Berlin
-- JS Kongress 2019, Munich
+- [Dot Conference 2018, Paris](https://twitter.com/ayusharma_/status/1060224341768572928)
+- [React day 2018, Berlin](https://twitter.com/verdaccio_npm/status/1067420167867695105)
 - JS Heroes 2019, Cluj Napoca ∙ [Small talk](https://twitter.com/jotadeveloper/status/1116314948962004992) ∙ [Presence](https://twitter.com/verdaccio_npm/status/1116608322700857344)
 - [ViennaJS Meetup](https://www.youtube.com/watch?v=hDIFKzmoCaA)
 - [Madrid NodeJS Meetup](https://www.todojs.com/introduccion-a-verdaccio/)
+- [Hacktober Fest 2018](https://github.com/verdaccio/verdaccio/issues/973)
 
 
 
