@@ -63,11 +63,11 @@ Excited ?? Yes !!! Let's go !!
 - [JWT token](#jwt-token)
 - [Docker improvements](#docker-improvements)
 - [Tech updates](#tech-updates)
-    - Eslint config
-    - Typescript
-    - React & Material UI
-    - Github actions
-    - UI as a separate package
+    - [eslint config](#verdaccio-eslint-config)
+    - [Verdaccio babel preset](#verdaccio-babel-preset)
+    - [UI Plugin](#vedaccio-ui-plugin)
+    - [Github actions](#github-actions)
+    - [Meetup & conferences](#meetup-conferences)
 
 ## <a id="new-ui"></a> New user interface
 
@@ -159,22 +159,27 @@ Verdaccio extendes it functionalities with a set of plugins. You can find detail
 
 Verdaccio 4 heavily relies on plugins and provides APIs for developers to build their own plugins. We introduced few major changes in development environment to adapt code modulatity, decolupling and typed system.
 
-Now the main verdaccio module is a powerful CLI to package management and a plugin system to introduce new functionalities. 
+Now the main verdaccio module is a powerful CLI to package management and a plugin system to introduce new functionalities.
 
-### <a id=""></a> Verdaccio babel preset
+### <a id="verdaccio-eslint-config"></a> Verdaccio eslint config
+
+Verdaccio team uses [@verdaccio/eslint-config](https://github.com/verdaccio/eslint-config-verdaccio) across all the repositories to maintains same coding style. 
+
+### <a id="verdaccio-babel-preset"></a> Verdaccio babel preset
+
 As babel@7 released in 2018, verdaccio team updated babel dependencies to the latest by creating [@verdaccio/babel-preset](https://github.com/verdaccio/babel-preset)
 
-### <a id=""></a> UI as a plugin
+### <a id="vedaccio-ui-plugin"></a> UI Plugin
 
 Verdaccio provides an easy configuration system to enable / disable of web application. Verdaccio is used as E2E tooling system in many platforms and shipping UI along with verdaccio is a non-benifical overhead. So we separated the UI module and it's repository for easy development and mantainability. 
 
 You can find UI repository [here](https://github.com/verdaccio/ui).
 
-### <a id=""></a> Github actions
+### <a id="github-actions"></a> Github actions
 
 Currently, Github actions in beta and verdaccio used them for release automation. Now it is very easy to make the release for the development team. We aim to introduce actions at other place after their stable release. 
 
-### <a id=""></a> Meetup & conferences 
+### <a id="meetup-conferences"></a> Meetup & conferences 
 
 Since verdaccio 3 release, Verdaccio contributors are actively participating in community activities, conferences, meetup and on twitter. 
 
