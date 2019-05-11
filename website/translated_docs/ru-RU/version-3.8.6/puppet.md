@@ -6,7 +6,7 @@ original_id: puppet
 
 Установите verdaccio на Debian, Ubuntu, Fedora, and RedHat.
 
-# Usage
+# Использование
 
 Есть два варианта установки verdaccio с помощью Puppet:
 
