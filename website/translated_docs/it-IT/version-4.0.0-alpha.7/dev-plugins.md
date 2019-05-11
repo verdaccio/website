@@ -29,13 +29,13 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> Solamente `adduser`, `allow_access`, `apiJWTmiddleware` e `allow_publish` sono facoltativi, verdaccio fornisce una soluzione di ripiego in tutti questi casi.
 
 #### apiJWTmiddleware method
 
-Since `v4.0.0`
+A partire da `v4.0.0`
 
-`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
+`apiJWTmiddleware` è stato introdotto su [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) allo scopo di avere pieno controllo del gestore dei token; sovrascrivere questo metodo disabiliterà il supporto di `login/adduser`. Raccomandiamo di non implementare questo metodo a meno che non sia assolutamente necessario. Vedi un esempio completo [qui](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
@@ -183,9 +183,9 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 }
 ```
 
-> L'API di archiviazione è ancora in via sperimentale e potrebbe cambiare nelle successive versioni minori. Per ulteriori informazioni sull'API di archiviazione si prega di seguire le [ definizioni dei tipi nel nostro archivio ufficiale](https://github.com/verdaccio/flow-types).
+> L'API di archiviazione è ancora in via sperimentale e potrebbe cambiare nelle successive versioni minori. Per ulteriori informazioni sull'API di Archiviazione si prega di seguire le [ definizioni dei tipi nel nostro repository ufficiale](https://github.com/verdaccio/flow-types).
 
-### Storage Examples
+### Esempi di Archiviazione
 
 Il seguente è un elenco di estensioni che utilizzano l'API di archiviazione e che potrebbero essere utilizzate come esempio.
 
@@ -210,8 +210,8 @@ module.exports = (...arguments) => {
 };
 ```
 
-It is imporant that the name of the plugin **must start with `verdaccio-theme-` prefix**.
+È importante che il nome del plugin **deve iniziare con il prefisso `verdaccio-theme-`**.
 
-### Theme Example
+### Esempio di Tema
 
-* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): The default Verdaccio theme based in React.js.
+* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): Il tema di default di Verdaccio costruito su React.js.
