@@ -6,18 +6,18 @@ original_id: plugins
 
 Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
-There are 4 types of plugins:
+Есть 4 типа плагинов:
 
-* Authentication
+* Аутентификация
 * Middleware
 * Хранилище
-* UI Theme
+* UI тема
 
-> If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
+> Если вам нужно разработать свой плагин, почитайте секцию [разработка](dev-plugins.md).
 
 ## Usage
 
-### Installation
+### Установка
 
 ```bash
 $> npm install --global verdaccio-activedirectory
@@ -34,7 +34,7 @@ Open the `config.yaml` file and update the `auth` section as follows:
 
 The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
 
-### Authentication Configuration
+### Конфигурирование аутентификации
 
 ```yaml
  htpasswd:
@@ -52,7 +52,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Authentication plugins
+#### Несколько плагинов аутентификации
 
 This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
 
@@ -67,7 +67,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Configuration
+### Конфигурирование middleware
 
 This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
 
@@ -77,9 +77,9 @@ middlewares:
     enabled: true
 ```
 
-> You might follow the [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) as base example.
+> В качестве примера, можно посмотреть на [middleware-плагин для audit](https://github.com/verdaccio/verdaccio-audit).
 
-### Storage Configuration
+### Конфигрирование хранилища
 
 This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
 
@@ -89,18 +89,18 @@ store:
     limit: 1000
 ```
 
-### Theme Configuration
+### Конфигурирование UI темы
 
-Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+Verdaccio позволяет заменить веб-интерфейс, и мы называем это **UI темой**. По умолчанию, используется `@verdaccio/ui-theme`, который включен в поставку, но вы можете использовать что-нибудь другое, установив свой плагин.
 
 ```bash
 <br />$&gt; npm install --global verdaccio-theme-dark
 
 ```
 
-> The plugin name prefix must start with `verdaccio-theme`, otherwise the pluging won't load.
+> Имя плагина должно начинаться с `verdaccio-theme`, иначе плагин не будет загружен.
 
-You can load only one theme at the time and pass through options if is need it.
+Вы можете загрузить только одну тему. Так же, можно передать параметры в тему.
 
 ```yaml
 theme:
@@ -109,11 +109,11 @@ theme:
     option2: bar
 ```
 
-## Legacy plugins
+## Устаревшие плагины
 
 ### Sinopia Plugins
 
-> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
+> Если вы используете плагин sinopia, помните, что все они - deprecated и могут перестать работать в будущем.
 
 * [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin for sinopia supporting an npm registry.
 * [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin for sinopia that keeps users in memory.
@@ -135,7 +135,7 @@ theme:
 
 > All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the modern verdaccio API and using the prefix as *verdaccio-xx-name*.
 
-## Verdaccio Plugins
+## Плагины Verdaccio
 
 ### Authorization Plugins
 
@@ -161,6 +161,6 @@ theme:
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
 
-## Caveats
+## Предостережение
 
 > Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.

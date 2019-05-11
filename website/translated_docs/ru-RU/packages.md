@@ -3,13 +3,13 @@ id: packages
 title: "Доступ к пакетам"
 ---
 
-It's a series of contraints that allow or restrict access to the local storage based in specific criteria.
+Это набор ограничений, которые разрешают или запрещают доступ к локальному хранилищу по определенному критерию.
 
-The security constraints remain on the shoulders of the plugin being used, by default `verdaccio` uses the [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). If you use a different plugin the behaviour might be different. The default plugin does not handle `allow_access` and `allow_publish` by itself, it uses an internal fallback in case the plugin is not ready for it.
+Ограничения реализуются плагинами, по умолчанию `verdaccio` использует [плагин htpasswd](https://github.com/verdaccio/verdaccio-htpasswd). Если вы используете другой плагин, то детали могут отличаться. Плагин по умолчанию не реализует `allow_access` and `allow_publish`, использется встроенная реализация, которая включается именно в такой ситуации - когда плагин не реализовал эти методы.
 
-For more information about permissions visit [the authentification section in the wiki](auth.md).
+Для более детальной информации о разрешениях, обратитесь к [странице аутентификации в вики](auth.md).
 
-### Usage
+### Использование
 
 ```yalm
 packages:
@@ -32,7 +32,7 @@ packages:
     proxy: uplink2
 ```
 
-if none is specified, the default one remains
+если не задано никаких правил, остается правило по умолчанию
 
 ```yaml
 packages:
@@ -41,20 +41,20 @@ packages:
     publish: $authenticated
 ```
 
-The list internal groups handled by `verdaccio` are:
+Вот список внутренних групп, используемых `verdaccio`:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
 ```
 
-All users recieve all those set of permissions independently of is anonymous or not plus the groups provided by the plugin, in case of `htpasswd` return the username as a group. For instance, if you are logged as `npmUser` the list of groups will be.
+Все пользователи получают этот набор групп, независимо от того, аутентифицированы они или нет, плюс группы из плагина, в случае плагина `htpasswd` он вернет имя пользователя в качестве группы. Например, если вы залогинились как `npmUser`, у вас будут вот такие группы.
 
 ```js
-// groups without '$' are going to be deprecated eventually
+// группы без '$' будут отмечены как deprecated когда-нибудь
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-If you want to protect specific set packages under your group, you need to do something like this. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.
+Если вы хотите разрешить доступ к некоторому набору пакетов только членам своей группы, вам нужно делать так. Давайте будем использовать `regex`, который выберет все пакеты с префиксом `npmuser-`. Мы рекомендем использовать префикс для ваших пакетов, так проще всего настраивать разграничение прав.
 
 ```yaml
 packages:
@@ -63,7 +63,7 @@ packages:
     publish: npmuser
 ```
 
-Restart `verdaccio` and in your console try to install `npmuser-core`.
+Перезапустите `verdaccio` и попробуйте установить `npmuser-core` через консоль.
 
 ```bash
 $ npm install npmuser-core
@@ -75,11 +75,11 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 ```
 
-You can change the existing behaviour using a different plugin authentication. `verdaccio` just checks whether the user that tried to access or publish a specific package belongs to the right group.
+Вы можете изменить описанное поведение, используя другой плагин аутентификации. `verdaccio` всего лишь проверяет, входит ли пользователь, который пытается загрузить или опубликовать пакет, в правильную группу.
 
-#### Set multiple groups
+#### Установка нескольких групп
 
-Defining multiple access groups is fairly easy, just define them with a white space between them.
+Указать несколько групп - очень просто, нужно просто записать их через пробел.
 
 ```yaml
   'company-*':
@@ -92,9 +92,9 @@ Defining multiple access groups is fairly easy, just define them with a white sp
     proxy: server1
 ```
 
-#### Blocking access to set of packages
+#### Блокировка доступа к набору пакетов
 
-If you want to block the acccess/publish to a specific group of packages. Just do not define `access` and `publish`.
+Если вы хотите заблокировать доступ и публикацию для определённой группы пакетов, просто удалите строчки `access` и `publish`.
 
 ```yaml
 packages:
@@ -104,11 +104,11 @@ packages:
     publish: $authenticated
 ```
 
-#### Blocking proxying a set of specific packages
+#### Запрещение проксирования для набора пакетов
 
-You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
+Вы можете захотеть запретить, для одного или нескольких пакетов, получение из удаленного репозитория, но, в то же время, разрешить остальным пакетом доступ к *аплинкам*.
 
-Let's see the following example:
+Рассмотрим следующий пример:
 
 ```yaml
 packages:
@@ -127,18 +127,18 @@ packages:
     proxy: npmjs
 ```
 
-Let's describe what we want with the above example:
+Опишем, что мы хотели в примере выше:
 
-* I want to host my own `jquery` dependency but I need to avoid proxying it.
-* I want all dependencies that match with `my-company-*` but I need to avoid proxying them.
-* I want all dependencies that are in the `my-local-scope` scope but I need to avoid proxying them.
-* I want proxying for all the rest of the dependencies.
+* Я хочу хранить свой собственный пакет `jquery`, и мне нужно запретить проксирование для него.
+* Я хочу хранить пакеты, удовлетворяющие паттерну `my-company-*`, и мне нужно запретить проксирование для них.
+* Я хочу хранить пакеты из скоупа `my-local-scope`, и мне нужно запретить проксирование для них.
+* Я хочу проксирование для всех остальных пакетов.
 
-Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
+**Учтите, что порядок правил важен, и всегда добавляейте правило для двух звездочек**. Потому что если его не будет, то `verdaccio` сам добавит его, что может повлиять на способ разрешения ваших зависимостей.
 
-#### Unpublishing Packages
+#### Удаление опубликованных пакетов
 
-The properly `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
+Свойство `publish` определеяет разрешения для команд `npm publish` и `npm unpublish`. Но, если вы хотите задать разрешение отдельно, можно использовать свойтство `unpublish` в секции доступа к пакетам, например:
 
 ```yalm
 packages:
@@ -160,21 +160,21 @@ packages:
     proxy: npmjs
 ```
 
-In the previous example, the behaviour would be described:
+В примере выше, было описано такое поведение:
 
-* all users can publish the `jquery` package, but only the user `root` would be able to unpublish any version.
-* only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
-* If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
+* все пользователи могут публиковать пакет `jquery`, но только пользователь `root` может удалять любые версии.
+* только аутентифицированные пользователи могут публиковать покаты `my-company-*`, но **никто не может удалять их**.
+* Если `unpublish` закомментировать, то доступ будет определяяться свойством `publish`.
 
 ### Конфигурация
 
-You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
+Вы можете определить несколько наборов `пакетов` и для каждого из них должен быть задан уникальный `regex`. Синтаксис базируется на [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Свойство | Тип     | Обязательное | Пример         | Поддержка | Описание                                                                  |
-| -------- | ------- | ------------ | -------------- | --------- | ------------------------------------------------------------------------- |
-| access   | string  | Нет          | $all           | все       | define groups allowed to access the package                               |
-| publish  | string  | Нет          | $authenticated | все       | define groups allowed to publish                                          |
-| proxy    | string  | Нет          | npmjs          | все       | limit look ups for specific uplink                                        |
-| storage  | boolean | Нет          | string         | `>v4`  | it creates a subfolder whithin the storage folder for each package access |
+| Свойство | Тип     | Обязательное | Пример         | Поддержка | Описание                                                   |
+| -------- | ------- | ------------ | -------------- | --------- | ---------------------------------------------------------- |
+| access   | string  | Нет          | $all           | все       | определяет группы, которым можно скачать этот пакет        |
+| publish  | string  | Нет          | $authenticated | все       | определяет группы, которым можно публиковать этот пакет    |
+| proxy    | string  | Нет          | npmjs          | все       | определяет аплинки для этого пакета                        |
+| storage  | boolean | Нет          | string         | `>v4`  | определяет подпапку в хранилище для этого пакета (пакетов) |
 
-> We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
+> Хочется отдельно отметить, что мы рекомендуем не использовать **allow_access**/**allow_publish** и **proxy_access**, они - deprecated и скоро будут удалены, пожалуйста, используйте короткие версии (**access**/**publish**/**proxy**).

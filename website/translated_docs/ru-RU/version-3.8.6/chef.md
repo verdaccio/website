@@ -6,7 +6,7 @@ original_id: chef
 
 Использование книги для приготовления Verdaccio
 
-For further information:
+Для получения дальнейшей информации:
 
 * <https://github.com/verdaccio/verdaccio-cookbook>
 * <https://supermarket.chef.io/cookbooks/verdaccio>

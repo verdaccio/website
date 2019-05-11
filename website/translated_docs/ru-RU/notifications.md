@@ -3,15 +3,15 @@ id: notifications
 title: "Уведомления"
 ---
 
-Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
+Уведомления изначально были сделаны, чтобы использовать Slack's Incoming webhooks, но их так же можно использовать и для любого другого эндпоинта. В данный момент поддерживается только `npm publish`.
 
-## Usage
+## Использование
 
-An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
+Пример использования с хуками **HipChat**, **Stride** и **Google Hangouts Chat**:
 
-> Verdaccio supports any API, feel free to ad more examples.
+> Verdaccio поддерживает любое API, не стесняйтесь и добавляйте еще примеры.
 
-#### Single notification
+#### Одиночное уведомление
 
 ```yaml
 notify:
@@ -21,7 +21,7 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-#### Multiple notification
+#### Несколько уведомлений
 
 ```yaml
 notify:
@@ -42,11 +42,11 @@ notify:
      content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
 ```
 
-## Template
+## Шаблон
 
-We use [Handlebars](https://handlebarsjs.com/) as main template engine.
+Мы используем [Handlebars](https://handlebarsjs.com/) в качестве движка шаблонов.
 
-### Format Examples
+### Пример форматирования
 
     # iterate all versions
     {{ name }}{{#each versions}} v{{version}}{{/each}}

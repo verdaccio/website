@@ -57,13 +57,13 @@
         "title": "Установка на IIS сервер"
       },
       "installation": {
-        "title": "Installation"
+        "title": "Установка"
       },
       "kubernetes": {
         "title": "Kubernetes"
       },
       "linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Связь с удалённым репозиторием"
       },
       "logger": {
         "title": "Логи"
@@ -90,7 +90,7 @@
         "title": "Puppet"
       },
       "reverse-proxy": {
-        "title": "Настройка обратного прокси-сервера"
+        "title": "Настройка reverse proxy"
       },
       "server-configuration": {
         "title": "Конфигурация сервера"
@@ -150,7 +150,7 @@
         "title": "Установка на IIS сервер"
       },
       "version-3.8.6/version-3.8.6-installation": {
-        "title": "Installation"
+        "title": "Установка"
       },
       "version-3.8.6/version-3.8.6-kubernetes": {
         "title": "Kubernetes"
@@ -183,7 +183,7 @@
         "title": "Исходный код"
       },
       "version-3.8.6/version-3.8.6-reverse-proxy": {
-        "title": "Настройка обратного прокси-сервера"
+        "title": "Настройка reverse proxy"
       },
       "version-3.8.6/version-3.8.6-server-configuration": {
         "title": "Конфигурация сервера"
@@ -306,10 +306,10 @@
         "title": "Github Actions"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-installation": {
-        "title": "Installation"
+        "title": "Установка"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Связь с удалённым репозиторием"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-packages": {
         "title": "Доступ к пакетам"
@@ -330,7 +330,7 @@
         "title": "Amazon Web Services"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Связь с удалённым репозиторием"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-protect-your-dependencies": {
         "title": "Защита пакетов"
@@ -342,7 +342,7 @@
         "title": "Разработка плагинов"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Связь с удалённым репозиторием"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-plugins": {
         "title": "Плагины"
@@ -351,7 +351,7 @@
         "title": "Кто использует Verdaccio?"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
-        "title": "Installation"
+        "title": "Установка"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
         "title": "Веб-интерфейс пользователя"
@@ -366,7 +366,7 @@
         "title": "Docker"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-installation": {
-        "title": "Installation"
+        "title": "Установка"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-logo": {
         "title": "Логотип"

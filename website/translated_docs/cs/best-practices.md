@@ -72,7 +72,7 @@ There's two options here:
 
 ## Bezpečnost
 
-Bezpečnost začíná ve vašem prostředí, pro takovou věc doporučujeme přečíst **[10 Doporučených postupů zabezpečení npm](https://snyk.io/blog/ten-npm-security-best-practices/) ** a postupujte podle doporučení.
+The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recommendation.
 
 ### Přístup k balíčkům
 

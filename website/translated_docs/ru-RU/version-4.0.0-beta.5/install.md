@@ -1,6 +1,6 @@
 ---
 id: version-4.0.0-beta.5-installation
-title: Installation
+title: Установка
 original_id: installation
 ---
 

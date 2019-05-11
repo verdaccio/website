@@ -24,7 +24,7 @@
         "title": "Migliori Pratiche"
       },
       "caching": {
-        "title": "Caching strategies"
+        "title": "Strategie di caching"
       },
       "chef": {
         "title": "Chef Cookbook"
@@ -231,7 +231,7 @@
         "title": "Migliori Pratiche"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-caching": {
-        "title": "Caching strategies"
+        "title": "Strategie di caching"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-configuration": {
         "title": "File di configurazione"
@@ -288,7 +288,7 @@
         "title": "Migliori Pratiche"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-caching": {
-        "title": "Caching strategies"
+        "title": "Strategie di caching"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-configuration": {
         "title": "File di configurazione"

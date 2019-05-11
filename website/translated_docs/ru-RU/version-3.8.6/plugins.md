@@ -6,11 +6,11 @@ original_id: plugins
 
 Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
-> If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
+> Если вам нужно разработать свой плагин, почитайте секцию [разработка](dev-plugins.md).
 
 ## Usage
 
-### Installation
+### Установка
 
 ```bash
 $> npm install --global verdaccio-activedirectory
@@ -70,7 +70,7 @@ middlewares:
     enabled: true
 ```
 
-> You might follow the [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) as base example.
+> В качестве примера, можно посмотреть на [middleware-плагин для audit](https://github.com/verdaccio/verdaccio-audit).
 
 ### Store Plugin Configuration
 
@@ -84,7 +84,7 @@ store:
 
 > If you define a custom store, the property **storage** in the configuration file will be ignored.
 
-## Legacy plugins
+## Устаревшие плагины
 
 ### Sinopia Plugins
 
@@ -110,7 +110,7 @@ store:
 
 > All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the modern verdaccio API and using the prefix as *verdaccio-xx-name*.
 
-## Verdaccio Plugins
+## Плагины Verdaccio
 
 (compatible since 2.1.x)
 
@@ -140,6 +140,6 @@ store:
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
 
-## Caveats
+## Предостережение
 
 > Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
