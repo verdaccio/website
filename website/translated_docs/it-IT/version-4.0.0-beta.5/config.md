@@ -6,9 +6,9 @@ original_id: configurazione
 
 Questo file è il fondamento di verdaccio nel quale è possibile modificare il comportamento predefinito, attivare i plugin ed estendere le funzionalità.
 
-A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
+La prima volta in assoluto che si esegue `verdaccio` viene creato un file di configurazione `config.yaml` predefinito.
 
-## Configurazione predefinita
+## Configurazione Predefinita
 
 La configurazione predefinita dispone del supporto per pacchetti ** scoped** e permette a qualsiasi utente di accedere a tutti i pacchetti ma solo **agli utenti autenticati di pubblicare**.
 
@@ -64,7 +64,7 @@ auth:
 
 ### Sicurezza
 
-<small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>A partire da: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
 Il blocco di sicurezza consente di personalizzare la firma del token. Per abilitare la nuova firma di [JWT (json web token)](https://jwt.io/) è necessario aggiungere il blocco `jwt` alla sezione `api`, `web` utilizza di default `jwt`.
 
@@ -89,9 +89,9 @@ La configurazione è divisa in due sezioni, `api` e `web`. Per utilizzare JWT su
 
 ### Server
 
-A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+Un insieme di proprietà per modificare il comportamento dell'applicazione del server, specificamente l'API (Express.js).
 
-> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enought.
+> È possibile specificare il timeout del server HTTP/1.1 keep alive in secondi per le connessioni entranti. Un valore pari a 0 rende il comportamento del server http simile a quello delle versioni di Node.js precedenti alla 8.0.0, le quali non avevano un timeout keep-alive. WORKAROUND: Tramite la configurazione specificata è possibile risolvere i seguenti problemi https://github.com/verdaccio/verdaccio/issues/301. Impostare su 0 in caso 60 non sia sufficiente.
 
 ```yaml
 server:
@@ -132,7 +132,7 @@ packages:
     proxy: npmjs
 ```
 
-## Impostazioni avanzate
+## Impostazioni Avanzate
 
 ### Pubblicazione Non in Linea
 
