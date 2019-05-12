@@ -2,12 +2,24 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://verdaccio.org//blog</id>
     <title>Verdaccio Blog</title>
-    <updated>2019-04-19T06:00:00Z</updated>
+    <updated>2019-05-13T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://verdaccio.org//blog"/>
     <subtitle>The best place to stay up-to-date with the latest Verdaccio news and events.</subtitle>
     <logo>https://verdaccio.org//img/logo/symbol/svg/verdaccio-tiny.svg</logo>
     <rights>Copyright © 2019 Verdaccio community</rights>
+    <entry>
+        <title type="html"><![CDATA[The new docker image for Verdaccio 4]]></title>
+        <id>https://verdaccio.org//blog/2019/05/13/the-new-docker-image-verdaccio-4.html</id>
+        <link href="https://verdaccio.org//blog/2019/05/13/the-new-docker-image-verdaccio-4.html">
+        </link>
+        <updated>2019-05-13T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>Docker has been a key part of success for Verdaccio. At the time of this writing, we have more than 4 million image pulls and this number is growing rapidly. The image provides an easy way to use Verdaccio in combination with tools like Kubernetes, D...</p>]]></summary>
+        <author>
+            <name>Juan Picado</name>
+            <uri>https://twitter.com/jotadeveloper</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Diving into JWT support for Verdaccio 4]]></title>
         <id>https://verdaccio.org//blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4.html</id>

@@ -4,7 +4,7 @@
         <title>Verdaccio Blog</title>
         <link>https://verdaccio.org//blog</link>
         <description>The best place to stay up-to-date with the latest Verdaccio news and events.</description>
-        <lastBuildDate>Fri, 19 Apr 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 13 May 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,13 @@
             <link>https://verdaccio.org//blog</link>
         </image>
         <copyright>Copyright © 2019 Verdaccio community</copyright>
+        <item>
+            <title><![CDATA[The new docker image for Verdaccio 4]]></title>
+            <link>https://verdaccio.org//blog/2019/05/13/the-new-docker-image-verdaccio-4.html</link>
+            <guid>https://verdaccio.org//blog/2019/05/13/the-new-docker-image-verdaccio-4.html</guid>
+            <pubDate>Mon, 13 May 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Docker has been a key part of success for Verdaccio. At the time of this writing, we have more than 4 million image pulls and this number is growing rapidly. The image provides an easy way to use Verdaccio in combination with tools like Kubernetes, D...</p>]]></description>
+        </item>
         <item>
             <title><![CDATA[Diving into JWT support for Verdaccio 4]]></title>
             <link>https://verdaccio.org//blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4.html</link>
