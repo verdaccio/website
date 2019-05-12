@@ -24,7 +24,7 @@ uplinks:
 
 ### Konfigurisanje
 
-Možete definisati više uplinks-a, a svaki od njih mora imati jedinstveno ime (key). uplinks mogu imati dva svojstva:
+You can define mutiple uplinks and each of them must have an unique name (key). They can have the following properties:
 
 | Svojstvo            | Tip     | Potrebno | Primer                                 | Podrška | Opis                                                                                                                               | Podrazumevano     |
 | ------------------- | ------- | -------- | -------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- | ----------------- |
