@@ -3,7 +3,7 @@ id: články
 title: "Články"
 ---
 
-Uvádíme články o Verdaccio, pokud jste napsali článek na blogu nebo návod který zmiňuje Verdaccio, neváhejte ho sem přidat.
+Below is a list of articles about Verdaccio. If you have written a blog post or tutorial that mentions Verdaccio, feel free to add it here!
 
 > Všechny jazyky jsou povoleny
 
@@ -23,7 +23,7 @@ Uvádíme články o Verdaccio, pokud jste napsali článek na blogu nebo návod
 
 # Články / Blogy / Návody (podle jazyku)
 
-### Zajímavé články
+### Remarkable Articles
 
 * [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
 * [Cover Your Apps While Still Using npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
