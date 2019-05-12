@@ -7,13 +7,16 @@ const siteConfig = require(process.cwd() + '/siteConfig.js');
 
 class Users extends React.Component {
   render() {
-    const showcase = siteConfig.users.map((user, i) => {
-      return (
-        <a href={user.infoLink} key={i} target="_blank" rel="noopener">
-          <img src={siteConfig.baseUrl + user.image} alt={user.caption} title={user.caption} />
-        </a>
-      );
-    });
+    const createShowcase = (userList) => {
+      return userList.map((user, i) => {
+        return (
+          <a href={user.infoLink} key={i} target="_blank" rel="noopener">
+            <img src={siteConfig.baseUrl + user.image} alt={user.caption} title={user.caption} />
+          </a>
+        );
+      });
+    }
+    
 
     return (
       <div className="mainContainer">
@@ -27,11 +30,19 @@ class Users extends React.Component {
               </h1>
               <p>
                 <translate>
-                  This project is used by many folks
+                  Verdaccio is used by many open source projects...
                 </translate>
               </p>
             </div>
-            <div className="logos">{showcase}</div>
+            <div className="logos">{createShowcase(siteConfig.openSourceUsers)}</div>
+            <div className="prose">
+              <p>
+                <translate>
+                  and companies too!
+                </translate>
+              </p>
+            </div>
+            <div className="logos">{createShowcase(siteConfig.companyUsers)}</div>
             <p>
               <translate>
                 Are you using this project? Do not be shy and add your company/project logo.

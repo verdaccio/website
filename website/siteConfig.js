@@ -2,20 +2,13 @@
 const {loadYaml} = require('./utils');
 
 const team = loadYaml("./data/team.yml");
-const users = [
+const openSourceUsers = [
   {
     caption: "Filiosoft",
     image: "img/users/filiosoft.png",
     infoLink: "https://filiosoft.com/",
     fbOpenSource: false,
     pinned: false,
-  },
-  {
-    caption: "SheetJS",
-    image: "img/users/sheetjs.png",
-    infoLink: "https://sheetjs.com/",
-    fbOpenSource: false,
-    pinned: true,
   },
   {
     caption: "Mozilla Neutrino",
@@ -52,7 +45,75 @@ const users = [
     fbOpenSource: false,
     pinned: false,
   },
+  {
+    caption: "Storybook",
+    image: "img/users/storybook.svg",
+    infoLink: "https://storybook.js.org",
+    fbOpenSource: false,
+    pinned: false,
+  },
+  {
+    caption: "create-react-app",
+    image: "img/users/create-react-app.svg",
+    infoLink: "https://facebook.github.io/create-react-app/",
+    fbOpenSource: true,
+    pinned: false,
+  },
+  {
+    caption: "Gatsby",
+    image: "img/users/gatsby.svg",
+    infoLink: "https://www.gatsbyjs.org/",
+    fbOpenSource: false,
+    pinned: false,
+  },
+  {
+    caption: "Uppy",
+    image: "img/users/uppy.svg",
+    infoLink: "https://uppy.io/",
+    fbOpenSource: false,
+    pinned: false,
+  },
+  {
+    caption: "Aurelia",
+    image: "img/users/aurelia.svg",
+    infoLink: "https://aurelia.io/",
+    fbOpenSource: false,
+    pinned: false,
+  },
+  {
+    caption: "Bit",
+    image: "img/users/bit.png",
+    infoLink: "https://bit.dev/",
+    fbOpenSource: false,
+    pinned: false,
+  },
+  {
+    caption: "Yoshi",
+    image: "img/users/yoshi.webp",
+    infoLink: "https://wix.github.io/yoshi/",
+    fbOpenSource: false,
+    pinned: false,
+  },
+  {
+    caption: "AWS CDK",
+    image: "img/users/aws-cdk.png",
+    infoLink: "https://docs.aws.amazon.com/cdk/api/latest/",
+    fbOpenSource: false,
+    pinned: false,
+  },
 ];
+
+const companyUsers = [
+  {
+    caption: "SheetJS",
+    image: "img/users/sheetjs.png",
+    infoLink: "https://sheetjs.com/",
+    fbOpenSource: false,
+    pinned: true,
+  },
+];
+
+const users = [...openSourceUsers, ...companyUsers];
 
 const siteConfig = {
   title: 'Verdaccio' /* title for your website */,
@@ -74,6 +135,8 @@ const siteConfig = {
     { page: 'team', label: 'Team'},
     { href: "https://opencollective.com/verdaccio", label: "Donate" },
   ],
+  openSourceUsers,
+  companyUsers,
   users,
   team,
   headerIcon: 'img/logo/symbol/svg/verdaccio-tiny.svg',
