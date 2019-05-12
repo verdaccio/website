@@ -3,7 +3,7 @@ id: ci
 title: "Ciągła integracja"
 ---
 
-Możesz używać verdaccio z ciągłą integracją podczas logowania i publikowania. When using NPM to install a private module in a continuous integration environment for the first time, a brick wall is quickly hit. Komenda logowania NPM jest zaprojektowana do użytku interaktywnego. Powoduje to problem w CI, skryptach, itp. Oto jak korzystać z logowania NPM na różnych platformach ciągłej integracji.
+Verdaccio can be used with continuous integration (CI) platforms to install or publish packages. When using NPM to install a private package in a CI environment for the first time, you may run into some issues. The `npm login` command is designed to be used interactively. This poses an issue in CI, scripts, etc. Below are some articles detailing how to use `npm login` on different CI platforms.
 
 - [Travis CI](https://remysharp.com/2015/10/26/using-travis-with-private-npm-deps)
 - [Circle CI 1.0](https://circleci.com/docs/1.0/npm-login/) or [Circle CI 2.0](https://circleci.com/docs/2.0/deployment-integrations/#npm)
