@@ -2,7 +2,7 @@
 author: Juan Picado
 authorURL: https://twitter.com/jotadeveloper
 authorFBID: 1122901551
-title: The new docker image for Verdaccio 4
+title: The new Docker image for Verdaccio 4
 ---
 
 Docker has been a key part of success for Verdaccio. At the time of this writing, we have more than 4 million image pulls and this number is growing rapidly. The image provides an easy way to use Verdaccio in combination with tools like Kubernetes, Docker Compose or any other container orchestration system, simplifying deployment and integration with existing infrastructure.
