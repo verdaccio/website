@@ -8,7 +8,7 @@ Verdaccio is an plugabble aplication. It can be extended in many ways, either ne
 
 > Если вам нужно разработать свой плагин, почитайте секцию [разработка](dev-plugins.md).
 
-## Usage
+## Использование
 
 ### Установка
 

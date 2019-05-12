@@ -8,7 +8,7 @@ Questo file è il fondamento di verdaccio nel quale è possibile modificare il c
 
 Un file di configurazione predefinito viene creato la prima volta che si esegue `verdaccio`.
 
-## Configurazione predefinita
+## Configurazione Predefinita
 
 La configurazione predefinita dispone del supporto per pacchetti ** scoped** e permette a qualsiasi utente di accedere a tutti i pacchetti ma solo **agli utenti autenticati di pubblicare**.
 
@@ -121,7 +121,7 @@ packages:
     proxy: npmjs
 ```
 
-## Impostazioni avanzate
+## Impostazioni Avanzate
 
 ### Pubblicazione Non in Linea
 

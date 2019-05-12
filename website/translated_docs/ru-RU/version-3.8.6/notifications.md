@@ -6,13 +6,13 @@ original_id: notifications
 
 Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
 
-## Usage
+## Использование
 
-An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
+Пример использования с хуками **HipChat**, **Stride** и **Google Hangouts Chat**:
 
-> Verdaccio supports any API, feel free to ad more examples.
+> Verdaccio поддерживает любое API, не стесняйтесь и добавляйте еще примеры.
 
-#### Single notification
+#### Одиночное уведомление
 
 ```yaml
 notify:
@@ -22,7 +22,7 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-#### Multiple notification
+#### Несколько уведомлений
 
 ```yaml
 notify:
@@ -43,11 +43,11 @@ notify:
      content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
 ```
 
-## Template
+## Шаблон
 
-We use [Handlebars](https://handlebarsjs.com/) as main template engine.
+Мы используем [Handlebars](https://handlebarsjs.com/) в качестве движка шаблонов.
 
-### Format Examples
+### Пример форматирования
 
     # iterate all versions
     {{ name }}{{#each versions}} v{{version}}{{/each}}`"}
@@ -56,17 +56,17 @@ We use [Handlebars](https://handlebarsjs.com/) as main template engine.
     {{ publisher.name }} has published {{publishedPackage}}"}
     
 
-### Properties
+### Свойства
 
-List of properties accesible via template
+Список свойств, доступных в шаблонах
 
-* Metadata
-* Publisher (who is publishing)
-* Package Published (package@1.0.0)
+* Метаданные
+* Публикатор (тот кто опубликовал)
+* Опубликованный пакет (package@1.0.0)
 
-### Metadata
+### Метаданные
 
-Package metadata that the template has access
+Метаданные пакета, к которым имеет доступ шаблон
 
     {
         "_id": "@test/pkg1",
@@ -117,11 +117,11 @@ Package metadata that the template has access
     }
     
 
-### Publisher
+### Публикатор
 
-You can access to the package publisher information in the `content` of a webhook using the `publisher` object.
+Вы можете получить доступ данным пользователя-публикатора в секции `content` веб-хука, используя объект `publisher`.
 
-See below the `publisher` object type:
+Описание типа `publisher`:
 
     {
       name: string,
@@ -130,7 +130,7 @@ See below the `publisher` object type:
     }
     
 
-An example:
+Пример:
 
     notify:
       method: POST
@@ -139,9 +139,9 @@ An example:
       content: '{"color":"green","message":"New package published: * {{ name }}*. Publisher name: * {{ publisher.name }} *.","notify":true,"message_format":"text"}'
     
 
-**Note:** it's not possible to get the publisher information if the `package.json` file already has the `publisher` property.
+**Заметка:** невозможно получить информацию о публикаторе, если в файле `package.json` уже есть свойство `publisher`.
 
-### Package Published
+### Опубликованный пакет
 
 You can acces to the package is being published with the keyword `{{publishedPackage}}` as follows.
 
@@ -150,11 +150,11 @@ You can acces to the package is being published with the keyword `{{publishedPac
 
 ## Конфигурация
 
-| Свойство            | Тип          | Обязательное | Поддержка | По умолчанию | Описание                                                                                     |
-| ------------------- | ------------ | ------------ | --------- | ------------ | -------------------------------------------------------------------------------------------- |
-| method              | string       | Нет          | все       |              | HTTP verb                                                                                    |
-| packagePattern      | string       | Нет          | все       |              | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | string       | Нет          | все       |              | Any flags to be used with the regular expression                                             |
-| headers             | array/object | Да           | все       |              | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | string       | Да           | все       |              | set the URL endpoint for this call                                                           |
-| content             | string       | Да           | все       |              | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Свойство            | Тип          | Обязательное | Поддержка | По умолчанию | Описание                                                                                   |
+| ------------------- | ------------ | ------------ | --------- | ------------ | ------------------------------------------------------------------------------------------ |
+| method              | string       | Нет          | все       |              | HTTP метод                                                                                 |
+| packagePattern      | string       | Нет          | все       |              | Запускает уведомление, только если имя пакета соответствует регэкспу                       |
+| packagePatternFlags | string       | Нет          | все       |              | Флаги для регэкспа                                                                         |
+| headers             | array/object | Да           | все       |              | Если эндпоинту нужны особенные хэдеры, укажите их здесь, в виде массива пар ключ-значение. |
+| endpoint            | string       | Да           | все       |              | URL эндпоинта для вызова                                                                   |
+| content             | string       | Да           | все       |              | любое [Handlebar](https://handlebarsjs.com/)-выражение                                     |

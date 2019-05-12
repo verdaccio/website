@@ -4,7 +4,7 @@ title: Установка на IIS сервер
 original_id: iss-server
 ---
 
-These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
+Эти инструкции были написаны для Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) и [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
 - Install IIS Install [iisnode](https://github.com/Azure/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
 - Создайте новую директорию в Explorer, в которой вы хотите расположить verdaccio. Например `C:\verdaccio`. Сохраните [package.json](#packagejson), [start.js](#startjs) и [web.config](#webconfig) в эту директорию.
@@ -49,7 +49,7 @@ process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
-### Alternate start.js for Verdaccio versions < v3.0
+### Альтернативный start.js для Verdaccio версии < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);
