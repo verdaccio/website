@@ -147,13 +147,14 @@ theme:
 * [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): authentification basée sur le plugin du fichier htpasswd (built-in) pour verdaccio
 * [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): plugin d'authentification Github oauth pour verdaccio.
 * [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): plugin de Github OAuth pour le boutton de connexion de verdaccio.
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
 
 ### Plugins Middleware
 
 * [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): plugin verdaccio pour le support de *npm audit* (intégré) (compatible à partir de 3.x)
 
 * [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): plugin verdaccio pour le support client *profil npm* et *Le profil npm du mot de passe* pour l'authentification basée sur *verdaccio-htpasswd*
+
+* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
 
 ### Plugins de stockage
 
