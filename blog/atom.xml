@@ -9,7 +9,7 @@
     <logo>https://verdaccio.org//img/logo/symbol/svg/verdaccio-tiny.svg</logo>
     <rights>Copyright © 2019 Verdaccio community</rights>
     <entry>
-        <title type="html"><![CDATA[The new docker image for Verdaccio 4]]></title>
+        <title type="html"><![CDATA[The new Docker image for Verdaccio 4]]></title>
         <id>https://verdaccio.org//blog/2019/05/13/the-new-docker-image-verdaccio-4.html</id>
         <link href="https://verdaccio.org//blog/2019/05/13/the-new-docker-image-verdaccio-4.html">
         </link>
