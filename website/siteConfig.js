@@ -94,13 +94,6 @@ const openSourceUsers = [
     fbOpenSource: false,
     pinned: false,
   },
-  {
-    caption: "AWS CDK",
-    image: "img/users/aws-cdk.png",
-    infoLink: "https://docs.aws.amazon.com/cdk/api/latest/",
-    fbOpenSource: false,
-    pinned: false,
-  },
 ];
 
 const companyUsers = [
