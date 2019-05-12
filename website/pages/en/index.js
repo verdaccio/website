@@ -8,6 +8,22 @@ const GridBlock = CompLibrary.GridBlock;
 
 const siteConfig = require(process.cwd() + '/siteConfig.js');
 
+const createShowcase = (userList) => {
+  return userList
+    .filter((user) => {
+      if (user.pinned) {
+        return user;
+      }
+    })
+    .map((user, i) => {
+    return (
+      <a href={user.infoLink} key={i} target="_blank" rel="noopener">
+        <img src={siteConfig.baseUrl + user.image} alt={user.caption} title={user.caption} />
+      </a>
+    );
+  });
+}
+
 class TweetsSection extends React.Component {
   render() {
     return(
@@ -275,10 +291,16 @@ class Index extends React.Component {
             </h2>
             <p>
               <translate>
-                This project is used by all these people
+                This project is sponsored by these awesome users
               </translate>
             </p>
-            <div className="logos">{showcase}</div>
+            <div className="logos">{createShowcase(siteConfig.sponsorUsers)}</div>
+            <p>
+              <translate>
+                and used by many more, including
+              </translate>
+            </p>
+            <div className="logos">{createShowcase(siteConfig.nonSponsorUsers)}</div>
             <div className="more-users">
               <a
                 className="button"

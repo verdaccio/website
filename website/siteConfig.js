@@ -2,7 +2,7 @@
 const {loadYaml} = require('./utils');
 
 const team = loadYaml("./data/team.yml");
-const openSourceUsers = [
+const nonSponsorUsers = [
   {
     caption: "Filiosoft",
     image: "img/users/filiosoft.png",
@@ -78,7 +78,7 @@ const openSourceUsers = [
     image: "img/users/aurelia.svg",
     infoLink: "https://aurelia.io/",
     fbOpenSource: false,
-    pinned: false,
+    pinned: true,
   },
   {
     caption: "Bit",
@@ -96,7 +96,7 @@ const openSourceUsers = [
   },
 ];
 
-const companyUsers = [
+const sponsorUsers = [
   {
     caption: "SheetJS",
     image: "img/users/sheetjs.png",
@@ -106,7 +106,7 @@ const companyUsers = [
   },
 ];
 
-const users = [...openSourceUsers, ...companyUsers];
+const users = [...sponsorUsers, ...nonSponsorUsers];
 
 const siteConfig = {
   title: 'Verdaccio' /* title for your website */,
@@ -128,8 +128,8 @@ const siteConfig = {
     { page: 'team', label: 'Team'},
     { href: "https://opencollective.com/verdaccio", label: "Donate" },
   ],
-  openSourceUsers,
-  companyUsers,
+  nonSponsorUsers,
+  sponsorUsers,
   users,
   team,
   headerIcon: 'img/logo/symbol/svg/verdaccio-tiny.svg',

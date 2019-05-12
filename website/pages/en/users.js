@@ -5,18 +5,17 @@ const translate = require("../../server/translate.js").translate;
 
 const siteConfig = require(process.cwd() + '/siteConfig.js');
 
+const createShowcase = (userList) => {
+  return userList.map((user, i) => {
+    return (
+      <a href={user.infoLink} key={i} target="_blank" rel="noopener">
+        <img src={siteConfig.baseUrl + user.image} alt={user.caption} title={user.caption} />
+      </a>
+    );
+  });
+}
 class Users extends React.Component {
   render() {
-    const createShowcase = (userList) => {
-      return userList.map((user, i) => {
-        return (
-          <a href={user.infoLink} key={i} target="_blank" rel="noopener">
-            <img src={siteConfig.baseUrl + user.image} alt={user.caption} title={user.caption} />
-          </a>
-        );
-      });
-    }
-    
 
     return (
       <div className="mainContainer">
@@ -30,19 +29,19 @@ class Users extends React.Component {
               </h1>
               <p>
                 <translate>
-                  Verdaccio is used by many open source projects...
+                  Verdaccio is sponsored by these awesome folks...
                 </translate>
               </p>
             </div>
-            <div className="logos">{createShowcase(siteConfig.openSourceUsers)}</div>
+            <div className="logos">{createShowcase(siteConfig.sponsorUsers)}</div>
             <div className="prose">
               <p>
                 <translate>
-                  and companies too!
+                  and used by many others, including:
                 </translate>
               </p>
             </div>
-            <div className="logos">{createShowcase(siteConfig.companyUsers)}</div>
+            <div className="logos">{createShowcase(siteConfig.nonSponsorUsers)}</div>
             <p>
               <translate>
                 Are you using this project? Do not be shy and add your company/project logo.
