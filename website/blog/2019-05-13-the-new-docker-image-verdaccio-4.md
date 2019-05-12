@@ -14,7 +14,9 @@ This article will describe what has changed, all the improvements and benefits y
 
 ### Keep it small
 
-The new image is three times smaller than the previous, shrinking down from 500MB to 150MB. We achieved this level of optimization by using [multi-stage build](https://medium.com/capital-one-tech/multi-stage-builds-and-dockerfile-b5866d9e2f84) which allows excluding dependencies and assets not required for the runtime.  
+The new image is three times smaller than the previous, shrinking down from 500MB to 150MB. We achieved this level of optimization by using [multi-stage build](https://medium.com/capital-one-tech/multi-stage-builds-and-dockerfile-b5866d9e2f84) which allows excluding dependencies and assets not required for the runtime.
+
+<!--truncate-->  
 
 ### Environment Variables
 
@@ -27,6 +29,8 @@ Property | Default value | Description
 `VERDACCIO_USER_UID` | `10001` | the user ID being
 `VERDACCIO_PORT` | `4873` | the verdaccio port
 `VERDACCIO_PROTOCOL` | `http` | the default web scheme
+
+<div id="codefund">''</div>
 
 ### Support Arbitrary User IDs
 
