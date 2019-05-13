@@ -376,6 +376,15 @@
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-what-is-verdaccio": {
         "title": "Co je Verdaccio?"
+      },
+      "version-4.0.0-beta.8/version-4.0.0-beta.8-configuration": {
+        "title": "Konfigurační Soubor"
+      },
+      "version-4.0.0-beta.8/version-4.0.0-beta.8-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0-beta.8/version-4.0.0-beta.8-reverse-proxy": {
+        "title": "Reverse Proxy Setup"
       }
     },
     "links": {
@@ -425,10 +434,12 @@
     "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio je nabízený jako doplněk, ověřování, middleware a podpora ukládání. Stačí si jeden vybrat nebo si vytvořit svůj vlastní.",
     "Plugin Support|no description given": "Podpora doplňků",
     "Who's Using This?|no description given": "Kdo ho využívá?",
-    "This project is used by all these people|no description given": "Tento projekt je využívaný následujícími lidmi",
+    "This project is sponsored by these awesome users|no description given": "This project is sponsored by these awesome users",
+    "and used by many more, including|no description given": "and used by many more, including",
     "More|no description given": "Více",
     "Users|no description given": "Uživatelé",
-    "This project is used by many folks|no description given": "Tento projekt je využíván následujícími lidmi",
+    "Verdaccio is sponsored by these awesome folks...|no description given": "Verdaccio is sponsored by these awesome folks...",
+    "and used by many others, including:|no description given": "and used by many others, including:",
     "Are you using this project? Do not be shy and add your company/project logo.|no description given": "Používáte tento projekt? Nestyďte se a přidejte logo firmy / projektu.",
     "Add your company|no description given": "Přidat vaši firmu",
     "Help Translate|recruit community translators for your project": "Pomoct s překladem",

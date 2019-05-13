@@ -24,7 +24,7 @@ uplinks:
 
 ### Cấu hình
 
-You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
+You can define mutiple uplinks and each of them must have an unique name (key). They can have the following properties:
 
 | Thuộc tính   | Phương thức | Yêu cầu | Ví dụ                                   | Hỗ trợ | Miêu tả                                                                                                                    | Giá trị mặc định |
 | ------------ | ----------- | ------- | --------------------------------------- | ------ | -------------------------------------------------------------------------------------------------------------------------- | ---------------- |

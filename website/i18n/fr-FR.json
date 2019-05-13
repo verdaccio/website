@@ -376,6 +376,15 @@
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-what-is-verdaccio": {
         "title": "C'est quoi Verdaccio?"
+      },
+      "version-4.0.0-beta.8/version-4.0.0-beta.8-configuration": {
+        "title": "Fichier de configuration"
+      },
+      "version-4.0.0-beta.8/version-4.0.0-beta.8-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0-beta.8/version-4.0.0-beta.8-reverse-proxy": {
+        "title": "Configuration du proxy inverse"
       }
     },
     "links": {
@@ -425,10 +434,12 @@
     "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio est basé sur les extensions, l’authentification, et le support des middlewares et du stockage. Choisissez-en un ou créez le vôtre.",
     "Plugin Support|no description given": "Support des Plugins",
     "Who's Using This?|no description given": "Qui se sert de cela?",
-    "This project is used by all these people|no description given": "Ce projet est utilisé par tous ces gens",
+    "This project is sponsored by these awesome users|no description given": "This project is sponsored by these awesome users",
+    "and used by many more, including|no description given": "and used by many more, including",
     "More|no description given": "Plus",
     "Users|no description given": "Utilisateurs",
-    "This project is used by many folks|no description given": "Ce projet est utilisé par beaucoup de gens",
+    "Verdaccio is sponsored by these awesome folks...|no description given": "Verdaccio is sponsored by these awesome folks...",
+    "and used by many others, including:|no description given": "and used by many others, including:",
     "Are you using this project? Do not be shy and add your company/project logo.|no description given": "Utilisez-vous ce projet? Ne soyez pas timide et ajoutez le logo de votre entreprise/projet.",
     "Add your company|no description given": "Ajoutez votre entreprise",
     "Help Translate|recruit community translators for your project": "Aidez à traduire",

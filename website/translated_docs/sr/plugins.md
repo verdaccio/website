@@ -147,13 +147,14 @@ theme:
 * [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): File plugin за Auth based on htpasswd (ugrađen), за verdaccio
 * [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Github oauth authentication plugin за verdaccio.
 * [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): GitHub OAuth plugin за verdaccio login дугме.
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
 
 ### Middleware Plugins
 
 * [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): verdaccio plugin за *npm audit* cli support (уграђен) (компатибилан од верзије 3.x)
 
 * [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): verdacciо plugin за *npm profile* cli support и *npm profile set password* за *verdaccio-htpasswd* базирану аутентификацију
+
+* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
 
 ### Storage Plugins
 

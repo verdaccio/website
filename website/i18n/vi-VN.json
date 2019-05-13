@@ -376,6 +376,15 @@
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-what-is-verdaccio": {
         "title": "What is Verdaccio?"
+      },
+      "version-4.0.0-beta.8/version-4.0.0-beta.8-configuration": {
+        "title": "Tệp cấu hình"
+      },
+      "version-4.0.0-beta.8/version-4.0.0-beta.8-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0-beta.8/version-4.0.0-beta.8-reverse-proxy": {
+        "title": "Reverse Proxy Setup"
       }
     },
     "links": {
@@ -425,10 +434,12 @@
     "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.",
     "Plugin Support|no description given": "Plugin Support",
     "Who's Using This?|no description given": "Who's Using This?",
-    "This project is used by all these people|no description given": "This project is used by all these people",
+    "This project is sponsored by these awesome users|no description given": "This project is sponsored by these awesome users",
+    "and used by many more, including|no description given": "and used by many more, including",
     "More|no description given": "More",
     "Users|no description given": "Users",
-    "This project is used by many folks|no description given": "This project is used by many folks",
+    "Verdaccio is sponsored by these awesome folks...|no description given": "Verdaccio is sponsored by these awesome folks...",
+    "and used by many others, including:|no description given": "and used by many others, including:",
     "Are you using this project? Do not be shy and add your company/project logo.|no description given": "Are you using this project? Do not be shy and add your company/project logo.",
     "Add your company|no description given": "Add your company",
     "Help Translate|recruit community translators for your project": "Help Translate",

@@ -376,6 +376,15 @@
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-what-is-verdaccio": {
         "title": "Verdaccio是什么？"
+      },
+      "version-4.0.0-beta.8/version-4.0.0-beta.8-configuration": {
+        "title": "配置文件"
+      },
+      "version-4.0.0-beta.8/version-4.0.0-beta.8-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0-beta.8/version-4.0.0-beta.8-reverse-proxy": {
+        "title": "逆向代理服务器设置"
       }
     },
     "links": {
@@ -425,10 +434,12 @@
     "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio 是基于插件的，支持身份验证、中间件和存储插件。只需选择一个现有的即可使用或开发一个属于您自己的。",
     "Plugin Support|no description given": "插件支持",
     "Who's Using This?|no description given": "谁在用这个？",
-    "This project is used by all these people|no description given": "此项目被所有这些人使用",
+    "This project is sponsored by these awesome users|no description given": "This project is sponsored by these awesome users",
+    "and used by many more, including|no description given": "and used by many more, including",
     "More|no description given": "更多",
     "Users|no description given": "用户",
-    "This project is used by many folks|no description given": "这个项目已被许多人采用。",
+    "Verdaccio is sponsored by these awesome folks...|no description given": "Verdaccio is sponsored by these awesome folks...",
+    "and used by many others, including:|no description given": "and used by many others, including:",
     "Are you using this project? Do not be shy and add your company/project logo.|no description given": "您是否正在使用此项目？不要害羞, 请添加您的公司/项目Logo到这里。",
     "Add your company|no description given": "添加你的公司",
     "Help Translate|recruit community translators for your project": "帮助翻译",

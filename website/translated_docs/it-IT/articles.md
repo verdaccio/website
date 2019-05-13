@@ -3,7 +3,7 @@ id: articles
 title: "Articoli"
 ---
 
-Riportiamo gli articoli relativi a Verdaccio, se hai scritto un post sul tuo blog o un tutorial che menziona Verdaccio, sentiti libero di aggiungerlo qui.
+Below is a list of articles about Verdaccio. If you have written a blog post or tutorial that mentions Verdaccio, feel free to add it here!
 
 > È consentita qualsiasi lingua
 
@@ -23,7 +23,7 @@ Riportiamo gli articoli relativi a Verdaccio, se hai scritto un post sul tuo blo
 
 # Articoli / Blog / Tutorial (per Lingua)
 
-### Articoli rilevanti
+### Remarkable Articles
 
 * [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
 * [Cover Your Apps While Still Using npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)

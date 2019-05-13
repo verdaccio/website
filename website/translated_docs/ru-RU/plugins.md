@@ -147,13 +147,14 @@ theme:
 * [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): аутентификационный плагин для использования файла htpasswd (встроенный)
 * [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): аутентификационный плагин для использования Github oauth.
 * [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): аутентификационный плагин для использования GitHub OAuth plugin.
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware-плагин для редиректа на https если установлен хэдер x-forwarded-proto
 
 ### Плагины Middleware
 
 * [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): плагин для поддержки команды *npm audit* (встроенный) (начиная с версии 3.x)
 
 * [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): плагин для команд *npm profile* и *npm profile set password* для аутентификации через *verdaccio-htpasswd*
+
+* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware-плагин для редиректа на https если установлен хэдер x-forwarded-proto
 
 ### Плагины хранилища
 

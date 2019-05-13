@@ -3,14 +3,14 @@ id: ssl
 title: "Podešavanje SSL Sertifikata"
 ---
 
-Pratite instrukcije kako da konfigurišete SSL sertifikat koji služi u NPM registriju pod HTTPS.
+Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.
 
 * Ažurirajte svojstvo listen u svom `~/.config/verdaccio/config.yaml`:
 
     listen: 'https://your.domain.com/'
     
 
-Jednom kada ažurite listen i probate ponovo da pokrenete verdaccio, pitaće Vas za sertifikate.
+Once you've updated the listen property and try to run verdaccio again, it will ask for certificates.
 
 * Generišite svoje sertifikate
 
@@ -19,28 +19,28 @@ Jednom kada ažurite listen i probate ponovo da pokrenete verdaccio, pitaće Vas
      $ openssl x509 -req -in /Users/user/.config/verdaccio/verdaccio-csr.pem -signkey /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-cert.pem
      ````
     
-    * Edit your config file `/Users/user/.config/verdaccio/config.yaml` and add the following section
+    * Edit your config file `/Users/user/.config/verdaccio/config.yaml` and add the following section:
     
     
 
 https: key: /Users/user/.config/verdaccio/verdaccio-key.pem cert: /Users/user/.config/verdaccio/verdaccio-cert.pem ca: /Users/user/.config/verdaccio/verdaccio-csr.pem
 
-    <br />Alternativno, ako imate sertifikat u `server.pfx` formatu, možete dodati sledeću sekciju za konfigurisanje. Ako je Vaš sertifikat enkriptovan, jedino je neophodno uneti passphrase.
+    <br />Alternatively, if you have a certificate with the `server.pfx` format, you can add the following configuration section: (The passphrase is optional and only needed if your certificate is encrypted.)
     
     
 
 https: pfx: /Users/user/.config/verdaccio/server.pfx passphrase: 'secret' ````
 
-Više informacija o `key`, `cert`, `ca`, `pfx` i `passphrase` argumentima u [Node dokumentaciji](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
+You can find more info on the `key`, `cert`, `ca`, `pfx`, and `passphrase` arguments in the [Node documentation](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
 
 * Pokrenite `verdaccio`u svom command line-u.
 
-* Otvorite pretraživač i učitajte `https://your.domain.com:port/`
+* Open the browser and visit `https://your.domain.com:port/`
 
-Instrukcije važe uglavnom za OSX i Linux, dok će na Windows-u putanje (paths) biti različite, ali u suštini, koraci su isti.
+These instructions are mostly valid under OSX and Linux; on Windows the paths will vary, but the steps are the same.
 
 ## Docker
 
-Ako koristite Docker image, potrebno je da podesite `PROTOCOL` environment varijablu na `https` pošto je `listen` argument obezbeđen kao [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43), i stoga ignorisan od strane config fajla.
+If you are using the Docker image, you have to set the `PROTOCOL` environment variable to `https`, as the `listen` argument is provided in the [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) and thus ignored from your config file.
 
-Takođe možete da podesite `PORT` environment variablu ako koristite različit port od `4873`.
+You can also set the `PORT` environment variable if you are using a port other than `4873`.
