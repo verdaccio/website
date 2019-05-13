@@ -90,7 +90,7 @@ La configurazione è divisa in due sezioni, `api` e `web`. Per utilizzare JWT su
 
 Un insieme di proprietà per modificare il comportamento dell'applicazione del server, specificamente l'API (Express.js).
 
-> È possibile specificare il timeout del server HTTP/1.1 keep alive in secondi per le connessioni entranti. Un valore pari a 0 rende il comportamento del server http simile a quello delle versioni di Node.js precedenti alla 8.0.0, le quali non avevano un timeout keep-alive. WORKAROUND: Tramite la configurazione specificata è possibile risolvere i seguenti problemi https://github.com/verdaccio/verdaccio/issues/301. Impostare su 0 in caso 60 non sia sufficiente.
+> È possibile specificare il timeout del server HTTP/1.1 keep alive in secondi per le connessioni entranti. Un valore pari a 0 rende il comportamento del server http simile a quello delle versioni di Node.js precedenti alla 8.0.0, le quali non avevano un timeout keep-alive. WORKAROUND: Tramite la configurazione specificata è possibile risolvere i seguenti problemi https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enough.
 
 ```yaml
 server:
