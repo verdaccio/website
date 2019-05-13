@@ -154,7 +154,7 @@ theme:
 
 * [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): плагин для команд *npm profile* и *npm profile set password* для аутентификации через *verdaccio-htpasswd*
 
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
+* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware-плагин для редиректа на https если установлен хэдер x-forwarded-proto
 
 ### Плагины хранилища
 
