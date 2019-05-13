@@ -52,7 +52,7 @@ you don't update dependencies so often.
 
 ## Using the memory instead the hardrive
 
-Sometimes caching packages is not a critical step, rather than route packages from different registries and achiving
+Sometimes caching packages is not a critical step, rather than route packages from different registries and achieving
 faster build times. There are two plugins that avoid write in a phisical hardrive at all using the memory.
 
 ```bash
