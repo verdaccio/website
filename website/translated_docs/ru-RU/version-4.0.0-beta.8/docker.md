@@ -95,9 +95,9 @@ RUN npm install verdaccio-s3-storage
 
 ### Docker и кастомная конфигурация порта
 
-Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
+Свойства `host:port`, определенные в `conf/config.yaml` в секции `listen` **, будут проигнорированы при использовании в docker**.
 
-If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
+Если вам необходимо, чтобы docker-экземпляр verdaccio работал на другом порту, скажем, на `5000`, при запуске команды `docker run` добавьте переменную окружения `VERDACCIO_PORT=5000` и выставьте этот порт наружу `-p 5000:5000`.
 
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
@@ -105,7 +105,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio:4.x-next
 ```
 
-Of course the numbers you give to `-p` paremeter need to match.
+Конечно, цифры, которые вы поставили в параметр `-p`, должны совпадать.
 
 ### Использование HTTPS с Docker
 
@@ -126,7 +126,7 @@ docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-You can set the port to use (for both container and host) by prefixing the above command with `VERDACCIO_PORT=5000`.
+Вы можете указать, какой порт использовать (для контейнера и хоста), предварив команду выше указанием `VERDACCIO_PORT=5000`.
 
 ```yaml
 version: '3.1'
@@ -191,7 +191,7 @@ yarn run build:docker
 
 ## Пользовательские сборки
 
-> If you have made an image based on Verdaccio, feel free to add it to this list.
+> Если у вас есть образ, основанный на Verdaccio, не стесняйтесь - добавляйте его в этот список.
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
