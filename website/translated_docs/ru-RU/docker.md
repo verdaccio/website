@@ -94,7 +94,7 @@ RUN npm install verdaccio-s3-storage
 
 ### Docker и кастомная конфигурация порта
 
-Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
+Свойства `host:port`, определенные в `conf/config.yaml` в секции `listen` **, будут проигнорированы при использовании в docker**.
 
 If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
 
