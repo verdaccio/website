@@ -3,7 +3,7 @@ id: articles
 title: "Статьи"
 ---
 
-Below is a list of articles about Verdaccio. If you have written a blog post or tutorial that mentions Verdaccio, feel free to add it here!
+Ниже - список статей про Verdaccio. Если вы написали пост в блоге или обучающую статью, где упоминается Verdaccio, не стесняйтесь, добавляйте её в этот список!
 
 > Статья может быть на любом языке
 
@@ -23,7 +23,7 @@ Below is a list of articles about Verdaccio. If you have written a blog post or 
 
 # Статьи / Блоги / Тьюториалы (по языкам)
 
-### Remarkable Articles
+### Интересные статьи
 
 * [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
 * [Cover Your Apps While Still Using npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
