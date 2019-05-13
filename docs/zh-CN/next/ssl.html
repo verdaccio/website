@@ -1,5 +1,5 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>设置SSL 证书 · Verdaccio</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;依照这些说明来配置SSL 证书来服务HTTPS 下的NPM registry。&lt;/p&gt;
-"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="设置SSL 证书 · Verdaccio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://verdaccio.org//"/><meta property="og:description" content="&lt;p&gt;依照这些说明来配置SSL 证书来服务HTTPS 下的NPM registry。&lt;/p&gt;
+<!DOCTYPE html><html lang="zh-CN"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>设置SSL 证书 · Verdaccio</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.&lt;/p&gt;
+"/><meta name="docsearch:version" content="next"/><meta name="docsearch:language" content="zh-CN"/><meta property="og:title" content="设置SSL 证书 · Verdaccio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://verdaccio.org//"/><meta property="og:description" content="&lt;p&gt;Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.&lt;/p&gt;
 "/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://verdaccio.org/blog/atom.xml" title="Verdaccio Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://verdaccio.org/blog/feed.xml" title="Verdaccio Blog RSS Feed"/><script>
               (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
               (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -76,37 +76,37 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">设置SSL 证书</h1></header><article><div><span><p>依照这些说明来配置SSL 证书来服务HTTPS 下的NPM registry。</p>
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">设置SSL 证书</h1></header><article><div><span><p>Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.</p>
 <ul>
 <li><p>在<code>~/.config/verdaccio/config.yaml</code>更新监听属性：</p>
 <p>listen: '<a href="https://your.domain.com/'">https://your.domain.com/'</a></p></li>
 </ul>
-<p>一旦更新监听，并试着再次运行verdaccio ，将会被要求使用证书。</p>
+<p>Once you've updated the listen property and try to run verdaccio again, it will ask for certificates.</p>
 <ul>
 <li><p>生成证书</p>
 <p>$ openssl genrsa -out /Users/user/.config/verdaccio/verdaccio-key.pem 2048
 $ openssl req -new -sha256 -key /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-csr.pem
 $ openssl x509 -req -in /Users/user/.config/verdaccio/verdaccio-csr.pem -signkey /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-cert.pem</p>
 <pre><code class="hljs">
-* 编辑<span class="hljs-built_in"> config </span>file `/Users/user/.config/verdaccio/config.yaml`并添加以下部分
+* <span class="hljs-builtin-name">Edit</span> your<span class="hljs-built_in"> config </span>file `/Users/user/.config/verdaccio/config.yaml` <span class="hljs-keyword">and</span> <span class="hljs-builtin-name">add</span> the following section:
 
 
 
 </code></pre></li>
 </ul>
 <p>https: key: /Users/user/.config/verdaccio/verdaccio-key.pem cert: /Users/user/.config/verdaccio/verdaccio-cert.pem ca: /Users/user/.config/verdaccio/verdaccio-csr.pem</p>
-<pre><code class="hljs">&lt;br /&gt;或者，如果证书是server.pfx`格式，您可以添加以下配置部分。如果证书已加密，密码则是可选以及仅当需要时使用。
+<pre><code class="hljs">&lt;br /&gt;Alternatively, if you have a certificate with the `server.pfx` format, you can add the following configuration section: (The passphrase is optional and only needed if your certificate is encrypted.)
 </code></pre>
 <p>https: pfx: /Users/user/.config/verdaccio/server.pfx passphrase: 'secret' ````</p>
-<p>更多 关于<code>key</code>, <code>cert</code>, <code>ca</code>, <code>pfx</code> 和<code>passphrase</code> 参数信息，请参照 <a href="https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options">节点文档</a></p>
+<p>You can find more info on the <code>key</code>, <code>cert</code>, <code>ca</code>, <code>pfx</code>, and <code>passphrase</code> arguments in the <a href="https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options">Node documentation</a></p>
 <ul>
 <li><p>在命令行运行<code>verdaccio</code>。</p></li>
-<li><p>打开浏览器并加载<code>https://your.domain.com:port/</code></p></li>
+<li><p>Open the browser and visit <code>https://your.domain.com:port/</code></p></li>
 </ul>
-<p>此指南主要在OSX和 Linux里有效，在 Windows 里，路径将不同，但步骤是一样的。</p>
+<p>These instructions are mostly valid under OSX and Linux; on Windows the paths will vary, but the steps are the same.</p>
 <h2><a class="anchor" aria-hidden="true" id="docker"></a><a href="#docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker</h2>
-<p>如果您使用Docker 镜像，您得设置<code>PROTOCOL</code> 环境变量到 <code>https</code>中，原因是因为 <code>listen</code> 参数由 <a href="https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43">Dockerfile</a>提供, 因此在您的config 文件中被忽略。</p>
-<p>如果您使用不同于 <code>4873</code>的端口，您也可以设置 <code>PORT</code> 环境变量。</p>
+<p>If you are using the Docker image, you have to set the <code>PROTOCOL</code> environment variable to <code>https</code>, as the <code>listen</code> argument is provided in the <a href="https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43">Dockerfile</a> and thus ignored from your config file.</p>
+<p>You can also set the <code>PORT</code> environment variable if you are using a port other than <code>4873</code>.</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/next/reverse-proxy"><span class="arrow-prev">← </span><span>逆向代理服务器设置</span></a><a class="docs-next button" href="/docs/zh-CN/next/windows"><span>作为 Windows 服务安装</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#docker">Docker</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/zh-CN/what-is-verdaccio.html">Getting Started</a><a href="/docs/zh-CN/docker.html">Docker</a><a href="/docs/zh-CN/configuration.html">Configuration</a><a href="/docs/zh-CN/logo">Logos</a></div><div><h5>Community</h5><a href="/zh-CN/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
