@@ -3,14 +3,14 @@ id: ssl
 title: "Настройка SSL-сертификатов"
 ---
 
-Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.
+Следуйте инструкциям по конфигурации SSL сертификатов, чтобы получить NPM репозиторий с HTTPS.
 
 * Обновите свойство `listen` в вашем `~/.config/verdaccio/config.yaml`:
 
     listen: 'https://your.domain.com/'
     
 
-Once you've updated the listen property and try to run verdaccio again, it will ask for certificates.
+Когда вы обновите свойство listen и попытаетесь запустить verdaccio снова, он запросит сертификаты.
 
 * Сгенерируйте ваши сертификаты
 
@@ -19,13 +19,13 @@ Once you've updated the listen property and try to run verdaccio again, it will 
      $ openssl x509 -req -in /Users/user/.config/verdaccio/verdaccio-csr.pem -signkey /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-cert.pem
      ````
     
-    * Edit your config file `/Users/user/.config/verdaccio/config.yaml` and add the following section:
+    * Отредактируйте конфигурационный файл `/Users/user/.config/verdaccio/config.yaml` и добавьте следующую секцию:
     
     
 
 https: key: /Users/user/.config/verdaccio/verdaccio-key.pem cert: /Users/user/.config/verdaccio/verdaccio-cert.pem ca: /Users/user/.config/verdaccio/verdaccio-csr.pem
 
-    <br />Alternatively, if you have a certificate with the `server.pfx` format, you can add the following configuration section: (The passphrase is optional and only needed if your certificate is encrypted.)
+    <br />Или, если у вас сертификат в формате `server.pfx`, вы можете добавить следущую секцию в конфиг: (Аргумент passphrase - не обязательный, и нужен только когда ваш сертификат зашифрован.)
     
     
 
