@@ -3,9 +3,9 @@ id: e2e
 title: "End to End тестирование"
 ---
 
-Некоторые проекты организуют свои пакеты, разделяя их на многопакетные репозитории или [монорепо](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). E2E-тестирование используется обычно только для тестировани пользовательсикх интерфейсов, но, с точки зрения Node.js, **публикацию пакетов тоже нужно тестировать**.
+Некоторые проекты организуют свои пакеты, разделяя их на многопакетные репозитории или [монорепо](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). E2E-тестирование используется обычно только для тестировани пользовательских интерфейсов, но, с точки зрения Node.js, **публикацию пакетов тоже нужно тестировать**.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Решение: локальный npm репозиторий. <a href="https://t.co/kvcyVANVSK">https://t.co/kvcyVANVSK</a></p>&mdash; Dan Abramov (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/951427674844680192?ref_src=twsrc%5Etfw">11 января 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Решение: локальный npm-репозиторий. <a href="https://t.co/kvcyVANVSK">https://t.co/kvcyVANVSK</a></p>&mdash; Dan Abramov (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/951427674844680192?ref_src=twsrc%5Etfw">11 января 2018</a></blockquote>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
