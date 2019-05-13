@@ -15,7 +15,7 @@ const nonSponsorUsers = [
     image: "img/users/neutrino.png",
     infoLink: "https://neutrinojs.org/",
     fbOpenSource: false,
-    pinned: true,
+    pinned: false,
   },
   {
     caption: "pnpm",
@@ -50,21 +50,21 @@ const nonSponsorUsers = [
     image: "img/users/storybook.svg",
     infoLink: "https://storybook.js.org",
     fbOpenSource: false,
-    pinned: false,
+    pinned: true,
   },
   {
     caption: "create-react-app",
     image: "img/users/create-react-app.svg",
     infoLink: "https://facebook.github.io/create-react-app/",
     fbOpenSource: true,
-    pinned: false,
+    pinned: true,
   },
   {
     caption: "Gatsby",
     image: "img/users/gatsby.svg",
     infoLink: "https://www.gatsbyjs.org/",
     fbOpenSource: false,
-    pinned: false,
+    pinned: true,
   },
   {
     caption: "Uppy",
