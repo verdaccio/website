@@ -90,7 +90,7 @@ Konfiguracija je podeljena u dve sekcije, `api` i `web`. Kako biste koristili JW
 
 Skup svojstava za menjanje ponašanja server aplikacije, posebno API-ja (Express.js).
 
-> Možete zadati da HTTP/1.1 server održava vreme posle kojeg se budi za dolazne konekcije. Ako zadate vrednost 0, http server će se ponašati slično kao Node.js verzije starije od 8.0.0, koje nisu imale ugrađenu funkciju: keep-alive timeout. ZAOBILAŽENJE: Datim konfigurisanjem, možete zaobići sledeći problem: https://github.com/verdaccio/verdaccio/issues/301. Postavite na vrednost 0 u slučaju da 60 nije dovoljno.
+> Možete zadati da HTTP/1.1 server održava vreme posle kojeg se budi za dolazne konekcije. Ako zadate vrednost 0, http server će se ponašati slično kao Node.js verzije starije od 8.0.0, koje nisu imale ugrađenu funkciju: keep-alive timeout. ZAOBILAŽENJE: Datim konfigurisanjem, možete zaobići sledeći problem: https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enough.
 
 ```yaml
 server:

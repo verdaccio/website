@@ -41,7 +41,7 @@ Increasing the value of `maxage` in each `uplink` remotes will be asked less fre
 
 ## Using the memory instead the hardrive
 
-Sometimes caching packages is not a critical step, rather than route packages from different registries and achiving faster build times. There are two plugins that avoid write in a phisical hardrive at all using the memory.
+Sometimes caching packages is not a critical step, rather than route packages from different registries and achieving faster build times. There are two plugins that avoid write in a phisical hardrive at all using the memory.
 
 ```bash
   npm install -g verdaccio-auth-memory

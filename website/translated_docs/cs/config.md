@@ -90,7 +90,7 @@ Konfigurace je rozdělena do dvou sekcí, `api` a `web`. Pro použití JWT v `ap
 
 Sada vlastností ke změně chování serverové aplikace, konkrétně rozhraní API (Express.js).
 
-> Můžete nastavit, jak dlouho má server držet aktivní příchozí spojení v sekundách pro HTTP/1.1. Hodnota 0 způsobuje, že se http server chová podobně jako Node.js před verzí 8.0.0, která neměla časový limit pro zachování. Možné řešení: Prostřednictvím dané konfigurace můžete vyřešit následující problém https://github.com/verdaccio/verdaccio/issues/301. Nastavte na 0 v případě, že 60 není dostatečné.
+> Můžete nastavit, jak dlouho má server držet aktivní příchozí spojení v sekundách pro HTTP/1.1. Hodnota 0 způsobuje, že se http server chová podobně jako Node.js před verzí 8.0.0, která neměla časový limit pro zachování. Možné řešení: Prostřednictvím dané konfigurace můžete vyřešit následující problém https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enough.
 
 ```yaml
 server:
