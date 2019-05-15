@@ -35,8 +35,8 @@ Afojuda iye owo osoosu fun igbekalẹ kekere kan (ni us-east-1): * ALB (agbede 1
 
 O le ṣe amulo Verdaccio bi iṣẹ pẹlu [ECS Volume](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) fun ibi ipamọ alatẹnumọ.
 
-Note: Fargate doesn't support persistent volumes, so you have to use the S3 storage plugin.
+Akiyesi: Fargate ko ṣe atilẹyin fun awọn iwọn iye alatẹnumọ, nitorina o ni lati lo ohun elo ipamọ S3.
 
 ## EKS
 
-See the documentation pages on [Kubernetes](kubernetes) and [Docker](docker).
+Wo awọn oju ewe iwe lori [Kubernetes](kubernetes) ati [Docker](docker).
