@@ -41,7 +41,7 @@ uplinks:
 
 ## Использование памяти вместо диска
 
-Sometimes caching packages is not a critical step, rather than route packages from different registries and achieving faster build times. Есть два плагина, которые позволяют избежать записи пакетов на диск, и хранить их в памяти.
+Иногда закэшировать пакеты не так важно, а важно получить их из разных репозиториев и ускорить сборку. Есть два плагина, которые позволяют избежать записи пакетов на диск, и хранить их в памяти.
 
 ```bash
   npm install -g verdaccio-auth-memory
