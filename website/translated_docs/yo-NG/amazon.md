@@ -1,6 +1,6 @@
 ---
 id: amazon
-title: "Amazon Web Services"
+title: "Awọn Iṣẹ Ayelujara ti Amazon"
 ---
 
 This document describes several approaches for deploying Verdaccio in the AWS cloud.
