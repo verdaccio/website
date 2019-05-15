@@ -27,7 +27,7 @@ Iyaworan:
     Elastic File System
     
 
-Awọn akọsilẹ Iyaworan: * Ṣe amulo eto akopọ yii si agbegbe ti o sunmọ julọ fun awọn olumulo rẹ fun iṣẹ to peye julọ. * A lo akojọpọ ti o ni ipele agbara alaifọwọyi nipataki fun imularada alara-ẹni. Awọn inilo eto ti Verdaccio kere jọjọ, nitorina o sọwọn pe o ma nilo awọn isẹlẹ pupọ lati mojuto ẹru abẹwo. * Because Amazon Linux 2 doesn't include Node, we run Verdaccio as a Docker image rather than natively on the instance. This is faster and more secure than relying on third party package sources for Node. * Elastic File System is cheap and stateful, and works across AZs. An alternative would be the [third-party S3 storage plugin](https://github.com/remitly/verdaccio-s3-storage). * For backup, use AWS Backup
+Awọn akọsilẹ Iyaworan: * Ṣe amulo eto akopọ yii si agbegbe ti o sunmọ julọ fun awọn olumulo rẹ fun iṣẹ to peye julọ. * A lo akojọpọ ti o ni ipele agbara alaifọwọyi nipataki fun imularada alara-ẹni. Awọn inilo eto ti Verdaccio kere jọjọ, nitorina o sọwọn pe o ma nilo awọn isẹlẹ pupọ lati mojuto ẹru abẹwo. * Nitoripe Amazon Linux 2 ko ni Oju ipade, a n lo Verdaccio gẹgẹbi aworan Docker dipo ilo abinibi lori isẹlẹ. Eleyi tubọ yara si ati tubọ ni aabo sii ju gbigbe ara le awọn orisun akojọ ti alagata lọ fun Oju ipade. * Elastic File System is cheap and stateful, and works across AZs. An alternative would be the [third-party S3 storage plugin](https://github.com/remitly/verdaccio-s3-storage). * For backup, use AWS Backup
 
 Estimated monthly cost for a small installation (in us-east-1): * ALB (1 LCU average): $22.265/mo * EC2 (t3.nano): $3.796/mo * EBS (8gb): $0.80/mo * EFS (5gb): $1.5/mo * Data transfer: (10gb): $0.9/mo * **TOTAL:** Under $30/mo
 
