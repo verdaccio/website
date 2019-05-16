@@ -47,7 +47,7 @@ warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 
 Больше информации об инструментах командной строки [читайте в этом разделе](cli.md).
 
-Вы можете задать репозиторий следующей командой.
+Вы можете задать адрес репозитория следующей командой.
 
 ```bash
 npm set registry http://localhost:4873/
@@ -65,6 +65,6 @@ npm install --registry http://localhost:4873
 
 ## Cloudron
 
-`verdaccio` так же доступен для устновку в один клик с [Cloudron](https://cloudron.io)
+`verdaccio` так же доступен для установки в один клик через [Cloudron](https://cloudron.io)
 
 [![Установка](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
