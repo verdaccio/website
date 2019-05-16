@@ -1,5 +1,5 @@
 ---
-id: best
+id: didara julọ
 title: "Best Practices"
 ---
 
