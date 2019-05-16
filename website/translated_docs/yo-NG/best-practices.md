@@ -28,7 +28,7 @@ Igbaniyanju wa wipe ki o seto iṣaaju kan fun awọn akojọ ikọkọ rẹ, fu
           access: $all
           publish: $authenticated
 
-Always remember, **the order of packages access is important**, packages are mached always top to bottom.
+Seranti nigbagbogbo, **aato ti iwọlesi ti akojọ se pataki**, awọn akojọ ma n jẹ sisopọ lati oke si isalẹ nigbagbogbo.
 
 ### Using public packages from npmjs.org
 
