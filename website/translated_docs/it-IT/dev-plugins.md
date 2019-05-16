@@ -182,7 +182,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 }
 ```
 
-> L'API di archiviazione è ancora in via sperimentale e potrebbe cambiare nelle successive versioni minori. Per ulteriori informazioni sull'API di Archiviazione si prega di seguire le [ definizioni dei tipi nel nostro repository ufficiale](https://github.com/verdaccio/flow-types).
+> L'API di archiviazione è ancora in via sperimentale e potrebbe cambiare nelle successive versioni minori. Per ulteriori informazioni sull'API di Archiviazione si prega di seguire le [definizioni dei tipi nel nostro repository ufficiale](https://github.com/verdaccio/flow-types).
 
 ### Esempi di Archiviazione
 
