@@ -7,11 +7,11 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 
 > Gbogbo ede ni a gba laaye
 
-## Core Team Articles
+## Awọn arokọ ti Ẹgbẹ Gangan
 
-* [An Introduction to Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
+* [Ifihan si Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
 * [Five use cases where a npm private proxy fits in your workflow](https://medium.com/@jotadeveloper/five-use-cases-where-a-npm-private-proxy-fits-in-your-workflow-632a81779c14)
-* [An Introduction to Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
+* [Ifihan si Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
 * [NPM Registry for your organisation](https://medium.com/@ayusharma.in/npm-registry-for-your-organisation-aeb8ea76144)
 * [Verdaccio 3 released 🎉!!](https://medium.com/verdaccio/verdaccio-3-released-feb06ef38558)
 * [The crazy story of Verdaccio](https://medium.com/verdaccio/the-crazy-story-of-verdaccio-d35d924728bc)
