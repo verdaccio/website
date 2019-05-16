@@ -46,29 +46,29 @@ Bi o se mọ *Verdaccio* n lo `htpasswd` ni atilẹwa. Ohun elo yẹn ko ṣe am
 
 Bi amulọ, `$all` **ma se asopọ gbogbo awọn olumulo, ni alaigbarale boya o ti wọle tabi ko wọle**.
 
-**Ohun elo ifasẹsi atilẹwa nikan ni iwa iṣaaju yẹn bawi**. Ti o ba n lo ohun elo akanṣe ati ti iru ohun elo bẹ ba n se imuṣiṣẹ `allow_access`, `allow_publish` tabi `allow_unpublish`, awọn ipinnu ti iwọle naa da lori ohun elo naa funrararẹ. Verdaccio akan seto awon akojo alaiyipada nikan.
+**Ohun elo ifasẹsi atilẹwa nikan ni iwa iṣaaju yẹn bawi**. Ti o ba n lo ohun elo akanṣe ati ti iru ohun elo bẹ ba n se imuṣiṣẹ `allow_access`, `allow_publish` tabi `allow_unpublish`, awọn ipinnu ti iwọle naa da lori ohun elo naa funrararẹ. Verdaccio ma ṣeto awọn ẹgbẹ akojọpọ atilẹwa nikan.
 
-Ejeki a gbeyewo gbogbo oun tati ko:
+Jẹ ki a ṣe atungbeyẹwo ni ṣoki:
 
-* **gbawole**: `$all`. `$authenticated` + awon akojo ti a fikun nipase plugini na
-* **aidanimo (igbejade): `$all` ati `$anonymous`.</li> </ul> 
-    
-    ## Default htpasswd
-    
-    In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
-    
-    ```yaml
-    auth:
-      htpasswd:
-        file: ./htpasswd
-        # Maximum amount of users allowed to register, defaults to "+inf".
-        # You can set this to -1 to disable registration.
-        #max_users: 1000
-    ```
-    
-    | Property  | Type   | Required | Example    | Support | Description                              |
-    | --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
-    | file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
-    | max_users | number | No       | 1000       | all     | set limit of users                       |
-    
-    In case to decide do not allow user to login, you can set `max_users: -1`.
+* **ti wọle**: `$all`, `$authenticated`, + awọn ẹgbẹ akojọpọ ti o jẹ fifikun nipasẹ ohun elo naa
+* **alainidamọ (ti jade sita)**: `$all` ati `$anonymous`.
+
+## Default htpasswd
+
+Lati mu iṣeto naa rọrun, `verdaccio` lo ohun elo to da lori `htpasswd`. Niwọnti ẹya v3.0.x `verdaccio-htpasswd` ohun elo naa ti n jẹ lilo ni atilẹ wa.
+
+```yaml
+auth:
+  htpasswd:
+    file: ./htpasswd
+    # Maximum amount of users allowed to register, defaults to "+inf".
+    # You can set this to -1 to disable registration.
+    #max_users: 1000
+```
+
+| Ohun ini  | Iru    | Required | Example    | Support | Description                              |
+| --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
+| file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
+| max_users | number | No       | 1000       | all     | set limit of users                       |
+
+In case to decide do not allow user to login, you can set `max_users: -1`.
