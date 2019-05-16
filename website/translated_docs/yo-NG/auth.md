@@ -1,6 +1,6 @@
 ---
-id: sise ijerisi
-title: "Sise ijerisi"
+id: sise ifasẹsi
+title: "Sise ifasẹsi"
 ---
 
 A so sise ijerisi mo auth [ plugin](plugins.md) ta n mulo. an seto awon ihamo ti pali nipa ti [ Agbawole Pali](packages.md).
