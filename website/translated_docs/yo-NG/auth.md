@@ -20,31 +20,31 @@ registry=http://localhost:5555/
 //registry.npmjs.org/:_authToken=secretNpmjsToken
 ```
 
-#### Igbejade alailorukọ
+#### Igbejade alainidamọ
 
-`verdaccio`nfayegba fun enikeni lati se igbejade alailoruko, lati se eleyi wa nilo lati se agbekale pipe ti[awon apo igbaniwole](packages.md).
+`verdaccio``verdaccio`gba ọ laaye lati ṣe imuṣiṣẹ igbejade alainidamọ, lati ni aṣeyọri pẹlu iyẹn o ma nilo lati seto [Iwọlesi ti Akojọ](packages.md) rẹ daradara.
 
-Bi apeere:
+Fun apẹẹrẹ:
 
 ```yaml
-  'ile-ise mi-*':
-     igbaniwole: $anonymous
-    igbejade: $anonymous
-    asoju: npmjs
+  'my-company-*':
+    access: $anonymous
+    publish: $anonymous
+    proxy: npmjs
 ```
 
 As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) until `npm@5.3.0` and all minor releases **won't allow you publish without a token**.
 
-## Imo oye awon Akojo
+## Nini oye Awọn ẹgbẹ akojọpọ
 
-### Itunmo ti `$all` ati `$anonymous`
+### Itunmọ `$all` ati `$anonymous`
 
-Bu a se mo *Verdaccio* nlo awon `htpasswd` ni aiyipada. Plugini na ko gbe se awon ona no `fayefun_igbawole`,`fayegba_igbejade` ati `fayegba_ako ti gbejade`. Ni eleyi, *Verdaccio* yio kapa re ni awon ona yi:
+Bi o se mọ *Verdaccio* n lo `htpasswd` ni atilẹwa. Ohun elo yẹn ko ṣe amuṣiṣẹ awọn ọna naa `allow_access`, `allow_publish` and `allow_unpublish`. Nitorina, *Verdaccio* ma mojuto iyẹn ni ọna wọnyi:
 
-* Ti o ba ti se agbawole (ako da o mo), `$all` ati `<code>$anonymous` tunmo si ikan kanna.
-* Ti o ba ti se agbawole, `$anonymous` koni je ara akojonre at `$all` yio jo mo olumulo yio wu to ba je to ba se agbawole. Akojo titun kan `$authenticated` a je afikun si atojo na.
+* Ti o ko ba wọle (o jẹ alainidamọ), `$all` ati `$anonymous` tumọ si nkankan na.
+* Ti o ba wọle, `$anonymous` ko ni jẹ ara awọn ẹgbẹ akojọpọ rẹ ati `$all` ma se asopọ pẹlu eyikeyi olumulo ti o ba ti wọle. Ẹgbẹ akojọpọ tuntun kan `$authenticated` ma jẹ fifikun si akojọ naa.
 
-Bi amu rele, `$all` ** yio jomo gbogbo awon olumulo, leyokokan yalanwon se agbewole tabi won ko se**.
+Bi amulọ, `$all` **ma se asopọ gbogbo awọn olumulo, ni alaigbarale boya o ti wọle tabi ko wọle**.
 
 ** ise tele je fun ijerisi aiyipada plugini**. Ti o ban lo plugini eleyi ti o ba ini e mu ti plugini na wan gbese awon `fayegba_igbaniwole`, `fayegba_igbajade` tabi `fayegba_aitigbejade`, ibi ti a paju de si fun igbaniwole da lori plugini na gangan. Verdaccio akan seto awon akojo alaiyipada nikan.
 
