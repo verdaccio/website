@@ -3,9 +3,9 @@ id: awọn arokọ
 title: "Awọn arokọ"
 ---
 
-Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. If you have written a blog post or tutorial that mentions Verdaccio, feel free to add it here!
+Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ akọsilẹ bulọọgi kan tabi ẹkọ itọnisọna ti o mẹnuba Verdaccio, ma ṣe ṣiyemeji lati ṣafikun rẹ sibi!
 
-> Any language is allowed
+> Gbogbo ede ni a gba laaye
 
 ## Core Team Articles
 
