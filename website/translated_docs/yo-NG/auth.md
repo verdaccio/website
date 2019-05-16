@@ -3,15 +3,15 @@ id: sise ifasẹsi
 title: "Sise ifasẹsi"
 ---
 
-Ifasẹsi naa jẹ sisopọ mọ auth [ plugin](plugins.md) ti o n lo. Awọn idena akojọ naa n jẹ mimojuto nipasẹ [ Iwọlesi ti Akojọ](packages.md).
+Ifasẹsi naa jẹ sisopọ mọ auth [ plugin](plugins.md) ti o n lo. Awọn idena akojọ naa n jẹ ṣiṣakoso nipasẹ [ Iwọlesi ti Akojọ](packages.md).
 
-Eto ijerisi ti olubara lan kapa e nipa `npm` ti olubara fun ra ra e. Logan to ba te wole lori ero na:
+Ifasẹsi onibara naa n jẹ ṣiṣakoso nipasẹ `npm` onibara funrarẹ. Lọgan ti o ba wọle si ohun elo naa:
 
 ```bash
-npm aropoolumulo --iforukosile http://localhost:4873
+npm adduser --registry http://localhost:4873
 ```
 
-A wa tokini kan ninu `npm` iseto apo ti a seda ni apo ile olumulo. Fun alaye lekunrere nisoa `.npmrc` ka [ iwe ijoba ](https://docs.npmjs.com/files/npmrc)l.
+Aami kan ma jẹ ṣisẹda ninu `npm` faili iṣeto ti igbalejo rẹ wa ninu foda ile olumulo rẹ. Fun ẹkunrẹrẹ alaye nipa `.npmrc` ka [ iwe alasẹ](https://docs.npmjs.com/files/npmrc).
 
 ```bash
 cat .npmrc
