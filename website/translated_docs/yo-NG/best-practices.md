@@ -40,11 +40,11 @@ Ti o ba se ibeere fun `express@4.0.1` pẹlu aseyọri lati ọdọ olupese yi l
 
 ### Override public packages
 
-If you want to use a modified version of some public package `foo`, you can just publish it to your local server, so when your type `npm install foo`, **it'll consider installing your version**.
+Ti o ba fẹ lo diẹ ninu awọn akopọ ti gbangba ti ẹya to ti ni ayipada `foo`, o le ṣe atẹjade rẹ si olupese ibilẹ rẹ, nitorina nigbati iru `npm install foo` rẹ, **o ma gbero fifi ti iwọ sori ẹrọ**.
 
 There's two options here:
 
-1. You want to create a separate **fork** and stop synchronizing with public version.
+1. O fẹ ṣẹda **fork** to daduro ati ki o da imuṣiṣẹpọ pẹlu gbogbogbo duro.
     
     If you want to do that, you should modify your configuration file so verdaccio won't make requests regarding this package to npmjs anymore. Add a separate entry for this package to `config.yaml` and remove `npmjs` from `proxy` list and restart the server.
     
