@@ -40,7 +40,7 @@ Se fai una richiesta `express@4.0.1` da questo server che va a buon fine una vol
 
 ### Annullare pacchetti pubblici
 
-Se desideri utilizzare una versione modificata di qualche pacchetto pubblico `foo`, puoi pubblicarla direttamente sul tuo server locale, così quando scrivi `npm install foo`, ** considererà di installare la tua versione**.
+Se desideri utilizzare una versione modificata di qualche pacchetto pubblico `foo`, puoi pubblicarla direttamente sul tuo server locale, così quando scrivi `npm install foo`, **considererà di installare la tua versione**.
 
 Ci sono due opzioni qui:
 
@@ -97,7 +97,7 @@ In questo modo, **nessuno sarà in grado di utilizzare il registro fino a quando
 
 ### Connessioni Assicurate
 
-L'utilizzo di **HTTPS** è una raccomandazione comune, per questa ragione raccomandiamo di leggere la sezione [SSL](ssl.md) per rendere Verdaccio sicuro o di utilizzare un HTTPS [reverse proxy](reverse-proxy.md) su Verdaccio.
+L'utilizzo di **HTTPS** è una raccomandazione comune, per questa ragione raccomandiamo di leggere la sezione [SSL](ssl.md) per rendere Verdaccio sicuro o di utilizzare un HTTPS [reverse proxy](reverse-proxy.md) oltre a Verdaccio.
 
 ### Token in Scadenza
 
