@@ -3,7 +3,7 @@ id: sise ifasẹsi
 title: "Sise ifasẹsi"
 ---
 
-A so sise ijerisi mo auth [ plugin](plugins.md) ta n mulo. an seto awon ihamo ti pali nipa ti [ Agbawole Pali](packages.md).
+Ifasẹsi naa jẹ sisopọ mọ auth [ plugin](plugins.md) ti o n lo. Awọn idena akojọ naa n jẹ mimojuto nipasẹ [ Iwọlesi ti Akojọ](packages.md).
 
 Eto ijerisi ti olubara lan kapa e nipa `npm` ti olubara fun ra ra e. Logan to ba te wole lori ero na:
 
