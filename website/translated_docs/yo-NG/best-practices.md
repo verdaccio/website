@@ -46,10 +46,10 @@ There's two options here:
 
 1. O fẹ ṣẹda **fork** to daduro ati ki o da imuṣiṣẹpọ pẹlu gbogbogbo duro.
     
-    If you want to do that, you should modify your configuration file so verdaccio won't make requests regarding this package to npmjs anymore. Add a separate entry for this package to `config.yaml` and remove `npmjs` from `proxy` list and restart the server.
+    If you want to do that, you should modify your configuration file so verdaccio won't make requests regarding this package to npmjs anymore. Se afikun iwọle to daduro fun akopọ yi si `config.yaml` ki o si yọ `npmjs` kuro ninu akojọ `proxy` ki o wa tun olupese bẹrẹ.
     
     ```yaml
-    packages:
+    awọn akopọ:
       '@my-company/*':
         access: $all
         publish: $authenticated
