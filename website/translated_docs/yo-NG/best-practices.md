@@ -1,13 +1,13 @@
 ---
 id: didara julọ
-title: "Best Practices"
+title: "Awọn iṣeṣi to Darajulọ"
 ---
 
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+Itọsọna yii jẹ akojọ ti awọn iṣeṣi to dara julọ ti o jẹ gbigba ati eyi ti a saba maa n gba niyanju fun gbogbo awọn olumulo. Maṣe mu itọsọna yi bi dandan, o le mu diẹ ninu wọn ni ibamu si awọn inilo rẹ.
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Ma se mikan lati dabaa awọn iṣesi to dara julọ pẹlu awujọ Verdaccio naa**.
 
-## Private Registry
+## Ibi iforukọsilẹ Ikọkọ
 
 You can add users and manage which users can access which packages.
 
