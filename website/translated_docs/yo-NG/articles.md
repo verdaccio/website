@@ -1,9 +1,9 @@
 ---
-id: articles
-title: "Articles"
+id: awọn arokọ
+title: "Awọn arokọ"
 ---
 
-Below is a list of articles about Verdaccio. If you have written a blog post or tutorial that mentions Verdaccio, feel free to add it here!
+Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. If you have written a blog post or tutorial that mentions Verdaccio, feel free to add it here!
 
 > Any language is allowed
 
