@@ -37,7 +37,7 @@ Per una specifica (patch) versione:
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next major release using the `4.x-next` (master) version.
+Per la successiva maggior release che utilizza la versione `4.x-next` (master).
 
 ```bash
 docker pull verdaccio/verdaccio:4.x-next
@@ -45,9 +45,9 @@ docker pull verdaccio/verdaccio:4.x-next
 
 > Se si è interessati ad un elenco dei tag, [ si prega di visitare il sito Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Running Verdaccio using Docker
+## Eseguire Verdaccio utilizzando Docker
 
-> The following configuration is based on the Verdaccio 4 or the `4.x-next` tag.
+> La configurazione seguente è basata su Verdaccio 4 o sul tag `4.x-next`.
 
 Per avviare il contenitore Docker:
 
