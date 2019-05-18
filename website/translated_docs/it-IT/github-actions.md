@@ -1,13 +1,13 @@
 ---
 id: github-actions
-title: "Github Actions"
+title: "Github Action"
 ---
 
-With [GitHub Actions](https://github.com/features/actions) you can automate your workflow, each GitHub Action performs a specific step in a process.
+Con [GitHub Action](https://github.com/features/actions) è possibile automatizzare il workflow, ciascun GitHub Action compie uno specifico step in un processo.
 
 ![actions](/img/github-actions.png)
 
-## Testing your packages
+## Testare i pacchetti
 
 Verdaccio provides a custom acttion for easy integration in your flow, you only add the following to your `main.workflow` in the step you consider the better for your flow.
 
