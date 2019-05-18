@@ -9,11 +9,11 @@ Alcuni progetti organizzano pacchetti in repository multi pacchetti o [monorepo]
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Such approach has been really hard to achieve considering:
+Tale approccio è stato molto difficile da raggiungere considerando che:
 
 * Populate canary packages on public services seems not to be a good idea
-* Some self-hosted OSS registries are too heavy
-* Offline environments (private networks)
+* Alcuni registri OSS self-hosted sono troppo pesanti
+* Ambienti offline (reti private)
 
 **Verdaccio** is a lightweight registry with zero-configuration that **fits perfectly in any E2E + CI workflow**.
 
