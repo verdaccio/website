@@ -82,7 +82,7 @@ In version 3, verdaccio has a limited search functionality and it was all on web
 ![alt text](./assets/nsp.gif)
 
 ### <a id="register-info"></a> Registry information 
-Registry infromation is now easily accessible. 
+Registry information is now easily accessible. 
 
 // @TODO https://github.com/verdaccio/verdaccio/pull/1178
 
@@ -109,7 +109,7 @@ In verdaccio@3, we moves hash router to more cleaner look to browser router. (No
 
 ## <a id="package-access"></a> Improvements in package access
 
-Verdaccio@4 improves the package management by additing access layer for publish & unpublish. Now you can have restrictions to some of users for publish and unpiblish flow. [Find out more](https://verdaccio.org/docs/en/packages )
+Verdaccio@4 improves the package management by adding access layer for publish & unpublish. Now you can have restrictions to some of users for publish and unpublish flow. [Find out more](https://verdaccio.org/docs/en/packages )
 
 ## <a id="disable-gravatar"></a> Disable Gravatar
 Verdaccio uses [Gravatar](https://en.gravatar.com) to show author, contributors and maintainers images. Now, gravatar support can be disabled from verdaccio `config.yaml`. 
@@ -163,7 +163,7 @@ Verdaccio suppports JWT - [JSON Web Tokens](https://jwt.io/) for authentication 
 NodeJS 6 went to end of life on April 30, 2019. Verdaccio@4 drops the support for node6 & npm 2. Now on, node 8 &  will be the minimum requirement. verdaccio@4 also checks for the minimum node version. https://github.com/verdaccio/verdaccio/pull/968 
 
 ## Plugins
-Verdaccio extendes it functionalities with a set of plugins. You can find detailed information in plugins [documentation](https://verdaccio.org/docs/en/plugins#verdaccio-plugins)
+Verdaccio extends its functionalities with a set of plugins. You can find detailed information in plugins [documentation](https://verdaccio.org/docs/en/plugins#verdaccio-plugins)
 
 
 ## <a id="tech-updates"></a> Tech updates
@@ -182,7 +182,7 @@ As babel@7 released in 2018, verdaccio team updated babel dependencies to the la
 
 ### <a id="vedaccio-ui-plugin"></a> UI Plugin
 
-Verdaccio provides an easy configuration system to enable / disable of web application. Verdaccio is used as E2E tooling system in many platforms and shipping UI along with verdaccio is a non-benifical overhead. So we separated the UI module and it's repository for easy development and mantainability. 
+Verdaccio provides an easy configuration system to enable / disable of web application. Verdaccio is used as E2E tooling system in many platforms and shipping UI along with verdaccio is a non-benifical overhead. So we separated the UI module and it's repository for easy development and maintainability. 
 
 You can find UI repository [here](https://github.com/verdaccio/ui).
 
@@ -201,6 +201,22 @@ Since verdaccio 3 release, Verdaccio contributors are actively participating in 
 - [Madrid NodeJS Meetup](https://www.todojs.com/introduccion-a-verdaccio/)
 - [Hacktober Fest 2018](https://github.com/verdaccio/verdaccio/issues/973)
 
+
+### New to Verdaccio / FAQ / Contact / Troubleshoot
+
+We welcome you in Verdaccio community and we look forward for your feedback and contribution to the project.
+
+If you have any issue you can try the following options, do no desist to ask or check our issues database, perhaps someone has asked already what you are looking for.
+
+* [Blog](https://medium.com/verdaccio)
+* [Donations](https://opencollective.com/verdaccio)
+* [Roadmaps](https://github.com/verdaccio/verdaccio/projects)
+* [Reporting an issue](https://github.com/verdaccio/verdaccio/blob/master/CONTRIBUTING.md#reporting-a-bug)
+* [Running discussions](https://github.com/verdaccio/verdaccio/issues?q=is%3Aissue+is%3Aopen+label%3Adiscuss)
+* [Chat](http://chat.verdaccio.org/)
+* [Logos](https://verdaccio.org/docs/en/logo)
+* [FAQ](https://github.com/verdaccio/verdaccio/issues?utf8=%E2%9C%93&q=is%3Aissue%20label%3Aquestion%20)
+* [Docker Examples](https://github.com/verdaccio/docker-examples)
 
 
 
