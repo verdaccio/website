@@ -73,8 +73,13 @@ Excited ?? Yes !!! Let's go !!
 
 Version 4 comes with a new shiny appealing user interface, providing more details to show and easy to navigate. We did major changes in verdaccio web application and everything is designed from scratch. 
 
+![alt text](./assets/verdaccio-main-page.png "verdaccio@4 detail page")
+
+
 ### <a id="new-search-process"></a> New search Process
 In version 3, verdaccio has a limited search functionality and it was all on web ui. Verdaccio 4 provides fast and quick search results from backend.
+
+![alt text](./assets/nsp.gif)
 
 ### <a id="register-info"></a> Registry information 
 Registry infromation is now easily accessible. 
@@ -89,13 +94,13 @@ Now package card provides more information about a package, easy to open issues 
 ### <a id="detailed-package"></a> Detailed Page
 We have detailed package in a more categorized manner for readme, dependencies, version and uplinks. 
 
+![alt text](./assets/detail-page.png "verdaccio@4 detail page")
+
 ### <a id="package-sidebar"></a> Package sidebar
 
 Package sidebar includes most relevant information from package metadata. You can open an issue, see readme and download the package tarball. It also clearly shows the package's minimum requirements on node and npm. 
 
 Also package sidebar shows *Author*, *Maintainers* and *Contributors* in different sections. When you click on anyone one of the avatar, you'll be able to contact that person via email.
-
-// @TODO add https://github.com/verdaccio/verdaccio/pull/1177
 
 ## <a id="router-api-ui"></a> New Router APIs
 Till, verdaccio@2 we have hash router implementation on frontend application routes. We faced a lot of problem with hash router in readme section. Readmes also uses (#) hash for the heading tags and anchor elements. 
@@ -107,9 +112,15 @@ In verdaccio@3, we moves hash router to more cleaner look to browser router. (No
 Verdaccio@4 improves the package management by additing access layer for publish & unpublish. Now you can have restrictions to some of users for publish and unpiblish flow. [Find out more](https://verdaccio.org/docs/en/packages )
 
 ## <a id="disable-gravatar"></a> Disable Gravatar
-Verdaccio uses [Gravatar](https://en.gravatar.com) to show author, conctributors and maintainers images. Now, gravatar support can be disabled from verdaccio `config.yaml`. 
+Verdaccio uses [Gravatar](https://en.gravatar.com) to show author, contributors and maintainers images. Now, gravatar support can be disabled from verdaccio `config.yaml`. 
 
-// @TODO: document this https://github.com/verdaccio/verdaccio/pull/1177
+```
+web:
+  title: Verdaccio
+  gravatar: false
+```
+
+In order to be fully offline, The fallback support is a generic user face SVG based on base64.
 
 ## <a id="new-npm-commands"></a> New commands
 
