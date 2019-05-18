@@ -19,11 +19,11 @@ Tale approccio è stato molto difficile da raggiungere considerando che:
 
 ## Implementazione
 
-There is no a silver bullet yet, each implementation seems to be specific for each project, you can check some of them in the following thread [clicking here](https://stackoverflow.com/a/50222427/308341).
+Non è ancora disponibile la soluzione perfetta, ogni implementazione sembra essere specifica per ciascun progetto; è possibile consultarne alcune nel thread seguente [cliccando qui](https://stackoverflow.com/a/50222427/308341).
 
 ### Example using Bash
 
-This is the most simple example using Verdaccio in a bash script (extracted from *create-react-app*).
+Questo è l'esempio più semplice dell'utilizzo di Verdaccio in un bash script (estratto da *create-react-app*).
 
 ```bash
 #!/bin/sh
@@ -32,16 +32,16 @@ set -e
 
 local_registry="http://0.0.0.0:4873"
 
-# start local registry
+# avvia il registro locale
 tmp_registry_log=`mktemp`
 sh -c "mkdir -p $HOME/.config/verdaccio"
 sh -c "cp --verbose /config.yaml $HOME/.config/verdaccio/config.yaml"
 sh -c "nohup verdaccio --config $HOME/.config/verdaccio/config.yaml &>$tmp_registry_log &"
-# wait for `verdaccio` to boot
+# attendi che`verdaccio` esegua il boot
 grep -q 'http address' <(tail -f $tmp_registry_log)
-# login so we can publish packages
+# fai il login affinché noi possiamo pubblicare i pacchetti 
 sh -c "npm-auth-to-token -u test -p test -e test@test.com -r $local_registry"
-# Run nmp command
+# Esegui il comando nmp 
 sh -c "npm --registry $local_registry publish"
 ```
 
