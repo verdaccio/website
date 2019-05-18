@@ -72,15 +72,15 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 > Nota: Verdaccio viene eseguito all'interno del container come utente non-root (uid=10001), se si utilizza bind mount per sovrascrivere le impostazioni predefinite, è necessario assicurarsi che la mount directory venga assegnata all'utente corretto. Nell'esempio precedente, è necessario eseguire `sudo chown -R 100:101 /opt/verdaccio` altrimenti si presenteranno errori di permesso durante l'esecuzione. Si consiglia di [utilizzare il volume di docker](https://docs.docker.com/storage/volumes/) al posto di bind mount.
 
-Verdaccio 4 fornisce un nuovo set di variabili d'ambiente per modificare i permessi, la porta o il protocollo http. Qui l'elenco completo:
+Verdaccio 4 fornisce un nuovo set di variabili d'ambiente per modificare le autorizzazioni, la porta o il protocollo http. Qui l'elenco completo:
 
-| Proprietà             | default                | Descrizione                                        |
-| --------------------- | ---------------------- | -------------------------------------------------- |
-| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | la directory di lavoro docker                      |
-| VERDACCIO_USER_NAME | `verdaccio`            | l'utente del sistema                               |
-| VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
-| VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
-| VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
+| Proprietà             | default                | Descrizione                                                           |
+| --------------------- | ---------------------- | --------------------------------------------------------------------- |
+| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | la directory di lavoro docker                                         |
+| VERDACCIO_USER_NAME | `verdaccio`            | l'utente del sistema                                                  |
+| VERDACCIO_USER_UID  | `10001`                | l'id utente utilizzato per applicare le autorizzazioni della cartella |
+| VERDACCIO_PORT        | `4873`                 | la porta di verdaccio                                                 |
+| VERDACCIO_PROTOCOL    | `http`                 | il protocollo http predefinito                                        |
 
 ### Estensioni
 
@@ -94,7 +94,7 @@ RUN npm install verdaccio-s3-storage
 
 ### Configurazione di Docker e della porta personalizzata
 
-Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
+Qualisiasi `host:port` configurato in `conf/config.yaml` sotto a `listen`** viene attualmente ignorato quando si utilizza docker**.
 
 If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
 
