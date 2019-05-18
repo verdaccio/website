@@ -70,14 +70,14 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio:4.x-next
 ```
 
-> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. Si consiglia di [utilizzare il volume di docker](https://docs.docker.com/storage/volumes/) al posto di bind mount.
+> Nota: Verdaccio viene eseguito all'interno del container come utente non-root (uid=10001), se si utilizza bind mount per sovrascrivere le impostazioni predefinite, è necessario assicurarsi che la mount directory venga assegnata all'utente corretto. Nell'esempio precedente, è necessario eseguire `sudo chown -R 100:101 /opt/verdaccio` altrimenti si presenteranno errori di permesso durante l'esecuzione. Si consiglia di [utilizzare il volume di docker](https://docs.docker.com/storage/volumes/) al posto di bind mount.
 
-Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
+Verdaccio 4 fornisce un nuovo set di variabili d'ambiente per modificare i permessi, la porta o il protocollo http. Qui l'elenco completo:
 
 | Proprietà             | default                | Descrizione                                        |
 | --------------------- | ---------------------- | -------------------------------------------------- |
-| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | the docker working directory                       |
-| VERDACCIO_USER_NAME | `verdaccio`            | the system user                                    |
+| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | la directory di lavoro docker                      |
+| VERDACCIO_USER_NAME | `verdaccio`            | l'utente del sistema                               |
 | VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
 | VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
 | VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
