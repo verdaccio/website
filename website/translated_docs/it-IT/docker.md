@@ -96,7 +96,7 @@ RUN npm install verdaccio-s3-storage
 
 Qualisiasi `host:port` configurato in `conf/config.yaml` sotto a `listen`** viene attualmente ignorato quando si utilizza docker**.
 
-If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
+Se si desidera raggiungere l'istanza docker di Verdaccio da una porta differente, diciamo `5000`, nel comando `docker run` aggiungere la variabile d'ambiente `VERDACCIO_PORT=5000` e poi esporre la porta `-p 5000:5000`.
 
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
@@ -104,7 +104,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio:4.x-next
 ```
 
-Of course the numbers you give to `-p` paremeter need to match.
+Naturalmente il numero che viene dato al parametro `-p` deve corrispondere.
 
 ### Utilizzare HTTPS con Docker
 
@@ -125,7 +125,7 @@ docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-You can set the port to use (for both container and host) by prefixing the above command with `VERDACCIO_PORT=5000`.
+Si può definire la porta da utilizzare (sia per il container che per l'host) anteponendo al comando precedente il prefisso `VERDACCIO_PORT=5000`.
 
 ```yaml
 version: '3.1'
@@ -187,7 +187,7 @@ Esiste una cartella separata che ospita configurazioni multiple per comporre imm
 
 <https://github.com/verdaccio/docker-examples>
 
-## Build personalizzati di Docker
+## Build Personalizzate di Docker
 
 > If you have made an image based on Verdaccio, feel free to add it to this list.
 
