@@ -62,6 +62,6 @@ sh -c "npm --registry $local_registry publish"
 
 Babel.js potrebbe essere interessato a integrare Verdaccio nei suoi workflow, se si desidera contribuire, consultare [questo ticket](https://github.com/babel/babel/issues/6134).
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Thinking of using verdaccio to test <a href="https://twitter.com/lernajs?ref_src=twsrc%5Etfw">@lernajs</a> v3 (+use this generally), as it&#39;s hard to know if a publish will be successful. Would like us to fix an issue where we would like to compile Babel using itself before it&#39;s published (as we self-host but from latest npm) as a smoke test</p>&mdash; Henry Zhu (@left_pad) <a href="https://twitter.com/left_pad/status/1045770889051164672?ref_src=twsrc%5Etfw">28 de septiembre de 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Sto pensando di utilizzare verdaccio per testare <a href="https://twitter.com/lernajs?ref_src=twsrc%5Etfw">@lernajs</a>v3 (+ usarlo in generale), visto che è difficile sapere se una pubblicazione avrà esito positivo. Ci piacerebbe risolvere un issue in cui vogliamo compilare Babel utilizzandolo prima che venga pubblicato (come se fossimo in self-hosting ma dall'ultimo npm) come uno smoke test</p>&mdash; Henry Zhu (@left_pad) <a href="https://twitter.com/left_pad/status/1045770889051164672?ref_src=twsrc%5Etfw">28 settembre 2018</a></blockquote>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
