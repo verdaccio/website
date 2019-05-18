@@ -55,7 +55,7 @@ Per avviare il contenitore Docker:
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
 ```
 
-The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
+L'ultimo argomento definisce quale immagine si utilizza. La riga sopra citata scaricherà da dockerhub l'ultima immagine pre costruita disponibile, se ciò non è ancora stato fatto.
 
 Se è stata [costruita un'immagine localmente](#build-your-own-docker-image) utilizzare `verdaccio` come ultimo argomento.
 
