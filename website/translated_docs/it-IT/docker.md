@@ -189,11 +189,11 @@ Esiste una cartella separata che ospita configurazioni multiple per comporre imm
 
 ## Build Personalizzate di Docker
 
-> If you have made an image based on Verdaccio, feel free to add it to this list.
+> Se hai creato un'immagine basata su Verdaccio, aggiungila a questo elenco.
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
-* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Contenitore privato di NPM che può eseguire il back up in s3
+* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Container privato di NPM che può eseguire il back up in s3
 * [docker-verdaccio-ldap](https://github.com/snadn/docker-verdaccio-ldap)
 * [verdaccio-ldap](https://github.com/nathantreid/verdaccio-ldap)
 * [verdaccio-compose-local-bridge](https://github.com/shingtoli/verdaccio-compose-local-bridge)
