@@ -15,9 +15,9 @@ Tale approccio è stato molto difficile da raggiungere considerando che:
 * Alcuni registri OSS self-hosted sono troppo pesanti
 * Ambienti offline (reti private)
 
-**Verdaccio** is a lightweight registry with zero-configuration that **fits perfectly in any E2E + CI workflow**.
+**Verdaccio** è un registro leggero senza configurazione che ** si adatta perfettamente a qualsiasi E2E + CI workflow**.
 
-## Implementation
+## Implementazione
 
 There is no a silver bullet yet, each implementation seems to be specific for each project, you can check some of them in the following thread [clicking here](https://stackoverflow.com/a/50222427/308341).
 
