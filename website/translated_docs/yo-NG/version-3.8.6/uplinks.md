@@ -27,18 +27,18 @@ uplinks:
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
 
-| Property     | Type    | Required | Example                                 | Support | Description                                                                                                                | Default    |
-| ------------ | ------- | -------- | --------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| url          | string  | Yes      | https://registry.npmjs.org/             | all     | The registry url                                                                                                           | npmjs      |
-| ca           | string  | No       | ~./ssl/client.crt'                      | all     | SSL path certificate                                                                                                       | No default |
-| timeout      | string  | No       | 100ms                                   | all     | set new timeout for the request                                                                                            | 30s        |
-| maxage       | string  | No       | 10m                                     | all     | limit maximun failure request                                                                                              | 2m         |
-| fail_timeout | string  | No       | 10m                                     | all     | defines max time when a request becomes a failure                                                                          | 5m         |
-| max_fails    | number  | No       | 2                                       | all     | limit maximun failure request                                                                                              | 2          |
-| cache        | boolean | No       | [true,false]                            | >= 2.1  | cache all remote tarballs in storage                                                                                       | true       |
-| auth         | list    | No       | [see below](uplinks.md#auth-property)   | >= 2.5  | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
-| headers      | list    | No       | authorization: "Bearer SecretJWToken==" | all     | list of custom headers for the uplink                                                                                      | disabled   |
-| strict_ssl   | boolean | No       | [true,false]                            | >= 3.0  | If true, requires SSL certificates be valid.                                                                               | true       |
+| Ohun ini     | Iru     | Ti o nilo | Apẹẹrẹ                                  | Atilẹyin | Apejuwe                                                                                                                    | Default    |
+| ------------ | ------- | --------- | --------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| url          | okun    | Bẹẹni     | https://registry.npmjs.org/             | gbogbo   | The registry url                                                                                                           | npmjs      |
+| ca           | okun    | Rara      | ~./ssl/client.crt'                      | gbogbo   | SSL path certificate                                                                                                       | No default |
+| timeout      | okun    | Rara      | 100ms                                   | gbogbo   | set new timeout for the request                                                                                            | 30s        |
+| maxage       | okun    | Rara      | 10m                                     | gbogbo   | limit maximun failure request                                                                                              | 2m         |
+| fail_timeout | okun    | Rara      | 10m                                     | gbogbo   | defines max time when a request becomes a failure                                                                          | 5m         |
+| max_fails    | nọmba   | Rara      | 2                                       | gbogbo   | limit maximun failure request                                                                                              | 2          |
+| cache        | boolean | Rara      | [true,false]                            | >= 2.1   | cache all remote tarballs in storage                                                                                       | true       |
+| auth         | list    | Rara      | [see below](uplinks.md#auth-property)   | >= 2.5   | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
+| headers      | list    | Rara      | authorization: "Bearer SecretJWToken==" | gbogbo   | list of custom headers for the uplink                                                                                      | disabled   |
+| strict_ssl   | boolean | Rara      | [true,false]                            | >= 3.0   | If true, requires SSL certificates be valid.                                                                               | true       |
 
 #### Auth property
 
