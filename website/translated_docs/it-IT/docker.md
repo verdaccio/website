@@ -200,4 +200,4 @@ Esiste una cartella separata che ospita configurazioni multiple per comporre imm
 * [docker-verdaccio](https://github.com/Global-Solutions/docker-verdaccio)
 * [verdaccio-docker](https://github.com/idahobean/verdaccio-docker)
 * [verdaccio-server](https://github.com/andru255/verdaccio-server)
-* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) immagine docker che esegue verdaccio da coldrye-debian-nodejs.
+* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) immagine docker che fornisce verdaccio da coldrye-debian-nodejs.
