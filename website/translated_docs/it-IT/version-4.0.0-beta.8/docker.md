@@ -38,7 +38,7 @@ Per una specifica (patch) versione:
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next major release using the `4.x-next` (master) version.
+Per la successiva maggior release che utilizza la versione `4.x-next` (master).
 
 ```bash
 docker pull verdaccio/verdaccio:4.x-next
@@ -46,9 +46,9 @@ docker pull verdaccio/verdaccio:4.x-next
 
 > Se si è interessati ad un elenco dei tag, [ si prega di visitare il sito Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Running Verdaccio using Docker
+## Eseguire Verdaccio utilizzando Docker
 
-> The following configuration is based on the Verdaccio 4 or the `4.x-next` tag.
+> La configurazione seguente è basata su Verdaccio 4 o sul tag `4.x-next`.
 
 Per avviare il contenitore Docker:
 
@@ -71,17 +71,17 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio:4.x-next
 ```
 
-> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. Si consiglia di [utilizzare il volume di docker](https://docs.docker.com/storage/volumes/) al posto di bind mount.
+> Nota: Verdaccio viene eseguito all'interno del container come utente non-root (uid=10001), se si utilizza bind mount per sovrascrivere le impostazioni predefinite, è necessario assicurarsi che la mount directory venga assegnata all'utente corretto. Nell'esempio precedente, è necessario eseguire `sudo chown -R 100:101 /opt/verdaccio` altrimenti si presenteranno errori di permesso durante l'esecuzione. Si consiglia di [utilizzare il volume di docker](https://docs.docker.com/storage/volumes/) al posto di bind mount.
 
 Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
 
-| Proprietà             | default                | Descrizione                                        |
-| --------------------- | ---------------------- | -------------------------------------------------- |
-| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | the docker working directory                       |
-| VERDACCIO_USER_NAME | `verdaccio`            | the system user                                    |
-| VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
-| VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
-| VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
+| Proprietà             | default                | Descrizione                                                           |
+| --------------------- | ---------------------- | --------------------------------------------------------------------- |
+| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | la directory di lavoro docker                                         |
+| VERDACCIO_USER_NAME | `verdaccio`            | l'utente del sistema                                                  |
+| VERDACCIO_USER_UID  | `10001`                | l'id utente utilizzato per applicare le autorizzazioni della cartella |
+| VERDACCIO_PORT        | `4873`                 | la porta di verdaccio                                                 |
+| VERDACCIO_PROTOCOL    | `http`                 | il protocollo http predefinito                                        |
 
 ### Plugin
 
@@ -95,9 +95,9 @@ RUN npm install verdaccio-s3-storage
 
 ### Configurazione di Docker e della porta personalizzata
 
-Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
+Qualisiasi `host:port` configurato in `conf/config.yaml` sotto a `listen`** viene attualmente ignorato quando si utilizza docker**.
 
-If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
+Se si desidera raggiungere l'istanza docker di Verdaccio da una porta differente, diciamo `5000`, nel comando `docker run` aggiungere la variabile d'ambiente `VERDACCIO_PORT=5000` e poi esporre la porta `-p 5000:5000`.
 
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
@@ -105,7 +105,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio:4.x-next
 ```
 
-Of course the numbers you give to `-p` paremeter need to match.
+Naturalmente il numero che viene dato al parametro `-p` deve corrispondere.
 
 ### Utilizzare HTTPS con Docker
 
@@ -126,7 +126,7 @@ docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-You can set the port to use (for both container and host) by prefixing the above command with `VERDACCIO_PORT=5000`.
+Si può definire la porta da utilizzare (sia per il container che per l'host) anteponendo al comando precedente il prefisso `VERDACCIO_PORT=5000`.
 
 ```yaml
 version: '3.1'
@@ -189,13 +189,13 @@ Esiste una cartella separata che ospita configurazioni multiple per comporre imm
 
 <https://github.com/verdaccio/docker-examples>
 
-## Build personalizzati di Docker
+## Build Personalizzate di Docker
 
-> If you have made an image based on Verdaccio, feel free to add it to this list.
+> Se hai creato un'immagine basata su Verdaccio, aggiungila a questo elenco.
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
-* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Contenitore privato di NPM che può eseguire il back up in s3
+* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Container privato di NPM che può eseguire il back up in s3
 * [docker-verdaccio-ldap](https://github.com/snadn/docker-verdaccio-ldap)
 * [verdaccio-ldap](https://github.com/nathantreid/verdaccio-ldap)
 * [verdaccio-compose-local-bridge](https://github.com/shingtoli/verdaccio-compose-local-bridge)
