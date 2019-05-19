@@ -47,7 +47,7 @@ docker pull verdaccio/verdaccio:4.x-next
 
 ## Eseguire Verdaccio utilizzando Docker
 
-> La configurazione seguente è basata su Verdaccio 4 o sul tag `4.x-next`.
+> La configurazione seguente è basata su Verdaccio 4 o sul `4.x-next` tag.
 
 Per avviare il contenitore Docker:
 
@@ -55,7 +55,7 @@ Per avviare il contenitore Docker:
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
 ```
 
-L'ultimo argomento definisce quale immagine si utilizza. La riga sopra citata scaricherà da dockerhub l'ultima immagine pre costruita disponibile, se ciò non è ancora stato fatto.
+L'ultimo argomento definisce quale immagine utilizzare. La riga sopra citata scaricherà da dockerhub l'ultima immagine pre costruita disponibile, se ciò non è ancora stato fatto.
 
 Se è stata [costruita un'immagine localmente](#build-your-own-docker-image) utilizzare `verdaccio` come ultimo argomento.
 
