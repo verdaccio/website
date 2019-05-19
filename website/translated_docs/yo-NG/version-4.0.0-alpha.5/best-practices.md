@@ -1,18 +1,18 @@
 ---
 id: version-4.0.0-alpha.5-best
-title: Best Practices
-original_id: best
+title: Awọn iṣeṣi to Darajulọ
+original_id: didara julọ
 ---
 
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+Itọsọna yii jẹ akojọ ti awọn iṣeṣi to dara julọ ti o jẹ gbigba ati eyi ti a saba maa n gba niyanju fun gbogbo awọn olumulo. Maṣe mu itọsọna yi bi dandan, o le mu diẹ ninu wọn ni ibamu si awọn inilo rẹ.
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Ma se mikan lati dabaa awọn iṣesi to dara julọ pẹlu awujọ Verdaccio naa**.
 
-## Private Registry
+## Ibi iforukọsilẹ Ikọkọ
 
 You can add users and manage which users can access which packages.
 
-It is recommended that you define a prefix for your private packages, for example `local-*` or scoped `@my-company/*`, so all your private things will look like this: `local-foo`. This way you can clearly separate public packages from private ones.
+Igbaniyanju wa wipe ki o seto iṣaaju kan fun awọn akojọ ikọkọ rẹ, fun apẹẹrẹ `local-*` or scoped `@my-company/*`, nitoriki gbogbo awọn ohun ikọkọ rẹ le dabi iru eyi: `local-foo`. This way you can clearly separate public packages from private ones.
 
 ```yaml
   packages:
