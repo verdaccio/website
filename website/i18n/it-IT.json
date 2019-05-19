@@ -48,7 +48,7 @@
         "title": "End to End testing"
       },
       "github-actions": {
-        "title": "Github Actions"
+        "title": "Github Action"
       },
       "google-cloud": {
         "title": "Google Cloud"
@@ -303,7 +303,7 @@
         "title": "End to End testing"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-github-actions": {
-        "title": "Github Actions"
+        "title": "Github Action"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-installation": {
         "title": "Installazione"
