@@ -1,7 +1,7 @@
 ---
 id: version-4.0.0-alpha.5-authentification
-title: Sise ijerisi
-original_id: sise ijerisi
+title: Sise ifasẹsi
+original_id: sise ifasẹsi
 ---
 
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
@@ -9,10 +9,10 @@ The authentification is tied to the auth [plugin](plugins.md) you are using. The
 The client authentification is handled by `npm` client itself. Once you login to the application:
 
 ```bash
-npm aropoolumulo --iforukosile http://localhost:4873
+npm adduser --registry http://localhost:4873
 ```
 
-A wa tokini kan ninu `npm` iseto apo ti a seda ni apo ile olumulo. Fun alaye lekunrere nisoa `.npmrc` ka [ iwe ijoba ](https://docs.npmjs.com/files/npmrc)l.
+Aami kan ma jẹ ṣisẹda ninu `npm` faili iṣeto ti igbalejo rẹ wa ninu foda ile olumulo rẹ. Fun ẹkunrẹrẹ alaye nipa `.npmrc` ka [ iwe alasẹ](https://docs.npmjs.com/files/npmrc).
 
 ```bash
 cat .npmrc
@@ -21,55 +21,55 @@ registry=http://localhost:5555/
 //registry.npmjs.org/:_authToken=secretNpmjsToken
 ```
 
-#### Igbajade alailoruko
+#### Igbejade alainidamọ
 
-`verdaccio`nfayegba fun enikeni lati se igbejade alailoruko, lati se eleyi wa nilo lati se agbekale pipe ti[awon apo igbaniwole](packages.md).
+`verdaccio``verdaccio`gba ọ laaye lati ṣe imuṣiṣẹ igbejade alainidamọ, lati ni aṣeyọri pẹlu iyẹn o ma nilo lati seto [Iwọlesi ti Akojọ](packages.md) rẹ daradara.
 
-Bi apeere:
+Fun apẹẹrẹ:
 
 ```yaml
-  'ile-ise mi-*':
-     igbaniwole: $anonymous
-    igbejade: $anonymous
-    asoju: npmjs
+  'my-company-*':
+    access: $anonymous
+    publish: $anonymous
+    proxy: npmjs
 ```
 
 As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) until `npm@5.3.0` and all minor releases **won't allow you publish without a token**.
 
-## Imo oye awon Akojo
+## Nini oye Awọn ẹgbẹ akojọpọ
 
-### Itunmo ti `$all` ati `$anonymous`
+### Itunmọ `$all` ati `$anonymous`
 
-Bu a se mo *Verdaccio* nlo awon `htpasswd` ni aiyipada. Plugini na ko gbe se awon ona no `fayefun_igbawole`,`fayegba_igbejade` ati `fayegba_ako ti gbejade`. Ni eleyi, *Verdaccio* yio kapa re ni awon ona yi:
+Bi o se mọ *Verdaccio* n lo `htpasswd` ni atilẹwa. Ohun elo yẹn ko ṣe amuṣiṣẹ awọn ọna naa `allow_access`, `allow_publish` and `allow_unpublish`. Nitorina, *Verdaccio* ma mojuto iyẹn ni ọna wọnyi:
 
-* Ti o ba ti se agbawole (ako da o mo), `$all` ati `<code>$anonymous` tunmo si ikan kanna.
+* Ti o ko ba wọle (o jẹ alainidamọ), `$all` ati `$anonymous` tumọ si nkankan na.
 * If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
 
-Bi amu rele, `$all` ** yio jomo gbogbo awon olumulo, leyokokan yalanwon se agbewole tabi won ko se**.
+Bi amulọ, `$all` **ma se asopọ gbogbo awọn olumulo, ni alaigbarale boya o ti wọle tabi ko wọle**.
 
-** ise tele je fun ijerisi aiyipada plugini**. Ti o ban lo plugini eleyi ti o ba ini e mu ti plugini na wan gbese awon `fayegba_igbaniwole`, `fayegba_igbajade` tabi `fayegba_aitigbejade`, ibi ti a paju de si fun igbaniwole da lori plugini na gangan. Verdaccio akan seto awon akojo alaiyipada nikan.
+**Ohun elo ifasẹsi atilẹwa nikan ni iwa iṣaaju yẹn bawi**. Ti o ba n lo ohun elo akanṣe ati ti iru ohun elo bẹ ba n se imuṣiṣẹ `allow_access`, `allow_publish` tabi `allow_unpublish`, awọn ipinnu ti iwọle naa da lori ohun elo naa funrararẹ. Verdaccio ma ṣeto awọn ẹgbẹ akojọpọ atilẹwa nikan.
 
-Ejeki a gbeyewo gbogbo oun tati ko:
+Jẹ ki a ṣe atungbeyẹwo ni ṣoki:
 
-* **gbawole**: `$all`. `$authenticated` + awon akojo ti a fikun nipase plugini na
-* **aidanimo (igbejade): `$all` ati `$anonymous`.</li> </ul> 
-    
-    ## Default htpasswd
-    
-    In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
-    
-    ```yaml
-    auth:
-      htpasswd:
-        file: ./htpasswd
-        # Maximum amount of users allowed to register, defaults to "+inf".
-        # You can set this to -1 to disable registration.
-        #max_users: 1000
-    ```
-    
-    | Property  | Type   | Required | Example    | Support | Description                              |
-    | --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
-    | file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
-    | max_users | number | No       | 1000       | all     | set limit of users                       |
-    
-    In case to decide do not allow user to login, you can set `max_users: -1`.
+* **ti wọle**: `$all`, `$authenticated`, + awọn ẹgbẹ akojọpọ ti o jẹ fifikun nipasẹ ohun elo naa
+* **alainidamọ (ti jade sita)**: `$all` ati `$anonymous`.
+
+## Default htpasswd
+
+In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
+
+```yaml
+auth:
+  htpasswd:
+    file: ./htpasswd
+    # Maximum amount of users allowed to register, defaults to "+inf".
+    # You can set this to -1 to disable registration.
+    #max_users: 1000
+```
+
+| Ohun ini  | Iru   | Ti o nilo | Apẹẹrẹ     | Atilẹyin | Apejuwe                               |
+| --------- | ----- | --------- | ---------- | -------- | ------------------------------------- |
+| faili     | okun  | Bẹẹni     | ./htpasswd | gbogbo   | faili to gbalejo awọn iwe ẹri alaroko |
+| max_users | nọmba | Rara      | 1000       | gbogbo   | ṣeto gbedeke iye awọn olumulo         |
+
+In case to decide do not allow user to login, you can set `max_users: -1`.
