@@ -20,9 +20,9 @@ All access restrictions defined to [protect your packages](protect-your-dependen
 
 ### Configuration
 
-| Property | Type    | Required | Example                        | Support | Description                                                                                                                                          |
-| -------- | ------- | -------- | ------------------------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| enable   | boolean | No       | true/false                     | all     | allow to display the web interface                                                                                                                   |
-| title    | string  | No       | Verdaccio                      | all     | HTML head title description                                                                                                                          |
-| logo     | string  | No       | http://my.logo.domain/logo.png | all     | a URI where logo is located                                                                                                                          |
-| scope    | string  | No       | \\@myscope                   | all     | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
+| Ohun ini | Iru     | Ti o nilo | Apẹẹrẹ                         | Atilẹyin | Apejuwe                                                                                                                                              |
+| -------- | ------- | --------- | ------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| enable   | boolean | Rara      | true/false                     | gbogbo   | allow to display the web interface                                                                                                                   |
+| title    | okun    | Rara      | Verdaccio                      | gbogbo   | HTML head title description                                                                                                                          |
+| logo     | okun    | Rara      | http://my.logo.domain/logo.png | gbogbo   | a URI where logo is located                                                                                                                          |
+| scope    | okun    | Rara      | \\@myscope                   | gbogbo   | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
