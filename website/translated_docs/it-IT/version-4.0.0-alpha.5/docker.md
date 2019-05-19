@@ -159,11 +159,11 @@ Esiste una cartella separata che ospita configurazioni multiple per comporre imm
 
 <https://github.com/verdaccio/docker-examples>
 
-## Build personalizzati di Docker
+## Build Personalizzate di Docker
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
-* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Contenitore privato di NPM che può eseguire il back up in s3
+* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Container privato di NPM che può eseguire il back up in s3
 * [docker-verdaccio-ldap](https://github.com/snadn/docker-verdaccio-ldap)
 * [verdaccio-ldap](https://github.com/nathantreid/verdaccio-ldap)
 * [verdaccio-compose-local-bridge](https://github.com/shingtoli/verdaccio-compose-local-bridge)
