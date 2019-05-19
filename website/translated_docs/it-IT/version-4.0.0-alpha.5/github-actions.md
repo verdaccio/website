@@ -1,16 +1,16 @@
 ---
 id: version-4.0.0-alpha.5-github-actions
-title: Github Actions
+title: Github Action
 original_id: github-actions
 ---
 
-With [GitHub Actions](https://github.com/features/actions) you can automate your workflow, each GitHub Action performs a specific step in a process.
+Con [GitHub Action](https://github.com/features/actions) è possibile automatizzare il workflow, ciascun GitHub Action esegue un passaggio specifico in un processo.
 
 ![actions](/img/github-actions.png)
 
-## Testing your packages
+## Testare i pacchetti
 
-Verdaccio provides a custom acttion for easy integration in your flow, you only add the following to your `main.workflow` in the step you consider the better for your flow.
+Verdaccio fornisce un'azione personalizzata per una semplice integrazione nel flusso; aggiungere esclusivamente quanto segue al `main.workflow` nel passaggio che si considera sia migliore per il flusso.
 
 ```gha
 action "Publish Verdaccio" {
@@ -19,8 +19,8 @@ action "Publish Verdaccio" {
 }
 ```
 
-The action will perform a `npm publish` and if the publishing finish succesfully will allow to continue to the next step, otherwise will fails. If there is any issue publishing a package you will notice using this action.
+Questa azione eseguirà un `npm publish` e se la pubblicazione termina con successo permetterà di continuare fino al passaggio successivo, altrimenti fallirà. Se è presente un qualsiasi problema pubblicando un pacchetto si noterà utilizzando questa azione.
 
-Within the image uses `verdaccio-auth-memory` and `verdaccio-memory` plugins to handle authentification and storage to speed up the process.
+All'interno dell'immagine utilizza i plugin `verdaccio-auth-memory` e `verdaccio-memory` per gestire l'autenticazione e l'archiviazione per velocizzare il processo.
 
-If you want to know more about the action, [visit our repository](https://github.com/verdaccio/github-actions) dedicated for GitHub Actions.
+Se si desidera sapere di più sull'azione, [visitare il nostro repository](https://github.com/verdaccio/github-actions) dedicato alle GitHub Action.
