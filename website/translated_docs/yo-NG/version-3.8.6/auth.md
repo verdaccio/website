@@ -1,7 +1,7 @@
 ---
 id: version-3.8.6-authentification
-title: Sise ijerisi
-original_id: sise ijerisi
+title: Sise ifasẹsi
+original_id: sise ifasẹsi
 ---
 
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
@@ -9,10 +9,10 @@ The authentification is tied to the auth [plugin](plugins.md) you are using. The
 The client authentification is handled by `npm` client itself. Once you login to the application:
 
 ```bash
-npm aropoolumulo --iforukosile http://localhost:4873
+npm adduser --registry http://localhost:4873
 ```
 
-A wa tokini kan ninu `npm` iseto apo ti a seda ni apo ile olumulo. Fun alaye lekunrere nisoa `.npmrc` ka [ iwe ijoba ](https://docs.npmjs.com/files/npmrc)l.
+Aami kan ma jẹ ṣisẹda ninu `npm` faili iṣeto ti igbalejo rẹ wa ninu foda ile olumulo rẹ. Fun ẹkunrẹrẹ alaye nipa `.npmrc` ka [ iwe alasẹ](https://docs.npmjs.com/files/npmrc).
 
 ```bash
 cat .npmrc
@@ -21,17 +21,17 @@ registry=http://localhost:5555/
 //registry.npmjs.org/:_authToken=secretNpmjsToken
 ```
 
-#### Igbajade alailoruko
+#### Igbejade alainidamọ
 
-`verdaccio`nfayegba fun enikeni lati se igbejade alailoruko, lati se eleyi wa nilo lati se agbekale pipe ti[awon apo igbaniwole](packages.md).
+`verdaccio``verdaccio`gba ọ laaye lati ṣe imuṣiṣẹ igbejade alainidamọ, lati ni aṣeyọri pẹlu iyẹn o ma nilo lati seto [Iwọlesi ti Akojọ](packages.md) rẹ daradara.
 
-Bi apeere:
+Fun apẹẹrẹ:
 
 ```yaml
-  'ile-ise mi-*':
-     igbaniwole: $anonymous
-    igbejade: $anonymous
-    asoju: npmjs
+  'my-company-*':
+    access: $anonymous
+    publish: $anonymous
+    proxy: npmjs
 ```
 
 As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) until `npm@5.3.0` and all minor releases **won't allow you publish without a token**. However `yarn` has not such limitation.
@@ -49,9 +49,9 @@ auth:
     #max_users: 1000
 ```
 
-| Property  | Type   | Required | Example    | Support | Description                              |
-| --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
-| file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
-| max_users | number | No       | 1000       | all     | set limit of users                       |
+| Ohun ini  | Iru   | Ti o nilo | Apẹẹrẹ     | Atilẹyin | Apejuwe                               |
+| --------- | ----- | --------- | ---------- | -------- | ------------------------------------- |
+| faili     | okun  | Bẹẹni     | ./htpasswd | gbogbo   | faili to gbalejo awọn iwe ẹri alaroko |
+| max_users | nọmba | Rara      | 1000       | gbogbo   | ṣeto gbedeke iye awọn olumulo         |
 
 In case to decide do not allow user to login, you can set `max_users: -1`.
