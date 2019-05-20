@@ -1,16 +1,16 @@
 ---
 id: version-3.8.6-chef
-title: Chef Cookbook
-original_id: chef
+title: Iwe idana Alase
+original_id: alase
 ---
 
-Using Chef Cookbook for Verdaccio
+Lilo Iwe idana Alase fun Verdaccio
 
 For further information:
 
 * <https://github.com/verdaccio/verdaccio-cookbook>
 * <https://supermarket.chef.io/cookbooks/verdaccio>
 
-> We are looking for contributors for this repository, if you are interested please notify the author via tickets.
+> A n wa awọn oluranlọwọ fun ibi ipamọ yii, ti o ba nifẹẹsi jọwọ pe akiyesi olusẹda nipasẹ awọn tikẹti.
 
-Author: [Keli Grubb](https://github.com/kgrubb) && Barthelemy Vessemont.
+Olusẹda: [Keli Grubb](https://github.com/kgrubb) && Barthelemy Vessemont.
