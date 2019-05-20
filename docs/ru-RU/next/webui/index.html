@@ -84,7 +84,7 @@
 <span class="hljs-attr">  logo:</span> <span class="hljs-string">logo.png</span>
 <span class="hljs-attr">  primary_color:</span> <span class="hljs-string">"#4b5e40"</span>
 <span class="hljs-attr">  gravatar:</span> <span class="hljs-literal">true</span> <span class="hljs-string">| false
-</span><span class="hljs-attr">  scope:</span> <span class="hljs-string">\@scope</span>
+</span><span class="hljs-attr">  scope:</span> <span class="hljs-string">"@scope"</span>
 <span class="hljs-attr">  sort_packages:</span> <span class="hljs-string">asc</span> <span class="hljs-string">| desc
 </span></code></pre>
 <p>Все ограничения, определенные в секции <a href="/docs/ru-RU/next/protect-your-dependencies">Защита пакетов</a>, будут действовать и для веб-интерфейса.</p>
@@ -100,7 +100,7 @@
 <tr><td>sort_packages</td><td>[asc,desc]</td><td>Нет</td><td>asc</td><td><code>&gt;v4</code></td><td>По умолчанию, приватные пакеты сортируются в прямом алфавитном порядке</td></tr>
 <tr><td>logo</td><td>string</td><td>Нет</td><td><code>/local/path/to/my/logo.png</code> <code>http://my.logo.domain/logo.png</code></td><td>все</td><td>URI логотипа (в шапке)</td></tr>
 <tr><td>primary_color</td><td>string</td><td>Нет</td><td>&quot;#4b5e40&quot;</td><td><code>&gt;4</code></td><td>Основной цвет UI (хедер и т.д.)</td></tr>
-<tr><td>scope</td><td>string</td><td>Нет</td><td>\@myscope</td><td><code>&gt;v3.x</code></td><td>If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \@)</td></tr>
+<tr><td>scope</td><td>string</td><td>Нет</td><td>\@myscope</td><td><code>&gt;v3.x</code></td><td>Если вы используете репозиторий для хранения пакетов определённого скоупа, укажите этот скоуп, чтобы он был показан в заголовке веб-страницы (примечание: экранируйте @ с помощью \@)</td></tr>
 </tbody>
 </table>
 <blockquote>
