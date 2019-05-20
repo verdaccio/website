@@ -18,7 +18,7 @@ Verdaccio n se ipamọ gbogbo awọn akopọ ni atilẹwa sinu foda `/storage`. 
 
 ## Yago fun Fifi tarballs sapo iranti
 
-If you have a limited storage space, you might need to avoid cache tarballs, enabling `cache` false in each uplink will cache only metadata files.
+Ti o ba ni aaye ibi ipamọ ti o lopin, o le nilo lati yago fun titọju tarballs, siseto `cache` false ninu uplink kọọkan ma ṣe ipamọ iranti awọn faili metadata nikan.
 
     uplinks:
       npmjs:
