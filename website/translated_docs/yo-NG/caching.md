@@ -5,9 +5,9 @@ title: "Awọn ọna ifisapo iranti"
 
 Verdaccio n se ipamọ gbogbo awọn akopọ ni atilẹwa sinu foda `/storage`. Ṣugbọn o le se ipinnu boya o fẹ tẹle ọna ti o yatọ. Lilo awọn ohun elo o le lo ipamọ ayelujara tabi eyikeyi iru ibi ipamọ data.
 
-## Caching scenarios
+## Awọn iṣẹlẹ ifisapo iranti
 
-* Build a Node.js project on **Continous Integration** (Bamboo, GitLab, Jenkins, etc) servers is a task that might take several times at a day, thus, the server will download tons of tarballs from the registry every time takes place. As usual, the CI tools clear the cache after each build and the process start over and over again. That is a waste of bandwidth and reduces the external traffic. **You can use Verdaccio for caching tarballs and metadata in our internal network and give a boost in your build time.**
+* Sise agbedide iṣẹ akanṣe Node.js lori awọn olupese **Continous Integration** (Bamboo, GitLab, Jenkins, abbl) le jẹ iṣẹ to ma gba akoko pupọ ni ọjọ kan, nitorina, olupese naa yoo gba awọn tọọnu ti tarballs lati ibi iforukọsilẹ ni gbogbo igba ti o ba waye. As usual, the CI tools clear the cache after each build and the process start over and over again. That is a waste of bandwidth and reduces the external traffic. **You can use Verdaccio for caching tarballs and metadata in our internal network and give a boost in your build time.**
 * **Latency and Connectivity**, not all countries enjoy a high-speed connection. For such reason cache packages locally in your network is really handy. Either if you are traveling, or have a weak connection, roaming or countries with strong Firewalls that might affect the user experience (eg: corrupting tarballs).
 * **Offline Mode**, all Node Package Managers nowadays uses their own internal cache, but it common that different projects might use different tools, which implies lock files and so on. Those tools are unable to share cache, the unique solution is centralized and relies on a proxy registry, Verdaccio cache all metadata and tarballs are downloaded by demand being able to share them across all your project.
 * Avoid that any remote registry suddenly returns *HTTP 404* error for tarballs were previously available a.k.a ([left-pad issue](https://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/)).
