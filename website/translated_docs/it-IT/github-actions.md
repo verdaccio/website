@@ -18,7 +18,7 @@ action "Publish Verdaccio" {
 }
 ```
 
-Questa azione eseguirà un `npm publish` e se la pubblicazione termina con successo permetterà di continuare fino al passaggio successivo, altrimenti fallirà. Se è presente un qualsiasi problema pubblicando un pacchetto si noterà utilizzando questa azione.
+The action will perform a `npm publish` and if the publishing finishes succesfully will allow to continue to the next step, otherwise will fails. Se è presente un qualsiasi problema pubblicando un pacchetto si noterà utilizzando questa azione.
 
 All'interno dell'immagine utilizza i plugin `verdaccio-auth-memory` e `verdaccio-memory` per gestire l'autenticazione e l'archiviazione per velocizzare il processo.
 
