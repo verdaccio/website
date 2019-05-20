@@ -48,7 +48,7 @@ docker pull verdaccio/verdaccio:4.x-next
 
 ## Eseguire Verdaccio utilizzando Docker
 
-> La configurazione seguente è basata su Verdaccio 4 o sul tag `4.x-next`.
+> La configurazione seguente è basata su Verdaccio 4 o sul `4.x-next` tag.
 
 Per avviare il contenitore Docker:
 
@@ -71,7 +71,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio:4.x-next
 ```
 
-> Nota: Verdaccio viene eseguito all'interno del container come utente non-root (uid=10001), se si utilizza bind mount per sovrascrivere le impostazioni predefinite, è necessario assicurarsi che la mount directory venga assegnata all'utente corretto. Nell'esempio precedente, è necessario eseguire `sudo chown -R 100:101 /opt/verdaccio` altrimenti si presenteranno errori di permesso durante l'esecuzione. Si consiglia di [utilizzare il volume di docker](https://docs.docker.com/storage/volumes/) al posto di bind mount.
+> Nota: Verdaccio viene eseguito all'interno del container come utente non-root (uid=10001), se si utilizza bind mount per sovrascrivere le impostazioni predefinite, è necessario assicurarsi che la mount directory venga assegnata all'utente corretto. Nell'esempio precedente, è necessario eseguire `sudo chown -R 100:101 /opt/verdaccio` altrimenti si presenteranno errori di autorizzazione durante l'esecuzione. Si consiglia di [utilizzare il volume di docker](https://docs.docker.com/storage/volumes/) al posto di bind mount.
 
 Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
 
@@ -95,7 +95,7 @@ RUN npm install verdaccio-s3-storage
 
 ### Configurazione di Docker e della porta personalizzata
 
-Qualisiasi `host:port` configurato in `conf/config.yaml` sotto a `listen`** viene attualmente ignorato quando si utilizza docker**.
+Qualsiasi `host:port` configurato in `conf/config.yaml` sotto a `listen` **viene attualmente ignorato quando si utilizza docker**.
 
 Se si desidera raggiungere l'istanza docker di Verdaccio da una porta differente, diciamo `5000`, nel comando `docker run` aggiungere la variabile d'ambiente `VERDACCIO_PORT=5000` e poi esporre la porta `-p 5000:5000`.
 
@@ -120,7 +120,7 @@ docker run -it --rm --name verdaccio \
 ### Utilizzare docker-compose
 
 1. Scaricare l'ultima versione di [docker-compose](https://github.com/docker/compose).
-2. Creare ed eseguire il contenitore:
+2. Creare ed eseguire il container:
 
 ```bash
 $ docker-compose up --build
@@ -202,4 +202,4 @@ Esiste una cartella separata che ospita configurazioni multiple per comporre imm
 * [docker-verdaccio](https://github.com/Global-Solutions/docker-verdaccio)
 * [verdaccio-docker](https://github.com/idahobean/verdaccio-docker)
 * [verdaccio-server](https://github.com/andru255/verdaccio-server)
-* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) immagine docker che esegue verdaccio da coldrye-debian-nodejs.
+* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) immagine docker che fornisce verdaccio da coldrye-debian-nodejs.
