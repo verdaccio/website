@@ -14,7 +14,7 @@ web:
   logo: logo.png
   primary_color: "#4b5e40"
   gravatar: true | false
-  scope: \@scope
+  scope: "@scope"
   sort_packages: asc | desc
 ```
 
