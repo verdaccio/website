@@ -1,16 +1,16 @@
 ---
 id: version-3.8.6-what-is-verdaccio
-title: What is Verdaccio?
+title: Veridaccio とは？
 original_id: what-is-verdaccio
 ---
 
-Verdaccio is a **lightweight private npm proxy registry** built in **Node.js**
+Verdaccio は **Node.js** に組み込まれる **軽量なプライベート npm proxy registry です。**
 
-## What's a registry
+## レジストリとは？
 
-* A repository for packages that implements the **CommonJS Compliant Package Registry specification** for reading package info
-* Provide an API compatible with npm clients **(yarn/npm/pnpm)**
-* Follow the semantic Versioning compatible **(semver)**
+* パッケージ情報を読み込むために **CommonJS パッケージレジストリ仕様に準拠した** パッケージリポジトリです
+* npm クライアント **(yarn/npm/pnpm)** と互換性のある API を提供します
+* セマンティックバージョニング **(semver)** に従います
 
     $> verdaccio
     
