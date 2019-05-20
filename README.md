@@ -23,7 +23,7 @@ Verdaccio is powered by [crowdin](https://crowdin.com/project/verdaccio) platfor
 
 > Crowdin works with 2 sort of roles, Translator and Proofreader. All users are Translator by default. Any suggestion should be approved by a proofreader for each language.
 
-If you want to be a Proofreader send me a private message over Crowdin.
+If you want to be a Proofreader send me a private message over *crowdin*.
 
 If you are willing to translate and language is not available, feel free to requested with a ticket.
 
