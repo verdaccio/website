@@ -7,10 +7,10 @@ Verdaccio は **Node.js** に組み込み可能な **軽量なプライベート
 
 <div id="codefund">''</div>
 
-## What's a registry
+## Registry とは？
 
-* A repository for packages that implements the **CommonJS Compliant Package Registry specification** for reading package info
-* Provide an API compatible with npm clients **(yarn/npm/pnpm)**
+* パッケージ情報を読み込むために **CommonJS パッケージレジストリ仕様に準拠した** パッケージリポジトリです
+* npm クライアント **(yarn/npm/pnpm)** と互換性のある API を提供します
 * Follow the semantic Versioning compatible **(semver)**
 
     $> verdaccio
