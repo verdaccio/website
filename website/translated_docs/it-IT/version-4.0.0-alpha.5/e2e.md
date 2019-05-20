@@ -4,7 +4,7 @@ title: End to End testing
 original_id: e2e
 ---
 
-Alcuni progetti organizzano pacchetti in repository multi pacchetti o [monorepo](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). Il test E2E è un tema che è rilevante solitamente solo per le Interfacce Utente, tuttavia secondo Node.js, ** è necessario testare anche i pacchetti in pubblicazione**.
+Alcuni progetti organizzano pacchetti in repository multi pacchetti o [monorepo](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). Il test E2E è un argomento che è rilevante solitamente solo per le Interfacce Utente, tuttavia secondo Node.js, **è necessario testare anche i pacchetti in pubblicazione**.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Solution: a local npm registry. <a href="https://t.co/kvcyVANVSK">https://t.co/kvcyVANVSK</a></p>&mdash; Dan Abramov (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/951427674844680192?ref_src=twsrc%5Etfw">11 gennaio 2018</a></blockquote>
 
@@ -12,17 +12,17 @@ Alcuni progetti organizzano pacchetti in repository multi pacchetti o [monorepo]
 
 Tale approccio è stato molto difficile da raggiungere considerando che:
 
-* Populate canary packages on public services seems not to be a good idea
+* Compilare pacchetti canary sui servizi pubblici sembra non essere una buona idea
 * Alcuni registri OSS self-hosted sono troppo pesanti
 * Ambienti offline (reti private)
 
-**Verdaccio** è un registro leggero senza configurazione che ** si adatta perfettamente a qualsiasi E2E + CI workflow**.
+**Verdaccio** è un registro leggero senza configurazione che **si adatta perfettamente a qualsiasi E2E + CI workflow**.
 
 ## Implementazione
 
 Non è ancora disponibile la soluzione perfetta, ogni implementazione sembra essere specifica per ciascun progetto; è possibile consultarne alcune nel thread seguente [cliccando qui](https://stackoverflow.com/a/50222427/308341).
 
-### Example using Bash
+### Esempio di utilizzo di Bash
 
 Questo è l'esempio più semplice dell'utilizzo di Verdaccio in un bash script (estratto da *create-react-app*).
 
@@ -61,8 +61,8 @@ sh -c "npm --registry $local_registry publish"
 
 ## Futuro
 
-Babel.js potrebbe essere interessato a integrare Verdaccio nei suoi workflow, se si desidera contribuire, consultare [questo ticket](https://github.com/babel/babel/issues/6134).
+Babel.js potrebbe essere interessato a integrare Verdaccio nel suo workflow, se si desidera contribuire, consultare [questo ticket](https://github.com/babel/babel/issues/6134).
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Sto pensando di utilizzare verdaccio per testare <a href="https://twitter.com/lernajs?ref_src=twsrc%5Etfw">@lernajs</a>v3 (+ usarlo in generale), visto che è difficile sapere se una pubblicazione avrà esito positivo. Ci piacerebbe risolvere un issue in cui vogliamo compilare Babel utilizzandolo prima che venga pubblicato (come se fossimo in self-hosting ma dall'ultimo npm) come uno smoke test</p>&mdash; Henry Zhu (@left_pad) <a href="https://twitter.com/left_pad/status/1045770889051164672?ref_src=twsrc%5Etfw">28 settembre 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Sto pensando di utilizzare verdaccio per testare <a href="https://twitter.com/lernajs?ref_src=twsrc%5Etfw">@lernajs</a> v3 (+ usarlo in generale), visto che è difficile sapere se una pubblicazione avrà esito positivo. Ci piacerebbe risolvere un issue in cui vogliamo compilare Babel utilizzandolo prima che venga pubblicato (come se fossimo in self-hosting ma dall'ultimo npm) come uno smoke test</p>&mdash; Henry Zhu (@left_pad) <a href="https://twitter.com/left_pad/status/1045770889051164672?ref_src=twsrc%5Etfw">28 settembre 2018</a></blockquote>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
