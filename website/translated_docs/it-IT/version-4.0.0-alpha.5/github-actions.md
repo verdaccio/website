@@ -4,13 +4,13 @@ title: Github Action
 original_id: github-actions
 ---
 
-Con [GitHub Action](https://github.com/features/actions) è possibile automatizzare il workflow, ciascun GitHub Action esegue un passaggio specifico in un processo.
+Con [GitHub Action](https://github.com/features/actions) è possibile automatizzare il workflow, ciascuna GitHub Action esegue un passaggio specifico in un processo.
 
 ![actions](/img/github-actions.png)
 
 ## Testare i pacchetti
 
-Verdaccio fornisce un'azione personalizzata per una semplice integrazione nel flusso; aggiungere esclusivamente quanto segue al `main.workflow` nel passaggio che si considera sia migliore per il flusso.
+Verdaccio fornisce un'azione personalizzata per una semplice integrazione nel flusso; aggiungere esclusivamente quanto segue al `main.workflow` nel passaggio che si considera migliore per il flusso.
 
 ```gha
 action "Publish Verdaccio" {
