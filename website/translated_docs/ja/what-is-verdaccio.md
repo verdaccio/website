@@ -1,17 +1,17 @@
 ---
 id: what-is-verdaccio
-title: "What is Verdaccio?"
+title: "Veridaccio とは？"
 ---
 
-Verdaccio is a **lightweight private npm proxy registry** built in **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+Verdaccio は **Node.js** に組み込まれる **軽量なプライベート npm proxy registry です。** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
 
 <div id="codefund">''</div>
 
-## What's a registry
+## レジストリとは？
 
-* A repository for packages that implements the **CommonJS Compliant Package Registry specification** for reading package info
-* Provide an API compatible with npm clients **(yarn/npm/pnpm)**
-* Follow the semantic Versioning compatible **(semver)**
+* パッケージ情報を読み込むために **CommonJS パッケージレジストリ仕様に準拠した** パッケージリポジトリです
+* npm クライアント **(yarn/npm/pnpm)** と互換性のある API を提供します
+* セマンティックバージョニング **(semver)** に従います
 
     $> verdaccio
     

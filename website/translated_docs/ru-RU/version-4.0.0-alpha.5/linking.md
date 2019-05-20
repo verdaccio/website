@@ -4,7 +4,7 @@ title: Связь с удалённым репозиторием
 original_id: linking-remote-registry
 ---
 
-Verdaccio - это прокси, и по умолчанию у него есть [связь](uplinks.md) с публичным репозиторием.
+Verdaccio - это прокси, и по умолчанию у него есть [аплинк](uplinks.md) с публичным репозиторием.
 
 ```yaml
 uplinks:

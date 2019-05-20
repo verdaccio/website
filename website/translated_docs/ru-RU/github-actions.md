@@ -18,7 +18,7 @@ action "Publish Verdaccio" {
 }
 ```
 
-Этот экшн сделает `npm publish` и если публикация пройдет успешно, позволит переход в следующий шаг, в противном случае пометит шаг как неудачный. При возникновении проблем во время пбликации, экшн известит вас об этом.
+The action will perform a `npm publish` and if the publishing finishes succesfully will allow to continue to the next step, otherwise will fails. При возникновении проблем во время пбликации, экшн известит вас об этом.
 
 Внутри использется docker-образ с плагинами `verdaccio-auth-memory` и `verdaccio-memory` (аутентификация и хранилище) для ускорения процесса.
 

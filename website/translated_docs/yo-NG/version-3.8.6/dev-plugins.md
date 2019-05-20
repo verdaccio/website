@@ -51,7 +51,7 @@ The auth was successful.
      callback(null, groups);
     
 
-### Example
+### Apẹẹrẹ
 
 ```javascript
 function Auth(config, stuff) {

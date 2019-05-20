@@ -141,11 +141,11 @@ Be **aware that the order of your packages definitions is important and always u
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Property | Type    | Required | Example        | Support | Description                                 |
-| -------- | ------- | -------- | -------------- | ------- | ------------------------------------------- |
-| access   | string  | No       | $all           | all     | define groups allowed to access the package |
-| publish  | string  | No       | $authenticated | all     | define groups allowed to publish            |
-| proxy    | string  | No       | npmjs          | all     | limit look ups for specific uplink          |
-| storage  | boolean | No       | [true,false]   | all     | TODO                                        |
+| Ohun ini | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                     |
+| -------- | ------- | --------- | -------------- | -------- | ------------------------------------------- |
+| access   | okun    | Rara      | $all           | gbogbo   | define groups allowed to access the package |
+| publish  | okun    | Rara      | $authenticated | gbogbo   | define groups allowed to publish            |
+| proxy    | okun    | Rara      | npmjs          | gbogbo   | limit look ups for specific uplink          |
+| storage  | boolean | Rara      | [true,false]   | gbogbo   | TODO                                        |
 
 > We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).

@@ -12,7 +12,7 @@ The verdaccio CLI is your go start the application.
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Command            | Default                        | Example        | Description            |
+| Command            | Default                        | Apẹẹrẹ         | Apejuwe                |
 | ------------------ | ------------------------------ | -------------- | ---------------------- |
 | --listen \ **-l** | 4873                           | -p 7000        | http port              |
 | --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | the configuration file |
