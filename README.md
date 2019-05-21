@@ -36,4 +36,4 @@ Privates messages here [https://crowdin.com/profile/juanpicado](https://crowdin.
 
 # Contributing
 
-`CONTRIBUTING.md`. Read the contribution guidelines before start.
+**CONTRIBUTING.md**. Read the contribution guidelines before start.
