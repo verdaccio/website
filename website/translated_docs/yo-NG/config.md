@@ -150,7 +150,7 @@ publish:
 url_prefix: /verdaccio/
 ```
 
-> We recommend use a subdirectory `/verdaccio/` instead a URI.
+> A ṣe igbaniyanju pe ki o lo ipin-ọna kan `/verdaccio/` dipo URI kan.
 
 ### Max Body Size
 
@@ -162,7 +162,7 @@ max_body_size: 10mb
 
 ### Listen Port
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+`verdaccio` n ṣiṣẹ ni atilẹwa ni ibudo naa `4873`. Yiyi ibudo naa pada le ṣee ṣe nipasẹ [cli](cli.md) tabi ninu faili iṣeto naa, awọn aṣayan wọnyi fẹsẹmulẹ.
 
 ```yaml
 listen:
@@ -189,7 +189,7 @@ https:
 
 Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
-#### http_proxy and https_proxy
+#### http_proxy ati https_proxy
 
 If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
 
@@ -208,7 +208,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Notifications
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Ṣiṣe imuṣiṣẹ awọn ifitonileti si awọn irinṣẹ alagata rọrun diẹ nipasẹ awọn ikọ ayelujara. Fun alaye siwaju sii nipa abala yii ka [oju ewe awọn ifitonileti](notifications.md).
 
 ```yaml
 notify:
@@ -224,7 +224,7 @@ notify:
 
 <small>Since: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`ayẹwo npmt` jẹ aṣẹ tuntun kan ti o jẹ pipese pẹlu [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio wa pẹlu ohun elo middleware ti o jẹ kikọ sinu rẹ lati sakoso aṣẹ yii.
 
 > If you have a new installation it comes by default, otherwise you need to add the following props to your config file
 
