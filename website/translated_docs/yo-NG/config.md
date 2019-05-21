@@ -3,9 +3,9 @@ id: iṣeto
 title: "Faili Iṣeto"
 ---
 
-This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
+Faili yii ni pataki igun ti verdaccio nibi ti o ti le se aiyipada iwa atilẹwa naa, ṣe imuṣiṣẹ awọn ohun elo ati awọn ẹya ara to jẹ afikun.
 
-A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
+Faili iṣeto atilẹwa kan `config.yaml` jẹ ṣiṣẹda ni igba akọkọ ti o ba ṣe amulo `verdaccio`.
 
 ## Default Configuration
 
