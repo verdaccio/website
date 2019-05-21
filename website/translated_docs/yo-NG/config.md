@@ -7,7 +7,7 @@ Faili yii ni pataki igun ti verdaccio nibi ti o ti le se aiyipada iwa atilẹwa 
 
 Faili iṣeto atilẹwa kan `config.yaml` jẹ ṣiṣẹda ni igba akọkọ ti o ba ṣe amulo `verdaccio`.
 
-## Default Configuration
+## Iṣeto Atilẹwa
 
 The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
 
