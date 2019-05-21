@@ -131,7 +131,7 @@ packages:
     proxy: npmjs
 ```
 
-## Advanced Settings
+## Iṣeto Giga
 
 ### Offline Publish
 
