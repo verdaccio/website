@@ -52,7 +52,7 @@ plugins: ./plugins
 
 ### Sise ifasẹsi
 
-Ibi ni iṣeto sise ifasẹsi ti ma n waye, ifasẹsi atilẹwa da lori `htpasswd` atipe o jẹ kikọ sinu rẹ. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
+Ibi ni iṣeto sise ifasẹsi ti ma n waye, ifasẹsi atilẹwa da lori `htpasswd` atipe o jẹ kikọ sinu rẹ. O le se ayipada iwa yi nipasẹ [plugins](plugins.md). Fun alaye siwaju sii nipa abala yii ka [oju ewe ifasẹsi](auth.md).
 
 ```yaml
 auth:
@@ -61,7 +61,7 @@ auth:
     max_users: 1000
 ```
 
-### Security
+### Aabo
 
 <small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
