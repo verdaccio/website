@@ -32,9 +32,9 @@ logs:
 
 ## Awọn abala
 
-The following sections explain what each property means and the different options.
+Awọn abala wọnyi ṣe alaye nipa nkan ti ohun ini kọọkan tumọ si ati awọn aṣaayan oriṣiriṣi.
 
-### Storage
+### Ibi ipamọ
 
 Is the location of the default storage. **Verdaccio is by default based on local file system**.
 
