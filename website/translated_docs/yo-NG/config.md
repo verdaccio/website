@@ -9,7 +9,7 @@ Faili iṣeto atilẹwa kan `config.yaml` jẹ ṣiṣẹda ni igba akọkọ ti
 
 ## Iṣeto Atilẹwa
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+Iṣeto atilẹwa naa ni atilẹyin fun **scoped** awọn akopọ ati fayegba eyikeyi olumulo lati wọle si gbogbo awọn akopọ ṣugbọn nikan jẹki **awọn olumulo ti o ni ifasẹsi lati se atẹjade**.
 
 ```yaml
 storage: ./storage
@@ -30,7 +30,7 @@ logs:
   - {type: stdout, format: pretty, level: http}
 ```
 
-## Sections
+## Awọn abala
 
 The following sections explain what each property means and the different options.
 
