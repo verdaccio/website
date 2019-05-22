@@ -5,7 +5,7 @@ authorFBID: 1122901551
 title: Diving into JWT support for Verdaccio 4
 ---
 
-![](https://cdn-images-1.medium.com/max/1024/1*t9d16DIcJg_-dEg0X_qTWg.png)
+![](https://verdaccio.nyc3.digitaloceanspaces.com/blog/1_t9d16DIcJg_-dEg0X_qTWg.png)
 
 If you are already using [Verdaccio 4](https://github.com/verdaccio/verdaccio) you are can immediately use the new token signature support with JWT or [JSON Web Tokens](https://github.com/auth0/node-jsonwebtoken).
 
