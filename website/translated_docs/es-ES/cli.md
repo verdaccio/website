@@ -20,6 +20,10 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 Para localizar el directorio de inicio, verdaccio confia en **$XDG_DATA_HOME** como primera opción y en un ambiente Windows se usa [la variable de ambiente APPDATA](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
+## Config file format
+
+Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+
 ## Ubicación del almacenamiento
 
 Verdaccio usa la variable de ambiente **$XDG_DATA_HOME** por defecto para ubicar el almacenamiento por defecto, el cual [debería ser lo mismo ](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) que $HOME/.local/share. Si estas usando un almacenamiento personalizado, lo anterior es irrelevante.
