@@ -20,6 +20,10 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 Для того, чтобы определить местоположение домашней директории мы полагаемся на **$XDG_DATA_HOME** в первую очередь и в среде Windows мы ищем переменную окружения [APPDATA](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
+## Config file format
+
+Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+
 ## Местоположение хранилища по умолчанию
 
 Для определения местоположения хранилища, по умолчанию мы используем переменную окружения **$XDG_DATA_HOME**, которая [должна быть похожа](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) на $HOME/.local/share. Но, если вы используете своё место для хранилища, это не имеет значения.
