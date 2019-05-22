@@ -28,7 +28,7 @@ yarn global add verdaccio@4.0.0
 You can find detailed installation instructions [here](https://verdaccio.org/docs/en/installation)
 
 ## Why 'Freedom' ?
-Verdaccio originated from [sinopia](https://github.com/rlidwka/sinopia) 3 years ago and since then verdaccio team maintaining and releasing major release every year. Since the fork, the project has evolved in many ways, making the project’s code base modern, easier to debug and more straightforward to contribute to by the community! 
+Verdaccio originated from [sinopia](https://github.com/rlidwka/sinopia) almost three years ago and since then verdaccio team maintaining and releasing major release every year. Since the fork, the project has evolved in many ways, making the project’s code base modern, easier to debug and more straightforward to contribute to by the community. 
 
 The name freedom holds true meaning for version 4 release. Verdaccio is a strong community of many contributors and developers from across the world, providing an ideal platform for everyone to give control of their code. Also, version 4 is free from tech debt of legacy code and stands on design patterns of the modern era which consist React, Typed plugin system, JWT, Docker & kubernetes. We can call it Freedom in true sense.
 
@@ -49,16 +49,14 @@ Excited ?? Yes !!! Let's go !!
     - [Registry information](#register-info)
     - [Detailed Page](#detailed-page)
     - [Package sidebar](#package-sidebar)
-- [New Router APIs](#router-api)
+- [New Router APIs](#router-api-ui)
 - [Improvements in package access](#package-access)
 - [Disable Gravatar](#disable-gravatar)
 - [New commands](#new-npm-commands)
-    - [npm star](#npm-start)
+    - [npm star](#npm-star)
     - [npm profile](#npm-profile)
-    - [npm token](#npm-token)
 - [Plugins](#plugins)
 - [Drop node 6 / npm 3 support](#remove-node-6)
-- [Update notification](#notification-banner)
 - [Unpublish packages role](#unpublish)
 - [JWT token](#jwt-token)
 - [Docker improvements](#docker-improvements)
@@ -86,12 +84,12 @@ Registry information is now easily accessible.
 
 // @TODO https://github.com/verdaccio/verdaccio/pull/1178
 
-### <a id="packages-card"></a> Packages 
+### <a id="package-card"></a> Packages 
 Now package card provides more information about a package, easy to open issues and read the documentation without navigating into package details. 
 
 **Order**: Verdaccio@4 has a basic support for package ordering from `config.yaml`. The package list can be sorted ascending & descending. [Find out more](https://verdaccio.org/docs/en/webui#configuration)
 
-### <a id="detailed-package"></a> Detailed Page
+### <a id="detailed-page"></a> Detailed Page
 We have detailed package in a more categorized manner for readme, dependencies, version and uplinks. 
 
 ![alt text](./assets/detail-page.png "verdaccio@4 detail page")
@@ -107,9 +105,9 @@ Till, verdaccio@2 we have hash router implementation on frontend application rou
 
 In verdaccio@3, we moves hash router to more cleaner look to browser router. (No more hashes in URLs).
 
-## <a id="package-access"></a> Improvements in package access
+## <a id="unpublish-package-role"></a> Unpublish packages role
 
-Verdaccio@4 improves the package management by adding access layer for publish & unpublish. Now you can have restrictions to some of users for publish and unpublish flow. [Find out more](https://verdaccio.org/docs/en/packages )
+Verdaccio@4 improves the package management by adding access layer for publish & unpublish. Now you can have restrictions to some of users for publish and unpublish. [Find out more](https://verdaccio.org/docs/en/packages )
 
 ## <a id="disable-gravatar"></a> Disable Gravatar
 Verdaccio uses [Gravatar](https://en.gravatar.com) to show author, contributors and maintainers images. Now, gravatar support can be disabled from verdaccio `config.yaml`. 
