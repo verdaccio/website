@@ -69,41 +69,41 @@ Excited ?? Yes !!! Let's go !!
 
 ## <a id="new-ui"></a> New user interface
 
-Version 4 comes with a new shiny appealing user interface, providing more details to show and easy to navigate. We did major changes in verdaccio web application and everything is designed from scratch. 
+Verdaccio@4.x comes with a new shiny appealing user interface, providing more details to show and easy to navigate. We did major changes in verdaccio web application and everything is designed from scratch. 
 
 ![alt text](./assets/verdaccio-main-page.png "verdaccio@4 detail page")
 
 
 ### <a id="new-search-process"></a> New search Process
-In version 3, verdaccio has a limited search functionality and it was all on web ui. Verdaccio 4 provides fast and quick search results from backend.
+In version 3, verdaccio has a limited search functionality and it was implemented on browser side. Verdaccio@4.x provides fast and quick search results from backend.
 
 ![alt text](./assets/nsp.gif)
 
-### <a id="register-info"></a> Registry information 
-Registry information is now easily accessible. 
+### <a id="register-info"></a> Register information 
+Register information can be easily accessible and can be seen by clicking on `information` icon in header.
 
 ![alt text](./assets/register-info.gif)
 
 ### <a id="package-card"></a> Packages 
-Now package card provides more information about a package, easy to open issues and read the documentation without navigating into package details. 
+New Package card provides more information about a package, easy to open issues and documentation link of package without navigating into package details. 
 
-**Order**: Verdaccio@4 has a basic support for package ordering from `config.yaml`. The package list can be sorted ascending & descending. [Find out more](https://verdaccio.org/docs/en/webui#configuration)
+**Order**: Verdaccio@4.x has a basic support for package ordering from `config.yaml`. The package list can be sorted ascending & descending. [Find out more](https://verdaccio.org/docs/en/webui#configuration)
 
 ### <a id="detailed-page"></a> Detailed Page
-We have detailed package in a more categorized manner for readme, dependencies, version and uplinks. 
+New Detailed package in a more categorized manner for readme, dependencies, version and uplinks. 
 
 ![alt text](./assets/detail-page.png "verdaccio@4 detail page")
 
 ### <a id="package-sidebar"></a> Package sidebar
 
-Package sidebar includes most relevant information from package metadata. You can open an issue, see readme and download the package tarball. It also clearly shows the package's minimum requirements on node and npm. 
+Package sidebar includes most relevant information from package metadata. You can open an issue,see readme and download the package tarball. It is also clearly shows the package's minimum requirements on node and npm. 
 
-Also package sidebar shows *Author*, *Maintainers* and *Contributors* in different sections. When you click on anyone one of the avatar, you'll be able to contact that person via email.
+Also package sidebar shows *Author*, *Maintainers* and *Contributors* in different sections. When you click on person avatar, you'll be able to contact that person via email.
 
 ## <a id="router-api-ui"></a> New Router APIs
-Till, verdaccio@2 we have hash router implementation on frontend application routes. We faced a lot of problem with hash router in readme section. Readmes also uses (#) hash for the heading tags and anchor elements. 
+Till, verdaccio@3 we have hash router implementation on frontend application routes. We faced a lot of problem with hash router in readme section. Readmes also uses (#) hash for the heading tags and anchor elements. 
 
-In verdaccio@3, we moves hash router to more cleaner look to browser router. (No more hashes in URLs).
+In verdaccio@3, we migrated hash router to browser router with more cleaner look. (No more hashes in URLs).
 
 ## <a id="unpublish-package-role"></a> Unpublish packages role
 
@@ -122,7 +122,7 @@ In order to be fully offline, The fallback support is a generic user face SVG ba
 
 ## <a id="new-npm-commands"></a> New commands
 
-We are really excited to add some npm cli commands to verdaccio. Now you can use `npm star`, `npm profile` and `npm token`
+We are really excited to add some npm cli commands to verdaccio. Now you can use `npm star`, and `npm profile`.
 
 ### <a id="npm-star"></a> npm star
 
@@ -158,11 +158,10 @@ Verdaccio suppports JWT - [JSON Web Tokens](https://jwt.io/) for authentication 
 
 ## <a id="remove-node-6"></a> Drop Node 6 / npm 3 support
 
-NodeJS 6 went to end of life on April 30, 2019. Verdaccio@4 drops the support for node6 & npm 2. Now on, node 8 &  will be the minimum requirement. verdaccio@4 also checks for the minimum node version. https://github.com/verdaccio/verdaccio/pull/968 
+NodeJS 6 went to end of life on April 30, 2019. Verdaccio@4.x drops the support for node6 & npm 2. Now on, node 8 & npm 5 will be the minimum requirement. verdaccio@4.x also checks for the minimum node version. https://github.com/verdaccio/verdaccio/pull/968 
 
 ## Plugins
 Verdaccio extends its functionalities with a set of plugins. You can find detailed information in plugins [documentation](https://verdaccio.org/docs/en/plugins#verdaccio-plugins)
-
 
 ## <a id="tech-updates"></a> Tech updates
 
