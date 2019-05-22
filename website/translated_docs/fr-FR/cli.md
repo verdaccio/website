@@ -20,6 +20,10 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 Pour localiser le répertoire de base, nous nous appuyons sur **$XDG_DATA_HOME** comme premier choix et sur l'environnement Windows que nous cherchons [Variable d’environnement APPDATA ](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
+## Config file format
+
+Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+
 ## Emplacement de stockage par défaut
 
 On utilise **$XDG_DATA_HOME**la variable d'environnement par défaut pour trouver le stockage par défaut qui [ devrait être identique ](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) de $HOME/ .local / share. Si vous utilisez un stockage personnalisé, cet emplacement est sans importance.
