@@ -30,7 +30,7 @@
             <link>https://verdaccio.org//blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4.html</link>
             <guid>https://verdaccio.org//blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4.html</guid>
             <pubDate>Fri, 19 Apr 2019 06:00:00 GMT</pubDate>
-            <description><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/1024/1*t9d16DIcJg_-dEg0X_qTWg.png" alt=""></p>
+            <description><![CDATA[<p><img src="https://verdaccio.nyc3.digitaloceanspaces.com/blog/1_t9d16DIcJg_-dEg0X_qTWg.png" alt=""></p>
 <p>If you are already using <a href="https://github.com/verdaccio/verdaccio">Verdaccio 4</a> you are can immediately use the new token signature support with JWT or <a href="https://github.com/auth0/node-jsonwebtoken">JSON Web Tokens</a>.</p>
 <pre><code class="hljs"><span class="hljs-built_in">npm</span> install -g verdaccio@next
 </code></pre>
