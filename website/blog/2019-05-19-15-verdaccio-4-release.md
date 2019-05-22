@@ -82,7 +82,7 @@ In version 3, verdaccio has a limited search functionality and it was all on web
 ### <a id="register-info"></a> Registry information 
 Registry information is now easily accessible. 
 
-// @TODO https://github.com/verdaccio/verdaccio/pull/1178
+![alt text](./assets/register-info.gif)
 
 ### <a id="package-card"></a> Packages 
 Now package card provides more information about a package, easy to open issues and read the documentation without navigating into package details. 
