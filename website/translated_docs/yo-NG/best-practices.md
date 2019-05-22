@@ -70,7 +70,7 @@ There's two options here:
     
     This way your package will be used until its original maintainer updates his public package to `0.1.3`.
 
-## Security
+## Aabo
 
 The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recommendation.
 
