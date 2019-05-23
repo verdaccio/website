@@ -1,13 +1,13 @@
 ---
 author: Ayush Sharma
 authorURL: https://twitter.com/ayusharma_
-authorFBID: 1122901551
+authorFBID: 100001655957183
 title: Verdaccio 4 released today !!!
 ---
 
 #### Release name: Freedom
 
-Verdaccio is a free open source javascript package proxy registry. It is fully compatible with pnpm, yarn and npm package management clients. It follows the CommonJS compliant package specifications. 
+Verdaccio is a free open source javascript package proxy registry. It is fully compatible with [pnpm](https://pnpm.js.org/), [yarn](https://yarnpkg.com) and [npm](https://www.npmjs.com/) package management clients. It follows the CommonJS compliant package specifications. 
 
 You can install and upgrade to the latest version by following commands:
 using **npm** 
@@ -22,97 +22,97 @@ yarn global add verdaccio@4.0.0
 
 or using **pnpm** 
 ````
-yarn global add verdaccio@4.0.0
+pnpm install -g verdaccio@4.0.0
 ````
 
 You can find detailed installation instructions [here](https://verdaccio.org/docs/en/installation)
 
 ## Why 'Freedom' ?
-Verdaccio originated from [sinopia](https://github.com/rlidwka/sinopia) almost three years ago and since then verdaccio team maintaining and releasing major release every year. Since the fork, the project has evolved in many ways, making the project’s code base modern, easier to debug and more straightforward to contribute to by the community. 
+Verdaccio originated from [Sinopia](https://github.com/rlidwka/sinopia) almost three years ago and since then Verdaccio Team maintaining and releasing major release every year. Since the fork, the project has evolved in many ways, making the project’s code base modern, easier to debug and more straightforward to contribute to by the community. 
 
-The name freedom holds true meaning for version 4 release. Verdaccio is a strong community of many contributors and developers from across the world, providing an ideal platform for everyone to give control of their code. Also, version 4 is free from tech debt of legacy code and stands on design patterns of the modern era which consist React, Typed plugin system, JWT, Docker & kubernetes. We can call it Freedom in true sense.
+The name Freedom holds true meaning for version 4 release. Verdaccio is a strong community of many contributors and developers from across the world, providing an ideal platform for everyone to give control of their code. Also, version 4 is free from tech debt of legacy code and stands on design patterns of the modern era which consist [React](https://reactjs.org/), [Typescript](https://www.typescriptlang.org/), [JWT](https://jwt.io/), [Docker](https://www.docker.com/) & [Kubernetes](https://kubernetes.io/). We can call it Freedom in true sense.
 
-Let's take a quick look at the life cycle and development of verdaccio community:
+Let's take a quick look at the life cycle and development of Verdaccio community:
 
-- **Verdaccio@2 (Release name: Birth)** -  focused on stability, code quality, improvement in  architecture of the old sinopia project and the most important community development. 
+- **Verdaccio@2.x (Release name: Birth)** -  Focused on stability, code quality, improvement in  architecture of the old sinopia project and community development. 
 
-- **Verdaccio@3 (Release name: Hope)** - revamped the user interface in React and introduced the simplicity of the plugin development. The verdaccio team and many contributors made the project almost bug free and robust. This was the time project started to grow and big players started using it. 
+- **Verdaccio@3.x (Release name: Hope)** - Redesigned the user interface in [React](https://reactjs.org/) and introduced the simplicity of the plugins development. The Verdaccio Team and many contributors made the project almost bug free and robust. This was the time the project started to grow and other projects started using it. 
 
-It's the first release, verdaccio is coming up with many exciting new CLI commands for package management,  Fast and Responsive user interface,  Security upgrades and easy deployments.
+It's the first release, Verdaccio is coming up with many exciting new CLI commands for package management, Fast and Responsive user interface, Security upgrades and easy deployments.
 
 Excited ?? Yes !!! Let's go !!
 
-## So what's changed ? TL;DR
-- [New User Interface](#new-ui)
+## So what's changed? TL;DR
+- [New User Interface](#new-user-interface)
     - [New search Process](#new-search-process)
-    - [Packages](#package-card)
-    - [Registry information](#register-info)
+    - [Register Information](#register-information)
+    - [Packages](#packages)
     - [Detailed Page](#detailed-page)
-    - [Package sidebar](#package-sidebar)
-- [New Router APIs](#router-api-ui)
-- [Improvements in package access](#package-access)
+    - [Package Sidebar](#package-sidebar)
+- [New Browser Router APIs](#new-browser-router)
+- [Unpublish Role](#unpublish-role)
 - [Disable Gravatar](#disable-gravatar)
-- [New commands](#new-npm-commands)
+- [New CLI Commands](#new-cli-commands)
     - [npm star](#npm-star)
     - [npm profile](#npm-profile)
+- [JWT Token](#jwt-token)
+- [Docker Improvements](#docker-improvements)
+- [Drop Node 6 Support](#drop-node-6-support)
 - [Plugins](#plugins)
-- [Drop node 6 / npm 3 support](#remove-node-6)
-- [Unpublish packages role](#unpublish)
-- [JWT token](#jwt-token)
-- [Docker improvements](#docker-improvements)
-- [Tech updates](#tech-updates)
-    - [eslint config](#verdaccio-eslint-config)
-    - [Verdaccio babel preset](#verdaccio-babel-preset)
-    - [UI Plugin](#vedaccio-ui-plugin)
-    - [Github actions](#github-actions)
-    - [Meetup & conferences](#meetup-conferences)
+- [Tech Updates](#tech-updates)
+    - [Verdaccio ESLint Config](#verdaccio-eslint-config)
+    - [Verdaccio Babel Preset](#verdaccio-babel-preset)
+    - [Verdaccio UI Plugin](#vedaccio-ui-plugin)
+    - [Meetup & Conferences](#meetup-&-conferences)
+- [Trusted by Many](#trusted-by-many)
+- [New to Verdaccio / FAQ / Contact / Troubleshoot](#new-to-verdaccio-/-faq-/-contact-/-troubleshoot)
 
-## <a id="new-ui"></a> New user interface
+## New User Interface
 
-Verdaccio@4.x comes with a new shiny appealing user interface, providing more details to show and easy to navigate. We did major changes in verdaccio web application and everything is designed from scratch. 
+Verdaccio@4.x comes with a new shiny appealing user interface, providing more details to show and easy to navigate. We did major changes in Verdaccio web application and everything is designed from scratch. 
 
 ![alt text](./assets/verdaccio-main-page.png "verdaccio@4 detail page")
 
 
-### <a id="new-search-process"></a> New search Process
-In version 3, verdaccio has a limited search functionality and it was implemented on browser side. Verdaccio@4.x provides fast and quick search results from backend.
+### New Search Process
+Verdaccio@3.x has a limited search functionality and it was implemented on the browser side. Verdaccio@4.x provides fast and quick search results from the backend.
 
 ![alt text](./assets/nsp.gif)
 
-### <a id="register-info"></a> Register information 
+### Register Information 
 Register information can be easily accessible and can be seen by clicking on `information` icon in header.
 
 ![alt text](./assets/register-info.gif)
 
-### <a id="package-card"></a> Packages 
-New Package card provides more information about a package, easy to open issues and documentation link of package without navigating into package details. 
+### Packages 
+New Package card provides more information about a package, easy to open issues and documentation link of the package without navigating into package details. 
 
-**Order**: Verdaccio@4.x has a basic support for package ordering from `config.yaml`. The package list can be sorted ascending & descending. [Find out more](https://verdaccio.org/docs/en/webui#configuration)
+**Order**: Verdaccio@4.x has basic support for package ordering from `config.yaml`. The package list can be sorted ascending & descending. [Find out more](https://verdaccio.org/docs/en/webui#configuration)
 
-### <a id="detailed-page"></a> Detailed Page
+### Detailed Page
 New Detailed package in a more categorized manner for readme, dependencies, version and uplinks. 
 
 ![alt text](./assets/detail-page.png "verdaccio@4 detail page")
 
-### <a id="package-sidebar"></a> Package sidebar
+### Package Sidebar
 
-Package sidebar includes most relevant information from package metadata. You can open an issue,see readme and download the package tarball. It is also clearly shows the package's minimum requirements on node and npm. 
+Package sidebar includes most relevant information from package metadata. You can open an issue, see Readme and download the package tarball. It also clearly shows the package's minimum requirements on node and npm. 
 
-Also package sidebar shows *Author*, *Maintainers* and *Contributors* in different sections. When you click on person avatar, you'll be able to contact that person via email.
+Also, The package sidebar shows *Author*, *Maintainers* and *Contributors* in different sections. When you click on person avatar, you'll be able to contact that person via email.
 
-## <a id="router-api-ui"></a> New Router APIs
-Till, verdaccio@3 we have hash router implementation on frontend application routes. We faced a lot of problem with hash router in readme section. Readmes also uses (#) hash for the heading tags and anchor elements. 
+## New Browser Router
+Till, verdaccio@3.x we have hash router implementation on frontend application routes. We faced a lot of problem with hash router in readme section. Readmes also uses (#) hash for the heading tags and anchor elements. 
 
-In verdaccio@3, we migrated hash router to browser router with more cleaner look. (No more hashes in URLs).
+In Verdaccio@3.x, we migrated the Hash Router to Browser Router with a more cleaner look. (No more hashes in URLs).
 
-## <a id="unpublish-package-role"></a> Unpublish packages role
+## Unpublish Role
 
-Verdaccio@4 improves the package management by adding access layer for publish & unpublish. Now you can have restrictions to some of users for publish and unpublish. [Find out more](https://verdaccio.org/docs/en/packages )
+Verdaccio@4.x improves the package management by adding an access layer to publish and unpublish. Now you can have restrictions to some of the users for publishing and un-publishing. [Find out more](https://verdaccio.org/docs/en/packages )
 
-## <a id="disable-gravatar"></a> Disable Gravatar
-Verdaccio uses [Gravatar](https://en.gravatar.com) to show author, contributors and maintainers images. Now, gravatar support can be disabled from verdaccio `config.yaml`. 
+## Disable Gravatar
+Verdaccio uses [Gravatar](https://en.gravatar.com) to show author, contributors and maintainers images. Now, gravatar support can be disabled from Verdaccio `config.yaml`. 
 
-```
+```yaml
 web:
   title: Verdaccio
   gravatar: false
@@ -120,22 +120,22 @@ web:
 
 In order to be fully offline, The fallback support is a generic user face SVG based on base64.
 
-## <a id="new-npm-commands"></a> New commands
+## New CLI Commands
 
-We are really excited to add some npm cli commands to verdaccio. Now you can use `npm star`, and `npm profile`.
+We are really excited to add some npm cli commands to Verdaccio. Now you can use `npm star`, and `npm profile`.
 
-### <a id="npm-star"></a> npm star
+### npm star
 
 Now a user can mark their favorite package. 
 
 ```
 npm star [<package>..]
 ```
-### <a id="npm-profile"></a> npm profile
+### npm profile
 
-With npm profile an user change their profile settings. 
+With npm profile, a user can change their profile settings. 
 
-*Note:* verdaccio does not support two factor authentication yet.
+*Note:* Verdaccio does not support two-factor authentication yet.
 
 ```
 npm profile get [--json|--parseable] [<property>]
@@ -146,50 +146,46 @@ npm profile set password
 Check out more at [https://docs.npmjs.com/cli/profile](https://docs.npmjs.com/cli/profile)
 
 
-## <a id="jwt-token"></a> JWT token
+## JWT Token
 
-Verdaccio suppports JWT - [JSON Web Tokens](https://jwt.io/) for authentication process. Previos version of verdaccio used `AES` token generator. The new JWT token standardises the process and provides an additonal mechanism for token generation. Verdaccio 4 still support the `AES` token generator.
+Verdaccio supports JWT - [JSON Web Tokens](https://jwt.io/) for the authentication. The previous version of Verdaccio used `AES` token generator. The new JWT token standardizes the process and provides an additional mechanism for token generation. Verdaccio@4.x still supports the `AES` token generator.
 
 [Click here for more information on new JWT tokens](https://medium.com/verdaccio/diving-into-jwt-support-for-verdaccio-4-88df2cf23ddc)
 
-## <a id="docker-improvements"></a> Docker improvements
+## Docker Improvements
 - https://github.com/verdaccio/verdaccio/pull/845
 @juanpicado
 
-## <a id="remove-node-6"></a> Drop Node 6 / npm 3 support
+## Drop Node 6 Support
 
-NodeJS 6 went to end of life on April 30, 2019. Verdaccio@4.x drops the support for node6 & npm 2. Now on, node 8 & npm 5 will be the minimum requirement. verdaccio@4.x also checks for the minimum node version. https://github.com/verdaccio/verdaccio/pull/968 
+NodeJS 6 went to end of life on April 30, 2019. Verdaccio@4.x drops the support for Node 6 & npm 2. Now on, Node 8 & npm 5 will be the minimum requirement. Verdaccio@4.x also checks for the minimum node version. https://github.com/verdaccio/verdaccio/pull/968 
 
 ## Plugins
-Verdaccio extends its functionalities with a set of plugins. You can find detailed information in plugins [documentation](https://verdaccio.org/docs/en/plugins#verdaccio-plugins)
+Verdaccio extends its functionalities with a set of plugins. You can find detailed information in plugins [Documentation](https://verdaccio.org/docs/en/plugins#verdaccio-plugins)
 
-## <a id="tech-updates"></a> Tech updates
+## Tech Updates
 
-Verdaccio 4 heavily relies on plugins and provides APIs for developers to build their own plugins. We introduced few major changes in development environment to adapt code modulatity, decolupling and typed system.
+Verdaccio 4 heavily relies on plugins and provides APIs for developers to build their own plugins. We introduced few major changes in the development environment to adapt code modularity, decoupling and typed system.
 
-Now the main verdaccio module is a powerful CLI to package management and a plugin system to introduce new functionalities.
+Now the main Verdaccio module is a powerful CLI to package management and a plugin system to introduce new functionalities.
 
-### <a id="verdaccio-eslint-config"></a> Verdaccio eslint config
+### Verdaccio ESLint config
 
-Verdaccio team uses [@verdaccio/eslint-config](https://github.com/verdaccio/eslint-config-verdaccio) across all the repositories to maintains same coding style. 
+Verdaccio Team uses [@verdaccio/eslint-config](https://github.com/verdaccio/eslint-config-verdaccio) across all the repositories to maintain the same coding style. 
 
-### <a id="verdaccio-babel-preset"></a> Verdaccio babel preset
+### Verdaccio Babel Preset
 
-As babel@7 released in 2018, verdaccio team updated babel dependencies to the latest by creating [@verdaccio/babel-preset](https://github.com/verdaccio/babel-preset)
+As Babel@7 released in 2018, Verdaccio Team updated babel dependencies to the latest by creating [@verdaccio/babel-preset](https://github.com/verdaccio/babel-preset)
 
-### <a id="vedaccio-ui-plugin"></a> UI Plugin
+### Verdaccio UI Plugin
 
-Verdaccio provides an easy configuration system to enable / disable of web application. Verdaccio is used as E2E tooling system in many platforms and shipping UI along with verdaccio is a non-benifical overhead. So we separated the UI module and it's repository for easy development and maintainability. 
+Verdaccio provides an easy configuration system to enable/disable of web application. Verdaccio is used as End-to-End(E2E) tooling system in many platforms and shipping UI along with Verdaccio is a non-beneficial overhead. So we separated the UI module and it's repository for simple & easy development and maintainability. 
 
 You can find UI repository [here](https://github.com/verdaccio/ui).
 
-### <a id="github-actions"></a> Github actions
+### Meetup & Conferences 
 
-Currently, Github actions in beta and verdaccio used them for release automation. Now it is very easy to make the release for the development team. We aim to introduce actions at other place after their stable release. 
-
-### <a id="meetup-conferences"></a> Meetup & conferences 
-
-Since verdaccio 3 release, Verdaccio contributors are actively participating in community activities, conferences, meetup and on twitter. 
+Since Verdaccio@3.x release, Verdaccio contributors are actively participating in community activities, conferences, meetup and on twitter. 
 
 - [Dot Conference 2018, Paris](https://twitter.com/ayusharma_/status/1060224341768572928)
 - [React day 2018, Berlin](https://twitter.com/verdaccio_npm/status/1067420167867695105)
@@ -197,6 +193,21 @@ Since verdaccio 3 release, Verdaccio contributors are actively participating in 
 - [ViennaJS Meetup](https://www.youtube.com/watch?v=hDIFKzmoCaA)
 - [Madrid NodeJS Meetup](https://www.todojs.com/introduccion-a-verdaccio/)
 - [Hacktober Fest 2018](https://github.com/verdaccio/verdaccio/issues/973)
+
+### Trusted by Many
+
+The Verdaccio Team is very happy to share that following projects are using Verdaccio as their End-to-End (E2E) testing tool.
+
+* [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests)
+* [Storybook](https://github.com/storybooks/storybook)
+* [Gatsby](https://github.com/gatsbyjs/gatsby) 
+* [Uppy](https://github.com/transloadit/uppy) 
+* [Aurelia Framework](https://github.com/aurelia) 
+* [bit](https://github.com/teambit/bit) 
+* [pnpm](https://github.com/pnpm/pnpm)
+* [Mozilla Neutrino](https://github.com/neutrinojs/neutrino)
+* [Amazon Web Services Cloud Development Kit](https://github.com/awslabs/aws-cdk)
+* [Hyperledger Composer](https://github.com/hyperledger/composer)
 
 
 ### New to Verdaccio / FAQ / Contact / Troubleshoot
@@ -207,7 +218,7 @@ If you have any issue you can try the following options, do no desist to ask or 
 
 * [Blog](https://medium.com/verdaccio)
 * [Donations](https://opencollective.com/verdaccio)
-* [Roadmaps](https://github.com/verdaccio/verdaccio/projects)
+* [Roadmap](https://github.com/verdaccio/verdaccio/projects)
 * [Reporting an issue](https://github.com/verdaccio/verdaccio/blob/master/CONTRIBUTING.md#reporting-a-bug)
 * [Running discussions](https://github.com/verdaccio/verdaccio/issues?q=is%3Aissue+is%3Aopen+label%3Adiscuss)
 * [Chat](http://chat.verdaccio.org/)
