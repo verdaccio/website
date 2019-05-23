@@ -11,11 +11,11 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 
 ## The latest Talk
 
-<iframe src="https://player.vimeo.com/video/322006226" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+<iframe width="960" height="540" src="https://www.youtube.com/embed/CnLA73E1BrE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 > The last shared talk is always highlighted here. We help you share your voice with the community.
 
-* [Практический опыт работы с приватным хранилищем npm-пакетов (Verdaccio)](https://youtu.be/CnLA73E1BrE?t=10101) - [О Panda-Meetup](http://panda-meetup.ru/msk-frontend-meetup-2)
+* [Практический опыт работы с приватным хранилищем npm-пакетов (Verdaccio)](https://youtu.be/CnLA73E1BrE?t=10101) - [О Panda-Meetup](http://panda-meetup.ru/msk-frontend-meetup-2) - time (2:48:23)
 * [Madrid Node.js Meetup - Introducción a Verdaccio: gestión de paquetes privados, March 2019](https://www.todojs.com/introduccion-a-verdaccio/)
 * [Vienna.js Meetuo - Introduction to Verdaccio, January 2019](https://www.youtube.com/watch?v=hDIFKzmoCaA)
 * [#22 FloripaJS Brazil Meetup, February 2019](https://www.youtube.com/watch?v=iOp70_svQ_M&feature=youtu.be&t=7578)
