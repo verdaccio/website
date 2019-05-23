@@ -149,7 +149,7 @@ Check out more at [https://docs.npmjs.com/cli/profile](https://docs.npmjs.com/cl
 
 ## JWT Token
 
-Verdaccio supports JWT - [JSON Web Tokens](https://jwt.io/) for the authentication. The previous version of Verdaccio used `AES` token generator. The new JWT token standardizes the process and provides an additional mechanism for token generation. Verdaccio@4.x still supports the `AES` token generator.
+Verdaccio supports [JSON Web Tokens](https://jwt.io/) for the authentication. The previous version of Verdaccio used `AES` token generator. The new JWT token standardizes the process and provides an additional mechanism for token generation. Verdaccio@4.x still supports the `AES` token generator.
 
 [Click here for more information on new JWT tokens](https://medium.com/verdaccio/diving-into-jwt-support-for-verdaccio-4-88df2cf23ddc)
 
@@ -162,7 +162,7 @@ Verdaccio supports JWT - [JSON Web Tokens](https://jwt.io/) for the authenticati
 NodeJS 6 went to end of life on April 30, 2019. Verdaccio@4.x drops the support for Node 6 & npm 2. Now on, Node 8 & npm 5 will be the minimum requirement. Verdaccio@4.x also checks for the minimum node version. https://github.com/verdaccio/verdaccio/pull/968 
 
 ## Plugins
-Verdaccio extends its functionalities with a set of plugins. You can find detailed information in plugins [Documentation](https://verdaccio.org/docs/en/plugins#verdaccio-plugins)
+Verdaccio extends its functionalities with a set of plugins. You can find detailed information in [Plugins Documentation](https://verdaccio.org/docs/en/plugins#verdaccio-plugins)
 
 ## Tech Updates
 
@@ -172,11 +172,11 @@ Now the main Verdaccio module is a powerful CLI to package management and a plug
 
 ### Verdaccio ESLint config
 
-Verdaccio Team uses [@verdaccio/eslint-config](https://github.com/verdaccio/eslint-config-verdaccio) across all the repositories to maintain the same coding style. 
+Now on, Verdaccio Team uses [@verdaccio/eslint-config](https://github.com/verdaccio/eslint-config-verdaccio) across all the repositories to maintain the same coding style. 
 
 ### Verdaccio Babel Preset
 
-As Babel@7 released in 2018, Verdaccio Team updated babel dependencies to the latest by creating [@verdaccio/babel-preset](https://github.com/verdaccio/babel-preset)
+As Babel@7 released in 2018, Verdaccio Team updated babel dependencies to the latest. We also created a central repository for the Babel preset [@verdaccio/babel-preset](https://github.com/verdaccio/babel-preset)
 
 ### Verdaccio UI Plugin
 
