@@ -5,11 +5,12 @@ authorFBID: 100001655957183
 title: Verdaccio 4 released today !!!
 ---
 
-#### Release name: Freedom
+# Release name: Freedom
 
 Verdaccio is a free open source javascript package proxy registry. It is fully compatible with [pnpm](https://pnpm.js.org/), [yarn](https://yarnpkg.com) and [npm](https://www.npmjs.com/) package management clients. It follows the CommonJS compliant package specifications. 
 
 You can install and upgrade to the latest version by following commands:
+
 using **npm** 
 ````
 npm install -g verdaccio@4.0.0
@@ -28,19 +29,19 @@ pnpm install -g verdaccio@4.0.0
 You can find detailed installation instructions [here](https://verdaccio.org/docs/en/installation)
 
 ## Why 'Freedom' ?
-Verdaccio originated from [Sinopia](https://github.com/rlidwka/sinopia) almost three years ago and since then Verdaccio Team maintaining and releasing major release every year. Since the fork, the project has evolved in many ways, making the project’s code base modern, easier to debug and more straightforward to contribute to by the community. 
+Verdaccio originated from [Sinopia](https://github.com/rlidwka/sinopia) almost three years ago and since then Verdaccio Team maintaining and releasing major release every year. Since the fork, the project has evolved in many ways, making the project’s code base modern, easier to debug and more straightforward to contribute. 
 
-The name Freedom holds true meaning for version 4 release. Verdaccio is a strong community of many contributors and developers from across the world, providing an ideal platform for everyone to give control of their code. Also, version 4 is free from tech debt of legacy code and stands on design patterns of the modern era which consist [React](https://reactjs.org/), [Typescript](https://www.typescriptlang.org/), [JWT](https://jwt.io/), [Docker](https://www.docker.com/) & [Kubernetes](https://kubernetes.io/). We can call it Freedom in true sense.
+The name Freedom holds true meaning for Verdaccio@4.x release. Verdaccio is a strong community of many contributors and developers from across the world, providing an ideal platform for everyone to give control of their code. Also, Verdaccio@4.x is free from tech debt of legacy code and stands on design patterns of the modern era which consist [React](https://reactjs.org/), [Typescript](https://www.typescriptlang.org/), [JWT](https://jwt.io/), [Docker](https://www.docker.com/) & [Kubernetes](https://kubernetes.io/). We can call it Freedom in true sense.
 
 Let's take a quick look at the life cycle and development of Verdaccio community:
 
-- **Verdaccio@2.x (Release name: Birth)** -  Focused on stability, code quality, improvement in  architecture of the old sinopia project and community development. 
+- **Verdaccio@2.x (Release name: Birth)** -  Focused on stability, code quality, improvement in  architecture of the old [Sinopia](https://github.com/rlidwka/sinopia) project and community development. 
 
 - **Verdaccio@3.x (Release name: Hope)** - Redesigned the user interface in [React](https://reactjs.org/) and introduced the simplicity of the plugins development. The Verdaccio Team and many contributors made the project almost bug free and robust. This was the time the project started to grow and other projects started using it. 
 
-It's the first release, Verdaccio is coming up with many exciting new CLI commands for package management, Fast and Responsive user interface, Security upgrades and easy deployments.
+Verdaccio@4.x is coming up with many exciting new CLI commands for package management, Fast and responsive user interface, security upgrades and easy deployments.
 
-Excited ?? Yes !!! Let's go !!
+Excited?? Yes !!! Let's go !!
 
 ## So what's changed? TL;DR
 - [New User Interface](#new-user-interface)
@@ -71,7 +72,7 @@ Excited ?? Yes !!! Let's go !!
 
 Verdaccio@4.x comes with a new shiny appealing user interface, providing more details to show and easy to navigate. We did major changes in Verdaccio web application and everything is designed from scratch. 
 
-![alt text](./assets/verdaccio-main-page.png "verdaccio@4 detail page")
+![verdaccio main page](./assets/verdaccio-main-page.png "verdaccio@4.x main page")
 
 
 ### New Search Process
@@ -80,37 +81,37 @@ Verdaccio@3.x has a limited search functionality and it was implemented on the b
 ![alt text](./assets/nsp.gif)
 
 ### Register Information 
-Register information can be easily accessible and can be seen by clicking on `information` icon in header.
+The Register information is easily accessible and can be seen by clicking on `information` icon in header.
 
 ![alt text](./assets/register-info.gif)
 
 ### Packages 
-New Package card provides more information about a package, easy to open issues and documentation link of the package without navigating into package details. 
+The new Package card provides more information about a package, easy to open issues and documentation link without navigating into package details. 
 
 **Order**: Verdaccio@4.x has basic support for package ordering from `config.yaml`. The package list can be sorted ascending & descending. [Find out more](https://verdaccio.org/docs/en/webui#configuration)
 
 ### Detailed Page
-New Detailed package in a more categorized manner for readme, dependencies, version and uplinks. 
+The new Detailed package in a more categorized manner for readme, dependencies, version and uplinks. 
 
 ![alt text](./assets/detail-page.png "verdaccio@4 detail page")
 
 ### Package Sidebar
 
-Package sidebar includes most relevant information from package metadata. You can open an issue, see Readme and download the package tarball. It also clearly shows the package's minimum requirements on node and npm. 
+The Package Sidebar includes most relevant information from package metadata. You can open an issue, see Readme and download the package tarball. It also clearly shows the package's minimum requirements on node and npm. 
 
 Also, The package sidebar shows *Author*, *Maintainers* and *Contributors* in different sections. When you click on person avatar, you'll be able to contact that person via email.
 
 ## New Browser Router
-Till, verdaccio@3.x we have hash router implementation on frontend application routes. We faced a lot of problem with hash router in readme section. Readmes also uses (#) hash for the heading tags and anchor elements. 
+Till, verdaccio@3.x we have Hash Router implementation on frontend application routes. We faced a lot of problem with hash router in the Readme section. The Readme also uses (#) hash for the heading tags and anchor elements. 
 
-In Verdaccio@3.x, we migrated the Hash Router to Browser Router with a more cleaner look. (No more hashes in URLs).
+In Verdaccio@4.x, we migrated the Hash Router to Browser Router with a more cleaner look. (No more hashes in URLs).
 
 ## Unpublish Role
 
-Verdaccio@4.x improves the package management by adding an access layer to publish and unpublish. Now you can have restrictions to some of the users for publishing and un-publishing. [Find out more](https://verdaccio.org/docs/en/packages )
+Verdaccio@4.x improves the package management by adding an access layer to publish and unpublish. Now you can have restrictions to some of the users for publishing and unpublishing. [Find out more](https://verdaccio.org/docs/en/packages )
 
 ## Disable Gravatar
-Verdaccio uses [Gravatar](https://en.gravatar.com) to show author, contributors and maintainers images. Now, gravatar support can be disabled from Verdaccio `config.yaml`. 
+Verdaccio uses [Gravatar](https://en.gravatar.com) to show the images of authors, contributors and maintainers. Now, gravatar support can be disabled from Verdaccio `config.yaml`. 
 
 ```yaml
 web:
