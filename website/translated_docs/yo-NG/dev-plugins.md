@@ -209,8 +209,8 @@ module.exports = (...arguments) => {
 };
 ```
 
-It is imporant that the name of the plugin **must start with `verdaccio-theme-` prefix**.
+O jẹ pataki pe orukọ ohun elo naa **gbọdọ bẹrẹ pẹlu afikun iṣaaju `verdaccio-theme-`**.
 
-### Theme Example
+### Apẹẹrẹ Akori
 
-* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): The default Verdaccio theme based in React.js.
+* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): Akori atilẹwa Verdaccio to da lori React.js.
