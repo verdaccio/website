@@ -37,9 +37,9 @@ uplinks:
     maxage: 30m
 ```
 
-Increasing the value of `maxage` in each `uplink` remotes will be asked less frequently. This might be a valid stragegy if you don't update dependencies so often.
+Sise alekun iye ti `maxage` ninu awọn idari `uplink` kọọkan maa jẹ bibeere nigbagbogbo. Eyi le jẹ ilana to fẹsẹmulẹ ti o ko ba maa ṣe imudojuiwọn awọn agbẹkẹle nigbagbogbo.
 
-## Using the memory instead the hardrive
+## Lilo iranti dipo lile ààyè ìtọ́jú lórí kọ̀mpútà
 
 Sometimes caching packages is not a critical step, rather than route packages from different registries and achieving faster build times. There are two plugins that avoid write in a phisical hardrive at all using the memory.
 
