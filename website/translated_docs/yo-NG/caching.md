@@ -28,7 +28,7 @@ Ti o ba ni aaye ibi ipamọ ti o lopin, o le nilo lati yago fun titọju tarball
 
 ## Fifa Akoko Ipari Apo iranti gun
 
-Verdaccio by default waits 2 minutes to invalidate the cache metadata before fetching new information from the remote registry.
+Verdaccio ni atilẹwa ma n duro fun iṣẹju meji lati fagilee awọn metadata apo iranti ki o to sawari alaye tuntun lati ibi iforukọsilẹ ọlọna jijin.
 
 ```yaml
 uplinks:
