@@ -193,9 +193,9 @@ The following list of plugins are implementing the Storage API and might be used
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)
 * [verdaccio-s3-storage](https://github.com/Remitly/verdaccio-s3-storage/tree/s3)
 
-> Are you willing to contribute with new Storage Plugins? [Click here.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
+> Ṣe o setan lati ṣe ilọwọsi pẹlu Awọn ohun elo Ibi ipamọ tuntun? [Tẹ ibi.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
 
-## Theme Plugin
+## Ohun elo Akori
 
 The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
 
