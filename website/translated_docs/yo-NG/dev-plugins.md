@@ -7,7 +7,7 @@ Awọn ọna pupọ lo wa lati fa `verdaccio` gun si, iru awọn ohun elo ti ati
 
 * Awọn ohun elo Ifasẹsi
 * Awọn ohun elo Middleware (lati `v2.7.0`)
-* Storage plugins since (`v3.x`)
+* Awọn ohun elo Ibi ipamọ lati (`v3.x`)
 
 > We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
 
