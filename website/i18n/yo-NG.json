@@ -39,7 +39,7 @@
         "title": "Faili Iṣeto"
       },
       "dev-plugins": {
-        "title": "Developing Plugins"
+        "title": "Ṣiṣe agbedide Awọn ohun elo"
       },
       "docker": {
         "title": "Docker"
@@ -141,7 +141,7 @@
         "title": "Contributing Verdaccio"
       },
       "version-3.8.6/version-3.8.6-dev-plugins": {
-        "title": "Developing Plugins"
+        "title": "Ṣiṣe agbedide Awọn ohun elo"
       },
       "version-3.8.6/version-3.8.6-docker": {
         "title": "Docker"
@@ -237,7 +237,7 @@
         "title": "Faili Iṣeto"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-dev-plugins": {
-        "title": "Developing Plugins"
+        "title": "Ṣiṣe agbedide Awọn ohun elo"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-docker": {
         "title": "Docker"
@@ -294,7 +294,7 @@
         "title": "Faili Iṣeto"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-dev-plugins": {
-        "title": "Developing Plugins"
+        "title": "Ṣiṣe agbedide Awọn ohun elo"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-docker": {
         "title": "Docker"
@@ -339,7 +339,7 @@
         "title": "Talks"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-dev-plugins": {
-        "title": "Developing Plugins"
+        "title": "Ṣiṣe agbedide Awọn ohun elo"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-linking-remote-registry": {
         "title": "Linking a Remote Registry"
