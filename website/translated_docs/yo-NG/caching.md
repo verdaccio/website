@@ -26,7 +26,7 @@ Ti o ba ni aaye ibi ipamọ ti o lopin, o le nilo lati yago fun titọju tarball
         cache: false
     
 
-## Extending Cache Expiration Time
+## Fifa Akoko Ipari Apo iranti gun
 
 Verdaccio by default waits 2 minutes to invalidate the cache metadata before fetching new information from the remote registry.
 
