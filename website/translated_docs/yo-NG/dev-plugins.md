@@ -9,11 +9,11 @@ Awọn ọna pupọ lo wa lati fa `verdaccio` gun si, iru awọn ohun elo ti ati
 * Awọn ohun elo Middleware (lati `v2.7.0`)
 * Awọn ohun elo Ibi ipamọ lati (`v3.x`)
 
-> We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
+> A ṣe igbaniyanju agbedide awọn ohun elo afikun nipa lilo [iru awọn itumọ iṣiṣẹ](https://github.com/verdaccio/flow-types) wa.
 
-## Authentication Plugin
+## Ohun elo Ifasẹsi
 
-Basically we have to return an object with a single method called `authenticate` that will recieve 3 arguments (`user, password, callback`).
+Ni pataki julọ a ni lati da ohun kan pada pẹlu ọna kan ti a n pe ni `ifasẹsi` ti o ma gba awọn ariyanjiyan mẹta (`olumulo, ọrọ igbaniwọle, ipe pada`).
 
 ### API
 
