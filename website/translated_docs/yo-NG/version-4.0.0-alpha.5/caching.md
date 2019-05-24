@@ -27,9 +27,9 @@ Ti o ba ni aaye ibi ipamọ ti o lopin, o le nilo lati yago fun titọju tarball
         cache: false
     
 
-## Extending Cache Expiration Time
+## Fifa Akoko Ipari Apo iranti gun
 
-Verdaccio by default waits 2 minutes to invalidate the cache metadata before fetching new information from the remote registry.
+Verdaccio ni atilẹwa ma n duro fun iṣẹju meji lati fagilee awọn metadata apo iranti ki o to sawari alaye tuntun lati ibi iforukọsilẹ ọlọna jijin.
 
 ```yaml
 uplinks:
@@ -38,18 +38,18 @@ uplinks:
     maxage: 30m
 ```
 
-Increasing the value of `maxage` in each `uplink` remotes will be asked less frequently. This might be a valid stragegy if you don't update dependencies so often.
+Sise alekun iye ti `maxage` ninu awọn idari `uplink` kọọkan maa jẹ bibeere nigbagbogbo. Eyi le jẹ ilana to fẹsẹmulẹ ti o ko ba maa ṣe imudojuiwọn awọn agbẹkẹle nigbagbogbo.
 
-## Using the memory instead the hardrive
+## Lilo iranti dipo lile ààyè ìtọ́jú lórí kọ̀mpútà
 
-Sometimes caching packages is not a critical step, rather than route packages from different registries and achiving faster build times. There are two plugins that avoid write in a phisical hardrive at all using the memory.
+Sometimes caching packages is not a critical step, rather than route packages from different registries and achiving faster build times. Awọn ohun elo afikun meji wa to yago patapata fun kikọ sinu ààyè ìtọ́jú alafojuri ti kọ̀mpútà nipa lilo iranti.
 
 ```bash
   npm install -g verdaccio-auth-memory
   npm install -g verdaccio-memory
 ```
 
-The configuration looks like this
+Iṣeto naa ribi iru eyi
 
 ```yaml
 auth:
@@ -63,4 +63,4 @@ store:
     limit: 1000
 ```
 
-Remember, once the server is restarted the data is being lost, we recomend this setup in cases where you do not need to persist at all.
+Ranti, ni kete ti olupese naa ba ti jẹ atunbẹrẹ ipadanu data naa ti n waye, a ṣe igbaniyanju iṣeto yii ni awọn aaye ti o ko ba ti nilo lati ṣe atẹnumọ.
