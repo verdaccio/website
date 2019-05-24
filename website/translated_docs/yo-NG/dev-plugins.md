@@ -1,12 +1,12 @@
 ---
 id: dev-plugins
-title: "Developing Plugins"
+title: "Ṣiṣe agbedide Awọn ohun elo"
 ---
 
-There are many ways to extend `verdaccio`, the kind of plugins supported are:
+Awọn ọna pupọ lo wa lati fa `verdaccio` gun si, iru awọn ohun elo ti atilẹyin wa fun ni:
 
-* Authentication plugins
-* Middleware plugins (since `v2.7.0`)
+* Awọn ohun elo Ifasẹsi
+* Awọn ohun elo Middleware (lati `v2.7.0`)
 * Storage plugins since (`v3.x`)
 
 > We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
