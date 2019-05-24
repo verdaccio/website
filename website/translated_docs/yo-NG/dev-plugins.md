@@ -9,7 +9,7 @@ Awọn ọna pupọ lo wa lati fa `verdaccio` gun si, iru awọn ohun elo ti ati
 * Awọn ohun elo Middleware (lati `v2.7.0`)
 * Awọn ohun elo Ibi ipamọ lati (`v3.x`)
 
-> A ṣe igbaniyanju agbedide awọn ohun elo afikun nipa lilo [iru awọn itumọ iṣiṣẹ](https://github.com/verdaccio/flow-types) wa.
+> A ṣe igbaniyanju agbedide awọn ohun elo afikun nipa lilo [awọn itumọ iru ilana](https://github.com/verdaccio/flow-types) wa.
 
 ## Ohun elo Ifasẹsi
 
@@ -28,11 +28,11 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> `adduser`, `allow_access`, `apiJWTmiddleware` ati `allow_publish` nikan ni o jẹ aṣaayan, verdaccio pese apadabọsi ni gbogbo awọn iṣẹlẹ bẹẹ.
 
-#### apiJWTmiddleware method
+#### ilana apiJWTmiddleware
 
-Since `v4.0.0`
+Lati `v4.0.0`
 
 `apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
