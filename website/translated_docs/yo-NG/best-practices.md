@@ -101,7 +101,7 @@ Lilo ** HTTPS ** jẹ igbaniyanju to wọpọ, fun idi eyi a ṣe igbaniyanju la
 
 ### Awọn aami to ti n Jotan
 
-Ni `verdaccio@3.x` awọn aami naa ko kin ni ọjọ ijotan. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+Ni `verdaccio@3.x` awọn aami naa ko kin ni ọjọ ijotan. Fun idi eyi a ṣafihan ẹya ara JWT ninu `verdaccio@4.x` tokan [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
@@ -115,7 +115,7 @@ security:
       expiresIn: 7d
 ```
 
-**Using this configuration will override the current system and you will be able to control how long the token will live**.
+**Lilo iṣeto yii yoo ṣe atẹmọlẹ eto ti lọwọlọwọ yii atipe iwọ yoo le ṣakoso iye igba ti aami naa yoo fi wa laye**.
 
 Using JWT also improves the performance with authentication plugins, the old system will perform an unpackage and validating the credentials in each request, while JWT will rely on the token signature avoiding the overhead for the plugin.
 
