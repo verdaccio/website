@@ -97,7 +97,7 @@ Ni ọna yẹn, **ẹnikẹni ki yoo lo anfani  ti ibi iforukọsilẹ rẹ ayaf
 
 ### Awọn isopọ to ni Aabo
 
-Lilo ** HTTPS ** jẹ igbaniyanju to wọpọ, fun idi eyi a ṣe igbaniyanju lati ka abala [SSL](ssl.md) lati mu ki Verdaccio ni aabo tabi lilo HTTPS [alayipada aṣoju ikọkọ](reverse-proxy.md) lori ti Verdaccio.
+Lilo ** HTTPS** jẹ igbaniyanju to wọpọ, fun idi eyi a ṣe igbaniyanju lati ka abala [SSL](ssl.md) lati mu ki Verdaccio ni aabo tabi lilo HTTPS [alayipada aṣoju ikọkọ](reverse-proxy.md) lori ti Verdaccio.
 
 ### Awọn aami to ti n Jotan
 
