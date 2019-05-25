@@ -79,7 +79,7 @@ Aabo naa bẹrẹ ni ayika rẹ, fun iru ohun bẹ ti a ṣe igbaniyanju patapat
 Ni atilẹwa gbogbo awọn akojọ ti o tẹ jade ni Verdaccio wa fun gbogbo eniyan lati ri, a ṣe igbaniyanju patapata pe ko dabobo ibi iforukọsilẹ rẹ lati ma jẹ ki awọn olumulo alailaṣẹ lati ita maa ṣe imudojuiwọn`access` ohun-ini si `$authenticated`.
 
 ```yaml
-  packages:
+  awọn akopọ:
     '@my-company/*':
       access: $authenticated
       publish: $authenticated
@@ -91,17 +91,17 @@ Ni atilẹwa gbogbo awọn akojọ ti o tẹ jade ni Verdaccio wa fun gbogbo eni
       publish: $authenticated
    ```
 
-In that way, **nobody will take advance of your registry unless is authorized and private packages won't be displayed in the User Interface**.
+Ni ọna yẹn, **ẹnikẹni ki yoo lo anfani  ti ibi iforukọsilẹ rẹ ayafi ti o ba gba aṣẹ atipe awọn akojọ ikọkọ ki yooo han ni Intafeesi Olumulo naa**.
 
-## Server
+## Olupese
 
-### Secured Connections
+### Awọn isopọ to ni Aabo
 
-Using **HTTPS** is a common recomendation, for such reason we recommend read the [SSL](ssl.md) section to make Verdaccio secure or using a HTTPS [reverse proxy](reverse-proxy.md) on top of Verdaccio.
+Lilo ** HTTPS ** jẹ igbaniyanju to wọpọ, fun idi eyi a ṣe igbaniyanju lati ka abala [SSL](ssl.md) lati mu ki Verdaccio ni aabo tabi lilo HTTPS [alayipada aṣoju ikọkọ](reverse-proxy.md) lori ti Verdaccio.
 
-### Expiring Tokens
+### Awọn aami to ti n Jotan
 
-In `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+Ni `verdaccio@3.x` awọn aami naa ko kin ni ọjọ ijotan. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
