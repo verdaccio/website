@@ -76,7 +76,7 @@ Aabo naa bẹrẹ ni ayika rẹ, fun iru ohun bẹ ti a ṣe igbaniyanju patapat
 
 ### Package Access
 
-By default all packages are you publish in Verdaccio are accessible for all public, we totally recommend protect your registry from external non authorized users updating `access` property to `$authenticated`.
+Ni atilẹwa gbogbo awọn akojọ ti o tẹ jade ni Verdaccio wa fun gbogbo eniyan lati ri, a ṣe igbaniyanju patapata pe ko dabobo ibi iforukọsilẹ rẹ lati ma jẹ ki awọn olumulo alailaṣẹ lati ita maa ṣe imudojuiwọn`access` ohun-ini si `$authenticated`.
 
 ```yaml
   packages:
