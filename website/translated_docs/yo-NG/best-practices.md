@@ -57,11 +57,11 @@ There's two options here:
         # proxy:
     ```
     
-    Nigbati o ba ṣe atẹjade akopọ rẹ ni ibilẹ, **o tọ ki o bẹrẹ pẹlu ẹya okun ti o ga ju eyi ti o wa tẹlẹ lọ**, nitori ko ma ba tako akopọ to ti wa ninu apo iranti tẹlẹ.
+    Nigbati o ba ṣe atẹjade akopọ rẹ ni ibilẹ, **o yẹ ki o bẹrẹ pẹlu ẹya okun ti o ga ju eyi ti o wa tẹlẹ lọ**, nitori ko ma ba tako akopọ to ti wa ninu apo iranti tẹlẹ.
 
 2. You want to temporarily use your version, but return to public one as soon as it's updated.
     
-    In order to avoid version conflicts, **you should use a custom pre-release suffix of the next patch version**. For example, if a public package has version 0.1.2, you can upload `0.1.3-my-temp-fix`.
+    Lati le yago fun awọn atako ti ẹya, **o yẹ ki o lo afikun ipari ti iṣaaju agbejade to jẹ akanṣe ti awẹ ẹya tokan**. Fun apẹẹrẹ, ti akopọ gbogbogbo ba jẹ ẹya 0.1.2, o le sagbega si `0.1.3-my-temp-fix`.
     
     ```bash
     npm version 0.1.3-my-temp-fix
