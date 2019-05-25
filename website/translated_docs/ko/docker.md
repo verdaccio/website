@@ -143,7 +143,7 @@ services:
     volumes:
       - "./storage:/verdaccio/storage"
       - "./config:/verdaccio/conf"
-      - "./config:/verdaccio/conf"  
+      - "./plugins:/verdaccio/plugins"  
 networks:
   node-network:
     driver: bridge

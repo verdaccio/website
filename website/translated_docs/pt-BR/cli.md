@@ -20,6 +20,10 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 Para encontrar o diretório padrão de configuração, é usada a variável **$XDG_DATA_HOME** em sistemas Linux e Mac, em instalações Windows é usada a [variável APPDATA](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
+## Config file format
+
+Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+
 ## Armazenamento Padrão
 
 A variável **$XDG_DATA_HOME** é usada para determinar o local de armazenamento padrão. Em geral essa variável [deve ser](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) igual a $HOME/.local/share. Se você estiver usando um tipo de armazenamento diferente do padrão, essa informação é irrelevante.

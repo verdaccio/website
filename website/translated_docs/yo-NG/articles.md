@@ -26,16 +26,16 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 ### Awọn arokọ ti o Tayọ
 
 * [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
-* [Cover Your Apps While Still Using npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
+* [Bo Awọn Ohun elo Rẹ Nigba Ti o Ṣi N lo Npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
 * [Containerizing Node.js Applications with Docker](https://nodesource.com/blog/containerizing-node-js-applications-with-docker)
 * [Verdaccio - A lightweight npm proxy registry - Interview with Juan Picado](https://survivejs.com/blog/verdaccio-interview/)
 * [Host, Publish and Manage Private npm Packages with Verdaccio](https://www.sitepoint.com/private-npm-packages-verdaccio/)
 * [Free Private NPM with Verdaccio and AWS](https://medium.com/@odahcam/free-private-npm-with-verdaccio-and-aws-a88e6f0f4beb)
 * [Run your own Unity Package Server!](https://medium.com/@markushofer/run-your-own-unity-package-server-b4fe9995704e)
 * [Ways to have your private npm registry — and a final DIY solution](https://medium.com/engenharia-noalvo/ways-to-have-your-private-npm-registry-and-a-final-diy-solution-eed001a88e74)
-* [How to set up a free private npm registry… for Windows](https://medium.com/@Anderson7301/how-to-set-up-a-free-private-npm-registry-for-windows-f532c6a381ce)
+* [Bi o ṣe le ṣeto ibi iforukọsilẹ npm aladani ni ọfẹ... fun Windows](https://medium.com/@Anderson7301/how-to-set-up-a-free-private-npm-registry-for-windows-f532c6a381ce)
 
-### English
+### Gẹẹsi
 
 * [Testing your npm package before releasing it using Verdaccio + ngrok](https://medium.com/strapi/testing-your-npm-package-before-releasing-it-using-verdaccio-ngrok-28e2832c850a)
 * [Host your own private NPM repository with Verdaccio](https://medium.com/devopslinks/host-your-own-private-npm-repository-with-verdaccio-e8a3202b97c5)
@@ -55,7 +55,7 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 * [verdaccioでprivateなnpmリポジトリを作成](https://qiita.com/mtokiwa/items/1bc22a2270e4408d4cdd)
 * [Version control of my own UnityPackage with Unity × Verdaccio / Unity×Verdaccioで自作UnityPackageをバージョン管理する](https://synamon.hatenablog.com/entry/2018/08/15/185607)
 
-### Chinese
+### Ṣainisi
 
 * [使用 verdaccio 搭建 npm 私有仓储](https://blog.sigoden.com/verdaccio--private-npm-registry/)
 * [Verdaccio：一个轻量级的私有npm代理注册表（sinopia fork)](https://www.ctolib.com/verdaccio-verdaccio.html)
@@ -68,12 +68,12 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 
 * [Installer un registre NPM](https://allons-y.io/wiki/installer-un-registre-npm)
 
-### Spanish
+### Sipanisi
 
 * [NPM privado: instalar y configurar Verdaccio](https://www.todojs.com/npm-privado-con-verdaccio/)
 * [NPM privado: 5 razones y 7 recomendaciones para utilizarlo](https://www.todojs.com/npm-privado-5-razones-y-7-recomendaciones/)
 
-### German
+### Jamani
 
 * [Struktur für große Angular-Anwendungen: Microservices, Module, MonoRepo?](https://jaxenter.de/struktur-angular-anwendungen-67467)
 * [Angular in einer Microservices-Welt](https://jaxenter.de/angular-microservices-66445)
@@ -82,5 +82,5 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 
 * [Introduction to Verdaccio VueJS Meetup 2018](https://www.slideshare.net/juancarlospicado/introduction-to-verdaccio)
 * [Introduccion Verdaccio Vienna JS Meetup 2019](https://docs.google.com/presentation/d/1eam_OtXCQh5IVYyia2GHhxVD8tb37B0yIadVa8wxQSk/edit?usp=sharing)
-* [Cover Your Apps While Still Using npm](https://www.slideshare.net/TierneyCoren/cover-your-apps-while-still-using-npm)
+* [Bo Awọn Ohun elo Rẹ Nigba Ti o Ṣi N lo Npm](https://www.slideshare.net/TierneyCoren/cover-your-apps-while-still-using-npm)
 * [Unity 2018-2019を見据えたDeNAのUnity開発のこれから [DeNA TechCon 2019]](https://www.slideshare.net/dena_tech/unity-20182019denaunity-dena-techcon-2019)

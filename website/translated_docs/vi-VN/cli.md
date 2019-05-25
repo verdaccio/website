@@ -20,6 +20,10 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 Để tìm thư mục chính, trước hết chúng ta chọn **$XDG_DATA_HOME**, sau đó tìm [biến môi trường APPDATA](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/) trong Window.
 
+## Config file format
+
+Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+
 ## Vị trí lưu trữ mặc định
 
 Chúng tôi sử dụng biến môi trường **$XDG_DATA_HOME **làm mặc định để tìm bộ nhớ theo mặc định, <a href = "https://askubuntu.com/questions/538526/is-home-local-share-the-default- Value-for-xdg-data-home-in-ubuntu-14-04 "> cũng giống như </a> $HOME/.local/share. Vị trí này sẽ không liên quan đến bạn nếu bạn đang sử dụng bộ nhớ tùy chỉnh.

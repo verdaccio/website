@@ -1,19 +1,19 @@
 ---
 id: dev-plugins
-title: "Developing Plugins"
+title: "Ṣiṣe agbedide Awọn ohun elo"
 ---
 
-There are many ways to extend `verdaccio`, the kind of plugins supported are:
+Awọn ọna pupọ lo wa lati fa `verdaccio` gun si, iru awọn ohun elo ti atilẹyin wa fun ni:
 
-* Authentication plugins
-* Middleware plugins (since `v2.7.0`)
-* Storage plugins since (`v3.x`)
+* Awọn ohun elo Ifasẹsi
+* Awọn ohun elo Middleware (lati `v2.7.0`)
+* Awọn ohun elo Ibi ipamọ lati (`v3.x`)
 
-> We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
+> A ṣe igbaniyanju agbedide awọn ohun elo afikun nipa lilo [awọn itumọ iru ilana](https://github.com/verdaccio/flow-types) wa.
 
-## Authentication Plugin
+## Ohun elo Ifasẹsi
 
-Basically we have to return an object with a single method called `authenticate` that will recieve 3 arguments (`user, password, callback`).
+Ni pataki julọ a ni lati da ohun kan pada pẹlu ọna kan ti a n pe ni `ifasẹsi` ti o ma gba awọn ariyanjiyan mẹta (`olumulo, ọrọ igbaniwọle, ipe pada`).
 
 ### API
 
@@ -28,13 +28,13 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> `adduser`, `allow_access`, `apiJWTmiddleware` ati `allow_publish` nikan ni o jẹ aṣaayan, verdaccio pese apadabọsi ni gbogbo awọn iṣẹlẹ bẹẹ.
 
-#### apiJWTmiddleware method
+#### ilana apiJWTmiddleware
 
-Since `v4.0.0`
+Lati `v4.0.0`
 
-`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
+`apiJWTmiddleware` jẹ sisafihan lori [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) lati le ni iṣakoso ti olutọju aami ni kikun, fifagbara bori ọna yii ma yọ atilẹyin `login/adduser`. A ṣe igbaniyanju pe ki o ma se ṣe amulo ọna yii ayafi ti o ba pọn dandan. Wo apẹẹrẹ ni kikun kan [nibi](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
@@ -98,9 +98,9 @@ auth:
     file: ./htpasswd
 ```
 
-Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
+Nibi ti `htpasswd` ti jẹ afikun ipari ti orukọ ohun elo naa. fun apẹẹrẹ: `verdaccio-htpasswd` ati awọn iyoku ti ara ma jẹ awọn odiwọn iṣeto ohun elo naa.
 
-## Middleware Plugin
+## Ohun elo Middleware
 
 Middleware plugins have the capability to modify the API layer, either adding new endpoints or intercepting requests.
 
@@ -112,9 +112,9 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 ### register_middlewares
 
-The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
+Ọna naa n pese iwọle kikun si sise ifasẹsi ati ibi ipamọ nipasẹ `auth` ati `storage`. `app` jẹ ohun elo ologeere ti o n faye gba ọ lati fi se afikun awọn ipo ipari tuntun.
 
-> A pretty good example of middleware plugin is the [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) and [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
+> Apẹẹrẹ didara julọ kan ti o jẹ ti ohun elo middleware ni [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) ati [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
 ### API
 
@@ -126,13 +126,13 @@ function register_middlewares(expressApp, authInstance, storageInstance) {
 
 To register a middleware we need an object with a single method called `register_middlewares` that will recieve 3 arguments (`expressApp, auth, storage`). *Auth* is the authentification instance and *storage* is also the main Storage instance that will give you have access to all to the storage actions.
 
-## Storage Plugin
+## Ohun elo Ibi ipamọ
 
 Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), but, since `verdaccio@3.x` you can plug in a custom storage replacing the default behaviour.
 
 ### API
 
-The storage API is a bit more complex, you will need to create a class that return a `IPluginStorage` implementation. Please see details bellow.
+API ti Ibi ipamọ jẹ eyi ti o le diẹ, o ma nilo lati ṣẹda kilasi kan ti o n se idapada imuṣiṣẹ `IPluginStorage`. Jọwọ wo alaye labẹ yii.
 
 ```flow
 class LocalDatabase<IPluginStorage>{
@@ -182,9 +182,9 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 }
 ```
 
-> The Storage API is still experimental and might change in the next minor versions. For further information about Storage API please follow the [types definitions in our official repository](https://github.com/verdaccio/flow-types).
+> API Ibi ipamọ ṣi jẹ onidanwo atipe o le yipada ninu awọn ẹya kekere ti o n bọ. Fun alaye siwaju sii nipa API Ibi ipamọ jọwọ tẹle [iru awọn itumọ ninu ibi ipamọ wa](https://github.com/verdaccio/flow-types).
 
-### Storage Examples
+### Awọn apẹẹrẹ Ibi ipamọ
 
 The following list of plugins are implementing the Storage API and might be used them as example.
 
@@ -193,11 +193,11 @@ The following list of plugins are implementing the Storage API and might be used
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)
 * [verdaccio-s3-storage](https://github.com/Remitly/verdaccio-s3-storage/tree/s3)
 
-> Are you willing to contribute with new Storage Plugins? [Click here.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
+> Ṣe o setan lati ṣe ilọwọsi pẹlu Awọn ohun elo Ibi ipamọ tuntun? [Tẹ ibi.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
 
-## Theme Plugin
+## Ohun elo Akori
 
-The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
+Ohun elo naa gbọdọ ṣe idapada iṣẹ kan ti o n ṣe idapada **okun** kan. Okun naa yẹ ki o jẹ ọgangan ipo ti gbongbo ti intafeesi olumulo rẹ.
 
 ### API
 
@@ -209,8 +209,8 @@ module.exports = (...arguments) => {
 };
 ```
 
-It is imporant that the name of the plugin **must start with `verdaccio-theme-` prefix**.
+O jẹ pataki pe orukọ ohun elo naa **gbọdọ bẹrẹ pẹlu afikun iṣaaju `verdaccio-theme-`**.
 
-### Theme Example
+### Apẹẹrẹ Akori
 
-* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): The default Verdaccio theme based in React.js.
+* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): Akori atilẹwa Verdaccio to da lori React.js.

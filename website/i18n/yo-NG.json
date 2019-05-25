@@ -36,10 +36,10 @@
         "title": "Command Line Tool"
       },
       "configuration": {
-        "title": "Configuration File"
+        "title": "Faili Iṣeto"
       },
       "dev-plugins": {
-        "title": "Developing Plugins"
+        "title": "Ṣiṣe agbedide Awọn ohun elo"
       },
       "docker": {
         "title": "Docker"
@@ -135,13 +135,13 @@
         "title": "Command Line Tool"
       },
       "version-3.8.6/version-3.8.6-configuration": {
-        "title": "Configuration File"
+        "title": "Faili Iṣeto"
       },
       "version-3.8.6/version-3.8.6-contributing": {
         "title": "Contributing Verdaccio"
       },
       "version-3.8.6/version-3.8.6-dev-plugins": {
-        "title": "Developing Plugins"
+        "title": "Ṣiṣe agbedide Awọn ohun elo"
       },
       "version-3.8.6/version-3.8.6-docker": {
         "title": "Docker"
@@ -213,7 +213,7 @@
         "title": "Command Line Tool"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-configuration": {
-        "title": "Configuration File"
+        "title": "Faili Iṣeto"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-uplinks": {
         "title": "Uplinks"
@@ -234,10 +234,10 @@
         "title": "Awọn ọna ifisapo iranti"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-configuration": {
-        "title": "Configuration File"
+        "title": "Faili Iṣeto"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-dev-plugins": {
-        "title": "Developing Plugins"
+        "title": "Ṣiṣe agbedide Awọn ohun elo"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-docker": {
         "title": "Docker"
@@ -291,10 +291,10 @@
         "title": "Awọn ọna ifisapo iranti"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-configuration": {
-        "title": "Configuration File"
+        "title": "Faili Iṣeto"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-dev-plugins": {
-        "title": "Developing Plugins"
+        "title": "Ṣiṣe agbedide Awọn ohun elo"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-docker": {
         "title": "Docker"
@@ -339,7 +339,7 @@
         "title": "Talks"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-dev-plugins": {
-        "title": "Developing Plugins"
+        "title": "Ṣiṣe agbedide Awọn ohun elo"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-linking-remote-registry": {
         "title": "Linking a Remote Registry"
@@ -360,7 +360,7 @@
         "title": "Awọn arokọ"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-configuration": {
-        "title": "Configuration File"
+        "title": "Faili Iṣeto"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-docker": {
         "title": "Docker"
@@ -378,7 +378,7 @@
         "title": "What is Verdaccio?"
       },
       "version-4.0.0-beta.8/version-4.0.0-beta.8-configuration": {
-        "title": "Configuration File"
+        "title": "Faili Iṣeto"
       },
       "version-4.0.0-beta.8/version-4.0.0-beta.8-docker": {
         "title": "Docker"

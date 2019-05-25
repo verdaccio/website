@@ -20,6 +20,10 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 Како бисмо лоцирали home directory, ослањамо се на **$XDG_DATA_HOME** као први избор у Windows окружењу где трагамо за [APPDATA environment variablom](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
+## Config file format
+
+Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+
 ## Подразумевана локација за чување
 
 Користимо **$XDG_DATA_HOME** environment варијаблу као подразумевано подешавање како бисмо лоцирали подразумевано место за чување које би требало [да буде исто](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) као $HOME/.local/share. Ако користите прилагођено место за чување података (custom storage), онда је локација ирелевантна.
