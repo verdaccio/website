@@ -26,7 +26,7 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 ### Awọn arokọ ti o Tayọ
 
 * [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
-* [Cover Your Apps While Still Using npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
+* [Bo Awọn Ohun elo Rẹ Nigba Ti o Ṣi N lo Npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
 * [Containerizing Node.js Applications with Docker](https://nodesource.com/blog/containerizing-node-js-applications-with-docker)
 * [Verdaccio - A lightweight npm proxy registry - Interview with Juan Picado](https://survivejs.com/blog/verdaccio-interview/)
 * [Host, Publish and Manage Private npm Packages with Verdaccio](https://www.sitepoint.com/private-npm-packages-verdaccio/)
@@ -82,5 +82,5 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 
 * [Introduction to Verdaccio VueJS Meetup 2018](https://www.slideshare.net/juancarlospicado/introduction-to-verdaccio)
 * [Introduccion Verdaccio Vienna JS Meetup 2019](https://docs.google.com/presentation/d/1eam_OtXCQh5IVYyia2GHhxVD8tb37B0yIadVa8wxQSk/edit?usp=sharing)
-* [Cover Your Apps While Still Using npm](https://www.slideshare.net/TierneyCoren/cover-your-apps-while-still-using-npm)
+* [Bo Awọn Ohun elo Rẹ Nigba Ti o Ṣi N lo Npm](https://www.slideshare.net/TierneyCoren/cover-your-apps-while-still-using-npm)
 * [Unity 2018-2019を見据えたDeNAのUnity開発のこれから [DeNA TechCon 2019]](https://www.slideshare.net/dena_tech/unity-20182019denaunity-dena-techcon-2019)
