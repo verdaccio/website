@@ -55,7 +55,7 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 * [verdaccioでprivateなnpmリポジトリを作成](https://qiita.com/mtokiwa/items/1bc22a2270e4408d4cdd)
 * [Version control of my own UnityPackage with Unity × Verdaccio / Unity×Verdaccioで自作UnityPackageをバージョン管理する](https://synamon.hatenablog.com/entry/2018/08/15/185607)
 
-### Chinese
+### Ṣainisi
 
 * [使用 verdaccio 搭建 npm 私有仓储](https://blog.sigoden.com/verdaccio--private-npm-registry/)
 * [Verdaccio：一个轻量级的私有npm代理注册表（sinopia fork)](https://www.ctolib.com/verdaccio-verdaccio.html)
@@ -68,12 +68,12 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 
 * [Installer un registre NPM](https://allons-y.io/wiki/installer-un-registre-npm)
 
-### Spanish
+### Sipanisi
 
 * [NPM privado: instalar y configurar Verdaccio](https://www.todojs.com/npm-privado-con-verdaccio/)
 * [NPM privado: 5 razones y 7 recomendaciones para utilizarlo](https://www.todojs.com/npm-privado-5-razones-y-7-recomendaciones/)
 
-### German
+### Jamani
 
 * [Struktur für große Angular-Anwendungen: Microservices, Module, MonoRepo?](https://jaxenter.de/struktur-angular-anwendungen-67467)
 * [Angular in einer Microservices-Welt](https://jaxenter.de/angular-microservices-66445)
