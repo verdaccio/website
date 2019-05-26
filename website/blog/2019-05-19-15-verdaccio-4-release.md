@@ -35,9 +35,9 @@ The name Freedom holds true meaning for Verdaccio@4.x release. Verdaccio is a st
 
 Let's take a quick look at the life cycle and development of Verdaccio community:
 
-- **Verdaccio@2.x Release name: Birth** -  Focused on stability, code quality, improvement in  architecture of the old [Sinopia](https://github.com/rlidwka/sinopia) project and community development. 
+- **Verdaccio (version 2 - Release name: Birth)** -  Focused on stability, code quality, improvement in  architecture of the old [Sinopia](https://github.com/rlidwka/sinopia) project and community development. 
 
-- **Verdaccio@3.x Release name: Hope** - Redesigned the user interface in [React](https://reactjs.org/) and introduced the simplicity of the plugins development. The Verdaccio Team and many contributors made the project almost bug free and robust. This was the time the project started to grow and other projects started using it. 
+- **Verdaccio (version 3 - Release name: Hope)** - Redesigned the user interface in [React](https://reactjs.org/) and introduced the simplicity of the plugins development. The Verdaccio Team and many contributors made the project almost bug free and robust. This was the time the project started to grow and other projects started using it. 
 
 Verdaccio@4.x is coming up with many exciting new CLI commands for package management, Fast and responsive user interface, security upgrades and easy deployments.
 
@@ -207,9 +207,7 @@ The Verdaccio Team is very happy to share that following projects are using Verd
 * [bit](https://github.com/teambit/bit) 
 * [pnpm](https://github.com/pnpm/pnpm)
 * [Mozilla Neutrino](https://github.com/neutrinojs/neutrino)
-* [Amazon Web Services Cloud Development Kit](https://github.com/awslabs/aws-cdk)
 * [Hyperledger Composer](https://github.com/hyperledger/composer)
-
 
 ### New to Verdaccio / FAQ / Contact / Troubleshoot
 
