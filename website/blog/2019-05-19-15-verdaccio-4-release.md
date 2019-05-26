@@ -28,6 +28,10 @@ pnpm install -g verdaccio@4.0.0
 
 You can find detailed installation instructions [here](https://verdaccio.org/docs/en/installation)
 
+<!--truncate-->
+
+<div id="codefund">''</div>
+
 ## Why 'Freedom' ?
 Verdaccio originated from [Sinopia](https://github.com/rlidwka/sinopia) almost three years ago and since then Verdaccio Team maintaining and releasing major release every year. Since the fork, the project has evolved in many ways, making the project’s code base modern, easier to debug and more straightforward to contribute. 
 
