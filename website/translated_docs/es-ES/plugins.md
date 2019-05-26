@@ -97,7 +97,7 @@ Verdaccio allows to replace the User Interface with a custom one, we call it **t
 
 ```
 
-> The plugin name prefix must start with `verdaccio-theme`, otherwise the pluging won't load.
+> The plugin name prefix must start with `verdaccio-theme`, otherwise the plugin won't load.
 
 You can load only one theme at the time and pass through options if is need it.
 
