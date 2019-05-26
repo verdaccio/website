@@ -22,37 +22,29 @@ Počevši od verzije `v2.x` možete povući docker images preko [tag](https://hu
 Za glavne verzije:
 
 ```bash
-docker pull verdaccio/verdaccio:3
+docker pull verdaccio/verdaccio:4
 ```
 
 Za podverzije:
 
 ```bash
-docker pull verdaccio/verdaccio:3.0
+docker pull verdaccio/verdaccio:4.0
 ```
 
 Za specifičnu verziju (patch):
 
 ```bash
-docker pull verdaccio/verdaccio:3.0.1
-```
-
-For the next major release using the `4.x-next` (master) version.
-
-```bash
-docker pull verdaccio/verdaccio:4.x-next
+docker pull verdaccio/verdaccio:4.0.0
 ```
 
 > Ako Vas zanima lista tagova, [posetite Docker Hub website](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
 ## Running Verdaccio using Docker
 
-> The following configuration is based on the Verdaccio 4 or the `4.x-next` tag.
-
 Kako biste pokrenuli docker container:
 
 ```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
 The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
@@ -67,7 +59,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   -v $V_PATH/conf:/verdaccio/conf \
   -v $V_PATH/storage:/verdaccio/storage \
   -v $V_PATH/plugins:/verdaccio/plugins \
-  verdaccio/verdaccio:4.x-next
+  verdaccio/verdaccio
 ```
 
 > Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) je preporučeno umesto korišćenja bind mount.
@@ -101,7 +93,7 @@ If you want to reach Verdaccio docker instance under different port, lets say `5
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   -e "VERDACCIO_PORT=8080" -p 8080:8080 \  
-  verdaccio/verdaccio:4.x-next
+  verdaccio/verdaccio
 ```
 
 Of course the numbers you give to `-p` paremeter need to match.
@@ -113,7 +105,7 @@ Možete konfigurisati protokol koji će verdaccio slušati (listen on) i to na s
 ```bash
 docker run -it --rm --name verdaccio \
   --env "VERDACCIO_PROTOCOL=https" -p 4873:4873
-  verdaccio/verdaccio:4.x-next
+  verdaccio/verdaccio
 ```
 
 ### Korišćenje docker-compose
@@ -132,7 +124,7 @@ version: '3.1'
 
 services:
   verdaccio:
-    image: verdaccio/verdaccio:4.x-next
+    image: verdaccio/verdaccio
     container_name: "verdaccio"
     networks:
       - node-network
