@@ -1,5 +1,5 @@
 ---
-id: configurazione
+id: configuration
 title: "File di configurazione"
 ---
 
