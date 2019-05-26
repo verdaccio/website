@@ -40,7 +40,7 @@ uplinks:
 
 Sise alekun iye ti `maxage` ninu awọn idari `uplink` kọọkan maa jẹ bibeere nigbagbogbo. Eyi le jẹ ilana to fẹsẹmulẹ ti o ko ba maa ṣe imudojuiwọn awọn agbẹkẹle nigbagbogbo.
 
-## Lilo iranti dipo lile ààyè ìtọ́jú lórí kọ̀mpútà
+## Lilo iranti dipo lilo ààyè ìtọ́jú lórí kọ̀mpútà
 
 Sometimes caching packages is not a critical step, rather than route packages from different registries and achiving faster build times. Awọn ohun elo afikun meji wa to yago patapata fun kikọ sinu ààyè ìtọ́jú alafojuri ti kọ̀mpútà nipa lilo iranti.
 

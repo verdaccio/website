@@ -97,7 +97,7 @@ Verdaccio позволяет заменить веб-интерфейс, и мы
 
 ```
 
-> Имя плагина должно начинаться с `verdaccio-theme`, иначе плагин не будет загружен.
+> The plugin name prefix must start with `verdaccio-theme`, otherwise the plugin won't load.
 
 Вы можете загрузить только одну тему. Так же, можно передать параметры в тему.
 
