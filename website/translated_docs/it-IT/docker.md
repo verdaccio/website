@@ -22,40 +22,32 @@ Dalla versione `v2.x` si possono ottenere immagini docker per [tag](https://hub.
 Per una versione maggiore:
 
 ```bash
-docker pull verdaccio/verdaccio:3
+docker pull verdaccio/verdaccio:4
 ```
 
 Per una versione minore:
 
 ```bash
-docker pull verdaccio/verdaccio:3.0
+docker pull verdaccio/verdaccio:4.0
 ```
 
 Per una specifica (patch) versione:
 
 ```bash
-docker pull verdaccio/verdaccio:3.0.1
-```
-
-Per la successiva maggior release che utilizza la versione `4.x-next` (master).
-
-```bash
-docker pull verdaccio/verdaccio:4.x-next
+docker pull verdaccio/verdaccio:4.0.0
 ```
 
 > Se si è interessati ad un elenco dei tag, [ si prega di visitare il sito Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
 ## Eseguire Verdaccio utilizzando Docker
 
-> La configurazione seguente è basata su Verdaccio 4 o sul `4.x-next` tag.
-
 Per avviare il contenitore Docker:
 
 ```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-L'ultimo argomento definisce quale immagine utilizzare. La riga sopra citata scaricherà da dockerhub l'ultima immagine pre costruita disponibile, se ciò non è ancora stato fatto.
+The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
 
 Se è stata [costruita un'immagine localmente](#build-your-own-docker-image) utilizzare `verdaccio` come ultimo argomento.
 
@@ -67,12 +59,12 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   -v $V_PATH/conf:/verdaccio/conf \
   -v $V_PATH/storage:/verdaccio/storage \
   -v $V_PATH/plugins:/verdaccio/plugins \
-  verdaccio/verdaccio:4.x-next
+  verdaccio/verdaccio
 ```
 
 > Nota: Verdaccio viene eseguito all'interno del container come utente non-root (uid=10001), se si utilizza bind mount per sovrascrivere le impostazioni predefinite, è necessario assicurarsi che la mount directory venga assegnata all'utente corretto. Nell'esempio precedente, è necessario eseguire `sudo chown -R 100:101 /opt/verdaccio` altrimenti si presenteranno errori di autorizzazione durante l'esecuzione. Si consiglia di [utilizzare il volume di docker](https://docs.docker.com/storage/volumes/) al posto di bind mount.
 
-Verdaccio 4 fornisce un nuovo set di variabili d'ambiente per modificare le autorizzazioni, la porta o il protocollo http. Qui l'elenco completo:
+Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
 
 | Proprietà             | default                | Descrizione                                                           |
 | --------------------- | ---------------------- | --------------------------------------------------------------------- |
@@ -101,7 +93,7 @@ Se si desidera raggiungere l'istanza docker di Verdaccio da una porta differente
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   -e "VERDACCIO_PORT=8080" -p 8080:8080 \  
-  verdaccio/verdaccio:4.x-next
+  verdaccio/verdaccio
 ```
 
 Naturalmente il numero che viene dato al parametro `-p` deve corrispondere.
@@ -113,7 +105,7 @@ Naturalmente il numero che viene dato al parametro `-p` deve corrispondere.
 ```bash
 docker run -it --rm --name verdaccio \
   --env "VERDACCIO_PROTOCOL=https" -p 4873:4873
-  verdaccio/verdaccio:4.x-next
+  verdaccio/verdaccio
 ```
 
 ### Utilizzare docker-compose
@@ -132,7 +124,7 @@ version: '3.1'
 
 services:
   verdaccio:
-    image: verdaccio/verdaccio:4.x-next
+    image: verdaccio/verdaccio
     container_name: "verdaccio"
     networks:
       - node-network
