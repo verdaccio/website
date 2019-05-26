@@ -1,7 +1,7 @@
 ---
 id: version-4.0.0-beta.10-configuration
 title: File di configurazione
-original_id: configurazione
+original_id: configuration
 ---
 
 Questo file è il fondamento di verdaccio nel quale è possibile modificare il comportamento predefinito, attivare i plugin ed estendere le funzionalità.
