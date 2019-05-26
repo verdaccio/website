@@ -33,7 +33,7 @@ You can find detailed installation instructions [here](https://verdaccio.org/doc
 <div id="codefund">''</div>
 
 ## Why 'Freedom' ?
-Verdaccio originated from [Sinopia](https://github.com/rlidwka/sinopia) almost three years ago and since then Verdaccio Team maintaining and releasing major release every year. Since the fork, the project has evolved in many ways, making the project’s code base modern, easier to debug and more straightforward to contribute. 
+Verdaccio originated from [Sinopia](https://github.com/rlidwka/sinopia) almost three years ago and since then the [Verdaccio Team](https://verdaccio.org/en/team) maintaining and releasing major release every year. Since the fork, the project has evolved in many ways, making the project’s code base modern, easier to debug and more straightforward to contribute. 
 
 The name Freedom holds true meaning for Verdaccio@4.x release. Verdaccio is a strong community of many contributors and developers from across the world, providing an ideal platform for everyone to give control of their code. Also, Verdaccio@4.x is free from tech debt of legacy code and stands on design patterns of the modern era which consist [React](https://reactjs.org/), [Typescript](https://www.typescriptlang.org/), [JWT](https://jwt.io/), [Docker](https://www.docker.com/) & [Kubernetes](https://kubernetes.io/). We can call it Freedom in true sense.
 
@@ -41,7 +41,7 @@ Let's take a quick look at the life cycle and development of Verdaccio community
 
 - **Verdaccio (version 2 - Release name: Birth)** -  Focused on stability, code quality, improvement in  architecture of the old [Sinopia](https://github.com/rlidwka/sinopia) project and community development. 
 
-- **Verdaccio (version 3 - Release name: Hope)** - Redesigned the user interface in [React](https://reactjs.org/) and introduced the simplicity of the plugins development. The Verdaccio Team and many contributors made the project almost bug free and robust. This was the time the project started to grow and other projects started using it. 
+- **Verdaccio (version 3 - Release name: Hope)** - Redesigned the user interface in [React](https://reactjs.org/) and introduced the simplicity of the plugins development. The [Verdaccio Team](https://verdaccio.org/en/team) and many contributors made the project almost bug free and robust. This was the time the project started to grow and other projects started using it. 
 
 Verdaccio@4.x is coming up with many exciting new CLI commands for package management, Fast and responsive user interface, security upgrades and easy deployments.
 
@@ -112,7 +112,7 @@ In Verdaccio@4.x, we migrated the Hash Router to Browser Router with a more clea
 
 ## Unpublish Role
 
-Verdaccio@4.x improves the package management by adding an access layer to publish and unpublish. Now you can have restrictions to some of the users for publishing and unpublishing. [Find out more](https://verdaccio.org/docs/en/packages )
+Verdaccio@4.x improves package management by adding an access layer to publish and unpublish. Now you can have restrictions to some of the users for publishing and unpublishing. [Find out more](https://verdaccio.org/docs/en/packages#unpublishing-packages)
 
 ## Disable Gravatar
 Verdaccio uses [Gravatar](https://en.gravatar.com) to show the images of authors, contributors and maintainers. Now, gravatar support can be disabled from Verdaccio `config.yaml`. 
@@ -165,7 +165,7 @@ There is no doubt that Docker has been a major breakthrough for this project, it
 
 ## Drop Node 6 Support
 
-NodeJS 6 went to end of life on April 30, 2019. Verdaccio@4.x drops the support for Node 6 & npm 3. Now on, Node 8 & npm 5 will be the minimum requirement. Verdaccio@4.x also checks for the minimum node version. https://github.com/verdaccio/verdaccio/pull/968 
+NodeJS 6 went to [end of life on April 30, 2019](https://github.com/nodejs/Release). Verdaccio@4.x drops the support for Node 6 & npm 3. Now on, Node 8 & npm 5 will be the minimum requirement. Verdaccio@4.x also checks for the minimum node version. https://github.com/verdaccio/verdaccio/pull/968 
 
 ## Plugins
 Verdaccio extends its functionalities with a set of plugins. You can find detailed information in [Plugins Documentation](https://verdaccio.org/docs/en/plugins#verdaccio-plugins)
@@ -178,11 +178,11 @@ Now the main Verdaccio module is a powerful CLI to package management and a plug
 
 ### Verdaccio ESLint config
 
-Now on, Verdaccio Team uses [@verdaccio/eslint-config](https://github.com/verdaccio/eslint-config-verdaccio) across all the repositories to maintain the same coding style. 
+Now on, [Verdaccio Team](https://verdaccio.org/en/team) uses [@verdaccio/eslint-config](https://github.com/verdaccio/eslint-config-verdaccio) across all the repositories to maintain the same coding style. 
 
 ### Verdaccio Babel Preset
 
-As Babel@7 released in 2018, Verdaccio Team updated babel dependencies to the latest. We also created a central repository for the Babel preset [@verdaccio/babel-preset](https://github.com/verdaccio/babel-preset)
+As Babel@7 released in 2018, [Verdaccio Team](https://verdaccio.org/en/team) updated babel dependencies to the latest. We also created a central repository for the Babel preset [@verdaccio/babel-preset](https://github.com/verdaccio/babel-preset)
 
 ### Verdaccio UI Plugin
 
@@ -203,7 +203,7 @@ Since Verdaccio@3.x release, Verdaccio contributors are actively participating i
 
 ### Trusted by Many
 
-The Verdaccio Team is very happy to share that following projects are using Verdaccio as their End-to-End (E2E) testing tool.
+The [Verdaccio Team](https://verdaccio.org/en/team) is very happy to share that following projects are using Verdaccio as their End-to-End (E2E) testing tool.
 
 * [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests)
 * [Storybook](https://github.com/storybooks/storybook)
