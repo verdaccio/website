@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Verdaccio 4 released !!! · Verdaccio</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# Release name: Freedom"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Verdaccio 4 released !!! · Verdaccio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://verdaccio.org//blog/2019/05/19/15-verdaccio-4-release"/><meta property="og:description" content="# Release name: Freedom"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://verdaccio.org/blog/atom.xml" title="Verdaccio Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://verdaccio.org/blog/feed.xml" title="Verdaccio Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-2527438-21', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://codefund.app/properties/256/funder.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/logo/symbol/svg/verdaccio-tiny.svg" alt="Verdaccio"/><h2 class="headerTitleWithLogo">Verdaccio</h2></a><a href="/en/versions"><h3>4.0.0-beta.10</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/installation" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/blog/" target="_self">Notes</a></li><li class=""><a href="https://medium.com/verdaccio" target="_self">Blog</a></li><li class=""><a href="https://twitter.com/verdaccio_npm" target="_self">Twitter</a></li><li class=""><a href="/en/help" target="_self">Help</a></li><li class=""><a href="https://github.com/verdaccio" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="/en/team" target="_self">Team</a></li><li class=""><a href="https://opencollective.com/verdaccio" target="_self">Donate</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/es-ES">Español</a></li><li><a href="/fr-FR">Français</a></li><li><a href="/it-IT">Italiano</a></li><li><a href="/sr-CS">Serbian (Latin)</a></li><li><a href="/zh-CN">中文</a></li><li><a href="/ru-RU">Russian</a></li><li><a href="https://crowdin.com/project/verdaccio" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">All Blog Posts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/blog/2019/05/19/15-verdaccio-4-release">Verdaccio 4 released !!!</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/05/13/the-new-docker-image-verdaccio-4">The new Docker image for Verdaccio 4</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4">Diving into JWT support for Verdaccio 4</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/02/24/migrating-verdaccio">Verdaccio Migration Guides</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/02/08/the-crazy-story-of-verdaccio">The crazy story of Verdaccio</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/11/19/setting-up-verdaccio-on-digitalocean">Setting up Verdaccio on DigitalOcean</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/10/21/verdaccio-4-alpha-release">Verdaccio 4 alpha release</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/09/06/verdaccio-and-deterministic-lock-files">Verdaccio and deterministic lock files</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/05/19/15-verdaccio-4-release">Verdaccio 4 released !!!</a></h1><p class="post-meta">May 19, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="https://twitter.com/ayusharma_" target="_blank" rel="noreferrer noopener">Ayush Sharma</a></p><div class="authorPhoto"><a href="https://twitter.com/ayusharma_" target="_blank" rel="noreferrer noopener"><img src="https://graph.facebook.com/100001655957183/picture/?height=200&amp;width=200" alt="Ayush Sharma"/></a></div></div></header><div><span><h1><a class="anchor" aria-hidden="true" id="release-name-freedom"></a><a href="#release-name-freedom" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Release name: Freedom</h1>
+<p>Verdaccio is a free open source javascript package proxy registry. It is fully compatible with <a href="https://pnpm.js.org/">pnpm</a>, <a href="https://yarnpkg.com">yarn</a> and <a href="https://www.npmjs.com/">npm</a> package management clients. It follows the CommonJS compliant package specifications.</p>
+<p>You can install and upgrade to the latest version by following commands:</p>
+<p>using <strong>npm</strong></p>
+<pre><code class="hljs">npm install -g <span class="hljs-symbol">verdaccio@</span><span class="hljs-number">4.0</span><span class="hljs-number">.0</span>
+</code></pre>
+<p>or using <strong>Yarn</strong></p>
+<pre><code class="hljs">yarn global add <span class="hljs-symbol">verdaccio@</span><span class="hljs-number">4.0</span><span class="hljs-number">.0</span>
+</code></pre>
+<p>or using <strong>pnpm</strong></p>
+<pre><code class="hljs">pnpm install -g <span class="hljs-symbol">verdaccio@</span><span class="hljs-number">4.0</span><span class="hljs-number">.0</span>
+</code></pre>
+<p>You can find detailed installation instructions <a href="https://verdaccio.org/docs/en/installation">here</a></p>
+<!--truncate-->
+<div id="codefund">''</div>
+<h2><a class="anchor" aria-hidden="true" id="why-freedom"></a><a href="#why-freedom" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Why 'Freedom' ?</h2>
+<p>Verdaccio originated from <a href="https://github.com/rlidwka/sinopia">Sinopia</a> almost three years ago and since then the <a href="https://verdaccio.org/en/team">Verdaccio Team</a> maintaining and releasing major release every year. Since the fork, the project has evolved in many ways, making the project’s code base modern, easier to debug and more straightforward to contribute.</p>
+<p>The name Freedom holds true meaning for Verdaccio@4.x release. Verdaccio is a strong community of many contributors and developers from across the world, providing an ideal platform for everyone to give control of their code. Also, Verdaccio@4.x is free from tech debt of legacy code and stands on design patterns of the modern era which consist <a href="https://reactjs.org/">React</a>, <a href="https://www.typescriptlang.org/">Typescript</a>, <a href="https://jwt.io/">JWT</a>, <a href="https://www.docker.com/">Docker</a> &amp; <a href="https://kubernetes.io/">Kubernetes</a>. We can call it Freedom in true sense.</p>
+<p>Let's take a quick look at the life cycle and development of Verdaccio community:</p>
+<ul>
+<li><p><strong>Verdaccio (version 2 - Release name: Birth)</strong> -  Focused on stability, code quality, improvement in  architecture of the old <a href="https://github.com/rlidwka/sinopia">Sinopia</a> project and community development.</p></li>
+<li><p><strong>Verdaccio (version 3 - Release name: Hope)</strong> - Redesigned the user interface in <a href="https://reactjs.org/">React</a> and introduced the simplicity of the plugins development. The <a href="https://verdaccio.org/en/team">Verdaccio Team</a> and many contributors made the project almost bug free and robust. This was the time the project started to grow and other projects started using it.</p></li>
+</ul>
+<p>Verdaccio@4.x is coming up with many exciting new CLI commands for package management, Fast and responsive user interface, security upgrades and easy deployments.</p>
+<p>Excited?? Yes !!! Let's go !!</p>
+<h2><a class="anchor" aria-hidden="true" id="so-what-s-changed-tl-dr"></a><a href="#so-what-s-changed-tl-dr" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>So what's changed? TL;DR</h2>
+<ul>
+<li><a href="#new-user-interface">New User Interface</a>
+<ul>
+<li><a href="#new-search-process">New search Process</a></li>
+<li><a href="#register-information">Register Information</a></li>
+<li><a href="#packages">Packages</a></li>
+<li><a href="#detailed-page">Detailed Page</a></li>
+<li><a href="#package-sidebar">Package Sidebar</a></li>
+</ul></li>
+<li><a href="#new-browser-router">New Browser Router APIs</a></li>
+<li><a href="#unpublish-role">Unpublish Role</a></li>
+<li><a href="#disable-gravatar">Disable Gravatar</a></li>
+<li><a href="#new-cli-commands">New CLI Commands</a>
+<ul>
+<li><a href="#npm-star">npm star</a></li>
+<li><a href="#npm-profile">npm profile</a></li>
+</ul></li>
+<li><a href="#jwt-token">JWT Token</a></li>
+<li><a href="#docker-improvements">Docker Improvements</a></li>
+<li><a href="#drop-node-6-support">Drop Node 6 Support</a></li>
+<li><a href="#plugins">Plugins</a></li>
+<li><a href="#tech-updates">Tech Updates</a>
+<ul>
+<li><a href="#verdaccio-eslint-config">Verdaccio ESLint Config</a></li>
+<li><a href="#verdaccio-babel-preset">Verdaccio Babel Preset</a></li>
+<li><a href="#vedaccio-ui-plugin">Verdaccio UI Plugin</a></li>
+<li><a href="#meetup-&amp;-conferences">Meetup &amp; Conferences</a></li>
+</ul></li>
+<li><a href="#trusted-by-many">Trusted by Many</a></li>
+<li><a href="#new-to-verdaccio-/-faq-/-contact-/-troubleshoot">New to Verdaccio / FAQ / Contact / Troubleshoot</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="new-user-interface"></a><a href="#new-user-interface" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New User Interface</h2>
+<p>Verdaccio@4.x comes with a new shiny appealing user interface, providing more details to show and easy to navigate. We did major changes in Verdaccio web application and everything is designed from scratch.</p>
+<p><img src="https://cdn.verdaccio.dev/blog/4.x-release/verdaccio-main-page.png" alt="verdaccio-main-page"></p>
+<h3><a class="anchor" aria-hidden="true" id="new-search-process"></a><a href="#new-search-process" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New Search Process</h3>
+<p>Verdaccio@3.x has a limited search functionality and it was implemented on the browser side. Verdaccio@4.x provides fast and quick search results from the backend.</p>
+<p><img src="https://cdn.verdaccio.dev/blog/4.x-release/search.png" alt="new-search-process"></p>
+<h3><a class="anchor" aria-hidden="true" id="register-information"></a><a href="#register-information" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Register Information</h3>
+<p>The Register information is easily accessible and can be seen by clicking on <code>information</code> icon in header.</p>
+<p><img src="https://cdn.verdaccio.dev/blog/4.x-release/register-info.png" alt="register-info-modal-image"></p>
+<h3><a class="anchor" aria-hidden="true" id="packages"></a><a href="#packages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Packages</h3>
+<p>The new Package card provides more information about a package, easy to open issues and documentation link without navigating into package details.</p>
+<p><strong>Order</strong>: Verdaccio@4.x has basic support for package ordering from <code>config.yaml</code>. The package list can be sorted ascending &amp; descending. <a href="https://verdaccio.org/docs/en/webui#configuration">Find out more</a></p>
+<h3><a class="anchor" aria-hidden="true" id="detailed-page"></a><a href="#detailed-page" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Detailed Page</h3>
+<p>The new Detailed package in a more categorized manner for readme, dependencies, version and uplinks.</p>
+<p><img src="https://cdn.verdaccio.dev/blog/4.x-release/detail-page.png" alt="verdaccio-detail-page"></p>
+<h3><a class="anchor" aria-hidden="true" id="package-sidebar"></a><a href="#package-sidebar" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Package Sidebar</h3>
+<p>The Package Sidebar includes most relevant information from package metadata. You can open an issue, see Readme and download the package tarball. It also clearly shows the package's minimum requirements on node and npm.</p>
+<p>Also, The package sidebar shows <em>Author</em>, <em>Maintainers</em> and <em>Contributors</em> in different sections. When you click on person avatar, you'll be able to contact that person via email.</p>
+<h2><a class="anchor" aria-hidden="true" id="new-browser-router"></a><a href="#new-browser-router" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New Browser Router</h2>
+<p>Till, verdaccio@3.x we have Hash Router implementation on frontend application routes. We faced a lot of problem with hash router in the Readme section. The Readme also uses (#) hash for the heading tags and anchor elements.</p>
+<p>In Verdaccio@4.x, we migrated the Hash Router to Browser Router with a more cleaner look. (No more hashes in URLs).</p>
+<h2><a class="anchor" aria-hidden="true" id="unpublish-role"></a><a href="#unpublish-role" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unpublish Role</h2>
+<p>Verdaccio@4.x improves package management by adding an access layer to publish and unpublish. Now you can have restrictions to some of the users for publishing and unpublishing. <a href="https://verdaccio.org/docs/en/packages#unpublishing-packages">Find out more</a></p>
+<h2><a class="anchor" aria-hidden="true" id="disable-gravatar"></a><a href="#disable-gravatar" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Disable Gravatar</h2>
+<p>Verdaccio uses <a href="https://en.gravatar.com">Gravatar</a> to show the images of authors, contributors and maintainers. Now, gravatar support can be disabled from Verdaccio <code>config.yaml</code>.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">web:</span>
+<span class="hljs-attr">  title:</span> <span class="hljs-string">Verdaccio</span>
+<span class="hljs-attr">  gravatar:</span> <span class="hljs-literal">false</span>
+</code></pre>
+<p>In order to be fully offline, The fallback support is a generic user face SVG based on base64.</p>
+<h2><a class="anchor" aria-hidden="true" id="new-cli-commands"></a><a href="#new-cli-commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New CLI Commands</h2>
+<p>We are really excited to add some npm cli commands to Verdaccio. Now you can use <code>npm star</code>, and <code>npm profile</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="npm-star"></a><a href="#npm-star" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>npm star</h3>
+<p>Now a user can mark their favorite package.</p>
+<pre><code class="hljs">npm <span class="hljs-keyword">star</span> [<span class="hljs-symbol">&lt;package&gt;</span>..]
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="npm-profile"></a><a href="#npm-profile" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>npm profile</h3>
+<p>With npm profile, a user can change their profile settings.</p>
+<p><em>Note:</em> Verdaccio does not support two-factor authentication yet.</p>
+<pre><code class="hljs">npm<span class="hljs-built_in"> profile </span><span class="hljs-builtin-name">get</span> [--json|--parseable] [&lt;property&gt;]
+npm<span class="hljs-built_in"> profile </span><span class="hljs-builtin-name">set</span> [--json|--parseable] &lt;property&gt; &lt;value&gt;
+npm<span class="hljs-built_in"> profile </span><span class="hljs-builtin-name">set</span> password
+</code></pre>
+<p>Check out more at <a href="https://docs.npmjs.com/cli/profile">https://docs.npmjs.com/cli/profile</a></p>
+<h2><a class="anchor" aria-hidden="true" id="jwt-token"></a><a href="#jwt-token" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>JWT Token</h2>
+<p>Verdaccio supports <a href="https://jwt.io/">JSON Web Tokens</a> for the authentication. The previous version of Verdaccio used <code>AES</code> token generator. The new JWT token standardizes the process and provides an additional mechanism for token generation. Verdaccio@4.x still supports the <code>AES</code> token generator.</p>
+<p><a href="https://medium.com/verdaccio/diving-into-jwt-support-for-verdaccio-4-88df2cf23ddc">Click here for more information on new JWT tokens</a></p>
+<h2><a class="anchor" aria-hidden="true" id="docker-improvements"></a><a href="#docker-improvements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker Improvements</h2>
+<p>There is no doubt that Docker has been a major breakthrough for this project, it's by far the most popular way to download Verdaccio, we have more than <a href="https://dockeri.co/image/verdaccio/verdaccio">4.200.000 downloads at this writing</a> and for such reason, we care about improving the developer experience adding new features.</p>
+<p><a href="https://verdaccio.org/blog/2019/05/13/the-new-docker-image-verdaccio-4">Please click here more information on the new Docker Image.</a></p>
+<h2><a class="anchor" aria-hidden="true" id="drop-node-6-support"></a><a href="#drop-node-6-support" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Drop Node 6 Support</h2>
+<p>NodeJS 6 went to <a href="https://github.com/nodejs/Release">end of life on April 30, 2019</a>. Verdaccio@4.x drops the support for Node 6 &amp; npm 3. Now on, Node 8 &amp; npm 5 will be the minimum requirement. Verdaccio@4.x also checks for the minimum node version. <a href="https://github.com/verdaccio/verdaccio/pull/968">https://github.com/verdaccio/verdaccio/pull/968</a></p>
+<h2><a class="anchor" aria-hidden="true" id="plugins"></a><a href="#plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugins</h2>
+<p>Verdaccio extends its functionalities with a set of plugins. You can find detailed information in <a href="https://verdaccio.org/docs/en/plugins#verdaccio-plugins">Plugins Documentation</a></p>
+<h2><a class="anchor" aria-hidden="true" id="tech-updates"></a><a href="#tech-updates" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tech Updates</h2>
+<p>Verdaccio 4 heavily relies on plugins and provides APIs for developers to build their own plugins. We introduced few major changes in the development environment to adapt code modularity, decoupling and typed system.</p>
+<p>Now the main Verdaccio module is a powerful CLI to package management and a plugin system to introduce new functionalities.</p>
+<h3><a class="anchor" aria-hidden="true" id="verdaccio-eslint-config"></a><a href="#verdaccio-eslint-config" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verdaccio ESLint config</h3>
+<p>Now on, <a href="https://verdaccio.org/en/team">Verdaccio Team</a> uses <a href="https://github.com/verdaccio/eslint-config-verdaccio">@verdaccio/eslint-config</a> across all the repositories to maintain the same coding style.</p>
+<h3><a class="anchor" aria-hidden="true" id="verdaccio-babel-preset"></a><a href="#verdaccio-babel-preset" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verdaccio Babel Preset</h3>
+<p>As Babel@7 released in 2018, <a href="https://verdaccio.org/en/team">Verdaccio Team</a> updated babel dependencies to the latest. We also created a central repository for the Babel preset <a href="https://github.com/verdaccio/babel-preset">@verdaccio/babel-preset</a></p>
+<h3><a class="anchor" aria-hidden="true" id="verdaccio-ui-plugin"></a><a href="#verdaccio-ui-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Verdaccio UI Plugin</h3>
+<p>Verdaccio provides an easy configuration system to enable/disable of web application. Verdaccio is used as End-to-End(E2E) tooling system in many platforms and shipping UI along with Verdaccio is a non-beneficial overhead. So we separated the UI module and it's repository for simple &amp; easy development and maintainability.</p>
+<p>You can find UI repository <a href="https://github.com/verdaccio/ui">here</a>.</p>
+<h3><a class="anchor" aria-hidden="true" id="meetup-conferences"></a><a href="#meetup-conferences" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Meetup &amp; Conferences</h3>
+<p>Since Verdaccio@3.x release, Verdaccio contributors are actively participating in community activities, conferences, meetup and on twitter.</p>
+<ul>
+<li><a href="https://twitter.com/ayusharma_/status/1060224341768572928">Dot Conference 2018, Paris</a></li>
+<li><a href="https://twitter.com/verdaccio_npm/status/1067420167867695105">React day 2018, Berlin</a></li>
+<li>JS Heroes 2019, Cluj Napoca ∙ <a href="https://twitter.com/jotadeveloper/status/1116314948962004992">Small talk</a> ∙ <a href="https://twitter.com/verdaccio_npm/status/1116608322700857344">Presence</a></li>
+<li><a href="https://www.youtube.com/watch?v=hDIFKzmoCaA">ViennaJS Meetup</a></li>
+<li><a href="https://www.todojs.com/introduccion-a-verdaccio/">Madrid NodeJS Meetup</a></li>
+<li><a href="https://github.com/verdaccio/verdaccio/issues/973">Hacktober Fest 2018</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="trusted-by-many"></a><a href="#trusted-by-many" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Trusted by Many</h3>
+<p><a href="https://verdaccio.org/en/team">Verdaccio Team</a> is very happy to share that following projects are using Verdaccio as their End-to-End (E2E) testing tool.</p>
+<ul>
+<li><a href="https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests">create-react-app</a></li>
+<li><a href="https://github.com/storybooks/storybook">Storybook</a></li>
+<li><a href="https://github.com/gatsbyjs/gatsby">Gatsby</a></li>
+<li><a href="https://github.com/transloadit/uppy">Uppy</a></li>
+<li><a href="https://github.com/aurelia">Aurelia Framework</a></li>
+<li><a href="https://github.com/teambit/bit">bit</a></li>
+<li><a href="https://github.com/pnpm/pnpm">pnpm</a></li>
+<li><a href="https://github.com/neutrinojs/neutrino">Mozilla Neutrino</a></li>
+<li><a href="https://github.com/hyperledger/composer">Hyperledger Composer</a></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="new-to-verdaccio-faq-contact-troubleshoot"></a><a href="#new-to-verdaccio-faq-contact-troubleshoot" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New to Verdaccio / FAQ / Contact / Troubleshoot</h3>
+<p>We welcome you in Verdaccio community and we look forward for your feedback and contribution to the project.</p>
+<p>If you have any issue you can try the following options, do no desist to ask or check our issues database, perhaps someone has asked already what you are looking for.</p>
+<ul>
+<li><a href="https://medium.com/verdaccio">Blog</a></li>
+<li><a href="https://opencollective.com/verdaccio">Donations</a></li>
+<li><a href="https://github.com/verdaccio/verdaccio/projects">Roadmap</a></li>
+<li><a href="https://github.com/verdaccio/verdaccio/blob/master/CONTRIBUTING.md#reporting-a-bug">Reporting an issue</a></li>
+<li><a href="https://github.com/verdaccio/verdaccio/issues?q=is%3Aissue+is%3Aopen+label%3Adiscuss">Running discussions</a></li>
+<li><a href="http://chat.verdaccio.org/">Chat</a></li>
+<li><a href="https://verdaccio.org/docs/en/logo">Logos</a></li>
+<li><a href="https://github.com/verdaccio/verdaccio/issues?utf8=%E2%9C%93&amp;q=is%3Aissue%20label%3Aquestion%20">FAQ</a></li>
+<li><a href="https://github.com/verdaccio/docker-examples">Docker Examples</a></li>
+</ul>
+</span></div></div><div class="blogSocialSection"><div class="blogSocialSectionItem"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Verdaccio 4 released !!!" data-url="https://verdaccio.org//blog/2019/05/19/15-verdaccio-4-release" data-related="true" data-show-count="false">Tweet</a></div></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#why-freedom">Why 'Freedom' ?</a></li><li><a href="#so-what-s-changed-tl-dr">So what's changed? TL;DR</a></li><li><a href="#new-user-interface">New User Interface</a><ul class="toc-headings"><li><a href="#new-search-process">New Search Process</a></li><li><a href="#register-information">Register Information</a></li><li><a href="#packages">Packages</a></li><li><a href="#detailed-page">Detailed Page</a></li><li><a href="#package-sidebar">Package Sidebar</a></li></ul></li><li><a href="#new-browser-router">New Browser Router</a></li><li><a href="#unpublish-role">Unpublish Role</a></li><li><a href="#disable-gravatar">Disable Gravatar</a></li><li><a href="#new-cli-commands">New CLI Commands</a><ul class="toc-headings"><li><a href="#npm-star">npm star</a></li><li><a href="#npm-profile">npm profile</a></li></ul></li><li><a href="#jwt-token">JWT Token</a></li><li><a href="#docker-improvements">Docker Improvements</a></li><li><a href="#drop-node-6-support">Drop Node 6 Support</a></li><li><a href="#plugins">Plugins</a></li><li><a href="#tech-updates">Tech Updates</a><ul class="toc-headings"><li><a href="#verdaccio-eslint-config">Verdaccio ESLint config</a></li><li><a href="#verdaccio-babel-preset">Verdaccio Babel Preset</a></li><li><a href="#verdaccio-ui-plugin">Verdaccio UI Plugin</a></li><li><a href="#meetup-conferences">Meetup &amp; Conferences</a></li><li><a href="#trusted-by-many">Trusted by Many</a></li><li><a href="#new-to-verdaccio-faq-contact-troubleshoot">New to Verdaccio / FAQ / Contact / Troubleshoot</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/what-is-verdaccio.html">Getting Started</a><a href="/docs/en/docker.html">Docker</a><a href="/docs/en/configuration.html">Configuration</a><a href="/docs/en/logo">Logos</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'a8b4d117e513cd8d71d6a95e3d9d4a91',
+                indexName: 'verdaccio',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
