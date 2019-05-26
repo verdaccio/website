@@ -203,7 +203,7 @@ Since Verdaccio@3.x release, Verdaccio contributors are actively participating i
 
 ### Trusted by Many
 
-The [Verdaccio Team](https://verdaccio.org/en/team) is very happy to share that following projects are using Verdaccio as their End-to-End (E2E) testing tool.
+[Verdaccio Team](https://verdaccio.org/en/team) is very happy to share that following projects are using Verdaccio as their End-to-End (E2E) testing tool.
 
 * [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests)
 * [Storybook](https://github.com/storybooks/storybook)
