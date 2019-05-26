@@ -72,18 +72,18 @@ Excited?? Yes !!! Let's go !!
 
 Verdaccio@4.x comes with a new shiny appealing user interface, providing more details to show and easy to navigate. We did major changes in Verdaccio web application and everything is designed from scratch. 
 
-![verdaccio-main-page](./assets/verdaccio-main-page.png)
+![verdaccio-main-page](https://nyc3.digitaloceanspaces.com/verdaccio/blog/4.x-release/verdaccio-main-page.png)
 
 
 ### New Search Process
 Verdaccio@3.x has a limited search functionality and it was implemented on the browser side. Verdaccio@4.x provides fast and quick search results from the backend.
 
-![new-search-process](./assets/search.png)
+![new-search-process](https://nyc3.digitaloceanspaces.com/verdaccio/blog/4.x-release/search.png)
 
 ### Register Information 
 The Register information is easily accessible and can be seen by clicking on `information` icon in header.
 
-![register-info-modal-image](./assets/register-info.png)
+![register-info-modal-image](https://nyc3.digitaloceanspaces.com/verdaccio/blog/4.x-release/register-info.png)
 
 ### Packages 
 The new Package card provides more information about a package, easy to open issues and documentation link without navigating into package details. 
@@ -93,7 +93,7 @@ The new Package card provides more information about a package, easy to open iss
 ### Detailed Page
 The new Detailed package in a more categorized manner for readme, dependencies, version and uplinks. 
 
-![verdaccio-detail-page](./assets/detail-page.png)
+![verdaccio-detail-page](https://nyc3.digitaloceanspaces.com/verdaccio/blog/4.x-release/detail-page.png)
 
 ### Package Sidebar
 
