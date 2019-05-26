@@ -158,10 +158,10 @@ Verdaccio supports [JSON Web Tokens](https://jwt.io/) for the authentication. Th
 [Click here for more information on new JWT tokens](https://medium.com/verdaccio/diving-into-jwt-support-for-verdaccio-4-88df2cf23ddc)
 
 ## Docker Improvements
-- https://github.com/verdaccio/verdaccio/pull/845
+
 There is no doubt that Docker has been a major breakthrough for this project, it's by far the most popular way to download Verdaccio, we have more than [4.200.000 downloads at this writing](https://dockeri.co/image/verdaccio/verdaccio) and for such reason, we care about improving the developer experience adding new features.
 
- [Please click here more information on the new Docker Image.](https://verdaccio.org/blog/2019/05/13/the-new-docker-image-verdaccio-4)
+[Please click here more information on the new Docker Image.](https://verdaccio.org/blog/2019/05/13/the-new-docker-image-verdaccio-4)
 
 ## Drop Node 6 Support
 
