@@ -2,7 +2,7 @@
 author: Ayush Sharma
 authorURL: https://twitter.com/ayusharma_
 authorFBID: 100001655957183
-title: Verdaccio 4 released today !!!
+title: Verdaccio 4 released !!!
 ---
 
 # Release name: Freedom
@@ -35,9 +35,9 @@ The name Freedom holds true meaning for Verdaccio@4.x release. Verdaccio is a st
 
 Let's take a quick look at the life cycle and development of Verdaccio community:
 
-- **Verdaccio@2.x (Release name: Birth)** -  Focused on stability, code quality, improvement in  architecture of the old [Sinopia](https://github.com/rlidwka/sinopia) project and community development. 
+- **Verdaccio@2.x Release name: Birth** -  Focused on stability, code quality, improvement in  architecture of the old [Sinopia](https://github.com/rlidwka/sinopia) project and community development. 
 
-- **Verdaccio@3.x (Release name: Hope)** - Redesigned the user interface in [React](https://reactjs.org/) and introduced the simplicity of the plugins development. The Verdaccio Team and many contributors made the project almost bug free and robust. This was the time the project started to grow and other projects started using it. 
+- **Verdaccio@3.x Release name: Hope** - Redesigned the user interface in [React](https://reactjs.org/) and introduced the simplicity of the plugins development. The Verdaccio Team and many contributors made the project almost bug free and robust. This was the time the project started to grow and other projects started using it. 
 
 Verdaccio@4.x is coming up with many exciting new CLI commands for package management, Fast and responsive user interface, security upgrades and easy deployments.
 
@@ -72,18 +72,18 @@ Excited?? Yes !!! Let's go !!
 
 Verdaccio@4.x comes with a new shiny appealing user interface, providing more details to show and easy to navigate. We did major changes in Verdaccio web application and everything is designed from scratch. 
 
-![verdaccio main page](./assets/verdaccio-main-page.png "verdaccio@4.x main page")
+![verdaccio-main-page](./assets/verdaccio-main-page.png)
 
 
 ### New Search Process
 Verdaccio@3.x has a limited search functionality and it was implemented on the browser side. Verdaccio@4.x provides fast and quick search results from the backend.
 
-![alt text](./assets/nsp.gif)
+![new-search-process](./assets/search.png)
 
 ### Register Information 
 The Register information is easily accessible and can be seen by clicking on `information` icon in header.
 
-![alt text](./assets/register-info.gif)
+![register-info-modal-image](./assets/register-info.png)
 
 ### Packages 
 The new Package card provides more information about a package, easy to open issues and documentation link without navigating into package details. 
@@ -93,7 +93,7 @@ The new Package card provides more information about a package, easy to open iss
 ### Detailed Page
 The new Detailed package in a more categorized manner for readme, dependencies, version and uplinks. 
 
-![alt text](./assets/detail-page.png "verdaccio@4 detail page")
+![verdaccio-detail-page](./assets/detail-page.png)
 
 ### Package Sidebar
 
@@ -159,7 +159,7 @@ Verdaccio supports [JSON Web Tokens](https://jwt.io/) for the authentication. Th
 
 ## Drop Node 6 Support
 
-NodeJS 6 went to end of life on April 30, 2019. Verdaccio@4.x drops the support for Node 6 & npm 2. Now on, Node 8 & npm 5 will be the minimum requirement. Verdaccio@4.x also checks for the minimum node version. https://github.com/verdaccio/verdaccio/pull/968 
+NodeJS 6 went to end of life on April 30, 2019. Verdaccio@4.x drops the support for Node 6 & npm 3. Now on, Node 8 & npm 5 will be the minimum requirement. Verdaccio@4.x also checks for the minimum node version. https://github.com/verdaccio/verdaccio/pull/968 
 
 ## Plugins
 Verdaccio extends its functionalities with a set of plugins. You can find detailed information in [Plugins Documentation](https://verdaccio.org/docs/en/plugins#verdaccio-plugins)
