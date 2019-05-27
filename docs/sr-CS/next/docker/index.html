@@ -91,26 +91,20 @@
 <h2><a class="anchor" aria-hidden="true" id="tagged-versions"></a><a href="#tagged-versions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tagged Versions</h2>
 <p>Počevši od verzije <code>v2.x</code> možete povući docker images preko <a href="https://hub.docker.com/r/verdaccio/verdaccio/tags/">tag</a>, i onda:</p>
 <p>Za glavne verzije:</p>
-<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:3
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:4
 </code></pre>
 <p>Za podverzije:</p>
-<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:3.0
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:4.0
 </code></pre>
 <p>Za specifičnu verziju (patch):</p>
-<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:3.0.1
-</code></pre>
-<p>For the next major release using the <code>4.x-next</code> (master) version.</p>
-<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:4.x-next
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:4.0.0
 </code></pre>
 <blockquote>
 <p>Ako Vas zanima lista tagova, <a href="https://hub.docker.com/r/verdaccio/verdaccio/tags/">posetite Docker Hub website</a>.</p>
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="running-verdaccio-using-docker"></a><a href="#running-verdaccio-using-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running Verdaccio using Docker</h2>
-<blockquote>
-<p>The following configuration is based on the Verdaccio 4 or the <code>4.x-next</code> tag.</p>
-</blockquote>
 <p>Kako biste pokrenuli docker container:</p>
-<pre><code class="hljs css language-bash">docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
+<pre><code class="hljs css language-bash">docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 </code></pre>
 <p>The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.</p>
 <p>Ako imate <a href="#build-your-own-docker-image">build an image locally</a> koristite <code>verdaccio</code> kao poslednji argument.</p>
@@ -120,7 +114,7 @@
   -v <span class="hljs-variable">$V_PATH</span>/conf:/verdaccio/conf \
   -v <span class="hljs-variable">$V_PATH</span>/storage:/verdaccio/storage \
   -v <span class="hljs-variable">$V_PATH</span>/plugins:/verdaccio/plugins \
-  verdaccio/verdaccio:4.x-next
+  verdaccio/verdaccio
 </code></pre>
 <blockquote>
 <p>Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run <code>sudo chown -R 100:101 /opt/verdaccio</code> otherwise you will get permission errors at runtime. <a href="https://docs.docker.com/storage/volumes/">Use docker volume</a> je preporučeno umesto korišćenja bind mount.</p>
@@ -149,14 +143,14 @@
 <p>If you want to reach Verdaccio docker instance under different port, lets say <code>5000</code> in your <code>docker run</code> command add the environment variable <code>VERDACCIO_PORT=5000</code> and then expose the port <code>-p 5000:5000</code>.</p>
 <pre><code class="hljs css language-bash">V_PATH=/path/<span class="hljs-keyword">for</span>/verdaccio; docker run -it --rm --name verdaccio \
   -e <span class="hljs-string">"VERDACCIO_PORT=8080"</span> -p 8080:8080 \  
-  verdaccio/verdaccio:4.x-next
+  verdaccio/verdaccio
 </code></pre>
 <p>Of course the numbers you give to <code>-p</code> paremeter need to match.</p>
 <h3><a class="anchor" aria-hidden="true" id="korišćenje-https-sa-docker-om"></a><a href="#korišćenje-https-sa-docker-om" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Korišćenje HTTPS sa Docker-om</h3>
 <p>Možete konfigurisati protokol koji će verdaccio slušati (listen on) i to na sličan način kao što ste podesili port configuration. Potrebno je da zamenite zadatu vrednost(&quot;http&quot;) u <code>PROTOCOL</code> environment variabl-i sa &quot;https&quot;,nakon što ste odredili sertifikate u config.yaml.</p>
 <pre><code class="hljs css language-bash">docker run -it --rm --name verdaccio \
   --env <span class="hljs-string">"VERDACCIO_PROTOCOL=https"</span> -p 4873:4873
-  verdaccio/verdaccio:4.x-next
+  verdaccio/verdaccio
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="korišćenje-docker-compose"></a><a href="#korišćenje-docker-compose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Korišćenje docker-compose</h3>
 <ol>
@@ -170,7 +164,7 @@
 
 <span class="hljs-attr">services:</span>
 <span class="hljs-attr">  verdaccio:</span>
-<span class="hljs-attr">    image:</span> <span class="hljs-string">verdaccio/verdaccio:4.x-next</span>
+<span class="hljs-attr">    image:</span> <span class="hljs-string">verdaccio/verdaccio</span>
 <span class="hljs-attr">    container_name:</span> <span class="hljs-string">"verdaccio"</span>
 <span class="hljs-attr">    networks:</span>
 <span class="hljs-bullet">      -</span> <span class="hljs-string">node-network</span>
