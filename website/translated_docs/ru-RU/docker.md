@@ -22,40 +22,32 @@ docker pull verdaccio/verdaccio
 Мажорная версия:
 
 ```bash
-docker pull verdaccio/verdaccio:3
+docker pull verdaccio/verdaccio:4
 ```
 
 Минорная версия:
 
 ```bash
-docker pull verdaccio/verdaccio:3.0
+docker pull verdaccio/verdaccio:4.0
 ```
 
 Конкретная версия (патч):
 
 ```bash
-docker pull verdaccio/verdaccio:3.0.1
-```
-
-Будущий `4.x-next` (master) релиз.
-
-```bash
-docker pull verdaccio/verdaccio:4.x-next
+docker pull verdaccio/verdaccio:4.0.0
 ```
 
 > Если вас интересует весь список тегов, [посетите нашу страницу на сайте Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
 ## Запускаем Verdaccio, используя Docker
 
-> Указанная конфигурация использует Verdaccio 4 или метку `4.x-next`.
-
 Запуск Docker контейнера:
 
 ```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-Последний аргумент определяет, какой образ использовать. В результате выполнения команды будет скачан последний образ с dockerhub, если вы еще этого не сделали.
+The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
 
 Если этот образ [у вас уже скачан](#build-your-own-docker-image) используйте `verdaccio` в качестве последнего аргумента.
 
@@ -67,12 +59,12 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   -v $V_PATH/conf:/verdaccio/conf \
   -v $V_PATH/storage:/verdaccio/storage \
   -v $V_PATH/plugins:/verdaccio/plugins \
-  verdaccio/verdaccio:4.x-next
+  verdaccio/verdaccio
 ```
 
 > Примечание: внутри контейнера Verdaccio запускается не из под root (uid=10001), и если вы используете кастомное монтирование каталогов, вам необходимо убедиться, что у пользователя будет доступ к этим каталогам. В примере выше, вам нужно запустить `sudo chown -R 100:101 /opt/verdaccio`, в противном случае вы получите ошибку доступа. [Используйте docker разделы](https://docs.docker.com/storage/volumes/) при монтировании каталогов.
 
-Verdaccio 4 предоставляет новый набор переменных окружения для модификации прав доступа, порта и http-протокола. Вот полный список:
+Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
 
 | Свойство              | По умолчанию           | Описание                                                 |
 | --------------------- | ---------------------- | -------------------------------------------------------- |
@@ -101,7 +93,7 @@ RUN npm install verdaccio-s3-storage
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   -e "VERDACCIO_PORT=8080" -p 8080:8080 \  
-  verdaccio/verdaccio:4.x-next
+  verdaccio/verdaccio
 ```
 
 Конечно, цифры, которые вы поставили в параметр `-p`, должны совпадать.
@@ -113,7 +105,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 ```bash
 docker run -it --rm --name verdaccio \
   --env "VERDACCIO_PROTOCOL=https" -p 4873:4873
-  verdaccio/verdaccio:4.x-next
+  verdaccio/verdaccio
 ```
 
 ### Использование docker-compose
@@ -132,7 +124,7 @@ version: '3.1'
 
 services:
   verdaccio:
-    image: verdaccio/verdaccio:4.x-next
+    image: verdaccio/verdaccio
     container_name: "verdaccio"
     networks:
       - node-network
