@@ -1,5 +1,5 @@
 ---
-id: installazione
+id: installation
 title: "Installazione"
 ---
 
@@ -8,8 +8,8 @@ Verdaccio è un'applicazione web multi piattaforma. Per la sua installazione son
 #### Prerequisiti
 
 1. Nodo maggiore di 
-    - For version `verdaccio@3.x` Node `v6.12` is the minimum supported version.
-    - For version `verdaccio@4.0.0-alpha.x` or `verdaccio@4.x` Node `8.x` (LTS "Carbon") is the minimum supported version.
+    - Per la versione `verdaccio@3.x` Node `v6.12.` è la versione minima supportata.
+    - Per la versione `verdaccio@4.0.0-alpha.x` o `verdaccio@4.x` Node `8.x` (LTS "Carbon") è la versione minima supportata.
 2. npm `>=4.x` or `yarn` > We highly recommend use the latest Node Package Managers clients `> npm@5.x | yarn@1.x | pnpm@2.x`
 3. The web interface supports the `Chrome, Firefox, Edge, and IE11` browsers.
 
