@@ -1,6 +1,6 @@
 ---
 id: linking-remote-registry
-title: "Collegare un Remote Registry"
+title: "Collegare un Registro Remoto"
 ---
 
 Verdaccio è un proxy e di default [collega](uplinks.md) il registro pubblico.
@@ -13,7 +13,7 @@ uplinks:
 
 È possibile collegare più registri: il documento seguente guiderà attraverso alcune utili configurazioni.
 
-## Using Associating Scope
+## Utilizzo dell'Associazione di Scope
 
 L'unica maniera per accedere a più registri utilizzando il `.npmrc` è la funzione scope come segue:
 
@@ -27,13 +27,13 @@ Questo approccio è valido, tuttavia presenta diversi svantaggi:
 * **Funziona esclusivamente con scope**
 * Lo scope deve coincidere, **non sono permesse Espressioni Regolari**
 * One scope **cannot fetch from multiple registries**
-* Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
+* Token e password **devono essere definiti all'interno di** `.npmrc` e registrati nel repository.
 
-See a full example [here](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
+Vedi un esempio completo [qui](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
 
-## Linking a Registry
+## Collegare un Registro
 
-Linking a registry is fairly simple. First, define a new section in the `uplinks` section. Note, the order here is irrelevant.
+Collegare un registro è abbastanza semplice. Per primo, definire una sezione nuova nella sezione degli `uplinks`. Notare, l'ordine qui è irrilevante.
 
 ```yaml
   uplinks:
