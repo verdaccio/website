@@ -49,7 +49,7 @@ Collegare un registro è abbastanza semplice. Per primo, definire una sezione nu
 
 ```
 
-Add a `proxy` section to define the selected registry you want to proxy.
+Aggiungere una sezione `proxy` per definire il registro selezionato che si desidera utilizzare come proxy.
 
 ## Linking Multiple Registries
 
@@ -68,7 +68,7 @@ Add a `proxy` section to define the selected registry you want to proxy.
     proxy: server1 server2
 ```
 
-Verdaccio supports multiple registries on the `proxy` field. The request will be resolved with the first in the list; if that fails, it will try with the next in the list and so on.
+Verdaccio supporta registri multipli nel campo `proxy`. The request will be resolved with the first in the list; if that fails, it will try with the next in the list and so on.
 
 ## Offline Registry
 
