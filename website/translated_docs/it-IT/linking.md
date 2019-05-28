@@ -68,11 +68,11 @@ Aggiungere una sezione `proxy` per definire il registro selezionato che si desid
     proxy: server1 server2
 ```
 
-Verdaccio supporta registri multipli nel campo `proxy`. The request will be resolved with the first in the list; if that fails, it will try with the next in the list and so on.
+Verdaccio supporta registri multipli nel campo `proxy`. La richiesta sarà risolta con il primo della lista; se fallisce, proverà con il successivo della lista e così via.
 
-## Offline Registry
+## Registro Offline
 
-Having a full Offline Registry is completely possible. If you don't want any connectivity with external remotes you can do the following.
+È del tutto possibile avere un intero Registro Offline. Se non si desidera alcuna connettività con remoti esterni, è possibile eseguire ciò che segue.
 
 ```yaml
 <br />auth:
@@ -91,4 +91,4 @@ packages:
     publish: $authenticated
 ```
 
-Remove all `proxy` fields within each section of `packages`. The registry will became full offline.
+Eliminare tutti i campi `proxy` all'interno di ogni sezione di `packages`. Il registro diventerà completamente offline.
