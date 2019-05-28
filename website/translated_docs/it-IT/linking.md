@@ -15,17 +15,17 @@ uplinks:
 
 ## Using Associating Scope
 
-The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
+L'unica maniera per accedere a più registri utilizzando il `.npmrc` è la funzione scope come segue:
 
     // .npmrc
     registry=https://registry.npmjs.org
     @mycompany:registry=http://localhost:4873
     
 
-This approach is valid, but comes with several disadvantages:
+Questo approccio è valido, tuttavia presenta diversi svantaggi:
 
-* It **only works with scopes**
-* Scope must match, **no Regular Expressions are allowed**
+* **Funziona esclusivamente con scope**
+* Lo scope deve coincidere, **non sono permesse Espressioni Regolari**
 * One scope **cannot fetch from multiple registries**
 * Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
 
