@@ -1,9 +1,9 @@
 ---
 id: linking-remote-registry
-title: "Linking a Remote Registry"
+title: "Collegare un Remote Registry"
 ---
 
-Verdaccio is a proxy and by default [links](uplinks.md) the public registry.
+Verdaccio è un proxy e di default [collega](uplinks.md) il registro pubblico.
 
 ```yaml
 uplinks:
@@ -11,7 +11,7 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-You can link multiple registries, the following document will drive you through some helpful configurations.
+È possibile collegare più registri: il documento seguente guiderà attraverso alcune utili configurazioni.
 
 ## Using Associating Scope
 
