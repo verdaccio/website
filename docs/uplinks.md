@@ -36,7 +36,8 @@ max_fails | number | No |2 | all | limit maximun failure request | 2
 cache | boolean | No |[true,false] | >= 2.1 | cache all remote tarballs in storage | true
 auth | list | No | [see below](uplinks.md#auth-property)  | >= 2.5 | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled
 headers | list | No | authorization: "Bearer SecretJWToken==" | all | list of custom headers for the uplink | disabled
-strict_ssl |boolean | No | [true,false] | >= 3.0 | If true, requires SSL certificates be valid. | true
+strict_ssl | boolean | No | [true,false] | >= 3.0 | If true, requires SSL certificates be valid. | true
+agent_options | object | No | maxSockets: 10 | >= 4.0.2 | options for the HTTP or HTTPS Agent responsible for managing uplink connection persistence and reuse [more info](https://nodejs.org/api/http.html#http_class_http_agent) | No default
 
 #### Auth property
 
