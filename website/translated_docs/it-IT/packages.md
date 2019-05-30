@@ -138,7 +138,7 @@ Descriviamo quello che si desidera con l'esempio precedente:
 
 #### Unpublishing Packages
 
-The properly `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
+La proprietà `publish` gestisce le autorizzazioni per `npm publish` e `npm unpublish`. Tuttavia, se si vuole essere più specifici, è possibile utilizzare la proprietà `unpublish` nella sezione di accesso ai pacchetti, per esempio:
 
 ```yalm
 packages:
@@ -160,10 +160,10 @@ packages:
     proxy: npmjs
 ```
 
-In the previous example, the behaviour would be described:
+Nell'esempio precedente, il comportamento verrebbe descritto così:
 
-* all users can publish the `jquery` package, but only the user `root` would be able to unpublish any version.
-* only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
+* tutti gli utenti possono pubblicare il pacchetto `jquery`, tuttavia solo l'utente `root` potrebbe annullare la pubblicazione di ogni versione.
+* solo gli utenti autenticati possono pubblicare i pacchetti `my-company-*`, tuttavia **nessuno sarebbe autorizzato ad annullare la loro pubblicazione**.
 * If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
 
 ### Configurazione
