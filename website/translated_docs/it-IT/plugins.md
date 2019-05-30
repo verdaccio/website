@@ -155,7 +155,7 @@ theme:
 
 * [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): plugin di verdaccio per il supporto cli di *npm profile* e *npm profile set password* per l'autenticazione basata su *verdaccio-htpasswd*
 
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
+* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) middleware plugin di Verdaccio per reindirizzare verso https se è impostata l'intestazione x-forwarded-proto
 
 ### Plugin di archiviazione
 
