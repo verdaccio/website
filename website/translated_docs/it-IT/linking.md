@@ -51,7 +51,7 @@ Collegare un registro è abbastanza semplice. Per primo, definire una sezione nu
 
 Aggiungere una sezione `proxy` per definire il registro selezionato che si desidera utilizzare come proxy.
 
-## Linking Multiple Registries
+## Collegare Registri Multipli
 
 ```yaml
   uplinks:
