@@ -1,8 +1,8 @@
 const React = require('react');
 
-const CompLibrary = require('../../core/CompLibrary.js');
-const translate = require("../../server/translate.js").translate;
-const translation = require('../../server/translation.js');
+const CompLibrary = require('docusaurus/lib/core/CompLibrary.js');
+const translate = require("docusaurus/lib/server/translate.js").translate;
+const translation = require('docusaurus/lib/server/translation.js');
 const Container = CompLibrary.Container;
 const GridBlock = CompLibrary.GridBlock;
 
