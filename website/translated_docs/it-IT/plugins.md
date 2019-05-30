@@ -1,16 +1,16 @@
 ---
-id: plugin
+id: plugins
 title: "Plugin"
 ---
 
 Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, o con nuovi metodi di autenticazione, aggiungendo endpoint o utilizzando un archivio personalizzato.
 
-There are 4 types of plugins:
+Sono presenti 4 tipi di plugin:
 
-* Authentication
+* Autenticazione
 * Middleware
 * Archiviazione
-* UI Theme
+* Tema della UI
 
 > Se sei interessato a sviluppare il tuo plugin personale, leggi la sezione [sviluppo](dev-plugins.md).
 
@@ -22,7 +22,7 @@ There are 4 types of plugins:
 $> npm install --global verdaccio-activedirectory
 ```
 
-`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
+`verdaccio` essendo un fork di sinopia ha retrocompatibilità con plugin che sono compatibili con `sinopia@1.4.0`. In tal caso l'installazione è la stessa.
 
     $> npm install --global sinopia-memory
     
