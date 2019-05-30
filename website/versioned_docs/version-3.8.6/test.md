@@ -1,7 +1,7 @@
 ---
-id: version-3.8.6-unit-testing
+id: version-3.8.6-test
 title: Unit Testing
-original_id: unit-testing
+original_id: test
 ---
 
 Verdaccio has strong focus on unit testing and end to end testing. If you are willing to contribute, 
