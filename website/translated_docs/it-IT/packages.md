@@ -1,6 +1,6 @@
 ---
-id: pacchetti
-title: "Accesso al pacchetto"
+id: packages
+title: "Accesso ai Pacchetti"
 ---
 
 È una serie di restrizioni che permettono o limitano l'accesso all'archiviazione locale basandosi su criteri specifici.
@@ -41,7 +41,7 @@ pacchetti:
     pubblicare: $authenticated
 ```
 
-The list internal groups handled by `verdaccio` are:
+Ecco l'elenco dei gruppi interni gestiti da `verdaccio`:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
