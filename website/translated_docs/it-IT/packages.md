@@ -97,11 +97,11 @@ Definire gruppi di accesso multipli è abbastanza facile, è sufficiente disting
 Se si desidera bloccare l'accesso/pubblicazione ad uno specifico gruppo di pacchetti, è sufficiente non definire `access` e `publish`.
 
 ```yaml
-pacchetti:
-  'vecchio-*':
+packages:
+  'old-*':
   '**':
-    accesso: $all
-    pubblicare: $authenticated
+    access: $all
+    publish: $authenticated
 ```
 
 #### Bloccare l'inoltro di un gruppo di pacchetti specifici
@@ -111,19 +111,19 @@ Si potrebbe voler impedire che uno o vari pacchetti vengano raggiunti dai regist
 Vediamo l'esempio seguente:
 
 ```yaml
-pacchetti:
+packages:
   'jquery':
-    accesso: $all
-    pubblicare: $all
-  'mia-azienda-*':
-    accessso: $all
-    pubblicare: $authenticated
-  '@mio-locale-scopo/*':
-    accesso: $all
-    pubblicare: $authenticated
+    access: $all
+    publish: $all
+  'my-company-*':
+    access: $all
+    publish: $authenticated
+  '@my-local-scope/*':
+    access: $all
+    publish: $authenticated
   '**':
-    accesso: $all
-    pubblicare: $authenticated
+    access: $all
+    publish: $authenticated
     proxy: npmjs
 ```
 
@@ -164,7 +164,7 @@ Nell'esempio precedente, il comportamento verrebbe descritto così:
 
 * tutti gli utenti possono pubblicare il pacchetto `jquery`, tuttavia solo l'utente `root` potrebbe annullare la pubblicazione di ogni versione.
 * solo gli utenti autenticati possono pubblicare i pacchetti `my-company-*`, tuttavia **nessuno sarebbe autorizzato ad annullare la loro pubblicazione**.
-* If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
+* Se `unpublish` è commentato, l'accesso verrà garantito o negato dalla definizione di `publish`.
 
 ### Configurazione
 
