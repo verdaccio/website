@@ -80,7 +80,7 @@ middlewares:
 
 ### Configurazione dell'Archiviazione
 
-This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
+Questo è un esempio di come configurare un plugin di archiviazione. Tutti i plugin di archiviazione devono essere definiti nel namespace **store**.
 
 ```yaml
 store:
@@ -90,14 +90,14 @@ store:
 
 ### Configurazione del Tema
 
-Verdaccio consente di sostituire l'Interfaccia Utente con una personalizzata, che noi chiamiamo **tema**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+Verdaccio consente di sostituire l'Interfaccia Utente con una personalizzata, che noi chiamiamo **tema**. Di default, utilizza `@verdaccio/ui-theme` che è integrato, tuttavia è possibile usare qualcosa di diverso installando il proprio plugin.
 
 ```bash
 <br />$> npm install --global verdaccio-theme-dark
 
 ```
 
-> The plugin name prefix must start with `verdaccio-theme`, otherwise the plugin won't load.
+> Il prefisso del nome del plugin deve cominciare con `verdaccio-theme`, altrimenti il plugin non caricherà.
 
 You can load only one theme at the time and pass through options if is need it.
 
