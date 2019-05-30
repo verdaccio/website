@@ -33,7 +33,7 @@ Aprire il file `config.yaml` e aggiornare la sezione `auth` come segue:
 
 La configurazione predefinita appare così, poiché usiamo un plugin `htpasswd` incorporato di default che si può disabilitare commentando le seguenti linee.
 
-### Authentication Configuration
+### Configurazione dell'Autenticazione
 
 ```yaml
  htpasswd:
@@ -51,7 +51,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Authentication plugins
+#### Plugin di Autenticazione Multipla
 
 Questo è tecnicamente possibile, prestando importanza all'ordine del plugin, dato che le credenziali verranno risolte in ordine.
 
@@ -66,9 +66,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Configuration
+### Configurazione di Middleware
 
-This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
+Questo è un esempio di come si configura un middleware plugin. Tutti i plugin middleware devono essere definiti nel namespace **middlewares**.
 
 ```yaml
 middlewares:
@@ -78,7 +78,7 @@ middlewares:
 
 > Si potrebbe seguire il [plugin audit middle](https://github.com/verdaccio/verdaccio-audit) come esempio di base.
 
-### Storage Configuration
+### Configurazione dell'Archiviazione
 
 This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
 
@@ -88,9 +88,9 @@ store:
     limit: 1000
 ```
 
-### Theme Configuration
+### Configurazione del Tema
 
-Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+Verdaccio consente di sostituire l'Interfaccia Utente con una personalizzata, che noi chiamiamo **tema**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
 
 ```bash
 <br />$> npm install --global verdaccio-theme-dark
