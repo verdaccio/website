@@ -75,15 +75,15 @@ require('./node_modules/verdaccio/src/lib/cli.js');
     <rewrite>
       <rules>
 
-        <!-- iisnode folder is where iisnode stores it's logs. Queste non dovrebbero
-        mai essere riscritte -->
+        <!-- iisnode folder is where iisnode stores it's logs. These should
+        never be rewritten -->
         <rule name="iisnode" stopProcessing="true">
             <match url="iisnode*" />
             <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
             <action type="None" />
         </rule>
 
-        <!-- Riscrivere tutti gli altri url affinché Verdaccio li gestisca -->
+        <!-- Rewrite all other urls in order for verdaccio to handle these -->
         <rule name="verdaccio">
             <match url="/*" />
             <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
@@ -92,8 +92,8 @@ require('./node_modules/verdaccio/src/lib/cli.js');
       </rules>
     </rewrite>
 
-    <!-- escludere la directory node_modules e le sottodirectory dalla notifica
-     di IIS poiché questi sono dettagli di implementazione delle applicazioni node.js -->
+    <!-- exclude node_modules directory and subdirectories from serving
+    by IIS since these are implementation details of node.js applications -->
     <security>
       <requestFiltering>
         <hiddenSegments>
