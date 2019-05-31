@@ -66,13 +66,13 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 Verdaccio 4 n pese awọn iyipada ayika tuntun lati ṣayipada si boya awọn igbanilaaye, ibudo tabi Ilana Http. Eyi ni akojọ pipe:
 
-| Ohun ini              | atilẹwa                | Apejuwe                                            |
-| --------------------- | ---------------------- | -------------------------------------------------- |
-| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | ọna isisẹ ti docker naa                            |
-| VERDACCIO_USER_NAME | `verdaccio`            | olumulo eto naa                                    |
-| VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
-| VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
-| VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
+| Ohun ini              | atilẹwa                | Apejuwe                                                                 |
+| --------------------- | ---------------------- | ----------------------------------------------------------------------- |
+| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | ọna isisẹ ti docker naa                                                 |
+| VERDACCIO_USER_NAME | `verdaccio`            | olumulo eto naa                                                         |
+| VERDACCIO_USER_UID  | `10001`                | idanimọ olumulo naa ti o n jẹ lilo lati ṣamulo awọn igbanilaaye ti foda |
+| VERDACCIO_PORT        | `4873`                 | ibudo verdaccio naa                                                     |
+| VERDACCIO_PROTOCOL    | `http`                 | ilana http atilẹwa naa                                                  |
 
 ### Plugins
 
@@ -84,7 +84,7 @@ FROM verdaccio/verdaccio
 RUN npm install verdaccio-s3-storage
 ```
 
-### Docker and custom port configuration
+### Docker ati iṣeto ibudo akanṣe
 
 Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
 
@@ -98,7 +98,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 Of course the numbers you give to `-p` paremeter need to match.
 
-### Using HTTPS with Docker
+### Lilo HTTPS pẹlu Docker
 
 You can configure the protocol verdaccio is going to listen on, similarly to the port configuration. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
 
@@ -108,9 +108,9 @@ docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-### Using docker-compose
+### Lilo docker-compose
 
-1. Get the latest version of [docker-compose](https://github.com/docker/compose).
+1. Gba ẹya tuntun ti [docker-compose](https://github.com/docker/compose).
 2. Build and run the container:
 
 ```bash
