@@ -15,7 +15,7 @@ docker pull verdaccio/verdaccio
 
 <div id="codefund">''</div>
 
-## Tagged Versions
+## Awọn ẹya to ni Isamisi
 
 Since version `v2.x` you can pull docker images by [tag](https://hub.docker.com/r/verdaccio/verdaccio/tags/), as follows:
 
