@@ -64,12 +64,12 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 > Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) is recommended over using bind mount.
 
-Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
+Verdaccio 4 n pese awọn iyipada ayika tuntun lati ṣayipada si boya awọn igbanilaaye, ibudo tabi Ilana Http. Eyi ni akojọ pipe:
 
-| Ohun ini              | default                | Apejuwe                                            |
+| Ohun ini              | atilẹwa                | Apejuwe                                            |
 | --------------------- | ---------------------- | -------------------------------------------------- |
-| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | the docker working directory                       |
-| VERDACCIO_USER_NAME | `verdaccio`            | the system user                                    |
+| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | ọna isisẹ ti docker naa                            |
+| VERDACCIO_USER_NAME | `verdaccio`            | olumulo eto naa                                    |
 | VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
 | VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
 | VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
