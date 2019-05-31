@@ -11,11 +11,11 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-È possibile collegare più registri: il documento seguente guiderà attraverso alcune utili configurazioni.
+È possibile collegare registri multipli: il documento seguente guiderà attraverso alcune utili configurazioni.
 
-## Utilizzo dell'Associazione di Scope
+## Utilizzo dello Scope di Associazione
 
-L'unica maniera per accedere a più registri utilizzando il `.npmrc` è la funzione scope come segue:
+L'unica maniera per accedere a registri multipli utilizzando il `.npmrc` è la funzione scope come segue:
 
     // .npmrc
     registry=https://registry.npmjs.org
@@ -33,7 +33,7 @@ Vedi un esempio completo [qui](https://stackoverflow.com/questions/54543979/npmr
 
 ## Collegare un Registro
 
-Collegare un registro è abbastanza semplice. Per primo, definire una sezione nuova nella sezione degli `uplinks`. Notare, l'ordine qui è irrilevante.
+Collegare un registro è abbastanza semplice. Per primo, definire una sezione nuova nella sezione `uplinks`. Notare, l'ordine qui è irrilevante.
 
 ```yaml
   uplinks:
