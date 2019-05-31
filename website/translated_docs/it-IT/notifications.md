@@ -1,5 +1,5 @@
 ---
-id: notifiche
+id: notifications
 title: "Notifiche"
 ---
 
