@@ -23,11 +23,11 @@ Elenchiamo le presentazioni su Verdaccio: se hai fatto o se in in procinto di fa
 * [Architectures for Huge Angular Based Enterprise #WeAreDevelopers2018](https://youtu.be/q4XmAy6_ucw?t=551)
 * [BxJS Weekly Ep. 13 - June 2, 2018 (javascript news podcast)](https://youtu.be/Xo8CzYGKXTs?list=PL_gX69xPLi-mqs5BJe-xPnOPT6K1Y5_ZQ&t=2732)
 
-## Future Talks
+## Presentazioni Future
 
-* [Madrid Node.js Meetup 5h March 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
+* [Madrid Node.js Meetup 5 Marzo 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
 
-## Related Videos
+## Video Collegati
 
 * [Local npm server](https://www.youtube.com/watch?v=vc2wMwcDKOE)
 * [Private NPM Registry (sinopia+docker)](https://www.youtube.com/watch?v=0TXTCrGaxKc)
