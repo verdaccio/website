@@ -111,7 +111,7 @@ docker run -it --rm --name verdaccio \
 ### Lilo docker-compose
 
 1. Gba ẹya tuntun ti [docker-compose](https://github.com/docker/compose).
-2. Build and run the container:
+2. Sagbedide ati ṣe imuṣiṣẹ apoti naa:
 
 ```bash
 $ docker-compose up --build
@@ -157,7 +157,7 @@ $ docker volume inspect verdaccio_verdaccio
 
 ```
 
-## Build your own Docker image
+## Sagbedide aworan Docker ti ara rẹ
 
 ```bash
 docker build -t verdaccio .
