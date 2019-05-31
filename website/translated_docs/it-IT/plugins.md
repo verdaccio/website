@@ -147,7 +147,7 @@ theme:
 * [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): Auth basato sul file di plugin htpasswd (interno) per verdaccio
 * [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Plugin di autenticazione Github oauth per verdaccio.
 * [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): Plugin GitHub OAuth per il bottone di login di verdaccio.
-* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin per gestire associazioni di gruppi dinamici utilizzando la sintassi `$group`. Works best with the ldap plugin.
+* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin per gestire associazioni di gruppi dinamici utilizzando la sintassi `$group`. Funziona meglio con il ldap plugin.
 
 ### Plugin di Middleware
 
@@ -165,4 +165,4 @@ theme:
 
 ## Avvertenze
 
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
+> Non tutti questi plugin sono stati testati con continuità, alcuni di essi potrebbero anche non funzionare affatto. In caso si incontri qualsiasi problema, si prega di notificarlo al proprietario del plugin in questione.
