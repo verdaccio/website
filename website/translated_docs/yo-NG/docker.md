@@ -173,23 +173,23 @@ Note: The first build takes some minutes to build because it needs to run `npm i
 
 Please note that for any of the above docker commands you need to have docker installed on your machine and the docker executable should be available on your `$PATH`.
 
-## Docker Examples
+## Awọn apẹẹrẹ Docker
 
 There is a separate repository that hosts multiple configurations to compose Docker images with `verdaccio`, for instance, as reverse proxy:
 
 <https://github.com/verdaccio/docker-examples>
 
-## Docker Custom Builds
+## Awọn agbedide Akanṣe ti Docker
 
 > If you have made an image based on Verdaccio, feel free to add it to this list.
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
-* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Private NPM container that can backup to s3
+* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Apoti NPM aladani ti o le ṣe atilẹyin de s3
 * [docker-verdaccio-ldap](https://github.com/snadn/docker-verdaccio-ldap)
 * [verdaccio-ldap](https://github.com/nathantreid/verdaccio-ldap)
 * [verdaccio-compose-local-bridge](https://github.com/shingtoli/verdaccio-compose-local-bridge)
 * [docker-verdaccio](https://github.com/Global-Solutions/docker-verdaccio)
 * [verdaccio-docker](https://github.com/idahobean/verdaccio-docker)
 * [verdaccio-server](https://github.com/andru255/verdaccio-server)
-* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) docker image providing verdaccio from coldrye-debian-nodejs.
+* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) aworan docker to n pese verdaccio lati coldrye-debian-nodejs.
