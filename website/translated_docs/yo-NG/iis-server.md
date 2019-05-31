@@ -1,6 +1,6 @@
 ---
 id: iss-server
-title: "Installing on IIS server"
+title: "Fifi sori olupese IIS"
 ---
 
 These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
