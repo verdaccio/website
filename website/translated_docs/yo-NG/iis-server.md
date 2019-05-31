@@ -7,7 +7,7 @@ Awọn ilana wọnyi ni a kọ fun Windows Server 2016, IIS 10, [Node.js 10.15.0
 
 - Fi IIS sori ẹ̀rọ [iisnode](https://github.com/Azure/iisnode). Ri daju pe o fi awọn ohun inilo ti o ṣe pataki sori ẹrọ (Url Rewrite Module & node) bi a ti ṣe salaye ninu ilana fun iisnode.
 - Ṣẹda foda tuntun ni Explorer ni ibi ti o fẹ gbalejo verdaccio. Fun apẹẹrẹ `C:\verdaccio`. Fi [package.json](#packagejson), [start.js](#startjs) and [web.config](#webconfig) pamọ sinu foda yii.
-- Create a new site in Internet Information Services Manager. You can name it whatever you want. I'll call it verdaccio in these [instructions](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Specify the path to where you saved all files and a port number.
+- Ṣẹda aaye ayelujara tuntun kan ni Alakoso Awọn Iṣẹ Alaye Ayelujara. O le fun lorukọ eyikeyi ti o fẹ. Mo ma pe ni verdaccio ninu [awọn alaye yii](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Yan pato ọna ibi ti o ti fi gbogbo awọn faili ati nọmba ibudo kan pamọ si.
 - Go back to Explorer and give the user that runs the application pool modify rights to the folder you just created. If you've named the new site verdaccio and did not change the app pool, it's running under an ApplicationPoolIdentity and you should give the user IIS AppPool\verdaccio modify rights see instructions if you need help. (You can restrict access later if you want so that it only has modify rights on the iisnode and verdaccio\storage)
 - Start a command prompt and execute the commands below to download verdaccio:
 
