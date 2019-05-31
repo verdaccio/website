@@ -37,9 +37,9 @@ For a specific (patch) version:
 docker pull verdaccio/verdaccio:4.0.0
 ```
 
-> If you are interested on a list of tags, [please visit the Docker Hub website](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
+> Ti o ba nifẹsi akojọ lori awọn aami, [jọwọ lọ si aaye ayelujara ti Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Running Verdaccio using Docker
+## Mimu Verdaccio ṣiṣẹ nipa lilo Docker
 
 To run the docker container:
 
