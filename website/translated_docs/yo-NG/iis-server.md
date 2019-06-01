@@ -23,9 +23,9 @@ Mo fẹ jẹ ki aaye ayelujara `verdaccio` jẹ aaye ayelujara atilẹwa ni IIS 
 - I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS
 - I set the bindings to "http", ip address "All Unassigned" on port 80, ok any warning or prompts
 
-Awọn itọsọna wọnyi da lori [Host Sinopia ni IIS lori Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). I had to tweak my web config as per below but you may find the original from the for mentioned link works better
+Awọn itọsọna wọnyi da lori [Host Sinopia ni IIS lori Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). Mo ni lati ṣe ayipada iṣeto wẹẹbu mi gẹgẹbi isalẹ yii ṣugbọn o le ri ojulowo naa lati ọdọ itọkasi asopọ to n ṣiṣẹ daradara
 
-A default configuration file will be created `c:\verdaccio\verdaccio\config.yaml`
+Faili iṣeto atilẹwa kan maa jẹ ṣiṣẹda `c:\verdaccio\verdaccio\config.yaml`
 
 ### package.json
 
@@ -48,7 +48,7 @@ process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
-### Alternate start.js for Verdaccio versions < v3.0
+### Ọna start.js miran fun awọn ẹya Verdaccio < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);
