@@ -68,7 +68,7 @@ auth:
 
 ### Configurazione di Middleware
 
-Questo è un esempio di come si configura un middleware plugin. Tutti i plugin middleware devono essere definiti nel namespace **middlewares**.
+Questo è un esempio di come si configura un middleware plugin. Tutti i middleware plugin devono essere definiti nel **middlewares** namespace.
 
 ```yaml
 middlewares:
@@ -76,11 +76,11 @@ middlewares:
     enabled: true
 ```
 
-> Si potrebbe seguire il [plugin audit middle](https://github.com/verdaccio/verdaccio-audit) come esempio di base.
+> Si potrebbe seguire l'[audit middle plugin](https://github.com/verdaccio/verdaccio-audit) come esempio di base.
 
 ### Configurazione dell'Archiviazione
 
-Questo è un esempio di come configurare un plugin di archiviazione. Tutti i plugin di archiviazione devono essere definiti nel namespace **store**.
+Questo è un esempio di come configurare un plugin di archiviazione. Tutti i plugin di archiviazione devono essere definiti nello **store** namespace.
 
 ```yaml
 store:
