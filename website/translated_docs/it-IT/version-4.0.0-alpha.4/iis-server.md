@@ -49,7 +49,7 @@ process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
-### In Alternativa start.js per Verdaccio versioni < v3.0
+### start.js sostitutivo per versioni di Verdaccio < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);
@@ -84,7 +84,7 @@ require('./node_modules/verdaccio/src/lib/cli.js');
             <action type="None" />
         </rule>
 
-        <!-- Riscrivi tutte gli altri url affinché Verdaccio li gestisca -->
+        <!-- Riscrivere tutti gli altri url affinché Verdaccio li gestisca -->
         <rule name="verdaccio">
             <match url="/*" />
             <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
@@ -93,8 +93,8 @@ require('./node_modules/verdaccio/src/lib/cli.js');
       </rules>
     </rewrite>
 
-    <!-- escludere la directory node_modules e le sottodirectory dalla pubblicazione
-     da IIS poiché questi sono dettagli di implementazione delle applicazioni node.js -->
+    <!-- escludere la directory node_modules e le sottodirectory dalla notifica
+     di IIS poiché questi sono dettagli di implementazione delle applicazioni node.js -->
     <security>
       <requestFiltering>
         <hiddenSegments>
