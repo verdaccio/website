@@ -11,11 +11,11 @@ Awọn iṣẹ akanṣe kan ma n ṣeto awọn akojọ ni awọn ibi ipamọ ti 
 
 Iru ọna yẹn ti jẹ eyi to soro gidi gan lati ni aṣeyọri pẹlu riro iwọnyi:
 
-* Populate canary packages on public services seems not to be a good idea
+* Iselọpọ awọn akojọ canary lori awọn iṣẹ gbogbogbo ni o dabi pe o ko kin se imọran to dara
 * Some self-hosted OSS registries are too heavy
 * Offline environments (private networks)
 
-**Verdaccio** is a lightweight registry with zero-configuration that **fits perfectly in any E2E + CI workflow**.
+**Verdaccio** jẹ ibi iforukọsilẹ fifuyẹ pẹlu iṣeto-odo ti **o ni ibamu didanmọran pẹlu eyikeyi E2E + CI ilana iṣẹ**.
 
 ## Implementation
 
