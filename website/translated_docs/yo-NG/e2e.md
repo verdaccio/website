@@ -23,7 +23,7 @@ Ko ti si ọta fadaka kankan, imuṣiṣẹ kọọkan dabi pe o jẹ pato fun i
 
 ### Apẹẹrẹ nipa lilo Bash
 
-This is the most simple example using Verdaccio in a bash script (extracted from *create-react-app*).
+Eyi ni apẹẹrẹ to rọrun julọ nipa lilo Verdaccio ninu iwe afọwọkọ bash kan (ti o jẹ fifajade lati *create-react-app*).
 
 ```bash
 #!/bin/sh
@@ -45,7 +45,7 @@ sh -c "npm-auth-to-token -u test -p test -e test@test.com -r $local_registry"
 sh -c "npm --registry $local_registry publish"
 ```
 
-## Whom are using it for E2E?
+## Tani o n lo E2E fun?
 
 * [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests) *(+64k ⭐️)*
 * [Storybook](https://github.com/storybooks/storybook) *(+34k ⭐️)*
