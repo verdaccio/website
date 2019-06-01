@@ -12,16 +12,16 @@ Awọn iṣẹ akanṣe kan ma n ṣeto awọn akojọ ni awọn ibi ipamọ ti 
 Iru ọna yẹn ti jẹ eyi to soro gidi gan lati ni aṣeyọri pẹlu riro iwọnyi:
 
 * Iselọpọ awọn akojọ canary lori awọn iṣẹ gbogbogbo ni o dabi pe o ko kin se imọran to dara
-* Some self-hosted OSS registries are too heavy
-* Offline environments (private networks)
+* Awọn ibi iforukọsilẹ OSS agbalejo-alara ẹni kan ti wuwo ju
+* Awọn awujọ alaisilorila (awọn nẹtiwọki aladani)
 
 **Verdaccio** jẹ ibi iforukọsilẹ fifuyẹ pẹlu iṣeto-odo ti **o ni ibamu didanmọran pẹlu eyikeyi E2E + CI ilana iṣẹ**.
 
-## Implementation
+## Imuṣiṣẹ
 
-There is no a silver bullet yet, each implementation seems to be specific for each project, you can check some of them in the following thread [clicking here](https://stackoverflow.com/a/50222427/308341).
+Ko ti si ọta fadaka kankan, imuṣiṣẹ kọọkan dabi pe o jẹ pato fun iṣẹ akanṣe kọọkan, o le ṣayẹwo diẹ ninu wọn ni okun atẹle yii [tẹ ibi](https://stackoverflow.com/a/50222427/308341).
 
-### Example using Bash
+### Apẹẹrẹ nipa lilo Bash
 
 This is the most simple example using Verdaccio in a bash script (extracted from *create-react-app*).
 
