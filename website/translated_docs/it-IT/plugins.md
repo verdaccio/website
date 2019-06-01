@@ -10,7 +10,7 @@ Sono presenti 4 tipi di plugin:
 * Autenticazione
 * Middleware
 * Archiviazione
-* Tema della UI
+* Tema della IU
 
 > Se sei interessato a sviluppare il tuo plugin personale, leggi la sezione [sviluppo](dev-plugins.md).
 
