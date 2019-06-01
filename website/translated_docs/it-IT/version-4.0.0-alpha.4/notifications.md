@@ -1,7 +1,7 @@
 ---
 id: version-4.0.0-alpha.4-notifications
 title: Notifiche
-original_id: notifiche
+original_id: notifications
 ---
 
 Notify fu creato principalmente per essere utilizzato con gli Incoming webhook di Slack, tuttavia consegnerà anche un semplice payload ad ogni endpoint. Al momento solo attivo per il comando `npm publish`.
@@ -52,8 +52,8 @@ Usiamo [Handlebars](https://handlebarsjs.com/) come template engine principale.
     # itera tutte le versioni
     {{ name }}{{#each versions}} v{{version}}{{/each}}
     
-    # editore e pacchetto `dist-tag` pubblicati
-    {{ publisher.name }} ha pubblicato {{ publishedPackage }}
+    # pacchetto publisher e `dist-tag` pubblicati
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ### Proprietà
@@ -143,9 +143,9 @@ Un esempio:
 
 ### Pacchetto pubblicato
 
-Puoi accedere al pacchetto che è stato pubblicato con la keyword `{{publishedPackage}}` come segue.
+Si può accedere al pacchetto che è stato pubblicato con la keyword `{{publishedPackage}}` come segue.
 
-    {{ publisher.name }} ha pubblicato {{ publishedPackage }}
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ## Configurazione
