@@ -7,7 +7,7 @@ Pẹlu [Awọn igbesẹ Github](https://github.com/features/actions) o le ṣe i
 
 ![actions](/img/github-actions.png)
 
-## Testing your packages
+## Sisedanwo awọn akopọ rẹ
 
 Verdaccio provides a custom acttion for easy integration in your flow, you only add the following to your `main.workflow` in the step you consider the better for your flow.
 
