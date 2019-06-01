@@ -1,9 +1,9 @@
 ---
-id: github-actions
-title: "Github Actions"
+id: awọn igbesẹ-github
+title: "Awọn igbesẹ-Github"
 ---
 
-With [GitHub Actions](https://github.com/features/actions) you can automate your workflow, each GitHub Action performs a specific step in a process.
+Pẹlu [Awọn igbesẹ Github](https://github.com/features/actions) o le ṣe ilana iṣẹ rẹ ni aifọwọyi, Igbesẹ Github kọọkan n ṣe igbesẹ kan ni pato ninu ilana kan.
 
 ![actions](/img/github-actions.png)
 
