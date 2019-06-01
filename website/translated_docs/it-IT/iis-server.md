@@ -64,8 +64,8 @@ require('./node_modules/verdaccio/src/lib/cli.js');
         <remove name="WebDAVModule" />
     </modules>
 
-    <!-- indicates that the start.js file is a node.js application
-    to be handled by the iisnode module -->
+    <!-- indica che il file start.js è un’applicazione di node.js
+    da far gestire al modulo iisnode -->
     <handlers>
             <remove name="WebDAV" />
             <add name="iisnode" path="start.js" verb="*" modules="iisnode" resourceType="Unspecified" requireAccess="Execute" />
@@ -75,15 +75,15 @@ require('./node_modules/verdaccio/src/lib/cli.js');
     <rewrite>
       <rules>
 
-        <!-- iisnode folder is where iisnode stores it's logs. These should
-        never be rewritten -->
+        <!-- la cartella iisnode è dove iisnode memorizza i propri log. Queste non dovrebbero
+        mai essere riscritte -->
         <rule name="iisnode" stopProcessing="true">
             <match url="iisnode*" />
             <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
             <action type="None" />
         </rule>
 
-        <!-- Rewrite all other urls in order for verdaccio to handle these -->
+        <!-- Riscrivere tutti gli altri url affinché Verdaccio li gestisca -->
         <rule name="verdaccio">
             <match url="/*" />
             <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
@@ -92,8 +92,8 @@ require('./node_modules/verdaccio/src/lib/cli.js');
       </rules>
     </rewrite>
 
-    <!-- exclude node_modules directory and subdirectories from serving
-    by IIS since these are implementation details of node.js applications -->
+    <!-- escludere la directory node_modules e le sottodirectory dalla notifica
+     di IIS poiché questi sono dettagli di implementazione delle applicazioni node.js -->
     <security>
       <requestFiltering>
         <hiddenSegments>
