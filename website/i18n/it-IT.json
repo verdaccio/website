@@ -63,7 +63,7 @@
         "title": "Kubernetes"
       },
       "linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Collegare un Registro Remoto"
       },
       "logger": {
         "title": "Logger"
@@ -78,7 +78,7 @@
         "title": "Notifiche"
       },
       "packages": {
-        "title": "Accesso al pacchetto"
+        "title": "Accesso ai Pacchetti"
       },
       "plugins": {
         "title": "Plugin"
@@ -99,13 +99,13 @@
         "title": "Configurare i Certificati SSL"
       },
       "talks": {
-        "title": "Talks"
+        "title": "Presentazioni"
       },
       "uplinks": {
         "title": "Uplink"
       },
       "webui": {
-        "title": "Interfaccia utente web"
+        "title": "Interfaccia Utente Web"
       },
       "what-is-verdaccio": {
         "title": "Cos'è Verdaccio?"
@@ -168,7 +168,7 @@
         "title": "Notifiche"
       },
       "version-3.8.6/version-3.8.6-packages": {
-        "title": "Accesso al pacchetto"
+        "title": "Accesso ai Pacchetti"
       },
       "version-3.8.6/version-3.8.6-plugins": {
         "title": "Plugin"
@@ -201,7 +201,7 @@
         "title": "Casi di utilizzo"
       },
       "version-3.8.6/version-3.8.6-webui": {
-        "title": "Interfaccia utente web"
+        "title": "Interfaccia Utente Web"
       },
       "version-3.8.6/version-3.8.6-what-is-verdaccio": {
         "title": "Cos'è Verdaccio?"
@@ -264,7 +264,7 @@
         "title": "Notifiche"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-packages": {
-        "title": "Accesso al pacchetto"
+        "title": "Accesso ai Pacchetti"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-scopes": {
         "title": "Comprensione degli Scope"
@@ -273,7 +273,7 @@
         "title": "Uplink"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-webui": {
-        "title": "Interfaccia utente web"
+        "title": "Interfaccia Utente Web"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-what-is-verdaccio": {
         "title": "Cos'è Verdaccio?"
@@ -309,19 +309,19 @@
         "title": "Installazione"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Collegare un Registro Remoto"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-packages": {
-        "title": "Accesso al pacchetto"
+        "title": "Accesso ai Pacchetti"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-talks": {
-        "title": "Talks"
+        "title": "Presentazioni"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-uplinks": {
         "title": "Uplink"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-webui": {
-        "title": "Interfaccia utente web"
+        "title": "Interfaccia Utente Web"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-who-is-using": {
         "title": "Who is using Verdaccio?"
@@ -330,19 +330,19 @@
         "title": "Amazon Web Services"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Collegare un Registro Remoto"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-protect-your-dependencies": {
         "title": "Protezione dei pacchetti"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-talks": {
-        "title": "Talks"
+        "title": "Presentazioni"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-dev-plugins": {
         "title": "Sviluppare Estensioni"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Collegare un Registro Remoto"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-plugins": {
         "title": "Plugin"
@@ -354,7 +354,7 @@
         "title": "Installazione"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
-        "title": "Interfaccia utente web"
+        "title": "Interfaccia Utente Web"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-articles": {
         "title": "Articoli"
@@ -372,7 +372,7 @@
         "title": "Logotype"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-webui": {
-        "title": "Interfaccia utente web"
+        "title": "Interfaccia Utente Web"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-what-is-verdaccio": {
         "title": "Cos'è Verdaccio?"
