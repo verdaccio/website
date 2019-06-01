@@ -26,7 +26,7 @@ Questo approccio è valido, tuttavia presenta diversi svantaggi:
 
 * **Funziona esclusivamente con scope**
 * Lo scope deve coincidere, **non sono permesse Espressioni Regolari**
-* Uno scope **non può raccogliere da multipli registri**
+* Uno scope **non può raccogliere da registri multipli**
 * Token e password **devono essere definiti all'interno di** `.npmrc` e registrati nel repository.
 
 Vedi un esempio completo [qui](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
