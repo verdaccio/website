@@ -1,6 +1,6 @@
 ---
 id: e2e
-title: "End to End testing"
+title: "Idanwo Opin si Opin"
 ---
 
 Some projects organize packages in multi-packages repositories or [monorepos](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). E2E testing is a topic that usually is only relevant for User Interfaces, but from a Node.js perspective, **publishing packages also need to be tested**.
