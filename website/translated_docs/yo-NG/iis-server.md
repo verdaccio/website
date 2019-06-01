@@ -18,12 +18,12 @@ Awọn ilana wọnyi ni a kọ fun Windows Server 2016, IIS 10, [Node.js 10.15.0
 - Ri daju pe o ni ofin to n wọle bọ to tẹwọgba abẹwo TCP si ibudo naa ni Awọn aabo ayelujara ti Windows
 - Ohun niyẹn! Bayi o le ṣe ilọ kiri si agbalejo naa ati ibudo ti o yan ni pato
 
-I wanted the `verdaccio` site to be the default site in IIS so I did the following:
+Mo fẹ jẹ ki aaye ayelujara `verdaccio` jẹ aaye ayelujara atilẹwa ni IIS fun idi eyi mo se awọn ohun wọnyii:
 
 - I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS
 - I set the bindings to "http", ip address "All Unassigned" on port 80, ok any warning or prompts
 
-These instructions are based on [Host Sinopia in IIS on Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). I had to tweak my web config as per below but you may find the original from the for mentioned link works better
+Awọn itọsọna wọnyi da lori [Host Sinopia ni IIS lori Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). I had to tweak my web config as per below but you may find the original from the for mentioned link works better
 
 A default configuration file will be created `c:\verdaccio\verdaccio\config.yaml`
 
