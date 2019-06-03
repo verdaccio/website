@@ -1,7 +1,7 @@
 ---
 id: version-3.8.6-plugins
 title: Plugin
-original_id: plugin
+original_id: plugins
 ---
 
 Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, con nuovi metodi di autenticazione, aggiungendo endpoint o utilizzando un archivio personalizzato.
@@ -70,7 +70,7 @@ middlewares:
     enabled: true
 ```
 
-> Si potrebbe seguire il [plugin audit middle](https://github.com/verdaccio/verdaccio-audit) come esempio di base.
+> Si potrebbe seguire l'[audit middle plugin](https://github.com/verdaccio/verdaccio-audit) come esempio di base.
 
 ### Configurazione del Plugin Store
 

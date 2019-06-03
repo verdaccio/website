@@ -1,5 +1,5 @@
 ---
-id: installazione
+id: installation
 title: "Installazione"
 ---
 
@@ -8,12 +8,12 @@ Verdaccio è un'applicazione web multi piattaforma. Per la sua installazione son
 #### Prerequisiti
 
 1. Nodo maggiore di 
-    - For version `verdaccio@3.x` Node `v6.12` is the minimum supported version.
-    - For version `verdaccio@4.0.0-alpha.x` or `verdaccio@4.x` Node `8.x` (LTS "Carbon") is the minimum supported version.
-2. npm `>=4.x` or `yarn` > We highly recommend use the latest Node Package Managers clients `> npm@5.x | yarn@1.x | pnpm@2.x`
-3. The web interface supports the `Chrome, Firefox, Edge, and IE11` browsers.
+    - Per la versione `verdaccio@3.x` Node `v6.12.` è la versione minima supportata.
+    - Per la versione `verdaccio@4.0.0-alpha.x` o `verdaccio@4.x` Node `8.x` (LTS "Carbon") è la versione minima supportata.
+2. npm `>=4.x` o `yarn` > Raccomandiamo vivamente di utilizzare gli ultimi Node Package Manager client `> npm@5.x | yarn@1.x | pnpm@2.x`
+3. L'interfaccia web supporta i browser `Chrome, Firefox, Edge, e IE11`.
 
-> Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
+> Verdaccio supporterà l'ultima versione di Node.js secondo le raccomandazioni del [Node.js Release Working Group](https://github.com/nodejs/Release).
 
 <div id="codefund">''</div>
 
@@ -47,13 +47,13 @@ warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 
 Per ulteriori informazioni riguardo a CLI, si prega di [leggere la sezione cli](cli.md).
 
-You can set the registry by using the following command.
+È possibile impostare il registro utilizzando il comando seguente.
 
 ```bash
 npm set registry http://localhost:4873/
 ```
 
-or you can pass a `--registry` flag when needed.
+o si può passare un `--registry` flag quando necessario.
 
 ```bash
 npm install --registry http://localhost:4873

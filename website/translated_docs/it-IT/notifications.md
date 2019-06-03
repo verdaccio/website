@@ -1,5 +1,5 @@
 ---
-id: notifiche
+id: notifications
 title: "Notifiche"
 ---
 
@@ -51,8 +51,8 @@ Usiamo [Handlebars](https://handlebarsjs.com/) come template engine principale.
     # itera tutte le versioni
     {{ name }}{{#each versions}} v{{version}}{{/each}}
     
-    # editore e pacchetto `dist-tag` pubblicati
-    {{ publisher.name }} ha pubblicato {{ publishedPackage }}
+    # pacchetto publisher e `dist-tag` pubblicati
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ### Proprietà
@@ -142,9 +142,9 @@ Un esempio:
 
 ### Pacchetto pubblicato
 
-Puoi accedere al pacchetto che è stato pubblicato con la keyword `{{publishedPackage}}` come segue.
+Si può accedere al pacchetto che è stato pubblicato con la keyword `{{publishedPackage}}` come segue.
 
-    {{ publisher.name }} ha pubblicato {{ publishedPackage }}
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
 ## Configurazione

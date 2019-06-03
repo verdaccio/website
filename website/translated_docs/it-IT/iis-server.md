@@ -48,7 +48,7 @@ process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
-### In Alternativa start.js per Verdaccio versioni < v3.0
+### start.js sostitutivo per versioni di Verdaccio < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);
@@ -64,8 +64,8 @@ require('./node_modules/verdaccio/src/lib/cli.js');
         <remove name="WebDAVModule" />
     </modules>
 
-    <!-- indicates that the start.js file is a node.js application
-    to be handled by the iisnode module -->
+    <!-- indica che il file start.js è un’applicazione di node.js
+    da far gestire al modulo iisnode -->
     <handlers>
             <remove name="WebDAV" />
             <add name="iisnode" path="start.js" verb="*" modules="iisnode" resourceType="Unspecified" requireAccess="Execute" />
@@ -75,7 +75,7 @@ require('./node_modules/verdaccio/src/lib/cli.js');
     <rewrite>
       <rules>
 
-        <!-- iisnode folder is where iisnode stores it's logs. Queste non dovrebbero
+        <!-- la cartella iisnode è dove iisnode memorizza i propri log. Queste non dovrebbero
         mai essere riscritte -->
         <rule name="iisnode" stopProcessing="true">
             <match url="iisnode*" />
@@ -83,7 +83,7 @@ require('./node_modules/verdaccio/src/lib/cli.js');
             <action type="None" />
         </rule>
 
-        <!-- Riscrivi tutte gli altri url affinché Verdaccio li gestisca -->
+        <!-- Riscrivere tutti gli altri url affinché Verdaccio li gestisca -->
         <rule name="verdaccio">
             <match url="/*" />
             <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
@@ -92,8 +92,8 @@ require('./node_modules/verdaccio/src/lib/cli.js');
       </rules>
     </rewrite>
 
-    <!-- escludere la directory node_modules e le sottodirectory dalla pubblicazione
-     da IIS poiché questi sono dettagli di implementazione delle applicazioni node.js -->
+    <!-- escludere la directory node_modules e le sottodirectory dalla notifica
+     di IIS poiché questi sono dettagli di implementazione delle applicazioni node.js -->
     <security>
       <requestFiltering>
         <hiddenSegments>

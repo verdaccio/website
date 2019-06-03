@@ -1,16 +1,16 @@
 ---
-id: plugin
+id: plugins
 title: "Plugin"
 ---
 
 Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, o con nuovi metodi di autenticazione, aggiungendo endpoint o utilizzando un archivio personalizzato.
 
-There are 4 types of plugins:
+Sono presenti 4 tipi di plugin:
 
-* Authentication
+* Autenticazione
 * Middleware
 * Archiviazione
-* UI Theme
+* Tema della IU
 
 > Se sei interessato a sviluppare il tuo plugin personale, leggi la sezione [sviluppo](dev-plugins.md).
 
@@ -22,7 +22,7 @@ There are 4 types of plugins:
 $> npm install --global verdaccio-activedirectory
 ```
 
-`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
+`verdaccio` essendo un fork di sinopia ha retrocompatibilità con plugin che sono compatibili con `sinopia@1.4.0`. In tal caso l'installazione è la stessa.
 
     $> npm install --global sinopia-memory
     
@@ -33,7 +33,7 @@ Aprire il file `config.yaml` e aggiornare la sezione `auth` come segue:
 
 La configurazione predefinita appare così, poiché usiamo un plugin `htpasswd` incorporato di default che si può disabilitare commentando le seguenti linee.
 
-### Authentication Configuration
+### Configurazione dell'Autenticazione
 
 ```yaml
  htpasswd:
@@ -51,7 +51,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Authentication plugins
+#### Plugin di Autenticazione Multipla
 
 Questo è tecnicamente possibile, prestando importanza all'ordine del plugin, dato che le credenziali verranno risolte in ordine.
 
@@ -66,9 +66,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Configuration
+### Configurazione di Middleware
 
-This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
+Questo è un esempio di come si configura un middleware plugin. Tutti i middleware plugin devono essere definiti nel **middlewares** namespace.
 
 ```yaml
 middlewares:
@@ -76,11 +76,11 @@ middlewares:
     enabled: true
 ```
 
-> Si potrebbe seguire il [plugin audit middle](https://github.com/verdaccio/verdaccio-audit) come esempio di base.
+> Si potrebbe seguire l'[audit middle plugin](https://github.com/verdaccio/verdaccio-audit) come esempio di base.
 
-### Storage Configuration
+### Configurazione dell'Archiviazione
 
-This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
+Questo è un esempio di come configurare un plugin di archiviazione. Tutti i plugin di archiviazione devono essere definiti nello **store** namespace.
 
 ```yaml
 store:
@@ -88,18 +88,18 @@ store:
     limit: 1000
 ```
 
-### Theme Configuration
+### Configurazione del Tema
 
-Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+Verdaccio consente di sostituire l'Interfaccia Utente con una personalizzata, che noi chiamiamo **tema**. Di default, utilizza `@verdaccio/ui-theme` che è integrato, tuttavia è possibile usare qualcosa di diverso installando il proprio plugin.
 
 ```bash
 <br />$> npm install --global verdaccio-theme-dark
 
 ```
 
-> The plugin name prefix must start with `verdaccio-theme`, otherwise the plugin won't load.
+> Il prefisso del nome del plugin deve cominciare con `verdaccio-theme`, altrimenti il plugin non caricherà.
 
-You can load only one theme at the time and pass through options if is need it.
+È possibile caricare solo un tema alla volta e considerare le opzioni se è necessario.
 
 ```yaml
 theme:
@@ -112,7 +112,7 @@ theme:
 
 ### Plugin di Sinopia
 
-> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
+> Se si sta facendo affidamento su qualunque sinopia plugin, ricordare che sono deprecati e potrebbero non funzionare in futuro.
 
 * [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): plugin auth per il supporto di sinopia a un registro npm.
 * [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): plugin auth per sinopia che mantiene gli utenti in memoria.
@@ -147,7 +147,7 @@ theme:
 * [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): Auth basato sul file di plugin htpasswd (interno) per verdaccio
 * [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Plugin di autenticazione Github oauth per verdaccio.
 * [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): Plugin GitHub OAuth per il bottone di login di verdaccio.
-* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin to handle dynamic group associations utilizing `$group` syntax. Works best with the ldap plugin.
+* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin per gestire associazioni di gruppi dinamici utilizzando la sintassi `$group`. Funziona meglio con il ldap plugin.
 
 ### Plugin di Middleware
 
@@ -155,7 +155,7 @@ theme:
 
 * [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): plugin di verdaccio per il supporto cli di *npm profile* e *npm profile set password* per l'autenticazione basata su *verdaccio-htpasswd*
 
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
+* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) middleware plugin di Verdaccio per reindirizzare verso https se è impostata l'intestazione x-forwarded-proto
 
 ### Plugin di archiviazione
 
@@ -165,4 +165,4 @@ theme:
 
 ## Avvertenze
 
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
+> Non tutti questi plugin sono stati testati con continuità, alcuni di essi potrebbero anche non funzionare affatto. In caso si incontri qualsiasi problema, si prega di notificarlo al proprietario del plugin in questione.
