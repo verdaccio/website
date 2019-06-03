@@ -1,7 +1,8 @@
 ---
-id: source-code
-title: "Source Code"
+id: repositories
+title: Source Code
 ---
-`verdaccio` is composed or multiple repositories you might contribute. Look into the **issues** tab whether there is a ticket waiting for you 
+
+`verdaccio` se sastoji od puno repozitorijuma u okviru kojih biste mogli da doprinesete. Pogledajte u **issues** tabu, možda je tamo ticket koji čeka na Vas 🤠.
 
 Da biste videli kompletnu listu repozitorijuma, [kliknite ovde](https://github.com/verdaccio/verdaccio/wiki/Repositories).
