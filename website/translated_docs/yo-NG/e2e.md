@@ -58,7 +58,7 @@ sh -c "npm --registry $local_registry publish"
 * [Hyperledger Composer](https://github.com/hyperledger/composer) *(+1.6k ⭐️)*
 * [Wix Yoshi](https://github.com/wix/yoshi)
 
-## Future
+## Ọjọ iwaju
 
 Babel.js might be interested on integrate Verdaccio in their workflow, if you want to contribute, check [this ticket](https://github.com/babel/babel/issues/6134).
 
