@@ -7,7 +7,7 @@ Using a reverse proxy is a common practice. The following configurations are the
 
 # Apache
 
-Apache and `mod_proxy` should **not decode/encode slashes** and leave them as they are:
+Apache e `mod_proxy` **non dovrebbero decodificare/codificare gli slash** e dovrebbero lasciarli così come sono:
 
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
