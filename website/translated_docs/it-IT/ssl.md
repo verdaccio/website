@@ -3,7 +3,7 @@ id: ssl
 title: "Configurare i Certificati SSL"
 ---
 
-Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.
+Seguire queste istruzioni per configurare un certificato SSL che serva al registro NPM su HTTPS.
 
 * Aggiornare la proprietà listen in `~/.config/verdaccio/config.yaml`:
 
