@@ -7,7 +7,7 @@
 
 const React = require('react');
 
-const CompLibrary = require('../../core/CompLibrary');
+const CompLibrary = require('docusaurus/lib/core/CompLibrary');
 
 const Container = CompLibrary.Container;
 
