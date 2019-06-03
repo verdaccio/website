@@ -1,7 +1,7 @@
 ---
 id: version-4.0.0-alpha.5-packages
-title: Accesso al pacchetto
-original_id: pacchetti
+title: Accesso ai Pacchetti
+original_id: packages
 ---
 
 È una serie di restrizioni che permettono o limitano l'accesso all'archiviazione locale basandosi su criteri specifici.
@@ -13,36 +13,36 @@ Per ulteriori informazioni sui permessi, visita [la sezione autenticazione nella
 ### Utilizzo
 
 ```yalm
-pacchetti:
-  # packages con scopo
-  '@scopo/*':
-    accesso: $all
-    pubblicare: $all
+packages:
+  # pacchetti con scope
+  '@scope/*':
+    access: $all
+    publish: $all
     proxy: server2
 
-  'privato-*':
-    accessso: $all
-    pubblicare: $all
+  'private-*':
+    access: $all
+    publish: $all
     proxy: uplink1
 
   '**':
-    # consenti a tutti gli utenti (inclusi gli utenti non autenticati) di leggere e
+    # consenti a tutti gli utenti (inclusi quelli non autenticati) di leggere e
     # pubblicare tutti i pacchetti
-    accesso: $all
-    pubblicare: $all
+    access: $all
+    publish: $all
     proxy: uplink2
 ```
 
 se non ne viene specificato nemmeno uno, rimane quello predefinito
 
 ```yaml
-pacchetti:
+packages:
   '**':
-    accessso: $all
-    pubblicare: $authenticated
+    access: $all
+    publish: $authenticated
 ```
 
-The list internal groups handled by `verdaccio` are:
+Ecco l'elenco dei gruppi interni gestiti da `verdaccio`:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
@@ -58,10 +58,10 @@ Tutti gli utenti ricevono tutti questi gruppi di permessi indipendentemente dal 
 Se si desidera proteggere un insieme specifico di pacchetti dentro al proprio gruppo, è necessario fare qualcosa simile a questo. Utilizziamo un `Regex` che copra tutti i pacchetti con prefisso `npmuser-`. Raccomandiamo di utilizzare un prefisso per i pacchetti, in modo che possa essere più semplice proteggerli.
 
 ```yaml
-pacchetti:
+packages:
   'npmuser-*':
-    accessso: npmuser
-    pubblicare: npmuser
+    access: npmuser
+    publish: npmuser
 ```
 
 Riavviare `verdaccio` e provare ad installare `npmuser-core` nella console.
@@ -98,11 +98,11 @@ Definire gruppi di accesso multipli è abbastanza facile, è sufficiente disting
 Se si desidera bloccare l'accesso/pubblicazione ad uno specifico gruppo di pacchetti. È sufficiente non definire `access` e `publish`.
 
 ```yaml
-pacchetti:
-  'vecchio-*':
+packages:
+  'old-*':
   '**':
-    accesso: $all
-    pubblicare: $authenticated
+    access: $all
+    publish: $authenticated
 ```
 
 #### Bloccare l'inoltro di un gruppo di pacchetti specifici
@@ -112,19 +112,19 @@ Si potrebbe voler impedire che uno o vari pacchetti vengano raggiunti dai regist
 Vediamo l'esempio seguente:
 
 ```yaml
-pacchetti:
+packages:
   'jquery':
-    accesso: $all
-    pubblicare: $all
-  'mia-azienda-*':
-    accessso: $all
-    pubblicare: $authenticated
-  '@mio-locale-scopo/*':
-    accesso: $all
-    pubblicare: $authenticated
+    access: $all
+    publish: $all
+  'my-company-*':
+    access: $all
+    publish: $authenticated
+  '@my-local-scope/*':
+    access: $all
+    publish: $authenticated
   '**':
-    accesso: $all
-    pubblicare: $authenticated
+    access: $all
+    publish: $authenticated
     proxy: npmjs
 ```
 
@@ -137,9 +137,9 @@ Descriviamo quello che si desidera con l'esempio precedente:
 
 **Non dimenticare l'importanza dell'ordine dei pacchetti e di utilizzare sempre il doppio asterisco**. Poiché se non lo si include, `verdaccio` lo includerà per voi e questo inciderà sulla modalità con cui le dipendenze sono risolte.
 
-#### Unpublishing Packages
+#### Rimozione di Pacchetti Pubblicati
 
-The properly `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
+La proprietà `publish` gestisce le autorizzazioni per `npm publish` e `npm unpublish`. Tuttavia, se si vuole essere più specifici, è possibile utilizzare la proprietà `unpublish` nella sezione di accesso ai pacchetti, per esempio:
 
 ```yalm
 packages:
@@ -161,21 +161,21 @@ packages:
     proxy: npmjs
 ```
 
-In the previous example, the behaviour would be described:
+Nell'esempio precedente, il comportamento verrebbe descritto così:
 
-* all users can publish the `jquery` package, but only the user `root` would be able to unpublish any version.
-* only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
-* If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
+* tutti gli utenti possono pubblicare il pacchetto `jquery`, tuttavia solo l'utente `root` potrebbe annullare la pubblicazione di ogni versione.
+* solo gli utenti autenticati possono pubblicare i pacchetti `my-company-*`, tuttavia **nessuno sarebbe autorizzato ad annullare la loro pubblicazione**.
+* Se `unpublish` è commentato, l'accesso verrà garantito o negato dalla definizione di `publish`.
 
 ### Configurazione
 
 Si possono definire `pacchetti` multipli ed ognuno di essi deve avere un `Regex` unico. La sintassi è basata su [ espressioni minimatch glob](https://github.com/isaacs/minimatch).
 
-| Proprietà     | Tipo               | Richiesto | Esempio        | Supporto | Descrizione                                                               |
-| ------------- | ------------------ | --------- | -------------- | -------- | ------------------------------------------------------------------------- |
-| accesso       | stringa            | No        | $all           | tutti    | definisce i gruppi autorizzati ad accedere al pacchetto                   |
-| pubblicazione | stringa            | No        | $authenticated | tutti    | definisce i gruppi autorizzati a pubblicare                               |
-| proxy         | stringa            | No        | npmjs          | tutti    | limita le ricerche di un uplink specifico                                 |
-| archiviazione | variabile booleana | No        | stringa        | `>v4` | it creates a subfolder whithin the storage folder for each package access |
+| Proprietà     | Tipo               | Richiesto | Esempio        | Supporto | Descrizione                                                                                      |
+| ------------- | ------------------ | --------- | -------------- | -------- | ------------------------------------------------------------------------------------------------ |
+| accesso       | stringa            | No        | $all           | tutti    | definisce i gruppi autorizzati ad accedere al pacchetto                                          |
+| pubblicazione | stringa            | No        | $authenticated | tutti    | definisce i gruppi autorizzati a pubblicare                                                      |
+| proxy         | stringa            | No        | npmjs          | tutti    | limita le ricerche di un uplink specifico                                                        |
+| archiviazione | variabile booleana | No        | stringa        | `>v4` | crea una sottocartella all'interno della cartella di archiviazione per ogni accesso ai pacchetti |
 
 > Vogliamo rimarcare che non raccomandiamo più l'utilizzo di **allow_access**/**allow_publish** e **proxy_access** che sono superati e saranno presto rimossi, si prega di utilizzare invece la versione breve di ognuna di queste (**access**/**publish**/**proxy**).
