@@ -1,27 +1,27 @@
 ---
 id: version-4.0.0-cli
-title: Command Line Tool
+title: Irinṣẹ Ila aṣẹ
 original_id: cli
 ---
 
-The verdaccio CLI is your go start the application.
+CLI ti verdaccio naa jẹ irinṣẹ bibẹẹrẹ ohun elo rẹ.
 
-## Commands
+## Awọn aṣẹ
 
 ```bash
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Command            | Default                        | Apẹẹrẹ         | Apejuwe                |
-| ------------------ | ------------------------------ | -------------- | ---------------------- |
-| --listen \ **-l** | 4873                           | -p 7000        | http port              |
-| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | the configuration file |
+| Aṣẹ                | Atilẹwa                        | Apẹẹrẹ         | Apejuwe         |
+| ------------------ | ------------------------------ | -------------- | --------------- |
+| --listen \ **-l** | 4873                           | -p 7000        | ibudo http      |
+| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | faili iṣeto naa |
 
-## Default config file location
+## Aaye faili iṣeto atilẹwa
 
 To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and Windows environment we look for [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
-## Config file format
+## Ọna faili iṣeto
 
 Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
 
