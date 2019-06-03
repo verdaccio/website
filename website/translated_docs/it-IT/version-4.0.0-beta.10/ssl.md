@@ -4,14 +4,14 @@ title: Configurare i Certificati SSL
 original_id: ssl
 ---
 
-Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.
+Seguire queste istruzioni per configurare un certificato SSL che serva al registro NPM su HTTPS.
 
 * Aggiornare la proprietà listen in `~/.config/verdaccio/config.yaml`:
 
     listen: 'https://your.domain.com/'
     
 
-Once you've updated the listen property and try to run verdaccio again, it will ask for certificates.
+Una volta aggiornata la proprietà listen e provato ad avviare verdaccio di nuovo, chiederà i certificati.
 
 * Generare i certificati
 
@@ -20,7 +20,7 @@ Once you've updated the listen property and try to run verdaccio again, it will 
      $ openssl x509 -req -in /Users/user/.config/verdaccio/verdaccio-csr.pem -signkey /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-cert.pem
      ````
     
-    * Edit your config file `/Users/user/.config/verdaccio/config.yaml` and add the following section:
+    * Modificare il file di configurazione `/Users/user/.config/verdaccio/config.yaml` e aggiungere la seguente sezione:
     
     
 
