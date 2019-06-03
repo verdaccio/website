@@ -1,7 +1,7 @@
 ---
-id: version-3.8.6-source-code
+id: version-3.8.6-repositories
 title: Source Code
-original_id: source-code
+original_id: repositories
 ---
 
 `verdaccio` se sastoji od puno repozitorijuma u okviru kojih biste mogli da doprinesete. Pogledajte u **issues** tabu, možda je tamo ticket koji čeka na Vas 🤠.
