@@ -1,7 +1,7 @@
 ---
-id: version-3.8.6-source-code
+id: version-3.8.6-repositories
 title: Codice sorgente
-original_id: codice sorgente
+original_id: repositories
 ---
 
 `verdaccio` è composto da più repository a cui puoi contribuire. Guarda nella scheda **issues** se ci fosse un ticket che ti aspetta 🤠.
