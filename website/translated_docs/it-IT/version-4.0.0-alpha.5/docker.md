@@ -36,7 +36,7 @@ Per una specifica (patch) versione:
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next master branch uses the `master` version.
+Per il prossimo ramo master che utilizza la versione `master`.
 
 ```bash
 docker pull verdaccio/verdaccio:master
