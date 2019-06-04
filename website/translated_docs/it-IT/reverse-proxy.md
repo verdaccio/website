@@ -3,7 +3,7 @@ id: reverse-proxy
 title: "Configurazione di Proxy inverso"
 ---
 
-Using a reverse proxy is a common practice. The following configurations are the most recommended and used ones.
+L'utilizzo di un proxy inverso è una pratica comune. Le configurazioni seguenti sono le più raccomandate e utilizzate.
 
 # Apache
 
@@ -39,7 +39,7 @@ Configurazione del server virtuale Apache
 
 # Nginx
 
-The following snippet is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
+Lo snippet seguente è un esempio completo di `docker` che può essere testato nel nostro [repository degli esempi di Docker](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
 
     upstream verdaccio_v4 {
         server verdaccio_relative_path_v4:4873;
