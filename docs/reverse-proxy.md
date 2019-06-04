@@ -42,7 +42,7 @@ Apache virtual server configuration
 
 # Nginx
 
-The following snipped is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx). 
+The following snippet is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx). 
 
 ````
 upstream verdaccio_v4 {
