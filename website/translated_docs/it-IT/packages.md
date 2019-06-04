@@ -138,7 +138,7 @@ Descriviamo quello che si desidera con l'esempio precedente:
 
 #### Rimozione di Pacchetti Pubblicati
 
-La proprietà `publish` gestisce le autorizzazioni per `npm publish` e `npm unpublish`. Tuttavia, se si vuole essere più specifici, è possibile utilizzare la proprietà `unpublish` nella sezione di accesso ai pacchetti, per esempio:
+The property `publish` handle permissions for `npm publish` and `npm unpublish`. Tuttavia, se si vuole essere più specifici, è possibile utilizzare la proprietà `unpublish` nella sezione di accesso ai pacchetti, per esempio:
 
 ```yalm
 packages:
