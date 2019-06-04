@@ -24,14 +24,14 @@ uplinks:
 
 ### Configurazione
 
-You can define mutiple uplinks and each of them must have an unique name (key). They can have the following properties:
+È possibile definire uplink multipli e ognuno di essi deve avere un nome univoco (key). Possono avere le seguenti proprietà:
 
 | Proprietà    | Tipo               | Richiesto | Esempio                                  | Supporto | Descrizione                                                                                                                                     | Impostazione predefinita |
 | ------------ | ------------------ | --------- | ---------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
 | url          | stringa            | Sì        | https://registry.npmjs.org/              | tutti    | L'url del registro di sistema                                                                                                                   | npmjs                    |
 | ca           | stringa            | No        | ~./ssl/client.crt'                       | tutti    | Certificato del percorso SSL                                                                                                                    | Non predefinito          |
 | timeout      | stringa            | No        | 100ms                                    | tutti    | impostare nuovo timeout per la richiesta                                                                                                        | 30s                      |
-| maxage       | stringa            | No        | 10m                                      | tutti    | the time threshold to the cache is valid                                                                                                        | 2m                       |
+| maxage       | stringa            | No        | 10m                                      | tutti    | la soglia di tempo entro cui la cache è valida                                                                                                  | 2m                       |
 | fail_timeout | stringa            | No        | 10m                                      | tutti    | definire il tempo massimo dopo il quale una richiesta fallisce                                                                                  | 5m                       |
 | max_fails    | numero             | No        | 2                                        | tutti    | limite massimo di fallimenti ad ogni richiesta                                                                                                  | 2                        |
 | cache        | variabile booleana | No        | [vero/falso]                             | >= 2.1   | memorizzare nella cache tutti i tarball remoti in archivio                                                                                      | vero                     |

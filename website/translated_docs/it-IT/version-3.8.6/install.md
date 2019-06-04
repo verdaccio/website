@@ -1,7 +1,7 @@
 ---
 id: version-3.8.6-installation
 title: Installazione
-original_id: installazione
+original_id: installation
 ---
 
 Verdaccio è un'applicazione web multipiattaforma. Per installarlo, sono necessari alcuni prerequisiti.

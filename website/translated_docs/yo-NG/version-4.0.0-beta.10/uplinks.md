@@ -27,7 +27,7 @@ uplinks:
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have the following properties:
 
-| Ohun ini     | Iru     | Ti o nilo | Apẹẹrẹ                                  | Atilẹyin | Apejuwe                                                                                                                    | Default    |
+| Ohun ini     | Iru     | Ti o nilo | Apẹẹrẹ                                  | Atilẹyin | Apejuwe                                                                                                                    | Atilẹwa    |
 | ------------ | ------- | --------- | --------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
 | url          | okun    | Bẹẹni     | https://registry.npmjs.org/             | gbogbo   | The registry url                                                                                                           | npmjs      |
 | ca           | okun    | Rara      | ~./ssl/client.crt'                      | gbogbo   | SSL path certificate                                                                                                       | No default |

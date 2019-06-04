@@ -1,17 +1,17 @@
 ---
 id: version-4.0.0-alpha.7-plugins
 title: Plugin
-original_id: plugin
+original_id: plugins
 ---
 
 Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, con nuovi metodi di autenticazione, aggiungendo endpoint o utilizzando un archivio personalizzato.
 
-There are 4 types of plugins:
+Sono presenti 4 tipi di plugin:
 
-* Authentication
+* Autenticazione
 * Middleware
 * Archiviazione
-* UI Theme
+* Tema della IU
 
 > Se sei interessato a sviluppare il tuo plugin personale, leggi la sezione [sviluppo](dev-plugins.md).
 
@@ -34,7 +34,7 @@ Aprire il file `config.yaml` e aggiornare la sezione `auth` come segue:
 
 La configurazione predefinita appare così, poiché usiamo un plugin `htpasswd` incorporato di default che si può disabilitare commentando le seguenti linee.
 
-### Authentication Configuration
+### Configurazione dell'Autenticazione
 
 ```yaml
  htpasswd:
@@ -52,7 +52,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Authentication plugins
+#### Plugin di Autenticazione Multipla
 
 Questo è tecnicamente possibile, prestando importanza all'ordine del plugin, dato che le credenziali verranno risolte in ordine.
 
@@ -67,7 +67,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Configuration
+### Configurazione di Middleware
 
 Questo è un esempio di come si configura un middleware plugin. Tutti i middleware plugin devono essere definiti nel **middlewares** namespace.
 
@@ -77,9 +77,9 @@ middlewares:
     enabled: true
 ```
 
-> Si potrebbe seguire il [plugin audit middle](https://github.com/verdaccio/verdaccio-audit) come esempio di base.
+> Si potrebbe seguire l'[audit middle plugin](https://github.com/verdaccio/verdaccio-audit) come esempio di base.
 
-### Storage Configuration
+### Configurazione dell'Archiviazione
 
 Questo è un esempio di come si configura un plugin di archiviazione. Tutti i plugin di archiviazione devono essere definiti nello **store** namespace.
 
@@ -89,9 +89,9 @@ store:
     limit: 1000
 ```
 
-### Theme Configuration
+### Configurazione del Tema
 
-Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+Verdaccio consente di sostituire l'Interfaccia Utente con una personalizzata, che noi chiamiamo **tema**. Di default, utilizza `@verdaccio/ui-theme` che è integrato, tuttavia è possibile usare qualcosa di diverso installando il proprio plugin.
 
 ```bash
 <br />$&gt; npm install --global verdaccio-theme-dark
@@ -100,7 +100,7 @@ Verdaccio allows to replace the User Interface with a custom one, we call it **t
 
 > The plugin name prefix must start with `verdaccio-theme`, otherwise the pluging won't load.
 
-You can load only one theme at the time and pass through options if is need it.
+È possibile caricare solo un tema alla volta e considerare le opzioni se è necessario.
 
 ```yaml
 theme:
@@ -113,7 +113,7 @@ theme:
 
 ### Plugin di Sinopia
 
-> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
+> Se si sta facendo affidamento su qualunque sinopia plugin, ricordare che sono deprecati e potrebbero non funzionare in futuro.
 
 * [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): plugin auth per il supporto di sinopia a un registro npm.
 * [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): plugin auth per sinopia che mantiene gli utenti in memoria.

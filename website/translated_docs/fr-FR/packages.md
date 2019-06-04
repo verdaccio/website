@@ -138,7 +138,7 @@ Décrivons ce que nous voulons avec l'exemple ci-dessus:
 
 #### Unpublishing Packages
 
-The properly `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
+The property `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
 
 ```yalm
 packages:

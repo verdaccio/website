@@ -39,7 +39,7 @@ Configurazione del server virtuale Apache
 
 # Nginx
 
-The following snipped is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
+Lo snippet seguente è un esempio completo di `docker` che può essere testato nel nostro [repository degli esempi di Docker](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
 
     upstream verdaccio_v4 {
         server verdaccio_relative_path_v4:4873;
@@ -91,7 +91,7 @@ The following snipped is a full `docker` example can be tested in our [Docker ex
     }
     
 
-## SSL example
+## Esempio di SSL
 
     server {
         listen 80;
@@ -134,9 +134,9 @@ The following snipped is a full `docker` example can be tested in our [Docker ex
 
 ## Avvio dietro al proxy inverso con dominio e porta differenti
 
-### Sub-directory
+### Sottodirectory
 
-If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise you would need something like this in your `config.yaml`.
+Se si sta utilizzando l'intero URL per Verdaccio, non è necessario definire un `url_prefix`, altrimenti nella `config.yaml` servirebbe qualcosa come questo:
 
 ```yaml
 url_prefix: /sub_directory/
@@ -144,7 +144,7 @@ url_prefix: /sub_directory/
 
 Se esegui verdaccio dietro al proxy inverso, potresti notare che tutti i file risorsa funzionano come percorsi correlati, come ` http://127.0.0.1:4873/-/static `
 
-To resolve this issue, **you should send real domain and port to verdaccio with `Host` header**
+Per risolvere questo problema, **si dovrebbe inviare a verdaccio il dominio reale e la porta con l'intestazione `Host`**
 
 La configurazione di Nginx dovrebbe apparire così:
 
@@ -157,7 +157,7 @@ location / {
 }
 ```
 
-For this case, `url_prefix` should **NOT** set in verdaccio config
+In questo caso, `url_prefix` **NON** dovrebbe essere impostato nella configurazione di verdaccio
 
 * * *
 

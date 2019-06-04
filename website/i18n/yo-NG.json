@@ -33,7 +33,7 @@
         "title": "Imuṣiṣẹpọ Alainidaduro"
       },
       "cli": {
-        "title": "Command Line Tool"
+        "title": "Irinṣẹ Ila aṣẹ"
       },
       "configuration": {
         "title": "Faili Iṣeto"
@@ -45,16 +45,16 @@
         "title": "Docker"
       },
       "e2e": {
-        "title": "End to End testing"
+        "title": "Idanwo Opin si Opin"
       },
       "github-actions": {
-        "title": "Github Actions"
+        "title": "Awọn igbesẹ-Github"
       },
       "google-cloud": {
         "title": "Google Cloud"
       },
       "iss-server": {
-        "title": "Installing on IIS server"
+        "title": "Fifi sori olupese IIS"
       },
       "installation": {
         "title": "Installation"
@@ -132,7 +132,7 @@
         "title": "Imuṣiṣẹpọ Alainidaduro"
       },
       "version-3.8.6/version-3.8.6-cli": {
-        "title": "Command Line Tool"
+        "title": "Irinṣẹ Ila aṣẹ"
       },
       "version-3.8.6/version-3.8.6-configuration": {
         "title": "Faili Iṣeto"
@@ -147,7 +147,7 @@
         "title": "Docker"
       },
       "version-3.8.6/version-3.8.6-iss-server": {
-        "title": "Installing on IIS server"
+        "title": "Fifi sori olupese IIS"
       },
       "version-3.8.6/version-3.8.6-installation": {
         "title": "Installation"
@@ -210,7 +210,7 @@
         "title": "Installing As a Windows Service"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-cli": {
-        "title": "Command Line Tool"
+        "title": "Irinṣẹ Ila aṣẹ"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-configuration": {
         "title": "Faili Iṣeto"
@@ -249,7 +249,7 @@
         "title": "Google Cloud"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-iss-server": {
-        "title": "Installing on IIS server"
+        "title": "Fifi sori olupese IIS"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-linking-registries": {
         "title": "Linking Regiestries"
@@ -300,10 +300,10 @@
         "title": "Docker"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-e2e": {
-        "title": "End to End testing"
+        "title": "Idanwo Opin si Opin"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-github-actions": {
-        "title": "Github Actions"
+        "title": "Awọn igbesẹ-Github"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-installation": {
         "title": "Installation"

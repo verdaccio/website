@@ -74,7 +74,7 @@ Ci sono due opzioni qui:
 
 La sicurezza inizia nel tuo ambiente, per questo raccomandiamo assolutamente di leggere **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** e di seguire le raccomandazioni.
 
-### Accesso al pacchetto
+### Accesso ai Pacchetti
 
 Di default tutti i pacchetti che pubblichi su Verdaccio sono accessibili a chiunque, ti raccomandiamo vivamente di proteggere il tuo registro da utenti esterni non autorizzati che aggiornano la proprietà `access` a `$authenticated`.
 

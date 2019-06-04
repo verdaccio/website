@@ -1,7 +1,7 @@
 ---
 id: version-3.8.6-packages
-title: Accesso al pacchetto
-original_id: pacchetti
+title: Accesso ai Pacchetti
+original_id: packages
 ---
 
 È una serie di restrizioni che permettono o limitano l'accesso all'archiviazione locale basandosi su criteri specifici.
@@ -13,33 +13,33 @@ Per ulteriori informazioni sui permessi, visita [la sezione autenticazione nella
 ### Utilizzo
 
 ```yalm
-pacchetti:
-  # packages con scopo
-  '@scopo/*':
-    accesso: $all
-    pubblicare: $all
+packages:
+  # pacchetti con scope
+  '@scope/*':
+    access: $all
+    publish: $all
     proxy: server2
 
-  'privato-*':
-    accessso: $all
-    pubblicare: $all
+  'private-*':
+    access: $all
+    publish: $all
     proxy: uplink1
 
   '**':
-    # consenti a tutti gli utenti (inclusi gli utenti non autenticati) di leggere e
+    # consenti a tutti gli utenti (inclusi quelli non autenticati) di leggere e
     # pubblicare tutti i pacchetti
-    accesso: $all
-    pubblicare: $all
+    access: $all
+    publish: $all
     proxy: uplink2
 ```
 
 se non ne viene specificato nemmeno uno, rimane quello predefinito
 
 ```yaml
-pacchetti:
+packages:
   '**':
-    accessso: $all
-    pubblicare: $authenticated
+    access: $all
+    publish: $authenticated
 ```
 
 La lista di gruppi validi a seconda dei plugin predefiniti è
@@ -58,10 +58,10 @@ Tutti gli utenti ricevono tutti questi gruppi di permessi indipendentemente dal 
 Se si desidera proteggere un insieme specifico di pacchetti dentro al proprio gruppo, è necessario fare qualcosa simile a questo. Utilizziamo un `Regex` che copra tutti i pacchetti con prefisso `npmuser-`. Raccomandiamo di utilizzare un prefisso per i pacchetti, in modo che possa essere più semplice proteggerli.
 
 ```yaml
-pacchetti:
+packages:
   'npmuser-*':
-    accessso: npmuser
-    pubblicare: npmuser
+    access: npmuser
+    publish: npmuser
 ```
 
 Riavviare `verdaccio` e provare ad installare `npmuser-core` nella console.
@@ -98,11 +98,11 @@ Definire gruppi di accesso multipli è abbastanza facile, è sufficiente disting
 Se si desidera bloccare l'accesso/pubblicazione ad uno specifico gruppo di pacchetti. È sufficiente non definire `access` e `publish`.
 
 ```yaml
-pacchetti:
-  'vecchio-*':
+packages:
+  'old-*':
   '**':
-    accesso: $all
-    pubblicare: $authenticated
+    access: $all
+    publish: $authenticated
 ```
 
 #### Bloccare l'inoltro di un gruppo di pacchetti specifici
@@ -112,19 +112,19 @@ Si potrebbe voler impedire che uno o vari pacchetti vengano raggiunti dai regist
 Vediamo l'esempio seguente:
 
 ```yaml
-pacchetti:
+packages:
   'jquery':
-    accesso: $all
-    pubblicare: $all
-  'mia-azienda-*':
-    accessso: $all
-    pubblicare: $authenticated
-  '@mio-locale-scopo/*':
-    accesso: $all
-    pubblicare: $authenticated
+    access: $all
+    publish: $all
+  'my-company-*':
+    access: $all
+    publish: $authenticated
+  '@my-local-scope/*':
+    access: $all
+    publish: $authenticated
   '**':
-    accesso: $all
-    pubblicare: $authenticated
+    access: $all
+    publish: $authenticated
     proxy: npmjs
 ```
 

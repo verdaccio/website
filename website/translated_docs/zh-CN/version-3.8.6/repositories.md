@@ -1,7 +1,7 @@
 ---
-id: version-3.8.6-source-code
+id: version-3.8.6-repositories
 title: 源代码
-original_id: source-code（源-代码）
+original_id: repositories
 ---
 
 `verdaccio` is composed or multiple repositories you might contribute. Look into the **issues** tab whether there is a ticket waiting for you 🤠.

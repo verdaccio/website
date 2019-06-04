@@ -1,6 +1,6 @@
 ---
 id: version-4.0.0-beta.5-webui
-title: Interfaccia utente web
+title: Interfaccia Utente Web
 original_id: webui
 ---
 

@@ -150,7 +150,7 @@ You can acces to the package is being published with the keyword `{{publishedPac
 
 ## Configuration
 
-| Ohun ini            | Iru          | Ti o nilo | Atilẹyin | Default | Apejuwe                                                                                      |
+| Ohun ini            | Iru          | Ti o nilo | Atilẹyin | Atilẹwa | Apejuwe                                                                                      |
 | ------------------- | ------------ | --------- | -------- | ------- | -------------------------------------------------------------------------------------------- |
 | method              | okun         | Rara      | gbogbo   |         | HTTP verb                                                                                    |
 | packagePattern      | okun         | Rara      | gbogbo   |         | Only run this notification if the package name matches the regular expression                |
