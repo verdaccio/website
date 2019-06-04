@@ -36,14 +36,14 @@ Note sull'architettura:
 * Elastic File System è economico e stateful e funziona sulle AZ. Un'alternativa sarebbe il [plugin di archiviazione di terze parti S3](https://github.com/remitly/verdaccio-s3-storage). 
   * Per effettuare il backup, utilizzare AWS Backup
 
-Costo mensile stimato per una piccola installazione (zona us-east-1):
+Costo mensile stimato per una piccola installazione (zona us-east-1/Stati Uniti orientali):
 
-* ALB (1 LCU average): $22.265/mo
-* EC2 (t3.nano): $3.796/mo
-* EBS (8gb): $0.80/mo
-* EFS (5gb): $1.5/mo
-* Data transfer: (10gb): $0.9/mo
-* **TOTAL:** Under $30/mo
+* ALB (in media 1 LCU): $22.265/mese
+* EC2 (t3.nano): $3.796/mese
+* EBS (8gb): $0.80/mese
+* EFS (5gb): $1.5/mese
+* Trasferimento dati: (10gb): $0.9/mese
+* **TOTALE:** Meno di $30/mese
 
 ## ECS
 
