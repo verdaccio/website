@@ -350,6 +350,39 @@
       "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
         "title": "Kdo používá Verdaccio?"
       },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-articles": {
+        "title": "Články"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-best": {
+        "title": "Osvědčené postupy"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-caching": {
+        "title": "Strategie ukládání do mezipaměti"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-ci": {
+        "title": "Continuous Integration"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-configuration": {
+        "title": "Konfigurační Soubor"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-github-actions": {
+        "title": "Github Actions"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-plugins": {
+        "title": "Plugins"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-ssl": {
+        "title": "Nastavení SSL certifikátu"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-webui": {
+        "title": "Webové uživatelské rozhraní"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-who-is-using": {
+        "title": "Kdo používá Verdaccio?"
+      },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
         "title": "Installation"
       },
@@ -385,6 +418,18 @@
       },
       "version-4.0.0-beta.8/version-4.0.0-beta.8-reverse-proxy": {
         "title": "Reverse Proxy Setup"
+      },
+      "version-4.0.0/version-4.0.0-cli": {
+        "title": "Nástroj Příkazové Řádky"
+      },
+      "version-4.0.0/version-4.0.0-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0/version-4.0.0-plugins": {
+        "title": "Plugins"
+      },
+      "version-4.0.0/version-4.0.0-talks": {
+        "title": "Rozhovory"
       }
     },
     "links": {
