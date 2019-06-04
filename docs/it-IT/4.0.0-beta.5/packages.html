@@ -86,32 +86,32 @@
 <p>Le restrizioni di sicurezza dipendono dal plugin che si sta utilizzando, <code>verdaccio</code> usa di default il <a href="https://github.com/verdaccio/verdaccio-htpasswd">plugin htpasswd</a>. Se si usa un plugin differente il funzionamento potrebbe essere diverso. Il plugin predefinito non gestisce direttamente <code>allow_access</code> e <code>allow_publish</code>, ma utilizza un'alternativa interna nel caso in cui il plugin non sia pronto per questo.</p>
 <p>Per ulteriori informazioni sui permessi, visita <a href="/docs/it-IT/4.0.0-beta.5/authentification">la sezione autenticazione nella wiki</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="utilizzo"></a><a href="#utilizzo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Utilizzo</h3>
-<pre><code class="hljs css language-yalm">pacchetti:
-  # packages con scopo
-  <span class="hljs-string">'@scopo/*'</span>:
-    accesso: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
-    pubblicare: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
+<pre><code class="hljs css language-yalm">packages:
+  # pacchetti con scope
+  <span class="hljs-string">'@scope/*'</span>:
+    access: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
+    publish: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
     proxy: server2
 
-  <span class="hljs-string">'privato-*'</span>:
-    accessso: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
-    pubblicare: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
+  <span class="hljs-string">'private-*'</span>:
+    access: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
+    publish: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
     proxy: uplink1
 
   <span class="hljs-string">'**'</span>:
-    # consenti a tutti gli utenti (inclusi gli utenti non autenticati) di leggere e
+    # consenti a tutti gli utenti (inclusi quelli non autenticati) di leggere e
     # pubblicare tutti i pacchetti
-    accesso: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
-    pubblicare: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
+    access: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
+    publish: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
     proxy: uplink2
 </code></pre>
 <p>se non ne viene specificato nemmeno uno, rimane quello predefinito</p>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr">pacchetti:</span>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    accessso:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    pubblicare:</span> <span class="hljs-string">$authenticated</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
-<p>The list internal groups handled by <code>verdaccio</code> are:</p>
+<p>Ecco l'elenco dei gruppi interni gestiti da <code>verdaccio</code>:</p>
 <pre><code class="hljs css language-js"><span class="hljs-string">'$all'</span>, <span class="hljs-string">'$anonymous'</span>, <span class="hljs-string">'@all'</span>, <span class="hljs-string">'@anonymous'</span>, <span class="hljs-string">'all'</span>, <span class="hljs-string">'undefined'</span>, <span class="hljs-string">'anonymous'</span>
 </code></pre>
 <p>Tutti gli utenti ricevono tutti questi gruppi di permessi indipendentemente dal fatto che siano anonimi o no, più i gruppi previsti dal plugin, nel caso <code>htpasswd</code> respinga lo username come un gruppo. Per esempio, se si è loggati come <code>npmUser</code> l'elenco dei nomi sarà.</p>
@@ -119,10 +119,10 @@
 <span class="hljs-string">'$all'</span>, <span class="hljs-string">'$anonymous'</span>, <span class="hljs-string">'@all'</span>, <span class="hljs-string">'@anonymous'</span>, <span class="hljs-string">'all'</span>, <span class="hljs-string">'undefined'</span>, <span class="hljs-string">'anonymous'</span>, <span class="hljs-string">'npmUser'</span>
 </code></pre>
 <p>Se si desidera proteggere un insieme specifico di pacchetti dentro al proprio gruppo, è necessario fare qualcosa simile a questo. Utilizziamo un <code>Regex</code> che copra tutti i pacchetti con prefisso <code>npmuser-</code>. Raccomandiamo di utilizzare un prefisso per i pacchetti, in modo che possa essere più semplice proteggerli.</p>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr">pacchetti:</span>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
   <span class="hljs-string">'npmuser-*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    accessso:</span> <span class="hljs-string">npmuser</span>
-<span class="hljs-attr">    pubblicare:</span> <span class="hljs-string">npmuser</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">npmuser</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">npmuser</span>
 </code></pre>
 <p>Riavviare <code>verdaccio</code> e provare ad installare <code>npmuser-core</code> nella console.</p>
 <pre><code class="hljs css language-bash">$ npm install npmuser-core
@@ -147,28 +147,28 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="bloccare-l-accesso-a-gruppi-di-pacchetti"></a><a href="#bloccare-l-accesso-a-gruppi-di-pacchetti" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bloccare l'accesso a gruppi di pacchetti</h4>
 <p>Se si desidera bloccare l'accesso/pubblicazione ad uno specifico gruppo di pacchetti. È sufficiente non definire <code>access</code> e <code>publish</code>.</p>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr">pacchetti:</span>
-  <span class="hljs-string">'vecchio-*'</span><span class="hljs-string">:</span>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
+  <span class="hljs-string">'old-*'</span><span class="hljs-string">:</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    accesso:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    pubblicare:</span> <span class="hljs-string">$authenticated</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="bloccare-l-inoltro-di-un-gruppo-di-pacchetti-specifici"></a><a href="#bloccare-l-inoltro-di-un-gruppo-di-pacchetti-specifici" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bloccare l'inoltro di un gruppo di pacchetti specifici</h4>
 <p>Si potrebbe voler impedire che uno o vari pacchetti vengano raggiunti dai registri remoti, ma allo stesso tempo, permettere ad altri l'accesso a differenti <em>uplink</em>.</p>
 <p>Vediamo l'esempio seguente:</p>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr">pacchetti:</span>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
 <span class="hljs-attr">  'jquery':</span>
-<span class="hljs-attr">    accesso:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    pubblicare:</span> <span class="hljs-string">$all</span>
-  <span class="hljs-string">'mia-azienda-*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    accessso:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    pubblicare:</span> <span class="hljs-string">$authenticated</span>
-  <span class="hljs-string">'@mio-locale-scopo/*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    accesso:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    pubblicare:</span> <span class="hljs-string">$authenticated</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">$all</span>
+  <span class="hljs-string">'my-company-*'</span><span class="hljs-string">:</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+  <span class="hljs-string">'@my-local-scope/*'</span><span class="hljs-string">:</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    accesso:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    pubblicare:</span> <span class="hljs-string">$authenticated</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
 <span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
 </code></pre>
 <p>Descriviamo quello che si desidera con l'esempio precedente:</p>
@@ -179,8 +179,8 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 <li>Desidero l'inoltro per tutte le dipendenze rimanenti.</li>
 </ul>
 <p><strong>Non dimenticare l'importanza dell'ordine dei pacchetti e di utilizzare sempre il doppio asterisco</strong>. Poiché se non lo si include, <code>verdaccio</code> lo includerà per voi e questo inciderà sulla modalità con cui le dipendenze sono risolte.</p>
-<h4><a class="anchor" aria-hidden="true" id="unpublishing-packages"></a><a href="#unpublishing-packages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unpublishing Packages</h4>
-<p>The properly <code>publish</code> handle permissions for <code>npm publish</code> and <code>npm unpublish</code>. But, if you want to be more specific, you can use the property <code>unpublish</code> in your package access section, for instance:</p>
+<h4><a class="anchor" aria-hidden="true" id="rimozione-di-pacchetti-pubblicati"></a><a href="#rimozione-di-pacchetti-pubblicati" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Rimozione di Pacchetti Pubblicati</h4>
+<p>La proprietà <code>publish</code> gestisce le autorizzazioni per <code>npm publish</code> e <code>npm unpublish</code>. Tuttavia, se si vuole essere più specifici, è possibile utilizzare la proprietà <code>unpublish</code> nella sezione di accesso ai pacchetti, per esempio:</p>
 <pre><code class="hljs css language-yalm">packages:
   <span class="hljs-string">'jquery'</span>:
     access: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
@@ -199,11 +199,11 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
     publish: <span class="hljs-symbol">$</span>authenticated
     proxy: npmjs
 </code></pre>
-<p>In the previous example, the behaviour would be described:</p>
+<p>Nell'esempio precedente, il comportamento verrebbe descritto così:</p>
 <ul>
-<li>all users can publish the <code>jquery</code> package, but only the user <code>root</code> would be able to unpublish any version.</li>
-<li>only authenticated users can publish <code>my-company-*</code> packages, but <strong>nobody would be allowed to unpublish them</strong>.</li>
-<li>If <code>unpublish</code> is commented out, the access will be granted or denied by the <code>publish</code> definition.</li>
+<li>tutti gli utenti possono pubblicare il pacchetto <code>jquery</code>, tuttavia solo l'utente <code>root</code> potrebbe annullare la pubblicazione di ogni versione.</li>
+<li>solo gli utenti autenticati possono pubblicare i pacchetti <code>my-company-*</code>, tuttavia <strong>nessuno sarebbe autorizzato ad annullare la loro pubblicazione</strong>.</li>
+<li>Se <code>unpublish</code> è commentato, l'accesso verrà garantito o negato dalla definizione di <code>publish</code>.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="configurazione"></a><a href="#configurazione" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurazione</h3>
 <p>Si possono definire <code>pacchetti</code> multipli ed ognuno di essi deve avere un <code>Regex</code> unico. La sintassi è basata su <a href="https://github.com/isaacs/minimatch"> espressioni minimatch glob</a>.</p>
@@ -215,7 +215,7 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 <tr><td>accesso</td><td>stringa</td><td>No</td><td>$all</td><td>tutti</td><td>definisce i gruppi autorizzati ad accedere al pacchetto</td></tr>
 <tr><td>pubblicazione</td><td>stringa</td><td>No</td><td>$authenticated</td><td>tutti</td><td>definisce i gruppi autorizzati a pubblicare</td></tr>
 <tr><td>proxy</td><td>stringa</td><td>No</td><td>npmjs</td><td>tutti</td><td>limita le ricerche di un uplink specifico</td></tr>
-<tr><td>archiviazione</td><td>variabile booleana</td><td>No</td><td>stringa</td><td><code>&gt;v4</code></td><td>it creates a subfolder whithin the storage folder for each package access</td></tr>
+<tr><td>archiviazione</td><td>variabile booleana</td><td>No</td><td>stringa</td><td><code>&gt;v4</code></td><td>crea una sottocartella all'interno della cartella di archiviazione per ogni accesso ai pacchetti</td></tr>
 </tbody>
 </table>
 <blockquote>
