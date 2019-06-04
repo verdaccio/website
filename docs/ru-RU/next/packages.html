@@ -180,7 +180,7 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 </ul>
 <p><strong>Учтите, что порядок правил важен, и всегда добавляейте правило для двух звездочек</strong>. Потому что если его не будет, то <code>verdaccio</code> сам добавит его, что может повлиять на способ разрешения ваших зависимостей.</p>
 <h4><a class="anchor" aria-hidden="true" id="удаление-опубликованных-пакетов"></a><a href="#удаление-опубликованных-пакетов" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Удаление опубликованных пакетов</h4>
-<p>Свойство <code>publish</code> определеяет разрешения для команд <code>npm publish</code> и <code>npm unpublish</code>. Но, если вы хотите задать разрешение отдельно, можно использовать свойтство <code>unpublish</code> в секции доступа к пакетам, например:</p>
+<p>The property <code>publish</code> handle permissions for <code>npm publish</code> and <code>npm unpublish</code>. Но, если вы хотите задать разрешение отдельно, можно использовать свойтство <code>unpublish</code> в секции доступа к пакетам, например:</p>
 <pre><code class="hljs css language-yalm">packages:
   <span class="hljs-string">'jquery'</span>:
     access: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
