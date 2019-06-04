@@ -180,7 +180,7 @@
         "title": "Puppet"
       },
       "version-3.8.6/version-3.8.6-source-code": {
-        "title": "Codice sorgente"
+        "title": "Codice Sorgente"
       },
       "version-3.8.6/version-3.8.6-reverse-proxy": {
         "title": "Configurazione di Proxy inverso"
@@ -455,7 +455,7 @@
   },
   "pages-strings": {
     "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Per saperne di più utilizza la [documentazione in questo sito.](/docs/en/installation.html)",
-    "Browse Docs|no description given": "Sfoglia documenti",
+    "Browse Docs|no description given": "Sfoglia i Documenti",
     "Ask questions about the documentation and project|no description given": "Fai domande sulla documentazione e sul progetto",
     "Join the community|no description given": "Unisciti alla community",
     "Find out what's new with this project|no description given": "Scopri cosa c'è di nuovo in questo progetto",
