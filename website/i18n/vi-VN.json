@@ -350,6 +350,39 @@
       "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
         "title": "Who is using Verdaccio?"
       },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-articles": {
+        "title": "Articles"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-best": {
+        "title": "Best Practices"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-caching": {
+        "title": "Caching strategies"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-ci": {
+        "title": "Tích hợp liên tục"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-configuration": {
+        "title": "Tệp cấu hình"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-github-actions": {
+        "title": "Github Actions"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-plugins": {
+        "title": "Plugins"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-ssl": {
+        "title": "Set up the SSL Certificates"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-webui": {
+        "title": "Web User Interface"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-who-is-using": {
+        "title": "Who is using Verdaccio?"
+      },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
         "title": "Installation"
       },
@@ -385,6 +418,18 @@
       },
       "version-4.0.0-beta.8/version-4.0.0-beta.8-reverse-proxy": {
         "title": "Reverse Proxy Setup"
+      },
+      "version-4.0.0/version-4.0.0-cli": {
+        "title": "Công cụ dòng lệnh Command line"
+      },
+      "version-4.0.0/version-4.0.0-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0/version-4.0.0-plugins": {
+        "title": "Plugins"
+      },
+      "version-4.0.0/version-4.0.0-talks": {
+        "title": "Talks"
       }
     },
     "links": {
