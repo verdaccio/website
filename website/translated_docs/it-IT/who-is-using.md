@@ -3,15 +3,15 @@ id: who-is-using
 title: "Chi sta utilizzando Verdaccio?"
 ---
 
-### As a Business
+### Aziende
 
-*If you are using Verdaccio in your business and want to share your experience, let us know. We will happy to listen to you.*
+*Se stai utilizzando Verdaccio nella tua azienda e vuoi condividere la tua esperienza, faccelo sapere. Saremo lieti di ascoltarti.*
 
 * [SheetJS](https://sheetjs.com/)
 
-### Open Source Projects
+### Progetti Open Source
 
-> **Feel free to suggest other OSS are using Verdaccio.**
+> **Sentiti libero di indicarci altri OSS che stanno utlizzando Verdaccio.**
 
 * [pnpm](https://pnpm.js.org/)
 * [Storybook](https://storybook.js.org/)
