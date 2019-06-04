@@ -25,6 +25,6 @@ title: "Chi sta utilizzando Verdaccio?"
 * [Wix Yoshi](https://github.com/wix/yoshi)
 * [The AWS Cloud Development Kit](https://github.com/awslabs/aws-cdk)
 
-#### Readme Recomendations
+#### Raccomandazioni del Readme
 
 * [react-native-cli](https://github.com/react-native-community/react-native-cli/blob/master/CONTRIBUTING.md)
