@@ -1,6 +1,6 @@
 ---
 id: who-is-using
-title: "Who is using Verdaccio?"
+title: "Chi sta utilizzando Verdaccio?"
 ---
 
 ### As a Business
