@@ -350,6 +350,39 @@
       "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
         "title": "Who is using Verdaccio?"
       },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-articles": {
+        "title": "Articoli"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-best": {
+        "title": "Migliori Pratiche"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-caching": {
+        "title": "Strategie di caching"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-ci": {
+        "title": "Integrazione continua"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-configuration": {
+        "title": "File di configurazione"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-github-actions": {
+        "title": "Github Action"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-plugins": {
+        "title": "Plugin"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-ssl": {
+        "title": "Configurare i Certificati SSL"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-uplinks": {
+        "title": "Uplink"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-webui": {
+        "title": "Interfaccia Utente Web"
+      },
+      "version-4.0.0-beta.10/version-4.0.0-beta.10-who-is-using": {
+        "title": "Who is using Verdaccio?"
+      },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
         "title": "Installazione"
       },
@@ -385,6 +418,18 @@
       },
       "version-4.0.0-beta.8/version-4.0.0-beta.8-reverse-proxy": {
         "title": "Configurazione di Proxy inverso"
+      },
+      "version-4.0.0/version-4.0.0-cli": {
+        "title": "Strumento riga di comando"
+      },
+      "version-4.0.0/version-4.0.0-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.0/version-4.0.0-plugins": {
+        "title": "Plugin"
+      },
+      "version-4.0.0/version-4.0.0-talks": {
+        "title": "Presentazioni"
       }
     },
     "links": {
