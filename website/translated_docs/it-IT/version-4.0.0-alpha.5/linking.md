@@ -34,7 +34,7 @@ Vedi un esempio completo [qui](https://stackoverflow.com/questions/54543979/npmr
 
 ## Collegare un Registro
 
-Link a registry is fairly simple, first, define a new section in the `uplinks` section, note the order here is irrelevant.
+Collegare un registro è abbastanza semplice. Per primo, definire una sezione nuova nella sezione `uplinks`, notare che qui l'ordine è irrilevante.
 
 ```yaml
   uplinks:
@@ -52,7 +52,7 @@ Link a registry is fairly simple, first, define a new section in the `uplinks` s
 
 Aggiungere una sezione `proxy` per definire il registro selezionato che si desidera utilizzare come proxy.
 
-## Linking Multiples Registry
+## Collegare Registri Multipli
 
 ```yaml
   uplinks:
@@ -69,11 +69,11 @@ Aggiungere una sezione `proxy` per definire il registro selezionato che si desid
     proxy: server1 server2
 ```
 
-Verdaccio supports multiples registries on the `proxy` field, the request will be resolved with the first in the list, if fails, it will try with the next in the list and so on.
+Verdaccio supporta registri multipli nel campo `proxy`. La richiesta sarà risolta con il primo della lista; se fallisce, proverà con il successivo della lista e così via.
 
 ## Registro Offline
 
-Having a full Offline Registry is completely possible, if you don't want any connectivity with external remotes you can do the following.
+È del tutto possibile avere un intero Registro Offline. Se non si desidera alcuna connettività con i remoti esterni, è possibile eseguire ciò che segue.
 
 ```yaml
 <br />auth:
@@ -92,4 +92,4 @@ packages:
     publish: $authenticated
 ```
 
-Remote all `proxy` fields within each section of `packages`. Il registro diventerà completamente offline.
+Eliminare tutti i campi `proxy` all'interno di ogni sezione di `packages`. Il registro diventerà completamente offline.
