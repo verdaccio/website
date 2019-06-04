@@ -9,7 +9,7 @@ Pẹlu [Awọn igbesẹ Github](https://github.com/features/actions) o le ṣe i
 
 ## Sisedanwo awọn akopọ rẹ
 
-Verdaccio n pese igbesẹ akanṣe kan fun irọrun imuṣiṣẹpọ ninu ilana rẹ, iwọ kan ma ṣe afikun awọn wọnyi si `main.workflow` rẹ ninu igbesẹ ti o ro pe o dara fun ilana rẹ.
+Verdaccio provides a custom action for easy integration in your flow, you only add the following to your `main.workflow` in the step you consider the better for your flow.
 
 ```gha
 action "Publish Verdaccio" {
@@ -18,7 +18,7 @@ action "Publish Verdaccio" {
 }
 ```
 
-Igbesẹ naa yoo ṣe `npm publish` ati ti titẹjade naa ba ti pari pẹlu aṣeyọri yoo gba laaye lati tẹsiwaju si igbesẹ to kan, aijẹbẹ yoo kuna. Ti isoro eyikeyi ba wa ni sise atẹjade akopọ kan o maa ṣe akiyesi rẹ nipa lilo igbesẹ yii.
+The action will perform a `npm publish` and if the publishing finishes successfully will allow to continue to the next step, otherwise will fails. Ti isoro eyikeyi ba wa ni sise atẹjade akopọ kan o maa ṣe akiyesi rẹ nipa lilo igbesẹ yii.
 
 Laarin aworan `verdaccio-auth-memory` ati `verdaccio-memory` lo awọn ohun elo lati sakoso sise ifasẹsi ati ipamọ lati mu ki ilana na yara si.
 
