@@ -69,7 +69,7 @@
         "title": "Logger"
       },
       "logo": {
-        "title": "Logotype"
+        "title": "Logo"
       },
       "node-api": {
         "title": "Node API"
@@ -111,7 +111,7 @@
         "title": "Cos'è Verdaccio?"
       },
       "who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Chi sta utilizzando Verdaccio?"
       },
       "windows": {
         "title": "Installazione come servizio di Windows"
@@ -324,7 +324,7 @@
         "title": "Interfaccia Utente Web"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Chi sta utilizzando Verdaccio?"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-amazon": {
         "title": "Amazon Web Services"
@@ -348,7 +348,7 @@
         "title": "Plugin"
       },
       "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Chi sta utilizzando Verdaccio?"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-articles": {
         "title": "Articoli"
@@ -381,7 +381,7 @@
         "title": "Interfaccia Utente Web"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Chi sta utilizzando Verdaccio?"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
         "title": "Installazione"
@@ -402,7 +402,7 @@
         "title": "Installazione"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-logo": {
-        "title": "Logotype"
+        "title": "Logo"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-webui": {
         "title": "Interfaccia Utente Web"
@@ -434,7 +434,7 @@
     },
     "links": {
       "Docs": "Documenti",
-      "Notes": "Notes",
+      "Notes": "Note",
       "Blog": "Blog",
       "Twitter": "Twitter",
       "Help": "Aiuto",
@@ -444,7 +444,7 @@
     },
     "categories": {
       "Introduction": "Introduzione",
-      "Features": "Features",
+      "Features": "Funzioni",
       "Server": "Server",
       "Development": "Sviluppo",
       "DevOps": "DevOps",
@@ -479,12 +479,12 @@
     "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio è basato su estensioni, autenticazione, supporto per middleware e archiviazione. Scegli uno di questi o crea il tuo personalizzato.",
     "Plugin Support|no description given": "Supporto delle estensioni",
     "Who's Using This?|no description given": "Chi lo sta utilizzando?",
-    "This project is sponsored by these awesome users|no description given": "This project is sponsored by these awesome users",
-    "and used by many more, including|no description given": "and used by many more, including",
+    "This project is sponsored by these awesome users|no description given": "Questo progetto è sponsorizzato da questi eccezionali utenti",
+    "and used by many more, including|no description given": "e utilizzato da molti altri, tra cui",
     "More|no description given": "Più",
     "Users|no description given": "Utenti",
-    "Verdaccio is sponsored by these awesome folks...|no description given": "Verdaccio is sponsored by these awesome folks...",
-    "and used by many others, including:|no description given": "and used by many others, including:",
+    "Verdaccio is sponsored by these awesome folks...|no description given": "Verdaccio è sponsorizzato da queste fantastiche persone...",
+    "and used by many others, including:|no description given": "e utilizzato da molti altri, tra cui:",
     "Are you using this project? Do not be shy and add your company/project logo.|no description given": "Stai utilizzando questo progetto? Non essere timido e aggiungi il logo della tua azienda/progetto.",
     "Add your company|no description given": "Aggiungi la tua azienda",
     "Help Translate|recruit community translators for your project": "Aiuta a tradurre",
