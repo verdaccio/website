@@ -12,9 +12,9 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-You can link multiples registries, the following document will drive you throught some helpful configurations.
+È possibile collegare registri multipli: il documento seguente guiderà attraverso alcune utili configurazioni.
 
-## Using Asociating Scope
+## Utilizzo dello Scope di Associazione
 
 L'unica maniera per accedere a registri multipli utilizzando il `.npmrc` è la funzione scope come segue:
 
@@ -23,7 +23,7 @@ L'unica maniera per accedere a registri multipli utilizzando il `.npmrc` è la f
     @mycompany:registry=http://localhost:4873
     
 
-This approache is valid, but comes with several dissadventages:
+Questo approccio è valido, tuttavia presenta diversi svantaggi:
 
 * **Funziona esclusivamente con scope**
 * Lo scope deve coincidere, **non sono permesse Espressioni Regolari**
