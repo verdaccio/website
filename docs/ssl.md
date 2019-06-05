@@ -47,6 +47,6 @@ You can find more info on the `key`, `cert`, `ca`, `pfx`, and `passphrase` argum
 These instructions are mostly valid under OSX and Linux; on Windows the paths will vary, but the steps are the same.
 
 ## Docker
-If you are using the Docker image, you have to set the `PROTOCOL` environment variable to `https`, as the `listen` argument is provided in the [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) and thus ignored from your config file.
+If you are using the Docker image, you have to set the `VERDACCIO_PROTOCOL` environment variable to `https`, as the `listen` argument is provided in the [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) and thus ignored from your config file.
 
-You can also set the `PORT` environment variable if you are using a port other than `4873`.
+You can also set the `VERDACCIO_PORT` environment variable if you are using a port other than `4873`.
