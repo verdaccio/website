@@ -41,6 +41,6 @@ https: pfx: /Users/user/.config/verdaccio/server.pfx passphrase: 'secret' ````
 
 ## Docker
 
-If you are using the Docker image, you have to set the `VERDACCIO_PROTOCOL` environment variable to `https`, as the `listen` argument is provided in the [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) and thus ignored from your config file.
+Если вы используете Docker-образ, вам нужно установить переменную окружения `VERDACCIO_PROTOCOL` в значение `https`, так как свойство `listen` придёт из файла [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) и будет проигнорировано в вашем конфигурационном файле.
 
-You can also set the `VERDACCIO_PORT` environment variable if you are using a port other than `4873`.
+Так же, вы можете установить переменную окружения `VERDACCIO_PORT`, если используете порт, отличный от `4873`.
