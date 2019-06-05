@@ -23,7 +23,7 @@ Per individuare la home directory, ci si affida a **$XDG_DATA_HOME** come prima 
 
 ## Formato del file di configurazione
 
-Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+Il file di configurazione dovrebbe essere un modulo YAML, JSON o NodeJS. Il formato YAML viene individuato analizzando l'estensione del file di configurazione (yaml o yml, case insensitive).
 
 ## Percorso di archiviazione predefinito
 

@@ -91,4 +91,4 @@ packages:
     publish: $authenticated
 ```
 
-Удалите все строчки с полем `proxy` в каждом блоке секции `packages`. The registry will become full offline.
+Удалите все строчки с полем `proxy` в каждом блоке секции `packages`. Реестр станет полностью оффлайновым.

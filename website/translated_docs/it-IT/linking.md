@@ -91,4 +91,4 @@ packages:
     publish: $authenticated
 ```
 
-Eliminare tutti i campi `proxy` all'interno di ogni sezione di `packages`. The registry will become full offline.
+Eliminare tutti i campi `proxy` all'interno di ogni sezione di `packages`. Il registro diventerà completamente offline.

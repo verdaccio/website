@@ -1,6 +1,6 @@
 ---
 id: logo
-title: "Logotype"
+title: "Logo"
 ---
 
 Il logo è stato disegnato da **[Breno Rodrigues](https://github.com/rodriguesbreno)** che ha vinto il [contest](https://github.com/verdaccio/verdaccio/issues/237) ([fase finale](https://github.com/verdaccio/verdaccio/issues/328)) e ha donato il suo lavoro a questo progetto.

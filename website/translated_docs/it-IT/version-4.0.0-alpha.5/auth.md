@@ -43,7 +43,7 @@ Come è descritto [nel caso #212](https://github.com/verdaccio/verdaccio/issues/
 Come è noto *Verdaccio* utilizza il `htpasswd` di default. Quel plugin non implementa i metodi `allow_access`, `allow_publish` e `allow_unpublish`. Quindi, *Verdaccio* lo gestirà nella seguente maniera:
 
 * Se non si è loggati (si è anonimi), `$all` e `$anonymous` significano esattamente la stessa cosa.
-* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
+* Se si è loggati, `$anonymous` non sarà parte dei gruppi e `$all` coinciderà con qualsiasi utente loggato. Un nuovo gruppo `$authenticated` verrà aggiunto all'elenco.
 
 Il concetto chiave è che `$all` ** coinciderà con tutti gli utenti, indipendentemente dal fatto che siano loggati o meno**.
 
@@ -56,7 +56,7 @@ Ricapitolando:
 
 ## Impostazione predefinita htpasswd
 
-Al fine di semplificare l'installazione, `verdaccio` utilizza un plugin basato su `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
+Al fine di semplificare l'installazione, `verdaccio` utilizza un plugin basato su `htpasswd`. A partire dalla versione v3.0.x il plugin `verdaccio-htpasswd` viene utilizzato di default.
 
 ```yaml
 auth:
