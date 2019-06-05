@@ -1,6 +1,6 @@
 ---
 id: version-4.0.0-beta.5-logo
-title: Logotype
+title: Logo
 original_id: logo
 ---
 
