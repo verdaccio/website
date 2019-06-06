@@ -7,11 +7,11 @@ Fifitonileti jẹ gbigbedide ni pataki lati jẹ lilo pẹlu awọn webhooks Sla
 
 ## Ilo
 
-An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
+Apẹẹrẹ kan pẹlu ikọ **HipChat**, **Stride** ati **Google Hangouts Chat**:
 
-> Verdaccio supports any API, feel free to ad more examples.
+> Verdaccio n ṣe atilẹyin eyikeyi API, ma se siyemeji lati ṣafikun apẹẹrẹ diẹ sii.
 
-#### Single notification
+#### Ifitonileti kan
 
 ```yaml
 notify:
