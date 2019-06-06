@@ -82,6 +82,6 @@ helm install --name npm --set customConfigMap=verdaccio-config stable/verdaccio
 
 ## Atilẹyin Rancher
 
-[Rancher](http://rancher.com/) is a complete container management platform that makes managing and using containers in production really easy.
+[Rancher](http://rancher.com/) jẹ pilatifọọmu isakoso apoti pipe ti o n jẹ ki iṣakoso ati lilo awọn apoti ni iṣelọpọ rọrun gidi gan.
 
 * [verdaccio-rancher](https://github.com/lgaticaq/verdaccio-rancher)
