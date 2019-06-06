@@ -9,7 +9,7 @@ title: "通知"
 
 **HipChat**, **Stride** 和 **Google Hangouts Chat** hook的一个范例:
 
-> Verdaccio 支持任何 API, 请随意添加更多范例。
+> Verdaccio supports any API, feel free to add more examples.
 
 #### 单个通知
 
