@@ -9,13 +9,13 @@ title: "Kubernetes"
 
 ### Ṣeto Helm
 
-If you haven't used Helm before, you need to setup the Helm controller called Tiller:
+Ti o ko ba ti lo Helm ri tẹlẹ, o nilo lati ṣeto oludari Helm ti a pe ni Tiller:
 
 ```bash
 helm init
 ```
 
-### Install
+### Fi sori ẹrọ
 
 Deploy the Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio) chart. In this example we use `npm` as release name:
 
