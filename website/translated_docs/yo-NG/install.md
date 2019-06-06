@@ -47,7 +47,7 @@ warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 
 Fun alaye siwaju sii nipa CLI naa, jọwọ [ka abala cli naa](cli.md).
 
-You can set the registry by using the following command.
+O le ṣeto ibi iforukọsilẹ nipa lilo aṣẹ wọnyi.
 
 ```bash
 npm set registry http://localhost:4873/
