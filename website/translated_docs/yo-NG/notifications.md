@@ -21,7 +21,7 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-#### Multiple notification
+#### Ifitonileti pupọ
 
 ```yaml
 notify:
@@ -42,11 +42,11 @@ notify:
      content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
 ```
 
-## Template
+## Awoṣe
 
-We use [Handlebars](https://handlebarsjs.com/) as main template engine.
+A lo [Handlebars](https://handlebarsjs.com/) gẹgẹbi ẹrọ ti koko awoṣe.
 
-### Format Examples
+### Awọn apẹẹrẹ Ọna
 
     # iterate all versions
     {{ name }}{{#each versions}} v{{version}}{{/each}}
