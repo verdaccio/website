@@ -9,7 +9,7 @@ Pẹlu [Awọn igbesẹ Github](https://github.com/features/actions) o le ṣe i
 
 ## Sisedanwo awọn akopọ rẹ
 
-Verdaccio provides a custom action for easy integration in your flow, you only add the following to your `main.workflow` in the step you consider the better for your flow.
+Verdaccio n pese igbesẹ akanṣe fun imusisẹpọ to rọrun ninu ilana rẹ, iwọ kan ma se afikun awọn wọnyi si `main.workflow` rẹ ninu igbesẹ ti o ro pe o dara julọ fun ilana rẹ.
 
 ```gha
 action "Publish Verdaccio" {
