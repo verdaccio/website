@@ -55,17 +55,17 @@ A lo [Handlebars](https://handlebarsjs.com/) gẹgẹbi ẹrọ ti koko awoṣe.
     {{ publisher.name }} has published {{ publishedPackage }}
     
 
-### Properties
+### Awọn ohun ini
 
-List of properties accesible via template
+Akojọ ti awọn ohun ini to ṣe wọle si nipasẹ awoṣe
 
-* Metadata
-* Publisher (who is publishing)
-* Package Published (package@1.0.0)
+* Mẹtadata
+* Olugbejade (ẹniti o n ṣe agbejade)
+* Akopọ to jẹ Gbigbejade (akopọ@1.0.0)
 
-### Metadata
+### Mẹtadata
 
-Package metadata that the template has access
+Mẹtadata akopọ ti awoṣe naa ni iwọle si
 
     {
         "_id": "@test/pkg1",
