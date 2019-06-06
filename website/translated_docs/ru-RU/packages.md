@@ -94,7 +94,7 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 
 #### Блокировка доступа к набору пакетов
 
-Если вы хотите заблокировать доступ и публикацию для определённой группы пакетов, просто удалите строчки `access` и `publish`.
+If you want to block the access/publish to a specific group of packages. Just do not define `access` and `publish`.
 
 ```yaml
 packages:
