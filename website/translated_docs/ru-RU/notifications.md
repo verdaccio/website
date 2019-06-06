@@ -9,7 +9,7 @@ title: "Уведомления"
 
 Пример использования с хуками **HipChat**, **Stride** и **Google Hangouts Chat**:
 
-> Verdaccio поддерживает любое API, не стесняйтесь и добавляйте еще примеры.
+> Verdaccio supports any API, feel free to add more examples.
 
 #### Одиночное уведомление
 
