@@ -12,7 +12,7 @@ command.
 
 An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
 
-> Verdaccio supports any API, feel free to ad more examples.
+> Verdaccio supports any API, feel free to add more examples.
 
 #### Single notification
 

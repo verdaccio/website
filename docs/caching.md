@@ -46,14 +46,14 @@ uplinks:
     maxage: 30m
 ```
 
-Increasing the value of `maxage` in each `uplink` remotes will be asked less frequently. This might be a valid stragegy if
+Increasing the value of `maxage` in each `uplink` remotes will be asked less frequently. This might be a valid strategy if
 you don't update dependencies so often.
 
 
 ## Using the memory instead the hardrive
 
 Sometimes caching packages is not a critical step, rather than route packages from different registries and achieving
-faster build times. There are two plugins that avoid write in a phisical hardrive at all using the memory.
+faster build times. There are two plugins that avoid write in a physical hard drive at all using the memory.
 
 ```bash
   npm install -g verdaccio-auth-memory
