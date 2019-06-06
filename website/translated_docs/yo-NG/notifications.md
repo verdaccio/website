@@ -1,6 +1,6 @@
 ---
-id: notifications
-title: "Notifications"
+id: awọn ifitonileti
+title: "Awọn ifitonileti"
 ---
 
 Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
