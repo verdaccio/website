@@ -15,7 +15,7 @@ There are 4 types of plugins:
 
 > If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
 
-## Usage
+## Ilo
 
 ### Installation
 
