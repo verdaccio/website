@@ -9,8 +9,8 @@ Verdaccio jẹ ohun elo ayelujara ti ọlọpọ pilatifọọmu. Lati fi sori �
 
 1. Oju ipade ti o ga ju 
     - Fun ẹya `verdaccio@3.x` Oju ipade `v6.12` jẹ ẹya ti o kere julọ ti atilẹyin wa fun.
-    - For version `verdaccio@4.0.0-alpha.x` or `verdaccio@4.x` Node `8.x` (LTS "Carbon") is the minimum supported version.
-2. npm `>=4.x` or `yarn` > We highly recommend use the latest Node Package Managers clients `> npm@5.x | yarn@1.x | pnpm@2.x`
+    - Fun ẹya `verdaccio@4.0.0-alpha.x` tabi `verdaccio@4.x` Oju ipade `8.x` (LTS "Carbon") jẹ ẹya ti o kere julọ ti atilẹyin wa fun.
+2. npm `>=4.x` tabi `yarn` > A ṣe igbaniyanju to ga lati lo Awọn Olusakoso Akopọ Oju ipade awọn onibara to tuntun julọ `> npm@5.x | yarn@1.x | pnpm@2.x`
 3. The web interface supports the `Chrome, Firefox, Edge, and IE11` browsers.
 
 > Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
