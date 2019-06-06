@@ -1,14 +1,14 @@
 ---
 id: version-3.8.6-node-api
-title: Node API
-original_id: node-api
+title: API Oju ipade
+original_id: api-oju ipade
 ---
 
 Verdaccio can be invoqued programmatically. The node API was introduced after version `verdaccio@3.0.0-alpha.10`.
 
-## Usage
+## Ilo
 
-#### Programmatically
+#### Pẹlu eto
 
 ```js
  import startServer from 'verdaccio';   
@@ -21,9 +21,9 @@ Verdaccio can be invoqued programmatically. The node API was introduced after ve
   });
 ```
 
-## Other implementations
+## Awọn imuṣiṣẹ miran
 
-* [verdaccio-server](https://github.com/boringame/verdaccio-server) local npm registry proxy server
+* [verdaccio-server](https://github.com/boringame/verdaccio-server) olupese ikọkọ ti ibi iforukọsilẹ npm ibilẹ
 
 ```js
 // js
