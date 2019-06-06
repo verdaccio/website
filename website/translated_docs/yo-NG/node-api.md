@@ -22,7 +22,7 @@ Verdaccio le jẹ pipe pẹlu eto. Awọn API oju ipade jẹ sisafihan lẹhin �
 
 ## Awọn imuṣiṣẹ miran
 
-* [verdaccio-server](https://github.com/boringame/verdaccio-server) local npm registry proxy server
+* [verdaccio-server](https://github.com/boringame/verdaccio-server) olupese ikọkọ ti ibi iforukọsilẹ npm ibilẹ
 
 ```js
 // js
