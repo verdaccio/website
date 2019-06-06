@@ -6,7 +6,7 @@ original_id: logo
 
 The logotype was designed by **[Breno Rodrigues](https://github.com/rodriguesbreno)** which won the [contest](https://github.com/verdaccio/verdaccio/issues/237) ([last stage](https://github.com/verdaccio/verdaccio/issues/328)) and donated his work to this project.
 
-> All logos are licensed under [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
+> Gbogbo awọn logo ni iwe aṣẹ labẹ [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
 
 Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
 
