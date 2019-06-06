@@ -5,7 +5,7 @@ title: "Irulogo"
 
 Irulogo jẹ didalara nipasẹ **[Breno Rodrigues](https://github.com/rodriguesbreno)** eyi to gbegba oroke ninu [idije](https://github.com/verdaccio/verdaccio/issues/237) ([ipele ikẹhin](https://github.com/verdaccio/verdaccio/issues/328)) atipe o si fi iṣẹ rẹ tọrẹ fun iṣẹ akanṣe yii.
 
-> All logos are licensed under [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
+> Gbogbo awọn logo ni iwe aṣẹ labẹ [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
 
 Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
 
