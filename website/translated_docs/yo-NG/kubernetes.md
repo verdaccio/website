@@ -17,25 +17,25 @@ helm init
 
 ### Fi sori ẹrọ
 
-Deploy the Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio) chart. In this example we use `npm` as release name:
+Samulo Helm atẹ [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio). Ninu apẹẹrẹ yii a lo `npm` gẹgẹbi orukọ igbejade:
 
 ```bash
 helm install --name npm stable/verdaccio
 ```
 
-### Deploy a specific version
+### Ṣamulo pato ẹya kan
 
 ```bash
 helm install --name npm --set image.tag=2.6.5 stable/verdaccio
 ```
 
-### Upgrading Verdaccio
+### Sisagbega Verdaccio
 
 ```bash
 helm upgrade npm stable/verdaccio
 ```
 
-### Uninstalling
+### Yiyọ kuro
 
 ```bash
 helm del --purge npm
