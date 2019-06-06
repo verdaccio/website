@@ -9,7 +9,7 @@ Notify was built primarily to use with Slack's Incoming webhooks, but will also 
 
 Příklad pro **HipChat**, **Stride** a **Google Hangouts Chat**:
 
-> Verdaccio podporuje jakékoliv API, klidně přidejte další příklady.
+> Verdaccio supports any API, feel free to add more examples.
 
 #### Jedno upozornění
 
