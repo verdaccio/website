@@ -149,11 +149,11 @@ O le wọle si akopọ ti o n jẹ gbigbe jade pẹlu koko-ọrọ `{{publishedP
 
 ## Configuration
 
-| Ohun ini            | Iru          | Ti o nilo | Atilẹyin | Atilẹwa | Apejuwe                                                                                      |
-| ------------------- | ------------ | --------- | -------- | ------- | -------------------------------------------------------------------------------------------- |
-| ọna                 | okun         | Rara      | gbogbo   |         | HTTP verb                                                                                    |
-| packagePattern      | okun         | Rara      | gbogbo   |         | Mu ifitonileti yi ṣiṣẹ nikan ti o ba jẹ pe orukọ akopọ naa ba ni ibaamu pẹlu iṣafihan deede  |
-| packagePatternFlags | okun         | Rara      | gbogbo   |         | Awọn asia eyikeyi to ba ma jẹ lilo pẹlu iṣafihan deede                                       |
-| headers             | array/object | Bẹẹni     | gbogbo   |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | okun         | Bẹẹni     | gbogbo   |         | set the URL endpoint for this call                                                           |
-| content             | okun         | Bẹẹni     | gbogbo   |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Ohun ini            | Iru        | Ti o nilo | Atilẹyin | Atilẹwa | Apejuwe                                                                                      |
+| ------------------- | ---------- | --------- | -------- | ------- | -------------------------------------------------------------------------------------------- |
+| ọna                 | okun       | Rara      | gbogbo   |         | HTTP verb                                                                                    |
+| packagePattern      | okun       | Rara      | gbogbo   |         | Mu ifitonileti yi ṣiṣẹ nikan ti o ba jẹ pe orukọ akopọ naa ba ni ibaamu pẹlu iṣafihan deede  |
+| packagePatternFlags | okun       | Rara      | gbogbo   |         | Awọn asia eyikeyi to ba ma jẹ lilo pẹlu iṣafihan deede                                       |
+| awọn akọle          | array/nkan | Bẹẹni     | gbogbo   |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
+| endpoint            | okun       | Bẹẹni     | gbogbo   |         | set the URL endpoint for this call                                                           |
+| content             | okun       | Bẹẹni     | gbogbo   |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
