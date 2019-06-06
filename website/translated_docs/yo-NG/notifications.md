@@ -138,22 +138,22 @@ Apẹẹrẹ kan:
       content: '{"color":"green","message":"New package published: * {{ name }}*. Orukọ olugbejade: * {{ publisher.name }} *.","notify":true,"message_format":"text"}'
     
 
-**Note:** it's not possible to get the publisher information if the `package.json` file already has the `publisher` property.
+**Akiyesi:** ko ṣe ṣee ṣe lati gba alaye olugbejade ti faili `package.json` ba ti ni ohun ini `olugbejade` tẹlẹ.
 
-### Package Published
+### Akopọ to ti jẹ Gbigbejade
 
-You can access to the package is being published with the keyword `{{publishedPackage}}` as follows.
+O le wọle si akopọ ti o n jẹ gbigbe jade pẹlu koko-ọrọ `{{publishedPackage}}` bi atẹle yi.
 
-    {{ publisher.name }} has published {{ publishedPackage }}
+    {{ publisher.name }} ti ṣe agbejade {{ publishedPackage }}
     
 
 ## Configuration
 
 | Ohun ini            | Iru          | Ti o nilo | Atilẹyin | Atilẹwa | Apejuwe                                                                                      |
 | ------------------- | ------------ | --------- | -------- | ------- | -------------------------------------------------------------------------------------------- |
-| method              | okun         | Rara      | gbogbo   |         | HTTP verb                                                                                    |
-| packagePattern      | okun         | Rara      | gbogbo   |         | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | okun         | Rara      | gbogbo   |         | Any flags to be used with the regular expression                                             |
+| ọna                 | okun         | Rara      | gbogbo   |         | HTTP verb                                                                                    |
+| packagePattern      | okun         | Rara      | gbogbo   |         | Mu ifitonileti yi ṣiṣẹ nikan ti o ba jẹ pe orukọ akopọ naa ba ni ibaamu pẹlu iṣafihan deede  |
+| packagePatternFlags | okun         | Rara      | gbogbo   |         | Awọn asia eyikeyi to ba ma jẹ lilo pẹlu iṣafihan deede                                       |
 | headers             | array/object | Bẹẹni     | gbogbo   |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
 | endpoint            | okun         | Bẹẹni     | gbogbo   |         | set the URL endpoint for this call                                                           |
 | content             | okun         | Bẹẹni     | gbogbo   |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
