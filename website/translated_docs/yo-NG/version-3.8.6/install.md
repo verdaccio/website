@@ -6,35 +6,35 @@ original_id: installation
 
 Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
 
-#### Prerequisites
+#### Awọn ohun inilo iṣaaju
 
-1. Node higher than 
+1. Oju ipade ti o ga ju 
     - For version `verdaccio@2.x` Node `v4.6.1` is the minimum supported version.
     - For version `verdaccio@latest` Node `6.12.0` is the minimum supported version.
 2. npm `>=3.x` or `yarn`
 3. The web interface supports the `Chrome, Firefox, Edge, and IE9` browsers.
 
-## Installing the CLI
+## Fifi CLI naa sori ẹrọ
 
-`verdaccio` must be installed globaly using either of the following methods:
+`verdaccio` gbọdọ jẹ fifi sori ẹrọ lagbaye nipa lilo boya ọkan ninu awọn ọna wọnyi:
 
-Using `npm`
+Lilo `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-or using `yarn`
+tabi lilo `yarn`
 
 ```bash
 yarn global add verdaccio
 ```
 
-![install verdaccio](/svg/install_verdaccio.gif)
+![fi verdaccio sori ẹrọ](/svg/install_verdaccio.gif)
 
-## Basic Usage
+## Ilo Ipilẹ
 
-Once it has been installed, you only need to execute the CLI command:
+Lọgan to ti jẹ fifi sori ẹrọ, iwọ kan nilo lati ṣe abayọri aṣẹ CLI naa:
 
 ```bash
 $> verdaccio
@@ -42,9 +42,9 @@ warn --- config file  - /home/.config/verdaccio/config.yaml
 warn --- http address - http://localhost:4873/ - verdaccio/3.0.1
 ```
 
-For more information about the CLI, please [read the cli section](cli.md).
+Fun alaye siwaju sii nipa CLI naa, jọwọ [ka abala cli naa](cli.md).
 
-## Docker Image
+## Aworan Docker
 
 `verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. For more information about how to install the official image, [read the docker section](docker.md).
 
@@ -52,4 +52,4 @@ For more information about the CLI, please [read the cli section](cli.md).
 
 `verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
 
-[![Install](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
+[![Fi sori ẹrọ](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
