@@ -9,7 +9,7 @@ Notify fué creado principalmente para usarse con los webhooks entrantes de Slac
 
 Un ejemplo con un hook de **HipChat**, **Stride** y **Google Hangouts Chat**:
 
-> Verdaccio soporta cualquier API, siéntase en libertad de añadir más ejemplos.
+> Verdaccio supports any API, feel free to add more examples.
 
 #### Notificación sencilla
 
