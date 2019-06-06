@@ -13,13 +13,13 @@ Verdaccio jẹ ohun elo ayelujara ti ọlọpọ pilatifọọmu. Lati fi sori �
 2. npm `>=4.x` tabi `yarn` > A ṣe igbaniyanju to ga lati lo Awọn Olusakoso Akopọ Oju ipade awọn onibara to tuntun julọ `> npm@5.x | yarn@1.x | pnpm@2.x`
 3. Intafeesi wẹẹbu naa n ṣe atilẹyin fun awọn ẹrọ aṣàwákiri ayelujara `Chrome, Firefox, Edge, ati IE11`.
 
-> Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
+> Verdaccio ma se atilẹyin fun ẹya Node.js to tuntun julọ ni ibamu si awọn igbaniyanju [Node.js Release Working Group](https://github.com/nodejs/Release).
 
 <div id="codefund">''</div>
 
-## Installing the CLI
+## Fifi CLI naa sori ẹrọ
 
-`verdaccio` must be installed globaly using either of the following methods:
+`verdaccio` gbọdọ jẹ fifi sori ẹrọ lagbaye nipa lilo boya ọkan ninu awọn ọna wọnyi:
 
 Using `npm`
 
