@@ -3,9 +3,9 @@ id: awọn ifitonileti
 title: "Awọn ifitonileti"
 ---
 
-Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
+Fifitonileti jẹ gbigbedide ni pataki lati jẹ lilo pẹlu awọn webhooks Slack ti n wọle bọ, ṣugbọn o tun ma ṣe ifijiṣẹ fi ifiranṣẹ to rọrun kan si eyikeyi opin. Lọwọlọwọ o n ṣiṣẹ fun aṣẹ `npm publish` nikan.
 
-## Usage
+## Ilo
 
 An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
 
