@@ -41,13 +41,13 @@ helm upgrade npm stable/verdaccio
 helm del --purge npm
 ```
 
-**Note:** this command delete all the resources, including packages that you may have previously published to the registry.
+**Akiyesi:** aṣẹ yi n pa gbogbo awọn ohun elo rẹ, pẹlu awọn akopọ ti o le ti gbejade tẹlẹ si ibi iforukọsilẹ naa.
 
-### Custom Verdaccio configuration
+### Akanṣe Iṣeto Verdaccio
 
-You can customize the Verdaccio configuration using a Kubernetes *configMap*.
+O le ṣe iṣeto Verdaccio ni akanṣe pẹlu lilo Kubernetes *configMap*.
 
-#### Prepare
+#### Gbaradi
 
 Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/full.yaml) and adapt it for your use case:
 
