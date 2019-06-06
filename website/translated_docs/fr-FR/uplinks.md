@@ -3,7 +3,7 @@ id: uplinks
 title: "Uplinks"
 ---
 
-Un *uplink* est un lien avec un registre externe qui donne accès à des paquets externes.
+An *uplink* is a link with an external registry that provides access to external packages.
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
 
