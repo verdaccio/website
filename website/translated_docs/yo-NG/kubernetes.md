@@ -49,16 +49,16 @@ O le ṣe iṣeto Verdaccio ni akanṣe pẹlu lilo Kubernetes *configMap*.
 
 #### Gbaradi
 
-Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/full.yaml) and adapt it for your use case:
+Se adakọ [iṣeto titẹlẹ](https://github.com/verdaccio/verdaccio/blob/master/conf/full.yaml) ki o si mu ṣe deede fun lilo ọrọ rẹ:
 
 ```bash
 wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/full.yaml -O config.yaml
 ```
 
-**Note:** Make sure you are using the right path for the storage that is used for persistency:
+**Akiyesi:** Ri daju pe o n lo ọna ti o tọ fun ibi ipamọ ti o jẹ lilo fun aiduro:
 
 ```yaml
-storage: /verdaccio/storage/data
+torage: /verdaccio/storage/data
 auth:
   htpasswd:
     file: /verdaccio/storage/htpasswd
