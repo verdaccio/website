@@ -21,7 +21,7 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 Для того, чтобы определить местоположение домашней директории мы полагаемся на **$XDG_DATA_HOME** в первую очередь и в среде Windows мы ищем переменную окружения [APPDATA](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
-## Config file format
+## Формат config-файла
 
 Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
 
