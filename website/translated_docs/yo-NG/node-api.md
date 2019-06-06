@@ -1,13 +1,13 @@
 ---
-id: node-api
-title: "Node API"
+id: api-oju ipade
+title: "API Oju ipade"
 ---
 
-Verdaccio can be invoked programmatically. The node API was introduced after version `verdaccio@3.0.0-alpha.10`.
+Verdaccio le jẹ pipe pẹlu eto. Awọn API oju ipade jẹ sisafihan lẹhin ẹya `verdaccio@3.0.0-alpha.10`.
 
-## Usage
+## Ilo
 
-#### Programmatically
+#### Pẹlu eto
 
 ```js
  import startServer from 'verdaccio';   
