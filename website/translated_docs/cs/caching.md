@@ -37,11 +37,11 @@ uplinks:
     maxage: 30m
 ```
 
-Zvýšení hodnoty `maxage` v každém `uplink` způsobí snížení frekvence dotazování. To může být platná strategie, pokud nebudete aktualizovat závislosti tak často.
+Zvýšení hodnoty `maxage` v každém `uplink` způsobí snížení frekvence dotazování. This might be a valid strategy if you don't update dependencies so often.
 
 ## Použití paměti místo pevného disku
 
-Sometimes caching packages is not a critical step, rather than route packages from different registries and achieving faster build times. Existují dva pluginy, které se vyhnou zápisu na fyzický pevný disk pomocí paměti.
+Sometimes caching packages is not a critical step, rather than route packages from different registries and achieving faster build times. There are two plugins that avoid write in a physical hard drive at all using the memory.
 
 ```bash
   npm install -g verdaccio-auth-memory
