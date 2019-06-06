@@ -8,7 +8,7 @@ Verdaccio is an plugabble aplication. It can be extended in many ways, either ne
 
 > If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
 
-## Usage
+## Ilo
 
 ### Installation
 
