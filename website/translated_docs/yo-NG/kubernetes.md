@@ -58,29 +58,29 @@ wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/full.yaml
 **Akiyesi:** Ri daju pe o n lo ọna ti o tọ fun ibi ipamọ ti o jẹ lilo fun aiduro:
 
 ```yaml
-torage: /verdaccio/storage/data
+storage: /verdaccio/storage/data
 auth:
   htpasswd:
     file: /verdaccio/storage/htpasswd
 ```
 
-#### Deploy the configMap
+#### Ṣamulo configMap naa
 
-Deploy the `configMap` to the cluster
+Ṣamulo `configMap` si iṣupọ naa
 
 ```bash
 kubectl create configmap verdaccio-config --from-file ./config.yaml
 ```
 
-#### Deploy Verdaccio
+#### Samulo Verdaccio
 
-Now you can deploy the Verdaccio Helm chart and specify which configuration to use:
+Ni bayi o le ṣe amulo atẹ Verdaccio Helm ati ṣiṣe pato iru iṣeto to ma jẹ lilo:
 
 ```bash
 helm install --name npm --set customConfigMap=verdaccio-config stable/verdaccio
 ```
 
-## Rancher Support
+## Atilẹyin Rancher
 
 [Rancher](http://rancher.com/) is a complete container management platform that makes managing and using containers in production really easy.
 
