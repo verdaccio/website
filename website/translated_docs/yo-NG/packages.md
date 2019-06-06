@@ -9,7 +9,7 @@ The security constraints remain on the shoulders of the plugin being used, by de
 
 For more information about permissions visit [the authentification section in the wiki](auth.md).
 
-### Usage
+### Ilo
 
 ```yalm
 packages:
@@ -94,7 +94,7 @@ Defining multiple access groups is fairly easy, just define them with a white sp
 
 #### Blocking access to set of packages
 
-If you want to block the acccess/publish to a specific group of packages. Just do not define `access` and `publish`.
+If you want to block the access/publish to a specific group of packages. Just do not define `access` and `publish`.
 
 ```yaml
 packages:
