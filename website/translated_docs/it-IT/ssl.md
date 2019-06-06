@@ -25,7 +25,7 @@ Una volta aggiornata la proprietà listen e provato ad avviare verdaccio di nuov
 
 https: key: /Users/user/.config/verdaccio/verdaccio-key.pem cert: /Users/user/.config/verdaccio/verdaccio-cert.pem ca: /Users/user/.config/verdaccio/verdaccio-csr.pem
 
-    <br />In alternativa, se si possiede un certificato con il formato `server.pfx`, si può aggiungere la parte seguente: (La passphrase è facoltativa e solo necessaria se il certificato è criptato.)
+    <br />In alternativa, se si possiede un certificato con il formato `server.pfx`, si può aggiungere la parte di configurazione seguente: (La passphrase è facoltativa e solo necessaria se il certificato è criptato.)
     
     
 
