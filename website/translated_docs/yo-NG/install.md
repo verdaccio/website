@@ -33,7 +33,7 @@ tabi lilo `yarn`
 yarn global add verdaccio
 ```
 
-![install verdaccio](assets/install_verdaccio.gif)
+![fi verdaccio sori ẹrọ](assets/install_verdaccio.gif)
 
 ## Ilo Ipilẹ
 
@@ -53,13 +53,13 @@ O le ṣeto ibi iforukọsilẹ nipa lilo aṣẹ wọnyi.
 npm set registry http://localhost:4873/
 ```
 
-or you can pass a `--registry` flag when needed.
+tabi o le gbe asia `--ibi iforukọsilẹ` kọja nigba ti o nilo.
 
 ```bash
 npm install --registry http://localhost:4873
 ```
 
-## Docker Image
+## Aworan Docker
 
 `verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. For more information about how to install the official image, [read the docker section](docker.md).
 
