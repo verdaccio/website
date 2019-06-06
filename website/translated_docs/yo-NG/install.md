@@ -37,7 +37,7 @@ yarn global add verdaccio
 
 ## Ilo Ipilẹ
 
-Once it has been installed, you only need to execute the CLI command:
+Lọgan to ti jẹ fifi sori ẹrọ, iwọ kan nilo lati ṣe abayọri aṣẹ CLI naa:
 
 ```bash
 $> verdaccio
@@ -45,7 +45,7 @@ warn --- config file  - /home/.config/verdaccio/config.yaml
 warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 ```
 
-For more information about the CLI, please [read the cli section](cli.md).
+Fun alaye siwaju sii nipa CLI naa, jọwọ [ka abala cli naa](cli.md).
 
 You can set the registry by using the following command.
 
