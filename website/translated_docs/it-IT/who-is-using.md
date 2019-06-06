@@ -3,7 +3,7 @@ id: who-is-using
 title: "Chi sta utilizzando Verdaccio?"
 ---
 
-### Aziende
+### Come Azienda
 
 *Se stai utilizzando Verdaccio nella tua azienda e vuoi condividere la tua esperienza, faccelo sapere. Saremo lieti di ascoltarti.*
 
@@ -11,7 +11,7 @@ title: "Chi sta utilizzando Verdaccio?"
 
 ### Progetti Open Source
 
-> **Sentiti libero di indicarci altri OSS che stanno utlizzando Verdaccio.**
+> **Sentiti libero di indicarci altri OSS che stanno utilizzando Verdaccio.**
 
 * [pnpm](https://pnpm.js.org/)
 * [Storybook](https://storybook.js.org/)
