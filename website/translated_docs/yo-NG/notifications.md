@@ -118,9 +118,9 @@ Mẹtadata akopọ ti awoṣe naa ni iwọle si
 
 ### Olugbejade
 
-You can access to the package publisher information in the `content` of a webhook using the `publisher` object.
+O le wọle si alaye olugbejade akopọ naa ni `akoonu` ti webhook kan nipa lilo `olugbejade` nkan.
 
-See below the `publisher` object type:
+Wo labẹ yii `olugbejade` iru nkan:
 
     {
       name: string,
@@ -129,13 +129,13 @@ See below the `publisher` object type:
     }
     
 
-An example:
+Apẹẹrẹ kan:
 
     notify:
       method: POST
       headers: [{'Content-Type': 'application/json'}]
       endpoint: https://usagge.hipchat.com/v2/room/3729485/notification?auth_token=mySecretToken
-      content: '{"color":"green","message":"New package published: * {{ name }}*. Publisher name: * {{ publisher.name }} *.","notify":true,"message_format":"text"}'
+      content: '{"color":"green","message":"New package published: * {{ name }}*. Orukọ olugbejade: * {{ publisher.name }} *.","notify":true,"message_format":"text"}'
     
 
 **Note:** it's not possible to get the publisher information if the `package.json` file already has the `publisher` property.
