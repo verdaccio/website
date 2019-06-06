@@ -206,7 +206,7 @@ This variable should contain a comma-separated list of domain extensions proxy s
 no_proxy: localhost,127.0.0.1
 ```
 
-### Notifications
+### Awọn ifitonileti
 
 Ṣiṣe imuṣiṣẹ awọn ifitonileti si awọn irinṣẹ alagata rọrun diẹ nipasẹ awọn ikọ ayelujara. Fun alaye siwaju sii nipa abala yii ka [oju ewe awọn ifitonileti](notifications.md).
 
