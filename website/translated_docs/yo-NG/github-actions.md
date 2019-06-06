@@ -18,7 +18,7 @@ action "Publish Verdaccio" {
 }
 ```
 
-The action will perform a `npm publish` and if the publishing finishes successfully will allow to continue to the next step, otherwise will fails. Ti isoro eyikeyi ba wa ni sise atẹjade akopọ kan o maa ṣe akiyesi rẹ nipa lilo igbesẹ yii.
+Igbesẹ naa yoo ṣe `npm publish` atipe ti atẹjade naa ba pari pẹlu aṣeyọri o ma ni aaye lati tẹsiwaju si igbesẹ ti o kan, bibẹkọ o ma kuna. Ti isoro eyikeyi ba wa ni sise atẹjade akopọ kan o maa ṣe akiyesi rẹ nipa lilo igbesẹ yii.
 
 Laarin aworan `verdaccio-auth-memory` ati `verdaccio-memory` lo awọn ohun elo lati sakoso sise ifasẹsi ati ipamọ lati mu ki ilana na yara si.
 
