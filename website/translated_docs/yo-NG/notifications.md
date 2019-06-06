@@ -116,7 +116,7 @@ Mẹtadata akopọ ti awoṣe naa ni iwọle si
     }
     
 
-### Publisher
+### Olugbejade
 
 You can access to the package publisher information in the `content` of a webhook using the `publisher` object.
 
