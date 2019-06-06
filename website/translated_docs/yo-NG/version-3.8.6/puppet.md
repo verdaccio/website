@@ -6,7 +6,7 @@ original_id: puppet
 
 Install verdaccio for Debian, Ubuntu, Fedora, and RedHat.
 
-# Usage
+# Ilo
 
 There are two variants to install verdaccio using this Puppet module:
 
