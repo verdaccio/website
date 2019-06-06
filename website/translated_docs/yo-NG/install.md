@@ -21,13 +21,13 @@ Verdaccio jẹ ohun elo ayelujara ti ọlọpọ pilatifọọmu. Lati fi sori �
 
 `verdaccio` gbọdọ jẹ fifi sori ẹrọ lagbaye nipa lilo boya ọkan ninu awọn ọna wọnyi:
 
-Using `npm`
+Lilo `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-or using `yarn`
+tabi lilo `yarn`
 
 ```bash
 yarn global add verdaccio
@@ -35,7 +35,7 @@ yarn global add verdaccio
 
 ![install verdaccio](assets/install_verdaccio.gif)
 
-## Basic Usage
+## Ilo Ipilẹ
 
 Once it has been installed, you only need to execute the CLI command:
 
