@@ -94,6 +94,13 @@ const nonSponsorUsers = [
     fbOpenSource: false,
     pinned: false,
   },
+  {
+    caption: "JustAnswer",
+    image: "img/users/justanswer.svg",
+    infoLink: "https://www.justanswer.com/",
+    fbOpenSource: false,
+    pinned: false,
+  },
 ];
 
 const sponsorUsers = [
