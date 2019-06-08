@@ -49,10 +49,10 @@ helm del --purge npm
 
 #### 准备
 
-复制 [现有配置](https://github.com/verdaccio/verdaccio/blob/master/conf/full.yaml)并将其调整为您所需要的:
+Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml) and adapt it for your use case:
 
 ```bash
-wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/full.yaml -O config.yaml
+wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/docker.yaml -O config.yaml
 ```
 
 **请注意:** 请确保您使用的是持续存储的正确路径:
