@@ -23,6 +23,9 @@
       "best": {
         "title": "Migliori Pratiche"
       },
+      "build": {
+        "title": "build"
+      },
       "caching": {
         "title": "Strategie di caching"
       },
@@ -89,6 +92,9 @@
       "puppet": {
         "title": "Puppet"
       },
+      "repositories": {
+        "title": "Codice Sorgente"
+      },
       "reverse-proxy": {
         "title": "Configurazione di Proxy inverso"
       },
@@ -100,6 +106,9 @@
       },
       "talks": {
         "title": "Presentazioni"
+      },
+      "test": {
+        "title": "test"
       },
       "uplinks": {
         "title": "Uplink"
@@ -179,7 +188,7 @@
       "version-3.8.6/version-3.8.6-puppet": {
         "title": "Puppet"
       },
-      "version-3.8.6/version-3.8.6-source-code": {
+      "version-3.8.6/version-3.8.6-repositories": {
         "title": "Codice Sorgente"
       },
       "version-3.8.6/version-3.8.6-reverse-proxy": {
@@ -191,7 +200,7 @@
       "version-3.8.6/version-3.8.6-ssl": {
         "title": "Configurare i Certificati SSL"
       },
-      "version-3.8.6/version-3.8.6-unit-testing": {
+      "version-3.8.6/version-3.8.6-test": {
         "title": "Test Unità"
       },
       "version-3.8.6/version-3.8.6-uplinks": {
@@ -430,6 +439,9 @@
       },
       "version-4.0.0/version-4.0.0-talks": {
         "title": "Presentazioni"
+      },
+      "version-4.0.1/version-4.0.1-docker": {
+        "title": "Docker"
       }
     },
     "links": {
