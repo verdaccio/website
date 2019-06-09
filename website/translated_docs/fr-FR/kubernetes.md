@@ -49,10 +49,10 @@ Vous pouvez personnaliser la configuration de Verdaccio en utilisant un Kubernet
 
 #### Préparer
 
-Copiez la [configuration existante](https://github.com/verdaccio/verdaccio/blob/master/conf/full.yaml) et adaptez la à votre propre cas d'utilisation:
+Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml) and adapt it for your use case:
 
 ```bash
-wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/full.yaml -O config.yaml
+wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/docker.yaml -O config.yaml
 ```
 
 **Remarque:** assurez-vous que vous utilisez le chemin correct d'archivage utilisé pour la persistance:

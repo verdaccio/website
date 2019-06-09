@@ -10,7 +10,7 @@ The security constraints remain on the shoulders of the plugin being used, by de
 
 For more information about permissions visit [the authentification section in the wiki](auth.md).
 
-### Usage
+### Ilo
 
 ```yalm
 packages:

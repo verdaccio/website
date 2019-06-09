@@ -49,10 +49,10 @@ helm del --purge npm
 
 #### Preparazione
 
-Copiare la [configurazione esistente](https://github.com/verdaccio/verdaccio/blob/master/conf/full.yaml) ed adattarla al proprio caso:
+Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml) and adapt it for your use case:
 
 ```bash
-wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/full.yaml -O config.yaml
+wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/docker.yaml -O config.yaml
 ```
 
 **Nota:** Assicurarsi che si stia utilizzando il percorso corretto per l'archiviazione che viene usato per la persistenza:

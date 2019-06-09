@@ -69,13 +69,13 @@
         "title": "Logger"
       },
       "logo": {
-        "title": "Logotype"
+        "title": "Irulogo"
       },
       "node-api": {
-        "title": "Node API"
+        "title": "API Oju ipade"
       },
       "notifications": {
-        "title": "Notifications"
+        "title": "Awọn ifitonileti"
       },
       "packages": {
         "title": "Package Access"
@@ -162,10 +162,10 @@
         "title": "Verdaccio Logotype"
       },
       "version-3.8.6/version-3.8.6-node-api": {
-        "title": "Node API"
+        "title": "API Oju ipade"
       },
       "version-3.8.6/version-3.8.6-notifications": {
-        "title": "Notifications"
+        "title": "Awọn ifitonileti"
       },
       "version-3.8.6/version-3.8.6-packages": {
         "title": "Package Access"
@@ -258,10 +258,10 @@
         "title": "Verdaccio Logotype"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-node-api": {
-        "title": "Node API"
+        "title": "API Oju ipade"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-notifications": {
-        "title": "Notifications"
+        "title": "Awọn ifitonileti"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-packages": {
         "title": "Package Access"
@@ -402,7 +402,7 @@
         "title": "Installation"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-logo": {
-        "title": "Logotype"
+        "title": "Irulogo"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-webui": {
         "title": "Web User Interface"

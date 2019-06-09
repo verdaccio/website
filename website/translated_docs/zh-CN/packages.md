@@ -94,7 +94,7 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 
 #### 阻止对一组包的访问
 
-如果你想要阻止访问/发布到一组包，只要不定义`access` 和 `publish`即可。
+If you want to block the access/publish to a specific group of packages. Just do not define `access` and `publish`.
 
 ```yaml
 packages:

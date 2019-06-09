@@ -25,13 +25,13 @@ Una volta aggiornata la proprietà listen e provato ad avviare verdaccio di nuov
 
 https: key: /Users/user/.config/verdaccio/verdaccio-key.pem cert: /Users/user/.config/verdaccio/verdaccio-cert.pem ca: /Users/user/.config/verdaccio/verdaccio-csr.pem
 
-    <br />In alternativa, se si possiede un certificato con il formato `server.pfx`, si può aggiungere la parte seguente: (La passphrase è facoltativa e solo necessaria se il certificato è criptato.)
+    <br />In alternativa, se si possiede un certificato con il formato `server.pfx`, si può aggiungere la parte di configurazione seguente: (La passphrase è facoltativa e solo necessaria se il certificato è criptato.)
     
     
 
 https: pfx: /Users/user/.config/verdaccio/server.pfx passphrase: 'secret' ````
 
-Ulteriori informazioni sugli argomenti `key`, `cert`, `ca`, `pfx` e `passphrase` nella [documentazione Node ](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
+Ulteriori informazioni sugli argomenti `key`, `cert`, `ca`, `pfx` e `passphrase` nella [documentazione Node](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
 
 * Eseguire `verdaccio` nella linea di comando.
 
@@ -41,6 +41,6 @@ Queste istruzioni sono ampiamente valide per OSX e Linux; per Windows i percorsi
 
 ## Docker
 
-If you are using the Docker image, you have to set the `VERDACCIO_PROTOCOL` environment variable to `https`, as the `listen` argument is provided in the [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) and thus ignored from your config file.
+Se si sta utilizzando l'immagine Docker, è necessario impostare la variabile d'ambiente `VERDACCIO_PROTOCOL` in `https`, visto che l'argomento `listen` viene fornito nel [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) e viene quindi ignorato dal file di configurazione.
 
-You can also set the `VERDACCIO_PORT` environment variable if you are using a port other than `4873`.
+Si può anche impostare la variabile d'ambiente `VERDACCIO_PORT` se si sta utilizzando una porta differente da `4873`.

@@ -9,7 +9,7 @@ Notifikacije su zamišljene da se koriste sa Slack's Incoming webhooks, ali tako
 
 Na primer sa **HipChat**, **Stride** i **Google Hangouts Chat** hook:
 
-> Verdaccio podržava svaki API, slobodno dodajte još primera.
+> Verdaccio supports any API, feel free to add more examples.
 
 #### Jedinstvena notifikacija
 

@@ -8,7 +8,7 @@ An *uplink* is a link with an external registry that provides acccess to externa
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
 
-### Usage
+### Ilo
 
 ```yaml
 uplinks:
@@ -37,7 +37,7 @@ You can define mutiple uplinks and each of them must have an unique name (key). 
 | max_fails    | nọmba   | Rara      | 2                                       | gbogbo   | limit maximun failure request                                                                                              | 2          |
 | cache        | boolean | Rara      | [true,false]                            | >= 2.1   | cache all remote tarballs in storage                                                                                       | true       |
 | auth         | list    | Rara      | [see below](uplinks.md#auth-property)   | >= 2.5   | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
-| headers      | list    | Rara      | authorization: "Bearer SecretJWToken==" | gbogbo   | list of custom headers for the uplink                                                                                      | disabled   |
+| awọn akọle   | list    | Rara      | authorization: "Bearer SecretJWToken==" | gbogbo   | list of custom headers for the uplink                                                                                      | disabled   |
 | strict_ssl   | boolean | Rara      | [true,false]                            | >= 3.0   | If true, requires SSL certificates be valid.                                                                               | true       |
 
 #### Auth property

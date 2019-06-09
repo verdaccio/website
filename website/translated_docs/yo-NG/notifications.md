@@ -1,17 +1,17 @@
 ---
-id: notifications
-title: "Notifications"
+id: awọn ifitonileti
+title: "Awọn ifitonileti"
 ---
 
-Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
+Fifitonileti jẹ gbigbedide ni pataki lati jẹ lilo pẹlu awọn webhooks Slack ti n wọle bọ, ṣugbọn o tun ma ṣe ifijiṣẹ fi ifiranṣẹ to rọrun kan si eyikeyi opin. Lọwọlọwọ o n ṣiṣẹ fun aṣẹ `npm publish` nikan.
 
-## Usage
+## Ilo
 
-An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
+Apẹẹrẹ kan pẹlu ikọ **HipChat**, **Stride** ati **Google Hangouts Chat**:
 
-> Verdaccio supports any API, feel free to ad more examples.
+> Verdaccio supports any API, feel free to add more examples.
 
-#### Single notification
+#### Ifitonileti kan
 
 ```yaml
 notify:
@@ -21,7 +21,7 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-#### Multiple notification
+#### Ifitonileti pupọ
 
 ```yaml
 notify:
@@ -42,11 +42,11 @@ notify:
      content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
 ```
 
-## Template
+## Awoṣe
 
-We use [Handlebars](https://handlebarsjs.com/) as main template engine.
+A lo [Handlebars](https://handlebarsjs.com/) gẹgẹbi ẹrọ ti koko awoṣe.
 
-### Format Examples
+### Awọn apẹẹrẹ Ọna
 
     # iterate all versions
     {{ name }}{{#each versions}} v{{version}}{{/each}}
@@ -55,17 +55,17 @@ We use [Handlebars](https://handlebarsjs.com/) as main template engine.
     {{ publisher.name }} has published {{ publishedPackage }}
     
 
-### Properties
+### Awọn ohun ini
 
-List of properties accesible via template
+Akojọ ti awọn ohun ini to ṣe wọle si nipasẹ awoṣe
 
-* Metadata
-* Publisher (who is publishing)
-* Package Published (package@1.0.0)
+* Mẹtadata
+* Olugbejade (ẹniti o n ṣe agbejade)
+* Akopọ to jẹ Gbigbejade (akopọ@1.0.0)
 
-### Metadata
+### Mẹtadata
 
-Package metadata that the template has access
+Mẹtadata akopọ ti awoṣe naa ni iwọle si
 
     {
         "_id": "@test/pkg1",
@@ -116,11 +116,11 @@ Package metadata that the template has access
     }
     
 
-### Publisher
+### Olugbejade
 
-You can access to the package publisher information in the `content` of a webhook using the `publisher` object.
+O le wọle si alaye olugbejade akopọ naa ni `akoonu` ti webhook kan nipa lilo `olugbejade` nkan.
 
-See below the `publisher` object type:
+Wo labẹ yii `olugbejade` iru nkan:
 
     {
       name: string,
@@ -129,31 +129,31 @@ See below the `publisher` object type:
     }
     
 
-An example:
+Apẹẹrẹ kan:
 
     notify:
       method: POST
       headers: [{'Content-Type': 'application/json'}]
       endpoint: https://usagge.hipchat.com/v2/room/3729485/notification?auth_token=mySecretToken
-      content: '{"color":"green","message":"New package published: * {{ name }}*. Publisher name: * {{ publisher.name }} *.","notify":true,"message_format":"text"}'
+      content: '{"color":"green","message":"New package published: * {{ name }}*. Orukọ olugbejade: * {{ publisher.name }} *.","notify":true,"message_format":"text"}'
     
 
-**Note:** it's not possible to get the publisher information if the `package.json` file already has the `publisher` property.
+**Akiyesi:** ko ṣe ṣee ṣe lati gba alaye olugbejade ti faili `package.json` ba ti ni ohun ini `olugbejade` tẹlẹ.
 
-### Package Published
+### Akopọ to ti jẹ Gbigbejade
 
-You can access to the package is being published with the keyword `{{publishedPackage}}` as follows.
+O le wọle si akopọ ti o n jẹ gbigbe jade pẹlu koko-ọrọ `{{publishedPackage}}` bi atẹle yi.
 
-    {{ publisher.name }} has published {{ publishedPackage }}
+    {{ publisher.name }} ti ṣe agbejade {{ publishedPackage }}
     
 
 ## Configuration
 
-| Ohun ini            | Iru          | Ti o nilo | Atilẹyin | Atilẹwa | Apejuwe                                                                                      |
-| ------------------- | ------------ | --------- | -------- | ------- | -------------------------------------------------------------------------------------------- |
-| method              | okun         | Rara      | gbogbo   |         | HTTP verb                                                                                    |
-| packagePattern      | okun         | Rara      | gbogbo   |         | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | okun         | Rara      | gbogbo   |         | Any flags to be used with the regular expression                                             |
-| headers             | array/object | Bẹẹni     | gbogbo   |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | okun         | Bẹẹni     | gbogbo   |         | set the URL endpoint for this call                                                           |
-| content             | okun         | Bẹẹni     | gbogbo   |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Ohun ini            | Iru        | Ti o nilo | Atilẹyin | Atilẹwa | Apejuwe                                                                                                |
+| ------------------- | ---------- | --------- | -------- | ------- | ------------------------------------------------------------------------------------------------------ |
+| ọna                 | okun       | Rara      | gbogbo   |         | HTTP verb                                                                                              |
+| packagePattern      | okun       | Rara      | gbogbo   |         | Mu ifitonileti yi ṣiṣẹ nikan ti o ba jẹ pe orukọ akopọ naa ba ni ibaamu pẹlu iṣafihan deede            |
+| packagePatternFlags | okun       | Rara      | gbogbo   |         | Awọn asia eyikeyi to ba ma jẹ lilo pẹlu iṣafihan deede                                                 |
+| awọn akọle          | array/nkan | Bẹẹni     | gbogbo   |         | Ti aaye opin yii ba nilo awọn akọle pato, ṣeto wọn nibi gẹgẹbi oriṣi eto ti bọtini: awọn nkan iyebiye. |
+| aaye opin           | okun       | Bẹẹni     | gbogbo   |         | ṣeto aaye opin ti URL naa fun ipe yii                                                                  |
+| akoonu              | okun       | Bẹẹni     | gbogbo   |         | eyikeyi awọn isafihan [Handlebar](https://handlebarsjs.com/)                                           |

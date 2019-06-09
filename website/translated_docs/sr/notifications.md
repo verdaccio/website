@@ -9,7 +9,7 @@ title: "Нотификације"
 
 На пример са **HipChat**, **Stride** и **Google Hangouts Chat** hook:
 
-> Verdaccio подржава сваки API, слободно додајте још примера.
+> Verdaccio supports any API, feel free to add more examples.
 
 #### Јединствена нотификација
 

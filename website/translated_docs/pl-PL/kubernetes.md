@@ -49,10 +49,10 @@ Możesz dostosować konfigurację Verdaccio za pomocą Kubernetes *configMap*.
 
 #### Prepare
 
-Skopiuj [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/full.yaml) i dostosuj ją do do twojego przypadku użycia:
+Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml) and adapt it for your use case:
 
 ```bash
-wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/full.yaml -O config.yaml
+wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/docker.yaml -O config.yaml
 ```
 
 **Note:** Upewnij się, że używasz właściwej ścieżki do pamięci, która jest używana do utrzymywania:

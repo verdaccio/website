@@ -9,7 +9,7 @@ Powiadomienie zostało zbudowane głównie z myślą o użyciu przychodzących w
 
 Przykład z zaczepką **HipChat**, **Krok** i **Czat Google Hangouts**:
 
-> Verdaccio obsługuje dowolne API, zachęcamy do zamieszczania większej liczby przykładów.
+> Verdaccio supports any API, feel free to add more examples.
 
 #### Pojedyncze powiadomienie
 

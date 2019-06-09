@@ -3,41 +3,41 @@ id: installation
 title: "Installation"
 ---
 
-Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
+Verdaccio jẹ ohun elo ayelujara ti ọlọpọ pilatifọọmu. Lati fi sori ẹrọ, o nilo awọn nkan pataki diẹ ṣaaju.
 
-#### Prerequisites
+#### Awọn ohun inilo iṣaaju
 
-1. Node higher than 
-    - For version `verdaccio@3.x` Node `v6.12` is the minimum supported version.
-    - For version `verdaccio@4.0.0-alpha.x` or `verdaccio@4.x` Node `8.x` (LTS "Carbon") is the minimum supported version.
-2. npm `>=4.x` or `yarn` > We highly recommend use the latest Node Package Managers clients `> npm@5.x | yarn@1.x | pnpm@2.x`
-3. The web interface supports the `Chrome, Firefox, Edge, and IE11` browsers.
+1. Oju ipade ti o ga ju 
+    - Fun ẹya `verdaccio@3.x` Oju ipade `v6.12` jẹ ẹya ti o kere julọ ti atilẹyin wa fun.
+    - Fun ẹya `verdaccio@4.0.0-alpha.x` tabi `verdaccio@4.x` Oju ipade `8.x` (LTS "Carbon") jẹ ẹya ti o kere julọ ti atilẹyin wa fun.
+2. npm `>=4.x` tabi `yarn` > A ṣe igbaniyanju to ga lati lo Awọn Olusakoso Akopọ Oju ipade awọn onibara to tuntun julọ `> npm@5.x | yarn@1.x | pnpm@2.x`
+3. Intafeesi wẹẹbu naa n ṣe atilẹyin fun awọn ẹrọ aṣàwákiri ayelujara `Chrome, Firefox, Edge, ati IE11`.
 
-> Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
+> Verdaccio ma se atilẹyin fun ẹya Node.js to tuntun julọ ni ibamu si awọn igbaniyanju [Node.js Release Working Group](https://github.com/nodejs/Release).
 
 <div id="codefund">''</div>
 
-## Installing the CLI
+## Fifi CLI naa sori ẹrọ
 
-`verdaccio` must be installed globaly using either of the following methods:
+`verdaccio` gbọdọ jẹ fifi sori ẹrọ lagbaye nipa lilo boya ọkan ninu awọn ọna wọnyi:
 
-Using `npm`
+Lilo `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-or using `yarn`
+tabi lilo `yarn`
 
 ```bash
 yarn global add verdaccio
 ```
 
-![install verdaccio](assets/install_verdaccio.gif)
+![fi verdaccio sori ẹrọ](assets/install_verdaccio.gif)
 
-## Basic Usage
+## Ilo Ipilẹ
 
-Once it has been installed, you only need to execute the CLI command:
+Lọgan to ti jẹ fifi sori ẹrọ, iwọ kan nilo lati ṣe abayọri aṣẹ CLI naa:
 
 ```bash
 $> verdaccio
@@ -45,21 +45,21 @@ warn --- config file  - /home/.config/verdaccio/config.yaml
 warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 ```
 
-For more information about the CLI, please [read the cli section](cli.md).
+Fun alaye siwaju sii nipa CLI naa, jọwọ [ka abala cli naa](cli.md).
 
-You can set the registry by using the following command.
+O le ṣeto ibi iforukọsilẹ nipa lilo aṣẹ wọnyi.
 
 ```bash
 npm set registry http://localhost:4873/
 ```
 
-or you can pass a `--registry` flag when needed.
+tabi o le gbe asia `--ibi iforukọsilẹ` kọja nigba ti o nilo.
 
 ```bash
 npm install --registry http://localhost:4873
 ```
 
-## Docker Image
+## Aworan Docker
 
 `verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. For more information about how to install the official image, [read the docker section](docker.md).
 
@@ -67,4 +67,4 @@ npm install --registry http://localhost:4873
 
 `verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
 
-[![Install](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
+[![Fi sori ẹrọ](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)

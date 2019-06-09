@@ -4,7 +4,7 @@ title: Chi sta utilizzando Verdaccio?
 original_id: who-is-using
 ---
 
-### Aziende
+### Come Azienda
 
 *Se stai utilizzando Verdaccio nella tua azienda e vuoi condividere la tua esperienza, faccelo sapere. Saremo lieti di ascoltarti.*
 
@@ -12,7 +12,7 @@ original_id: who-is-using
 
 ### Progetti Open Source
 
-> **Sentiti libero di indicarci altri OSS che stanno utlizzando Verdaccio.**
+> **Sentiti libero di indicarci altri OSS che stanno utilizzando Verdaccio.**
 
 * [pnpm](https://pnpm.js.org/)
 * [create-react-app](https://facebook.github.io/create-react-app/)

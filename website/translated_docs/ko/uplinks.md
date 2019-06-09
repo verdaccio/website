@@ -3,7 +3,7 @@ id: uplinks
 title: "업링크"
 ---
 
-An *uplink* is a link with an external registry that provides acccess to external packages.
+An *uplink* is a link with an external registry that provides access to external packages.
 
 ![업링크](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
 

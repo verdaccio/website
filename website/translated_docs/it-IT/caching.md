@@ -37,11 +37,11 @@ uplinks:
     maxage: 30m
 ```
 
-Incrementando il valore di `maxage` in ciascun `uplink`, i remoti verranno interrogati con minore frequenza. Questa potrebbe essere una strategia valida se non si aggiornano le dipendenze così spesso.
+Incrementando il valore di `maxage` in ciascun `uplink`, i remoti verranno interrogati con minore frequenza. This might be a valid strategy if you don't update dependencies so often.
 
 ## Utilizzare la memoria invece dell'hardrive
 
-A volte non è un passaggio fondamentale memorizzare nella cache pacchetti, quanto memorizzare pacchetti di route da registri differenti e accelerare le fasi di build. Sono disponibili due plugin per evitare del tutto di scrivere su un hardrive fisico utilizzando la memoria.
+A volte non è un passaggio fondamentale memorizzare nella cache pacchetti, quanto memorizzare pacchetti di route da registri differenti e accelerare le fasi di build. There are two plugins that avoid write in a physical hard drive at all using the memory.
 
 ```bash
   npm install -g verdaccio-auth-memory

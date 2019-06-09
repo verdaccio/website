@@ -62,6 +62,6 @@ sh -c "npm --registry $local_registry publish"
 
 Babel.js le nifẹsi lati ṣe imuṣiṣẹpọ pẹlu Verdaccio ninu ilana iṣẹ wọn, ti o ba fẹ lati ṣe ilọwọsi, wo [tikẹti yii](https://github.com/babel/babel/issues/6134).
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">N gbalero lati lo verdaccio lati sedanwo <a href="https://twitter.com/lernajs?ref_src=twsrc%5Etfw">@lernajs</a> v3 (+lo eyi ni gbogbogbo), bo se jẹpe&#39; o ṣoro lati mọ boya atẹjade kan ma jẹ aṣeyọri. Would like us to fix an issue where we would like to compile Babel using itself before it&#39;s published (as we self-host but from latest npm) as a smoke test</p>&mdash; Henry Zhu (@left_pad) <a href="https://twitter.com/left_pad/status/1045770889051164672?ref_src=twsrc%5Etfw">28 de septiembre de 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">N gbalero lati lo verdaccio lati sedanwo <a href="https://twitter.com/lernajs?ref_src=twsrc%5Etfw">@lernajs</a> v3 (+lo eyi ni gbogbogbo), bo se jẹpe&#39; o ṣoro lati mọ boya atẹjade kan ma jẹ aṣeyọri. Se o ma nifẹ fun wa lati ṣatunse isoro kan nibi ti a ma ti nifẹ lati ṣe akojọ Babel nipa lilo ara rẹ ṣaaju ki o to jẹ gbigbejade (gẹgẹbi a ṣe se igbalejo-ara ẹni ṣugbọn lati awọn npm to tuntun julọ) gẹgẹbi idanwo eefin</p>&mdash; Henry Zhu (@left_pad) <a href="https://twitter.com/left_pad/status/1045770889051164672?ref_src=twsrc%5Etfw"> ọjọ kejidinlọgbọn osu kẹsan ọdun 2018</a></blockquote>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

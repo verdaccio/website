@@ -94,7 +94,7 @@ Defining multiple access groups is fairly easy, just define them with a white sp
 
 #### Blocking access to set of packages
 
-If you want to block the acccess/publish to a specific group of packages. Just do not define `access` and `publish`.
+If you want to block the access/publish to a specific group of packages. Just do not define `access` and `publish`.
 
 ```yaml
 packages:

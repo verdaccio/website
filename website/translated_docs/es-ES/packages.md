@@ -94,7 +94,7 @@ Definir múltiples grupos de acceso es bastante sencillo, simplemente defínalos
 
 #### Bloqueando el acceso a paquetes
 
-Si así lo deseas bloquea el acceso/la publicación a un grupo específico de paquetes. Simplemente no definas `access` y `publish`.
+If you want to block the access/publish to a specific group of packages. Just do not define `access` and `publish`.
 
 ```yaml
 packages:
