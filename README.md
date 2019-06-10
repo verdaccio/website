@@ -10,6 +10,25 @@ https://www.verdaccio.org
 
 Documentation files are hosted under `/docs` folder.
 
+# Running the website locally
+You should run all these tasks from the inner `/website` folder.
+
+The commands you need to use for serving the site locally:
+- `npm install` - installs all dependencies.
+- `npm start` - runs a local server that launches the Verdaccio documentation site on http://localhost:3000/
+
+# Running the website as a docker container
+
+The Verdaccio documentation website can run as a docker container (useful for offline stations, local serve of docs, etc.).
+ 
+ In order to run the website on docker, use the following commands (run commands from the outer **/website** folder):
+
+`docker build -t verdaccio-docs:4.0.1 . `- building the verdaccio documentation site image
+`docker run -p <host-port>:3000 verdaccio-docs:4.0.1 `- starting the container, listening on **<host-port>** for your choice.
+
+Saving the image for later offline usage is available by building the container and then using `sudo docker save verdaccio-docs:4.0.1 > <tar-name>.tar` and loading it afterwards with `sudo docker load < <tar-name>.tar `.
+> tested on ubuntu 18.04.2 with Docker 18.09.6
+
 # Translation
 
 Verdaccio is powered by [crowdin](https://crowdin.com/project/verdaccio) platform that provides Verdaccio [a free open source license](https://crowdin.com/page/open-source-project-setup-request).
