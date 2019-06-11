@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:lts
 
 # Create the docs website directory
 WORKDIR /website
@@ -7,8 +7,8 @@ COPY . .
 
 WORKDIR /website/website
 
-RUN npm install
+RUN yarn install
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
