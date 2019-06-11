@@ -24,7 +24,7 @@ The Verdaccio documentation website can run as a Docker container
  
  In order to run the website on Docker, use the following commands (run commands from the outer **/website** folder):
 
-`docker build -t verdaccio-docs:4.0.1 . `- building the verdaccio documentation site image
+`docker build -t verdaccio-docs:4.0.1 . `- building the Verdaccio documentation site image
 `docker run -p <host-port>:3000 verdaccio-docs:4.0.1 `- starting the container, listening on **<host-port>** for your choice.
 
 Saving the image for later offline usage is available by building the container and then using `docker save verdaccio-docs:4.0.1 > <tar-name>.tar` and loading it afterwards with `docker load < <tar-name>.tar `.

@@ -1,7 +1,7 @@
 FROM node:lts
 
 # Create the docs website directory
-WORKDIR /website
+WORKDIR /verdaccio-website
 
 COPY . .
 
