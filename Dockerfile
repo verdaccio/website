@@ -1,11 +1,11 @@
 FROM node:lts
 
 # Create the docs website directory
-WORKDIR /website
+WORKDIR /verdaccio-website
 
 COPY . .
 
-WORKDIR /website/website
+WORKDIR /verdaccio-website/website
 
 RUN yarn install
 
