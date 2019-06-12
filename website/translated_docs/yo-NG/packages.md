@@ -32,7 +32,7 @@ packages:
     proxy: uplink2
 ```
 
-if none is specified, the default one remains
+ti ikankan ko ba jẹ yiyan ni pato, ohun ti atilẹwa ma si wa nibẹ
 
 ```yaml
 packages:
@@ -41,20 +41,20 @@ packages:
     publish: $authenticated
 ```
 
-The list internal groups handled by `verdaccio` are:
+Akojọ ti awọn ẹgbẹ abẹle n sakoso nipasẹ `verdaccio` ni wọnyii:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
 ```
 
-All users recieve all those set of permissions independently of is anonymous or not plus the groups provided by the plugin, in case of `htpasswd` return the username as a group. For instance, if you are logged as `npmUser` the list of groups will be.
+Gbogbo awọn olumulo ma n gba gbogbo awọn igbanilaaye naa ni olominira ti alainidamọ tabi ti kii ṣe bẹ awọn ẹgbẹ ti o jẹ pipese nipasẹ ohun elo naa, nitori ti `htpasswd` ba da orukọ olumulo pada gẹgẹbi ẹgbẹ kan. Fun apẹẹrẹ, ti o ba wọle bi `npmUser` akojọ awọn ẹgbẹ yoo wa bẹ.
 
 ```js
 // groups without '$' are going to be deprecated eventually
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-If you want to protect specific set packages under your group, you need to do something like this. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.
+Ti o ba fẹ lati dabobo pato eto awọn akopọ kan labẹ ẹgbẹ rẹ, o nilo lati ṣe nkan bi eleyi. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.
 
 ```yaml
 packages:
