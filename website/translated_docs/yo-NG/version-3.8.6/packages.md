@@ -1,14 +1,14 @@
 ---
 id: version-3.8.6-packages
-title: Package Access
-original_id: packages
+title: Iwọlesi Akopọ
+original_id: awọn akopọ
 ---
 
-It's a series of contraints that allow or restrict access to the local storage based in specific criteria.
+O jẹ oriṣi awọn idina ti o fayegba tabi ṣe idena wiwọle si ibi ipamọ ibilẹ ti o da lori pato awọn ilana kan.
 
-The security constraints remain on the shoulders of the plugin being used, by default `verdaccio` uses the [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). If you use a different plugin the behaviour might be different. The default plugin does not handle `allow_access` and `allow_publish` by itself, it uses an internal fallback in case the plugin is not ready for it.
+Awọn idina aabo wa lori awọn ejika ti ohun elo ti a n lo, nipa atilẹwa `verdaccio` n samulo [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Ti o ba lo ohun elo to yatọ ihuwasi naa le yatọ. Ohun elo atilẹwa ko kin bojuto `allow_access` ati `allow_publish` funrarẹ, o n lo ipadabọsi ti abẹle to ba lọ jẹpe ohun elo naa ko ti ṣetan fun un.
 
-For more information about permissions visit [the authentification section in the wiki](auth.md).
+Fun alaye siwaju sii nipa awọn igbanilaaye lọ si [abala sise ifasẹsi ninu wiki naa](auth.md).
 
 ### Ilo
 
@@ -33,7 +33,7 @@ packages:
     proxy: uplink2
 ```
 
-if none is specified, the default one remains
+ti ikankan ko ba jẹ yiyan ni pato, ohun ti atilẹwa ma si wa nibẹ
 
 ```yaml
 packages:
