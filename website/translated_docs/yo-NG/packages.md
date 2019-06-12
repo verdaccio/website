@@ -47,7 +47,7 @@ Akojọ ti awọn ẹgbẹ abẹle n sakoso nipasẹ `verdaccio` ni wọnyii:
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
 ```
 
-All users recieve all those set of permissions independently of is anonymous or not plus the groups provided by the plugin, in case of `htpasswd` return the username as a group. For instance, if you are logged as `npmUser` the list of groups will be.
+Gbogbo awọn olumulo ma n gba gbogbo awọn igbanilaaye naa ni olominira ti alainidamọ tabi ti kii ṣe bẹ awọn ẹgbẹ ti o jẹ pipese nipasẹ ohun elo naa, nitori ti `htpasswd` ba da orukọ olumulo pada gẹgẹbi ẹgbẹ kan. Fun apẹẹrẹ, ti o ba wọle bi `npmUser` akojọ awọn ẹgbẹ yoo wa bẹ.
 
 ```js
 // groups without '$' are going to be deprecated eventually
