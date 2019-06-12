@@ -32,7 +32,7 @@ packages:
     proxy: uplink2
 ```
 
-if none is specified, the default one remains
+ti ikankan ko ba jẹ yiyan ni pato, ohun ti atilẹwa ma si wa nibẹ
 
 ```yaml
 packages:
@@ -41,7 +41,7 @@ packages:
     publish: $authenticated
 ```
 
-The list internal groups handled by `verdaccio` are:
+Akojọ ti awọn ẹgbẹ abẹle n sakoso nipasẹ `verdaccio` ni wọnyii:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
