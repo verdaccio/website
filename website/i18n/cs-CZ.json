@@ -23,6 +23,9 @@
       "best": {
         "title": "Osvědčené postupy"
       },
+      "build": {
+        "title": "build"
+      },
       "caching": {
         "title": "Strategie ukládání do mezipaměti"
       },
@@ -89,6 +92,9 @@
       "puppet": {
         "title": "Puppet"
       },
+      "repositories": {
+        "title": "Source Code"
+      },
       "reverse-proxy": {
         "title": "Reverse Proxy Setup"
       },
@@ -100,6 +106,9 @@
       },
       "talks": {
         "title": "Rozhovory"
+      },
+      "test": {
+        "title": "test"
       },
       "uplinks": {
         "title": "Uplinks"
@@ -179,7 +188,7 @@
       "version-3.8.6/version-3.8.6-puppet": {
         "title": "Puppet"
       },
-      "version-3.8.6/version-3.8.6-source-code": {
+      "version-3.8.6/version-3.8.6-repositories": {
         "title": "Source Code"
       },
       "version-3.8.6/version-3.8.6-reverse-proxy": {
@@ -191,7 +200,7 @@
       "version-3.8.6/version-3.8.6-ssl": {
         "title": "Nastavení SSL certifikátu"
       },
-      "version-3.8.6/version-3.8.6-unit-testing": {
+      "version-3.8.6/version-3.8.6-test": {
         "title": "Unit Testing"
       },
       "version-3.8.6/version-3.8.6-uplinks": {
@@ -430,6 +439,9 @@
       },
       "version-4.0.0/version-4.0.0-talks": {
         "title": "Rozhovory"
+      },
+      "version-4.0.1/version-4.0.1-docker": {
+        "title": "Docker"
       }
     },
     "links": {
