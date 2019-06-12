@@ -32,7 +32,7 @@ packages:
     proxy: uplink2
 ```
 
-if none is specified, the default one remains
+ti ikankan ko ba jẹ yiyan ni pato, ohun ti atilẹwa ma si wa nibẹ
 
 ```yaml
 packages:
