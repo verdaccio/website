@@ -62,4 +62,4 @@ store:
     limit: 1000
 ```
 
-Ranti, ni kete ti olupese naa ba ti jẹ atunbẹrẹ ipadanu data naa ti n waye, a ṣe igbaniyanju iṣeto yii ni awọn aaye ti o ko ba ti nilo lati ṣe atẹnumọ.
+Remember, once the server is restarted the data is being lost, we recommend this setup in cases where you do not need to persist at all.
