@@ -74,5 +74,5 @@ store:
     limit: 1000
 ```
 
-Remember, once the server is restarted the data is being lost, we recomend this setup in cases where you do not
+Remember, once the server is restarted the data is being lost, we recommend this setup in cases where you do not
 need to persist at all.
