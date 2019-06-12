@@ -5,7 +5,7 @@ title: "Iwọlesi Akopọ"
 
 O jẹ oriṣi awọn idina ti o fayegba tabi ṣe idena wiwọle si ibi ipamọ ibilẹ ti o da lori pato awọn ilana kan.
 
-The security constraints remain on the shoulders of the plugin being used, by default `verdaccio` uses the [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). If you use a different plugin the behaviour might be different. The default plugin does not handle `allow_access` and `allow_publish` by itself, it uses an internal fallback in case the plugin is not ready for it.
+Awọn idina aabo wa lori awọn ejika ti ohun elo ti a n lo, nipa atilẹwa `verdaccio` n samulo [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). If you use a different plugin the behaviour might be different. The default plugin does not handle `allow_access` and `allow_publish` by itself, it uses an internal fallback in case the plugin is not ready for it.
 
 For more information about permissions visit [the authentification section in the wiki](auth.md).
 
