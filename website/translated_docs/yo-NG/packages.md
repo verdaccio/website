@@ -75,9 +75,9 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 ```
 
-O le sayipada awọn ihuwasi to ti wa tẹlẹ nipa lilo ifasẹsi ohun elo to yatọ. `verdaccio` just checks whether the user that tried to access or publish a specific package belongs to the right group.
+O le sayipada awọn ihuwasi to ti wa tẹlẹ nipa lilo ifasẹsi ohun elo to yatọ. `verdaccio` kan ma n sayẹwo boya olumulo naa ti o gbiyanju lati wọle si tabi ṣagbejade pato akopọ kan jẹ ara ẹgbẹ ti o yẹ.
 
-#### Set multiple groups
+#### Seto awọn akopọ ọlọpọ
 
 Defining multiple access groups is fairly easy, just define them with a white space between them.
 
