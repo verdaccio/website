@@ -90,7 +90,7 @@ store:
 
 ### Iṣeto Akori
 
-Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+Verdaccio n gbanilaaye lati rọpo Intafeesi olumulo pẹlu eyi to jẹ akanṣe, a n pe ni **akori**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
 
 ```bash
 <br />$> npm install --global verdaccio-theme-dark
