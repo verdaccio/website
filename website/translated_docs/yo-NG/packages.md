@@ -129,12 +129,12 @@ packages:
 
 Jẹ ki a ṣe apejuwe ohun ti a fẹ pẹlu apẹẹrẹ oke yii:
 
-* I want to host my own `jquery` dependency but I need to avoid proxying it.
-* I want all dependencies that match with `my-company-*` but I need to avoid proxying them.
-* I want all dependencies that are in the `my-local-scope` scope but I need to avoid proxying them.
-* I want proxying for all the rest of the dependencies.
+* Mo fẹ lati gbalejo igbarale `jquery` ti ara mi ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ rẹ.
+* Mo fẹ ki gbogbo awọn igbarale ti o ni ibaamu pẹlu `my-company-*` ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ qọn.
+* Mo fẹ ki gbogbo awọn igbarale ti o wa ni iwoye `my-local-scope` scope ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ wọn.
+* Mo fẹ ki ṣe aṣoju ikọkọ wa fun gbogbo awọn igbarale yoku.
 
-Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
+Lọ **mọ pe aṣẹ ti awọn itumọ awọn akopọ rẹ jẹ pataki ati ki o ma lo wildcard nigbagbogbo**. Nitori ti o ko ba se afikun rẹ `verdaccio` yoo se afikun rẹ fun ẹ atipe o ma kan ọna ti awọn igbarale rẹ jẹ yiyanju si.
 
 #### Unpublishing Packages
 
