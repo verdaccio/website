@@ -112,7 +112,7 @@ theme:
 
 ### Sinopia Plugins
 
-> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
+> Ti o ba ni igbarale lori eyikeyi ohun elo sinopia kankan, ranti pe adinku ti ba iwulo wọn atipe wọn le ma sisẹ mọ lọjọ iwaju.
 
 * [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin for sinopia supporting an npm registry.
 * [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin for sinopia that keeps users in memory.
@@ -134,7 +134,7 @@ theme:
 
 > All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the modern verdaccio API and using the prefix as *verdaccio-xx-name*.
 
-## Verdaccio Plugins
+## Awọn ohun elo Verdaccio
 
 ### Authorization Plugins
 
@@ -147,7 +147,7 @@ theme:
 * [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): Auth based on htpasswd file plugin (built-in) for verdaccio
 * [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Github oauth authentication plugin for verdaccio.
 * [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): GitHub OAuth plugin for the verdaccio login button.
-* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin to handle dynamic group associations utilizing `$group` syntax. Works best with the ldap plugin.
+* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Ohun elo lati mojuto awọn ẹgbẹ akojọ alaidurolojukan ti nipa lilo sintasi `$group`. O ma n ṣiṣẹ dara julọ pẹlu ohun elo ldap.
 
 ### Middleware Plugins
 
