@@ -1,6 +1,6 @@
 ---
-id: plugins
-title: "Plugins"
+id: awọn ohun elo
+title: "Awọn ohun elo"
 ---
 
 Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
