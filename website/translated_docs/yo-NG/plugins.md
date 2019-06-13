@@ -165,4 +165,4 @@ theme:
 
 ## Awọn akiyesi
 
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
+> Ko kin ṣe gbogbo awọn ohun elo asomọ wọnyi ni o n jẹ didanwo nigbagbogbo, diẹ ninu awọn wọn le ma ṣiṣẹ rara. Jọwọ ti o ba ri eyikeyi isoro kankan ma se kọ lati fi to ẹniti to ni ohun elo naa leti.
