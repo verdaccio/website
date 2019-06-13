@@ -170,11 +170,11 @@ Ninu apẹẹrẹ titẹlẹ, ihuwasi naa yoo jẹ jijuwe:
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Ohun ini    | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                                                   |
-| ----------- | ------- | --------- | -------------- | -------- | ------------------------------------------------------------------------- |
-| iwọle       | okun    | Rara      | $all           | gbogbo   | seto awọn ẹgbẹ ti aaye wa fun lati wọle si akopọ naa                      |
-| atẹjade     | okun    | Rara      | $authenticated | gbogbo   | seto awọn ẹgbẹ ti aaye wa fun lati wọle se atẹjade                        |
-| aṣoju ikọkọ | okun    | Rara      | npmjs          | gbogbo   | se adinku awọn iwa jade fun pato uplink kan                               |
-| ibi ipamọ   | boolean | Rara      | okun           | `>v4` | it creates a subfolder whithin the storage folder for each package access |
+| Ohun ini    | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                                           |
+| ----------- | ------- | --------- | -------------- | -------- | ----------------------------------------------------------------- |
+| iwọle       | okun    | Rara      | $all           | gbogbo   | seto awọn ẹgbẹ ti aaye wa fun lati wọle si akopọ naa              |
+| atẹjade     | okun    | Rara      | $authenticated | gbogbo   | seto awọn ẹgbẹ ti aaye wa fun lati wọle se atẹjade                |
+| aṣoju ikọkọ | okun    | Rara      | npmjs          | gbogbo   | se adinku awọn iwa jade fun pato uplink kan                       |
+| ibi ipamọ   | boolean | Rara      | okun           | `>v4` | o n ṣẹda ẹka foda kan ninu foda ibi ipamọ fun ọkọọkan iwọle akopọ |
 
 > We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
