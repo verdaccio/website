@@ -3,16 +3,16 @@ id: awọn ohun elo
 title: "Awọn ohun elo"
 ---
 
-Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
+Verdaccio jẹ ohun elo alasomọ. O le se fagun ni ọpọlọpọ awọn ọna, boya awọn ọna ifasẹsi tuntun, sise afikun awọn aaye opin tabi lilo akanṣe ibi ipamọ.
 
-There are 4 types of plugins:
+Oriṣi awọn asomọ mẹrin lo wa:
 
-* Authentication
+* Ifasẹsi
 * Middleware
 * Ibi ipamọ
-* UI Theme
+* Akori UI
 
-> If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
+> Ti o ba nifẹ lati se agbedide asomọ ti ara rẹ, ka [abala](dev-plugins.md) agbedide.
 
 ## Ilo
 
