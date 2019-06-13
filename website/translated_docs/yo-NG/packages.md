@@ -177,4 +177,4 @@ You can define mutiple `packages` and each of them must have an unique `Regex`. 
 | aṣoju ikọkọ | okun    | Rara      | npmjs          | gbogbo   | se adinku awọn iwa jade fun pato uplink kan                       |
 | ibi ipamọ   | boolean | Rara      | okun           | `>v4` | o n ṣẹda ẹka foda kan ninu foda ibi ipamọ fun ọkọọkan iwọle akopọ |
 
-> We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
+> A ṣafihan pe a ṣe igbaniyanju lati ma se lo **allow_access**/**allow_publish** ati **proxy_access** rara mọ, adinku ti ba iwulo wọn atipe wọn ma jẹ yiyọ kuro laipẹ, jọwọ lo ẹya kukuru ti ọkọọkan wọn (**access**/**publish**/**proxy**).
