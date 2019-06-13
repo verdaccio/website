@@ -1,9 +1,9 @@
 ---
-id: logger
-title: "Logger"
+id: olugbasilẹ
+title: "Olugbasilẹ"
 ---
 
-As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
+Gẹgẹbi eyikeyi ohun elo ayelujara, verdaccio ni olugbasilẹ alabawa ti alakanṣe kan. O le ṣe asọye awọn orisirisi oniruuru awọn abajade.
 
 ```yaml
 logs:
@@ -11,7 +11,7 @@ logs:
   - {type: stdout, format: pretty, level: http}
   # file output
   - {type: file, path: verdaccio.log, level: info}
-  # Rotating log stream. Options are passed directly to bunyan. See: https://github.com/trentm/node-bunyan#stream-type-rotating-file
+  # Rotating log stream. Awọn aṣayan n jẹ fifransẹ ni taara si bunyan. See: https://github.com/trentm/node-bunyan#stream-type-rotating-file
   - {type: rotating-file, format: json, path: /path/to/log.jsonl, level: http, options: {period: 1d}}
 ```
 
