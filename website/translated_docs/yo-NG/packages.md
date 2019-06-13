@@ -163,8 +163,8 @@ packages:
 Ninu apẹẹrẹ titẹlẹ, ihuwasi naa yoo jẹ jijuwe:
 
 * gbogbo awọn olumulo le ṣe atẹjade akopọ `jquery`, ṣugbọn olumulo `root` nikan ni yoo ni anfani lati ṣe aitẹjade eyikeyi ti ẹya.
-* only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
-* If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
+* awọn olumulo to ni ifasẹsi nikan ni o le ṣe atẹjade awọn akopọ `my-company-*`, sugbọn ** ko si aaye fun ẹnikẹni lati aitẹjade wọn**.
+* Ti `unpublish` ba ti jẹ sisọ jade, iwọle naa yoo jẹ fifọwọsi tabi kikọ nipasẹ agbekalẹ `publish` naa.
 
 ### Configuration
 
@@ -172,7 +172,7 @@ You can define mutiple `packages` and each of them must have an unique `Regex`. 
 
 | Ohun ini | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                                                   |
 | -------- | ------- | --------- | -------------- | -------- | ------------------------------------------------------------------------- |
-| access   | okun    | Rara      | $all           | gbogbo   | define groups allowed to access the package                               |
+| iwọle    | okun    | Rara      | $all           | gbogbo   | seto awọn ẹgbẹ ti aaye wa fun lati wọle si akopọ naa                      |
 | publish  | okun    | Rara      | $authenticated | gbogbo   | define groups allowed to publish                                          |
 | proxy    | okun    | Rara      | npmjs          | gbogbo   | limit look ups for specific uplink                                        |
 | storage  | boolean | Rara      | okun           | `>v4` | it creates a subfolder whithin the storage folder for each package access |
