@@ -127,7 +127,7 @@ packages:
     proxy: npmjs
 ```
 
-Let's describe what we want with the above example:
+Jẹ ki a ṣe apejuwe ohun ti a fẹ pẹlu apẹẹrẹ oke yii:
 
 * I want to host my own `jquery` dependency but I need to avoid proxying it.
 * I want all dependencies that match with `my-company-*` but I need to avoid proxying them.
