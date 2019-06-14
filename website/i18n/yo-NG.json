@@ -60,7 +60,7 @@
         "title": "Fifi sori olupese IIS"
       },
       "installation": {
-        "title": "Installation"
+        "title": "Ifi sori ẹrọ"
       },
       "kubernetes": {
         "title": "Kubernetes"
@@ -69,7 +69,7 @@
         "title": "Linking a Remote Registry"
       },
       "logger": {
-        "title": "Logger"
+        "title": "Olugbasilẹ"
       },
       "logo": {
         "title": "Irulogo"
@@ -81,10 +81,10 @@
         "title": "Awọn ifitonileti"
       },
       "packages": {
-        "title": "Package Access"
+        "title": "Iwọlesi Akopọ"
       },
       "plugins": {
-        "title": "Plugins"
+        "title": "Awọn ohun elo"
       },
       "protect-your-dependencies": {
         "title": "Protecting packages"
@@ -159,13 +159,13 @@
         "title": "Fifi sori olupese IIS"
       },
       "version-3.8.6/version-3.8.6-installation": {
-        "title": "Installation"
+        "title": "Ifi sori ẹrọ"
       },
       "version-3.8.6/version-3.8.6-kubernetes": {
         "title": "Kubernetes"
       },
       "version-3.8.6/version-3.8.6-logger": {
-        "title": "Logger"
+        "title": "Olugbasilẹ"
       },
       "version-3.8.6/version-3.8.6-logo": {
         "title": "Verdaccio Logotype"
@@ -177,10 +177,10 @@
         "title": "Awọn ifitonileti"
       },
       "version-3.8.6/version-3.8.6-packages": {
-        "title": "Package Access"
+        "title": "Iwọlesi Akopọ"
       },
       "version-3.8.6/version-3.8.6-plugins": {
-        "title": "Plugins"
+        "title": "Awọn ohun elo"
       },
       "version-3.8.6/version-3.8.6-protect-your-dependencies": {
         "title": "Protecting packages"
@@ -273,7 +273,7 @@
         "title": "Awọn ifitonileti"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-packages": {
-        "title": "Package Access"
+        "title": "Iwọlesi Akopọ"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-scopes": {
         "title": "Understanding Scopes"
@@ -315,13 +315,13 @@
         "title": "Awọn igbesẹ-Github"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-installation": {
-        "title": "Installation"
+        "title": "Ifi sori ẹrọ"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-linking-remote-registry": {
         "title": "Linking a Remote Registry"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-packages": {
-        "title": "Package Access"
+        "title": "Iwọlesi Akopọ"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-talks": {
         "title": "Talks"
@@ -354,7 +354,7 @@
         "title": "Linking a Remote Registry"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-plugins": {
-        "title": "Plugins"
+        "title": "Awọn ohun elo"
       },
       "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
         "title": "Who is using Verdaccio?"
@@ -378,7 +378,7 @@
         "title": "Awọn igbesẹ-Github"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-plugins": {
-        "title": "Plugins"
+        "title": "Awọn ohun elo"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-ssl": {
         "title": "Set up the SSL Certificates"
@@ -393,7 +393,7 @@
         "title": "Who is using Verdaccio?"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
-        "title": "Installation"
+        "title": "Ifi sori ẹrọ"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
         "title": "Web User Interface"
@@ -408,7 +408,7 @@
         "title": "Docker"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-installation": {
-        "title": "Installation"
+        "title": "Ifi sori ẹrọ"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-logo": {
         "title": "Irulogo"
@@ -435,7 +435,7 @@
         "title": "Docker"
       },
       "version-4.0.0/version-4.0.0-plugins": {
-        "title": "Plugins"
+        "title": "Awọn ohun elo"
       },
       "version-4.0.0/version-4.0.0-talks": {
         "title": "Talks"
@@ -462,7 +462,7 @@
       "DevOps": "DevOps",
       "Guides": "Guides",
       "Configuration": "Configuration",
-      "Plugins": "Plugins"
+      "Plugins": "Awọn ohun elo"
     }
   },
   "pages-strings": {
