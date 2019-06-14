@@ -43,7 +43,7 @@ Is the location of the default storage. **Verdaccio is by default based on local
 storage: ./storage
 ```
 
-### Plugins
+### Awọn ohun elo
 
 Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
 
