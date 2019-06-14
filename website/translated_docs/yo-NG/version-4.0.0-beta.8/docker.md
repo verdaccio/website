@@ -83,7 +83,7 @@ Verdaccio 4 provides a new set of environment variables to modify either permiss
 | VERDACCIO_PORT        | `4873`                 | ibudo verdaccio naa                                                     |
 | VERDACCIO_PROTOCOL    | `http`                 | ilana http atilẹwa naa                                                  |
 
-### Plugins
+### Awọn ohun elo
 
 Plugins can be installed in a separate directory and mounted using Docker or Kubernetes, however make sure you build plugins with native dependencies using the same base image as the Verdaccio Dockerfile.
 
