@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-installation
-title: Installation
+title: Ifi sori ẹrọ
 original_id: installation
 ---
 
