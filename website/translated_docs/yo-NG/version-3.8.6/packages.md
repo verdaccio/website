@@ -1,14 +1,14 @@
 ---
 id: version-3.8.6-packages
-title: Package Access
-original_id: packages
+title: Iwọlesi Akopọ
+original_id: awọn akopọ
 ---
 
-It's a series of contraints that allow or restrict access to the local storage based in specific criteria.
+O jẹ oriṣi awọn idina ti o fayegba tabi ṣe idena wiwọle si ibi ipamọ ibilẹ ti o da lori pato awọn ilana kan.
 
-The security constraints remain on the shoulders of the plugin being used, by default `verdaccio` uses the [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). If you use a different plugin the behaviour might be different. The default plugin does not handle `allow_access` and `allow_publish` by itself, it uses an internal fallback in case the plugin is not ready for it.
+Awọn idina aabo wa lori awọn ejika ti ohun elo ti a n lo, nipa atilẹwa `verdaccio` n samulo [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Ti o ba lo ohun elo to yatọ ihuwasi naa le yatọ. Ohun elo atilẹwa ko kin bojuto `allow_access` ati `allow_publish` funrarẹ, o n lo ipadabọsi ti abẹle to ba lọ jẹpe ohun elo naa ko ti ṣetan fun un.
 
-For more information about permissions visit [the authentification section in the wiki](auth.md).
+Fun alaye siwaju sii nipa awọn igbanilaaye lọ si [abala sise ifasẹsi ninu wiki naa](auth.md).
 
 ### Ilo
 
@@ -33,7 +33,7 @@ packages:
     proxy: uplink2
 ```
 
-if none is specified, the default one remains
+ti ikankan ko ba jẹ yiyan ni pato, ohun ti atilẹwa ma si wa nibẹ
 
 ```yaml
 packages:
@@ -48,14 +48,14 @@ The list of valid groups according the default plugins are
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
 ```
 
-All users recieve all those set of permissions independently of is anonymous or not plus the groups provided by the plugin, in case of `htpasswd` return the username as a group. For instance, if you are logged as `npmUser` the list of groups will be.
+Gbogbo awọn olumulo ma n gba gbogbo awọn igbanilaaye naa ni olominira ti alainidamọ tabi ti kii ṣe bẹ awọn ẹgbẹ ti o jẹ pipese nipasẹ ohun elo naa, nitori ti `htpasswd` ba da orukọ olumulo pada gẹgẹbi ẹgbẹ kan. Fun apẹẹrẹ, ti o ba wọle bi `npmUser` akojọ awọn ẹgbẹ yoo wa bẹ.
 
 ```js
 // groups without '$' are going to be deprecated eventually
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-If you want to protect specific set packages under your group, you need to do something like this. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recomend using a prefix for your packages, in that way it will be easier to protect them.
+Ti o ba fẹ lati dabobo pato eto awọn akopọ kan labẹ ẹgbẹ rẹ, o nilo lati ṣe nkan bi eleyi. Jẹ ki a lo `Regex` ti o bo gbogbo awọn akopọ `npmuser-` ti iṣaaju. We recomend using a prefix for your packages, in that way it will be easier to protect them.
 
 ```yaml
 packages:
@@ -64,7 +64,7 @@ packages:
     publish: npmuser
 ```
 
-Restart `verdaccio` and in your console try to install `npmuser-core`.
+Se atunbẹrẹ `verdaccio` ati ninu kọnsolu rẹ gbiyanju lati fi `npmuser-core` sori ẹrọ.
 
 ```bash
 $ npm install npmuser-core
@@ -76,11 +76,11 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 ```
 
-You can change the existing behaviour using a different plugin authentication. `verdaccio` just checks whether the user that tried to access or publish a specific package belongs to the right group.
+O le sayipada awọn ihuwasi to ti wa tẹlẹ nipa lilo ifasẹsi ohun elo to yatọ. `verdaccio` kan ma n sayẹwo boya olumulo naa ti o gbiyanju lati wọle si tabi ṣagbejade pato akopọ kan jẹ ara ẹgbẹ ti o yẹ.
 
-#### Set multiple groups
+#### Seto awọn akopọ ọlọpọ
 
-Defining multiple access groups is fairly easy, just define them with a white space between them.
+Ṣiṣagbekalẹ awọn ẹgbẹ ọlọpọ iwọle jẹ irọrun, kan ṣagbekalẹ wọn pẹlu alafo funfun kan laarin wọn.
 
 ```yaml
   'company-*':
@@ -93,7 +93,7 @@ Defining multiple access groups is fairly easy, just define them with a white sp
     proxy: server1
 ```
 
-#### Blocking access to set of packages
+#### Didena wiwọle si iṣeto ti awọn akojọ
 
 If you want to block the acccess/publish to a specific group of packages. Just do not define `access` and `publish`.
 
@@ -105,11 +105,11 @@ packages:
     publish: $authenticated
 ```
 
-#### Blocking proxying a set of specific packages
+#### Didena ṣiṣe aṣoju ikọkọ ti eto pato awọn akojọ kan
 
-You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
+O le fẹ dènà ọkan tabi ọpọlọpọ awọn akojọ lati sawari lati awọn ibi ipamọ latọna jijin., Ṣugbọn, ni bakanna, fayegba awọn ẹlomiran lati wọle si awọn orisirisi *uplinks*.
 
-Let's see the following example:
+Jẹ ki a wo apẹẹrẹ wọnyii:
 
 ```yaml
 packages:
@@ -128,24 +128,24 @@ packages:
     proxy: npmjs
 ```
 
-Let's describe what we want with the above example:
+Jẹ ki a ṣe apejuwe ohun ti a fẹ pẹlu apẹẹrẹ oke yii:
 
-* I want to host my own `jquery` dependency but I need to avoid proxying it.
-* I want all dependencies that match with `my-company-*` but I need to avoid proxying them.
-* I want all dependencies that are in the `my-local-scope` scope but I need to avoid proxying them.
-* I want proxying for all the rest of the dependencies.
+* Mo fẹ lati gbalejo igbarale `jquery` ti ara mi ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ rẹ.
+* Mo fẹ ki gbogbo awọn igbarale ti o ni ibaamu pẹlu `my-company-*` ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ qọn.
+* Mo fẹ ki gbogbo awọn igbarale ti o wa ni iwoye `my-local-scope` scope ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ wọn.
+* Mo fẹ ki ṣe aṣoju ikọkọ wa fun gbogbo awọn igbarale yoku.
 
-Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
+Lọ **mọ pe aṣẹ ti awọn itumọ awọn akopọ rẹ jẹ pataki ati ki o ma lo wildcard nigbagbogbo**. Nitori ti o ko ba se afikun rẹ `verdaccio` yoo se afikun rẹ fun ẹ atipe o ma kan ọna ti awọn igbarale rẹ jẹ yiyanju si.
 
 ### Configuration
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Ohun ini | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                     |
-| -------- | ------- | --------- | -------------- | -------- | ------------------------------------------- |
-| access   | okun    | Rara      | $all           | gbogbo   | define groups allowed to access the package |
-| publish  | okun    | Rara      | $authenticated | gbogbo   | define groups allowed to publish            |
-| proxy    | okun    | Rara      | npmjs          | gbogbo   | limit look ups for specific uplink          |
-| storage  | boolean | Rara      | [true,false]   | gbogbo   | TODO                                        |
+| Ohun ini    | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                              |
+| ----------- | ------- | --------- | -------------- | -------- | ---------------------------------------------------- |
+| iwọle       | okun    | Rara      | $all           | gbogbo   | seto awọn ẹgbẹ ti aaye wa fun lati wọle si akopọ naa |
+| atẹjade     | okun    | Rara      | $authenticated | gbogbo   | seto awọn ẹgbẹ ti aaye wa fun lati wọle se atẹjade   |
+| aṣoju ikọkọ | okun    | Rara      | npmjs          | gbogbo   | se adinku awọn iwa jade fun pato uplink kan          |
+| ibi ipamọ   | boolean | Rara      | [true,false]   | gbogbo   | TODO                                                 |
 
-> We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
+> A ṣafihan pe a ṣe igbaniyanju lati ma se lo **allow_access**/**allow_publish** ati **proxy_access** rara mọ, adinku ti ba iwulo wọn atipe wọn ma jẹ yiyọ kuro laipẹ, jọwọ lo ẹya kukuru ti ọkọọkan wọn (**access**/**publish**/**proxy**).
