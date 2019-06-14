@@ -1,28 +1,28 @@
 ---
-id: plugins
-title: "Plugins"
+id: awọn ohun elo
+title: "Awọn ohun elo"
 ---
 
-Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
+Verdaccio jẹ ohun elo alasomọ. O le se fagun ni ọpọlọpọ awọn ọna, boya awọn ọna ifasẹsi tuntun, sise afikun awọn aaye opin tabi lilo akanṣe ibi ipamọ.
 
-There are 4 types of plugins:
+Oriṣi awọn asomọ mẹrin lo wa:
 
-* Authentication
+* Ifasẹsi
 * Middleware
 * Ibi ipamọ
-* UI Theme
+* Akori UI
 
-> If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
+> Ti o ba nifẹ lati se agbedide asomọ ti ara rẹ, ka [abala](dev-plugins.md) agbedide.
 
 ## Ilo
 
-### Installation
+### Ifi sori ẹrọ
 
 ```bash
 $> npm install --global verdaccio-activedirectory
 ```
 
-`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
+`verdaccio` gẹgẹ bi ẹya ti o wa lati sinopia o ni ibasisẹpọ ẹlẹyin pẹlu awọn asomọ ti o ni ibasisẹpọ pẹlu `sinopia@1.4.0`. Ni iru eyi ifi sori ẹrọ na jẹ nkan kanna.
 
     $> npm install --global sinopia-memory
     
@@ -33,7 +33,7 @@ Open the `config.yaml` file and update the `auth` section as follows:
 
 The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
 
-### Authentication Configuration
+### Iṣeto Ifasẹsi
 
 ```yaml
  htpasswd:
@@ -51,7 +51,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Authentication plugins
+#### Awọn ohun elo Ifasẹsi ọlọpọlọpọ
 
 This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
 
@@ -66,9 +66,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Configuration
+### Iṣeto Middleware
 
-This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
+Eyi jẹ apẹẹrẹ bi o ṣe le seto ohun asomọ middleware kan. Gbogbo awọn ohun asomọ gbọdọ wa ni asọye ninu aaye orukọ **middlewares**.
 
 ```yaml
 middlewares:
@@ -76,11 +76,11 @@ middlewares:
     enabled: true
 ```
 
-> You might follow the [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) as base example.
+> O le tẹle [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) bi apẹẹrẹ ipilẹ.
 
-### Storage Configuration
+### Iṣeto Ibi ipamọ
 
-This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
+Eyi jẹ apẹẹrẹ bi o ṣe le ṣeto ohun asomọ ibi ipamọ kan. Gbogbo awọn ohun asomọ ibi ipamọ gbọdọ wa ni asọye ni aaye orukọ **store**.
 
 ```yaml
 store:
@@ -88,18 +88,18 @@ store:
     limit: 1000
 ```
 
-### Theme Configuration
+### Iṣeto Akori
 
-Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+Verdaccio n gbanilaaye lati rọpo Intafeesi olumulo pẹlu eyi to jẹ akanṣe, a n pe ni **akori**. Ni atilẹwa, o n lo `@verdaccio/ui-theme` ti o ba wa lati ilẹ, ṣugbọn, o le lo ohun ti o yatọ lati fi ohun asomọ ti ara rẹ sori ẹrọ.
 
 ```bash
 <br />$> npm install --global verdaccio-theme-dark
 
 ```
 
-> The plugin name prefix must start with `verdaccio-theme`, otherwise the plugin won't load.
+> Orukọ iṣaaju ohun asomọ naa gbọdọ bẹrẹ pẹlu `verdaccio-theme`, bibẹkọ ohun asomọ naa koni ṣiṣẹ.
 
-You can load only one theme at the time and pass through options if is need it.
+O le lo akori kan ṣoṣo ni akoko kan ati ki o kọja laarin awọn aṣayan ti o ba nilo rẹ.
 
 ```yaml
 theme:
@@ -108,11 +108,11 @@ theme:
     option2: bar
 ```
 
-## Legacy plugins
+## Awọn ohun elo Ijogun
 
 ### Sinopia Plugins
 
-> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
+> Ti o ba ni igbarale lori eyikeyi ohun elo sinopia kankan, ranti pe adinku ti ba iwulo wọn atipe wọn le ma sisẹ mọ lọjọ iwaju.
 
 * [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin for sinopia supporting an npm registry.
 * [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin for sinopia that keeps users in memory.
@@ -134,7 +134,7 @@ theme:
 
 > All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the modern verdaccio API and using the prefix as *verdaccio-xx-name*.
 
-## Verdaccio Plugins
+## Awọn ohun elo Verdaccio
 
 ### Authorization Plugins
 
@@ -147,7 +147,7 @@ theme:
 * [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): Auth based on htpasswd file plugin (built-in) for verdaccio
 * [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Github oauth authentication plugin for verdaccio.
 * [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): GitHub OAuth plugin for the verdaccio login button.
-* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin to handle dynamic group associations utilizing `$group` syntax. Works best with the ldap plugin.
+* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Ohun elo lati mojuto awọn ẹgbẹ akojọ alaidurolojukan ti nipa lilo sintasi `$group`. O ma n ṣiṣẹ dara julọ pẹlu ohun elo ldap.
 
 ### Middleware Plugins
 
@@ -155,7 +155,7 @@ theme:
 
 * [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): verdacci plugin for *npm profile* cli support and *npm profile set password* for *verdaccio-htpasswd* based authentificaton
 
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
+* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Ohun elo Verdaccio middleware lati ṣe àtúnjúwe si https ti o ba ṣeto x-forwarded-proto gẹgẹbi akọsori
 
 ### Storage Plugins
 
@@ -163,6 +163,6 @@ theme:
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
 
-## Caveats
+## Awọn akiyesi
 
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
+> Ko kin ṣe gbogbo awọn ohun elo asomọ wọnyi ni o n jẹ didanwo nigbagbogbo, diẹ ninu awọn wọn le ma ṣiṣẹ rara. Jọwọ ti o ba ri eyikeyi isoro kankan ma se kọ lati fi to ẹniti to ni ohun elo naa leti.

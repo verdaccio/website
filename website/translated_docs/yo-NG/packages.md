@@ -54,7 +54,7 @@ Gbogbo awọn olumulo ma n gba gbogbo awọn igbanilaaye naa ni olominira ti ala
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-Ti o ba fẹ lati dabobo pato eto awọn akopọ kan labẹ ẹgbẹ rẹ, o nilo lati ṣe nkan bi eleyi. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.
+Ti o ba fẹ lati dabobo pato eto awọn akopọ kan labẹ ẹgbẹ rẹ, o nilo lati ṣe nkan bi eleyi. Jẹ ki a lo `Regex` ti o bo gbogbo awọn akopọ `npmuser-` ti iṣaaju. A ṣe igbaniyanju nipa lilo eto iṣaaju fun awọn akopọ rẹ, ni ọna yii o ma rọrun lati dabobo wọn.
 
 ```yaml
 packages:
@@ -63,7 +63,7 @@ packages:
     publish: npmuser
 ```
 
-Restart `verdaccio` and in your console try to install `npmuser-core`.
+Se atunbẹrẹ `verdaccio` ati ninu kọnsolu rẹ gbiyanju lati fi `npmuser-core` sori ẹrọ.
 
 ```bash
 $ npm install npmuser-core
@@ -75,11 +75,11 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 ```
 
-You can change the existing behaviour using a different plugin authentication. `verdaccio` just checks whether the user that tried to access or publish a specific package belongs to the right group.
+O le sayipada awọn ihuwasi to ti wa tẹlẹ nipa lilo ifasẹsi ohun elo to yatọ. `verdaccio` kan ma n sayẹwo boya olumulo naa ti o gbiyanju lati wọle si tabi ṣagbejade pato akopọ kan jẹ ara ẹgbẹ ti o yẹ.
 
-#### Set multiple groups
+#### Seto awọn akopọ ọlọpọ
 
-Defining multiple access groups is fairly easy, just define them with a white space between them.
+Ṣiṣagbekalẹ awọn ẹgbẹ ọlọpọ iwọle jẹ irọrun, kan ṣagbekalẹ wọn pẹlu alafo funfun kan laarin wọn.
 
 ```yaml
   'company-*':
@@ -92,9 +92,9 @@ Defining multiple access groups is fairly easy, just define them with a white sp
     proxy: server1
 ```
 
-#### Blocking access to set of packages
+#### Didena wiwọle si iṣeto ti awọn akojọ
 
-If you want to block the access/publish to a specific group of packages. Just do not define `access` and `publish`.
+Ti o ba fẹ lati dènà wiwọle/atẹjade si pato ẹgbẹ ti awọn akojọ kan. Sa ma ṣeto `access` ati `publish`.
 
 ```yaml
 packages:
@@ -104,11 +104,11 @@ packages:
     publish: $authenticated
 ```
 
-#### Blocking proxying a set of specific packages
+#### Didena ṣiṣe aṣoju ikọkọ ti eto pato awọn akojọ kan
 
-You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
+O le fẹ dènà ọkan tabi ọpọlọpọ awọn akojọ lati sawari lati awọn ibi ipamọ latọna jijin., Ṣugbọn, ni bakanna, fayegba awọn ẹlomiran lati wọle si awọn orisirisi *uplinks*.
 
-Let's see the following example:
+Jẹ ki a wo apẹẹrẹ wọnyii:
 
 ```yaml
 packages:
@@ -127,18 +127,18 @@ packages:
     proxy: npmjs
 ```
 
-Let's describe what we want with the above example:
+Jẹ ki a ṣe apejuwe ohun ti a fẹ pẹlu apẹẹrẹ oke yii:
 
-* I want to host my own `jquery` dependency but I need to avoid proxying it.
-* I want all dependencies that match with `my-company-*` but I need to avoid proxying them.
-* I want all dependencies that are in the `my-local-scope` scope but I need to avoid proxying them.
-* I want proxying for all the rest of the dependencies.
+* Mo fẹ lati gbalejo igbarale `jquery` ti ara mi ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ rẹ.
+* Mo fẹ ki gbogbo awọn igbarale ti o ni ibaamu pẹlu `my-company-*` ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ qọn.
+* Mo fẹ ki gbogbo awọn igbarale ti o wa ni iwoye `my-local-scope` scope ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ wọn.
+* Mo fẹ ki ṣe aṣoju ikọkọ wa fun gbogbo awọn igbarale yoku.
 
-Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
+Lọ **mọ pe aṣẹ ti awọn itumọ awọn akopọ rẹ jẹ pataki ati ki o ma lo wildcard nigbagbogbo**. Nitori ti o ko ba se afikun rẹ `verdaccio` yoo se afikun rẹ fun ẹ atipe o ma kan ọna ti awọn igbarale rẹ jẹ yiyanju si.
 
-#### Unpublishing Packages
+#### Ṣiṣe aitẹjade Awọn akopọ
 
-The property `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
+Ohun ini `publish` naa n mojuto awọn igbanilaaye fun `npm publish` ati `npm unpublish`. Ṣugbọn, ti o ba fẹ lati wa ni pato, o le lo ohun ini `unpublish` naa ni abala iwọle akopọ rẹ, fun apẹẹrẹ:
 
 ```yalm
 packages:
@@ -160,21 +160,21 @@ packages:
     proxy: npmjs
 ```
 
-In the previous example, the behaviour would be described:
+Ninu apẹẹrẹ titẹlẹ, ihuwasi naa yoo jẹ jijuwe:
 
-* all users can publish the `jquery` package, but only the user `root` would be able to unpublish any version.
-* only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
-* If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
+* gbogbo awọn olumulo le ṣe atẹjade akopọ `jquery`, ṣugbọn olumulo `root` nikan ni yoo ni anfani lati ṣe aitẹjade eyikeyi ti ẹya.
+* awọn olumulo to ni ifasẹsi nikan ni o le ṣe atẹjade awọn akopọ `my-company-*`, sugbọn ** ko si aaye fun ẹnikẹni lati aitẹjade wọn**.
+* Ti `unpublish` ba ti jẹ sisọ jade, iwọle naa yoo jẹ fifọwọsi tabi kikọ nipasẹ agbekalẹ `publish` naa.
 
 ### Configuration
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Ohun ini | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                                                   |
-| -------- | ------- | --------- | -------------- | -------- | ------------------------------------------------------------------------- |
-| access   | okun    | Rara      | $all           | gbogbo   | define groups allowed to access the package                               |
-| publish  | okun    | Rara      | $authenticated | gbogbo   | define groups allowed to publish                                          |
-| proxy    | okun    | Rara      | npmjs          | gbogbo   | limit look ups for specific uplink                                        |
-| storage  | boolean | Rara      | okun           | `>v4` | it creates a subfolder whithin the storage folder for each package access |
+| Ohun ini    | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                                           |
+| ----------- | ------- | --------- | -------------- | -------- | ----------------------------------------------------------------- |
+| iwọle       | okun    | Rara      | $all           | gbogbo   | seto awọn ẹgbẹ ti aaye wa fun lati wọle si akopọ naa              |
+| atẹjade     | okun    | Rara      | $authenticated | gbogbo   | seto awọn ẹgbẹ ti aaye wa fun lati wọle se atẹjade                |
+| aṣoju ikọkọ | okun    | Rara      | npmjs          | gbogbo   | se adinku awọn iwa jade fun pato uplink kan                       |
+| ibi ipamọ   | boolean | Rara      | okun           | `>v4` | o n ṣẹda ẹka foda kan ninu foda ibi ipamọ fun ọkọọkan iwọle akopọ |
 
-> We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
+> A ṣafihan pe a ṣe igbaniyanju lati ma se lo **allow_access**/**allow_publish** ati **proxy_access** rara mọ, adinku ti ba iwulo wọn atipe wọn ma jẹ yiyọ kuro laipẹ, jọwọ lo ẹya kukuru ti ọkọọkan wọn (**access**/**publish**/**proxy**).

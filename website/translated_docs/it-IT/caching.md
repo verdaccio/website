@@ -62,4 +62,4 @@ store:
     limit: 1000
 ```
 
-Ricorda, una volta che il server viene riavviato i dati vengono persi, raccomandiamo questa configurazione in casi in cui non sia necessario che continui a funzionare.
+Remember, once the server is restarted the data is being lost, we recommend this setup in cases where you do not need to persist at all.

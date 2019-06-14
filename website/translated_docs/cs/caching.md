@@ -62,4 +62,4 @@ store:
     limit: 1000
 ```
 
-Pamatujte si, že jakmile je server restartován, data jsou ztracena, doporučujeme toto nastavení v případech, kdy není mezipaměť nutná.
+Remember, once the server is restarted the data is being lost, we recommend this setup in cases where you do not need to persist at all.
