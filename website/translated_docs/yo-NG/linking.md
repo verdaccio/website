@@ -1,9 +1,9 @@
 ---
-id: linking-remote-registry
-title: "Linking a Remote Registry"
+id: sise asopọ-ibi iforukọsilẹ-ọlọna jijin
+title: "Sise asopọ ibi iforukọsilẹ ọlọna jijin kan"
 ---
 
-Verdaccio is a proxy and by default [links](uplinks.md) the public registry.
+Verdaccio jẹ aṣoju ikọkọ ati nipa atilẹda [n se asopọ](uplinks.md) ibi iforukọsilẹ ti gbogbogbo.
 
 ```yaml
 uplinks:
