@@ -1,5 +1,5 @@
 ---
-id: version-4.0.2-packages
+id: version-4.0.2-awọn akopọ
 title: Iwọlesi Akopọ
 original_id: awọn akopọ
 ---
@@ -107,7 +107,7 @@ packages:
 
 #### Didena ṣiṣe aṣoju ikọkọ ti eto pato awọn akojọ kan
 
-O le fẹ dènà ọkan tabi ọpọlọpọ awọn akojọ lati sawari lati awọn ibi ipamọ latọna jijin., Ṣugbọn, ni bakanna, fayegba awọn ẹlomiran lati wọle si awọn orisirisi *uplinks*.
+O le fẹ dènà ọkan tabi ọpọlọpọ awọn akojọ lati sawari lati awọn ibi ipamọ latọna jijin., sugbọn, ni bakanna, fayegba awọn ẹlomiran lati wọle si awọn orisirisi *uplinks*.
 
 Jẹ ki a wo apẹẹrẹ wọnyii:
 
