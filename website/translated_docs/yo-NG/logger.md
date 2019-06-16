@@ -19,9 +19,9 @@ Lo `SIGUSR2` lati pe akiyesi ohun elo naa, faili-igbasilẹ naa jẹ yi yipo ati
 
 ### Iṣeto
 
-| Ohun ini | Iru  | Ti o nilo | Apẹẹrẹ                                         | Atilẹyin | Apejuwe                                           |
-| -------- | ---- | --------- | ---------------------------------------------- | -------- | ------------------------------------------------- |
-| iru      | okun | Rara      | [stdout, file]                                 | gbogbo   | ṣe asọye abajade naa                              |
-| ọna      | okun | Rara      | verdaccio.log                                  | gbogbo   | if type is file, define the location of that file |
-| format   | okun | Rara      | [pretty, pretty-timestamped]                   | gbogbo   | output format                                     |
-| level    | okun | Rara      | [fatal, error, warn, http, info, debug, trace] | gbogbo   | verbose level                                     |
+| Ohun ini | Iru  | Ti o nilo | Apẹẹrẹ                                         | Atilẹyin | Apejuwe                                          |
+| -------- | ---- | --------- | ---------------------------------------------- | -------- | ------------------------------------------------ |
+| iru      | okun | Rara      | [stdout, file]                                 | gbogbo   | ṣe asọye abajade naa                             |
+| ọna      | okun | Rara      | verdaccio.log                                  | gbogbo   | ti iru ẹ ba jẹ faili, ṣe asọye aaye ti faili naa |
+| ọna      | okun | Rara      | [pretty, pretty-timestamped]                   | gbogbo   | ọna abajade                                      |
+| ipele    | okun | Rara      | [fatal, error, warn, http, info, debug, trace] | gbogbo   | ipele verbose                                    |
