@@ -33,7 +33,7 @@ Wo apẹẹrẹ kikun kan [nibi](https://stackoverflow.com/questions/54543979/np
 
 ## Sise asopọ Ibi iforukọsilẹ kan
 
-Linking a registry is fairly simple. First, define a new section in the `uplinks` section. Note, the order here is irrelevant.
+Sise asopọ ibi iforukọsilẹ kan rọrun gan. Lakọkọ, ṣe asọye abala tuntun kan ni abala ti `uplinks`. Akiyesi, eto ti ibi ko ṣe pataki.
 
 ```yaml
   uplinks:
@@ -49,9 +49,9 @@ Linking a registry is fairly simple. First, define a new section in the `uplinks
 
 ```
 
-Add a `proxy` section to define the selected registry you want to proxy.
+Se afikun abala `aṣoju ikọkọ` lati seto ibi iforukọsilẹ to jẹ yiyan ti o fẹ lati se ni aṣoju ikọkọ.
 
-## Linking Multiple Registries
+## Siṣe asopọ Awọn ibi iforukọsilẹ ọlọpọlọpọ
 
 ```yaml
   uplinks:
