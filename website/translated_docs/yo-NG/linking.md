@@ -11,7 +11,7 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-You can link multiple registries, the following document will drive you through some helpful configurations.
+O le ṣe asopọ awọn ibi iforukọsilẹ ọlọpọlọpọ, iwe wọnyii yoo ṣe atọkun rẹ bi iranlọwọ diẹ lara awọn iṣeto.
 
 ## Using Associating Scope
 
