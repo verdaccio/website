@@ -95,7 +95,7 @@ O le sayipada awọn ihuwasi to ti wa tẹlẹ nipa lilo ifasẹsi ohun elo to y
 
 #### Didena wiwọle si iṣeto ti awọn akojọ
 
-If you want to block the access/publish to a specific group of packages. Just do not define `access` and `publish`.
+Ti o ba fẹ lati dènà wiwọle/atẹjade lọ si pato ẹgbẹ ti awọn akojọ kan. Just do not define `access` and `publish`.
 
 ```yaml
 packages:
