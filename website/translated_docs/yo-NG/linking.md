@@ -68,9 +68,9 @@ Se afikun abala `aṣoju ikọkọ` lati seto ibi iforukọsilẹ to jẹ yiyan 
     proxy: server1 server2
 ```
 
-Verdaccio supports multiple registries on the `proxy` field. The request will be resolved with the first in the list; if that fails, it will try with the next in the list and so on.
+Verdaccio n ṣe atilẹyin fun awọn ibi iforukọsilẹ ọlọpọlọpọ lori aaye `aṣoju ikọkọ`. Ibeere ​​naa yoo jẹ yiyanju pẹlu alakọkọ ninu akojọ naa; to ba jẹ pe iyẹn kuna, o ma gbiyanju pẹlu eyi tókàn ninu akojọ naa ati bẹbẹ lọ.
 
-## Offline Registry
+## Ibi iforukọsilẹ Alaisilorila
 
 Having a full Offline Registry is completely possible. If you don't want any connectivity with external remotes you can do the following.
 
