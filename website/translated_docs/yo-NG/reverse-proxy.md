@@ -1,6 +1,6 @@
 ---
-id: reverse-proxy
-title: "Reverse Proxy Setup"
+id: aṣoju ikọkọ-alayipada
+title: "Iseto Aṣoju ikọkọ-Alayipada"
 ---
 
 Using a reverse proxy is a common practice. The following configurations are the most recommended and used ones.
