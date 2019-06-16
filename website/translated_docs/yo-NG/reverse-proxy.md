@@ -18,7 +18,7 @@ Apache ati `mod_proxy` ko **yẹ ko tumọ koodu/di koodu awọn slash** ki o si
 
 ### Iṣeto pẹlu SSL
 
-Apache virtual server configuration
+Iṣeto olupese aifojuri ti Apache
 
         apacheconfig
         <IfModule mod_ssl.c>
