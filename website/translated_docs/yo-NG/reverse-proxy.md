@@ -7,7 +7,7 @@ Lilo aṣoju ikọkọ alayipada jẹ iṣe ti o wọpọ. Awọn iṣeto wọny
 
 # Apache
 
-Apache and `mod_proxy` should **not decode/encode slashes** and leave them as they are:
+Apache ati `mod_proxy` ko **yẹ ko tumọ koodu/di koodu awọn slash** ki o si fi wọn silẹ bi wọn se wa:
 
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
@@ -16,7 +16,7 @@ Apache and `mod_proxy` should **not decode/encode slashes** and leave them as th
     </VirtualHost>
     
 
-### Configuration with SSL
+### Iṣeto pẹlu SSL
 
 Apache virtual server configuration
 
