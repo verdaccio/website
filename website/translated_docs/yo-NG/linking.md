@@ -91,4 +91,4 @@ packages:
     publish: $authenticated
 ```
 
-Remove all `proxy` fields within each section of `packages`. The registry will become full offline.
+Yọ gbogbo `aṣoju ikọkọ` awọn aaye laarin abala kọọkan ti `awọn akopọ`. Ibi iforukọsilẹ naa yoo di kikun ni aisilorila.
