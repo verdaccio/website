@@ -72,7 +72,7 @@ Verdaccio n ṣe atilẹyin fun awọn ibi iforukọsilẹ ọlọpọlọpọ l
 
 ## Ibi iforukọsilẹ Alaisilorila
 
-Having a full Offline Registry is completely possible. If you don't want any connectivity with external remotes you can do the following.
+Nini Ibi iforukọsilẹ Alaisilorila kikun jẹ eyi to ṣeeṣe patapata. Ti o ko ba fẹ asopọmọ eyikeyi pẹlu awọn idari ti ita o le ṣe awọn wọnyii.
 
 ```yaml
 <br />auth:
