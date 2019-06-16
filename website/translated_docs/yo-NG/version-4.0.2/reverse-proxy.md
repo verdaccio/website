@@ -1,5 +1,5 @@
 ---
-id: version-4.0.2-reverse-proxy
+id: version-4.0.2-aṣoju ikọkọ-alayipada
 title: Reverse Proxy Setup
 original_id: reverse-proxy
 ---
