@@ -445,17 +445,17 @@
       }
     },
     "links": {
-      "Docs": "Docs",
+      "Docs": "Dokumentation",
       "Notes": "Notes",
       "Blog": "Blog",
       "Twitter": "Twitter",
-      "Help": "Help",
+      "Help": "Hilfe",
       "GitHub": "GitHub",
       "Team": "Team",
-      "Donate": "Donate"
+      "Donate": "Spenden"
     },
     "categories": {
-      "Introduction": "Introduction",
+      "Introduction": "Einführung",
       "Features": "Features",
       "Server": "Server",
       "Development": "Development",
