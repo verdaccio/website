@@ -15,16 +15,16 @@ O le ṣe asopọ awọn ibi iforukọsilẹ ọlọpọlọpọ, iwe wọnyii y
 
 ## Lilo Ilana ti Alabasepọ
 
-The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
+Ọna ara lati wọle si awọn ibi iforukọsilẹ ọlọpọlọpọ nipa lilo `.npmrc` jẹ ilana ẹya ara bi atẹle yii:
 
     // .npmrc
     registry=https://registry.npmjs.org
     @mycompany:registry=http://localhost:4873
     
 
-This approach is valid, but comes with several disadvantages:
+Ọna yii fẹsẹmulẹ, ṣugbọn o wa pẹlu ọpọlọpọ awọn akude:
 
-* It **only works with scopes**
+* O **n ṣiṣẹ pẹlu awọn scope nikan**
 * Scope must match, **no Regular Expressions are allowed**
 * One scope **cannot fetch from multiple registries**
 * Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
