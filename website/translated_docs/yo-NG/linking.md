@@ -27,11 +27,11 @@ O le ṣe asopọ awọn ibi iforukọsilẹ ọlọpọlọpọ, iwe wọnyii y
 * O **n ṣiṣẹ pẹlu awọn scope nikan**
 * Scope gbọdọ baramu, **ko si igbalaaye fun Awọn ifarahan Yẹpẹrẹ kankan**
 * Scope kan **kole sawari lati awọn ibi iforukọsilẹ ọlọpọlọpọ**
-* Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
+* Awọn aami/awọn ọrọ igbaniwọle **gbọdọ wa ni asọye laarin** `.npmrc` atipe jẹ gbigbe wọle sinu ibi ipamọ naa.
 
-See a full example [here](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
+Wo apẹẹrẹ kikun kan [nibi](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
 
-## Linking a Registry
+## Sise asopọ Ibi iforukọsilẹ kan
 
 Linking a registry is fairly simple. First, define a new section in the `uplinks` section. Note, the order here is irrelevant.
 
