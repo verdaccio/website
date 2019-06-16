@@ -13,7 +13,7 @@ uplinks:
 
 O le ṣe asopọ awọn ibi iforukọsilẹ ọlọpọlọpọ, iwe wọnyii yoo ṣe atọkun rẹ bi iranlọwọ diẹ lara awọn iṣeto.
 
-## Using Associating Scope
+## Lilo Ilana ti Alabasepọ
 
 The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
 
