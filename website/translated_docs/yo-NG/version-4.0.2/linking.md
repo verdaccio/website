@@ -1,5 +1,5 @@
 ---
-id: version-4.0.2-linking-remote-registry
+id: version-4.0.2-sise asopọ-ibi iforukọsilẹ-ọlọna jijin
 title: Linking a Remote Registry
 original_id: linking-remote-registry
 ---
