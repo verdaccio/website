@@ -26,7 +26,7 @@ O le ṣe asopọ awọn ibi iforukọsilẹ ọlọpọlọpọ, iwe wọnyii y
 
 * O **n ṣiṣẹ pẹlu awọn scope nikan**
 * Scope gbọdọ baramu, **ko si igbalaaye fun Awọn ifarahan Yẹpẹrẹ kankan**
-* One scope **cannot fetch from multiple registries**
+* Scope kan **kole sawari lati awọn ibi iforukọsilẹ ọlọpọlọpọ**
 * Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
 
 See a full example [here](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
