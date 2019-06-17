@@ -7,13 +7,13 @@ Irulogo jẹ didalara nipasẹ **[Breno Rodrigues](https://github.com/rodriguesb
 
 > Gbogbo awọn logo ni iwe aṣẹ labẹ [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
 
-Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
+Ọpẹ pataki si *[@Lisapressmar](https://github.com/Lisapressmar)* fun ilọwọsi rẹ pẹlu awọn ọpọlọpọ ọna ati iwọn aworan.
 
 <div id="codefund">''</div>
 
-## Symbols
+## Awọn aami
 
-**With text**
+**Pẹlu ọrọ**
 
 ![symbol tiny with text](assets/logo/symbol/png/logo-small-header-bottom.png)
 
@@ -25,7 +25,7 @@ Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her con
 
 ![symbol svg](assets/logo/symbol/svg/logo-small-header-bottom.svg)
 
-**No text**
+**Ko si ọrọ**
 
 ![symbol tiny](assets/logo/symbol/png/verdaccio-tiny.png)
 
