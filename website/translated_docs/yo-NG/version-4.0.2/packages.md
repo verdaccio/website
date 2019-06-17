@@ -167,7 +167,7 @@ Ninu apẹẹrẹ titẹlẹ, ihuwasi naa yoo jẹ jijuwe:
 * awọn olumulo to ni ifasẹsi nikan ni o le ṣe atẹjade awọn akopọ `my-company-*`, sugbọn ** ko si aaye fun ẹnikẹni lati aitẹjade wọn**.
 * Ti `unpublish` ba ti jẹ sisọ jade, iwọle naa yoo jẹ fifọwọsi tabi kikọ nipasẹ agbekalẹ `publish` naa.
 
-### Configuration
+### Iṣeto
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
