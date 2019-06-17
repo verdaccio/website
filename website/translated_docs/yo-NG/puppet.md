@@ -9,7 +9,7 @@ Fi verdaccio sori ẹrọ fun Debian, Ubuntu, Fedora, ati RedHat.
 
 Awọn orisi ọna meji lo wa lati fi verdaccio sori ẹrọ nipa lilo modulu Puppet yii:
 
-* Apply-mode (with puppet-apply and no puppetmaster setup needed)
+* Ipo-iṣamulo (pẹlu puppet-apply ati pe ko nilo siseto puppetmaster)
 * Master-Agent-mode (with puppet-agent accessing your configuration through the puppetmaster).
 
 In both variants you have to explicitely call "class nodejs {}" in your puppet script because the puppet-verdaccio module only defines this as a requirement, so you have all the flexibility you want when installing nodejs. Scroll down for details about Master-Agent-mode variant.
