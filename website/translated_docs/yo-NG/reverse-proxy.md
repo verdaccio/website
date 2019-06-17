@@ -136,7 +136,7 @@ Ege wọnyii jẹ `docker` kikun apẹẹrẹ le jẹ didanwo ni [Awọn apẹ�
 
 ### Ẹka-ọna
 
-If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise you would need something like this in your `config.yaml`.
+Ti gbogbo URL ba n jẹ lilo fun Verdaccio, iwọ ko nilo lati ṣe asoye `url_prefix`, bibẹkọ o ma nilo nkan bi eleyi ninu `config.yaml` rẹ.
 
 ```yaml
 url_prefix: /sub_directory/
