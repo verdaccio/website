@@ -7,7 +7,7 @@ Fi verdaccio sori ẹrọ fun Debian, Ubuntu, Fedora, ati RedHat.
 
 # Ilo
 
-There are two variants to install verdaccio using this Puppet module:
+Awọn orisi ọna meji lo wa lati fi verdaccio sori ẹrọ nipa lilo modulu Puppet yii:
 
 * Apply-mode (with puppet-apply and no puppetmaster setup needed)
 * Master-Agent-mode (with puppet-agent accessing your configuration through the puppetmaster).
