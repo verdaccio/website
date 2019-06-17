@@ -39,7 +39,7 @@ Iṣeto olupese aifojuri ti Apache
 
 # Nginx
 
-The following snippet is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
+Ege wọnyii jẹ `docker` kikun apẹẹrẹ le jẹ didanwo ni [Awọn apẹẹrẹ ibi ipamọ Docker](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx) wa.
 
     upstream verdaccio_v4 {
         server verdaccio_relative_path_v4:4873;
@@ -91,7 +91,7 @@ The following snippet is a full `docker` example can be tested in our [Docker ex
     }
     
 
-## SSL example
+## Apẹẹrẹ SSL
 
     server {
         listen 80;
@@ -134,7 +134,7 @@ The following snippet is a full `docker` example can be tested in our [Docker ex
 
 ## Run behind reverse proxy with different domain and port
 
-### Sub-directory
+### Ẹka-ọna
 
 If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise you would need something like this in your `config.yaml`.
 
