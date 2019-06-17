@@ -120,7 +120,10 @@
         "title": "O que é o Verdaccio?"
       },
       "who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Quem está usando Verdaccio?"
+      },
+      "security-policy": {
+        "title": "Política de Segurança"
       },
       "windows": {
         "title": "Instalando como um Serviço no Windows"

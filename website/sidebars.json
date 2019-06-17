@@ -5,24 +5,17 @@
       "installation",
       "cli",
       "who-is-using",
+      "security-policy",
       "logo",
       {
         "type": "subcategory",
         "label": "Uses Cases",
-        "ids": [
-          "e2e",
-          "caching",
-          "github-actions",
-          "linking-remote-registry"
-        ]
+        "ids": ["e2e", "caching", "github-actions", "linking-remote-registry"]
       },
       {
         "type": "subcategory",
         "label": "Talks & Articles",
-        "ids": [
-          "articles",
-          "talks"
-        ]
+        "ids": ["articles", "talks"]
       }
     ],
     "Features": [
@@ -41,11 +34,7 @@
       "windows",
       "iss-server"
     ],
-    "Development": [
-      "plugins",
-      "dev-plugins",
-      "node-api"
-    ],
+    "Development": ["plugins", "dev-plugins", "node-api"],
     "DevOps": [
       "docker",
       "kubernetes",
@@ -53,23 +42,14 @@
       {
         "type": "subcategory",
         "label": "Cloud",
-        "ids": [
-          "amazon"
-        ]
+        "ids": ["amazon"]
       },
       {
         "type": "subcategory",
         "label": "Tools",
-        "ids": [
-          "ansible",
-          "puppet",
-          "chef"
-        ]
+        "ids": ["ansible", "puppet", "chef"]
       }
     ],
-    "Guides": [
-      "best",
-      "protect-your-dependencies"
-    ]
+    "Guides": ["best", "protect-your-dependencies"]
   }
 }
