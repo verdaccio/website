@@ -18,7 +18,7 @@ Jẹ ki a wo fun apẹẹrẹ awọn iseto wọnyi. O ni eto ti awọn igbarale 
 
 Pẹlu iṣeto yii, lakotan a fayegba awọn ẹgbẹ **admin** ati **teamA** lati *se atẹjade* ati **teamA** **teamB** **teamC** *wiwọle* si awọn igbarale bẹ.
 
-### Use case: teamD try to access the dependency
+### Lo apẹẹrẹ: teamD gbiyanju lati wọle si igbarale naa
 
 So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
 
