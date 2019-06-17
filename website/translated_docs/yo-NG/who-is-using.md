@@ -1,6 +1,6 @@
 ---
-id: who-is-using
-title: "Who is using Verdaccio?"
+id: tani-n-lo
+title: "Tani o nlo Verdaccio?"
 ---
 
 ### As a Business
