@@ -20,14 +20,14 @@ Pẹlu iṣeto yii, lakotan a fayegba awọn ẹgbẹ **admin** ati **teamA** la
 
 ### Lo apẹẹrẹ: teamD gbiyanju lati wọle si igbarale naa
 
-So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
+Nitorina, ti mo ba wọle bi **teamD**. Ko yẹ ki n ni anfani lati wọle si gbogbo awọn igbarale ti o ni baamu pẹlu ilana `my-company-*`.
 
 ```bash
 ➜ npm whoami
 teamD
 ```
 
-I won't have access to such dependencies and also won't be visible via web for user **teamD**. If I try to access the following will happen.
+Mi koni raye wọle si awọn igbarale bẹ atipe kii yoo han nipasẹ ayelujara fun olumulo **teamD**. Ti mo ba gbiyanju lati wọle awọn wọnyi yoo ṣẹlẹ.
 
 ```bash
 ➜ npm install my-company-core
@@ -35,7 +35,7 @@ npm ERR! code E403
 npm ERR! 403 Forbidden: webpack-1@latest
 ```
 
-or with `yarn`
+tabi pẹlu `yarn`
 
 ```bash
 ➜ yarn add my-company-core
