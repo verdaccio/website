@@ -50,7 +50,7 @@ O le ṣe iṣeto Verdaccio ni akanṣe pẹlu lilo Kubernetes *configMap*.
 
 #### Gbaradi
 
-Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml) and adapt it for your use case:
+Se adakọ [iṣeto titẹlẹ](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml) ki o si mu ṣe deede fun lilo ọrọ rẹ:
 
 ```bash
 wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/docker.yaml -O config.yaml
