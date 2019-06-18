@@ -30,4 +30,4 @@ A ṣe akojọ awọn ọrọ nipa Verdaccio, ti o ba sọ ọrọ kan tabi ti o
 ## Awọn fidio ti o ni Ibatan
 
 * [Olupese npm ibilẹ](https://www.youtube.com/watch?v=vc2wMwcDKOE)
-* [Private NPM Registry (sinopia+docker)](https://www.youtube.com/watch?v=0TXTCrGaxKc)
+* [Ibi iforukọsilẹ NPM Aladani (sinopia+docker)](https://www.youtube.com/watch?v=0TXTCrGaxKc)
