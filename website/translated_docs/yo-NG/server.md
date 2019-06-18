@@ -37,9 +37,9 @@ Ti o ba fẹ lati tẹtisi gbogbo adirẹsi itagbangba ṣeto ilana igbọran ni
 gbọ: 0.0.0.0:4873
 ```
 
-If you are running verdaccio in a Amazon EC2 Instance, [you will need set the listen in change your config file](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) as is described above.
+Ti o ba n mu verdaccio ṣiṣẹ ninu Ilana Amazon EC2 kan, [o ma nilo lati ṣeto itẹtisi naa ni aaye ayipada faili iṣeto rẹ](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) bi a ti salaye loke.
 
-> Configure Apache or nginx? Please check out the [Reverse Proxy Setup](reverse-proxy.md)
+> Ṣeto Apache tabi nginx? Jọwọ ṣabẹwo [Iseto Aṣoju ikọkọ Alayipada](reverse-proxy.md)
 
 ## Keeping verdaccio running forever
 
