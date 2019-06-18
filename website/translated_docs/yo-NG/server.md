@@ -41,11 +41,11 @@ Ti o ba n mu verdaccio ṣiṣẹ ninu Ilana Amazon EC2 kan, [o ma nilo lati ṣ
 
 > Ṣeto Apache tabi nginx? Jọwọ ṣabẹwo [Iseto Aṣoju ikọkọ Alayipada](reverse-proxy.md)
 
-## Keeping verdaccio running forever
+## Mimu verdaccio ṣiṣẹ titilailai
 
-You can use node package called ['forever'](https://github.com/nodejitsu/forever) to keep verdaccio running all the time.
+O le lo akopọ oju ipade ti a n pe ni ['forever'](https://github.com/nodejitsu/forever) lati mu ki verdaccio ma ṣiṣẹ ni gbogbo igba.
 
-First install `forever` globally:
+Kọkọ fi `forever` sori ẹrọ kaakiri agbaye:
 
 ```bash
 $ sudo npm install -g forever
