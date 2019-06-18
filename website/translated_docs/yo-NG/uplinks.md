@@ -76,7 +76,7 @@ uplinks:
       token: "token"
 ```
 
-> Note: `token` has priority over `token_env`
+> Akiyesi: `token` ṣe pataki ju `token_env` lọ
 
 ### You Must know
 
