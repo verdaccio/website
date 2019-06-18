@@ -3,23 +3,23 @@ id: ssl
 title: "Ṣeto Awọn iwe ẹri SSL"
 ---
 
-Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.
+Tẹle awọn itọsọna wọnyi lati seto iwe ẹri SSL kan lati ṣiṣẹ bi ibiiforukọsilẹ NPM kan lori HTTPS.
 
-* Update the listen property in your `~/.config/verdaccio/config.yaml`:
+* Ṣe imudojuiwọn ohun elo itẹtisi ni `~/.config/verdaccio/config.yaml` rẹ:
 
     listen: 'https://your.domain.com/'
     
 
-Once you've updated the listen property and try to run verdaccio again, it will ask for certificates.
+Lọgan ti o ti se imudojuiwọn ohun elo itẹtisi ati gbigbiyanju lati ṣe imuṣiṣẹ verdaccio lẹẹkansi, yoo beere fun awọn iwe ẹri.
 
-* Generate your certificates
+* Pilẹṣẹ awọn iwe ẹri rẹ
 
      $ openssl genrsa -out /Users/user/.config/verdaccio/verdaccio-key.pem 2048
      $ openssl req -new -sha256 -key /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-csr.pem
      $ openssl x509 -req -in /Users/user/.config/verdaccio/verdaccio-csr.pem -signkey /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-cert.pem
      ````
     
-    * Edit your config file `/Users/user/.config/verdaccio/config.yaml` and add the following section:
+    * Ṣatunkọ faili iṣeto rẹ `/Users/user/.config/verdaccio/config.yaml` ki o si se afikun abala wọnyi:
     
     
 
