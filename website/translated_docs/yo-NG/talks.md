@@ -7,11 +7,11 @@ A ṣe akojọ awọn ọrọ nipa Verdaccio, ti o ba sọ ọrọ kan tabi ti o
 
 > Ma ṣe ṣiyemeji lati pin àkóónú rẹ pẹlu awujọ naa, a gba ọ niyanju lati sọ nipa Verdaccio. Ti o ba nilo iranlọwọ lori bi o ṣe le bẹrẹ, alaye tabi awọn ohun elo, kan si wa ni [Chat at Discord](https://chat.verdaccio.org) wa, a ma ran ẹ lọwọ.
 
-## The latest Talk <iframe width="960" height="540" src="https://www.youtube.com/embed/CnLA73E1BrE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+## Ọrọ to n lọ lọwọ <iframe width="960" height="540" src="https://www.youtube.com/embed/CnLA73E1BrE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-> The last shared talk is always highlighted here. We help you share your voice with the community.
+> Ọrọ ikẹhin to jẹ pinpin ma n jẹ fififihan nibi nigbagbogbo. A n ṣe iranlọwọ fun ọ lati pin ohun rẹ pẹlu awujọ.
 
-* [Практический опыт работы с приватным хранилищем npm-пакетов (Verdaccio)](https://youtu.be/CnLA73E1BrE?t=10101) - [О Panda-Meetup](http://panda-meetup.ru/msk-frontend-meetup-2) - time (2:48:23)
+* [Практический опыт работы с приватным хранилищем npm-пакетов (Verdaccio)](https://youtu.be/CnLA73E1BrE?t=10101) - [О Panda-Meetup](http://panda-meetup.ru/msk-frontend-meetup-2) - aago (2:48:23)
 * [Madrid Node.js Meetup - Introducción a Verdaccio: gestión de paquetes privados, March 2019](https://www.todojs.com/introduccion-a-verdaccio/)
 * [Vienna.js Meetuo - Introduction to Verdaccio, January 2019](https://www.youtube.com/watch?v=hDIFKzmoCaA)
 * [#22 FloripaJS Brazil Meetup, February 2019](https://www.youtube.com/watch?v=iOp70_svQ_M&feature=youtu.be&t=7578)
@@ -23,7 +23,7 @@ A ṣe akojọ awọn ọrọ nipa Verdaccio, ti o ba sọ ọrọ kan tabi ti o
 * [Architectures for Huge Angular Based Enterprise #WeAreDevelopers2018](https://youtu.be/q4XmAy6_ucw?t=551)
 * [BxJS Weekly Ep. 13 - June 2, 2018 (javascript news podcast)](https://youtu.be/Xo8CzYGKXTs?list=PL_gX69xPLi-mqs5BJe-xPnOPT6K1Y5_ZQ&t=2732)
 
-## Future Talks
+## Awọn ọrọ Ọjọ iwaju
 
 * [Madrid Node.js Meetup 5h March 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
 
