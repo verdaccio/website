@@ -78,9 +78,9 @@ uplinks:
 
 > Akiyesi: `token` ṣe pataki ju `token_env` lọ
 
-### You Must know
+### O Gbọdọ Mọ
 
-* Uplinks must be registries compatible with the `npm` endpoints. Eg: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* and more.
-* Setting `cache` to false will help to save space in your hard drive. This will avoid store `tarballs` but [it will keep metadata in folders](https://github.com/verdaccio/verdaccio/issues/391).
+* Uplinks gbọdọ ni ibamu pẹlu awọn ibi iforukọsilẹ pẹlu `npm` awọn aaye opin. Fun apẹẹrẹ: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* ati siwaju sii.
+* Ṣiṣeto `cache` si eke yoo ṣe iranlọwọ lati pa aaye mọ ninu ààyè ìtọ́jú alafojuri rẹ. Eyi yoo yago fun itọju `tarballs` sugbọn [o ma fi metadata pamọ sinu awọn foda](https://github.com/verdaccio/verdaccio/issues/391).
 * Exceed with multiple uplinks might slow down the lookup of your packages due for each request a npm client does, verdaccio does 1 call for each uplink.
 * The (timeout, maxage and fail_timeout) format follow the [NGINX measurement units](http://nginx.org/en/docs/syntax.html)
