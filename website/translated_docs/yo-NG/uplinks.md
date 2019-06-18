@@ -36,10 +36,10 @@ O le ṣe asọye awọn uplink ọlọpọlọpọ atipe ọkọọkan wọn gb
 | max_fails       | nọmba   | Rara      | 2                                       | gbogbo   | se adinku iye ibeere ikuna to pọju                                                                                             | 2                |
 | apo iranti      | boolean | Rara      | [otitọ, irọ]                            | >= 2.1   | ko gbogbo awọn tarball ọna jijin si ipamọ apo iranti                                                                           | otitọ            |
 | auth            | akojọ   | Rara      | [wo isalẹ](uplinks.md#auth-property)    | >= 2.5   | n yan akọle 'Authorization' naa [alaye siwaju sii](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | o ti jẹ yiyọkuro |
-| awọn akọle      | akojọ   | Rara      | authorization: "Bearer SecretJWToken==" | gbogbo   | list of custom headers for the uplink                                                                                          | o ti jẹ yiyọkuro |
-| strict_ssl      | boolean | Rara      | [otitọ, irọ]                            | >= 3.0   | If true, requires SSL certificates be valid.                                                                                   | otitọ            |
+| awọn akọle      | akojọ   | Rara      | authorization: "Bearer SecretJWToken==" | gbogbo   | akojọ awọn akọle akanṣe fun uplink naa                                                                                         | o ti jẹ yiyọkuro |
+| strict_ssl      | boolean | Rara      | [otitọ, irọ]                            | >= 3.0   | To ba jẹ otitọ, o nilo ki awọn iwe ẹri SSL fẹsẹmulẹ.                                                                           | otitọ            |
 
-#### Auth property
+#### Ohun ini Auth
 
 The `auth` property allows you to use an auth token with an uplink. Using the default environment variable:
 
