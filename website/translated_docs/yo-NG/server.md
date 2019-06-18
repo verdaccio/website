@@ -51,35 +51,35 @@ Kọkọ fi `forever` sori ẹrọ kaakiri agbaye:
 $ sudo npm install -g forever
 ```
 
-Make sure you've run verdaccio at least once to generate the config file and write down the created admin user. You can then use the following command to start verdaccio:
+Rii daju pe o ti ṣe imuṣiṣẹ verdaccio ni o kere ju lẹẹkan lati ṣe ipilẹsẹ faili iṣeto ati ki o si kọ olumulo alakoso ti o jẹ ṣiṣẹda silẹ. O le wa lo awọn aṣẹ wọnyi lati bẹrẹ verdaccio:
 
 ```bash
 $ forever start `which verdaccio`
 ```
 
-You can check the documentation for more information on how to use forever.
+O le ṣayẹwo awọn iwe akọsilẹ fun alaye diẹ sii lori bi o ṣe le lo forever.
 
-## Surviving server restarts
+## Olupese ti o ye ti n bẹrẹ lẹẹkansi
 
-You can use `crontab` and `forever` together to start verdaccio after a server reboot. When you're logged in as the verdaccio user do the following:
+O le lo `crontab` ati `forever` papọ lati bẹrẹ verdaccio lẹhin atunbẹrẹ olupese. Nigba ti o ba wọle gẹgẹbi olumulo verdaccio naa ṣe awọn wọnyii:
 
 ```bash
 $ crontab -e
 ```
 
-This might ask you to choose an editor. Pick your favorite and proceed. Add the following entry to the file:
+Eyi le beere lọwọ rẹ lati yan olusatunkọ kan. Mu ayanfẹ rẹ ki o si tẹsiwaju. Se afikun awọn atẹwọle wọnyii si faili naa:
 
     @reboot /usr/bin/forever start /usr/lib/node_modules/verdaccio/bin/verdaccio
     
 
-The locations may vary depending on your server setup. If you want to know where your files are you can use the 'which' command:
+Awọn ipo le yatọ si dida lori iṣeto olupese rẹ. Ti o ba fẹ lati mọ ibi ti awọn faili rẹ wa o le lo aṣẹ 'which':
 
 ```bash
 $ which forever
 $ which verdaccio
 ```
 
-## Using systemd
+## Lilo systemd
 
 Instead of `forever` you can use `systemd` for starting verdaccio and keeping it running. Verdaccio installation has systemd unit, you only need to copy it:
 
