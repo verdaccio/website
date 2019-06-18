@@ -52,7 +52,7 @@ uplinks:
       token_env: true # defaults to `process.env['NPM_TOKEN']`
 ```
 
-or via a specified environment variable:
+tabi nipasẹ iyipada ayika to jẹ yiyan:
 
 ```yaml
 uplinks:
@@ -63,9 +63,9 @@ uplinks:
       token_env: FOO_TOKEN
 ```
 
-`token_env: FOO_TOKEN`internally will use `process.env['FOO_TOKEN']`
+`token_env: FOO_TOKEN`labẹnu ma lo `process.env['FOO_TOKEN']`
 
-or by directly specifying a token:
+tabi nipa yiyan aami kan taarata:
 
 ```yaml
 uplinks:
