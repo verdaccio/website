@@ -3,23 +3,23 @@ id: iṣeto-olupese
 title: "Iṣeto Olupese"
 ---
 
-This is mostly basic linux server configuration stuff but I felt it important to document and share the steps I took to get verdaccio running permanently on my server. You will need root (or sudo) permissions for the following.
+Eyi jẹ ohun ipilẹ iṣeto olupese ti linux ṣugbọn mo lero pe o ṣe pataki lati ṣe akosile ati pin awọn igbesẹ ti mo gbe lati mu ki verdaccio ma ṣiṣẹ titilailai lori olupese mi. O ma nilo awọn igbanilaaye ipile (tabi sudo) fun awọn wọnyii.
 
-## Running as a separate user
+## Nṣiṣẹ gẹgẹbi olumulo ti o yatọ
 
-First create the verdaccio user:
+Kọkọ ṣẹda olumulo verdaccio naa:
 
 ```bash
 $ sudo adduser --system --gecos 'Verdaccio NPM mirror' --group --home /var/lib/verdaccio verdaccio
 ```
 
-Or, in case you do not have `adduser`:
+Tabi, toba sẹlẹ pe o ko ni `adduser`:
 
 ```bash
 $ sudo useradd --system --comment 'Verdaccio NPM mirror' --create-home --home-dir /var/lib/verdaccio --shell /sbin/nologin verdaccio
 ```
 
-You create a shell as the verdaccio user using the following command:
+O ṣẹda ikarahun gẹgẹbi olumulo verdaccio nipa lilo aṣẹ wọnyi:
 
 ```bash
 $ sudo su -s /bin/bash verdaccio
