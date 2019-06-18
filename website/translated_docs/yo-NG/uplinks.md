@@ -3,7 +3,7 @@ id: uplinks
 title: "Uplinks"
 ---
 
-An *uplink* is a link with an external registry that provides access to external packages.
+*uplink* jẹ ọna asopọ pẹlu ibi iforukọsilẹ ti ita ti o n pese iwọle si awọn akojọ ti ita.
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
 
@@ -22,7 +22,7 @@ uplinks:
     url: http://localhost:55666/
 ```
 
-### Configuration
+### Iṣeto
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have the following properties:
 
