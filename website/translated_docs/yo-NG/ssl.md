@@ -1,6 +1,6 @@
 ---
 id: ssl
-title: "Set up the SSL Certificates"
+title: "Ṣeto Awọn iwe ẹri SSL"
 ---
 
 Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.
