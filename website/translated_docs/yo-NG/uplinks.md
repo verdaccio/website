@@ -41,7 +41,7 @@ O le ṣe asọye awọn uplink ọlọpọlọpọ atipe ọkọọkan wọn gb
 
 #### Ohun ini Auth
 
-The `auth` property allows you to use an auth token with an uplink. Using the default environment variable:
+Ohun ini `auth` fun ọ laaye lati lo aami auth kan pẹlu uplink. Lilo iyipada ayika atilẹwa naa:
 
 ```yaml
 uplinks:
