@@ -33,14 +33,14 @@ https: pfx: /Users/user/.config/verdaccio/server.pfx passphrase: 'secret' ````
 
 O le ri alaye diẹ sii lori awọn ariyanjiyan `key`, `cert`, `ca`, `pfx`, ati `passphrase` ni [Iwe akọsilẹ Oju ipade](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
 
-* Run `verdaccio` in your command line.
+* Se imusisẹ `verdaccio` ninu ila aṣẹ rẹ.
 
-* Open the browser and visit `https://your.domain.com:port/`
+* Ṣii ẹrọ aṣàwákiri ayelujara ki o si ṣabẹwo si `https://your.domain.com:port/`
 
-These instructions are mostly valid under OSX and Linux; on Windows the paths will vary, but the steps are the same.
+Awọn itọsọna wọnyi ma n saba fẹsẹmulẹ labẹ OSX ati Linux; lori Windows awọn ọna naa yoo yatọ, ṣugbọn awọn igbesẹ naa jẹ bakanna.
 
 ## Docker
 
-If you are using the Docker image, you have to set the `VERDACCIO_PROTOCOL` environment variable to `https`, as the `listen` argument is provided in the [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) and thus ignored from your config file.
+Ti o ba n lo aworan Docker, o ni lati ṣeto iyipada ayika `VERDACCIO_PROTOCOL` si `https`, gẹgẹ bi ariyanjiyan `listen` se jẹ pipese ninu [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) naa ati pe o foju fo ti inu faili iṣeto rẹ.
 
-You can also set the `VERDACCIO_PORT` environment variable if you are using a port other than `4873`.
+O tun le ṣeto iyipada ayika `VERDACCIO_PORT` ti o ba nlo ibudo miiran to yatọ si `4873`.
