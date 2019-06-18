@@ -81,10 +81,10 @@ $ which verdaccio
 
 ## Lilo systemd
 
-Instead of `forever` you can use `systemd` for starting verdaccio and keeping it running. Verdaccio installation has systemd unit, you only need to copy it:
+Dipo `forever` o le lo `systemd` fun bibẹrẹ verdaccio ati mi ma mu ṣiṣẹ lọ. Fifi Verdaccio sori ẹrọ ni ẹya systemd, o kan nilo lati se adaakọ rẹ ni:
 
 ```bash
 $ sudo cp /usr/lib/node_modules/verdaccio/systemd/verdaccio.service /lib/systemd/system/ && sudo systemctl daemon-reload
 ```
 
-This unit assumes you have configuration in `/etc/verdaccio/config.yaml` and store data in `/var/lib/verdaccio`, so either move your files to those locations or edit the unit.
+Ẹya yii gba wipe o ni iṣeto ni `/etc/verdaccio/config.yaml` ati tọju data ni `/var/lib/verdaccio`, nitorina boya ki o gbe awọn faili rẹ lọ si awọn aaye yẹn tabi satunkọ ẹya naa.
