@@ -26,15 +26,15 @@ $ sudo su -s /bin/bash verdaccio
 $ cd
 ```
 
-The `cd` command sends you to the home directory of the verdaccio user. Make sure you run verdaccio at least once to generate the config file. Edit it according to your needs.
+Aṣẹ `cd` n rán ẹ lọ si itọsọna ile ti olumulo verdaccio naa. Rii daju pe o mu verdaccio ṣiṣẹ ni o kere ju lẹẹkan lati ṣe ipilẹṣẹ faili iṣeto naa. Ṣatunkọ rẹ ni ibaamu pẹlu awọn inilo rẹ.
 
-## Listening on all addresses
+## Gbigbọ lori gbogbo awọn adirẹsi
 
-If you want to listen to every external address set the listen directive in the config to:
+Ti o ba fẹ lati tẹtisi gbogbo adirẹsi itagbangba ṣeto ilana igbọran ninu iṣeto naa lati:
 
 ```yaml
-# you can specify listen address (or simply a port)
-listen: 0.0.0.0:4873
+# o le se adirẹsi itẹtisi ni pato (tabi ibudo kan nìkan)
+gbọ: 0.0.0.0:4873
 ```
 
 If you are running verdaccio in a Amazon EC2 Instance, [you will need set the listen in change your config file](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) as is described above.
