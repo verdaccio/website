@@ -25,9 +25,9 @@ A ṣe akojọ awọn ọrọ nipa Verdaccio, ti o ba sọ ọrọ kan tabi ti o
 
 ## Awọn ọrọ Ọjọ iwaju
 
-* [Madrid Node.js Meetup 5h March 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
+* [Ipade Node.js ti Madrid Ọjọ karun Oṣu Kẹta Ọdun 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
 
-## Related Videos
+## Awọn fidio ti o ni Ibatan
 
-* [Local npm server](https://www.youtube.com/watch?v=vc2wMwcDKOE)
+* [Olupese npm ibilẹ](https://www.youtube.com/watch?v=vc2wMwcDKOE)
 * [Private NPM Registry (sinopia+docker)](https://www.youtube.com/watch?v=0TXTCrGaxKc)
