@@ -1,11 +1,11 @@
 ---
-id: talks
-title: "Talks"
+id: awọn ọrọ
+title: "Awọn ọrọ"
 ---
 
-We list the talks about Verdaccio, if you gave a talk or you are about to give one about Verdaccio or that mention this project, feel free to add it here.
+A ṣe akojọ awọn ọrọ nipa Verdaccio, ti o ba sọ ọrọ kan tabi ti o fẹ lati sọ ọrọ kan nipa Verdaccio tabi ti o darukọ iṣẹ akanṣe yii, ma se kọ lati se afikun rẹ sibi.
 
-> Do not hesistate to share your content with the community, we encorage you to speak about Verdaccio. If need help how to start, information or resources, reach us in our [Chat at Discord](https://chat.verdaccio.org), we will help you.
+> Ma ṣe ṣiyemeji lati pin àkóónú rẹ pẹlu awujọ naa, a gba ọ niyanju lati sọ nipa Verdaccio. Ti o ba nilo iranlọwọ lori bi o ṣe le bẹrẹ, alaye tabi awọn ohun elo, kan si wa ni [Chat at Discord](https://chat.verdaccio.org) wa, a ma ran ẹ lọwọ.
 
 ## The latest Talk <iframe width="960" height="540" src="https://www.youtube.com/embed/CnLA73E1BrE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
