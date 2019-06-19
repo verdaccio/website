@@ -80,12 +80,11 @@ Ci sono due opzioni qui:
 
 La sicurezza comincia nel proprio ambiente, perciò invitiamo a leggere assolutamente **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** e a seguire le raccomandazioni.
 
-### Package Access
+### Accesso ai Pacchetti
 
-By default all packages are you publish in Verdaccio are accessible for all public, we totally recommend protect your registry from external non authorized users updating `access` property to `$authenticated`.
+Di default tutti i pacchetti che pubblichi su Verdaccio sono accessibili a chiunque, ti raccomandiamo vivamente di proteggere il tuo registro da utenti esterni non autorizzati che aggiornano la proprietà `access` a `$authenticated`.
 
-```yaml
-  packages:
+```packages:
     '@my-company/*':
       access: $authenticated
       publish: $authenticated
@@ -97,7 +96,7 @@ By default all packages are you publish in Verdaccio are accessible for all publ
       publish: $authenticated
    ```
 
-In that way, **nobody will take advance of your registry unless is authorized and private packages won't be displayed in the User Interface**.
+In questo modo, **nessuno sarà in grado di utilizzare il tuo registro a meno che non sia autorizzato e i pacchetti privati non verranno visualizzati nell'Interfaccia Utente**.
 
 ## Server
 
