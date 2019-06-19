@@ -70,14 +70,15 @@ Ci sono due opzioni qui:
     npm --publish --tag fix --registry http://localhost:4873
    ```
 
-   This way your package will be used until its original maintainer updates his public package to `0.1.3`.
+   In questo modo il pacchetto verrà utilizzato fino a che il suo maintainer originale aggiorna 
+ il suo pacchetto pubblico a `0.1.3`.
 
 
 
 
-## Security
+## Sicurezza
 
-The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recomendations.
+La sicurezza comincia nel proprio ambiente, perciò invitiamo a leggere assolutamente **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** e a seguire le raccomandazioni.
 
 ### Package Access
 
