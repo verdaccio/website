@@ -30,11 +30,11 @@ La guida seguente è un elenco delle migliore pratiche raccolte e che raccomandi
       publish: $authenticated
    ```
 
-Always remember, **the order of packages access is important**, packages are mached always top to bottom.
+Ricorda sempre, **l'ordine di accesso ai pacchetti è importante**, i pacchetti vengono combinati sempre dall'alto verso il basso.
 
-### Using public packages from npmjs.org
+### Utilizzo di pacchetti pubblici da npmjs.org
 
-If some package doesn't exist in the storage, server will try to fetch it from npmjs.org. Se npmjs.org non funziona, fornirà solo i pacchetti presenti nella cache come se non ne esistessero altri. **Verdaccio will download only what's needed (= requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
+Se qualche pacchetto non esiste nell'archivio, il server proverà a recuperarlo da npmjs.org. Se npmjs.org non funziona, fornirà solo i pacchetti presenti nella cache come se non ne esistessero altri. **Verdaccio will download only what's needed (= requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
 
 **Example:**
 
