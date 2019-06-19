@@ -34,19 +34,19 @@ Ricorda sempre, **l'ordine di accesso ai pacchetti è importante**, i pacchetti 
 
 ### Utilizzo di pacchetti pubblici da npmjs.org
 
-Se qualche pacchetto non esiste nell'archivio, il server proverà a recuperarlo da npmjs.org. Se npmjs.org non funziona, fornirà solo i pacchetti presenti nella cache come se non ne esistessero altri. **Verdaccio will download only what's needed (= requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
+Se qualche pacchetto non esiste nell'archivio, il server proverà a recuperarlo da npmjs.org. Se npmjs.org non funziona, fornirà solo i pacchetti presenti nella cache come se non ne esistessero altri. **Verdaccio scaricherà solo ciò che è necessario (= richiesto dai client)** e questa informazione verrà memorizzata nella cache, così che se il client chiederà la stessa cosa una seconda volta, potrà essere soddisfatto senza dover chiedere a npmjs.org.
 
-**Example:**
+**Esempio:**
 
-If you successfully request `express@4.0.1` from this server once, you'll able to do that again (with all it's dependencies) anytime even if npmjs.org is down. But say `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, this server would say that only `express@4.0.1` (= only what's in the cache) is published, but nothing else.
+Se si fa una richiesta `express@4.0.1` che va a buon fine da questo server una volta, sarà possibile farla un'altra volta (con tutte le sue dipendenze) in ogni momento, anche con npmjs.org non funzionante. Però diciamo che `express@4.0.0` non verrà scaricato fino a che non sia effettivamente necessario per qualcuno. E se npmjs.org è offline, questo server direbbe che solo `express@4.0.1` (= solo quello che è nella cache) viene pubblicato, ma nient'altro.
 
-### Override public packages
+### Override su pacchetti pubblici 
 
-If you want to use a modified version of some public package `foo`, you can just publish it to your local server, so when your type `npm install foo`, **it'll consider installing your version**.
+Se si desidera utilizzare una versione modificata di qualche pacchetto pubblico `foo`, si può pubblicarla solamente sul server locale, così scrivendo `npm install foo`, **valuterà di installare questa versione**.
 
-There's two options here:
+Ci sono due opzioni qui:
 
-1. You want to create a separate **fork** and stop synchronizing with public version.
+1. Si desidera creare un **fork** separato e interrompere la sincronizzazione con la versione pubblica.
 
    Se si vuole fare ciò, si dovrebbe modificare il file di configurazione affinché verdaccio non faccia più richieste a npmjs riguardo a questi pacchetti. Add a separate entry for this package to `config.yaml` and remove `npmjs` from `proxy` list and restart the server.
 
