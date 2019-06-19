@@ -6,7 +6,7 @@ original_id: who-is-using
 
 ### Come Azienda
 
-*If you are using Verdaccio in your bussiness and want to share your experience, let us know. Saremo lieti di ascoltarti.*
+*Se stai utilizzando Verdaccio nella tua azienda e vuoi condividere la tua esperienza, faccelo sapere. Saremo lieti di ascoltarti.*
 
 * [SheetJS](https://sheetjs.com/)
 
