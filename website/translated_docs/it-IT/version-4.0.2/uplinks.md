@@ -4,7 +4,7 @@ title: Uplink
 original_id: uplink
 ---
 
-An *uplink* is a link with an external registry that provides access to external packages.
+Un *uplink* è un link ad un registro esterno che fornisce accesso ai pacchetti esterni.
 
 ![Uplink](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
 
@@ -25,7 +25,7 @@ uplinks:
 
 ### Configurazione
 
-È possibile definire uplink multipli ed ognuno di essi deve avere un nome univoco (key). They can have the following properties:
+È possibile definire uplink multipli ed ognuno di essi deve avere un nome univoco (key). Possono avere le proprietà seguenti:
 
 | Proprietà    | Tipo               | Richiesto | Esempio                                  | Supporto | Descrizione                                                                                                                                     | Impostazione predefinita |
 | ------------ | ------------------ | --------- | ---------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
