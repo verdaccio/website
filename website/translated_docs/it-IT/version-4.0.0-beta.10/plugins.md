@@ -98,7 +98,7 @@ Verdaccio consente di sostituire l'Interfaccia Utente con una personalizzata, ch
 
 ```
 
-> The plugin name prefix must start with `verdaccio-theme`, otherwise the pluging won't load.
+> Il prefisso del nome del plugin deve cominciare con `verdaccio-theme`, altrimenti il plugin non caricherà.
 
 È possibile caricare solo un tema alla volta e considerare le opzioni se è necessario.
 
