@@ -198,7 +198,7 @@ Il seguente è un elenco di estensioni che utilizzano l'API di archiviazione e c
 
 ## Theme Plugin
 
-The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
+Il plugin deve restituire una funzione che restituisca una **stringa**. The string should be the absolute location of the root of your user interface.
 
 ### API
 
