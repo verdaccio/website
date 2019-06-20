@@ -25,7 +25,7 @@ uplinks:
 
 ### Configurazione
 
-È possibile definire uplink multipli ed ognuno di essi deve avere un nome univoco (key). They can have the following properties:
+È possibile definire uplink multipli ed ognuno di essi deve avere un nome univoco (key). Possono avere le proprietà seguenti:
 
 | Proprietà    | Tipo               | Richiesto | Esempio                                  | Supporto | Descrizione                                                                                                                                     | Impostazione predefinita |
 | ------------ | ------------------ | --------- | ---------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
