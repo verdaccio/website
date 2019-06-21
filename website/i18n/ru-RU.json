@@ -442,6 +442,39 @@
       },
       "version-4.0.1/version-4.0.1-docker": {
         "title": "Docker"
+      },
+      "version-4.0.2/version-4.0.2-caching": {
+        "title": "Стратегии кэширования"
+      },
+      "version-4.0.2/version-4.0.2-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.2/version-4.0.2-github-actions": {
+        "title": "Github Actions"
+      },
+      "version-4.0.2/version-4.0.2-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.0.2/version-4.0.2-linking-remote-registry": {
+        "title": "Связь с удалённым репозиторием"
+      },
+      "version-4.0.2/version-4.0.2-notifications": {
+        "title": "Уведомления"
+      },
+      "version-4.0.2/version-4.0.2-packages": {
+        "title": "Доступ к пакетам"
+      },
+      "version-4.0.2/version-4.0.2-reverse-proxy": {
+        "title": "Настройка reverse proxy"
+      },
+      "version-4.0.2/version-4.0.2-ssl": {
+        "title": "Настройка SSL-сертификатов"
+      },
+      "version-4.0.2/version-4.0.2-uplinks": {
+        "title": "Аплинки"
+      },
+      "version-4.0.2/version-4.0.2-webui": {
+        "title": "Веб-интерфейс пользователя"
       }
     },
     "links": {
