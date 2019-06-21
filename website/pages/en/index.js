@@ -159,6 +159,12 @@ class HomeSplash extends React.Component {
                 height="30px"
                 style={{marginTop: '8px'}}
               />
+              <div style={{marginTop: '8px'}}>
+                <a class="twitter-follow-button"
+                  href="https://twitter.com/verdaccio_npm"
+                  data-size="default">
+                  Follow @verdaccio_npm</a>
+              </div>
             </div>
           </div>
         </div>
@@ -190,8 +196,6 @@ const MiddleTitle = (props) => {
     </div>
   );
 }
-
-
 
 class Index extends React.Component {
   render() {
@@ -304,6 +308,14 @@ class Index extends React.Component {
                 }>
                 <translate>More</translate> {siteConfig.title} <translate>Users</translate>
               </a>
+              <br/>
+              <br/>
+              <div>
+                <a href="https://stackshare.io/verdaccio" target="_blank">
+                    <img src="https://camo.githubusercontent.com/133bad5d4856c564b2cb68e7c51ef10ff71b96a3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f466f6c6c6f772532306f6e2d537461636b53686172652d626c75652e7376673f6c6f676f3d737461636b7368617265267374796c653d666c6174"
+                      alt="stackshare" data-canonical-src="https://img.shields.io/badge/Follow%20on-StackShare-blue.svg?logo=stackshare&amp;style=flat"/>
+                </a>
+              </div>
             </div>
           </div>
         </div>
