@@ -79,7 +79,7 @@ We list the articles about Verdaccio, if you have written a blog post or tutoria
 * [Struktur für große Angular-Anwendungen: Microservices, Module, MonoRepo?](https://jaxenter.de/struktur-angular-anwendungen-67467)
 * [Angular in einer Microservices-Welt](https://jaxenter.de/angular-microservices-66445)
 
-## Slides
+## Awọn ifaworanhan
 
 * [Introduction to Verdaccio VueJS Meetup 2018](https://www.slideshare.net/juancarlospicado/introduction-to-verdaccio)
 * [Introduccion Verdaccio Vienna JS Meetup 2019](https://docs.google.com/presentation/d/1eam_OtXCQh5IVYyia2GHhxVD8tb37B0yIadVa8wxQSk/edit?usp=sharing)
