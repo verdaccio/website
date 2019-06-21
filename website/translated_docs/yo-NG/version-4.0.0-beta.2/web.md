@@ -21,13 +21,13 @@ web:
 
 All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
 
-### Configuration
+### Iṣeto
 
 | Ohun ini      | Iru        | Ti o nilo | Apẹẹrẹ                         | Atilẹyin   | Apejuwe                                                                                                                                              |
 | ------------- | ---------- | --------- | ------------------------------ | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | enable        | boolean    | Rara      | true/false                     | gbogbo     | allow to display the web interface                                                                                                                   |
 | title         | okun       | Rara      | Verdaccio                      | gbogbo     | HTML head title description                                                                                                                          |
-| gravatar      | boolean    | Rara      | true                           | `>v4`   | Gravatars will be generated under the hood if this property is enabled                                                                               |
+| gravatar      | boolean    | Rara      | otitọ                          | `>v4`   | Gravatars will be generated under the hood if this property is enabled                                                                               |
 | sort_packages | [asc,desc] | Rara      | asc                            | `>v4`   | By default private packages are sorted by ascending                                                                                                  |
 | logo          | okun       | Rara      | http://my.logo.domain/logo.png | gbogbo     | a URI where logo is located (header logo)                                                                                                            |
 | primary_color | okun       | Rara      | "#4b5e40"                      | `>4`    | The primary color to use throughout the UI (header, etc)                                                                                             |
