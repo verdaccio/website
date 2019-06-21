@@ -4,7 +4,7 @@ title: Configurazione di Proxy inverso
 original_id: reverse-proxy
 ---
 
-Using a reverse proxy is a common practice. The following configurations are the most recommended and used ones.
+Utilizzare un proxy inverso è una pratica comune. Le configurazioni seguenti sono le più raccomandate e utilizzate.
 
 # Apache
 

@@ -106,7 +106,7 @@ packages:
 
 #### Didena ṣiṣe aṣoju ikọkọ ti eto pato awọn akojọ kan
 
-O le fẹ dènà ọkan tabi ọpọlọpọ awọn akojọ lati sawari lati awọn ibi ipamọ latọna jijin., Ṣugbọn, ni bakanna, fayegba awọn ẹlomiran lati wọle si awọn orisirisi *uplinks*.
+O le fẹ dènà ọkan tabi ọpọlọpọ awọn akojọ lati sawari lati awọn ibi ipamọ latọna jijin., sugbọn, ni bakanna, fayegba awọn ẹlomiran lati wọle si awọn orisirisi *uplinks*.
 
 Jẹ ki a wo apẹẹrẹ wọnyii:
 

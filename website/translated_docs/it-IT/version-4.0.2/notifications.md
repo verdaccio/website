@@ -10,7 +10,7 @@ Notify fu creato principalmente per essere utilizzato con gli Incoming webhook d
 
 Un esempio con un hook **HipChat**, **Stride** e **Google Hangouts Chat**:
 
-> Verdaccio supports any API, feel free to add more examples.
+> Verdaccio supporta qualsiasi API, sentiti libero di aggiungere ulteriori esempi.
 
 #### Notifica singola
 

@@ -1,5 +1,5 @@
 ---
-id: version-4.0.2-caching
+id: version-4.0.2-ifisapo iranti
 title: Awọn ọna ifisapo iranti
 original_id: ifisapo iranti
 ---
@@ -38,11 +38,11 @@ uplinks:
     maxage: 30m
 ```
 
-Sise alekun iye ti `maxage` ninu awọn idari `uplink` kọọkan maa jẹ bibeere nigbagbogbo. This might be a valid strategy if you don't update dependencies so often.
+Sise alekun iye ti `maxage` ninu awọn idari `uplink` kọọkan maa jẹ bibeere nigbagbogbo. Eyi le jẹ ilana to fẹsẹmulẹ ti o ko ba maa ṣe imudojuiwọn awọn agbẹkẹle nigbagbogbo.
 
 ## Lilo iranti dipo lilo ààyè ìtọ́jú lórí kọ̀mpútà
 
-Nigbamiran awọn akopọ ifisapo iranti o kin ṣe igbesẹ pataki, dipo ti ọna awọn akopọ lati awọn ibi iforukọsilẹ ti o yatọ ati nini iyọrisi awọn akoko agbedide to yara. There are two plugins that avoid write in a physical hard drive at all using the memory.
+Nigbamiran awọn akopọ ifisapo iranti o kin ṣe igbesẹ pataki, dipo ti ọna awọn akopọ lati awọn ibi iforukọsilẹ ti o yatọ ati nini iyọrisi awọn akoko agbedide to yara. Awọn ohun elo afikun meji wa to yago patapata fun kikọ sinu ààyè ìtọ́jú alafojuri ti kọ̀mpútà nipa lilo iranti.
 
 ```bash
   npm install -g verdaccio-auth-memory
@@ -63,4 +63,4 @@ store:
     limit: 1000
 ```
 
-Remember, once the server is restarted the data is being lost, we recommend this setup in cases where you do not need to persist at all.
+Ranti, ni kete ti olupese naa ba ti jẹ atunbẹrẹ ipadanu data naa ti n waye, a ṣe igbaniyanju iṣeto yii ni awọn aaye ti o ko ba ti nilo lati ṣe atẹnumọ.

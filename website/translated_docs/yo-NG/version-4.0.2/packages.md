@@ -1,5 +1,5 @@
 ---
-id: version-4.0.2-packages
+id: version-4.0.2-awọn akopọ
 title: Iwọlesi Akopọ
 original_id: awọn akopọ
 ---
@@ -95,7 +95,7 @@ O le sayipada awọn ihuwasi to ti wa tẹlẹ nipa lilo ifasẹsi ohun elo to y
 
 #### Didena wiwọle si iṣeto ti awọn akojọ
 
-If you want to block the access/publish to a specific group of packages. Just do not define `access` and `publish`.
+Ti o ba fẹ lati dènà wiwọle/atẹjade lọ si pato ẹgbẹ ti awọn akojọ kan. Just do not define `access` and `publish`.
 
 ```yaml
 packages:
@@ -107,7 +107,7 @@ packages:
 
 #### Didena ṣiṣe aṣoju ikọkọ ti eto pato awọn akojọ kan
 
-O le fẹ dènà ọkan tabi ọpọlọpọ awọn akojọ lati sawari lati awọn ibi ipamọ latọna jijin., Ṣugbọn, ni bakanna, fayegba awọn ẹlomiran lati wọle si awọn orisirisi *uplinks*.
+O le fẹ dènà ọkan tabi ọpọlọpọ awọn akojọ lati sawari lati awọn ibi ipamọ latọna jijin., sugbọn, ni bakanna, fayegba awọn ẹlomiran lati wọle si awọn orisirisi *uplinks*.
 
 Jẹ ki a wo apẹẹrẹ wọnyii:
 
@@ -167,7 +167,7 @@ Ninu apẹẹrẹ titẹlẹ, ihuwasi naa yoo jẹ jijuwe:
 * awọn olumulo to ni ifasẹsi nikan ni o le ṣe atẹjade awọn akopọ `my-company-*`, sugbọn ** ko si aaye fun ẹnikẹni lati aitẹjade wọn**.
 * Ti `unpublish` ba ti jẹ sisọ jade, iwọle naa yoo jẹ fifọwọsi tabi kikọ nipasẹ agbekalẹ `publish` naa.
 
-### Configuration
+### Iṣeto
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 

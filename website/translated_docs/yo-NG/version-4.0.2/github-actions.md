@@ -1,5 +1,5 @@
 ---
-id: version-4.0.2-github-actions
+id: version-4.0.2-awọn igbesẹ-github
 title: Awọn igbesẹ-Github
 original_id: awọn igbesẹ-github
 ---

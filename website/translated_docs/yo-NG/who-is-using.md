@@ -1,17 +1,17 @@
 ---
-id: who-is-using
-title: "Who is using Verdaccio?"
+id: tani-n-lo
+title: "Tani o nlo Verdaccio?"
 ---
 
-### As a Business
+### Gẹgẹbi Iṣowo
 
-*If you are using Verdaccio in your business and want to share your experience, let us know. We will happy to listen to you.*
+*Ti o ba nlo Verdaccio ninu iṣowo rẹ ti o si fẹ lati sọ nipa iriri rẹ, jẹ ki a mọ. Inu wa yoo dun lati tẹtisi ọ.*
 
 * [SheetJS](https://sheetjs.com/)
 
-### Open Source Projects
+### Awọn iṣẹ akanṣe Orisun Gbangba
 
-> **Feel free to suggest other OSS are using Verdaccio.**
+> **Ma se kọ lati daba OSS miiran ti o nlo Verdaccio.**
 
 * [pnpm](https://pnpm.js.org/)
 * [Storybook](https://storybook.js.org/)
@@ -25,6 +25,6 @@ title: "Who is using Verdaccio?"
 * [Wix Yoshi](https://github.com/wix/yoshi)
 * [The AWS Cloud Development Kit](https://github.com/awslabs/aws-cdk)
 
-#### Readme Recomendations
+#### Awọn igbaniyanju Readme
 
 * [react-native-cli](https://github.com/react-native-community/react-native-cli/blob/master/CONTRIBUTING.md)

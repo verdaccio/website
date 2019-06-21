@@ -30,61 +30,61 @@ La guida seguente è un elenco delle migliore pratiche raccolte e che raccomandi
       publish: $authenticated
    ```
 
-Always remember, **the order of packages access is important**, packages are mached always top to bottom.
+Ricorda sempre, **l'ordine di accesso ai pacchetti è importante**, i pacchetti vengono combinati sempre dall'alto verso il basso.
 
-### Using public packages from npmjs.org
+### Utilizzo di pacchetti pubblici da npmjs.org
 
-If some package doesn't exist in the storage, server will try to fetch it from npmjs.org. Se npmjs.org non funziona, fornirà solo i pacchetti presenti nella cache come se non ne esistessero altri. **Verdaccio will download only what's needed (= requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
+Se qualche pacchetto non esiste nell'archivio, il server proverà a recuperarlo da npmjs.org. Se npmjs.org non funziona, fornirà solo i pacchetti presenti nella cache come se non ne esistessero altri. **Verdaccio scaricherà solo ciò che è necessario (= richiesto dai client)** e questa informazione verrà memorizzata nella cache, così che se il client chiederà la stessa cosa una seconda volta, potrà essere soddisfatto senza dover chiedere a npmjs.org.
 
-**Example:**
+**Esempio:**
 
-If you successfully request `express@4.0.1` from this server once, you'll able to do that again (with all it's dependencies) anytime even if npmjs.org is down. But say `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, this server would say that only `express@4.0.1` (= only what's in the cache) is published, but nothing else.
+Se si fa una richiesta `express@4.0.1` che va a buon fine da questo server una volta, sarà possibile farla un'altra volta (con tutte le sue dipendenze) in ogni momento, anche con npmjs.org non funzionante. Però diciamo che `express@4.0.0` non verrà scaricato fino a che non sia effettivamente necessario per qualcuno. E se npmjs.org è offline, questo server direbbe che solo `express@4.0.1` (= solo quello che è nella cache) viene pubblicato, ma nient'altro.
 
-### Override public packages
+### Override su pacchetti pubblici 
 
-If you want to use a modified version of some public package `foo`, you can just publish it to your local server, so when your type `npm install foo`, **it'll consider installing your version**.
+Se si desidera utilizzare una versione modificata di qualche pacchetto pubblico `foo`, si può pubblicarla solamente sul server locale, così scrivendo `npm install foo`, **valuterà di installare questa versione**.
 
-There's two options here:
+Ci sono due opzioni qui:
 
-1. You want to create a separate **fork** and stop synchronizing with public version.
+1. Si desidera creare un **fork** separato e interrompere la sincronizzazione con la versione pubblica.
 
-   Se si vuole fare ciò, si dovrebbe modificare il file di configurazione affinché verdaccio non faccia più richieste a npmjs riguardo a questi pacchetti. Add a separate entry for this package to `config.yaml` and remove `npmjs` from `proxy` list and restart the server.
+   Se si vuole fare ciò, si dovrebbe modificare il file di configurazione affinché verdaccio non faccia più richieste a npmjs riguardo a questi pacchetti. Aggiungere un'entrata separata per questo pacchetto a` config.yaml`, rimuovere `npmjs` dalla lista `proxy` e riavviare il server.
 
    ```yaml
     packages:
       '@my-company/*':
         access: $all
         publish: $authenticated
-        # comment it out or leave it empty
+        # commentare o lasciare vuoto
         # proxy:
    ```
 
-   When you publish your package locally, **you should probably start with version string higher than existing one**, so it won't conflict with existing package in the cache.
+   Quando si pubblica localmente il pacchetto, **si dovrebbe iniziare con una stringa di versione superiore a quella esistente**, così non entrerà in conflitto con il pacchetto esistente nella cache.
 
 2. Si vuole temporaneamente utilizzare la propria versione, ma tornare alla pubblica appena questa sia aggiorna,.
 
-   In order to avoid version conflicts, **you should use a custom pre-release suffix of the next patch version**. For example, if a public package has version 0.1.2, you can upload `0.1.3-my-temp-fix`.
+   Per evitare qualsiasi conflitto delle versioni, **si dovrebbe usare un suffisso personalizzato rilasciato prima della successiva versione della patch**. Per esempio, se un pacchetto pubblico ha la versione 0.1.2, si può caricare `0.1.3-my-temp-fix`.
 
    ```bash
     npm version 0.1.3-my-temp-fix
     npm --publish --tag fix --registry http://localhost:4873
    ```
 
-   This way your package will be used until its original maintainer updates his public package to `0.1.3`.
+   In questo modo il pacchetto verrà utilizzato fino a che il suo maintainer originale aggiorna 
+ il suo pacchetto pubblico a `0.1.3`.
 
 
 
 
-## Security
+## Sicurezza
 
-The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recomendations.
+La sicurezza comincia nel proprio ambiente, perciò invitiamo a leggere assolutamente **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** e a seguire le raccomandazioni.
 
-### Package Access
+### Accesso ai Pacchetti
 
-By default all packages are you publish in Verdaccio are accessible for all public, we totally recommend protect your registry from external non authorized users updating `access` property to `$authenticated`.
+Di default tutti i pacchetti che pubblichi su Verdaccio sono accessibili a chiunque, ti raccomandiamo vivamente di proteggere il tuo registro da utenti esterni non autorizzati che aggiornano la proprietà `access` a `$authenticated`.
 
-```yaml
-  packages:
+```packages:
     '@my-company/*':
       access: $authenticated
       publish: $authenticated
@@ -96,7 +96,7 @@ By default all packages are you publish in Verdaccio are accessible for all publ
       publish: $authenticated
    ```
 
-In that way, **nobody will take advance of your registry unless is authorized and private packages won't be displayed in the User Interface**.
+In questo modo, **nessuno sarà in grado di utilizzare il tuo registro a meno che non sia autorizzato e i pacchetti privati non verranno visualizzati nell'Interfaccia Utente**.
 
 ## Server
 

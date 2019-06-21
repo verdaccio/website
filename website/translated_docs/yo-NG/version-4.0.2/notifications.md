@@ -1,5 +1,5 @@
 ---
-id: version-4.0.2-notifications
+id: version-4.0.2-awọn ifitonileti
 title: Awọn ifitonileti
 original_id: awọn ifitonileti
 ---
@@ -148,7 +148,7 @@ O le wọle si akopọ ti o n jẹ gbigbe jade pẹlu koko-ọrọ `{{publishedP
     {{ publisher.name }} ti ṣe agbejade {{ publishedPackage }}
     
 
-## Configuration
+## Iṣeto
 
 | Ohun ini            | Iru        | Ti o nilo | Atilẹyin | Atilẹwa | Apejuwe                                                                                                |
 | ------------------- | ---------- | --------- | -------- | ------- | ------------------------------------------------------------------------------------------------------ |

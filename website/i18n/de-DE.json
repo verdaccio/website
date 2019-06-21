@@ -445,33 +445,33 @@
       }
     },
     "links": {
-      "Docs": "Docs",
+      "Docs": "Dokumentation",
       "Notes": "Notes",
       "Blog": "Blog",
       "Twitter": "Twitter",
-      "Help": "Help",
+      "Help": "Hilfe",
       "GitHub": "GitHub",
       "Team": "Team",
-      "Donate": "Donate"
+      "Donate": "Spenden"
     },
     "categories": {
-      "Introduction": "Introduction",
+      "Introduction": "Einführung",
       "Features": "Features",
       "Server": "Server",
-      "Development": "Development",
+      "Development": "Entwicklung",
       "DevOps": "DevOps",
-      "Guides": "Guides",
+      "Guides": "Ratgeber",
       "Configuration": "Configuration",
       "Plugins": "Plugins"
     }
   },
   "pages-strings": {
     "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Erfahren Sie mehr über die [Dokumentation auf dieser Seite.] (/ docs/en/installation.html)",
-    "Browse Docs|no description given": "Browse Docs",
+    "Browse Docs|no description given": "Dokumentation durchsuchen",
     "Ask questions about the documentation and project|no description given": "Stellen Sie Fragen über die Dokumentation und das Projekt",
     "Join the community|no description given": "Werde Teil der Community",
     "Find out what's new with this project|no description given": "Finden Sie heraus, was neu bei diesem Projekt ist",
-    "Stay up to date|no description given": "Up to date bleiben",
+    "Stay up to date|no description given": "Auf dem Laufenden bleiben",
     "Need help?|no description given": "Brauchen Sie Hilfe?",
     "This project is maintained by a dedicated group of people.|statement made to reader": "This project is maintained by a dedicated group of people.",
     "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)|no description given": "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)",

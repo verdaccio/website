@@ -7,52 +7,52 @@ Irulogo jẹ didalara nipasẹ **[Breno Rodrigues](https://github.com/rodriguesb
 
 > Gbogbo awọn logo ni iwe aṣẹ labẹ [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
 
-Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
+Ọpẹ pataki si *[@Lisapressmar](https://github.com/Lisapressmar)* fun ilọwọsi rẹ pẹlu awọn ọpọlọpọ ọna ati iwọn aworan.
 
 <div id="codefund">''</div>
 
-## Symbols
+## Awọn aami
 
-**With text**
+**Pẹlu ọrọ**
 
-![symbol tiny with text](assets/logo/symbol/png/logo-small-header-bottom.png)
+![aami bintin pẹlu ọrọ](assets/logo/symbol/png/logo-small-header-bottom.png)
 
-![symbol medium with text](assets/logo/symbol/png/logo-small-header-bottom@2x.png)
+![aami alabọde pẹlu ọrọ](assets/logo/symbol/png/logo-small-header-bottom@2x.png)
 
-![symbol big with text](assets/logo/symbol/png/logo-small-header-bottom@3x.png)
-
-**SVG**
-
-![symbol svg](assets/logo/symbol/svg/logo-small-header-bottom.svg)
-
-**No text**
-
-![symbol tiny](assets/logo/symbol/png/verdaccio-tiny.png)
-
-![symbol medium](assets/logo/symbol/png/verdaccio-tiny@2x.png)
-
-![symbol big](assets/logo/symbol/png/verdaccio-tiny@3x.png)
+![aami nla pẹlu ọrọ](assets/logo/symbol/png/logo-small-header-bottom@3x.png)
 
 **SVG**
 
-![svg format symbol no text](assets/logo/symbol/svg/verdaccio-tiny.svg)
+![aami svg](assets/logo/symbol/svg/logo-small-header-bottom.svg)
 
-### Black&White
+**Ko si ọrọ**
 
-![symbol bw small](assets/logo/symbol/png/verdaccio-blackwhite.png)
+![aami bintin](assets/logo/symbol/png/verdaccio-tiny.png)
 
-![symbol bw medium](assets/logo/symbol/png/verdaccio-blackwhite@2x.png)
+![aami alabọde](assets/logo/symbol/png/verdaccio-tiny@2x.png)
 
-![symbol bw big](assets/logo/symbol/png/verdaccio-blackwhite@3x.png)
+![aami nla](assets/logo/symbol/png/verdaccio-tiny@3x.png)
 
 **SVG**
 
-![symbol bw svg](assets/logo/symbol/svg/verdaccio-blackwhite.svg)
+![aami ọna svg ko si ọrọ](assets/logo/symbol/svg/verdaccio-tiny.svg)
 
-## Banner
+### Dudu&Funfun
 
-![banner small](assets/logo/banner/png/verdaccio-banner.png)
+![aami bw kekere](assets/logo/symbol/png/verdaccio-blackwhite.png)
 
-![banner medium](assets/logo/banner/png/verdaccio-banner@2x.png)
+![aami bw alabọde](assets/logo/symbol/png/verdaccio-blackwhite@2x.png)
 
-![banner big](assets/logo/banner/png/verdaccio-banner@3x.png)
+![aami bw nla](assets/logo/symbol/png/verdaccio-blackwhite@3x.png)
+
+**SVG**
+
+![aami bw svg](assets/logo/symbol/svg/verdaccio-blackwhite.svg)
+
+## Bana
+
+![bana kekere](assets/logo/banner/png/verdaccio-banner.png)
+
+![baba alabọde](assets/logo/banner/png/verdaccio-banner@2x.png)
+
+![bana nla](assets/logo/banner/png/verdaccio-banner@3x.png)

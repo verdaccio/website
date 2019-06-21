@@ -3,19 +3,19 @@ id: puppet
 title: "Puppet"
 ---
 
-Install verdaccio for Debian, Ubuntu, Fedora, and RedHat.
+Fi verdaccio sori ẹrọ fun Debian, Ubuntu, Fedora, ati RedHat.
 
 # Ilo
 
-There are two variants to install verdaccio using this Puppet module:
+Awọn orisi ọna meji lo wa lati fi verdaccio sori ẹrọ nipa lilo modulu Puppet yii:
 
-* Apply-mode (with puppet-apply and no puppetmaster setup needed)
-* Master-Agent-mode (with puppet-agent accessing your configuration through the puppetmaster).
+* Ipo-iṣamulo (pẹlu puppet-apply ati pe ko nilo siseto puppetmaster)
+* Ipo-Master-Agent (pẹlu puppet-agent ti n wọle si iṣeto rẹ nipasẹ puppetmaster).
 
-In both variants you have to explicitely call "class nodejs {}" in your puppet script because the puppet-verdaccio module only defines this as a requirement, so you have all the flexibility you want when installing nodejs. Scroll down for details about Master-Agent-mode variant.
+Ninu awọn orisi mejeeji o ni lati pe ipe "kilasi nodejs {}" kedere ninu iwe afọwọkọ puppet rẹ nitori modulu puppet-verdaccio naa kan ma n ṣe asoye eyi gẹgẹbi ibeere kan, nitorina o ni gbogbo irọrun ti o fẹ nigbati o ba n fi nodejs sori ẹrọ. Yi lọ si isalẹ fun awọn alaye nipa orisi ipo-Master-Agent.
 
-For further information:
+Fun alaye siwaju sii:
 
 <https://github.com/verdaccio/puppet-verdaccio>
 
-> We are looking for active contributors for this integration, if you are interested [refers to this ticket](https://github.com/verdaccio/puppet-verdaccio/issues/11).
+> A n wa awọn oluranlọwọ ti n ṣiṣe lọwọ fun imuṣiṣẹpọ yii, ti o ba nifẹsi [tọka si tikẹti yi](https://github.com/verdaccio/puppet-verdaccio/issues/11).
