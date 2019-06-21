@@ -1,44 +1,44 @@
 ---
 id: version-4.0.0-beta.10-ssl
-title: Set up the SSL Certificates
+title: Ṣeto Awọn iwe ẹri SSL
 original_id: ssl
 ---
 
-Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.
+Tẹle awọn itọsọna wọnyi lati seto iwe ẹri SSL kan lati ṣiṣẹ bi ibiiforukọsilẹ NPM kan lori HTTPS.
 
-* Update the listen property in your `~/.config/verdaccio/config.yaml`:
+* Ṣe imudojuiwọn ohun elo itẹtisi ni `~/.config/verdaccio/config.yaml` rẹ:
 
     listen: 'https://your.domain.com/'
     
 
-Once you've updated the listen property and try to run verdaccio again, it will ask for certificates.
+Lọgan ti o ti se imudojuiwọn ohun elo itẹtisi ati gbigbiyanju lati ṣe imuṣiṣẹ verdaccio lẹẹkansi, yoo beere fun awọn iwe ẹri.
 
-* Generate your certificates
+* Pilẹṣẹ awọn iwe ẹri rẹ
 
      $ openssl genrsa -out /Users/user/.config/verdaccio/verdaccio-key.pem 2048
      $ openssl req -new -sha256 -key /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-csr.pem
      $ openssl x509 -req -in /Users/user/.config/verdaccio/verdaccio-csr.pem -signkey /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-cert.pem
      ````
     
-    * Edit your config file `/Users/user/.config/verdaccio/config.yaml` and add the following section:
+    * Ṣatunkọ faili iṣeto rẹ `/Users/user/.config/verdaccio/config.yaml` ki o si se afikun abala wọnyi:
     
     
 
 https: key: /Users/user/.config/verdaccio/verdaccio-key.pem cert: /Users/user/.config/verdaccio/verdaccio-cert.pem ca: /Users/user/.config/verdaccio/verdaccio-csr.pem
 
-    <br />Alternatively, if you have a certificate with the `server.pfx` format, you can add the following configuration section: (The passphrase is optional and only needed if your certificate is encrypted.)
+    <br />Ni ọna miiran, ti o ba ni iwe ẹri pẹlu ilana ti `server.pfx`, o le se afikun awọn abala iṣeto wọnyii: (Gbolohun irekọja naa kii se dandan ati pe o ma jẹ ni nilo nikan to ba jẹ pe iwe ẹri rẹ jẹ alaroko.)
     
     
 
 https: pfx: /Users/user/.config/verdaccio/server.pfx passphrase: 'secret' ````
 
-You can find more info on the `key`, `cert`, `ca`, `pfx`, and `passphrase` arguments in the [Node documentation](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
+O le ri alaye diẹ sii lori awọn ariyanjiyan `key`, `cert`, `ca`, `pfx`, ati `passphrase` ni [Iwe akọsilẹ Oju ipade](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
 
-* Run `verdaccio` in your command line.
+* Se imusisẹ `verdaccio` ninu ila aṣẹ rẹ.
 
-* Open the browser and visit `https://your.domain.com:port/`
+* Ṣii ẹrọ aṣàwákiri ayelujara ki o si ṣabẹwo si `https://your.domain.com:port/`
 
-These instructions are mostly valid under OSX and Linux; on Windows the paths will vary, but the steps are the same.
+Awọn itọsọna wọnyi ma n saba fẹsẹmulẹ labẹ OSX ati Linux; lori Windows awọn ọna naa yoo yatọ, ṣugbọn awọn igbesẹ naa jẹ bakanna.
 
 ## Docker
 
