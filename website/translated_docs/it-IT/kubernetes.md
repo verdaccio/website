@@ -49,7 +49,7 @@ helm del --purge npm
 
 #### Preparazione
 
-Copiare la [configurazione esistente](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml) e adattarla al proprio caso:
+Copiare la [configurazione esistente](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml) e adattarla al proprio caso d'uso:
 
 ```bash
 wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/docker.yaml -O config.yaml
