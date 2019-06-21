@@ -10,48 +10,48 @@ The logotype was designed by **[Breno Rodrigues](https://github.com/rodriguesbre
 
 Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
 
-## Symbols
+## Awọn aami
 
-**With text**
+**Pẹlu ọrọ**
 
-![symbol tiny with text](/img/logo/symbol/png/logo-small-header-bottom.png)
+![aami bintin pẹlu ọrọ](/img/logo/symbol/png/logo-small-header-bottom.png)
 
-![symbol medium with text](/img/logo/symbol/png/logo-small-header-bottom@2x.png)
+![aami alabọde pẹlu ọrọ](/img/logo/symbol/png/logo-small-header-bottom@2x.png)
 
-![symbol big with text](/img/logo/symbol/png/logo-small-header-bottom@3x.png)
-
-**SVG**
-
-![symbol svg](/img/logo/symbol/svg/logo-small-header-bottom.svg)
-
-**No text**
-
-![symbol tiny](/img/logo/symbol/png/verdaccio-tiny.png)
-
-![symbol medium](/img/logo/symbol/png/verdaccio-tiny@2x.png)
-
-![symbol big](/img/logo/symbol/png/verdaccio-tiny@3x.png)
+![aami nla pẹlu ọrọ](/img/logo/symbol/png/logo-small-header-bottom@3x.png)
 
 **SVG**
 
-![svg format symbol no text](/img/logo/symbol/svg/verdaccio-tiny.svg)
+![aami svg](/img/logo/symbol/svg/logo-small-header-bottom.svg)
 
-### Black&White
+**Ko si ọrọ**
 
-![symbol bw small](/img/logo/symbol/png/verdaccio-blackwhite.png)
+![aami bintin](/img/logo/symbol/png/verdaccio-tiny.png)
 
-![symbol bw medium](/img/logo/symbol/png/verdaccio-blackwhite@2x.png)
+![aami alabọde](/img/logo/symbol/png/verdaccio-tiny@2x.png)
 
-![symbol bw big](/img/logo/symbol/png/verdaccio-blackwhite@3x.png)
+![aami nla](/img/logo/symbol/png/verdaccio-tiny@3x.png)
 
 **SVG**
 
-![symbol bw svg](/img/logo/symbol/svg/verdaccio-blackwhite.svg)
+![aami ọna svg ko si ọrọ](/img/logo/symbol/svg/verdaccio-tiny.svg)
 
-## Banner
+### Dudu&Funfun
 
-![banner small](/img/logo/banner/png/verdaccio-banner.png)
+![aami bw kekere](/img/logo/symbol/png/verdaccio-blackwhite.png)
 
-![banner medium](/img/logo/banner/png/verdaccio-banner@2x.png)
+![aami bw alabọde](/img/logo/symbol/png/verdaccio-blackwhite@2x.png)
 
-![banner big](/img/logo/banner/png/verdaccio-banner@3x.png)
+![aami bw nla](/img/logo/symbol/png/verdaccio-blackwhite@3x.png)
+
+**SVG**
+
+![aami bw svg](/img/logo/symbol/svg/verdaccio-blackwhite.svg)
+
+## Bana
+
+![bana kekere](/img/logo/banner/png/verdaccio-banner.png)
+
+![baba alabọde](/img/logo/banner/png/verdaccio-banner@2x.png)
+
+![bana nla](/img/logo/banner/png/verdaccio-banner@3x.png)
