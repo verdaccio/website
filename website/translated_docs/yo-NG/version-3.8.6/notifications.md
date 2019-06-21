@@ -148,7 +148,7 @@ You can acces to the package is being published with the keyword `{{publishedPac
     {{ publisher.name }} has published {{publishedPackage}}"}
     
 
-## Configuration
+## Iṣeto
 
 | Ohun ini            | Iru        | Ti o nilo | Atilẹyin | Atilẹwa | Apejuwe                                                                                                |
 | ------------------- | ---------- | --------- | -------- | ------- | ------------------------------------------------------------------------------------------------------ |
