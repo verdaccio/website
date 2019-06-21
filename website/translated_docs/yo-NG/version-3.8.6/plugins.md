@@ -1,16 +1,16 @@
 ---
 id: version-3.8.6-plugins
-title: Plugins
-original_id: plugins
+title: Awọn ohun elo
+original_id: awọn ohun elo
 ---
 
 Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
-> If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
+> Ti o ba nifẹ lati se agbedide asomọ ti ara rẹ, ka [abala](dev-plugins.md) agbedide.
 
 ## Ilo
 
-### Installation
+### Ifi sori ẹrọ
 
 ```bash
 $> npm install --global verdaccio-activedirectory
@@ -21,7 +21,7 @@ $> npm install --global verdaccio-activedirectory
     $> npm install --global sinopia-memory
     
 
-### Configuration
+### Iṣeto
 
 Open the `config.yaml` file and update the `auth` section as follows:
 
@@ -70,7 +70,7 @@ middlewares:
     enabled: true
 ```
 
-> You might follow the [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) as base example.
+> O le tẹle [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) bi apẹẹrẹ ipilẹ.
 
 ### Store Plugin Configuration
 
@@ -84,7 +84,7 @@ store:
 
 > If you define a custom store, the property **storage** in the configuration file will be ignored.
 
-## Legacy plugins
+## Awọn ohun elo Ijogun
 
 ### Sinopia Plugins
 
@@ -110,7 +110,7 @@ store:
 
 > All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the modern verdaccio API and using the prefix as *verdaccio-xx-name*.
 
-## Verdaccio Plugins
+## Awọn ohun elo Verdaccio
 
 (compatible since 2.1.x)
 
@@ -140,6 +140,6 @@ store:
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
 
-## Caveats
+## Awọn akiyesi
 
 > Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
