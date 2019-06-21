@@ -1,26 +1,26 @@
 ---
 id: version-3.8.6-server-configuration
-title: Server Configuration
-original_id: server-configuration
+title: Iṣeto Olupese
+original_id: iṣeto-olupese
 ---
 
-This is mostly basic linux server configuration stuff but I felt it important to document and share the steps I took to get verdaccio running permanently on my server. You will need root (or sudo) permissions for the following.
+Eyi jẹ ohun ipilẹ iṣeto olupese ti linux ṣugbọn mo lero pe o ṣe pataki lati ṣe akosile ati pin awọn igbesẹ ti mo gbe lati mu ki verdaccio ma ṣiṣẹ titilailai lori olupese mi. O ma nilo awọn igbanilaaye ipile (tabi sudo) fun awọn wọnyii.
 
-## Running as a separate user
+## Nṣiṣẹ gẹgẹbi olumulo ti o yatọ
 
-First create the verdaccio user:
+Kọkọ ṣẹda olumulo verdaccio naa:
 
 ```bash
 $ sudo adduser --system --gecos 'Verdaccio NPM mirror' --group --home /var/lib/verdaccio verdaccio
 ```
 
-Or, in case you do not have `adduser`:
+Tabi, toba sẹlẹ pe o ko ni `adduser`:
 
 ```bash
 $ sudo useradd --system --comment 'Verdaccio NPM mirror' --create-home --home-dir /var/lib/verdaccio --shell /sbin/nologin verdaccio
 ```
 
-You create a shell as the verdaccio user using the following command:
+O ṣẹda ikarahun gẹgẹbi olumulo verdaccio nipa lilo aṣẹ wọnyi:
 
 ```bash
 $ sudo su -s /bin/bash verdaccio
@@ -29,24 +29,24 @@ $ cd
 
 The `cd` command sends you to the home directory of the verdaccio user. Make sure you run verdaccio at least once to generate the config file. Edit it according to your needs.
 
-## Listening on all addresses
+## Gbigbọ lori gbogbo awọn adirẹsi
 
-If you want to listen to every external address set the listen directive in the config to:
+Ti o ba fẹ lati tẹtisi gbogbo adirẹsi itagbangba ṣeto ilana igbọran ninu iṣeto naa lati:
 
 ```yaml
-# you can specify listen address (or simply a port)
-listen: 0.0.0.0:4873
+# o le se adirẹsi itẹtisi ni pato (tabi ibudo kan nìkan)
+gbọ: 0.0.0.0:4873
 ```
 
-If you are running verdaccio in a Amazon EC2 Instance, [you will need set the listen in change your config file](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) as is described above.
+Ti o ba n mu verdaccio ṣiṣẹ ninu Ilana Amazon EC2 kan, [o ma nilo lati ṣeto itẹtisi naa ni aaye ayipada faili iṣeto rẹ](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) bi a ti salaye loke.
 
 > Configure Apache or nginx? Please check out the [Reverse Proxy Setup](reverse-proxy.md)
 
-## Keeping verdaccio running forever
+## Mimu verdaccio ṣiṣẹ titilailai
 
-You can use node package called ['forever'](https://github.com/nodejitsu/forever) to keep verdaccio running all the time.
+O le lo akopọ oju ipade ti a n pe ni ['forever'](https://github.com/nodejitsu/forever) lati mu ki verdaccio ma ṣiṣẹ ni gbogbo igba.
 
-First install `forever` globally:
+Kọkọ fi `forever` sori ẹrọ kaakiri agbaye:
 
 ```bash
 $ sudo npm install -g forever
@@ -58,9 +58,9 @@ Make sure you've run verdaccio at least once to generate the config file and wri
 $ forever start `which verdaccio`
 ```
 
-You can check the documentation for more information on how to use forever.
+O le ṣayẹwo awọn iwe akọsilẹ fun alaye diẹ sii lori bi o ṣe le lo forever.
 
-## Surviving server restarts
+## Olupese ti o ye ti n bẹrẹ lẹẹkansi
 
 You can use `crontab` and `forever` together to start verdaccio after a server reboot. When you're logged in as the verdaccio user do the following:
 
@@ -80,7 +80,7 @@ $ which forever
 $ which verdaccio
 ```
 
-## Using systemd
+## Lilo systemd
 
 Instead of `forever` you can use `systemd` for starting verdaccio and keeping it running. Verdaccio installation has systemd unit, you only need to copy it:
 
@@ -88,4 +88,4 @@ Instead of `forever` you can use `systemd` for starting verdaccio and keeping it
 $ sudo cp /usr/lib/node_modules/verdaccio/systemd/verdaccio.service /lib/systemd/system/ && sudo systemctl daemon-reload
 ```
 
-This unit assumes you have configuration in `/etc/verdaccio/config.yaml` and store data in `/var/lib/verdaccio`, so either move your files to those locations or edit the unit.
+Ẹya yii gba wipe o ni iṣeto ni `/etc/verdaccio/config.yaml` ati tọju data ni `/var/lib/verdaccio`, nitorina boya ki o gbe awọn faili rẹ lọ si awọn aaye yẹn tabi satunkọ ẹya naa.
