@@ -1,19 +1,19 @@
 ---
 id: version-3.8.6-ssl
-title: Set up the SSL Certificates
+title: Ṣeto Awọn iwe ẹri SSL
 original_id: ssl
 ---
 
 Follow this instructions to configure a SSL certificate to serve NPM registry under HTTPS.
 
-* Update the listen property in your `~/.config/verdaccio/config.yaml`:
+* Ṣe imudojuiwọn ohun elo itẹtisi ni `~/.config/verdaccio/config.yaml` rẹ:
 
     listen: 'https://your.domain.com/'
     
 
 Once you update the listen and try to run verdaccio again will ask for certificates.
 
-* Generate your certificates
+* Pilẹṣẹ awọn iwe ẹri rẹ
 
      $ openssl genrsa -out /Users/user/.config/verdaccio/verdaccio-key.pem 2048
      $ openssl req -new -sha256 -key /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-csr.pem
@@ -34,7 +34,7 @@ https: pfx: /Users/user/.config/verdaccio/server.pfx passphrase: 'secret' ````
 
 More info on the `key`, `cert`, `ca`, `pfx` and `passphrase` arguments on the [Node documentation](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
 
-* Run `verdaccio` in your command line.
+* Se imusisẹ `verdaccio` ninu ila aṣẹ rẹ.
 
 * Open the browser and load `https://your.domain.com:port/`
 
