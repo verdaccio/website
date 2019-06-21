@@ -147,7 +147,7 @@ O le wọle si akopọ ti o n jẹ gbigbe jade pẹlu koko-ọrọ `{{publishedP
     {{ publisher.name }} ti ṣe agbejade {{ publishedPackage }}
     
 
-## Configuration
+## Iṣeto
 
 | Ohun ini            | Iru        | Ti o nilo | Atilẹyin | Atilẹwa | Apejuwe                                                                                                |
 | ------------------- | ---------- | --------- | -------- | ------- | ------------------------------------------------------------------------------------------------------ |
