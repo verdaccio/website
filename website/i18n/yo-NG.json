@@ -60,16 +60,16 @@
         "title": "Fifi sori olupese IIS"
       },
       "installation": {
-        "title": "Installation"
+        "title": "Ifi sori ẹrọ"
       },
       "kubernetes": {
         "title": "Kubernetes"
       },
       "linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Sise asopọ ibi iforukọsilẹ ọlọna jijin kan"
       },
       "logger": {
-        "title": "Logger"
+        "title": "Olugbasilẹ"
       },
       "logo": {
         "title": "Irulogo"
@@ -81,13 +81,13 @@
         "title": "Awọn ifitonileti"
       },
       "packages": {
-        "title": "Package Access"
+        "title": "Iwọlesi Akopọ"
       },
       "plugins": {
-        "title": "Plugins"
+        "title": "Awọn ohun elo"
       },
       "protect-your-dependencies": {
-        "title": "Protecting packages"
+        "title": "Didabobo awọn akopọ"
       },
       "puppet": {
         "title": "Puppet"
@@ -96,16 +96,16 @@
         "title": "Source Code"
       },
       "reverse-proxy": {
-        "title": "Reverse Proxy Setup"
+        "title": "Iseto Aṣoju ikọkọ-Alayipada"
       },
       "server-configuration": {
-        "title": "Server Configuration"
+        "title": "Iṣeto Olupese"
       },
       "ssl": {
-        "title": "Set up the SSL Certificates"
+        "title": "Ṣeto Awọn iwe ẹri SSL"
       },
       "talks": {
-        "title": "Talks"
+        "title": "Awọn ọrọ"
       },
       "test": {
         "title": "test"
@@ -120,7 +120,7 @@
         "title": "What is Verdaccio?"
       },
       "who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Tani o nlo Verdaccio?"
       },
       "windows": {
         "title": "Installing As a Windows Service"
@@ -159,13 +159,13 @@
         "title": "Fifi sori olupese IIS"
       },
       "version-3.8.6/version-3.8.6-installation": {
-        "title": "Installation"
+        "title": "Ifi sori ẹrọ"
       },
       "version-3.8.6/version-3.8.6-kubernetes": {
         "title": "Kubernetes"
       },
       "version-3.8.6/version-3.8.6-logger": {
-        "title": "Logger"
+        "title": "Olugbasilẹ"
       },
       "version-3.8.6/version-3.8.6-logo": {
         "title": "Verdaccio Logotype"
@@ -177,13 +177,13 @@
         "title": "Awọn ifitonileti"
       },
       "version-3.8.6/version-3.8.6-packages": {
-        "title": "Package Access"
+        "title": "Iwọlesi Akopọ"
       },
       "version-3.8.6/version-3.8.6-plugins": {
-        "title": "Plugins"
+        "title": "Awọn ohun elo"
       },
       "version-3.8.6/version-3.8.6-protect-your-dependencies": {
-        "title": "Protecting packages"
+        "title": "Didabobo awọn akopọ"
       },
       "version-3.8.6/version-3.8.6-puppet": {
         "title": "Puppet"
@@ -192,13 +192,13 @@
         "title": "Source Code"
       },
       "version-3.8.6/version-3.8.6-reverse-proxy": {
-        "title": "Reverse Proxy Setup"
+        "title": "Iseto Aṣoju ikọkọ-Alayipada"
       },
       "version-3.8.6/version-3.8.6-server-configuration": {
-        "title": "Server Configuration"
+        "title": "Iṣeto Olupese"
       },
       "version-3.8.6/version-3.8.6-ssl": {
-        "title": "Set up the SSL Certificates"
+        "title": "Ṣeto Awọn iwe ẹri SSL"
       },
       "version-3.8.6/version-3.8.6-test": {
         "title": "Unit Testing"
@@ -273,7 +273,7 @@
         "title": "Awọn ifitonileti"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-packages": {
-        "title": "Package Access"
+        "title": "Iwọlesi Akopọ"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-scopes": {
         "title": "Understanding Scopes"
@@ -315,16 +315,16 @@
         "title": "Awọn igbesẹ-Github"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-installation": {
-        "title": "Installation"
+        "title": "Ifi sori ẹrọ"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Sise asopọ ibi iforukọsilẹ ọlọna jijin kan"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-packages": {
-        "title": "Package Access"
+        "title": "Iwọlesi Akopọ"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-talks": {
-        "title": "Talks"
+        "title": "Awọn ọrọ"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-uplinks": {
         "title": "Uplinks"
@@ -333,31 +333,31 @@
         "title": "Web User Interface"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Tani o nlo Verdaccio?"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-amazon": {
         "title": "Awọn Iṣẹ Ayelujara ti Amazon"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Sise asopọ ibi iforukọsilẹ ọlọna jijin kan"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-protect-your-dependencies": {
-        "title": "Protecting packages"
+        "title": "Didabobo awọn akopọ"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-talks": {
-        "title": "Talks"
+        "title": "Awọn ọrọ"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-dev-plugins": {
         "title": "Ṣiṣe agbedide Awọn ohun elo"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Sise asopọ ibi iforukọsilẹ ọlọna jijin kan"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-plugins": {
-        "title": "Plugins"
+        "title": "Awọn ohun elo"
       },
       "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Tani o nlo Verdaccio?"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-articles": {
         "title": "Awọn arokọ"
@@ -378,10 +378,10 @@
         "title": "Awọn igbesẹ-Github"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-plugins": {
-        "title": "Plugins"
+        "title": "Awọn ohun elo"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-ssl": {
-        "title": "Set up the SSL Certificates"
+        "title": "Ṣeto Awọn iwe ẹri SSL"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-uplinks": {
         "title": "Uplinks"
@@ -390,10 +390,10 @@
         "title": "Web User Interface"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Tani o nlo Verdaccio?"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
-        "title": "Installation"
+        "title": "Ifi sori ẹrọ"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
         "title": "Web User Interface"
@@ -408,7 +408,7 @@
         "title": "Docker"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-installation": {
-        "title": "Installation"
+        "title": "Ifi sori ẹrọ"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-logo": {
         "title": "Irulogo"
@@ -426,7 +426,7 @@
         "title": "Docker"
       },
       "version-4.0.0-beta.8/version-4.0.0-beta.8-reverse-proxy": {
-        "title": "Reverse Proxy Setup"
+        "title": "Iseto Aṣoju ikọkọ-Alayipada"
       },
       "version-4.0.0/version-4.0.0-cli": {
         "title": "Irinṣẹ Ila aṣẹ"
@@ -435,13 +435,46 @@
         "title": "Docker"
       },
       "version-4.0.0/version-4.0.0-plugins": {
-        "title": "Plugins"
+        "title": "Awọn ohun elo"
       },
       "version-4.0.0/version-4.0.0-talks": {
-        "title": "Talks"
+        "title": "Awọn ọrọ"
       },
       "version-4.0.1/version-4.0.1-docker": {
         "title": "Docker"
+      },
+      "version-4.0.2/version-4.0.2-caching": {
+        "title": "Awọn ọna ifisapo iranti"
+      },
+      "version-4.0.2/version-4.0.2-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.2/version-4.0.2-github-actions": {
+        "title": "Awọn igbesẹ-Github"
+      },
+      "version-4.0.2/version-4.0.2-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.0.2/version-4.0.2-linking-remote-registry": {
+        "title": "Sise asopọ ibi iforukọsilẹ ọlọna jijin kan"
+      },
+      "version-4.0.2/version-4.0.2-notifications": {
+        "title": "Awọn ifitonileti"
+      },
+      "version-4.0.2/version-4.0.2-packages": {
+        "title": "Iwọlesi Akopọ"
+      },
+      "version-4.0.2/version-4.0.2-reverse-proxy": {
+        "title": "Iseto Aṣoju ikọkọ-Alayipada"
+      },
+      "version-4.0.2/version-4.0.2-ssl": {
+        "title": "Ṣeto Awọn iwe ẹri SSL"
+      },
+      "version-4.0.2/version-4.0.2-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.0.2/version-4.0.2-webui": {
+        "title": "Web User Interface"
       }
     },
     "links": {
@@ -461,8 +494,8 @@
       "Development": "Development",
       "DevOps": "DevOps",
       "Guides": "Guides",
-      "Configuration": "Configuration",
-      "Plugins": "Plugins"
+      "Configuration": "Iṣeto",
+      "Plugins": "Awọn ohun elo"
     }
   },
   "pages-strings": {

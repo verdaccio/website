@@ -18,7 +18,7 @@ web:
 
 All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
 
-### Configuration
+### Iṣeto
 
 | Ohun ini | Iru     | Ti o nilo | Apẹẹrẹ                         | Atilẹyin | Apejuwe                                                                                                                                              |
 | -------- | ------- | --------- | ------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |

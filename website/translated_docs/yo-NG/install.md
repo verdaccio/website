@@ -1,6 +1,6 @@
 ---
 id: installation
-title: "Installation"
+title: "Ifi sori ẹrọ"
 ---
 
 Verdaccio jẹ ohun elo ayelujara ti ọlọpọ pilatifọọmu. Lati fi sori ẹrọ, o nilo awọn nkan pataki diẹ ṣaaju.

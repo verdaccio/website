@@ -442,6 +442,39 @@
       },
       "version-4.0.1/version-4.0.1-docker": {
         "title": "Docker"
+      },
+      "version-4.0.2/version-4.0.2-caching": {
+        "title": "Strategie ukládání do mezipaměti"
+      },
+      "version-4.0.2/version-4.0.2-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.2/version-4.0.2-github-actions": {
+        "title": "Github Actions"
+      },
+      "version-4.0.2/version-4.0.2-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.0.2/version-4.0.2-linking-remote-registry": {
+        "title": "Linking a Remote Registry"
+      },
+      "version-4.0.2/version-4.0.2-notifications": {
+        "title": "Upozornění"
+      },
+      "version-4.0.2/version-4.0.2-packages": {
+        "title": "Přístup k balíčkům"
+      },
+      "version-4.0.2/version-4.0.2-reverse-proxy": {
+        "title": "Reverse Proxy Setup"
+      },
+      "version-4.0.2/version-4.0.2-ssl": {
+        "title": "Nastavení SSL certifikátu"
+      },
+      "version-4.0.2/version-4.0.2-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.0.2/version-4.0.2-webui": {
+        "title": "Webové uživatelské rozhraní"
       }
     },
     "links": {

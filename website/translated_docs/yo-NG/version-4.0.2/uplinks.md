@@ -4,7 +4,7 @@ title: Uplinks
 original_id: uplinks
 ---
 
-An *uplink* is a link with an external registry that provides access to external packages.
+*uplink* jẹ ọna asopọ pẹlu ibi iforukọsilẹ ti ita ti o n pese iwọle si awọn akojọ ti ita.
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
 
@@ -27,20 +27,20 @@ uplinks:
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have the following properties:
 
-| Ohun ini     | Iru     | Ti o nilo | Apẹẹrẹ                                  | Atilẹyin | Apejuwe                                                                                                                    | Atilẹwa    |
-| ------------ | ------- | --------- | --------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| url          | okun    | Bẹẹni     | https://registry.npmjs.org/             | gbogbo   | The registry url                                                                                                           | npmjs      |
-| ca           | okun    | Rara      | ~./ssl/client.crt'                      | gbogbo   | SSL path certificate                                                                                                       | No default |
-| timeout      | okun    | Rara      | 100ms                                   | gbogbo   | set new timeout for the request                                                                                            | 30s        |
-| maxage       | okun    | Rara      | 10m                                     | gbogbo   | the time threshold to the cache is valid                                                                                   | 2m         |
-| fail_timeout | okun    | Rara      | 10m                                     | gbogbo   | defines max time when a request becomes a failure                                                                          | 5m         |
-| max_fails    | nọmba   | Rara      | 2                                       | gbogbo   | limit maximun failure request                                                                                              | 2          |
-| cache        | boolean | Rara      | [true,false]                            | >= 2.1   | cache all remote tarballs in storage                                                                                       | true       |
-| auth         | list    | Rara      | [see below](uplinks.md#auth-property)   | >= 2.5   | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
-| awọn akọle   | list    | Rara      | authorization: "Bearer SecretJWToken==" | gbogbo   | list of custom headers for the uplink                                                                                      | disabled   |
-| strict_ssl   | boolean | Rara      | [true,false]                            | >= 3.0   | If true, requires SSL certificates be valid.                                                                               | true       |
+| Ohun ini        | Iru     | Ti o nilo | Apẹẹrẹ                                  | Atilẹyin | Apejuwe                                                                                                                        | Atilẹwa          |
+| --------------- | ------- | --------- | --------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
+| url             | okun    | Bẹẹni     | https://registry.npmjs.org/             | gbogbo   | url ibi iforukọsilẹ naa                                                                                                        | npmjs            |
+| ca              | okun    | Rara      | ~./ssl/client.crt'                      | gbogbo   | iwe ẹri ipa ọna SSL                                                                                                            | Kosi atilẹda     |
+| akoko idawọduro | okun    | Rara      | 100ms                                   | gbogbo   | ṣeto akoko idawọduro tuntun fun ìbéèrè naa                                                                                     | 30s              |
+| maxage          | okun    | Rara      | 10m                                     | gbogbo   | akoko aala si apo iranti naa fẹsẹmulẹ                                                                                          | 2m               |
+| fail_timeout    | okun    | Rara      | 10m                                     | gbogbo   | n ṣe asọye akoko gigaju nigba ti ìbéèrè ma di ikuna                                                                            | 5m               |
+| max_fails       | nọmba   | Rara      | 2                                       | gbogbo   | se adinku iye ibeere ikuna to pọju                                                                                             | 2                |
+| apo iranti      | boolean | Rara      | [otitọ, irọ]                            | >= 2.1   | ko gbogbo awọn tarball ọna jijin si ipamọ apo iranti                                                                           | otitọ            |
+| auth            | akojọ   | Rara      | [wo isalẹ](uplinks.md#auth-property)    | >= 2.5   | n yan akọle 'Authorization' naa [alaye siwaju sii](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | o ti jẹ yiyọkuro |
+| awọn akọle      | akojọ   | Rara      | authorization: "Bearer SecretJWToken==" | gbogbo   | akojọ awọn akọle akanṣe fun uplink naa                                                                                         | o ti jẹ yiyọkuro |
+| strict_ssl      | boolean | Rara      | [otitọ, irọ]                            | >= 3.0   | To ba jẹ otitọ, o nilo ki awọn iwe ẹri SSL fẹsẹmulẹ.                                                                           | otitọ            |
 
-#### Auth property
+#### Ohun ini Auth
 
 The `auth` property allows you to use an auth token with an uplink. Using the default environment variable:
 
@@ -53,7 +53,7 @@ uplinks:
       token_env: true # defaults to `process.env['NPM_TOKEN']`
 ```
 
-or via a specified environment variable:
+tabi nipasẹ iyipada ayika to jẹ yiyan:
 
 ```yaml
 uplinks:
@@ -64,9 +64,9 @@ uplinks:
       token_env: FOO_TOKEN
 ```
 
-`token_env: FOO_TOKEN`internally will use `process.env['FOO_TOKEN']`
+`token_env: FOO_TOKEN`labẹnu ma lo `process.env['FOO_TOKEN']`
 
-or by directly specifying a token:
+tabi nipa yiyan aami kan taarata:
 
 ```yaml
 uplinks:
@@ -77,11 +77,11 @@ uplinks:
       token: "token"
 ```
 
-> Note: `token` has priority over `token_env`
+> Akiyesi: `token` ṣe pataki ju `token_env` lọ
 
-### You Must know
+### O Gbọdọ Mọ
 
-* Uplinks must be registries compatible with the `npm` endpoints. Eg: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* and more.
-* Setting `cache` to false will help to save space in your hard drive. This will avoid store `tarballs` but [it will keep metadata in folders](https://github.com/verdaccio/verdaccio/issues/391).
-* Exceed with multiple uplinks might slow down the lookup of your packages due for each request a npm client does, verdaccio does 1 call for each uplink.
-* The (timeout, maxage and fail_timeout) format follow the [NGINX measurement units](http://nginx.org/en/docs/syntax.html)
+* Uplinks gbọdọ ni ibamu pẹlu awọn ibi iforukọsilẹ pẹlu `npm` awọn aaye opin. Fun apẹẹrẹ: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* ati siwaju sii.
+* Ṣiṣeto `cache` si eke yoo ṣe iranlọwọ lati pa aaye mọ ninu ààyè ìtọ́jú alafojuri rẹ. Eyi yoo yago fun itọju `tarballs` sugbọn [o ma fi metadata pamọ sinu awọn foda](https://github.com/verdaccio/verdaccio/issues/391).
+* Titayọ pẹlu ọpọlọpọ uplinks le mu ifasẹyin ba isawari awọn akopọ rẹ ti o ti yẹ fun ibeere kọọkan ti onibara npm kan ṣe, verdaccio n ṣe ipe 1 fun uplink kọọkan.
+* Ilana (timeout, maxage and fail_timeout) tẹle [awọn odiwọn iwọn NGINX](http://nginx.org/en/docs/syntax.html)

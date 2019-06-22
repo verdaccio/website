@@ -42,7 +42,7 @@ Ni aaye ibi ipamọ atilẹwa. **Verdaccio ni atilẹwa da lori eto faili ibil�
 storage: ./storage
 ```
 
-### Plugins
+### Awọn ohun elo
 
 Ni aaye ti ọna ohun elo naa. O wulo fun awọn iṣamulo to da lori Docker/Kubernetes.
 

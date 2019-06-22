@@ -4,7 +4,7 @@ title: Аплинки
 original_id: uplinks
 ---
 
-An *uplink* is a link with an external registry that provides access to external packages.
+*Аплинк* - это соединение с внешним репозиторием, через которое идет доступ к внешним пакетом.
 
 ![Аплинки](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
 

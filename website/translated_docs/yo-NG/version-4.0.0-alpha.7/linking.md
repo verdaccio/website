@@ -1,10 +1,10 @@
 ---
 id: version-4.0.0-alpha.7-linking-remote-registry
-title: Linking a Remote Registry
-original_id: linking-remote-registry
+title: Sise asopọ ibi iforukọsilẹ ọlọna jijin kan
+original_id: sise asopọ-ibi iforukọsilẹ-ọlọna jijin
 ---
 
-Verdaccio is a proxy and by default [links](uplinks.md) the public registry.
+Verdaccio jẹ aṣoju ikọkọ ati nipa atilẹda [n se asopọ](uplinks.md) ibi iforukọsilẹ ti gbogbogbo.
 
 ```yaml
 uplinks:
@@ -12,29 +12,29 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-You can link multiple registries, the following document will drive you through some helpful configurations.
+O le ṣe asopọ awọn ibi iforukọsilẹ ọlọpọlọpọ, iwe wọnyii yoo ṣe atọkun rẹ bi iranlọwọ diẹ lara awọn iṣeto.
 
-## Using Associating Scope
+## Lilo Ilana ti Alabasepọ
 
-The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
+Ọna ara lati wọle si awọn ibi iforukọsilẹ ọlọpọlọpọ nipa lilo `.npmrc` jẹ ilana ẹya ara bi atẹle yii:
 
     // .npmrc
     registry=https://registry.npmjs.org
     @mycompany:registry=http://localhost:4873
     
 
-This approach is valid, but comes with several disadvantages:
+Ọna yii fẹsẹmulẹ, ṣugbọn o wa pẹlu ọpọlọpọ awọn akude:
 
-* It **only works with scopes**
-* Scope must match, **no Regular Expressions are allowed**
-* One scope **cannot fetch from multiple registries**
-* Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
+* O **n ṣiṣẹ pẹlu awọn scope nikan**
+* Scope gbọdọ baramu, **ko si igbalaaye fun Awọn ifarahan Yẹpẹrẹ kankan**
+* Scope kan **kole sawari lati awọn ibi iforukọsilẹ ọlọpọlọpọ**
+* Awọn aami/awọn ọrọ igbaniwọle **gbọdọ wa ni asọye laarin** `.npmrc` atipe jẹ gbigbe wọle sinu ibi ipamọ naa.
 
-See a full example [here](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
+Wo apẹẹrẹ kikun kan [nibi](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
 
-## Linking a Registry
+## Sise asopọ Ibi iforukọsilẹ kan
 
-Linking a registry is fairly simple. First, define a new section in the `uplinks` section. Note, the order here is irrelevant.
+Sise asopọ ibi iforukọsilẹ kan rọrun gan. Lakọkọ, ṣe asọye abala tuntun kan ni abala ti `uplinks`. Akiyesi, eto ti ibi ko ṣe pataki.
 
 ```yaml
   uplinks:
@@ -50,9 +50,9 @@ Linking a registry is fairly simple. First, define a new section in the `uplinks
 
 ```
 
-Add a `proxy` section to define the selected registry you want to proxy.
+Se afikun abala `aṣoju ikọkọ` lati seto ibi iforukọsilẹ to jẹ yiyan ti o fẹ lati se ni aṣoju ikọkọ.
 
-## Linking Multiple Registries
+## Siṣe asopọ Awọn ibi iforukọsilẹ ọlọpọlọpọ
 
 ```yaml
   uplinks:
@@ -69,11 +69,11 @@ Add a `proxy` section to define the selected registry you want to proxy.
     proxy: server1 server2
 ```
 
-Verdaccio supports multiple registries on the `proxy` field. The request will be resolved with the first in the list; if that fails, it will try with the next in the list and so on.
+Verdaccio n ṣe atilẹyin fun awọn ibi iforukọsilẹ ọlọpọlọpọ lori aaye `aṣoju ikọkọ`. Ibeere ​​naa yoo jẹ yiyanju pẹlu alakọkọ ninu akojọ naa; to ba jẹ pe iyẹn kuna, o ma gbiyanju pẹlu eyi tókàn ninu akojọ naa ati bẹbẹ lọ.
 
-## Offline Registry
+## Ibi iforukọsilẹ Alaisilorila
 
-Having a full Offline Registry is completely possible. If you don't want any connectivity with external remotes you can do the following.
+Nini Ibi iforukọsilẹ Alaisilorila kikun jẹ eyi to ṣeeṣe patapata. Ti o ko ba fẹ asopọmọ eyikeyi pẹlu awọn idari ti ita o le ṣe awọn wọnyii.
 
 ```yaml
 <br />auth:
@@ -92,4 +92,4 @@ packages:
     publish: $authenticated
 ```
 
-Remove all `proxy` fields within each section of `packages`. The registry will became full offline.
+Yọ gbogbo `aṣoju ikọkọ` awọn aaye laarin abala kọọkan ti `awọn akopọ`. The registry will became full offline.

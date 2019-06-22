@@ -6,7 +6,7 @@ original_id: alase
 
 Lilo Iwe idana Alase fun Verdaccio
 
-For further information:
+Fun alaye siwaju sii:
 
 * <https://github.com/verdaccio/verdaccio-cookbook>
 * <https://supermarket.chef.io/cookbooks/verdaccio>

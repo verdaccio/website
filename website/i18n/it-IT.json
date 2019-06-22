@@ -442,6 +442,39 @@
       },
       "version-4.0.1/version-4.0.1-docker": {
         "title": "Docker"
+      },
+      "version-4.0.2/version-4.0.2-caching": {
+        "title": "Strategie di caching"
+      },
+      "version-4.0.2/version-4.0.2-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.2/version-4.0.2-github-actions": {
+        "title": "Github Action"
+      },
+      "version-4.0.2/version-4.0.2-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.0.2/version-4.0.2-linking-remote-registry": {
+        "title": "Collegare un Registro Remoto"
+      },
+      "version-4.0.2/version-4.0.2-notifications": {
+        "title": "Notifiche"
+      },
+      "version-4.0.2/version-4.0.2-packages": {
+        "title": "Accesso ai Pacchetti"
+      },
+      "version-4.0.2/version-4.0.2-reverse-proxy": {
+        "title": "Configurazione di Proxy inverso"
+      },
+      "version-4.0.2/version-4.0.2-ssl": {
+        "title": "Configurare i Certificati SSL"
+      },
+      "version-4.0.2/version-4.0.2-uplinks": {
+        "title": "Uplink"
+      },
+      "version-4.0.2/version-4.0.2-webui": {
+        "title": "Interfaccia Utente Web"
       }
     },
     "links": {

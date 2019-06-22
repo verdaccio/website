@@ -442,6 +442,39 @@
       },
       "version-4.0.1/version-4.0.1-docker": {
         "title": "Docker"
+      },
+      "version-4.0.2/version-4.0.2-caching": {
+        "title": "Caching strategies"
+      },
+      "version-4.0.2/version-4.0.2-docker": {
+        "title": "Docker"
+      },
+      "version-4.0.2/version-4.0.2-github-actions": {
+        "title": "Github Actions"
+      },
+      "version-4.0.2/version-4.0.2-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.0.2/version-4.0.2-linking-remote-registry": {
+        "title": "Linking a Remote Registry"
+      },
+      "version-4.0.2/version-4.0.2-notifications": {
+        "title": "알림"
+      },
+      "version-4.0.2/version-4.0.2-packages": {
+        "title": "패키지 접근"
+      },
+      "version-4.0.2/version-4.0.2-reverse-proxy": {
+        "title": "리버스 프록시 설정"
+      },
+      "version-4.0.2/version-4.0.2-ssl": {
+        "title": "SSL 인증서 설정하기"
+      },
+      "version-4.0.2/version-4.0.2-uplinks": {
+        "title": "업링크"
+      },
+      "version-4.0.2/version-4.0.2-webui": {
+        "title": "Web User Interface"
       }
     },
     "links": {

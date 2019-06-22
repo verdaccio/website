@@ -34,7 +34,7 @@ Ricorda sempre, **l'ordine di accesso ai pacchetti è importante**, i pacchetti 
 
 ### Utilizzo di pacchetti pubblici da npmjs.org
 
-Se qualche pacchetto non esiste nell'archivio, il server proverà a recuperarlo da npmjs.org. Se npmjs.org non funziona, fornirà solo i pacchetti presenti nella cache come se non ne esistessero altri. **Verdaccio scaricherà solo ciò che è necessario (= richiesto dai client)** e questa informazione verrà memorizzata nella cache, così che se il client chiederà la stessa cosa una seconda volta, potrà essere soddisfatto senza dover chiedere a npmjs.org.
+Se un pacchetto non esiste nell'archivio, il server proverà a recuperarlo da npmjs.org. Se npmjs.org non funziona, fornirà solo i pacchetti presenti nella cache come se non ne esistessero altri. **Verdaccio scaricherà solo ciò che è necessario (= richiesto dai client)** e questa informazione verrà memorizzata nella cache, così che se il client chiederà la stessa cosa una seconda volta, potrà essere soddisfatto senza dover chiedere a npmjs.org.
 
 **Esempio:**
 
@@ -42,7 +42,7 @@ Se si fa una richiesta `express@4.0.1` che va a buon fine da questo server una v
 
 ### Override su pacchetti pubblici 
 
-Se si desidera utilizzare una versione modificata di qualche pacchetto pubblico `foo`, si può pubblicarla solamente sul server locale, così scrivendo `npm install foo`, **valuterà di installare questa versione**.
+Se si desidera utilizzare una versione modificata di un pacchetto pubblico `foo`, si può pubblicarlo solamente sul server locale, così scrivendo `npm install foo`, **valuterà di installare questa versione**.
 
 Ci sono due opzioni qui:
 
