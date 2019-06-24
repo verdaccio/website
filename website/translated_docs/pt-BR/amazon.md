@@ -3,13 +3,13 @@ id: amazon
 title: "Amazon Web Services"
 ---
 
-This document describes several approaches for deploying Verdaccio in the AWS cloud.
+Este documento descreve várias abordagens para implantar o Verdaccio na nuvem da AWS.
 
 ## EC2
 
-[CloudFormation template for deploying this stack.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
+[Template para implantar este stack na CloudFormation.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
-Architecture:
+Arquitetura:
 
     Clients
      |
