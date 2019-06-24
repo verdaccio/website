@@ -33,9 +33,9 @@ Custo mensal estimado para uma pequena instalação (na zona us-east-1): * ALB (
 
 ## ECS
 
-You can deploy Verdaccio as a task with an [ECS Volume](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) for persistent storage.
+Você pode implantar o Verdaccio como uma função com um [ECS Volume](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) para armazenamento persistente.
 
-Note: Fargate doesn't support persistent volumes, so you have to use the S3 storage plugin.
+Nota: Fargate não suporta volumes persistentes, desta forma você tem que usar o plugin de armazenamento S3.
 
 ## EKS
 
