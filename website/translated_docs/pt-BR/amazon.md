@@ -39,4 +39,4 @@ Nota: Fargate não suporta volumes persistentes, desta forma você tem que usar 
 
 ## EKS
 
-See the documentation pages on [Kubernetes](kubernetes) and [Docker](docker).
+Veja as páginas de documentação em [Kubernetes](kubernetes) e [Docker](docker).
