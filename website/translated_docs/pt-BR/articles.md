@@ -64,16 +64,16 @@ Abaixo encontra-se uma lista de artigos sobre o Verdaccio. Se você escreveu uma
 * [搭建离线npm私库——verdaccio](https://www.jishux.com/plus/view-765581-1.html)
 * [[筆記] 建立自己的 npm, 以npm Orgs跟Verdaccio為例](https://medium.com/@ceall8650/%E7%AD%86%E8%A8%98-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84-npm-%E4%BB%A5npm-orgs%E8%B7%9Fverdaccio%E7%82%BA%E4%BE%8B-cfb83b2307e6)
 
-### French
+### Francês
 
 * [Installer un registre NPM](https://allons-y.io/wiki/installer-un-registre-npm)
 
-### Spanish
+### Espanhol
 
 * [NPM privado: instalar y configurar Verdaccio](https://www.todojs.com/npm-privado-con-verdaccio/)
 * [NPM privado: 5 razones y 7 recomendaciones para utilizarlo](https://www.todojs.com/npm-privado-5-razones-y-7-recomendaciones/)
 
-### German
+### Alemão
 
 * [Struktur für große Angular-Anwendungen: Microservices, Module, MonoRepo?](https://jaxenter.de/struktur-angular-anwendungen-67467)
 * [Angular in einer Microservices-Welt](https://jaxenter.de/angular-microservices-66445)
