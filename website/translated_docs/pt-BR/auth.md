@@ -46,29 +46,29 @@ Como você sabe, *Verdaccio* usa o `htpasswd` por padrão. Esse plugin não impl
 
 O ponto chave é, `$all` **irá corresponder a todos os usuários, independentemente de estarem logados ou não**.
 
-**O comportamento anterior só se aplica ao plugin de autenticação padrão**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
+**O comportamento anterior só se aplica ao plugin de autenticação padrão**. Se você estiver usando um plugin personalizado e os implementos de plugin `allow_access`, `allow_publish` ou `allow_unpublish`, a resolução do acesso depende do próprio plugin. Verdaccio só irá definir os grupos padrão.
 
-Let's recap:
+Vamos recapitular:
 
-* **logged**: `$all`, `$authenticated`, + groups added by the plugin
-* **anonymous (logged out)**: `$all` and `$anonymous`.
+* **logado**: `$all`, `$authenticated`, + grupos adicionados ao plugin
+* **anônimo (deslogado)**: `$all` e `$anonymous`.
 
 ## Default htpasswd
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
+Para simplificar a configuração, `verdaccio` usa um plugin baseado em `htpasswd`. Desde a versão v3.0.x o plugin `verdaccio-htpasswd` é usado por padrão.
 
 ```yaml
 auth:
   htpasswd:
     file: ./htpasswd
-    # Maximum amount of users allowed to register, defaults to "+inf".
-    # You can set this to -1 to disable registration.
+    # Quantidade máxima de usuários autorizados a se registrar, padrão "+inf".
+    # Você pode definir isso como -1 para desativar o registro.
     #max_users: 1000
 ```
 
-| Property  | Type   | Obrigatório | Exemplo    | Support | Descrição                                                    |
-| --------- | ------ | ----------- | ---------- | ------- | ------------------------------------------------------------ |
-| file      | string | Sim         | ./htpasswd | all     | arquivo onde ficam armazenadas as credenciais criptografadas |
-| max_users | number | Não         | 1000       | todos   | define o limite de usuários                                  |
+| Propriedade | Tipo   | Obrigatório | Exemplo    | Suporte  | Descrição                                         |
+| ----------- | ------ | ----------- | ---------- | -------- | ------------------------------------------------- |
+| file        | string | Sim         | ./htpasswd | completo | arquivo que hospeda as credenciais criptografadas |
+| max_users   | número | Não         | 1000       | todos    | define o limite de usuários                       |
 
 No caso de não permitir o login de usuário, você pode definir `max_users: -1`.
