@@ -39,7 +39,7 @@ As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/21
 
 ### O significado de `$all` e `$anonymous`
 
-Como você sabe, *Verdaccio* usa o `htpasswd` por padrão. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
+Como você sabe, *Verdaccio* usa o `htpasswd` por padrão. Esse plugin não implementa os métodos `allow_access`, `allow_publish` e `allow_unpublish`. Assim, o *Verdaccio* irá lidar com isso da seguinte maneira:
 
 * If you are not logged in (you are anonymous), `$all` and `$anonymous` means exactly the same.
 * If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
