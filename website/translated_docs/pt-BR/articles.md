@@ -3,11 +3,11 @@ id: articles
 title: "Artigos"
 ---
 
-Abaixo encontra-se uma lista de artigos sobre o Verdaccio. If you have written a blog post or tutorial that mentions Verdaccio, feel free to add it here!
+Abaixo encontra-se uma lista de artigos sobre o Verdaccio. Se você escreveu uma postagem em blog ou tutorial que menciona o Verdaccio, fique à vontade para adicioná-lo aqui!
 
-> Any language is allowed
+> Qualquer idioma é permitido
 
-## Core Team Articles
+## Artigos da Equipe Central
 
 * [An Introduction to Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
 * [Five use cases where a npm private proxy fits in your workflow](https://medium.com/@jotadeveloper/five-use-cases-where-a-npm-private-proxy-fits-in-your-workflow-632a81779c14)
@@ -21,9 +21,9 @@ Abaixo encontra-se uma lista de artigos sobre o Verdaccio. If you have written a
 * [How I learned React Js and how you can…](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
 * [How did I fall in the open source world…and that was a nice thing!](https://medium.com/@priscilawebdev/how-do-i-fall-in-the-open-source-world-and-that-was-a-nice-thing-b0e85d05490d)
 
-# Articles / Blogs / Tutorials (by Language)
+# Artigos / Blogs / Tutoriais (por Idioma)
 
-### Remarkable Articles
+### Artigos Notáveis
 
 * [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
 * [Cover Your Apps While Still Using npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
@@ -35,7 +35,7 @@ Abaixo encontra-se uma lista de artigos sobre o Verdaccio. If you have written a
 * [Ways to have your private npm registry — and a final DIY solution](https://medium.com/engenharia-noalvo/ways-to-have-your-private-npm-registry-and-a-final-diy-solution-eed001a88e74)
 * [How to set up a free private npm registry… for Windows](https://medium.com/@Anderson7301/how-to-set-up-a-free-private-npm-registry-for-windows-f532c6a381ce)
 
-### English
+### Inglês
 
 * [Testing your npm package before releasing it using Verdaccio + ngrok](https://medium.com/strapi/testing-your-npm-package-before-releasing-it-using-verdaccio-ngrok-28e2832c850a)
 * [Host your own private NPM repository with Verdaccio](https://medium.com/devopslinks/host-your-own-private-npm-repository-with-verdaccio-e8a3202b97c5)
@@ -49,13 +49,13 @@ Abaixo encontra-se uma lista de artigos sobre o Verdaccio. If you have written a
 * [Verdaccio examples for Google Cloud and K8s setups. https://github.com/papezt/verdaccio-examples](https://github.com/papezt/verdaccio-examples)
 * [Setting up a private NPM Registry Is Easier Than You Think](https://medium.com/@902Labs/setting-up-a-private-npm-registry-is-easier-than-you-think-455e1bd438f2)
 
-### Japanese
+### Japonês
 
 * [Verdaccio でプライベート npm リポジトリをサクッと立てる](http://neos21.hatenablog.com/entry/2017/09/08/080000)
 * [verdaccioでprivateなnpmリポジトリを作成](https://qiita.com/mtokiwa/items/1bc22a2270e4408d4cdd)
 * [Version control of my own UnityPackage with Unity × Verdaccio / Unity×Verdaccioで自作UnityPackageをバージョン管理する](https://synamon.hatenablog.com/entry/2018/08/15/185607)
 
-### Chinese
+### Chinês
 
 * [使用 verdaccio 搭建 npm 私有仓储](https://blog.sigoden.com/verdaccio--private-npm-registry/)
 * [Verdaccio：一个轻量级的私有npm代理注册表（sinopia fork)](https://www.ctolib.com/verdaccio-verdaccio.html)
