@@ -51,7 +51,7 @@ O ponto chave é, `$all` **irá corresponder a todos os usuários, independentem
 Vamos recapitular:
 
 * **logado**: `$all`, `$authenticated`, + grupos adicionados ao plugin
-* **anônimo (deslogado)**: `$all` e `$anonymous`.
+* **anônimo (desconectado)**: `$all` e `$anonymous`.
 
 ## Default htpasswd
 
