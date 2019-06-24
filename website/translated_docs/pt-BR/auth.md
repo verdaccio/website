@@ -42,11 +42,11 @@ As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/21
 Como você sabe, *Verdaccio* usa o `htpasswd` por padrão. Esse plugin não implementa os métodos `allow_access`, `allow_publish` e `allow_unpublish`. Assim, o *Verdaccio* irá lidar com isso da seguinte maneira:
 
 * Se você não está logado (você está anônimo), `$all` e `$anonymous` significam exatamente o mesmo.
-* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
+* Se você estiver logado, `$anonymous` não fará parte de seus grupos e `$all` irá corresponder a qualquer usuário logado. Um novo grupo `$authenticated` será adicionado à lista.
 
-As a takeaway, `$all` **will match all users, independently whether is logged or not**.
+O ponto chave é, `$all` **irá corresponder a todos os usuários, independentemente de estarem logados ou não**.
 
-**The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
+**O comportamento anterior só se aplica ao plugin de autenticação padrão**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
 
 Let's recap:
 
