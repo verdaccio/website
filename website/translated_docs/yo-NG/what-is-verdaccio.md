@@ -16,13 +16,13 @@ Verdaccio jẹ **ibi iforukọsilẹ aṣoju ikọkọ npm aladani fifuyẹ** to
     $> verdaccio
     
 
-![registry](assets/verdaccio_server.gif)
+![ibi iforukọsilẹ](assets/verdaccio_server.gif)
 
 ## Lilo Verdaccio
 
 Lilo verdaccio pẹlu eyikeyi onibara alakoso akopọ oju ipade jẹ ohun to rọrun.
 
-![registry](assets/npm_install.gif)
+![ibi iforukọsilẹ](assets/npm_install.gif)
 
 O le lo iforukọsilẹ alakanṣe nipa siseto agbaye fun gbogbo awọn iṣẹ rẹ
 
@@ -52,4 +52,4 @@ Verdaccio n fi gbogbo awọn igbarale si apo iranti nipasẹ ibeere ati mu ki aw
 * A pese atilẹyin Docker ati Kubernetes
 * O ni ibamu 100% pẹlu yarn, npm ati pnpm
 * O jẹ **fifayọ** dida lori `sinopia@1.4.0` ati 100% **ibasisẹpọ ẹlẹyin**.
-* Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
+* Verdaccio tumọ si **Awọ ewe ti o gbajumọ ni aaye atijọ ni Italy fun aworan fresco**.
