@@ -9,7 +9,7 @@ Verdaccio jẹ **ibi iforukọsilẹ aṣoju ikọkọ npm aladani fifuyẹ** to
 
 ## Kini n jẹ ibi iforukọsilẹ
 
-* A repository for packages that implements the **CommonJS Compliant Package Registry specification** for reading package info
+* Ibi ipamọ kan fun awọn akopọ ti o n ṣe imuṣiṣẹ **alaye CommonJS Compliant Package Registry** fun kika alaye akopọ
 * Provide an API compatible with npm clients **(yarn/npm/pnpm)**
 * Follow the semantic Versioning compatible **(semver)**
 
