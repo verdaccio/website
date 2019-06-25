@@ -3,9 +3,9 @@ id: windows
 title: "Fifi sori ẹrọ Bi Iṣẹ Windows kan"
 ---
 
-O da lori awọn itọnisọna ti o wa [nibi](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). I crafted the following and it provided me with a fully working verdaccio service installation:
+O da lori awọn itọnisọna ti o wa [nibi](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). Mo ṣẹda iwọnyi ti o si wa pese iṣẹ verdaccio ti o n ṣiṣẹ ni kikun fun mi:
 
-1. Create a directory for verdaccio 
+1. Ṣẹda ọna fun verdaccio 
     * mkdir `c:\verdaccio`
     * cd `c:\verdaccio`
 2. Install verdaccio locally (I ran into npm issues with global installs) 
