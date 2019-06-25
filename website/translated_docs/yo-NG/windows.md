@@ -3,7 +3,7 @@ id: windows
 title: "Fifi sori ẹrọ Bi Iṣẹ Windows kan"
 ---
 
-Loosely based upon the instructions found [here](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). I crafted the following and it provided me with a fully working verdaccio service installation:
+O da lori awọn itọnisọna ti o wa [nibi](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). I crafted the following and it provided me with a fully working verdaccio service installation:
 
 1. Create a directory for verdaccio 
     * mkdir `c:\verdaccio`
