@@ -37,18 +37,18 @@ uplinks:
     maxage: 30m
 ```
 
-Increasing the value of `maxage` in each `uplink` remotes will be asked less frequently. This might be a valid strategy if you don't update dependencies so often.
+Ao aumentar o valor de `maxage` em cada `uplink`, o controle remoto será consultado com menos frequência. Esta pode ser uma estratégia válida se você não atualiza as dependências com tanta frequência.
 
-## Using the memory instead the hardrive
+## Usando a memória em vez do disco rígido
 
-Sometimes caching packages is not a critical step, rather than route packages from different registries and achieving faster build times. There are two plugins that avoid write in a physical hard drive at all using the memory.
+Às vezes, o armazenamento em cache de pacotes não é uma etapa crítica, em vez de rotear pacotes de diferentes registros e alcançar tempos de construção mais rápidos. Existem dois plugins que evitam a gravação em uma unidade física usando a memória.
 
 ```bash
   npm install -g verdaccio-auth-memory
   npm install -g verdaccio-memory
 ```
 
-The configuration looks like this
+A configuração aparece como a seguir
 
 ```yaml
 auth:
@@ -62,4 +62,4 @@ store:
     limit: 1000
 ```
 
-Remember, once the server is restarted the data is being lost, we recommend this setup in cases where you do not need to persist at all.
+Lembre-se, uma vez que o servidor é reiniciado, os dados são perdidos, recomendamos esta configuração nos casos em que você não precisa persistir com a função.
