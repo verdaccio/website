@@ -76,7 +76,7 @@ A segurança começa no seu ambiente, por isso recomendamos que leia **[10 npm S
 
 ### Permissões dos Pacotes
 
-By default all packages are you publish in Verdaccio are accessible for all public, we totally recommend protect your registry from external non authorized users updating `access` property to `$authenticated`.
+Por padrão, todos os pacotes que você publica no Verdaccio são acessíveis para todos os públicos, nós recomendamos que você proteja seu registro de usuários externos não autorizados, atualizando a propriedade `access` para `$authenticated`.
 
 ```yaml
   packages:
@@ -91,17 +91,17 @@ By default all packages are you publish in Verdaccio are accessible for all publ
       publish: $authenticated
    ```
 
-In that way, **nobody will take advance of your registry unless is authorized and private packages won't be displayed in the User Interface**.
+Dessa forma, **ninguém acessará seu registro a menos que seja autorizado e pacotes privados não serão exibidos na Interface do Usuário **.
 
-## Server
+## Servidor
 
-### Secured Connections
+### Conexões Seguras
 
-Using **HTTPS** is a common recomendation, for such reason we recommend read the [SSL](ssl.md) section to make Verdaccio secure or using a HTTPS [reverse proxy](reverse-proxy.md) on top of Verdaccio.
+O uso de **HTTPS** é uma recomendação comum, por essa razão recomendamos a leitura da seção [SSL](ssl.md) para tornar o Verdaccio seguro ou usar um HTTPS [reverse proxy](reverse-proxy.md) no topo do Verdaccio.
 
-### Expiring Tokens
+### Validando Tokens
 
-In `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+No `verdaccio@3.x` os tokens não têm data de validade. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
