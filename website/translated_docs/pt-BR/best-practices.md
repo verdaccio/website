@@ -3,11 +3,11 @@ id: best
 title: "Melhores Práticas"
 ---
 
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+O guia a seguir é uma lista das melhores práticas coletadas e que geralmente recomendamos a todos os usuários. Não leve este guia como obrigatório, você pode escolher algumas delas de acordo com suas necessidades.
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Sinta-se à vontade para sugerir suas melhores práticas com a comunidade Verdaccio**.
 
-## Private Registry
+## Registro Privado
 
 You can add users and manage which users can access which packages.
 
