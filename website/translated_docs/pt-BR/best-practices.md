@@ -36,7 +36,7 @@ If some package doesn't exist in the storage, server will try to fetch it from n
 
 **Exemplo:**
 
-Se você solicitar `express@4.0.1` a partir deste servidor uma vez com êxito, você poderá faze-lo novamente (com todas as suas dependências) a qualquer momento, mesmo que o npmjs.org esteja inativo. Entretanto `express@4.0.0` não será baixado até que seja realmente necessário para alguém. And if npmjs.org is offline, this server would say that only `express@4.0.1` (= only what's in the cache) is published, but nothing else.
+Se você solicitar `express@4.0.1` a partir deste servidor uma vez com êxito, você poderá faze-lo novamente (com todas as suas dependências) a qualquer momento, mesmo que o npmjs.org esteja inativo. Entretanto `express@4.0.0` não será baixado até que seja realmente necessário para alguém. E se o npmjs.org estiver offline, este servidor dirá que somente o `express@4.0.1` (= somente o que está no cache) é publicado, mas nada mais.
 
 ### Override public packages
 
