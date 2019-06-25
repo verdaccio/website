@@ -11,13 +11,13 @@ O da lori awọn itọnisọna ti o wa [nibi](http://asysadmin.tumblr.com/post/3
 2. Fi verdaccio sori ẹrọ ni ibilẹ (Mo salaba pade awọn iṣoro npm pẹlu awọn fifisori ti agbaye) 
     * npm install verdaccio
 3. Ṣẹda faili `config.yaml` rẹ ni aaye yii `(c:\verdaccio\config.yaml)`
-4. Windows Service Setup
+4. Iṣeto Iṣẹ Windows
 
-## Using NSSM
+## Lilo NSSM
 
-ALTERNATIVE METHOD: (WinSW package was missing when I tried to download it)
+ỌNA MIRAN: (Akopọ WinSW ti sọnu nigbati mo gbiyanju lati gba lati ayelujara)
 
-* Download [NSSM](https://www.nssm.cc/download/) and extract
+* Gba [NSSM](https://www.nssm.cc/download/) ki o si fa jade
 
 * Add the path that contains nssm.exe to the PATH
 
