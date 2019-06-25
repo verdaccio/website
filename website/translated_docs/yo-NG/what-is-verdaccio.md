@@ -40,13 +40,13 @@ Gbogbo awọn akopọ ti o ṣe atẹjade rẹ jẹ ikọkọ atipe o se wọle 
 
 ## Aṣoju ikọkọ
 
-Verdaccio cache all dependencies by demand and speed up installations in local or private networks.
+Verdaccio n fi gbogbo awọn igbarale si apo iranti nipasẹ ibeere ati mu ki awọn fifi sori ẹrọ yara si ni awọn nẹtiwọki ibilẹ tabi ti ikọkọ.
 
-## Verdaccio in a nutshell
+## Verdaccio ni soki
 
-* It's a web app based on Node.js
-* It's a private npm registry
-* It's a local network proxy
+* O jẹ ohun elo ayelujara ti o da lori Node.js
+* O jẹ ibi iforukọsilẹ npm ti ikọkọ kan
+* O jẹ aṣoju ikọkọ nẹtiwọki ibilẹ kan
 * It's a Pluggable application
 * It's a fairly easy install and use
 * We offer Docker and Kubernetes support
