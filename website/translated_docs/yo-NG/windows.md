@@ -19,9 +19,9 @@ O da lori awọn itọnisọna ti o wa [nibi](http://asysadmin.tumblr.com/post/3
 
 * Gba [NSSM](https://www.nssm.cc/download/) ki o si fa jade
 
-* Add the path that contains nssm.exe to the PATH
+* Se afikun ọna ti o ni nssm.exe si PATH
 
-* Open an administrative command
+* Ṣi aṣẹ isakoso kan
 
 * Run nssm install verdaccio At a minimum you must fill in the Application tab Path, Startup directory and Arguments fields. Assuming an install with node in the system path and a location of c:\verdaccio the below values will work:
     
