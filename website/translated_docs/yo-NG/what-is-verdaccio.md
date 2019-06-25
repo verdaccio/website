@@ -51,5 +51,5 @@ Verdaccio n fi gbogbo awọn igbarale si apo iranti nipasẹ ibeere ati mu ki aw
 * O rọrun lati fi sori ẹrọ ati lati lo
 * A pese atilẹyin Docker ati Kubernetes
 * O ni ibamu 100% pẹlu yarn, npm ati pnpm
-* It was **forked** based on `sinopia@1.4.0` and 100% **backward compatible**.
+* O jẹ **fifayọ** dida lori `sinopia@1.4.0` ati 100% **ibasisẹpọ ẹlẹyin**.
 * Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
