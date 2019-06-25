@@ -23,7 +23,7 @@ O da lori awọn itọnisọna ti o wa [nibi](http://asysadmin.tumblr.com/post/3
 
 * Ṣi aṣẹ isakoso kan
 
-* Run nssm install verdaccio At a minimum you must fill in the Application tab Path, Startup directory and Arguments fields. Assuming an install with node in the system path and a location of c:\verdaccio the below values will work:
+* Ṣe imuṣiṣẹ nssm install verdaccio Ni o kere ju o gbọdọ pese idahun si Ọna taabu Ohun elo, Ibẹrẹ ọna ati Awọn aaye awọn ariyanjiyan. Assuming an install with node in the system path and a location of c:\verdaccio the below values will work:
     
     * Path: `node`
     * Startup directory: `c:\verdaccio`
