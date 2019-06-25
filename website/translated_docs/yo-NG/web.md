@@ -32,4 +32,4 @@ Gbogbo awọn idena wiwọle ti o jẹ siseto[dabobo awọn akopọ rẹ](protec
 | primary_color | okun       | Rara      | "#4b5e40"                                                     | `>4`    | Awọ akọkọ lati lo jakejado UI naa(akọle, abbl)                                                                   |
 | scope         | okun       | Rara      | @myscope                                                      | `>v3.x` | Ti o ba n lo iforukọsilẹ yii fun scope modulu kan ni pato, yan scope naa lati ṣeto rẹ ninu akọle itọnisọna webui |
 
-> It is recommended the logo size has the following size `40x40` pixels.
+> O jẹ igbaniyanju pe ki iwọn aami idanimọ ni iwọn wọnyii `40x40` pixels.
