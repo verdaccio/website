@@ -18,7 +18,7 @@ Verdaccio armazena todos os pacotes por padrão na pasta `/storage`. Mas você p
 
 ## Evite armazenar tarballs
 
-If you have a limited storage space, you might need to avoid cache tarballs, enabling `cache` false in each uplink will cache only metadata files.
+Se você tiver um espaço de armazenamento limitado, pode ser necessário evitar tarballs de cache, ativar o `cache` false em cada uplink armazenará apenas os arquivos de metadados.
 
     uplinks:
       npmjs:
@@ -26,9 +26,9 @@ If you have a limited storage space, you might need to avoid cache tarballs, ena
         cache: false
     
 
-## Extending Cache Expiration Time
+## Estendendo o Tempo de Expiração do Cache
 
-Verdaccio by default waits 2 minutes to invalidate the cache metadata before fetching new information from the remote registry.
+O Verdaccio, por padrão, aguarda 2 minutos para invalidar os metadados do cache antes de buscar novas informações do registro remoto.
 
 ```yaml
 uplinks:
