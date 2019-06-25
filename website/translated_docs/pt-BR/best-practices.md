@@ -40,7 +40,7 @@ Se você solicitar `express@4.0.1` a partir deste servidor uma vez com êxito, v
 
 ### Override public packages
 
-If you want to use a modified version of some public package `foo`, you can just publish it to your local server, so when your type `npm install foo`, **it'll consider installing your version**.
+Se você quiser usar uma versão modificada de algum pacote público `foo`, você pode apenas publicá-lo em seu servidor local, assim quando você digitar `npm install foo`, **ele vai considerar a instalação da sua versão**.
 
 There's two options here:
 
