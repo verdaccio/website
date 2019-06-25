@@ -31,9 +31,9 @@ O da lori awọn itọnisọna ti o wa [nibi](http://asysadmin.tumblr.com/post/3
     
     O le ṣatunṣe awọn iseto iṣẹ miiran labẹ awọn taabu miiran bi o ba se fẹ. Nigbati o ba ti ṣetan, tẹ bọtini Fi iṣẹ sori ẹrọ
     
-    * Start the service sc start verdaccio
+    * Bẹrẹ iṣẹ sc naa bẹrẹ verdaccio
 
-## Using WinSW
+## Lilo WinSW
 
 * As of 2015-10-27, WinSW is no longer available at the below location. Please follow the Using NSSM instructions above.
 * Download [WinSW](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/) 
