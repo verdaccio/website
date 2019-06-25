@@ -34,7 +34,7 @@ tabi nipa ila aṣẹ gẹgẹbi ariyanjiyan `--registry` ni npm (o yatọ diẹ
     npm install lodash --registry http://localhost:4873
     
 
-## Aladani
+## Ikọkọ
 
 All packages that you publish are private and only accessible based in your configuration.
 
