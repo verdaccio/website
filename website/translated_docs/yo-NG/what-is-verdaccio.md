@@ -47,9 +47,9 @@ Verdaccio n fi gbogbo awọn igbarale si apo iranti nipasẹ ibeere ati mu ki aw
 * O jẹ ohun elo ayelujara ti o da lori Node.js
 * O jẹ ibi iforukọsilẹ npm ti ikọkọ kan
 * O jẹ aṣoju ikọkọ nẹtiwọki ibilẹ kan
-* It's a Pluggable application
-* It's a fairly easy install and use
-* We offer Docker and Kubernetes support
-* It is 100% compatible with yarn, npm and pnpm
+* O jẹ ohun elo alaasomọ kan
+* O rọrun lati fi sori ẹrọ ati lati lo
+* A pese atilẹyin Docker ati Kubernetes
+* O ni ibamu 100% pẹlu yarn, npm ati pnpm
 * It was **forked** based on `sinopia@1.4.0` and 100% **backward compatible**.
 * Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
