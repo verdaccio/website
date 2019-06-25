@@ -61,18 +61,18 @@ There's two options here:
 
 2. You want to temporarily use your version, but return to public one as soon as it's updated.
     
-    In order to avoid version conflicts, **you should use a custom pre-release suffix of the next patch version**. For example, if a public package has version 0.1.2, you can upload `0.1.3-my-temp-fix`.
+    Para evitar conflitos de versões, **você deve usar um sufixo de pré-lançamento personalizado da próxima versão do patch**. Por exemplo, se um pacote público tiver a versão 0.1.2, você poderá fazer upload de `0.1.3-my-temp-fix`.
     
     ```bash
     npm version 0.1.3-my-temp-fix
     npm --publish --tag fix --registry http://localhost:4873
     ```
     
-    This way your package will be used until its original maintainer updates his public package to `0.1.3`.
+    Desta forma, o seu pacote será usado até que seu mantenedor original atualize seu pacote público para `0.1.3`.
 
 ## Security
 
-The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recommendation.
+A segurança começa no seu ambiente, por isso recomendamos que leia **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** e siga a recomendação.
 
 ### Permissões dos Pacotes
 
