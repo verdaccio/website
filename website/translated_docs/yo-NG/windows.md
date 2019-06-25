@@ -23,11 +23,11 @@ O da lori awọn itọnisọna ti o wa [nibi](http://asysadmin.tumblr.com/post/3
 
 * Ṣi aṣẹ isakoso kan
 
-* Ṣe imuṣiṣẹ nssm install verdaccio Ni o kere ju o gbọdọ pese idahun si Ọna taabu Ohun elo, Ibẹrẹ ọna ati Awọn aaye awọn ariyanjiyan. Assuming an install with node in the system path and a location of c:\verdaccio the below values will work:
+* Ṣe imuṣiṣẹ nssm install verdaccio Ni o kere ju o gbọdọ pese idahun si Ọna taabu Ohun elo, Ibẹrẹ ọna ati Awọn aaye awọn ariyanjiyan. Kani wipe ifisori ẹrọ pẹlu oju ipade ninu ọna eto naa ati aaye kan ti c:\verdaccio awọn iye to wa ni isalẹ yoo ṣiṣẹ:
     
     * Path: `node`
     * Startup directory: `c:\verdaccio`
-    * Arguments: `c:\verdaccio\node_modules\verdaccio\build\lib\cli.js -c c:\verdaccio\config.yaml`
+    * Awọn ariyanjiyan: `c:\verdaccio\node_modules\verdaccio\build\lib\cli.js -c c:\verdaccio\config.yaml`
     
     You can adjust other service settings under other tabs as desired. When you are done, click Install service button
     
