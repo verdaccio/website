@@ -18,13 +18,13 @@ web:
   sort_packages: asc | desc
 ```
 
-All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
+Gbogbo awọn idena wiwọle ti o jẹ siseto[dabobo awọn akopọ rẹ](protect-your-dependencies.md) naa yoo jẹ sisamulo si Intafeesi Ayelujara naa.
 
 ### Iṣeto
 
 | Ohun ini      | Iru        | Ti o nilo | Apẹẹrẹ                                                        | Atilẹyin   | Apejuwe                                                                                                                  |
 | ------------- | ---------- | --------- | ------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------ |
-| enable        | boolean    | Rara      | true/false                                                    | gbogbo     | allow to display the web interface                                                                                       |
+| muṣiṣẹ        | boolean    | Rara      | otitọ/irọ                                                     | gbogbo     | allow to display the web interface                                                                                       |
 | title         | okun       | Rara      | Verdaccio                                                     | gbogbo     | HTML head title description                                                                                              |
 | gravatar      | boolean    | Rara      | otitọ                                                         | `>v4`   | Gravatars will be generated under the hood if this property is enabled                                                   |
 | sort_packages | [asc,desc] | Rara      | asc                                                           | `>v4`   | By default private packages are sorted by ascending                                                                      |
