@@ -101,7 +101,7 @@ O uso de **HTTPS** é uma recomendação comum, por essa razão recomendamos a l
 
 ### Validando Tokens
 
-No `verdaccio@3.x` os tokens não têm data de validade. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+No `verdaccio@3.x` os tokens não têm data de validade. Por essa razão, introduzimos no próximo `verdaccio@4.x` o recurso JWT [PR#896] (https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
@@ -115,8 +115,8 @@ security:
       expiresIn: 7d
 ```
 
-**Using this configuration will override the current system and you will be able to control how long the token will live**.
+**O uso desta configuração substituirá o sistema atual e você poderá controlar por quanto tempo o token ficará ativo**.
 
-Using JWT also improves the performance with authentication plugins, the old system will perform an unpackage and validating the credentials in each request, while JWT will rely on the token signature avoiding the overhead for the plugin.
+O uso do JWT também melhora o desempenho com plug-ins de autenticação, o sistema antigo executará um desempacotamento e validará as credenciais em cada solicitação, enquanto o JWT dependerá da assinatura do token, evitando a sobrecarga do plug-in.
 
-As a side note, at **npmjs the token never expires**.
+Como anotação, no **npmjs o token nunca expira **.
