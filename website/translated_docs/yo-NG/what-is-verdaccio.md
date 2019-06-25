@@ -11,20 +11,20 @@ Verdaccio jẹ **ibi iforukọsilẹ aṣoju ikọkọ npm aladani fifuyẹ** to
 
 * Ibi ipamọ kan fun awọn akopọ ti o n ṣe imuṣiṣẹ **alaye CommonJS Compliant Package Registry** fun kika alaye akopọ
 * Pese API kan to ni ibamu pẹlu awọn onibara npm **(yarn/npm/pnpm)**
-* Follow the semantic Versioning compatible **(semver)**
+* Tẹle itumọ ọrọ ti o n se ẹya to ni ibaramu **(semver)**
 
     $> verdaccio
     
 
 ![registry](assets/verdaccio_server.gif)
 
-## Using Verdaccio
+## Lilo Verdaccio
 
-Using verdaccio with any node package manager client is quite straightforward.
+Lilo verdaccio pẹlu eyikeyi onibara alakoso akopọ oju ipade jẹ ohun to rọrun.
 
 ![registry](assets/npm_install.gif)
 
-You can use a custom registry either setting globally for all your projects
+O le lo iforukọsilẹ alakanṣe nipa siseto agbaye fun gbogbo awọn iṣẹ rẹ
 
     npm set registry http://localhost:4873
     
