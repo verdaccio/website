@@ -29,12 +29,12 @@ O le lo iforukọsilẹ alakanṣe nipa siseto agbaye fun gbogbo awọn iṣẹ 
     npm set registry http://localhost:4873
     
 
-or by command line as argument `--registry` in npm (slightly different in yarn)
+tabi nipa ila aṣẹ gẹgẹbi ariyanjiyan `--registry` ni npm (o yatọ diẹ ni yarn)
 
     npm install lodash --registry http://localhost:4873
     
 
-## Private
+## Aladani
 
 All packages that you publish are private and only accessible based in your configuration.
 
