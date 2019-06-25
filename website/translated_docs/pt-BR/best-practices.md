@@ -57,7 +57,7 @@ There's two options here:
         # proxy:
     ```
     
-    When you publish your package locally, **you should probably start with version string higher than existing one**, so it won't conflict with existing package in the cache.
+    Quando você publicar o seu pacote localmente, **você provavelmente deve começar com uma string de versão maior que a existente**, para que ela não entre em conflito com o pacote existente no cache.
 
 2. You want to temporarily use your version, but return to public one as soon as it's updated.
     
