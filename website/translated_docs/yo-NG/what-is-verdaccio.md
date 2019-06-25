@@ -36,9 +36,9 @@ tabi nipa ila aṣẹ gẹgẹbi ariyanjiyan `--registry` ni npm (o yatọ diẹ
 
 ## Ikọkọ
 
-All packages that you publish are private and only accessible based in your configuration.
+Gbogbo awọn akopọ ti o ṣe atẹjade rẹ jẹ ikọkọ atipe o se wọle si nikan ni dida lori iṣeto rẹ.
 
-## Proxy
+## Aṣoju ikọkọ
 
 Verdaccio cache all dependencies by demand and speed up installations in local or private networks.
 
