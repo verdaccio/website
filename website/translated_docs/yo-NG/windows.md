@@ -35,14 +35,14 @@ O da lori awọn itọnisọna ti o wa [nibi](http://asysadmin.tumblr.com/post/3
 
 ## Lilo WinSW
 
-* As of 2015-10-27, WinSW is no longer available at the below location. Please follow the Using NSSM instructions above.
-* Download [WinSW](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/) 
-    * Place the executable (e.g. `winsw-1.9-bin.exe`) into this folder (`c:\verdaccio`) and rename it to `verdaccio-winsw.exe`
-* Create a configuration file in `c:\verdaccio`, named `verdaccio-winsw.xml` with the following configuration `xml verdaccio verdaccio verdaccio node c:\verdaccio\node_modules\verdaccio\src\lib\cli.js -c c:\verdaccio\config.yaml roll c:\verdaccio`.
-* Install your service 
+* Titi di 2015-10-27, WinSW ko si ni aaye to wa ni isalẹ yii mọ. Jọwọ tẹle awọn ilana itọnisọna Lilo NSSM loke.
+* Gba lati ayelujara [WinSW](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/) 
+    * Gbe awọn iṣẹ ṣiṣe naa (fun apẹẹrẹ `winsw-1.9-bin.exe`) sinu foda yii (`c:\verdaccio`) ki o si pa lorukọ da si `verdaccio-winsw.exe`
+* Ṣẹda faili iṣeto kan ni `c:\verdaccio`, ti o n jẹ `verdaccio-winsw.xml` pẹlu iṣeto wọnyii `xml verdaccio verdaccio verdaccio node c:\verdaccio\node_modules\verdaccio\src\lib\cli.js -c c:\verdaccio\config.yaml roll c:\verdaccio`.
+* Fi iṣẹ rẹ sii 
     * `cd c:\verdaccio`
     * `verdaccio-winsw.exe install`
-* Start your service 
+* Bẹrẹ iṣẹ rẹ 
     * `verdaccio-winsw.exe start`
 
 Some of the above config is more verbose than I had expected, it appears as though 'workingdirectory' is ignored, but other than that, this works for me and allows my verdaccio instance to persist between restarts of the server, and also restart itself should there be any crashes of the verdaccio process.
