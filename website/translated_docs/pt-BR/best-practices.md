@@ -1,6 +1,6 @@
 ---
-id: best
-title: "Melhores Práticas"
+id: Melhores
+title: "Boas Práticas"
 ---
 
 O guia a seguir é uma lista das melhores práticas coletadas e que geralmente recomendamos a todos os usuários. Não leve este guia como obrigatório, você pode escolher algumas delas de acordo com suas necessidades.
