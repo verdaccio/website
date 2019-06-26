@@ -45,8 +45,8 @@ O da lori awọn itọnisọna ti o wa [nibi](http://asysadmin.tumblr.com/post/3
 * Bẹrẹ iṣẹ rẹ 
     * `verdaccio-winsw.exe start`
 
-Some of the above config is more verbose than I had expected, it appears as though 'workingdirectory' is ignored, but other than that, this works for me and allows my verdaccio instance to persist between restarts of the server, and also restart itself should there be any crashes of the verdaccio process.
+Diẹ lara awọn iṣeto ti o wa loke jẹ verbose ju bi mo ti se reti lọ, o dabi pe 'workingdirectory' ti ko bikita, ṣugbọn yatọ si eyi, eyi ṣiṣẹ fun mi o si fayegba verdaccio instance mi lati si duro sinsin laarin atunbẹrẹ ti olupese naa, ati sise atunbẹrẹ ara rẹ ti o ba lọ jẹpe ijamba kankan ba waye si ilana verdaccio naa.
 
-## Repositories
+## Awọn ibi ipamọ
 
 * [verdaccio-deamon-windows](https://github.com/davidenke/verdaccio-deamon-windows)
