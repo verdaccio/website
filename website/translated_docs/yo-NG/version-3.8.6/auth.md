@@ -6,7 +6,7 @@ original_id: sise ifasẹsi
 
 Ifasẹsi naa jẹ siso mọ ohun elo asomọ [ohun elo asomọ](plugins.md) auth ti o n lo. Awọn idena akopọ naa tun n jẹ mimojuto nipasẹ awọn [Iwọlesi Akopọ](packages.md).
 
-The client authentification is handled by `npm` client itself. Once you login to the application:
+Ifasẹsi onibara n jẹ mimojuto nipasẹ onibara `npm` funra rẹ. Lọgan ti o ba ti wọle si ohun elo naa:
 
 ```bash
 npm adduser --registry http://localhost:4873
