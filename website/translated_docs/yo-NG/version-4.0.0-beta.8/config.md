@@ -87,7 +87,7 @@ Iṣeto naa jẹ pinpin si abala meji, `api` ati `web`. Lati lo JWT lori `api`, 
 
 > A ṣe igbaniyanju to ga lati ko lọ si JWT niwọnti ibuwọlu ijogun (`aes192`) ti wa ni iparun ati pe o ma farasin ni awọn ẹya ọjọ iwaju.
 
-### Server
+### Olupese
 
 Awọn eto ohun elo lati ṣe ayipada iwa ti ohun elo olupese naa, paapaa API (Express.js).
 
@@ -186,7 +186,7 @@ https:
     ca: ./path/verdaccio-csr.pem
 ```
 
-### Proxy
+### Aṣoju ikọkọ
 
 Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
