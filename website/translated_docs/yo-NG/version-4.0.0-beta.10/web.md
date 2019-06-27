@@ -1,12 +1,12 @@
 ---
 id: version-4.0.0-beta.10-webui
-title: Web User Interface
+title: Intafeesi Olumulo ti Ayelujara
 original_id: webui
 ---
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
-Verdaccio has a web user interface to display only the private packages and can be customisable.
+Verdaccio ni intafeesi olumulo ayelujara kan lati safihan awọn akopọ aladani naa nikan atipe o le jẹ sise ni akanṣe.
 
 ```yaml
 web:
@@ -19,18 +19,18 @@ web:
   sort_packages: asc | desc
 ```
 
-All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
+Gbogbo awọn idena wiwọle ti o jẹ siseto[dabobo awọn akopọ rẹ](protect-your-dependencies.md) naa yoo jẹ sisamulo si Intafeesi Ayelujara naa.
 
 ### Iṣeto
 
 | Ohun ini      | Iru        | Ti o nilo | Apẹẹrẹ                                                        | Atilẹyin   | Apejuwe                                                                                                                                              |
 | ------------- | ---------- | --------- | ------------------------------------------------------------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| enable        | boolean    | Rara      | true/false                                                    | gbogbo     | allow to display the web interface                                                                                                                   |
-| title         | okun       | Rara      | Verdaccio                                                     | gbogbo     | HTML head title description                                                                                                                          |
-| gravatar      | boolean    | Rara      | otitọ                                                         | `>v4`   | Gravatars will be generated under the hood if this property is enabled                                                                               |
-| sort_packages | [asc,desc] | Rara      | asc                                                           | `>v4`   | By default private packages are sorted by ascending                                                                                                  |
-| logo          | okun       | Rara      | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | gbogbo     | a URI where logo is located (header logo)                                                                                                            |
-| primary_color | okun       | Rara      | "#4b5e40"                                                     | `>4`    | The primary color to use throughout the UI (header, etc)                                                                                             |
+| muṣiṣẹ        | boolean    | Rara      | otitọ/irọ                                                     | gbogbo     | gba lati ṣafihan intafeesi ayelujara naa                                                                                                             |
+| akọle         | okun       | Rara      | Verdaccio                                                     | gbogbo     | Apejuwe akọle akori HTML                                                                                                                             |
+| gravatar      | boolean    | Rara      | otitọ                                                         | `>v4`   | Gravatars yoo jẹ pipilẹṣẹ labẹ ibori ti o ba jẹ pe ohun-ini yii wa ni imusisẹ                                                                        |
+| sort_packages | [asc,desc] | Rara      | asc                                                           | `>v4`   | Nipa atilẹwa awọn akopọ aladani ti jẹ siseto lẹsẹsẹ ni ọna igasoke                                                                                   |
+| logo          | okun       | Rara      | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | gbogbo     | uRI kan nibi ti aami idanimọ wa (akọle aami idanimọ)                                                                                                 |
+| primary_color | okun       | Rara      | "#4b5e40"                                                     | `>4`    | Awọ akọkọ lati lo jakejado UI naa(akọle, abbl)                                                                                                       |
 | scope         | okun       | Rara      | \\@myscope                                                  | `>v3.x` | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
 
-> It is recommended the logo size has the following size `40x40` pixels.
+> O jẹ igbaniyanju pe ki iwọn aami idanimọ ni iwọn wọnyii `40x40` pixels.
