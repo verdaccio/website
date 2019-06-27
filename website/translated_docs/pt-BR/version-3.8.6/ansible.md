@@ -4,7 +4,7 @@ title: Ansible
 original_id: ansible
 ---
 
-Nós temos uma solução customizada para o `verdaccio` na sua organização.
+Nós possuímos uma solução customizada para o `verdaccio` em nossa organização.
 
 <https://github.com/verdaccio/ansible-verdaccio>
 
