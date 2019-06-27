@@ -20,9 +20,9 @@ Use `SIGUSR2` to notify the application, the log-file was rotated and it needs t
 
 ### Configuration
 
-| Property | Type   | Obrigatório | Exemplo                                        | Support | Descrição                                         |
-| -------- | ------ | ----------- | ---------------------------------------------- | ------- | ------------------------------------------------- |
-| type     | string | Não         | [stdout, file]                                 | all     | define the output                                 |
-| path     | string | Não         | verdaccio.log                                  | all     | if type is file, define the location of that file |
-| format   | string | Não         | [pretty, pretty-timestamped]                   | all     | output format                                     |
-| level    | string | Não         | [fatal, error, warn, http, info, debug, trace] | all     | verbose level                                     |
+| Propriedade | Tipo   | Obrigatório | Exemplo                                        | Suporte  | Descrição                                         |
+| ----------- | ------ | ----------- | ---------------------------------------------- | -------- | ------------------------------------------------- |
+| type        | string | Não         | [stdout, file]                                 | completo | define the output                                 |
+| path        | string | Não         | verdaccio.log                                  | completo | if type is file, define the location of that file |
+| format      | string | Não         | [pretty, pretty-timestamped]                   | completo | output format                                     |
+| level       | string | Não         | [fatal, error, warn, http, info, debug, trace] | completo | verbose level                                     |
