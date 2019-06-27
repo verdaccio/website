@@ -98,6 +98,9 @@
       "reverse-proxy": {
         "title": "리버스 프록시 설정"
       },
+      "security-policy": {
+        "title": "Security Policy"
+      },
       "server-configuration": {
         "title": "서버 구성"
       },
