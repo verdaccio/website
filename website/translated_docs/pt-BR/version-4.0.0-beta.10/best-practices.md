@@ -1,18 +1,18 @@
 ---
 id: version-4.0.0-beta.10-best
-title: Best Practices
-original_id: best
+title: Boas Práticas
+original_id: Melhores
 ---
 
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+O guia a seguir é uma lista das melhores práticas coletadas e que geralmente recomendamos a todos os usuários. Não leve este guia como obrigatório, você pode escolher algumas delas de acordo com suas necessidades.
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Sinta-se à vontade para sugerir suas melhores práticas com a comunidade Verdaccio**.
 
-## Private Registry
+## Registro Privado
 
 You can add users and manage which users can access which packages.
 
-It is recommended that you define a prefix for your private packages, for example `local-*` or scoped `@my-company/*`, so all your private things will look like this: `local-foo`. This way you can clearly separate public packages from private ones.
+É recomendado que você defina um prefixo para os seus pacotes privados, por exemplo `local-*` ou `@my-company/*`, assim todos os seus elementos privados ficarão assim: `local-foo`. This way you can clearly separate public packages from private ones.
 
 ```yaml
   packages:
@@ -98,15 +98,15 @@ By default all packages are you publish in Verdaccio are accessible for all publ
 
 In that way, **nobody will take advance of your registry unless is authorized and private packages won't be displayed in the User Interface**.
 
-## Server
+## Servidor
 
-### Secured Connections
+### Conexões Seguras
 
-Using **HTTPS** is a common recomendation, for such reason we recommend read the [SSL](ssl.md) section to make Verdaccio secure or using a HTTPS [reverse proxy](reverse-proxy.md) on top of Verdaccio.
+O uso de **HTTPS** é uma recomendação comum, por essa razão recomendamos a leitura da seção [SSL](ssl.md) para tornar o Verdaccio seguro ou usar um HTTPS [reverse proxy](reverse-proxy.md) no topo do Verdaccio.
 
-### Expiring Tokens
+### Validando Tokens
 
-In `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+No `verdaccio@3.x` os tokens não têm data de validade. Por essa razão, introduzimos no próximo `verdaccio@4.x` o recurso JWT [PR#896] (https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
@@ -120,8 +120,8 @@ security:
       expiresIn: 7d
 ```
 
-**Using this configuration will override the current system and you will be able to control how long the token will live**.
+**O uso desta configuração substituirá o sistema atual e você poderá controlar por quanto tempo o token ficará ativo**.
 
-Using JWT also improves the performance with authentication plugins, the old system will perform an unpackage and validating the credentials in each request, while JWT will rely on the token signature avoiding the overhead for the plugin.
+O uso do JWT também melhora o desempenho com plug-ins de autenticação, o sistema antigo executará um desempacotamento e validará as credenciais em cada solicitação, enquanto o JWT dependerá da assinatura do token, evitando a sobrecarga do plug-in.
 
-As a side note, at **npmjs the token never expires**.
+Como anotação, no **npmjs o token nunca expira **.
