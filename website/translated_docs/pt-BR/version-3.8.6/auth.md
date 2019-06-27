@@ -1,7 +1,7 @@
 ---
 id: version-3.8.6-authentification
 title: Autenticação
-original_id: autenticacao
+original_id: authentification
 ---
 
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
@@ -12,7 +12,7 @@ The client authentification is handled by `npm` client itself. Once you login to
 npm adduser --registry http://localhost:4873
 ```
 
-A token is generated in the `npm` configuration file hosted in your user home folder. For more information about `.npmrc` read the [official documentation](https://docs.npmjs.com/files/npmrc).
+Um token é gerado no arquivo de configuração `npm` hospedado na pasta inicial do seu usuário. Para mais informações sobre o `.npmrc` leia a [documentação oficial](https://docs.npmjs.com/files/npmrc).
 
 ```bash
 cat .npmrc
@@ -21,11 +21,11 @@ registry=http://localhost:5555/
 //registry.npmjs.org/:_authToken=secretNpmjsToken
 ```
 
-#### Anonymous publish
+#### Publicação anônima
 
-`verdaccio`allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
+`verdaccio` permite que você ative a publicação anônima, para conseguir isso você precisará configurar corretamente o [acesso a pacotes](packages.md).
 
-Eg:
+Por exemplo:
 
 ```yaml
   'my-company-*':
@@ -49,9 +49,9 @@ auth:
     #max_users: 1000
 ```
 
-| Property  | Type   | Obrigatório | Exemplo    | Support | Descrição                                                    |
-| --------- | ------ | ----------- | ---------- | ------- | ------------------------------------------------------------ |
-| file      | string | Sim         | ./htpasswd | all     | arquivo onde ficam armazenadas as credenciais criptografadas |
-| max_users | number | Não         | 1000       | all     | define o limite de usuários                                  |
+| Propriedade | Tipo   | Obrigatório | Exemplo    | Suporte  | Descrição                                         |
+| ----------- | ------ | ----------- | ---------- | -------- | ------------------------------------------------- |
+| file        | string | Sim         | ./htpasswd | completo | arquivo que hospeda as credenciais criptografadas |
+| max_users   | número | Não         | 1000       | completo | define o limite de usuários                       |
 
 No caso de não permitir o login de usuário, você pode definir `max_users: -1`.
