@@ -89,7 +89,7 @@ Iṣeto naa jẹ pinpin si abala meji, `api` ati `web`. Lati lo JWT lori `api`, 
 
 ### UI Ayelujara
 
-Ohun ini yii gba ọ laaye lati se ayipada si ifihan ati irisi UI ayelujara. For more information about this section read the [web ui page](web.md).
+Ohun ini yii gba ọ laaye lati se ayipada si ifihan ati irisi UI ayelujara. Fun alaye siwaju sii nipa abala yii ka [oju ewe ui ayelujara](web.md).
 
 ```yaml
 web:
@@ -101,7 +101,7 @@ web:
 
 ### Uplinks
 
-Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
+Uplinks ni agbara eto naa lati sawari awọn akopọ lati awọn ibi iforukọsilẹ ọlọna jijin nigbati awọn akopọ naa ko ba si ni agbegbe. Fun alaye siwaju sii nipa abala yii ka [oju ewe uplinks](uplinks.md).
 
 ```yaml
 uplinks:
@@ -109,9 +109,9 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Awọn akopọ
 
-Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
+Awọn akopọ fayegba olumulo naa lati ṣakoso bi wiwọle si ori akopọ naa se ma maa waye. For more information about this section read the [packages page](packages.md).
 
 ```yaml
 packages:
