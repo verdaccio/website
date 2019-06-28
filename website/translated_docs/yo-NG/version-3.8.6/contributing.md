@@ -36,9 +36,9 @@ Dajudaju, inu wa yoo dun ki o ṣe iranlọwọ fun wa lati mu eto akopọ naa d
 
 Eyi ninu diẹ ninu awọn ero:
 
-* Create a common eslint rules to be used across all dependencies or plugins
-* Improve Flow types definitions delivery
-* Moving to Webpack 4
+* Ṣẹda awọn ofin ti eslint ti o wọpọ to ma jẹ lilo jakejado gbogbo awọn igbarale tabi awọn ohun elo asomọ
+* Mu ifijiṣẹ awọn itumọ awọn iru Ilana dara si
+* Gbigbe lọ si Webpack 4
 * Improve hot reload with Webpack
 * We use babel and webpack across all dependencies, why not a common preset?
 * Improve continous integration delivery
