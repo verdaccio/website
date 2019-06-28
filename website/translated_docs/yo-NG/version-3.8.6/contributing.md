@@ -28,7 +28,7 @@ A ni [akojọ ti ohun elo asomọ](plugins.md) ti o gun to si ti ṣetan lati j�
 
 ### Emi yoo nifẹ lati ṣiṣẹ ninu Intafeesi Olumulo naa
 
-Recently we have moved to modern techonologies as `React` and `element-react`. We are looking forward to see new ideas how to improve the UI.
+Laipẹ a ti ko lọ si awọn imọ ẹrọ igbalode gẹgẹbi `React` ati `element-react`. We are looking forward to see new ideas how to improve the UI.
 
 ### I feel more confortable improving the stack
 
