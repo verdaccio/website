@@ -1,12 +1,12 @@
 ---
 id: version-3.8.6-build
-title: Build the source code
-original_id: build
+title: Se agbedide koodu orisun naa
+original_id: agbedide
 ---
 
-Verdaccio relies on `yarn` instead `npm` to download dependencies.
+Verdaccio n gbarale `yarn` dipo `npm` lati gba awọn igbarale.
 
-*Note: the current build only will build with `➜ yarn@1.x`.
+*Akiyesi: agbedide ti lọwọlọwọ yii yoo se agbedide pẹlu `➜ yarn@1.x` nikan.
 
 ```bash
   yarn install
