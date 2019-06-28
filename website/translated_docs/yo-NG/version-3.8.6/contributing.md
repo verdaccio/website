@@ -32,9 +32,9 @@ Laipẹ a ti ko lọ si awọn imọ ẹrọ igbalode gẹgẹbi `React` ati `el
 
 ### O rọmilọrun jọjọ lati mu eto akopọ naa dara si
 
-Dajudaju, inu wa yoo dun ki o ṣe iranlọwọ fun wa lati mu eto akopọ naa dara sii, o le ṣe agbega awọn igbarale bi `eslint`, `stylelint`, `webpack`. O maa dara gan ti o ba le ṣe imudara iṣeto `webpack` diẹ si. A fayegba eyikeyi aba. Furthermore whether you have experience with **Yeoman** you might help us with the [verdaccio generator](https://github.com/verdaccio/generator-verdaccio-plugin).
+Dajudaju, inu wa yoo dun ki o ṣe iranlọwọ fun wa lati mu eto akopọ naa dara sii, o le ṣe agbega awọn igbarale bi `eslint`, `stylelint`, `webpack`. O maa dara gan ti o ba le ṣe imudara iṣeto `webpack` diẹ si. A fayegba eyikeyi aba. Siwaju sii boya o ni iriri pẹlu **Yeoman** o le ṣe iranlọwọ fun wa pẹlu [ẹrọ amuagbarawa ti verdaccio](https://github.com/verdaccio/generator-verdaccio-plugin).
 
-Here some ideas:
+Eyi ninu diẹ ninu awọn ero:
 
 * Create a common eslint rules to be used across all dependencies or plugins
 * Improve Flow types definitions delivery
