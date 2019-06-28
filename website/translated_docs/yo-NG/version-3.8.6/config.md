@@ -6,7 +6,7 @@ original_id: iṣeto
 
 Faili yii ni pataki igun ti verdaccio nibi ti o ti le se aiyipada iwa atilẹwa naa, ṣe imuṣiṣẹ awọn ohun elo ati awọn ẹya ara to jẹ afikun.
 
-A default configuration file is created the very first time you run `verdaccio`.
+Faili iṣeto atilẹwa kan jẹ ṣiṣẹda ni igba akọkọ ti o ba ṣe amulo `verdaccio`.
 
 ## Iṣeto Atilẹwa
 
@@ -37,7 +37,7 @@ Awọn abala wọnyi ṣe alaye nipa nkan ti ohun ini kọọkan tumọ si ati a
 
 ### Ibi ipamọ
 
-Is the location of the default storage. **Verdaccio is by default based on local file system**.
+Ni aaye ti ibi ipamọ atilẹwa. **Verdaccio is by default based on local file system**.
 
 ```yaml
 storage: ./storage
