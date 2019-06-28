@@ -216,7 +216,7 @@ notify:
 
 `ayẹwo npm` jẹ aṣẹ titun kan ti o jẹ gbigbejade pẹlu [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio wa pẹlu ohun elo middleware ti o jẹ kikọ sinu rẹ lati sakoso aṣẹ yii.
 
-> If you have a new installation it comes by default, otherwise you need to add the following props to your config file
+> Ti o ba sẹsẹ fi sori ẹrọ o ma n ba wa ni atilẹwa, bibẹkọ o nilo lati se afikun awọn atilẹyin wọnyi sinu faili iṣeto rẹ
 
 ```yaml
 middlewares:
