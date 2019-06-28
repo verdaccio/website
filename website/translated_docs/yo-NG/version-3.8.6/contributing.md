@@ -24,9 +24,9 @@ Gbogbo wa ni ọgbọn ọtọọtọ, nitorina, jẹ ki a wo ibiti o le rọrun
 
 Node.js ni ipilẹ `verdaccio`, a n lo awọn ibi ikowesi gẹgẹbi `express`, `commander`, `request` tabi `async`. Verdaccio lakotan jẹ API Rest ti o ṣẹda ibaraẹnisọrọ pẹlu awọn onibara `npm` ti o ni ibamu, gẹgẹbi `yarn`.
 
-We have a long [list of plugins](plugins.md) ready to be used and improved but at the same time [you might create your own](dev-plugins.md).
+A ni [akojọ ti ohun elo asomọ](plugins.md) ti o gun to si ti ṣetan lati jẹ lilo ati mimu dara si sugbon ni bakanna [o le ṣẹda ti ara rẹ](dev-plugins.md).
 
-### I would prefer to work in the User Interface
+### Emi yoo nifẹ lati ṣiṣẹ ninu Intafeesi Olumulo naa
 
 Recently we have moved to modern techonologies as `React` and `element-react`. We are looking forward to see new ideas how to improve the UI.
 
