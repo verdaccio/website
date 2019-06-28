@@ -30,9 +30,9 @@ A ni [akojọ ti ohun elo asomọ](plugins.md) ti o gun to si ti ṣetan lati j�
 
 Laipẹ a ti ko lọ si awọn imọ ẹrọ igbalode gẹgẹbi `React` ati `element-react`. A n fojusọna lati ri awọn ero tuntun lori bi a ṣe le mu Intafeesi Olumulo dara si.
 
-### I feel more confortable improving the stack
+### O rọmilọrun jọjọ lati mu eto akopọ naa dara si
 
-Of course, we will be happy to help us improving the stack, you can upgrade dependencies as `eslint`, `stylelint`, `webpack`. You might merely improve the `webpack` configuration would be great. Any suggestion is very welcome. Furthermore whether you have experience with **Yeoman** you might help us with the [verdaccio generator](https://github.com/verdaccio/generator-verdaccio-plugin).
+Dajudaju, inu wa yoo dun ki o ṣe iranlọwọ fun wa lati mu eto akopọ naa dara sii, o le ṣe agbega awọn igbarale bi `eslint`, `stylelint`, `webpack`. O maa dara gan ti o ba le ṣe imudara iṣeto `webpack` diẹ si. A fayegba eyikeyi aba. Furthermore whether you have experience with **Yeoman** you might help us with the [verdaccio generator](https://github.com/verdaccio/generator-verdaccio-plugin).
 
 Here some ideas:
 
