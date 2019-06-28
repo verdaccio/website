@@ -1,6 +1,6 @@
 ---
-id: security-policy
-title: "Security Policy"
+id: eto imulo-aabo
+title: "Eto imulo Aabo"
 ---
 
-Follow our security policy on [Github](https://github.com/verdaccio/verdaccio/security/policy)
+Tẹle eto imulo aabo wa ni [Github](https://github.com/verdaccio/verdaccio/security/policy)
