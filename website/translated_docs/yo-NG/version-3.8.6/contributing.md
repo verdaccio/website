@@ -18,11 +18,11 @@ Ni iwofiri akọkọ verdaccio jẹ ibi ipamọ kan soso, ṣugbọn awọn ọn
 
 ### Sisawari ipo mi
 
-All we have different skills, so, let's see where you might feel comfortable.
+Gbogbo wa ni ọgbọn ọtọọtọ, nitorina, jẹ ki a wo ibiti o le rọrun fun ọ.
 
-### I know or I want to learn Node.js
+### Mo mọ tabi Mo fẹ lati kọ Node.js
 
-Node.js is the base of `verdaccio`, we use libraries as `express`, `commander`, `request` or `async`. Verdaccio is basically a Rest API that create a communication with `npm` clients compatible, as `yarn`.
+Node.js ni ipilẹ `verdaccio`, a n lo awọn ibi ikowesi gẹgẹbi `express`, `commander`, `request` tabi `async`. Verdaccio is basically a Rest API that create a communication with `npm` clients compatible, as `yarn`.
 
 We have a long [list of plugins](plugins.md) ready to be used and improved but at the same time [you might create your own](dev-plugins.md).
 
