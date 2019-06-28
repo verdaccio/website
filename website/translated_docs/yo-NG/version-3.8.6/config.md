@@ -152,7 +152,7 @@ max_body_size: 10mb
 
 ### Ibudo Itẹtisi
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+`verdaccio` n ṣiṣẹ ni atilẹwa ni ibudo `4873` naa. Yiyi ibudo naa pada le ṣee ṣe nipasẹ [cli](cli.md) tabi ninu faili iṣeto naa, awọn aṣayan wọnyi fẹsẹmulẹ.
 
 ```yaml
 listen:
