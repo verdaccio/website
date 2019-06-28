@@ -39,9 +39,9 @@ Eyi ninu diẹ ninu awọn ero:
 * Ṣẹda awọn ofin ti eslint ti o wọpọ to ma jẹ lilo jakejado gbogbo awọn igbarale tabi awọn ohun elo asomọ
 * Mu ifijiṣẹ awọn itumọ awọn iru Ilana dara si
 * Gbigbe lọ si Webpack 4
-* Improve hot reload with Webpack
-* We use babel and webpack across all dependencies, why not a common preset?
-* Improve continous integration delivery
+* Mu atunmuṣiṣẹ gbigbona dara si pẹlu Webpack
+* A n lo babel ati webpack jakejado gbogbo awọn igbarale, kilode ti kii ṣe iṣeto atilẹda to wọpọ?
+* Mu ifijiṣẹ imuṣiṣẹpọ alainidaduro dara si
 
 ### I do great Documentation
 
