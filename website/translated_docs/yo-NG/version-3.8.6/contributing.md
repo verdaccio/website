@@ -1,7 +1,7 @@
 ---
 id: version-3.8.6-contributing
-title: Contributing Verdaccio
-original_id: contributing
+title: Lilọwọsi Verdaccio
+original_id: lilọwọsi
 ---
 
 First of all 👏👏 thanks for visiting this page, for us means you are willing contribute to `verdaccio` and we are happy for that. Jumping into an unfamiliar code base is not easy but we are here to help you.
