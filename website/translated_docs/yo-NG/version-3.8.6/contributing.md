@@ -4,15 +4,15 @@ title: Lilọwọsi Verdaccio
 original_id: lilọwọsi
 ---
 
-First of all 👏👏 thanks for visiting this page, for us means you are willing contribute to `verdaccio` and we are happy for that. Jumping into an unfamiliar code base is not easy but we are here to help you.
+Lakọkọ naa 👏👏 o seun fun wiwa si oju ewe yii, fun wa o tumọ si pe o ṣetan lati ṣe ilọwọsi si `verdaccio` atipe inu wa dun fun eyi. Fifo lọ sinu ipilẹ koodu ti o jẹ ajeji ko rọrun ṣugbọn a wa nibi lati ran ọ lọwọ.
 
-## Comunication Channels
+## Awọn ikanni Ibaraẹnisọrọ
 
-If you are willing for asking, we use two channels for discussions:
+Ti o ba ṣetan lati se ibeere, a n lo awọn ikanni meji fun awọn ijiroro:
 
-* [Public Discord channel](http://chat.verdaccio.org/)
+* [Ikanni gbogbogbo Discord](http://chat.verdaccio.org/)
 
-## Getting started
+## Bibẹrẹ
 
 As a first glance verdaccio is a single repository, but there are many ways you might contribute and a variety of technologies to practice.
 
