@@ -38,14 +38,14 @@ Bi apejuwe rẹ ti ṣe jẹ ṣiṣe [lori ọrọ #212](https://github.com/ver
 
 ## htpasswd atilẹwa
 
-Lati le tubọ mu iṣeto naa rọrun, `verdaccio` n lo ohun elo asomọ kan to da lori `htpasswd`. As of version v3.0.x an [external plugin](https://github.com/verdaccio/verdaccio-htpasswd) is used by default. The v2.x version of this package still contains the built-in version of this plugin.
+Lati le tubọ mu iṣeto naa rọrun, `verdaccio` n lo ohun elo asomọ kan to da lori `htpasswd`. Titi di ẹya v3.0.x [ohun elo asomọ ti ita](https://github.com/verdaccio/verdaccio-htpasswd) ma n jẹ lilo ni atilẹwa. The v2.x Ẹya v2.x ti akopọ yii si tun ni ẹya alakọmọ ti ohun elo asomọ yii.
 
 ```yaml
 auth:
   htpasswd:
     file: ./htpasswd
-    # Maximum amount of users allowed to register, defaults to "+inf".
-    # You can set this to -1 to disable registration.
+    # Iye awọn olumulo to pọju ti aaye wa fun lati forukọsilẹ, n pada si "+inf".
+    # O le ṣeto eyi si -1 lati yọ iforukọsilẹ kuro.
     #max_users: 1000
 ```
 
