@@ -64,7 +64,7 @@ auth:
 
 ### Aabo
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Niwọn: <code>verdaccio@4.0.0</code> nitori <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
 Bulọọku aabo fayegba ọ lati ṣe aami ibuwọlu naa ni akanṣe. Lati ṣe imuṣiṣẹ ibuwọlu tuntun [JWT (json web token)](https://jwt.io/) o nilo lati se afikun bulọọku `jwt` si abala `api`, `web` n lo `jwt` ni atilẹwa.
 
@@ -87,9 +87,9 @@ Iṣeto naa jẹ pinpin si abala meji, `api` ati `web`. Lati lo JWT lori `api`, 
 
 > A ṣe igbaniyanju to ga lati ko lọ si JWT niwọnti ibuwọlu ijogun (`aes192`) ti wa ni iparun ati pe o ma farasin ni awọn ẹya ọjọ iwaju.
 
-### Web UI
+### UI Ayelujara
 
-This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
+Ohun ini yii gba ọ laaye lati se ayipada si ifihan ati irisi UI ayelujara. For more information about this section read the [web ui page](web.md).
 
 ```yaml
 web:
