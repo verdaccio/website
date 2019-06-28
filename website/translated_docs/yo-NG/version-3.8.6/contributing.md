@@ -14,9 +14,9 @@ Ti o ba ṣetan lati se ibeere, a n lo awọn ikanni meji fun awọn ijiroro:
 
 ## Bibẹrẹ
 
-As a first glance verdaccio is a single repository, but there are many ways you might contribute and a variety of technologies to practice.
+Ni iwofiri akọkọ verdaccio jẹ ibi ipamọ kan soso, ṣugbọn awọn ọna pupọ wa ti o le gba lati ṣe ilọwọsi ati oriṣiriṣi awọn imọ ẹrọ lati danwo.
 
-### Finding my spot
+### Sisawari ipo mi
 
 All we have different skills, so, let's see where you might feel comfortable.
 
