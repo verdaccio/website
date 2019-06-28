@@ -22,7 +22,7 @@ Gbogbo wa ni ọgbọn ọtọọtọ, nitorina, jẹ ki a wo ibiti o le rọrun
 
 ### Mo mọ tabi Mo fẹ lati kọ Node.js
 
-Node.js ni ipilẹ `verdaccio`, a n lo awọn ibi ikowesi gẹgẹbi `express`, `commander`, `request` tabi `async`. Verdaccio is basically a Rest API that create a communication with `npm` clients compatible, as `yarn`.
+Node.js ni ipilẹ `verdaccio`, a n lo awọn ibi ikowesi gẹgẹbi `express`, `commander`, `request` tabi `async`. Verdaccio lakotan jẹ API Rest ti o ṣẹda ibaraẹnisọrọ pẹlu awọn onibara `npm` ti o ni ibamu, gẹgẹbi `yarn`.
 
 We have a long [list of plugins](plugins.md) ready to be used and improved but at the same time [you might create your own](dev-plugins.md).
 
