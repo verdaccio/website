@@ -125,24 +125,24 @@ packages:
 
 ### Atẹjade Alaisilorila
 
-By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
+Nipa atilẹwa `verdaccio` ko kin fayegba sise atẹjade nigbati onibara ko ba si lori ila, ihuwasi naa le se bori nipasẹ siseto eyi si *true*.
 
 ```yaml
 publish:
   allow_offline: false
 ```
 
-<small>Since: <code>verdaccio@2.3.6</code> due <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
+<small>Niwọn: <code>verdaccio@2.3.6</code> nitori <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
 
-### URL Prefix
+### Ibẹrẹ URL
 
 ```yaml
 url_prefix: https://dev.company.local/verdaccio/
 ```
 
-Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
+Niwọn: `verdaccio@2.3.6` nitori [#197](https://github.com/verdaccio/verdaccio/pull/197)
 
-### Max Body Size
+### Iwọn Ara to Pọju
 
 By default the maximum body size for a JSON document is `10mb`, if you run in errors as `"request entity too large"` you may increase this value.
 
