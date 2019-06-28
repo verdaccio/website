@@ -190,7 +190,7 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-This variable should contain a comma-separated list of domain extensions proxy should not be used for.
+Alayipada yii yẹ ki o ni awọn akojọpọ awọn afikun ibudo ti o jẹ yiya sọtọ pẹlu aami idanuduro diẹ ti aṣoju ikọkọ ko gbọdọ jẹ lilo fun.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
@@ -198,7 +198,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Awọn ifitonileti
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Ṣiṣe imuṣiṣẹ awọn ifitonileti si awọn irinṣẹ alagata jẹ irọrun nipasẹ awọn aaye ikọ ayelujara. Fun alaye siwaju sii nipa abala yii ka [oju ewe awọn ifitonileti](notifications.md).
 
 ```yaml
 notify:
@@ -208,13 +208,13 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-> For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
+> Fun alaye awọn eto iṣeto siwaju sii, jọwọ [ṣayẹwo koodu orisun naa](https://github.com/verdaccio/verdaccio/tree/master/conf).
 
-### Audit
+### Ayẹwo
 
-<small>Since: <code>verdaccio@3.0.0</code></small>
+<small>Lati: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`ayẹwo npm` jẹ aṣẹ titun kan ti o jẹ gbigbejade pẹlu [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio wa pẹlu ohun elo middleware ti o jẹ kikọ sinu rẹ lati sakoso aṣẹ yii.
 
 > If you have a new installation it comes by default, otherwise you need to add the following props to your config file
 
