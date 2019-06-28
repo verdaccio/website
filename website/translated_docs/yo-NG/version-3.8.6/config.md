@@ -37,7 +37,7 @@ Awọn abala wọnyi ṣe alaye nipa nkan ti ohun ini kọọkan tumọ si ati a
 
 ### Ibi ipamọ
 
-Ni aaye ti ibi ipamọ atilẹwa. **Verdaccio is by default based on local file system**.
+Ni aaye ti ibi ipamọ atilẹwa. **Verdaccio ni atilẹwa da lori eto faili ibilẹ**.
 
 ```yaml
 storage: ./storage
@@ -45,7 +45,7 @@ storage: ./storage
 
 ### Awọn ohun elo
 
-Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
+Ni aaye ti ọna ohun elo naa. O wulo fun awọn iṣamulo to da lori Docker/Kubernetes.
 
 ```yaml
 plugins: ./plugins
