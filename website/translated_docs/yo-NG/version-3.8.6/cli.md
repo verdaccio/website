@@ -19,7 +19,7 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 ## Aaye faili iṣeto atilẹwa
 
-To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and Windows environment we look for [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
+Lati sawari itọsọna ile, a gbẹkẹle **$XDG_DATA_HOME** gẹgẹbi aṣayan akọkọ ati ayika Windows ti a n wa fun [iyipada ayika ti APPDATA](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
 ## Default storage location
 
