@@ -111,7 +111,7 @@ uplinks:
 
 ### Awọn akopọ
 
-Awọn akopọ fayegba olumulo naa lati ṣakoso bi wiwọle si ori akopọ naa se ma maa waye. For more information about this section read the [packages page](packages.md).
+Awọn akopọ fayegba olumulo naa lati ṣakoso bi wiwọle si ori akopọ naa se ma maa waye. Fun alaye siwaju sii nipa abala yii ka [oju ewe awọn akopọ](packages.md).
 
 ```yaml
 packages:
@@ -123,7 +123,7 @@ packages:
 
 ## Iṣeto Giga
 
-### Offline Publish
+### Atẹjade Alaisilorila
 
 By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
 
