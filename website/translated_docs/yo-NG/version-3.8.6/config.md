@@ -166,7 +166,7 @@ listen:
 
 ### HTTPS
 
-To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
+Lati mu `https` ṣiṣẹ ninu `verdaccio` o to lati ṣeto asia `listen` pẹlu Ilana *https://*. Fun alaye siwaju sii nipa abala yii ka [oju ewe ssl](ssl.md).
 
 ```yaml
 https:
@@ -177,11 +177,11 @@ https:
 
 ### Aṣoju ikọkọ
 
-Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
+Awọn aṣoju ikọkọ jẹ awọn olupese HTTP oniṣẹ-pataki ti o jẹ didalara lati gbe data kuro lati awọn olupese ọlọna jinjin lọ si awọn onibara agbegbe.
 
 #### http_proxy ati https_proxy
 
-If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
+Ti o ba ni aṣoju ikọkọ kan ninu nẹtiwọki rẹ o le ṣeto akọle `X-Forwarded-For` kan nipa lilo awọn ohun ini wọnyi.
 
 ```yaml
 http_proxy: http://something.local/
