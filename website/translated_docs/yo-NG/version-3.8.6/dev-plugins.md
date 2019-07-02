@@ -122,7 +122,7 @@ Lati ṣe iforukọsilẹ middleware kan a nilo ohun kan pẹlu ọna kan ṣo�
 
 ## Ohun elo Ibi ipamọ
 
-Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), but, since `verdaccio@3.x` you can plug in a custom storage replacing the default behaviour.
+Verdaccio ni atilẹwa n lo ohun elo ibi ipamọ eto faili [local-storage](https://github.com/verdaccio/local-storage),ṣugbọn, lati `verdaccio@3.x` o le se asomọ ibi ipamọ akanṣe kan ti o rọpo ihuwasi atilẹwa.
 
 ### API
 
