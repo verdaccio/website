@@ -118,7 +118,7 @@ function register_middlewares(expressApp, authInstance, storageInstance) {
 }
 ```
 
-Lati ṣe iforukọsilẹ middleware kan a nilo ohun kan pẹlu ọna kan ṣoṣo ti a n pe ni `register_middlewares` ti yoo gba awọn ariyanjiyan mẹta (`expressApp, auth, storage`). *Auth* is the authentification instance and *storage* is also the main Storage instance that will give you have access to all to the storage actions.
+Lati ṣe iforukọsilẹ middleware kan a nilo ohun kan pẹlu ọna kan ṣoṣo ti a n pe ni `register_middlewares` ti yoo gba awọn ariyanjiyan mẹta (`expressApp, auth, storage`). *Auth* ni isẹlẹ sise ifasẹsi ati *storage* tun jẹ isẹlẹ Ibi ipamọ to se koko julọ ti yoo fun ọ ni iwọle si gbogbo awọn igbesẹ ibi ipamọ.
 
 ## Ohun elo Ibi ipamọ
 
