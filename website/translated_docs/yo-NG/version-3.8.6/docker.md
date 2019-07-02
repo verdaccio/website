@@ -18,21 +18,21 @@ docker pull verdaccio/verdaccio
 
 ## Awọn ẹya to ni Isamisi
 
-Since version `v2.x` you can pull docker images by [tag](https://hub.docker.com/r/verdaccio/verdaccio/tags/), as follows:
+Lati ẹya `v2.x` o le fa awọn aworan docker nipasẹ [aami](https://hub.docker.com/r/verdaccio/verdaccio/tags/), bi iwọnyi:
 
-For a major version:
+Fun ẹya pataki kan:
 
 ```bash
 docker pull verdaccio/verdaccio:3
 ```
 
-For a minor version:
+Fun ẹya kekere kan:
 
 ```bash
 docker pull verdaccio/verdaccio:3.0
 ```
 
-For a specific (patch) version:
+Fun ẹya (awẹ) kan pato:
 
 ```bash
 docker pull verdaccio/verdaccio:3.0.1
