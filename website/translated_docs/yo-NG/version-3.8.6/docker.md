@@ -80,7 +80,7 @@ Eyikeyi `host:port` to jẹ ṣiṣeto ni `conf/config.yaml` labẹ `listen` n l
 
 Ti o ba fẹ lati kansi isẹlẹ docker verdaccio labẹ ibudo to yatọ, jẹ ki a sọpe `5000` ninu `docker run` rẹ rọpo aṣẹ `-p 4873:4873` pẹlu `-p 5000:4873`.
 
-In case you need to specify which port to listen to **in the docker container**, since version 2.?.? you can do so by providing additional arguments to `docker run`: `--env PORT=5000` This changes which port the docker container exposes and the port verdaccio listens to.
+Toba sẹlẹ pe o nilo lati sọ pato ibudo to yẹ lati tẹtisi **ninu apoti docker naa**, lati ẹya 2.?.? o le ṣe bẹ nipa pipese afikun awọn ariyanjiyan si `docker run`: `--env PORT=5000` Eleyi n ṣe ayipada ibudo eyi ti apoti docker naa n laju si ati ibudo ti verdaccio n tẹtisi.
 
 Of course the numbers you give to `-p` paremeter need to match, so assuming you want them to all be the same this is what you could copy, paste and adopt:
 
