@@ -32,11 +32,11 @@ interface IPluginAuth extends IPlugin {
 
 #### Ipepada
 
-Once the authentication has been executed there is 2 options to give a response to `verdaccio`.
+Lọgan ti ifasẹsi naa ti waye awọn aṣayan meji lo wa lati fun `verdaccio` ni esi.
 
 ###### OnError
 
-Either something bad happened or auth was unsuccessful.
+Boya a jẹ wipe ohun buburu kan sẹlẹ tabi ifasẹsi ko ni aṣeyọri.
 
 ```flow
 callback(null, false)
@@ -44,7 +44,7 @@ callback(null, false)
 
 ###### OnSuccess
 
-The auth was successful.
+Ifasẹsi naa jẹ aṣeyọri.
 
 `groups` is an array of strings where the user is part of.
 
