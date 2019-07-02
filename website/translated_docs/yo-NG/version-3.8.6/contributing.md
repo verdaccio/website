@@ -53,7 +53,7 @@ A ni aaye ayelujara ti oju ewe ifabọsi kan <http://www.verdaccio.org/> ti inu 
 
 Aaye ayelujara wa da lori [Docusaurus](https://docusaurus.io/).
 
-### I am a DevOps
+### Mo jẹ DevOps
 
 We have a widely popular Docker image <https://hub.docker.com/r/verdaccio/verdaccio/> that need maintenance and pretty likely huge improvements, we need your knowledge for the benefits of all users.
 
