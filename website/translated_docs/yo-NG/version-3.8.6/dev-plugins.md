@@ -96,7 +96,7 @@ Nibi ti `htpasswd` ti jẹ afikun ipari ti orukọ ohun elo naa. fun apẹẹr�
 
 ## Ohun elo Middleware
 
-Middleware plugins have the capability to modify the API layer, either adding new endpoints or intercepting requests.
+Awọn ohun elo Middleware ni agbara lati ṣe ayipada ipele API naa, boya sise afikun awọn aaye opin tuntun tabi ṣiṣe idalọna awọn ibeere.
 
 ```flow
 interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
