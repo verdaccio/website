@@ -75,8 +75,8 @@ Ti o ba n ronu pe *"Mo ti rii [awọn ibi ipamọ](repositories.md) naa atipe Mo
 
 O ma nilo lati kọ bi o ṣe le ṣe agbedide, [a ti seto itọsọna kan fun eyi ni pato](build.md).
 
-Once you have played around with all scripts and you know how to use them, we are ready to go to the next step, run the [**Unit Test**](test.md).
+Lọgan ti o ba ti sere kiri gbogbo awọn iwe afọwọkọ ti o si ti mọ bi o ṣe le lo wọn, a ti ṣetan lati lọ si igbesẹ tokan, ṣe imuṣiṣẹ [**Idanwo Iwọn**](test.md).
 
-## Full list of contributors. We want to see your face here !
+## Akojọ awọn olulọwọsi ni kikun. A fẹ lati ri oju rẹ nibi !
 
 <a href="graphs/contributors"><img src="https://opencollective.com/verdaccio/contributors.svg?width=890&button=false" /></a>
