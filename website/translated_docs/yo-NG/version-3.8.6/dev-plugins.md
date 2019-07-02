@@ -28,9 +28,9 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> `adduser`, `allow_access` ati `allow_publish` nikan ni o jẹ aṣayan, verdaccio pese apadabọsi ni gbogbo awọn iṣẹlẹ bẹẹ.
 
-#### Callback
+#### Ipepada
 
 Once the authentication has been executed there is 2 options to give a response to `verdaccio`.
 
