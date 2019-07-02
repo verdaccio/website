@@ -32,9 +32,9 @@ logs:
 
 ## Seções
 
-The following sections explain what each property means and the different options.
+As seções a seguir explicam o que cada propriedade significa e as diferentes opções.
 
-### Storage
+### Armazenamento
 
 Is the location of the default storage. **Verdaccio is by default based on local file system**.
 
