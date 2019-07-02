@@ -36,7 +36,7 @@ Lọgan ti ifasẹsi naa ti waye awọn aṣayan meji lo wa lati fun `verdaccio`
 
 ###### OnError
 
-Boya a jẹ wipe ohun buburu kan sẹlẹ tabi ifasẹsi ko ni aṣeyọri.
+Boya a jẹ wipe ohun buburu kan sẹlẹ tabi ifasẹsi ko jẹ aṣeyọri.
 
 ```flow
 callback(null, false)
@@ -46,7 +46,7 @@ callback(null, false)
 
 Ifasẹsi naa jẹ aṣeyọri.
 
-`groups` is an array of strings where the user is part of.
+`awọn ẹgbẹ` jẹ oriṣi eto ti awọn okun nibi ti olumulo naa ti jẹ ara ti.
 
      callback(null, groups);
     
@@ -84,7 +84,7 @@ Auth.prototype.authenticate = function (user, password, callback) {
 module.exports = Auth;
 ```
 
-And the configuration will looks like:
+Atipe iṣeto naa yoo dabi:
 
 ```yaml
 auth:
@@ -92,7 +92,7 @@ auth:
     file: ./htpasswd
 ```
 
-Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
+Nibi ti `htpasswd` ti jẹ afikun ipari ti orukọ ohun elo naa. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
 
 ## Ohun elo Middleware
 
