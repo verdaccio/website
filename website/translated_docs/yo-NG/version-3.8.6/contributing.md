@@ -55,11 +55,11 @@ Aaye ayelujara wa da lori [Docusaurus](https://docusaurus.io/).
 
 ### Mo jẹ DevOps
 
-We have a widely popular Docker image <https://hub.docker.com/r/verdaccio/verdaccio/> that need maintenance and pretty likely huge improvements, we need your knowledge for the benefits of all users.
+A ni aworan Docker kan to gbajugbaja kaakiri <https://hub.docker.com/r/verdaccio/verdaccio/> ti o nilo itọju atipe o dabi pe o nilo awọn imudara nla si, a nilo imo rẹ fun awọn anfani ti gbogbo awọn olumulo.
 
-We have support for **Kubernetes**, **Puppet**, **Ansible** and **Chef** and we need help in those fields, feel free to see all repositories.
+A ni atilẹyin fun **Kubernetes**, **Puppet**, **Ansible** ati **Chef** atipe a nilo iranlọwọ ninu awọn aaye naa, ma se kọ lati wo gbogbo awọn ibi ipamọ.
 
-### I can do translations
+### Mo le ṣe awọn itumọ ede
 
 Verdaccio aims to be multilingual, in order to achieve it **we have the awesome support** of [Crowdin](https://crowdin.com) that is an amazing platform for translations.
 
