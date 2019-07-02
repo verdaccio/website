@@ -54,9 +54,9 @@ Lati mu apoti docker ṣiṣẹ:
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-Ariyanjiyan ikẹhin ṣe alaye iru aworan to yẹ lati lo. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
+Ariyanjiyan ikẹhin n sọ iru aworan to ma jẹ lilo. Ila to wa loke yoo fa aworan tuntun ti o ti wa ni kikọ tẹlẹ lati dockerhub, ti o ko ba ti ṣe bẹ tẹlẹ.
 
-If you have [build an image locally](#build-your-own-docker-image) use `verdaccio` as the last argument.
+Ti o ba ti [kọ aworan kan ni ilana ibilẹ](#build-your-own-docker-image) lo `verdaccio` gẹgẹbi ariyanjiyan ikẹhin.
 
 You can use `-v` to bind mount `conf`, `storage` and `plugins` to the hosts filesystem:
 
