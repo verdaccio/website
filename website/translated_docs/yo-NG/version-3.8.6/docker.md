@@ -38,7 +38,7 @@ Fun ẹya (awẹ) kan pato:
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next major release using the `beta` (master branch) version.
+Fun ifilọlẹ gboogi tokan nipa lilo ẹya `beta` (ẹka ọga).
 
 ```bash
 docker pull verdaccio/verdaccio:beta
@@ -46,15 +46,15 @@ docker pull verdaccio/verdaccio:beta
 
 > Ti o ba nifẹsi akojọ lori awọn aami, [jọwọ lọ si aaye ayelujara ti Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Running verdaccio using Docker
+## Mimu verdaccio ṣiṣẹ nipa lilo Docker
 
-To run the docker container:
+Lati mu apoti docker ṣiṣẹ:
 
 ```bash
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
+Ariyanjiyan ikẹhin ṣe alaye iru aworan to yẹ lati lo. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
 
 If you have [build an image locally](#build-your-own-docker-image) use `verdaccio` as the last argument.
 
