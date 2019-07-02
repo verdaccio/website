@@ -36,7 +36,7 @@ As seções a seguir explicam o que cada propriedade significa e as diferentes o
 
 ### Armazenamento
 
-Is the location of the default storage. **Verdaccio is by default based on local file system**.
+É a localização do armazenamento padrão. **Por padrão o Verdaccio está baseado no arquivo de sistema local **.
 
 ```yaml
 storage: ./storage
@@ -44,7 +44,7 @@ storage: ./storage
 
 ### Plugins
 
-Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
+É a localização do diretório de plugins. Útil para implementações baseadas em Docker/Kubernetes.
 
 ```yaml
 plugins: ./plugins
