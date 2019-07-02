@@ -92,7 +92,7 @@ auth:
     file: ./htpasswd
 ```
 
-Nibi ti `htpasswd` ti jẹ afikun ipari ti orukọ ohun elo naa. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
+Nibi ti `htpasswd` ti jẹ afikun ipari ti orukọ ohun elo naa. fun apẹẹrẹ: `verdaccio-htpasswd` ati awọn iyoku ti ara ma jẹ awọn odiwọn iṣeto ohun elo naa.
 
 ## Ohun elo Middleware
 
