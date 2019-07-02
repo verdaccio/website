@@ -68,15 +68,15 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
   verdaccio/verdaccio
 ```
 
-> Akiyesi: Verdaccio n ṣiṣẹ bi olumulo ti ko lo gbongbo (uid=100, gid=101) ninu apoti naa, ti o ba lo atopọ dide lati fagbara bori atilẹwa, o nilo lati rii daju pe ọna atilẹyin naa jẹ pinpin si olumulo to tọ. Ninu apẹẹrẹ ti o wa loke, o nilo lati ṣamulo `sudo chown -R 100:101 /opt/verdaccio` bibẹkọ o ma salaba pade awọn aṣiṣe igbanilaaye ni akoko iṣiṣẹ. [Lo iwọn iye docker](https://docs.docker.com/storage/volumes/) o jẹ igbaniyanju lori lilo dide atilẹyin.
+> Akiyesi: Verdaccio n ṣiṣẹ bi olumulo ti ko lo gbongbo (uid=100, gid=101) ninu apoti naa, ti o ba lo atopọ dide lati fagbara bori atilẹwa, o nilo lati rii daju pe ọna atilẹyin naa jẹ pinpin si olumulo to tọ. Ninu apẹẹrẹ ti o wa loke, o nilo lati ṣamulo `sudo chown -R 100:101 /opt/verdaccio` bibẹkọ o ma salaba pade awọn aṣiṣe igbanilaaye ni akoko iṣiṣẹ. [Lo iwọn iye docker](https://docs.docker.com/storage/volumes/) o jẹ igbaniyanju lori lilo atopọ dide.
 
 ### Awọn ohun elo
 
-Plugins can be installed in a separate directory and mounted using Docker or Kubernetes, however make sure you build plugins with native dependencies using the same base image as the Verdaccio Dockerfile.
+Awọn ohun elo afikun le ṣee fi sori ọna to yatọ ati jẹ titopọ nipa lilo Docker tabi Kubernetes, amọṣa rii daju pe o kọ awọn ohun elo afikun pẹlu awọn igbarale abinibi nipa lilo aworan ipilẹ kanna bi ti Verdaccio Dockerfile.
 
 ### Docker ati iṣeto ibudo akanṣe
 
-Any `host:port` configured in `conf/config.yaml` under `listen` is currently ignored when using docker.
+Eyikeyi `host:port` to jẹ ṣiṣeto ni `conf/config.yaml` labẹ `listen` n lọwọlọwọ jẹ fifojufo nigbati docker ba n jẹ lilo.
 
 If you want to reach verdaccio docker instance under different port, lets say `5000` in your `docker run` command replace `-p 4873:4873` with `-p 5000:4873`.
 
