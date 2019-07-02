@@ -73,7 +73,7 @@ A ti ṣeto iṣẹ akanṣe kan nibi ti o ti le yan ede ti o fẹran, ti o ko b
 
 Ti o ba n ronu pe *"Mo ti rii [awọn ibi ipamọ](repositories.md) naa atipe Mo ti setan lati bẹrẹ lẹsẹkẹsẹ"* to ba jẹbẹ Mo ni iroyin rere fun ọ, iyẹn ni igbesẹ tokan.
 
-You will need learn how to build, [we have prepared a guide just for that](build.md).
+O ma nilo lati kọ bi o ṣe le ṣe agbedide, [a ti seto itọsọna kan fun eyi ni pato](build.md).
 
 Once you have played around with all scripts and you know how to use them, we are ready to go to the next step, run the [**Unit Test**](test.md).
 
