@@ -82,7 +82,7 @@ Ti o ba fẹ lati kansi isẹlẹ docker verdaccio labẹ ibudo to yatọ, jẹ 
 
 Toba sẹlẹ pe o nilo lati sọ pato ibudo to yẹ lati tẹtisi **ninu apoti docker naa**, lati ẹya 2.?.? o le ṣe bẹ nipa pipese afikun awọn ariyanjiyan si `docker run`: `--env PORT=5000` Eleyi n ṣe ayipada ibudo eyi ti apoti docker naa n laju si ati ibudo ti verdaccio n tẹtisi.
 
-Of course the numbers you give to `-p` paremeter need to match, so assuming you want them to all be the same this is what you could copy, paste and adopt:
+Dajudaju awọn nọmba ti o fi fun `-p` odiwọn nilo lati baramu, nitorina kani wipe o fẹ ki gbogbo wọn jẹ ikannaa eyi ni ohun ti o le dakọ, lẹẹmọ ati samulo:
 
 ```bash
 PORT=5000; docker run -it --rm --name verdaccio \
@@ -92,7 +92,7 @@ PORT=5000; docker run -it --rm --name verdaccio \
 
 ### Lilo HTTPS pẹlu Docker
 
-You can configure the protocol verdaccio is going to listen on, similarly to the port configuration. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
+O le ṣe iṣeto awọn ilana ti verdaccio yoo tẹtisi, ni ibaramu si iṣeto ti ibudo naa. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
 
 ```bash
 PROTOCOL=https; docker run -it --rm --name verdaccio \
