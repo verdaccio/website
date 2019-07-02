@@ -126,7 +126,7 @@ Verdaccio ni atilẹwa n lo ohun elo ibi ipamọ eto faili [local-storage](https
 
 ### API
 
-The storage API is a bit more complex, you will need to create a class that return a `IPluginStorage` implementation. Please see details bellow.
+API ti Ibi ipamọ jẹ eyi ti o le diẹ, o ma nilo lati ṣẹda kilasi kan ti o n se idapada imuṣiṣẹ `IPluginStorage`. Jọwọ wo alaye labẹ yii.
 
 ```flow
 class LocalDatabase<IPluginStorage>{
@@ -178,13 +178,13 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 
 > API Ibi ipamọ ṣi jẹ onidanwo atipe o le yipada ninu awọn ẹya kekere ti o n bọ. Fun alaye siwaju sii nipa API Ibi ipamọ jọwọ tẹle [iru awọn itumọ ninu ibi ipamọ wa](https://github.com/verdaccio/flow-types).
 
-### Storage Plugins Examples
+### Awọn apẹẹrẹ Awọn ohun elo Ibi ipamọ
 
-The following list of plugins are implementing the Storage API and might be used them as example.
+Awọn akojọ ti awọn afikun wọnyi n ṣe imuṣiṣẹ API Ibi ipamọ naa atipe o le jẹ lilo bi apẹẹrẹ.
 
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory)
 * [local-storage](https://github.com/verdaccio/local-storage)
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)
 * [verdaccio-s3-storage](https://github.com/Remitly/verdaccio-s3-storage/tree/s3)
 
-> Are you willing to contribute with new Storage Plugins? [Click here.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
+> Ṣe o setan lati ṣe ilọwọsi pẹlu Awọn ohun elo Ibi ipamọ tuntun? [Tẹ ibi.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
