@@ -78,7 +78,7 @@ Awọn ohun elo afikun le ṣee fi sori ọna to yatọ ati jẹ titopọ nipa l
 
 Eyikeyi `host:port` to jẹ ṣiṣeto ni `conf/config.yaml` labẹ `listen` n lọwọlọwọ jẹ fifojufo nigbati docker ba n jẹ lilo.
 
-If you want to reach verdaccio docker instance under different port, lets say `5000` in your `docker run` command replace `-p 4873:4873` with `-p 5000:4873`.
+Ti o ba fẹ lati kansi isẹlẹ docker verdaccio labẹ ibudo to yatọ, jẹ ki a sọpe `5000` ninu `docker run` rẹ rọpo aṣẹ `-p 4873:4873` pẹlu `-p 5000:4873`.
 
 In case you need to specify which port to listen to **in the docker container**, since version 2.?.? you can do so by providing additional arguments to `docker run`: `--env PORT=5000` This changes which port the docker container exposes and the port verdaccio listens to.
 
