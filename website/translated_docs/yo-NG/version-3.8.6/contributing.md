@@ -49,9 +49,9 @@ Eyi ninu diẹ ninu awọn ero:
 
 ### Mo jẹ Oludalara
 
-We have a frontend website <http://www.verdaccio.org/> that will be happy to see your ideas.
+A ni aaye ayelujara ti oju ewe ifabọsi kan <http://www.verdaccio.org/> ti inu rẹ maa dun lati ri awọn ero rẹ.
 
-Our website is based on [Docusaurus](https://docusaurus.io/).
+Aaye ayelujara wa da lori [Docusaurus](https://docusaurus.io/).
 
 ### I am a DevOps
 
