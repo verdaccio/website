@@ -92,7 +92,7 @@ PORT=5000; docker run -it --rm --name verdaccio \
 
 ### Lilo HTTPS pẹlu Docker
 
-O le ṣe iṣeto awọn ilana ti verdaccio yoo tẹtisi, ni ibaramu si iṣeto ti ibudo naa. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
+O le ṣe iṣeto awọn ilana ti verdaccio yoo tẹtisi, ni ibaramu si iṣeto ti ibudo naa. O ni lati satunkọ iye atilẹwa("http") ti `PROTOCOL` iyipada ayika si "https", lẹhin ti o ti sọ awọn iwe ẹri inu config.yaml ni pato.
 
 ```bash
 PROTOCOL=https; docker run -it --rm --name verdaccio \
@@ -109,7 +109,7 @@ PROTOCOL=https; docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-You can set the port to use (for both container and host) by prefixing the above command with `PORT=5000`.
+O le ṣeto ibudo naa lati lo (fun awọn apoti ati agbalejo) nipasẹ fifi awọn aṣẹ ti o wa loke yii saaju pẹlu `PORT=5000`.
 
 Docker will generate a named volume in which to store persistent application data. You can use `docker inspect` or `docker volume inspect` to reveal the physical location of the volume and edit the configuration, such as:
 
