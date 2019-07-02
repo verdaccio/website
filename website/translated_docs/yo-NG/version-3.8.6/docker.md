@@ -58,7 +58,7 @@ Ariyanjiyan ikẹhin n sọ iru aworan to ma jẹ lilo. Ila to wa loke yoo fa aw
 
 Ti o ba ti [kọ aworan kan ni ilana ibilẹ](#build-your-own-docker-image) lo `verdaccio` gẹgẹbi ariyanjiyan ikẹhin.
 
-O le lo `-v` lati de `conf`, `storage` ati `plugins` mọ eto faili ti olugbalejo naa:
+O le lo `-v` lati de atilẹyin `conf`, `storage` ati `plugins` mọ eto faili ti olugbalejo naa:
 
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
