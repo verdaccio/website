@@ -9,7 +9,7 @@ Um arquivo de configuração padrão `config.yaml` é criado na primeira vez que
 
 ## Configuração Padrão
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+A configuração padrão tem suporte para pacotes **com escopo (scoped)** e permite que qualquer usuário acesse todos os pacotes, mas somente que os **usuários autenticados publiquem**.
 
 ```yaml
 storage: ./storage
