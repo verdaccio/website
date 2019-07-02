@@ -61,7 +61,7 @@ A ni atilẹyin fun **Kubernetes**, **Puppet**, **Ansible** ati **Chef** atipe a
 
 ### Mo le ṣe awọn itumọ ede
 
-Verdaccio aims to be multilingual, in order to achieve it **we have the awesome support** of [Crowdin](https://crowdin.com) that is an amazing platform for translations.
+Verdaccio gbero lati wa ni ọpọlọpọ ede, lati le ṣe aṣeyọri nipa eyi **a ni atilẹyin oniyebiye** ti [Crowdin](https://crowdin.com) eyi ti o jẹ pilatifọọmu alarabanra fun ṣiṣe awọn itumọ.
 
 <img src="https://d3n8a8pro7vhmx.cloudfront.net/uridu/pages/144/attachments/original/1485948891/Crowdin.png" width="400px" />
 
