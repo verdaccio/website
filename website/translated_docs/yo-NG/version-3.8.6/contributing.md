@@ -45,9 +45,9 @@ Eyi ninu diẹ ninu awọn ero:
 
 ### Mo ma n kọ Iwe akọsilẹ to kun ojuiwọn
 
-Many contributors find typos and grammar issues, that also helps to improve the overall experience for troubleshooting.
+Ọpọlọpọ awọn olulọwọsi ma n ri awọn aṣitẹ ati awọn iṣoro girama, ti o tun ma n pese iranlọwọ lati mu olubori iriri fun laasigbo titusita dara si.
 
-### I am a Designer
+### Mo jẹ Oludalara
 
 We have a frontend website <http://www.verdaccio.org/> that will be happy to see your ideas.
 
