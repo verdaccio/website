@@ -43,7 +43,7 @@ Eyi ninu diẹ ninu awọn ero:
 * A n lo babel ati webpack jakejado gbogbo awọn igbarale, kilode ti kii ṣe iṣeto atilẹda to wọpọ?
 * Mu ifijiṣẹ imuṣiṣẹpọ alainidaduro dara si
 
-### I do great Documentation
+### Mo ma n kọ Iwe akọsilẹ to kun ojuiwọn
 
 Many contributors find typos and grammar issues, that also helps to improve the overall experience for troubleshooting.
 
