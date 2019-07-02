@@ -106,7 +106,7 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 ### register_middlewares
 
-The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
+Ọna naa n pese iwọle kikun si sise ifasẹsi ati ibi ipamọ nipasẹ `auth` ati `storage`. `app` jẹ ohun elo ologere ti o n fayegba ọ lati se afikun awọn aaye opin tuntun.
 
 > Apẹẹrẹ didara julọ kan ti o jẹ ti ohun elo middleware ni [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) ati [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
