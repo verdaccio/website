@@ -65,11 +65,11 @@ Verdaccio gbero lati wa ni ọpọlọpọ ede, lati le ṣe aṣeyọri nipa ey
 
 <img src="https://d3n8a8pro7vhmx.cloudfront.net/uridu/pages/144/attachments/original/1485948891/Crowdin.png" width="400px" />
 
-We have setup a project where you can choose your favourite language, if you do not find your language feel free to request one [creating a ticket](https://github.com/verdaccio/verdaccio/issues/new).
+A ti ṣeto iṣẹ akanṣe kan nibi ti o ti le yan ede ti o fẹran, ti o ko ba ri ede rẹ ma ṣe kọ lati beere fun ọkan [ṣiṣẹda tikẹti kan](https://github.com/verdaccio/verdaccio/issues/new).
 
-[Go to Crowdin Verdaccio](https://crowdin.com/project/verdaccio)
+[Lọ si Crowdin Verdaccio](https://crowdin.com/project/verdaccio)
 
-## I'm ready to contribute
+## Mo setan lati ṣe ilọwọsi
 
 If you are thinking *"I've seen already the [repositories](repositories.md) and I'm willing to start right away"* then I have good news for you, that's the next step.
 
