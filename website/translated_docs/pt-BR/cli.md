@@ -20,7 +20,7 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 Para encontrar o diretório padrão de configuração, é usada a variável **$XDG_DATA_HOME** em sistemas Linux e Mac, em instalações Windows é usada a [variável APPDATA](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
-## Config file format
+## Formato do arquivo de configuração
 
 Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
 
