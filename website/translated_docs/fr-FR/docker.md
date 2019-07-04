@@ -81,7 +81,13 @@ Les plugins peuvent être installés dans un dossier séparé et montés à l'ai
 ```docker
 FROM verdaccio/verdaccio
 
-RUN npm install verdaccio-s3-storage
+USER root
+
+ENV NODE_ENV=production
+
+RUN npm i && npm install verdaccio-s3-storage
+
+USER verdaccio
 ```
 
 ### Configuration de Docker et du port personnalisé
