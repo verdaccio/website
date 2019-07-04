@@ -1,10 +1,10 @@
 ---
-id: version-3.8.6-notifications
+id: version-3.8.6-awọn ifitonileti
 title: Awọn ifitonileti
 original_id: awọn ifitonileti
 ---
 
-Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
+Fifitonileti jẹ gbigbedide ni pataki lati jẹ lilo pẹlu awọn webhooks Slack ti n wọle bọ, ṣugbọn o tun ma ṣe ifijiṣẹ fi ifiranṣẹ to rọrun kan si eyikeyi opin. Lọwọlọwọ o n ṣiṣẹ fun aṣẹ `npm publish` nikan.
 
 ## Ilo
 
@@ -143,7 +143,7 @@ Apẹẹrẹ kan:
 
 ### Akopọ to ti jẹ Gbigbejade
 
-You can acces to the package is being published with the keyword `{{publishedPackage}}` as follows.
+O le wọle si akopọ ti o n jẹ gbigbe jade pẹlu koko-ọrọ `{{publishedPackage}}` bi atẹle yi.
 
     {{ publisher.name }} has published {{publishedPackage}}"}
     
