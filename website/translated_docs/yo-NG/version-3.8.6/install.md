@@ -10,9 +10,9 @@ Verdaccio jẹ ohun elo ayelujara ti ọlọpọ pilatifọọmu. Lati fi sori �
 
 1. Oju ipade ti o ga ju 
     - Fun ẹya `verdaccio@2.x` Oju ipade `v4.6.1` jẹ ẹya ti o kere julọ ti atilẹyin wa fun.
-    - For version `verdaccio@latest` Node `6.12.0` is the minimum supported version.
-2. npm `>=3.x` or `yarn`
-3. The web interface supports the `Chrome, Firefox, Edge, and IE9` browsers.
+    - Fun ẹya `verdaccio@latest` Oju ipade `6.12.0` jẹ ẹya ti o kere julọ ti atilẹyin wa fun.
+2. npm `>=3.x` tabi `yarn`
+3. Intafeesi wẹẹbu naa n ṣe atilẹyin fun awọn ẹrọ aṣàwákiri ayelujara `Chrome, Firefox, Edge, and IE9`.
 
 ## Fifi CLI naa sori ẹrọ
 
