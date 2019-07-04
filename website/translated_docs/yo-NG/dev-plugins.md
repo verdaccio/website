@@ -36,13 +36,13 @@ Lati `v4.0.0`
 
 `apiJWTmiddleware` jẹ sisafihan lori [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) lati le ni iṣakoso ti olutọju aami ni kikun, fifagbara bori ọna yii ma yọ atilẹyin `login/adduser`. A ṣe igbaniyanju pe ki o ma se ṣe amulo ọna yii ayafi ti o ba pọn dandan. Wo apẹẹrẹ ni kikun kan [nibi](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
-#### Callback
+#### Ipepada
 
-Once the authentication has been executed there is 2 options to give a response to `verdaccio`.
+Lọgan ti ifasẹsi naa ti waye awọn aṣayan meji lo wa lati fun `verdaccio` ni esi.
 
 ###### OnError
 
-Either something bad happened or auth was unsuccessful.
+Boya a jẹ wipe ohun buburu kan sẹlẹ tabi ifasẹsi ko jẹ aṣeyọri.
 
 ```flow
 callback(null, false)
@@ -50,9 +50,9 @@ callback(null, false)
 
 ###### OnSuccess
 
-The auth was successful.
+Ifasẹsi naa jẹ aṣeyọri.
 
-`groups` is an array of strings where the user is part of.
+`awọn ẹgbẹ` jẹ oriṣi eto ti awọn okun nibi ti olumulo naa ti jẹ ara ti.
 
      callback(null, groups);
     
@@ -90,7 +90,7 @@ Auth.prototype.authenticate = function (user, password, callback) {
 module.exports = Auth;
 ```
 
-And the configuration will looks like:
+Atipe iṣeto naa yoo dabi:
 
 ```yaml
 auth:
@@ -102,7 +102,7 @@ Nibi ti `htpasswd` ti jẹ afikun ipari ti orukọ ohun elo naa. fun apẹẹr�
 
 ## Ohun elo Middleware
 
-Middleware plugins have the capability to modify the API layer, either adding new endpoints or intercepting requests.
+Awọn ohun elo Middleware ni agbara lati ṣe ayipada ipele API naa, boya sise afikun awọn aaye opin tuntun tabi ṣiṣe idalọna awọn ibeere.
 
 ```flow
 interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
@@ -124,11 +124,11 @@ function register_middlewares(expressApp, authInstance, storageInstance) {
 }
 ```
 
-To register a middleware we need an object with a single method called `register_middlewares` that will recieve 3 arguments (`expressApp, auth, storage`). *Auth* is the authentification instance and *storage* is also the main Storage instance that will give you have access to all to the storage actions.
+Lati ṣe iforukọsilẹ middleware kan a nilo ohun kan pẹlu ọna kan ṣoṣo ti a n pe ni `register_middlewares` ti yoo gba awọn ariyanjiyan mẹta (`expressApp, auth, storage`). *Auth* ni isẹlẹ sise ifasẹsi ati *storage* tun jẹ isẹlẹ Ibi ipamọ to se koko julọ ti yoo fun ọ ni iwọle si gbogbo awọn igbesẹ ibi ipamọ.
 
 ## Ohun elo Ibi ipamọ
 
-Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), but, since `verdaccio@3.x` you can plug in a custom storage replacing the default behaviour.
+Verdaccio ni atilẹwa n lo ohun elo ibi ipamọ eto faili [local-storage](https://github.com/verdaccio/local-storage),ṣugbọn, lati `verdaccio@3.x` o le se asomọ ibi ipamọ akanṣe kan ti o rọpo ihuwasi atilẹwa.
 
 ### API
 
@@ -186,7 +186,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 
 ### Awọn apẹẹrẹ Ibi ipamọ
 
-The following list of plugins are implementing the Storage API and might be used them as example.
+Awọn akojọ ti awọn afikun wọnyi n ṣe imuṣiṣẹ API Ibi ipamọ naa atipe o le jẹ lilo bi apẹẹrẹ.
 
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory)
 * [local-storage](https://github.com/verdaccio/local-storage)
