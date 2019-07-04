@@ -6,7 +6,7 @@ original_id: docker
 
 ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
-To pull the latest pre-built [docker image](https://hub.docker.com/r/verdaccio/verdaccio/):
+Lati fa [aworan docker](https://hub.docker.com/r/verdaccio/verdaccio/) tuntun to ti jẹ kikọ siwaju:
 
 ```bash
 docker pull verdaccio/verdaccio
@@ -18,21 +18,21 @@ docker pull verdaccio/verdaccio
 
 ## Awọn ẹya to ni Isamisi
 
-Since version `v2.x` you can pull docker images by [tag](https://hub.docker.com/r/verdaccio/verdaccio/tags/), as follows:
+Lati ẹya `v2.x` o le fa awọn aworan docker nipasẹ [aami](https://hub.docker.com/r/verdaccio/verdaccio/tags/), bi iwọnyi:
 
-For a major version:
+Fun ẹya pataki kan:
 
 ```bash
 docker pull verdaccio/verdaccio:3
 ```
 
-For a minor version:
+Fun ẹya kekere kan:
 
 ```bash
 docker pull verdaccio/verdaccio:3.0
 ```
 
-For a specific (patch) version:
+Fun ẹya (awẹ) kan pato:
 
 ```bash
 docker pull verdaccio/verdaccio:3.0.1
@@ -50,17 +50,17 @@ docker pull verdaccio/verdaccio:4.x-next
 
 > The following configuration is based on the Verdaccio 4 or the `4.x-next` tag.
 
-To run the docker container:
+Lati mu apoti docker ṣiṣẹ:
 
 ```bash
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
 ```
 
-The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
+Ariyanjiyan ikẹhin n sọ iru aworan to ma jẹ lilo. Ila to wa loke yoo fa aworan tuntun ti o ti wa ni kikọ tẹlẹ lati dockerhub, ti o ko ba ti ṣe bẹ tẹlẹ.
 
-If you have [build an image locally](#build-your-own-docker-image) use `verdaccio` as the last argument.
+Ti o ba ti [kọ aworan kan ni ilana ibilẹ](#build-your-own-docker-image) lo `verdaccio` gẹgẹbi ariyanjiyan ikẹhin.
 
-You can use `-v` to bind mount `conf`, `storage` and `plugins` to the hosts filesystem:
+O le lo `-v` lati de atopọ `conf`, `storage` ati `plugins` mọ eto faili ti olugbalejo naa:
 
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
@@ -71,7 +71,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio:4.x-next
 ```
 
-> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) is recommended over using bind mount.
+> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Lo iwọn iye docker](https://docs.docker.com/storage/volumes/) o jẹ igbaniyanju lori lilo atopọ dide.
 
 Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
 
@@ -85,7 +85,7 @@ Verdaccio 4 provides a new set of environment variables to modify either permiss
 
 ### Awọn ohun elo
 
-Plugins can be installed in a separate directory and mounted using Docker or Kubernetes, however make sure you build plugins with native dependencies using the same base image as the Verdaccio Dockerfile.
+Awọn ohun elo afikun le ṣee fi sori ọna to yatọ ati jẹ titopọ nipa lilo Docker tabi Kubernetes, amọṣa rii daju pe o kọ awọn ohun elo afikun pẹlu awọn igbarale abinibi nipa lilo aworan ipilẹ kanna bi ti Verdaccio Dockerfile.
 
 ```docker
 FROM verdaccio/verdaccio
@@ -109,7 +109,7 @@ Of course the numbers you give to `-p` paremeter need to match.
 
 ### Lilo HTTPS pẹlu Docker
 
-You can configure the protocol verdaccio is going to listen on, similarly to the port configuration. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
+O le ṣe iṣeto awọn ilana ti verdaccio yoo tẹtisi, ni ibaramu si iṣeto ti ibudo naa. O ni lati satunkọ iye atilẹwa("http") ti `PROTOCOL` iyipada ayika si "https", lẹhin ti o ti sọ awọn iwe ẹri inu config.yaml ni pato.
 
 ```bash
 docker run -it --rm --name verdaccio \
@@ -151,7 +151,7 @@ networks:
     driver: bridge
 ```
 
-Docker will generate a named volume in which to store persistent application data. You can use `docker inspect` or `docker volume inspect` to reveal the physical location of the volume and edit the configuration, such as:
+Docker ma pilẹṣẹ iye iwọn to ni orukọ inu eyi ti data ohun elo alatẹnumọ ma jẹ fifipamọ sii. O le lo `docker inspect` tabi `docker volume inspect` lati safihan ipo afojuri ti iye iwọn naa ati ṣatunkọ iṣeto naa, bii ti:
 
 ```bash
 $ docker volume inspect verdaccio_verdaccio
@@ -173,19 +173,19 @@ $ docker volume inspect verdaccio_verdaccio
 docker build -t verdaccio .
 ```
 
-There is also an npm script for building the docker image, so you can also do:
+Iwe afọwọkọ npm kan naa tun wa fun kikọ aworan docker naa, nitorina o tun le ṣe:
 
 ```bash
 yarn run build:docker
 ```
 
-Note: The first build takes some minutes to build because it needs to run `npm install`, and it will take that long again whenever you change any file that is not listed in `.dockerignore`.
+Akiyesi: Agbedide akọkọ n gba iṣẹju diẹ lati jẹ kikọ nitori pe o nilo lati samulo iṣẹ `npm install`, atipe o ma pẹ to bayii lẹẹkansi nigbakugba to ba sayipada eyikeyi faili ti ko ba si lori akojọ ti `.dockerignore`.
 
-Please note that for any of the above docker commands you need to have docker installed on your machine and the docker executable should be available on your `$PATH`.
+Jọwọ kiyesi pe fun eyikeyi ninu awọn asẹ docker to wa loke yii o nilo lati ni docker lori ẹrọ rẹ atipe awọn iṣẹ ṣiṣe docker naa gbọdọ wa lori `$PATH`.
 
 ## Awọn apẹẹrẹ Docker
 
-There is a separate repository that hosts multiple configurations to compose Docker images with `verdaccio`, for instance, as reverse proxy:
+Ibi ipamọ kan to dayatọ wa ti o n gbalejo ọpọlọpọ awọn iṣeto lati kọ awọn aworan Docker pẹlu `verdaccio`, fun apẹẹrẹ, bi aṣoju ikọkọ alayipada:
 
 <https://github.com/verdaccio/docker-examples>
 
