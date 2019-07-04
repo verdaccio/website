@@ -81,7 +81,13 @@ Verdaccio 4 provides a new set of environment variables to modify either permiss
 ```docker
 FROM verdaccio/verdaccio
 
-RUN npm install verdaccio-s3-storage
+USER root
+
+ENV NODE_ENV=production
+
+RUN npm i && npm install verdaccio-s3-storage
+
+USER verdaccio
 ```
 
 ### Docker和自定义端口配置
