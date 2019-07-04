@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-ci
-title: Integração contínua
+title: Integração Contínua
 original_id: ci
 ---
 
