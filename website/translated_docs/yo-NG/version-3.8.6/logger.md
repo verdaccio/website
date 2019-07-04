@@ -4,7 +4,7 @@ title: Olugbasilẹ
 original_id: olugbasilẹ
 ---
 
-As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
+Gẹgẹbi eyikeyi ohun elo ayelujara, verdaccio ni olugbasilẹ alabawa ti alakanṣe kan. O le ṣe asọye awọn orisirisi oniruuru awọn abajade.
 
 ```yaml
 logs:
