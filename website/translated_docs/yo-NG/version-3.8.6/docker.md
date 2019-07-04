@@ -140,7 +140,7 @@ npm run build:docker
 
 Akiyesi: Agbedide akọkọ n gba iṣẹju diẹ lati jẹ kikọ nitori pe o nilo lati samulo iṣẹ `npm install`, atipe o ma pẹ to bayii lẹẹkansi nigbakugba to ba sayipada eyikeyi faili ti ko ba si lori akojọ ti `.dockerignore`.
 
-If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
+Ti o ba fẹ lo aworan docker naa lori rpi kan tabi ẹrọ kan to ni ibamu dockerfile kan na tun wa. Lati kọ aworan docker naa fun raspberry pi ṣe abayọri:
 
 ```bash
 npm run build:docker:rpi
