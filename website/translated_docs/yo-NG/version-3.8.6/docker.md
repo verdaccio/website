@@ -146,7 +146,7 @@ Ti o ba fẹ lo aworan docker naa lori rpi kan tabi ẹrọ kan to ni ibamu dock
 npm run build:docker:rpi
 ```
 
-Please note that for any of the above docker commands you need to have docker installed on your machine and the docker executable should be available on your `$PATH`.
+Jọwọ kiyesi pe fun eyikeyi ninu awọn asẹ docker to wa loke yii o nilo lati ni docker lori ẹrọ rẹ atipe awọn iṣẹ ṣiṣe docker naa gbọdọ wa lori `$PATH`.
 
 ## Awọn apẹẹrẹ Docker
 
