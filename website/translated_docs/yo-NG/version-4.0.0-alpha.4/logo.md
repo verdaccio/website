@@ -1,6 +1,6 @@
 ---
 id: version-4.0.0-alpha.4-logo
-title: Verdaccio Logotype
+title: Iru aami idanimọ Verdaccio
 original_id: logo
 ---
 
