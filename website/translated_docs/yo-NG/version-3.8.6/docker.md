@@ -111,7 +111,7 @@ $ docker-compose up --build
 
 O le ṣeto ibudo naa lati lo (fun awọn apoti ati agbalejo) nipasẹ fifi awọn aṣẹ ti o wa loke yii saaju pẹlu `PORT=5000`.
 
-Docker ma pilẹṣẹ iye iwọn to ni orukọ inu eyi ti data ohun elo alatẹnumọ ma jẹ fifipamọ sii. You can use `docker inspect` or `docker volume inspect` to reveal the physical location of the volume and edit the configuration, such as:
+Docker ma pilẹṣẹ iye iwọn to ni orukọ inu eyi ti data ohun elo alatẹnumọ ma jẹ fifipamọ sii. O le lo `docker inspect` tabi `docker volume inspect` lati safihan ipo afojuri ti iye iwọn naa ati ṣatunkọ iṣeto naa, bii ti:
 
     $ docker volume inspect verdaccio_verdaccio
     [
