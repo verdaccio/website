@@ -25,9 +25,9 @@ $> npm install --global verdaccio-activedirectory
 
 Sii faili `config.yaml` ki o si ṣe imudojuiwọn abala `auth` naa bi atẹle yi:
 
-The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
+Iṣeto atilẹwa naa dabi iru eyi, nitoripe a lo ohun elo alakọmọ `htpasswd` ni atilẹwa pe ki o le yọ kuro nipa yiyọ awọn ila wọnyi.
 
-### Auth Plugin Configuration
+### Iṣeto Ohun elo Ifasẹsi
 
 ```yaml
  htpasswd:
@@ -35,7 +35,7 @@ The default configuration looks like this, due we use a build-in `htpasswd` plug
     #max_users: 1000
 ```
 
-and replacing them with (in case you decide to use a `ldap` plugin.
+ati rirọpo wọn pẹlu (toba sẹlẹ pe o pinnu lati lo ohun elo `ldap`.
 
 ```yaml
 auth:
@@ -45,7 +45,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Auth plugins
+#### Awọn ohun elo Ifasẹsi ọlọpọ
 
 This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
 
