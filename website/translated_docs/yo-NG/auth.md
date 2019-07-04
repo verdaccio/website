@@ -53,7 +53,7 @@ Jẹ ki a ṣe atungbeyẹwo ni ṣoki:
 * **ti wọle**: `$all`, `$authenticated`, + awọn ẹgbẹ akojọpọ ti o jẹ fifikun nipasẹ ohun elo naa
 * **alainidamọ (ti jade sita)**: `$all` ati `$anonymous`.
 
-## Default htpasswd
+## htpasswd atilẹwa
 
 Lati mu iṣeto naa rọrun, `verdaccio` lo ohun elo to da lori `htpasswd`. Niwọnti ẹya v3.0.x `verdaccio-htpasswd` ohun elo naa ti n jẹ lilo ni atilẹ wa.
 
@@ -71,4 +71,4 @@ auth:
 | faili     | okun  | Bẹẹni     | ./htpasswd | gbogbo   | faili to gbalejo awọn iwe ẹri alaroko |
 | max_users | nọmba | Rara      | 1000       | gbogbo   | ṣeto gbedeke iye awọn olumulo         |
 
-In case to decide do not allow user to login, you can set `max_users: -1`.
+Toba sẹlẹ pe o pinnu lati ma fayegba olumulo lati wọle, o le ṣeto `max_users: -1`.
