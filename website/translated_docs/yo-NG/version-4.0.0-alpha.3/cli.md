@@ -19,12 +19,12 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 ## Aaye faili iṣeto atilẹwa
 
-To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and Windows environment we look for [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
+Lati sawari itọsọna ile, a gbẹkẹle **$XDG_DATA_HOME** gẹgẹbi aṣayan akọkọ ati ayika Windows ti a n wa fun [iyipada ayika ti APPDATA](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
-## Default storage location
+## Aaye ibi ipamọ atilẹwa
 
-We use **$XDG_DATA_HOME** environment variable as default to locate the storage by default which [should be the same](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) as $HOME/.local/share. If you are using a custom storage, this location is irrelevant.
+A lo iyipada ayika **$XDG_DATA_HOME** gẹgẹbi atilẹwa lati sawari ibi ipamọ nipasẹ atilẹwa eyiti [o yẹ ki o jẹ ikanna](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) bii ti $HOME/.local/share. Ti o ba n lo ibi ipamọ akanṣe kan, aaye yii ko ṣe pataki.
 
-## Default database file location
+## Aaye faili ibi ipamọ data atilẹwa
 
-The default database file location is in the storage location. Starting with version 4.0.0, the database file name will be **.verdaccio-db.json** for a new installation of Verdaccio. When upgrading an existing Verdaccio server, the file name will remain **.sinopia-db.json**.
+Aaye faili ibi ipamọ data atilẹwa wa ninu aaye ibi ipamọ. Bibẹrẹ pẹlu ẹya 4.0.0, orukọ faili ibi ipamọ data yoo jẹ **.verdaccio-db.json** fun ifisori ẹrọ tuntun ti Verdaccio. Nigbati isagbega olupese Verdaccio kan to ti wa tẹlẹ ba n waye, orukọ faili naa yoo si ma jẹ **.sinopia-db.json**.
