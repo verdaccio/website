@@ -22,7 +22,7 @@ Awọn ilana wọnyi ni a kọ fun Windows Server 2012, IIS 8, [Node.js 0.12.3](
 Mo fẹ jẹ ki aaye ayelujara `verdaccio` jẹ aaye ayelujara atilẹwa ni IIS fun idi eyi mo se awọn ohun wọnyii:
 
 - Mo rii daju pe faili .npmrc ni `c:\users{yourname}` ni ibi iforukọsilẹ to jẹ siseto si `"registry=http://localhost/"`
-- I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS
+- Mo da "Aaye Ayelujara Atilẹwa" duro atipe mo kan bẹrẹ aaye ayelujara "verdaccio" nikan ni IIS
 - I set the bindings to "http", ip address "All Unassigned" on port 80, ok any warning or prompts
 
 Awọn itọsọna wọnyi da lori [Host Sinopia ni IIS lori Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). Mo ni lati ṣe ayipada iṣeto wẹẹbu mi gẹgẹbi isalẹ yii ṣugbọn o le ri ojulowo naa lati ọdọ itọkasi asopọ to n ṣiṣẹ daradara
