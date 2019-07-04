@@ -132,7 +132,7 @@ Docker ma pilẹṣẹ iye iwọn to ni orukọ inu eyi ti data ohun elo alatẹ
 docker build -t verdaccio .
 ```
 
-There is also an npm script for building the docker image, so you can also do:
+Iwe afọwọkọ npm kan naa tun wa fun kikọ aworan docker naa, nitorina o tun le ṣe:
 
 ```bash
 npm run build:docker
