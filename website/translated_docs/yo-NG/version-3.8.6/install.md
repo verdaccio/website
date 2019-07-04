@@ -50,6 +50,6 @@ Fun alaye siwaju sii nipa CLI naa, jọwọ [ka abala cli naa](cli.md).
 
 ## Cloudron
 
-`verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
+`verdaccio` tun wa gẹgẹbi ifisori ẹrọ olontẹ-ẹẹkan lori [Cloudron](https://cloudron.io)
 
 [![Fi sori ẹrọ](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
