@@ -4,13 +4,13 @@ title: Arquivo de Configuração
 original_id: configuration
 ---
 
-This file is the cornerstone of verdaccio where you can modify the default behaviour, enable plugins and extend features.
+Este arquivo é a peça chave do verdaccio, onde você pode modificar o comportamento padrão, habilitar plugins e estender recursos.
 
-A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
+Um arquivo de configuração padrão `config.yaml` é criado na primeira vez que você executa `verdaccio`.
 
 ## Configuração Padrão
 
-The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.
+A configuração padrão tem suporte para pacotes **com escopo (scoped)** e permite que qualquer usuário acesse todos os pacotes, mas somente que os **usuários autenticados publiquem**.
 
 ```yaml
 storage: ./storage
@@ -33,9 +33,9 @@ logs:
 
 ## Seções
 
-The following sections explain what each property means and the different options.
+As seções a seguir explicam o que cada propriedade significa e as diferentes opções.
 
-### Storage
+### Armazenamento
 
 Is the location of the default storage. **Verdaccio is by default based on local file system**.
 
