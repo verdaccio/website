@@ -4,12 +4,12 @@ title: Ifi sori ẹrọ
 original_id: installation
 ---
 
-Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
+Verdaccio jẹ ohun elo ayelujara ti ọlọpọ pilatifọọmu. Lati fi sori ẹrọ, o nilo awọn nkan pataki diẹ ṣaaju.
 
 #### Awọn ohun inilo iṣaaju
 
 1. Oju ipade ti o ga ju 
-    - For version `verdaccio@2.x` Node `v4.6.1` is the minimum supported version.
+    - Fun ẹya `verdaccio@2.x` Oju ipade `v4.6.1` jẹ ẹya ti o kere julọ ti atilẹyin wa fun.
     - For version `verdaccio@latest` Node `6.12.0` is the minimum supported version.
 2. npm `>=3.x` or `yarn`
 3. The web interface supports the `Chrome, Firefox, Edge, and IE9` browsers.
