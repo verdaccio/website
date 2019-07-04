@@ -47,7 +47,7 @@ auth:
 
 #### Awọn ohun elo Ifasẹsi ọlọpọ
 
-This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
+Eyi ṣeeṣe pẹlu ọgbọn, ṣiṣe aṣẹ ohun elo naa ni pataki, gẹgẹbi awọn iwe ẹri naa yoo ṣe jẹ yiyanju lẹsẹẹsẹ.
 
 ```yaml
 auth:
@@ -60,9 +60,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Plugin Configuration
+### Iṣeto Ohun elo Middleware
 
-This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
+Eyi jẹ apẹẹrẹ bi o ṣe le seto ohun asomọ middleware kan. Gbogbo awọn ohun asomọ gbọdọ wa ni asọye ninu aaye orukọ **middlewares**.
 
 ```yaml
 middlewares:
@@ -72,7 +72,7 @@ middlewares:
 
 > O le tẹle [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) bi apẹẹrẹ ipilẹ.
 
-### Store Plugin Configuration
+### Iṣeto Ohun elo Ibi ipamọ
 
 This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
 
