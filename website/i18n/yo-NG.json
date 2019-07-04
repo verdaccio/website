@@ -24,7 +24,7 @@
         "title": "Awọn iṣeṣi to Darajulọ"
       },
       "build": {
-        "title": "build"
+        "title": "agbedide"
       },
       "caching": {
         "title": "Awọn ọna ifisapo iranti"
@@ -99,7 +99,7 @@
         "title": "Iseto Aṣoju ikọkọ-Alayipada"
       },
       "security-policy": {
-        "title": "Security Policy"
+        "title": "Eto imulo Aabo"
       },
       "server-configuration": {
         "title": "Iṣeto Olupese"
@@ -135,7 +135,7 @@
         "title": "Sise ifasẹsi"
       },
       "version-3.8.6/version-3.8.6-build": {
-        "title": "Build the source code"
+        "title": "Se agbedide koodu orisun naa"
       },
       "version-3.8.6/version-3.8.6-chef": {
         "title": "Iwe idana Alase"
@@ -150,7 +150,7 @@
         "title": "Faili Iṣeto"
       },
       "version-3.8.6/version-3.8.6-contributing": {
-        "title": "Contributing Verdaccio"
+        "title": "Lilọwọsi Verdaccio"
       },
       "version-3.8.6/version-3.8.6-dev-plugins": {
         "title": "Ṣiṣe agbedide Awọn ohun elo"
@@ -171,7 +171,7 @@
         "title": "Olugbasilẹ"
       },
       "version-3.8.6/version-3.8.6-logo": {
-        "title": "Verdaccio Logotype"
+        "title": "Iru aami idanimọ Verdaccio"
       },
       "version-3.8.6/version-3.8.6-node-api": {
         "title": "API Oju ipade"
@@ -267,7 +267,7 @@
         "title": "Linking Regiestries"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-logo": {
-        "title": "Verdaccio Logotype"
+        "title": "Iru aami idanimọ Verdaccio"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-node-api": {
         "title": "API Oju ipade"
