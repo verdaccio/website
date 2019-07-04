@@ -95,7 +95,7 @@ O le sayipada awọn ihuwasi to ti wa tẹlẹ nipa lilo ifasẹsi ohun elo to y
 
 #### Didena wiwọle si iṣeto ti awọn akojọ
 
-If you want to block the acccess/publish to a specific group of packages. Just do not define `access` and `publish`.
+Ti o ba fẹ lati dènà wiwọle/atẹjade lọ si pato ẹgbẹ ti awọn akojọ kan. Sa ma ti ṣeto `access` ati `publish`.
 
 ```yaml
 packages:
@@ -169,7 +169,7 @@ Ninu apẹẹrẹ titẹlẹ, ihuwasi naa yoo jẹ jijuwe:
 
 ### Iṣeto
 
-You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
+O le ṣe asọye ọpọ `packages` atipe ikọọkan ninu wọn gbọdọ ni `Regex` to dayatọ. Sintasi naa da lori [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
 | Ohun ini    | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                                           |
 | ----------- | ------- | --------- | -------------- | -------- | ----------------------------------------------------------------- |
