@@ -138,7 +138,7 @@ Iwe afọwọkọ npm kan naa tun wa fun kikọ aworan docker naa, nitorina o tu
 npm run build:docker
 ```
 
-Note: The first build takes some minutes to build because it needs to run `npm install`, and it will take that long again whenever you change any file that is not listed in `.dockerignore`.
+Akiyesi: Agbedide akọkọ n gba iṣẹju diẹ lati jẹ kikọ nitori pe o nilo lati samulo iṣẹ `npm install`, atipe o ma pẹ to bayii lẹẹkansi nigbakugba to ba sayipada eyikeyi faili ti ko ba si lori akojọ ti `.dockerignore`.
 
 If you want to use the docker image on a rpi or a compatible device there is also a dockerfile available. To build the docker image for raspberry pi execute:
 
