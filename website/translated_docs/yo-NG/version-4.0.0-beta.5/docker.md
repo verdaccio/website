@@ -6,7 +6,7 @@ original_id: docker
 
 ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 
-To pull the latest pre-built [docker image](https://hub.docker.com/r/verdaccio/verdaccio/):
+Lati fa [aworan docker](https://hub.docker.com/r/verdaccio/verdaccio/) tuntun to ti jẹ kikọ siwaju:
 
 ```bash
 docker pull verdaccio/verdaccio
@@ -18,21 +18,21 @@ docker pull verdaccio/verdaccio
 
 ## Awọn ẹya to ni Isamisi
 
-Since version `v2.x` you can pull docker images by [tag](https://hub.docker.com/r/verdaccio/verdaccio/tags/), as follows:
+Lati ẹya `v2.x` o le fa awọn aworan docker nipasẹ [aami](https://hub.docker.com/r/verdaccio/verdaccio/tags/), bi iwọnyi:
 
-For a major version:
+Fun ẹya pataki kan:
 
 ```bash
 docker pull verdaccio/verdaccio:3
 ```
 
-For a minor version:
+Fun ẹya kekere kan:
 
 ```bash
 docker pull verdaccio/verdaccio:3.0
 ```
 
-For a specific (patch) version:
+Fun ẹya (awẹ) kan pato:
 
 ```bash
 docker pull verdaccio/verdaccio:3.0.1
@@ -52,19 +52,19 @@ docker pull verdaccio/verdaccio:4.x-next
 
 > Ti o ba nifẹsi akojọ lori awọn aami, [jọwọ lọ si aaye ayelujara ti Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Running verdaccio using Docker
+## Mimu verdaccio ṣiṣẹ nipa lilo Docker
 
-To run the docker container:
+Lati mu apoti docker ṣiṣẹ:
 
 ```bash
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
+Ariyanjiyan ikẹhin n sọ iru aworan to ma jẹ lilo. Ila to wa loke yoo fa aworan tuntun ti o ti wa ni kikọ tẹlẹ lati dockerhub, ti o ko ba ti ṣe bẹ tẹlẹ.
 
-If you have [build an image locally](#build-your-own-docker-image) use `verdaccio` as the last argument.
+Ti o ba ti [kọ aworan kan ni ilana ibilẹ](#build-your-own-docker-image) lo `verdaccio` gẹgẹbi ariyanjiyan ikẹhin.
 
-You can use `-v` to bind mount `conf`, `storage` and `plugins` to the hosts filesystem:
+O le lo `-v` lati de atopọ `conf`, `storage` ati `plugins` mọ eto faili ti olugbalejo naa:
 
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
@@ -74,11 +74,11 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
   verdaccio/verdaccio
 ```
 
-> Note: Verdaccio runs as a non-root user (uid=100, gid=101) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) is recommended over using bind mount.
+> Akiyesi: Verdaccio n ṣiṣẹ bi olumulo ti ko lo gbongbo (uid=100, gid=101) ninu apoti naa, ti o ba lo atopọ dide lati fagbara bori atilẹwa, o nilo lati rii daju pe ọna atilẹyin naa jẹ pinpin si olumulo to tọ. Ninu apẹẹrẹ ti o wa loke, o nilo lati ṣamulo `sudo chown -R 100:101 /opt/verdaccio` bibẹkọ o ma salaba pade awọn aṣiṣe igbanilaaye ni akoko iṣiṣẹ. [Lo iwọn iye docker](https://docs.docker.com/storage/volumes/) o jẹ igbaniyanju lori lilo atopọ dide.
 
 ### Awọn ohun elo
 
-Plugins can be installed in a separate directory and mounted using Docker or Kubernetes, however make sure you build plugins with native dependencies using the same base image as the Verdaccio Dockerfile.
+Awọn ohun elo afikun le ṣee fi sori ọna to yatọ ati jẹ titopọ nipa lilo Docker tabi Kubernetes, amọṣa rii daju pe o kọ awọn ohun elo afikun pẹlu awọn igbarale abinibi nipa lilo aworan ipilẹ kanna bi ti Verdaccio Dockerfile.
 
 ```docker
 FROM verdaccio/verdaccio
@@ -88,13 +88,13 @@ RUN npm install verdaccio-s3-storage
 
 ### Docker ati iṣeto ibudo akanṣe
 
-Any `host:port` configured in `conf/config.yaml` under `listen` is currently ignored when using docker.
+Eyikeyi `host:port` to jẹ ṣiṣeto ni `conf/config.yaml` labẹ `listen` n lọwọlọwọ jẹ fifojufo nigbati docker ba n jẹ lilo.
 
-If you want to reach verdaccio docker instance under different port, lets say `5000` in your `docker run` command replace `-p 4873:4873` with `-p 5000:4873`.
+Ti o ba fẹ lati kansi isẹlẹ docker verdaccio labẹ ibudo to yatọ, jẹ ki a sọpe `5000` ninu `docker run` rẹ rọpo aṣẹ `-p 4873:4873` pẹlu `-p 5000:4873`.
 
-In case you need to specify which port to listen to **in the docker container**, since version 2.?.? you can do so by providing additional arguments to `docker run`: `--env PORT=5000` This changes which port the docker container exposes and the port verdaccio listens to.
+Toba sẹlẹ pe o nilo lati sọ pato ibudo to yẹ lati tẹtisi **ninu apoti docker naa**, lati ẹya 2.?.? o le ṣe bẹ nipa pipese afikun awọn ariyanjiyan si `docker run`: `--env PORT=5000` Eleyi n ṣe ayipada ibudo eyi ti apoti docker naa n laju si ati ibudo ti verdaccio n tẹtisi.
 
-Of course the numbers you give to `-p` paremeter need to match, so assuming you want them to all be the same this is what you could copy, paste and adopt:
+Dajudaju awọn nọmba ti o fi fun `-p` odiwọn nilo lati baramu, nitorina kani wipe o fẹ ki gbogbo wọn jẹ ikannaa eyi ni ohun ti o le dakọ, lẹẹmọ ati samulo:
 
 ```bash
 PORT=5000; docker run -it --rm --name verdaccio \
@@ -104,7 +104,7 @@ PORT=5000; docker run -it --rm --name verdaccio \
 
 ### Lilo HTTPS pẹlu Docker
 
-You can configure the protocol verdaccio is going to listen on, similarly to the port configuration. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
+O le ṣe iṣeto awọn ilana ti verdaccio yoo tẹtisi, ni ibaramu si iṣeto ti ibudo naa. O ni lati satunkọ iye atilẹwa("http") ti `PROTOCOL` iyipada ayika si "https", lẹhin ti o ti sọ awọn iwe ẹri inu config.yaml ni pato.
 
 ```bash
 PROTOCOL=https; docker run -it --rm --name verdaccio \
@@ -121,9 +121,9 @@ PROTOCOL=https; docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-You can set the port to use (for both container and host) by prefixing the above command with `PORT=5000`.
+O le ṣeto ibudo naa lati lo (fun awọn apoti ati agbalejo) nipasẹ fifi awọn aṣẹ ti o wa loke yii saaju pẹlu `PORT=5000`.
 
-Docker will generate a named volume in which to store persistent application data. You can use `docker inspect` or `docker volume inspect` to reveal the physical location of the volume and edit the configuration, such as:
+Docker ma pilẹṣẹ iye iwọn to ni orukọ inu eyi ti data ohun elo alatẹnumọ ma jẹ fifipamọ sii. O le lo `docker inspect` tabi `docker volume inspect` lati safihan ipo afojuri ti iye iwọn naa ati ṣatunkọ iṣeto naa, bii ti:
 
 ```bash
 $ docker volume inspect verdaccio_verdaccio
@@ -145,19 +145,19 @@ $ docker volume inspect verdaccio_verdaccio
 docker build -t verdaccio .
 ```
 
-There is also an npm script for building the docker image, so you can also do:
+Iwe afọwọkọ npm kan naa tun wa fun kikọ aworan docker naa, nitorina o tun le ṣe:
 
 ```bash
 npm run build:docker
 ```
 
-Note: The first build takes some minutes to build because it needs to run `npm install`, and it will take that long again whenever you change any file that is not listed in `.dockerignore`.
+Akiyesi: Agbedide akọkọ n gba iṣẹju diẹ lati jẹ kikọ nitori pe o nilo lati samulo iṣẹ `npm install`, atipe o ma pẹ to bayii lẹẹkansi nigbakugba to ba sayipada eyikeyi faili ti ko ba si lori akojọ ti `.dockerignore`.
 
-Please note that for any of the above docker commands you need to have docker installed on your machine and the docker executable should be available on your `$PATH`.
+Jọwọ kiyesi pe fun eyikeyi ninu awọn asẹ docker to wa loke yii o nilo lati ni docker lori ẹrọ rẹ atipe awọn iṣẹ ṣiṣe docker naa gbọdọ wa lori `$PATH`.
 
 ## Awọn apẹẹrẹ Docker
 
-There is a separate repository that hosts multiple configurations to compose Docker images with `verdaccio`, for instance, as reverse proxy:
+Ibi ipamọ kan to dayatọ wa ti o n gbalejo ọpọlọpọ awọn iṣeto lati kọ awọn aworan Docker pẹlu `verdaccio`, fun apẹẹrẹ, bi aṣoju ikọkọ alayipada:
 
 <https://github.com/verdaccio/docker-examples>
 
