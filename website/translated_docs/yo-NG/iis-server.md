@@ -20,8 +20,8 @@ Awọn ilana wọnyi ni a kọ fun Windows Server 2016, IIS 10, [Node.js 10.15.0
 
 Mo fẹ jẹ ki aaye ayelujara `verdaccio` jẹ aaye ayelujara atilẹwa ni IIS fun idi eyi mo se awọn ohun wọnyii:
 
-- I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS
-- I set the bindings to "http", ip address "All Unassigned" on port 80, ok any warning or prompts
+- Mo da "Aaye Ayelujara Atilẹwa" duro atipe mo kan bẹrẹ aaye ayelujara "verdaccio" nikan ni IIS
+- Mo seto awọn isopọ naa si "http", adirẹsi ip "Gbogbo eyi ti ko jẹ Pinpin" lori ibudo 80, fọwọsi eyikeyi ikilọ tabi awọn ibeere
 
 Awọn itọsọna wọnyi da lori [Host Sinopia ni IIS lori Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). Mo ni lati ṣe ayipada iṣeto wẹẹbu mi gẹgẹbi isalẹ yii ṣugbọn o le ri ojulowo naa lati ọdọ itọkasi asopọ to n ṣiṣẹ daradara
 
@@ -106,7 +106,7 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 </configuration>
 ```
 
-### Troubleshooting
+### Titu laasigbo sita
 
 - **Intafeesi wẹẹbu naa ko kin ṣiṣẹ nigbati o ba jẹ gbigbalejo pẹlu https pẹlu bi o ti ma n gbìyànjú lati gba awọn iwe afọwọkọ sori ẹrọ lori http.**  
     Ri daju pe o ti darukọ `url_prefix` ni deede ni iṣeto verdaccio. Se atẹle [ijiroro](https://github.com/verdaccio/verdaccio/issues/622).
