@@ -1,14 +1,14 @@
 ---
 id: version-3.8.6-logo
-title: Verdaccio Logotype
+title: Iru aami idanimọ Verdaccio
 original_id: logo
 ---
 
-The logotype was designed by **[Breno Rodrigues](https://github.com/rodriguesbreno)** which won the [contest](https://github.com/verdaccio/verdaccio/issues/237) ([last stage](https://github.com/verdaccio/verdaccio/issues/328)) and donated his work to this project.
+Iru aami idanimọ jẹ didalara nipasẹ **[Breno Rodrigues](https://github.com/rodriguesbreno)** eyi to gbegba oroke ninu [idije](https://github.com/verdaccio/verdaccio/issues/237) ([ipele ikẹhin](https://github.com/verdaccio/verdaccio/issues/328)) atipe o si fi iṣẹ rẹ tọrẹ fun iṣẹ akanṣe yii.
 
 > Gbogbo awọn logo ni iwe aṣẹ labẹ [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
 
-Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
+Ọpẹ pataki si *[@Lisapressmar](https://github.com/Lisapressmar)* fun ilọwọsi rẹ pẹlu awọn ọpọlọpọ ọna ati iwọn aworan.
 
 ## Awọn aami
 

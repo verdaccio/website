@@ -150,11 +150,11 @@ You can acces to the package is being published with the keyword `{{publishedPac
 
 ## Configuration
 
-| Property            | Type         | Obrigatório | Support | Padrão | Descrição                                                                                    |
-| ------------------- | ------------ | ----------- | ------- | ------ | -------------------------------------------------------------------------------------------- |
-| method              | string       | Não         | all     |        | HTTP verb                                                                                    |
-| packagePattern      | string       | Não         | all     |        | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | string       | Não         | all     |        | Any flags to be used with the regular expression                                             |
-| headers             | array/object | Sim         | all     |        | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | string       | Sim         | all     |        | set the URL endpoint for this call                                                           |
-| content             | string       | Sim         | all     |        | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Propriedade         | Tipo         | Obrigatório | Suporte  | Padrão | Descrição                                                                                    |
+| ------------------- | ------------ | ----------- | -------- | ------ | -------------------------------------------------------------------------------------------- |
+| method              | string       | Não         | completo |        | HTTP verb                                                                                    |
+| packagePattern      | string       | Não         | completo |        | Only run this notification if the package name matches the regular expression                |
+| packagePatternFlags | string       | Não         | completo |        | Any flags to be used with the regular expression                                             |
+| headers             | array/object | Sim         | completo |        | If this endpoint requires specific headers, set them here as an array of key: value objects. |
+| endpoint            | string       | Sim         | completo |        | set the URL endpoint for this call                                                           |
+| content             | string       | Sim         | completo |        | any [Handlebar](https://handlebarsjs.com/) expressions                                       |

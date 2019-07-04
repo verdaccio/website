@@ -22,13 +22,13 @@ All access restrictions defined to [protect your packages](protect-your-dependen
 
 ### Configuration
 
-| Property      | Type       | Obrigatório | Exemplo                        | Support  | Descrição                                                                                                                                            |
+| Propriedade   | Tipo       | Obrigatório | Exemplo                        | Suporte  | Descrição                                                                                                                                            |
 | ------------- | ---------- | ----------- | ------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| enable        | boolean    | Não         | true/false                     | all      | habilitar a interface web                                                                                                                            |
-| title         | string     | Não         | Verdaccio                      | all      | Título da página web                                                                                                                                 |
+| enable        | boolean    | Não         | true/false                     | completo | habilitar a interface web                                                                                                                            |
+| title         | string     | Não         | Verdaccio                      | completo | Título da página web                                                                                                                                 |
 | gravatar      | boolean    | Não         | true                           | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                               |
 | sort_packages | [asc,desc] | Não         | asc                            | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                               |
-| logo          | string     | Não         | http://my.logo.domain/logo.png | all      | a URI where logo is located (header logo)                                                                                                            |
-| scope         | string     | Não         | \\@myscope                   | all      | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
+| logo          | string     | Não         | http://my.logo.domain/logo.png | completo | a URI where logo is located (header logo)                                                                                                            |
+| scope         | string     | Não         | \\@myscope                   | completo | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
 
 > It is recommended the logo size has the following size `40x40` pixels.

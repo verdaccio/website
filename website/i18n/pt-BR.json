@@ -12,7 +12,7 @@
         "title": "Ansible"
       },
       "articles": {
-        "title": "Articles"
+        "title": "Artigos"
       },
       "authentification": {
         "title": "Autenticação"
@@ -21,13 +21,13 @@
         "title": "Windows Azure"
       },
       "best": {
-        "title": "Best Practices"
+        "title": "Boas Práticas"
       },
       "build": {
         "title": "build"
       },
       "caching": {
-        "title": "Caching strategies"
+        "title": "Estratégias de Cashing"
       },
       "chef": {
         "title": "Chef Cookbook"
@@ -97,6 +97,9 @@
       },
       "reverse-proxy": {
         "title": "Configuração de Proxy Reverso"
+      },
+      "security-policy": {
+        "title": "Security Policy"
       },
       "server-configuration": {
         "title": "Configuração do Servidor"
@@ -237,10 +240,10 @@
         "title": "Windows Azure"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-best": {
-        "title": "Best Practices"
+        "title": "Boas Práticas"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-caching": {
-        "title": "Caching strategies"
+        "title": "Estratégias de Cashing"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-configuration": {
         "title": "Arquivo de Configuração"
@@ -288,16 +291,16 @@
         "title": "O que é o Verdaccio?"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-articles": {
-        "title": "Articles"
+        "title": "Artigos"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-authentification": {
         "title": "Autenticação"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-best": {
-        "title": "Best Practices"
+        "title": "Boas Práticas"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-caching": {
-        "title": "Caching strategies"
+        "title": "Estratégias de Cashing"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-configuration": {
         "title": "Arquivo de Configuração"
@@ -360,13 +363,13 @@
         "title": "Who is using Verdaccio?"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-articles": {
-        "title": "Articles"
+        "title": "Artigos"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-best": {
-        "title": "Best Practices"
+        "title": "Boas Práticas"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-caching": {
-        "title": "Caching strategies"
+        "title": "Estratégias de Cashing"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-ci": {
         "title": "Integração contínua"
@@ -399,7 +402,7 @@
         "title": "Web User Interface"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-articles": {
-        "title": "Articles"
+        "title": "Artigos"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-configuration": {
         "title": "Arquivo de Configuração"
@@ -444,7 +447,7 @@
         "title": "Docker"
       },
       "version-4.0.2/version-4.0.2-caching": {
-        "title": "Caching strategies"
+        "title": "Estratégias de Cashing"
       },
       "version-4.0.2/version-4.0.2-docker": {
         "title": "Docker"

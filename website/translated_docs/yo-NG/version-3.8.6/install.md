@@ -4,15 +4,15 @@ title: Ifi sori ẹrọ
 original_id: installation
 ---
 
-Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
+Verdaccio jẹ ohun elo ayelujara ti ọlọpọ pilatifọọmu. Lati fi sori ẹrọ, o nilo awọn nkan pataki diẹ ṣaaju.
 
 #### Awọn ohun inilo iṣaaju
 
 1. Oju ipade ti o ga ju 
-    - For version `verdaccio@2.x` Node `v4.6.1` is the minimum supported version.
-    - For version `verdaccio@latest` Node `6.12.0` is the minimum supported version.
-2. npm `>=3.x` or `yarn`
-3. The web interface supports the `Chrome, Firefox, Edge, and IE9` browsers.
+    - Fun ẹya `verdaccio@2.x` Oju ipade `v4.6.1` jẹ ẹya ti o kere julọ ti atilẹyin wa fun.
+    - Fun ẹya `verdaccio@latest` Oju ipade `6.12.0` jẹ ẹya ti o kere julọ ti atilẹyin wa fun.
+2. npm `>=3.x` tabi `yarn`
+3. Intafeesi wẹẹbu naa n ṣe atilẹyin fun awọn ẹrọ aṣàwákiri ayelujara `Chrome, Firefox, Edge, and IE9`.
 
 ## Fifi CLI naa sori ẹrọ
 
@@ -46,10 +46,10 @@ Fun alaye siwaju sii nipa CLI naa, jọwọ [ka abala cli naa](cli.md).
 
 ## Aworan Docker
 
-`verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. For more information about how to install the official image, [read the docker section](docker.md).
+`verdaccio` ni aworan docker ti o le lo, atipe ni ọpọlọpọ igba, iṣeto atilẹwa naa ti dara to. Fun alaye siwaju sii nipa bi o ṣe le fi aworan naa sori ẹrọ, [ka abala docker naa](docker.md).
 
 ## Cloudron
 
-`verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
+`verdaccio` tun wa gẹgẹbi ifisori ẹrọ olontẹ-ẹẹkan lori [Cloudron](https://cloudron.io)
 
 [![Fi sori ẹrọ](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)

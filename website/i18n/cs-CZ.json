@@ -98,6 +98,9 @@
       "reverse-proxy": {
         "title": "Reverse Proxy Setup"
       },
+      "security-policy": {
+        "title": "Security Policy"
+      },
       "server-configuration": {
         "title": "Server Configuration"
       },

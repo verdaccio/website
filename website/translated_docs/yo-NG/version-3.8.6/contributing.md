@@ -1,82 +1,82 @@
 ---
 id: version-3.8.6-contributing
-title: Contributing Verdaccio
-original_id: contributing
+title: Lilọwọsi Verdaccio
+original_id: lilọwọsi
 ---
 
-First of all 👏👏 thanks for visiting this page, for us means you are willing contribute to `verdaccio` and we are happy for that. Jumping into an unfamiliar code base is not easy but we are here to help you.
+Lakọkọ naa 👏👏 o seun fun wiwa si oju ewe yii, fun wa o tumọ si pe o ṣetan lati ṣe ilọwọsi si `verdaccio` atipe inu wa dun fun eyi. Fifo lọ sinu ipilẹ koodu ti o jẹ ajeji ko rọrun ṣugbọn a wa nibi lati ran ọ lọwọ.
 
-## Comunication Channels
+## Awọn ikanni Ibaraẹnisọrọ
 
-If you are willing for asking, we use two channels for discussions:
+Ti o ba ṣetan lati se ibeere, a n lo awọn ikanni meji fun awọn ijiroro:
 
-* [Public Discord channel](http://chat.verdaccio.org/)
+* [Ikanni gbogbogbo Discord](http://chat.verdaccio.org/)
 
-## Getting started
+## Bibẹrẹ
 
-As a first glance verdaccio is a single repository, but there are many ways you might contribute and a variety of technologies to practice.
+Ni iwofiri akọkọ verdaccio jẹ ibi ipamọ kan soso, ṣugbọn awọn ọna pupọ wa ti o le gba lati ṣe ilọwọsi ati oriṣiriṣi awọn imọ ẹrọ lati danwo.
 
-### Finding my spot
+### Sisawari ipo mi
 
-All we have different skills, so, let's see where you might feel comfortable.
+Gbogbo wa ni ọgbọn ọtọọtọ, nitorina, jẹ ki a wo ibiti o le rọrun fun ọ.
 
-### I know or I want to learn Node.js
+### Mo mọ tabi Mo fẹ lati kọ Node.js
 
-Node.js is the base of `verdaccio`, we use libraries as `express`, `commander`, `request` or `async`. Verdaccio is basically a Rest API that create a communication with `npm` clients compatible, as `yarn`.
+Node.js ni ipilẹ `verdaccio`, a n lo awọn ibi ikowesi gẹgẹbi `express`, `commander`, `request` tabi `async`. Verdaccio lakotan jẹ API Rest ti o ṣẹda ibaraẹnisọrọ pẹlu awọn onibara `npm` ti o ni ibamu, gẹgẹbi `yarn`.
 
-We have a long [list of plugins](plugins.md) ready to be used and improved but at the same time [you might create your own](dev-plugins.md).
+A ni [akojọ ti ohun elo asomọ](plugins.md) ti o gun to si ti ṣetan lati jẹ lilo ati mimu dara si sugbon ni bakanna [o le ṣẹda ti ara rẹ](dev-plugins.md).
 
-### I would prefer to work in the User Interface
+### Emi yoo nifẹ lati ṣiṣẹ ninu Intafeesi Olumulo naa
 
-Recently we have moved to modern techonologies as `React` and `element-react`. We are looking forward to see new ideas how to improve the UI.
+Laipẹ a ti ko lọ si awọn imọ ẹrọ igbalode gẹgẹbi `React` ati `element-react`. A n fojusọna lati ri awọn ero tuntun lori bi a ṣe le mu Intafeesi Olumulo dara si.
 
-### I feel more confortable improving the stack
+### O rọmilọrun jọjọ lati mu eto akopọ naa dara si
 
-Of course, we will be happy to help us improving the stack, you can upgrade dependencies as `eslint`, `stylelint`, `webpack`. You might merely improve the `webpack` configuration would be great. Any suggestion is very welcome. Furthermore whether you have experience with **Yeoman** you might help us with the [verdaccio generator](https://github.com/verdaccio/generator-verdaccio-plugin).
+Dajudaju, inu wa yoo dun ki o ṣe iranlọwọ fun wa lati mu eto akopọ naa dara sii, o le ṣe agbega awọn igbarale bi `eslint`, `stylelint`, `webpack`. O maa dara gan ti o ba le ṣe imudara iṣeto `webpack` diẹ si. A fayegba eyikeyi aba. Siwaju sii boya o ni iriri pẹlu **Yeoman** o le ṣe iranlọwọ fun wa pẹlu [ẹrọ amuagbarawa ti verdaccio](https://github.com/verdaccio/generator-verdaccio-plugin).
 
-Here some ideas:
+Eyi ninu diẹ ninu awọn ero:
 
-* Create a common eslint rules to be used across all dependencies or plugins
-* Improve Flow types definitions delivery
-* Moving to Webpack 4
-* Improve hot reload with Webpack
-* We use babel and webpack across all dependencies, why not a common preset?
-* Improve continous integration delivery
+* Ṣẹda awọn ofin ti eslint ti o wọpọ to ma jẹ lilo jakejado gbogbo awọn igbarale tabi awọn ohun elo asomọ
+* Mu ifijiṣẹ awọn itumọ awọn iru Ilana dara si
+* Gbigbe lọ si Webpack 4
+* Mu atunmuṣiṣẹ gbigbona dara si pẹlu Webpack
+* A n lo babel ati webpack jakejado gbogbo awọn igbarale, kilode ti kii ṣe iṣeto atilẹda to wọpọ?
+* Mu ifijiṣẹ imuṣiṣẹpọ alainidaduro dara si
 
-### I do great Documentation
+### Mo ma n kọ Iwe akọsilẹ to kun ojuiwọn
 
-Many contributors find typos and grammar issues, that also helps to improve the overall experience for troubleshooting.
+Ọpọlọpọ awọn olulọwọsi ma n ri awọn aṣitẹ ati awọn iṣoro girama, ti o tun ma n pese iranlọwọ lati mu olubori iriri fun laasigbo titusita dara si.
 
-### I am a Designer
+### Mo jẹ Oludalara
 
-We have a frontend website <http://www.verdaccio.org/> that will be happy to see your ideas.
+A ni aaye ayelujara ti oju ewe ifabọsi kan <http://www.verdaccio.org/> ti inu rẹ maa dun lati ri awọn ero rẹ.
 
-Our website is based on [Docusaurus](https://docusaurus.io/).
+Aaye ayelujara wa da lori [Docusaurus](https://docusaurus.io/).
 
-### I am a DevOps
+### Mo jẹ DevOps
 
-We have a widely popular Docker image <https://hub.docker.com/r/verdaccio/verdaccio/> that need maintenance and pretty likely huge improvements, we need your knowledge for the benefits of all users.
+A ni aworan Docker kan to gbajugbaja kaakiri <https://hub.docker.com/r/verdaccio/verdaccio/> ti o nilo itọju atipe o dabi pe o nilo awọn imudara nla si, a nilo imo rẹ fun awọn anfani ti gbogbo awọn olumulo.
 
-We have support for **Kubernetes**, **Puppet**, **Ansible** and **Chef** and we need help in those fields, feel free to see all repositories.
+A ni atilẹyin fun **Kubernetes**, **Puppet**, **Ansible** ati **Chef** atipe a nilo iranlọwọ ninu awọn aaye naa, ma se kọ lati wo gbogbo awọn ibi ipamọ.
 
-### I can do translations
+### Mo le ṣe awọn itumọ ede
 
-Verdaccio aims to be multilingual, in order to achieve it **we have the awesome support** of [Crowdin](https://crowdin.com) that is an amazing platform for translations.
+Verdaccio gbero lati wa ni ọpọlọpọ ede, lati le ṣe aṣeyọri nipa eyi **a ni atilẹyin oniyebiye** ti [Crowdin](https://crowdin.com) eyi ti o jẹ pilatifọọmu alarabanra fun ṣiṣe awọn itumọ.
 
 <img src="https://d3n8a8pro7vhmx.cloudfront.net/uridu/pages/144/attachments/original/1485948891/Crowdin.png" width="400px" />
 
-We have setup a project where you can choose your favourite language, if you do not find your language feel free to request one [creating a ticket](https://github.com/verdaccio/verdaccio/issues/new).
+A ti ṣeto iṣẹ akanṣe kan nibi ti o ti le yan ede ti o fẹran, ti o ko ba ri ede rẹ ma ṣe kọ lati beere fun ọkan [ṣiṣẹda tikẹti kan](https://github.com/verdaccio/verdaccio/issues/new).
 
-[Go to Crowdin Verdaccio](https://crowdin.com/project/verdaccio)
+[Lọ si Crowdin Verdaccio](https://crowdin.com/project/verdaccio)
 
-## I'm ready to contribute
+## Mo setan lati ṣe ilọwọsi
 
-If you are thinking *"I've seen already the [repositories](repositories.md) and I'm willing to start right away"* then I have good news for you, that's the next step.
+Ti o ba n ronu pe *"Mo ti rii [awọn ibi ipamọ](repositories.md) naa atipe Mo ti setan lati bẹrẹ lẹsẹkẹsẹ"* to ba jẹbẹ Mo ni iroyin rere fun ọ, iyẹn ni igbesẹ tokan.
 
-You will need learn how to build, [we have prepared a guide just for that](build.md).
+O ma nilo lati kọ bi o ṣe le ṣe agbedide, [a ti seto itọsọna kan fun eyi ni pato](build.md).
 
-Once you have played around with all scripts and you know how to use them, we are ready to go to the next step, run the [**Unit Test**](test.md).
+Lọgan ti o ba ti sere kiri gbogbo awọn iwe afọwọkọ ti o si ti mọ bi o ṣe le lo wọn, a ti ṣetan lati lọ si igbesẹ tokan, ṣe imuṣiṣẹ [**Idanwo Iwọn**](test.md).
 
-## Full list of contributors. We want to see your face here !
+## Akojọ awọn olulọwọsi ni kikun. A fẹ lati ri oju rẹ nibi !
 
 <a href="graphs/contributors"><img src="https://opencollective.com/verdaccio/contributors.svg?width=890&button=false" /></a>

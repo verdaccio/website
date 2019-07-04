@@ -4,9 +4,9 @@ title: Fifi sori olupese IIS
 original_id: iss-server
 ---
 
-These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) and [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
+Awọn ilana wọnyi ni a kọ fun Windows Server 2012, IIS 8, [Node.js 0.12.3](https://nodejs.org/), [iisnode 0.2.16](https://github.com/tjanczuk/iisnode) ati [verdaccio 2.1.0](https://github.com/verdaccio/verdaccio).
 
-- Install IIS Install [iisnode](https://github.com/tjanczuk/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
+- Fi IIS Install sori ẹrọ [iisnode](https://github.com/tjanczuk/iisnode). Ri daju pe o fi awọn ohun inilo ti o ṣe pataki sori ẹrọ (Url Rewrite Module & node) bi a ti ṣe salaye ninu awọn ilana fun iisnode.
 - Ṣẹda foda tuntun ni Explorer ni ibi ti o fẹ gbalejo verdaccio. Fun apẹẹrẹ `C:\verdaccio`. Fi [package.json](#packagejson), [start.js](#startjs) and [web.config](#webconfig) pamọ sinu foda yii.
 - Ṣẹda aaye ayelujara tuntun kan ni Alakoso Awọn Iṣẹ Alaye Ayelujara. O le fun lorukọ eyikeyi ti o fẹ. Mo ma pe ni verdaccio ninu [awọn alaye yii](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Yan pato ọna ibi ti o ti fi gbogbo awọn faili ati nọmba ibudo kan pamọ si.
 - Pada lọ si Explorer ki o si fun olumulo ti o n lo awọn ẹtọ atunṣe adagun ohun elo si foda ti o sẹsẹ ṣẹda. Ti o ba ti fun aaye ayelujara tuntun naa ni orukọ verdaccio ati ti o ko yi adagun ohun elo naa pada, o n ṣiṣẹ labẹ ApplicationPoolIdentity kan atipe o yẹ ki o fun olumulo naa ni awọn ẹtọ atunṣe IIS AppPool\verdaccio wo awọn ilana ti o ba nilo iranlọwọ. (O le se idena wiwọle to ba ya ti o ba fẹ to fi ma jẹ wipe awọn ẹtọ atunṣe nikan ni o ma ni lori iisnode ati verdaccio\storage)
@@ -17,13 +17,13 @@ These instructions were written for Windows Server 2012, IIS 8, [Node.js 0.12.3]
     
 
 - Ri daju pe o ni ofin to n wọle bọ to tẹwọgba abẹwo TCP si ibudo naa ni Awọn aabo ayelujara ti Windows
-- Thats it! Now you can navigate to the host and port that you specified
+- Ohun niyẹn! Bayi o le ṣe ilọ kiri si agbalejo naa ati ibudo ti o yan ni pato
 
 Mo fẹ jẹ ki aaye ayelujara `verdaccio` jẹ aaye ayelujara atilẹwa ni IIS fun idi eyi mo se awọn ohun wọnyii:
 
-- I made sure the .npmrc file in `c:\users{yourname}` had the registry set to `"registry=http://localhost/"`
-- I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS
-- I set the bindings to "http", ip address "All Unassigned" on port 80, ok any warning or prompts
+- Mo rii daju pe faili .npmrc ni `c:\users{yourname}` ni ibi iforukọsilẹ to jẹ siseto si `"registry=http://localhost/"`
+- Mo da "Aaye Ayelujara Atilẹwa" duro atipe mo kan bẹrẹ aaye ayelujara "verdaccio" nikan ni IIS
+- Mo seto awọn isopọ naa si "http", adirẹsi ip "Gbogbo eyi ti ko jẹ Pinpin" lori ibudo 80, fọwọsi eyikeyi ikilọ tabi awọn ibeere
 
 Awọn itọsọna wọnyi da lori [Host Sinopia ni IIS lori Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). Mo ni lati ṣe ayipada iṣeto wẹẹbu mi gẹgẹbi isalẹ yii ṣugbọn o le ri ojulowo naa lati ọdọ itọkasi asopọ to n ṣiṣẹ daradara
 
@@ -99,7 +99,7 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 </configuration>
 ```
 
-### Troubleshooting
+### Titu laasigbo sita
 
 - **Intafeesi wẹẹbu naa ko kin ṣiṣẹ nigbati o ba jẹ gbigbalejo pẹlu https pẹlu bi o ti ma n gbìyànjú lati gba awọn iwe afọwọkọ sori ẹrọ lori http.**  
     Ri daju pe o ti darukọ `url_prefix` ni deede ni iṣeto verdaccio. Se atẹle [ijiroro](https://github.com/verdaccio/verdaccio/issues/622).

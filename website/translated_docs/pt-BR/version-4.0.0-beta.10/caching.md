@@ -1,25 +1,25 @@
 ---
 id: version-4.0.0-beta.10-caching
-title: Caching strategies
+title: Estratégias de Cashing
 original_id: caching
 ---
 
-Verdaccio caches all packages by default into the `/storage` folder. But you can decide whether you want to follow a different strategy. Using of plugins you might use the cloud or any sort of database.
+Verdaccio armazena todos os pacotes por padrão na pasta `/storage`. Mas você pode decidir se quer seguir uma estratégia diferente. Usando plugins você pode usar a nuvem ou qualquer tipo de banco de dados.
 
-## Caching scenarios
+## Possibilidades de Cache
 
-* Build a Node.js project on **Continous Integration** (Bamboo, GitLab, Jenkins, etc) servers is a task that might take several times at a day, thus, the server will download tons of tarballs from the registry every time takes place. As usual, the CI tools clear the cache after each build and the process start over and over again. That is a waste of bandwidth and reduces the external traffic. **You can use Verdaccio for caching tarballs and metadata in our internal network and give a boost in your build time.**
-* **Latency and Connectivity**, not all countries enjoy a high-speed connection. For such reason cache packages locally in your network is really handy. Either if you are traveling, or have a weak connection, roaming or countries with strong Firewalls that might affect the user experience (eg: corrupting tarballs).
-* **Offline Mode**, all Node Package Managers nowadays uses their own internal cache, but it common that different projects might use different tools, which implies lock files and so on. Those tools are unable to share cache, the unique solution is centralized and relies on a proxy registry, Verdaccio cache all metadata and tarballs are downloaded by demand being able to share them across all your project.
-* Avoid that any remote registry suddenly returns *HTTP 404* error for tarballs were previously available a.k.a ([left-pad issue](https://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/)).
+* A criação de um projeto Node.js em servidores de **Integração Contínua** (Bamboo, GitLab, Jenkins, etc.) é uma atividade que pode ser executada várias vezes ao dia, portanto, o servidor fará o download do registro de um grande número de tarballs sempre que isso ocorrer. Como de costume, as ferramentas de IC limpam o cache após cada compilação e o processo é iniciado repetidamente. Isto é um desperdício de bandwidth e reduz o tráfego externo. **Você pode usar o Verdaccio para fazer cache de tarballs e metadados em nossa rede interna e dar um impulso em seu tempo de compilação.**
+* **Latência e Conectividade**, nem todos os países desfrutam de uma conexão de alta velocidade. Neste caso, armazenar pacotes localmente em sua rede é muito útil. Mesmo se você estiver viajando, ou tiver uma conexão fraca, estiver em roaming ou enfrentando países com firewalls fortes que possam afetar a experiência do usuário (por exemplo: corrompendo tarballs).
+* **Modo Offline**, todos os Node Package Managers hoje em dia usam seu próprio cache interno, mas é comum que projetos diferentes usem ferramentas diferentes, o que implica arquivos de bloqueio e assim por diante. Essas ferramentas não podem compartilhar o cache, a única solução é centralizada e depende de um registro de proxy. Verdaccio armazena em cache todos os metadados e tarballs são baixadas por demanda, sendo capaz de compartilhá-los em todo o seu projeto.
+* Evita que qualquer registro remoto retorne repentinamente erros de *HTTP 404* para tarballs que estavam previamente disponíveis, também conhecido como ([left-pad issue](https://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/)).
 
-# Strategies for faster builds
+# Estratégias para construções mais rápidas
 
-> We are looking for more strategies, feel free to share your experience in this field
+> Estamos à procura de mais estratégias, sinta-se à vontade para compartilhar sua experiência neste campo
 
-## Avoid Caching tarballs
+## Evite armazenar tarballs
 
-If you have a limited storage space, you might need to avoid cache tarballs, enabling `cache` false in each uplink will cache only metadata files.
+Se você tiver um espaço de armazenamento limitado, pode ser necessário evitar tarballs de cache, ativar o `cache` false em cada uplink armazenará apenas os arquivos de metadados.
 
     uplinks:
       npmjs:
@@ -27,9 +27,9 @@ If you have a limited storage space, you might need to avoid cache tarballs, ena
         cache: false
     
 
-## Extending Cache Expiration Time
+## Estendendo o Tempo de Expiração do Cache
 
-Verdaccio by default waits 2 minutes to invalidate the cache metadata before fetching new information from the remote registry.
+O Verdaccio, por padrão, aguarda 2 minutos para invalidar os metadados do cache antes de buscar novas informações do registro remoto.
 
 ```yaml
 uplinks:
@@ -38,18 +38,18 @@ uplinks:
     maxage: 30m
 ```
 
-Increasing the value of `maxage` in each `uplink` remotes will be asked less frequently. This might be a valid stragegy if you don't update dependencies so often.
+Ao aumentar o valor de `maxage` em cada `uplink`, o controle remoto será consultado com menos frequência. This might be a valid stragegy if you don't update dependencies so often.
 
-## Using the memory instead the hardrive
+## Usando a memória em vez do disco rígido
 
-Sometimes caching packages is not a critical step, rather than route packages from different registries and achieving faster build times. There are two plugins that avoid write in a phisical hardrive at all using the memory.
+Às vezes, o armazenamento em cache de pacotes não é uma etapa crítica, em vez de rotear pacotes de diferentes registros e alcançar tempos de construção mais rápidos. There are two plugins that avoid write in a phisical hardrive at all using the memory.
 
 ```bash
   npm install -g verdaccio-auth-memory
   npm install -g verdaccio-memory
 ```
 
-The configuration looks like this
+A configuração aparece como a seguir
 
 ```yaml
 auth:

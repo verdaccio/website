@@ -1,54 +1,54 @@
 ---
 id: version-4.0.0-alpha.4-what-is-verdaccio
-title: What is Verdaccio?
-original_id: what-is-verdaccio
+title: Ki ni verdaccio?
+original_id: ki-ni-verdaccio
 ---
 
-Verdaccio is a **lightweight private npm proxy registry** built in **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+Verdaccio jẹ **ibi iforukọsilẹ aṣoju ikọkọ npm aladani fifuyẹ** to jẹ kikọ ni **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-## What's a registry
+## Kini n jẹ ibi iforukọsilẹ
 
-* A repository for packages that implements the **CommonJS Compliant Package Registry specification** for reading package info
-* Provide an API compatible with npm clients **(yarn/npm/pnpm)**
-* Follow the semantic Versioning compatible **(semver)**
+* Ibi ipamọ kan fun awọn akopọ ti o n ṣe imuṣiṣẹ **alaye CommonJS Compliant Package Registry** fun kika alaye akopọ
+* Pese API kan to ni ibamu pẹlu awọn onibara npm **(yarn/npm/pnpm)**
+* Tẹle itumọ ọrọ ti o n se ẹya to ni ibaramu **(semver)**
 
     $> verdaccio
     
 
-![registry](assets/verdaccio_server.gif)
+![ibi iforukọsilẹ](assets/verdaccio_server.gif)
 
-## Using Verdaccio
+## Lilo Verdaccio
 
-Using verdaccio with any node package manager client is quite straightforward.
+Lilo verdaccio pẹlu eyikeyi onibara alakoso akopọ oju ipade jẹ ohun to rọrun.
 
-![registry](assets/npm_install.gif)
+![ibi iforukọsilẹ](assets/npm_install.gif)
 
-You can use a custom registry either setting globally for all your projects
+O le lo iforukọsilẹ alakanṣe nipa siseto agbaye fun gbogbo awọn iṣẹ rẹ
 
     npm set registry http://localhost:4873
     
 
-or by command line as argument `--registry` in npm (slightly different in yarn)
+tabi nipa ila aṣẹ gẹgẹbi ariyanjiyan `--registry` ni npm (o yatọ diẹ ni yarn)
 
     npm install lodash --registry http://localhost:4873
     
 
-## Private
+## Ikọkọ
 
-All packages that you publish are private and only accessible based in your configuration.
+Gbogbo awọn akopọ ti o ṣe atẹjade rẹ jẹ ikọkọ atipe o se wọle si nikan ni dida lori iṣeto rẹ.
 
-## Proxy
+## Aṣoju ikọkọ
 
-Verdaccio cache all dependencies by demand and speed up installations in local or private networks.
+Verdaccio n fi gbogbo awọn igbarale si apo iranti nipasẹ ibeere ati mu ki awọn fifi sori ẹrọ yara si ni awọn nẹtiwọki ibilẹ tabi ti ikọkọ.
 
-## Verdaccio in a nutshell
+## Verdaccio ni soki
 
-* It's a web app based on Node.js
-* It's a private npm registry
-* It's a local network proxy
-* It's a Pluggable application
-* It's a fairly easy install and use
-* We offer Docker and Kubernetes support
-* It is 100% compatible with yarn, npm and pnpm
-* It was **forked** based on `sinopia@1.4.0` and 100% **backward compatible**.
-* Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
+* O jẹ ohun elo ayelujara ti o da lori Node.js
+* O jẹ ibi iforukọsilẹ npm ti ikọkọ kan
+* O jẹ aṣoju ikọkọ nẹtiwọki ibilẹ kan
+* O jẹ ohun elo alaasomọ kan
+* O rọrun lati fi sori ẹrọ ati lati lo
+* A pese atilẹyin Docker ati Kubernetes
+* O ni ibamu 100% pẹlu yarn, npm ati pnpm
+* O jẹ **fifayọ** dida lori `sinopia@1.4.0` ati 100% **ibasisẹpọ ẹlẹyin**.
+* Verdaccio tumọ si **Awọ ewe ti o gbajumọ ni aaye atijọ ni Italy fun aworan fresco**.

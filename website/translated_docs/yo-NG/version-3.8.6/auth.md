@@ -36,16 +36,16 @@ Fun apẹẹrẹ:
 
 Bi apejuwe rẹ ti ṣe jẹ ṣiṣe [lori ọrọ #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) titi `npm@5.3.0` atipe gbogbo awọn ifilọlẹ kekere **koni fayegba ọ lati se atẹjade laisi aami kankan**. Amọ sa `yarn` ko ni iru opin yẹn.
 
-## Default htpasswd
+## htpasswd atilẹwa
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. As of version v3.0.x an [external plugin](https://github.com/verdaccio/verdaccio-htpasswd) is used by default. The v2.x version of this package still contains the built-in version of this plugin.
+Lati le tubọ mu iṣeto naa rọrun, `verdaccio` n lo ohun elo asomọ kan to da lori `htpasswd`. Titi di ẹya v3.0.x [ohun elo asomọ ti ita](https://github.com/verdaccio/verdaccio-htpasswd) ma n jẹ lilo ni atilẹwa. The v2.x Ẹya v2.x ti akopọ yii si tun ni ẹya alakọmọ ti ohun elo asomọ yii.
 
 ```yaml
 auth:
   htpasswd:
     file: ./htpasswd
-    # Maximum amount of users allowed to register, defaults to "+inf".
-    # You can set this to -1 to disable registration.
+    # Iye awọn olumulo to pọju ti aaye wa fun lati forukọsilẹ, n pada si "+inf".
+    # O le ṣeto eyi si -1 lati yọ iforukọsilẹ kuro.
     #max_users: 1000
 ```
 
@@ -54,4 +54,4 @@ auth:
 | faili     | okun  | Bẹẹni     | ./htpasswd | gbogbo   | faili to gbalejo awọn iwe ẹri alaroko |
 | max_users | nọmba | Rara      | 1000       | gbogbo   | ṣeto gbedeke iye awọn olumulo         |
 
-In case to decide do not allow user to login, you can set `max_users: -1`.
+Toba sẹlẹ pe o pinnu lati ma fayegba olumulo lati wọle, o le ṣeto `max_users: -1`.

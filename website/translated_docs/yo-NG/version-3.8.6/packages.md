@@ -42,7 +42,7 @@ packages:
     publish: $authenticated
 ```
 
-The list of valid groups according the default plugins are
+Akojọ awọn ẹgbẹ to fẹsẹmulẹ ni ibamu si awọn ohun elo atilẹwa
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
@@ -55,7 +55,7 @@ Gbogbo awọn olumulo ma n gba gbogbo awọn igbanilaaye naa ni olominira ti ala
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-Ti o ba fẹ lati dabobo pato eto awọn akopọ kan labẹ ẹgbẹ rẹ, o nilo lati ṣe nkan bi eleyi. Jẹ ki a lo `Regex` ti o bo gbogbo awọn akopọ `npmuser-` ti iṣaaju. We recomend using a prefix for your packages, in that way it will be easier to protect them.
+Ti o ba fẹ lati dabobo pato eto awọn akopọ kan labẹ ẹgbẹ rẹ, o nilo lati ṣe nkan bi eleyi. Jẹ ki a lo `Regex` ti o bo gbogbo awọn akopọ `npmuser-` ti iṣaaju. A ṣe igbaniyanju nipa lilo eto iṣaaju fun awọn akopọ rẹ, ni ọna yii o ma rọrun lati dabobo wọn.
 
 ```yaml
 packages:
@@ -95,7 +95,7 @@ O le sayipada awọn ihuwasi to ti wa tẹlẹ nipa lilo ifasẹsi ohun elo to y
 
 #### Didena wiwọle si iṣeto ti awọn akojọ
 
-If you want to block the acccess/publish to a specific group of packages. Just do not define `access` and `publish`.
+Ti o ba fẹ lati dènà wiwọle/atẹjade lọ si pato ẹgbẹ ti awọn akojọ kan. Sa ma ti ṣeto `access` ati `publish`.
 
 ```yaml
 packages:
@@ -139,7 +139,7 @@ Lọ **mọ pe aṣẹ ti awọn itumọ awọn akopọ rẹ jẹ pataki ati ki 
 
 ### Iṣeto
 
-You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
+O le ṣe asọye ọpọ `packages` atipe ikọọkan ninu wọn gbọdọ ni `Regex` to dayatọ. Sintasi naa da lori [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
 | Ohun ini    | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                              |
 | ----------- | ------- | --------- | -------------- | -------- | ---------------------------------------------------- |

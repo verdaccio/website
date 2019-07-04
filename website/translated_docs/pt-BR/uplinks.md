@@ -26,18 +26,18 @@ uplinks:
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have the following properties:
 
-| Property     | Type    | Obrigatório | Exemplo                                 | Support | Descrição                                                                                                                  | Padrão     |
-| ------------ | ------- | ----------- | --------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| url          | string  | Sim         | https://registry.npmjs.org/             | all     | The registry url                                                                                                           | npmjs      |
-| ca           | string  | Não         | ~./ssl/client.crt'                      | all     | SSL path certificate                                                                                                       | No default |
-| timeout      | string  | Não         | 100ms                                   | all     | set new timeout for the request                                                                                            | 30s        |
-| maxage       | string  | Não         | 10m                                     | all     | the time threshold to the cache is valid                                                                                   | 2m         |
-| fail_timeout | string  | Não         | 10m                                     | all     | defines max time when a request becomes a failure                                                                          | 5m         |
-| max_fails    | number  | Não         | 2                                       | all     | limit maximun failure request                                                                                              | 2          |
-| cache        | boolean | Não         | [true,false]                            | >= 2.1  | cache all remote tarballs in storage                                                                                       | true       |
-| auth         | list    | Não         | [see below](uplinks.md#auth-property)   | >= 2.5  | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
-| headers      | list    | Não         | authorization: "Bearer SecretJWToken==" | all     | list of custom headers for the uplink                                                                                      | disabled   |
-| strict_ssl   | boolean | Não         | [true,false]                            | >= 3.0  | If true, requires SSL certificates be valid.                                                                               | true       |
+| Propriedade  | Tipo    | Obrigatório | Exemplo                                 | Suporte  | Descrição                                                                                                                  | Padrão     |
+| ------------ | ------- | ----------- | --------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| url          | string  | Sim         | https://registry.npmjs.org/             | completo | The registry url                                                                                                           | npmjs      |
+| ca           | string  | Não         | ~./ssl/client.crt'                      | completo | SSL path certificate                                                                                                       | No default |
+| timeout      | string  | Não         | 100ms                                   | completo | set new timeout for the request                                                                                            | 30s        |
+| maxage       | string  | Não         | 10m                                     | completo | the time threshold to the cache is valid                                                                                   | 2m         |
+| fail_timeout | string  | Não         | 10m                                     | completo | defines max time when a request becomes a failure                                                                          | 5m         |
+| max_fails    | número  | Não         | 2                                       | completo | limit maximun failure request                                                                                              | 2          |
+| cache        | boolean | Não         | [true,false]                            | >= 2.1   | cache all remote tarballs in storage                                                                                       | true       |
+| auth         | list    | Não         | [see below](uplinks.md#auth-property)   | >= 2.5   | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
+| headers      | list    | Não         | authorization: "Bearer SecretJWToken==" | completo | list of custom headers for the uplink                                                                                      | disabled   |
+| strict_ssl   | boolean | Não         | [true,false]                            | >= 3.0   | If true, requires SSL certificates be valid.                                                                               | true       |
 
 #### Auth property
 

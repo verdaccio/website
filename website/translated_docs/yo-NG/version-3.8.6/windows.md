@@ -1,53 +1,53 @@
 ---
 id: version-3.8.6-windows
-title: Installing As a Windows Service
+title: Fifi sori ẹrọ Bi Iṣẹ Windows kan
 original_id: windows
 ---
 
-Loosely based upon the instructions found [here](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). I crafted the following and it provided me with a fully working verdaccio service installation:
+O da lori awọn itọnisọna ti o wa [nibi](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). Mo ṣẹda iwọnyi ti o si wa pese iṣẹ verdaccio ti o n ṣiṣẹ ni kikun fun mi:
 
-1. Create a directory for verdaccio 
+1. Ṣẹda ọna fun verdaccio 
     * mkdir `c:\verdaccio`
     * cd `c:\verdaccio`
-2. Install verdaccio locally (I ran into npm issues with global installs) 
+2. Fi verdaccio sori ẹrọ ni ibilẹ (Mo salaba pade awọn iṣoro npm pẹlu awọn fifisori ti agbaye) 
     * npm install verdaccio
-3. Create your `config.yaml` file in this location `(c:\verdaccio\config.yaml)`
-4. Windows Service Setup
+3. Ṣẹda faili `config.yaml` rẹ ni aaye yii `(c:\verdaccio\config.yaml)`
+4. Iṣeto Iṣẹ Windows
 
-## Using NSSM
+## Lilo NSSM
 
-ALTERNATIVE METHOD: (WinSW package was missing when I tried to download it)
+ỌNA MIRAN: (Akopọ WinSW ti sọnu nigbati mo gbiyanju lati gba lati ayelujara)
 
-* Download [NSSM](https://www.nssm.cc/download/) and extract
+* Gba [NSSM](https://www.nssm.cc/download/) ki o si fa jade
 
-* Add the path that contains nssm.exe to the PATH
+* Se afikun ọna ti o ni nssm.exe si PATH
 
-* Open an administrative command
+* Ṣi aṣẹ isakoso kan
 
-* Run nssm install verdaccio At a minimum you must fill in the Application tab Path, Startup directory and Arguments fields. Assuming an install with node in the system path and a location of c:\verdaccio the below values will work:
+* Ṣe imuṣiṣẹ nssm install verdaccio Ni o kere ju o gbọdọ pese idahun si Ọna taabu Ohun elo, Ibẹrẹ ọna ati Awọn aaye awọn ariyanjiyan. Kani wipe ifisori ẹrọ pẹlu oju ipade ninu ọna eto naa ati aaye kan ti c:\verdaccio awọn iye to wa ni isalẹ yoo ṣiṣẹ:
     
     * Path: `node`
     * Startup directory: `c:\verdaccio`
-    * Arguments: `c:\verdaccio\node_modules\verdaccio\build\lib\cli.js -c c:\verdaccio\config.yaml`
+    * Awọn ariyanjiyan: `c:\verdaccio\node_modules\verdaccio\build\lib\cli.js -c c:\verdaccio\config.yaml`
     
     You can adjust other service settings under other tabs as desired. When you are done, click Install service button
     
-    * Start the service sc start verdaccio
+    * Bẹrẹ iṣẹ sc naa bẹrẹ verdaccio
 
-## Using WinSW
+## Lilo WinSW
 
 * As of 2015-10-27, WinSW is no longer available at the below location. Please follow the Using NSSM instructions above.
 * Download [WinSW](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/) 
-    * Place the executable (e.g. `winsw-1.9-bin.exe`) into this folder (`c:\verdaccio`) and rename it to `verdaccio-winsw.exe`
-* Create a configuration file in `c:\verdaccio`, named `verdaccio-winsw.xml` with the following configuration `xml verdaccio verdaccio verdaccio node c:\verdaccio\node_modules\verdaccio\src\lib\cli.js -c c:\verdaccio\config.yaml roll c:\verdaccio`.
-* Install your service 
+    * Gbe awọn iṣẹ ṣiṣe naa (fun apẹẹrẹ `winsw-1.9-bin.exe`) sinu foda yii (`c:\verdaccio`) ki o si pa lorukọ da si `verdaccio-winsw.exe`
+* Ṣẹda faili iṣeto kan ni `c:\verdaccio`, ti o n jẹ `verdaccio-winsw.xml` pẹlu iṣeto wọnyii `xml verdaccio verdaccio verdaccio node c:\verdaccio\node_modules\verdaccio\src\lib\cli.js -c c:\verdaccio\config.yaml roll c:\verdaccio`.
+* Fi iṣẹ rẹ sii 
     * `cd c:\verdaccio`
     * `verdaccio-winsw.exe install`
-* Start your service 
+* Bẹrẹ iṣẹ rẹ 
     * `verdaccio-winsw.exe start`
 
-Some of the above config is more verbose than I had expected, it appears as though 'workingdirectory' is ignored, but other than that, this works for me and allows my verdaccio instance to persist between restarts of the server, and also restart itself should there be any crashes of the verdaccio process.
+Diẹ lara awọn iṣeto ti o wa loke jẹ verbose ju bi mo ti se reti lọ, o dabi pe 'workingdirectory' ti ko bikita, ṣugbọn yatọ si eyi, eyi ṣiṣẹ fun mi o si fayegba verdaccio instance mi lati si duro sinsin laarin atunbẹrẹ ti olupese naa, ati sise atunbẹrẹ ara rẹ ti o ba lọ jẹpe ijamba kankan ba waye si ilana verdaccio naa.
 
-## Repositories
+## Awọn ibi ipamọ
 
 * [verdaccio-deamon-windows](https://github.com/davidenke/verdaccio-deamon-windows)
