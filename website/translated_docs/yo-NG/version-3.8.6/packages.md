@@ -139,7 +139,7 @@ Lọ **mọ pe aṣẹ ti awọn itumọ awọn akopọ rẹ jẹ pataki ati ki 
 
 ### Iṣeto
 
-O le ṣe asọye ọpọ `packages` atipe ikọọkan ninu wọn gbọdọ ni `Regex` to dayatọ. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
+O le ṣe asọye ọpọ `packages` atipe ikọọkan ninu wọn gbọdọ ni `Regex` to dayatọ. Sintasi naa da lori [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
 | Ohun ini    | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                              |
 | ----------- | ------- | --------- | -------------- | -------- | ---------------------------------------------------- |
