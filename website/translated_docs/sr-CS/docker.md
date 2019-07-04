@@ -81,7 +81,13 @@ Plugins se mogu instalirati u posebnom direktorijumu i mountovati korišćenjem 
 ```docker
 FROM verdaccio/verdaccio
 
-RUN npm install verdaccio-s3-storage
+USER root
+
+ENV NODE_ENV=production
+
+RUN npm i && npm install verdaccio-s3-storage
+
+USER verdaccio
 ```
 
 ### Docker i custom port konfiguracija
