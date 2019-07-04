@@ -150,7 +150,7 @@ Jọwọ kiyesi pe fun eyikeyi ninu awọn asẹ docker to wa loke yii o nilo la
 
 ## Awọn apẹẹrẹ Docker
 
-There is a separate repository that hosts multiple configurations to compose Docker images with `verdaccio`, for instance, as reverse proxy:
+Ibi ipamọ kan to dayatọ wa ti o n gbalejo ọpọlọpọ awọn iṣeto lati kọ awọn aworan Docker pẹlu `verdaccio`, fun apẹẹrẹ, bi aṣoju ikọkọ alayipada:
 
 <https://github.com/verdaccio/docker-examples>
 
