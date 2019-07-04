@@ -33,7 +33,7 @@
         "title": "Chef Cookbook"
       },
       "ci": {
-        "title": "Integração contínua"
+        "title": "Integração Contínua"
       },
       "cli": {
         "title": "Utilitário na Linha de Comando"
@@ -141,7 +141,7 @@
         "title": "Chef Cookbook"
       },
       "version-3.8.6/version-3.8.6-ci": {
-        "title": "Integração contínua"
+        "title": "Integração Contínua"
       },
       "version-3.8.6/version-3.8.6-cli": {
         "title": "Utilitário na Linha de Comando"
@@ -372,7 +372,7 @@
         "title": "Estratégias de Cashing"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-ci": {
-        "title": "Integração contínua"
+        "title": "Integração Contínua"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-configuration": {
         "title": "Arquivo de Configuração"
