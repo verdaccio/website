@@ -23,7 +23,7 @@ $> npm install --global verdaccio-activedirectory
 
 ### Iṣeto
 
-Open the `config.yaml` file and update the `auth` section as follows:
+Sii faili `config.yaml` ki o si ṣe imudojuiwọn abala `auth` naa bi atẹle yi:
 
 The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
 
