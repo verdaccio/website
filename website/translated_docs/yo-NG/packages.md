@@ -168,7 +168,7 @@ Ninu apẹẹrẹ titẹlẹ, ihuwasi naa yoo jẹ jijuwe:
 
 ### Iṣeto
 
-You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
+O le ṣe asọye ọpọ `packages` atipe ikọọkan ninu wọn gbọdọ ni `Regex` to dayatọ. Sintasi naa da lori [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
 | Ohun ini    | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                                           |
 | ----------- | ------- | --------- | -------------- | -------- | ----------------------------------------------------------------- |
