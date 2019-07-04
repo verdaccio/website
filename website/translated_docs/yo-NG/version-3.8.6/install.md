@@ -46,7 +46,7 @@ Fun alaye siwaju sii nipa CLI naa, jọwọ [ka abala cli naa](cli.md).
 
 ## Aworan Docker
 
-`verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. For more information about how to install the official image, [read the docker section](docker.md).
+`verdaccio` ni aworan docker ti o le lo, atipe ni ọpọlọpọ igba, iṣeto atilẹwa naa ti dara to. Fun alaye siwaju sii nipa bi o ṣe le fi aworan naa sori ẹrọ, [ka abala docker naa](docker.md).
 
 ## Cloudron
 
