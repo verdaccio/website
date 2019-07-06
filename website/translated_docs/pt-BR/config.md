@@ -67,7 +67,7 @@ auth:
 
 O bloco de segurança permite personalizar o token de assinatura. Para habilitar a nova assinatura do [JWT (json web token)](https://jwt.io/) é necessário adicionar o bloco `jwt` à seção `api`, `web` usa `jwt` por padrão.
 
-A configuração é separada em duas seções, `api` e `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+A configuração é separada em duas seções, `api` e `web`. Para usar o JWT na `api` você precisará defini-lo, caso contrário, você usará a assinatura de token herdada (`aes192`). Para o JWT, você pode personalizar a [assinatura](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) e a [verificação](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) do token com suas próprias propriedades.
 
     security:
       api:
