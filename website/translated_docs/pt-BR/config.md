@@ -84,13 +84,13 @@ A configuração é separada em duas seções, `api` e `web`. Para usar o JWT na
             someProp: [value]
     
 
-> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+> É altamente recomendável migrar para o JWT, pois a assinatura herdada (`aes192`) está obsoleta e desaparecerá em versões futuras.
 
 ### Server
 
-A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+Um conjunto de propriedades para alterar o comportamento do aplicativo do servidor, especificamente a API (Express.js).
 
-> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enough.
+> Você pode especificar o tempo limite de espera do servidor HTTP/1.1 em segundos para conexões de entrada. Um valor 0 faz com que o servidor http se comporte de maneira semelhante às versões do Node.js anteriores a 8.0.0, que não tinham um tempo limite de atividade. SOLUÇÃO ALTERNATIVA: Através da configuração fornecida, você pode solucionar o seguinte problema https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enough.
 
 ```yaml
 server:
