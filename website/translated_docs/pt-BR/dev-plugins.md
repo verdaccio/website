@@ -112,9 +112,9 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 ### register_middlewares
 
-The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
+O método fornece acesso total à autenticação e armazenamento via `auth` e `storage`. `app` é o aplicativo rápido que permite adicionar novos endpoints.
 
-> A pretty good example of middleware plugin is the [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) and [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
+> Um bom exemplo de plugin de middleware é o [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) e [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
 ### API
 
@@ -126,13 +126,13 @@ function register_middlewares(expressApp, authInstance, storageInstance) {
 
 To register a middleware we need an object with a single method called `register_middlewares` that will recieve 3 arguments (`expressApp, auth, storage`). *Auth* is the authentification instance and *storage* is also the main Storage instance that will give you have access to all to the storage actions.
 
-## Storage Plugin
+## Plugin de Armazenamento
 
 Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), but, since `verdaccio@3.x` you can plug in a custom storage replacing the default behaviour.
 
 ### API
 
-The storage API is a bit more complex, you will need to create a class that return a `IPluginStorage` implementation. Please see details bellow.
+A API de armazenamento é um pouco mais complexa, você precisará criar uma classe que retorne uma implementação `IPluginStorage`. Por favor, veja os detalhes abaixo.
 
 ```flow
 class LocalDatabase<IPluginStorage>{
@@ -182,9 +182,9 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 }
 ```
 
-> The Storage API is still experimental and might change in the next minor versions. For further information about Storage API please follow the [types definitions in our official repository](https://github.com/verdaccio/flow-types).
+> A API de armazenamento ainda é experimental e pode mudar nas próximas versões secundárias. Para mais informações sobre a API de Armazenamento, siga as [definições de tipo em nosso repositório oficial](https://github.com/verdaccio/flow-types).
 
-### Storage Examples
+### Exemplos de Armazenamento
 
 The following list of plugins are implementing the Storage API and might be used them as example.
 
