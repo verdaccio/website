@@ -9,11 +9,11 @@ Existem muitas maneiras de estender o `verdaccio`, os tipos de plugins suportado
 * Plugins middleware (A partir da `v2.7.0`)
 * Plugins de armazenamento (A partir da `v3.x`)
 
-> We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
+> Recomendamos o desenvolvimento de extensões usando nossas [definições de tipo de fluxo](https://github.com/verdaccio/flow-types).
 
-## Authentication Plugin
+## Plugin de Autenticação
 
-Basically we have to return an object with a single method called `authenticate` that will recieve 3 arguments (`user, password, callback`).
+Basicamente, temos que retornar um objeto com um único método chamado `authenticate` que receberá 3 argumentos (`user, password, callback`).
 
 ### API
 
