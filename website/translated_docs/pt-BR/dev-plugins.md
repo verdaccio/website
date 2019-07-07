@@ -193,11 +193,11 @@ The following list of plugins are implementing the Storage API and might be used
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)
 * [verdaccio-s3-storage](https://github.com/Remitly/verdaccio-s3-storage/tree/s3)
 
-> Are you willing to contribute with new Storage Plugins? [Click here.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
+> Você está disposto a contribuir com novos plugins de armazenamento? [Clique aqui.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
 
-## Theme Plugin
+## Plugin de Tema
 
-The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
+O plugin deve retornar uma função que retorna uma **string**. A string deve ser a localização absoluta da root da sua interface de usuário.
 
 ### API
 
@@ -209,8 +209,8 @@ module.exports = (...arguments) => {
 };
 ```
 
-It is imporant that the name of the plugin **must start with `verdaccio-theme-` prefix**.
+É importante que o nome do plugin **deve começar com o prefixo `verdaccio-theme-`**.
 
-### Theme Example
+### Exemplo de Tema
 
-* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): The default Verdaccio theme based in React.js.
+* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): O tema padrão do Verdaccio é baseado no React.js.
