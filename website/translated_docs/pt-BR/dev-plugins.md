@@ -34,7 +34,7 @@ interface IPluginAuth extends IPlugin {
 
 A partir da `v4.0.0`
 
-`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
+`apiJWTmiddleware` foi introduzido na [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) para ter controle total do gestor de token, sobrescrever este método irá desativar o suporte ao `login/adduser`. Recomendamos não implementar este método a menos que seja totalmente necessário. Veja um exemplo completo [aqui](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
@@ -98,9 +98,9 @@ auth:
     file: ./htpasswd
 ```
 
-Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
+Onde `htpasswd` é o sufixo do nome do plugin. Exemplo: `verdaccio-htpasswd` e o resto do corpo seriam os parâmetros de configuração do plugin.
 
-## Middleware Plugin
+## Plugin Middleware
 
 Middleware plugins have the capability to modify the API layer, either adding new endpoints or intercepting requests.
 
