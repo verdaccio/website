@@ -18,6 +18,13 @@ const nonSponsorUsers = [
     pinned: false,
   },
   {
+    caption: "Angular CLI",
+    image: "img/users/angular.png",
+    infoLink: "https://cli.angular.io/",
+    fbOpenSource: false,
+    pinned: true,
+  },
+  {
     caption: "pnpm",
     image: "img/users/pnpm_logo.png",
     infoLink: "https://pnpm.js.org/",
