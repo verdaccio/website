@@ -1,6 +1,6 @@
 ---
-id: version-3.8.6-repositories
-title: Source Code
+id: version-3.8.6-awọn ibi ipamọ
+title: Koodu Orisun
 original_id: awọn ibi ipamọ
 ---
 

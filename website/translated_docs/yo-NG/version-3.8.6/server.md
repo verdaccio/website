@@ -1,5 +1,5 @@
 ---
-id: version-3.8.6-server-configuration
+id: version-3.8.6-iṣeto-olupese
 title: Iṣeto Olupese
 original_id: iṣeto-olupese
 ---

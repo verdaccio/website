@@ -4,14 +4,14 @@ title: Ṣeto Awọn iwe ẹri SSL
 original_id: ssl
 ---
 
-Follow this instructions to configure a SSL certificate to serve NPM registry under HTTPS.
+Tẹle awọn itọsọna wọnyi lati seto iwe ẹri SSL kan lati ṣiṣẹ bi ibi iforukọsilẹ NPM kan labẹ HTTPS.
 
 * Ṣe imudojuiwọn ohun elo itẹtisi ni `~/.config/verdaccio/config.yaml` rẹ:
 
     listen: 'https://your.domain.com/'
     
 
-Once you update the listen and try to run verdaccio again will ask for certificates.
+Lọgan ti o ti se imudojuiwọn ohun elo itẹtisi ti o si gbiyanju lati ṣe imuṣiṣẹ verdaccio lẹẹkansi yoo beere fun awọn iwe ẹri.
 
 * Pilẹṣẹ awọn iwe ẹri rẹ
 
@@ -20,28 +20,28 @@ Once you update the listen and try to run verdaccio again will ask for certifica
      $ openssl x509 -req -in /Users/user/.config/verdaccio/verdaccio-csr.pem -signkey /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-cert.pem
      ````
     
-    * Edit your config file `/Users/user/.config/verdaccio/config.yaml` and add the following section
+    * Ṣatunkọ faili iṣeto rẹ `/Users/user/.config/verdaccio/config.yaml` ki o si se afikun abala wọnyi
     
     
 
 https: key: /Users/user/.config/verdaccio/verdaccio-key.pem cert: /Users/user/.config/verdaccio/verdaccio-cert.pem ca: /Users/user/.config/verdaccio/verdaccio-csr.pem
 
-    <br />Alternatively, if you have a certificate as `server.pfx` format, you can add the following configuration section. The passphrase is optional and only needed, if your certificate is encrypted.
+    <br />Ni ọna miiran, ti o ba ni iwe ẹri pẹlu ilana ti `server.pfx`, o le se afikun awọn abala iṣeto wọnyii. Gbolohun irekọja naa kii se dandan ati pe o ma jẹ ni nilo nikan, to ba jẹ pe iwe ẹri rẹ jẹ alaroko.
     
     
 
 https: pfx: /Users/user/.config/verdaccio/server.pfx passphrase: 'secret' ````
 
-More info on the `key`, `cert`, `ca`, `pfx` and `passphrase` arguments on the [Node documentation](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
+Alaye diẹ sii lori awọn ariyanjiyan `key`, `cert`, `ca`, `pfx`, ati `passphrase` lori [Iwe akọsilẹ oju ipade](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
 
 * Se imusisẹ `verdaccio` ninu ila aṣẹ rẹ.
 
-* Open the browser and load `https://your.domain.com:port/`
+* Ṣii ẹrọ aṣàwákiri ayelujara ki o si ṣabẹwo si `https://your.domain.com:port/`
 
-This instructions are mostly valid under OSX and Linux, on Windows the paths will vary but, the steps are the same.
+Awọn itọsọna wọnyi ma n saba fẹsẹmulẹ labẹ OSX ati Linux, lori Windows awọn ọna naa yoo yatọ, ṣugbọn awọn igbesẹ naa jẹ bakanna.
 
 ## Docker
 
-If you are using the Docker image, you have to set the `PROTOCOL` environment variable to `https` as the `listen` argument is provided on the [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43), and thus ignored from your config file.
+Ti o ba n lo aworan Docker, o ni lati ṣeto iyipada ayika `PROTOCOL` si `https`, gẹgẹ bi ariyanjiyan `listen` se jẹ pipese lori [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) naa ati pe o foju fo ti inu faili iṣeto rẹ.
 
-You can also set the `PORT` environment variable if you are using a different port than `4873`.
+O tun le ṣeto iyipada ayika `PORT` ti o ba nlo ibudo miiran to yatọ si `4873`.
