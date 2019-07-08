@@ -11,10 +11,11 @@ Il CLI di verdaccio è la modalità per avviare l'applicazione.
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Comandi            | Impostazione predefinita       | Esempio        | Descrizione               |
-| ------------------ | ------------------------------ | -------------- | ------------------------- |
-| --listen \ **-l** | 4873                           | -p 7000        | porta http                |
-| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | il file di configurazione |
+| Comandi            | Impostazione predefinita       | Esempio        | Descrizione                          |
+| ------------------ | ------------------------------ | -------------- | ------------------------------------ |
+| --listen \ **-l** | 4873                           | -p 7000        | porta http                           |
+| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | il file di configurazione            |
+| --info \ **-i**   |                                |                | prints local environment information |
 
 ## Posizione predefinita dei file config
 
