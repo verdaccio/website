@@ -4,7 +4,7 @@ title: Ṣeto Awọn iwe ẹri SSL
 original_id: ssl
 ---
 
-Follow this instructions to configure a SSL certificate to serve NPM registry under HTTPS.
+Tẹle awọn itọsọna wọnyi lati seto iwe ẹri SSL kan lati ṣiṣẹ bi ibi iforukọsilẹ NPM kan labẹ HTTPS.
 
 * Ṣe imudojuiwọn ohun elo itẹtisi ni `~/.config/verdaccio/config.yaml` rẹ:
 
