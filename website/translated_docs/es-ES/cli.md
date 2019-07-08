@@ -11,10 +11,11 @@ El CLI de verdaccio es la forma de iniciar la aplicación.
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Comando            | Por Defecto                    | Ejemplo        | Descripción                 |
-| ------------------ | ------------------------------ | -------------- | --------------------------- |
-| --listen \ **-l** | 4873                           | -p 7000        | puerto http                 |
-| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | el archivo de configuración |
+| Comando            | Por Defecto                    | Ejemplo        | Descripción                          |
+| ------------------ | ------------------------------ | -------------- | ------------------------------------ |
+| --listen \ **-l** | 4873                           | -p 7000        | puerto http                          |
+| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | el archivo de configuración          |
+| --info \ **-i**   |                                |                | prints local environment information |
 
 ## Ubicación por defecto del archivo de configuración
 
