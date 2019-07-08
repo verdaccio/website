@@ -4,17 +4,17 @@ title: Criando Plugins
 original_id: dev-plugins
 ---
 
-There are many ways to extend `verdaccio`, the kind of plugins supported are:
+Existem muitas maneiras de estender o `verdaccio`, os tipos de plugins suportados são:
 
-* Authentication plugins
-* Middleware plugins (since `v2.7.0`)
-* Storage plugins since (`v3.x`)
+* Plugins de autenticação
+* Plugins middleware (A partir da `v2.7.0`)
+* Plugins de armazenamento (A partir da `v3.x`)
 
-> We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
+> Recomendamos o desenvolvimento de extensões usando nossas [definições de tipo de fluxo](https://github.com/verdaccio/flow-types).
 
-## Authentication Plugin
+## Plugin de Autenticação
 
-Basically we have to return an object with a single method called `authenticate` that will recieve 3 arguments (`user, password, callback`).
+Basicamente, temos que retornar um objeto com um único método chamado `authenticate` que receberá 3 argumentos (`user, password, callback`).
 
 ### API
 
@@ -94,7 +94,7 @@ auth:
 
 Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
 
-## Middleware Plugin
+## Plugin Middleware
 
 Middleware plugins have the capability to modify the API layer, either adding new endpoints or intercepting requests.
 
@@ -108,7 +108,7 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
 
-> A pretty good example of middleware plugin is the [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) and [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
+> Um bom exemplo de plugin de middleware é o [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) e [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
 ### API
 
@@ -120,7 +120,7 @@ function register_middlewares(expressApp, authInstance, storageInstance) {
 
 To register a middleware we need an object with a single method called `register_middlewares` that will recieve 3 arguments (`expressApp, auth, storage`). *Auth* is the authentification instance and *storage* is also the main Storage instance that will give you have access to all to the storage actions.
 
-## Storage Plugin
+## Plugin de Armazenamento
 
 Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), but, since `verdaccio@3.x` you can plug in a custom storage replacing the default behaviour.
 
@@ -176,7 +176,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 }
 ```
 
-> The Storage API is still experimental and might change in the next minor versions. For further information about Storage API please follow the [types definitions in our official repository](https://github.com/verdaccio/flow-types).
+> A API de armazenamento ainda é experimental e pode mudar nas próximas versões secundárias. Para mais informações sobre a API de Armazenamento, siga as [definições de tipo em nosso repositório oficial](https://github.com/verdaccio/flow-types).
 
 ### Storage Plugins Examples
 
