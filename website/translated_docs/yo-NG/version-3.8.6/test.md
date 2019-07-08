@@ -1,7 +1,7 @@
 ---
 id: version-3.8.6-idanwo
 title: Idanwo Iwọn
-original_id: test
+original_id: idanwo
 ---
 
 Verdaccio has strong focus on unit testing and end to end testing. If you are willing to contribute, please refer to the following [guide for more information](https://github.com/verdaccio/verdaccio/wiki/Developing-new-tests).
