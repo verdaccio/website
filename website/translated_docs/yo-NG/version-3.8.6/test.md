@@ -4,4 +4,4 @@ title: Idanwo Iwọn
 original_id: idanwo
 ---
 
-Verdaccio has strong focus on unit testing and end to end testing. If you are willing to contribute, please refer to the following [guide for more information](https://github.com/verdaccio/verdaccio/wiki/Developing-new-tests).
+Verdaccio ni ifojusun to lagbara lori idanwo iwọn ati idanwo opin si opin. If you are willing to contribute, please refer to the following [guide for more information](https://github.com/verdaccio/verdaccio/wiki/Developing-new-tests).
