@@ -17,6 +17,7 @@ We have some highlights to share:
 further read about this topic, [check our docs](https://verdaccio.org/docs/en/e2e).
 * This release **has been fully developed by contributors**, kudos to them.
 * We just reached 7k stars, **would you help us to reach 10k?** Give us your star ⭐️!
+* We have a new [Security Policy Document](https://github.com/verdaccio/verdaccio/security/policy) 🛡, helps us to keep Verdaccio secure for their users.
 
 > If you 😍 Verdaccio as we do, helps us to grow  more donating to the project via [OpenCollective](https://opencollective.com/verdaccio).
 
