@@ -11,10 +11,11 @@ Verdaccio CLI je Vaša početna stanica za pokretanje aplikacije.
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Komanda            | Podrazumevano                  | Primer         | Opis                   |
-| ------------------ | ------------------------------ | -------------- | ---------------------- |
-| --listen \ **-l** | 4873                           | -p 7000        | http port              |
-| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | file za konfigurisanje |
+| Komanda            | Podrazumevano                  | Primer         | Opis                                 |
+| ------------------ | ------------------------------ | -------------- | ------------------------------------ |
+| --listen \ **-l** | 4873                           | -p 7000        | http port                            |
+| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | file za konfigurisanje               |
+| --info \ **-i**   |                                |                | prints local environment information |
 
 ## Podrazumevana lokacija config file-a
 
