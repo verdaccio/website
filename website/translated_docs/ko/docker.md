@@ -81,7 +81,13 @@ Plugins can be installed in a separate directory and mounted using Docker or Kub
 ```docker
 FROM verdaccio/verdaccio
 
-RUN npm install verdaccio-s3-storage
+USER root
+
+ENV NODE_ENV=production
+
+RUN npm i && npm install verdaccio-s3-storage
+
+USER verdaccio
 ```
 
 ### Docker and custom port configuration

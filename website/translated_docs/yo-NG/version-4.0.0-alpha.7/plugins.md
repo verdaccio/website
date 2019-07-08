@@ -4,7 +4,7 @@ title: Awọn ohun elo
 original_id: awọn ohun elo
 ---
 
-Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
+Verdaccio jẹ ohun elo alasomọ. O le se fagun ni ọpọlọpọ awọn ọna, boya awọn ọna ifasẹsi tuntun, sise afikun awọn aaye opin tabi lilo akanṣe ibi ipamọ.
 
 Oriṣi awọn asomọ mẹrin lo wa:
 
@@ -23,16 +23,16 @@ Oriṣi awọn asomọ mẹrin lo wa:
 $> npm install --global verdaccio-activedirectory
 ```
 
-`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
+`verdaccio` gẹgẹ bi ẹya ti o wa lati sinopia o ni ibasisẹpọ ẹlẹyin pẹlu awọn asomọ ti o ni ibasisẹpọ pẹlu `sinopia@1.4.0`. Ni iru eyi ifi sori ẹrọ na jẹ nkan kanna.
 
     $> npm install --global sinopia-memory
     
 
 ### Iṣeto
 
-Open the `config.yaml` file and update the `auth` section as follows:
+Sii faili `config.yaml` ki o si ṣe imudojuiwọn abala `auth` naa bi atẹle yi:
 
-The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
+Iṣeto atilẹwa naa dabi iru eyi, nitoripe a lo ohun elo alakọmọ `htpasswd` ni atilẹwa pe ki o le yọ kuro nipa yiyọ awọn ila wọnyi.
 
 ### Iṣeto Ifasẹsi
 
@@ -42,7 +42,7 @@ The default configuration looks like this, due we use a build-in `htpasswd` plug
     #max_users: 1000
 ```
 
-and replacing them with (in case you decide to use a `ldap` plugin.
+ati rirọpo wọn pẹlu (toba sẹlẹ pe o pinnu lati lo ohun elo `ldap`.
 
 ```yaml
 auth:
@@ -54,7 +54,7 @@ auth:
 
 #### Awọn ohun elo Ifasẹsi ọlọpọlọpọ
 
-This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
+Eyi ṣeeṣe pẹlu ọgbọn, ṣiṣe aṣẹ ohun elo naa ni pataki, gẹgẹbi awọn iwe ẹri naa yoo ṣe jẹ yiyanju lẹsẹẹsẹ.
 
 ```yaml
 auth:
@@ -69,7 +69,7 @@ auth:
 
 ### Iṣeto Middleware
 
-This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
+Eyi jẹ apẹẹrẹ bi o ṣe le seto ohun asomọ middleware kan. Gbogbo awọn ohun asomọ gbọdọ wa ni asọye ninu aaye orukọ **middlewares**.
 
 ```yaml
 middlewares:
@@ -81,7 +81,7 @@ middlewares:
 
 ### Iṣeto Ibi ipamọ
 
-This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
+Eyi jẹ apẹẹrẹ bi o ṣe le ṣeto ohun asomọ ibi ipamọ kan. Gbogbo awọn ohun asomọ ibi ipamọ gbọdọ wa ni asọye ni aaye orukọ **store**.
 
 ```yaml
 store:
@@ -111,14 +111,14 @@ theme:
 
 ## Awọn ohun elo Ijogun
 
-### Sinopia Plugins
+### Awọn ohun elo Sinopia
 
 > Ti o ba ni igbarale lori eyikeyi ohun elo sinopia kankan, ranti pe adinku ti ba iwulo wọn atipe wọn le ma sisẹ mọ lọjọ iwaju.
 
-* [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin for sinopia supporting an npm registry.
-* [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin for sinopia that keeps users in memory.
-* [sinopia-github-oauth-cli](https://www.npmjs.com/package/sinopia-github-oauth-cli).
-* [sinopia-crowd](https://www.npmjs.com/package/sinopia-crowd): auth plugin for sinopia supporting atlassian crowd.
+* [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): ohun elo ifasẹsi fun sinopia to n ṣe atilẹyin ibi iforukọsilẹ npm kan.
+* [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): ohun elo ifasẹsi fun sinopia ti o n se itọju awọn olumulo sinu iranti.
+* [sinopia-github-oauth-cli](https://www.npmjs.com/package/sinopia-github-oauth-cli)。.
+* [sinopia-crowd](https://www.npmjs.com/package/sinopia-crowd): ohun elo ifasẹsi fun sinopia to n ṣe atilẹyin atlassian crowd.
 * [sinopia-activedirectory](https://www.npmjs.com/package/sinopia-activedirectory): Active Directory authentication plugin for sinopia.
 * [sinopia-github-oauth](https://www.npmjs.com/package/sinopia-github-oauth): authentication plugin for sinopia2, supporting github oauth web flow.
 * [sinopia-delegated-auth](https://www.npmjs.com/package/sinopia-delegated-auth): Sinopia authentication plugin that delegates authentication to another HTTP URL

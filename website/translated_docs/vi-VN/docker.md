@@ -81,7 +81,13 @@ Những phần mềm bổ trợ có thể được cài đặt trong một thư 
 ```docker
 FROM verdaccio/verdaccio
 
-RUN npm install verdaccio-s3-storage
+USER root
+
+ENV NODE_ENV=production
+
+RUN npm i && npm install verdaccio-s3-storage
+
+USER verdaccio
 ```
 
 ### Docker và cấu hình cổng tùy chỉnh

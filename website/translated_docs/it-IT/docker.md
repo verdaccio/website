@@ -81,7 +81,13 @@ I plugin possono essere installati in una cartella separata e montati utilizzand
 ```docker
 FROM verdaccio/verdaccio
 
-RUN npm install verdaccio-s3-storage
+USER root
+
+ENV NODE_ENV=production
+
+RUN npm i && npm install verdaccio-s3-storage
+
+USER verdaccio
 ```
 
 ### Configurazione di Docker e della porta personalizzata

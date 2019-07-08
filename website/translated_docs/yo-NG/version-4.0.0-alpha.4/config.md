@@ -6,7 +6,7 @@ original_id: iṣeto
 
 Faili yii ni pataki igun ti verdaccio nibi ti o ti le se aiyipada iwa atilẹwa naa, ṣe imuṣiṣẹ awọn ohun elo ati awọn ẹya ara to jẹ afikun.
 
-A default configuration file is created the very first time you run `verdaccio`.
+Faili iṣeto atilẹwa kan jẹ ṣiṣẹda ni igba akọkọ ti o ba ṣe amulo `verdaccio`.
 
 ## Iṣeto Atilẹwa
 
@@ -37,7 +37,7 @@ Awọn abala wọnyi ṣe alaye nipa nkan ti ohun ini kọọkan tumọ si ati a
 
 ### Ibi ipamọ
 
-Is the location of the default storage. **Verdaccio is by default based on local file system**.
+Ni aaye ti ibi ipamọ atilẹwa. **Verdaccio ni atilẹwa da lori eto faili ibilẹ**.
 
 ```yaml
 storage: ./storage
@@ -45,7 +45,7 @@ storage: ./storage
 
 ### Awọn ohun elo
 
-Is the location of the plugin directory. Useful for Docker/Kubernetes based deployments.
+Ni aaye ti ọna ohun elo naa. O wulo fun awọn iṣamulo to da lori Docker/Kubernetes.
 
 ```yaml
 plugins: ./plugins
@@ -64,7 +64,7 @@ auth:
 
 ### Aabo
 
-<small>Since: <code>verdaccio@4.0.0</code> due <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>Niwọn: <code>verdaccio@4.0.0</code> nitori <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
 Bulọọku aabo fayegba ọ lati ṣe aami ibuwọlu naa ni akanṣe. Lati ṣe imuṣiṣẹ ibuwọlu tuntun [JWT (json web token)](https://jwt.io/) o nilo lati se afikun bulọọku `jwt` si abala `api`, `web` n lo `jwt` ni atilẹwa.
 
@@ -98,9 +98,9 @@ server:
   keepAliveTimeout: 60
 ```
 
-### Web UI
+### UI Ayelujara
 
-This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
+Ohun ini yii gba ọ laaye lati se ayipada si ifihan ati irisi UI ayelujara. Fun alaye siwaju sii nipa abala yii ka [oju ewe ui ayelujara](web.md).
 
 ```yaml
 web:
@@ -112,7 +112,7 @@ web:
 
 ### Uplinks
 
-Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
+Uplinks ni agbara eto naa lati sawari awọn akopọ lati awọn ibi iforukọsilẹ ọlọna jijin nigbati awọn akopọ naa ko ba si ni agbegbe. Fun alaye siwaju sii nipa abala yii ka [oju ewe uplinks](uplinks.md).
 
 ```yaml
 uplinks:
@@ -120,9 +120,9 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-### Packages
+### Awọn akopọ
 
-Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
+Awọn akopọ fayegba olumulo naa lati ṣakoso bi wiwọle si ori akopọ naa se ma maa waye. Fun alaye siwaju sii nipa abala yii ka [oju ewe awọn akopọ](packages.md).
 
 ```yaml
 packages:
@@ -134,36 +134,36 @@ packages:
 
 ## Iṣeto Giga
 
-### Offline Publish
+### Atẹjade Alaisilorila
 
-By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
+Nipa atilẹwa `verdaccio` ko kin fayegba sise atẹjade nigbati onibara ko ba si lori ila, ihuwasi naa le se bori nipasẹ siseto eyi si *true*.
 
 ```yaml
 publish:
   allow_offline: false
 ```
 
-<small>Since: <code>verdaccio@2.3.6</code> due <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
+<small>Niwọn: <code>verdaccio@2.3.6</code> nitori <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small>
 
-### URL Prefix
+### Ibẹrẹ URL
 
 ```yaml
 url_prefix: https://dev.company.local/verdaccio/
 ```
 
-Since: `verdaccio@2.3.6` due [#197](https://github.com/verdaccio/verdaccio/pull/197)
+Niwọn: `verdaccio@2.3.6` nitori [#197](https://github.com/verdaccio/verdaccio/pull/197)
 
-### Max Body Size
+### Iwọn Ara to Pọju
 
-By default the maximum body size for a JSON document is `10mb`, if you run in errors as `"request entity too large"` you may increase this value.
+Nipa atilẹwa iwọn ara to pọju fun iwe akọsilẹ JSON jẹ `10mb`, ti o ba salabapade awọn aṣiṣe bi `"request entity too large"` o le se alekun iye yii.
 
 ```yaml
 max_body_size: 10mb
 ```
 
-### Listen Port
+### Ibudo Itẹtisi
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+`verdaccio` n ṣiṣẹ ni atilẹwa ni ibudo `4873` naa. Yiyi ibudo naa pada le ṣee ṣe nipasẹ [cli](cli.md) tabi ninu faili iṣeto naa, awọn aṣayan wọnyi fẹsẹmulẹ.
 
 ```yaml
 listen:
@@ -177,7 +177,7 @@ listen:
 
 ### HTTPS
 
-To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
+Lati mu `https` ṣiṣẹ ninu `verdaccio` o to lati ṣeto asia `listen` pẹlu Ilana *https://*. Fun alaye siwaju sii nipa abala yii ka [oju ewe ssl](ssl.md).
 
 ```yaml
 https:
@@ -188,11 +188,11 @@ https:
 
 ### Aṣoju ikọkọ
 
-Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
+Awọn aṣoju ikọkọ jẹ awọn olupese HTTP oniṣẹ-pataki ti o jẹ didalara lati gbe data kuro lati awọn olupese ọlọna jinjin lọ si awọn onibara agbegbe.
 
 #### http_proxy ati https_proxy
 
-If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
+Ti o ba ni aṣoju ikọkọ kan ninu nẹtiwọki rẹ o le ṣeto akọle `X-Forwarded-For` kan nipa lilo awọn ohun ini wọnyi.
 
 ```yaml
 http_proxy: http://something.local/
@@ -201,7 +201,7 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-This variable should contain a comma-separated list of domain extensions proxy should not be used for.
+Alayipada yii yẹ ki o ni awọn akojọpọ awọn afikun ibudo ti o jẹ yiya sọtọ pẹlu aami idanuduro diẹ ti aṣoju ikọkọ ko gbọdọ jẹ lilo fun.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
@@ -209,7 +209,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Awọn ifitonileti
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Ṣiṣe imuṣiṣẹ awọn ifitonileti si awọn irinṣẹ alagata jẹ irọrun nipasẹ awọn aaye ikọ ayelujara. Fun alaye siwaju sii nipa abala yii ka [oju ewe awọn ifitonileti](notifications.md).
 
 ```yaml
 notify:
@@ -219,15 +219,15 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-> For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/conf).
+> Fun alaye awọn eto iṣeto siwaju sii, jọwọ [ṣayẹwo koodu orisun naa](https://github.com/verdaccio/verdaccio/tree/master/conf).
 
-### Audit
+### Ayẹwo
 
-<small>Since: <code>verdaccio@3.0.0</code></small>
+<small>Lati: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`ayẹwo npm` jẹ aṣẹ titun kan ti o jẹ gbigbejade pẹlu [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio wa pẹlu ohun elo middleware ti o jẹ kikọ sinu rẹ lati sakoso aṣẹ yii.
 
-> If you have a new installation it comes by default, otherwise you need to add the following props to your config file
+> Ti o ba sẹsẹ fi sori ẹrọ o ma n ba wa ni atilẹwa, bibẹkọ o nilo lati se afikun awọn atilẹyin wọnyi sinu faili iṣeto rẹ
 
 ```yaml
 middlewares:

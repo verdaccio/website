@@ -10,7 +10,7 @@ There are 4 types of plugins:
 
 * Authentication
 * Middleware
-* Storage
+* Armazenamento
 * UI Theme
 
 > If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.

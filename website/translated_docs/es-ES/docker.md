@@ -81,7 +81,13 @@ Extensiones pueden ser instaladas en un directorio separado y montado usando Doc
 ```docker
 FROM verdaccio/verdaccio
 
-RUN npm install verdaccio-s3-storage
+USER root
+
+ENV NODE_ENV=production
+
+RUN npm i && npm install verdaccio-s3-storage
+
+USER verdaccio
 ```
 
 ### Configuración de Docker y puerto de escucha por defecto

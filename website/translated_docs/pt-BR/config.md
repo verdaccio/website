@@ -52,7 +52,7 @@ plugins: ./plugins
 
 ### Autenticação
 
-The authentification set up is done here, the default auth is based on `htpasswd` and is built-in. Você pode modifica este comportamento via [plugins](plugins.md). Para maiores informações sobre esta seção, leia a [página sobre autenticação](auth.md).
+A configuração de autenticação é feita aqui, por padrão é baseada em `htpasswd` e é embutida. Você pode modificar este comportamento via [plugins](plugins.md). Para maiores informações sobre esta seção, leia a [página sobre autenticação](auth.md).
 
 ```yaml
 auth:
@@ -61,13 +61,13 @@ auth:
     max_users: 1000
 ```
 
-### Security
+### Segurança
 
-<small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
+<small>A partir de: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-The security block allows you to customise the token signature. To enable [JWT (json web token)](https://jwt.io/) new signture you need to add the block `jwt` to `api` section, `web` uses by default `jwt`.
+O bloco de segurança permite personalizar o token de assinatura. Para habilitar a nova assinatura do [JWT (json web token)](https://jwt.io/) é necessário adicionar o bloco `jwt` à seção `api`, `web` usa `jwt` por padrão.
 
-The configuration is separated in two sections, `api` and `web`. To use JWT on `api`, it has to be defined, otherwise will use the legacy token signature (`aes192`). For JWT you might customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
+A configuração é separada em duas seções, `api` e `web`. Para usar o JWT na `api` você precisará defini-lo, caso contrário, você usará a assinatura de token herdada (`aes192`). Para o JWT, você pode personalizar a [assinatura](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) e a [verificação](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) do token com suas próprias propriedades.
 
     security:
       api:
@@ -84,13 +84,13 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
             someProp: [value]
     
 
-> We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
+> É altamente recomendável migrar para o JWT, pois a assinatura herdada (`aes192`) está obsoleta e desaparecerá em versões futuras.
 
 ### Server
 
-A set of properties to modify the behavior of the server application, specifically the API (Express.js).
+Um conjunto de propriedades para alterar o comportamento do aplicativo do servidor, especificamente a API (Express.js).
 
-> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections. A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout. WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enough.
+> Você pode especificar o tempo limite de espera do servidor HTTP/1.1 em segundos para conexões de entrada. Um valor 0 faz com que o servidor http se comporte de maneira semelhante às versões do Node.js anteriores a 8.0.0, que não tinham um tempo limite de atividade. SOLUÇÃO ALTERNATIVA: Através da configuração fornecida, você pode solucionar o seguinte problema https://github.com/verdaccio/verdaccio/issues/301. Defina como 0 caso 60 não seja suficiente.
 
 ```yaml
 server:
@@ -99,7 +99,7 @@ server:
 
 ### Web UI
 
-This property allow you to modify the look and feel of the web UI. For more information about this section read the [web ui page](web.md).
+Esta propriedade permite que você modifique a aparência da interface do usuário da web. Para mais informações sobre esta seção, leia a [página sobre web ui](web.md).
 
 ```yaml
 web:
@@ -121,7 +121,7 @@ uplinks:
 
 ### Packages
 
-Packages allow the user to control how the packages are gonna be accessed. For more information about this section read the [packages page](packages.md).
+Pacotes permitem que o usuário controle como os pacotes serão acessados. Para mais informações sobre esta seção, leia a [página sobre pacotes](packages.md).
 
 ```yaml
 packages:
@@ -150,7 +150,7 @@ publish:
 url_prefix: /verdaccio/
 ```
 
-> We recommend use a subdirectory `/verdaccio/` instead a URI.
+> Recomendamos usar um subdiretório `/verdaccio/` em vez de um URI.
 
 ### Max Body Size
 
@@ -162,7 +162,7 @@ max_body_size: 10mb
 
 ### Listen Port
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+O `verdaccio` é executado por padrão na porta `4873`. A alteração da porta pode ser feita via [cli](cli.md) ou no arquivo de configuração, as seguintes opções são válidas.
 
 ```yaml
 listen:
@@ -208,7 +208,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Notificações
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Habilitar notificações para ferramentas de terceiros é bastante fácil através de web hooks. Para mais informações sobre esta seção, leia a [página sobre notificações](notifications.md).
 
 ```yaml
 notify:
@@ -224,7 +224,7 @@ notify:
 
 <small>Since: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
+`npm audit` é um novo comando lançado com a [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio inclui um plugin de middleware integrado para lidar com este comando.
 
 > If you have a new installation it comes by default, otherwise you need to add the following props to your config file
 
