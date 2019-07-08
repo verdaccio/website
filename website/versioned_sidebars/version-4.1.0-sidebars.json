@@ -1,0 +1,76 @@
+{
+  "version-4.1.0-docs": {
+    "Introduction": [
+      "version-4.1.0-what-is-verdaccio",
+      "version-4.1.0-installation",
+      "version-4.1.0-cli",
+      "version-4.1.0-who-is-using",
+      "version-4.1.0-security-policy",
+      "version-4.1.0-logo",
+      {
+        "type": "subcategory",
+        "label": "Uses Cases",
+        "ids": [
+          "version-4.1.0-e2e",
+          "version-4.1.0-caching",
+          "version-4.1.0-github-actions",
+          "version-4.1.0-linking-remote-registry"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Talks & Articles",
+        "ids": [
+          "version-4.1.0-articles",
+          "version-4.1.0-talks"
+        ]
+      }
+    ],
+    "Features": [
+      "version-4.1.0-configuration",
+      "version-4.1.0-uplinks",
+      "version-4.1.0-packages",
+      "version-4.1.0-authentification",
+      "version-4.1.0-notifications",
+      "version-4.1.0-logger",
+      "version-4.1.0-webui"
+    ],
+    "Server": [
+      "version-4.1.0-server-configuration",
+      "version-4.1.0-reverse-proxy",
+      "version-4.1.0-ssl",
+      "version-4.1.0-windows",
+      "version-4.1.0-iss-server"
+    ],
+    "Development": [
+      "version-4.1.0-plugins",
+      "version-4.1.0-dev-plugins",
+      "version-4.1.0-node-api"
+    ],
+    "DevOps": [
+      "version-4.1.0-docker",
+      "version-4.1.0-kubernetes",
+      "version-4.1.0-ci",
+      {
+        "type": "subcategory",
+        "label": "Cloud",
+        "ids": [
+          "version-4.1.0-amazon"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Tools",
+        "ids": [
+          "version-4.1.0-ansible",
+          "version-4.1.0-puppet",
+          "version-4.1.0-chef"
+        ]
+      }
+    ],
+    "Guides": [
+      "version-4.1.0-best",
+      "version-4.1.0-protect-your-dependencies"
+    ]
+  }
+}
