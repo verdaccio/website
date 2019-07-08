@@ -5,21 +5,21 @@ authorFBID: 1122901551
 title: Release 4.1.0
 ---
 
-Verdaccio keeps growing thanks to their users. This release is a minor one we do every month, for further 
-[information about or releases can be read here.](https://github.com/verdaccio/contributing/blob/master/RELEASES.md) 
+Verdaccio keeps growing thanks to their users. This release is a minor one we do every month, for further
+[information about our releases can be read here](https://github.com/verdaccio/contributing/blob/master/RELEASES.md).
 
-Furthermore, the info about the release is also available [at GitHub releases page.](https://github.com/verdaccio/verdaccio/releases/tag/v4.1.0).
+Furthermore, the info about the release is also available [at GitHub releases page](https://github.com/verdaccio/verdaccio/releases/tag/v4.1.0).
 
 We have some highlights to share:
 
 * At this stage, Docker downloads [have grown to 4.8 million pulls](https://dockeri.co/image/verdaccio/verdaccio).
-* **Angular CLI** just started to uses [Verdaccio 4 for E2E tool](https://twitter.com/jotadeveloper/status/1146415913396318208). For
+* **Angular CLI** just started to uses [Verdaccio 4 for E2E testing](https://twitter.com/jotadeveloper/status/1146415913396318208). For
 further read about this topic, [check our docs](https://verdaccio.org/docs/en/e2e).
 * This release **has been fully developed by contributors**, kudos to them.
 * We just reached 7k stars, **would you help us to reach 10k?** Give us your star ⭐️!
 * We have a new [Security Policy Document](https://github.com/verdaccio/verdaccio/security/policy) 🛡, helps us to keep Verdaccio secure for their users.
 
-> If you 😍 Verdaccio as we do, helps us to grow  more donating to the project via [OpenCollective](https://opencollective.com/verdaccio).
+> If you 😍 Verdaccio as we do, helps us to grow more donating to the project via [OpenCollective](https://opencollective.com/verdaccio).
 
 Thanks for support Verdaccio ! 👏👏👏👏.
 
@@ -56,35 +56,35 @@ as it is not safe to recover gracefully from them.
 The configuration would looks like
 
 ```yaml
-filters:  
-   storage-filter-blackwhitelist:
-     filter_file: /path/to/file
+filters:
+  storage-filter-blackwhitelist:
+    filter_file: /path/to/file
 ```
 
 The current API for the plugin is
 
 ```javascript
 interface IPluginStorageFilter<T> extends IPlugin<T> {
-		filter_metadata(packageInfo: Package): Promise<Package>;
-	}
+    filter_metadata(packageInfo: Package): Promise<Package>;
+}
 ```
 
 This system might be extended in the future, we are trying this approach at this stage.
 
-### [parse YAML/JSON/JS config file](https://github.com/verdaccio/verdaccio/pull/1258) by @honzahommer  
+### [parse YAML/JSON/JS config file](https://github.com/verdaccio/verdaccio/pull/1258) by @honzahommer
 
-Verdaccio now is able to understand JSON format for configuration files.
+Now, Verdaccio is able to understand JSON format for configuration files.
 
-```
+```bash
 verdaccio --config /myPath/verdaccio.json
 ```
 
 ### [New CLI command `verdaccio --info`](https://github.com/verdaccio/verdaccio/pull/1365) by @jamesgeorge007
 
-The new command will display information of your environment, this sort of information is handy in order to report any bug.
+The new `verdaccio --info` command will display information of your environment, this sort of information is handy in order to report any bug.
 
-```
-verdaccio --info
+```bash
+$ verdaccio --info
 
 Environment Info:
 
