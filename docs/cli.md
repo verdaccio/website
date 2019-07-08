@@ -15,6 +15,7 @@ Command | Default | Example | Description
 --- | --- | --- | ---
 --listen \ **-l** | 4873 |  -p 7000 | http port
 --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | the configuration file
+--info \ **-i** | | | prints local environment information
 
 ## Default config file location
 
