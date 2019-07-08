@@ -1,4 +1,4 @@
-FROM node:lts
+FROM node:lts-slim
 
 # Create the docs website directory
 WORKDIR /verdaccio-website
