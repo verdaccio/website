@@ -60,7 +60,7 @@ filters:
      filter_file: /path/to/file
 ```
 
-The current API for plugin is
+The current API for the plugin is
 
 ```javascript
 interface IPluginStorageFilter<T> extends IPlugin<T> {
