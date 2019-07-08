@@ -4,7 +4,7 @@
         <title>Verdaccio Blog</title>
         <link>https://verdaccio.org//blog</link>
         <description>The best place to stay up-to-date with the latest Verdaccio news and events.</description>
-        <lastBuildDate>Sun, 19 May 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 08 Jul 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,28 @@
             <link>https://verdaccio.org//blog</link>
         </image>
         <copyright>Copyright © 2019 Verdaccio community</copyright>
+        <item>
+            <title><![CDATA[Release 4.1.0]]></title>
+            <link>https://verdaccio.org//blog/2019/07/08/verdaccio-410-release.html</link>
+            <guid>https://verdaccio.org//blog/2019/07/08/verdaccio-410-release.html</guid>
+            <pubDate>Mon, 08 Jul 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Verdaccio keeps growing thanks to their users. This release is a minor one we do every month, for further
+<a href="https://github.com/verdaccio/contributing/blob/master/RELEASES.md">information about or releases can be read here.</a></p>
+<p>Furthermore, the info about the release is also available <a href="https://github.com/verdaccio/verdaccio/releases/tag/v4.1.0">at GitHub releases page.</a>.</p>
+<p>We have some highlights to share:</p>
+<ul>
+<li>At this stage, Docker downloads <a href="https://dockeri.co/image/verdaccio/verdaccio">have grown to 4.8 million pulls</a>.</li>
+<li><strong>Angular CLI</strong> just started to uses <a href="https://twitter.com/jotadeveloper/status/1146415913396318208">Verdaccio 4 for E2E tool</a>. For
+further read about this topic, <a href="https://verdaccio.org/docs/en/e2e">check our docs</a>.</li>
+<li>This release <strong>has been fully developed by contributors</strong>, kudos to them.</li>
+<li>We just reached 7k stars, <strong>would you help us to reach 10k?</strong> Give us your star ⭐️!</li>
+</ul>
+<blockquote>
+<p>If you 😍 Verdaccio as we do, helps us to grow  more donating to the project via <a href="https://opencollective.com/verdaccio">OpenCollective</a>.</p>
+</blockquote>
+<p>Thanks for support Verdaccio ! 👏👏👏👏.</p>
+]]></description>
+        </item>
         <item>
             <title><![CDATA[Verdaccio 4 released !!!]]></title>
             <link>https://verdaccio.org//blog/2019/05/19/15-verdaccio-4-release.html</link>
