@@ -1,5 +1,5 @@
 ---
-id: version-3.8.6-reverse-proxy
+id: version-3.8.6-aṣoju ikọkọ-alayipada
 title: Iseto Aṣoju ikọkọ-Alayipada
 original_id: aṣoju ikọkọ-alayipada
 ---
