@@ -42,6 +42,6 @@ Awọn itọsọna wọnyi ma n saba fẹsẹmulẹ labẹ OSX ati Linux, lori W
 
 ## Docker
 
-If you are using the Docker image, you have to set the `PROTOCOL` environment variable to `https` as the `listen` argument is provided on the [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43), and thus ignored from your config file.
+Ti o ba n lo aworan Docker, o ni lati ṣeto iyipada ayika `PROTOCOL` si `https`, gẹgẹ bi ariyanjiyan `listen` se jẹ pipese lori [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) naa ati pe o foju fo ti inu faili iṣeto rẹ.
 
-You can also set the `PORT` environment variable if you are using a different port than `4873`.
+O tun le ṣeto iyipada ayika `PORT` ti o ba nlo ibudo miiran to yatọ si `4873`.
