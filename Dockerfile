@@ -1,13 +1,13 @@
-FROM node:lts
+FROM node:lts-alpine
 
 # Create the docs website directory
-WORKDIR /verdaccio-website
-
-COPY . .
+COPY . /verdaccio-website
 
 WORKDIR /verdaccio-website/website
 
-RUN yarn install
+RUN apk add --no-cache -t build-deps make gcc g++ python libtool autoconf automake && \
+    yarn install && \
+    apk del build-deps
 
 EXPOSE 3000
 
