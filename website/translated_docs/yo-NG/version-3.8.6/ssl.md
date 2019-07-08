@@ -11,7 +11,7 @@ Tẹle awọn itọsọna wọnyi lati seto iwe ẹri SSL kan lati ṣiṣẹ bi
     listen: 'https://your.domain.com/'
     
 
-Once you update the listen and try to run verdaccio again will ask for certificates.
+Lọgan ti o ti se imudojuiwọn ohun elo itẹtisi ti o si gbiyanju lati ṣe imuṣiṣẹ verdaccio lẹẹkansi yoo beere fun awọn iwe ẹri.
 
 * Pilẹṣẹ awọn iwe ẹri rẹ
 
@@ -20,7 +20,7 @@ Once you update the listen and try to run verdaccio again will ask for certifica
      $ openssl x509 -req -in /Users/user/.config/verdaccio/verdaccio-csr.pem -signkey /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-cert.pem
      ````
     
-    * Edit your config file `/Users/user/.config/verdaccio/config.yaml` and add the following section
+    * Ṣatunkọ faili iṣeto rẹ `/Users/user/.config/verdaccio/config.yaml` ki o si se afikun abala wọnyi
     
     
 
