@@ -478,6 +478,18 @@
       },
       "version-4.0.2/version-4.0.2-webui": {
         "title": "Web User Interface"
+      },
+      "version-4.1.0/version-4.1.0-cli": {
+        "title": "Công cụ dòng lệnh Command line"
+      },
+      "version-4.1.0/version-4.1.0-dev-plugins": {
+        "title": "Phát triển các phần mềm bổ trợ"
+      },
+      "version-4.1.0/version-4.1.0-docker": {
+        "title": "Docker"
+      },
+      "version-4.1.0/version-4.1.0-security-policy": {
+        "title": "Security Policy"
       }
     },
     "links": {
