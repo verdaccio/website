@@ -478,6 +478,18 @@
       },
       "version-4.0.2/version-4.0.2-webui": {
         "title": "Web User Interface"
+      },
+      "version-4.1.0/version-4.1.0-cli": {
+        "title": "Befehlszeilen-Tool"
+      },
+      "version-4.1.0/version-4.1.0-dev-plugins": {
+        "title": "Entwicklung von Plugins"
+      },
+      "version-4.1.0/version-4.1.0-docker": {
+        "title": "Docker"
+      },
+      "version-4.1.0/version-4.1.0-security-policy": {
+        "title": "Security Policy"
       }
     },
     "links": {
