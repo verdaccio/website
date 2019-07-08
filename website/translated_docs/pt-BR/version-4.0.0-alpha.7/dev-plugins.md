@@ -4,17 +4,17 @@ title: Criando Plugins
 original_id: dev-plugins
 ---
 
-There are many ways to extend `verdaccio`, the kind of plugins supported are:
+Existem muitas maneiras de estender o `verdaccio`, os tipos de plugins suportados são:
 
-* Authentication plugins
-* Middleware plugins (since `v2.7.0`)
-* Storage plugins since (`v3.x`)
+* Plugins de autenticação
+* Plugins middleware (A partir da `v2.7.0`)
+* Plugins de armazenamento (A partir da `v3.x`)
 
-> We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
+> Recomendamos o desenvolvimento de extensões usando nossas [definições de tipo de fluxo](https://github.com/verdaccio/flow-types).
 
-## Authentication Plugin
+## Plugin de Autenticação
 
-Basically we have to return an object with a single method called `authenticate` that will recieve 3 arguments (`user, password, callback`).
+Basicamente, temos que retornar um objeto com um único método chamado `authenticate` que receberá 3 argumentos (`user, password, callback`).
 
 ### API
 
@@ -29,13 +29,13 @@ interface IPluginAuth extends IPlugin {
 }
 ```
 
-> Only `adduser`, `allow_access`, `apiJWTmiddleware` and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
+> Apenas `adduser`, `allow_access`, `apiJWTmiddleware` e `allow_publish` são opcionais, o verdaccio fornece uma solução de fallback em todos esses casos.
 
-#### apiJWTmiddleware method
+#### método apiJWTmiddleware
 
-Since `v4.0.0`
+A partir da `v4.0.0`
 
-`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
+`apiJWTmiddleware` foi introduzido na [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) para ter controle total do gestor de token, sobrescrever este método irá desativar o suporte ao `login/adduser`. Recomendamos não implementar este método a menos que seja totalmente necessário. Veja um exemplo completo [aqui](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Callback
 
@@ -101,7 +101,7 @@ auth:
 
 Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
 
-## Middleware Plugin
+## Plugin Middleware
 
 Middleware plugins have the capability to modify the API layer, either adding new endpoints or intercepting requests.
 
@@ -115,7 +115,7 @@ interface verdaccio$IPluginMiddleware extends verdaccio$IPlugin {
 
 The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
 
-> A pretty good example of middleware plugin is the [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) and [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
+> Um bom exemplo de plugin de middleware é o [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) e [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
 
 ### API
 
@@ -127,7 +127,7 @@ function register_middlewares(expressApp, authInstance, storageInstance) {
 
 To register a middleware we need an object with a single method called `register_middlewares` that will recieve 3 arguments (`expressApp, auth, storage`). *Auth* is the authentification instance and *storage* is also the main Storage instance that will give you have access to all to the storage actions.
 
-## Storage Plugin
+## Plugin de Armazenamento
 
 Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage), but, since `verdaccio@3.x` you can plug in a custom storage replacing the default behaviour.
 
@@ -183,9 +183,9 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 }
 ```
 
-> The Storage API is still experimental and might change in the next minor versions. For further information about Storage API please follow the [types definitions in our official repository](https://github.com/verdaccio/flow-types).
+> A API de armazenamento ainda é experimental e pode mudar nas próximas versões secundárias. Para mais informações sobre a API de Armazenamento, siga as [definições de tipo em nosso repositório oficial](https://github.com/verdaccio/flow-types).
 
-### Storage Examples
+### Exemplos de Armazenamento
 
 The following list of plugins are implementing the Storage API and might be used them as example.
 
@@ -196,7 +196,7 @@ The following list of plugins are implementing the Storage API and might be used
 
 > Are you willing to contribute with new Storage Plugins? [Click here.](https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295)
 
-## Theme Plugin
+## Plugin de Tema
 
 The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
 
@@ -210,8 +210,8 @@ module.exports = (...arguments) => {
 };
 ```
 
-It is imporant that the name of the plugin **must start with `verdaccio-theme-` prefix**.
+É importante que o nome do plugin **deve começar com o prefixo `verdaccio-theme-`**.
 
-### Theme Example
+### Exemplo de Tema
 
-* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): The default Verdaccio theme based in React.js.
+* [@verdaccio/ui-theme](https://github.com/verdaccio/ui): O tema padrão do Verdaccio é baseado no React.js.

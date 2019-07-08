@@ -11,10 +11,11 @@ A linha de comando é por onde você pode controlar toda a sua instalação Verd
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Comando            | Padrão                         | Exemplo        | Descrição                 |
-| ------------------ | ------------------------------ | -------------- | ------------------------- |
-| --listen \ **-l** | 4873                           | -p 7000        | porta http                |
-| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | o arquivo de configuração |
+| Comando            | Padrão                         | Exemplo        | Descrição                            |
+| ------------------ | ------------------------------ | -------------- | ------------------------------------ |
+| --listen \ **-l** | 4873                           | -p 7000        | porta http                           |
+| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | o arquivo de configuração            |
+| --info \ **-i**   |                                |                | prints local environment information |
 
 ## Local padrão das Configurações
 

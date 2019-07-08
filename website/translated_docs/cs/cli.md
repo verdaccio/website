@@ -11,10 +11,11 @@ Chcete-li spustit aplikaci, použijte Verdaccio CLI.
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Příkaz             | Výchozí                        | Příklad        | Popis               |
-| ------------------ | ------------------------------ | -------------- | ------------------- |
-| --listen \ **-l** | 4873                           | -p 7000        | http port           |
-| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | konfigurační soubor |
+| Příkaz             | Výchozí                        | Příklad        | Popis                                |
+| ------------------ | ------------------------------ | -------------- | ------------------------------------ |
+| --listen \ **-l** | 4873                           | -p 7000        | http port                            |
+| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | konfigurační soubor                  |
+| --info \ **-i**   |                                |                | prints local environment information |
 
 ## Výchozí umístění konfiguračního souboru
 

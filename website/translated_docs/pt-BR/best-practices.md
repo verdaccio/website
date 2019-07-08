@@ -70,7 +70,7 @@ There's two options here:
     
     Desta forma, o seu pacote será usado até que seu mantenedor original atualize seu pacote público para `0.1.3`.
 
-## Security
+## Segurança
 
 A segurança começa no seu ambiente, por isso recomendamos que leia **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** e siga a recomendação.
 
