@@ -121,12 +121,12 @@ store:
 * [verdaccio-ldap](https://www.npmjs.com/package/verdaccio-ldap): Ohun elo ifasẹsi LDAP fun sinopia.
 * [verdaccio-active-directory](https://github.com/nowhammies/verdaccio-activedirectory): Ohun elo ifasẹsi Active Directory fun verdaccio
 * [verdaccio-gitlab](https://github.com/bufferoverflow/verdaccio-gitlab): lo Aami Iwọlesi Aladani ti GitLab lati se ifasẹsi
-* [verdaccio-gitlab-ci](https://github.com/lab360-ch/verdaccio-gitlab-ci): Enable GitLab CI to authenticate against verdaccio.
-* [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): Auth based on htpasswd file plugin (built-in) for verdaccio
-* [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Github oauth authentication plugin for verdaccio.
-* [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): GitHub OAuth plugin for the verdaccio login button.
+* [verdaccio-gitlab-ci](https://github.com/lab360-ch/verdaccio-gitlab-ci): Ṣe imuṣiṣẹ GitLab CI lati se ifasẹsi ni ilodi si verdaccio.
+* [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): Ifasẹsi to da lori ohun elo faili htpasswd (alakọ-sinu) fun verdaccio
+* [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Ohun elo ifasẹsi Github oauth fun verdaccio.
+* [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): Ohun elo GitHub OAuth fun bọtini iwọle verdaccio naa.
 
-### Middleware Plugins
+### Awọn ohun elo Middleware
 
 * [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): verdaccio plugin for *npm audit* cli support (built-in) (compatible since 3.x)
 
