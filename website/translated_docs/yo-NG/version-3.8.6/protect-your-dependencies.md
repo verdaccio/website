@@ -1,10 +1,10 @@
 ---
-id: version-3.8.6-protect-your-dependencies
+id: version-3.8.6-dabobo-awọn igbarale-rẹ
 title: Didabobo awọn akopọ
 original_id: dabobo-awọn igbarale-rẹ
 ---
 
-`verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages acces](packages).
+`verdaccio` faye gba ọ lati dabobo atẹjade, lati ṣe aṣeyọri pẹlu iyẹn o ma nilo lati ṣeto [iwọlesi awọn akopọ](packages) rẹ dardara.
 
 ### Iṣeto akopọ
 
