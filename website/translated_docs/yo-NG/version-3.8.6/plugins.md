@@ -128,13 +128,13 @@ store:
 
 ### Awọn ohun elo Middleware
 
-* [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): verdaccio plugin for *npm audit* cli support (built-in) (compatible since 3.x)
+* [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): ohun elo verdaccio fun *npm audit* atilẹyin cli (alakọ-sinu) (ni ibamu lati 3.x)
 
-* [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): verdacci plugin for *npm profile* cli support and *npm profile set password* for *verdaccio-htpasswd* based authentificaton
+* [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): ohun elo verdaccio fun atilẹyin cli *npm profile* ati *npm profile set password* fun sise ifasẹsi to da lori *verdaccio-htpasswd*
 
-### Storage Plugins
+### Awọn ohun elo Ibi ipamọ
 
-(compatible since 3.x)
+(ni ibamu lati 3.x)
 
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Storage plugin to host packages in Memory
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
