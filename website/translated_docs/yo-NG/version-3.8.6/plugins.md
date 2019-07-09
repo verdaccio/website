@@ -136,10 +136,10 @@ store:
 
 (ni ibamu lati 3.x)
 
-* [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Storage plugin to host packages in Memory
-* [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
-* [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
+* [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Ohun elo ibi ipamọ to wa lati gbalejo awọn akopọ ni Iranti
+* [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Ohun elo ibi ipamọ to wa lati gbalejo awọn akopọ **Amazon S3**
+* [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Ohun elo ibi ipamọ to wa lati gbalejo awọn akopọ **Google Cloud Storage**
 
 ## Awọn akiyesi
 
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
+> Ko kin ṣe gbogbo awọn ohun elo asomọ wọnyi ni o n jẹ didanwo nigbagbogbo, diẹ ninu awọn wọn le ma ṣiṣẹ rara. Jọwọ ti o ba ri eyikeyi isoro kankan ma se kọ lati fi to ẹniti to ni ohun elo naa leti.
