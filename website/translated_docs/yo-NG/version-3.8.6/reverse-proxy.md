@@ -53,7 +53,7 @@ Iṣeto olupese aifojuri ti Apache
     }
     
 
-## Ṣe imuṣiṣẹ ẹlẹhin aṣoju ikọkọ alayipada pẹlu ibugbe ati ibudo to yatọ
+## Ṣe imuṣiṣẹ aṣoju ikọkọ alayipada ẹlẹhin pẹlu ibugbe ati ibudo to yatọ
 
 If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like `http://127.0.0.1:4873/-/static`
 
