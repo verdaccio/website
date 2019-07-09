@@ -99,9 +99,9 @@ store:
 * [sinopia-delegated-auth](https://www.npmjs.com/package/sinopia-delegated-auth): Ohun elo ifasẹsi Sinopia ti o n ṣe atunpin ifasẹsi si HTTP URL miran
 * [sinopia-altldap](https://www.npmjs.com/package/sinopia-altldap): Ohun elo ifasẹsi LDAP Miiran fun Sinopia
 * [sinopia-request](https://www.npmjs.com/package/sinopia-request): Ohun elo-ifasẹsi to rọrun ati to kun pẹlu iṣeto lati lo API ita kan.
-* [sinopia-htaccess-gpg-email](https://www.npmjs.com/package/sinopia-htaccess-gpg-email): Generate password in htaccess format, encrypt with GPG and send via MailGun API to users.
-* [sinopia-mongodb](https://www.npmjs.com/package/sinopia-mongodb): An easy and fully auth-plugin with configuration to use a mongodb database.
-* [sinopia-htpasswd](https://www.npmjs.com/package/sinopia-htpasswd): auth plugin for sinopia supporting htpasswd format.
+* [sinopia-htaccess-gpg-email](https://www.npmjs.com/package/sinopia-htaccess-gpg-email): Pilẹṣẹ ọrọ igbaniwọle ni ilana htaccess, pa ni aroko pẹlu GPG ki o si firanṣẹ nipasẹ MailGun API si awọn olumulo.
+* [sinopia-mongodb](https://www.npmjs.com/package/sinopia-mongodb): Ohun elo-ifasẹsi to rọrun ati to kun pẹlu iṣeto lati lo ibi ipamọ data mongodb.
+* [sinopia-htpasswd](https://www.npmjs.com/package/sinopia-htpasswd): ohun elo ifasẹsi fun sinopia to n ṣe atilẹyin ilana htpasswd.
 * [sinopia-leveldb](https://www.npmjs.com/package/sinopia-leveldb): a leveldb backed auth plugin for sinopia private npm.
 * [sinopia-gitlabheres](https://www.npmjs.com/package/sinopia-gitlabheres): Gitlab authentication plugin for sinopia.
 * [sinopia-gitlab](https://www.npmjs.com/package/sinopia-gitlab): Gitlab authentication plugin for sinopia
