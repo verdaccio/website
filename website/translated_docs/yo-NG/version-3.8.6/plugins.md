@@ -108,11 +108,11 @@ store:
 * [sinopia-ldap](https://www.npmjs.com/package/sinopia-ldap): Ohun elo ifasẹsi LDAP fun sinopia.
 * [sinopia-github-oauth-env](https://www.npmjs.com/package/sinopia-github-oauth-env) Ohun elo ifasẹsi Sinopia pẹlu github oauth web flow.
 
-> All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the modern verdaccio API and using the prefix as *verdaccio-xx-name*.
+> Gbogbo awọn ohun elo sinopia gbọdọ ni ibaramu pẹlu gbogbo awọn ẹya ọjọ iwaju verdaccio. Amọ sa, a gba awọn olulọwọsi niyanju lati ṣi wọn nidi lọ si API igbalode ti verdaccio àti lílo ọrọ ibẹrẹ bii *verdaccio-xx-name*.
 
 ## Awọn ohun elo Verdaccio
 
-(compatible since 2.1.x)
+(ni ibamu lati 2.1.x)
 
 ### Authorization Plugins
 
