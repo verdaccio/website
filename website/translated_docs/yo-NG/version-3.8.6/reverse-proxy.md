@@ -74,7 +74,7 @@ Fun ọrọ eyi, `url_prefix` ko GBỌDỌ wa leto ninu iṣeto verdaccio
 
 * * *
 
-or a sub-directory installation:
+tabi ifi ẹka-ọna kan sori ẹrọ:
 
 ```nginx
 location ~ ^/verdaccio/(.*)$ {
@@ -85,6 +85,6 @@ location ~ ^/verdaccio/(.*)$ {
 }
 ```
 
-For this case, `url_prefix` should set to `/verdaccio/`
+Fun ọrọ eyi, `url_prefix` yẹ ko jẹ siseto si `/verdaccio/`
 
 > Akiyesi: Slash kan n bẹ lẹhin ọna fifisori ẹrọ (`https://your-domain:port/verdaccio/`)!
