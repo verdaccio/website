@@ -221,7 +221,7 @@ A partir da [`v4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
 
 Os plugins de filtro foram introduzidos sob [solicitação](https://github.com/verdaccio/verdaccio/issues/818) para possibilitar a filtragem de metadados de uplinks.
 
-More [info in the PR](https://github.com/verdaccio/verdaccio/pull/1161).
+Mais [informações na PR](https://github.com/verdaccio/verdaccio/pull/1161).
 
 ```yaml
 filters:  
