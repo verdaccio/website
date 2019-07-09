@@ -215,11 +215,11 @@ module.exports = (...arguments) => {
 
 * [@verdaccio/ui-theme](https://github.com/verdaccio/ui): O tema padrão do Verdaccio é baseado no React.js.
 
-## Filter Plugin
+## Plugin de Filtro
 
-Since [`4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
+A partir da [`v4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
 
-Filter plugins were introduced due a [request](https://github.com/verdaccio/verdaccio/issues/818) in order to be able to filter metadata from uplinks.
+Os plugins de filtro foram introduzidos sob [solicitação](https://github.com/verdaccio/verdaccio/issues/818) para possibilitar a filtragem de metadados de uplinks.
 
 More [info in the PR](https://github.com/verdaccio/verdaccio/pull/1161).
 
