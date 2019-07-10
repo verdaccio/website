@@ -178,3 +178,5 @@ You can define mutiple `packages` and each of them must have an unique `Regex`. 
 | storage | 字符串    | No  | 字符串            | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
 
 > 我们强烈建议不要再使用已被弃用的**allow_access**/**allow_publish** 和 **proxy_access**，它们很快就会被移除，请使用它们的精简版本 (**access**/**publish**/**proxy**) 。
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
