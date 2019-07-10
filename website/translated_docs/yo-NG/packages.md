@@ -178,3 +178,5 @@ O le ṣe asọye ọpọ `packages` atipe ikọọkan ninu wọn gbọdọ ni `
 | ibi ipamọ   | okun | Rara      | okun           | `/some-folder` | o n ṣẹda ẹka foda kan ninu foda ibi ipamọ fun ọkọọkan iwọle akopọ |
 
 > A ṣafihan pe a ṣe igbaniyanju lati ma se lo **allow_access**/**allow_publish** ati **proxy_access** rara mọ, adinku ti ba iwulo wọn atipe wọn ma jẹ yiyọ kuro laipẹ, jọwọ lo ẹya kukuru ti ọkọọkan wọn (**access**/**publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
