@@ -3,13 +3,13 @@ id: amazon
 title: "Mga Serbisyo sa Web ng Amazon"
 ---
 
-This document describes several approaches for deploying Verdaccio in the AWS cloud.
+Ang dokumento na ito ay naglalarawan ng mga ilang diskarte para ipamahagi ng Verdaccio sa AWS cloud.
 
-## EC2
+## Ang EC2
 
 [CloudFormation template for deploying this stack.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
-Architecture:
+Ang Arkitektura:
 
     Clients
      |
@@ -31,7 +31,7 @@ Architecture notes: * Deploy this stack into the region closest to your users fo
 
 Estimated monthly cost for a small installation (in us-east-1): * ALB (1 LCU average): $22.265/mo * EC2 (t3.nano): $3.796/mo * EBS (8gb): $0.80/mo * EFS (5gb): $1.5/mo * Data transfer: (10gb): $0.9/mo * **TOTAL:** Under $30/mo
 
-## ECS
+## Ang ECS
 
 You can deploy Verdaccio as a task with an [ECS Volume](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) for persistent storage.
 
