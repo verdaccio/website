@@ -170,11 +170,11 @@ In the previous example, the behaviour would be described:
 
 Vous pouvez définir mutiple `packages` et chacun d’eux doit avoir un unique `Regex`. La syntaxe est basée sur [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Propriété | Type                 | Obligatoire | Exemple        | Soutien  | Description                                                               |
-| --------- | -------------------- | ----------- | -------------- | -------- | ------------------------------------------------------------------------- |
-| accès     | chaîne de caractères | Non         | $all           | tous     | définir des groupes autorisés à accéder au package                        |
-| publier   | chaîne               | Non         | $authenticated | tous     | définir les groupes autorisés à publier                                   |
-| proxy     | chaîne de caractères | Non         | npmjs          | tous     | limite la recherche d'un uplink spécifique                                |
-| stockage  | booléenne            | Non         | chaîne         | `>v4` | it creates a subfolder whithin the storage folder for each package access |
+| Propriété | Type                 | Obligatoire | Exemple        | Soutien        | Description                                                               |
+| --------- | -------------------- | ----------- | -------------- | -------------- | ------------------------------------------------------------------------- |
+| accès     | chaîne de caractères | Non         | $all           | tous           | définir des groupes autorisés à accéder au package                        |
+| publier   | chaîne               | Non         | $authenticated | tous           | définir les groupes autorisés à publier                                   |
+| proxy     | chaîne de caractères | Non         | npmjs          | tous           | limite la recherche d'un uplink spécifique                                |
+| stockage  | chaîne               | Non         | chaîne         | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
 
 > Nous vous signalons qu'il est déconseillé d'utiliser les **allow_access **/**allow_publish** et les **proxy_access** qui sont obsolètes et qui seront bientôt supprimés. version courte de chacun de ces éléments (**acces**/ **publish**/**proxy**).
