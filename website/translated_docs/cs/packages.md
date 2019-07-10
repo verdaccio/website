@@ -170,11 +170,11 @@ In the previous example, the behaviour would be described:
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Vlastnost | Typ     | Požadované | Příklad        | Podpora  | Popis                                                                     |
-| --------- | ------- | ---------- | -------------- | -------- | ------------------------------------------------------------------------- |
-| access    | řetězec | Ne         | $all           | všechny  | define groups allowed to access the package                               |
-| publish   | řetězec | Ne         | $authenticated | všechny  | define groups allowed to publish                                          |
-| proxy     | řetězec | Ne         | npmjs          | všechny  | limit look ups for specific uplink                                        |
-| storage   | boolean | Ne         | řetězec        | `>v4` | it creates a subfolder whithin the storage folder for each package access |
+| Vlastnost | Typ     | Požadované | Příklad        | Podpora        | Popis                                                                     |
+| --------- | ------- | ---------- | -------------- | -------------- | ------------------------------------------------------------------------- |
+| access    | řetězec | Ne         | $all           | všechny        | define groups allowed to access the package                               |
+| publish   | řetězec | Ne         | $authenticated | všechny        | define groups allowed to publish                                          |
+| proxy     | řetězec | Ne         | npmjs          | všechny        | limit look ups for specific uplink                                        |
+| storage   | řetězec | Ne         | řetězec        | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
 
 > We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
