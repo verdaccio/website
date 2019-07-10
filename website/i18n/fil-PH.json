@@ -6,7 +6,7 @@
     "tagline": "A lightweight private npm proxy registry",
     "docs": {
       "amazon": {
-        "title": "Amazon Web Services"
+        "title": "Mga Serbisyo sa Web ng Amazon"
       },
       "ansible": {
         "title": "Ansible"
@@ -234,7 +234,7 @@
         "title": "What is Verdaccio?"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-amazon": {
-        "title": "Amazon Web Services"
+        "title": "Mga Serbisyo sa Web ng Amazon"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-azure": {
         "title": "Windows Azure"
@@ -339,7 +339,7 @@
         "title": "Who is using Verdaccio?"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-amazon": {
-        "title": "Amazon Web Services"
+        "title": "Mga Serbisyo sa Web ng Amazon"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-linking-remote-registry": {
         "title": "Linking a Remote Registry"
