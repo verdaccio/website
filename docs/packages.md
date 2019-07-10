@@ -180,3 +180,5 @@ proxy | string | No | npmjs | all | limit look ups for specific uplink
 storage | string | No | string | `/some-folder` | it creates a subfolder whithin the storage folder for each package access
 
 > We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
