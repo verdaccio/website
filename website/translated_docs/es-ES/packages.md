@@ -178,3 +178,5 @@ You can define mutiple `packages` and each of them must have an unique `Regex`. 
 | storage   | string | No        | string         | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
 
 > Resaltamos que ya no recomendamos usar **allow_access**/**allow_publish** y **proxy_access**, estos son obsoletos y pronto serán removidos, por favor usar las versiones reducidas de estos (**access**/**publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
