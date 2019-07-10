@@ -177,3 +177,5 @@ You can define mutiple `packages` and each of them must have an unique `Regex`. 
 | magazyn    | ciąg znaków | Nie      | ciąg znaków    | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
 
 > Podkreślamy, że zalecamy niekorzystanie dłużej z **allow_access**/**allow_publish**i** proxy_access**, są one nieaktualne i wkrótce zostaną usunięte. Użyj skróconej wersji każdego z tych (**access**/**publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
