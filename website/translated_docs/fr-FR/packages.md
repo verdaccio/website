@@ -178,3 +178,5 @@ Vous pouvez définir mutiple `packages` et chacun d’eux doit avoir un unique `
 | stockage  | chaîne               | Non         | chaîne         | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
 
 > Nous vous signalons qu'il est déconseillé d'utiliser les **allow_access **/**allow_publish** et les **proxy_access** qui sont obsolètes et qui seront bientôt supprimés. version courte de chacun de ces éléments (**acces**/ **publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
