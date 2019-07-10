@@ -178,3 +178,5 @@ packages:
 | storage  | string | Нет          | string         | `/some-folder` | определяет подпапку в хранилище для этого пакета (пакетов) |
 
 > Хочется отдельно отметить, что мы рекомендуем не использовать **allow_access**/**allow_publish** и **proxy_access**, они - deprecated и скоро будут удалены, пожалуйста, используйте короткие версии (**access**/**publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
