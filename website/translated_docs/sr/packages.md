@@ -177,3 +177,5 @@ In the previous example, the behaviour would be described:
 | storage  | string | Не        | string         | `/some-folder` | креира под-фолдер унутрар storage фолдера за сваки приступ пакетима |
 
 > Наглашавамо да не препоручујемо да и даље користите **allow_access**/**allow_publish** и **proxy_access**, јер ће наведене ускоро бити уклоњене. Молимо Вас да уместо тога користите скраћене верзије (**access**/**publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
