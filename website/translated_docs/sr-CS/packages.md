@@ -178,3 +178,5 @@ Možete definisati multiple `packages` pri čemu svaki od njih mora imati jedins
 | storage  | string | No       | string         | `/some-folder` | kreira pod-folder unutrar storage foldera za svaki pristup paketima |
 
 > Naglašavamo da ne preporučujemo da i dalje koristite **allow_access**/**allow_publish** i **proxy_access**, jer će navedene uskoro biti uklonjene. Molimo Vas da umesto toga koristite skraćene verzije (**access**/**publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
