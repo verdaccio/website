@@ -26,25 +26,26 @@ const createShowcase = (userList) => {
 
 class TweetsSection extends React.Component {
   render() {
+    let language = this.props.language || 'en';
     return(
       <div className="tweets-section">
         <div>
-          {this.renderTweetUpRight()}
+          {this.renderTweetUpRight(language)}
         </div>
         <div>
-          {this.renderTweetUpLeft()}
+          {this.renderTweetUpLeft(language)}
         </div>
         <div>
-          {this.renderTweetDownRight()}
+          {this.renderTweetDownRight(language)}
         </div>
         <div>
-          {this.renderTweetDownLeft()}
+          {this.renderTweetDownLeft(language)}
         </div>
       </div>);
   }
 
-  renderTweetUpRight() {
-    return (<blockquote className="twitter-tweet" data-cards="hidden" data-lang="es"><p lang="en" dir="ltr">In a world
+  renderTweetUpRight(language) {
+    return (<blockquote className="twitter-tweet" data-cards="hidden" data-lang={language}><p lang="en" dir="ltr">In a world
         where <a href="https://twitter.com/npmjs?ref_src=twsrc%5Etfw">@npmjs</a> and other core infrastructure fully
         embraced the &quot;move fast and break things&quot; mindset, it&#39;s great to see other people care deeply about
         stability. <a href="https://t.co/uVk7xFeiwU">https://t.co/uVk7xFeiwU</a> &quot;just works&quot; and has saved us
@@ -54,9 +55,9 @@ class TweetsSection extends React.Component {
       </blockquote>);
   }
 
-  renderTweetUpLeft() {
+  renderTweetUpLeft(language) {
     return (
-      <blockquote className="twitter-tweet" data-lang="es"><p lang="en" dir="ltr">Woke up to <a
+      <blockquote className="twitter-tweet" data-lang={language}><p lang="en" dir="ltr">Woke up to <a
         href="https://twitter.com/timer150?ref_src=twsrc%5Etfw">@timer150</a> fixing end-to-end test flakiness in Create
         React App 👏 Background: we have a Lerna monorepo and used very complex hacks for integration testing of
         generated projects. Solution: run a local npm registry to simulate a publish 😁 <a
@@ -65,9 +66,9 @@ class TweetsSection extends React.Component {
       </blockquote>);
   }
 
-  renderTweetDownRight() {
+  renderTweetDownRight(language) {
     return (
-      <blockquote className="twitter-tweet" data-lang="es"><p lang="en" dir="ltr">Verdaccio is my personal hero. A
+      <blockquote className="twitter-tweet" data-lang={language}><p lang="en" dir="ltr">Verdaccio is my personal hero. A
         lightweight npm registry &amp; cache. Just two commands to install + use it. <a
           href="https://twitter.com/hashtag/incredibile?src=hash&amp;ref_src=twsrc%5Etfw">#incredibile</a> <a
           href="https://t.co/X0uNgS6UMz">https://t.co/X0uNgS6UMz</a></p>&mdash; Manfred Steyer (@ManfredSteyer) <a
@@ -75,9 +76,9 @@ class TweetsSection extends React.Component {
       </blockquote>)
   }
 
-  renderTweetDownLeft() {
+  renderTweetDownLeft(language) {
     return (
-      <blockquote className="twitter-tweet" data-conversation="none" data-cards="hidden" data-lang="es">
+      <blockquote className="twitter-tweet" data-conversation="none" data-cards="hidden" data-lang={language}>
         <p lang="en" dir="ltr">
           <a href="https://twitter.com/verdaccio_npm?ref_src=twsrc%5Etfw">@verdaccio_npm</a> is a pretty good open-source
         tool and seems to be growing. We&#39;re currently using them at NodeSource for some internal caching and
