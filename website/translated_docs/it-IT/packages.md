@@ -178,3 +178,5 @@ Si possono definire `pacchetti` multipli ed ognuno di essi deve avere un `Regex`
 | archiviazione | stringa | No        | stringa        | `/some-folder` | crea una sottocartella all'interno della cartella di archiviazione per ogni accesso ai pacchetti |
 
 > Vogliamo rimarcare che non raccomandiamo più l'utilizzo di **allow_access**/**allow_publish** e **proxy_access** che sono superati e saranno presto rimossi, si prega di utilizzare invece la versione breve di ognuna di queste (**access**/**publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
