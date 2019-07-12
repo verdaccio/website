@@ -5,9 +5,9 @@ title: "Instalando em um Servidor ISS"
 
 Estas instruções foram escritas para o Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) e [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
-- Install IIS Install [iisnode](https://github.com/Azure/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
-- Create a new folder in Explorer where you want to host verdaccio. For example `C:\verdaccio`. Save [package.json](#packagejson), [start.js](#startjs) and [web.config](#webconfig) in this folder.
-- Create a new site in Internet Information Services Manager. You can name it whatever you want. I'll call it verdaccio in these [instructions](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Specify the path to where you saved all files and a port number.
+- Instale o IIS Install [iisnode](https://github.com/Azure/iisnode). Certifique-se de instalar os pré-requisitos (Url Rewrite Module & node), conforme explicado nas instruções do iisnode.
+- Crie uma nova pasta no Explorer onde você deseja hospedar o verdaccio. Por exemplo `C:\verdaccio`. Salve o [package.json](#packagejson), [start.js](#startjs) e [web.config](#webconfig) nesta pasta.
+- Crie um novo site no Gerenciador de Serviços de Informações da Internet. Você pode nomea-lo como quiser. Chamarei de verdaccio nestas [instruções](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Especifique o caminho onde você salvou todos os arquivos e um número de porta.
 - Go back to Explorer and give the user that runs the application pool modify rights to the folder you just created. If you've named the new site verdaccio and did not change the app pool, it's running under an ApplicationPoolIdentity and you should give the user IIS AppPool\verdaccio modify rights see instructions if you need help. (You can restrict access later if you want so that it only has modify rights on the iisnode and verdaccio\storage)
 - Start a command prompt and execute the commands below to download verdaccio:
 
