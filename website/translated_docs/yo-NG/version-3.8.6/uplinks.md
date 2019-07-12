@@ -4,7 +4,7 @@ title: Uplinks
 original_id: uplinks
 ---
 
-An *uplink* is a link with an external registry that provides acccess to external packages.
+*uplink* jẹ ọna asopọ pẹlu ibi iforukọsilẹ ti ita ti o n pese iwọle si awọn akojọ ti ita.
 
 ![Uplinks](/img/uplinks.png)
 
@@ -25,7 +25,7 @@ uplinks:
 
 ### Iṣeto
 
-You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
+O le ṣe asọye ọpọ uplinks atipe ikọọkan ninu wọn gbọdọ ni orukọ to dayatọ (kọkọrọ). Wọn le ni awọn ohun ini meji:
 
 | Ohun ini        | Iru     | Ti o nilo | Apẹẹrẹ                                  | Atilẹyin | Apejuwe                                                                                                                        | Atilẹwa          |
 | --------------- | ------- | --------- | --------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
