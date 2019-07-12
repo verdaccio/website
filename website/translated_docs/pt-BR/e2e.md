@@ -3,17 +3,17 @@ id: e2e
 title: "Teste End-to-End"
 ---
 
-Some projects organize packages in multi-packages repositories or [monorepos](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). E2E testing is a topic that usually is only relevant for User Interfaces, but from a Node.js perspective, **publishing packages also need to be tested**.
+Alguns projetos organizam pacotes em repositórios multi-pacotes ou [mono repositórios](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). O teste E2E é um tópico que geralmente só é relevante para as Interfaces de usuário, porém do ponto de vista do Node.js, **a publicação de pacotes também requerem testes**.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Solution: a local npm registry. <a href="https://t.co/kvcyVANVSK">https://t.co/kvcyVANVSK</a></p>&mdash; Dan Abramov (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/951427674844680192?ref_src=twsrc%5Etfw">11 de enero de 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Solução: um registro npm local. <a href="https://t.co/kvcyVANVSK">https://t.co/kvcyVANVSK</a></p>&mdash; Dan Abramov (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/951427674844680192?ref_src=twsrc%5Etfw">11 de Janeiro de 2018</a></blockquote>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Such approach has been really hard to achieve considering:
+Tal abordagem tem sido realmente difícil de alcançar, considerando:
 
-* Populate canary packages on public services seems not to be a good idea
-* Some self-hosted OSS registries are too heavy
-* Offline environments (private networks)
+* Preencher pacotes canários em serviços públicos parece não ser uma boa ideia
+* Alguns registros de OSS auto-hospedados são muito pesados
+* Ambientes offline (redes privadas)
 
 **Verdaccio** is a lightweight registry with zero-configuration that **fits perfectly in any E2E + CI workflow**.
 
