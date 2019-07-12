@@ -37,7 +37,7 @@ Para uma versão específica (patch):
 docker pull verdaccio/verdaccio:4.0.0
 ```
 
-> Se você está interessado em uma lista de tags, [acesse o Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
+> Se você está interessado em uma lista de tags, por favor [acesse o Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
 ## Running Verdaccio using Docker
 
