@@ -39,7 +39,7 @@ docker pull verdaccio/verdaccio:4.0.0
 
 > Se você está interessado em uma lista de tags, por favor [acesse o Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Running Verdaccio using Docker
+## Executando o Verdaccio usando Docker
 
 Para executar o container do docker:
 
@@ -47,7 +47,7 @@ Para executar o container do docker:
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
+O último argumento define qual imagem usar. A linha acima irá puxar a imagem pré-construída mais recente do dockerhub, caso você não tenha feito ainda.
 
 Se você tiver [uma imagem construída localmente](#build-your-own-docker-image) use `verdaccio` como o último argumento.
 
