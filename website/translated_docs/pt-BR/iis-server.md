@@ -23,9 +23,9 @@ Eu queria que o site do `verdaccio` fosse o site padrão no IIS, então fiz o se
 - I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS
 - I set the bindings to "http", ip address "All Unassigned" on port 80, ok any warning or prompts
 
-These instructions are based on [Host Sinopia in IIS on Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). I had to tweak my web config as per below but you may find the original from the for mentioned link works better
+Estas instruções são baseadas em [Host Sinopia in IIS on Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). Eu tive que fazer pequenos ajustes na minha configuração web, como você pode ver abaixo, mas você pode encontrar o original do link mencionado que funciona melhor
 
-A default configuration file will be created `c:\verdaccio\verdaccio\config.yaml`
+Um arquivo de configuração padrão será criado `c:\verdaccio\verdaccio\config.yaml`
 
 ### package.json
 
@@ -48,7 +48,7 @@ process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
-### Alternate start.js for Verdaccio versions < v3.0
+### Start.js alternativos para versões do Verdaccio < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);
@@ -75,15 +75,15 @@ require('./node_modules/verdaccio/src/lib/cli.js');
     <rewrite>
       <rules>
 
-        <!-- iisnode folder is where iisnode stores it's logs. These should
-        never be rewritten -->
+        <!-- iisnode folder is where iisnode stores it's logs. Estes nunca
+        deverão ser reescritos -->
         <rule name="iisnode" stopProcessing="true">
             <match url="iisnode*" />
             <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
             <action type="None" />
         </rule>
 
-        <!-- Rewrite all other urls in order for verdaccio to handle these -->
+        <!-- Reescreva todas as outras URLs para que o verdaccio possa lidar com estes -->
         <rule name="verdaccio">
             <match url="/*" />
             <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
@@ -92,8 +92,8 @@ require('./node_modules/verdaccio/src/lib/cli.js');
       </rules>
     </rewrite>
 
-    <!-- exclude node_modules directory and subdirectories from serving
-    by IIS since these are implementation details of node.js applications -->
+    <!-- exclui o diretório e os subdiretórios node_modules da veiculação
+     pelo IIS, uma vez que estes são detalhes de implementação de aplicativos node.js -->
     <security>
       <requestFiltering>
         <hiddenSegments>
