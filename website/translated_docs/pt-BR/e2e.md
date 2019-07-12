@@ -45,7 +45,7 @@ sh -c "npm-auth-to-token -u test -p test -e test@test.com -r $local_registry"
 sh -c "npm --registry $local_registry publish"
 ```
 
-## Whom are using it for E2E?
+## Quem está usando para E2E?
 
 * [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests) *(+64k ⭐️)*
 * [Storybook](https://github.com/storybooks/storybook) *(+34k ⭐️)*
@@ -58,7 +58,7 @@ sh -c "npm --registry $local_registry publish"
 * [Hyperledger Composer](https://github.com/hyperledger/composer) *(+1.6k ⭐️)*
 * [Wix Yoshi](https://github.com/wix/yoshi)
 
-## Future
+## Futuro
 
 Babel.js might be interested on integrate Verdaccio in their workflow, if you want to contribute, check [this ticket](https://github.com/babel/babel/issues/6134).
 
