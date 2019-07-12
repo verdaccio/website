@@ -8,17 +8,17 @@ Estas instruções foram escritas para o Windows Server 2016, IIS 10, [Node.js 1
 - Instale o IIS Install [iisnode](https://github.com/Azure/iisnode). Certifique-se de instalar os pré-requisitos (Url Rewrite Module & node), conforme explicado nas instruções do iisnode.
 - Crie uma nova pasta no Explorer onde você deseja hospedar o verdaccio. Por exemplo `C:\verdaccio`. Salve o [package.json](#packagejson), [start.js](#startjs) e [web.config](#webconfig) nesta pasta.
 - Crie um novo site no Gerenciador de Serviços de Informações da Internet. Você pode nomea-lo como quiser. Chamarei de verdaccio nestas [instruções](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Especifique o caminho onde você salvou todos os arquivos e um número de porta.
-- Volte para o Explorer e forneça, ao usuário que executa a pool de aplicações, direitos de modificação para a pasta recém criada. If you've named the new site verdaccio and did not change the app pool, it's running under an ApplicationPoolIdentity and you should give the user IIS AppPool\verdaccio modify rights see instructions if you need help. (You can restrict access later if you want so that it only has modify rights on the iisnode and verdaccio\storage)
-- Start a command prompt and execute the commands below to download verdaccio:
+- Volte para o Explorer e forneça, ao usuário que executa a pool de aplicações, direitos de modificação para a pasta recém criada. Se você nomeou o novo site como verdaccio e não alterou a pool de aplicações, ele está sendo executado sob uma ApplicationPoolIdentity e você deve conceder ao usuário direitos de modificação de IIS AppPool\verdaccio, veja as instruções se precisar de ajuda. (Você pode restringir o acesso mais tarde caso o queira, para que ele tenha apenas direitos de modificação no iisnode e no verdaccio\storage)
+- Inicie um prompt de comando e execute os comandos abaixo para fazer o download do verdaccio:
 
     cd c:\verdaccio
     npm install
     
 
-- Make sure you have an inbound rule accepting TCP traffic to the port in Windows Firewall
-- Thats it! Now you can navigate to the host and port that you specified
+- Verifique se você tem uma regra de entrada aceitando o tráfego TCP na porta do Firewall do Windows
+- E é isto! Agora você pode navegar para o host e a porta que você especificou
 
-I wanted the `verdaccio` site to be the default site in IIS so I did the following:
+Eu queria que o site do `verdaccio` fosse o site padrão no IIS, então fiz o seguinte:
 
 - I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS
 - I set the bindings to "http", ip address "All Unassigned" on port 80, ok any warning or prompts
