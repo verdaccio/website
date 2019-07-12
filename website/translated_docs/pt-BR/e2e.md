@@ -15,15 +15,15 @@ Tal abordagem tem sido realmente difícil de alcançar, considerando:
 * Alguns registros de OSS auto-hospedados são muito pesados
 * Ambientes offline (redes privadas)
 
-**Verdaccio** is a lightweight registry with zero-configuration that **fits perfectly in any E2E + CI workflow**.
+O **Verdaccio** é um registro leve com zero configurações que **se encaixa perfeitamente em qualquer fluxo de trabalho E2E + CI**.
 
-## Implementation
+## Implementação
 
-There is no a silver bullet yet, each implementation seems to be specific for each project, you can check some of them in the following thread [clicking here](https://stackoverflow.com/a/50222427/308341).
+Ainda não há uma solução única, cada implementação parece ser específica de cada projeto, você pode verificar algumas delas [clicando neste tópico](https://stackoverflow.com/a/50222427/308341).
 
-### Example using Bash
+### Exemplos usando Bash
 
-This is the most simple example using Verdaccio in a bash script (extracted from *create-react-app*).
+Este é o exemplo mais simples usando o Verdaccio em um script bash (extraído do *create-react-app *).
 
 ```bash
 #!/bin/sh
