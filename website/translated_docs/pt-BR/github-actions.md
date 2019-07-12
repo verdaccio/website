@@ -20,6 +20,6 @@ action "Publish Verdaccio" {
 
 Esta ação irá executar um `npm publish` e se a publicação terminar com sucesso, continuará até o próximo passo, senão irá falhar. Se houver qualquer problema ao publicar um pacote você notará usando essa ação.
 
-Within the image uses `verdaccio-auth-memory` and `verdaccio-memory` plugins to handle authentification and storage to speed up the process.
+Dentro da imagem usa-se os plugins `verdaccio-auth-memory` e `verdaccio-memory` para gerenciar autenticação e armazenamento para acelerar o processo.
 
-If you want to know more about the action, [visit our repository](https://github.com/verdaccio/github-actions) dedicated for GitHub Actions.
+Se você quiser saber mais sobre a ação, [visite nosso repositório ](https://github.com/verdaccio/github-actions) dedicado ao GitHub Actions.
