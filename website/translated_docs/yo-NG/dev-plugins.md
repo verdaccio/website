@@ -219,9 +219,9 @@ O jẹ pataki pe orukọ ohun elo naa **gbọdọ bẹrẹ pẹlu afikun iṣaaj
 
 Lati [`4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
 
-Filter plugins were introduced due a [request](https://github.com/verdaccio/verdaccio/issues/818) in order to be able to filter metadata from uplinks.
+Awọn ohun elo asẹ jẹ ṣiṣe nitori [ibeere fun](https://github.com/verdaccio/verdaccio/issues/818) lati le ni anfani lati ya metadata sọtọ kuro ni ara awọn uplink.
 
-More [info in the PR](https://github.com/verdaccio/verdaccio/pull/1161).
+Alaye siwaju si [wa ninu PR](https://github.com/verdaccio/verdaccio/pull/1161).
 
 ```yaml
 filters:  
