@@ -48,7 +48,7 @@ Awọn aṣayan meji lo wa nibi:
 
 1. O fẹ ṣẹda **fork** to daduro ati ki o da imuṣiṣẹpọ pẹlu ẹya ti gbogbogbo duro.
 
-   Ti o ba fẹ ṣe eyi, o yẹ ki o ṣe ayipada faili iṣeto rẹ ki verdaccio ma ṣe le ma beere awọn ibeere nipa akopọ yii si npmjs mọ rara. Add a separate entry for this package to `config.yaml` and remove `npmjs` from `proxy` list and restart the server.
+   Ti o ba fẹ ṣe eyi, o yẹ ki o ṣe ayipada faili iṣeto rẹ ki verdaccio ma ṣe le ma beere awọn ibeere nipa akopọ yii si npmjs mọ rara. Se afikun iwọle to daduro fun akopọ yi si `config.yaml` ki o si yọ `npmjs` kuro ninu akojọ `proxy` ki o wa tun olupese bẹrẹ.
 
    ```yaml
     packages:
@@ -59,11 +59,11 @@ Awọn aṣayan meji lo wa nibi:
         # proxy:
    ```
 
-   When you publish your package locally, **you should probably start with version string higher than existing one**, so it won't conflict with existing package in the cache.
+   Nigbati o ba ṣe atẹjade akopọ rẹ ni ibilẹ, **o yẹ ki o bẹrẹ pẹlu ẹya okun ti o ga ju eyi ti o wa tẹlẹ lọ**, nitori ko ma ba tako akopọ to ti wa ninu apo iranti tẹlẹ.
 
 2. O fẹ lati lo ẹya ti ara rẹ fun igba diẹ, ṣugbọn pada si ti gbogbogbo ni kete ti o ba ti wa ni imudojuiwọn.
 
-   In order to avoid version conflicts, **you should use a custom pre-release suffix of the next patch version**. For example, if a public package has version 0.1.2, you can upload `0.1.3-my-temp-fix`.
+   Lati le yago fun awọn atako ti ẹya, **o yẹ ki o lo afikun ipari ti iṣaaju agbejade to jẹ akanṣe ti awẹ ẹya tokan**. Fun apẹẹrẹ, ti akopọ gbogbogbo ba jẹ ẹya 0.1.2, o le sagbega si 0.1.3-my-temp-fix.
 
    ```bash
     npm version 0.1.3-my-temp-fix
