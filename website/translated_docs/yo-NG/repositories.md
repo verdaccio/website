@@ -1,8 +1,8 @@
 ---
 id: awọn ibi ipamọ
-title: Source Code
+title: Koodu Orisun
 ---
 
-`verdaccio` is composed or multiple repositories you might contribute. Look into the **issues** tab whether there is a ticket waiting for you 🤠.
+`verdaccio` ni awọn ibi ipamọ pupọ ti o le ṣe ilọwọsi. Wo inu taabu **issues** boya tikẹti kan wa ti o duro de ọ 🤠.
 
-To see the complete list of repositories, [click here](https://github.com/verdaccio/verdaccio/wiki/Repositories).
+Lati wo akojọpọ pipe ti awọn ibi ipamọ, [tẹ ibi](https://github.com/verdaccio/verdaccio/wiki/Repositories).

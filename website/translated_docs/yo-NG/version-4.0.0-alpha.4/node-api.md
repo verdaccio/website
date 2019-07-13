@@ -4,7 +4,7 @@ title: API Oju ipade
 original_id: api-oju ipade
 ---
 
-Verdaccio can be invoked programmatically. Awọn API oju ipade jẹ sisafihan lẹhin ẹya `verdaccio@3.0.0-alpha.10`.
+Verdaccio le jẹ pipe pẹlu eto. Awọn API oju ipade jẹ sisafihan lẹhin ẹya `verdaccio@3.0.0-alpha.10`.
 
 ## Ilo
 

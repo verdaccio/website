@@ -23,7 +23,7 @@ Lati sawari itọsọna ile, a gbẹkẹle **$XDG_DATA_HOME** gẹgẹbi aṣaya
 
 ## Ọna faili iṣeto
 
-Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+Faili iṣeto gbọdọ jẹ YAML, JSON tabi modulu NodeJS. Ọna YAML n jẹ ṣiṣawari nipasẹ yiyanju afikun faili iṣeto (yaml tabi yml, ko bikita fun lẹta titobi taki kekere).
 
 ## Aaye ibi ipamọ atilẹwa
 

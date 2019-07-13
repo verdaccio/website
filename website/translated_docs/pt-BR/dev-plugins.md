@@ -215,13 +215,13 @@ module.exports = (...arguments) => {
 
 * [@verdaccio/ui-theme](https://github.com/verdaccio/ui): O tema padrão do Verdaccio é baseado no React.js.
 
-## Filter Plugin
+## Plugin de Filtro
 
-Since [`4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
+A partir da [`v4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
 
-Filter plugins were introduced due a [request](https://github.com/verdaccio/verdaccio/issues/818) in order to be able to filter metadata from uplinks.
+Os plugins de filtro foram introduzidos sob [solicitação](https://github.com/verdaccio/verdaccio/issues/818) para possibilitar a filtragem de metadados de uplinks.
 
-More [info in the PR](https://github.com/verdaccio/verdaccio/pull/1161).
+Mais [informações na PR](https://github.com/verdaccio/verdaccio/pull/1161).
 
 ```yaml
 filters:  
@@ -231,7 +231,7 @@ filters:
 
 ### API
 
-The method `filter_metadata` will allow you to filter metadata that comes from any uplink, it is `Promise` based and has to return the same metadata modified.
+O método `filter_metadata` permitirá que você filtre metadados provenientes de qualquer uplink, ele é baseado em `Promise` e tem que retornar os mesmos metadados modificados.
 
 > Do not remove properties frm the metadata, try to do not mutate rather return a new object.
 

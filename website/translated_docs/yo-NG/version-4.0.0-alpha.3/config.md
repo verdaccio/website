@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.3-configuration
+id: version-4.0.0-alpha.3-iṣeto
 title: Faili Iṣeto
 original_id: iṣeto
 ---

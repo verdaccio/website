@@ -133,7 +133,7 @@ Ege wọnyii jẹ `docker` kikun apẹẹrẹ le jẹ didanwo ni [Awọn apẹ�
     }
     
 
-## Run behind reverse proxy with different domain and port
+## Ṣe imuṣiṣẹ aṣoju ikọkọ alayipada ẹlẹhin pẹlu ibugbe ati ibudo to yatọ
 
 ### Ẹka-ọna
 
@@ -143,11 +143,11 @@ Ti gbogbo URL ba n jẹ lilo fun Verdaccio, iwọ ko nilo lati ṣe asoye `url_p
 url_prefix: /sub_directory/
 ```
 
-If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like `http://127.0.0.1:4873/-/static`
+Ti o ba ṣe imuṣiṣẹ aṣoju ikọkọ alayipada ẹlẹhin verdaccio, o le kiyesi pe gbogbo faili ohun elo ṣiṣẹ bi ọna relaticve, bi `http://127.0.0.1:4873/-/static`
 
 Lati yanju ọrọ yii, **o yẹ ki o fi ogidi ibugbe ati ibudo ransẹ si verdaccio pẹlu akọle `Host`**
 
-Nginx configure should look like this:
+Iṣeto Nginx yẹ ki o ri bi eyi:
 
 ```nginx
 location / {
@@ -162,7 +162,7 @@ Fun ọrọ eyi, `url_prefix` ko **GBỌDỌ** wa leto ninu iṣeto verdaccio
 
 * * *
 
-or a sub-directory installation:
+tabi ifi ẹka-ọna kan sori ẹrọ:
 
 ```nginx
 location ~ ^/verdaccio/(.*)$ {
@@ -173,6 +173,6 @@ location ~ ^/verdaccio/(.*)$ {
 }
 ```
 
-For this case, `url_prefix` should set to `/verdaccio/`
+Fun ọrọ eyi, `url_prefix` yẹ ko jẹ siseto si `/verdaccio/`
 
 > Akiyesi: Slash kan n bẹ lẹhin ọna fifisori ẹrọ (`https://your-domain:port/verdaccio/`)!

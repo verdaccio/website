@@ -37,9 +37,9 @@ Para uma versão específica (patch):
 docker pull verdaccio/verdaccio:4.0.0
 ```
 
-> Se você está interessado em uma lista de tags, [acesse o Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
+> Se você está interessado em uma lista de tags, por favor [acesse o Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
-## Running Verdaccio using Docker
+## Executando o Verdaccio usando Docker
 
 Para executar o container do docker:
 
@@ -47,7 +47,7 @@ Para executar o container do docker:
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.
+O último argumento define qual imagem usar. A linha acima irá puxar a imagem pré-construída mais recente do dockerhub, caso você não tenha feito ainda.
 
 Se você tiver [uma imagem construída localmente](#build-your-own-docker-image) use `verdaccio` como o último argumento.
 
@@ -64,15 +64,15 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 > Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) is recommended over using bind mount.
 
-Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
+O Verdaccio 4 fornece um novo conjunto de variáveis de ambiente para modificar permissões, porta ou protocolo http. Abaixo a lista completa:
 
-| Propriedade           | default                | Descrição                                          |
-| --------------------- | ---------------------- | -------------------------------------------------- |
-| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | the docker working directory                       |
-| VERDACCIO_USER_NAME | `verdaccio`            | the system user                                    |
-| VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
-| VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
-| VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
+| Propriedade           | padrão                 | Descrição                                                    |
+| --------------------- | ---------------------- | ------------------------------------------------------------ |
+| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | o diretório de trabalho do docker                            |
+| VERDACCIO_USER_NAME | `verdaccio`            | o usuário do sistema                                         |
+| VERDACCIO_USER_UID  | `10001`                | o Id do usuário sendo usado para aplicar permissões de pasta |
+| VERDACCIO_PORT        | `4873`                 | a porta do verdaccio                                         |
+| VERDACCIO_PROTOCOL    | `http`                 | o protocolo http padrão                                      |
 
 ### Plugins
 
@@ -90,7 +90,7 @@ RUN npm i && npm install verdaccio-s3-storage
 USER verdaccio
 ```
 
-### Docker and custom port configuration
+### Configuração de Docker e porta customizada
 
 Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
 
@@ -104,7 +104,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 Of course the numbers you give to `-p` paremeter need to match.
 
-### Using HTTPS with Docker
+### Usando HTTPS com Docker
 
 You can configure the protocol verdaccio is going to listen on, similarly to the port configuration. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
 
@@ -114,10 +114,10 @@ docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-### Using docker-compose
+### Usando docker-compose
 
-1. Get the latest version of [docker-compose](https://github.com/docker/compose).
-2. Build and run the container:
+1. Obtenha a última versão do [docker-compose](https://github.com/docker/compose).
+2. Construa e execute o contêiner:
 
 ```bash
 $ docker-compose up --build
@@ -163,7 +163,7 @@ $ docker volume inspect verdaccio_verdaccio
 
 ```
 
-## Build your own Docker image
+## Construa a sua própria imagem Docker
 
 ```bash
 docker build -t verdaccio .
@@ -179,23 +179,23 @@ Note: The first build takes some minutes to build because it needs to run `npm i
 
 Please note that for any of the above docker commands you need to have docker installed on your machine and the docker executable should be available on your `$PATH`.
 
-## Docker Examples
+## Exemplos de Docker
 
 There is a separate repository that hosts multiple configurations to compose Docker images with `verdaccio`, for instance, as reverse proxy:
 
 <https://github.com/verdaccio/docker-examples>
 
-## Docker Custom Builds
+## Construções de Docker Personalizadas
 
 > If you have made an image based on Verdaccio, feel free to add it to this list.
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
-* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Private NPM container that can backup to s3
+* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Contêiner NPM privado que pode fazer backup para s3
 * [docker-verdaccio-ldap](https://github.com/snadn/docker-verdaccio-ldap)
 * [verdaccio-ldap](https://github.com/nathantreid/verdaccio-ldap)
 * [verdaccio-compose-local-bridge](https://github.com/shingtoli/verdaccio-compose-local-bridge)
 * [docker-verdaccio](https://github.com/Global-Solutions/docker-verdaccio)
 * [verdaccio-docker](https://github.com/idahobean/verdaccio-docker)
 * [verdaccio-server](https://github.com/andru255/verdaccio-server)
-* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) docker image providing verdaccio from coldrye-debian-nodejs.
+* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) imagem docker que executa o verdaccio a partir do coldrye-debian-nodejs.

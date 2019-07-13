@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.5-github-actions
+id: version-4.0.0-alpha.5-awọn-igbesẹ-github
 title: Awọn igbesẹ-Github
 original_id: awọn igbesẹ-github
 ---
@@ -19,7 +19,7 @@ action "Publish Verdaccio" {
 }
 ```
 
-The action will perform a `npm publish` and if the publishing finish succesfully will allow to continue to the next step, otherwise will fails. Ti isoro eyikeyi ba wa ni sise atẹjade akopọ kan o maa ṣe akiyesi rẹ nipa lilo igbesẹ yii.
+Igbesẹ naa yoo ṣe `npm publish` ati ti titẹjade naa ba ti pari pẹlu aṣeyọri yoo gba laaye lati tẹsiwaju si igbesẹ to kan, aijẹbẹ yoo kuna. Ti isoro eyikeyi ba wa ni sise atẹjade akopọ kan o maa ṣe akiyesi rẹ nipa lilo igbesẹ yii.
 
 Laarin aworan `verdaccio-auth-memory` ati `verdaccio-memory` lo awọn ohun elo lati sakoso sise ifasẹsi ati ipamọ lati mu ki ilana na yara si.
 

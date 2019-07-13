@@ -6,7 +6,7 @@ original_id: iss-server
 
 Awọn ilana wọnyi ni a kọ fun Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
-- Install IIS Install [iisnode](https://github.com/Azure/iisnode). Ri daju pe o fi awọn ohun inilo ti o ṣe pataki sori ẹrọ (Url Rewrite Module & node) bi a ti ṣe salaye ninu awọn ilana fun iisnode.
+- Fi IIS Install sori ẹrọ [iisnode](https://github.com/Azure/iisnode). Ri daju pe o fi awọn ohun inilo ti o ṣe pataki sori ẹrọ (Url Rewrite Module & node) bi a ti ṣe salaye ninu awọn ilana fun iisnode.
 - Ṣẹda foda tuntun ni Explorer ni ibi ti o fẹ gbalejo verdaccio. Fun apẹẹrẹ `C:\verdaccio`. Fi [package.json](#packagejson), [start.js](#startjs) and [web.config](#webconfig) pamọ sinu foda yii.
 - Ṣẹda aaye ayelujara tuntun kan ni Alakoso Awọn Iṣẹ Alaye Ayelujara. O le fun lorukọ eyikeyi ti o fẹ. Mo ma pe ni verdaccio ninu [awọn alaye yii](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Yan pato ọna ibi ti o ti fi gbogbo awọn faili ati nọmba ibudo kan pamọ si.
 - Pada lọ si Explorer ki o si fun olumulo ti o n lo awọn ẹtọ atunṣe adagun ohun elo si foda ti o sẹsẹ ṣẹda. Ti o ba ti fun aaye ayelujara tuntun naa ni orukọ verdaccio ati ti o ko yi adagun ohun elo naa pada, o n ṣiṣẹ labẹ ApplicationPoolIdentity kan atipe o yẹ ki o fun olumulo naa ni awọn ẹtọ atunṣe IIS AppPool\verdaccio wo awọn ilana ti o ba nilo iranlọwọ. (O le se idena wiwọle to ba ya ti o ba fẹ to fi ma jẹ wipe awọn ẹtọ atunṣe nikan ni o ma ni lori iisnode ati verdaccio\storage)

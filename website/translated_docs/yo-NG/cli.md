@@ -11,11 +11,11 @@ CLI ti verdaccio naa jẹ irinṣẹ bibẹẹrẹ ohun elo rẹ.
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Aṣẹ                | Atilẹwa                        | Apẹẹrẹ         | Apejuwe                              |
-| ------------------ | ------------------------------ | -------------- | ------------------------------------ |
-| --listen \ **-l** | 4873                           | -p 7000        | ibudo http                           |
-| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | faili iṣeto naa                      |
-| --info \ **-i**   |                                |                | prints local environment information |
+| Aṣẹ                | Atilẹwa                        | Apẹẹrẹ         | Apejuwe                        |
+| ------------------ | ------------------------------ | -------------- | ------------------------------ |
+| --listen \ **-l** | 4873                           | -p 7000        | ibudo http                     |
+| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | faili iṣeto naa                |
+| --info \ **-i**   |                                |                | n ṣe atẹjade alaye ayika ibilẹ |
 
 ## Aaye faili iṣeto atilẹwa
 

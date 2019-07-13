@@ -93,7 +93,7 @@
         "title": "Puppet"
       },
       "repositories": {
-        "title": "Source Code"
+        "title": "Koodu Orisun"
       },
       "reverse-proxy": {
         "title": "Iseto Aṣoju ikọkọ-Alayipada"
@@ -111,7 +111,7 @@
         "title": "Awọn ọrọ"
       },
       "test": {
-        "title": "test"
+        "title": "idanwo"
       },
       "uplinks": {
         "title": "Uplinks"
@@ -192,7 +192,7 @@
         "title": "Puppet"
       },
       "version-3.8.6/version-3.8.6-repositories": {
-        "title": "Source Code"
+        "title": "Koodu Orisun"
       },
       "version-3.8.6/version-3.8.6-reverse-proxy": {
         "title": "Iseto Aṣoju ikọkọ-Alayipada"
@@ -204,7 +204,7 @@
         "title": "Ṣeto Awọn iwe ẹri SSL"
       },
       "version-3.8.6/version-3.8.6-test": {
-        "title": "Unit Testing"
+        "title": "Idanwo Iwọn"
       },
       "version-3.8.6/version-3.8.6-uplinks": {
         "title": "Uplinks"

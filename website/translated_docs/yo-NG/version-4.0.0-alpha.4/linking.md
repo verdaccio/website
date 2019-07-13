@@ -1,7 +1,7 @@
 ---
-id: version-4.0.0-alpha.4-linking-registries
-title: Linking Regiestries
-original_id: linking-registries
+id: version-4.0.0-alpha.4-ṣiṣe-asopọ-awọn-ibi-iforukọsilẹ
+title: Siṣe asopọ Awọn ibi iforukọsilẹ
+original_id: ṣiṣe-asopọ-awọn-ibi-iforukọsilẹ
 ---
 
 dsadsa

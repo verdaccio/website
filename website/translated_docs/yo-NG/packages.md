@@ -170,11 +170,13 @@ Ninu apẹẹrẹ titẹlẹ, ihuwasi naa yoo jẹ jijuwe:
 
 O le ṣe asọye ọpọ `packages` atipe ikọọkan ninu wọn gbọdọ ni `Regex` to dayatọ. Sintasi naa da lori [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Ohun ini    | Iru     | Ti o nilo | Apẹẹrẹ         | Atilẹyin | Apejuwe                                                           |
-| ----------- | ------- | --------- | -------------- | -------- | ----------------------------------------------------------------- |
-| iwọle       | okun    | Rara      | $all           | gbogbo   | seto awọn ẹgbẹ ti aaye wa fun lati wọle si akopọ naa              |
-| atẹjade     | okun    | Rara      | $authenticated | gbogbo   | seto awọn ẹgbẹ ti aaye wa fun lati wọle se atẹjade                |
-| aṣoju ikọkọ | okun    | Rara      | npmjs          | gbogbo   | se adinku awọn iwa jade fun pato uplink kan                       |
-| ibi ipamọ   | boolean | Rara      | okun           | `>v4` | o n ṣẹda ẹka foda kan ninu foda ibi ipamọ fun ọkọọkan iwọle akopọ |
+| Ohun ini    | Iru  | Ti o nilo | Apẹẹrẹ         | Atilẹyin         | Apejuwe                                                           |
+| ----------- | ---- | --------- | -------------- | ---------------- | ----------------------------------------------------------------- |
+| iwọle       | okun | Rara      | $all           | gbogbo           | seto awọn ẹgbẹ ti aaye wa fun lati wọle si akopọ naa              |
+| atẹjade     | okun | Rara      | $authenticated | gbogbo           | seto awọn ẹgbẹ ti aaye wa fun lati wọle se atẹjade                |
+| aṣoju ikọkọ | okun | Rara      | npmjs          | gbogbo           | se adinku awọn iwa jade fun pato uplink kan                       |
+| ibi ipamọ   | okun | Rara      | okun           | `/awọn-foda kan` | o n ṣẹda ẹka foda kan ninu foda ibi ipamọ fun ọkọọkan iwọle akopọ |
 
 > A ṣafihan pe a ṣe igbaniyanju lati ma se lo **allow_access**/**allow_publish** ati **proxy_access** rara mọ, adinku ti ba iwulo wọn atipe wọn ma jẹ yiyọ kuro laipẹ, jọwọ lo ẹya kukuru ti ọkọọkan wọn (**access**/**publish**/**proxy**).
+
+Ti o ba fẹ alaye siwaju sii nipa bi o ṣe le lo ohun ini **ibi ipamọ**, jọwọ lọ si [ọrọ iwoye](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674) yii.

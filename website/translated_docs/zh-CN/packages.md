@@ -170,11 +170,13 @@ In the previous example, the behaviour would be described:
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| 属性      | 类型      | 必须的 | 示例             | 支持       | 描述                                                                        |
-| ------- | ------- | --- | -------------- | -------- | ------------------------------------------------------------------------- |
-| access  | string  | No  | $all           | all      | 定义允许访问包的组                                                                 |
-| publish | string  | No  | $authenticated | all      | 定义允许发布的组                                                                  |
-| proxy   | string  | No  | npmjs          | all      | 针对特定的uplink限制查找                                                           |
-| storage | boolean | No  | 字符串            | `>v4` | it creates a subfolder whithin the storage folder for each package access |
+| 属性      | 类型     | 必须的 | 示例             | 支持             | 描述                                                                        |
+| ------- | ------ | --- | -------------- | -------------- | ------------------------------------------------------------------------- |
+| access  | string | No  | $all           | all            | 定义允许访问包的组                                                                 |
+| publish | string | No  | $authenticated | all            | 定义允许发布的组                                                                  |
+| proxy   | string | No  | npmjs          | all            | 针对特定的uplink限制查找                                                           |
+| storage | 字符串    | No  | 字符串            | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
 
 > 我们强烈建议不要再使用已被弃用的**allow_access**/**allow_publish** 和 **proxy_access**，它们很快就会被移除，请使用它们的精简版本 (**access**/**publish**/**proxy**) 。
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
