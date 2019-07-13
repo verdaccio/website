@@ -231,9 +231,9 @@ filters:
 
 ### API
 
-The method `filter_metadata` will allow you to filter metadata that comes from any uplink, it is `Promise` based and has to return the same metadata modified.
+Ọna `filter_metadata` naa yoo gba ọ laaye lati ya metadata ti o wa lati eyikeyi uplink sọtọ, o jẹ eyi to da lori `Ileri` ati pe o ni lati tun da metadata kanna pada pẹlu atunṣe.
 
-> Do not remove properties frm the metadata, try to do not mutate rather return a new object.
+> Maṣe yọ awọn ohun ini lati ara metadata naa, gbiyanju lati ma ṣe ṣe iyipada dipo bẹ kuku da ohun tuntun kan pada.
 
     interface IPluginStorageFilter<T> extends IPlugin<T> {
         filter_metadata(packageInfo: Package): Promise<Package>;
