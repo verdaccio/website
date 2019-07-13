@@ -215,9 +215,9 @@ O jẹ pataki pe orukọ ohun elo naa **gbọdọ bẹrẹ pẹlu afikun iṣaaj
 
 * [@verdaccio/ui-theme](https://github.com/verdaccio/ui): Akori atilẹwa Verdaccio to da lori React.js.
 
-## Filter Plugin
+## Ohun elo Asẹ
 
-Since [`4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
+Lati [`4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
 
 Filter plugins were introduced due a [request](https://github.com/verdaccio/verdaccio/issues/818) in order to be able to filter metadata from uplinks.
 
