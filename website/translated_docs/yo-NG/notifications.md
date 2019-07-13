@@ -9,7 +9,7 @@ Fifitonileti jẹ gbigbedide ni pataki lati jẹ lilo pẹlu awọn webhooks Sla
 
 Apẹẹrẹ kan pẹlu ikọ **HipChat**, **Stride** ati **Google Hangouts Chat**:
 
-> Verdaccio supports any API, feel free to add more examples.
+> Verdaccio n ṣe atilẹyin eyikeyi API, ma se siyemeji lati ṣafikun apẹẹrẹ diẹ sii.
 
 #### Ifitonileti kan
 
