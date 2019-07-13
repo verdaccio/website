@@ -1,14 +1,14 @@
 ---
 id: version-3.8.6-use-cases
-title: Use Cases
-original_id: use-cases
+title: Awọn apẹẹrẹ Ilo
+original_id: awọn apẹẹrẹ-ilo
 ---
 
-## Using private packages
+## Lilo awọn akopọ ikọkọ
 
-You can add users and manage which users can access which packages.
+O se afikun awọn olumulo ati ki o ṣakoso irufẹ awọn olumulo ti o le wọle si irufẹ awọn akopọ.
 
-It is recommended that you define a prefix for your private packages, for example "local", so all your private things will look like this: `local-foo`. This way you can clearly separate public packages from private ones.
+Igbaniyanju wa wipe ki o seto iṣaaju kan fun awọn akojọ ikọkọ rẹ, fun apẹẹrẹ "local", nitoriki gbogbo awọn ohun ikọkọ rẹ le dabi iru eyi: `local-foo`. This way you can clearly separate public packages from private ones.
 
 ## Using public packages from npmjs.org
 
