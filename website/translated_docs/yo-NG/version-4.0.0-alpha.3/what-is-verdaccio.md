@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.3-what-is-verdaccio
+id: version-4.0.0-alpha.3-kini-verdaccio
 title: Ki ni verdaccio?
 original_id: ki-ni-verdaccio
 ---
