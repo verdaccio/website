@@ -69,7 +69,7 @@ Se afikun abala `aṣoju ikọkọ` lati seto ibi iforukọsilẹ to jẹ yiyan 
     proxy: server1 server2
 ```
 
-Verdaccio supports multiples registries on the `proxy` field, the request will be resolved with the first in the list, if fails, it will try with the next in the list and so on.
+Verdaccio n ṣe atilẹyin fun awọn ibi iforukọsilẹ ọlọpọlọpọ lori aaye `proxy`, ibeere ​​naa yoo jẹ yiyanju pẹlu alakọkọ ninu akojọ naa, to ba jẹ pe iyẹn kuna, o ma gbiyanju pẹlu eyi tókàn ninu akojọ naa ati bẹbẹ lọ.
 
 ## Ibi iforukọsilẹ Alaisilorila
 
