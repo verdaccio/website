@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.7-linking-remote-registry
+id: version-4.0.0-alpha.7-sise-asopọ-ibi-iforukọsilẹ-ọlọna-jijin
 title: Sise asopọ ibi iforukọsilẹ ọlọna jijin kan
 original_id: sise asopọ-ibi iforukọsilẹ-ọlọna jijin
 ---
