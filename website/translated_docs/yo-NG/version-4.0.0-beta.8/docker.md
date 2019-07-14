@@ -191,7 +191,7 @@ Ibi ipamọ kan to dayatọ wa ti o n gbalejo ọpọlọpọ awọn iṣeto lat
 
 ## Awọn agbedide Akanṣe ti Docker
 
-> If you have made an image based on Verdaccio, feel free to add it to this list.
+> Ti o ba ti ṣe aworan kan to da lori Verdaccio, ma se kọ lati se afikun rẹ si akojọ yii.
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
