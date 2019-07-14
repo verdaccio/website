@@ -34,7 +34,7 @@ Wo apẹẹrẹ kikun kan [nibi](https://stackoverflow.com/questions/54543979/np
 
 ## Sise asopọ Ibi iforukọsilẹ kan
 
-Link a registry is fairly simple, first, define a new section in the `uplinks` section, note the order here is irrelevant.
+Siṣe asopọ ibi iforukọsilẹ jẹ irọrun, lakọkọ, ṣto abala tuntun kan ni abala ti `uplinks`, akiyesi, eto ti ibi ko ṣe pataki.
 
 ```yaml
   uplinks:
@@ -52,7 +52,7 @@ Link a registry is fairly simple, first, define a new section in the `uplinks` s
 
 Se afikun abala `aṣoju ikọkọ` lati seto ibi iforukọsilẹ to jẹ yiyan ti o fẹ lati se ni aṣoju ikọkọ.
 
-## Linking Multiples Registry
+## Siṣe asopọ Awọn ibi iforukọsilẹ ọlọpọlọpọ
 
 ```yaml
   uplinks:
