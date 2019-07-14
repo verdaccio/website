@@ -42,7 +42,7 @@ Sise alekun iye ti `maxage` ninu awọn idari `uplink` kọọkan maa jẹ bibee
 
 ## Lilo iranti dipo lilo ààyè ìtọ́jú lórí kọ̀mpútà
 
-Sometimes caching packages is not a critical step, rather than route packages from different registries and achiving faster build times. Awọn ohun elo afikun meji wa to yago patapata fun kikọ sinu ààyè ìtọ́jú alafojuri ti kọ̀mpútà nipa lilo iranti.
+Nigbamiran awọn akopọ ifisapo iranti o kin ṣe igbesẹ pataki, dipo ti ọna awọn akopọ lati awọn ibi iforukọsilẹ ti o yatọ ati nini iyọrisi awọn akoko agbedide to yara. Awọn ohun elo afikun meji wa to yago patapata fun kikọ sinu ààyè ìtọ́jú alafojuri ti kọ̀mpútà nipa lilo iranti.
 
 ```bash
   npm install -g verdaccio-auth-memory
