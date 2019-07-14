@@ -97,7 +97,7 @@ RUN npm install verdaccio-s3-storage
 
 Eyikeyi `host:port` to jẹ ṣiṣeto ni `conf/config.yaml` labẹ `listen` **n lọwọlọwọ jẹ fifojufo nigbati docker ba n jẹ lilo**.
 
-If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
+Ti o ba fẹ lati kansi instance docker Verdaccio labẹ ibudo to yatọ, jẹ ki a sọpe `5000` ninu aṣẹ `docker run` safikun iyipada ayika naa `VERDACCIO_PORT=5000` ati ki o wa safihan ibudo `-p 5000:5000` naa.
 
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
@@ -105,7 +105,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio:4.x-next
 ```
 
-Of course the numbers you give to `-p` paremeter need to match.
+Dajudaju awọn nọmba ti o fi fun odiwọn `-p` nilo lati baramu.
 
 ### Lilo HTTPS pẹlu Docker
 
@@ -126,7 +126,7 @@ docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-You can set the port to use (for both container and host) by prefixing the above command with `VERDACCIO_PORT=5000`.
+O le ṣeto ibudo naa lati lo (fun awọn apoti ati agbalejo) nipasẹ fifi awọn aṣẹ ti o wa loke yii saaju pẹlu `VERDACCIO_PORT=5000`.
 
 ```yaml
 version: '3.1'
