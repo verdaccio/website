@@ -38,7 +38,7 @@ Fun ẹya (awẹ) kan pato:
 docker pull verdaccio/verdaccio:3.0.1
 ```
 
-For the next major release using the `4.x-next` (master) version.
+Fun ifilọlẹ gboogi tokan nipa lilo ẹya `4.x-next` (ọga).
 
 ```bash
 docker pull verdaccio/verdaccio:4.x-next
