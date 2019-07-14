@@ -1,10 +1,10 @@
 ---
-id: version-4.0.0-beta.5-articles
+id: version-4.0.0-beta.5-awọn-arokọ
 title: Awọn arokọ
 original_id: awọn arokọ
 ---
 
-We list the articles about Verdaccio, if you have written a blog post or tutorial that mention Verdaccio, feel free to add it here.
+A ṣe akojọ awọn arokọ nipa Verdaccio, ti o ba ti kọ akọsilẹ bulọọgi kan tabi ẹkọ itọnisọna ti o mẹnuba Verdaccio, ma ṣe ṣiyemeji lati ṣafikun rẹ sibi.
 
 > Gbogbo ede ni a gba laaye
 
@@ -24,7 +24,7 @@ We list the articles about Verdaccio, if you have written a blog post or tutoria
 
 # Awọn arokọ / Awọn bulọọgi / Awọn ẹkọ itọnisọna (nipasẹ Ede)
 
-### Remarkable articles
+### Awọn arokọ ti o tayọ
 
 * [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
 * [Bo Awọn Ohun elo Rẹ Nigba Ti o Ṣi N lo Npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
