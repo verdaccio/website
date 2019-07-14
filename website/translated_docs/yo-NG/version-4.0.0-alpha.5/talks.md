@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.5-talks
+id: version-4.0.0-alpha.5-awọn-ọrọ
 title: Awọn ọrọ
 original_id: awọn ọrọ
 ---
@@ -8,7 +8,7 @@ A ṣe akojọ awọn ọrọ nipa Verdaccio, ti o ba sọ ọrọ kan tabi ti o
 
 > Ma ṣe ṣiyemeji lati pin àkóónú rẹ pẹlu awujọ naa, a gba ọ niyanju lati sọ nipa Verdaccio. Ti o ba nilo iranlọwọ lori bi o ṣe le bẹrẹ, alaye tabi awọn ohun elo, kan si wa ni [Chat at Discord](https://chat.verdaccio.org) wa, a ma ran ẹ lọwọ.
 
-## The latets Talk <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+## Ọrọ to n lọ lọwọ <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 > Ọrọ ikẹhin to jẹ pinpin ma n jẹ fififihan nibi nigbagbogbo. A n ṣe iranlọwọ fun ọ lati pin ohun rẹ pẹlu awujọ.
 
