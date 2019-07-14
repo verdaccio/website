@@ -73,7 +73,7 @@ Verdaccio n ṣe atilẹyin fun awọn ibi iforukọsilẹ ọlọpọlọpọ l
 
 ## Ibi iforukọsilẹ Alaisilorila
 
-Having a full Offline Registry is completely possible, if you don't want any connectivity with external remotes you can do the following.
+Nini Ibi iforukọsilẹ Alaisilorila kikun jẹ eyi to ṣeeṣe patapata, ti o ko ba fẹ asopọmọ eyikeyi pẹlu awọn idari ti ita o le ṣe awọn wọnyii.
 
 ```yaml
 <br />auth:
@@ -92,4 +92,4 @@ packages:
     publish: $authenticated
 ```
 
-Remote all `proxy` fields within each section of `packages`. The registry will became full offline.
+Yọ gbogbo `aṣoju ikọkọ` awọn aaye laarin abala kọọkan ti `awọn akopọ`. Ibi iforukọsilẹ naa yoo di kikun ni aisilorila.
