@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.5-linking-remote-registry
+id: version-4.0.0-alpha.5-sise-asopọ-ibi-iforukọsilẹ-ọlọna-jijin
 title: Sise asopọ ibi iforukọsilẹ ọlọna jijin kan
 original_id: sise asopọ-ibi iforukọsilẹ-ọlọna jijin
 ---
@@ -12,9 +12,9 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-You can link multiples registries, the following document will drive you throught some helpful configurations.
+O le ṣe asopọ awọn ibi iforukọsilẹ ọlọpọlọpọ, iwe wọnyii yoo ṣe atọkun rẹ ninu iranlọwọ diẹ lara awọn iṣeto.
 
-## Using Asociating Scope
+## Lilo Scope ti Alabasepọ
 
 Ọna ara lati wọle si awọn ibi iforukọsilẹ ọlọpọlọpọ nipa lilo `.npmrc` jẹ ilana ẹya ara bi atẹle yii:
 
@@ -23,7 +23,7 @@ You can link multiples registries, the following document will drive you through
     @mycompany:registry=http://localhost:4873
     
 
-This approache is valid, but comes with several dissadventages:
+Ọna yii fẹsẹmulẹ, ṣugbọn o wa pẹlu ọpọlọpọ awọn akude:
 
 * O **n ṣiṣẹ pẹlu awọn scope nikan**
 * Scope gbọdọ baramu, **ko si igbalaaye fun Awọn ifarahan Yẹpẹrẹ kankan**
