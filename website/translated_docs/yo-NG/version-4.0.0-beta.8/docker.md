@@ -48,7 +48,7 @@ docker pull verdaccio/verdaccio:4.x-next
 
 ## Mimu Verdaccio ṣiṣẹ nipa lilo Docker
 
-> The following configuration is based on the Verdaccio 4 or the `4.x-next` tag.
+> Awọn iṣeto wọnyi da lori Verdaccio 4 naa tabi isamisi `4.x-next`.
 
 Lati mu apoti docker ṣiṣẹ:
 
