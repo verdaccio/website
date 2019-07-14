@@ -71,9 +71,9 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio:4.x-next
 ```
 
-> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Lo iwọn iye docker](https://docs.docker.com/storage/volumes/) o jẹ igbaniyanju lori lilo atopọ dide.
+> Akiyesi: Verdaccio n ṣiṣẹ bi olumulo ti ko lo gbongbo (uid=10001) ninu apoti naa, if ti o ba lo atopọ dide lati fagbara bori atilẹwa, o nilo lati rii daju pe ọna atilẹyin naa jẹ pinpin si olumulo to tọ. Ninu apẹẹrẹ ti o wa loke, o nilo lati ṣamulo `sudo chown -R 100:101 /opt/verdaccio` bibẹkọ o ma salaba pade awọn aṣiṣe igbanilaaye ni akoko iṣiṣẹ. [Lo iwọn iye docker](https://docs.docker.com/storage/volumes/) o jẹ igbaniyanju lori lilo atopọ dide.
 
-Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
+Verdaccio 4 n pese awọn iyipada ayika tuntun lati ṣayipada si boya awọn igbanilaaye, ibudo tabi Ilana http. Eyi ni akojọ pipe:
 
 | Ohun ini              | atilẹwa                | Apejuwe                                                                 |
 | --------------------- | ---------------------- | ----------------------------------------------------------------------- |
@@ -95,7 +95,7 @@ RUN npm install verdaccio-s3-storage
 
 ### Docker ati iṣeto ibudo akanṣe
 
-Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
+Eyikeyi `host:port` to jẹ ṣiṣeto ni `conf/config.yaml` labẹ `listen` **n lọwọlọwọ jẹ fifojufo nigbati docker ba n jẹ lilo**.
 
 If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
 
