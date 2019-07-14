@@ -70,14 +70,14 @@ Awọn aṣayan meji lo wa nibi:
     npm --publish --tag fix --registry http://localhost:4873
    ```
 
-   This way your package will be used until its original maintainer updates his public package to `0.1.3`.
+   Ni ọna yii akopọ rẹ ma jẹ lilo titi ti ojulowo olutọju rẹ yoo fi ṣe imudojuiwọn akopọ gbogbogbo ti ara rẹ si `0.1.3`.
 
 
 
 
-## Security
+## Aabo
 
-The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recomendations.
+Aabo naa bẹrẹ ni ayika rẹ, fun iru ohun bẹ ti a ṣe igbaniyanju patapata lati ka **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** ki o si tẹle awọn iyanju naa.
 
 ### Package Access
 
