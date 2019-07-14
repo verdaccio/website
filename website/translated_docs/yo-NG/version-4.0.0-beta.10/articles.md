@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-beta.10-articles
+id: version-4.0.0-beta.10-awọn-arokọ
 title: Awọn arokọ
 original_id: awọn arokọ
 ---
