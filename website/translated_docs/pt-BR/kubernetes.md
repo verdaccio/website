@@ -72,16 +72,16 @@ Implemente o `configMap` no cluster
 kubectl create configmap verdaccio-config --from-file ./config.yaml
 ```
 
-#### Deploy Verdaccio
+#### Lançando Verdaccio
 
-Now you can deploy the Verdaccio Helm chart and specify which configuration to use:
+Agora você pode lançar a tabela Verdaccio Helm e especificar qual configuração usar:
 
 ```bash
 helm install --name npm --set customConfigMap=verdaccio-config stable/verdaccio
 ```
 
-## Rancher Support
+## Suporte Rancher
 
-[Rancher](http://rancher.com/) is a complete container management platform that makes managing and using containers in production really easy.
+[Rancher](http://rancher.com/) é uma plataforma completa de gerenciamento de contêineres que facilita o gerenciamento e o uso de contêineres na produção.
 
 * [verdaccio-rancher](https://github.com/lgaticaq/verdaccio-rancher)
