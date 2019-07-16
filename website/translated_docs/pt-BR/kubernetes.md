@@ -7,55 +7,55 @@ title: "Kubernetes"
 
 ## Helm
 
-### Setup Helm
+### Configurar o Helm
 
-If you haven't used Helm before, you need to setup the Helm controller called Tiller:
+Se você nunca usou Helm antes, você precisará configurar o controlador Helm chamado Tiller:
 
 ```bash
 helm init
 ```
 
-### Install
+### Instalação
 
-Deploy the Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio) chart. In this example we use `npm` as release name:
+Implemente o gráfico Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio). Neste exemplo usamos `npm` como o nome de lançamento:
 
 ```bash
 helm install --name npm stable/verdaccio
 ```
 
-### Deploy a specific version
+### Implemente uma versão específica
 
 ```bash
 helm install --name npm --set image.tag=2.6.5 stable/verdaccio
 ```
 
-### Upgrading Verdaccio
+### Atualizando o Verdaccio
 
 ```bash
 helm upgrade npm stable/verdaccio
 ```
 
-### Uninstalling
+### Desinstalando
 
 ```bash
 helm del --purge npm
 ```
 
-**Note:** this command delete all the resources, including packages that you may have previously published to the registry.
+**Nota:** este comando apaga todos os recursos, incluindo pacotes que você pode ter publicado anteriormente no registro.
 
-### Custom Verdaccio configuration
+### Configuração personalizada do Verdaccio
 
-You can customize the Verdaccio configuration using a Kubernetes *configMap*.
+Você pode personalizar a configuração do Verdaccio usando um Kubernetes *configMap*.
 
-#### Prepare
+#### Preparo
 
-Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml) and adapt it for your use case:
+Copie a [configuração existente](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml) e adapte-a para o seu caso:
 
 ```bash
 wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/docker.yaml -O config.yaml
 ```
 
-**Note:** Make sure you are using the right path for the storage that is used for persistency:
+**Nota:** Verifique se você está usando o caminho certo para o armazenamento usado pela persistência:
 
 ```yaml
 storage: /verdaccio/storage/data
