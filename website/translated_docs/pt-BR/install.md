@@ -53,7 +53,7 @@ Você pode definir o registro usando o seguinte comando.
 npm set registry http://localhost:4873/
 ```
 
-or you can pass a `--registry` flag when needed.
+ou você pode passar uma `--registry` flag quando necessário.
 
 ```bash
 npm install --registry http://localhost:4873
