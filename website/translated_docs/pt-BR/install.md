@@ -13,13 +13,13 @@ Verdaccio é uma aplicação web multiplataforma. Para instalá-lo, você precis
 2. npm `>=4.x` ou `yarn` > É altamente recomendável usar os clientes mais recentes do Node Package Managers `> npm@5.x | yarn@1.x | pnpm@2.x`
 3. A interface da web suporta os navegadores `Chrome, Firefox, Edge, and IE11`.
 
-> Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
+> Verdaccio suportará a versão mais recente do Node.js de acordo com as recomendações do [Node.js Release Working Group](https://github.com/nodejs/Release).
 
 <div id="codefund">''</div>
 
 ## Instação
 
-`verdaccio` must be installed globaly using either of the following methods:
+O `verdaccio` deve ser instalado globalmente usando um dos métodos a seguir:
 
 Usando `npm`
 
@@ -37,7 +37,7 @@ yarn global add verdaccio
 
 ## Como Usar
 
-Once it has been installed, you only need to execute the CLI command:
+Uma vez instalado, você só precisa executar o comando da CLI:
 
 ```bash
 $> verdaccio
@@ -45,9 +45,9 @@ warn --- config file  - /home/.config/verdaccio/config.yaml
 warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 ```
 
-For more information about the CLI, please [read the cli section](cli.md).
+Para mais informações sobre a CLI, por favor [leia a seção sobre a cli](cli.md).
 
-You can set the registry by using the following command.
+Você pode definir o registro usando o seguinte comando.
 
 ```bash
 npm set registry http://localhost:4873/
