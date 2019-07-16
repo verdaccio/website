@@ -7,9 +7,9 @@ title: "Kubernetes"
 
 ## Helm
 
-### Configurar o Helm
+### Configurando o Helm
 
-Se você nunca usou Helm antes, você precisará configurar o controlador Helm chamado Tiller:
+Se você nunca usou Helm antes, você precisará configurar o controlador do Helm chamado Tiller:
 
 ```bash
 helm init
@@ -64,9 +64,9 @@ auth:
     file: /verdaccio/storage/htpasswd
 ```
 
-#### Deploy the configMap
+#### Implementando o configMap
 
-Deploy the `configMap` to the cluster
+Implemente o `configMap` no cluster
 
 ```bash
 kubectl create configmap verdaccio-config --from-file ./config.yaml
