@@ -1,6 +1,6 @@
 ---
 id: linking-remote-registry
-title: "Linking a Remote Registry"
+title: "Vinculando um Registro Remoto"
 ---
 
 Verdaccio is a proxy and by default [links](uplinks.md) the public registry.
