@@ -198,7 +198,7 @@ Awọn akojọ ti awọn afikun wọnyi n ṣe imuṣiṣẹ API Ibi ipamọ naa
 
 ## Ohun elo Akori
 
-The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
+Ohun elo naa gbọdọ ṣe idapada iṣẹ kan ti o n ṣe idapada **okun**. Okun naa yẹ ki o jẹ ọgangan ipo ti gbongbo ti intafeesi olumulo rẹ.
 
 ### API
 
