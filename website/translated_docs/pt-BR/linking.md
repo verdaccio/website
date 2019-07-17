@@ -72,7 +72,7 @@ Verdaccio suporta múltiplos registros no campo `proxy`. A solicitação será r
 
 ## Registro Offline
 
-Having a full Offline Registry is completely possible. If you don't want any connectivity with external remotes you can do the following.
+Ter um Registro Offline completo é absolutamente possível. Se você não quiser nenhuma conectividade com controles remotos externos você pode fazer o seguinte.
 
 ```yaml
 <br />auth:
@@ -91,4 +91,4 @@ packages:
     publish: $authenticated
 ```
 
-Remove all `proxy` fields within each section of `packages`. The registry will become full offline.
+Remove todos os campos `proxy` de cada seção dos `pacotes`. O registro ficará totalmente offline.
