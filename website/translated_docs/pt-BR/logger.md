@@ -24,4 +24,4 @@ Use `SIGUSR2` para notificar o aplicativo, o arquivo de log foi girado e ele pre
 | tipo        | string | Não         | [stdout, file]                                 | completo | define a saída                                            |
 | caminho     | string | Não         | verdaccio.log                                  | completo | se o tipo é arquivo, define a localização daquele arquivo |
 | formato     | string | Não         | [pretty, pretty-timestamped]                   | completo | formato da saída                                          |
-| level       | string | Não         | [fatal, error, warn, http, info, debug, trace] | completo | level detalhado                                           |
+| nível       | string | Não         | [fatal, erro, aviso, http, info, debug, trace] | completo | level detalhado                                           |
