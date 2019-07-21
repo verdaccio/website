@@ -7,11 +7,11 @@ Notify foi criado principalmente para ser usado com webhooks entrantes para Slac
 
 ## Utilização
 
-An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
+Um exemplo com um hook de **HipChat**, **Stride** e **Google Hangouts Chat**:
 
-> Verdaccio supports any API, feel free to add more examples.
+> Verdaccio suporta qualquer API, fique à vontade para adicionar mais exemplos.
 
-#### Single notification
+#### Notificação única
 
 ```yaml
 notify:
@@ -21,7 +21,7 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-#### Multiple notification
+#### Notificação múltipla
 
 ```yaml
 notify:
@@ -42,22 +42,22 @@ notify:
      content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
 ```
 
-## Template
+## Modelo
 
-We use [Handlebars](https://handlebarsjs.com/) as main template engine.
+Nós usamos [Handlebars](https://handlebarsjs.com/) como mecanismo de modelo principal.
 
-### Format Examples
+### Exemplos de Formato
 
-    # iterate all versions
+    # iterar todas as versões
     {{ name }}{{#each versions}} v{{version}}{{/each}}
     
-    # publisher and `dist-tag` package published
+    # editor e pacote `dist-tag` publicado
     {{ publisher.name }} has published {{ publishedPackage }}
     
 
-### Properties
+### Propriedades
 
-List of properties accesible via template
+Lista de propriedades acessáveis via modelo
 
 * Metadata
 * Publisher (who is publishing)
