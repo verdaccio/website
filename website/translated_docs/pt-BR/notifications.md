@@ -60,7 +60,7 @@ Nós usamos [Handlebars](https://handlebarsjs.com/) como mecanismo de modelo pri
 Lista de propriedades acessáveis via modelo
 
 * Metadata
-* Publisher (who is publishing)
+* Publisher (quem está publicando)
 * Package Published (package@1.0.0)
 
 ### Metadata
