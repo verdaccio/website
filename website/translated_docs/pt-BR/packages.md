@@ -103,11 +103,11 @@ packages:
     publish: $authenticated
 ```
 
-#### Blocking proxying a set of specific packages
+#### Bloqueando a transmissão de um conjunto de pacotes específicos
 
-You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
+Você pode querer bloquear um ou vários pacotes de buscar nos repositórios remotos, mas ao mesmo tempo, permitir que outros acessem *uplinks* diferentes.
 
-Let's see the following example:
+Vamos ver o seguinte exemplo:
 
 ```yaml
 packages:
@@ -126,9 +126,9 @@ packages:
     proxy: npmjs
 ```
 
-Let's describe what we want with the above example:
+Vamos descrever o que queremos com o exemplo acima:
 
-* I want to host my own `jquery` dependency but I need to avoid proxying it.
+* Eu quero hospedar minha própria dependência `jquery`, mas eu preciso evitar o proxy.
 * I want all dependencies that match with `my-company-*` but I need to avoid proxying them.
 * I want all dependencies that are in the `my-local-scope` scope but I need to avoid proxying them.
 * I want proxying for all the rest of the dependencies.
