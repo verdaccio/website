@@ -65,7 +65,7 @@ Lista de propriedades acessáveis via modelo
 
 ### Metadata
 
-Package metadata that the template has access
+Pacote de metadata que o modelo tem acesso
 
     {
         "_id": "@test/pkg1",
@@ -116,9 +116,9 @@ Package metadata that the template has access
     }
     
 
-### Publisher
+### Editor
 
-You can access to the package publisher information in the `content` of a webhook using the `publisher` object.
+Você pode acessar as informações do editor do pacote no `content` de um webhook usando o objeto `publisher`.
 
 See below the `publisher` object type:
 
