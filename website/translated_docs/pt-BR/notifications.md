@@ -149,11 +149,11 @@ Você pode acessar o pacote que está sendo publicado com a palavra-chave `{{pub
 
 ## Configuração
 
-| Propriedade         | Tipo         | Obrigatório | Suporte  | Padrão | Descrição                                                                                    |
-| ------------------- | ------------ | ----------- | -------- | ------ | -------------------------------------------------------------------------------------------- |
-| method              | string       | Não         | completo |        | HTTP verb                                                                                    |
-| packagePattern      | string       | Não         | completo |        | Só execute esta notificação se o nome do pacote corresponder à expressão regular             |
-| packagePatternFlags | string       | Não         | completo |        | Qualquer sinalizador a ser usado com a expressão regular                                     |
-| headers             | array/object | Sim         | completo |        | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | string       | Sim         | completo |        | set the URL endpoint for this call                                                           |
-| content             | string       | Sim         | completo |        | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Propriedade         | Tipo         | Obrigatório | Suporte  | Padrão | Descrição                                                                                                        |
+| ------------------- | ------------ | ----------- | -------- | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| method              | string       | Não         | completo |        | HTTP verb                                                                                                        |
+| packagePattern      | string       | Não         | completo |        | Só execute esta notificação se o nome do pacote corresponder à expressão regular                                 |
+| packagePatternFlags | string       | Não         | completo |        | Qualquer sinalizador a ser usado com a expressão regular                                                         |
+| headers             | array/object | Sim         | completo |        | Se esse terminal exigir headers específicos, configure-os aqui como uma matriz de objetos da key: value objects. |
+| endpoint            | string       | Sim         | completo |        | set the URL endpoint for this call                                                                               |
+| content             | string       | Sim         | completo |        | any [Handlebar](https://handlebarsjs.com/) expressions                                                           |
