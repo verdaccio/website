@@ -140,9 +140,9 @@ Um exemplo:
 
 **Nota:** Não é possível obter as informações do editor se o arquivo `package.json` já possui a propriedade `publisher`.
 
-### Package Published
+### Pacote Publicado
 
-You can access to the package is being published with the keyword `{{publishedPackage}}` as follows.
+Você pode acessar o pacote que está sendo publicado com a palavra-chave `{{publishedPackage}}` do seguinte modo.
 
     {{ publisher.name }} has published {{ publishedPackage }}
     
@@ -152,8 +152,8 @@ You can access to the package is being published with the keyword `{{publishedPa
 | Propriedade         | Tipo         | Obrigatório | Suporte  | Padrão | Descrição                                                                                    |
 | ------------------- | ------------ | ----------- | -------- | ------ | -------------------------------------------------------------------------------------------- |
 | method              | string       | Não         | completo |        | HTTP verb                                                                                    |
-| packagePattern      | string       | Não         | completo |        | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | string       | Não         | completo |        | Any flags to be used with the regular expression                                             |
+| packagePattern      | string       | Não         | completo |        | Só execute esta notificação se o nome do pacote corresponder à expressão regular             |
+| packagePatternFlags | string       | Não         | completo |        | Qualquer sinalizador a ser usado com a expressão regular                                     |
 | headers             | array/object | Sim         | completo |        | If this endpoint requires specific headers, set them here as an array of key: value objects. |
 | endpoint            | string       | Sim         | completo |        | set the URL endpoint for this call                                                           |
 | content             | string       | Sim         | completo |        | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
