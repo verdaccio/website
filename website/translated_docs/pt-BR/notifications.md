@@ -120,7 +120,7 @@ Pacote de metadata que o modelo tem acesso
 
 Você pode acessar as informações do editor do pacote no `content` de um webhook usando o objeto `publisher`.
 
-See below the `publisher` object type:
+Veja abaixo o tipo de objeto `publisher`:
 
     {
       name: string,
@@ -129,7 +129,7 @@ See below the `publisher` object type:
     }
     
 
-An example:
+Um exemplo:
 
     notify:
       method: POST
@@ -138,7 +138,7 @@ An example:
       content: '{"color":"green","message":"New package published: * {{ name }}*. Publisher name: * {{ publisher.name }} *.","notify":true,"message_format":"text"}'
     
 
-**Note:** it's not possible to get the publisher information if the `package.json` file already has the `publisher` property.
+**Nota:** Não é possível obter as informações do editor se o arquivo `package.json` já possui a propriedade `publisher`.
 
 ### Package Published
 
