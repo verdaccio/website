@@ -3,13 +3,13 @@ id: packages
 title: "Permissões dos Pacotes"
 ---
 
-It's a series of contraints that allow or restrict access to the local storage based in specific criteria.
+É uma série de restrições que permitem ou restringem o acesso ao armazenamento local com base em critérios específicos.
 
-The security constraints remain on the shoulders of the plugin being used, by default `verdaccio` uses the [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). If you use a different plugin the behaviour might be different. The default plugin does not handle `allow_access` and `allow_publish` by itself, it uses an internal fallback in case the plugin is not ready for it.
+As restrições de segurança permanecem dependentes do plugin em uso, por padrão o `verdaccio` usa o [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Se você usar um plugin diferente, o comportamento poderá ser diferente. The default plugin does not handle `allow_access` and `allow_publish` by itself, it uses an internal fallback in case the plugin is not ready for it.
 
 For more information about permissions visit [the authentification section in the wiki](auth.md).
 
-### Usage
+### Utilização
 
 ```yalm
 packages:
@@ -166,7 +166,7 @@ In the previous example, the behaviour would be described:
 * only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
 * If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
 
-### Configuration
+### Configuração
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
