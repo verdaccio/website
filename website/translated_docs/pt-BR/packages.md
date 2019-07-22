@@ -46,14 +46,14 @@ A lista de grupos internos gerenciados pelo `verdaccio` são:
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
 ```
 
-All users recieve all those set of permissions independently of is anonymous or not plus the groups provided by the plugin, in case of `htpasswd` return the username as a group. For instance, if you are logged as `npmUser` the list of groups will be.
+Todos os usuários recebem todos esses grupos de permissões, independentemente de serem anônimos ou não, mais os grupos fornecidos pelo plugin, no caso de `htpasswd` retornar o nome de usuário como um grupo. Por exemplo, se você estiver logado como `npmUser`, a lista de grupos será.
 
 ```js
 // groups without '$' are going to be deprecated eventually
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-If you want to protect specific set packages under your group, you need to do something like this. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.
+Se você quiser proteger um grupo de pacotes específicos dentro do seu grupo, você deve fazer algo semelhante a isso. Vamos usar um `Regex` que cubra todos os pacotes `npmuser-` prefixados. Recomendamos usar um prefixo para seus pacotes, assim será mais fácil protegê-los.
 
 ```yaml
 packages:
@@ -62,7 +62,7 @@ packages:
     publish: npmuser
 ```
 
-Restart `verdaccio` and in your console try to install `npmuser-core`.
+Reinicie o `verdaccio` e no seu console tente instalar o `npmuser-core`.
 
 ```bash
 $ npm install npmuser-core
