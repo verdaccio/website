@@ -5,9 +5,9 @@ title: "Permissões dos Pacotes"
 
 É uma série de restrições que permitem ou restringem o acesso ao armazenamento local com base em critérios específicos.
 
-As restrições de segurança permanecem dependentes do plugin em uso, por padrão o `verdaccio` usa o [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Se você usar um plugin diferente, o comportamento poderá ser diferente. The default plugin does not handle `allow_access` and `allow_publish` by itself, it uses an internal fallback in case the plugin is not ready for it.
+As restrições de segurança permanecem dependentes do plugin em uso, por padrão o `verdaccio` usa o [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Se você usar um plugin diferente, o comportamento poderá ser diferente. O plugin padrão não suporta `allow_access` e `allow_publish` por si só, ele usa um fallback interno caso o plugin não esteja pronto para isso.
 
-For more information about permissions visit [the authentification section in the wiki](auth.md).
+Para mais informações sobre permissões visite a [seção de autenticação no wiki](auth.md).
 
 ### Utilização
 
@@ -25,14 +25,13 @@ packages:
     proxy: uplink1
 
   '**':
-    # allow all users (including non-authenticated users) to read and
-    # publish all packages
+    # permite a todos os usuários (incluindo os não autentificados) a ler e
+    # publicar todos os pacotes
     access: $all
     publish: $all
-    proxy: uplink2
 ```
 
-if none is specified, the default one remains
+se nenhum for especificado, o padrão permanece
 
 ```yaml
 packages:
@@ -41,7 +40,7 @@ packages:
     publish: $authenticated
 ```
 
-The list internal groups handled by `verdaccio` are:
+A lista de grupos internos gerenciados pelo `verdaccio` são:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
