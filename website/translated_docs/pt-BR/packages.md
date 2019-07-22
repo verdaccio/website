@@ -176,6 +176,6 @@ You can define mutiple `packages` and each of them must have an unique `Regex`. 
 | proxy       | string | Não         | npmjs          | completo       | limita a busca a um uplink específico                                             |
 | storage     | string | Não         | string         | `/some-folder` | ele cria uma subpasta dentro da pasta de armazenamento para cada acesso ao pacote |
 
-> We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
+> Salientamos a recomendação de não usar mais **allow_access**/**allow_publish** e **proxy_access**, eles estão obsoletos e serão removidos em breve. Use a versão curta de cada um deles (**access**/**publish**/**proxy**).
 
-If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
+Se você quiser mais informações sobre como usar a propriedade **storage**, consulte este [comentário](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
