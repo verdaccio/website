@@ -159,22 +159,22 @@ packages:
     proxy: npmjs
 ```
 
-In the previous example, the behaviour would be described:
+No exemplo anterior, o comportamento seria descrito como:
 
-* all users can publish the `jquery` package, but only the user `root` would be able to unpublish any version.
-* only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
-* If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
+* todos os usuários podem publicar o pacote `jquery`, mas somente o usuário `root` poderá cancelar a publicação de qualquer versão.
+* somente usuários autenticados podem publicar pacotes `my-company-*`, mas **ninguém poderá cancelar a publicação deles**.
+* Se `unpublish` estiver comentado, o acesso será concedido ou negado pela definição `publish`.
 
 ### Configuração
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Propriedade | Tipo   | Obrigatório | Exemplo        | Suporte        | Descrição                                                                 |
-| ----------- | ------ | ----------- | -------------- | -------------- | ------------------------------------------------------------------------- |
-| access      | string | Não         | $all           | completo       | define groups allowed to access the package                               |
-| publish     | string | Não         | $authenticated | completo       | define groups allowed to publish                                          |
-| proxy       | string | Não         | npmjs          | completo       | limit look ups for specific uplink                                        |
-| storage     | string | Não         | string         | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
+| Propriedade | Tipo   | Obrigatório | Exemplo        | Suporte        | Descrição                                                                         |
+| ----------- | ------ | ----------- | -------------- | -------------- | --------------------------------------------------------------------------------- |
+| access      | string | Não         | $all           | completo       | define os grupos com permissão para acessar os pacotes                            |
+| publish     | string | Não         | $authenticated | completo       | define os grupos permitidos a publicar                                            |
+| proxy       | string | Não         | npmjs          | completo       | limita a busca a um uplink específico                                             |
+| storage     | string | Não         | string         | `/some-folder` | ele cria uma subpasta dentro da pasta de armazenamento para cada acesso ao pacote |
 
 > We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
 
