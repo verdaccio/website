@@ -1,5 +1,5 @@
 ---
-id: packages
+id: pacotes
 title: "Permissões dos Pacotes"
 ---
 
