@@ -233,7 +233,7 @@ filters:
 
 O método `filter_metadata` permitirá que você filtre metadados provenientes de qualquer uplink, ele é baseado em `Promise` e tem que retornar os mesmos metadados modificados.
 
-> Do not remove properties frm the metadata, try to do not mutate rather return a new object.
+> Do not remove properties from the metadata, try to do not mutate rather return a new object.
 
     interface IPluginStorageFilter<T> extends IPlugin<T> {
         filter_metadata(packageInfo: Package): Promise<Package>;
