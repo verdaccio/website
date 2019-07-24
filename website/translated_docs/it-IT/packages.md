@@ -170,11 +170,13 @@ Nell'esempio precedente, il comportamento verrebbe descritto così:
 
 Si possono definire `pacchetti` multipli ed ognuno di essi deve avere un `Regex` unico. La sintassi è basata su [ espressioni minimatch glob](https://github.com/isaacs/minimatch).
 
-| Proprietà     | Tipo               | Richiesto | Esempio        | Supporto | Descrizione                                                                                      |
-| ------------- | ------------------ | --------- | -------------- | -------- | ------------------------------------------------------------------------------------------------ |
-| accesso       | stringa            | No        | $all           | tutti    | definisce i gruppi autorizzati ad accedere al pacchetto                                          |
-| pubblicazione | stringa            | No        | $authenticated | tutti    | definisce i gruppi autorizzati a pubblicare                                                      |
-| proxy         | stringa            | No        | npmjs          | tutti    | limita le ricerche di un uplink specifico                                                        |
-| archiviazione | variabile booleana | No        | stringa        | `>v4` | crea una sottocartella all'interno della cartella di archiviazione per ogni accesso ai pacchetti |
+| Proprietà     | Tipo    | Richiesto | Esempio        | Supporto       | Descrizione                                                                                      |
+| ------------- | ------- | --------- | -------------- | -------------- | ------------------------------------------------------------------------------------------------ |
+| accesso       | stringa | No        | $all           | tutti          | definisce i gruppi autorizzati ad accedere al pacchetto                                          |
+| pubblicazione | stringa | No        | $authenticated | tutti          | definisce i gruppi autorizzati a pubblicare                                                      |
+| proxy         | stringa | No        | npmjs          | tutti          | limita le ricerche di un uplink specifico                                                        |
+| archiviazione | stringa | No        | stringa        | `/some-folder` | crea una sottocartella all'interno della cartella di archiviazione per ogni accesso ai pacchetti |
 
 > Vogliamo rimarcare che non raccomandiamo più l'utilizzo di **allow_access**/**allow_publish** e **proxy_access** che sono superati e saranno presto rimossi, si prega di utilizzare invece la versione breve di ognuna di queste (**access**/**publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).

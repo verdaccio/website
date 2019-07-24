@@ -169,11 +169,13 @@ In the previous example, the behaviour would be described:
 
 Можете дефинисати мултипле `packages` при чему сваки од њих мора имати јединствени `Regex`. Синтакса је базирана на [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Својство | Тип     | Неопходно | Пример         | Подршка  | Опис                                                                |
-| -------- | ------- | --------- | -------------- | -------- | ------------------------------------------------------------------- |
-| access   | string  | Не        | $all           | all      | дефинише групе којима је дозвољен приступ пакету                    |
-| publish  | string  | Не        | $authenticated | all      | дефинише групе којима је дозвољено да публикују                     |
-| proxy    | string  | Не        | npmjs          | all      | лимитира look ups за специфични uplink                              |
-| storage  | boolean | Не        | string         | `>v4` | креира под-фолдер унутрар storage фолдера за сваки приступ пакетима |
+| Својство | Тип    | Неопходно | Пример         | Подршка        | Опис                                                                |
+| -------- | ------ | --------- | -------------- | -------------- | ------------------------------------------------------------------- |
+| access   | string | Не        | $all           | all            | дефинише групе којима је дозвољен приступ пакету                    |
+| publish  | string | Не        | $authenticated | all            | дефинише групе којима је дозвољено да публикују                     |
+| proxy    | string | Не        | npmjs          | all            | лимитира look ups за специфични uplink                              |
+| storage  | string | Не        | string         | `/some-folder` | креира под-фолдер унутрар storage фолдера за сваки приступ пакетима |
 
 > Наглашавамо да не препоручујемо да и даље користите **allow_access**/**allow_publish** и **proxy_access**, јер ће наведене ускоро бити уклоњене. Молимо Вас да уместо тога користите скраћене верзије (**access**/**publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).

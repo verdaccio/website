@@ -169,11 +169,13 @@ In the previous example, the behaviour would be described:
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Właściwość | Typ         | Wymagane | Przykład       | Wsparcie  | Opis                                                                      |
-| ---------- | ----------- | -------- | -------------- | --------- | ------------------------------------------------------------------------- |
-| access     | ciąg znaków | Nie      | $all           | wszystkie | define groups allowed to access the package                               |
-| publish    | ciąg znaków | Nie      | $authenticated | wszystkie | define groups allowed to publish                                          |
-| proxy      | ciąg znaków | Nie      | npmjs          | wszystko  | limit look ups for specific uplink                                        |
-| magazyn    | boolean     | Nie      | ciąg znaków    | `>v4`  | it creates a subfolder whithin the storage folder for each package access |
+| Właściwość | Typ         | Wymagane | Przykład       | Wsparcie       | Opis                                                                      |
+| ---------- | ----------- | -------- | -------------- | -------------- | ------------------------------------------------------------------------- |
+| access     | ciąg znaków | Nie      | $all           | wszystkie      | define groups allowed to access the package                               |
+| publish    | ciąg znaków | Nie      | $authenticated | wszystkie      | define groups allowed to publish                                          |
+| proxy      | ciąg znaków | Nie      | npmjs          | wszystko       | limit look ups for specific uplink                                        |
+| magazyn    | ciąg znaków | Nie      | ciąg znaków    | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
 
 > Podkreślamy, że zalecamy niekorzystanie dłużej z **allow_access**/**allow_publish**i** proxy_access**, są one nieaktualne i wkrótce zostaną usunięte. Użyj skróconej wersji każdego z tych (**access**/**publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).

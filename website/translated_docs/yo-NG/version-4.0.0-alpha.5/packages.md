@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.5-packages
+id: version-4.0.0-alpha.5-awọn akopọ
 title: Iwọlesi Akopọ
 original_id: awọn akopọ
 ---
@@ -139,7 +139,7 @@ Lọ **mọ pe aṣẹ ti awọn itumọ awọn akopọ rẹ jẹ pataki ati ki 
 
 #### Ṣiṣe aitẹjade Awọn akopọ
 
-The properly `publish` handle permissions for `npm publish` and `npm unpublish`. Ṣugbọn, ti o ba fẹ lati wa ni pato, o le lo ohun ini `unpublish` naa ni abala iwọle akopọ rẹ, fun apẹẹrẹ:
+Ohun ini `publish` naa n mojuto awọn igbanilaaye fun `npm publish` ati `npm unpublish`. Ṣugbọn, ti o ba fẹ lati wa ni pato, o le lo ohun ini `unpublish` naa ni abala iwọle akopọ rẹ, fun apẹẹrẹ:
 
 ```yalm
 packages:

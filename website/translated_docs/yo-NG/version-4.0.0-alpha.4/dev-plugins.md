@@ -35,7 +35,7 @@ interface IPluginAuth extends IPlugin {
 
 Lati `v4.0.0`
 
-`apiJWTmiddleware` jẹ sisafihan lori [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) lati le ni iṣakoso ti olutọju aami ni kikun, fifagbara bori ọna yii ma yọ atilẹyin `login/adduser`. We recommend don't implement his method unless is totally necessary. Wo apẹẹrẹ ni kikun kan [nibi](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
+`apiJWTmiddleware` jẹ sisafihan lori [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) lati le ni iṣakoso ti olutọju aami ni kikun, fifagbara bori ọna yii ma yọ atilẹyin `login/adduser`. A ṣe igbaniyanju pe ki o ma se ṣe amulo ọna yii ayafi ti o ba pọn dandan. Wo apẹẹrẹ ni kikun kan [nibi](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
 #### Ipepada
 

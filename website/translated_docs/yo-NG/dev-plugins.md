@@ -215,13 +215,13 @@ O jẹ pataki pe orukọ ohun elo naa **gbọdọ bẹrẹ pẹlu afikun iṣaaj
 
 * [@verdaccio/ui-theme](https://github.com/verdaccio/ui): Akori atilẹwa Verdaccio to da lori React.js.
 
-## Filter Plugin
+## Ohun elo Asẹ
 
-Since [`4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
+Lati [`4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
 
-Filter plugins were introduced due a [request](https://github.com/verdaccio/verdaccio/issues/818) in order to be able to filter metadata from uplinks.
+Awọn ohun elo asẹ jẹ ṣiṣe nitori [ibeere fun](https://github.com/verdaccio/verdaccio/issues/818) lati le ni anfani lati ya metadata sọtọ kuro ni ara awọn uplink.
 
-More [info in the PR](https://github.com/verdaccio/verdaccio/pull/1161).
+Alaye siwaju si [wa ninu PR](https://github.com/verdaccio/verdaccio/pull/1161).
 
 ```yaml
 filters:  
@@ -231,9 +231,9 @@ filters:
 
 ### API
 
-The method `filter_metadata` will allow you to filter metadata that comes from any uplink, it is `Promise` based and has to return the same metadata modified.
+Ọna `filter_metadata` naa yoo gba ọ laaye lati ya metadata ti o wa lati eyikeyi uplink sọtọ, o jẹ eyi to da lori `Ileri` ati pe o ni lati tun da metadata kanna pada pẹlu atunṣe.
 
-> Do not remove properties frm the metadata, try to do not mutate rather return a new object.
+> Maṣe yọ awọn ohun ini lati ara metadata naa, gbiyanju lati ma ṣe ṣe iyipada dipo bẹ kuku da ohun tuntun kan pada.
 
     interface IPluginStorageFilter<T> extends IPlugin<T> {
         filter_metadata(packageInfo: Package): Promise<Package>;

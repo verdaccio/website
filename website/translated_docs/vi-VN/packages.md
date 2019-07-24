@@ -170,11 +170,13 @@ In the previous example, the behaviour would be described:
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Thuộc tính | Phương thức | Yêu cầu | Ví dụ          | Hỗ trợ   | Miêu tả                                                                   |
-| ---------- | ----------- | ------- | -------------- | -------- | ------------------------------------------------------------------------- |
-| access     | chuỗi       | Không   | $all           | tất cả   | define groups allowed to access the package                               |
-| publish    | chuỗi       | Không   | $authenticated | tất cả   | define groups allowed to publish                                          |
-| proxy      | chuỗi       | Không   | npmjs          | tất cả   | limit look ups for specific uplink                                        |
-| storage    | boolean     | Không   | chuỗi          | `>v4` | it creates a subfolder whithin the storage folder for each package access |
+| Thuộc tính | Phương thức | Yêu cầu | Ví dụ          | Hỗ trợ         | Miêu tả                                                                   |
+| ---------- | ----------- | ------- | -------------- | -------------- | ------------------------------------------------------------------------- |
+| access     | chuỗi       | Không   | $all           | tất cả         | define groups allowed to access the package                               |
+| publish    | chuỗi       | Không   | $authenticated | tất cả         | define groups allowed to publish                                          |
+| proxy      | chuỗi       | Không   | npmjs          | tất cả         | limit look ups for specific uplink                                        |
+| storage    | chuỗi       | Không   | chuỗi          | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
 
 > We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
+
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).

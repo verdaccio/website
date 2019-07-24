@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-talks
+id: version-4.0.0-awọn ọrọ
 title: Awọn ọrọ
 original_id: awọn ọrọ
 ---

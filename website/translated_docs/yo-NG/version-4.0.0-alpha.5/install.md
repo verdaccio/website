@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.5-installation
+id: version-4.0.0-alpha.5-ifi sori ẹrọ
 title: Ifi sori ẹrọ
 original_id: installation
 ---
