@@ -25,7 +25,7 @@ uplinks:
 
 ### Iṣeto
 
-You can define mutiple uplinks and each of them must have an unique name (key). They can have the following properties:
+O le ṣe asọye ọpọ uplinks atipe ikọọkan ninu wọn gbọdọ ni orukọ to dayatọ (kọkọrọ). Wọn le ni awọn ohun ini wọnyii:
 
 | Ohun ini        | Iru     | Ti o nilo | Apẹẹrẹ                                  | Atilẹyin | Apejuwe                                                                                                                        | Atilẹwa          |
 | --------------- | ------- | --------- | --------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------------ | ---------------- |
@@ -42,7 +42,7 @@ You can define mutiple uplinks and each of them must have an unique name (key). 
 
 #### Ohun ini Auth
 
-The `auth` property allows you to use an auth token with an uplink. Using the default environment variable:
+Ohun ini `auth` naa fayegba ọ lati lo aami auth kan pẹlu uplink kan. Lilo iyipada ayika atilẹwa naa:
 
 ```yaml
 uplinks:
