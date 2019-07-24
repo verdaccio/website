@@ -243,7 +243,7 @@ filters:
 The method `filter_metadata` will allow you to filter metadata that comes from any uplink, it is `Promise` based
 and has to return the same metadata modified. 
 
-> Do not remove properties frm the metadata, try to do not mutate rather return a new object.
+> Do not remove properties from the metadata, try to do not mutate rather return a new object.
 
 ```
 interface IPluginStorageFilter<T> extends IPlugin<T> {
