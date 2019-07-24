@@ -6,18 +6,18 @@ original_id: plugins
 
 Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
-There are 4 types of plugins:
+Existem 4 tipos de plugins:
 
-* Authentication
-* Middleware
+* Autenticação
+* Midleware
 * Armazenamento
-* UI Theme
+* Tema da Interface de Usuário
 
-> If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
+> Se você estiver interessado em desenvolver o seu próprio plugin, leia a seção sobre [desenvolvimento](dev-plugins.md).
 
-## Usage
+## Utilização
 
-### Installation
+### Instalação
 
 ```bash
 $> npm install --global verdaccio-activedirectory
@@ -28,13 +28,13 @@ $> npm install --global verdaccio-activedirectory
     $> npm install --global sinopia-memory
     
 
-### Configuration
+### Configuração
 
 Open the `config.yaml` file and update the `auth` section as follows:
 
 The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
 
-### Authentication Configuration
+### Configuração de Autenticação
 
 ```yaml
  htpasswd:
@@ -52,7 +52,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Authentication plugins
+#### Plugins de Multipla Autenticação
 
 This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
 
@@ -67,7 +67,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Configuration
+### Configuração de Middleware
 
 This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
 
@@ -77,9 +77,9 @@ middlewares:
     enabled: true
 ```
 
-> You might follow the [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) as base example.
+> Você pode seguir o [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) como exemplo básico.
 
-### Storage Configuration
+### Configuração de Armazenamento
 
 This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
 
@@ -89,9 +89,9 @@ store:
     limit: 1000
 ```
 
-### Theme Configuration
+### Configuração de Tema
 
-Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+O Verdaccio permite substituir a interface do usuário por uma personalizada, chamamos de **tema** (theme). Por padrão, usa-se o tema integrado `@verdaccio/ui-theme`, mas você pode usar algo diferente instalando seu próprio plugin.
 
 ```bash
 <br />$&gt; npm install --global verdaccio-theme-dark
@@ -100,7 +100,7 @@ Verdaccio allows to replace the User Interface with a custom one, we call it **t
 
 > The plugin name prefix must start with `verdaccio-theme`, otherwise the pluging won't load.
 
-You can load only one theme at the time and pass through options if is need it.
+Você só pode usar um tema por vez e percorrer as opções, se for necessário.
 
 ```yaml
 theme:
@@ -109,11 +109,11 @@ theme:
     option2: bar
 ```
 
-## Legacy plugins
+## Plugins Legados
 
 ### Sinopia Plugins
 
-> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
+> Se você está contando com qualquer plugin para sinopia, lembre-se de que eles estão obsoletos e podem não funcionar no futuro.
 
 * [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin for sinopia supporting an npm registry.
 * [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin for sinopia that keeps users in memory.
@@ -135,7 +135,7 @@ theme:
 
 > All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the modern verdaccio API and using the prefix as *verdaccio-xx-name*.
 
-## Verdaccio Plugins
+## Plugins de Verdaccio
 
 ### Authorization Plugins
 
@@ -148,7 +148,7 @@ theme:
 * [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): Auth based on htpasswd file plugin (built-in) for verdaccio
 * [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Github oauth authentication plugin for verdaccio.
 * [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): GitHub OAuth plugin for the verdaccio login button.
-* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin to handle dynamic group associations utilizing `$group` syntax. Works best with the ldap plugin.
+* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin para lidar com associações de grupos dinâmicos utilizando a sintaxe `$group`. Funciona melhor com o plugin ldap.
 
 ### Middleware Plugins
 
@@ -156,7 +156,7 @@ theme:
 
 * [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): verdacci plugin for *npm profile* cli support and *npm profile set password* for *verdaccio-htpasswd* based authentificaton
 
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
+* [verdaccio-https](https://github.com/honzahommer/verdaccio-https): plugin middleware de Verdaccio para redirecionar para https se o cabeçalho x-forwarded-proto estiver definido
 
 ### Storage Plugins
 
@@ -164,6 +164,6 @@ theme:
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
 
-## Caveats
+## Ressalvas
 
 > Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
