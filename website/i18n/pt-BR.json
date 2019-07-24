@@ -48,7 +48,7 @@
         "title": "Docker"
       },
       "e2e": {
-        "title": "End to End testing"
+        "title": "Teste End-to-End"
       },
       "github-actions": {
         "title": "Github Actions"
@@ -60,19 +60,19 @@
         "title": "Instalando em um Servidor ISS"
       },
       "installation": {
-        "title": "Installation"
+        "title": "Instalação"
       },
       "kubernetes": {
         "title": "Kubernetes"
       },
       "linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Vinculando um Registro Remoto"
       },
       "logger": {
         "title": "Logs"
       },
       "logo": {
-        "title": "Logotype"
+        "title": "Logotipo"
       },
       "node-api": {
         "title": "Api Node"
@@ -99,7 +99,7 @@
         "title": "Configuração de Proxy Reverso"
       },
       "security-policy": {
-        "title": "Security Policy"
+        "title": "Política de Segurança"
       },
       "server-configuration": {
         "title": "Configuração do Servidor"
@@ -162,7 +162,7 @@
         "title": "Instalando em um Servidor ISS"
       },
       "version-3.8.6/version-3.8.6-installation": {
-        "title": "Installation"
+        "title": "Instalação"
       },
       "version-3.8.6/version-3.8.6-kubernetes": {
         "title": "Kubernetes"
@@ -312,16 +312,16 @@
         "title": "Docker"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-e2e": {
-        "title": "End to End testing"
+        "title": "Teste End-to-End"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-github-actions": {
         "title": "Github Actions"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-installation": {
-        "title": "Installation"
+        "title": "Instalação"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Vinculando um Registro Remoto"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-packages": {
         "title": "Permissões dos Pacotes"
@@ -342,7 +342,7 @@
         "title": "Amazon Web Services"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Vinculando um Registro Remoto"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-protect-your-dependencies": {
         "title": "Protegendo seus pacotes"
@@ -354,7 +354,7 @@
         "title": "Criando Plugins"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Vinculando um Registro Remoto"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-plugins": {
         "title": "Plugins"
@@ -396,7 +396,7 @@
         "title": "Who is using Verdaccio?"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
-        "title": "Installation"
+        "title": "Instalação"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
         "title": "Web User Interface"
@@ -411,10 +411,10 @@
         "title": "Docker"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-installation": {
-        "title": "Installation"
+        "title": "Instalação"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-logo": {
-        "title": "Logotype"
+        "title": "Logotipo"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-webui": {
         "title": "Web User Interface"
@@ -459,7 +459,7 @@
         "title": "Kubernetes"
       },
       "version-4.0.2/version-4.0.2-linking-remote-registry": {
-        "title": "Linking a Remote Registry"
+        "title": "Vinculando um Registro Remoto"
       },
       "version-4.0.2/version-4.0.2-notifications": {
         "title": "Notificações"
@@ -489,7 +489,7 @@
         "title": "Docker"
       },
       "version-4.1.0/version-4.1.0-security-policy": {
-        "title": "Security Policy"
+        "title": "Política de Segurança"
       }
     },
     "links": {
@@ -509,7 +509,7 @@
       "Development": "Development",
       "DevOps": "DevOps",
       "Guides": "Guides",
-      "Configuration": "Configuration",
+      "Configuration": "Configuração",
       "Plugins": "Plugins"
     }
   },
