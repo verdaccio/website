@@ -3,11 +3,11 @@ id: server-configuration
 title: "Configuração do Servidor"
 ---
 
-This is mostly basic linux server configuration stuff but I felt it important to document and share the steps I took to get verdaccio running permanently on my server. You will need root (or sudo) permissions for the following.
+Este é o material mais básico para configuração do servidor em linux, mas eu achei importante documentar e compartilhar os passos que tomei para fazer o verdaccio rodar permanentemente no meu servidor. Você precisará de permissões de root (ou sudo) para o seguinte.
 
-## Running as a separate user
+## Executar como um usuário separado
 
-First create the verdaccio user:
+Primeiro crie o usuário de verdaccio:
 
 ```bash
 $ sudo adduser --system --gecos 'Verdaccio NPM mirror' --group --home /var/lib/verdaccio verdaccio
