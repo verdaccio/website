@@ -14,7 +14,7 @@ There are 4 types of plugins:
 
 > If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
 
-## Usage
+## Utilização
 
 ### Installation
 
@@ -27,7 +27,7 @@ $> npm install --global verdaccio-activedirectory
     $> npm install --global sinopia-memory
     
 
-### Configuration
+### Configuração
 
 Open the `config.yaml` file and update the `auth` section as follows:
 
