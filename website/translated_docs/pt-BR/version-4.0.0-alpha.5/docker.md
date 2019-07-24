@@ -48,7 +48,7 @@ For the next major release using the `4.x-next` (4.x branch) version.
 docker pull verdaccio/verdaccio:4.x-next
 ```
 
-> Se você está interessado em uma lista de tags, [acesse o Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
+> Se você está interessado em uma lista de tags, por favor [acesse o Docker Hub](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
 ## Executando verdaccio usando Docker
 
@@ -84,7 +84,7 @@ FROM verdaccio/verdaccio
 RUN npm install verdaccio-s3-storage
 ```
 
-### Docker and custom port configuration
+### Configuração de Docker e porta customizada
 
 Any `host:port` configured in `conf/config.yaml` under `listen` is currently ignored when using docker.
 
@@ -100,7 +100,7 @@ PORT=5000; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-### Using HTTPS with Docker
+### Usando HTTPS com Docker
 
 You can configure the protocol verdaccio is going to listen on, similarly to the port configuration. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
 
@@ -110,10 +110,10 @@ PROTOCOL=https; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-### Using docker-compose
+### Usando docker-compose
 
-1. Get the latest version of [docker-compose](https://github.com/docker/compose).
-2. Build and run the container:
+1. Obtenha a última versão do [docker-compose](https://github.com/docker/compose).
+2. Construa e execute o contêiner:
 
 ```bash
 $ docker-compose up --build
@@ -137,7 +137,7 @@ $ docker volume inspect verdaccio_verdaccio
 
 ```
 
-## Build your own Docker image
+## Construa a sua própria imagem Docker
 
 ```bash
 docker build -t verdaccio .
@@ -153,21 +153,21 @@ Note: The first build takes some minutes to build because it needs to run `npm i
 
 Please note that for any of the above docker commands you need to have docker installed on your machine and the docker executable should be available on your `$PATH`.
 
-## Docker Examples
+## Exemplos de Docker
 
 There is a separate repository that hosts multiple configurations to compose Docker images with `verdaccio`, for instance, as reverse proxy:
 
 <https://github.com/verdaccio/docker-examples>
 
-## Docker Custom Builds
+## Construções de Docker Personalizadas
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
-* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Private NPM container that can backup to s3
+* [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Contêiner NPM privado que pode fazer backup para s3
 * [docker-verdaccio-ldap](https://github.com/snadn/docker-verdaccio-ldap)
 * [verdaccio-ldap](https://github.com/nathantreid/verdaccio-ldap)
 * [verdaccio-compose-local-bridge](https://github.com/shingtoli/verdaccio-compose-local-bridge)
 * [docker-verdaccio](https://github.com/Global-Solutions/docker-verdaccio)
 * [verdaccio-docker](https://github.com/idahobean/verdaccio-docker)
 * [verdaccio-server](https://github.com/andru255/verdaccio-server)
-* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) docker image providing verdaccio from coldrye-debian-nodejs.
+* [coldrye-debian-verdaccio](https://github.com/coldrye-docker/coldrye-debian-verdaccio) imagem docker que executa o verdaccio a partir do coldrye-debian-nodejs.
