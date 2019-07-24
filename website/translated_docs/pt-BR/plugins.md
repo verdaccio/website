@@ -22,7 +22,7 @@ Existem 4 tipos de plugins:
 $> npm install --global verdaccio-activedirectory
 ```
 
-`verdaccio` as a sinopia fork it has backward compability with plugins that are compatible with `sinopia@1.4.0`. In such case the installation is the same.
+`verdaccio`, como um fork de sinopia, tem compatibilidade com plugins que são compatíveis com `sinopia@1.4.0`. Neste caso, a instalação é a mesma.
 
     $> npm install --global sinopia-memory
     
@@ -33,7 +33,7 @@ Open the `config.yaml` file and update the `auth` section as follows:
 
 The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
 
-### Authentication Configuration
+### Configuração de Autenticação
 
 ```yaml
  htpasswd:
@@ -51,7 +51,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Authentication plugins
+#### Plugins de Multipla Autenticação
 
 This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
 
@@ -66,9 +66,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Configuration
+### Configuração de Middleware
 
-This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
+Este é um exemplo de como configurar um plugin de middleware. Todos os plugins de middleware devem ser definidos no **middlewares** namespace.
 
 ```yaml
 middlewares:
@@ -76,11 +76,11 @@ middlewares:
     enabled: true
 ```
 
-> You might follow the [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) as base example.
+> Você pode seguir o [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) como exemplo básico.
 
-### Storage Configuration
+### Configuração de Armazenamento
 
-This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
+Este é um exemplo de como configurar um plugin de armazenamento. Todos os plugins de armazenamento devem ser definidos no **store** namespace.
 
 ```yaml
 store:
@@ -88,7 +88,7 @@ store:
     limit: 1000
 ```
 
-### Theme Configuration
+### Configuração de Tema
 
 Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
 
