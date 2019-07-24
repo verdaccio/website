@@ -1,6 +1,6 @@
 ---
 id: version-3.8.6-installation
-title: Installation
+title: Instalação
 original_id: installation
 ---
 
@@ -16,7 +16,7 @@ Verdaccio is a multiplatform web application. To install it, you need a few prer
 
 ## Instação
 
-`verdaccio` must be installed globaly using either of the following methods:
+O `verdaccio` deve ser instalado globalmente usando um dos métodos a seguir:
 
 Usando `npm`
 
@@ -34,7 +34,7 @@ yarn global add verdaccio
 
 ## Como Usar
 
-Once it has been installed, you only need to execute the CLI command:
+Uma vez instalado, você só precisa executar o comando da CLI:
 
 ```bash
 $> verdaccio
@@ -42,7 +42,7 @@ warn --- config file  - /home/.config/verdaccio/config.yaml
 warn --- http address - http://localhost:4873/ - verdaccio/3.0.1
 ```
 
-For more information about the CLI, please [read the cli section](cli.md).
+Para mais informações sobre a CLI, por favor [leia a seção sobre a cli](cli.md).
 
 ## Imagem do Docker
 
@@ -52,4 +52,4 @@ For more information about the CLI, please [read the cli section](cli.md).
 
 `verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
 
-[![Install](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
+[![Instalação](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
