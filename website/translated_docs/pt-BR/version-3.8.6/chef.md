@@ -6,7 +6,7 @@ original_id: chef
 
 Utilizando o Chef Cookbook para o Verdaccio
 
-For further information:
+Para mais informações:
 
 * <https://github.com/verdaccio/verdaccio-cookbook>
 * <https://supermarket.chef.io/cookbooks/verdaccio>
