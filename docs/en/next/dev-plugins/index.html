@@ -265,7 +265,7 @@ to be able to filter metadata from uplinks.</p>
 <p>The method <code>filter_metadata</code> will allow you to filter metadata that comes from any uplink, it is <code>Promise</code> based
 and has to return the same metadata modified.</p>
 <blockquote>
-<p>Do not remove properties frm the metadata, try to do not mutate rather return a new object.</p>
+<p>Do not remove properties from the metadata, try to do not mutate rather return a new object.</p>
 </blockquote>
 <pre><code class="hljs"><span class="hljs-keyword">interface</span> <span class="hljs-symbol">IPluginStorageFilter</span>&lt;<span class="hljs-symbol">T</span>&gt; <span class="hljs-symbol">extends</span> <span class="hljs-symbol">IPlugin</span>&lt;<span class="hljs-symbol">T</span>&gt; {
     filter_metadata(packageInfo: Package): Promise&lt;Package&gt;;
