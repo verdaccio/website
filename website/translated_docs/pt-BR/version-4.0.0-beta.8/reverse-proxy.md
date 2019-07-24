@@ -8,7 +8,7 @@ Using a reverse proxy is a common practice. The following configurations are the
 
 # Apache
 
-Apache and `mod_proxy` should **not decode/encode slashes** and leave them as they are:
+Apache e `mod_proxy` **não devem decodificar/codificar barras** e deixa-las como estão:
 
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
@@ -17,9 +17,9 @@ Apache and `mod_proxy` should **not decode/encode slashes** and leave them as th
     </VirtualHost>
     
 
-### Configuration with SSL
+### Configuração com SSL
 
-Apache virtual server configuration
+Configuração do servidor virtual Apache
 
         apacheconfig
         <IfModule mod_ssl.c>
@@ -92,7 +92,7 @@ The following snipped is a full `docker` example can be tested in our [Docker ex
     }
     
 
-## SSL example
+## Exemplo de SSL
 
     server {
         listen 80;
@@ -135,9 +135,9 @@ The following snipped is a full `docker` example can be tested in our [Docker ex
 
 ## Run behind reverse proxy with different domain and port
 
-### Sub-directory
+### Subdiretório
 
-If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise you would need something like this in your `config.yaml`.
+Se toda a URL estiver sendo usada pelo Verdaccio, você não precisa definir um `url_prefix`, caso contrário você precisaria de algo assim em seu `config.yaml`.
 
 ```yaml
 url_prefix: /sub_directory/
@@ -145,7 +145,7 @@ url_prefix: /sub_directory/
 
 If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like `http://127.0.0.1:4873/-/static`
 
-To resolve this issue, **you should send real domain and port to verdaccio with `Host` header**
+Para resolver este problema, **você deve enviar um domínio e uma porta reais para o verdaccio com cabeçalho `Host` **
 
 Nginx configure should look like this:
 
@@ -158,7 +158,7 @@ location / {
 }
 ```
 
-For this case, `url_prefix` should **NOT** set in verdaccio config
+Para este caso, `url_prefix` **NÃO** deve ser configurada nas configurações do verdaccio
 
 * * *
 
@@ -175,4 +175,4 @@ location ~ ^/verdaccio/(.*)$ {
 
 For this case, `url_prefix` should set to `/verdaccio/`
 
-> Note: There is a Slash after install path (`https://your-domain:port/verdaccio/`)!
+> Nota: Há uma barra após o caminho de instalação (`https://your-domain:port/verdaccio/`)!
