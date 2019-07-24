@@ -3,20 +3,20 @@ id: plugins
 title: "Plugins"
 ---
 
-Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
+Verdaccio é uma aplicação versátil. Pode ser estendido de várias maneiras, seja com novos métodos de autenticação, adicionando endpoints ou usando um armazenamento personalizado.
 
-There are 4 types of plugins:
+Existem 4 tipos de plugins:
 
-* Authentication
-* Middleware
+* Autenticação
+* Midleware
 * Armazenamento
-* UI Theme
+* Tema da Interface de Usuário
 
-> If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
+> Se você estiver interessado em desenvolver o seu próprio plugin, leia a seção sobre [desenvolvimento](dev-plugins.md).
 
 ## Utilização
 
-### Installation
+### Instalação
 
 ```bash
 $> npm install --global verdaccio-activedirectory
