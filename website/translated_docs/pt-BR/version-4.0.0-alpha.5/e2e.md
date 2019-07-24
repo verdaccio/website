@@ -1,30 +1,30 @@
 ---
 id: version-4.0.0-alpha.5-e2e
-title: End to End testing
+title: Teste End-to-End
 original_id: e2e
 ---
 
-Some projects organize packages in multi-packages repositories or [monorepos](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). E2E testing is a topic that usually is only relevant for User Interfaces, but from a Node.js perspective, **publishing packages also need to be tested**.
+Alguns projetos organizam pacotes em repositórios multi-pacotes ou [mono repositórios](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). O teste E2E é um tópico que geralmente só é relevante para as Interfaces de usuário, porém do ponto de vista do Node.js, **a publicação de pacotes também requerem testes**.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Solution: a local npm registry. <a href="https://t.co/kvcyVANVSK">https://t.co/kvcyVANVSK</a></p>&mdash; Dan Abramov (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/951427674844680192?ref_src=twsrc%5Etfw">11 de enero de 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Solution: a local npm registry. <a href="https://t.co/kvcyVANVSK">https://t.co/kvcyVANVSK</a></p>&mdash; Dan Abramov (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/951427674844680192?ref_src=twsrc%5Etfw">11 de Janeiro de 2018</a></blockquote>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Such approach has been really hard to achieve considering:
+Tal abordagem tem sido realmente difícil de alcançar, considerando:
 
-* Populate canary packages on public services seems not to be a good idea
-* Some self-hosted OSS registries are too heavy
-* Offline environments (private networks)
+* Preencher pacotes canários em serviços públicos parece não ser uma boa ideia
+* Alguns registros de OSS auto-hospedados são muito pesados
+* Ambientes offline (redes privadas)
 
-**Verdaccio** is a lightweight registry with zero-configuration that **fits perfectly in any E2E + CI workflow**.
+O **Verdaccio** é um registro leve com zero configurações que **se encaixa perfeitamente em qualquer fluxo de trabalho E2E + CI**.
 
-## Implementation
+## Implementação
 
-There is no a silver bullet yet, each implementation seems to be specific for each project, you can check some of them in the following thread [clicking here](https://stackoverflow.com/a/50222427/308341).
+Ainda não há uma solução única, cada implementação parece ser específica de cada projeto, você pode verificar algumas delas [clicando neste tópico](https://stackoverflow.com/a/50222427/308341).
 
-### Example using Bash
+### Exemplos usando Bash
 
-This is the most simple example using Verdaccio in a bash script (extracted from *create-react-app*).
+Este é o exemplo mais simples usando o Verdaccio em um script bash (extraído do *create-react-app *).
 
 ```bash
 #!/bin/sh
@@ -46,7 +46,7 @@ sh -c "npm-auth-to-token -u test -p test -e test@test.com -r $local_registry"
 sh -c "npm --registry $local_registry publish"
 ```
 
-## Whom are using it for E2E?
+## Quem está usando para E2E?
 
 * [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests) *(+64k ⭐️)*
 * [Storybook](https://github.com/storybooks/storybook) *(+34k ⭐️)*
@@ -59,10 +59,10 @@ sh -c "npm --registry $local_registry publish"
 * [Hyperledger Composer](https://github.com/hyperledger/composer) *(+1.6k ⭐️)*
 * [Wix Yoshi](https://github.com/wix/yoshi)
 
-## Future
+## Futuro
 
-Babel.js might be interested on integrate Verdaccio in their workflow, if you want to contribute, check [this ticket](https://github.com/babel/babel/issues/6134).
+Babel.js pode estar interessado em integrar o verdaccio em seus fluxos de trabalho, se você quiser contribuir, verifique [este ticket ](https://github.com/babel/babel/issues/6134).
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Thinking of using verdaccio to test <a href="https://twitter.com/lernajs?ref_src=twsrc%5Etfw">@lernajs</a> v3 (+use this generally), as it&#39;s hard to know if a publish will be successful. Would like us to fix an issue where we would like to compile Babel using itself before it&#39;s published (as we self-host but from latest npm) as a smoke test</p>&mdash; Henry Zhu (@left_pad) <a href="https://twitter.com/left_pad/status/1045770889051164672?ref_src=twsrc%5Etfw">28 de septiembre de 2018</a></blockquote>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Thinking of using verdaccio to test <a href="https://twitter.com/lernajs?ref_src=twsrc%5Etfw">@lernajs</a> v3 (+use this generally), as it&#39;s hard to know if a publish will be successful. Would like us to fix an issue where we would like to compile Babel using itself before it&#39;s published (as we self-host but from latest npm) as a smoke test</p>&mdash; Henry Zhu (@left_pad) <a href="https://twitter.com/left_pad/status/1045770889051164672?ref_src=twsrc%5Etfw">28 de Setembro de 2018</a></blockquote>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
