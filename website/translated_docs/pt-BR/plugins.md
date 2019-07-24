@@ -155,7 +155,7 @@ theme:
 
 * [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): verdacci plugin for *npm profile* cli support and *npm profile set password* for *verdaccio-htpasswd* based authentificaton
 
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
+* [verdaccio-https](https://github.com/honzahommer/verdaccio-https): plugin middleware de Verdaccio para redirecionar para https se o cabeçalho x-forwarded-proto estiver definido
 
 ### Storage Plugins
 
@@ -163,6 +163,6 @@ theme:
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
 
-## Caveats
+## Ressalvas
 
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
+> Nem todos esses plugins foram testados continuamente, alguns deles podem não funcionar.    Por favor, se você encontrou algum problema, sinta-se livre para notificar o proprietário de cada plugin.
