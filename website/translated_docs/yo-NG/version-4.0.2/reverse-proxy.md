@@ -4,7 +4,7 @@ title: Iseto Aṣoju ikọkọ-Alayipada
 original_id: aṣoju ikọkọ-alayipada
 ---
 
-Using a reverse proxy is a common practice. The following configurations are the most recommended and used ones.
+Lilo aṣoju ikọkọ alayipada jẹ iṣe ti o wọpọ. Awọn iṣeto wọnyi jẹ awọn ti a gba gẹgẹ bi iyanju​ ati ti o jẹ lilo julọ.
 
 # Apache
 
