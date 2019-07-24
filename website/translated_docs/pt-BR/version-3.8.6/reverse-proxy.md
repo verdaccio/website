@@ -15,7 +15,7 @@ Apache and mod_proxy should not decode/encode slashes and leave them as they are
     </VirtualHost>
     
 
-### Configuration with SSL
+### Configuração com SSL
 
 config.yaml
 
@@ -23,7 +23,7 @@ config.yaml
 url_prefix: https://npm.your.domain.com
 ```
 
-Apache virtual server configuration
+Configuração do servidor virtual Apache
 
         apacheconfig
         <IfModule mod_ssl.c>
@@ -87,4 +87,4 @@ location ~ ^/verdaccio/(.*)$ {
 
 For this case, `url_prefix` should set to `/verdaccio/`
 
-> Note: There is a Slash after install path (`https://your-domain:port/verdaccio/`)!
+> Nota: Há uma barra após o caminho de instalação (`https://your-domain:port/verdaccio/`)!
