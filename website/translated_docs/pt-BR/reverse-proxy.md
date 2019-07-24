@@ -157,7 +157,7 @@ location / {
 }
 ```
 
-For this case, `url_prefix` should **NOT** set in verdaccio config
+Para este caso, `url_prefix` **NÃO** deve ser configurada nas configurações do verdaccio
 
 * * *
 
@@ -174,4 +174,4 @@ location ~ ^/verdaccio/(.*)$ {
 
 For this case, `url_prefix` should set to `/verdaccio/`
 
-> Note: There is a Slash after install path (`https://your-domain:port/verdaccio/`)!
+> Nota: Há uma barra após o caminho de instalação (`https://your-domain:port/verdaccio/`)!
