@@ -20,7 +20,7 @@ web:
 
 All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
 
-### Configuration
+### Configuração
 
 | Propriedade   | Tipo       | Obrigatório | Exemplo                        | Suporte  | Descrição                                                                                                                                            |
 | ------------- | ---------- | ----------- | ------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
