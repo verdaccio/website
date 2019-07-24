@@ -90,16 +90,16 @@ store:
 
 ### Configuração de Tema
 
-Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+O Verdaccio permite substituir a interface do usuário por uma personalizada, chamamos de **tema** (theme). Por padrão, usa-se o tema integrado `@verdaccio/ui-theme`, mas você pode usar algo diferente instalando seu próprio plugin.
 
 ```bash
 <br />$> npm install --global verdaccio-theme-dark
 
 ```
 
-> The plugin name prefix must start with `verdaccio-theme`, otherwise the plugin won't load.
+> O prefixo do nome do plugin deve começar com `verdaccio-theme`, caso contrário o plugin não carregará.
 
-You can load only one theme at the time and pass through options if is need it.
+Você só pode usar um tema por vez e percorrer as opções, se for necessário.
 
 ```yaml
 theme:
@@ -108,7 +108,7 @@ theme:
     option2: bar
 ```
 
-## Legacy plugins
+## Plugins Legados
 
 ### Sinopia Plugins
 
