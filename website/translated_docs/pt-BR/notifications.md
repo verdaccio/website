@@ -3,15 +3,15 @@ id: notifications
 title: "Notificações"
 ---
 
-Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
+Notify foi criado principalmente para ser usado com webhooks entrantes para Slack, mas também fornecerá uma carga útil simples para qualquer endpoint. Atualmente, apenas ativo para comando `npm publish`.
 
-## Usage
+## Utilização
 
-An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
+Um exemplo com um hook de **HipChat**, **Stride** e **Google Hangouts Chat**:
 
-> Verdaccio supports any API, feel free to add more examples.
+> Verdaccio suporta qualquer API, fique à vontade para adicionar mais exemplos.
 
-#### Single notification
+#### Notificação única
 
 ```yaml
 notify:
@@ -21,7 +21,7 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-#### Multiple notification
+#### Notificação múltipla
 
 ```yaml
 notify:
@@ -42,30 +42,30 @@ notify:
      content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
 ```
 
-## Template
+## Modelo
 
-We use [Handlebars](https://handlebarsjs.com/) as main template engine.
+Nós usamos [Handlebars](https://handlebarsjs.com/) como mecanismo de modelo principal.
 
-### Format Examples
+### Exemplos de Formato
 
-    # iterate all versions
+    # iterar todas as versões
     {{ name }}{{#each versions}} v{{version}}{{/each}}
     
-    # publisher and `dist-tag` package published
+    # editor e pacote `dist-tag` publicado
     {{ publisher.name }} has published {{ publishedPackage }}
     
 
-### Properties
+### Propriedades
 
-List of properties accesible via template
+Lista de propriedades acessáveis via modelo
 
 * Metadata
-* Publisher (who is publishing)
+* Publisher (quem está publicando)
 * Package Published (package@1.0.0)
 
 ### Metadata
 
-Package metadata that the template has access
+Pacote de metadata que o modelo tem acesso
 
     {
         "_id": "@test/pkg1",
@@ -116,11 +116,11 @@ Package metadata that the template has access
     }
     
 
-### Publisher
+### Editor
 
-You can access to the package publisher information in the `content` of a webhook using the `publisher` object.
+Você pode acessar as informações do editor do pacote no `content` de um webhook usando o objeto `publisher`.
 
-See below the `publisher` object type:
+Veja abaixo o tipo de objeto `publisher`:
 
     {
       name: string,
@@ -129,7 +129,7 @@ See below the `publisher` object type:
     }
     
 
-An example:
+Um exemplo:
 
     notify:
       method: POST
@@ -138,22 +138,22 @@ An example:
       content: '{"color":"green","message":"New package published: * {{ name }}*. Publisher name: * {{ publisher.name }} *.","notify":true,"message_format":"text"}'
     
 
-**Note:** it's not possible to get the publisher information if the `package.json` file already has the `publisher` property.
+**Nota:** Não é possível obter as informações do editor se o arquivo `package.json` já possui a propriedade `publisher`.
 
-### Package Published
+### Pacote Publicado
 
-You can access to the package is being published with the keyword `{{publishedPackage}}` as follows.
+Você pode acessar o pacote que está sendo publicado com a palavra-chave `{{publishedPackage}}` do seguinte modo.
 
     {{ publisher.name }} has published {{ publishedPackage }}
     
 
-## Configuration
+## Configuração
 
-| Propriedade         | Tipo         | Obrigatório | Suporte  | Padrão | Descrição                                                                                    |
-| ------------------- | ------------ | ----------- | -------- | ------ | -------------------------------------------------------------------------------------------- |
-| method              | string       | Não         | completo |        | HTTP verb                                                                                    |
-| packagePattern      | string       | Não         | completo |        | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | string       | Não         | completo |        | Any flags to be used with the regular expression                                             |
-| headers             | array/object | Sim         | completo |        | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | string       | Sim         | completo |        | set the URL endpoint for this call                                                           |
-| content             | string       | Sim         | completo |        | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Propriedade         | Tipo         | Obrigatório | Suporte  | Padrão | Descrição                                                                                                        |
+| ------------------- | ------------ | ----------- | -------- | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| method              | string       | Não         | completo |        | HTTP verb                                                                                                        |
+| packagePattern      | string       | Não         | completo |        | Só execute esta notificação se o nome do pacote corresponder à expressão regular                                 |
+| packagePatternFlags | string       | Não         | completo |        | Qualquer sinalizador a ser usado com a expressão regular                                                         |
+| headers             | array/object | Sim         | completo |        | Se esse terminal exigir headers específicos, configure-os aqui como uma matriz de objetos da key: value objects. |
+| endpoint            | string       | Sim         | completo |        | define o endpoint da URL para esta chamada                                                                       |
+| content             | string       | Sim         | completo |        | qualquer expressão [Handlebar](https://handlebarsjs.com/)                                                        |

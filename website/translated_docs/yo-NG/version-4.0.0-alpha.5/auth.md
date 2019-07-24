@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.5-authentification
+id: version-4.0.0-alpha.5-sise-ifasẹsi
 title: Sise ifasẹsi
 original_id: sise ifasẹsi
 ---
@@ -43,7 +43,7 @@ Bi apejuwe rẹ ti ṣe jẹ ṣiṣe [lori ọrọ #212](https://github.com/ver
 Bi o se mọ *Verdaccio* n lo `htpasswd` ni atilẹwa. Ohun elo yẹn ko ṣe amuṣiṣẹ awọn ọna naa `allow_access`, `allow_publish` and `allow_unpublish`. Nitorina, *Verdaccio* ma mojuto iyẹn ni ọna wọnyi:
 
 * Ti o ko ba wọle (o jẹ alainidamọ), `$all` ati `$anonymous` tumọ si nkankan na.
-* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
+* Ti o ba wọle, `$anonymous` ko ni jẹ ara awọn ẹgbẹ akojọpọ rẹ atipe `$all` ma se asopọ pẹlu eyikeyi olumulo ti o ba ti wọle. Ẹgbẹ akojọpọ tuntun kan `$authenticated` ma jẹ fifikun si akojọ naa.
 
 Bi amulọ, `$all` **ma se asopọ gbogbo awọn olumulo, ni alaigbarale boya o ti wọle tabi ko wọle**.
 
@@ -56,7 +56,7 @@ Jẹ ki a ṣe atungbeyẹwo ni ṣoki:
 
 ## htpasswd atilẹwa
 
-Lati le tubọ mu iṣeto naa rọrun, `verdaccio` n lo ohun elo asomọ kan to da lori `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
+Lati le tubọ mu iṣeto naa rọrun, `verdaccio` n lo ohun elo asomọ kan to da lori `htpasswd`. Lati ẹya v3.0.x ohun elo `verdaccio-htpasswd` naa n jẹ lilo ni atilẹwa.
 
 ```yaml
 auth:

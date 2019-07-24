@@ -12,11 +12,11 @@ CLI ti verdaccio naa jẹ irinṣẹ bibẹẹrẹ ohun elo rẹ.
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Aṣẹ                | Atilẹwa                        | Apẹẹrẹ         | Apejuwe                              |
-| ------------------ | ------------------------------ | -------------- | ------------------------------------ |
-| --listen \ **-l** | 4873                           | -p 7000        | ibudo http                           |
-| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | faili iṣeto naa                      |
-| --info \ **-i**   |                                |                | prints local environment information |
+| Aṣẹ                | Atilẹwa                        | Apẹẹrẹ         | Apejuwe                        |
+| ------------------ | ------------------------------ | -------------- | ------------------------------ |
+| --listen \ **-l** | 4873                           | -p 7000        | ibudo http                     |
+| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | faili iṣeto naa                |
+| --info \ **-i**   |                                |                | n ṣe atẹjade alaye ayika ibilẹ |
 
 
 ## Aaye faili iṣeto atilẹwa
@@ -25,7 +25,7 @@ Lati sawari itọsọna ile, a gbẹkẹle **$XDG_DATA_HOME** gẹgẹbi aṣaya
 
 ## Ọna faili iṣeto
 
-Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+Faili iṣeto gbọdọ jẹ YAML, JSON tabi modulu NodeJS. Ọna YAML n jẹ ṣiṣawari nipasẹ yiyanju afikun faili iṣeto (yaml tabi yml, ko bikita fun lẹta titobi taki kekere).
 
 ## Aaye ibi ipamọ atilẹwa
 

@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-beta.10-configuration
+id: version-4.0.0-beta.10-iṣeto
 title: Faili Iṣeto
 original_id: iṣeto
 ---

@@ -1,10 +1,10 @@
 ---
-id: version-4.0.0-beta.8-reverse-proxy
+id: version-4.0.0-beta.8-aṣoju-ikọkọ-alayipada
 title: Iseto Aṣoju ikọkọ-Alayipada
 original_id: aṣoju ikọkọ-alayipada
 ---
 
-Using a reverse proxy is a common practice. The following configurations are the most recommended and used ones.
+Lilo aṣoju ikọkọ alayipada jẹ iṣe ti o wọpọ. Awọn iṣeto wọnyi jẹ awọn ti a gba gẹgẹ bi iyanju​ ati ti o jẹ lilo julọ.
 
 # Apache
 
@@ -40,7 +40,7 @@ Iṣeto olupese aifojuri ti Apache
 
 # Nginx
 
-The following snipped is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
+Ege wọnyii jẹ `docker` kikun apẹẹrẹ le jẹ didanwo ni [Awọn apẹẹrẹ ibi ipamọ Docker](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx) wa.
 
     upstream verdaccio_v4 {
         server verdaccio_relative_path_v4:4873;

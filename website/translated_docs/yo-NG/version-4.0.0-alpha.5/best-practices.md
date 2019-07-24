@@ -70,18 +70,18 @@ Awọn aṣayan meji lo wa nibi:
     npm --publish --tag fix --registry http://localhost:4873
    ```
 
-   This way your package will be used until its original maintainer updates his public package to `0.1.3`.
+   Ni ọna yii akopọ rẹ ma jẹ lilo titi ti ojulowo olutọju rẹ yoo fi ṣe imudojuiwọn akopọ gbogbogbo ti ara rẹ si `0.1.3`.
 
 
 
 
-## Security
+## Aabo
 
-The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recomendations.
+Aabo naa bẹrẹ ni ayika rẹ, fun iru ohun bẹ ti a ṣe igbaniyanju patapata lati ka **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** ki o si tẹle awọn iyanju naa.
 
-### Package Access
+### Iwọlesi Akopọ
 
-By default all packages are you publish in Verdaccio are accessible for all public, we totally recommend protect your registry from external non authorized users updating `access` property to `$authenticated`.
+Ni atilẹwa gbogbo awọn akojọ ti o tẹ jade ni Verdaccio wa fun gbogbo eniyan lati ri, a ṣe igbaniyanju patapata pe ko dabobo ibi iforukọsilẹ rẹ lati ma jẹ ki awọn olumulo alailaṣẹ lati ita maa ṣe imudojuiwọn ohun ini `access` si `$authenticated`.
 
 ```yaml
   packages:
@@ -96,7 +96,7 @@ By default all packages are you publish in Verdaccio are accessible for all publ
       publish: $authenticated
    ```
 
-In that way, **nobody will take advance of your registry unless is authorized and private packages won't be displayed in the User Interface**.
+Ni ọna yẹn, **ẹnikẹni ki yoo lo anfani ti ibi iforukọsilẹ rẹ ayafi ti o ba gba aṣẹ atipe awọn akojọ ikọkọ ki yoo han ni Intafeesi Olumulo naa**.
 
 ## Olupese
 

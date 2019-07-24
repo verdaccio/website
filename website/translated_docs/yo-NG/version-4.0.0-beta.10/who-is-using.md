@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-beta.10-who-is-using
+id: version-4.0.0-beta.10-tani-n-lo
 title: Tani o nlo Verdaccio?
 original_id: tani-n-lo
 ---

@@ -3,11 +3,11 @@ id: protect-your-dependencies
 title: "Protegendo seus pacotes"
 ---
 
-`verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
+O `verdaccio` permite que você proteja a publicação, para assegurar isso você precisará configurar corretamente o seu [acesso a pacotes](packages).
 
-### Package configuration
+### Configuração de pacote
 
-Let's see for instance the following set up. You have a set of dependencies what are prefixed with `my-company-*` and you need to protect them from anonymous or another logged user without right credentials.
+Vamos ver por exemplo a seguinte configuração. Você tem um conjunto de dependências que são prefixadas com `my-company-*` e você precisa protegê-las de um usuário anônimo ou outro usuário logado sem credenciais corretas.
 
 ```yaml
   'my-company-*':
@@ -16,18 +16,18 @@ Let's see for instance the following set up. You have a set of dependencies what
     proxy: npmjs
 ```
 
-With this configuration, basically we allow to groups **admin** and **teamA** to *publish* and **teamA** **teamB** **teamC** *access* to such dependencies.
+Com esta configuração, basicamente permitimos aos grupos **admin** e **teamA** a *publicar* (publish) e aos grupos **teamA** **teamB** **teamC** a *acessar* (access) tais dependências.
 
-### Use case: teamD try to access the dependency
+### Exemplo de caso: teamD tenta acessar a dependência
 
-So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
+Desta forma, se eu estiver logado como **teamD**, eu não deveria poder acessar todas as dependências que combinam com o padrão `my-company-*`.
 
 ```bash
 ➜ npm whoami
 teamD
 ```
 
-I won't have access to such dependencies and also won't be visible via web for user **teamD**. If I try to access the following will happen.
+Eu não terei acesso a tais dependências e elas também não serão visíveis via web para o usuário **teamD**. Se eu tentar acessar o seguinte vai acontecer.
 
 ```bash
 ➜ npm install my-company-core
@@ -35,12 +35,12 @@ npm ERR! code E403
 npm ERR! 403 Forbidden: webpack-1@latest
 ```
 
-or with `yarn`
+ou com `yarn`
 
 ```bash
 ➜ yarn add my-company-core
 yarn add v0.24.6
 info No lockfile found.
 [1/4] 
-error An unexpected error occurred: "http://localhost:5555/webpack-1: unregistered users are not allowed to access package my-company-core".
+error An unexpected error occurred: "http://localhost:5555/webpack-1: usuários não registrados não têm permissão para acessar o pacote my-company-core".
 ```
