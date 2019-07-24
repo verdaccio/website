@@ -3,11 +3,11 @@ id: puppet
 title: "Puppet"
 ---
 
-Install verdaccio for Debian, Ubuntu, Fedora, and RedHat.
+Instalar verdaccio para Debian, Ubuntu, Fedora e RedHat.
 
-# Usage
+# Utilização
 
-There are two variants to install verdaccio using this Puppet module:
+Existem duas variantes para instalar o verdaccio usando este módulo Puppet:
 
 * Apply-mode (with puppet-apply and no puppetmaster setup needed)
 * Master-Agent-mode (with puppet-agent accessing your configuration through the puppetmaster).
