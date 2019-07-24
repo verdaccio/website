@@ -6,11 +6,11 @@ original_id: plugins
 
 Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
-> If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
+> Se você estiver interessado em desenvolver o seu próprio plugin, leia a seção sobre [desenvolvimento](dev-plugins.md).
 
-## Usage
+## Utilização
 
-### Installation
+### Instalação
 
 ```bash
 $> npm install --global verdaccio-activedirectory
@@ -21,7 +21,7 @@ $> npm install --global verdaccio-activedirectory
     $> npm install --global sinopia-memory
     
 
-### Configuration
+### Configuração
 
 Open the `config.yaml` file and update the `auth` section as follows:
 
@@ -70,7 +70,7 @@ middlewares:
     enabled: true
 ```
 
-> You might follow the [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) as base example.
+> Você pode seguir o [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) como exemplo básico.
 
 ### Store Plugin Configuration
 
@@ -84,7 +84,7 @@ store:
 
 > If you define a custom store, the property **storage** in the configuration file will be ignored.
 
-## Legacy plugins
+## Plugins Legados
 
 ### Sinopia Plugins
 
@@ -110,7 +110,7 @@ store:
 
 > All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the modern verdaccio API and using the prefix as *verdaccio-xx-name*.
 
-## Verdaccio Plugins
+## Plugins de Verdaccio
 
 (compatible since 2.1.x)
 
@@ -140,6 +140,6 @@ store:
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
 
-## Caveats
+## Ressalvas
 
 > Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
