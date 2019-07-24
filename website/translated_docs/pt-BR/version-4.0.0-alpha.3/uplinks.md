@@ -8,7 +8,7 @@ An *uplink* is a link with an external registry that provides acccess to externa
 
 ![Uplinks](/img/uplinks.png)
 
-### Usage
+### Utilização
 
 ```yaml
 uplinks:
@@ -23,7 +23,7 @@ uplinks:
     url: http://localhost:55666/
 ```
 
-### Configuration
+### Configuração
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
 
