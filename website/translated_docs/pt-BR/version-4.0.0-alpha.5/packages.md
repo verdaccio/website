@@ -1,16 +1,16 @@
 ---
 id: version-4.0.0-alpha.5-packages
 title: Permissões dos Pacotes
-original_id: packages
+original_id: pacotes
 ---
 
-It's a series of contraints that allow or restrict access to the local storage based in specific criteria.
+É uma série de restrições que permitem ou restringem o acesso ao armazenamento local com base em critérios específicos.
 
-The security constraints remain on the shoulders of the plugin being used, by default `verdaccio` uses the [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). If you use a different plugin the behaviour might be different. The default plugin does not handle `allow_access` and `allow_publish` by itself, it uses an internal fallback in case the plugin is not ready for it.
+As restrições de segurança permanecem dependentes do plugin em uso, por padrão o `verdaccio` usa o [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Se você usar um plugin diferente, o comportamento poderá ser diferente. O plugin padrão não suporta `allow_access` e `allow_publish` por si só, ele usa um fallback interno caso o plugin não esteja pronto para isso.
 
-For more information about permissions visit [the authentification section in the wiki](auth.md).
+Para mais informações sobre permissões visite a [seção de autenticação no wiki](auth.md).
 
-### Usage
+### Utilização
 
 ```yalm
 packages:
@@ -26,14 +26,13 @@ packages:
     proxy: uplink1
 
   '**':
-    # allow all users (including non-authenticated users) to read and
-    # publish all packages
+    # permite a todos os usuários (incluindo os não autentificados) a ler e
+    # publicar todos os pacotes
     access: $all
     publish: $all
-    proxy: uplink2
 ```
 
-if none is specified, the default one remains
+se nenhum for especificado, o padrão permanece
 
 ```yaml
 packages:
@@ -42,20 +41,20 @@ packages:
     publish: $authenticated
 ```
 
-The list internal groups handled by `verdaccio` are:
+A lista de grupos internos gerenciados pelo `verdaccio` são:
 
 ```js
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous'
 ```
 
-All users recieve all those set of permissions independently of is anonymous or not plus the groups provided by the plugin, in case of `htpasswd` return the username as a group. For instance, if you are logged as `npmUser` the list of groups will be.
+Todos os usuários recebem todos esses grupos de permissões, independentemente de serem anônimos ou não, mais os grupos fornecidos pelo plugin, no caso de `htpasswd` retornar o nome de usuário como um grupo. Por exemplo, se você estiver logado como `npmUser`, a lista de grupos será.
 
 ```js
 // groups without '$' are going to be deprecated eventually
 '$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser'
 ```
 
-If you want to protect specific set packages under your group, you need to do something like this. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.
+Se você quiser proteger um grupo de pacotes específicos dentro do seu grupo, você deve fazer algo semelhante a isso. Vamos usar um `Regex` que cubra todos os pacotes `npmuser-` prefixados. Recomendamos usar um prefixo para seus pacotes, assim será mais fácil protegê-los.
 
 ```yaml
 packages:
@@ -64,7 +63,7 @@ packages:
     publish: npmuser
 ```
 
-Restart `verdaccio` and in your console try to install `npmuser-core`.
+Reinicie o `verdaccio` e no seu console tente instalar o `npmuser-core`.
 
 ```bash
 $ npm install npmuser-core
@@ -76,11 +75,11 @@ npm ERR! A complete log of this run can be found in:
 npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 ```
 
-You can change the existing behaviour using a different plugin authentication. `verdaccio` just checks whether the user that tried to access or publish a specific package belongs to the right group.
+Você pode alterar o atual comportamento usando uma autenticação de plugin diferente. O `verdaccio` apenas verifica se o usuário que tentou acessar ou publicar um pacote específico pertence ao grupo correto.
 
-#### Set multiple groups
+#### Definir vários grupos
 
-Defining multiple access groups is fairly easy, just define them with a white space between them.
+Definir vários grupos de acesso é bastante fácil, basta defini-los com um espaço em branco entre eles.
 
 ```yaml
   'company-*':
@@ -93,7 +92,7 @@ Defining multiple access groups is fairly easy, just define them with a white sp
     proxy: server1
 ```
 
-#### Blocking access to set of packages
+#### Bloqueando o acesso ao conjunto de pacotes
 
 If you want to block the acccess/publish to a specific group of packages. Just do not define `access` and `publish`.
 
@@ -105,11 +104,11 @@ packages:
     publish: $authenticated
 ```
 
-#### Blocking proxying a set of specific packages
+#### Bloqueando a transmissão de um conjunto de pacotes específicos
 
-You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
+Você pode querer bloquear um ou vários pacotes de buscar nos repositórios remotos, mas ao mesmo tempo, permitir que outros acessem *uplinks* diferentes.
 
-Let's see the following example:
+Vamos ver o seguinte exemplo:
 
 ```yaml
 packages:
@@ -128,18 +127,18 @@ packages:
     proxy: npmjs
 ```
 
-Let's describe what we want with the above example:
+Vamos descrever o que queremos com o exemplo acima:
 
-* I want to host my own `jquery` dependency but I need to avoid proxying it.
-* I want all dependencies that match with `my-company-*` but I need to avoid proxying them.
-* I want all dependencies that are in the `my-local-scope` scope but I need to avoid proxying them.
-* I want proxying for all the rest of the dependencies.
+* Eu quero hospedar minha própria dependência `jquery`, mas eu preciso evitar o proxy.
+* Eu quero todas as dependências que combinam com `my-company-*`, mas eu preciso que os pacotes não se realizem via proxy.
+* Eu quero todas as dependências que estão no escopo `my-local-scope`, mas eu preciso que os pacotes não se realizem via proxy.
+* Eu quero que o resto das dependências se realizem via proxy.
 
-Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
+Esteja **ciente de que a ordem das suas definições de pacotes é importante e use sempre wildcard duplo **. Porque se você não incluir o `verdaccio` irá incluí-lo para você e o modo como suas dependências serão resolvidas será afetado.
 
-#### Unpublishing Packages
+#### Cancelando a Publicação de Pacotes
 
-The properly `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
+The properly `publish` handle permissions for `npm publish` and `npm unpublish`. Mas, se você quiser ser mais específico, você pode usar a propriedade `unpublish` em sua seção de acesso a pacotes, por exemplo:
 
 ```yalm
 packages:
@@ -161,21 +160,21 @@ packages:
     proxy: npmjs
 ```
 
-In the previous example, the behaviour would be described:
+No exemplo anterior, o comportamento seria descrito como:
 
-* all users can publish the `jquery` package, but only the user `root` would be able to unpublish any version.
-* only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
-* If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
+* todos os usuários podem publicar o pacote `jquery`, mas somente o usuário `root` poderá cancelar a publicação de qualquer versão.
+* somente usuários autenticados podem publicar pacotes `my-company-*`, mas **ninguém poderá cancelar a publicação deles**.
+* Se `unpublish` estiver comentado, o acesso será concedido ou negado pela definição `publish`.
 
-### Configuration
+### Configuração
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Propriedade | Tipo    | Obrigatório | Exemplo        | Suporte  | Descrição                                                                 |
-| ----------- | ------- | ----------- | -------------- | -------- | ------------------------------------------------------------------------- |
-| access      | string  | Não         | $all           | completo | define groups allowed to access the package                               |
-| publish     | string  | Não         | $authenticated | completo | define groups allowed to publish                                          |
-| proxy       | string  | Não         | npmjs          | completo | limit look ups for specific uplink                                        |
-| storage     | boolean | Não         | string         | `>v4` | it creates a subfolder whithin the storage folder for each package access |
+| Propriedade | Tipo    | Obrigatório | Exemplo        | Suporte  | Descrição                                                                         |
+| ----------- | ------- | ----------- | -------------- | -------- | --------------------------------------------------------------------------------- |
+| access      | string  | Não         | $all           | completo | define os grupos com permissão para acessar os pacotes                            |
+| publish     | string  | Não         | $authenticated | completo | define os grupos permitidos a publicar                                            |
+| proxy       | string  | Não         | npmjs          | completo | limita a busca a um uplink específico                                             |
+| storage     | boolean | Não         | string         | `>v4` | ele cria uma subpasta dentro da pasta de armazenamento para cada acesso ao pacote |
 
-> We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
+> Salientamos a recomendação de não usar mais **allow_access**/**allow_publish** e **proxy_access**, eles estão obsoletos e serão removidos em breve. Use a versão curta de cada um deles (**access**/**publish**/**proxy**).
