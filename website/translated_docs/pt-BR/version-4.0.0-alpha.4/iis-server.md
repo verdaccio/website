@@ -4,29 +4,29 @@ title: Instalando em um Servidor ISS
 original_id: iss-server
 ---
 
-These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
+Estas instruções foram escritas para o Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) e [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
 
 - Install IIS Install [iisnode](https://github.com/Azure/iisnode). Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.
-- Create a new folder in Explorer where you want to host verdaccio. For example `C:\verdaccio`. Save [package.json](#packagejson), [start.js](#startjs) and [web.config](#webconfig) in this folder.
-- Create a new site in Internet Information Services Manager. You can name it whatever you want. I'll call it verdaccio in these [instructions](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Specify the path to where you saved all files and a port number.
-- Go back to Explorer and give the user that runs the application pool modify rights to the folder you just created. If you've named the new site verdaccio and did not change the app pool, it's running under an ApplicationPoolIdentity and you should give the user IIS AppPool\verdaccio modify rights see instructions if you need help. (You can restrict access later if you want so that it only has modify rights on the iisnode and verdaccio\storage)
-- Start a command prompt and execute the commands below to download verdaccio:
+- Crie uma nova pasta no Explorer onde você deseja hospedar o verdaccio. Por exemplo `C:\verdaccio`. Salve o [package.json](#packagejson), [start.js](#startjs) e [web.config](#webconfig) nesta pasta.
+- Crie um novo site no Gerenciador de Serviços de Informações da Internet. Você pode nomea-lo como quiser. Chamarei de verdaccio nestas [instruções](http://www.iis.net/learn/manage/configuring-security/application-pool-identities). Especifique o caminho onde você salvou todos os arquivos e um número de porta.
+- Volte para o Explorer e forneça, ao usuário que executa a pool de aplicações, direitos de modificação para a pasta recém criada. Se você nomeou o novo site como verdaccio e não alterou a pool de aplicações, ele está sendo executado sob uma ApplicationPoolIdentity e você deve conceder ao usuário direitos de modificação de IIS AppPool\verdaccio, veja as instruções se precisar de ajuda. (Você pode restringir o acesso mais tarde caso o queira, para que ele tenha apenas direitos de modificação no iisnode e no verdaccio\storage)
+- Inicie um prompt de comando e execute os comandos abaixo para fazer o download do verdaccio:
 
     cd c:\verdaccio
     npm install
     
 
-- Make sure you have an inbound rule accepting TCP traffic to the port in Windows Firewall
+- Verifique se você tem uma regra de entrada aceitando o tráfego TCP na porta do Firewall do Windows
 - Thats it! Now you can navigate to the host and port that you specified
 
-I wanted the `verdaccio` site to be the default site in IIS so I did the following:
+Eu queria que o site do `verdaccio` fosse o site padrão no IIS, então fiz o seguinte:
 
 - I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS
 - I set the bindings to "http", ip address "All Unassigned" on port 80, ok any warning or prompts
 
-These instructions are based on [Host Sinopia in IIS on Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). I had to tweak my web config as per below but you may find the original from the for mentioned link works better
+Estas instruções são baseadas em [Host Sinopia in IIS on Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). Eu tive que fazer pequenos ajustes na minha configuração web, como você pode ver abaixo, mas você pode encontrar o original do link mencionado que funciona melhor
 
-A default configuration file will be created `c:\verdaccio\verdaccio\config.yaml`
+Um arquivo de configuração padrão será criado `c:\verdaccio\verdaccio\config.yaml`
 
 ### package.json
 
@@ -49,7 +49,7 @@ process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
-### Alternate start.js for Verdaccio versions < v3.0
+### Start.js alternativos para versões do Verdaccio < v3.0
 
 ```bash
 process.argv.push('-l', 'unix:' + process.env.PORT);
@@ -76,15 +76,15 @@ require('./node_modules/verdaccio/src/lib/cli.js');
     <rewrite>
       <rules>
 
-        <!-- iisnode folder is where iisnode stores it's logs. These should
-        never be rewritten -->
+        <!-- iisnode folder is where iisnode stores it's logs. Estes nunca
+        deverão ser reescritos -->
         <rule name="iisnode" stopProcessing="true">
             <match url="iisnode*" />
             <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
             <action type="None" />
         </rule>
 
-        <!-- Rewrite all other urls in order for verdaccio to handle these -->
+        <!-- Reescreva todas as outras URLs para que o verdaccio possa lidar com estes -->
         <rule name="verdaccio">
             <match url="/*" />
             <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
@@ -93,8 +93,8 @@ require('./node_modules/verdaccio/src/lib/cli.js');
       </rules>
     </rewrite>
 
-    <!-- exclude node_modules directory and subdirectories from serving
-    by IIS since these are implementation details of node.js applications -->
+    <!-- exclui o diretório e os subdiretórios node_modules da veiculação
+     pelo IIS, uma vez que estes são detalhes de implementação de aplicativos node.js -->
     <security>
       <requestFiltering>
         <hiddenSegments>
@@ -109,5 +109,5 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 
 ### Troubleshooting
 
-- **The web interface does not load when hosted with https as it tries to download scripts over http.**  
-    Make sure that you have correctly mentioned `url_prefix` in verdaccio config. Follow the [discussion](https://github.com/verdaccio/verdaccio/issues/622).
+- **A interface da Web não é carregada quando hospedada em https, pois tentará baixar scripts por meio de http.**  
+    Certifique-se de ter mencionado corretamente o `url_prefix` na configuração do verdaccio. Siga a [ discussão](https://github.com/verdaccio/verdaccio/issues/622).
