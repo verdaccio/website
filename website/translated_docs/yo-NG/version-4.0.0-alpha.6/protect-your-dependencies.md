@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.6-protect-your-dependencies
+id: version-4.0.0-alpha.6-dabobo-awọn-igbarale-rẹ
 title: Didabobo awọn akopọ
 original_id: dabobo-awọn igbarale-rẹ
 ---

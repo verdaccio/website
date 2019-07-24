@@ -1,12 +1,12 @@
 ---
-id: version-4.0.0-alpha.5-who-is-using
+id: version-4.0.0-alpha.5-tani-n-lo
 title: Tani o nlo Verdaccio?
 original_id: tani-n-lo
 ---
 
 ### Gẹgẹbi Iṣowo
 
-*If you are using Verdaccio in your bussiness and want to share your experience, let us know. Inu wa yoo dun lati tẹtisi ọ.*
+*Ti o ba nlo Verdaccio ninu iṣowo rẹ ti o si fẹ lati sọ nipa iriri rẹ, jẹ ki a mọ. Inu wa yoo dun lati tẹtisi ọ.*
 
 * [SheetJS](https://sheetjs.com/)
 

@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-beta.5-logo
+id: version-4.0.0-beta.5-aami-idanimọ
 title: Irulogo
 original_id: logo
 ---

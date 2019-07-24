@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-beta.2-installation
+id: version-4.0.0-beta.2-ifi sori ẹrọ
 title: Ifi sori ẹrọ
 original_id: installation
 ---

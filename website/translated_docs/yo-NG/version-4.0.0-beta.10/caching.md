@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-beta.10-caching
+id: version-4.0.0-beta.10-ifisapo-iranti
 title: Awọn ọna ifisapo iranti
 original_id: ifisapo iranti
 ---

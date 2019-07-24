@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-alpha.7-linking-remote-registry
+id: version-4.0.0-alpha.7-sise-asopọ-ibi-iforukọsilẹ-ọlọna-jijin
 title: Sise asopọ ibi iforukọsilẹ ọlọna jijin kan
 original_id: sise asopọ-ibi iforukọsilẹ-ọlọna jijin
 ---
@@ -92,4 +92,4 @@ packages:
     publish: $authenticated
 ```
 
-Yọ gbogbo `aṣoju ikọkọ` awọn aaye laarin abala kọọkan ti `awọn akopọ`. The registry will became full offline.
+Yọ gbogbo `aṣoju ikọkọ` awọn aaye laarin abala kọọkan ti `awọn akopọ`. Ibi iforukọsilẹ naa yoo di kikun ni aisilorila.
