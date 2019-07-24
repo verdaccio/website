@@ -7,7 +7,7 @@ Usar um proxy reverso é uma prática comum. As seguintes configurações são a
 
 # Apache
 
-Apache and `mod_proxy` should **not decode/encode slashes** and leave them as they are:
+Apache e `mod_proxy` **não devem decodificar/codificar barras** e deixa-las como estão:
 
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
@@ -16,9 +16,9 @@ Apache and `mod_proxy` should **not decode/encode slashes** and leave them as th
     </VirtualHost>
     
 
-### Configuration with SSL
+### Configuração com SSL
 
-Apache virtual server configuration
+Configuração do servidor virtual Apache
 
         apacheconfig
         <IfModule mod_ssl.c>
@@ -39,7 +39,7 @@ Apache virtual server configuration
 
 # Nginx
 
-The following snippet is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
+O trecho a seguir é um exemplo completo de `docker` que está disponível para ser testado no [repositório de exemplos de Docker](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
 
     upstream verdaccio_v4 {
         server verdaccio_relative_path_v4:4873;
@@ -91,7 +91,7 @@ The following snippet is a full `docker` example can be tested in our [Docker ex
     }
     
 
-## SSL example
+## Exemplo de SSL
 
     server {
         listen 80;
@@ -134,9 +134,9 @@ The following snippet is a full `docker` example can be tested in our [Docker ex
 
 ## Run behind reverse proxy with different domain and port
 
-### Sub-directory
+### Subdiretório
 
-If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise you would need something like this in your `config.yaml`.
+Se toda a URL estiver sendo usada pelo Verdaccio, você não precisa definir um `url_prefix`, caso contrário você precisaria de algo assim em seu `config.yaml`.
 
 ```yaml
 url_prefix: /sub_directory/
@@ -144,7 +144,7 @@ url_prefix: /sub_directory/
 
 If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like `http://127.0.0.1:4873/-/static`
 
-To resolve this issue, **you should send real domain and port to verdaccio with `Host` header**
+Para resolver este problema, **você deve enviar um domínio e uma porta reais para o verdaccio com cabeçalho `Host` **
 
 Nginx configure should look like this:
 
