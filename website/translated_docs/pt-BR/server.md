@@ -61,30 +61,30 @@ Você pode verificar a documentação para obter mais informações sobre como u
 
 ## Sobreviver a reinicializações do servidor
 
-You can use `crontab` and `forever` together to start verdaccio after a server reboot. When you're logged in as the verdaccio user do the following:
+Você pode usar `crontab` e `forever` em conjunto para inicializar o verdaccio após a reinicialização do servidor. Quando você estiver logado como usuário do verdaccio, faça o seguinte:
 
 ```bash
 $ crontab -e
 ```
 
-This might ask you to choose an editor. Pick your favorite and proceed. Add the following entry to the file:
+Isso pode pedir para você escolher um editor. Escolha o seu favorito e prossiga. Adicione a seguinte entrada ao arquivo:
 
     @reboot /usr/bin/forever start /usr/lib/node_modules/verdaccio/bin/verdaccio
     
 
-The locations may vary depending on your server setup. If you want to know where your files are you can use the 'which' command:
+Os locais podem variar dependendo da configuração do servidor. Se você quiser saber onde estão seus arquivos, você pode usar o comando 'which':
 
 ```bash
 $ which forever
 $ which verdaccio
 ```
 
-## Using systemd
+## Utilizar o systemd
 
-Instead of `forever` you can use `systemd` for starting verdaccio and keeping it running. Verdaccio installation has systemd unit, you only need to copy it:
+Ao invés do `forever` você pode usar o `systemd` para iniciar o verdaccio e mantê-lo rodando. A instalação do Verdaccio possui uma unidade systemd, você só precisa copiá-la:
 
 ```bash
 $ sudo cp /usr/lib/node_modules/verdaccio/systemd/verdaccio.service /lib/systemd/system/ && sudo systemctl daemon-reload
 ```
 
-This unit assumes you have configuration in `/etc/verdaccio/config.yaml` and store data in `/var/lib/verdaccio`, so either move your files to those locations or edit the unit.
+Esta unidade assume que você tenha a configuração em `/etc/verdaccio/config.yaml` e armazena dados em `/var/lib/verdaccio`, então mova seus arquivos para esses locais ou edite a unidade.
