@@ -1,11 +1,11 @@
 ---
 id: webui
-title: "Web User Interface"
+title: "Interface de Usuário da Web"
 ---
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
-Verdaccio has a web user interface to display only the private packages and can be customisable.
+O Verdaccio possui uma interface de usuário da web para exibir apenas os pacotes privados e pode ser personalizável.
 
 ```yaml
 web:
@@ -18,7 +18,7 @@ web:
   sort_packages: asc | desc
 ```
 
-All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
+Todas as restrições de acesso definidas para [proteger seus pacotes](protect-your-dependencies.md) também se aplicam à interface da web.
 
 ### Configuração
 
