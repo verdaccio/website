@@ -3,7 +3,7 @@ id: uplinks
 title: "Uplinks"
 ---
 
-An *uplink* is a link with an external registry that provides access to external packages.
+Um *uplink* é um link com um registro externo que fornece acesso a pacotes externos.
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
 
@@ -24,15 +24,15 @@ uplinks:
 
 ### Configuração
 
-You can define mutiple uplinks and each of them must have an unique name (key). They can have the following properties:
+Você pode definir vários uplinks e cada um deles deve ter um nome exclusivo (chave). Eles podem ter as seguintes propriedades:
 
 | Propriedade  | Tipo    | Obrigatório | Exemplo                                 | Suporte  | Descrição                                                                                                                  | Padrão     |
 | ------------ | ------- | ----------- | --------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| url          | string  | Sim         | https://registry.npmjs.org/             | completo | The registry url                                                                                                           | npmjs      |
-| ca           | string  | Não         | ~./ssl/client.crt'                      | completo | SSL path certificate                                                                                                       | No default |
-| timeout      | string  | Não         | 100ms                                   | completo | set new timeout for the request                                                                                            | 30s        |
-| maxage       | string  | Não         | 10m                                     | completo | the time threshold to the cache is valid                                                                                   | 2m         |
-| fail_timeout | string  | Não         | 10m                                     | completo | defines max time when a request becomes a failure                                                                          | 5m         |
+| url          | string  | Sim         | https://registry.npmjs.org/             | completo | A url do registro                                                                                                          | npmjs      |
+| ca           | string  | Não         | ~./ssl/client.crt'                      | completo | Local do certificado SSL                                                                                                   | No default |
+| timeout      | string  | Não         | 100ms                                   | completo | define novo tempo limite para o pedido                                                                                     | 30s        |
+| maxage       | string  | Não         | 10m                                     | completo | o limite de tempo para o cache ser válido                                                                                  | 2m         |
+| fail_timeout | string  | Não         | 10m                                     | completo | define o tempo máximo quando uma solicitação se torna uma falha                                                            | 5m         |
 | max_fails    | número  | Não         | 2                                       | completo | limit maximun failure request                                                                                              | 2          |
 | cache        | boolean | Não         | [true,false]                            | >= 2.1   | cache all remote tarballs in storage                                                                                       | true       |
 | auth         | list    | Não         | [see below](uplinks.md#auth-property)   | >= 2.5   | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
