@@ -80,7 +80,7 @@ uplinks:
 
 ### Deves Saber
 
-* Os uplinks devem ser registros compatíveis com os `npm` endpoints. Eg: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* and more.
-* Setting `cache` to false will help to save space in your hard drive. This will avoid store `tarballs` but [it will keep metadata in folders](https://github.com/verdaccio/verdaccio/issues/391).
-* Exceed with multiple uplinks might slow down the lookup of your packages due for each request a npm client does, verdaccio does 1 call for each uplink.
-* The (timeout, maxage and fail_timeout) format follow the [NGINX measurement units](http://nginx.org/en/docs/syntax.html)
+* Os uplinks devem ser registros compatíveis com os `npm` endpoints. Por exemplo: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* e mais.
+* Configurar o `cache` para false ajudará a economizar espaço no seu disco rígido. Isto vai evitar armazenar as `tarballs` mas [irá manter o metadata em pastas](https://github.com/verdaccio/verdaccio/issues/391).
+* Exceder com vários uplinks pode atrasar a busca por pacotes, pois para cada solicitação um cliente npm é encaminhado, o verdaccio, por sua vez, faz uma chamada para cada uplink.
+* O formato (timeout, maxage e fail_timeout) segue as [unidades de medida NGINX](http://nginx.org/en/docs/syntax.html)
