@@ -35,8 +35,8 @@ Você pode definir vários uplinks e cada um deles deve ter um nome exclusivo (c
 | fail_timeout | string  | Não         | 10m                                     | completo | define o tempo máximo quando uma solicitação se torna uma falha                                                           | 5m         |
 | max_fails    | número  | Não         | 2                                       | completo | limite máximo de falhas                                                                                                   | 2          |
 | cache        | boolean | Não         | [true,false]                            | >= 2.1   | armazenar em cache todos os tarballs remotos presentes no armazenamento                                                   | true       |
-| auth         | list    | Não         | [veja abaixo](uplinks.md#auth-property) | >= 2.5   | atribui o cabeçalho 'Autorização' [mais info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
-| headers      | list    | Não         | authorization: "Bearer SecretJWToken==" | completo | lista de cabeçalhos customizados para o uplink                                                                            | disabled   |
+| auth         | lista   | Não         | [veja abaixo](uplinks.md#auth-property) | >= 2.5   | atribui o cabeçalho 'Autorização' [mais info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
+| headers      | lista   | Não         | authorization: "Bearer SecretJWToken==" | completo | lista de cabeçalhos customizados para o uplink                                                                            | disabled   |
 | strict_ssl   | boolean | Não         | [true,false]                            | >= 3.0   | Se verdadeiro, requer certificados SSL válidos.                                                                           | true       |
 
 #### Propriedade Auth
