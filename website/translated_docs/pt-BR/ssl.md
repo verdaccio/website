@@ -31,16 +31,16 @@ https: key: /Users/user/.config/verdaccio/verdaccio-key.pem cert: /Users/user/.c
 
 https: pfx: /Users/user/.config/verdaccio/server.pfx passphrase: 'secret' ````
 
-You can find more info on the `key`, `cert`, `ca`, `pfx`, and `passphrase` arguments in the [Node documentation](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
+Você pode encontrar mais informações nos argumentos `key`, `cert`, `ca`, `pfx`, e `passphrase` contidos na [documentação do Node](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
 
-* Run `verdaccio` in your command line.
+* Execute o `verdaccio` na sua linha de comando.
 
-* Open the browser and visit `https://your.domain.com:port/`
+* Abra o navegador e visite o endereço `https://your.domain.com:port/`
 
-These instructions are mostly valid under OSX and Linux; on Windows the paths will vary, but the steps are the same.
+Essas instruções são válidas principalmente para OSX e Linux; no Windows, os caminhos variam, mas os passos são os mesmos.
 
 ## Docker
 
-If you are using the Docker image, you have to set the `VERDACCIO_PROTOCOL` environment variable to `https`, as the `listen` argument is provided in the [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) and thus ignored from your config file.
+Se você estiver usando a imagem do Docker, você terá que configurar a variável de ambiente `VERDACCIO_PROTOCOL` para `https`, já que o argumento `listen` é fornecido no [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) e, portanto, ignorado do seu arquivo de configuração.
 
-You can also set the `VERDACCIO_PORT` environment variable if you are using a port other than `4873`.
+Você também pode definir a variável de ambiente `VERDACCIO_PORT` se estiver usando uma porta diferente de `4873`.
