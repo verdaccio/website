@@ -22,14 +22,14 @@ Todas as restrições de acesso definidas para [proteger seus pacotes](protect-y
 
 ### Configuração
 
-| Nome          | Tipo       | Obrigatório | Exemplo                                                       | Suporte    | Descrição                                                                                                                |
-| ------------- | ---------- | ----------- | ------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------ |
-| enable        | boolean    | Não         | true/false                                                    | completo   | habilitar a interface web                                                                                                |
-| title         | string     | Não         | Verdaccio                                                     | completo   | Título da página web                                                                                                     |
-| gravatar      | boolean    | Não         | true                                                          | `>v4`   | Gravatars will be generated under the hood if this property is enabled                                                   |
-| sort_packages | [asc,desc] | Não         | asc                                                           | `>v4`   | By default private packages are sorted by ascending                                                                      |
-| logo          | string     | Não         | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | completo   | a URI where logo is located (header logo)                                                                                |
-| primary_color | string     | Não         | "#4b5e40"                                                     | `>4`    | The primary color to use throughout the UI (header, etc)                                                                 |
-| scope         | string     | Não         | @myscope                                                      | `>v3.x` | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header |
+| Nome          | Tipo       | Obrigatório | Exemplo                                                       | Suporte    | Descrição                                                                                                                                         |
+| ------------- | ---------- | ----------- | ------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| enable        | boolean    | Não         | true/false                                                    | completo   | habilitar a interface web                                                                                                                         |
+| title         | string     | Não         | Verdaccio                                                     | completo   | Título da página web                                                                                                                              |
+| gravatar      | boolean    | Não         | true                                                          | `>v4`   | Se esta propriedade estiver habilitada, gravatars serão gerados internamente                                                                      |
+| sort_packages | [asc,desc] | Não         | asc                                                           | `>v4`   | Por padrão pacotes privados são classificados em ordem crescente                                                                                  |
+| logo          | string     | Não         | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | completo   | a URI onde o logotipo está localizado (logotipo do cabeçalho)                                                                                     |
+| primary_color | string     | Não         | "#4b5e40"                                                     | `>4`    | A cor principal a ser usada em toda a interface do usuário (cabeçalho, etc)                                                                       |
+| scope         | string     | Não         | @myscope                                                      | `>v3.x` | Se você estiver usando esse registro para um escopo de módulo específico, especifique esse escopo para defini-lo no cabeçalho de instruções webui |
 
-> It is recommended the logo size has the following size `40x40` pixels.
+> Recomenda-se que o tamanho do logotipo tenha o seguinte tamanho `40x40` pixels.
