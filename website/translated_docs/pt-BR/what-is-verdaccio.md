@@ -49,7 +49,7 @@ Verdaccio armazena em cache todas as dependências por demanda e acelera as inst
 * É um proxy de rede local
 * É um aplicativo capaz de ser estendido por plugins
 * É bastante fácil de instalar e usar
-* We offer Docker and Kubernetes support
-* It is 100% compatible with yarn, npm and pnpm
-* It was **forked** based on `sinopia@1.4.0` and 100% **backward compatible**.
-* Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
+* Oferecemos suporte para Docker e Kubernetes
+* É 100% compatível com yarn, npm e pnpm
+* É um **fork** com base em `sinopia@1.4.0` e 100% **compatível com versões anteriores**.
+* O nome Verdaccio vem de **um tom de verde popular na Itália medieval usado para afrescos**.
