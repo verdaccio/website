@@ -1,11 +1,11 @@
 ---
 id: talks
-title: "Talks"
+title: "Palestras"
 ---
 
-We list the talks about Verdaccio, if you gave a talk or you are about to give one about Verdaccio or that mention this project, feel free to add it here.
+Listamos as palestras sobre o Verdaccio, se você deu uma palestra ou está prestes a dar uma sobre o Verdaccio ou que menciona este projeto, sinta-se à vontade para adicioná-la aqui.
 
-> Do not hesistate to share your content with the community, we encorage you to speak about Verdaccio. If need help how to start, information or resources, reach us in our [Chat at Discord](https://chat.verdaccio.org), we will help you.
+> Não hesite em compartilhar seu conteúdo com a comunidade, nós encorajamos você a falar sobre o Verdaccio. If need help how to start, information or resources, reach us in our [Chat at Discord](https://chat.verdaccio.org), we will help you.
 
 ## The latest Talk <iframe width="960" height="540" src="https://www.youtube.com/embed/CnLA73E1BrE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
