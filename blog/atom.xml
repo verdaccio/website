@@ -16,7 +16,6 @@
         <updated>2019-07-30T06:00:00Z</updated>
         <summary type="html"><![CDATA[<p>Verdaccio keeps growing, thanks to their users. This release is a minor one we do every month, for further
 <a href="https://github.com/verdaccio/contributing/blob/master/RELEASES.md">information about our releases, it can be read here</a>.</p>
-<p>Furthermore, the info about the release is also available <a href="https://github.com/verdaccio/verdaccio/releases/tag/v4.2.0">at GitHub releases page</a>.</p>
 <p>We have some highlights to share:</p>
 <ul>
 <li>At this stage, Docker downloads <a href="https://dockeri.co/image/verdaccio/verdaccio">have grown to 5.1 million pulls</a>.</li>
