@@ -13,7 +13,7 @@ Furthermore, the info about the release is also available [at GitHub releases pa
 We have some highlights to share:
 
 * At this stage, Docker downloads [have grown to 5.1 million pulls](https://dockeri.co/image/verdaccio/verdaccio).
-* **New Verdaccio Monorepo** development begun early this month, we are migrating small repositories, plugins and other tools to create a unique ecosystem. [Feel free to contribute](https://github.com/verdaccio/monorepo). by [**@sergiohgz**](https://github.com/sergiohgz)
+* **New Verdaccio Monorepo** development begun early this month, we are migrating small repositories, plugins and other tools to create a unique ecosystem. [Feel free to contribute](https://github.com/verdaccio/monorepo). by [**@sergiohgz**](https://github.com/sergiohgz) with the contributions of [@griffithtp](https://github.com/griffithtp).
 * We finally migrated all repositories to **Typescript**, we do not support Flow types anymore.
 
 If you 😍 Verdaccio as we do, helps us to grow more donating to the project via [OpenCollective](https://opencollective.com/verdaccio), this project is addressed by **voluntaries**, help us to be sustainable.
