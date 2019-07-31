@@ -4,7 +4,7 @@
         <title>Verdaccio Blog</title>
         <link>https://verdaccio.org//blog</link>
         <description>The best place to stay up-to-date with the latest Verdaccio news and events.</description>
-        <lastBuildDate>Mon, 08 Jul 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 30 Jul 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,24 @@
             <link>https://verdaccio.org//blog</link>
         </image>
         <copyright>Copyright © 2019 Verdaccio community</copyright>
+        <item>
+            <title><![CDATA[Release 4.2.0]]></title>
+            <link>https://verdaccio.org//blog/2019/07/30/verdaccio-420-release.html</link>
+            <guid>https://verdaccio.org//blog/2019/07/30/verdaccio-420-release.html</guid>
+            <pubDate>Tue, 30 Jul 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Verdaccio keeps growing, thanks to their users. This release is a minor one we do every month, for further
+<a href="https://github.com/verdaccio/contributing/blob/master/RELEASES.md">information about our releases, it can be read here</a>.</p>
+<p>Furthermore, the info about the release is also available <a href="https://github.com/verdaccio/verdaccio/releases/tag/v4.2.0">at GitHub releases page</a>.</p>
+<p>We have some highlights to share:</p>
+<ul>
+<li>At this stage, Docker downloads <a href="https://dockeri.co/image/verdaccio/verdaccio">have grown to 5.1 million pulls</a>.</li>
+<li><strong>New Verdaccio Monorepo</strong> development has begun early this month, we are migrating small repositories, plugins and other tools to create a unique ecosystem, <a href="https://github.com/verdaccio/monorepo">feel free to contribute</a>. This first steps are developed by <a href="https://github.com/sergiohgz"><strong>@sergiohgz</strong></a> with the contributions of <a href="https://github.com/griffithtp">@griffithtp</a>.</li>
+<li>We finally migrated all repositories to <strong>Typescript</strong>, we do not support Flow types anymore.</li>
+</ul>
+<p>If you 😍 Verdaccio as we do, helps us to grow more donating to the project via <a href="https://opencollective.com/verdaccio">OpenCollective</a>, this project is addressed by <strong>voluntaries</strong>, help us to be sustainable.</p>
+<p>Thanks for support Verdaccio ! 👏👏👏👏.</p>
+]]></description>
+        </item>
         <item>
             <title><![CDATA[Release 4.1.0]]></title>
             <link>https://verdaccio.org//blog/2019/07/08/verdaccio-410-release.html</link>
