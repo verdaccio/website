@@ -6,7 +6,7 @@ title: Release 4.2.0
 ---
 
 Verdaccio keeps growing, thanks to their users. This release is a minor one we do every month, for further
-[information about our releases, they can be read here](https://github.com/verdaccio/contributing/blob/master/RELEASES.md).
+[information about our releases, it can be read here](https://github.com/verdaccio/contributing/blob/master/RELEASES.md).
 
 Furthermore, the info about the release is also available [at GitHub releases page](https://github.com/verdaccio/verdaccio/releases/tag/v4.2.0).
 
