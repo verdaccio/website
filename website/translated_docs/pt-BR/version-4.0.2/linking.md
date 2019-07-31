@@ -1,10 +1,10 @@
 ---
 id: version-4.0.2-linking-remote-registry
-title: Linking a Remote Registry
+title: Vinculando um Registro Remoto
 original_id: linking-remote-registry
 ---
 
-Verdaccio is a proxy and by default [links](uplinks.md) the public registry.
+Verdaccio é uma proxy e por padrão [conecta](uplinks.md) o registro público.
 
 ```yaml
 uplinks:
@@ -12,29 +12,29 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-You can link multiple registries, the following document will drive you through some helpful configurations.
+Você pode conectar vários registros, o documento a seguir guiará você por algumas configurações úteis.
 
-## Using Associating Scope
+## Usando Associação de Escopo
 
-The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
+A única maneira de acessar vários registros usando o `.npmrc` é com a função de escopo, da seguinte forma:
 
     // .npmrc
     registry=https://registry.npmjs.org
     @mycompany:registry=http://localhost:4873
     
 
-This approach is valid, but comes with several disadvantages:
+Essa abordagem é válida, mas apresenta várias desvantagens:
 
-* It **only works with scopes**
-* Scope must match, **no Regular Expressions are allowed**
-* One scope **cannot fetch from multiple registries**
-* Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
+* Ela **apenas funciona com escopos**
+* O escopo deve coincidir, **não são permitidas Expressões Regulares**
+* Um escopo **não pode buscar vários registros**
+* Tokens/passwords **devem ser definidos no ** `.npmrc` e registrados no repositório.
 
-See a full example [here](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
+Veja um exemplo completo [aqui](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
 
-## Linking a Registry
+## Vinculando um Registro
 
-Linking a registry is fairly simple. First, define a new section in the `uplinks` section. Note, the order here is irrelevant.
+Vincular um registro é bastante simples. Primeiro, defina uma nova seção na seção `uplinks`. Note, a ordem aqui é irrelevante.
 
 ```yaml
   uplinks:
@@ -50,9 +50,9 @@ Linking a registry is fairly simple. First, define a new section in the `uplinks
 
 ```
 
-Add a `proxy` section to define the selected registry you want to proxy.
+Adicione uma seção `proxy` para definir o registro selecionado que você deseja usar como proxy.
 
-## Linking Multiple Registries
+## Vinculando Múltiplos Registros
 
 ```yaml
   uplinks:
@@ -69,11 +69,11 @@ Add a `proxy` section to define the selected registry you want to proxy.
     proxy: server1 server2
 ```
 
-Verdaccio supports multiple registries on the `proxy` field. The request will be resolved with the first in the list; if that fails, it will try with the next in the list and so on.
+Verdaccio suporta múltiplos registros no campo `proxy`. A solicitação será resolvida com o primeiro da lista; se este falhar, ele tentará com o próximo na lista e assim por diante.
 
-## Offline Registry
+## Registro Offline
 
-Having a full Offline Registry is completely possible. If you don't want any connectivity with external remotes you can do the following.
+Ter um Registro Offline completo é absolutamente possível. Se você não quiser nenhuma conectividade com controles remotos externos você pode fazer o seguinte.
 
 ```yaml
 <br />auth:
@@ -92,4 +92,4 @@ packages:
     publish: $authenticated
 ```
 
-Remove all `proxy` fields within each section of `packages`. The registry will become full offline.
+Remove todos os campos `proxy` de cada seção dos `pacotes`. O registro ficará totalmente offline.

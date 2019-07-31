@@ -1,10 +1,10 @@
 ---
 id: version-4.0.0-alpha.5-linking-remote-registry
-title: Linking a Remote Registry
+title: Vinculando um Registro Remoto
 original_id: linking-remote-registry
 ---
 
-Verdaccio is a proxy and by default [links](uplinks.md) the public registry.
+Verdaccio é uma proxy e por padrão [conecta](uplinks.md) o registro público.
 
 ```yaml
 uplinks:
@@ -16,7 +16,7 @@ You can link multiples registries, the following document will drive you through
 
 ## Using Asociating Scope
 
-The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
+A única maneira de acessar vários registros usando o `.npmrc` é com a função de escopo, da seguinte forma:
 
     // .npmrc
     registry=htts://registry.npmjs.org
@@ -25,14 +25,14 @@ The unique way to access multiple registries using the `.npmrc` is the scope fea
 
 This approache is valid, but comes with several dissadventages:
 
-* It **only works with scopes**
-* Scope must match, **no Regular Expressions are allowed**
-* One scope **cannot fetch from multiple registries**
-* Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
+* Ela **apenas funciona com escopos**
+* O escopo deve coincidir, **não são permitidas Expressões Regulares**
+* Um escopo **não pode buscar vários registros**
+* Tokens/passwords **devem ser definidos no ** `.npmrc` e registrados no repositório.
 
-See a full example [here](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
+Veja um exemplo completo [aqui](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
 
-## Linking a Registry
+## Vinculando um Registro
 
 Link a registry is fairly simple, first, define a new section in the `uplinks` section, note the order here is irrelevant.
 
@@ -50,7 +50,7 @@ Link a registry is fairly simple, first, define a new section in the `uplinks` s
 
 ```
 
-Add a `proxy` section to define the selected registry you want to proxy.
+Adicione uma seção `proxy` para definir o registro selecionado que você deseja usar como proxy.
 
 ## Linking Multiples Registry
 
@@ -71,7 +71,7 @@ Add a `proxy` section to define the selected registry you want to proxy.
 
 Verdaccio supports multiples registries on the `proxy` field, the request will be resolved with the first in the list, if fails, it will try with the next in the list and so on.
 
-## Offline Registry
+## Registro Offline
 
 Having a full Offline Registry is completely possible, if you don't want any connectivity with external remotes you can do the following.
 

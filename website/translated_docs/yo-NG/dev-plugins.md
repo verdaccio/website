@@ -233,7 +233,7 @@ filters:
 
 Ọna `filter_metadata` naa yoo gba ọ laaye lati ya metadata ti o wa lati eyikeyi uplink sọtọ, o jẹ eyi to da lori `Ileri` ati pe o ni lati tun da metadata kanna pada pẹlu atunṣe.
 
-> Maṣe yọ awọn ohun ini lati ara metadata naa, gbiyanju lati ma ṣe ṣe iyipada dipo bẹ kuku da ohun tuntun kan pada.
+> Do not remove properties from the metadata, try to do not mutate rather return a new object.
 
     interface IPluginStorageFilter<T> extends IPlugin<T> {
         filter_metadata(packageInfo: Package): Promise<Package>;

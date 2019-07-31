@@ -62,7 +62,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Lo iwọn iye docker](https://docs.docker.com/storage/volumes/) o jẹ igbaniyanju lori lilo atopọ dide.
+> Akiyesi: Verdaccio n ṣiṣẹ bi olumulo ti ko lo gbongbo (uid=10001) ninu apoti naa, if ti o ba lo atopọ dide lati fagbara bori atilẹwa, o nilo lati rii daju pe ọna atilẹyin naa jẹ pinpin si olumulo to tọ. Ninu apẹẹrẹ ti o wa loke, o nilo lati ṣamulo `sudo chown -R 100:101 /opt/verdaccio` bibẹkọ o ma salaba pade awọn aṣiṣe igbanilaaye ni akoko iṣiṣẹ. [Lo iwọn iye docker](https://docs.docker.com/storage/volumes/) o jẹ igbaniyanju lori lilo atopọ dide.
 
 Verdaccio 4 n pese awọn iyipada ayika tuntun lati ṣayipada si boya awọn igbanilaaye, ibudo tabi Ilana Http. Eyi ni akojọ pipe:
 
@@ -92,9 +92,9 @@ USER verdaccio
 
 ### Docker ati iṣeto ibudo akanṣe
 
-Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
+Eyikeyi `host:port` to jẹ ṣiṣeto ni `conf/config.yaml` labẹ `listen` **n lọwọlọwọ jẹ fifojufo nigbati docker ba n jẹ lilo**.
 
-If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
+Ti o ba fẹ lati kansi instance docker Verdaccio labẹ ibudo to yatọ, jẹ ki a sọpe `5000` ninu aṣẹ `docker run` safikun iyipada ayika naa `VERDACCIO_PORT=5000` ati ki o wa safihan ibudo `-p 5000:5000` naa.
 
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
@@ -102,7 +102,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-Of course the numbers you give to `-p` paremeter need to match.
+Dajudaju awọn nọmba ti o fi fun odiwọn `-p` nilo lati baramu.
 
 ### Lilo HTTPS pẹlu Docker
 
@@ -123,7 +123,7 @@ docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-You can set the port to use (for both container and host) by prefixing the above command with `VERDACCIO_PORT=5000`.
+O le ṣeto ibudo naa lati lo (fun awọn apoti ati agbalejo) nipasẹ fifi awọn aṣẹ ti o wa loke yii saaju pẹlu `VERDACCIO_PORT=5000`.
 
 ```yaml
 version: '3.1'
@@ -187,7 +187,7 @@ Ibi ipamọ kan to dayatọ wa ti o n gbalejo ọpọlọpọ awọn iṣeto lat
 
 ## Awọn agbedide Akanṣe ti Docker
 
-> If you have made an image based on Verdaccio, feel free to add it to this list.
+> Ti o ba ti ṣe aworan kan to da lori Verdaccio, ma se kọ lati se afikun rẹ si akojọ yii.
 
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)

@@ -4,11 +4,11 @@ title: Github Actions
 original_id: github-actions
 ---
 
-With [GitHub Actions](https://github.com/features/actions) you can automate your workflow, each GitHub Action performs a specific step in a process.
+Com [GitHub Actions](https://github.com/features/actions) você pode automatizar seu fluxo de trabalho, cada GitHub Action executa uma etapa específica em um processo.
 
 ![actions](/img/github-actions.png)
 
-## Testing your packages
+## Testando os seus pacotes
 
 Verdaccio provides a custom acttion for easy integration in your flow, you only add the following to your `main.workflow` in the step you consider the better for your flow.
 
@@ -19,8 +19,8 @@ action "Publish Verdaccio" {
 }
 ```
 
-The action will perform a `npm publish` and if the publishing finishes succesfully will allow to continue to the next step, otherwise will fails. If there is any issue publishing a package you will notice using this action.
+The action will perform a `npm publish` and if the publishing finishes succesfully will allow to continue to the next step, otherwise will fails. Se houver qualquer problema ao publicar um pacote você notará usando essa ação.
 
-Within the image uses `verdaccio-auth-memory` and `verdaccio-memory` plugins to handle authentification and storage to speed up the process.
+Dentro da imagem usa-se os plugins `verdaccio-auth-memory` e `verdaccio-memory` para gerenciar autenticação e armazenamento para acelerar o processo.
 
-If you want to know more about the action, [visit our repository](https://github.com/verdaccio/github-actions) dedicated for GitHub Actions.
+Se você quiser saber mais sobre a ação, [visite nosso repositório ](https://github.com/verdaccio/github-actions) dedicado ao GitHub Actions.

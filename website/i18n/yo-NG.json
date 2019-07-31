@@ -210,7 +210,7 @@
         "title": "Uplinks"
       },
       "version-3.8.6/version-3.8.6-use-cases": {
-        "title": "Use Cases"
+        "title": "Awọn apẹẹrẹ Ilo"
       },
       "version-3.8.6/version-3.8.6-webui": {
         "title": "Intafeesi Olumulo ti Ayelujara"
@@ -255,7 +255,7 @@
         "title": "Docker"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-e2e": {
-        "title": "End to end testing"
+        "title": "Idanwo Opin si opin"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-google-cloud": {
         "title": "Google Cloud"
@@ -264,7 +264,7 @@
         "title": "Fifi sori olupese IIS"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-linking-registries": {
-        "title": "Linking Regiestries"
+        "title": "Siṣe asopọ Awọn ibi iforukọsilẹ"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-logo": {
         "title": "Iru aami idanimọ Verdaccio"
@@ -279,7 +279,7 @@
         "title": "Iwọlesi Akopọ"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-scopes": {
-        "title": "Understanding Scopes"
+        "title": "Nini oye Awọn scope"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-uplinks": {
         "title": "Uplinks"

@@ -1,6 +1,6 @@
 ---
 id: version-4.0.0-beta.2-installation
-title: Installation
+title: Instalação
 original_id: installation
 ---
 
@@ -9,16 +9,16 @@ Verdaccio is a multiplatform web application. To install it, you need a few prer
 #### Pré-requisitos
 
 1. Node, acima da versão 
-    - For version `verdaccio@3.x` Node `v6.12` is the minimum supported version.
-    - For version `verdaccio@4.0.0-alpha.x` or `verdaccio@4.x` Node `8.x` (LTS "Carbon") is the minimum supported version.
-2. npm `>=4.x` or `yarn` > We highly recommend use the latest Node Package Managers clients `> npm@5.x | yarn@1.x | pnpm@2.x`
-3. The web interface supports the `Chrome, Firefox, Edge, and IE11` browsers.
+    - Para a versão `verdaccio@3.x`, o Node `v6.12` é a versão mínima suportada.
+    - Para as versões `verdaccio@4.0.0-alpha.x` ou `verdaccio@4.x`, o Node `8.x` (LTS "Carbon") é a versão mínima suportada.
+2. npm `>=4.x` ou `yarn` > É altamente recomendável usar os clientes mais recentes do Node Package Managers `> npm@5.x | yarn@1.x | pnpm@2.x`
+3. A interface da web suporta os navegadores `Chrome, Firefox, Edge, and IE11`.
 
-> Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
+> Verdaccio suportará a versão mais recente do Node.js de acordo com as recomendações do [Node.js Release Working Group](https://github.com/nodejs/Release).
 
 ## Instação
 
-`verdaccio` must be installed globaly using either of the following methods:
+O `verdaccio` deve ser instalado globalmente usando um dos métodos a seguir:
 
 Usando `npm`
 
@@ -36,7 +36,7 @@ yarn global add verdaccio
 
 ## Como Usar
 
-Once it has been installed, you only need to execute the CLI command:
+Uma vez instalado, você só precisa executar o comando da CLI:
 
 ```bash
 $> verdaccio
@@ -44,15 +44,15 @@ warn --- config file  - /home/.config/verdaccio/config.yaml
 warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 ```
 
-For more information about the CLI, please [read the cli section](cli.md).
+Para mais informações sobre a CLI, por favor [leia a seção sobre a cli](cli.md).
 
-You can set the registry by using the following command.
+Você pode definir o registro usando o seguinte comando.
 
 ```bash
 npm set registry http://localhost:4873/
 ```
 
-or you can pass a `--registry` flag when needed.
+ou você pode passar uma `--registry` flag quando necessário.
 
 ```bash
 npm install --registry http://localhost:4873
@@ -66,4 +66,4 @@ npm install --registry http://localhost:4873
 
 `verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
 
-[![Install](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
+[![Instalação](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)

@@ -232,7 +232,7 @@ filters:
 
 ### API
 
-The method `filter_metadata` will allow you to filter metadata that comes from any uplink, it is `Promise` based and has to return the same metadata modified.
+O método `filter_metadata` permitirá que você filtre metadados provenientes de qualquer uplink, ele é baseado em `Promise` e tem que retornar os mesmos metadados modificados.
 
 > Do not remove properties frm the metadata, try to do not mutate rather return a new object.
 
