@@ -27,20 +27,20 @@ uplinks:
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
 
-| Propriedade  | Tipo    | Obrigatório | Exemplo                                 | Suporte  | Descrição                                                                                                                  | Padrão     |
-| ------------ | ------- | ----------- | --------------------------------------- | -------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| url          | string  | Sim         | https://registry.npmjs.org/             | completo | The registry url                                                                                                           | npmjs      |
-| ca           | string  | Não         | ~./ssl/client.crt'                      | completo | SSL path certificate                                                                                                       | No default |
-| timeout      | string  | Não         | 100ms                                   | completo | set new timeout for the request                                                                                            | 30s        |
-| maxage       | string  | Não         | 10m                                     | completo | the time threshold to the cache is valid                                                                                   | 2m         |
-| fail_timeout | string  | Não         | 10m                                     | completo | defines max time when a request becomes a failure                                                                          | 5m         |
-| max_fails    | número  | Não         | 2                                       | completo | limit maximun failure request                                                                                              | 2          |
-| cache        | boolean | Não         | [true,false]                            | >= 2.1   | cache all remote tarballs in storage                                                                                       | true       |
-| auth         | list    | Não         | [see below](uplinks.md#auth-property)   | >= 2.5   | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
-| headers      | list    | Não         | authorization: "Bearer SecretJWToken==" | completo | list of custom headers for the uplink                                                                                      | disabled   |
-| strict_ssl   | boolean | Não         | [true,false]                            | >= 3.0   | If true, requires SSL certificates be valid.                                                                               | true       |
+| Propriedade  | Tipo    | Obrigatório | Exemplo                                 | Suporte  | Descrição                                                                                                                 | Padrão     |
+| ------------ | ------- | ----------- | --------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------------------------- | ---------- |
+| url          | string  | Sim         | https://registry.npmjs.org/             | completo | A url do registro                                                                                                         | npmjs      |
+| ca           | string  | Não         | ~./ssl/client.crt'                      | completo | Local do certificado SSL                                                                                                  | No default |
+| timeout      | string  | Não         | 100ms                                   | completo | define novo tempo limite para o pedido                                                                                    | 30s        |
+| maxage       | string  | Não         | 10m                                     | completo | o limite de tempo para o cache ser válido                                                                                 | 2m         |
+| fail_timeout | string  | Não         | 10m                                     | completo | define o tempo máximo quando uma solicitação se torna uma falha                                                           | 5m         |
+| max_fails    | número  | Não         | 2                                       | completo | limite máximo de falhas                                                                                                   | 2          |
+| cache        | boolean | Não         | [true,false]                            | >= 2.1   | armazenar em cache todos os tarballs remotos presentes no armazenamento                                                   | true       |
+| auth         | lista   | Não         | [veja abaixo](uplinks.md#auth-property) | >= 2.5   | atribui o cabeçalho 'Autorização' [mais info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
+| headers      | lista   | Não         | authorization: "Bearer SecretJWToken==" | completo | lista de cabeçalhos customizados para o uplink                                                                            | disabled   |
+| strict_ssl   | boolean | Não         | [true,false]                            | >= 3.0   | Se verdadeiro, requer certificados SSL válidos.                                                                           | true       |
 
-#### Auth property
+#### Propriedade Auth
 
 The `auth` property allows you to use an auth token with an uplink. Using the default environment variable:
 
@@ -53,7 +53,7 @@ uplinks:
       token_env: true # defaults to `process.env['NPM_TOKEN']`
 ```
 
-or via a specified environment variable:
+ou através de uma variável de ambiente especificada:
 
 ```yaml
 uplinks:
@@ -64,9 +64,9 @@ uplinks:
       token_env: FOO_TOKEN
 ```
 
-`token_env: FOO_TOKEN`internally will use `process.env['FOO_TOKEN']`
+`token_env: FOO_TOKEN` internamente vai usar `process.env['FOO_TOKEN']`
 
-or by directly specifying a token:
+ou especificando diretamente um token:
 
 ```yaml
 uplinks:
@@ -77,11 +77,11 @@ uplinks:
       token: "token"
 ```
 
-> Note: `token` has priority over `token_env`
+> Nota: `token` possui prioridade sobre `token_env`
 
-### You Must know
+### Deves Saber
 
-* Uplinks must be registries compatible with the `npm` endpoints. Eg: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* and more.
-* Setting `cache` to false will help to save space in your hard drive. This will avoid store `tarballs` but [it will keep metadata in folders](https://github.com/verdaccio/verdaccio/issues/391).
-* Exceed with multiple uplinks might slow down the lookup of your packages due for each request a npm client does, verdaccio does 1 call for each uplink.
-* The (timeout, maxage and fail_timeout) format follow the [NGINX measurement units](http://nginx.org/en/docs/syntax.html)
+* Os uplinks devem ser registros compatíveis com os `npm` endpoints. Por exemplo: *verdaccio*, `sinopia@1.4.0`, *npmjs registry*, *yarn registry*, *JFrog*, *Nexus* e mais.
+* Configurar o `cache` para false ajudará a economizar espaço no seu disco rígido. Isto vai evitar armazenar as `tarballs` mas [irá manter o metadata em pastas](https://github.com/verdaccio/verdaccio/issues/391).
+* Exceder com vários uplinks pode atrasar a busca por pacotes, pois para cada solicitação um cliente npm é encaminhado, o verdaccio, por sua vez, faz uma chamada para cada uplink.
+* O formato (timeout, maxage e fail_timeout) segue as [unidades de medida NGINX](http://nginx.org/en/docs/syntax.html)
