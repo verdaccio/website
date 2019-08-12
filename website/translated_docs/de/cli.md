@@ -3,27 +3,27 @@ id: cli
 title: "Befehlszeilen-Tool"
 ---
 
-The verdaccio CLI is your go start the application.
+Mit der verdaccio CLI kann die Anwendung gestartet werden.
 
-## Commands
+## Befehle
 
 ```bash
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Command            | Default                        | Example        | Description                          |
-| ------------------ | ------------------------------ | -------------- | ------------------------------------ |
-| --listen \ **-l** | 4873                           | -p 7000        | http port                            |
-| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | the configuration file               |
-| --info \ **-i**   |                                |                | prints local environment information |
+| Befehl             | Standard                       | Beispiel       | Beschreibung                                                                     |
+| ------------------ | ------------------------------ | -------------- | -------------------------------------------------------------------------------- |
+| --listen \ **-l** | 4873                           | -p 7000        | http port                                                                        |
+| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | Die Konfigurationsdatei                                                          |
+| --info \ **-i**   |                                |                | Gibt die lokalen Umgebungsinformationen aus prints local environment information |
 
-## Default config file location
+## Standardpfad zur Konfigurationsdatei
 
 To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and Windows environment we look for [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
-## Config file format
+## Format der Konfigurationsdatei
 
-Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+Die Konfiguration sollte eine YAML, JSON oder NodeJS Modul sein. Das YAML Format wird ermittelt durch das Ermittlem der Dateiendung (yaml oder yml, ohne Berücksichtigung der Schreibweise). 
 
 ## Default storage location
 
