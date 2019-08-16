@@ -6,7 +6,9 @@ original_id: dev-plugins
 
 There are many ways to extend `verdaccio`, the kind of plugins supported are:
 
+* Authentication plugins
 * Middleware plugins (since `v2.7.0`)
+* Storage plugins since (`v3.x`)
 
 > We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
 
@@ -56,7 +58,7 @@ The auth was successful.
      callback(null, groups);
     
 
-### Example
+### Beispiel
 
 ```javascript
 function Auth(config, stuff) {
