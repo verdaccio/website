@@ -490,11 +490,16 @@
       },
       "version-4.1.0/version-4.1.0-security-policy": {
         "title": "Política de Segurança"
+      },
+      "version-4.2.0/version-4.2.0-dev-plugins": {
+        "title": "Criando Plugins"
+      },
+      "version-4.2.0/version-4.2.0-packages": {
+        "title": "Permissões dos Pacotes"
       }
     },
     "links": {
       "Docs": "Docs",
-      "Notes": "Notes",
       "Blog": "Blog",
       "Twitter": "Twitter",
       "Help": "Help",
