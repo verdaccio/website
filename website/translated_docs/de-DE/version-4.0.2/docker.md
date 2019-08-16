@@ -67,7 +67,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
 
-| Property              | default                | Description                                        |
+| Property              | default                | Beschreibung                                       |
 | --------------------- | ---------------------- | -------------------------------------------------- |
 | VERDACCIO_APPDIR      | `/opt/verdaccio-build` | the docker working directory                       |
 | VERDACCIO_USER_NAME | `verdaccio`            | the system user                                    |
