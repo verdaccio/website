@@ -5,7 +5,7 @@ title: "Rozhovory"
 
 Vyjmenováváme rozhovory o Verdaccio, pokud jste dali rozhovor nebo se chystáte dát rozhovor o Verdaccio nebo hodláte zmínit tento projekt, neváhejte jej sem přidat.
 
-> Neváhejte se podělit o svůj obsah s komunitou, doporučujeme vám mluvit o Verdaccio. Pokud potřebujete pomoci s tím, jak začít, informace nebo zdroje, kontaktujte nás v našem [Chatu Discort](https://chat.verdaccio.org), pomůžeme vám.
+> Do not hesitate to share your content with the community, we encourage you to speak about Verdaccio. Pokud potřebujete pomoci s tím, jak začít, informace nebo zdroje, kontaktujte nás v našem [Chatu Discort](https://chat.verdaccio.org), pomůžeme vám.
 
 ## Nejnovější rozhovory <iframe width="960" height="540" src="https://www.youtube.com/embed/CnLA73E1BrE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
