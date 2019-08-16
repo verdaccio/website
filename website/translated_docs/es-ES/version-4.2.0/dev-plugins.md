@@ -6,7 +6,9 @@ original_id: dev-plugins
 
 Existen muchas maneras de extender `verdaccio`, los tipos de extensiones soportados son:
 
+* Extensiones de autenticación
 * Extensiones de Middleware (since `v2.7.0`)
+* Extensiones de Almacenamiento desde (`v3.x`)
 
 > Nosotros reocmendados desarrollar extensiones usando nuestras [definiciones de tipado de Flow](https://github.com/verdaccio/flow-types).
 
