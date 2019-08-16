@@ -5,7 +5,7 @@ title: "Talks"
 
 We list the talks about Verdaccio, if you gave a talk or you are about to give one about Verdaccio or that mention this project, feel free to add it here.
 
-> Do not hesistate to share your content with the community, we encorage you to speak about Verdaccio.
+> Do not hesitate to share your content with the community, we encourage you to speak about Verdaccio.
 > If need help how to start, information or resources, reach us in our [Chat at Discord](https://chat.verdaccio.org),
 > we will help you.
 
