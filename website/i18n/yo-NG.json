@@ -490,11 +490,16 @@
       },
       "version-4.1.0/version-4.1.0-security-policy": {
         "title": "Eto imulo Aabo"
+      },
+      "version-4.2.0/version-4.2.0-dev-plugins": {
+        "title": "Ṣiṣe agbedide Awọn ohun elo"
+      },
+      "version-4.2.0/version-4.2.0-packages": {
+        "title": "Iwọlesi Akopọ"
       }
     },
     "links": {
       "Docs": "Awọn iwe",
-      "Notes": "Awọn akọsilẹ",
       "Blog": "Bulọọgi",
       "Twitter": "Twitter",
       "Help": "Iranlọwọ",
