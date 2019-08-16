@@ -5,7 +5,7 @@ title: "Palestras"
 
 Listamos as palestras sobre o Verdaccio, se você deu uma palestra ou está prestes a dar uma sobre o Verdaccio ou que menciona este projeto, sinta-se à vontade para adicioná-la aqui.
 
-> Não hesite em compartilhar seu conteúdo com a comunidade, nós encorajamos você a falar sobre o Verdaccio. Se precisar de ajuda para começar, informações ou recursos, entre em contato conosco em nosso grupo no [Discord](https://chat.verdaccio.org), nós iremos ajudá-lo.
+> Do not hesitate to share your content with the community, we encourage you to speak about Verdaccio. Se precisar de ajuda para começar, informações ou recursos, entre em contato conosco em nosso grupo no [Discord](https://chat.verdaccio.org), nós iremos ajudá-lo.
 
 ## Palestras mais recentes <iframe width="960" height="540" src="https://www.youtube.com/embed/CnLA73E1BrE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
