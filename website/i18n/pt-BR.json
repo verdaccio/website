@@ -108,7 +108,7 @@
         "title": "Configurar SSL"
       },
       "talks": {
-        "title": "Talks"
+        "title": "Palestras"
       },
       "test": {
         "title": "test"
@@ -117,13 +117,13 @@
         "title": "Uplinks"
       },
       "webui": {
-        "title": "Web User Interface"
+        "title": "Interface de Usuário da Web"
       },
       "what-is-verdaccio": {
         "title": "O que é o Verdaccio?"
       },
       "who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Quem está usando o Verdaccio?"
       },
       "windows": {
         "title": "Instalando como um Serviço no Windows"
@@ -213,7 +213,7 @@
         "title": "Casos de uso"
       },
       "version-3.8.6/version-3.8.6-webui": {
-        "title": "Web User Interface"
+        "title": "Interface de Usuário da Web"
       },
       "version-3.8.6/version-3.8.6-what-is-verdaccio": {
         "title": "O que é o Verdaccio?"
@@ -285,7 +285,7 @@
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-webui": {
-        "title": "Web User Interface"
+        "title": "Interface de Usuário da Web"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-what-is-verdaccio": {
         "title": "O que é o Verdaccio?"
@@ -327,16 +327,16 @@
         "title": "Permissões dos Pacotes"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-talks": {
-        "title": "Talks"
+        "title": "Palestras"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-uplinks": {
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-webui": {
-        "title": "Web User Interface"
+        "title": "Interface de Usuário da Web"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Quem está usando o Verdaccio?"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-amazon": {
         "title": "Amazon Web Services"
@@ -348,7 +348,7 @@
         "title": "Protegendo seus pacotes"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-talks": {
-        "title": "Talks"
+        "title": "Palestras"
       },
       "version-4.0.0-alpha.7/version-4.0.0-alpha.7-dev-plugins": {
         "title": "Criando Plugins"
@@ -360,7 +360,7 @@
         "title": "Plugins"
       },
       "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Quem está usando o Verdaccio?"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-articles": {
         "title": "Artigos"
@@ -390,16 +390,16 @@
         "title": "Uplinks"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-webui": {
-        "title": "Web User Interface"
+        "title": "Interface de Usuário da Web"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Quem está usando o Verdaccio?"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
         "title": "Instalação"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
-        "title": "Web User Interface"
+        "title": "Interface de Usuário da Web"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-articles": {
         "title": "Artigos"
@@ -417,7 +417,7 @@
         "title": "Logotipo"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-webui": {
-        "title": "Web User Interface"
+        "title": "Interface de Usuário da Web"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-what-is-verdaccio": {
         "title": "O que é o Verdaccio?"
@@ -441,7 +441,7 @@
         "title": "Plugins"
       },
       "version-4.0.0/version-4.0.0-talks": {
-        "title": "Talks"
+        "title": "Palestras"
       },
       "version-4.0.1/version-4.0.1-docker": {
         "title": "Docker"
@@ -477,7 +477,7 @@
         "title": "Uplinks"
       },
       "version-4.0.2/version-4.0.2-webui": {
-        "title": "Web User Interface"
+        "title": "Interface de Usuário da Web"
       },
       "version-4.1.0/version-4.1.0-cli": {
         "title": "Utilitário na Linha de Comando"
@@ -490,11 +490,16 @@
       },
       "version-4.1.0/version-4.1.0-security-policy": {
         "title": "Política de Segurança"
+      },
+      "version-4.2.0/version-4.2.0-dev-plugins": {
+        "title": "Criando Plugins"
+      },
+      "version-4.2.0/version-4.2.0-packages": {
+        "title": "Permissões dos Pacotes"
       }
     },
     "links": {
       "Docs": "Docs",
-      "Notes": "Notes",
       "Blog": "Blog",
       "Twitter": "Twitter",
       "Help": "Help",

@@ -80,7 +80,7 @@ $ which forever
 $ which verdaccio
 ```
 
-## Using systemd
+## Utilizar o systemd
 
 Instead of `forever` you can use `systemd` for starting verdaccio and keeping it running. Verdaccio installation has systemd unit, you only need to copy it:
 
@@ -88,4 +88,4 @@ Instead of `forever` you can use `systemd` for starting verdaccio and keeping it
 $ sudo cp /usr/lib/node_modules/verdaccio/systemd/verdaccio.service /lib/systemd/system/ && sudo systemctl daemon-reload
 ```
 
-This unit assumes you have configuration in `/etc/verdaccio/config.yaml` and store data in `/var/lib/verdaccio`, so either move your files to those locations or edit the unit.
+Esta unidade assume que você tenha a configuração em `/etc/verdaccio/config.yaml` e armazena dados em `/var/lib/verdaccio`, então mova seus arquivos para esses locais ou edite a unidade.

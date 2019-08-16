@@ -4,20 +4,20 @@ title: Befehlszeilen-Tool
 original_id: cli
 ---
 
-The verdaccio CLI is your go start the application.
+Mit der verdaccio CLI kann die Anwendung gestartet werden.
 
-## Commands
+## Befehle
 
 ```bash
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Command            | Default                        | Example        | Description            |
-| ------------------ | ------------------------------ | -------------- | ---------------------- |
-| --listen \ **-l** | 4873                           | -p 7000        | http port              |
-| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | the configuration file |
+| Befehl             | Standard                       | Beispiel       | Beschreibung            |
+| ------------------ | ------------------------------ | -------------- | ----------------------- |
+| --listen \ **-l** | 4873                           | -p 7000        | http port               |
+| --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | Die Konfigurationsdatei |
 
-## Default config file location
+## Standardpfad zur Konfigurationsdatei
 
 To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and Windows environment we look for [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 

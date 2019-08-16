@@ -490,11 +490,16 @@
       },
       "version-4.1.0/version-4.1.0-security-policy": {
         "title": "Security Policy"
+      },
+      "version-4.2.0/version-4.2.0-dev-plugins": {
+        "title": "플러그인 개발하기"
+      },
+      "version-4.2.0/version-4.2.0-packages": {
+        "title": "패키지 접근"
       }
     },
     "links": {
       "Docs": "Docs",
-      "Notes": "Notes",
       "Blog": "Blog",
       "Twitter": "Twitter",
       "Help": "Help",

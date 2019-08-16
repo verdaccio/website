@@ -5,7 +5,7 @@ title: "Выступления"
 
 Здесь мы перечисляем выступления, посвященные Verdaccio; если вы делали такое выступление или собираетесь, или упоминаете Verdaccio в своем выступлении, пожалуйста, добавьте его здесь.
 
-> Не забывайте поделиться с комьюнити, мы любим, когда говорят о Verdaccio. Если вам нужны мысли тему "с чего начать", информация или материалы на эту тему, пишите нам в [чате в Discord](https://chat.verdaccio.org), и мы поможем.
+> Do not hesitate to share your content with the community, we encourage you to speak about Verdaccio. Если вам нужны мысли тему "с чего начать", информация или материалы на эту тему, пишите нам в [чате в Discord](https://chat.verdaccio.org), и мы поможем.
 
 ## Самые последние выступления <iframe width="960" height="540" src="https://www.youtube.com/embed/CnLA73E1BrE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 

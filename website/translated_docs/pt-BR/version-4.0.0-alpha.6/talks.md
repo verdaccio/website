@@ -1,16 +1,16 @@
 ---
 id: version-4.0.0-alpha.6-talks
-title: Talks
+title: Palestras
 original_id: talks
 ---
 
-We list the talks about Verdaccio, if you gave a talk or you are about to give one about Verdaccio or that mention this project, feel free to add it here.
+Listamos as palestras sobre o Verdaccio, se você deu uma palestra ou está prestes a dar uma sobre o Verdaccio ou que menciona este projeto, sinta-se à vontade para adicioná-la aqui.
 
-> Do not hesistate to share your content with the community, we encorage you to speak about Verdaccio. If need help how to start, information or resources, reach us in our [Chat at Discord](https://chat.verdaccio.org), we will help you.
+> Não hesite em compartilhar seu conteúdo com a comunidade, nós encorajamos você a falar sobre o Verdaccio. Se precisar de ajuda para começar, informações ou recursos, entre em contato conosco em nosso grupo no [Discord](https://chat.verdaccio.org), nós iremos ajudá-lo.
 
-## The latest Talk <iframe src="https://player.vimeo.com/video/322006226" width="640" height="360" frameborder="0" allowfullscreen mark="crwd-mark"></iframe> 
+## Palestras mais recentes <iframe src="https://player.vimeo.com/video/322006226" width="640" height="360" frameborder="0" allowfullscreen mark="crwd-mark"></iframe> 
 
-> The last shared talk is always highlighted here. We help you share your voice with the community.
+> A última palestra compartilhada é sempre destacada aqui. Ajudamos você a compartilhar sua voz com a comunidade.
 
 * [Madrid Node.js Meetup - Introducción a Verdaccio: gestión de paquetes privados, March 2019](https://www.todojs.com/introduccion-a-verdaccio/)
 * [Vienna.js Meetuo - Introduction to Verdaccio, January 2019](https://www.youtube.com/watch?v=hDIFKzmoCaA)
@@ -23,11 +23,11 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 * [Architectures for Huge Angular Based Enterprise #WeAreDevelopers2018](https://youtu.be/q4XmAy6_ucw?t=551)
 * [BxJS Weekly Ep. 13 - June 2, 2018 (javascript news podcast)](https://youtu.be/Xo8CzYGKXTs?list=PL_gX69xPLi-mqs5BJe-xPnOPT6K1Y5_ZQ&t=2732)
 
-## Future Talks
+## Palestras Futuras
 
 * [Madrid Node.js Meetup 5h March 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
 
-## Related Videos
+## Vídeos Relacionados
 
 * [Local npm server](https://www.youtube.com/watch?v=vc2wMwcDKOE)
 * [Private NPM Registry (sinopia+docker)](https://www.youtube.com/watch?v=0TXTCrGaxKc)

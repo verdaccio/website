@@ -25,7 +25,7 @@ registry=http://localhost:5555/
 
 `verdaccio`allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
 
-Eg:
+Bsp.:
 
 ```yaml
   'my-company-*':
@@ -49,9 +49,9 @@ auth:
     #max_users: 1000
 ```
 
-| Property  | Type   | Required | Example    | Support | Description                              |
+| Property  | Type   | Required | Beispiel   | Support | Beschreibung                             |
 | --------- | ------ | -------- | ---------- | ------- | ---------------------------------------- |
-| file      | string | Yes      | ./htpasswd | all     | file that host the encrypted credentials |
-| max_users | number | No       | 1000       | all     | set limit of users                       |
+| Datei     | string | Ja       | ./htpasswd | all     | file that host the encrypted credentials |
+| max_users | number | Nein     | 1000       | all     | set limit of users                       |
 
 In case to decide do not allow user to login, you can set `max_users: -1`.

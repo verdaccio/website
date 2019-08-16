@@ -5,7 +5,7 @@ title: "Presentazioni"
 
 Elenchiamo le presentazioni su Verdaccio: se hai fatto o se in in procinto di fare una presentazione su Verdaccio o che menzioni questo progetto, aggiungila qui.
 
-> Non esitare a condividere i tuoi contenuti con la community, ti incoraggiamo a parlare di Verdaccio. Se hai bisogno di aiuto su come iniziare, informazioni o risorse, raggiungici sulla nostra [Chat di Discord](https://chat.verdaccio.org), ti aiuteremo.
+> Do not hesitate to share your content with the community, we encourage you to speak about Verdaccio. Se hai bisogno di aiuto su come iniziare, informazioni o risorse, raggiungici sulla nostra [Chat di Discord](https://chat.verdaccio.org), ti aiuteremo.
 
 ## L’ultima Presentazione <iframe width="960" height="540" src="https://www.youtube.com/embed/CnLA73E1BrE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
