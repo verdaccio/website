@@ -6,7 +6,9 @@ original_id: dev-plugins
 
 Има много начина да проширите `verdaccio`, типови подржаних plugin-а су:
 
+* Authentication plugins
 * Middleware plugins (од верзије `v2.7.0`)
+* Storage plugins (од верзије `v3.x`)
 
 > Препоручујемо developing plugins који користе наше [flow type дефиниције](https://github.com/verdaccio/flow-types).
 
