@@ -490,11 +490,16 @@
       },
       "version-4.1.0/version-4.1.0-security-policy": {
         "title": "Security Policy"
+      },
+      "version-4.2.0/version-4.2.0-dev-plugins": {
+        "title": "Разработка плагинов"
+      },
+      "version-4.2.0/version-4.2.0-packages": {
+        "title": "Доступ к пакетам"
       }
     },
     "links": {
       "Docs": "Документация",
-      "Notes": "Заметки",
       "Blog": "Блог",
       "Twitter": "Twitter",
       "Help": "Помощь",
