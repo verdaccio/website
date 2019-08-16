@@ -6,7 +6,9 @@ original_id: dev-plugins
 
 Awọn ọna pupọ lo wa lati fa `verdaccio` gun si, iru awọn ohun elo ti atilẹyin wa fun ni:
 
+* Awọn ohun elo Ifasẹsi
 * Awọn ohun elo Middleware (lati `v2.7.0`)
+* Awọn ohun elo Ibi ipamọ lati (`v3.x`)
 
 > A ṣe igbaniyanju agbedide awọn ohun elo afikun nipa lilo [awọn itumọ iru ilana](https://github.com/verdaccio/flow-types) wa.
 
