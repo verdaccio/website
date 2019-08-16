@@ -6,7 +6,9 @@ original_id: dev-plugins
 
 Có nhiều cách để mở rộng `verdaccio`. Các loại phần mềm bổ trợ là:
 
+* Xác minh các phần mềm bổ trợ
 * Phần mềm bổ trợ Middleware (kể từ phiên bản `v2.7.0`)
+* Phần mềm bổ trợ lưu trữ từ phiên bản (` v3.x `)
 
 > Chúng tôi khuyên bạn nên phát triển phần mềm bổ trợ bằng cách sử dụng [định nghĩa loại luồng ](https://github.com/verdaccio/flow-types) của chúng tôi.
 
