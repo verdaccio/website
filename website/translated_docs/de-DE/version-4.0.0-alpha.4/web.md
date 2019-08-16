@@ -22,13 +22,13 @@ All access restrictions defined to [protect your packages](protect-your-dependen
 
 ### Configuration
 
-| Property      | Type       | Required | Example                        | Support  | Description                                                                                                                                          |
+| Property      | Type       | Required | Beispiel                       | Support  | Beschreibung                                                                                                                                         |
 | ------------- | ---------- | -------- | ------------------------------ | -------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| enable        | boolean    | No       | true/false                     | all      | allow to display the web interface                                                                                                                   |
-| title         | string     | No       | Verdaccio                      | all      | HTML head title description                                                                                                                          |
-| gravatar      | boolean    | No       | true                           | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                               |
-| sort_packages | [asc,desc] | No       | asc                            | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                               |
-| logo          | string     | No       | http://my.logo.domain/logo.png | all      | a URI where logo is located (header logo)                                                                                                            |
-| scope         | string     | No       | \\@myscope                   | all      | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
+| enable        | boolean    | Nein     | true/false                     | all      | allow to display the web interface                                                                                                                   |
+| title         | string     | Nein     | Verdaccio                      | all      | HTML head title description                                                                                                                          |
+| gravatar      | boolean    | Nein     | true                           | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                               |
+| sort_packages | [asc,desc] | Nein     | asc                            | `>v4` | Gravatars will be generated under the hood if this property is enabled                                                                               |
+| logo          | string     | Nein     | http://my.logo.domain/logo.png | all      | a URI where logo is located (header logo)                                                                                                            |
+| scope         | string     | Nein     | \\@myscope                   | all      | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header (note: escape @ with \\@) |
 
 > It is recommended the logo size has the following size `40x40` pixels.
