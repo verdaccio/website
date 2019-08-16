@@ -6,7 +6,9 @@ original_id: dev-plugins
 
 Il existe plusieurs façons pour étendre `verdaccio`, les types de plugins pris en charge sont :
 
+* Plugins d’authentification
 * Plugins Middleware (depuis `v2.7.0`)
+* Plugins de stockage depuis (`v3.x`)
 
 > Nous vous recommandons de développer des plugins à l'aide de nos [ définitions des types de flux ](https://github.com/verdaccio/flow-types).
 
