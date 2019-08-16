@@ -490,11 +490,16 @@
       },
       "version-4.1.0/version-4.1.0-security-policy": {
         "title": "Security Policy"
+      },
+      "version-4.2.0/version-4.2.0-dev-plugins": {
+        "title": "Sviluppare Estensioni"
+      },
+      "version-4.2.0/version-4.2.0-packages": {
+        "title": "Accesso ai Pacchetti"
       }
     },
     "links": {
       "Docs": "Documenti",
-      "Notes": "Note",
       "Blog": "Blog",
       "Twitter": "Twitter",
       "Help": "Aiuto",
