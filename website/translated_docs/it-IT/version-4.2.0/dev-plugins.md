@@ -6,7 +6,9 @@ original_id: dev-plugins
 
 Esistono diversi modi di ampliare `verdaccio`, i tipi di estensioni supportati sono:
 
+* Plugin di autenticazione
 * Plugin Middleware (da `v2.7.0`)
+* Plugin di archiviazione da (`v3.x`)
 
 > Consigliamo di sviluppare estensioni utilizzando le nostre [definizioni di tipo di flusso](https://github.com/verdaccio/flow-types).
 
