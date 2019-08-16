@@ -6,7 +6,9 @@ original_id: dev-plugins
 
 Istnieje wiele sposobów na rozszerzenie funkcjonalności `verdaccio`, wspierane są następujące rodzaje wtyczek:
 
+* Wtyczki uwierzytelniania
 * Wtyczki oprogramowania pośredniego (od wersji `v2.7.0`)
+* Wtyczki magazynu danych od wersji (`v3.x`)
 
 > Zalecamy tworzenie wtyczek za pomocą naszych [flow type definitions](https://github.com/verdaccio/flow-types).
 
