@@ -6,7 +6,9 @@ original_id: dev-plugins
 
 有很多种扩展 `verdaccio`的方法，支持的插件种类有：
 
+* 认证插件
 * Middleware 插件 (自 `v2.7.0`)
+* 存储插件自 (`v3.x`)
 
 > 我们建议使用[flow类型定义](https://github.com/verdaccio/flow-types)来开发插件。
 
