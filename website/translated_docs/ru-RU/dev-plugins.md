@@ -233,7 +233,7 @@ filters:
 
 Метод `filter_metadata` позволяет фильтровать метаданные, которые пришли из аплинка, это `Promise`, который должен возвращать модифицированные данныые.
 
-> Do not remove properties from the metadata, try to do not mutate rather return a new object.
+> Не удаляйте свойства метаданных, попытайтесь изменить их, вместо создания нового объекта.
 
     interface IPluginStorageFilter<T> extends IPlugin<T> {
         filter_metadata(packageInfo: Package): Promise<Package>;
