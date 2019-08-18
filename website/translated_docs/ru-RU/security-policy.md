@@ -1,6 +1,6 @@
 ---
 id: security-policy
-title: "Security Policy"
+title: "Политика безопасности"
 ---
 
-Follow our security policy on [Github](https://github.com/verdaccio/verdaccio/security/policy)
+Следуйте нашей политике безопасности, описанной на [Github](https://github.com/verdaccio/verdaccio/security/policy)
