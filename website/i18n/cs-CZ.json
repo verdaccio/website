@@ -1,5 +1,5 @@
 {
-  "_comment": "Tento soubor je automaticky generována pomocí write-translations.js",
+  "_comment": "Tento soubor je automaticky generován pomocí write-translations.js",
   "localized-strings": {
     "next": "Další",
     "previous": "Předchozí",
@@ -39,7 +39,7 @@
         "title": "Nástroj Příkazové Řádky"
       },
       "configuration": {
-        "title": "Konfigurační Soubor"
+        "title": "Konfigurační soubor"
       },
       "dev-plugins": {
         "title": "Developing Plugins"
@@ -147,7 +147,7 @@
         "title": "Nástroj Příkazové Řádky"
       },
       "version-3.8.6/version-3.8.6-configuration": {
-        "title": "Konfigurační Soubor"
+        "title": "Konfigurační soubor"
       },
       "version-3.8.6/version-3.8.6-contributing": {
         "title": "Contributing Verdaccio"
@@ -225,7 +225,7 @@
         "title": "Nástroj Příkazové Řádky"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-configuration": {
-        "title": "Konfigurační Soubor"
+        "title": "Konfigurační soubor"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-uplinks": {
         "title": "Uplinks"
@@ -246,7 +246,7 @@
         "title": "Strategie ukládání do mezipaměti"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-configuration": {
-        "title": "Konfigurační Soubor"
+        "title": "Konfigurační soubor"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-dev-plugins": {
         "title": "Developing Plugins"
@@ -303,7 +303,7 @@
         "title": "Strategie ukládání do mezipaměti"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-configuration": {
-        "title": "Konfigurační Soubor"
+        "title": "Konfigurační soubor"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-dev-plugins": {
         "title": "Developing Plugins"
@@ -375,7 +375,7 @@
         "title": "Continuous Integration"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-configuration": {
-        "title": "Konfigurační Soubor"
+        "title": "Konfigurační soubor"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-github-actions": {
         "title": "Github Actions"
@@ -405,7 +405,7 @@
         "title": "Články"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-configuration": {
-        "title": "Konfigurační Soubor"
+        "title": "Konfigurační soubor"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-docker": {
         "title": "Docker"
@@ -423,7 +423,7 @@
         "title": "Co je Verdaccio?"
       },
       "version-4.0.0-beta.8/version-4.0.0-beta.8-configuration": {
-        "title": "Konfigurační Soubor"
+        "title": "Konfigurační soubor"
       },
       "version-4.0.0-beta.8/version-4.0.0-beta.8-docker": {
         "title": "Docker"
@@ -499,7 +499,7 @@
       }
     },
     "links": {
-      "Docs": "Dokumenty",
+      "Docs": "Dokumentace",
       "Blog": "Blog",
       "Twitter": "Twitter",
       "Help": "Pomoc",
@@ -509,7 +509,7 @@
     },
     "categories": {
       "Introduction": "Úvod",
-      "Features": "Funkce",
+      "Features": "Vlastnosti",
       "Server": "Server",
       "Development": "Vývoj",
       "DevOps": "DevOps",
@@ -519,15 +519,15 @@
     }
   },
   "pages-strings": {
-    "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Zjištěte více pomocí [documentation on this site.](/docs/en/installation.html)",
+    "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Zjistěte více pomocí [dokumentace na těchto stránkách.](/docs/en/installation.html)",
     "Browse Docs|no description given": "Procházet dokumentaci",
     "Ask questions about the documentation and project|no description given": "Položit otázku o dokumentaci nebo projektu",
     "Join the community|no description given": "Přidejte se ke komunitě",
     "Find out what's new with this project|no description given": "Zjistěte, co je nového v tomto projektu",
     "Stay up to date|no description given": "Zůstaňte aktuální",
-    "Need help?|no description given": "Potřebujete pomoc?",
-    "This project is maintained by a dedicated group of people.|statement made to reader": "Tento projekt je spravovaný dedikovanou skupinou lidí.",
-    "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)|no description given": "Zjištěte více o Verdaccio pomocí [documentation on this site.](/docs/en/installation.html)",
+    "Need help?|no description given": "Potřebujete pomoci?",
+    "This project is maintained by a dedicated group of people.|statement made to reader": "Tento projekt je spravován oddanou skupinou lidí.",
+    "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)|no description given": "Zjistěte více o Verdacciu pomocí [dokumentace na těchto stránkách.](/docs/en/installation.html)",
     "You can follow and contact us on|no description given": "Můžete nás sledovat a kontaktovat na",
     "and also you can chat with the Verdaccio community at|no description given": "a také můžete chatovat s Verdaccio komunitou na",
     "If the documentation is not enough help, you can try browsing into our|no description given": "Pokud v dokumentaci není informace, kterou hledáte, můžete se zkusit podívat na naše",
@@ -544,12 +544,12 @@
     "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio je nabízený jako doplněk, ověřování, middleware a podpora ukládání. Stačí si jeden vybrat nebo si vytvořit svůj vlastní.",
     "Plugin Support|no description given": "Podpora doplňků",
     "Who's Using This?|no description given": "Kdo ho využívá?",
-    "This project is sponsored by these awesome users|no description given": "This project is sponsored by these awesome users",
-    "and used by many more, including|no description given": "and used by many more, including",
+    "This project is sponsored by these awesome users|no description given": "Tento projekt je sponzorován těmito úžasnými uživateli",
+    "and used by many more, including|no description given": "a používán mnoha dalšími, včetně",
     "More|no description given": "Více",
     "Users|no description given": "Uživatelé",
-    "Verdaccio is sponsored by these awesome folks...|no description given": "Verdaccio is sponsored by these awesome folks...",
-    "and used by many others, including:|no description given": "and used by many others, including:",
+    "Verdaccio is sponsored by these awesome folks...|no description given": "Verdaccio je sponzorováno těmito úžasnými lidičkami...",
+    "and used by many others, including:|no description given": "a používán mnoha dalšími, včetně:",
     "Are you using this project? Do not be shy and add your company/project logo.|no description given": "Používáte tento projekt? Nestyďte se a přidejte logo firmy / projektu.",
     "Add your company|no description given": "Přidat vaši firmu",
     "Help Translate|recruit community translators for your project": "Pomoct s překladem",
