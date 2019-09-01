@@ -130,7 +130,7 @@ const siteConfig = {
   cname: 'verdaccio.org',
   noIndex: false,
   baseUrl: '/' /* base url for your project */,
-  projectName: 'verdaccio' /* used to generate github project links */,
+  projectName: 'website',
   headerLinks: [
     { doc: 'installation', label: 'Docs'},
     { blog: true, label: 'Blog'},
