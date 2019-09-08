@@ -1,14 +1,14 @@
 ---
 id: version-4.0.0-alpha.5-configuration
-title: Konfigurační Soubor
+title: Konfigurační soubor
 original_id: konfigurace
 ---
 
-Tento soubor je základní kámen verdaccia, kde můžete modifikovat výchozí chování, povolovat doplňky a rozšiřovat funkce.
+Tento soubor je základní kámen verdaccia, kde můžete upravit výchozí chování, povolit doplňky a rozšířit funkčnost.
 
 Výchozí konfigurační soubor `config.yaml` je vytvořen při prvním spuštění `verdaccia`.
 
-## Výchozí Konfigurace
+## Výchozí konfigurace
 
 Výchozí konfigurace má podporu pro balíčky **s rozsahem** a umožňuje každému uživateli přístup ke všem balíčkům, ale pouze **ověřeným uživatelům k publikování**.
 
