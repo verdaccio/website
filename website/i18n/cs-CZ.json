@@ -36,7 +36,7 @@
         "title": "Continuous Integration"
       },
       "cli": {
-        "title": "Nástroj Příkazové Řádky"
+        "title": "Nástroj příkazové řádky"
       },
       "configuration": {
         "title": "Konfigurační soubor"
@@ -144,7 +144,7 @@
         "title": "Continuous Integration"
       },
       "version-3.8.6/version-3.8.6-cli": {
-        "title": "Nástroj Příkazové Řádky"
+        "title": "Nástroj příkazové řádky"
       },
       "version-3.8.6/version-3.8.6-configuration": {
         "title": "Konfigurační soubor"
@@ -222,7 +222,7 @@
         "title": "Instalovat jako Windows službu"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-cli": {
-        "title": "Nástroj Příkazové Řádky"
+        "title": "Nástroj příkazové řádky"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-configuration": {
         "title": "Konfigurační soubor"
@@ -432,7 +432,7 @@
         "title": "Reverse Proxy Setup"
       },
       "version-4.0.0/version-4.0.0-cli": {
-        "title": "Nástroj Příkazové Řádky"
+        "title": "Nástroj příkazové řádky"
       },
       "version-4.0.0/version-4.0.0-docker": {
         "title": "Docker"
@@ -480,7 +480,7 @@
         "title": "Webové uživatelské rozhraní"
       },
       "version-4.1.0/version-4.1.0-cli": {
-        "title": "Nástroj Příkazové Řádky"
+        "title": "Nástroj příkazové řádky"
       },
       "version-4.1.0/version-4.1.0-dev-plugins": {
         "title": "Developing Plugins"
@@ -496,6 +496,9 @@
       },
       "version-4.2.0/version-4.2.0-packages": {
         "title": "Přístup k balíčkům"
+      },
+      "version-4.2.1/version-4.2.1-talks": {
+        "title": "Rozhovory"
       }
     },
     "links": {
