@@ -216,13 +216,13 @@ module.exports = (...arguments) => {
 
 * [@verdaccio/ui-theme](https://github.com/verdaccio/ui): Тема по умолчанию для Verdaccio, написана на React.js.
 
-## Filter Plugin
+## Плагин фильтрации
 
-Since [`4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
+Применим, начиная с [`4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
 
-Filter plugins were introduced due a [request](https://github.com/verdaccio/verdaccio/issues/818) in order to be able to filter metadata from uplinks.
+Плигин фильтрации был создан по [запросу](https://github.com/verdaccio/verdaccio/issues/818), для того, чтобы фильтровать метаданные из аплинков.
 
-More [info in the PR](https://github.com/verdaccio/verdaccio/pull/1161).
+Больше информации [в PR](https://github.com/verdaccio/verdaccio/pull/1161).
 
 ```yaml
 filters:  
@@ -232,9 +232,9 @@ filters:
 
 ### API
 
-The method `filter_metadata` will allow you to filter metadata that comes from any uplink, it is `Promise` based and has to return the same metadata modified.
+Метод `filter_metadata` позволяет фильтровать метаданные, которые пришли из аплинка, это `Promise`, который должен возвращать модифицированные данныые.
 
-> Do not remove properties from the metadata, try to do not mutate rather return a new object.
+> Не удаляйте свойства метаданных, попытайтесь изменить их, вместо создания нового объекта.
 
     interface IPluginStorageFilter<T> extends IPlugin<T> {
         filter_metadata(packageInfo: Package): Promise<Package>;
