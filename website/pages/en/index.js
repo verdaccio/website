@@ -41,6 +41,12 @@ class TweetsSection extends React.Component {
         <div>
           {this.renderTweetDownLeft(language)}
         </div>
+        <div>
+          {this.renderSnyk(language)}
+        </div>
+        <div>
+          {this.renderMichael(language)}
+        </div>
       </div>);
   }
 
@@ -87,6 +93,35 @@ class TweetsSection extends React.Component {
         </p>&mdash; Tierney Cyren (@bitandbang) <a
         href="https://twitter.com/bitandbang/status/1001297542779424768?ref_src=twsrc%5Etfw">29 de mayo de 2018</a>
       </blockquote>);
+  }
+
+  renderMichael(language) {
+    return (
+      <blockquote className="twitter-tweet" data-conversation="none" data-cards="hidden" data-lang={language}>
+        <p lang="en" dir="ltr">I&#39;m increasingly relying on
+          <a href="https://twitter.com/verdaccio_npm?ref_src=twsrc%5Etfw">@verdaccio_npm</a> to help test complex monorepo
+            release scenarios. I&#39;ve already published about 20 versions today before I got the process exactly
+            right.<br/><br/>This would simply not be feasible with other tools or approaches. Verdaccio is simple and 🔥
+        </p>&mdash; Michael Bromley (@michlbrmly)
+        <a href="https://twitter.com/michlbrmly/status/1169571193550192641?ref_src=twsrc%5Etfw">September 5, 2019</a>
+      </blockquote>
+      );
+  }
+
+  renderSnyk(language) {
+    return (
+      <blockquote class="twitter-tweet">
+        <p lang="en" dir="ltr">The 10 <a href="https://twitter.com/npmjs?ref_src=twsrc%5Etfw">@npmjs</a> security best practices with
+          <a href="https://twitter.com/liran_tal?ref_src=twsrc%5Etfw">@liran_tal</a>
+            and
+          <a href="https://twitter.com/jotadeveloper?ref_src=twsrc%5Etfw">@jotadeveloper</a>: #6 Use a local npm proxy (with
+          <a href="https://twitter.com/verdaccio_npm?ref_src=twsrc%5Etfw">@verdaccio_npm</a>)
+          <a href="https://t.co/KDLN6nGHhM">https://t.co/KDLN6nGHhM</a>
+          <a href="https://t.co/0RbGT4HdLb">pic.twitter.com/0RbGT4HdLb</a></p>&mdash; Snyk (@snyksec)
+          <a href="https://twitter.com/snyksec/status/1168280372800557063?ref_src=twsrc%5Etfw">September 1, 2019
+          </a>
+        </blockquote>
+      );
   }
 }
 

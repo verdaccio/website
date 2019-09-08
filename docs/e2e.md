@@ -56,6 +56,7 @@ sh -c "npm --registry $local_registry publish"
 * [bit](https://github.com/teambit/bit) *(+6k ⭐️)*
 * [pnpm](https://github.com/pnpm/pnpm) *(+5k ⭐️)*
 * [Mozilla Neutrino](https://github.com/neutrinojs/neutrino) *(+3k ⭐️)*
+* [Embark](https://embark.status.im/) *(+3k ⭐️)*
 * [Hyperledger Composer](https://github.com/hyperledger/composer) *(+1.6k ⭐️)*
 * [Wix Yoshi](https://github.com/wix/yoshi)
 

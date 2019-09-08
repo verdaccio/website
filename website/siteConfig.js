@@ -108,6 +108,20 @@ const nonSponsorUsers = [
     fbOpenSource: false,
     pinned: false,
   },
+  {
+    caption: "vendure",
+    image: "img/users/vendure.png",
+    infoLink: "https://www.vendure.io/",
+    fbOpenSource: false,
+    pinned: true,
+  },
+  {
+    caption: "embark",
+    image: "img/users/embark.png",
+    infoLink: "https://embark.status.im",
+    fbOpenSource: false,
+    pinned: false,
+  },
 ];
 
 const sponsorUsers = [
