@@ -8,6 +8,7 @@ title: "Tani o nlo Verdaccio?"
 *Ti o ba nlo Verdaccio ninu iṣowo rẹ ti o si fẹ lati sọ nipa iriri rẹ, jẹ ki a mọ. Inu wa yoo dun lati tẹtisi ọ.*
 
 * [SheetJS](https://sheetjs.com/)
+* [Satispay](https://www.satispay.com/)
 
 ### Awọn iṣẹ akanṣe Orisun Gbangba
 
