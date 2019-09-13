@@ -496,6 +496,9 @@
       },
       "version-4.2.0/version-4.2.0-packages": {
         "title": "Доступ к пакетам"
+      },
+      "version-4.2.1/version-4.2.1-talks": {
+        "title": "Выступления"
       }
     },
     "links": {

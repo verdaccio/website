@@ -496,6 +496,9 @@
       },
       "version-4.2.0/version-4.2.0-packages": {
         "title": "Acceso a Paquetes"
+      },
+      "version-4.2.1/version-4.2.1-talks": {
+        "title": "Talks"
       }
     },
     "links": {

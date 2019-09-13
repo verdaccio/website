@@ -1,13 +1,13 @@
 ---
 id: konfigurace
-title: "Konfigurační Soubor"
+title: "Konfigurační soubor"
 ---
 
-Tento soubor je základní kámen verdaccia, kde můžete modifikovat výchozí chování, povolovat doplňky a rozšiřovat funkce.
+Tento soubor je základní kámen verdaccia, kde můžete upravit výchozí chování, povolit doplňky a rozšířit funkčnost.
 
 Výchozí konfigurační soubor `config.yaml` je vytvořen při prvním spuštění `verdaccia`.
 
-## Výchozí Konfigurace
+## Výchozí konfigurace
 
 Výchozí konfigurace má podporu pro balíčky **s rozsahem** a umožňuje každému uživateli přístup ke všem balíčkům, ale pouze **ověřeným uživatelům k publikování**.
 
@@ -36,7 +36,7 @@ Následující sekce vysvětlují co jaká vlastnost znamená a jaké má volby.
 
 ### Úložiště
 
-Je umístění výchozího úložiště. **Ve výchozím nastavení je Verdaccio uložené na lokálním úložišti.**.
+Je umístění výchozího úložiště. **Ve výchozím nastavení je Verdaccio uloženo na lokálním úložišti.**.
 
 ```yaml
 storage: ./storage
