@@ -31,8 +31,8 @@ Apache and `mod_proxy` should **not decode/encode slashes** and leave them as th
             ProxyRequests           Off
             ProxyPreserveHost       On
             AllowEncodedSlashes     NoDecode
-            ProxyPass               /       http://127.0.0.1:4873 nocanon
-            ProxyPassReverse        /       http://127.0.0.1:4873
+            ProxyPass               /       http://127.0.0.1:4873/ nocanon
+            ProxyPassReverse        /       http://127.0.0.1:4873/
         </VirtualHost>
         </IfModule>
     
