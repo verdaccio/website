@@ -150,11 +150,11 @@ You can access to the package is being published with the keyword `{{publishedPa
 
 ## Konfigurace
 
-| Vlastnost           | Typ          | Požadované | Podpora | Výchozí | Popis                                                                                        |
-| ------------------- | ------------ | ---------- | ------- | ------- | -------------------------------------------------------------------------------------------- |
-| method              | řetězec      | Ne         | všechny |         | HTTP verb                                                                                    |
-| packagePattern      | řetězec      | Ne         | všechny |         | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | řetězec      | Ne         | všechny |         | Any flags to be used with the regular expression                                             |
-| headers             | array/object | Ano        | všechny |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | řetězec      | Ano        | všechny |         | set the URL endpoint for this call                                                           |
-| content             | řetězec      | Ano        | všechny |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Vlastnost           | Typ          | Požadované | Podpora | Výchozí hodnota | Popis                                                                                        |
+| ------------------- | ------------ | ---------- | ------- | --------------- | -------------------------------------------------------------------------------------------- |
+| method              | řetězec      | Ne         | všechny |                 | HTTP verb                                                                                    |
+| packagePattern      | řetězec      | Ne         | všechny |                 | Only run this notification if the package name matches the regular expression                |
+| packagePatternFlags | řetězec      | Ne         | všechny |                 | Any flags to be used with the regular expression                                             |
+| headers             | array/object | Ano        | všechny |                 | If this endpoint requires specific headers, set them here as an array of key: value objects. |
+| endpoint            | řetězec      | Ano        | všechny |                 | set the URL endpoint for this call                                                           |
+| content             | řetězec      | Ano        | všechny |                 | any [Handlebar](https://handlebarsjs.com/) expressions                                       |

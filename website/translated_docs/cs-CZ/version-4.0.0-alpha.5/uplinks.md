@@ -27,18 +27,18 @@ uplinks:
 
 You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:
 
-| Vlastnost    | Typ     | Požadované | Příklad                                 | Podpora | Popis                                                                                                                      | Výchozí    |
-| ------------ | ------- | ---------- | --------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| url          | řetězec | Ano        | https://registry.npmjs.org/             | všechny | The registry url                                                                                                           | npmjs      |
-| ca           | řetězec | Ne         | ~./ssl/client.crt'                      | všechny | SSL path certificate                                                                                                       | No default |
-| timeout      | řetězec | Ne         | 100ms                                   | všechny | set new timeout for the request                                                                                            | 30s        |
-| maxage       | řetězec | Ne         | 10m                                     | všechny | the time threshold to the cache is valid                                                                                   | 2m         |
-| fail_timeout | řetězec | Ne         | 10m                                     | všechny | defines max time when a request becomes a failure                                                                          | 5m         |
-| max_fails    | číslo   | Ne         | 2                                       | všechny | limit maximun failure request                                                                                              | 2          |
-| cache        | boolean | Ne         | [true,false]                            | >= 2.1  | cache all remote tarballs in storage                                                                                       | true       |
-| auth         | list    | Ne         | [see below](uplinks.md#auth-property)   | >= 2.5  | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled   |
-| headers      | list    | Ne         | authorization: "Bearer SecretJWToken==" | všechny | list of custom headers for the uplink                                                                                      | disabled   |
-| strict_ssl   | boolean | Ne         | [true,false]                            | >= 3.0  | If true, requires SSL certificates be valid.                                                                               | true       |
+| Vlastnost    | Typ     | Požadované | Příklad                                 | Podpora | Popis                                                                                                                      | Výchozí hodnota |
+| ------------ | ------- | ---------- | --------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------------- | --------------- |
+| url          | řetězec | Ano        | https://registry.npmjs.org/             | všechny | The registry url                                                                                                           | npmjs           |
+| ca           | řetězec | Ne         | ~./ssl/client.crt'                      | všechny | SSL path certificate                                                                                                       | No default      |
+| timeout      | řetězec | Ne         | 100ms                                   | všechny | set new timeout for the request                                                                                            | 30s             |
+| maxage       | řetězec | Ne         | 10m                                     | všechny | the time threshold to the cache is valid                                                                                   | 2m              |
+| fail_timeout | řetězec | Ne         | 10m                                     | všechny | defines max time when a request becomes a failure                                                                          | 5m              |
+| max_fails    | číslo   | Ne         | 2                                       | všechny | limit maximun failure request                                                                                              | 2               |
+| cache        | boolean | Ne         | [true,false]                            | >= 2.1  | cache all remote tarballs in storage                                                                                       | true            |
+| auth         | list    | Ne         | [see below](uplinks.md#auth-property)   | >= 2.5  | assigns the header 'Authorization' [more info](http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules) | disabled        |
+| headers      | list    | Ne         | authorization: "Bearer SecretJWToken==" | všechny | list of custom headers for the uplink                                                                                      | disabled        |
+| strict_ssl   | boolean | Ne         | [true,false]                            | >= 3.0  | If true, requires SSL certificates be valid.                                                                               | true            |
 
 #### Auth property
 

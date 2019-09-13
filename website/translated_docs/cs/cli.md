@@ -1,6 +1,6 @@
 ---
 id: cli
-title: "Nástroj Příkazové Řádky"
+title: "Nástroj příkazové řádky"
 ---
 
 Chcete-li spustit aplikaci, použijte Verdaccio CLI.
@@ -11,19 +11,19 @@ Chcete-li spustit aplikaci, použijte Verdaccio CLI.
 verdaccio --listen 4000 --config ~./config.yaml
 ```
 
-| Příkaz             | Výchozí                        | Příklad        | Popis                                |
+| Příkaz             | Výchozí hodnota                | Příklad        | Popis                                |
 | ------------------ | ------------------------------ | -------------- | ------------------------------------ |
 | --listen \ **-l** | 4873                           | -p 7000        | http port                            |
 | --config \ **-c** | ~/.local/verdaccio/config.yaml | ~./config.yaml | konfigurační soubor                  |
-| --info \ **-i**   |                                |                | prints local environment information |
+| --info \ **-i**   |                                |                | vypíše informace o místním prostředí |
 
 ## Výchozí umístění konfiguračního souboru
 
 To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and Windows environment we look for [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
-## Config file format
+## Formát konfiguračního souboru
 
-Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+Konfigurační soubor by měl být YAML, JSON nebo NodeJS modul. Formát YAML je rozpoznán pomocí přípony názvu souboru (yaml nebo yml, nezáleží na velikosti).
 
 ## Výchozí místo úložiště
 
