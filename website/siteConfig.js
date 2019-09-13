@@ -116,6 +116,13 @@ const nonSponsorUsers = [
     pinned: true,
   },
   {
+    caption: "webiny",
+    image: "img/users/webiny.png",
+    infoLink: "https://www.webiny.com",
+    fbOpenSource: false,
+    pinned: false,
+  },
+  {
     caption: "embark",
     image: "img/users/embark.png",
     infoLink: "https://embark.status.im",
