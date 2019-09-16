@@ -1,5 +1,5 @@
 ---
-id: what-is-verdaccio
+id: was-ist-verdaccio
 title: "Was ist Verdaccio?"
 ---
 
@@ -11,27 +11,27 @@ Verdaccio ist eine **minimalistische private npm proxy registry** basierend auf 
 
 * Ein Package Repository, welches die **CommonJS Compliant Package Registry specification** zum Lesen der Package-Informationen implementiert.
 * Stellt eine mit den NPM Package Managern **(yarn/npm/pnpm)** kompatible API zur Verfügung.
-* Follow the semantic Versioning compatible **(semver)**
+* Konform dem Semantic Versioning **(semver)** Standard.
 
     $> verdaccio
     
 
 ![registry](assets/verdaccio_server.gif)
 
-## Using Verdaccio
+## Konfiguration
 
-Using verdaccio with any node package manager client is quite straightforward.
+Die Konfiguration von Verdaccio mit jedem beliebigem Node Package Manager ist sehr unkompliziert.
 
 ![registry](assets/npm_install.gif)
 
-You can use a custom registry either setting globally for all your projects
+Konfiguration einer Registry global für alle Projekte
 
     npm set registry http://localhost:4873
     
 
-or by command line as argument `--registry` in npm (slightly different in yarn)
+oder mittels dem Kommandozeilen-Parameter `--registry` in npm (etwas anders in yarn)
 
-    npm install lodash --registry http://localhost:4873
+    npm set registry http://localhost:4873
     
 
 ## Private
