@@ -1,6 +1,6 @@
 ---
 id: what-is-verdaccio
-title: "What is Verdaccio?"
+title: "Was ist Verdaccio?"
 ---
 
 Verdaccio is a **lightweight private npm proxy registry** built in **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
