@@ -7,7 +7,7 @@ Dieses Dokument beschreibt die Vorgehensweise, um Verdaccio in der AWS Cloud ber
 
 ## EC2
 
-[CloudFormation template for deploying this stack.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
+[CloudFormation Template des Systems.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
 Architektur:
 
@@ -35,8 +35,8 @@ Geschätzte Monatskosten für eine minimale Installation (in us-east-1): * ALB (
 
 Verdaccio kann als Task mit einem [ ECS Volumen](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) als persistenten Speicher genutzt werden.
 
-Note: Fargate doesn't support persistent volumes, so you have to use the S3 storage plugin.
+Anmerkung: Fargate unterstützt keine persistenten Volumes, daher muss in diesem Fall das [S3 Storage Plugin](https://github. com/remitly/verdaccio-s3-storage) verwendet werden.
 
 ## EKS
 
-See the documentation pages on [Kubernetes](kubernetes) and [Docker](docker).
+Siehe: [Kubernetes](kubernetes) and [Docker](docker) Dokumentation.
