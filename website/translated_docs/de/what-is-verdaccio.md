@@ -3,14 +3,14 @@ id: what-is-verdaccio
 title: "Was ist Verdaccio?"
 ---
 
-Verdaccio is a **lightweight private npm proxy registry** built in **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+Verdaccio ist eine **minimalistische private npm proxy registry** basierend auf ** Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
 
 <div id="codefund">''</div>
 
-## What's a registry
+## Was ist eine Registry
 
-* A repository for packages that implements the **CommonJS Compliant Package Registry specification** for reading package info
-* Provide an API compatible with npm clients **(yarn/npm/pnpm)**
+* Ein Package Repository, welches die **CommonJS Compliant Package Registry specification** zum Lesen der Package-Informationen implementiert.
+* Stellt eine mit den NPM Package Managern **(yarn/npm/pnpm)** kompatible API zur Verfügung.
 * Follow the semantic Versioning compatible **(semver)**
 
     $> verdaccio
