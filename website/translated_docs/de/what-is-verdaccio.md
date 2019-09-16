@@ -36,20 +36,20 @@ oder mittels dem Kommandozeilen-Parameter `--registry` in npm (etwas anders in y
 
 ## Private
 
-All packages that you publish are private and only accessible based in your configuration.
+Alle veröffentlichten Packages sind privat und nur basierend auf der Konfiguration zugänglich.
 
 ## Proxy
 
-Verdaccio cache all dependencies by demand and speed up installations in local or private networks.
+Verdaccio speichert alle Abhängigkeiten und beschleunigt somit Installationen in lokalen oder privaten Netzwerken.
 
 ## Verdaccio in a nutshell
 
-* It's a web app based on Node.js
-* It's a private npm registry
-* It's a local network proxy
+* Es ist eine Webapplikation basierend auf Node.js
+* Es ist eine private npm registry
+* Es ist ein lokaler Netzwerk Proxy
 * It's a Pluggable application
-* It's a fairly easy install and use
-* We offer Docker and Kubernetes support
-* It is 100% compatible with yarn, npm and pnpm
-* It was **forked** based on `sinopia@1.4.0` and 100% **backward compatible**.
+* Sehr einfache Nutzung sowie Konfiguration
+* Docker und Kubernetes Support
+* Kompatibel mit yarn, npm und pnpm
+* Basiert auf `sinopia@1.4.0` und 100% **rückwärts kompatibel**.
 * Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
