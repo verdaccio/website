@@ -1,18 +1,18 @@
 ---
-id: who-is-using
-title: "Who is using Verdaccio?"
+id: wer-benutzt-verdaccio
+title: "Wer benutzt Verdaccio?"
 ---
 
-### As a Business
+### Als Unternehmen
 
-*If you are using Verdaccio in your business and want to share your experience, let us know. We will happy to listen to you.*
+*Falls Sie Verdaccio in Ihrem Unternehmen nutzen und Ihre Erfahrung mit uns teilen wollen, kontaktieren Sie uns. Wir würden uns über Ihr Feedback freuen.*
 
 * [SheetJS](https://sheetjs.com/)
 * [Satispay](https://www.satispay.com/)
 
-### Open Source Projects
+### Open Source Projekte
 
-> **Feel free to suggest other OSS are using Verdaccio.**
+> **Zögere nicht Verdaccio weiterzuempfehlen.**
 
 * [pnpm](https://pnpm.js.org/)
 * [Storybook](https://storybook.js.org/)
