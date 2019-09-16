@@ -3,17 +3,17 @@ id: logo
 title: "Logotype"
 ---
 
-The logotype was designed by **[Breno Rodrigues](https://github.com/rodriguesbreno)** which won the [contest](https://github.com/verdaccio/verdaccio/issues/237) ([last stage](https://github.com/verdaccio/verdaccio/issues/328)) and donated his work to this project.
+Das Verdaccio Logo wurde vom Gewinner des [Contests](https://github.com/verdaccio/verdaccio/issues/237) **[Breno Rodrigues](https://github.com/rodriguesbreno)** entworfen, welcher dieses dem Projekt zur Verfügung gestellt hat.
 
-> All logos are licensed under [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs).
+> Alle Logos sind unter dem [Creative Commons](https://github.com/verdaccio/verdaccio/blob/master/LICENSE-docs) Lizenzmodell lizenziert.
 
-Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
+Besonderer Dank gilt *[@Lisapressmar](https://github.com/Lisapressmar)* für Ihren Beitrag mit verschiedenen Grafikformaten.
 
 <div id="codefund">''</div>
 
-## Symbols
+## Symbole
 
-**With text**
+**Mit Text**
 
 ![symbol tiny with text](assets/logo/symbol/png/logo-small-header-bottom.png)
 
@@ -25,7 +25,7 @@ Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her con
 
 ![symbol svg](assets/logo/symbol/svg/logo-small-header-bottom.svg)
 
-**No text**
+**Kein Text**
 
 ![symbol tiny](assets/logo/symbol/png/verdaccio-tiny.png)
 
@@ -37,7 +37,7 @@ Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her con
 
 ![svg format symbol no text](assets/logo/symbol/svg/verdaccio-tiny.svg)
 
-### Black&White
+### Schwarz&Weiß
 
 ![symbol bw small](assets/logo/symbol/png/verdaccio-blackwhite.png)
 
