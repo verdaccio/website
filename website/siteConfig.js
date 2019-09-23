@@ -129,6 +129,13 @@ const nonSponsorUsers = [
     fbOpenSource: false,
     pinned: false,
   },
+  {
+    caption: "Satispay",
+    image: "img/users/satispay.png",
+    infoLink: "https://www.satispay.com",
+    fbOpenSource: false,
+    pinned: false,
+  },
 ];
 
 const sponsorUsers = [
