@@ -3,7 +3,7 @@ id: articles
 title: "Articles"
 ---
 
-Below is a list of articles about Verdaccio. If you have written a blog post or tutorial that mentions Verdaccio, feel free to add it here!
+Unten finden Sie eine Liste mit Artikeln über Verdaccio. If you have written a blog post or tutorial that mentions Verdaccio, feel free to add it here!
 
 > Any language is allowed
 
