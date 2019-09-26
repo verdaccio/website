@@ -1,0 +1,217 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Managing multiples projects with Lerna and Yarn Workspaces · Verdaccio</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Verdaccio is a project with a big ecosystem, composed by several projects, each one with its own configurations and ways to manage. This fact transforms a simple maintenance operation, like updating a common dependency, into a real hard work."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Managing multiples projects with Lerna and Yarn Workspaces · Verdaccio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://verdaccio.org//blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces"/><meta property="og:description" content="Verdaccio is a project with a big ecosystem, composed by several projects, each one with its own configurations and ways to manage. This fact transforms a simple maintenance operation, like updating a common dependency, into a real hard work."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://verdaccio.org/blog/atom.xml" title="Verdaccio Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://verdaccio.org/blog/feed.xml" title="Verdaccio Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-2527438-21', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://codefund.io/properties/256/funder.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/logo/symbol/svg/verdaccio-tiny.svg" alt="Verdaccio"/><h2 class="headerTitleWithLogo">Verdaccio</h2></a><a href="/en/versions"><h3>4.2.2</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/installation" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://twitter.com/verdaccio_npm" target="_self">Twitter</a></li><li class=""><a href="/en/help" target="_self">Help</a></li><li class=""><a href="https://github.com/verdaccio" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="/en/team" target="_self">Team</a></li><li class=""><a href="https://opencollective.com/verdaccio" target="_self">Donate</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/es-ES">Español</a></li><li><a href="/fr-FR">Français</a></li><li><a href="/it-IT">Italiano</a></li><li><a href="/sr-CS">Serbian (Latin)</a></li><li><a href="/zh-CN">中文</a></li><li><a href="/ru-RU">Russian</a></li><li><a href="https://crowdin.com/project/verdaccio" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces">Managing multiples projects with Lerna and Yarn Workspaces</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/07/30/verdaccio-420-release">Release 4.2.0</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/07/08/verdaccio-410-release">Release 4.1.0</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/05/19/15-verdaccio-4-release">Verdaccio 4 released !!!</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/05/13/the-new-docker-image-verdaccio-4">The new Docker image for Verdaccio 4</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4">Diving into JWT support for Verdaccio 4</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/02/24/migrating-verdaccio">Verdaccio Migration Guides</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/02/08/the-crazy-story-of-verdaccio">The crazy story of Verdaccio</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/11/19/setting-up-verdaccio-on-digitalocean">Setting up Verdaccio on DigitalOcean</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/10/21/verdaccio-4-alpha-release">Verdaccio 4 alpha release</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/09/06/verdaccio-and-deterministic-lock-files">Verdaccio and deterministic lock files</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces">Managing multiples projects with Lerna and Yarn Workspaces</a></h1><p class="post-meta">September 7, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="https://github.com/sergiohgz" target="_blank" rel="noreferrer noopener">Sergio Herrera</a></p><div class="authorPhoto"><a href="https://github.com/sergiohgz" target="_blank" rel="noreferrer noopener"><img src="https://avatars3.githubusercontent.com/u/14012309" alt="Sergio Herrera"/></a></div></div></header><div><span><p>Verdaccio is a project with a big ecosystem, composed by several projects, each one with its own configurations and ways to manage. This fact transforms a simple maintenance operation, like updating a common dependency, into a real hard work.</p>
+<p>We saw a problem, these configurations entropy made harder to work with all the projects. So, we needed to simplify and unify them to make it easier. We need a <strong>monorepo</strong>.</p>
+<p>A monorepo is a project configuration to manage a collection of dependencies in a simple and unified way. There are many examples out there that Javascript developer use nowadays, like <a href="https://babeljs.io/">Babel</a>, <a href="https://create-react-app.dev/">Create React App</a> or <a href="https://material-ui.com/">Material UI</a>.</p>
+<p>Now, we are proud to announce our <a href="https://github.com/verdaccio/monorepo">monorepo</a>, our big ecosystem joined in only one repository. This article is the first part of a series of articles where we will try to explain our motivation about to set up by your own, improve the management and workflows (CI, code quality, etc).</p>
+<!--truncate-->
+<div id="codefund">''</div>
+<h2><a class="anchor" aria-hidden="true" id="background-and-tools"></a><a href="#background-and-tools" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Background and tools</h2>
+<p>A year ago, <a href="https://twitter.com/jotadeveloper">Juan</a> and I met in Madrid, Spain, and were talking about the roadmap for Verdaccio 4, the scope of the projects and more. We had some concerns about the Verdaccio ecosystem we want to build, such amount of repositories requires hard work for maintenance by each one with their own dependencies, scripts, configurations, etc.</p>
+<p>We decided to unify all configurations, because handle several repositories would not be realistic  and would have all things replicated in all repositories. In order to achieve our goal, and we found <a href="https://lerna.js.org/">Lerna</a> and <a href="https://yarnpkg.com/lang/en/docs/workspaces/">Yarn Workspaces</a>.</p>
+<p>As a first step, we created the basic architecture of the monorepo and moved the first dependencies in, an ESLint config and a Babel preset.</p>
+<p>After Verdaccio 4 release, Typescript migration and more, we saw that many projects shares the same architecture, so it could be a good moment to achieve our goals.</p>
+<p>There are more tools for this purpose, but we will focus on Lerna and Yarn Workspaces.</p>
+<h3><a class="anchor" aria-hidden="true" id="lerna"></a><a href="#lerna" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lerna</h3>
+<p><strong>Lerna</strong> is a tool to manage several Javascript projects with multiple packages (called <em>monorepos</em>), optimizing the workflows around them.</p>
+<p>You can install it globally with <code>npm install --global lerna</code>, <code>yarn global add lerna</code> or your favourite package manager, to run commands with <code>lerna &lt;command&gt;</code>. Also, if you don't want to install it, you can use package runners such as <code>npx</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="yarn-workspaces"></a><a href="#yarn-workspaces" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Yarn Workspaces</h3>
+<p><strong>Yarn Workspaces</strong> is a way to setup package architecture where all packages dependencies are installed together with a single <code>yarn install</code>.</p>
+<p>This involves two things that you could not see at the first moment.</p>
+<ul>
+<li>All the packages in the workspace uses a common lockfile as a <em>single source of truth</em>.</li>
+<li>If a package has a dependency on other package in the workspace, they are linked <em>without affecting your global environment</em>.</li>
+</ul>
+<p>Since Yarn 1.0, this feature is enabled by default, you only need a root <code>package.json</code> to setup them.</p>
+<h2><a class="anchor" aria-hidden="true" id="creating-the-monorepo"></a><a href="#creating-the-monorepo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating the monorepo</h2>
+<p>The initial setup is really simple, you only need to create a new repository and run <code>lerna init</code> to initialize the monorepo. This will generate files like <code>package.json</code> or <code>lerna.json</code> (packages structure is shown as example, but not generated).</p>
+<pre><code class="hljs">lerna<span class="hljs-selector-class">.json</span>
+package<span class="hljs-selector-class">.json</span>
+packages/
+├── pkg1
+│   └── package<span class="hljs-selector-class">.json</span>
+├── pkg2
+│   └── package<span class="hljs-selector-class">.json</span>
+└── pkg3
+    └── package<span class="hljs-selector-class">.json</span>
+</code></pre>
+<p>Let's see the main configuration for <code>lerna.json</code> and root <code>package.json</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="lernajson"></a><a href="#lernajson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>lerna.json</h3>
+<p>After initial setup, this file will looks like:</p>
+<pre><code class="hljs css language-json">{
+  <span class="hljs-attr">"packages"</span>: [<span class="hljs-string">"packages/*"</span>],
+  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"0.0.0"</span>
+}
+</code></pre>
+<ul>
+<li>packages: this array defines the location for all packages that conforms the monorepo. They could be explicit (<code>packages/pkg1</code>) or, if a folder has several packages, you can use <code>*</code> wildcard. In our case, we use <code>core/*</code>, <code>plugins/*</code> and <code>tools/*</code>.</li>
+<li>version: the version of the packages. It could be a semver value (called <em>fixed mode</em>) or <code>independent</code> if you want to let packages define their own version. Take care that <em>independent mode</em> will create one tag for each package that will be published with its own version. We prefer <em>fixed mode</em> to keep all packages with the same version and reduce headaches to users.</li>
+</ul>
+<p>Other interesting settings are:</p>
+<ul>
+<li>npmClient: you can define in you want to use Yarn, Npm or your favourite client.</li>
+<li>useWorkspaces: if you want to enable Yarn Workspaces, you will have to tell it to Lerna, setting this option to <code>true</code>.</li>
+<li>stream: if you want to have the output of a child process inmediately in the console, you have to enable this option. Also, this will prefix each line with the package name that generate them.</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="packagejson"></a><a href="#packagejson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>package.json</h3>
+<p>After initial setup, you need some configuration to allow <em>Lerna</em> work with <em>Yarn Workspaces</em>:</p>
+<ul>
+<li>workspaces: this is the array where we define the packages that are part of the workspace. In a simple way, this is the same you have defined in <code>lerna.json</code> under the <em>packages</em> key.</li>
+<li>private: as the root package should be a simple container, you should keep it with <code>true</code> value to not publish it.</li>
+</ul>
+<p>Later, you will learn how to define more settings in the root <code>package.json</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="creating-and-importing-packages"></a><a href="#creating-and-importing-packages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating and importing packages</h2>
+<p>You have a monorepo, but it's not useful at this moment. Let's create and import some packages.</p>
+<h3><a class="anchor" aria-hidden="true" id="lerna-create"></a><a href="#lerna-create" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>lerna create</h3>
+<p>To create new packages, you can use <code>lerna create &lt;package_name&gt;</code> like you would do with <code>npm init</code> or <code>yarn init</code>. The wizard will ask you for some fields like package description, author or license. Other way to give that information is using command options (<code>--description</code>, <code>--author</code>, etc).</p>
+<p>Then, you have the package ready for work with it, add stuff like Babel or ESLint, dependencies and scripts to <code>package.json</code>...</p>
+<p>It's important to say that if your package is a scoped package, you have to add the next codeblock in <code>package.json</code>, but do not add it if your package is not scoped, because <code>lerna publish</code> will fail in this case:</p>
+<pre><code class="hljs css language-json">"publishConfig": {
+  "access": "public"
+}
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="lerna-import"></a><a href="#lerna-import" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>lerna import</h3>
+<p>If you have a project you want to import, you don't have to create a new one in the monorepo, you can import it using <code>lerna import &lt;path_to_project&gt;</code>.</p>
+<p>This command will read all the Git history from the project specified and apply commit-by-commit into your monorepo to avoid losing the original history. If there were commits with conflicts, the import process will fail, but CLI propose you to use the <code>--flatten</code> option to bypass it. Also, if you want to keep original authors and committers, you can pass <code>--preserve-commit</code> option.</p>
+<p>After the import completes, you can remove unnecessary stuff like CI settings, old scripts, hoisted devDependencies...</p>
+<h2><a class="anchor" aria-hidden="true" id="managing-dependencies-and-devdependencies"></a><a href="#managing-dependencies-and-devdependencies" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Managing dependencies and devDependencies</h2>
+<p>Each package will contain their own <em>dependencies</em> and <em>devDependencies</em> like if the package is not in a monorepo, but there are some interesting things you can do with <em>devDependencies</em>, hoist them in the root <code>package.json</code>.</p>
+<p>Let's see with an example, <em>pkg1</em> and <em>pkg2</em> defines ESLint as devDependency, so you have defined that in two packages, duplicating the definition and management. You can extract it from both and set it as devDependency in the root <code>package.json</code>. This way, all the projects that need it will have it available. Now, we are going to add ESLint to <em>pkg3</em>, you only have to add its own configuration, because package has been hoisted right now.</p>
+<p>But the same doesn't work with <em>dependencies</em>, because they are needed when the package is published.</p>
+<p>A good practice is to hoist every devDependency so they will be available for every package, except in two cases:</p>
+<ul>
+<li>A package needs a specific version of the package. In this case, you can have a root definition for all the packages and the specific version for the package that requires it. This will create a <code>node_modules</code> for the specific package, but not another <code>yarn.lock</code>.</li>
+<li>Those <em>devDependencies</em> that are part of the workspace must not be defined in the root <code>package.json</code>, because if you do that, you will create a cycle. An example is if <em>pkg1</em> and <em>pkg2</em> define <em>pkg3</em> as devDependency, it could not be defined in the root because <em>pkg3</em> will depend with itself.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="running-scripts"></a><a href="#running-scripts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running scripts</h2>
+<p>Like <em>dependencies</em>, each package will have their own <em>scripts</em>, so you should define them in their specific <code>package.json</code>.</p>
+<p>But what happens when you want to run scripts for many packages at the same time? You don't need to extract them to the root <code>package.json</code> because they will contain specific arguments/options for each project. You can invoke scripts or commands from the root package using two <em>Lerna</em> commands, <code>lerna run</code> and <code>lerna exec</code>.</p>
+<p>The first, <code>lerna run &lt;script&gt;</code>, will perform the script provided looking for what packages have it defined in their <code>packages.json</code>. This command is useful when you want to build package or run tests, because not all packages would have them defined.</p>
+<p><center>
+<img src="https://cdn.verdaccio.dev/blog/managing-multiples-projects-with-lerna-and-yarn-workspaces/lerna_run_example.png" alt="lerna-run-example">
+</center></p>
+<p>The second, <code>lerna exec &lt;command&gt;</code>, will execute the command (not script) in all the packages. This is useful if you want to run tools like ESLint in all the packages and you have it installed globally. In this case, the command invoked must be in your <em>system PATH</em> (<code>ls</code>, <code>cat</code>, npm binaries, etc).</p>
+<p><center>
+<img src="https://cdn.verdaccio.dev/blog/managing-multiples-projects-with-lerna-and-yarn-workspaces/lerna_exec_example.png" alt="lerna-exec-example">
+</center></p>
+<p>Both commands shares options like <code>--scope=&lt;packages&gt;</code> and <code>--ignore=&lt;packages&gt;</code>, where the first will run only in packages specified and the last will ignore them.</p>
+<h2><a class="anchor" aria-hidden="true" id="versioning-the-monorepo"></a><a href="#versioning-the-monorepo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Versioning the monorepo</h2>
+<p>As we mentioned in <a href="#lerna.json">lerna.json</a> section there are two versioning ways for packages in monorepos: <em>fixed mode</em> and <em>independent mode</em>.</p>
+<p>We will focus in <em>fixed mode</em> because:</p>
+<ul>
+<li>We want to use the same version for all the packages in the ecosystem.</li>
+<li>Independent mode creates one <em>git tag</em> for each package and version in each release. With the example before, in a release we will create three tags, <em>pkg1@0.1.0</em>, <em>pkg2@2.1.0</em>, <em>pkg3@0.5.2</em>. In larger codebases you will create more than 10 tags at the same time.</li>
+</ul>
+<p>In <em>fixed mode</em>, the version set in the <em>lerna.json</em> is a reference for all the packages but, if a package has no changes between releases, that package will not be published except when the version bump is major (from <em>X.Y.Z</em> to <em>X+1.0.0</em>).</p>
+<p>Because Lerna is going to manage the versioning, you should change your mind to use <code>lerna version</code> and <code>lerna publish</code> commands.</p>
+<ul>
+<li><code>lerna version</code> will update version for the packages that has changes from the release (you can review with <code>lerna changed</code>). This will launch a wizard except if you pass the version or a semver keyword (<em>major</em>, <em>minor</em>, <em>patch</em>, etc) as the first argument or use Conventional Commits (see below). This command updates version in all affected packages, commit changes, create tags and pushes to the remote automatically.<br>
+Also, you can use <code>--conventional-commits</code> option if your commits follows <a href="https://www.conventionalcommits.org">Conventional Commits spec</a>, automating the changelog generation. Additionally, for Github and Gitlab users, you can use <code>--create-release &lt;github | gitlab&gt;</code> to create release with changes. Keep in mind that you have to provide an auth token (<em>GH_TOKEN</em> or <em>GL_TOKEN</em>).</li>
+<li><code>lerna publish</code> will act as <code>lerna version</code> and publish packages if you don't provide <code>from-git</code> or <code>from-package</code> arguments, or only publish if provide one. You would like to use <code>from-git</code> to version first, using Git as a <strong>single source of truth</strong>.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="conclusion-and-thanks"></a><a href="#conclusion-and-thanks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusion and thanks</h2>
+<p>Lerna and Yarn Workspaces are a great combination for creating monorepos. In this first part, you have learned how to setup a monorepo, add packages, improve dependency management, scripts and versioning. In the next chapters, you will see more configuration and tooling (and their settings for monorepos), and how to automate some things using Continuous Integration tools.</p>
+<p>We have to thank the teams and community behind both projects, specially <a href="https://twitter.com/left_pad">Henry Zhu</a> and <a href="https://twitter.com/evocateur">Daniel Stockman</a> for Lerna, and <a href="https://twitter.com/arcanis">Maël Nison</a> for Yarn. Also, but not less important, we want to thank all the people that makes Verdaccio possible, contributing, donating, documenting, and more.</p>
+<blockquote>
+<p>If you 😍 Verdaccio as we do, helps us to grow more donating to the project via <a href="https://opencollective.com/verdaccio">OpenCollective</a>.</p>
+</blockquote>
+<p>Thanks for support Verdaccio ! 👏👏👏👏.</p>
+</span></div></div><div class="blogSocialSection"><div class="blogSocialSectionItem"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Managing multiples projects with Lerna and Yarn Workspaces" data-url="https://verdaccio.org//blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces" data-related="true" data-via="sergiohgz" data-show-count="false">Tweet</a></div></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#background-and-tools">Background and tools</a><ul class="toc-headings"><li><a href="#lerna">Lerna</a></li><li><a href="#yarn-workspaces">Yarn Workspaces</a></li></ul></li><li><a href="#creating-the-monorepo">Creating the monorepo</a><ul class="toc-headings"><li><a href="#lernajson">lerna.json</a></li><li><a href="#packagejson">package.json</a></li></ul></li><li><a href="#creating-and-importing-packages">Creating and importing packages</a><ul class="toc-headings"><li><a href="#lerna-create">lerna create</a></li><li><a href="#lerna-import">lerna import</a></li></ul></li><li><a href="#managing-dependencies-and-devdependencies">Managing dependencies and devDependencies</a></li><li><a href="#running-scripts">Running scripts</a></li><li><a href="#versioning-the-monorepo">Versioning the monorepo</a></li><li><a href="#conclusion-and-thanks">Conclusion and thanks</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/what-is-verdaccio.html">Getting Started</a><a href="/docs/en/docker.html">Docker</a><a href="/docs/en/configuration.html">Configuration</a><a href="/docs/en/logo">Logos</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'a8b4d117e513cd8d71d6a95e3d9d4a91',
+                indexName: 'verdaccio',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

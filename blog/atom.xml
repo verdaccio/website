@@ -2,12 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://verdaccio.org//blog</id>
     <title>Verdaccio Blog</title>
-    <updated>2019-07-30T06:00:00Z</updated>
+    <updated>2019-09-07T06:00:00Z</updated>
     <generator>Feed for Node.js</generator>
     <link rel="alternate" href="https://verdaccio.org//blog"/>
     <subtitle>The best place to stay up-to-date with the latest Verdaccio news and events.</subtitle>
     <logo>https://verdaccio.org//img/logo/symbol/svg/verdaccio-tiny.svg</logo>
     <rights>Copyright © 2019 Verdaccio community</rights>
+    <entry>
+        <title type="html"><![CDATA[Managing multiples projects with Lerna and Yarn Workspaces]]></title>
+        <id>https://verdaccio.org//blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces.html</id>
+        <link href="https://verdaccio.org//blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces.html">
+        </link>
+        <updated>2019-09-07T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>Verdaccio is a project with a big ecosystem, composed by several projects, each one with its own configurations and ways to manage. This fact transforms a simple maintenance operation, like updating a common dependency, into a real hard work.</p>
+<p>We saw a problem, these configurations entropy made harder to work with all the projects. So, we needed to simplify and unify them to make it easier. We need a <strong>monorepo</strong>.</p>
+<p>A monorepo is a project configuration to manage a collection of dependencies in a simple and unified way. There are many examples out there that Javascript developer use nowadays, like <a href="https://babeljs.io/">Babel</a>, <a href="https://create-react-app.dev/">Create React App</a> or <a href="https://material-ui.com/">Material UI</a>.</p>
+<p>Now, we are proud to announce our <a href="https://github.com/verdaccio/monorepo">monorepo</a>, our big ecosystem joined in only one repository. This article is the first part of a series of articles where we will try to explain our motivation about to set up by your own, improve the management and workflows (CI, code quality, etc).</p>
+]]></summary>
+        <author>
+            <name>Sergio Herrera</name>
+            <uri>https://github.com/sergiohgz</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Release 4.2.0]]></title>
         <id>https://verdaccio.org//blog/2019/07/30/verdaccio-420-release.html</id>
