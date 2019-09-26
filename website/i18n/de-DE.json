@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Nächste",
     "previous": "Vorherige",
-    "tagline": "Verdaccio · Eine einfache private npm Proxy-Registrierung",
+    "tagline": "Verdaccio · Ein einfaches privates npm Proxy-Register",
     "docs": {
       "amazon": {
         "title": "Amazon Web Services"
@@ -516,7 +516,7 @@
       "Server": "Server",
       "Development": "Entwicklung",
       "DevOps": "DevOps",
-      "Guides": "Ratgeber",
+      "Guides": "Leitfaden",
       "Configuration": "Configuration",
       "Plugins": "Plugins"
     }
