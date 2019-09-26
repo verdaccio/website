@@ -72,7 +72,7 @@
         "title": "Logger"
       },
       "logo": {
-        "title": "Logotype"
+        "title": "Logo"
       },
       "node-api": {
         "title": "Node API"
@@ -120,10 +120,10 @@
         "title": "Web User Interface"
       },
       "what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Was ist Verdaccio?"
       },
       "who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Wer benutzt Verdaccio?"
       },
       "windows": {
         "title": "Als Windows-Dienst installieren"
@@ -216,7 +216,7 @@
         "title": "Web User Interface"
       },
       "version-3.8.6/version-3.8.6-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Was ist Verdaccio?"
       },
       "version-3.8.6/version-3.8.6-windows": {
         "title": "Als Windows-Dienst installieren"
@@ -231,7 +231,7 @@
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.3/version-4.0.0-alpha.3-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Was ist Verdaccio?"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-amazon": {
         "title": "Amazon Web Services"
@@ -288,7 +288,7 @@
         "title": "Web User Interface"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Was ist Verdaccio?"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-articles": {
         "title": "Articles"
@@ -336,7 +336,7 @@
         "title": "Web User Interface"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Wer benutzt Verdaccio?"
       },
       "version-4.0.0-alpha.6/version-4.0.0-alpha.6-amazon": {
         "title": "Amazon Web Services"
@@ -360,7 +360,7 @@
         "title": "Plugins"
       },
       "version-4.0.0-beta.0/version-4.0.0-beta.0-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Wer benutzt Verdaccio?"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-articles": {
         "title": "Articles"
@@ -393,7 +393,7 @@
         "title": "Web User Interface"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-who-is-using": {
-        "title": "Who is using Verdaccio?"
+        "title": "Wer benutzt Verdaccio?"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-installation": {
         "title": "Installation"
@@ -414,13 +414,13 @@
         "title": "Installation"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-logo": {
-        "title": "Logotype"
+        "title": "Logo"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-webui": {
         "title": "Web User Interface"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-what-is-verdaccio": {
-        "title": "What is Verdaccio?"
+        "title": "Was ist Verdaccio?"
       },
       "version-4.0.0-beta.8/version-4.0.0-beta.8-configuration": {
         "title": "Konfigurationsdatei"
@@ -529,16 +529,16 @@
     "Find out what's new with this project|no description given": "Finden Sie heraus, was neu bei diesem Projekt ist",
     "Stay up to date|no description given": "Auf dem Laufenden bleiben",
     "Need help?|no description given": "Brauchen Sie Hilfe?",
-    "This project is maintained by a dedicated group of people.|statement made to reader": "This project is maintained by a dedicated group of people.",
-    "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)|no description given": "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)",
-    "You can follow and contact us on|no description given": "You can follow and contact us on",
-    "and also you can chat with the Verdaccio community at|no description given": "and also you can chat with the Verdaccio community at",
-    "If the documentation is not enough help, you can try browsing into our|no description given": "If the documentation is not enough help, you can try browsing into our",
-    "This project is maintained by the Verdaccio community.|no description given": "This project is maintained by the Verdaccio community.",
+    "This project is maintained by a dedicated group of people.|statement made to reader": "Dieses Projekt wird von einer engagierten Gruppe von Menschen betreut.",
+    "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)|no description given": "Weitere Informationen zu Verdaccio finden Sie in der [Dokumentation auf dieser Site.] (/ Docs / de / installation.html)",
+    "You can follow and contact us on|no description given": "Sie können uns folgen und kontaktieren via",
+    "and also you can chat with the Verdaccio community at|no description given": "und ausserdem können Sie mit der Verdaccio communiy Chatten auf",
+    "If the documentation is not enough help, you can try browsing into our|no description given": "Wenn die Dokumentation nicht ausreicht, können Sie versuchen hier zu stöbern",
+    "This project is maintained by the Verdaccio community.|no description given": "Dieses Projekt wird von der Verdaccio-Community betreut.",
     "Get Started|no description given": "Erste Schritte",
     "Contribute|no description given": "Einen Beitrag leisten",
-    "That’s it ! Enjoy your private package manager.|no description given": "That’s it ! Enjoy your private package manager.",
-    "Many great developers are already enjoying Verdaccio, join the community!|no description given": "Many great developers are already enjoying Verdaccio, join the community!",
+    "That’s it ! Enjoy your private package manager.|no description given": "Das ist es! Viel Spaß mit Ihrem privaten Paketmanager.",
+    "Many great developers are already enjoying Verdaccio, join the community!|no description given": "Viele großartige Entwickler genießen bereits Verdaccio, treten Sie der Community bei!",
     "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.|no description given": "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.",
     "The most popular npm clients are supported|no description given": "The most popular npm clients are supported",
     "We have an official **Docker** image ready to use|no description given": "We have an official **Docker** image ready to use",
