@@ -8,6 +8,7 @@ title: "Kdo používá Verdaccio?"
 *If you are using Verdaccio in your business and want to share your experience, let us know. Rádi si poslechneme váš názor.*
 
 * [SheetJS](https://sheetjs.com/)
+* [Satispay](https://www.satispay.com/)
 
 ### Open Source Projekty
 

@@ -3,7 +3,7 @@ id: cli
 title: "Befehlszeilen-Tool"
 ---
 
-Mit der verdaccio CLI kann die Anwendung gestartet werden.
+Die Anwendung kann über die Verdaccio CLI gestartet werden.
 
 ## Befehle
 
@@ -23,7 +23,7 @@ To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice an
 
 ## Format der Konfigurationsdatei
 
-Die Konfiguration sollte eine YAML, JSON oder NodeJS Modul sein. Das YAML Format wird ermittelt durch das Ermittlem der Dateiendung (yaml oder yml, ohne Berücksichtigung der Schreibweise). 
+Die Konfiguration sollte eine YAML, JSON oder NodeJS Modul sein. Das YAML Format wird ermittelt durch das Ermittlem der Dateiendung (yaml oder yml, ohne Berücksichtigung der Schreibweise). Die Konfiguration kann mittels einer YAML oder JSON Datei sowie einem NodeJS Model erfolgen. Dabei müssen YAML Dateien die Dateiendung **. yaml** oder **. yml ** haben (Case Insensitive).
 
 ## Default storage location
 

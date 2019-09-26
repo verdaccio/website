@@ -8,6 +8,7 @@ title: "Chi sta utilizzando Verdaccio?"
 *Se stai utilizzando Verdaccio nella tua azienda e vuoi condividere la tua esperienza, faccelo sapere. Saremo lieti di ascoltarti.*
 
 * [SheetJS](https://sheetjs.com/)
+* [Satispay](https://www.satispay.com/)
 
 ### Progetti Open Source
 
