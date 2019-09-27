@@ -12,11 +12,11 @@ Furthermore, the info about the release is also available [at GitHub releases pa
 
 We have some highlights to share:
 
-* At this stage, Docker downloads [have grown to 5.8 million pulls](https://dockeri.co/image/verdaccio/verdaccio).
-* We just reached 7.9k stars, **would you help us to reach 10k?** Give us your star ⭐️!
-* Blog: Don't miss our new entry [**Managing multiples projects with Lerna and Yarn Workspaces**](https://verdaccio.org/blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces) by [@sergiohgz](https://github.com/sergiohgz).
+* At this stage, Docker 🐳 pulls [have grown to **5.7 million pulls**](https://dockeri.co/image/verdaccio/verdaccio).
+* We just reached **7.9k 🌟**, *would you help us to reach 10k?* Give us your star ⭐️!
+* **Blog** 🗒: Don't miss our new entry [**Managing multiples projects with Lerna and Yarn Workspaces**](https://verdaccio.org/blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces) by [@sergiohgz](https://github.com/sergiohgz).
 * **[Monorepo](https://github.com/verdaccio/monorepo)**: Along the last months we have crafted our monorepo for grouping all our ecosystem, plugin, core and tooling packages. This does not mean Verdaccio will become monorepo, rather help us to growth without affect the main repository and easy updates or fast response to mistakes in any release.
-* **Hacktoberfest is here**: We have prepared a guide if you want to contribute to Verdaccio, feel free to [read it](https://github.com/verdaccio/verdaccio/issues/1461) and give is feedback.
+* **Hacktoberfest 🎃 is here**: We have prepared a guide if you want to contribute to Verdaccio, feel free to [read it](https://github.com/verdaccio/verdaccio/issues/1461) and give is feedback.
 
 > If you 😍 Verdaccio as we do, helps us to grow more donating to the project via [OpenCollective](https://opencollective.com/verdaccio).
 
@@ -52,12 +52,14 @@ When you publish a new version of your package, you want to be able to access th
 
 ### [npm token command support ](https://github.com/verdaccio/verdaccio/issues/1427) by @juanpicado, @Eomm and @juangabreil.
 
-The command `npm token` is really useful to generate multiple tokens. This release ship some partial support for it and flagged as **experiment**, to enable it you must do the following in your config file
+The command `npm token` is really useful to generate multiple tokens. This release ship some partial support for it and flagged as **experiment**, to enable it you must do the following in your config file.
 
 ```yaml
 experiments:
   token: true
 ```
+
+![npm token list](https://nyc3.digitaloceanspaces.com/verdaccio/blog/4.3.0/token_list.png)
 
 You can find further technical information [here](https://github.com/verdaccio/verdaccio/pull/1427).
 
