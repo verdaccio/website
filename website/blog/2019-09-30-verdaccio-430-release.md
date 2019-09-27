@@ -42,11 +42,11 @@ npm install -g verdaccio@4.3.0
 
 ## New Features
 
-### [Browse web package version]https://github.com/verdaccio/verdaccio/issues/1457) by @juanpicado
+### [Browse web packages by version](https://github.com/verdaccio/verdaccio/issues/1457) by @juanpicado
 
 When you publish a new version of your package, you want to be able to access the previous ones, that's exacltly what you can do with this new release.
 
-![verdaccio browse by version](https://nyc3.digitaloceanspaces.com/verdaccio/blog/4.3.0/64075807-3ca76780-ccbd-11e9-877b-42900d3fb9f4.gif)
+![verdaccio browse by version](https://nyc3.digitaloceanspaces.com/verdaccio/blog/4.3.0/version_ui_navigation.gif)
 
 > Note the README always point to the latest release, Verdaccio does not persist readme on each publish. This might change in the future, file a ticket if you are interested and might be considered if there is enough 👍🏻 votes.
 
