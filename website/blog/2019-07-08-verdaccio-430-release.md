@@ -14,6 +14,9 @@ We have some highlights to share:
 
 * At this stage, Docker downloads [have grown to 5.8 million pulls](https://dockeri.co/image/verdaccio/verdaccio).
 * We just reached 7.9k stars, **would you help us to reach 10k?** Give us your star ⭐️!
+* Blog: Don't miss our new entry [**Managing multiples projects with Lerna and Yarn Workspaces**](https://verdaccio.org/blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces) by [@sergiohgz](https://github.com/sergiohgz).
+* **[Monorepo](https://github.com/verdaccio/monorepo)**: Along the last months we have crafted our monorepo for grouping all our ecosystem, plugin, core and tooling packages. This does not mean Verdaccio will become monorepo, rather help us to growth without affect the main repository and easy updates or fast response to mistakes in any release.
+
 > If you 😍 Verdaccio as we do, helps us to grow more donating to the project via [OpenCollective](https://opencollective.com/verdaccio).
 
 Thanks for support Verdaccio ! 👏👏👏👏.
@@ -56,6 +59,10 @@ experiments:
 ```
 
 You can find further technical information [here](https://github.com/verdaccio/verdaccio/pull/1427).
+
+## Experiment Flags
+
+This release include a new property named `experiments`. We want to be able to experiment new things without affect production environments. This flag allow us to add new features and get feedback from the community that wants to use them. This means the feature might not be stable.
 
 ### Other updates
 
