@@ -68,7 +68,7 @@ This new image has been tested in production for months and is quite stable, thu
 
 ## Contributions
 
-We want to thank **[Diego Louzán](https://github.com/dlouzan)**, **[Dimitri Koppriwa](https://github.com/kopax)**, **[Sergio Herrera](https://twitter.com/sergiohgz)**, [Ben Tucker](https://github.com/btucker), [Michiel De Mey](https://github.com/MichielDeMey) and me [Juan Picado](https://github.com/juanpicado) for this amazing job improving the Docker image. 
+We want to thank **[Diego Louzán](https://github.com/dlouzan)**, **[Dimitri Kopriwa](https://github.com/kopax)**, **[Sergio Herrera](https://twitter.com/sergiohgz)**, [Ben Tucker](https://github.com/btucker), [Michiel De Mey](https://github.com/MichielDeMey) and me [Juan Picado](https://github.com/juanpicado) for this amazing job improving the Docker image. 
 
 Without forgetting the Helm Chart contributors, [James Sidhu](https://github.com/sidhuko), [Carlos Tadeu Panato Junior](https://github.com/cpanato), [Bort Verwilst](https://github.com/verwilst), [ercanucan](https://github.com/ercanucan) and [Taehyun Kim](https://github.com/kimxogus) that have keep the Kubernetes integration alive during the last year. 
 
