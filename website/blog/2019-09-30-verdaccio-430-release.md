@@ -60,7 +60,7 @@ When you publish a new version of your package, you want to be able to access th
 
 ### [npm token command support ](https://github.com/verdaccio/verdaccio/issues/1427) by @juanpicado, @Eomm and @juangabreil.
 
-The command `npm token` is really useful to generate multiple tokens. This release ship some partial support for it and flagged as **experiment**, to enable it you must do the following in your config file.
+The command `npm token` is really useful to generate multiple tokens. This release ships some partial support for it and is flagged as **experiment**, to enable it you must do the following in your config file.
 
 ```yaml
 experiments:
