@@ -15,7 +15,7 @@ We have some highlights to share:
 * At this stage, Docker 🐳 pulls [have grown to **5.7 million pulls**](https://dockeri.co/image/verdaccio/verdaccio).
 * We just reached **7.9k 🌟**, *would you help us to reach 10k?* Give us your star ⭐️!
 * **Blog** 🗒: Don't miss our new entry [**Managing multiples projects with Lerna and Yarn Workspaces**](https://verdaccio.org/blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces) by [@sergiohgz](https://github.com/sergiohgz).
-* **[Monorepo](https://github.com/verdaccio/monorepo)**: Along the last months we have crafted our monorepo for grouping all our ecosystem, plugin, core and tooling packages. This does not mean Verdaccio will become monorepo, rather help us to growth without affect the main repository and easy updates or fast response to mistakes in any release.
+* **[Monorepo](https://github.com/verdaccio/monorepo)**: Along the last months we have crafted our monorepo for grouping all our ecosystem, plugin, core and tooling packages. This does not mean Verdaccio will become a monorepo, rather it will help us to grow without affecting the main repository and do easy updates or respond fast to mistakes in any release.
 * **Hacktoberfest 🎃 is here**: We have prepared a guide if you want to contribute to Verdaccio, feel free to [read it](https://github.com/verdaccio/verdaccio/issues/1461) and give is feedback.
 
 > If you 😍 Verdaccio as we do, helps us to grow more donating to the project via [OpenCollective](https://opencollective.com/verdaccio).
