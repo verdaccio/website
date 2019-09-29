@@ -8,7 +8,7 @@ title: Release 4.3.0
 Verdaccio keeps growing thanks to their users. This release is a minor one we do every month, for further
 [information about our releases can be read here](https://github.com/verdaccio/contributing/blob/master/RELEASES.md).
 
-Furthermore, the info about the release is also available [at GitHub releases page](https://github.com/verdaccio/verdaccio/releases/tag/v4.1.0).
+Furthermore, the info about the release is also available [at GitHub releases page](https://github.com/verdaccio/verdaccio/releases/tag/v4.3.0).
 
 We have some highlights to share:
 
@@ -40,6 +40,14 @@ docker pull verdaccio/verdaccio:4.3.0
 npm install -g verdaccio@4.3.0
 ```
 
+## Experiment Flags
+
+This release includes a new property named `experiments` than can be placed in the `config.yaml` and is completely optional.
+
+We want to be able to ship new things without affect production environments. This flag allow us to add new features and get feedback from the community that wants to use them.
+
+For the features are under this flag means might not be stable or removed in future releases.
+
 ## New Features
 
 ### [Browse web packages by version](https://github.com/verdaccio/verdaccio/issues/1457) by @juanpicado
@@ -62,10 +70,6 @@ experiments:
 ![npm token list](https://nyc3.digitaloceanspaces.com/verdaccio/blog/4.3.0/token_list.png)
 
 You can find further technical information [here](https://github.com/verdaccio/verdaccio/pull/1427).
-
-## Experiment Flags
-
-This release include a new property named `experiments`. We want to be able to experiment new things without affect production environments. This flag allow us to add new features and get feedback from the community that wants to use them. This means the feature might not be stable.
 
 ### Other updates
 
