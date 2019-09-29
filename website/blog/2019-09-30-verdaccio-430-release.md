@@ -52,7 +52,7 @@ For the features are under this flag means might not be stable or removed in fut
 
 ### [Browse web packages by version](https://github.com/verdaccio/verdaccio/issues/1457) by @juanpicado
 
-When you publish a new version of your package, you want to be able to access the previous ones, that's exacltly what you can do with this new release.
+When you publish a new version of your package, you want to be able to access the previous ones, that's exactly what you can do with this new release.
 
 ![verdaccio browse by version](https://nyc3.digitaloceanspaces.com/verdaccio/blog/4.3.0/version_ui_navigation.gif)
 
