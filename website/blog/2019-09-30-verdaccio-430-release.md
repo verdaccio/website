@@ -56,7 +56,7 @@ When you publish a new version of your package, you want to be able to access th
 
 ![verdaccio browse by version](https://nyc3.digitaloceanspaces.com/verdaccio/blog/4.3.0/version_ui_navigation.gif)
 
-> Note the README always point to the latest release, Verdaccio does not persist readme on each publish. This might change in the future, file a ticket if you are interested and might be considered if there is enough 👍🏻 votes.
+> Note the README always points to the latest release, Verdaccio does not persist the readme on each publish. This might change in the future, file a ticket if you are interested and might be considered if there is enough 👍🏻 votes.
 
 ### [npm token command support ](https://github.com/verdaccio/verdaccio/issues/1427) by @juanpicado, @Eomm and @juangabreil.
 
