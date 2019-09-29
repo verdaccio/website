@@ -8,7 +8,7 @@ title: Release 4.3.0
 Verdaccio keeps growing thanks to their users. This release is a minor one we do every month, further
 [information about our releases can be read here](https://github.com/verdaccio/contributing/blob/master/RELEASES.md).
 
-Furthermore, the info about the release is also available [at GitHub releases page](https://github.com/verdaccio/verdaccio/releases/tag/v4.3.0).
+Furthermore, the info about the release is also available at the [GitHub releases page](https://github.com/verdaccio/verdaccio/releases/tag/v4.3.0).
 
 We have some highlights to share:
 
