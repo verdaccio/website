@@ -84,3 +84,18 @@ Verdaccio 3 is still under our **security maintenance state**, thus, we just shi
 * Update core dependencies
 
 > We update as much is possible without break the current implementation, thus storage or htpasswd are not part of this update.
+
+
+## Use this version
+
+### Docker
+
+```bash
+docker pull verdaccio/verdaccio:3.13.0
+```
+
+### npmjs
+
+```bash
+npm install -g verdaccio@3.13.0
+```
