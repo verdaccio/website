@@ -83,7 +83,7 @@ Verdaccio 3 is still under our **security maintenance state**, thus, we just shi
 * Docker image updated to Node.js **v10.16.3**
 * Update core dependencies
 
-> We update as much is possible without break the current implementation, thus storage or htpasswd are not part of this update.
+> We update as much as possible without breaking the current implementation, thus storage or htpasswd are not part of this update.
 
 
 ## Use this version
