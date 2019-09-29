@@ -99,3 +99,9 @@ docker pull verdaccio/verdaccio:3.13.0
 ```bash
 npm install -g verdaccio@3.13.0
 ```
+
+or
+
+```bash
+npm i -g verdaccio@previous
+```
