@@ -73,5 +73,14 @@ You can find further technical information [here](https://github.com/verdaccio/v
 
 ### Other updates
 
-- (Docker) Node.js update to 10.16.3 [#1473](https://github.com/verdaccio/verdaccio/issues/1473)
+- (Docker) Node.js update to v10.16.3 [#1473](https://github.com/verdaccio/verdaccio/issues/1473)
 - (Logging) Ensure every log file has at least one record [#1414](https://github.com/verdaccio/verdaccio/issues/1414)
+
+# Verdaccio v3
+
+Verdaccio 3 is still under our **security maintenance state**, thus, we just shipped a minor update `v3.13.0`.
+
+* Docker image updated to Node.js **v10.16.3**
+* Update core dependencies
+
+> We update as much is possible without break the current implementation, thus storage or htpasswd are not part of this update.
