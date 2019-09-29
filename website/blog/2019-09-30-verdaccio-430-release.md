@@ -42,7 +42,7 @@ npm install -g verdaccio@4.3.0
 
 ## Experiment Flags
 
-This release includes a new property named `experiments` than can be placed in the `config.yaml` and is completely optional.
+This release includes a new property named `experiments` that can be placed in the `config.yaml` and is completely optional.
 
 We want to be able to ship new things without affect production environments. This flag allow us to add new features and get feedback from the community that wants to use them.
 
