@@ -20,7 +20,7 @@ We have some highlights to share:
 
 > If you 😍 Verdaccio as we do, help us to grow more by donating to the project via [OpenCollective](https://opencollective.com/verdaccio).
 
-Thanks for support Verdaccio ! 👏👏👏👏.
+Thanks for supporting Verdaccio ! 👏👏👏👏.
 
 <!--truncate-->
 
