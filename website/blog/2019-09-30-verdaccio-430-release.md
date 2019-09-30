@@ -73,8 +73,17 @@ You can find further technical information [here](https://github.com/verdaccio/v
 
 ### Other updates
 
-- (Docker) Node.js update to v10.16.3 [#1473](https://github.com/verdaccio/verdaccio/issues/1473)
-- (Logging) Ensure every log file has at least one record [#1414](https://github.com/verdaccio/verdaccio/issues/1414)
+- (Docker) Node.js update to v10.16.3 [#1473](https://github.com/verdaccio/verdaccio/issues/1473) by [@juanpicado](https://github.com/juanpicado)
+- (Logging) Ensure every log file has at least one record [#1414](https://github.com/verdaccio/verdaccio/issues/1414) by [@mlucool](https://github.com/mlucool)
+- **UI**: fix: correctly load font files - closes [#134](https://github.com/verdaccio/ui/pull/134) by [@DanielRuf](https://github.com/DanielRuf)
+- **UI**: fix(ui): fix the hover effect on the packageItem's author area [#137](https://github.com/verdaccio/ui/pull/137) by [@FilipMessa](https://github.com/FilipMessa)
+- **UI**: chore: pumped mui version [#131](https://github.com/verdaccio/ui/pull/131) by [@priscilawebdev](https://github.com/priscilawebdev)
+- **UI**: fix: sidebar view on small screens [#136](https://github.com/verdaccio/ui/pull/136) by [@juanpicado](https://github.com/juanpicado)
+- **Monorepo**: fix(security): Cross-site Scripting (XSS) for readme [#145](https://github.com/verdaccio/monorepo/pull/145) by [@juanpicado](https://github.com/juanpicado)
+- **Monorepo**: remove eslint warnings [#112](https://github.com/verdaccio/monorepo/pull/112) by [@sergiohgz](https://github.com/sergiohgz)
+- **Monorepo**: chore: use Alpine image in DevContainers [#100](https://github.com/verdaccio/monorepo/pull/100) by [@sergiohgz](https://github.com/sergiohgz)
+- **Monorepo**: ci: publish every commit in a temporal in-memory registry  [#74](https://github.com/verdaccio/monorepo/pull/74) by [@sergiohgz](https://github.com/sergiohgz)
+
 
 # Verdaccio v3
 
