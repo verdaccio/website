@@ -1,18 +1,18 @@
 ---
 id: version-4.0.0-beta.0-who-is-using
-title: Who is using Verdaccio?
-original_id: who-is-using
+title: Wer benutzt Verdaccio?
+original_id: wer-benutzt-verdaccio
 ---
 
-### As a Business
+### Als Unternehmen
 
-*If you are using Verdaccio in your business and want to share your experience, let us know. We will happy to listen to you.*
+*Falls Sie Verdaccio in Ihrem Unternehmen nutzen und Ihre Erfahrung mit uns teilen wollen, kontaktieren Sie uns. Wir würden uns über Ihr Feedback freuen.*
 
 * [SheetJS](https://sheetjs.com/)
 
-### Open Source Projects
+### Open Source Projekte
 
-> **Feel free to suggest other OSS are using Verdaccio.**
+> **Zögere nicht Verdaccio weiterzuempfehlen.**
 
 * [pnpm](https://pnpm.js.org/)
 * [create-react-app](https://facebook.github.io/create-react-app/)

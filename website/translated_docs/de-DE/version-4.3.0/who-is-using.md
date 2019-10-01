@@ -1,5 +1,5 @@
 ---
-id: version-4.0.0-beta.10-who-is-using
+id: version-4.3.0-who-is-using
 title: Wer benutzt Verdaccio?
 original_id: wer-benutzt-verdaccio
 ---
@@ -9,6 +9,8 @@ original_id: wer-benutzt-verdaccio
 *Falls Sie Verdaccio in Ihrem Unternehmen nutzen und Ihre Erfahrung mit uns teilen wollen, kontaktieren Sie uns. Wir würden uns über Ihr Feedback freuen.*
 
 * [SheetJS](https://sheetjs.com/)
+* [Satispay](https://www.satispay.com/)
+
 
 ### Open Source Projekte
 
@@ -29,3 +31,5 @@ original_id: wer-benutzt-verdaccio
 #### Readme Recomendations
 
 * [react-native-cli](https://github.com/react-native-community/react-native-cli/blob/master/CONTRIBUTING.md)
+
+

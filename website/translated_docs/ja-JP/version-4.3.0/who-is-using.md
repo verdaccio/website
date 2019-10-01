@@ -1,18 +1,20 @@
 ---
-id: version-4.0.0-beta.10-who-is-using
-title: Wer benutzt Verdaccio?
-original_id: wer-benutzt-verdaccio
+id: version-4.3.0-who-is-using
+title: Who is using Verdaccio?
+original_id: who-is-using
 ---
 
-### Als Unternehmen
+### As a Business
 
-*Falls Sie Verdaccio in Ihrem Unternehmen nutzen und Ihre Erfahrung mit uns teilen wollen, kontaktieren Sie uns. Wir würden uns über Ihr Feedback freuen.*
+*If you are using Verdaccio in your business and want to share your experience, let us know. We will happy to listen to you.*
 
 * [SheetJS](https://sheetjs.com/)
+* [Satispay](https://www.satispay.com/)
 
-### Open Source Projekte
 
-> **Zögere nicht Verdaccio weiterzuempfehlen.**
+### Open Source Projects
+
+> **Feel free to suggest other OSS are using Verdaccio.**
 
 * [pnpm](https://pnpm.js.org/)
 * [Storybook](https://storybook.js.org/)
@@ -29,3 +31,5 @@ original_id: wer-benutzt-verdaccio
 #### Readme Recomendations
 
 * [react-native-cli](https://github.com/react-native-community/react-native-cli/blob/master/CONTRIBUTING.md)
+
+

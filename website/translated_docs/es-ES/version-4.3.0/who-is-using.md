@@ -1,18 +1,20 @@
 ---
-id: version-4.0.0-beta.10-who-is-using
-title: Wer benutzt Verdaccio?
-original_id: wer-benutzt-verdaccio
+id: version-4.3.0-who-is-using
+title: Quien usa Verdaccio?
+original_id: who-is-using
 ---
 
-### Als Unternehmen
+### Como Negocio
 
-*Falls Sie Verdaccio in Ihrem Unternehmen nutzen und Ihre Erfahrung mit uns teilen wollen, kontaktieren Sie uns. Wir würden uns über Ihr Feedback freuen.*
+*Si estas usando Verdaccio en tu negocio y quieres compartir tu experiencia, dejamos saber. Nos encantará escucharte.*
 
 * [SheetJS](https://sheetjs.com/)
+* [Satispay](https://www.satispay.com/)
 
-### Open Source Projekte
 
-> **Zögere nicht Verdaccio weiterzuempfehlen.**
+### Proyectos Open Source
+
+> **Sientete libre de sugerir otros OSS que esten usando Verdaccio.**
 
 * [pnpm](https://pnpm.js.org/)
 * [Storybook](https://storybook.js.org/)
@@ -26,6 +28,8 @@ original_id: wer-benutzt-verdaccio
 * [Wix Yoshi](https://github.com/wix/yoshi)
 * [The AWS Cloud Development Kit](https://github.com/awslabs/aws-cdk)
 
-#### Readme Recomendations
+#### Recomendaciones en el Readme
 
 * [react-native-cli](https://github.com/react-native-community/react-native-cli/blob/master/CONTRIBUTING.md)
+
+
