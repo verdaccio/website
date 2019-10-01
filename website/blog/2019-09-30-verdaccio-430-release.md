@@ -87,7 +87,7 @@ You can find further technical information [here](https://github.com/verdaccio/v
 
 # Verdaccio v3
 
-Verdaccio 3 is still under our **security maintenance state**, thus we just shipped a minor update `v3.13.0`.
+Verdaccio 3 is still under our **security maintenance state**, thus we just shipped a minor update `v3.13.1`.
 
 * Docker image updated to Node.js **v10.16.3**
 * Update core dependencies
@@ -100,13 +100,13 @@ Verdaccio 3 is still under our **security maintenance state**, thus we just ship
 ### Docker
 
 ```bash
-docker pull verdaccio/verdaccio:3.13.0
+docker pull verdaccio/verdaccio:3.13.1
 ```
 
 ### npmjs
 
 ```bash
-npm install -g verdaccio@3.13.0
+npm install -g verdaccio@3.13.1
 ```
 
 or
