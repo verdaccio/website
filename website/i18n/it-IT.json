@@ -99,7 +99,7 @@
         "title": "Configurazione di Proxy inverso"
       },
       "security-policy": {
-        "title": "Security Policy"
+        "title": "Politica sulla Sicurezza"
       },
       "server-configuration": {
         "title": "Configurazione del server"
@@ -489,7 +489,7 @@
         "title": "Docker"
       },
       "version-4.1.0/version-4.1.0-security-policy": {
-        "title": "Security Policy"
+        "title": "Politica sulla Sicurezza"
       },
       "version-4.2.0/version-4.2.0-dev-plugins": {
         "title": "Sviluppare Estensioni"
