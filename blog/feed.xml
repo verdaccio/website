@@ -4,7 +4,7 @@
         <title>Verdaccio Blog</title>
         <link>https://verdaccio.org//blog</link>
         <description>The best place to stay up-to-date with the latest Verdaccio news and events.</description>
-        <lastBuildDate>Sat, 07 Sep 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 30 Sep 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,28 @@
             <link>https://verdaccio.org//blog</link>
         </image>
         <copyright>Copyright © 2019 Verdaccio community</copyright>
+        <item>
+            <title><![CDATA[Release 4.3.0]]></title>
+            <link>https://verdaccio.org//blog/2019/09/30/verdaccio-430-release.html</link>
+            <guid>https://verdaccio.org//blog/2019/09/30/verdaccio-430-release.html</guid>
+            <pubDate>Mon, 30 Sep 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Verdaccio keeps growing thanks to their users. This release is a minor one we do every month, further
+<a href="https://github.com/verdaccio/contributing/blob/master/RELEASES.md">information about our releases can be read here</a>.</p>
+<p>Furthermore, the info about the release is also available at the <a href="https://github.com/verdaccio/verdaccio/releases/tag/v4.3.0">GitHub releases page</a>.</p>
+<p>We have some highlights to share:</p>
+<ul>
+<li>At this stage, Docker 🐳 pulls <a href="https://dockeri.co/image/verdaccio/verdaccio">have grown to <strong>5.7 million pulls</strong></a>.</li>
+<li>We just reached <strong>7.9k 🌟</strong>, <em>would you help us to reach 10k?</em> Give us your star ⭐️!</li>
+<li><strong>Blog</strong> 🗒: Don't miss our new entry <a href="https://verdaccio.org/blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces"><strong>Managing multiple projects with Lerna and Yarn Workspaces</strong></a> by <a href="https://github.com/sergiohgz">@sergiohgz</a>.</li>
+<li><strong><a href="https://github.com/verdaccio/monorepo">Monorepo</a></strong>: Along the last months we have crafted our monorepo for grouping all our ecosystem, plugin, core and tooling packages. This does not mean Verdaccio will become a monorepo, rather it will help us to grow without affecting the main repository and do easy updates or respond fast to mistakes in any release.</li>
+<li><strong>Hacktoberfest 🎃 is here</strong>: We have prepared a guide if you want to contribute to Verdaccio, feel free to <a href="https://github.com/verdaccio/verdaccio/issues/1461">read it</a> and give us feedback.</li>
+</ul>
+<blockquote>
+<p>If you 😍 Verdaccio as we do, help us to grow more by donating to the project via <a href="https://opencollective.com/verdaccio">OpenCollective</a>.</p>
+</blockquote>
+<p>Thanks for supporting Verdaccio ! 👏👏👏👏.</p>
+]]></description>
+        </item>
         <item>
             <title><![CDATA[Managing multiples projects with Lerna and Yarn Workspaces]]></title>
             <link>https://verdaccio.org//blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces.html</link>
