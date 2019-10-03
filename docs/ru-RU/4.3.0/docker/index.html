@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="ru-RU"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Docker · Verdaccio</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="![alt Docker Pulls Count](https://dockeri.co/image/verdaccio/verdaccio &quot;Docker Pulls Count&quot;)"/><meta name="docsearch:version" content="4.3.0"/><meta name="docsearch:language" content="ru-RU"/><meta property="og:title" content="Docker · Verdaccio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://verdaccio.org//"/><meta property="og:description" content="![alt Docker Pulls Count](https://dockeri.co/image/verdaccio/verdaccio &quot;Docker Pulls Count&quot;)"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://verdaccio.org/blog/atom.xml" title="Verdaccio Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://verdaccio.org/blog/feed.xml" title="Verdaccio Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-2527438-21', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://codefund.io/properties/256/funder.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/ru-RU"><img class="logo" src="/img/logo/symbol/svg/verdaccio-tiny.svg" alt="Verdaccio"/><h2 class="headerTitleWithLogo">Verdaccio</h2></a><a href="/ru-RU/versions"><h3>4.3.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/ru-RU/4.3.0/installation" target="_self">Документация</a></li><li class=""><a href="/blog/" target="_self">Блог</a></li><li class=""><a href="https://twitter.com/verdaccio_npm" target="_self">Twitter</a></li><li class=""><a href="/ru-RU/help" target="_self">Помощь</a></li><li class=""><a href="https://github.com/verdaccio" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="/ru-RU/team" target="_self">Команда</a></li><li class=""><a href="https://opencollective.com/verdaccio" target="_self">Пожертвовать</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>Russian</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/4.3.0/docker">English</a></li><li><a href="/docs/es-ES/4.3.0/docker">Español</a></li><li><a href="/docs/fr-FR/4.3.0/docker">Français</a></li><li><a href="/docs/it-IT/4.3.0/docker">Italiano</a></li><li><a href="/docs/sr-CS/4.3.0/docker">Serbian (Latin)</a></li><li><a href="/docs/zh-CN/4.3.0/docker">中文</a></li><li><a href="https://crowdin.com/project/verdaccio" target="_blank" rel="noreferrer noopener">Помочь перевести</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>DevOps</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Введение<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/what-is-verdaccio">What is Verdaccio?</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/cli">Command Line Tool</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/who-is-using">Who is using Verdaccio?</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/security-policy">Security Policy</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/logo">Logotype</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Uses Cases</h4><ul><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/e2e">End to End testing</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/caching">Caching strategies</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/github-actions">Github Actions</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/linking-remote-registry">Linking a Remote Registry</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Talks &amp; Articles</h4><ul><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/articles">Articles</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/talks">Talks</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Features<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/configuration">Configuration File</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/uplinks">Uplinks</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/packages">Package Access</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/authentification">Authentification</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/notifications">Notifications</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/logger">Logger</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/webui">Web User Interface</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Сервер<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/server-configuration">Server Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/reverse-proxy">Reverse Proxy Setup</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/ssl">Set up the SSL Certificates</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/windows">Installing As a Windows Service</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/iss-server">Installing on IIS server</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Разработка<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/plugins">Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/dev-plugins">Developing Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/node-api">Node API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">DevOps<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/docs/ru-RU/4.3.0/docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/kubernetes">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/ci">Continuous Integration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cloud</h4><ul><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/amazon">Amazon Web Services</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tools</h4><ul><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/ansible">Ansible</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/puppet">Puppet</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/chef">Chef Cookbook</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Руководства<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/best">Best Practices</a></li><li class="navListItem"><a class="navItem" href="/docs/ru-RU/4.3.0/protect-your-dependencies">Protecting packages</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/ru-RU" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Docker</h1></header><article><div><span><p><img src="https://dockeri.co/image/verdaccio/verdaccio" alt="alt Docker Pulls Count" title="Docker Pulls Count"></p>
+<p>Для скачивания последней версии <a href="https://hub.docker.com/r/verdaccio/verdaccio/">Docker образа</a>:</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio
+</code></pre>
+<p><img src="/docs/assets/docker_verdaccio.gif" alt="Docker pull"></p>
+<div id="codefund">''</div>
+<h2><a class="anchor" aria-hidden="true" id="версии-с-меткой"></a><a href="#версии-с-меткой" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Версии с меткой</h2>
+<p>Начиная с версии <code>v2.x</code> вы можете скачать Docker образ <a href="https://hub.docker.com/r/verdaccio/verdaccio/tags/">тег</a>, так:</p>
+<p>Для базовых версий:</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:4
+</code></pre>
+<p>Для минорной версии:</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:4.0
+</code></pre>
+<p>Конкретная версия (патч):</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:4.0.0
+</code></pre>
+<blockquote>
+<p>Если вас интересует весь список тегов, <a href="https://hub.docker.com/r/verdaccio/verdaccio/tags/">посетите нашу страницу на сайте Docker Hub</a>.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="запускаем-verdaccio-используя-docker"></a><a href="#запускаем-verdaccio-используя-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Запускаем Verdaccio, используя Docker</h2>
+<p>Запуск Docker контейнера:</p>
+<pre><code class="hljs css language-bash">docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+</code></pre>
+<p>The last argument defines which image to use. The above line will pull the latest prebuilt image from dockerhub, if you haven't done that already.</p>
+<p>Если этот образ <a href="#build-your-own-docker-image">у вас уже скачан</a> используйте <code>verdaccio</code> в качестве последнего аргумента.</p>
+<p>Вы можете использовать <code>-v</code> для того, что бы примонтировать каталоги <code>conf</code>, <code>storage</code> и <code>plugins</code> к основной (host) файловой системе:</p>
+<pre><code class="hljs css language-bash">V_PATH=/path/<span class="hljs-keyword">for</span>/verdaccio; docker run -it --rm --name verdaccio \
+  -p 4873:4873 \
+  -v <span class="hljs-variable">$V_PATH</span>/conf:/verdaccio/conf \
+  -v <span class="hljs-variable">$V_PATH</span>/storage:/verdaccio/storage \
+  -v <span class="hljs-variable">$V_PATH</span>/plugins:/verdaccio/plugins \
+  verdaccio/verdaccio
+</code></pre>
+<blockquote>
+<p>Примечание: внутри контейнера Verdaccio запускается не из под root (uid=10001), и если вы используете кастомное монтирование каталогов, вам необходимо убедиться, что у пользователя будет доступ к этим каталогам. В примере выше, вам нужно запустить <code>sudo chown -R 100:101 /opt/verdaccio</code>, в противном случае вы получите ошибку доступа. <a href="https://docs.docker.com/storage/volumes/">Используйте docker разделы</a> при монтировании каталогов.</p>
+</blockquote>
+<p>Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:</p>
+<table>
+<thead>
+<tr><th>Свойство</th><th>По умолчанию</th><th>Описание</th></tr>
+</thead>
+<tbody>
+<tr><td>VERDACCIO_APPDIR</td><td><code>/opt/verdaccio-build</code></td><td>рабочая папка докера</td></tr>
+<tr><td>VERDACCIO_USER_NAME</td><td><code>verdaccio</code></td><td>системный пользователь</td></tr>
+<tr><td>VERDACCIO_USER_UID</td><td><code>10001</code></td><td>id юзера, который используется для задания прав на папки</td></tr>
+<tr><td>VERDACCIO_PORT</td><td><code>4873</code></td><td>порт сервера Verdaccio</td></tr>
+<tr><td>VERDACCIO_PROTOCOL</td><td><code>http</code></td><td>http-протокол по умолчанию</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="плагины"></a><a href="#плагины" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Плагины</h3>
+<p>Плагины могут быть установлены в отдельную директорию и смонтированы с использованием Docker или Kubernetes. Однако вам нужно убедиться, что вы используете встроенные плагины с родными зависимостями, использующими такой же базовый образ как и в Verdaccio Dockerfile.</p>
+<pre><code class="hljs css language-docker"><span class="hljs-keyword">FROM</span> verdaccio/verdaccio
+
+<span class="hljs-keyword">USER</span> root
+
+<span class="hljs-keyword">ENV</span> NODE_ENV=production
+
+<span class="hljs-keyword">RUN</span><span class="bash"> npm i &amp;&amp; npm install verdaccio-s3-storage</span>
+
+<span class="hljs-keyword">USER</span> verdaccio
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="docker-и-кастомная-конфигурация-порта"></a><a href="#docker-и-кастомная-конфигурация-порта" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker и кастомная конфигурация порта</h3>
+<p>Свойства <code>host:port</code>, определенные в <code>conf/config.yaml</code> в секции <code>listen</code> <strong>, будут проигнорированы при использовании в docker</strong>.</p>
+<p>Если вам необходимо, чтобы docker-экземпляр verdaccio работал на другом порту, скажем, на <code>5000</code>, при запуске команды <code>docker run</code> добавьте переменную окружения <code>VERDACCIO_PORT=5000</code> и выставьте этот порт наружу <code>-p 5000:5000</code>.</p>
+<pre><code class="hljs css language-bash">V_PATH=/path/<span class="hljs-keyword">for</span>/verdaccio; docker run -it --rm --name verdaccio \
+  -e <span class="hljs-string">"VERDACCIO_PORT=8080"</span> -p 8080:8080 \  
+  verdaccio/verdaccio
+</code></pre>
+<p>Конечно, цифры, которые вы поставили в параметр <code>-p</code>, должны совпадать.</p>
+<h3><a class="anchor" aria-hidden="true" id="использование-https-с-docker"></a><a href="#использование-https-с-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Использование HTTPS с Docker</h3>
+<p>Вы можете настроить протокол, который verdaccio будет слушать, аналогично тому, как ранее конфигурировался порт. Необходмило переопределить значение по умолчанию (&quot;http&quot;) переменной окружения <code>PROTOCOL</code> на &quot;https&quot;, после того, как вы укажете сертификаты в config.yaml.</p>
+<pre><code class="hljs css language-bash">docker run -it --rm --name verdaccio \
+  --env <span class="hljs-string">"VERDACCIO_PROTOCOL=https"</span> -p 4873:4873
+  verdaccio/verdaccio
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="использование-docker-compose"></a><a href="#использование-docker-compose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Использование docker-compose</h3>
+<ol>
+<li>Возьмите последнюю версию <a href="https://github.com/docker/compose">docker-compose</a>.</li>
+<li>Соберите и запустите контейнер:</li>
+</ol>
+<pre><code class="hljs css language-bash">$ docker-compose up --build
+</code></pre>
+<p>Вы можете указать, какой порт использовать (для контейнера и хоста), предварив команду выше указанием <code>VERDACCIO_PORT=5000</code>.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span>
+
+<span class="hljs-attr">services:</span>
+<span class="hljs-attr">  verdaccio:</span>
+<span class="hljs-attr">    image:</span> <span class="hljs-string">verdaccio/verdaccio</span>
+<span class="hljs-attr">    container_name:</span> <span class="hljs-string">"verdaccio"</span>
+<span class="hljs-attr">    networks:</span>
+
+<span class="hljs-bullet">      -</span> <span class="hljs-string">node-network</span>
+<span class="hljs-attr">    environment:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">VERDACCIO_PORT=4873</span>
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">"4873:4873"</span>
+<span class="hljs-attr">    volumes:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">"./storage:/verdaccio/storage"</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">"./config:/verdaccio/conf"</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">"./plugins:/verdaccio/plugins"</span>  
+<span class="hljs-attr">networks:</span>
+<span class="hljs-attr">  node-network:</span>
+<span class="hljs-attr">    driver:</span> <span class="hljs-string">bridge</span>
+</code></pre>
+<p>Docker сгенерирует именованный раздел, в котором будут храниться данные приложения. Вы можете использовать <code>docker inspect</code> или <code>docker volume inspect</code> для определения физического местоположения и изменения конфигурации, например:</p>
+<pre><code class="hljs css language-bash">$ docker volume inspect verdaccio_verdaccio
+[
+    {
+        <span class="hljs-string">"Name"</span>: <span class="hljs-string">"verdaccio_verdaccio"</span>,
+        <span class="hljs-string">"Driver"</span>: <span class="hljs-string">"local"</span>,
+        <span class="hljs-string">"Mountpoint"</span>: <span class="hljs-string">"/var/lib/docker/volumes/verdaccio_verdaccio/_data"</span>,
+        <span class="hljs-string">"Labels"</span>: null,
+        <span class="hljs-string">"Scope"</span>: <span class="hljs-string">"local"</span>
+    }
+]
+
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="сборка-собственного-docker-образа"></a><a href="#сборка-собственного-docker-образа" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Сборка собственного Docker образа</h2>
+<pre><code class="hljs css language-bash">docker build -t verdaccio .
+</code></pre>
+<p>Есть так же npm скрипт для сборки Docker образа, по этому вы можете выполнить:</p>
+<pre><code class="hljs css language-bash">yarn run build:docker
+</code></pre>
+<p>Примечание: Первая сборки может занять несколько минут, потому что нужно выполнить <code>npm install</code>, это будет занимать много времени, всякий раз, как вы измените, что либо, что не перечислено в <code>.dockerignore</code>.</p>
+<p>Имейте в виду, что для выполнения всех, представленных выше команд, Docker должен быть установлен на вашем компьютере и исполняемый файл должен быть представлен в переменной окружения <code>$PATH</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="примеры"></a><a href="#примеры" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Примеры</h2>
+<p>Это отдельные репозитории, которые содержат многожество конфигураций для сборки Docker образов с <code>verdaccio</code>, для запуска обратного прокси:</p>
+<p><a href="https://github.com/verdaccio/docker-examples">https://github.com/verdaccio/docker-examples</a></p>
+<h2><a class="anchor" aria-hidden="true" id="пользовательские-сборки"></a><a href="#пользовательские-сборки" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Пользовательские сборки</h2>
+<blockquote>
+<p>Если у вас есть образ, основанный на Verdaccio, не стесняйтесь - добавляйте его в этот список.</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/snics/docker-verdaccio-gitlab">docker-verdaccio-gitlab</a></li>
+<li><a href="https://github.com/deployable/docker-verdaccio">docker-verdaccio</a></li>
+<li><a href="https://github.com/asynchrony/docker-verdaccio-s3">docker-verdaccio-s3</a> Контейнер с приватным NPM, который может сохранять резервные копии на s3</li>
+<li><a href="https://github.com/snadn/docker-verdaccio-ldap">docker-verdaccio-ldap</a></li>
+<li><a href="https://github.com/nathantreid/verdaccio-ldap">verdaccio-ldap</a></li>
+<li><a href="https://github.com/shingtoli/verdaccio-compose-local-bridge">verdaccio-compose-local-bridge</a></li>
+<li><a href="https://github.com/Global-Solutions/docker-verdaccio">docker-verdaccio</a></li>
+<li><a href="https://github.com/idahobean/verdaccio-docker">verdaccio-docker</a></li>
+<li><a href="https://github.com/andru255/verdaccio-server">verdaccio-server</a></li>
+<li><a href="https://github.com/coldrye-docker/coldrye-debian-verdaccio">coldrye-debian-verdaccio</a> docker образ, предоставляющий verdaccio от coldrye-debian-nodejs.</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ru-RU/4.3.0/node-api"><span class="arrow-prev">← </span><span>Node API</span></a><a class="docs-next button" href="/docs/ru-RU/4.3.0/kubernetes"><span>Kubernetes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#версии-с-меткой">Версии с меткой</a></li><li><a href="#запускаем-verdaccio-используя-docker">Запускаем Verdaccio, используя Docker</a><ul class="toc-headings"><li><a href="#плагины">Плагины</a></li><li><a href="#docker-и-кастомная-конфигурация-порта">Docker и кастомная конфигурация порта</a></li><li><a href="#использование-https-с-docker">Использование HTTPS с Docker</a></li><li><a href="#использование-docker-compose">Использование docker-compose</a></li></ul></li><li><a href="#сборка-собственного-docker-образа">Сборка собственного Docker образа</a></li><li><a href="#примеры">Примеры</a></li><li><a href="#пользовательские-сборки">Пользовательские сборки</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/ru-RU/what-is-verdaccio.html">Getting Started</a><a href="/docs/ru-RU/docker.html">Docker</a><a href="/docs/ru-RU/configuration.html">Configuration</a><a href="/docs/ru-RU/logo">Logos</a></div><div><h5>Community</h5><a href="/ru-RU/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'a8b4d117e513cd8d71d6a95e3d9d4a91',
+                indexName: 'verdaccio',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
