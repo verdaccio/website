@@ -94,7 +94,7 @@ store:
 Verdaccio n gbanilaaye lati rọpo Intafeesi olumulo pẹlu eyi to jẹ akanṣe, a n pe ni **akori**. Ni atilẹwa, o n lo `@verdaccio/ui-theme` ti o ba wa lati ilẹ, ṣugbọn, o le lo ohun ti o yatọ lati fi ohun asomọ ti ara rẹ sori ẹrọ.
 
 ```bash
-<br />$&gt; npm install --global verdaccio-theme-dark
+<br />$> npm install --global verdaccio-theme-dark
 
 ```
 
