@@ -111,6 +111,7 @@
 <tr><td>auth</td><td>list</td><td>否</td><td><a href="/docs/zh-CN/next/uplinks#auth-property">见下文</a></td><td>&gt;= 2.5</td><td>指定“授权authorization”请求头的内容 <a href="http://blog.npmjs.org/post/118393368555/deploying-with-npm-private-modules">详情见</a></td><td>禁用</td></tr>
 <tr><td>headers</td><td>list</td><td>否</td><td>authorization: &quot;Bearer SecretJWToken==&quot;</td><td>全部</td><td>上行链路请求的请求头header列表</td><td>禁用</td></tr>
 <tr><td>strict_ssl</td><td>boolean</td><td>否</td><td>[true,false]</td><td>&gt;= 3.0</td><td>为true时，会检测SSL证书的有效性</td><td>true</td></tr>
+<tr><td>agent_options</td><td>object</td><td>否</td><td>maxSockets: 10</td><td>&gt;= 4.0.2</td><td>options for the HTTP or HTTPS Agent responsible for managing uplink connection persistence and reuse <a href="https://nodejs.org/api/http.html#http_class_http_agent">more info</a></td><td>无默认值</td></tr>
 </tbody>
 </table>
 <h4><a class="anchor" aria-hidden="true" id="auth属性"></a><a href="#auth属性" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Auth属性</h4>
