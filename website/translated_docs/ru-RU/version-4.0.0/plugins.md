@@ -94,7 +94,7 @@ store:
 Verdaccio позволяет заменить веб-интерфейс, и мы называем это **UI темой**. По умолчанию, используется `@verdaccio/ui-theme`, который включен в поставку, но вы можете использовать что-нибудь другое, установив свой плагин.
 
 ```bash
-<br />$&gt; npm install --global verdaccio-theme-dark
+<br />$> npm install --global verdaccio-theme-dark
 
 ```
 
