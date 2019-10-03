@@ -94,7 +94,7 @@ store:
 O Verdaccio permite substituir a interface do usuário por uma personalizada, chamamos de **tema** (theme). Por padrão, usa-se o tema integrado `@verdaccio/ui-theme`, mas você pode usar algo diferente instalando seu próprio plugin.
 
 ```bash
-<br />$&gt; npm install --global verdaccio-theme-dark
+<br />$> npm install --global verdaccio-theme-dark
 
 ```
 

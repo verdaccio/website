@@ -233,3 +233,20 @@ middlewares:
   audit:
     enabled: true
 ```
+
+### Experiments
+
+This release includes a new property named `experiments` that can be placed in the `config.yaml` and is completely optional.
+
+We want to be able to ship new things without affecting production environments. This flag allows us to add new features and get feedback from the community that wants to use them.
+
+The features that are under this flag might not be stable or might be removed in future releases.
+
+Here one example:
+
+```yaml
+experiments:
+  token: false
+```
+
+> To disable the experiments warning in the console, you must comment out the whole `experiments` section.
