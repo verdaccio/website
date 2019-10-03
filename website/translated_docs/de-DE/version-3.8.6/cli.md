@@ -4,7 +4,7 @@ title: Befehlszeilen-Tool
 original_id: cli
 ---
 
-Mit der verdaccio CLI kann die Anwendung gestartet werden.
+Die Anwendung kann über die Verdaccio CLI gestartet werden.
 
 ## Befehle
 
