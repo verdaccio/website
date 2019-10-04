@@ -4,9 +4,9 @@ title: Аутентификация
 original_id: authentification
 ---
 
-The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
+Аутентикация привязана к [плагину](plugins.md) который вы используете. Также пакет по ограничению доступа управляется [Пакетом Доступа](packages.md).
 
-The client authentification is handled by `npm` client itself. Once you login to the application:
+Аутентикация клиента управляется самим `npm` клиентом. Как только вы войдете в приложение:
 
 ```bash
 npm adduser --registry http://localhost:4873
