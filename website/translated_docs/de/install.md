@@ -33,7 +33,7 @@ oder für `yarn`
 yarn global add verdaccio
 ```
 
-![install verdaccio](assets/install_verdaccio.gif)
+![Installation verdaccio](assets/install_verdaccio.gif)
 
 ## Grunddlegende Verwendung
 
@@ -53,7 +53,7 @@ Mit der folgenden Anweisung können sie das Register festlegen:
 npm set registry http://localhost:4873/
 ```
 
-or you can pass a `--registry` flag when needed.
+Oder Sie können ein `--registry` flag übergeben sofern benötigt.
 
 ```bash
 npm install --registry http://localhost:4873
