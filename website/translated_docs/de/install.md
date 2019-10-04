@@ -3,31 +3,31 @@ id: installation
 title: "Installation"
 ---
 
-Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
+Verdaccio ist eine multiplatform Webanwendung. Für die Installation gelten nur geringe Voraussetzungen.
 
-#### Prerequisites
+#### Voraussetzungen
 
-1. Node higher than 
-    - For version `verdaccio@3.x` Node `v6.12` is the minimum supported version.
-    - For version `verdaccio@4.0.0-alpha.x` or `verdaccio@4.x` Node `8.x` (LTS "Carbon") is the minimum supported version.
-2. npm `>=4.x` or `yarn` > We highly recommend use the latest Node Package Managers clients `> npm@5.x | yarn@1.x | pnpm@2.x`
-3. The web interface supports the `Chrome, Firefox, Edge, and IE11` browsers.
+1. Node größer als 
+    - Für `verdaccio@3.x` wird mindestens Node `v6.12` Vorausgesetzt.
+    - Für `verdaccio@4.0.0-alpha.x` oder `verdaccio@4.x` wird mindestens Node `8.x` (LTS "Carbon") Vorausgesetzt.
+2. npm `>=4.x` oder `yarn` > Wir empfehlen dringendst die neusten Node Package-Manager-Clients zu verwenden `> npm@5.x | yarn@1.x | pnpm@2.x`
+3. Doe Weboberfläche unterstützt die Browser `Chrome, Firefox, Edge, und IE11`.
 
-> Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
+> Verdaccio wird laut [Node.js Release Working Group](https://github.com/nodejs/Release) Empfehlung die neuste Node.js Version unterstützen.
 
 <div id="codefund">''</div>
 
-## Installing the CLI
+## Installation der CLI
 
-`verdaccio` must be installed globaly using either of the following methods:
+`verdaccio` muss unter Verwendung einer der folgenden Methoden global installiert werden:
 
-Using `npm`
+Bei Verwendung von `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-or using `yarn`
+oder für `yarn`
 
 ```bash
 yarn global add verdaccio
@@ -35,9 +35,9 @@ yarn global add verdaccio
 
 ![install verdaccio](assets/install_verdaccio.gif)
 
-## Basic Usage
+## Grunddlegende Verwendung
 
-Once it has been installed, you only need to execute the CLI command:
+Sobald die Installation durchgeführt wurde, muss nur die folgende CLI Anweisung ausgeführt werden:
 
 ```bash
 $> verdaccio
@@ -45,9 +45,9 @@ warn --- config file  - /home/.config/verdaccio/config.yaml
 warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 ```
 
-For more information about the CLI, please [read the cli section](cli.md).
+Für weitere Informationen über die CLI lesen Sie bitte die [cli Sektion](cli.md).
 
-You can set the registry by using the following command.
+Mit der folgenden Anweisung können sie das Register festlegen:
 
 ```bash
 npm set registry http://localhost:4873/
