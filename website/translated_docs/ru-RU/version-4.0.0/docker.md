@@ -71,7 +71,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio:4.x-next
 ```
 
-> Примечание: внутри контейнера Verdaccio запускается не из под root (uid=10001), и если вы используете кастомное монтирование каталогов, вам необходимо убедиться, что у пользователя будет доступ к этим каталогам. В примере выше, вам нужно запустить `sudo chown -R 100:101 /opt/verdaccio`, в противном случае вы получите ошибку доступа. [Используйте docker разделы](https://docs.docker.com/storage/volumes/) при монтировании каталогов.
+> Примечание: внутри контейнера Verdaccio запускается не из под root (uid=10001), и если вы используете кастомное монтирование каталогов, вам необходимо убедиться, что у пользователя будет доступ к этим каталогам. В примере выше, вам нужно запустить `sudo chown -R 10001:65533 /opt/verdaccio`, в противном случае вы получите ошибку доступа. [Используйте docker разделы](https://docs.docker.com/storage/volumes/) при монтировании каталогов.
 
 Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
 

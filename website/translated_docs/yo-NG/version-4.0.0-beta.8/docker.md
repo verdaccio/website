@@ -71,7 +71,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio:4.x-next
 ```
 
-> Akiyesi: Verdaccio n ṣiṣẹ bi olumulo ti ko lo gbongbo (uid=10001) ninu apoti naa, if ti o ba lo atopọ dide lati fagbara bori atilẹwa, o nilo lati rii daju pe ọna atilẹyin naa jẹ pinpin si olumulo to tọ. Ninu apẹẹrẹ ti o wa loke, o nilo lati ṣamulo `sudo chown -R 100:101 /opt/verdaccio` bibẹkọ o ma salaba pade awọn aṣiṣe igbanilaaye ni akoko iṣiṣẹ. [Lo iwọn iye docker](https://docs.docker.com/storage/volumes/) o jẹ igbaniyanju lori lilo atopọ dide.
+> Akiyesi: Verdaccio n ṣiṣẹ bi olumulo ti ko lo gbongbo (uid=10001) ninu apoti naa, if ti o ba lo atopọ dide lati fagbara bori atilẹwa, o nilo lati rii daju pe ọna atilẹyin naa jẹ pinpin si olumulo to tọ. Ninu apẹẹrẹ ti o wa loke, o nilo lati ṣamulo `sudo chown -R 10001:65533 /opt/verdaccio` bibẹkọ o ma salaba pade awọn aṣiṣe igbanilaaye ni akoko iṣiṣẹ. [Lo iwọn iye docker](https://docs.docker.com/storage/volumes/) o jẹ igbaniyanju lori lilo atopọ dide.
 
 Verdaccio 4 n pese awọn iyipada ayika tuntun lati ṣayipada si boya awọn igbanilaaye, ibudo tabi Ilana http. Eyi ni akojọ pipe:
 

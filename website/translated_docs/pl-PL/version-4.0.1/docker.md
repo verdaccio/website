@@ -63,7 +63,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. [Zalecane jest użycie woluminu dokujacego](https://docs.docker.com/storage/volumes/) zamiast używania wiązania uchwytu.
+> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 10001:65533 /opt/verdaccio` otherwise you will get permission errors at runtime. [Zalecane jest użycie woluminu dokujacego](https://docs.docker.com/storage/volumes/) zamiast używania wiązania uchwytu.
 
 Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
 

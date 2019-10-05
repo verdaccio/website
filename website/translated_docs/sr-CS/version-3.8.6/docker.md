@@ -68,7 +68,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
   verdaccio/verdaccio
 ```
 
-> Napomena: Verdaccio radi kao non-root user (uid=100, gid=101) unutar container-a. Ako koristite bind mount da pregazite zadate postavke (override), onda morate da dodelite mount directory pravom korisniku. U navedenom primeru, morate da pokrenete `sudo chown -R 100:101 /opt/verdaccio`, u suprotnom ćete dobiti permission errors u runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) je preporučeno umesto korišćenja bind mount.
+> Napomena: Verdaccio radi kao non-root user (uid=100, gid=101) unutar container-a. Ako koristite bind mount da pregazite zadate postavke (override), onda morate da dodelite mount directory pravom korisniku. U navedenom primeru, morate da pokrenete `sudo chown -R 10001:65533 /opt/verdaccio`, u suprotnom ćete dobiti permission errors u runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) je preporučeno umesto korišćenja bind mount.
 
 ### Plugins
 
