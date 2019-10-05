@@ -63,17 +63,17 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-> Примечание: внутри контейнера Verdaccio запускается не из под root (uid=10001), и если вы используете кастомное монтирование каталогов, вам необходимо убедиться, что у пользователя будет доступ к этим каталогам. В примере выше, вам нужно запустить `sudo chown -R 10001:65533 /opt/verdaccio`, в противном случае вы получите ошибку доступа. [Используйте docker разделы](https://docs.docker.com/storage/volumes/) при монтировании каталогов.
+> Примечание: внутри контейнера Verdaccio запускается не из под root (uid=10001), и если вы используете кастомное монтирование каталогов, вам необходимо убедиться, что у пользователя будет доступ к этим каталогам. В примере выше, вам нужно запустить `sudo chown -R 100:101 /opt/verdaccio`, в противном случае вы получите ошибку доступа. [Используйте docker разделы](https://docs.docker.com/storage/volumes/) при монтировании каталогов.
 
 Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
 
-| Свойство              | По умолчанию           | Описание                                                 |
-| --------------------- | ---------------------- | -------------------------------------------------------- |
-| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | рабочая папка докера                                     |
+| Свойство            | По умолчанию           | Описание                                                 |
+| ------------------- | ---------------------- | -------------------------------------------------------- |
+| VERDACCIO_APPDIR    | `/opt/verdaccio-build` | рабочая папка докера                                     |
 | VERDACCIO_USER_NAME | `verdaccio`            | системный пользователь                                   |
 | VERDACCIO_USER_UID  | `10001`                | id юзера, который используется для задания прав на папки |
-| VERDACCIO_PORT        | `4873`                 | порт сервера Verdaccio                                   |
-| VERDACCIO_PROTOCOL    | `http`                 | http-протокол по умолчанию                               |
+| VERDACCIO_PORT      | `4873`                 | порт сервера Verdaccio                                   |
+| VERDACCIO_PROTOCOL  | `http`                 | http-протокол по умолчанию                               |
 
 ### Плагины
 

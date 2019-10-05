@@ -63,17 +63,17 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 10001:65533 /opt/verdaccio` otherwise you will get permission errors at runtime. Chúng tôi khuyên bạn nên [ sử dụng khối lượng docker](https://docs.docker.com/storage/volumes/) thay vì cài đặt bắt buộc.
+> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 100:101 /opt/verdaccio` otherwise you will get permission errors at runtime. Chúng tôi khuyên bạn nên [ sử dụng khối lượng docker](https://docs.docker.com/storage/volumes/) thay vì cài đặt bắt buộc.
 
 Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
 
-| Thuộc tính            | default                | Miêu tả                                            |
-| --------------------- | ---------------------- | -------------------------------------------------- |
-| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | the docker working directory                       |
+| Thuộc tính          | default                | Miêu tả                                            |
+| ------------------- | ---------------------- | -------------------------------------------------- |
+| VERDACCIO_APPDIR    | `/opt/verdaccio-build` | the docker working directory                       |
 | VERDACCIO_USER_NAME | `verdaccio`            | the system user                                    |
 | VERDACCIO_USER_UID  | `10001`                | the user id being used to apply folder permissions |
-| VERDACCIO_PORT        | `4873`                 | the verdaccio port                                 |
-| VERDACCIO_PROTOCOL    | `http`                 | the default http protocol                          |
+| VERDACCIO_PORT      | `4873`                 | the verdaccio port                                 |
+| VERDACCIO_PROTOCOL  | `http`                 | the default http protocol                          |
 
 
 ### Plugins

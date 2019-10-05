@@ -68,7 +68,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio -p 4873:4873 \
   verdaccio/verdaccio
 ```
 
-> Note: Verdaccio se ejecuta como usuario non-root (uid=100, gid=101) dentro del contenedor, si usas montaje para anular el por defecto, necesitas asegurarte que el directorio a montar es asignado al usuario correcto. En el ejemplo de arriba, necesitas ejecutar `sudo chown -R 10001:65533 /opt/verdaccio` de lo contrario, obtendrás errores de permiso en tiempo de ejecución. [Usar el volumen docker](https://docs.docker.com/storage/volumes/) es recomendado antes que usar el montaje de unión.
+> Note: Verdaccio se ejecuta como usuario non-root (uid=100, gid=101) dentro del contenedor, si usas montaje para anular el por defecto, necesitas asegurarte que el directorio a montar es asignado al usuario correcto. En el ejemplo de arriba, necesitas ejecutar `sudo chown -R 100:101 /opt/verdaccio` de lo contrario, obtendrás errores de permiso en tiempo de ejecución. [Usar el volumen docker](https://docs.docker.com/storage/volumes/) es recomendado antes que usar el montaje de unión.
 
 ### Plugins
 
