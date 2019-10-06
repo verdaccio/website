@@ -1,34 +1,42 @@
 ---
+title: Upgrade from v3.x to verdaccio 4.x with LDAP and Docker
 author: Dimitri Kopriwa
 authorURL: https://twitter.com/DimitriKopriwa
-title: Configure verdaccio 4.3.0 with LDAP and Docker
+authorImageURL: https://avatars1.githubusercontent.com/u/1866564?s=460&v=4
+authorTwitter: DimitriKopriwa
 ---
 
-Hi! I am Dimitri and I am a user and contributor of Verdaccio.
+I am Dimitri and I am a user and contributor of Verdaccio.
 
-In this blog post, I will show you how I migrated Verdaccio from V3 to V4.
+Today, I will explain how I migrated my private dockerized Verdaccio registry from `v3.x` to `v4.x`.
 
-[information about our releases can be read here](https://github.com/verdaccio/contributing/blob/master/RELEASES.md)
+I will also configure [`verdaccio-ldap`](https://www.npmjs.com/package/verdaccio-ldap) to authenticate my users against LDAP.
+
+[Working demo here](https://github.com/verdaccio/docker-examples/tree/master/ldap-verdaccio-v4)
 
 <!--truncate-->
 
 <div id="codefund">''</div>
 
-Congratulation everyone who tested, contributed to Verdaccio :tada: v4 ! :balloon:
+First of all, I wante to congratulate everyone who tested, contributed to Verdaccio v4.
 
-I am creating this blog post to help others, its aims to provide information to people whiling to use Verdaccio `v4.3.0` and `verdaccio-ldap` with :whale: Docker.
+V4 include bunch of improvment, optimization, starting with the Web UI made completely redesigned with ReactJS and MaterialUI.
+
+Not only that security has been improved with the introduction of the optional `JWT`, but `v4` also bring a new feature to `unpublish` packages.
+
+Let's upgrade it!
 
 ## Prerequisite
 
-- Read verdaccio [documentation](https://verdaccio.org/docs/en/installation).
-- Read verdaccio-ldap [documentation](https://www.npmjs.com/package/verdaccio-ldap).
-- Make a copy of your v3 storage directory while configuring v4.
-- A running LDAP instance (such as OpenLDAP).
+- Read [verdaccio documentation](https://verdaccio.org/docs/en/installation).
+- Read [verdaccio-ldap documentation](https://www.npmjs.com/package/verdaccio-ldap).
+- A backup of your v3 `storage` directory (just in case).
+- A running LDAP database (such as OpenLDAP).
 - [Docker installed](https://docs.docker.com/v17.09/engine/installation/).
 
 ## Goal
 
-- Update Verdaccio from 3.x to 4.x.
+- Update Verdaccio from `v3.x` to `v4.x.`
 - Configure LDAP.
 - Configure JWT. ([Read more](https://medium.com/verdaccio/diving-into-jwt-support-for-verdaccio-4-88df2cf23ddc))
 
@@ -43,7 +51,7 @@ This is my tree structure:
 └── Dockerfile
 ```
 
-The first thing I have to do was to update my `Dockerfile`, this is what I have done:
+First thing I had to do was to update my `Dockerfile`, this is what I have done:
 
 ```Dockerfile
 FROM verdaccio/verdaccio:4.3
@@ -54,11 +62,11 @@ RUN chown -R $VERDACCIO_USER_UID /verdaccio
 USER verdaccio
 ```
 
-- Verdaccio v3 docker image is now using by default `verdaccio` user for security reason, this is why if you use `npm`, you'll have to switch to `root` user.
-* You do not have to do anything else to migrate your `Dockerfile`
-* Later, you must solve the `storage` directory permissions.
+- `v3.x` is now using by default `verdaccio` user for security reason. This is why need to switch to `root` user to use `npm`.
+- We install `verdaccio-ldap` but you can install any plugin. *(Only if you don't want the `verdaccio-htaccess` builtin solution to be your user database)*
+- Later, you **MUST** solve the `storage` directory **permissions** and **ownership**.
 
-### Configuration
+## Configuration
 
 This is my `config.yaml`:
 
@@ -156,10 +164,13 @@ listen:
   - 0.0.0.0:4873
 ```
 
-Most of those configurations are described in Verdaccio [Configuration File documentation](https://verdaccio.org/docs/en/configuration).
+Available options are explained in details in [Configuration File documentation](https://verdaccio.org/docs/en/configuration).
 
 I will describe the most important here.
 
+### LDAP
+
+We use [`verdacio-ldap`](https://www.npmjs.com/package/verdaccio-ldap) plugin to authenticate with LDAP.
 
 **`searchFilter`**
 
@@ -179,13 +190,15 @@ I use an organization unit to store all my group for verdaccio-ldap security.
 groupSearchBase: 'ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks'
 ```
 
+### Security
+
 **`packages`**
 
-You should use scope for all your privates packages, in this scenario, we use LDAP groups for `access`, `publish` and `unpublish`.
+You SHOULD use scope for all your privates packages, in this scenario, we use LDAP groups for `access`, `publish` and `unpublish`.
 
-Not that we  do not use `proxy: npmjs` because they only exist on our private registry.
+Note that we do not use `proxy: npmjs` because they only exist on our private registry.
 
-I recommend you to create scope for all of your private packages, and reserve the group on npmjs registry so no one will be able to take the same scope in the futur.
+I recommend you to create scope for all of your private packages, and reserve the group on npmjs registry so no one will be able to publish publicly in it in the futur.
 
 ```yaml
   '@scope-*/*':
@@ -246,8 +259,8 @@ security:
       notBefore: 0
 ```
 
-- `expiresIn`: You will have to reauthenticate after 30 days, and 7 days on the web.
-- `notBefore`: Just set it to 0, it is the time to wait before the JWT is valid.
+- `expiresIn`: You will have to reauthenticate after `30 days`, and `7 days` on the web UI.
+- `notBefore`: Just set it to `0`, it is the time to wait before the JWT starts it's validity.
 
 ## Build the image
 
@@ -285,17 +298,11 @@ Successfully built 5e36f29f5374
 Successfully tagged verdaccio-3-ldap:latest
 ```
 
-Your image is ready, you can push it to your private docker registry, or to the docker hub if you can host private images.
+Your image is ready, you can push it to your private docker registry, or on Docker Hub if you can host private images.
 
-Do not publish it if it's a public image because you are storing all your LDAP credentials in the image.
+Do not publish it publicly unless you remove all your LDAP credentials in the configuration.
 
-If you still want to use the public docker hub registry, then mount the configuration on startup with a volume, for example:
-
-```bash
-docker run -v $(pwd)/config.yaml:/verdaccio/conf/config.yaml verdaccio-3-ldap
-```
-
-And remove the `config.yaml` within the `Dockerfile`:
+To do so, remove the `config.yaml` within the `Dockerfile`:
 
 ```diff
 FROM verdaccio/verdaccio:4.3
@@ -306,19 +313,25 @@ RUN chown -R $VERDACCIO_USER_UID /verdaccio
 USER verdaccio
 ```
 
+And mount the configuration on startup with a volume:
+
+```bash
+docker run -v $(pwd)/config.yaml:/verdaccio/conf/config.yaml verdaccio-3-ldap
+```
+
 ## Run the service
 
 
-You will have to mount the storage volume when using `Docker`,  to do that, just use `-v` with `docker run` command:
+You will have to mount the `storage` volume when using `Docker`,  to do that, just use `-v` with `docker run` command:
 
 
 ```bash
 docker run -v /srv/verdaccio/storage:/verdaccio/storage verdaccio-3-ldap
 ```
 
-Remember, you have made a backup of your storage directory, now let's fix the permissions to allow verdaccio to run.
+Remember, you have made a backup of your storage directory, now let's fix `permissions` and `ownership` to finish verdaccio migration.
 
-Because within the docker container, the user is `verdaccio`, you won't be able to run `chown` and `chmod` commands, so do it from your host as `root`:
+Because within the docker container, the user is `verdaccio`, you can't run `chown` and `chmod` commands. Just do it directly from your host as `root`:
 
 ```bash
 cd /srv/verdaccio/ # the location depend of your installation
@@ -329,55 +342,55 @@ chown -R $VERDACCIO_USER_UID storage
 
 ## Test the service
 
-First, add your users to the appropriate group we have configured on your LDAP server.
+First, fill appropriate LDAP group for all your LDAP users that should have access to the private npm registry.
 
-`$ip` is the address of the server, if you use `https` behind a reverse proxy or directly with verdacci, then fix the following command that use `http`.
+> We call `$IP` the IP address of the server. If you serve it over `https` behind a reverse proxy or directly, then fix all the following command to use the right protocol.
 
-This is all the test result I have done while configurating verdaccio, in case it help you win some time:
+This is all the test I have done while configurating verdaccio, before going to production:
 
 ### plugin
 
-- [x] it should work with `verdaccio-htaccess` when `verdaccio-ldap` is **not** installed. :heavy_check_mark:
-- [x] it should work with `verdaccio-htaccess` when `auth.ldap` is disabled and `verdaccio-ldap` is installed. :heavy_check_mark:
-- [x] it should work with one `verdaccio-ldap`. :heavy_check_mark:
-- [x] it should work with `verdaccio-htaccess` and fallback to `verdaccio-ldap` through **web**. :heavy_check_mark:
-- [x] it should work with `verdaccio-htaccess` and fallback to `verdaccio-ldap` through **npm**. :x: *Either use `verdaccio-htaccess` or `verdaccio-ldap`, it is useless to use both, even if the web work with the two, the `npm --add-user` command will fail.*
+- `[x]` it should work with `verdaccio-htaccess` when `verdaccio-ldap` is **not** installed. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` it should work with `verdaccio-htaccess` when `auth.ldap` is disabled and `verdaccio-ldap` is installed. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` it should work with one `verdaccio-ldap`. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` it should work with `verdaccio-htaccess` and fallback to `verdaccio-ldap` through **web**. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` it should work with `verdaccio-htaccess` and fallback to `verdaccio-ldap` through **npm**. <img src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png" title="NOK" name="NOK" height="16px" /> *Either use `verdaccio-htaccess` or `verdaccio-ldap`, it is useless to use both, even if the web work with the two, the `npm --add-user` command will fail.*
 
 ### `npm`
 
-- [x] `npm --adduser` should work with different users. :heavy_check_mark:
-- [x] `npm --adduser` should fail with wrong user/password. :heavy_check_mark:
-- [x] it should auth with JWT and the `verdaccio-ldap` plugin. :heavy_check_mark:
-- [x] it should auth with legacy and the `verdaccio-ldap` plugin. :heavy_check_mark:
-- [x] `npm i` in CI that download from the registry **should spam** the LDAP with authentication requests with legaxy. :heavy_check_mark:
-- [x] `npm i` in CI that download from the registry should not spam the LDAP with authentication requests with JWT. :heavy_check_mark:
+- `[x]` `npm --adduser` should work with different users. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `npm --adduser` should fail with wrong user/password. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` it should auth with JWT and the `verdaccio-ldap` plugin. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` it should auth with legacy and the `verdaccio-ldap` plugin. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `npm i` in CI that download from the registry **should spam** the LDAP with authentication requests with legaxy. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `npm i` in CI that download from the registry should not spam the LDAP with authentication requests with JWT. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
 
 ### Web
 
 The new design with material-UI is super nice btw.
 
-- [x] it should authenticate with different users. :heavy_check_mark:
-- [x] it should fail to authenticate with different users and wrong password. :heavy_check_mark:
-- [x] it should show packages to users with `access` permissions. :heavy_check_mark:
-- [x] it should hide packages to users without `access` permissions. :heavy_check_mark:
+- `[x]` it should authenticate with different users. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` it should fail to authenticate with different users and wrong password. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` it should show packages to users with `access` permissions. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` it should hide packages to users without `access` permissions. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
 
-## Packages permissions
+### Packages permissions
 
-- [x] `access` should work with a user with perms. :heavy_check_mark:
-- [x] `access` should fail with a user without perms.. :heavy_check_mark:
-- [x] `access` should work with a user in ldap group with perms. :heavy_check_mark:
-- [x] `access` should fail with a user not in ldap group with perms. :heavy_check_mark:
-- [x] `publish` should work with a user with perms. :heavy_check_mark:
-- [x] `publish` should work with a user in ldap group with perms. :heavy_check_mark:
-- [x] `publish` should fail with a user not in ldap group without perms. :heavy_check_mark:
-- [x] `unpublish` should work with a user with perms. :heavy_check_mark:
-- [x] `unpublish` should fail with a user without perms. :heavy_check_mark:
-- [x] `unpublish` should work with a ldap group with perms. :heavy_check_mark:
-- [x] `unpublish` should fail with a user not in ldap group with perms. :heavy_check_mark:
+- `[x]` `access` should work with a user with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `access` should fail with a user without perms.. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `access` should work with a user in ldap group with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `access` should fail with a user not in ldap group with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `publish` should work with a user with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `publish` should work with a user in ldap group with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `publish` should fail with a user not in ldap group without perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `unpublish` should work with a user with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `unpublish` should fail with a user without perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `unpublish` should work with a ldap group with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
+- `[x]` `unpublish` should fail with a user not in ldap group with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
 
 ### Web
 
-- Test the web interface, generally `http://$ip:4873` if you are not using a reverse proxy.
+- Test the web interface, generally `http://$IP:4873` if you are not using a reverse proxy.
 
 After login, you won't be able to see private scopped package if you don't have the `access` group.
 
@@ -386,19 +399,19 @@ After login, you won't be able to see private scopped package if you don't have 
 Because we use the JWT, you must re-authenticate, this is how we do:
 
 ```bash
-npm adduser --registry http://$ip --always-auth
+npm adduser --registry http://$IP --always-auth
 ```
 
 If you want to use it just for a specific scope:
 
 ```bash
-npm set @scope:registry http://$ip
+npm set @scope:registry http://$IP
 ```
 
 If you want to use it as your default proxy for npm:
 
 ```bash
-npm set registry http://$ip
+npm set registry http://$IP
 ```
 
 
@@ -429,15 +442,15 @@ No you can't, but pull request are welcome.
 
 - Does my registry users need to re-authenticate?
 
-If you use JWT for authentication, which I recommend, they will have to authenticate.
+If you use `JWT` for authentication, which I recommend, they will all have to re-authenticate.
 
 - I have `404` or `401` errors with good credentials.
 
-This is generally due to wrong permissions in `storage` directory.
+This is due to wrong permissions or ownership in `storage` directory, dont forget to `chmod -R 777 /verdaccio/storage` and `chown -R $VERDACCIO_USER_UID /verdaccio`.
 
 - When should I use `--always-auth` when running `--add-user`?
 
-If you keep having `403` issues when retrieving packages from the registry, and all of the permissions have been fixed as described in this article, we have found that adding `--always-auth` will solve the issue.
+If you keep having `403` issues when retrieving packages from the registry, and permissions and ownership have been fixed, we have found that adding `--always-auth` will solve the issue.
 
 In my case, I have found that `--always-auth` was required in my production environment.
 
