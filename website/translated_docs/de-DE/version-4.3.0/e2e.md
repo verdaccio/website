@@ -4,7 +4,7 @@ title: End to End testing
 original_id: e2e
 ---
 
-Some projects organize packages in multi-packages repositories or [monorepos](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). E2E testing is a topic that usually is only relevant for User Interfaces, but from a Node.js perspective, **publishing packages also need to be tested**.
+Some projects organize packages in multi-packages repositories or [monorepos](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). E2E Tests sind für gewöhnlich nur ein Thema bei Benutzeroberflächen. Aus der Sicht von Node.js muss das**Veröffentlichen von Paketen ebenfalls getestet werden**.
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Solution: a local npm registry. <a href="https://t.co/kvcyVANVSK">https://t.co/kvcyVANVSK</a></p>&mdash; Dan Abramov (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/951427674844680192?ref_src=twsrc%5Etfw">11 de enero de 2018</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -15,7 +15,7 @@ Such approach has been really hard to achieve considering:
 * Some self-hosted OSS registries are too heavy
 * Offline environments (private networks)
 
-**Verdaccio** is a lightweight registry with zero-configuration that **fits perfectly in any E2E + CI workflow**.
+**Verdaccio** ist ein leichtgewichtiges Register ohne Konfigurationsaufwand, welches **perfekt in jeden E2E + CI workflow passt**.
 
 ## Implementation
 
@@ -23,7 +23,7 @@ There is no a silver bullet yet, each implementation seems to be specific for ea
 
 ### Example using Bash
 
-This is the most simple example using Verdaccio in a bash script (extracted from *create-react-app*).
+Dies ist das einfachste Beispiel Verdaccio om einem Bash-Skript zu verwenden (Auszug aus *create-react-app*).
 
 ```bash
 #!/bin/sh
