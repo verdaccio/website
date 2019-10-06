@@ -8,7 +8,7 @@ authorTwitter: DimitriKopriwa
 
 I am Dimitri and I am a user and contributor of Verdaccio.
 
-Today, I will explain how I migrated my private dockerized Verdaccio registry from `v3.x` to `v4.x`.
+Today, I will explain how I migrated my private dockerized <img height="16px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f433.png" title="docker" /> Verdaccio registry from `v3.x` to `v4.x`.
 
 I will also configure [`verdaccio-ldap`](https://www.npmjs.com/package/verdaccio-ldap) to authenticate my users against LDAP.
 
@@ -18,7 +18,7 @@ I will also configure [`verdaccio-ldap`](https://www.npmjs.com/package/verdaccio
 
 <div id="codefund">''</div>
 
-First of all, I wante to congratulate everyone who tested, contributed to Verdaccio v4.
+First of all, I wante to congratulate everyone who tested, contributed to Verdaccio <img height="16px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png" title="congrats" /> v4 <img height="16px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f388.png" title="congrats" />.
 
 V4 include bunch of improvment, optimization, starting with the Web UI made completely redesigned with ReactJS and MaterialUI.
 
