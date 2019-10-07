@@ -115,7 +115,7 @@
   verdaccio/verdaccio
 </code></pre>
 <blockquote>
-<p>Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run <code>sudo chown -R 100:101 /opt/verdaccio</code> otherwise you will get permission errors at runtime. <a href="https://docs.docker.com/storage/volumes/">Usar el volumen docker</a> es recomendado antes que usar el montaje de unión.</p>
+<p>Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run <code>sudo chown -R 10001:65533 /opt/verdaccio</code> otherwise you will get permission errors at runtime. <a href="https://docs.docker.com/storage/volumes/">Usar el volumen docker</a> es recomendado antes que usar el montaje de unión.</p>
 </blockquote>
 <p>Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:</p>
 <table>

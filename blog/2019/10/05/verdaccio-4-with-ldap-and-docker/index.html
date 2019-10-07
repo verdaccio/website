@@ -1,0 +1,448 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Upgrade from v3.x to verdaccio 4.x with LDAP and Docker · Verdaccio</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="I am Dimitri and I am a user and contributor of Verdaccio."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Upgrade from v3.x to verdaccio 4.x with LDAP and Docker · Verdaccio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://verdaccio.org//blog/2019/10/05/verdaccio-4-with-ldap-and-docker"/><meta property="og:description" content="I am Dimitri and I am a user and contributor of Verdaccio."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://verdaccio.org/blog/atom.xml" title="Verdaccio Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://verdaccio.org/blog/feed.xml" title="Verdaccio Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-2527438-21', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://codefund.io/properties/256/funder.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/logo/symbol/svg/verdaccio-tiny.svg" alt="Verdaccio"/><h2 class="headerTitleWithLogo">Verdaccio</h2></a><a href="/en/versions"><h3>4.3.3</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/installation" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://twitter.com/verdaccio_npm" target="_self">Twitter</a></li><li class=""><a href="/en/help" target="_self">Help</a></li><li class=""><a href="https://github.com/verdaccio" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="/en/team" target="_self">Team</a></li><li class=""><a href="https://opencollective.com/verdaccio" target="_self">Donate</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/es-ES">Español</a></li><li><a href="/fr-FR">Français</a></li><li><a href="/it-IT">Italiano</a></li><li><a href="/sr-CS">Serbian (Latin)</a></li><li><a href="/zh-CN">中文</a></li><li><a href="/ru-RU">Russian</a></li><li><a href="https://crowdin.com/project/verdaccio" target="_blank" rel="noreferrer noopener">Help Translate</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>All Blog Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">All Blog Posts</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/blog/2019/10/05/verdaccio-4-with-ldap-and-docker">Upgrade from v3.x to verdaccio 4.x with LDAP and Docker</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/09/30/verdaccio-430-release">Release 4.3.0</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces">Managing multiples projects with Lerna and Yarn Workspaces</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/07/30/verdaccio-420-release">Release 4.2.0</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/07/08/verdaccio-410-release">Release 4.1.0</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/05/19/15-verdaccio-4-release">Verdaccio 4 released !!!</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/05/13/the-new-docker-image-verdaccio-4">The new Docker image for Verdaccio 4</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4">Diving into JWT support for Verdaccio 4</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/02/24/migrating-verdaccio">Verdaccio Migration Guides</a></li><li class="navListItem"><a class="navItem" href="/blog/2019/02/08/the-crazy-story-of-verdaccio">The crazy story of Verdaccio</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/11/19/setting-up-verdaccio-on-digitalocean">Setting up Verdaccio on DigitalOcean</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/10/21/verdaccio-4-alpha-release">Verdaccio 4 alpha release</a></li><li class="navListItem"><a class="navItem" href="/blog/2018/09/06/verdaccio-and-deterministic-lock-files">Verdaccio and deterministic lock files</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2019/10/05/verdaccio-4-with-ldap-and-docker">Upgrade from v3.x to verdaccio 4.x with LDAP and Docker</a></h1><p class="post-meta">October 5, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="https://twitter.com/DimitriKopriwa" target="_blank" rel="noreferrer noopener">Dimitri Kopriwa</a></p><div class="authorPhoto"><a href="https://twitter.com/DimitriKopriwa" target="_blank" rel="noreferrer noopener"><img src="https://avatars1.githubusercontent.com/u/1866564?s=460&amp;v=4" alt="Dimitri Kopriwa"/></a></div></div></header><div><span><p>I am Dimitri and I am a user and contributor of Verdaccio.</p>
+<p>Today, I will explain how I migrated my private dockerized <img height="16px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f433.png" title="docker" /> Verdaccio registry from <code>v3.x</code> to <code>v4.x</code>.</p>
+<p>I will also configure <a href="https://www.npmjs.com/package/verdaccio-ldap"><code>verdaccio-ldap</code></a> to authenticate my users against LDAP.</p>
+<p><a href="https://github.com/verdaccio/docker-examples/tree/master/ldap-verdaccio-v4">Working demo here</a></p>
+<!--truncate-->
+<div id="codefund">''</div>
+<p>First of all, I wante to congratulate everyone who tested, contributed to Verdaccio <img height="16px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png" title="congrats" /> v4 <img height="16px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f388.png" title="congrats" />.</p>
+<p>V4 include bunch of improvment, optimization, starting with the Web UI made completely redesigned with ReactJS and MaterialUI.</p>
+<p>Not only that security has been improved with the introduction of the optional <code>JWT</code>, but <code>v4</code> also bring a new feature to <code>unpublish</code> packages.</p>
+<p>Let's upgrade it!</p>
+<h2><a class="anchor" aria-hidden="true" id="prerequisite"></a><a href="#prerequisite" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisite</h2>
+<ul>
+<li>Read <a href="https://verdaccio.org/docs/en/installation">verdaccio documentation</a>.</li>
+<li>Read <a href="https://www.npmjs.com/package/verdaccio-ldap">verdaccio-ldap documentation</a>.</li>
+<li>A backup of your v3 <code>storage</code> directory (just in case).</li>
+<li>A running LDAP database (such as OpenLDAP).</li>
+<li><a href="https://docs.docker.com/v17.09/engine/installation/">Docker installed</a>.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="goal"></a><a href="#goal" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Goal</h2>
+<ul>
+<li>Update Verdaccio from <code>v3.x</code> to <code>v4.x.</code></li>
+<li>Configure LDAP.</li>
+<li>Configure JWT. (<a href="https://medium.com/verdaccio/diving-into-jwt-support-for-verdaccio-4-88df2cf23ddc">Read more</a>)</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="dockerfile"></a><a href="#dockerfile" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dockerfile</h2>
+<p>This is my tree structure:</p>
+<pre><code class="hljs">├── conf
+│   └── config<span class="hljs-selector-class">.yaml</span>
+└── Dockerfile
+</code></pre>
+<p>First thing I had to do was to update my <code>Dockerfile</code>, this is what I have done:</p>
+<pre><code class="hljs css language-Dockerfile"><span class="hljs-keyword">FROM</span> verdaccio/verdaccio:<span class="hljs-number">4.3</span>
+<span class="hljs-keyword">USER</span> root
+<span class="hljs-keyword">RUN</span><span class="bash"> npm i &amp;&amp; npm i verdaccio-ldap</span>
+<span class="hljs-keyword">COPY</span><span class="bash"> conf /verdaccio/conf</span>
+<span class="hljs-keyword">RUN</span><span class="bash"> chown -R <span class="hljs-variable">$VERDACCIO_USER_UID</span> /verdaccio</span>
+<span class="hljs-keyword">USER</span> verdaccio
+</code></pre>
+<ul>
+<li><code>v3.x</code> is now using by default <code>verdaccio</code> user for security reason. This is why need to switch to <code>root</code> user to use <code>npm</code>.</li>
+<li>We install <code>verdaccio-ldap</code> but you can install any plugin. <em>(Only if you don't want the <code>verdaccio-htaccess</code> builtin solution to be your user database)</em></li>
+<li>Later, you <strong>MUST</strong> solve the <code>storage</code> directory <strong>permissions</strong> and <strong>ownership</strong>.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="configuration"></a><a href="#configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration</h2>
+<p>This is my <code>config.yaml</code>:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">storage:</span> <span class="hljs-string">/verdaccio/storage</span>
+<span class="hljs-attr">max_body_size:</span> <span class="hljs-number">100</span><span class="hljs-string">mb</span>
+
+<span class="hljs-attr">web:</span>
+<span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">  title:</span> <span class="hljs-string">My</span> <span class="hljs-string">private</span> <span class="hljs-string">NPM</span> <span class="hljs-string">registry</span>
+<span class="hljs-attr">  gravatar:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">  sort_packages:</span> <span class="hljs-string">asc</span>
+
+<span class="hljs-attr">security:</span>
+<span class="hljs-attr">  legacy:</span> <span class="hljs-literal">false</span>
+<span class="hljs-attr">  api:</span>
+<span class="hljs-attr">    jwt:</span>
+<span class="hljs-attr">      sign:</span>
+<span class="hljs-attr">        expiresIn:</span> <span class="hljs-number">30</span><span class="hljs-string">d</span>
+<span class="hljs-attr">        notBefore:</span> <span class="hljs-number">0</span>
+<span class="hljs-attr">  web:</span>
+<span class="hljs-attr">    sign:</span>
+<span class="hljs-attr">      expiresIn:</span> <span class="hljs-number">7</span><span class="hljs-string">d</span>
+<span class="hljs-attr">      notBefore:</span> <span class="hljs-number">1</span>
+
+<span class="hljs-attr">auth:</span>
+<span class="hljs-attr">  ldap:</span>
+<span class="hljs-attr">    type:</span> <span class="hljs-string">ldap</span>
+<span class="hljs-attr">    client_options:</span>
+<span class="hljs-attr">      url:</span> <span class="hljs-string">"ldap://ldap.verdaccio.private.rocks"</span>
+      <span class="hljs-comment"># Only required if you need auth to bind</span>
+<span class="hljs-attr">      adminDn:</span> <span class="hljs-string">"cn=readonly,dc=verdaccio.private,dc=rocks"</span>
+<span class="hljs-attr">      adminPassword:</span> <span class="hljs-string">"********"</span>
+      <span class="hljs-comment"># Search base for users</span>
+<span class="hljs-attr">      searchBase:</span> <span class="hljs-string">"dc=verdaccio.private,dc=rocks"</span>
+<span class="hljs-attr">      searchFilter:</span> <span class="hljs-string">"(&amp;(uid=<span class="hljs-template-variable">{{username}}</span>)(memberOf=cn=npm_users,ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks))"</span>
+      <span class="hljs-comment"># # If you are using groups, this is also needed</span>
+<span class="hljs-attr">      groupDnProperty:</span> <span class="hljs-string">'cn'</span>
+<span class="hljs-attr">      groupSearchBase:</span> <span class="hljs-string">'ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks'</span>
+      <span class="hljs-comment"># If you have memberOf support on your ldap</span>
+<span class="hljs-attr">      searchAttributes:</span> <span class="hljs-string">['*',</span> <span class="hljs-string">'memberOf'</span><span class="hljs-string">]</span>
+      <span class="hljs-comment"># Else, if you don't (use one or the other):</span>
+      <span class="hljs-comment"># groupSearchFilter: '(memberUid={{dn}})'</span>
+      <span class="hljs-comment">#</span>
+      <span class="hljs-comment"># Optional, default false.</span>
+      <span class="hljs-comment"># If true, then up to 100 credentials at a time will be cached for 5 minutes.</span>
+<span class="hljs-attr">      cache:</span> <span class="hljs-literal">false</span>
+      <span class="hljs-comment"># Optional</span>
+<span class="hljs-attr">      reconnect:</span> <span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># a list of other known repositories we can talk to</span>
+<span class="hljs-attr">uplinks:</span>
+<span class="hljs-attr">  npmjs:</span>
+<span class="hljs-attr">    url:</span> <span class="hljs-attr">https://registry.npmjs.org/</span>
+
+<span class="hljs-attr">packages:</span>
+  <span class="hljs-string">'@scope-*/*'</span><span class="hljs-string">:</span>
+    <span class="hljs-comment"># scoped packages</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">npm_access</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">npm_publisher</span>
+<span class="hljs-attr">    unpublish:</span> <span class="hljs-string">npm_publisher</span>
+
+  <span class="hljs-string">'@scope/*'</span><span class="hljs-string">:</span>
+    <span class="hljs-comment"># scoped packages</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">npm_access</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">npm_publisher</span>
+<span class="hljs-attr">    unpublish:</span> <span class="hljs-string">npm_publisher</span>
+
+  <span class="hljs-string">'@*/*'</span><span class="hljs-string">:</span>
+    <span class="hljs-comment"># scoped packages</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+  <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
+    <span class="hljs-comment"># allow all users (including non-authenticated users) to read and</span>
+    <span class="hljs-comment"># publish all packages</span>
+    <span class="hljs-comment">#</span>
+    <span class="hljs-comment"># you can specify usernames/groupnames (depending on your auth plugin)</span>
+    <span class="hljs-comment"># and three keywords: "$all", "$anonymous", "$authenticated"</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
+
+    <span class="hljs-comment"># allow all known users to publish packages</span>
+    <span class="hljs-comment"># (anyone can register by default, remember?)</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+
+    <span class="hljs-comment"># if package is not available locally, proxy requests to 'npmjs' registry</span>
+<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+
+<span class="hljs-comment"># log settings</span>
+<span class="hljs-attr">logs:</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">{type:</span> <span class="hljs-string">stdout,</span> <span class="hljs-attr">format:</span> <span class="hljs-string">pretty,</span> <span class="hljs-attr">level:</span> <span class="hljs-string">trace}</span>
+<span class="hljs-comment">#  - {type: file, path: verdaccio.log, level: info}</span>
+
+<span class="hljs-attr">listen:</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span><span class="hljs-string">:4873</span>
+</code></pre>
+<p>Available options are explained in details in <a href="https://verdaccio.org/docs/en/configuration">Configuration File documentation</a>.</p>
+<p>I will describe the most important here.</p>
+<h3><a class="anchor" aria-hidden="true" id="ldap"></a><a href="#ldap" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>LDAP</h3>
+<p>We use <a href="https://www.npmjs.com/package/verdaccio-ldap"><code>verdacio-ldap</code></a> plugin to authenticate with LDAP.</p>
+<p><strong><code>searchFilter</code></strong></p>
+<p>I use the <code>memberOf</code> overlay, and this LDAP query will allow to connect only users present in a defined LDAP group.</p>
+<p>If you are not using the <code>memberOf</code> overlay, you can allow all users to login as follow:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">searchFilter:</span> <span class="hljs-string">"(&amp;(uid=<span class="hljs-template-variable">{{username}}</span>))"</span>
+</code></pre>
+<p><strong><code>groupSearchBase</code></strong></p>
+<p>I use an organization unit to store all my group for verdaccio-ldap security.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">groupSearchBase:</span> <span class="hljs-string">'ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks'</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="security"></a><a href="#security" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Security</h3>
+<p><strong><code>packages</code></strong></p>
+<p>You SHOULD use scope for all your privates packages, in this scenario, we use LDAP groups for <code>access</code>, <code>publish</code> and <code>unpublish</code>.</p>
+<p>Note that we do not use <code>proxy: npmjs</code> because they only exist on our private registry.</p>
+<p>I recommend you to create scope for all of your private packages, and reserve the group on npmjs registry so no one will be able to publish publicly in it in the futur.</p>
+<pre><code class="hljs css language-yaml">  <span class="hljs-string">'@scope-*/*'</span><span class="hljs-string">:</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">npm_access</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">npm_publisher</span>
+<span class="hljs-attr">    unpublish:</span> <span class="hljs-string">npm_publisher</span>
+
+  <span class="hljs-string">'@scope/*'</span><span class="hljs-string">:</span>
+    <span class="hljs-comment"># scoped packages</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">npm_access</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">npm_publisher</span>
+<span class="hljs-attr">    unpublish:</span> <span class="hljs-string">npm_publisher</span>
+</code></pre>
+<p>They are some public package on npmjs registry which are scoped, this will proxy all the request to npmjs registry.</p>
+<p>I recommend not to change this, otherwise you might get issue to download them.</p>
+<pre><code class="hljs css language-yaml">  <span class="hljs-string">'@*/*'</span><span class="hljs-string">:</span>
+    <span class="hljs-comment"># scoped packages</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+</code></pre>
+<p>For all other packages, to prevent anyone to use our registry, we just allow <code>$authenticated</code> to publish.
+We also use <code>proxy: npmjs</code> so we also serve all the public package on npmjs registry.</p>
+<p>We allow <code>$all</code> to download from our registry, because it is public, but if you want to preserve your bandwidth or just forbid unknown user to authenticate, just use <code>$authenticated</code> as well.</p>
+<pre><code class="hljs css language-yaml">  <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
+<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
+<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+</code></pre>
+<p><strong><code>security</code></strong></p>
+<p>You should (and I recommend it) use <code>JWT</code> security, otherwise your LDAP server will received an authentication request for each request.</p>
+<p>If you don't mind, you can keep <code>legacy: true</code>.</p>
+<p>If you do use the JWT authentication, then <strong>all your users</strong> will have to re-authenticate with <code>npm adduser</code>.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">security:</span>
+<span class="hljs-attr">  legacy:</span> <span class="hljs-literal">false</span>
+<span class="hljs-attr">  api:</span>
+<span class="hljs-attr">    jwt:</span>
+<span class="hljs-attr">      sign:</span>
+<span class="hljs-attr">        expiresIn:</span> <span class="hljs-number">30</span><span class="hljs-string">d</span>
+<span class="hljs-attr">        notBefore:</span> <span class="hljs-number">0</span>
+<span class="hljs-attr">  web:</span>
+<span class="hljs-attr">    sign:</span>
+<span class="hljs-attr">      expiresIn:</span> <span class="hljs-number">7</span><span class="hljs-string">d</span>
+<span class="hljs-attr">      notBefore:</span> <span class="hljs-number">0</span>
+</code></pre>
+<ul>
+<li><code>expiresIn</code>: You will have to reauthenticate after <code>30 days</code>, and <code>7 days</code> on the web UI.</li>
+<li><code>notBefore</code>: Just set it to <code>0</code>, it is the time to wait before the JWT starts it's validity.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="build-the-image"></a><a href="#build-the-image" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build the image</h2>
+<p>Use <a href="https://docs.docker.com/engine/reference/commandline/build/"><code>docker build</code></a> to build the new image.</p>
+<ul>
+<li><code>-t</code> will give the name <code>verdaccio-3-ldap</code> to the new image</li>
+<li><code>.</code> means that the Dockerfile is in the current working directory.</li>
+</ul>
+<pre><code class="hljs css language-bash">$ docker build -t verdaccio-3-ldap .
+
+Sending build context to Docker daemon  14.34kB
+Step 1/7 : FROM verdaccio/verdaccio:4.3
+4.3: Pulling from verdaccio/verdaccio
+e7c96db7181b: Already exists 
+50958466d97a: Already exists 
+56174ae7ed1d: Already exists 
+284842a36c0d: Already exists 
+38829697cf41: Pull complete 
+67d4be407dc1: Pull complete 
+75921a7a709e: Pull complete 
+27621c093247: Pull complete 
+b5dd63eea3d5: Pull complete 
+3d5fd2ab9d4d: Pull complete 
+Digest: sha256:2a79d82601596f1889f2fe99d397c8900bf473c6682624cc0c37288896617e99
+Status: Downloaded newer image <span class="hljs-keyword">for</span> verdaccio/verdaccio:4.3
+ ---&gt; 03eefd251eef
+<span class="hljs-comment"># etc...</span>
+Step 7/7 : USER verdaccio
+ ---&gt; Running <span class="hljs-keyword">in</span> 2426b01499b8
+Removing intermediate container 2426b01499b8
+ ---&gt; 5e36f29f5374
+Successfully built 5e36f29f5374
+Successfully tagged verdaccio-3-ldap:latest
+</code></pre>
+<p>Your image is ready, you can push it to your private docker registry, or on Docker Hub if you can host private images.</p>
+<p>Do not publish it publicly unless you remove all your LDAP credentials in the configuration.</p>
+<p>To do so, remove the <code>config.yaml</code> within the <code>Dockerfile</code>:</p>
+<pre><code class="hljs css language-diff">FROM verdaccio/verdaccio:4.3
+USER root
+RUN npm i &amp;&amp; npm i verdaccio-ldap
+<span class="hljs-deletion">- COPY conf /verdaccio/conf</span>
+RUN chown -R $VERDACCIO_USER_UID /verdaccio
+USER verdaccio
+</code></pre>
+<p>And mount the configuration on startup with a volume:</p>
+<pre><code class="hljs css language-bash">docker run -v $(<span class="hljs-built_in">pwd</span>)/config.yaml:/verdaccio/conf/config.yaml verdaccio-3-ldap
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="run-the-service"></a><a href="#run-the-service" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run the service</h2>
+<p>You will have to mount the <code>storage</code> volume when using <code>Docker</code>,  to do that, just use <code>-v</code> with <code>docker run</code> command:</p>
+<pre><code class="hljs css language-bash">docker run -v /srv/verdaccio/storage:/verdaccio/storage verdaccio-3-ldap
+</code></pre>
+<p>Remember, you have made a backup of your storage directory, now let's fix <code>permissions</code> and <code>ownership</code> to finish verdaccio migration.</p>
+<p>Because within the docker container, the user is <code>verdaccio</code>, you can't run <code>chown</code> and <code>chmod</code> commands. Just do it directly from your host as <code>root</code>:</p>
+<pre><code class="hljs css language-bash"><span class="hljs-built_in">cd</span> /srv/verdaccio/ <span class="hljs-comment"># the location depend of your installation</span>
+chmod -R 777 storage
+VERDACCIO_USER_UID=10001 <span class="hljs-comment"># unless you have changed it</span>
+chown -R <span class="hljs-variable">$VERDACCIO_USER_UID</span> storage
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="test-the-service"></a><a href="#test-the-service" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Test the service</h2>
+<p>First, fill appropriate LDAP group for all your LDAP users that should have access to the private npm registry.</p>
+<blockquote>
+<p>We call <code>$IP</code> the IP address of the server. If you serve it over <code>https</code> behind a reverse proxy or directly, then fix all the following command to use the right protocol.</p>
+</blockquote>
+<p>This is all the test I have done while configurating verdaccio, before going to production:</p>
+<h3><a class="anchor" aria-hidden="true" id="plugin"></a><a href="#plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>plugin</h3>
+<ul>
+<li><code>[x]</code> it should work with <code>verdaccio-htaccess</code> when <code>verdaccio-ldap</code> is <strong>not</strong> installed. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> it should work with <code>verdaccio-htaccess</code> when <code>auth.ldap</code> is disabled and <code>verdaccio-ldap</code> is installed. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> it should work with one <code>verdaccio-ldap</code>. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> it should work with <code>verdaccio-htaccess</code> and fallback to <code>verdaccio-ldap</code> through <strong>web</strong>. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> it should work with <code>verdaccio-htaccess</code> and fallback to <code>verdaccio-ldap</code> through <strong>npm</strong>. <img src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png" title="NOK" name="NOK" height="16px" /> <em>Either use <code>verdaccio-htaccess</code> or <code>verdaccio-ldap</code>, it is useless to use both, even if the web work with the two, the <code>npm --add-user</code> command will fail.</em></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="npm"></a><a href="#npm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>npm</code></h3>
+<ul>
+<li><code>[x]</code> <code>npm --adduser</code> should work with different users. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>npm --adduser</code> should fail with wrong user/password. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> it should auth with JWT and the <code>verdaccio-ldap</code> plugin. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> it should auth with legacy and the <code>verdaccio-ldap</code> plugin. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>npm i</code> in CI that download from the registry <strong>should spam</strong> the LDAP with authentication requests with legaxy. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>npm i</code> in CI that download from the registry should not spam the LDAP with authentication requests with JWT. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="web"></a><a href="#web" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Web</h3>
+<p>The new design with material-UI is super nice btw.</p>
+<ul>
+<li><code>[x]</code> it should authenticate with different users. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> it should fail to authenticate with different users and wrong password. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> it should show packages to users with <code>access</code> permissions. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> it should hide packages to users without <code>access</code> permissions. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="packages-permissions"></a><a href="#packages-permissions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Packages permissions</h3>
+<ul>
+<li><code>[x]</code> <code>access</code> should work with a user with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>access</code> should fail with a user without perms.. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>access</code> should work with a user in ldap group with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>access</code> should fail with a user not in ldap group with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>publish</code> should work with a user with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>publish</code> should work with a user in ldap group with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>publish</code> should fail with a user not in ldap group without perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>unpublish</code> should work with a user with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>unpublish</code> should fail with a user without perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>unpublish</code> should work with a ldap group with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+<li><code>[x]</code> <code>unpublish</code> should fail with a user not in ldap group with perms. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" /></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="web-1"></a><a href="#web-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Web</h3>
+<ul>
+<li>Test the web interface, generally <code>http://$IP:4873</code> if you are not using a reverse proxy.</li>
+</ul>
+<p>After login, you won't be able to see private scopped package if you don't have the <code>access</code> group.</p>
+<h3><a class="anchor" aria-hidden="true" id="npm-1"></a><a href="#npm-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>npm</h3>
+<p>Because we use the JWT, you must re-authenticate, this is how we do:</p>
+<pre><code class="hljs css language-bash">npm adduser --registry http://<span class="hljs-variable">$IP</span> --always-auth
+</code></pre>
+<p>If you want to use it just for a specific scope:</p>
+<pre><code class="hljs css language-bash">npm <span class="hljs-built_in">set</span> @scope:registry http://<span class="hljs-variable">$IP</span>
+</code></pre>
+<p>If you want to use it as your default proxy for npm:</p>
+<pre><code class="hljs css language-bash">npm <span class="hljs-built_in">set</span> registry http://<span class="hljs-variable">$IP</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="conclusion-and-thanks"></a><a href="#conclusion-and-thanks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Conclusion and thanks</h2>
+<p>Docker, LDAP are a great way to authenticate users from your organization. In this article, you have learned how to setup verdaccion with LDAP and Docker.</p>
+<p>I have to thank the teams and community behind verdaccio projects, specially <a href="https://twitter.com/jotadeveloper">Juan Picado</a>, <a href="https://twitter.com/DanielRufde">Daniel Refde</a> and <a href="https://github.com/sergiohgz">Sergio Hg</a> for their help on the GitHub issues and the discord <a href="http://chat.verdaccio.org/">chat</a>.</p>
+<p>Also, but not less important, I want to thank all the people that makes Verdaccio possible, contributing, donating, documenting, and more.</p>
+<p>I hope it is well explained and you people of verdaccio are able to reproduce a configuration that fit with your LDAP.</p>
+<p>To me it took a while to figure out the different errors I had and the most annoying things was those manual step to fix the permissions and access.</p>
+<p>If you have any question, please check at the FAQ below, or feel free to reply to this blog post.</p>
+<blockquote>
+<p>If you 😍 Verdaccio as I do, helps them to grow by donating to the project via <a href="https://opencollective.com/verdaccio">OpenCollective</a>.</p>
+</blockquote>
+<p>Thanks for reading and long life to Verdaccio !</p>
+<h2><a class="anchor" aria-hidden="true" id="faq"></a><a href="#faq" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>FAQ</h2>
+<ul>
+<li>Can we use two authentication plugin together such as <code>verdaccio-htaccess</code>?</li>
+</ul>
+<p>No you can't, but pull request are welcome.</p>
+<ul>
+<li>Does my registry users need to re-authenticate?</li>
+</ul>
+<p>If you use <code>JWT</code> for authentication, which I recommend, they will all have to re-authenticate.</p>
+<ul>
+<li>I have <code>404</code> or <code>401</code> errors with good credentials.</li>
+</ul>
+<p>This is due to wrong permissions or ownership in <code>storage</code> directory, dont forget to <code>chmod -R 777 /verdaccio/storage</code> and <code>chown -R $VERDACCIO_USER_UID /verdaccio</code>.</p>
+<ul>
+<li>When should I use <code>--always-auth</code> when running <code>--add-user</code>?</li>
+</ul>
+<p>If you keep having <code>403</code> issues when retrieving packages from the registry, and permissions and ownership have been fixed, we have found that adding <code>--always-auth</code> will solve the issue.</p>
+<p>In my case, I have found that <code>--always-auth</code> was required in my production environment.</p>
+</span></div></div><div class="blogSocialSection"><div class="blogSocialSectionItem"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Upgrade from v3.x to verdaccio 4.x with LDAP and Docker" data-url="https://verdaccio.org//blog/2019/10/05/verdaccio-4-with-ldap-and-docker" data-related="true" data-via="DimitriKopriwa" data-show-count="false">Tweet</a></div></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#goal">Goal</a></li><li><a href="#dockerfile">Dockerfile</a></li><li><a href="#configuration">Configuration</a><ul class="toc-headings"><li><a href="#ldap">LDAP</a></li><li><a href="#security">Security</a></li></ul></li><li><a href="#build-the-image">Build the image</a></li><li><a href="#run-the-service">Run the service</a></li><li><a href="#test-the-service">Test the service</a><ul class="toc-headings"><li><a href="#plugin">plugin</a></li><li><a href="#npm"><code>npm</code></a></li><li><a href="#web">Web</a></li><li><a href="#packages-permissions">Packages permissions</a></li><li><a href="#web-1">Web</a></li><li><a href="#npm-1">npm</a></li></ul></li><li><a href="#conclusion-and-thanks">Conclusion and thanks</a></li><li><a href="#faq">FAQ</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/what-is-verdaccio.html">Getting Started</a><a href="/docs/en/docker.html">Docker</a><a href="/docs/en/configuration.html">Configuration</a><a href="/docs/en/logo">Logos</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'a8b4d117e513cd8d71d6a95e3d9d4a91',
+                indexName: 'verdaccio',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

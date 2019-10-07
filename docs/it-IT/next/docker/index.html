@@ -115,7 +115,7 @@
   verdaccio/verdaccio
 </code></pre>
 <blockquote>
-<p>Nota: Verdaccio viene eseguito all'interno del container come utente non-root (uid=10001), se si utilizza bind mount per sovrascrivere le impostazioni predefinite, è necessario assicurarsi che la mount directory venga assegnata all'utente corretto. Nell'esempio precedente, è necessario eseguire <code>sudo chown -R 100:101 /opt/verdaccio</code> altrimenti si presenteranno errori di autorizzazione durante l'esecuzione. Si consiglia di <a href="https://docs.docker.com/storage/volumes/">utilizzare il volume di docker</a> al posto di bind mount.</p>
+<p>Nota: Verdaccio viene eseguito all'interno del container come utente non-root (uid=10001), se si utilizza bind mount per sovrascrivere le impostazioni predefinite, è necessario assicurarsi che la mount directory venga assegnata all'utente corretto. In above example, you need to run <code>sudo chown -R 10001:65533 /opt/verdaccio</code> otherwise you will get permission errors at runtime. Si consiglia di <a href="https://docs.docker.com/storage/volumes/">utilizzare il volume di docker</a> al posto di bind mount.</p>
 </blockquote>
 <p>Verdaccio 4 fornisce un nuovo set di variabili d'ambiente per modificare le autorizzazioni, la porta o il protocollo http. Qui l'elenco completo:</p>
 <table>

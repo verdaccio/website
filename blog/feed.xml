@@ -4,7 +4,7 @@
         <title>Verdaccio Blog</title>
         <link>https://verdaccio.org//blog</link>
         <description>The best place to stay up-to-date with the latest Verdaccio news and events.</description>
-        <lastBuildDate>Mon, 30 Sep 2019 06:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 05 Oct 2019 06:00:00 GMT</lastBuildDate>
         <docs>http://blogs.law.harvard.edu/tech/rss</docs>
         <generator>Feed for Node.js</generator>
         <image>
@@ -13,6 +13,17 @@
             <link>https://verdaccio.org//blog</link>
         </image>
         <copyright>Copyright © 2019 Verdaccio community</copyright>
+        <item>
+            <title><![CDATA[Upgrade from v3.x to verdaccio 4.x with LDAP and Docker]]></title>
+            <link>https://verdaccio.org//blog/2019/10/05/verdaccio-4-with-ldap-and-docker.html</link>
+            <guid>https://verdaccio.org//blog/2019/10/05/verdaccio-4-with-ldap-and-docker.html</guid>
+            <pubDate>Sat, 05 Oct 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>I am Dimitri and I am a user and contributor of Verdaccio.</p>
+<p>Today, I will explain how I migrated my private dockerized <img height="16px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f433.png" title="docker" /> Verdaccio registry from <code>v3.x</code> to <code>v4.x</code>.</p>
+<p>I will also configure <a href="https://www.npmjs.com/package/verdaccio-ldap"><code>verdaccio-ldap</code></a> to authenticate my users against LDAP.</p>
+<p><a href="https://github.com/verdaccio/docker-examples/tree/master/ldap-verdaccio-v4">Working demo here</a></p>
+]]></description>
+        </item>
         <item>
             <title><![CDATA[Release 4.3.0]]></title>
             <link>https://verdaccio.org//blog/2019/09/30/verdaccio-430-release.html</link>
