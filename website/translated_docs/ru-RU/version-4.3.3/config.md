@@ -241,7 +241,7 @@ middlewares:
     enabled: true
 ```
 
-### Experiments
+### Эксперименты
 
 This release includes a new property named `experiments` that can be placed in the `config.yaml` and is completely optional.
 
