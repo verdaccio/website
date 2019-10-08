@@ -32,11 +32,13 @@ jobs:
             pnpm install
   test_build_website:
     executor: default_executor
-    - run:
-        name: build website
-        command: pnpm run build
+    steps:
+      - run:
+          name: build website
+          command: pnpm run build
 
   deploy-website:
+    <<: *defaults
     executor: default_executor
     steps:
       - run:
