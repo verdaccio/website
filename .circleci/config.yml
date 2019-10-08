@@ -31,18 +31,18 @@ jobs:
       - checkout
       - run:
           name: Install pnpm
-          command: npm -g install pnpm@next
+          command: sudo npm -g install pnpm@next
       - run:
           name: Install dependencies
           command: |
             cd website
-            pnpm install
+            sudo pnpm install
   test_build_website:
     executor: default_executor
     steps:
       - run:
           name: build website
-          command: pnpm run build
+          command: sudo pnpm run build
 
   deploy-website:
     <<: *defaults
