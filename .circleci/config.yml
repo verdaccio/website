@@ -1,4 +1,13 @@
-version: 2
+version: 2.1
+
+executors:
+  node_latest:
+    docker:
+    - image: circleci/node:latest
+  node_lts:
+    docker:
+      - image: circleci/node:lts
+  default_executor: node_latest
 
 aliases:
   - &defaults
@@ -8,32 +17,44 @@ aliases:
      only:
        - master
 jobs:
-  deploy-website:
-    docker:
-      - image: circleci/node:12
+  prepare:
+    <<: *defaults
+    executor: default_executor
     steps:
       - checkout
       - run:
           name: Install pnpm
           command: npm -g install pnpm@next
       - run:
-          name: Test build
+          name: Install dependencies
           command: |
             cd website
             pnpm install
-            pnpm run build
+  test_build_website:
+    executor: default_executor
+    - run:
+          name: build website
+          command: pnpm run build
+
+  deploy-website:
+    executor: default_executor
+    steps:
       - run:
           name: Deploying to GitHub Pages
           command: |
             git config --global user.email "verdacciobot@users.noreply.github.com"
             git config --global user.name "Verdaccio bot for Deployments"
             echo "machine github.com login verdacciobot password $GITHUB_TOKEN" > ~/.netrc
-            cd website
-            pnpm install
             GIT_USER=verdacciobot USE_SSH=false pnpm run publish-gh-pages
 workflows:
   version: 2
   build_and_deploy:
     jobs:
+      - prepare:
+      - test_build_website:
+         requires:
+            - prepare
       - deploy-website:
+         requires:
+            - prepare
          filters: *filter-only-master
