@@ -12,6 +12,13 @@ executors:
 aliases:
   - &defaults
     working_directory: ~/verdaccio
+  - &ignore_non_dev_branches
+    filters:
+      tags:
+        only: /.*/
+      branches:
+        ignore:
+          - /release\/.*/
   - &filter-only-master
    branches:
      only:
@@ -53,6 +60,7 @@ workflows:
   build_and_deploy:
     jobs:
       - prepare:
+        <<: *ignore_non_dev_branches
       - test_build_website:
          requires:
             - prepare
