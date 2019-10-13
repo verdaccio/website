@@ -4,13 +4,13 @@ title: Amazon Web Services
 original_id: amazon
 ---
 
-This document describes several approaches for deploying Verdaccio in the AWS cloud.
+Dieses Dokument beschreibt die Vorgehensweise, um Verdaccio in der AWS Cloud bereitzustellen.
 
 ## EC2
 
-[CloudFormation template for deploying this stack.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
+[CloudFormation Template des Systems.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
-Architecture:
+Architektur:
 
     Clients
      |
@@ -31,9 +31,9 @@ Architecture:
 Architecture notes:
 
 * Deploy this stack into the region closest to your users for maximum performance.
-* We use an auto scaling group primarily for self-healing. The system requirements of Verdaccio are pretty low, so it's unlikely you'll need multiple instances to handle traffic load.
-* Because Amazon Linux 2 doesn't include Node, we run Verdaccio as a Docker image rather than natively on the instance. This is faster and more secure than relying on third party package sources for Node.
-* Elastic File System is cheap and stateful, and works across AZs. An alternative would be the [third-party S3 storage plugin](https://github.com/remitly/verdaccio-s3-storage). 
+* We use an auto scaling group primarily for self-healing. Aufgrund der sehr geringen Systemvoraussetzungen von Verdaccio ist es sehr unwahrscheinlich, dass um den Traffic abzuarbeiten, mehrere Instanzen benötigt werden.
+* Because Amazon Linux 2 doesn't include Node, we run Verdaccio as a Docker image rather than natively on the instance. Dies ist sowohl schneller, als auch sicherer als die Nutzung von Third-Party Paketen zur Installation von Node.
+* Elastic File System is cheap and stateful, and works across AZs. Eine Alternative wäre das Verdaccio [Third Party Storage Plugin](https://github.com/remitly/verdaccio-s3-storage). 
   * For backup, use AWS Backup
 
 Estimated monthly cost for a small installation (in us-east-1):
@@ -47,10 +47,10 @@ Estimated monthly cost for a small installation (in us-east-1):
 
 ## ECS
 
-You can deploy Verdaccio as a task with an [ECS Volume](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) for persistent storage.
+Verdaccio kann als Task mit einem [ ECS Volumen](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html) als persistenten Speicher genutzt werden.
 
-Note: Fargate doesn't support persistent volumes, so you have to use the S3 storage plugin.
+Anmerkung: Fargate unterstützt keine persistenten Volumes, daher muss in diesem Fall das [S3 Storage Plugin](https://github. com/remitly/verdaccio-s3-storage) verwendet werden.
 
 ## EKS
 
-See the documentation pages on [Kubernetes](kubernetes) and [Docker](docker).
+Siehe: [Kubernetes](kubernetes) and [Docker](docker) Dokumentation.
