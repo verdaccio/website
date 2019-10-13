@@ -6,23 +6,23 @@ original_id: articles
 
 We list the articles about Verdaccio, if you have written a blog post or tutorial that mention Verdaccio, feel free to add it here.
 
-> Any language is allowed
+> Alle Sprachen sind erlaubt
 
-## Core Team Articles
+## Core Team Artikel
 
-* [An Introduction to Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
-* [Five use cases where a npm private proxy fits in your workflow](https://medium.com/@jotadeveloper/five-use-cases-where-a-npm-private-proxy-fits-in-your-workflow-632a81779c14)
-* [An Introduction to Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
-* [NPM Registry for your organisation](https://medium.com/@ayusharma.in/npm-registry-for-your-organisation-aeb8ea76144)
-* [Verdaccio 3 released 🎉!!](https://medium.com/verdaccio/verdaccio-3-released-feb06ef38558)
-* [The crazy story of Verdaccio](https://medium.com/verdaccio/the-crazy-story-of-verdaccio-d35d924728bc)
-* [Verdaccio 4 alpha release 🚀](https://medium.com/verdaccio/verdaccio-4-alpha-release-400c7ed4884d)
-* [Verdaccio and deterministic lock files](https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e)
-* [Setting up Verdaccio on DigitalOcean](https://medium.com/verdaccio/setting-up-verdaccio-on-digitalocean-61b5d08e4f0d)
-* [How I learned React Js and how you can…](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
-* [How did I fall in the open source world…and that was a nice thing!](https://medium.com/@priscilawebdev/how-do-i-fall-in-the-open-source-world-and-that-was-a-nice-thing-b0e85d05490d)
+* [Eine Einführung in Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
+* [Fünf Anwendungsfälle, in denen ein privater npm-Proxy in Ihren Workflow passt](https://medium.com/@jotadeveloper/five-use-cases-where-a-npm-private-proxy-fits-in-your-workflow-632a81779c14)
+* [Eine Einführung in Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
+* [NPM Registry für Ihre Organisation](https://medium.com/@ayusharma.in/npm-registry-for-your-organisation-aeb8ea76144)
+* [Verdaccio 3 veröffentlicht 🎉!!](https://medium.com/verdaccio/verdaccio-3-released-feb06ef38558)
+* [Die verrückte Geschichte von Verdaccio](https://medium.com/verdaccio/the-crazy-story-of-verdaccio-d35d924728bc)
+* [Verdaccio 4 alpha veröffentlicht 🚀](https://medium.com/verdaccio/verdaccio-4-alpha-release-400c7ed4884d)
+* [Verdaccio und deterministische Lock-Dateien](https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e)
+* [Verdaccio mit DigitalOcean einrichten](https://medium.com/verdaccio/setting-up-verdaccio-on-digitalocean-61b5d08e4f0d)
+* [Wie ich React Js gelernt habe und wie du es kannst...](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
+* [Wie bin ich in die Open Source Welt gekommen bin... und das war eine gute Sache!](https://medium.com/@priscilawebdev/how-do-i-fall-in-the-open-source-world-and-that-was-a-nice-thing-b0e85d05490d)
 
-# Articles / Blogs / Tutorials (by Language)
+# Articles / Blogs / Tutorials (nach Sprache)
 
 ### Remarkable articles
 
@@ -78,7 +78,7 @@ We list the articles about Verdaccio, if you have written a blog post or tutoria
 * [Struktur für große Angular-Anwendungen: Microservices, Module, MonoRepo?](https://jaxenter.de/struktur-angular-anwendungen-67467)
 * [Angular in einer Microservices-Welt](https://jaxenter.de/angular-microservices-66445)
 
-## Slides
+## Folien
 
 * [Introduction to Verdaccio VueJS Meetup 2018](https://www.slideshare.net/juancarlospicado/introduction-to-verdaccio)
 * [Introduccion Verdaccio Vienna JS Meetup 2019](https://docs.google.com/presentation/d/1eam_OtXCQh5IVYyia2GHhxVD8tb37B0yIadVa8wxQSk/edit?usp=sharing)
