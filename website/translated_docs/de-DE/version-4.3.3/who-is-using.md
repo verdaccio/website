@@ -1,7 +1,7 @@
 ---
 id: version-4.3.3-who-is-using
 title: Wer benutzt Verdaccio?
-original_id: wer-benutzt-verdaccio
+original_id: who-is-using
 ---
 
 ### Als Unternehmen
@@ -28,7 +28,7 @@ original_id: wer-benutzt-verdaccio
 * [Wix Yoshi](https://github.com/wix/yoshi)
 * [The AWS Cloud Development Kit](https://github.com/awslabs/aws-cdk)
 
-#### Readme Recommendations
+#### Readme Empfehlungen
 
 * [react-native-cli](https://github.com/react-native-community/react-native-cli/blob/master/CONTRIBUTING.md)
 

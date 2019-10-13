@@ -4,12 +4,15 @@ title: Ansible
 original_id: ansible
 ---
 
-We have a customised solution for `verdaccio` in our organization.
+Wir haben eine maßgeschneiderte Lösung für verdaccio</ code> in unserer Organisation.
+https://github.com/verdaccio/ansible-verdaccio</p>
 
-<https://github.com/verdaccio/ansible-verdaccio>
+<p><a href="https://github.com/verdaccio/ansible-verdaccio">https://github.com/verdaccio/ansible-verdaccio</a></p>
 
-#### Other options
+<h4>Andere Optionen</h4>
 
-* Ansible role for Gentoo users: [jirutka/ansible-role-sinopia](https://github.com/jirutka/ansible-role-sinopia).
-* Ansible role for Ubuntu users: [jagregory/sinopia-ansible](https://github.com/jagregory/sinopia-ansible).
-* ansible-verdaccio-role <https://github.com/refinery29/ansible-verdaccio-role>
+<ul>
+<li>Ansible role für Gentoo Benutzer: <a href="https://github.com/jirutka/ansible-role-sinopia">jirutka/ansible-role-sinopia</a>.</li>
+<li>Ansible role für Ubuntu Benutzer: <a href="https://github.com/jagregory/sinopia-ansible">jagregory/sinopia-ansible</a>.</li>
+<li>ansible-verdaccio-role <a href="https://github.com/refinery29/ansible-verdaccio-role">https://github.com/refinery29/ansible-verdaccio-role</a></li>
+</ul>

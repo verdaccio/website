@@ -1,7 +1,7 @@
 ---
 id: version-4.0.0-beta.0-who-is-using
 title: Wer benutzt Verdaccio?
-original_id: wer-benutzt-verdaccio
+original_id: who-is-using
 ---
 
 ### Als Unternehmen

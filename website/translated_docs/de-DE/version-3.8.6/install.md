@@ -6,35 +6,35 @@ original_id: installation
 
 Verdaccio is a multiplatform web application. To install it, you need a few prerequisites.
 
-#### Prerequisites
+#### Voraussetzungen
 
-1. Node higher than 
+1. Node größer als 
     - For version `verdaccio@2.x` Node `v4.6.1` is the minimum supported version.
     - For version `verdaccio@latest` Node `6.12.0` is the minimum supported version.
 2. npm `>=3.x` or `yarn`
 3. The web interface supports the `Chrome, Firefox, Edge, and IE9` browsers.
 
-## Installing the CLI
+## Installation der CLI
 
-`verdaccio` must be installed globaly using either of the following methods:
+`verdaccio` muss unter Verwendung einer der folgenden Methoden global installiert werden:
 
-Using `npm`
+Bei Verwendung von `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-or using `yarn`
+oder für `yarn`
 
 ```bash
 yarn global add verdaccio
 ```
 
-![install verdaccio](/svg/install_verdaccio.gif)
+![Installation verdaccio](/svg/install_verdaccio.gif)
 
-## Basic Usage
+## Grunddlegende Verwendung
 
-Once it has been installed, you only need to execute the CLI command:
+Sobald die Installation durchgeführt wurde, muss nur die folgende CLI Anweisung ausgeführt werden:
 
 ```bash
 $> verdaccio
@@ -42,7 +42,7 @@ warn --- config file  - /home/.config/verdaccio/config.yaml
 warn --- http address - http://localhost:4873/ - verdaccio/3.0.1
 ```
 
-For more information about the CLI, please [read the cli section](cli.md).
+Für weitere Informationen über die CLI lesen Sie bitte die [cli Sektion](cli.md).
 
 ## Docker Image
 
