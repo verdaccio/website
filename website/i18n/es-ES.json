@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Siguiente",
     "previous": "Anterior",
-    "tagline": "Verdaccio · A lightweight private npm proxy registry",
+    "tagline": "Un registro privado, ligero y proxy de npm",
     "docs": {
       "amazon": {
         "title": "Amazon Web Services"
@@ -512,7 +512,7 @@
     },
     "categories": {
       "Introduction": "Introduction",
-      "Features": "Features",
+      "Features": "Características",
       "Server": "Servidor",
       "Development": "Desarrollo",
       "DevOps": "DevOps",
@@ -523,12 +523,12 @@
   },
   "pages-strings": {
     "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Aprende mas leyendo la [documentación en este sitio.](/docs/es-Es/installation.html)",
-    "Browse Docs|no description given": "Navegar Documentación",
+    "Browse Docs|no description given": "Navegar en la Documentación",
     "Ask questions about the documentation and project|no description given": "Haz preguntas sobre la documentación y el proyecto",
     "Join the community|no description given": "Únete a la comunidad",
     "Find out what's new with this project|no description given": "Entérate que hay de nuevo en este proyecto",
     "Stay up to date|no description given": "Mantente actualizado",
-    "Need help?|no description given": "Necesitas ayuda?",
+    "Need help?|no description given": "¿Necesitas ayuda?",
     "This project is maintained by a dedicated group of people.|statement made to reader": "Este proyecto es mantenido por un grupo de personas dedicadas.",
     "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)|no description given": "Aprenda mucho mas sobre Verdaccio usando la [documentación en este sitio.](/docs/en/installation.html)",
     "You can follow and contact us on|no description given": "Puedes seguirnos o contactarnos en",
