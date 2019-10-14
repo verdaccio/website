@@ -502,16 +502,16 @@
       }
     },
     "links": {
-      "Docs": "Docs",
+      "Docs": "Documentación",
       "Blog": "Blog",
       "Twitter": "Twitter",
-      "Help": "Help",
+      "Help": "Ayuda",
       "GitHub": "GitHub",
-      "Team": "Team",
-      "Donate": "Donate"
+      "Team": "Equipo",
+      "Donate": "Donar"
     },
     "categories": {
-      "Introduction": "Introduction",
+      "Introduction": "Introducción",
       "Features": "Características",
       "Server": "Servidor",
       "Development": "Desarrollo",
