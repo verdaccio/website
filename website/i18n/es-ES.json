@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Siguiente",
     "previous": "Anterior",
-    "tagline": "Verdaccio · A lightweight private npm proxy registry",
+    "tagline": "Un registro privado, ligero y proxy de npm",
     "docs": {
       "amazon": {
         "title": "Amazon Web Services"
@@ -502,33 +502,33 @@
       }
     },
     "links": {
-      "Docs": "Docs",
+      "Docs": "Documentación",
       "Blog": "Blog",
       "Twitter": "Twitter",
-      "Help": "Help",
+      "Help": "Ayuda",
       "GitHub": "GitHub",
-      "Team": "Team",
-      "Donate": "Donate"
+      "Team": "Equipo",
+      "Donate": "Donar"
     },
     "categories": {
-      "Introduction": "Introduction",
-      "Features": "Features",
-      "Server": "Server",
-      "Development": "Development",
+      "Introduction": "Introducción",
+      "Features": "Características",
+      "Server": "Servidor",
+      "Development": "Desarrollo",
       "DevOps": "DevOps",
-      "Guides": "Guides",
+      "Guides": "Guías",
       "Configuration": "Configuración",
       "Plugins": "Plugins"
     }
   },
   "pages-strings": {
     "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Aprende mas leyendo la [documentación en este sitio.](/docs/es-Es/installation.html)",
-    "Browse Docs|no description given": "Navegar Documentación",
+    "Browse Docs|no description given": "Navegar en la Documentación",
     "Ask questions about the documentation and project|no description given": "Haz preguntas sobre la documentación y el proyecto",
     "Join the community|no description given": "Únete a la comunidad",
     "Find out what's new with this project|no description given": "Entérate que hay de nuevo en este proyecto",
     "Stay up to date|no description given": "Mantente actualizado",
-    "Need help?|no description given": "Necesitas ayuda?",
+    "Need help?|no description given": "¿Necesitas ayuda?",
     "This project is maintained by a dedicated group of people.|statement made to reader": "Este proyecto es mantenido por un grupo de personas dedicadas.",
     "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)|no description given": "Aprenda mucho mas sobre Verdaccio usando la [documentación en este sitio.](/docs/en/installation.html)",
     "You can follow and contact us on|no description given": "Puedes seguirnos o contactarnos en",
@@ -547,12 +547,12 @@
     "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio esta basado en extensiones, autenticación, soporte para *middleware* y almacenamiento. Solo elige uno o crea el tuyo propio.",
     "Plugin Support|no description given": "Soporte de Extensiones",
     "Who's Using This?|no description given": "Quién está usando esto?",
-    "This project is sponsored by these awesome users|no description given": "This project is sponsored by these awesome users",
-    "and used by many more, including|no description given": "and used by many more, including",
+    "This project is sponsored by these awesome users|no description given": "Este proyecto es patrocinado por éstos usuarios asombrosos",
+    "and used by many more, including|no description given": "y usado por muchos otros, incluyendo",
     "More|no description given": "Más",
     "Users|no description given": "Usuarios",
-    "Verdaccio is sponsored by these awesome folks...|no description given": "Verdaccio is sponsored by these awesome folks...",
-    "and used by many others, including:|no description given": "and used by many others, including:",
+    "Verdaccio is sponsored by these awesome folks...|no description given": "Verdaccio es patrocinado por ésta gente asombrosa...",
+    "and used by many others, including:|no description given": "y usado por muchos otros, incluyendo:",
     "Are you using this project? Do not be shy and add your company/project logo.|no description given": "Estas usando este proyecto? No tengas vergüenza y agrega el logotipo de tu compañia/proyecto.",
     "Add your company|no description given": "Agrega tu compañia",
     "Help Translate|recruit community translators for your project": "Ayuda con traducciones",
