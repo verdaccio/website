@@ -44,14 +44,14 @@ Como sabes *Verdaccio* usa `htpasswd` por defecto. Dicha extensión no implement
 * Si tú no iniciaste sesión (eres anónimo), `$all` y `$anonymous` significarán exactamente lo mismo.
 * Si tú iniciaste sesión, `$anonymous` no formará parte de tus grupos y `$all` coincidirá con cualquier usuario con sesión. Un nuevo grupo `$authenticated` será añadido a la lista.
 
-As a takeaway, `$all` **will match all users, independently whether is logged or not**.
+Como nota, `$all` **coincidirá con todos los usuarios, independientemente si han iniciado sesión o no**.
 
-**The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
+**El comportamiento anterior solo aplica a la extensión de autenticación por defecto**. Si tú estás usando una extensión personalizada y dicha extensión implementa `allow_access`, `allow_publish` o `allow_unpublish`, la resolución del acceso dependerá de dicha extensión. Verdaccio establecerá solamente los grupos por defecto.
 
-Let's recap:
+Entonces recapitulando:
 
-* **logged**: `$all`, `$authenticated`, + groups added by the plugin
-* **anonymous (logged out)**: `$all` and `$anonymous`.
+* **logged**: `$all`, `$authenticated`, + grupos añadidos por la extensión
+* **anonymous (sin sesión)**: `$all` y `$anonymous`.
 
 ## Htpasswd por defecto
 
