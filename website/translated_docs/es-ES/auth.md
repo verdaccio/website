@@ -20,7 +20,7 @@ registry=http://localhost:5555/
 //registry.npmjs.org/:_authToken=secretNpmjsToken
 ```
 
-#### Publicar anonimamente
+#### Publicar anónimamente
 
 `verdaccio` te permite habilitar publicar de manera anónima, para poder hacerlo necesitarás configurar correctamente tu [acceso a paquetes](packages.md).
 
@@ -39,10 +39,10 @@ Como se describe en [el ticket #212](https://github.com/verdaccio/verdaccio/issu
 
 ### El significado de `$all` y `$anonymous`
 
-As you know *Verdaccio* uses the `htpasswd` by default. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
+Como sabes *Verdaccio* usa `htpasswd` por defecto. Dicha extensión no implementa los métodos `allow_access`, `allow_publish` ni `allow_unpublish`. En consecuencia, *Verdaccio* manejará eso de la siguiente manera:
 
-* If you are not logged in (you are anonymous), `$all` and `$anonymous` means exactly the same.
-* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
+* Si tú no iniciaste sesión (eres anónimo), `$all` y `$anonymous` significarán exactamente lo mismo.
+* Si tú iniciaste sesión, `$anonymous` no formará parte de tus grupos y `$all` coincidirá con cualquier usuario con sesión. Un nuevo grupo `$authenticated` será añadido a la lista.
 
 As a takeaway, `$all` **will match all users, independently whether is logged or not**.
 
