@@ -55,7 +55,7 @@ Entonces recapitulando:
 
 ## Htpasswd por defecto
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
+A fin de simplificar la configuración, `verdaccio` usa una extensión basada en `htpasswd`. Desde la versión v3.0.x la extensión `verdaccio-htpasswd` es usada por defecto.
 
 ```yaml
 auth:
