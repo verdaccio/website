@@ -35,9 +35,9 @@ Por ejemplo:
 
 Como se describe en [el ticket #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) hasta la versión de `pm@5.3.0` y todas las versiones menores **no permitirán publicar sin un token**.
 
-## Understanding Groups
+## Entendiendo los Grupos
 
-### The meaning of `$all` and `$anonymous`
+### El significado de `$all` y `$anonymous`
 
 As you know *Verdaccio* uses the `htpasswd` by default. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
 
