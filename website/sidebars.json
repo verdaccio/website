@@ -8,14 +8,14 @@
       "security-policy",
       "logo",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Uses Cases",
-        "ids": ["e2e", "caching", "github-actions", "linking-remote-registry"]
+        "items": ["e2e", "caching", "github-actions", "linking-remote-registry"]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Talks & Articles",
-        "ids": ["articles", "talks"]
+        "items": ["articles", "talks"]
       }
     ],
     "Features": [
@@ -40,14 +40,14 @@
       "kubernetes",
       "ci",
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Cloud",
-        "ids": ["amazon"]
+        "items": ["amazon"]
       },
       {
-        "type": "subcategory",
+        "type": "category",
         "label": "Tools",
-        "ids": ["ansible", "puppet", "chef"]
+        "items": ["ansible", "puppet", "chef"]
       }
     ],
     "Guides": ["best", "protect-your-dependencies"]
