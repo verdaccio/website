@@ -11,7 +11,7 @@ Der folgende Leitfaden ist eine Liste der gesammelten Best Practices, die wir in
 
 You can add users and manage which users can access which packages.
 
-It is recommended that you define a prefix for your private packages, for example `local-*` or scoped `@my-company/*`, so all your private things will look like this: `local-foo`. This way you can clearly separate public packages from private ones.
+Es wird empfohlen, dass Sie ein Präfix für Ihre privaten Pakete definieren, z. B. `local-*` oder mit einem Scope versehen `@my-company/*`, so dass Ihre Code so aussieht: `local-foo`. This way you can clearly separate public packages from private ones.
 
     yaml
       packages:
@@ -28,7 +28,7 @@ It is recommended that you define a prefix for your private packages, for exampl
           access: $all
           publish: $authenticated
 
-Always remember, **the order of packages access is important**, packages are mached always top to bottom.
+Denken Sie immer daran, dass **die Reihenfolge der Paketzugriffe wichtig ist**. Pakete werden immer von oben nach unten bearbeitet.
 
 ### Using public packages from npmjs.org
 
