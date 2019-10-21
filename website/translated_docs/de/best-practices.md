@@ -3,9 +3,9 @@ id: best
 title: "Best Practices"
 ---
 
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+Der folgende Leitfaden ist eine Liste der gesammelten Best Practices, die wir in der Regel allen Benutzern empfehlen. Diese Anleitung ist nicht verpflichtend. Sie können die Empfehlungen entsprechend Ihren eigenen Bedürfnissen auswählen.
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Zögern Sie nicht, der Verdaccio-Community Ihre Empfehlungen vorzuschlagen.**.
 
 ## Private Registry
 
