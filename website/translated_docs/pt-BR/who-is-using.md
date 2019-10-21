@@ -19,6 +19,7 @@ title: "Quem está usando o Verdaccio?"
 * [Mozilla Neutrino](https://neutrinojs.org/)
 * [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests)
 * [Gatsby](https://github.com/gatsbyjs/gatsby)
+* [Apollo GraphQL](https://github.com/apollographql)
 * [Uppy](https://github.com/transloadit/uppy)
 * [Aurelia Framework](https://github.com/aurelia)
 * [bit](https://github.com/teambit/bit)
