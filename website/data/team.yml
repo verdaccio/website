@@ -15,7 +15,7 @@ admons:
     role: admin/core
   - name: Sergio Hg
     github: sergiohgz
-    role: core
+    role: admin/core
   - name: Meeeeow
     github: Meeeeow
     role: core
@@ -23,6 +23,10 @@ admons:
     github: priscilawebdev
     twitter: Priscil13949295
     role: core
+  - name: Daniel Rufd
+    github: DanielRuf
+    twitter: DanielRufde
+    role: core    
 maintainers:
   - name: Verdaccio
     github: verdacciobot
