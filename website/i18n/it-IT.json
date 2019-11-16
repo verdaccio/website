@@ -499,6 +499,36 @@
       },
       "version-4.2.1/version-4.2.1-talks": {
         "title": "Presentazioni"
+      },
+      "version-4.3.0/version-4.3.0-e2e": {
+        "title": "End to End testing"
+      },
+      "version-4.3.0/version-4.3.0-reverse-proxy": {
+        "title": "Configurazione di Proxy inverso"
+      },
+      "version-4.3.0/version-4.3.0-who-is-using": {
+        "title": "Chi sta utilizzando Verdaccio?"
+      },
+      "version-4.3.3/version-4.3.3-configuration": {
+        "title": "File di configurazione"
+      },
+      "version-4.3.3/version-4.3.3-uplinks": {
+        "title": "Uplink"
+      },
+      "version-4.3.3/version-4.3.3-who-is-using": {
+        "title": "Chi sta utilizzando Verdaccio?"
+      },
+      "version-4.3.4/version-4.3.4-docker": {
+        "title": "Docker"
+      },
+      "version-4.3.4/version-4.3.4-reverse-proxy": {
+        "title": "Configurazione di Proxy inverso"
+      },
+      "version-4.3.4/version-4.3.4-security-policy": {
+        "title": "Politica sulla Sicurezza"
+      },
+      "version-4.3.4/version-4.3.4-who-is-using": {
+        "title": "Chi sta utilizzando Verdaccio?"
       }
     },
     "links": {
