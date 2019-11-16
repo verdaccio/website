@@ -67,13 +67,6 @@ const nonSponsorUsers = [
     pinned: true,
   },
   {
-    caption: "Gatsby",
-    image: "img/users/gatsby.svg",
-    infoLink: "https://www.gatsbyjs.org/",
-    fbOpenSource: false,
-    pinned: true,
-  },
-  {
     caption: "Uppy",
     image: "img/users/uppy.svg",
     infoLink: "https://uppy.io/",
@@ -146,6 +139,13 @@ const nonSponsorUsers = [
 ];
 
 const sponsorUsers = [
+  {
+    caption: "Gatsby",
+    image: "img/users/gatsby.svg",
+    infoLink: "https://www.gatsbyjs.org/",
+    fbOpenSource: false,
+    pinned: true,
+  },
   {
     caption: "SheetJS",
     image: "img/users/sheetjs.png",
