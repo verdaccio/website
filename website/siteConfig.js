@@ -136,6 +136,13 @@ const nonSponsorUsers = [
     fbOpenSource: false,
     pinned: false,
   },
+  {
+    caption: "web3.js - Ethereum JavaScript API",
+    image: "img/users/web3js.jpg",
+    infoLink: "https://github.com/ethereum/web3.js",
+    fbOpenSource: false,
+    pinned: true,
+  },
 ];
 
 const sponsorUsers = [
