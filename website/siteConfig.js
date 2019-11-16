@@ -88,6 +88,13 @@ const nonSponsorUsers = [
     pinned: true,
   },
   {
+    caption: "Babel.js",
+    image: "img/users/babel.png",
+    infoLink: "https://babeljs.io/",
+    fbOpenSource: false,
+    pinned: true,
+  },
+  {
     caption: "Bit",
     image: "img/users/bit.png",
     infoLink: "https://bit.dev/",
