@@ -48,26 +48,19 @@ sh -c "npm --registry $local_registry publish"
 
 ## Whom are using it for E2E?
 
-* [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests) *(+64k ⭐️)*
-* [Storybook](https://github.com/storybooks/storybook) *(+34k ⭐️)*
-* [Gatsby](https://github.com/gatsbyjs/gatsby) *(+31k ⭐️) WIP* [#8791](https://github.com/gatsbyjs/gatsby/pull/8791) [#11525](https://github.com/gatsbyjs/gatsby/pull/11525)
-* [Uppy](https://github.com/transloadit/uppy) *(+15k ⭐️)*
-* [Aurelia Framework](https://github.com/aurelia) *(+10k ⭐️)*
+* [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests) *(+73.5k ⭐️)*
+* [Storybook](https://github.com/storybooks/storybook) *(+44k ⭐️)*
+* [Gatsby](https://github.com/gatsbyjs/gatsby) *(+40k ⭐️) 
+* [Babel.js](https://github.com/babel/babel) *(+35k ⭐️)*
+* [Uppy](https://github.com/transloadit/uppy) *(+21k ⭐️)*
+* [Aurelia Framework](https://github.com/aurelia) *(+12k ⭐️)*
+* [ethereum/web3.js](https://github.com/ethereum/web3.js) *(+8k ⭐️)*
 * [bit](https://github.com/teambit/bit) *(+6k ⭐️)*
-* [pnpm](https://github.com/pnpm/pnpm) *(+5k ⭐️)*
+* [pnpm](https://github.com/pnpm/pnpm) *(+6k ⭐️)*
 * [Mozilla Neutrino](https://github.com/neutrinojs/neutrino) *(+3k ⭐️)*
 * [Embark](https://embark.status.im/) *(+3k ⭐️)*
 * [Hyperledger Composer](https://github.com/hyperledger/composer) *(+1.6k ⭐️)*
 * [Wix Yoshi](https://github.com/wix/yoshi)
-
-
-## Future
-
-Babel.js might be interested on integrate Verdaccio in their workflow, if you want to contribute, check [this ticket](https://github.com/babel/babel/issues/6134).
-
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Thinking of using verdaccio to test <a href="https://twitter.com/lernajs?ref_src=twsrc%5Etfw">@lernajs</a> v3 (+use this generally), as it&#39;s hard to know if a publish will be successful. Would like us to fix an issue where we would like to compile Babel using itself before it&#39;s published (as we self-host but from latest npm) as a smoke test</p>&mdash; Henry Zhu (@left_pad) <a href="https://twitter.com/left_pad/status/1045770889051164672?ref_src=twsrc%5Etfw">28 de septiembre de 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 
 
