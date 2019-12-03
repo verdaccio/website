@@ -33,6 +33,7 @@ Iṣeto olupese aifojuri ti Apache
             AllowEncodedSlashes     NoDecode
             ProxyPass               /       http://127.0.0.1:4873/ nocanon
             ProxyPassReverse        /       http://127.0.0.1:4873/
+            RequestHeader set       X-Forwarded-Proto "https"
         </VirtualHost>
         </IfModule>
     

@@ -5,7 +5,7 @@ original_id: docker
 ---
 
 <div class="docker-count">
-  ![alt Количество скачиваний](http://dockeri.co/image/verdaccio/verdaccio "Количество скачиваний")
+  ![alt Docker Pulls Count](https://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 </div>
 
 Для скачивания последней версии [Docker образа](https://hub.docker.com/r/verdaccio/verdaccio/):

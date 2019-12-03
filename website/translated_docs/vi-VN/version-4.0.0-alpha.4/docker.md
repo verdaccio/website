@@ -5,7 +5,7 @@ original_id: docker
 ---
 
 <div class="docker-count">
-  ![alt Docker Pulls Count](http://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
+  ![alt Docker Pulls Count](https://dockeri.co/image/verdaccio/verdaccio "Docker Pulls Count")
 </div>
 
 Để tải [hình ảnh docker mới nhất](https://hub.docker.com/r/verdaccio/verdaccio/):

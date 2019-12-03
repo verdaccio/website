@@ -87,7 +87,7 @@ The configuration is separated in two sections, `api` and `web`. To use JWT on `
 
 > We highly recommend move to JWT since legacy signature (`aes192`) is deprecated and will disappear in future versions.
 
-### Server
+### Servidor
 
 A set of properties to modify the behavior of the server application, specifically the API (Express.js).
 

@@ -47,22 +47,16 @@ sh -c "npm --registry $local_registry publish"
 
 ## Tani o n lo E2E fun?
 
-* [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests) *(+64k ⭐️)*
-* [Storybook](https://github.com/storybooks/storybook) *(+34k ⭐️)*
-* [Gatsby](https://github.com/gatsbyjs/gatsby) *(+31k ⭐️) WIP* [#8791](https://github.com/gatsbyjs/gatsby/pull/8791) [#11525](https://github.com/gatsbyjs/gatsby/pull/11525)
-* [Uppy](https://github.com/transloadit/uppy) *(+15k ⭐️)*
-* [Aurelia Framework](https://github.com/aurelia) *(+10k ⭐️)*
+* [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests) *(+73.5k ⭐️)*
+* [Storybook](https://github.com/storybooks/storybook) *(+44k ⭐️)*
+* [Gatsby](https://github.com/gatsbyjs/gatsby) *(+40k ⭐️) 
+* [Babel.js](https://github.com/babel/babel) *(+35k ⭐️)*
+* [Uppy](https://github.com/transloadit/uppy) *(+21k ⭐️)*
+* [Aurelia Framework](https://github.com/aurelia) *(+12k ⭐️)*
+* [ethereum/web3.js](https://github.com/ethereum/web3.js) *(+8k ⭐️)*
 * [bit](https://github.com/teambit/bit) *(+6k ⭐️)*
-* [pnpm](https://github.com/pnpm/pnpm) *(+5k ⭐️)*
+* [pnpm](https://github.com/pnpm/pnpm) *(+6k ⭐️)*
 * [Mozilla Neutrino](https://github.com/neutrinojs/neutrino) *(+3k ⭐️)*
 * [Embark](https://embark.status.im/) *(+3k ⭐️)*
 * [Hyperledger Composer](https://github.com/hyperledger/composer) *(+1.6k ⭐️)*
 * [Wix Yoshi](https://github.com/wix/yoshi)
-
-## Ọjọ iwaju
-
-Babel.js le nifẹsi lati ṣe imuṣiṣẹpọ pẹlu Verdaccio ninu ilana iṣẹ wọn, ti o ba fẹ lati ṣe ilọwọsi, wo [tikẹti yii](https://github.com/babel/babel/issues/6134).
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">N gbalero lati lo verdaccio lati sedanwo <a href="https://twitter.com/lernajs?ref_src=twsrc%5Etfw">@lernajs</a> v3 (+lo eyi ni gbogbogbo), bo se jẹpe&#39; o ṣoro lati mọ boya atẹjade kan ma jẹ aṣeyọri. Se o ma nifẹ fun wa lati ṣatunse isoro kan nibi ti a ma ti nifẹ lati ṣe akojọ Babel nipa lilo ara rẹ ṣaaju ki o to jẹ gbigbejade (gẹgẹbi a ṣe se igbalejo-ara ẹni ṣugbọn lati awọn npm to tuntun julọ) gẹgẹbi idanwo eefin</p>&mdash; Henry Zhu (@left_pad) <a href="https://twitter.com/left_pad/status/1045770889051164672?ref_src=twsrc%5Etfw"> ọjọ kejidinlọgbọn osu kẹsan ọdun 2018</a></blockquote>
-
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
