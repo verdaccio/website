@@ -3,9 +3,9 @@ id: authentification
 title: "인증"
 ---
 
-The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
+인증은 당신이 사용중인 auth [plugin](plugins.md)과 연관되어 있습니다. 패키제 제한 또한 [Package Access](packages.md)에 의해 핸들링됩니다.
 
-The client authentification is handled by `npm` client itself. Once you login to the application:
+클라이언트 인증은 `npm` 클라이언트 자체에서 처리됩니다. 어플리케이션에 로그인하면:
 
 ```bash
 npm adduser --registry http://localhost:4873
