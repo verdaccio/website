@@ -3,7 +3,7 @@ id: caching
 title: "Caching strategies"
 ---
 
-Verdaccio caches all packages by default into the `/storage` folder. But you can decide whether you want to follow a different strategy. Using of plugins you might use the cloud or any sort of database.
+Verdaccio 默认将所有的包缓存到`/storage`文件夹中。 But you can decide whether you want to follow a different strategy. Using of plugins you might use the cloud or any sort of database.
 
 ## Caching scenarios
 
@@ -39,7 +39,7 @@ uplinks:
 
 Increasing the value of `maxage` in each `uplink` remotes will be asked less frequently. This might be a valid strategy if you don't update dependencies so often.
 
-## Using the memory instead the hardrive
+## 使用内存代替硬盘存储
 
 Sometimes caching packages is not a critical step, rather than route packages from different registries and achieving faster build times. There are two plugins that avoid write in a physical hard drive at all using the memory.
 

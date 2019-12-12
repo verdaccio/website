@@ -7,7 +7,7 @@ This document describes several approaches for deploying Verdaccio in the AWS cl
 
 ## EC2
 
-[CloudFormation template for deploying this stack.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
+[CloudFormation 模板发布这个栈](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
 Architecture:
 
