@@ -162,6 +162,7 @@ theme:
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Storage plugin за хостовање пакета у Memory
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin за хостовање пакета на **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin за хостовање пакета на **Google Cloud Storage**
+* [verdaccio-minio](https://github.com/barolab/verdaccio-minio) A verdaccio plugin for storing data in Minio
 
 ## Упозорења (Caveats)
 
