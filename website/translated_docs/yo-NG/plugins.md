@@ -162,6 +162,7 @@ theme:
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Ohun elo ibi ipamọ to wa lati gbalejo awọn akopọ ni Iranti
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Ohun elo ibi ipamọ to wa lati gbalejo awọn akopọ **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Ohun elo ibi ipamọ to wa lati gbalejo awọn akopọ **Google Cloud Storage**
+* [verdaccio-minio](https://github.com/barolab/verdaccio-minio) A verdaccio plugin for storing data in Minio
 
 ## Awọn akiyesi
 
