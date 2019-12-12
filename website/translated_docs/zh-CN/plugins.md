@@ -162,6 +162,7 @@ theme:
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory)在内存中装载包的存储插件
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage)在**Amazon S3**中存储包的存储插件
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)在**Google Cloud Storage**中存储包的存储插件
+* [verdaccio-minio](https://github.com/barolab/verdaccio-minio) A verdaccio plugin for storing data in Minio
 
 ## 警告
 
