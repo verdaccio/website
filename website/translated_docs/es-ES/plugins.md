@@ -162,6 +162,7 @@ theme:
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Plugin de almacenamiento para alojar paquetes en la Memoria
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Plugin de almacenamiento para alojar paquetes **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Plugin de almacenamiento para alojar paquetes **Google Cloud Storage**
+* [verdaccio-minio](https://github.com/barolab/verdaccio-minio) A verdaccio plugin for storing data in Minio
 
 ## Advertencias
 
