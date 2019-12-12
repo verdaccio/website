@@ -162,6 +162,7 @@ theme:
 * [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) плагин хранилища для хранения пакетов в памяти
 * [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) плагин хранилища для хранения пакетов в **Amazon S3**
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) плагин хранилища для хранения пакетов в **Google Cloud Storage**
+* [verdaccio-minio](https://github.com/barolab/verdaccio-minio) A verdaccio plugin for storing data in Minio
 
 ## Предостережение
 
