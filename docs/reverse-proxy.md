@@ -10,11 +10,25 @@ most recommended and used ones.
 
 Apache and `mod_proxy` should **not decode/encode slashes** and leave them as they are:
 
+For installing at relative path, `/npm`, on the server
+
 ````
 <VirtualHost *:80>
   AllowEncodedSlashes NoDecode
   ProxyPass /npm http://127.0.0.1:4873 nocanon
   ProxyPassReverse /npm http://127.0.0.1:4873
+</VirtualHost>
+````
+
+For installing at root path, `/`, on the server
+````
+<VirtualHost *:80>
+  ServerName registry.url
+  ServerAdmin hello@my-registry.url
+  ProxyPreserveHost On
+  AllowEncodedSlashes NoDecode
+  ProxyPass /  http://127.0.0.1:4873/ nocanon
+  ProxyPassReverse / http://127.0.0.1:4873/
 </VirtualHost>
 ````
 
