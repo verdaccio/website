@@ -23,8 +23,8 @@ For installing at relative path, `/npm`, on the server
 For installing at root path, `/`, on the server
 ````
 <VirtualHost *:80>
-  ServerName registry.url
-  ServerAdmin hello@my-registry.url
+  ServerName your.domain.com
+  ServerAdmin hello@your.domain.com
   ProxyPreserveHost On
   AllowEncodedSlashes NoDecode
   ProxyPass / http://127.0.0.1:4873/ nocanon
