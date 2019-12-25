@@ -27,7 +27,7 @@ For installing at root path, `/`, on the server
   ServerAdmin hello@my-registry.url
   ProxyPreserveHost On
   AllowEncodedSlashes NoDecode
-  ProxyPass /  http://127.0.0.1:4873/ nocanon
+  ProxyPass / http://127.0.0.1:4873/ nocanon
   ProxyPassReverse / http://127.0.0.1:4873/
 </VirtualHost>
 ````
