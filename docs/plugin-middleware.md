@@ -7,7 +7,7 @@ title: "Middleware Plugin"
 
 <div id="codefund">''</div>
 
-Middleware plugins have the capability to modify the API layer, either adding new endpoints or intercepting requests.
+Middleware plugins have the capability to modify the API (web and cli) layer, either adding new endpoints or intercepting requests.
 
 ```typescript
 interface IPluginMiddleware<T> extends IPlugin<T> {
@@ -41,7 +41,7 @@ public register_middlewares(
 The `auth` and `storage` are instances and can be extended, but we don't recommend this approach unless is well founded.
 
 
-> Feel examples of middleware plugin to look up are [sinopia-github-oauth](https://github.com/soundtrackyourbrand/sinopia-github-oauth) and [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit).
+> A good example of a middleware plugin is the [verdaccio-audit](https://github.com/verdaccio/monorepo/tree/master/plugins/audi).
 
 ## Generate an middleware plugin
 
@@ -71,20 +71,20 @@ Setting the project root at: /Users/user/verdaccio_yo_generator
 ? Author's Name Juan Picado
 ? Author's Email jotadeveloper@gmail.com
 ? Key your keywords (comma to split) verdaccio,plugin,auth,awesome,verdaccio-plugin
-   create verdaccio-plugin-middleware-custom-endpoint/package.json
-   create verdaccio-plugin-middleware-custom-endpoint/.gitignore
-   create verdaccio-plugin-middleware-custom-endpoint/.npmignore
-   create verdaccio-plugin-middleware-custom-endpoint/jest.config.js
-   create verdaccio-plugin-middleware-custom-endpoint/.babelrc
-   create verdaccio-plugin-middleware-custom-endpoint/.travis.yml
-   create verdaccio-plugin-middleware-custom-endpoint/README.md
-   create verdaccio-plugin-middleware-custom-endpoint/.eslintrc
-   create verdaccio-plugin-middleware-custom-endpoint/.eslintignore
-   create verdaccio-plugin-middleware-custom-endpoint/src/index.ts
-   create verdaccio-plugin-middleware-custom-endpoint/index.ts
-   create verdaccio-plugin-middleware-custom-endpoint/tsconfig.json
-   create verdaccio-plugin-middleware-custom-endpoint/types/index.ts
-   create verdaccio-plugin-middleware-custom-endpoint/.editorconfig
+   create verdaccio-plugin-custom-endpoint/package.json
+   create verdaccio-plugin-custom-endpoint/.gitignore
+   create verdaccio-plugin-custom-endpoint/.npmignore
+   create verdaccio-plugin-custom-endpoint/jest.config.js
+   create verdaccio-plugin-custom-endpoint/.babelrc
+   create verdaccio-plugin-custom-endpoint/.travis.yml
+   create verdaccio-plugin-custom-endpoint/README.md
+   create verdaccio-plugin-custom-endpoint/.eslintrc
+   create verdaccio-plugin-custom-endpoint/.eslintignore
+   create verdaccio-plugin-custom-endpoint/src/index.ts
+   create verdaccio-plugin-custom-endpoint/index.ts
+   create verdaccio-plugin-custom-endpoint/tsconfig.json
+   create verdaccio-plugin-custom-endpoint/types/index.ts
+   create verdaccio-plugin-custom-endpoint/.editorconfig
 
 I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
 
@@ -99,13 +99,13 @@ After the install finish, access to your project scalfold.
 ➜ cat package.json
 
   {
-  "name": "verdaccio-plugin-middleware-custom-endpoint",
+  "name": "verdaccio-plugin-custom-endpoint",
   "version": "0.0.1",
   "description": "awesome middleware plugin",
   ...
 ```
 
-> Don't include `middleware` in your plugin name, the generator will add it for you.
+The middleware are registrered after built-in endpoints, thus, it is not possible to override the implemented ones.
 
 ### List Community Middleware Plugins
 

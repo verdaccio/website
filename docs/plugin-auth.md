@@ -207,20 +207,20 @@ Setting the project root at: /Users/user/verdaccio_yo_generator
 ? Author's Name Juan Picado
 ? Author's Email jotadeveloper@gmail.com
 ? Key your keywords (comma to split) verdaccio,plugin,auth,awesome,verdaccio-plugin
-   create verdaccio-plugin-auth-service-name/package.json
-   create verdaccio-plugin-auth-service-name/.gitignore
-   create verdaccio-plugin-auth-service-name/.npmignore
-   create verdaccio-plugin-auth-service-name/jest.config.js
-   create verdaccio-plugin-auth-service-name/.babelrc
-   create verdaccio-plugin-auth-service-name/.travis.yml
-   create verdaccio-plugin-auth-service-name/README.md
-   create verdaccio-plugin-auth-service-name/.eslintrc
-   create verdaccio-plugin-auth-service-name/.eslintignore
-   create verdaccio-plugin-auth-service-name/src/index.ts
-   create verdaccio-plugin-auth-service-name/index.ts
-   create verdaccio-plugin-auth-service-name/tsconfig.json
-   create verdaccio-plugin-auth-service-name/types/index.ts
-   create verdaccio-plugin-auth-service-name/.editorconfig
+   create verdaccio-plugin-authservice-name/package.json
+   create verdaccio-plugin-authservice-name/.gitignore
+   create verdaccio-plugin-authservice-name/.npmignore
+   create verdaccio-plugin-authservice-name/jest.config.js
+   create verdaccio-plugin-authservice-name/.babelrc
+   create verdaccio-plugin-authservice-name/.travis.yml
+   create verdaccio-plugin-authservice-name/README.md
+   create verdaccio-plugin-authservice-name/.eslintrc
+   create verdaccio-plugin-authservice-name/.eslintignore
+   create verdaccio-plugin-authservice-name/src/index.ts
+   create verdaccio-plugin-authservice-name/index.ts
+   create verdaccio-plugin-authservice-name/tsconfig.json
+   create verdaccio-plugin-authservice-name/types/index.ts
+   create verdaccio-plugin-authservice-name/.editorconfig
 
 I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
 
@@ -231,17 +231,15 @@ I'm all done. Running npm install for you to install the required dependencies. 
 After the install finish, access to your project scalfold.
 
 ```
-➜ cd verdaccio-plugin-auth-service-name
+➜ cd verdaccio-plugin-service-name
 ➜ cat package.json
 
   {
-  "name": "verdaccio-plugin-auth-service-name",
+  "name": "verdaccio-plugin-service-name",
   "version": "0.0.1",
   "description": "awesome auth plugin",
   ...
 ```
-
-> Don't include `auth` in your plugin name, the generator will add it for you.
 
 ## Full implementation ES5 example
 
