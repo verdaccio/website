@@ -90,10 +90,10 @@
         "title": "Plugin Generator"
       },
       "plugin-middleware": {
-        "title": "plugin-middleware"
+        "title": "Middleware Plugin"
       },
       "plugin-storage": {
-        "title": "plugin-storage"
+        "title": "Storage Plugin"
       },
       "plugins": {
         "title": "Plugins"

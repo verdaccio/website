@@ -179,8 +179,71 @@ import { getNotFound } from '@verdaccio/commons-api';
 callback(err);
 ```
 
+## Generate an authentication plugin
 
-## Example
+For detailed info check our [plugin generator page](plugin-generator). Run the `yo` command in your terminal and follow the steps.
+
+```
+➜ yo verdaccio-plugin
+
+Just found a `.yo-rc.json` in a parent directory.
+Setting the project root at: /Users/user/verdaccio_yo_generator
+
+     _-----_     ╭──────────────────────────╮
+    |       |    │        Welcome to        │
+    |--(o)--|    │ generator-verdaccio-plug │
+   `---------´   │   in plugin generator!   │
+    ( _´U`_ )    ╰──────────────────────────╯
+    /___A___\   /
+     |  ~  |
+   __'.___.'__
+ ´   `  |° ´ Y `
+
+? What is the name of your plugin? service-name
+? Select Language typescript
+? What kind of plugin you want to create? auth
+? Please, describe your plugin awesome auth plugin
+? GitHub username or organization myusername
+? Author's Name Juan Picado
+? Author's Email jotadeveloper@gmail.com
+? Key your keywords (comma to split) verdaccio,plugin,auth,awesome,verdaccio-plugin
+   create verdaccio-plugin-auth-auth-service-name/package.json
+   create verdaccio-plugin-auth-auth-service-name/.gitignore
+   create verdaccio-plugin-auth-auth-service-name/.npmignore
+   create verdaccio-plugin-auth-auth-service-name/jest.config.js
+   create verdaccio-plugin-auth-auth-service-name/.babelrc
+   create verdaccio-plugin-auth-auth-service-name/.travis.yml
+   create verdaccio-plugin-auth-auth-service-name/README.md
+   create verdaccio-plugin-auth-auth-service-name/.eslintrc
+   create verdaccio-plugin-auth-auth-service-name/.eslintignore
+   create verdaccio-plugin-auth-auth-service-name/src/index.ts
+   create verdaccio-plugin-auth-auth-service-name/index.ts
+   create verdaccio-plugin-auth-auth-service-name/tsconfig.json
+   create verdaccio-plugin-auth-auth-service-name/types/index.ts
+   create verdaccio-plugin-auth-auth-service-name/.editorconfig
+
+I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
+
+
+⸨ ░░░░░░░░░░░░░░░░░⸩ ⠋ fetchMetadata: sill pacote range manifest for @babel/plugin-syntax-jsx@^7.7.4 fetc
+```
+
+After the install finish, access to your project scalfold.
+
+```
+➜ cd verdaccio-plugin-auth-service-name
+➜ cat package.json
+
+  {
+  "name": "verdaccio-plugin-auth-service-name",
+  "version": "0.0.1",
+  "description": "awesome auth plugin",
+  ...
+```
+
+> Don't include `auth` in your plugin name, the generator will add it for you.
+
+## Full implementation ES5 example
 
 ```javascript
 function Auth(config, stuff) {
@@ -220,7 +283,20 @@ auth:
   htpasswd:
     file: ./htpasswd
 ```
+
 Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
 
 ### List Community Authentication Plugins
 
+* [verdaccio-bitbucket](https://github.com/idangozlan/verdaccio-bitbucket): Bitbucket authentication plugin for verdaccio.
+* [verdaccio-bitbucket-server](https://github.com/oeph/verdaccio-bitbucket-server): Bitbucket Server authentication plugin for verdaccio.
+* [verdaccio-ldap](https://www.npmjs.com/package/verdaccio-ldap): LDAP auth plugin for verdaccio.
+* [verdaccio-active-directory](https://github.com/nowhammies/verdaccio-activedirectory): Active Directory authentication plugin for verdaccio
+* [verdaccio-gitlab](https://github.com/bufferoverflow/verdaccio-gitlab): use GitLab Personal Access Token to authenticate
+* [verdaccio-gitlab-ci](https://github.com/lab360-ch/verdaccio-gitlab-ci): Enable GitLab CI to authenticate against verdaccio.
+* [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): Auth based on htpasswd file plugin (built-in) for verdaccio
+* [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Github oauth authentication plugin for verdaccio.
+* [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): GitHub OAuth plugin for the verdaccio login button.
+* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin to handle dynamic group associations utilizing `$group` syntax. Works best with the ldap plugin.
+
+**Have you developed a new plugin? Add it here ! **
