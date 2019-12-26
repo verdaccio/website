@@ -3,10 +3,12 @@ id: plugin-auth
 title: "Authentication Plugin"
 ---
 
-# What's an Authentication Plugin?
+## What's an Authentication Plugin?
 
 Is a sort plugin that allows to handle who access or publish to a specific package. By default the `htpasswd` is built-in, but can
 easily be replaced by your own.
+
+<div id="codefund">''</div>
 
  ## Getting Started
 
@@ -67,7 +69,7 @@ Since `v4.0.0`
 Verdaccio relies on `callback` functions at time of this writing. Each method should call the method and what you returns is important, let's review how to do it.
 
 
-### `authentication` Callback
+### `authentication` callback
 
 Once the authentication has been executed there is 2 options to give a response to `verdaccio`.
 
@@ -148,6 +150,35 @@ import { getNotFound } from '@verdaccio/commons-api';
 
 callback(err);
 ```
+
+### `allow_access`, `allow_publish`, or `allow_unpublish` callback
+
+These methods aims to allow or deny trigger some actions.
+
+##### If the request success
+
+If the service is able to create an user, return a `true` as the second argument.
+
+```typescript
+
+allow_access(user: RemoteUser, pkg: PackageAccess, cb: Callback): void
+  const isAllowed: boolean = checkAction(user, pkg);
+
+  callback(null, isAllowed)
+```
+
+##### If the request fails
+
+Any other action different than success must return an error.
+
+```typescript
+import { getNotFound } from '@verdaccio/commons-api';
+
+ const err = getForbidden('not allowed to access package');
+
+callback(err);
+```
+
 
 ## Example
 

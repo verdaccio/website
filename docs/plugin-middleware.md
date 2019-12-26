@@ -1,4 +1,8 @@
 ---
 id: plugin-middleware
-title: "Developing Web Middleware Plugin"
+title: "Middleware Plugin"
 ---
+
+## What's an Middleware Plugin?
+
+<div id="codefund">''</div>

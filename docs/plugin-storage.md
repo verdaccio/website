@@ -1,4 +1,8 @@
 ---
 id: plugin-storage
-title: "Developing Storage Plugin"
+title: "Storage Plugin"
 ---
+
+## What's an Storage Plugin?
+
+<div id="codefund">''</div>
