@@ -5,100 +5,13 @@ title: "Developing Plugins"
 
 There are many ways to extend `verdaccio`, the kind of plugins supported are:
 
-* Authentication plugins
-* Middleware plugins (since `v2.7.0`)
-* Storage plugins since (`v3.x`)
+* Authentication
+* Middleware
+* Storage
+* Theme
 
-> We recommend developing plugins using our [flow type definitions](https://github.com/verdaccio/flow-types).
+> We recommend developing plugins using our [Typescript type definitions](https://github.com/verdaccio/monorepo/tree/master/core/types).
 
-## Authentication Plugin
-
-Basically we have to return an object with a single method called `authenticate` that will recieve 3 arguments (`user, password, callback`).
-
-### API
-
-```flow
-interface IPluginAuth extends IPlugin {
-  login_url?: string;
-  authenticate(user: string, password: string, cb: Callback): void;
-  adduser(user: string, password: string, cb: Callback): void;
-  allow_access(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
-  apiJWTmiddleware(user: RemoteUser, pkg: $Subtype<PackageAccess>, cb: Callback): void;
-  allow_publish(helpers): void;
-}
-```
-> Only `adduser`, `allow_access`, `apiJWTmiddleware`  and `allow_publish` are optional, verdaccio provide a fallback in all those cases.
-
-#### apiJWTmiddleware method
-
-Since `v4.0.0`
-
-`apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
-
-#### Callback
-
-Once the authentication has been executed there is 2 options to give a response to `verdaccio`.
-
-###### OnError
-
-Either something bad happened or auth was unsuccessful.
-
-```flow
-callback(null, false)
-```
-
-###### OnSuccess
-
-The auth was successful.
-
-
-`groups` is an array of strings where the user is part of.
-
-```
- callback(null, groups);
-```
-
-### Example
-
-```javascript
-function Auth(config, stuff) {
-  var self = Object.create(Auth.prototype);
-  self._users = {};
-
-  // config for this module
-  self._config = config;
-
-  // verdaccio logger
-  self._logger = stuff.logger;
-
-  // pass verdaccio logger to ldapauth
-  self._config.client_options.log = stuff.logger;
-
-  return self;
-}
-
-Auth.prototype.authenticate = function (user, password, callback) {
-  var LdapClient = new LdapAuth(self._config.client_options);
-  ....
-  LdapClient.authenticate(user, password, function (err, ldapUser) {
-    ...
-    var groups;
-     ...
-    callback(null, groups);
-  });
-};
-
-module.exports = Auth;
-```
-
-And the configuration will looks like:
-
-```yaml
-auth:
-  htpasswd:
-    file: ./htpasswd
-```
-Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and the rest of the body would be the plugin configuration params.
 
 ## Middleware Plugin
 
@@ -225,14 +138,14 @@ Since [`4.1.0`](https://github.com/verdaccio/verdaccio/pull/1313)
 
 
 Filter plugins were introduced due a [request](https://github.com/verdaccio/verdaccio/issues/818) in order
-to be able to filter metadata from uplinks. 
+to be able to filter metadata from uplinks.
 
-More [info in the PR](https://github.com/verdaccio/verdaccio/pull/1161). 
+More [info in the PR](https://github.com/verdaccio/verdaccio/pull/1161).
 
 
 
 ```yaml
-filters:  
+filters:
    storage-filter-blackwhitelist:
      filter_file: /path/to/file
 ```
@@ -241,7 +154,7 @@ filters:
 ### API
 
 The method `filter_metadata` will allow you to filter metadata that comes from any uplink, it is `Promise` based
-and has to return the same metadata modified. 
+and has to return the same metadata modified.
 
 > Do not remove properties from the metadata, try to do not mutate rather return a new object.
 

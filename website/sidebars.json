@@ -34,7 +34,16 @@
       "windows",
       "iss-server"
     ],
-    "Development": ["plugins", "dev-plugins", "node-api"],
+    "Development": [
+      "plugins",
+      "dev-plugins",
+      {
+        "type": "subcategory",
+        "label": "Dev Guides",
+        "ids": ["plugin-generator", "plugin-auth", "plugin-middleware", "plugin-storage"]
+      },
+      "node-api"
+    ],
     "DevOps": [
       "docker",
       "kubernetes",
