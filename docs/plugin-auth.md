@@ -5,36 +5,53 @@ title: "Authentication Plugin"
 
 # What's an Authentication Plugin?
 
-dasdsa [dasdsa](plugin-generator.md) dasdsa
+Is a sort plugin that allows to handle who access or publish to a specific package. By default the `htpasswd` is built-in, but can
+easily be replaced by your own.
 
+ ## Getting Started
 
-## Getting Started
+The authentication plugins are defined in the `auth:` section, as follows:
 
+```yaml
+auth:
+  htpasswd:
+    file: ./htpasswd
+```
 
+also multiple plugins can be chained:
 
-## Authentication Plugin
+```yaml
+auth:
+  htpasswd:
+    file: ./htpasswd
+  anotherAuth:
+    foo: bar
+    bar: foo
+  lastPlugin:
+    foo: bar
+    bar: foo
+```
+
+> If one of the plugin in the chain is able to resolve the request, the next ones will be ignored.
+
+## How to the authentication plugin works?
 
 Basically we have to return an object with a single method called `authenticate` that will recieve 3 arguments (`user, password, callback`).
+
+On each request, `authenticate` will be triggered and the plugin should return the credentials, if the `authenticate` fails, it will fallback to the `$anonymous` role by default.
 
 ### API
 
 ```typescript
-  type AuthAccessCallback = (error: string | null, access: boolean) => void;
-  type AuthCallback = (error: string | null, groups: string[] | false) => void;
-
   interface IPluginAuth<T> extends IPlugin<T> {
     authenticate(user: string, password: string, cb: AuthCallback): void;
     adduser?(user: string, password: string, cb: AuthCallback): void;
     changePassword?(user: string, password: string, newPassword: string, cb: AuthCallback): void;
-    allow_publish?(user: RemoteUser, pkg: T & PackageAccess, cb: AuthAccessCallback): void;
-    allow_access?(user: RemoteUser, pkg: T & PackageAccess, cb: AuthAccessCallback): void;
-    allow_unpublish?(user: RemoteUser, pkg: T & PackageAccess, cb: AuthAccessCallback): void;
     allow_publish?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: AuthAccessCallback): void;
     allow_access?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: AuthAccessCallback): void;
     allow_unpublish?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: AuthAccessCallback): void;
     apiJWTmiddleware?(helpers: any): Function;
   }
-
 ```
 > Only `adduser`, `allow_access`, `apiJWTmiddleware`, `allow_publish`  and `allow_unpublish` are optional, verdaccio provide a fallback in all those cases.
 
@@ -44,19 +61,25 @@ Since `v4.0.0`
 
 `apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
-#### Callback
+
+## What should I return in each of the methods?
+
+Verdaccio relies on `callback` functions at time of this writing. Each method should call the method and what you returns is important, let's review how to do it.
+
+
+### `authentication` Callback
 
 Once the authentication has been executed there is 2 options to give a response to `verdaccio`.
 
-###### OnError
+##### If the authentication fails
 
-Either something bad happened or auth was unsuccessful.
+If the auth was unsuccessful, return `false` as the second argument.
 
 ```typescript
 callback(null, false)
 ```
 
-###### OnSuccess
+##### If the authentication success
 
 The auth was successful.
 
@@ -67,7 +90,42 @@ The auth was successful.
  callback(null, groups);
 ```
 
-### Example
+##### If the authentication produce an error
+
+The authentication service might fails, and you might want to reflect that in the user response, eg: service is unavailable.
+
+```
+ import { getInternalError } from '@verdaccio/commons-api';
+
+ callback(getInternalError('something bad message), null);
+```
+
+> A failure on login is not the same as service error, if you want to notify user the credentails are wrong, just return `false` instead string of groups. The behaviour mostly depends of you.
+
+
+### `adduser` Callback
+
+##### If adduser success
+
+If the service is able to create an user, return `true` as the second argument.
+
+```typescript
+callback(null, true)
+```
+
+##### If adduser fails
+
+Any other action different than success must return an error.
+
+```typescript
+import { getConflict } from '@verdaccio/commons-api';
+
+const err = getConflict('maximum amount of users reached');
+
+callback(err);
+```
+
+## Example
 
 ```javascript
 function Auth(config, stuff) {
