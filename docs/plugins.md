@@ -11,7 +11,7 @@ There are 4 types of plugins:
 * [Authentication](plugin-auth.md)
 * [Middleware](plugin-middleware.md)
 * [Storage](plugin-storage.md)
-* Custom Theme
+* Custom Theme and filters
 
 > If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
 

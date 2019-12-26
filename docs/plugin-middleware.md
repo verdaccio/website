@@ -9,6 +9,8 @@ title: "Middleware Plugin"
 
 Middleware plugins have the capability to modify the API (web and cli) layer, either adding new endpoints or intercepting requests.
 
+### API
+
 ```typescript
 interface IPluginMiddleware<T> extends IPlugin<T> {
   register_middlewares(app: any, auth: IBasicAuth<T>, storage: IStorageManager<T>): void;
