@@ -6,7 +6,7 @@ title: "Plugins"
 Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding
 endpoints or using a custom storage.
 
-There are 4 types of plugins:
+There are 5 types of plugins:
 
 * [Authentication](plugin-auth.md)
 * [Middleware](plugin-middleware.md)
@@ -141,16 +141,3 @@ theme:
 > All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the
 modern verdaccio API and using the prefix as *verdaccio-xx-name*.
 
-## Verdaccio Plugins
-
-### Storage Plugins
-
-* [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Storage plugin to host packages in Memory
-* [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
-* [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
-* [verdaccio-minio](https://github.com/barolab/verdaccio-minio) A verdaccio plugin for storing data in Minio
-
-## Caveats
-
-> Not all these plugins are been tested continuously, some of them might not work at all.
-Please if you found any issue feel free to notify the owner of each plugin.
