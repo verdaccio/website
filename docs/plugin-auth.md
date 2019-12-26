@@ -103,7 +103,7 @@ The authentication service might fails, and you might want to reflect that in th
 > A failure on login is not the same as service error, if you want to notify user the credentails are wrong, just return `false` instead string of groups. The behaviour mostly depends of you.
 
 
-### `adduser` Callback
+### `adduser` callback
 
 ##### If adduser success
 
@@ -121,6 +121,30 @@ Any other action different than success must return an error.
 import { getConflict } from '@verdaccio/commons-api';
 
 const err = getConflict('maximum amount of users reached');
+
+callback(err);
+```
+
+### `changePassword` callback
+
+##### If the request success
+
+If the service is able to create an user, return `true` as the second argument.
+
+```typescript
+const user = serviceUpdatePassword(user, password, newPassword);
+
+callback(null, user)
+```
+
+##### If the request fails
+
+Any other action different than success must return an error.
+
+```typescript
+import { getNotFound } from '@verdaccio/commons-api';
+
+ const err = getNotFound('user not found');
 
 callback(err);
 ```
