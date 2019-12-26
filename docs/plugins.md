@@ -8,9 +8,9 @@ endpoints or using a custom storage.
 
 There are 4 types of plugins:
 
-* Authentication
-* Middleware
-* Storage
+* [Authentication](plugin-auth.md)
+* [Middleware](plugin-middleware.md)
+* [Storage](plugin-storage.md)
 * Custom Theme
 
 > If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
@@ -41,7 +41,7 @@ The default configuration looks like this, due we use a build-in `htpasswd` plug
 ```yaml
  htpasswd:
     file: ./htpasswd
-    #max_users: 1000
+    # max_users: 1000
 ```
 
 and replacing them with (in case you decide to use a `ldap` plugin.
@@ -142,15 +142,6 @@ theme:
 modern verdaccio API and using the prefix as *verdaccio-xx-name*.
 
 ## Verdaccio Plugins
-
-
-### Middleware Plugins
-
-* [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): verdaccio plugin for *npm audit* cli support (built-in) (compatible since 3.x)
-
-* [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): verdacci plugin for *npm profile* cli support and *npm profile set password* for *verdaccio-htpasswd* based authentificaton
-
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
 
 ### Storage Plugins
 

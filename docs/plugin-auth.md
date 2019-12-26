@@ -207,20 +207,20 @@ Setting the project root at: /Users/user/verdaccio_yo_generator
 ? Author's Name Juan Picado
 ? Author's Email jotadeveloper@gmail.com
 ? Key your keywords (comma to split) verdaccio,plugin,auth,awesome,verdaccio-plugin
-   create verdaccio-plugin-auth-auth-service-name/package.json
-   create verdaccio-plugin-auth-auth-service-name/.gitignore
-   create verdaccio-plugin-auth-auth-service-name/.npmignore
-   create verdaccio-plugin-auth-auth-service-name/jest.config.js
-   create verdaccio-plugin-auth-auth-service-name/.babelrc
-   create verdaccio-plugin-auth-auth-service-name/.travis.yml
-   create verdaccio-plugin-auth-auth-service-name/README.md
-   create verdaccio-plugin-auth-auth-service-name/.eslintrc
-   create verdaccio-plugin-auth-auth-service-name/.eslintignore
-   create verdaccio-plugin-auth-auth-service-name/src/index.ts
-   create verdaccio-plugin-auth-auth-service-name/index.ts
-   create verdaccio-plugin-auth-auth-service-name/tsconfig.json
-   create verdaccio-plugin-auth-auth-service-name/types/index.ts
-   create verdaccio-plugin-auth-auth-service-name/.editorconfig
+   create verdaccio-plugin-auth-service-name/package.json
+   create verdaccio-plugin-auth-service-name/.gitignore
+   create verdaccio-plugin-auth-service-name/.npmignore
+   create verdaccio-plugin-auth-service-name/jest.config.js
+   create verdaccio-plugin-auth-service-name/.babelrc
+   create verdaccio-plugin-auth-service-name/.travis.yml
+   create verdaccio-plugin-auth-service-name/README.md
+   create verdaccio-plugin-auth-service-name/.eslintrc
+   create verdaccio-plugin-auth-service-name/.eslintignore
+   create verdaccio-plugin-auth-service-name/src/index.ts
+   create verdaccio-plugin-auth-service-name/index.ts
+   create verdaccio-plugin-auth-service-name/tsconfig.json
+   create verdaccio-plugin-auth-service-name/types/index.ts
+   create verdaccio-plugin-auth-service-name/.editorconfig
 
 I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
 
@@ -299,4 +299,4 @@ Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and t
 * [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): GitHub OAuth plugin for the verdaccio login button.
 * [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin to handle dynamic group associations utilizing `$group` syntax. Works best with the ldap plugin.
 
-**Have you developed a new plugin? Add it here ! **
+**Have you developed a new plugin? Add it here !**
