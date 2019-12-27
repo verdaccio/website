@@ -7,6 +7,8 @@ Faili yii ni pataki igun ti verdaccio nibi ti o ti le se aiyipada iwa atilẹwa 
 
 Faili iṣeto atilẹwa kan `config.yaml` jẹ ṣiṣẹda ni igba akọkọ ti o ba ṣe amulo `verdaccio`.
 
+<div id="codefund">''</div>
+
 ## Iṣeto Atilẹwa
 
 Iṣeto atilẹwa naa ni atilẹyin fun **scoped** awọn akopọ ati fayegba eyikeyi olumulo lati wọle si gbogbo awọn akopọ ṣugbọn nikan jẹki **awọn olumulo ti o ni ifasẹsi lati se atẹjade**.
