@@ -18,6 +18,8 @@ title: "Инсталирање на IIS server"
 - Постарајте се да имате добро подешено правило за прихватање TCP саобраћаја на порт, у Windows Firewall
 - И то је то! Сада можете да навигате до host-a и порта које сте одредили
 
+<div id="codefund">''</div>
+
 Желео сам да `verdaccio` сајт буде подразумевани сајт у IIS и зато сам урадио следеће:
 
 - Стопирао сам "Default Web Site" и покренуо јединo "verdaccio" сајт у IIS
@@ -44,7 +46,7 @@ title: "Инсталирање на IIS server"
 ### start.js
 
 ```bash
-process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
@@ -108,5 +110,4 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 
 ### Проблеми (Troubleshooting)
 
-- **Web интерфејс се не учитава када је хостован са https пошто покушава да преузме скрипте преко http.**  
-    Проверите да ли сте исправно унели `url_prefix` у verdaccio config. Пратите[дискусију](https://github.com/verdaccio/verdaccio/issues/622).
+- **The web interface does not load when hosted with https as it tries to download scripts over http.** Make sure that you have correctly mentioned `url_prefix` in verdaccio config. Follow the [discussion](https://github.com/verdaccio/verdaccio/issues/622).
