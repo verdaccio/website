@@ -5,12 +5,12 @@ title: "Plugins"
 
 Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
-There are 4 types of plugins:
+There are 5 types of plugins:
 
-* Authentication
-* Middleware
-* Almacenamiento
-* UI Theme
+* [Authentication](plugin-auth.md)
+* [Middleware](plugin-middleware.md)
+* [Almacenamiento](plugin-storage.md)
+* Custom Theme and filters
 
 > If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
 
@@ -38,7 +38,7 @@ La configuración por defecto luce así, debido a que usamos un plugin `htpasswd
 ```yaml
  htpasswd:
     file: ./htpasswd
-    #max_users: 1000
+    # max_users: 1000
 ```
 
 y reemplazándolos con (en caso de que decida usar un plugin `ldap`).
@@ -133,37 +133,3 @@ theme:
 * [sinopia-github-oauth-env](https://www.npmjs.com/package/sinopia-github-oauth-env) plugin de autenticación de Sinopia con flujo web github oauth.
 
 > All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the modern verdaccio API and using the prefix as *verdaccio-xx-name*.
-
-## Plugins de Verdaccio
-
-### Plugins de Autorización
-
-* [verdaccio-bitbucket](https://github.com/idangozlan/verdaccio-bitbucket): plugin de autenticación de Bitbucket para verdaccio.
-* [verdaccio-bitbucket-server](https://github.com/oeph/verdaccio-bitbucket-server): Bitbucket Server authentication plugin for verdaccio.
-* [verdaccio-ldap](https://www.npmjs.com/package/verdaccio-ldap): LDAP auth plugin for verdaccio.
-* [verdaccio-active-directory](https://github.com/nowhammies/verdaccio-activedirectory): Active Directory authentication plugin for verdaccio
-* [verdaccio-gitlab](https://github.com/bufferoverflow/verdaccio-gitlab): use GitLab Personal Access Token to authenticate
-* [verdaccio-gitlab-ci](https://github.com/lab360-ch/verdaccio-gitlab-ci): Enable GitLab CI to authenticate against verdaccio.
-* [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): Auth based on htpasswd file plugin (built-in) for verdaccio
-* [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Github oauth authentication plugin for verdaccio.
-* [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): GitHub OAuth plugin for the verdaccio login button.
-* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin to handle dynamic group associations utilizing `$group` syntax. Works best with the ldap plugin.
-
-### Plugins de Middleware
-
-* [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): plugin de verdaccio para soporte cli de *npm audit* (incorporado) (compatible desde 3.x)
-
-* [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): plugin de verdaccio para soporte cli de *npm profile* y *npm profile set password* para la autenticación basada en *verdaccio-htpasswd*
-
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
-
-### Plugins de Storage (Almacenamiento)
-
-* [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Plugin de almacenamiento para alojar paquetes en la Memoria
-* [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Plugin de almacenamiento para alojar paquetes **Amazon S3**
-* [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Plugin de almacenamiento para alojar paquetes **Google Cloud Storage**
-* [verdaccio-minio](https://github.com/barolab/verdaccio-minio) A verdaccio plugin for storing data in Minio
-
-## Advertencias
-
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
