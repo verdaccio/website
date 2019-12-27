@@ -31,23 +31,23 @@ Storage plugins are composed of two objects, the `IPluginStorage<T>` and the `IP
 * The `IPackageStorage` is an object that is created by each request that handles the I/O actions for the metadata and tarballs.
 
 ```typescript
-	  interface IPackageStorage {
-			logger: Logger;
-			writeTarball(pkgName: string): IUploadTarball;
-			readTarball(pkgName: string): IReadTarball;
-			readPackage(fileName: string, callback: ReadPackageCallback): void;
-			createPackage(pkgName: string, value: Package, cb: CallbackAction): void;
-			deletePackage(fileName: string, callback: CallbackAction): void;
-			removePackage(callback: CallbackAction): void;
-			updatePackage(
-				pkgFileName: string,
-				updateHandler: StorageUpdateCallback,
-				onWrite: StorageWriteCallback,
-				transformPackage: PackageTransformer,
-				onEnd: CallbackAction
-			): void;
-			savePackage(fileName: string, json: Package, callback: CallbackAction): void;
-  }
+interface IPackageStorage {
+  logger: Logger;
+  writeTarball(pkgName: string): IUploadTarball;
+  readTarball(pkgName: string): IReadTarball;
+  readPackage(fileName: string, callback: ReadPackageCallback): void;
+  createPackage(pkgName: string, value: Package, cb: CallbackAction): void;
+  deletePackage(fileName: string, callback: CallbackAction): void;
+  removePackage(callback: CallbackAction): void;
+  updatePackage(
+    pkgFileName: string,
+    updateHandler: StorageUpdateCallback,
+    onWrite: StorageWriteCallback,
+    transformPackage: PackageTransformer,
+    onEnd: CallbackAction
+  ): void;
+  savePackage(fileName: string, json: Package, callback: CallbackAction): void;
+}
 ```
 
 ## Generate an middleware plugin

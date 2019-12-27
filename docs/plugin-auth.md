@@ -161,10 +161,11 @@ If the service is able to create an user, return a `true` as the second argument
 
 ```typescript
 
-allow_access(user: RemoteUser, pkg: PackageAccess, cb: Callback): void
+allow_access(user: RemoteUser, pkg: PackageAccess, cb: Callback): void {
   const isAllowed: boolean = checkAction(user, pkg);
 
   callback(null, isAllowed)
+}
 ```
 
 ##### If the request fails
