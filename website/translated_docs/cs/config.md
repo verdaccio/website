@@ -7,6 +7,8 @@ Tento soubor je základní kámen verdaccia, kde můžete upravit výchozí chov
 
 Výchozí konfigurační soubor `config.yaml` je vytvořen při prvním spuštění `verdaccia`.
 
+<div id="codefund">''</div>
+
 ## Výchozí konfigurace
 
 Výchozí konfigurace má podporu pro balíčky **s rozsahem** a umožňuje každému uživateli přístup ke všem balíčkům, ale pouze **ověřeným uživatelům k publikování**.
