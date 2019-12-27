@@ -9,10 +9,24 @@ Usar um proxy reverso é uma prática comum. As seguintes configurações são a
 
 Apache e `mod_proxy` **não devem decodificar/codificar barras** e deixa-las como estão:
 
+For installing at relative path, `/npm`, on the server
+
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
       ProxyPass /npm http://127.0.0.1:4873 nocanon
       ProxyPassReverse /npm http://127.0.0.1:4873
+    </VirtualHost>
+    
+
+For installing at root path, `/`, on the server
+
+    <VirtualHost *:80>
+      ServerName your.domain.com
+      ServerAdmin hello@your.domain.com
+      ProxyPreserveHost On
+      AllowEncodedSlashes NoDecode
+      ProxyPass / http://127.0.0.1:4873/ nocanon
+      ProxyPassReverse / http://127.0.0.1:4873/
     </VirtualHost>
     
 
