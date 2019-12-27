@@ -5,6 +5,8 @@ title: "Iseto Aṣoju ikọkọ-Alayipada"
 
 Lilo aṣoju ikọkọ alayipada jẹ iṣe ti o wọpọ. Awọn iṣeto wọnyi jẹ awọn ti a gba gẹgẹ bi iyanju​ ati ti o jẹ lilo julọ.
 
+<div id="codefund">''</div>
+
 # Apache
 
 Apache ati `mod_proxy` ko **yẹ ko tumọ koodu/di koodu awọn slash** ki o si fi wọn silẹ bi wọn se wa:
@@ -151,7 +153,7 @@ Ege wọnyii jẹ `docker` kikun apẹẹrẹ le jẹ didanwo ni [Awọn apẹ�
 
 ### Ẹka-ọna
 
-Ti gbogbo URL ba n jẹ lilo fun Verdaccio, iwọ ko nilo lati ṣe asoye `url_prefix`, bibẹkọ o ma nilo nkan bi eleyi ninu `config.yaml` rẹ.
+If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise you would need something like this in your `config.yaml`.
 
 ```yaml
 url_prefix: /sub_directory/
