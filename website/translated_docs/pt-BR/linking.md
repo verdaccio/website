@@ -13,6 +13,8 @@ uplinks:
 
 Você pode conectar vários registros, o documento a seguir guiará você por algumas configurações úteis.
 
+<div id="codefund">''</div>
+
 ## Usando Associação de Escopo
 
 A única maneira de acessar vários registros usando o `.npmrc` é com a função de escopo, da seguinte forma:
