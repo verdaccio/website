@@ -5,12 +5,12 @@ title: "Плагины"
 
 Verdaccio поддерживает плагины. Плагины позволяют расширить функциональность Verdaccio разными способами - добавить методы аутентификации, добавить эндпоинты или создать своё хранилище.
 
-Есть 4 типа плагинов:
+There are 5 types of plugins:
 
-* Аутентификация
-* Middleware
-* Хранилище
-* UI тема
+* [Аутентификация](plugin-auth.md)
+* [Middleware](plugin-middleware.md)
+* [Хранилище](plugin-storage.md)
+* Custom Theme and filters
 
 > Если вам нужно разработать свой плагин, почитайте секцию [разработка](dev-plugins.md).
 
@@ -38,7 +38,7 @@ $> npm install --global verdaccio-activedirectory
 ```yaml
  htpasswd:
     file: ./htpasswd
-    #max_users: 1000
+    # max_users: 1000
 ```
 
 заменяем на (в случае, когда вы решили использовать плагин `ldap`.
@@ -133,37 +133,3 @@ theme:
 * [sinopia-github-oauth-env](https://www.npmjs.com/package/sinopia-github-oauth-env) плагин аутентификации для sinopia, использует github oauth web flow.
 
 > Все плагины sinopia совместимы со всеми будущими версиями verdaccio. Тем не менее, мы очень хотели бы, чтобы контрибьюторы мигрировали на современный verdaccio API и использовали префикс *verdaccio-xx-name*.
-
-## Плагины Verdaccio
-
-### Плагины аутентификации
-
-* [verdaccio-bitbucket](https://github.com/idangozlan/verdaccio-bitbucket): аутентификационный плагин для использования Bitbucket.
-* [verdaccio-bitbucket-server](https://github.com/oeph/verdaccio-bitbucket-server): аутентификационный плагин для использования Bitbucket Server.
-* [verdaccio-ldap](https://www.npmjs.com/package/verdaccio-ldap):аутентификационный плагин для использования LDAP.
-* [verdaccio-active-directory](https://github.com/nowhammies/verdaccio-activedirectory): аутентификационный плагин для использования Active Directory
-* [verdaccio-gitlab](https://github.com/bufferoverflow/verdaccio-gitlab): аутентификационный плагин для использования GitLab Personal Access Token
-* [verdaccio-gitlab-ci](https://github.com/lab360-ch/verdaccio-gitlab-ci): аутентификационный плагин для использования GitLab CI.
-* [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): аутентификационный плагин для использования файла htpasswd (встроенный)
-* [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): аутентификационный плагин для использования Github oauth.
-* [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): аутентификационный плагин для использования GitHub OAuth plugin.
-* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Плагин для работы с группами с помощью синтаксиса `$group`. Лучше всего работает с плагином ldap.
-
-### Плагины Middleware
-
-* [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): плагин для поддержки команды *npm audit* (встроенный) (начиная с версии 3.x)
-
-* [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): плагин для команд *npm profile* и *npm profile set password* для аутентификации через *verdaccio-htpasswd*
-
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware-плагин для редиректа на https если установлен хэдер x-forwarded-proto
-
-### Плагины хранилища
-
-* [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) плагин хранилища для хранения пакетов в памяти
-* [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) плагин хранилища для хранения пакетов в **Amazon S3**
-* [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) плагин хранилища для хранения пакетов в **Google Cloud Storage**
-* [verdaccio-minio](https://github.com/barolab/verdaccio-minio) A verdaccio plugin for storing data in Minio
-
-## Предостережение
-
-> Не все плагины были протестированы в рамках непрерывной интеграции, и некоторые могут вообще не работать. Если вы нашли баг, пожалуйста, известите владельца плагина.
