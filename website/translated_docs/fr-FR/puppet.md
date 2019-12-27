@@ -12,6 +12,8 @@ Deux variantes sont disponibles pour installer verdaccio à l’aide de ce modul
 * Mode d'application (avec puppet-apply et aucune configuration puppetmaster n'est demandée)
 * Mode Master-Agent (avec accès à la configuration de puppet-agent via puppetmaster).
 
+<div id="codefund">''</div>
+
 Dans les deux variantes, il est nécessaire d'appeler explicitement la "classe nodejs {}" dans le script puppet car le module puppet-verdaccio le définit uniquement en tant qu'exigence. Vous disposez ainsi de toute la flexibilité que vous souhaitez pour l'installation de nodejs. Faites défiler la liste pour plus de détails sur la variante de la méthode Master-Agent.
 
 Pour plus d'informations:
