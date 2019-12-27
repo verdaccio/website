@@ -5,6 +5,8 @@ title: "Didabobo awọn akopọ"
 
 `verdaccio` faye gba ọ lati dabobo atẹjade, lati ṣe aṣeyọri pẹlu iyẹn o ma nilo lati ṣeto [iwọlesi awọn akopọ](packages) rẹ dardara.
 
+<div id="codefund">''</div>
+
 ### Iṣeto akopọ
 
 Jẹ ki a wo fun apẹẹrẹ awọn iseto wọnyi. O ni eto ti awọn igbarale kan ti o wa lati ilẹ tẹlẹ pẹlu `my-company-*` atipe o nilo lati dabobo wọn kuro lọdọ alainidamọ tabi olumulo miiran ti o wọle laini awọn iwe ẹri to tọ.
