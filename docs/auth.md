@@ -5,6 +5,8 @@ title: "Authentification"
 
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
 
+<div id="codefund">''</div>
+
 The client authentification is handled by `npm` client itself. Once you login to the application:
 
 ```bash
@@ -39,7 +41,7 @@ As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/21
 
 ### The meaning of `$all` and `$anonymous`
 
-As you know *Verdaccio* uses the `htpasswd` by default. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. 
+As you know *Verdaccio* uses the `htpasswd` by default. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`.
 Thus, *Verdaccio* will handle that in the following way:
 
 * If you are not logged in (you are anonymous), `$all` and `$anonymous` means exactly the same.

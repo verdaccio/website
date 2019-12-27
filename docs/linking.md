@@ -13,6 +13,8 @@ uplinks:
 
 You can link multiple registries, the following document will drive you through some helpful configurations.
 
+<div id="codefund">''</div>
+
 ## Using Associating Scope
 
 The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:

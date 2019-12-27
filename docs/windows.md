@@ -13,6 +13,8 @@ Loosely based upon the instructions found [here](http://asysadmin.tumblr.com/pos
 3. Create your `config.yaml` file in this location `(c:\verdaccio\config.yaml)`
 4. Windows Service Setup
 
+<div id="codefund">''</div>
+
 ## Using NSSM
 
 ALTERNATIVE METHOD: (WinSW package was missing when I tried to download it)

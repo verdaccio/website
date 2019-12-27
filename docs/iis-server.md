@@ -25,6 +25,7 @@ npm install
 * Make sure you have an inbound rule accepting TCP traffic to the port in Windows Firewall
 * Thats it! Now you can navigate to the host and port that you specified
 
+<div id="codefund">''</div>
 
 I wanted the `verdaccio` site to be the default site in IIS so I did the following:
 
@@ -54,7 +55,7 @@ A default configuration file will be created `c:\verdaccio\verdaccio\config.yaml
 ### start.js
 
 ````bash
-process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ````
 
@@ -117,5 +118,5 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 ````
 
 ### Troubleshooting
-- **The web interface does not load when hosted with https as it tries to download scripts over http.**   
+- **The web interface does not load when hosted with https as it tries to download scripts over http.**
 Make sure that you have correctly mentioned `url_prefix` in verdaccio config. Follow the [discussion](https://github.com/verdaccio/verdaccio/issues/622).

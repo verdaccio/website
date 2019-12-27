@@ -8,6 +8,8 @@ webhooks, but will also deliver a simple payload to
 any endpoint. Currently only active for `npm publish`
 command.
 
+<div id="codefund">''</div>
+
 ## Usage
 
 An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
@@ -42,10 +44,10 @@ notify:
      method: POST
      headers: [{'Content-Type': 'application/json'}, {'authorization': 'Bearer secretToken'}]
      endpoint: https://api.atlassian.com/site/{cloudId}/conversation/{conversationId}/message
-     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
+     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'
 ```
 
-## Template 
+## Template
 
 We use [Handlebars](https://handlebarsjs.com/) as main template engine.
 
@@ -67,7 +69,7 @@ List of properties accesible via template
 * Publisher (who is publishing)
 * Package Published (package@1.0.0)
 
-### Metadata 
+### Metadata
 
 Package metadata that the template has access
 

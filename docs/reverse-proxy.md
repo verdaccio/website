@@ -4,7 +4,9 @@ title: "Reverse Proxy Setup"
 ---
 
 Using a reverse proxy is a common practice. The following configurations are the
-most recommended and used ones. 
+most recommended and used ones.
+
+<div id="codefund">''</div>
 
 # Apache
 
@@ -57,7 +59,7 @@ Apache virtual server configuration
 
 # Nginx
 
-The following snippet is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx). 
+The following snippet is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
 
 ````
 upstream verdaccio_v4 {
@@ -156,8 +158,8 @@ server {
 
 ### Sub-directory
 
-If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise 
-you would need something like this in your `config.yaml`.  
+If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise
+you would need something like this in your `config.yaml`.
 
 ```yaml
 url_prefix: /sub_directory/

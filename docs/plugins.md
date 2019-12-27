@@ -15,6 +15,8 @@ There are 5 types of plugins:
 
 > If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
 
+<div id="codefund">''</div>
+
 ## Usage
 
 ### Installation

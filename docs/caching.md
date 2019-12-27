@@ -6,6 +6,7 @@ title: "Caching strategies"
 Verdaccio caches all packages by default into the `/storage` folder. But you can decide whether you want to follow
 a different strategy. Using of plugins you might use the cloud or any sort of database.
 
+<div id="codefund">''</div>
 
 ## Caching scenarios
 
