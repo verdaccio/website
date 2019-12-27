@@ -13,6 +13,8 @@ Ugrubo bazirano na uputstvima koja se mogu pronaći [ovde](http://asysadmin.tumb
 3. Kreirajte svoj `config.yaml` falj na ovoj lokaciji `(c:\verdaccio\config.yaml)`
 4. Windows Service Setup
 
+<div id="codefund">''</div>
+
 ## Korišćenje NSSM
 
 ALTERNATIVNI METOD: (WinSW paket je nedostajao kada je jedan od naših saradnika pokušao da ga preuzme)
