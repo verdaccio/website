@@ -5,6 +5,8 @@ title: "Kubernetes"
 
  您可以在[verdaccio/docker-例子](https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example)资源库找到在Kubernetes群集中配置Verdaccio的指南。 然而，建议在Kubernetes集群上安装Verdaccio的方法是使用[Helm](https://helm.sh)。 Helm 是 [Kubernetes](https://kubernetes.io) 包管理者，它带来很多优点。
 
+<div id="codefund">''</div>
+
 ## Helm
 
 ### 设置Helm
