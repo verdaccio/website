@@ -9,10 +9,24 @@ title: "Настройка reverse proxy"
 
 Apache и `mod_proxy` **не должны кодировать/декодировать слэши**, то есть нужно просто ничего не делать (со слэшами):
 
+For installing at relative path, `/npm`, on the server
+
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
       ProxyPass /npm http://127.0.0.1:4873 nocanon
       ProxyPassReverse /npm http://127.0.0.1:4873
+    </VirtualHost>
+    
+
+For installing at root path, `/`, on the server
+
+    <VirtualHost *:80>
+      ServerName your.domain.com
+      ServerAdmin hello@your.domain.com
+      ProxyPreserveHost On
+      AllowEncodedSlashes NoDecode
+      ProxyPass / http://127.0.0.1:4873/ nocanon
+      ProxyPassReverse / http://127.0.0.1:4873/
     </VirtualHost>
     
 
@@ -143,11 +157,11 @@ Apache и `mod_proxy` **не должны кодировать/декодиро�
 url_prefix: /sub_directory/
 ```
 
-Если вы запускаете verdaccio за reverse proxy, вы заметите, что все ресурсные файлы запрашиваются по абсолютному пути, например `http://127.0.0.1:4873/-/static`
+If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like `http://127.0.0.1:4873/-/static`
 
 Чтобы решить эту проблему, **вам нужно послать реальный домен и порт для verdaccio с помощью хедера `Host` **
 
-Nginx-конфигурация должна выглядеть примерно так:
+Nginx configure should look like this:
 
 ```nginx
 location / {
@@ -162,7 +176,7 @@ location / {
 
 * * *
 
-или, в случае использования подпапки в URL:
+or a sub-directory installation:
 
 ```nginx
 location ~ ^/verdaccio/(.*)$ {
@@ -173,6 +187,6 @@ location ~ ^/verdaccio/(.*)$ {
 }
 ```
 
-В этом случае, `url_prefix` должен быть равен `/verdaccio/`
+For this case, `url_prefix` should set to `/verdaccio/`
 
 > Примечание: Слэш после пути - обязателен (`https://your-domain:port/verdaccio/`)!
