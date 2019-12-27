@@ -5,6 +5,8 @@ title: "Enregistreur"
 
 Comme toute application Web, verdaccio dispose d'un enregistreur intégré personnalisable. Vous pouvez définir différents types de sorties.
 
+<div id="codefund">''</div>
+
 ```yaml
 logs:
   # console output
