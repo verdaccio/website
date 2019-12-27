@@ -7,6 +7,8 @@ O jẹ oriṣi awọn idina ti o fayegba tabi ṣe idena wiwọle si ibi ipamọ
 
 Awọn idina aabo wa lori awọn ejika ti ohun elo ti a n lo, nipa atilẹwa `verdaccio` n samulo [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Ti o ba lo ohun elo to yatọ ihuwasi naa le yatọ. Ohun elo atilẹwa ko kin bojuto `allow_access` ati `allow_publish` funrarẹ, o n lo ipadabọsi ti abẹle to ba lọ jẹpe ohun elo naa ko ti ṣetan fun un.
 
+<div id="codefund">''</div>
+
 Fun alaye siwaju sii nipa awọn igbanilaaye lọ si [abala sise ifasẹsi ninu wiki naa](auth.md).
 
 ### Ilo
@@ -149,7 +151,7 @@ packages:
   'my-company-*':
     access: $all
     publish: $authenticated
-    unpublish: 
+    unpublish:
   '@my-local-scope/*':
     access: $all
     publish: $authenticated
