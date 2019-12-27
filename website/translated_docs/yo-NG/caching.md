@@ -5,6 +5,8 @@ title: "Awọn ọna ifisapo iranti"
 
 Verdaccio n se ipamọ gbogbo awọn akopọ ni atilẹwa sinu foda `/storage`. Ṣugbọn o le se ipinnu boya o fẹ tẹle ọna ti o yatọ. Lilo awọn ohun elo o le lo ipamọ ayelujara tabi eyikeyi iru ibi ipamọ data.
 
+<div id="codefund">''</div>
+
 ## Awọn iṣẹlẹ ifisapo iranti
 
 * Sise agbedide iṣẹ akanṣe Node.js lori awọn olupese **Imuṣiṣẹpọ Alainidaduro** (Bamboo, GitLab, Jenkins, abbl) le jẹ iṣẹ to ma gba akoko pupọ ni ọjọ kan, nitorina, olupese naa yoo gba awọn tọọnu ti tarballs lati ibi iforukọsilẹ ni gbogbo igba ti o ba waye. Bi ti gbogbo igba, awọn irinṣẹ CI n pa ibi iranti rẹ lẹhin agbedide kọọkan atipe ilana naa yoo pada bẹrẹ lati ibẹrẹ pẹpẹ lẹẹkansi. Eyi jẹ ibudanu ti itankanlẹ atipe o n mu adinku abẹwo to n ti ita wa. **O le lo Verdaccio fun ibi iranti tarballs ati metadata ninu nẹtiwọki abẹle wa ki o si mu igbelarugẹ ba akoko agbedide rẹ.**
