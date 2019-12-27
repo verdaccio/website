@@ -18,6 +18,8 @@ These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.
 - 请确保您有入站规则来接受TCP流量到Windows防火墙的端口
 - 就这样！现在您可以导航到您指定的主机和端口
 
+<div id="codefund">''</div>
+
 我希望 `verdaccio`站点成为IIS中默认的站点，因此我执行了以下操作：
 
 - 我中止“默认网站”，并且只在IIS 里启动"verdaccio"站点
@@ -44,7 +46,7 @@ These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.
 ### start.js
 
 ```bash
-process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
@@ -108,5 +110,4 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 
 ### 故障排除
 
-- **以https 为主机的网页界面无法加载，因为它总是尝试从 http下载脚本。**  
-    请确保您在verdaccio配置里正确提到`url_prefix`。请跟随 [讨论](https://github.com/verdaccio/verdaccio/issues/622)。
+- **The web interface does not load when hosted with https as it tries to download scripts over http.** Make sure that you have correctly mentioned `url_prefix` in verdaccio config. Follow the [discussion](https://github.com/verdaccio/verdaccio/issues/622).
