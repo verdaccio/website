@@ -5,6 +5,8 @@ title: "Reverse Proxy Setup"
 
 Using a reverse proxy is a common practice. The following configurations are the most recommended and used ones.
 
+<div id="codefund">''</div>
+
 # Apache
 
 Apache and `mod_proxy` should **not decode/encode slashes** and leave them as they are:
