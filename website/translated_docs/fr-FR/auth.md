@@ -5,6 +5,8 @@ title: "Authentification"
 
 Les paramètres de la section d’authentification sont étroitement liés au [ plug-in ](plugins.md) " Auth " que vous utilisez. Les restrictions de package sont également gérées par [ l'accès au package](packages.md).
 
+<div id="codefund">''</div>
+
 Le processus d'authentification du client est géré par `npm` lui-même. Une fois que vous êtes connectés à l'application:
 
 ```bash
