@@ -5,6 +5,8 @@ title: "Protegendo seus pacotes"
 
 O `verdaccio` permite que você proteja a publicação, para assegurar isso você precisará configurar corretamente o seu [acesso a pacotes](packages).
 
+<div id="codefund">''</div>
+
 ### Configuração de pacote
 
 Vamos ver por exemplo a seguinte configuração. Você tem um conjunto de dependências que são prefixadas com `my-company-*` e você precisa protegê-las de um usuário anônimo ou outro usuário logado sem credenciais corretas.
