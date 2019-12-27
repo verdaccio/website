@@ -9,10 +9,24 @@ L'utilizzo di un proxy inverso è una pratica comune. Le configurazioni seguenti
 
 Apache e `mod_proxy` **non dovrebbero decodificare/codificare gli slash** e dovrebbero lasciarli così come sono:
 
+For installing at relative path, `/npm`, on the server
+
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
       ProxyPass /npm http://127.0.0.1:4873 nocanon
       ProxyPassReverse /npm http://127.0.0.1:4873
+    </VirtualHost>
+    
+
+For installing at root path, `/`, on the server
+
+    <VirtualHost *:80>
+      ServerName your.domain.com
+      ServerAdmin hello@your.domain.com
+      ProxyPreserveHost On
+      AllowEncodedSlashes NoDecode
+      ProxyPass / http://127.0.0.1:4873/ nocanon
+      ProxyPassReverse / http://127.0.0.1:4873/
     </VirtualHost>
     
 
