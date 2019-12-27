@@ -5,6 +5,8 @@ title: "Настройка reverse proxy"
 
 Использрвание reverse proxy является обычной практикой. Конфигурация ниже - рекомендованная, и наиболее часто используется.
 
+<div id="codefund">''</div>
+
 # Apache
 
 Apache и `mod_proxy` **не должны кодировать/декодировать слэши**, то есть нужно просто ничего не делать (со слэшами):
@@ -151,7 +153,7 @@ For installing at root path, `/`, on the server
 
 ### Префикс
 
-Если вы испольузете данные домен-порт только для Verdaccio, вам не нужен определять `url_prefix`, а в противном случе, нам нужна следующая строчка в `config.yaml`.
+If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise you would need something like this in your `config.yaml`.
 
 ```yaml
 url_prefix: /sub_directory/
