@@ -5,6 +5,8 @@ title: "Kubernetes"
 
  Možete naći uputstva kako da izvršite deploy Verdaccio-a na Kubernetes klaster u [verdaccio/docker-example](https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example) repozitorijumu. Ipak, preporučujemo da instalirate Verdaccio na Kubernetes klaster tako što ćete koristiti [Helm](https://helm.sh). Helm je [Kubernetes](https://kubernetes.io) package manager koji donosi mnoge pogodnosti.
 
+<div id="codefund">''</div>
+
 ## Helm
 
 ### Setup Helm
