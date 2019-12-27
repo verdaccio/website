@@ -12,6 +12,8 @@ Hay dos variantes para instalar verdaccio utilizando este módulo Puppet:
 * Modo Aplicación (con aplicación de Puppet y sin necesidad de configurar el puppetmaster)
 * Modo Agente Maestro (con acceso del agente Puppet a su configuración a través del puppetmaster).
 
+<div id="codefund">''</div>
+
 En ambas variantes tiene que llamar explícitamente a "class nodejs {}" en su script de puppet porque el módulo de puppet-verdaccio solo define esto como un requisito, por lo que tiene toda la flexibilidad que quiera cuando instale nodejs. Desplácese hacia abajo para detalles sobre la variante del Modo Agente Maestro.
 
 Para más información:
