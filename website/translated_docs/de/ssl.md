@@ -5,6 +5,8 @@ title: "SSL-Zertifikate einrichten"
 
 Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.
 
+<div id="codefund">''</div>
+
 * Update the listen property in your `~/.config/verdaccio/config.yaml`:
 
     listen: 'https://your.domain.com/'
