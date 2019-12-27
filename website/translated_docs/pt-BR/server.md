@@ -5,6 +5,8 @@ title: "Configuração do Servidor"
 
 Este é o material mais básico para configuração do servidor em linux, mas eu achei importante documentar e compartilhar os passos que tomei para fazer o verdaccio rodar permanentemente no meu servidor. Você precisará de permissões de root (ou sudo) para o seguinte.
 
+<div id="codefund">''</div>
+
 ## Executar como um usuário separado
 
 Primeiro crie o usuário de verdaccio:
