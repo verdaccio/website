@@ -13,6 +13,8 @@ O da lori awọn itọnisọna ti o wa [nibi](http://asysadmin.tumblr.com/post/3
 3. Ṣẹda faili `config.yaml` rẹ ni aaye yii `(c:\verdaccio\config.yaml)`
 4. Iṣeto Iṣẹ Windows
 
+<div id="codefund">''</div>
+
 ## Lilo NSSM
 
 ỌNA MIRAN: (Akopọ WinSW ti sọnu nigbati mo gbiyanju lati gba lati ayelujara)
