@@ -9,6 +9,8 @@ Ang dokumento na ito ay naglalarawan ng mga ilang diskarte para ipamahagi ng Ver
 
 [CloudFormation template for deploying this stack.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
+<div id="codefund">''</div>
+
 Ang Arkitektura:
 
     Clients
