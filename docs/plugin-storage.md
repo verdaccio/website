@@ -50,6 +50,57 @@ Storage plugins are composed of two objects, the `IPluginStorage<T>` and the `IP
   }
 ```
 
+## Generate an middleware plugin
+
+For detailed info check our [plugin generator page](plugin-generator). Run the `yo` command in your terminal and follow the steps.
+
+```
+➜ yo verdaccio-plugin
+
+Just found a `.yo-rc.json` in a parent directory.
+Setting the project root at: /Users/user/verdaccio_yo_generator
+
+     _-----_     ╭──────────────────────────╮
+    |       |    │        Welcome to        │
+    |--(o)--|    │ generator-verdaccio-plug │
+   `---------´   │   in plugin generator!   │
+    ( _´U`_ )    ╰──────────────────────────╯
+    /___A___\   /
+     |  ~  |
+   __'.___.'__
+ ´   `  |° ´ Y `
+
+? What is the name of your plugin? custom-endpoint
+? Select Language typescript
+? What kind of plugin you want to create? storage
+? Please, describe your plugin awesome storage plugin
+? GitHub username or organization myusername
+? Author's Name Juan Picado
+? Author's Email jotadeveloper@gmail.com
+? Key your keywords (comma to split) verdaccio,plugin,storage,awesome,verdaccio-plugin
+   create verdaccio-plugin-storage-package-database/package.json
+   create verdaccio-plugin-storage-package-database/.gitignore
+   create verdaccio-plugin-storage-package-database/.npmignore
+   create verdaccio-plugin-storage-package-database/jest.config.js
+   create verdaccio-plugin-storage-package-database/.babelrc
+   create verdaccio-plugin-storage-package-database/.travis.yml
+   create verdaccio-plugin-storage-package-database/README.md
+   create verdaccio-plugin-storage-package-database/.eslintrc
+   create verdaccio-plugin-storage-package-database/.eslintignore
+   create verdaccio-plugin-storage-package-database/src/PackageStorage.ts
+   create verdaccio-plugin-storage-package-database/src/index.ts
+   create verdaccio-plugin-storage-package-database/src/plugin.ts
+   create verdaccio-plugin-storage-package-database/index.ts
+   create verdaccio-plugin-storage-package-database/tsconfig.json
+   create verdaccio-plugin-storage-package-database/types/index.ts
+   create verdaccio-plugin-storage-package-database/.editorconfig
+
+I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
+
+
+⸨ ░░░░░░░░░░░░░░░░░⸩ ⠋ fetchMetadata: sill pacote range manifest for @babel/plugin-syntax-jsx@^7.7.4 fetc
+```
+
 ### List Community Storage Plugins
 
 The following list of plugins are implementing the Storage API and might be used them as example.

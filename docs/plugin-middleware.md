@@ -72,7 +72,7 @@ Setting the project root at: /Users/user/verdaccio_yo_generator
 ? GitHub username or organization myusername
 ? Author's Name Juan Picado
 ? Author's Email jotadeveloper@gmail.com
-? Key your keywords (comma to split) verdaccio,plugin,auth,awesome,verdaccio-plugin
+? Key your keywords (comma to split) verdaccio,plugin,middleware,awesome,verdaccio-plugin
    create verdaccio-plugin-custom-endpoint/package.json
    create verdaccio-plugin-custom-endpoint/.gitignore
    create verdaccio-plugin-custom-endpoint/.npmignore
