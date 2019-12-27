@@ -5,6 +5,8 @@ title: "Protezione dei pacchetti"
 
 `verdaccio` consente di proteggere la pubblicazione. Per ottenere ciò è necessario configurare correttamente l'[accesso ai pacchetti](packages).
 
+<div id="codefund">''</div>
+
 ### Configurazione del pacchetto
 
 Vediamo, per esempio, la seguente configurazione. Si dispone di una serie di dipendenze che hanno come prefisso `my-company-*` e si necessita di proteggerle da anonimi o da altri utenti loggati senza credenziali.
