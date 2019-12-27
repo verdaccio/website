@@ -83,6 +83,18 @@
       "packages": {
         "title": "Iwọlesi Akopọ"
       },
+      "plugin-auth": {
+        "title": "Ohun elo Ifasẹsi"
+      },
+      "plugin-generator": {
+        "title": "Plugin Generator"
+      },
+      "plugin-middleware": {
+        "title": "Ohun elo Middleware"
+      },
+      "plugin-storage": {
+        "title": "Ohun elo Ibi ipamọ"
+      },
       "plugins": {
         "title": "Awọn ohun elo"
       },
@@ -529,6 +541,12 @@
       },
       "version-4.3.4/version-4.3.4-who-is-using": {
         "title": "Tani o nlo Verdaccio?"
+      },
+      "version-4.3.5/version-4.3.5-e2e": {
+        "title": "Idanwo Opin si Opin"
+      },
+      "version-4.4.0/version-4.4.0-plugins": {
+        "title": "Awọn ohun elo"
       }
     },
     "links": {
