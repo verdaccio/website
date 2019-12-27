@@ -21,7 +21,7 @@ interface IPluginMiddleware<T> extends IPlugin<T> {
 
 The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
 
-```
+```typescript
 public register_middlewares(
     app: Application,
     auth: IBasicAuth<CustomConfig>,
