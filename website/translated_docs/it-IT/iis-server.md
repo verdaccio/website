@@ -18,6 +18,8 @@ Queste istruzioni sono state scritte per Windows Server 2016, IIS 10, [Node.js 1
 - Assicurarsi di possedere una regola in entrata che accetti il traffico TCP alla porta in Windows Firewall
 - Con questo è tutto! Ora si può navigare nell'host e nella porta che sono stati specificati
 
+<div id="codefund">''</div>
+
 Desideravo che `verdaccio` fosse il sito di default su IIS, quindi ho intrapreso le seguenti azioni:
 
 - Ho arrestato il "Sito Web predefinito" e ho avviato esclusivamente il sito "verdaccio" su IIS
@@ -44,7 +46,7 @@ Verrà creato un file di configurazione predefinito `c:\verdaccio\verdaccio\conf
 ### start.js
 
 ```bash
-process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
@@ -108,5 +110,4 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 
 ### Risoluzione dei problemi
 
-- **L'interfaccia web non viene caricata quando è allocata su https dal momento che tenta di scaricare script su http.**  
-    Assicurarsi di aver nominato correttamente `url-prefix` nella configurazione di verdaccio. Seguire la [discussione](https://github.com/verdaccio/verdaccio/issues/622).
+- **The web interface does not load when hosted with https as it tries to download scripts over http.** Make sure that you have correctly mentioned `url_prefix` in verdaccio config. Follow the [discussion](https://github.com/verdaccio/verdaccio/issues/622).
