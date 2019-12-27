@@ -5,6 +5,8 @@ title: "Kubernetes"
 
  Możesz znaleźć instrukcje wdrażania Verdaccio w grupie Kubernetes w magazynie [verdaccio/docker-example](https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example). Jednakże, zalecana metoda do instalacji Verdaccio na Kubernetes grupie jest do użycia [Helm](https://helm.sh). Helm jest [Kubernetes](https://kubernetes.io) menedżerem pakietów, który przynosi wiele korzyści.
 
+<div id="codefund">''</div>
+
 ## Helm
 
 ### Setup Helm
