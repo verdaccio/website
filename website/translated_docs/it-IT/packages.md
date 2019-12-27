@@ -7,6 +7,8 @@ title: "Accesso ai Pacchetti"
 
 Le restrizioni di sicurezza dipendono dal plugin che si sta utilizzando, `verdaccio` usa di default il [plugin htpasswd](https://github.com/verdaccio/verdaccio-htpasswd). Se si usa un plugin differente il funzionamento potrebbe essere diverso. Il plugin predefinito non gestisce direttamente `allow_access` e `allow_publish`, ma utilizza un'alternativa interna nel caso in cui il plugin non sia pronto per questo.
 
+<div id="codefund">''</div>
+
 Per ulteriori informazioni sui permessi, visita [la sezione autenticazione nella wiki](auth.md).
 
 ### Utilizzo
@@ -149,7 +151,7 @@ packages:
   'my-company-*':
     access: $all
     publish: $authenticated
-    unpublish: 
+    unpublish:
   '@my-local-scope/*':
     access: $all
     publish: $authenticated
