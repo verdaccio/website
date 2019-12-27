@@ -5,12 +5,12 @@ title: "Plugins"
 
 Verdaccio je aplikacija koja podržava plugine. Može se proširivati na mnogo načina, dodavanjem novih metoda za autentifikaciju, dodavanjem endpoints-a ili korišćenjem custom storage-a.
 
-There are 4 types of plugins:
+There are 5 types of plugins:
 
-* Authentication
-* Middleware
-* Memorija za skladištenje
-* UI Theme
+* [Authentication](plugin-auth.md)
+* [Middleware](plugin-middleware.md)
+* [Memorija za skladištenje](plugin-storage.md)
+* Custom Theme and filters
 
 > Ako ste zainteresovani da razvijete sopstveni plugin, pročitajte [development](dev-plugins.md) sekciju.
 
@@ -38,7 +38,7 @@ Podrazumevana konfiguracija izgleda ovako, jer koristimo ugrađeni `htpasswd` pl
 ```yaml
  htpasswd:
     file: ./htpasswd
-    #max_users: 1000
+    # max_users: 1000
 ```
 
 i zameniti ih sa datim (ako se odlučite da koristite `ldap` plugin).
@@ -133,36 +133,3 @@ theme:
 * [sinopia-github-oauth-env](https://www.npmjs.com/package/sinopia-github-oauth-env) Sinopia authentication plugin sa github oauth web flow.
 
 > Svi sinopia pluginsi, trebalo bi da budu kompatibilni sa svim budućim verzijama verdaccio-a. Bilo kako bilo, ohrabrujemo naše saradnike da pređu na moderni verdaccio API i da koriste prefiks kao *verdaccio-xx-name*.
-
-## Verdaccio Plugins
-
-### Authorization Plugins
-
-* [verdaccio-bitbucket](https://github.com/idangozlan/verdaccio-bitbucket): Bitbucket authentication plugin za verdaccio.
-* [verdaccio-bitbucket-server](https://github.com/oeph/verdaccio-bitbucket-server): Bitbucket Server authentication plugin za verdaccio.
-* [verdaccio-ldap](https://www.npmjs.com/package/verdaccio-ldap): LDAP auth plugin za verdaccio.
-* [verdaccio-active-directory](https://github.com/nowhammies/verdaccio-activedirectory): Active Directory authentication plugin za verdaccio
-* [verdaccio-gitlab](https://github.com/bufferoverflow/verdaccio-gitlab): koristi GitLab Personal Access Token za autentifikaciju
-* [verdaccio-gitlab-ci](https://github.com/lab360-ch/verdaccio-gitlab-ci): Omogućava GitLab CI da authenticate protiv verdaccio.
-* [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): File plugin za Auth based on htpasswd (ugrađen), za verdaccio
-* [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Github oauth authentication plugin za verdaccio.
-* [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): GitHub OAuth plugin za the verdaccio login dugme.
-* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin to handle dynamic group associations utilizing `$group` syntax. Works best with the ldap plugin.
-
-### Middleware Plugins
-
-* [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): verdaccio plugin za *npm audit* cli support (ugrađen) (kompatibilni od verzije 3.x)
-
-* [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): verdacci plugin za *npm profile* cli support i *npm profile set password* za *verdaccio-htpasswd* baziranu autentifikaciju
-
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
-
-### Storage Plugins
-
-* [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Storage plugin za hostovanje paketa u Memory
-* [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin za hostovanje paketa na **Amazon S3**
-* [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin za hostovanje paketa na **Google Cloud Storage**
-
-## Upozorenja (Caveats)
-
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.

@@ -9,16 +9,14 @@ title: "Github Actions"
 
 ## Тестирование пакетов
 
-Verdaccio предоставляет несколько кастомных экшнов для интеграции в ваш цикл, вам нужно только добавить следующие строчки в нужный шаг в `main.workflow`.
+Verdaccio provides a custom action for easy integration in your flow by adding the following to your workflow file's `steps` key.
 
-```gha
-action "Publish Verdaccio" {
-  uses = "verdaccio/github-actions/publish@master"
-  args = ["publish"]
-}
+```yaml
+- name: Publish with Verdaccio
+  uses: verdaccio/github-actions/publish@master
 ```
 
-Этот экшн сделает `npm publish` и если публикация пройдет успешно, позволит переход в следующий шаг, в противном случае пометит шаг как неудачный. При возникновении проблем во время пбликации, экшн известит вас об этом.
+The action will perform a `npm publish` and if the publishing finishes successfully, the workflow will continue to the next step, otherwise the step will fail. If there are any issues publishing a package you will notice using this action.
 
 Внутри использется docker-образ с плагинами `verdaccio-auth-memory` и `verdaccio-memory` (аутентификация и хранилище) для ускорения процесса.
 

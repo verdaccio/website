@@ -9,16 +9,14 @@ With [GitHub Actions](https://github.com/features/actions) you can automate your
 
 ## Testing your packages
 
-Verdaccio provides a custom action for easy integration in your flow, you only add the following to your `main.workflow` in the step you consider the better for your flow.
+Verdaccio provides a custom action for easy integration in your flow by adding the following to your workflow file's `steps` key.
 
-```gha
-action "Publish Verdaccio" {
-  uses = "verdaccio/github-actions/publish@master"
-  args = ["publish"]
-}
+```yaml
+- name: Publish with Verdaccio
+  uses: verdaccio/github-actions/publish@master
 ```
 
-The action will perform a `npm publish` and if the publishing finishes successfully will allow to continue to the next step, otherwise will fails. If there is any issue publishing a package you will notice using this action.
+The action will perform a `npm publish` and if the publishing finishes successfully, the workflow will continue to the next step, otherwise the step will fail. If there are any issues publishing a package you will notice using this action.
 
 Within the image uses `verdaccio-auth-memory` and `verdaccio-memory` plugins to handle authentification and storage to speed up the process.
 
