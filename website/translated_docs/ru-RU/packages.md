@@ -7,6 +7,8 @@ title: "Доступ к пакетам"
 
 Ограничения реализуются плагинами, по умолчанию `verdaccio` использует [плагин htpasswd](https://github.com/verdaccio/verdaccio-htpasswd). Если вы используете другой плагин, то детали могут отличаться. Плагин по умолчанию не реализует `allow_access` and `allow_publish`, использется встроенная реализация, которая включается именно в такой ситуации - когда плагин не реализовал эти методы.
 
+<div id="codefund">''</div>
+
 Для более детальной информации о разрешениях, обратитесь к [странице аутентификации в вики](auth.md).
 
 ### Использование
@@ -149,7 +151,7 @@ packages:
   'my-company-*':
     access: $all
     publish: $authenticated
-    unpublish: 
+    unpublish:
   '@my-local-scope/*':
     access: $all
     publish: $authenticated
