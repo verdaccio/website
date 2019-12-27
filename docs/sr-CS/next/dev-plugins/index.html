@@ -82,162 +82,20 @@
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/sr-CS" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Developing Plugins</h1></header><article><div><span><p>Ima mnogo načina da proširite <code>verdaccio</code>, tipovi podržanih plugin-a su:</p>
 <ul>
-<li>Authentication plugins</li>
-<li>Middleware plugins (od verzije <code>v2.7.0</code>)</li>
-<li>Storage plugins (od verzije <code>v3.x</code>)</li>
+<li><a href="/docs/sr-CS/next/plugin-auth">Authentication</a></li>
+<li><a href="/docs/sr-CS/next/plugin-middleware">Middleware</a></li>
+<li><a href="/docs/sr-CS/next/plugin-storage">Memorija za skladištenje</a></li>
+<li>Theme</li>
+<li>Filter plugins</li>
 </ul>
 <blockquote>
-<p>Preporučujemo developing plugins koji koriste naše <a href="https://github.com/verdaccio/flow-types">flow type definicije</a>.</p>
+<p>We recommend developing plugins using our <a href="https://github.com/verdaccio/monorepo/tree/master/core/types">Typescript type definitions</a>.</p>
 </blockquote>
-<h2><a class="anchor" aria-hidden="true" id="authentication-plugin"></a><a href="#authentication-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Authentication Plugin</h2>
-<p>U suštini treba da vratimo objekat korišćenjem metode zvane <code>authenticate</code> koja prima 3 argumenta (<code>user, password, callback</code>).</p>
-<h3><a class="anchor" aria-hidden="true" id="api"></a><a href="#api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h3>
-<pre><code class="hljs css language-flow"><span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IPluginAuth</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">IPlugin</span> {</span>
-  login_url?: string;
-  authenticate(<span class="hljs-string">user:</span> string, <span class="hljs-string">password:</span> string, <span class="hljs-string">cb:</span> Callback): <span class="hljs-keyword">void</span>;
-  adduser(<span class="hljs-string">user:</span> string, <span class="hljs-string">password:</span> string, <span class="hljs-string">cb:</span> Callback): <span class="hljs-keyword">void</span>;
-  allow_access(<span class="hljs-string">user:</span> RemoteUser, <span class="hljs-string">pkg:</span> $Subtype&lt;PackageAccess&gt;, <span class="hljs-string">cb:</span> Callback): <span class="hljs-keyword">void</span>;
-  apiJWTmiddleware(<span class="hljs-string">user:</span> RemoteUser, <span class="hljs-string">pkg:</span> $Subtype&lt;PackageAccess&gt;, <span class="hljs-string">cb:</span> Callback): <span class="hljs-keyword">void</span>;
-  allow_publish(helpers): <span class="hljs-keyword">void</span>;
-}
-</code></pre>
-<blockquote>
-<p>Jedini opcioni su &lt;0&gt;adduser&lt;/0&gt;, &lt;0&gt;allow_access&lt;/0&gt;, &lt;0&gt;apiJWTmiddleware&lt;/0&gt; i &lt;0&gt;allow_publish&lt;/0&gt;. Verdaccio omogućava fallback u svim navedenim slučajevima.</p>
-</blockquote>
-<h4><a class="anchor" aria-hidden="true" id="apijwtmiddleware-metod"></a><a href="#apijwtmiddleware-metod" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>apiJWTmiddleware metod</h4>
-<p>Od verzije <code>v4.0.0</code></p>
-<p><code>apiJWTmiddleware</code> je uveden od <a href="https://github.com/verdaccio/verdaccio/pull/1227">PR#1227</a> kako bi se omogućila potpuna kontrola nad upravljanjem tokenima (token handler). Ako biste pregazili taj metod, onemogućili biste <code>login/adduser</code> podršku. Preporučujemo Vam da ne koristite navedeni metod, osim ako to nije apsolutno neophodno. Detaljni primer možete pronaći <a href="https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068">ovde</a>.</p>
-<h4><a class="anchor" aria-hidden="true" id="callback"></a><a href="#callback" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Callback</h4>
-<p>Jednom kada se autentifikacija izvrši, na raspolaganju su 2 opcije koje daju odgovor <code>verdaccio-u</code>.</p>
-<h6><a class="anchor" aria-hidden="true" id="onerror"></a><a href="#onerror" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OnError</h6>
-<p>Ili se nešto loše dogodilo ili auth nije bila uspešna.</p>
-<pre><code class="hljs css language-flow"><span class="hljs-function"><span class="hljs-title">callback</span><span class="hljs-params">(null, false)</span></span>
-</code></pre>
-<h6><a class="anchor" aria-hidden="true" id="onsuccess"></a><a href="#onsuccess" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>OnSuccess</h6>
-<p>Auth je uspešno objavljena.</p>
-<p><code>groups</code> čini niz stringova u koji spada korisnik.</p>
-<pre><code class="hljs"> callback(null, groups);
-</code></pre>
-<h3><a class="anchor" aria-hidden="true" id="primer"></a><a href="#primer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Primer</h3>
-<pre><code class="hljs css language-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Auth</span>(<span class="hljs-params">config, stuff</span>) </span>{
-  <span class="hljs-keyword">var</span> self = <span class="hljs-built_in">Object</span>.create(Auth.prototype);
-  self._users = {};
-
-  <span class="hljs-comment">// config for this module</span>
-  self._config = config;
-
-  <span class="hljs-comment">// verdaccio logger</span>
-  self._logger = stuff.logger;
-
-  <span class="hljs-comment">// pass verdaccio logger to ldapauth</span>
-  self._config.client_options.log = stuff.logger;
-
-  <span class="hljs-keyword">return</span> self;
-}
-
-Auth.prototype.authenticate = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">user, password, callback</span>) </span>{
-  <span class="hljs-keyword">var</span> LdapClient = <span class="hljs-keyword">new</span> LdapAuth(self._config.client_options);
-  ....
-  LdapClient.authenticate(user, password, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, ldapUser</span>) </span>{
-    ...
-    var groups;
-     ...
-    callback(<span class="hljs-literal">null</span>, groups);
-  });
-};
-
-<span class="hljs-built_in">module</span>.exports = Auth;
-</code></pre>
-<p>I na kraju, konfiguracija izgleda ovako:</p>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  htpasswd:</span>
-<span class="hljs-attr">    file:</span> <span class="hljs-string">./htpasswd</span>
-</code></pre>
-<p>Pri čemu je <code>htpasswd</code> sufiks za ime plugina. Primer: <code>verdaccio-htpasswd</code> i ostatak body-ja sadržaće parametre za konfigurisanje plugin-a.</p>
-<h2><a class="anchor" aria-hidden="true" id="middleware-plugin"></a><a href="#middleware-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Middleware Plugin</h2>
-<p>Middleware plugins imaju moć da modifikuju API layer, bilo dodavanjem novih endpoints ili intercepting zahteva.</p>
-<pre><code class="hljs css language-flow"><span class="hljs-keyword">interface</span> <span class="hljs-symbol">verdaccio</span>$<span class="hljs-symbol">IPluginMiddleware</span> <span class="hljs-symbol">extends</span> <span class="hljs-symbol">verdaccio</span>$<span class="hljs-symbol">IPlugin</span> {
-  register_middlewares(app: any, auth: IBasicAuth, storage: IStorageManager): <span class="hljs-built_in">void</span>;
-}
-</code></pre>
-<h3><a class="anchor" aria-hidden="true" id="register_middlewares"></a><a href="#register_middlewares" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>register_middlewares</h3>
-<p>Metod omogućava potpuni pristup do authentification i storage preko <code>auth</code> i <code>storage</code>. <code>app</code> je express aplikacija koja Vam omogućava da dodajete nove endpoints.</p>
-<blockquote>
-<p>Prilično dobri primeri za middleware plugin su <a href="https://github.com/soundtrackyourbrand/sinopia-github-oauth">sinopia-github-oauth</a> i <a href="https://github.com/verdaccio/verdaccio-audit">verdaccio-audit</a>.</p>
-</blockquote>
-<h3><a class="anchor" aria-hidden="true" id="api-1"></a><a href="#api-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h3>
-<pre><code class="hljs css language-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">register_middlewares</span>(<span class="hljs-params">expressApp, authInstance, storageInstance</span>) </span>{
-   <span class="hljs-comment">/* more stuff */</span>
-}
-</code></pre>
-<p>Kako bismo registrovali middleware, potreban nam je objekat sa jedinstvenim metodom zvanim <code>register_middlewares</code> koji će primiti 3 argumenta (<code>expressApp, auth, storage</code>). <em>Auth</em> je instanca za autentifikaciju, a <em>storage</em> je takođe glavna instanca za Storage koja će Vam dati pristup svim akcijama koje se odnose na storage.</p>
-<h2><a class="anchor" aria-hidden="true" id="storage-plugin"></a><a href="#storage-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Plugin</h2>
-<p>Verdaccio po fabričkim podešavanjima koristi file system storage plugin <a href="https://github.com/verdaccio/local-storage">local-storage</a>, ali, počevši od verzije <code>verdaccio@3.x</code> možete ubaciti custom storage plugin i tako zameniti postojeći način izvršavanja (behaviour).</p>
-<h3><a class="anchor" aria-hidden="true" id="api-2"></a><a href="#api-2" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h3>
-<p>Za storage API, stvari su nešto komplikovanije, pošto ćete morati da kreirate klasu koja vraća <code>IPluginStorage</code> implementaciju. Ispod imate detaljno objašnjenje.</p>
-<pre><code class="hljs css language-flow">class LocalDatabase&lt;IPluginStorage&gt;{
-  constructor(config: $Subtype&lt;verdaccio$Config&gt;, logger: verdaccio$Logger): ILocalData;
-}
-
-interface IPluginStorage {
-  logger: verdaccio$Logger;
-    config: $Subtype&lt;verdaccio$Config&gt;;
-  add(name: <span class="hljs-built_in">string</span>, callback: verdaccio$Callback): <span class="hljs-literal">void</span>;
-  remove(name: <span class="hljs-built_in">string</span>, callback: verdaccio$Callback): <span class="hljs-literal">void</span>;
-  get(callback: verdaccio$Callback): <span class="hljs-literal">void</span>;
-  getSecret(): Promise&lt;<span class="hljs-built_in">string</span>&gt;;
-  setSecret(secret: <span class="hljs-built_in">string</span>): Promise&lt;any&gt;;
-  getPackageStorage(packageInfo: <span class="hljs-built_in">string</span>): verdaccio$IPackageStorage;
-  search(onPackage: verdaccio$Callback, onEnd: verdaccio$Callback, validateName: Function): <span class="hljs-literal">void</span>;
-}
-
-interface IPackageStorageManager {
-  path: <span class="hljs-built_in">string</span>;
-  logger: verdaccio$Logger;
-  writeTarball(name: <span class="hljs-built_in">string</span>): verdaccio$IUploadTarball;
-  readTarball(name: <span class="hljs-built_in">string</span>): verdaccio$IReadTarball;
-  readPackage(fileName: <span class="hljs-built_in">string</span>, callback: verdaccio$Callback): <span class="hljs-literal">void</span>;
-  createPackage(name: <span class="hljs-built_in">string</span>, value: verdaccio$Package, cb: verdaccio$Callback): <span class="hljs-literal">void</span>;
-  deletePackage(fileName: <span class="hljs-built_in">string</span>, callback: verdaccio$Callback): <span class="hljs-literal">void</span>;
-  removePackage(callback: verdaccio$Callback): <span class="hljs-literal">void</span>;
-  updatePackage(pkgFileName: <span class="hljs-built_in">string</span>,
-                updateHandler: verdaccio$Callback,
-                onWrite: verdaccio$Callback,
-                transformPackage: Function,
-                onEnd: verdaccio$Callback): <span class="hljs-literal">void</span>;
-  savePackage(fileName: <span class="hljs-built_in">string</span>, json: verdaccio$Package, callback: verdaccio$Callback): <span class="hljs-literal">void</span>;
-}
-
-class verdaccio$IUploadTarball extends stream$PassThrough {
-  <span class="hljs-keyword">abort</span>: Function;
-  done: Function;
-  _transform: Function;
-  <span class="hljs-keyword">abort</span>(): <span class="hljs-literal">void</span>;
-  done(): <span class="hljs-literal">void</span>;
-}
-
-class verdaccio$IReadTarball extends stream$PassThrough {
-  <span class="hljs-keyword">abort</span>: Function;
-  <span class="hljs-keyword">abort</span>(): <span class="hljs-literal">void</span>;
-}
-</code></pre>
-<blockquote>
-<p>Storage API je i dalje u eksperimentalnoj fazi i moguće je da će pretrpeti neke izmene u narednim verzijama. Za više informacija o Storage API molimo Vas da pratite <a href="https://github.com/verdaccio/flow-types">types definicije u našem zvaničnom repozitorijumu</a>.</p>
-</blockquote>
-<h3><a class="anchor" aria-hidden="true" id="storage-examples"></a><a href="#storage-examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Examples</h3>
-<p>Navedena lista plugina implementuje Storage API i možete ih koristiti kao primere.</p>
-<ul>
-<li><a href="https://github.com/verdaccio/verdaccio-memory">verdaccio-memory</a></li>
-<li><a href="https://github.com/verdaccio/local-storage">local-storage</a></li>
-<li><a href="https://github.com/verdaccio/verdaccio-google-cloud">verdaccio-google-cloud</a></li>
-<li><a href="https://github.com/Remitly/verdaccio-s3-storage/tree/s3">verdaccio-s3-storage</a></li>
-</ul>
-<blockquote>
-<p>Da li ste voljni da date doprinos razvoju novih Storage Plugins? <a href="https://github.com/verdaccio/verdaccio/issues/103#issuecomment-357478295">Kliknite ovde.</a></p>
-</blockquote>
+<h1><a class="anchor" aria-hidden="true" id="other-plugins"></a><a href="#other-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Other plugins</h1>
+<p>The following plugins are valid and in process of incubation.</p>
 <h2><a class="anchor" aria-hidden="true" id="theme-plugin"></a><a href="#theme-plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Theme Plugin</h2>
 <p>The plugin must return a function that returns a <strong>string</strong>. The string should be the absolute location of the root of your user interface.</p>
-<h3><a class="anchor" aria-hidden="true" id="api-3"></a><a href="#api-3" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h3>
+<h3><a class="anchor" aria-hidden="true" id="api"></a><a href="#api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h3>
 <pre><code class="hljs css language-javascript"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
 
 <span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">...<span class="hljs-built_in">arguments</span></span>) =&gt;</span> {
@@ -253,11 +111,11 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 <p>Since <a href="https://github.com/verdaccio/verdaccio/pull/1313"><code>4.1.0</code></a></p>
 <p>Filter plugins were introduced due a <a href="https://github.com/verdaccio/verdaccio/issues/818">request</a> in order to be able to filter metadata from uplinks.</p>
 <p>More <a href="https://github.com/verdaccio/verdaccio/pull/1161">info in the PR</a>.</p>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr">filters:</span>  
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">filters:</span>
 <span class="hljs-attr">   storage-filter-blackwhitelist:</span>
 <span class="hljs-attr">     filter_file:</span> <span class="hljs-string">/path/to/file</span>
 </code></pre>
-<h3><a class="anchor" aria-hidden="true" id="api-4"></a><a href="#api-4" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h3>
+<h3><a class="anchor" aria-hidden="true" id="api-1"></a><a href="#api-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h3>
 <p>The method <code>filter_metadata</code> will allow you to filter metadata that comes from any uplink, it is <code>Promise</code> based and has to return the same metadata modified.</p>
 <blockquote>
 <p>Do not remove properties from the metadata, try to do not mutate rather return a new object.</p>
@@ -265,7 +123,7 @@ class verdaccio$IReadTarball extends stream$PassThrough {
 <pre><code class="hljs">interface IPluginStorageFilter&lt;T&gt; extends IPlugin&lt;T&gt; {
     filter_metadata(packageInfo: Package): Promise&lt;Package&gt;;
 }</code></pre>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/sr-CS/next/plugins"><span class="arrow-prev">← </span><span>Plugins</span></a><a class="docs-next button" href="/docs/sr-CS/next/plugin-generator"><span>Dalje</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#authentication-plugin">Authentication Plugin</a><ul class="toc-headings"><li><a href="#api">API</a></li><li><a href="#primer">Primer</a></li></ul></li><li><a href="#middleware-plugin">Middleware Plugin</a><ul class="toc-headings"><li><a href="#register_middlewares">register_middlewares</a></li><li><a href="#api-1">API</a></li></ul></li><li><a href="#storage-plugin">Storage Plugin</a><ul class="toc-headings"><li><a href="#api-2">API</a></li><li><a href="#storage-examples">Storage Examples</a></li></ul></li><li><a href="#theme-plugin">Theme Plugin</a><ul class="toc-headings"><li><a href="#api-3">API</a></li><li><a href="#theme-example">Theme Example</a></li></ul></li><li><a href="#filter-plugin">Filter Plugin</a><ul class="toc-headings"><li><a href="#api-4">API</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/sr-CS/what-is-verdaccio.html">Getting Started</a><a href="/docs/sr-CS/docker.html">Docker</a><a href="/docs/sr-CS/configuration.html">Configuration</a><a href="/docs/sr-CS/logo">Logos</a></div><div><h5>Community</h5><a href="/sr-CS/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/sr-CS/next/plugins"><span class="arrow-prev">← </span><span>Plugins</span></a><a class="docs-next button" href="/docs/sr-CS/next/plugin-generator"><span>Plugin Generator</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#theme-plugin">Theme Plugin</a><ul class="toc-headings"><li><a href="#api">API</a></li><li><a href="#theme-example">Theme Example</a></li></ul></li><li><a href="#filter-plugin">Filter Plugin</a><ul class="toc-headings"><li><a href="#api-1">API</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/sr-CS/what-is-verdaccio.html">Getting Started</a><a href="/docs/sr-CS/docker.html">Docker</a><a href="/docs/sr-CS/configuration.html">Configuration</a><a href="/docs/sr-CS/logo">Logos</a></div><div><h5>Community</h5><a href="/sr-CS/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
