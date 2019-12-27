@@ -7,6 +7,8 @@ title: "配置文件"
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
+<div id="codefund">''</div>
+
 ## 默认配置
 
 默认配置支持 ** 私有(scoped) ** 包, 并允许匿名访问非私有包, 但只有 ** 已登陆用户才能发布包**。
