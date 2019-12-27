@@ -18,6 +18,8 @@ These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.
 - Hãy chắc chắn bạn có yêu cầu gửi đến rằng chấp nhận lưu lượng truy cập TCP vào cổng tường lửa của Windows
 - Sau đấy bạn có thể điều hướng đến máy chủ và cổng mà bạn chỉ định
 
+<div id="codefund">''</div>
+
 Tôi muốn trang web `verdaccio` trở thành trang mặc định trong IIS, vì vậy tôi đã làm như sau:
 
 - Tôi đã hủy bỏ "trang web mặc định" và chỉ bắt đầu trang "verdaccio" trong IIS
@@ -44,7 +46,7 @@ Tệp tin cấu hình mặc định `c:\verdaccio\verdaccio\config.yaml` sẽ đ
 ### start.js
 
 ```bash
-process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
@@ -108,5 +110,4 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 
 ### Khắc phục sự cố
 
-- **Không thể tải giao diện web được lưu trữ trên https vì web luôn tải tập lệnh từ http.**  
-    Hãy đảm bảo việc bạn nhập `url_prefix` chính xác trong cấu hình verdaccio. Vui lòng vào [discussion](https://github.com/verdaccio/verdaccio/issues/622) để cùng thảo luận.
+- **The web interface does not load when hosted with https as it tries to download scripts over http.** Make sure that you have correctly mentioned `url_prefix` in verdaccio config. Follow the [discussion](https://github.com/verdaccio/verdaccio/issues/622).
