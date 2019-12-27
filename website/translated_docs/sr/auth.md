@@ -5,6 +5,8 @@ title: "Authentification"
 
 Аутентификација је везана за auth [plugin](plugins.md) који користите. Ограничења пакета су дефинисана преко [Package Access](packages.md).
 
+<div id="codefund">''</div>
+
 Аутентификацију клијента врши сам `npm` клијент. Након пријаве на апликацију:
 
 ```bash
