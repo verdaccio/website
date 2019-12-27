@@ -5,6 +5,8 @@ title: "Authentification"
 
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions also is handled by the [Package Access](packages.md).
 
+<div id="codefund">''</div>
+
 The client authentification is handled by `npm` client itself. Once you login to the application:
 
 ```bash
