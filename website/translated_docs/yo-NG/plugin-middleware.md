@@ -5,9 +5,9 @@ title: "Ohun elo Middleware"
 
 ## What's an Middleware Plugin?
 
-<div id="codefund">''</div>
-
 Middleware plugins have the capability to modify the API (web and cli) layer, either adding new endpoints or intercepting requests.
+
+<div id="codefund">''</div>
 
 ### API
 
