@@ -5,6 +5,8 @@ title: "Notificações"
 
 Notify foi criado principalmente para ser usado com webhooks entrantes para Slack, mas também fornecerá uma carga útil simples para qualquer endpoint. Atualmente, apenas ativo para comando `npm publish`.
 
+<div id="codefund">''</div>
+
 ## Utilização
 
 Um exemplo com um hook de **HipChat**, **Stride** e **Google Hangouts Chat**:
@@ -39,7 +41,7 @@ notify:
      method: POST
      headers: [{'Content-Type': 'application/json'}, {'authorization': 'Bearer secretToken'}]
      endpoint: https://api.atlassian.com/site/{cloudId}/conversation/{conversationId}/message
-     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
+     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'
 ```
 
 ## Modelo
