@@ -5,6 +5,8 @@ title: "Configurazione di Proxy inverso"
 
 L'utilizzo di un proxy inverso è una pratica comune. Le configurazioni seguenti sono le più raccomandate e utilizzate.
 
+<div id="codefund">''</div>
+
 # Apache
 
 Apache e `mod_proxy` **non dovrebbero decodificare/codificare gli slash** e dovrebbero lasciarli così come sono:
@@ -151,7 +153,7 @@ Lo snippet seguente è un esempio completo di `docker` che può essere testato n
 
 ### Sottodirectory
 
-Se si sta utilizzando l'intero URL per Verdaccio, non è necessario definire un `url_prefix`, altrimenti nella `config.yaml` servirebbe qualcosa come questo:
+If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise you would need something like this in your `config.yaml`.
 
 ```yaml
 url_prefix: /sub_directory/
