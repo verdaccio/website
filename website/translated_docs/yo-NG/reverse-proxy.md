@@ -9,10 +9,24 @@ Lilo aṣoju ikọkọ alayipada jẹ iṣe ti o wọpọ. Awọn iṣeto wọny
 
 Apache ati `mod_proxy` ko **yẹ ko tumọ koodu/di koodu awọn slash** ki o si fi wọn silẹ bi wọn se wa:
 
+For installing at relative path, `/npm`, on the server
+
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
       ProxyPass /npm http://127.0.0.1:4873 nocanon
       ProxyPassReverse /npm http://127.0.0.1:4873
+    </VirtualHost>
+    
+
+For installing at root path, `/`, on the server
+
+    <VirtualHost *:80>
+      ServerName your.domain.com
+      ServerAdmin hello@your.domain.com
+      ProxyPreserveHost On
+      AllowEncodedSlashes NoDecode
+      ProxyPass / http://127.0.0.1:4873/ nocanon
+      ProxyPassReverse / http://127.0.0.1:4873/
     </VirtualHost>
     
 
