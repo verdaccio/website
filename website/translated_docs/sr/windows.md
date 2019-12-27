@@ -13,6 +13,8 @@ title: "Инсталирајте као Windows Service"
 3. Креирајте свој `config.yaml` фајл на овој локацији `(c:\verdaccio\config.yaml)`
 4. Windows Service Setup
 
+<div id="codefund">''</div>
+
 ## Коришћење NSSM
 
 АЛТЕРНАТИВНИ МЕТОД: (WinSW пакет је недостајао када је један од наших сарадника покушао да га преузме)
