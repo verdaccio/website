@@ -13,6 +13,8 @@ Librement basé sur les instructions trouvées [ici](http://asysadmin.tumblr.com
 3. Créer votre fichier `confi.yaml` dans cet emplacement `(c:\verdaccio\config.yaml)`
 4. Configurer le service Windows
 
+<div id="codefund">''</div>
+
 ## Utilisation de NSSM
 
 MÉTHODE ALTERNATIVE: (le paquet WinSW n'était pas présent lorsque j'ai essayé de le télécharger)
