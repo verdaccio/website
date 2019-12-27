@@ -5,6 +5,8 @@ title: "Autentizace"
 
 Ověření je svázené s [doplňkem](plugins.md) pro ověření, který používáte. Omezení balíčků je též zpracování v [Přístupu k balíčkům](packages.md).
 
+<div id="codefund">''</div>
+
 Ověření klienta provádí sám klient `npm`. Jakmile se přihlásíte do aplikace:
 
 ```bash
