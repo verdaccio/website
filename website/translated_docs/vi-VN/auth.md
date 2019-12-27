@@ -5,6 +5,8 @@ title: "Yêu cầu xác thực"
 
 Cài đặt yêu cầu xác thực có liên quan chặt chẽ đến [plugin](plugins.md) mà bạn đang sử dụng. Giới hạn truy cập gói cũng được kiểm soát thông qua [quyền truy cập gói](packages.md).
 
+<div id="codefund">''</div>
+
 Quá trình xác thực của khách hàng được xử lý bởi chính công cụ `npm`. Bạn có thể đăng nhập vào ứng dụng bằng lệnh sau:
 
 ```bash
