@@ -5,12 +5,12 @@ title: "Awọn ohun elo"
 
 Verdaccio jẹ ohun elo alasomọ. O le se fagun ni ọpọlọpọ awọn ọna, boya awọn ọna ifasẹsi tuntun, sise afikun awọn aaye opin tabi lilo akanṣe ibi ipamọ.
 
-Oriṣi awọn asomọ mẹrin lo wa:
+There are 5 types of plugins:
 
-* Ifasẹsi
-* Middleware
-* Ibi ipamọ
-* Akori UI
+* [Ifasẹsi](plugin-auth.md)
+* [Middleware](plugin-middleware.md)
+* [Ibi ipamọ](plugin-storage.md)
+* Custom Theme and filters
 
 > Ti o ba nifẹ lati se agbedide asomọ ti ara rẹ, ka [abala](dev-plugins.md) agbedide.
 
@@ -38,7 +38,7 @@ Iṣeto atilẹwa naa dabi iru eyi, nitoripe a lo ohun elo alakọmọ `htpasswd
 ```yaml
  htpasswd:
     file: ./htpasswd
-    #max_users: 1000
+    # max_users: 1000
 ```
 
 ati rirọpo wọn pẹlu (toba sẹlẹ pe o pinnu lati lo ohun elo `ldap`.
@@ -133,37 +133,3 @@ theme:
 * [sinopia-github-oauth-env](https://www.npmjs.com/package/sinopia-github-oauth-env) Ohun elo ifasẹsi Sinopia pẹlu github oauth web flow.
 
 > Gbogbo awọn ohun elo sinopia gbọdọ ni ibaramu pẹlu gbogbo awọn ẹya ọjọ iwaju verdaccio. Amọ sa, a gba awọn olulọwọsi niyanju lati ṣi wọn nidi lọ si API igbalode ti verdaccio àti lílo ọrọ ibẹrẹ bii *verdaccio-xx-name*.
-
-## Awọn ohun elo Verdaccio
-
-### Awọn ohun elo Ifunlasẹ
-
-* [verdaccio-bitbucket](https://github.com/idangozlan/verdaccio-bitbucket): Ohun elo ifasẹsi Bitbucket fun verdaccio.
-* [verdaccio-bitbucket-server](https://github.com/oeph/verdaccio-bitbucket-server): Ohun elo ifasẹsi Olupese ti Bitbucket fun verdaccio.
-* [verdaccio-ldap](https://www.npmjs.com/package/verdaccio-ldap): Ohun elo ifasẹsi LDAP fun sinopia.
-* [verdaccio-active-directory](https://github.com/nowhammies/verdaccio-activedirectory): Ohun elo ifasẹsi Active Directory fun verdaccio
-* [verdaccio-gitlab](https://github.com/bufferoverflow/verdaccio-gitlab): lo Aami Iwọlesi Aladani ti GitLab lati se ifasẹsi
-* [verdaccio-gitlab-ci](https://github.com/lab360-ch/verdaccio-gitlab-ci): Ṣe imuṣiṣẹ GitLab CI lati se ifasẹsi ni ilodi si verdaccio.
-* [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): Ifasẹsi to da lori ohun elo faili htpasswd (alakọ-sinu) fun verdaccio
-* [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Ohun elo ifasẹsi Github oauth fun verdaccio.
-* [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): Ohun elo GitHub OAuth fun bọtini iwọle verdaccio naa.
-* [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Ohun elo lati mojuto awọn ẹgbẹ akojọ alaidurolojukan ti nipa lilo sintasi `$group`. O ma n ṣiṣẹ dara julọ pẹlu ohun elo ldap.
-
-### Awọn ohun elo Middleware
-
-* [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): ohun elo verdaccio fun *npm audit* atilẹyin cli (alakọ-sinu) (ni ibamu lati 3.x)
-
-* [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): ohun elo verdaccio fun atilẹyin cli *npm profile* ati *npm profile set password* fun sise ifasẹsi to da lori *verdaccio-htpasswd*
-
-* [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Ohun elo Verdaccio middleware lati ṣe àtúnjúwe si https ti o ba ṣeto x-forwarded-proto gẹgẹbi akọsori
-
-### Awọn ohun elo Ibi ipamọ
-
-* [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Ohun elo ibi ipamọ to wa lati gbalejo awọn akopọ ni Iranti
-* [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Ohun elo ibi ipamọ to wa lati gbalejo awọn akopọ **Amazon S3**
-* [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Ohun elo ibi ipamọ to wa lati gbalejo awọn akopọ **Google Cloud Storage**
-* [verdaccio-minio](https://github.com/barolab/verdaccio-minio) A verdaccio plugin for storing data in Minio
-
-## Awọn akiyesi
-
-> Ko kin ṣe gbogbo awọn ohun elo asomọ wọnyi ni o n jẹ didanwo nigbagbogbo, diẹ ninu awọn wọn le ma ṣiṣẹ rara. Jọwọ ti o ba ri eyikeyi isoro kankan ma se kọ lati fi to ẹniti to ni ohun elo naa leti.
