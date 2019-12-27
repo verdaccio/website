@@ -5,6 +5,8 @@ title: "Configuração de Proxy Reverso"
 
 Usar um proxy reverso é uma prática comum. As seguintes configurações são as mais recomendadas e usadas.
 
+<div id="codefund">''</div>
+
 # Apache
 
 Apache e `mod_proxy` **não devem decodificar/codificar barras** e deixa-las como estão:
@@ -151,7 +153,7 @@ O trecho a seguir é um exemplo completo de `docker` que está disponível para 
 
 ### Subdiretório
 
-Se toda a URL estiver sendo usada pelo Verdaccio, você não precisa definir um `url_prefix`, caso contrário você precisaria de algo assim em seu `config.yaml`.
+If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise you would need something like this in your `config.yaml`.
 
 ```yaml
 url_prefix: /sub_directory/
