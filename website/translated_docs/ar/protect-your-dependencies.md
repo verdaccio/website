@@ -5,6 +5,8 @@ title: "حماية الحُزم"
 
 `verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
 
+<div id="codefund">''</div>
+
 ### Package configuration
 
 Let's see for instance the following set up. You have a set of dependencies what are prefixed with `my-company-*` and you need to protect them from anonymous or another logged user without right credentials.
