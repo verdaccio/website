@@ -7,6 +7,8 @@ title: "Фајл за конфигурисање"
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
+<div id="codefund">''</div>
+
 ## Подразумеване поставке (Default Configuration)
 
 Подразумеване поставке подржавају **scoped** пакете за све кориснике, али само **ауторизованим корисницима омогућавају да публикују**.
