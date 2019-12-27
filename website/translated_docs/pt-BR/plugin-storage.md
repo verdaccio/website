@@ -5,9 +5,9 @@ title: "Plugin de Armazenamento"
 
 ## What's an Storage Plugin?
 
-<div id="codefund">''</div>
-
 Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage). The default storge can be easily replaced, either using a community plugin or creating one by your own.
+
+<div id="codefund">''</div>
 
 ### API
 
