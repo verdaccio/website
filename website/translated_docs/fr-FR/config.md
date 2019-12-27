@@ -7,6 +7,8 @@ Ce fichier est le pilier de verdaccio où vous pouvez modifier le comportement p
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
+<div id="codefund">''</div>
+
 ## Configuration par défaut
 
 La configuration par défaut a un support pour les packs **portée(scoped)** et permet à tout utilisateur à accéder à tous les packs, mais seuls **les utilisateurs authentifiés qui peuvent publier**.
