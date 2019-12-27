@@ -5,6 +5,8 @@ title: "Подешавање SSL Сертификата"
 
 Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.
 
+<div id="codefund">''</div>
+
 * Ажурирајте својство listen у свом `~/.config/verdaccio/config.yaml`:
 
     listen: 'https://your.domain.com/'
