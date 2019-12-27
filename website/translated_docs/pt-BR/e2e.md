@@ -5,6 +5,8 @@ title: "Teste End-to-End"
 
 Alguns projetos organizam pacotes em repositórios multi-pacotes ou [mono repositórios](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). O teste E2E é um tópico que geralmente só é relevante para as Interfaces de usuário, porém do ponto de vista do Node.js, **a publicação de pacotes também requerem testes**.
 
+<div id="codefund">''</div>
+
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Solution: a local npm registry. <a href="https://t.co/kvcyVANVSK">https://t.co/kvcyVANVSK</a></p>&mdash; Dan Abramov (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/951427674844680192?ref_src=twsrc%5Etfw">11 de Janeiro de 2018</a></blockquote>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -49,7 +51,7 @@ sh -c "npm --registry $local_registry publish"
 
 * [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests) *(+73.5k ⭐️)*
 * [Storybook](https://github.com/storybooks/storybook) *(+44k ⭐️)*
-* [Gatsby](https://github.com/gatsbyjs/gatsby) *(+40k ⭐️) 
+* [Gatsby](https://github.com/gatsbyjs/gatsby) *(+40k ⭐️)
 * [Babel.js](https://github.com/babel/babel) *(+35k ⭐️)*
 * [Uppy](https://github.com/transloadit/uppy) *(+21k ⭐️)*
 * [Aurelia Framework](https://github.com/aurelia) *(+12k ⭐️)*
