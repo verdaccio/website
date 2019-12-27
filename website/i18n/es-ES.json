@@ -83,6 +83,18 @@
       "packages": {
         "title": "Acceso a Paquetes"
       },
+      "plugin-auth": {
+        "title": "Extensión de Autenticación"
+      },
+      "plugin-generator": {
+        "title": "Plugin Generator"
+      },
+      "plugin-middleware": {
+        "title": "Extensión de Middleware"
+      },
+      "plugin-storage": {
+        "title": "Extensión de Almacenamiento"
+      },
       "plugins": {
         "title": "Plugins"
       },
@@ -529,6 +541,12 @@
       },
       "version-4.3.4/version-4.3.4-who-is-using": {
         "title": "Quien usa Verdaccio?"
+      },
+      "version-4.3.5/version-4.3.5-e2e": {
+        "title": "Pruebas End to End"
+      },
+      "version-4.4.0/version-4.4.0-plugins": {
+        "title": "Plugins"
       }
     },
     "links": {
