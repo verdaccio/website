@@ -3,14 +3,16 @@ id: node-api
 title: "Api Node"
 ---
 
-Verdaccio pode ser chamado programaticamente. A API do nó foi introduzida após a versão `verdaccio@3.0.0-alpha.10`.
+Verdaccio can be invoked programmatically. The node API was introduced after version `verdaccio@3.0.0`.
 
 ## Utilização
+
+<div id="codefund">''</div>
 
 #### Programação
 
 ```js
- import startServer from 'verdaccio'; 
+ import startServer from 'verdaccio';
 
  startServer(configJsonFormat, 6000, store, '1.0.0', 'verdaccio',
     (webServer, addrs, pkgName, pkgVersion) => {
