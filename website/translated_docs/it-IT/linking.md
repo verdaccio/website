@@ -13,6 +13,8 @@ uplinks:
 
 È possibile collegare registri multipli: il documento seguente guiderà attraverso alcune utili configurazioni.
 
+<div id="codefund">''</div>
+
 ## Utilizzo dello Scope di Associazione
 
 L'unica maniera per accedere a registri multipli utilizzando il `.npmrc` è la funzione scope come segue:
