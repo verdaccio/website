@@ -83,6 +83,18 @@
       "packages": {
         "title": "패키지 접근"
       },
+      "plugin-auth": {
+        "title": "Authentication Plugin"
+      },
+      "plugin-generator": {
+        "title": "Plugin Generator"
+      },
+      "plugin-middleware": {
+        "title": "Middleware Plugin"
+      },
+      "plugin-storage": {
+        "title": "Storage Plugin"
+      },
       "plugins": {
         "title": "플러그인"
       },
@@ -529,6 +541,12 @@
       },
       "version-4.3.4/version-4.3.4-who-is-using": {
         "title": "Who is using Verdaccio?"
+      },
+      "version-4.3.5/version-4.3.5-e2e": {
+        "title": "End to End testing"
+      },
+      "version-4.4.0/version-4.4.0-plugins": {
+        "title": "플러그인"
       }
     },
     "links": {
