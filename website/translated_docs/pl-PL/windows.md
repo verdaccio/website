@@ -13,6 +13,8 @@ Ogólnie, bazując na instrukcji podanej [tutaj](http://asysadmin.tumblr.com/pos
 3. Stwórz swój plik `config.yaml` w następującej lokalizacji `(c:\verdaccio\config.yaml)`
 4. Instalacja usługi systemu Windows
 
+<div id="codefund">''</div>
+
 ## Using NSSM
 
 ALTERNATIVE METHOD: (WinSW package was missing when I tried to download it)
