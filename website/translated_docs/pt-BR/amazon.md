@@ -9,6 +9,8 @@ Este documento descreve várias abordagens para implantar o Verdaccio na nuvem d
 
 [Template para implantar este stack na CloudFormation.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
+<div id="codefund">''</div>
+
 Arquitetura:
 
     Clients
