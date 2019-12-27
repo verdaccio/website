@@ -18,6 +18,8 @@ Awọn ilana wọnyi ni a kọ fun Windows Server 2016, IIS 10, [Node.js 10.15.0
 - Ri daju pe o ni ofin to n wọle bọ to tẹwọgba abẹwo TCP si ibudo naa ni Awọn aabo ayelujara ti Windows
 - Ohun niyẹn! Bayi o le ṣe ilọ kiri si agbalejo naa ati ibudo ti o yan ni pato
 
+<div id="codefund">''</div>
+
 Mo fẹ jẹ ki aaye ayelujara `verdaccio` jẹ aaye ayelujara atilẹwa ni IIS fun idi eyi mo se awọn ohun wọnyii:
 
 - Mo da "Aaye Ayelujara Atilẹwa" duro atipe mo kan bẹrẹ aaye ayelujara "verdaccio" nikan ni IIS
@@ -44,7 +46,7 @@ Faili iṣeto atilẹwa kan maa jẹ ṣiṣẹda `c:\verdaccio\verdaccio\config
 ### start.js
 
 ```bash
-process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
@@ -108,5 +110,4 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 
 ### Titu laasigbo sita
 
-- **Intafeesi wẹẹbu naa ko kin ṣiṣẹ nigbati o ba jẹ gbigbalejo pẹlu https pẹlu bi o ti ma n gbìyànjú lati gba awọn iwe afọwọkọ sori ẹrọ lori http.**  
-    Ri daju pe o ti darukọ `url_prefix` ni deede ni iṣeto verdaccio. Se atẹle [ijiroro](https://github.com/verdaccio/verdaccio/issues/622).
+- **The web interface does not load when hosted with https as it tries to download scripts over http.** Make sure that you have correctly mentioned `url_prefix` in verdaccio config. Follow the [discussion](https://github.com/verdaccio/verdaccio/issues/622).
