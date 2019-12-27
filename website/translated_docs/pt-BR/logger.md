@@ -5,6 +5,8 @@ title: "Logs"
 
 Como qualquer aplicativo da web, o verdaccio possui um logger integrado personalizável. Você pode definir vários tipos de saídas.
 
+<div id="codefund">''</div>
+
 ```yaml
 logs:
   # console output
