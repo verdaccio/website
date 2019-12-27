@@ -5,6 +5,8 @@ title: "Best Practices"
 
 Der folgende Leitfaden ist eine Liste der gesammelten Best Practices, die wir in der Regel allen Benutzern empfehlen. Diese Anleitung ist nicht verpflichtend. Sie können die Empfehlungen entsprechend Ihren eigenen Bedürfnissen auswählen.
 
+<div id="codefund">''</div>
+
 **Zögern Sie nicht, der Verdaccio-Community Ihre Empfehlungen vorzuschlagen.**.
 
 ## Private Registry
