@@ -12,6 +12,8 @@ Awọn orisi ọna meji lo wa lati fi verdaccio sori ẹrọ nipa lilo modulu Pu
 * Ipo-iṣamulo (pẹlu puppet-apply ati pe ko nilo siseto puppetmaster)
 * Ipo-Master-Agent (pẹlu puppet-agent ti n wọle si iṣeto rẹ nipasẹ puppetmaster).
 
+<div id="codefund">''</div>
+
 Ninu awọn orisi mejeeji o ni lati pe ipe "kilasi nodejs {}" kedere ninu iwe afọwọkọ puppet rẹ nitori modulu puppet-verdaccio naa kan ma n ṣe asoye eyi gẹgẹbi ibeere kan, nitorina o ni gbogbo irọrun ti o fẹ nigbati o ba n fi nodejs sori ẹrọ. Yi lọ si isalẹ fun awọn alaye nipa orisi ipo-Master-Agent.
 
 Fun alaye siwaju sii:
