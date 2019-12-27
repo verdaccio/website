@@ -57,7 +57,7 @@ On each request, `authenticate` will be triggered and the plugin should return t
 ```
 > Only `adduser`, `allow_access`, `apiJWTmiddleware`, `allow_publish`  and `allow_unpublish` are optional, verdaccio provide a fallback in all those cases.
 
-#### apiJWTmiddleware method
+#### `apiJWTmiddleware` method
 
 Since `v4.0.0`
 

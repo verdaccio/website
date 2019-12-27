@@ -28,7 +28,7 @@ Storage plugins are composed of two objects, the `IPluginStorage<T>` and the `IP
     search(onPackage: onSearchPackage, onEnd: onEndSearchPackage, validateName: onValidatePackage): void;
   }
 ```
-* The `IPackageStorage` is an object is created by each request that handle the I/O actions for the metadata and tarballs.
+* The `IPackageStorage` is an object that is created by each request that handles the I/O actions for the metadata and tarballs.
 
 ```typescript
 	  interface IPackageStorage {
