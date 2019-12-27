@@ -5,6 +5,8 @@ title: "Strategie di caching"
 
 Verdaccio di default memorizza nella cache tutti i pacchetti nella cartella `/storage`. Tuttavia si può decidere di voler seguire una strategia differente. Utilizzando i plugin si potrebbe usare il cloud o qualsiasi tipo di database.
 
+<div id="codefund">''</div>
+
 ## Scenari di caching
 
 * Costruire un progetto Node.js su server di **Continous Integration** (Bamboo, GitLab, Jenkins, ecc.) è un'attività che può essere eseguita diverse volte al giorno, perciò il server effettuerà il download dal registro di un gran numero di tarball ogni volta che questo avviene. Come al solito, i tool di CI puliscono la cache dopo ogni build e il processo ricomincia nuovamente ogni volta. Ciò è uno spreco di banda e riduce il traffico esterno. **È possibile utilizzare Verdaccio per memorizzare nella cache tarball e metadati nella nostra rete interna e per dare un impulso in fase di build.**
