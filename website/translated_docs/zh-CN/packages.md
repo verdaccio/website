@@ -7,6 +7,8 @@ title: "包的访问"
 
 安全约束构建于被使用的插件上，在默认情况下，`verdaccio`使用[htpasswd 插件](https://github.com/verdaccio/verdaccio-htpasswd)。 如果你使用不同的插件，行为可能会有所不同。 默认插件自己并不处理`allow_access`和`allow_publish`，它使用内部回退功能以防止插件尚未就绪。
 
+<div id="codefund">''</div>
+
 关于权限的更多信息，请访问[维基文档的认证部分](auth.md)。
 
 ### 用法
@@ -149,7 +151,7 @@ packages:
   'my-company-*':
     access: $all
     publish: $authenticated
-    unpublish: 
+    unpublish:
   '@my-local-scope/*':
     access: $all
     publish: $authenticated
