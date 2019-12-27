@@ -9,6 +9,8 @@ title: "Amazon Web Services"
 
 [Шаблон CloudFormation для этого стека.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
+<div id="codefund">''</div>
+
 Архитектура:
 
     Clients
