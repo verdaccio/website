@@ -83,6 +83,18 @@
       "packages": {
         "title": "包的访问"
       },
+      "plugin-auth": {
+        "title": "Authentication Plugin（认证插件）"
+      },
+      "plugin-generator": {
+        "title": "Plugin Generator"
+      },
+      "plugin-middleware": {
+        "title": "Middleware Plugin（Middleware 插件）"
+      },
+      "plugin-storage": {
+        "title": "Storage Plugin（存储插件）"
+      },
       "plugins": {
         "title": "插件"
       },
@@ -529,6 +541,12 @@
       },
       "version-4.3.4/version-4.3.4-who-is-using": {
         "title": "谁在使用 Verdaccio?"
+      },
+      "version-4.3.5/version-4.3.5-e2e": {
+        "title": "End to End testing"
+      },
+      "version-4.4.0/version-4.4.0-plugins": {
+        "title": "插件"
       }
     },
     "links": {
