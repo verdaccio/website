@@ -18,6 +18,8 @@ These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.
 - Upewnij się, że w Zaporze systemu Windows masz regułę ruchu przychodzącego akceptującą ruch TCP przez dany port
 - To wszystko! Teraz można przejść do hosta i portu, który został określony
 
+<div id="codefund">''</div>
+
 Chciałem, aby strona `verdaccio` była domyślną stroną w IIS, więc wykonałem następujące czynności:
 
 - Zatrzymałem "Domyślną witrynę sieci Web" i uruchomiłem tylko witrynę "verdaccio" w IIS
@@ -44,7 +46,7 @@ Domyślny plik konfiguracji zostanie utworzony `c:\verdaccio\verdaccio\config.ya
 ### start.js
 
 ```bash
-process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
@@ -108,5 +110,4 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 
 ### Rozwiązywanie problemów
 
-- **Interfejs sieciowy nie ładuje się, gdy jest hostowany przez protokół https, ponieważ próbuje on pobrać skrypty za pomocą protokołu http.**  
-    Upewnij się, że poprawnie wskazałeś `url_prefix` w konfiguracji verdaccio. Śledź [dyskusję](https://github.com/verdaccio/verdaccio/issues/622).
+- **The web interface does not load when hosted with https as it tries to download scripts over http.** Make sure that you have correctly mentioned `url_prefix` in verdaccio config. Follow the [discussion](https://github.com/verdaccio/verdaccio/issues/622).
