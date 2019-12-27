@@ -14,6 +14,8 @@ There are 5 types of plugins:
 
 > Jeśli jesteś zainteresowany stworzeniem swojej własnej wtyczki, przeczytaj sekcję dotyczącą [programowania](dev-plugins.md).
 
+<div id="codefund">''</div>
+
 ## Użycie
 
 ### Instalacja
