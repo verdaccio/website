@@ -5,6 +5,8 @@ title: "Kubernetes"
 
  Instrukce, jak nasadit Verdaccio do Kuberneter clusteru najdete v repozitáři [verdaccio/docker-example](https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example). Nicméně doporučená metoda instalace Verdaccia do Kubernetes clusteru je pomocí [Helm](https://helm.sh). Helm je balíčkový správce pro [Kubernetes](https://kubernetes.io) což přináší mnoho výhod.
 
+<div id="codefund">''</div>
+
 ## Helm
 
 ### Nastavení Helm
