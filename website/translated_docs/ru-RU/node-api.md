@@ -3,14 +3,16 @@ id: node-api
 title: "Node API"
 ---
 
-Verdaccio можно запустить программно. Это API появилось в версии `verdaccio@3.0.0-alpha.10`.
+Verdaccio can be invoked programmatically. The node API was introduced after version `verdaccio@3.0.0`.
 
 ## Использование
+
+<div id="codefund">''</div>
 
 #### Программно
 
 ```js
- import startServer from 'verdaccio';   
+ import startServer from 'verdaccio';
 
  startServer(configJsonFormat, 6000, store, '1.0.0', 'verdaccio',
     (webServer, addrs, pkgName, pkgVersion) => {
