@@ -5,6 +5,8 @@ title: "Autenticação"
 
 A autenticação está ligada ao [plugin](plugins.md) auth que você está utilizando. As restrições do pacote também são tratadas pelo [Package Access](packages.md).
 
+<div id="codefund">''</div>
+
 A autenticação do cliente é tratada pelo próprio cliente do `npm`. Uma vez logado no aplicativo:
 
 ```bash
