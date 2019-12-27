@@ -14,6 +14,8 @@ There are 5 types of plugins:
 
 > Ti o ba nifẹ lati se agbedide asomọ ti ara rẹ, ka [abala](dev-plugins.md) agbedide.
 
+<div id="codefund">''</div>
+
 ## Ilo
 
 ### Ifi sori ẹrọ
