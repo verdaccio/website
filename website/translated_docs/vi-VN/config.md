@@ -7,6 +7,8 @@ Tệp này là một phần quan trọng của Verdaccio, đây là nơi bạn c
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
+<div id="codefund">''</div>
+
 ## Cấu hình mặc định
 
 Cấu hình mặc định có hỗ trợ gói **scoped** và cho phép truy cập ẩn danh vào các gói không phải riêng tư, nhưng chỉ ** người dùng đã đăng nhập mới có thể xuất bản gói **.
