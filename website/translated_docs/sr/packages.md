@@ -7,6 +7,8 @@ title: "Package Access"
 
 Сигурност пада на плећа plugina који се користи. По правилу, `verdaccio` користи [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Ако користите различит plugin, начин извршавања (behaviour) би такође могао бити промењен. Подразумевани plugin не руководи (handle) са `allow_access` и `allow_publish` самостално, већ користи интерни fallback у случају да не постоји спремни plugin.
 
+<div id="codefund">''</div>
+
 За више информација о дозволама, посетите [authentification секцију на wiki](auth.md).
 
 ### Коришћење
@@ -148,7 +150,7 @@ packages:
   'my-company-*':
     access: $all
     publish: $authenticated
-    unpublish: 
+    unpublish:
   '@my-local-scope/*':
     access: $all
     publish: $authenticated
