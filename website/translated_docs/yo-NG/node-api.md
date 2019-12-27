@@ -3,14 +3,16 @@ id: api-oju ipade
 title: "API Oju ipade"
 ---
 
-Verdaccio le jẹ pipe pẹlu eto. Awọn API oju ipade jẹ sisafihan lẹhin ẹya `verdaccio@3.0.0-alpha.10`.
+Verdaccio can be invoked programmatically. The node API was introduced after version `verdaccio@3.0.0`.
 
 ## Ilo
+
+<div id="codefund">''</div>
 
 #### Pẹlu eto
 
 ```js
- import startServer from 'verdaccio';   
+ import startServer from 'verdaccio';
 
  startServer(configJsonFormat, 6000, store, '1.0.0', 'verdaccio',
     (webServer, addrs, pkgName, pkgVersion) => {
