@@ -10,6 +10,8 @@ title: "Chef Cookbook"
 * <https://github.com/verdaccio/verdaccio-cookbook>
 * <https://supermarket.chef.io/cookbooks/verdaccio>
 
+<div id="codefund">''</div>
+
 > Тражимо сараднике за овај репозиторијум, па ако сте заинтересовани, молимо Вас да се јавите аутору преко tickets-a.
 
 Аутори: [Keli Grubb](https://github.com/kgrubb) && Barthelemy Vessemont.
