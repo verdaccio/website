@@ -18,6 +18,8 @@ title: "Установка на IIS сервер"
 - Убедитесь, что у вас есть правила приёма входящего TCP подключения на порт в Windows Firewall
 - Вот и всё! Теперь вы можете перейти на хост и порт, который вы указывали
 
+<div id="codefund">''</div>
+
 Я хотел чтобы сайт `verdaccio` был сайтом по умолчанию в IIS, по этому я сделал так:
 
 - Я остановил "Default Web Site" и просто запустил сайт "verdaccio" в IIS
@@ -44,7 +46,7 @@ title: "Установка на IIS сервер"
 ### start.js
 
 ```bash
-process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
@@ -108,5 +110,4 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 
 ### Устранение проблем
 
-- **Web интерфейс не загружается, когда используется https, из-за попыток загрузить скрипты по http.**  
-    Убедитесь что у вас правильно указан `url_prefix` в конфигурации verdaccio. Перейти к [обсуждению](https://github.com/verdaccio/verdaccio/issues/622).
+- **The web interface does not load when hosted with https as it tries to download scripts over http.** Make sure that you have correctly mentioned `url_prefix` in verdaccio config. Follow the [discussion](https://github.com/verdaccio/verdaccio/issues/622).

@@ -5,6 +5,8 @@ title: "Sise ifasẹsi"
 
 Ifasẹsi naa jẹ sisopọ mọ auth [ plugin](plugins.md) ti o n lo. Awọn idena akojọ naa n jẹ ṣiṣakoso nipasẹ [ Iwọlesi ti Akojọ](packages.md).
 
+<div id="codefund">''</div>
+
 Ifasẹsi onibara naa n jẹ ṣiṣakoso nipasẹ `npm` onibara funrarẹ. Lọgan ti o ba wọle si ohun elo naa:
 
 ```bash

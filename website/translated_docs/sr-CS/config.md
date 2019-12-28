@@ -7,6 +7,8 @@ Ovaj fajl je osnova verdaccio-a. U okviru njega, možete vršiti izmene zadatih 
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
+<div id="codefund">''</div>
+
 ## Podrazumevane postavke (Default Configuration)
 
 Podrazumevane postavke podržavaju **scoped** pakete za sve korisnike, ali samo **autorizovanim korisnicima omogućavaju da publikuju**.

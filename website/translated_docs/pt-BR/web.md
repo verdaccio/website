@@ -5,6 +5,8 @@ title: "Interface de Usuário da Web"
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
+<div id="codefund">''</div>
+
 O Verdaccio possui uma interface de usuário da web para exibir apenas os pacotes privados e pode ser personalizável.
 
 ```yaml

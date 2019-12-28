@@ -5,6 +5,8 @@ title: "Github Actions"
 
 Com [GitHub Actions](https://github.com/features/actions) você pode automatizar seu fluxo de trabalho, cada GitHub Action executa uma etapa específica em um processo.
 
+<div id="codefund">''</div>
+
 ![actions](/img/github-actions.png)
 
 ## Testando os seus pacotes

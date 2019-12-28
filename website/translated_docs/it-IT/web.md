@@ -5,6 +5,8 @@ title: "Interfaccia Utente Web"
 
 ![Uplink](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
+<div id="codefund">''</div>
+
 Verdaccio offre un'interfaccia web utente per mostrare solo i pacchetti privati e può essere personalizzata,.
 
 ```yaml

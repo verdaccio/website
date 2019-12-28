@@ -5,14 +5,30 @@ title: "Configurazione di Proxy inverso"
 
 L'utilizzo di un proxy inverso è una pratica comune. Le configurazioni seguenti sono le più raccomandate e utilizzate.
 
+<div id="codefund">''</div>
+
 # Apache
 
 Apache e `mod_proxy` **non dovrebbero decodificare/codificare gli slash** e dovrebbero lasciarli così come sono:
+
+For installing at relative path, `/npm`, on the server
 
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
       ProxyPass /npm http://127.0.0.1:4873 nocanon
       ProxyPassReverse /npm http://127.0.0.1:4873
+    </VirtualHost>
+    
+
+For installing at root path, `/`, on the server
+
+    <VirtualHost *:80>
+      ServerName your.domain.com
+      ServerAdmin hello@your.domain.com
+      ProxyPreserveHost On
+      AllowEncodedSlashes NoDecode
+      ProxyPass / http://127.0.0.1:4873/ nocanon
+      ProxyPassReverse / http://127.0.0.1:4873/
     </VirtualHost>
     
 
@@ -137,7 +153,7 @@ Lo snippet seguente è un esempio completo di `docker` che può essere testato n
 
 ### Sottodirectory
 
-Se si sta utilizzando l'intero URL per Verdaccio, non è necessario definire un `url_prefix`, altrimenti nella `config.yaml` servirebbe qualcosa come questo:
+If the whole URL is being used for Verdaccio, you don't need to define a `url_prefix`, otherwise you would need something like this in your `config.yaml`.
 
 ```yaml
 url_prefix: /sub_directory/

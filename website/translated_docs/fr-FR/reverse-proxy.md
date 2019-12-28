@@ -5,14 +5,30 @@ title: "Configuration du proxy inverse"
 
 Using a reverse proxy is a common practice. The following configurations are the most recommended and used ones.
 
+<div id="codefund">''</div>
+
 # Apache
 
 Apache and `mod_proxy` should **not decode/encode slashes** and leave them as they are:
+
+For installing at relative path, `/npm`, on the server
 
     <VirtualHost *:80>
       AllowEncodedSlashes NoDecode
       ProxyPass /npm http://127.0.0.1:4873 nocanon
       ProxyPassReverse /npm http://127.0.0.1:4873
+    </VirtualHost>
+    
+
+For installing at root path, `/`, on the server
+
+    <VirtualHost *:80>
+      ServerName your.domain.com
+      ServerAdmin hello@your.domain.com
+      ProxyPreserveHost On
+      AllowEncodedSlashes NoDecode
+      ProxyPass / http://127.0.0.1:4873/ nocanon
+      ProxyPassReverse / http://127.0.0.1:4873/
     </VirtualHost>
     
 

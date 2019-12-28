@@ -5,6 +5,8 @@ title: "认证"
 
 认证部分设置与 "Auth" [ 插件 ](plugins.md)息息相关。包的访问限制也同时通过 [ 包访问权限](packages.md) 控制。
 
+<div id="codefund">''</div>
+
 客户端的认证流程由 `npm` 自行处理，在你通过以下命令登陆后：
 
 ```bash

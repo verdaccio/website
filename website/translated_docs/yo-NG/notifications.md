@@ -5,6 +5,8 @@ title: "Awọn ifitonileti"
 
 Fifitonileti jẹ gbigbedide ni pataki lati jẹ lilo pẹlu awọn webhooks Slack ti n wọle bọ, ṣugbọn o tun ma ṣe ifijiṣẹ fi ifiranṣẹ to rọrun kan si eyikeyi opin. Lọwọlọwọ o n ṣiṣẹ fun aṣẹ `npm publish` nikan.
 
+<div id="codefund">''</div>
+
 ## Ilo
 
 Apẹẹrẹ kan pẹlu ikọ **HipChat**, **Stride** ati **Google Hangouts Chat**:
@@ -39,7 +41,7 @@ notify:
      method: POST
      headers: [{'Content-Type': 'application/json'}, {'authorization': 'Bearer secretToken'}]
      endpoint: https://api.atlassian.com/site/{cloudId}/conversation/{conversationId}/message
-     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
+     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'
 ```
 
 ## Awoṣe

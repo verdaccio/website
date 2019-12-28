@@ -13,6 +13,8 @@ Istnieje wiele sposobów na rozszerzenie funkcjonalności `verdaccio`, wspierane
 
 > We recommend developing plugins using our [Typescript type definitions](https://github.com/verdaccio/monorepo/tree/master/core/types).
 
+<div id="codefund">''</div>
+
 # Other plugins
 
 The following plugins are valid and in process of incubation.

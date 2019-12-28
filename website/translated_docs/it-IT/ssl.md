@@ -5,6 +5,8 @@ title: "Configurare i Certificati SSL"
 
 Seguire queste istruzioni per configurare un certificato SSL che serva al registro NPM su HTTPS.
 
+<div id="codefund">''</div>
+
 * Aggiornare la proprietà listen in `~/.config/verdaccio/config.yaml`:
 
     listen: 'https://your.domain.com/'

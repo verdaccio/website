@@ -5,6 +5,8 @@ title: "Github Actions"
 
 С помощью [GitHub Actions](https://github.com/features/actions) вы можете автоматизировать свою работу, каждый экшн из GitHub Action выполняет определенный шаг.
 
+<div id="codefund">''</div>
+
 ![actions](/img/github-actions.png)
 
 ## Тестирование пакетов

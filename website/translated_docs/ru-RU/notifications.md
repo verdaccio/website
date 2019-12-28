@@ -5,6 +5,8 @@ title: "Уведомления"
 
 Уведомления изначально были сделаны, чтобы использовать Slack's Incoming webhooks, но их так же можно использовать и для любого другого эндпоинта. В данный момент поддерживается только `npm publish`.
 
+<div id="codefund">''</div>
+
 ## Использование
 
 Пример использования с хуками **HipChat**, **Stride** и **Google Hangouts Chat**:
@@ -39,7 +41,7 @@ notify:
      method: POST
      headers: [{'Content-Type': 'application/json'}, {'authorization': 'Bearer secretToken'}]
      endpoint: https://api.atlassian.com/site/{cloudId}/conversation/{conversationId}/message
-     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
+     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'
 ```
 
 ## Шаблон

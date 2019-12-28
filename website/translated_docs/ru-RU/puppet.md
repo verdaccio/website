@@ -12,6 +12,8 @@ title: "Puppet"
 * Apply-mode (с помощью puppet-apply, установка puppetmaster не требется)
 * Master-Agent-mode (с помощью puppet-agent с доступом к вашей конфигурации через puppetmaster).
 
+<div id="codefund">''</div>
+
 В обоих вариантах вам надо сделать вызов "class nodejs {}" в вашем puppet-скрипте, потому что модуль puppet-verdaccio только выставляет требование на модуль nodejs, так что у вас появляется гибкость в выборе способа установки nodejs. Чтобы получить больше информации для варианта с Master-Agent-mode, прокрутите вниз.
 
 Для получения дальнейшей информации:

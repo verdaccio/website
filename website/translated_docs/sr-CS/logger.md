@@ -5,6 +5,8 @@ title: "Logger"
 
 Kao i svaka web aplikacija, verdaccio poseduje ugrađeni logger koji se može prilagođavati po želji korisnika. Možete definisati različite tipove izlaza.
 
+<div id="codefund">''</div>
+
 ```yaml
 logs:
   # console output

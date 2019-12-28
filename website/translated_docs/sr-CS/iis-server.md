@@ -18,6 +18,8 @@ Navedene instrukcije su pisane za Windows Server 2016, IIS 10, Windows Server 20
 - Postarajte se da imate dobro podešeno pravilo za prihvatanje TCP saobraćaja na port, u Windows Firewall
 - I to je to! Sada možete da navigate do host-a i porta koje ste odredili
 
+<div id="codefund">''</div>
+
 Želeo sam da `verdaccio` sajt bude podrazumevani sajt u IIS i zato sam uradio sledeće:
 
 - Stopirao sam "Default Web Site" i pokrenuo jedino "verdaccio" sajt u IIS
@@ -44,7 +46,7 @@ Kreiraće se podrazumevana konfiguracija `c:\verdaccio\verdaccio\config.yaml`
 ### start.js
 
 ```bash
-process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml'); 
+process.argv.push('-l', 'unix:' + process.env.PORT, '-c', './config.yaml');
 require('./node_modules/verdaccio/build/lib/cli.js');
 ```
 
@@ -108,5 +110,4 @@ require('./node_modules/verdaccio/src/lib/cli.js');
 
 ### Problemi (Troubleshooting)
 
-- **Web interfejs se ne učitava kada je hostovan sa https pošto pokušava da preuzme skripte preko http.**  
-    Proverite da li ste ispravno uneli `url_prefix` u verdaccio config. Pratite [diskusiju](https://github.com/verdaccio/verdaccio/issues/622).
+- **The web interface does not load when hosted with https as it tries to download scripts over http.** Make sure that you have correctly mentioned `url_prefix` in verdaccio config. Follow the [discussion](https://github.com/verdaccio/verdaccio/issues/622).

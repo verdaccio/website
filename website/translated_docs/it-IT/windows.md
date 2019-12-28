@@ -13,6 +13,8 @@ Basato approssimativamente sulle istruzioni che trovi [qui](http://asysadmin.tum
 3. Creare il file `config.yaml` in questa posizione `(c:\verdaccio\config.yaml)`
 4. Configurare Windows Service
 
+<div id="codefund">''</div>
+
 ## Utilizzo di NSSM
 
 METODO ALTERNATIVO: (il pacchetto WinSW non era presente quando ho provato a scaricarlo)

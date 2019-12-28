@@ -7,6 +7,8 @@ Es una serie de restricciones que permiten o limitan el acceso al almacenamiento
 
 Las restricciones de seguridad permanecen dependientes de la extensión en uso. Por defecto, `verdaccio` utiliza [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Si usas una extensión diferente ten en cuenta que el comportamiento podría ser diferente. La extensión por defecto no maneja `allow_access` y `allow_publish` por sí misma, esta usa un recurso de seguridad interno en caso de que la extensión no esté lista para esto.
 
+<div id="codefund">''</div>
+
 Para mas información sobre permisos, visite [la sección de autenticación](auth.md).
 
 ### Uso
@@ -149,7 +151,7 @@ packages:
   'my-company-*':
     access: $all
     publish: $authenticated
-    unpublish: 
+    unpublish:
   '@my-local-scope/*':
     access: $all
     publish: $authenticated

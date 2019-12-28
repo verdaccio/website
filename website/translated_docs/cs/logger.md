@@ -5,6 +5,8 @@ title: "Logger"
 
 Jako všechny webové aplikace má verdaccio přizpůsobitelný vestavěný logger. Můžete definovat různé typy výstupů.
 
+<div id="codefund">''</div>
+
 ```yaml
 logs:
   # výstup konzole

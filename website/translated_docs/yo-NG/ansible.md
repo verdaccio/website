@@ -7,6 +7,8 @@ A ni akanṣe ojutu kan fun `verdaccio` ni ajọ wa.
 
 <https://github.com/verdaccio/ansible-verdaccio>
 
+<div id="codefund">''</div>
+
 #### Awọn asaayan miiran
 
 * Iṣẹ Ansible fun awọn olumulo Gentoo: [jirutka/ansible-ise-sinopia](https://github.com/jirutka/ansible-role-sinopia).

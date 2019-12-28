@@ -7,6 +7,8 @@ title: "Ansible"
 
 <https://github.com/verdaccio/ansible-verdaccio>
 
+<div id="codefund">''</div>
+
 #### 其他选项
 
 * Ansible 对Gentoo用户的作用:[jirutka/ansible-role-sinopia](https://github.com/jirutka/ansible-role-sinopia)。

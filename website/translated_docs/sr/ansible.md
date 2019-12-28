@@ -7,6 +7,8 @@ title: "Ansible"
 
 <https://github.com/verdaccio/ansible-verdaccio>
 
+<div id="codefund">''</div>
+
 #### Остале могућности
 
 * Ansible role за кориснике Gentoo-а: [jirutka/ansible-role-sinopia](https://github.com/jirutka/ansible-role-sinopia).

@@ -5,6 +5,8 @@ title: "Server Configuration"
 
 Ovo je najbazičnija konfiguracija za linux server ali nam se čini važnim da dokumentujemo i podelimo sa Vama sve korake kako bi verdaccio stalno radio na serveru. Biće Vam potrebne root (ili sudo) dozvole za navedeno.
 
+<div id="codefund">''</div>
+
 ## Pokretanje, kao zaseban korisnik
 
 Najpre kreirajte verdaccio korisnika:

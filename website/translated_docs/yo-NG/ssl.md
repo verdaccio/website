@@ -5,6 +5,8 @@ title: "Ṣeto Awọn iwe ẹri SSL"
 
 Tẹle awọn itọsọna wọnyi lati seto iwe ẹri SSL kan lati ṣiṣẹ bi ibiiforukọsilẹ NPM kan lori HTTPS.
 
+<div id="codefund">''</div>
+
 * Ṣe imudojuiwọn ohun elo itẹtisi ni `~/.config/verdaccio/config.yaml` rẹ:
 
     listen: 'https://your.domain.com/'

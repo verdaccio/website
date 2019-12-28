@@ -5,6 +5,8 @@ title: "Notifikacije"
 
 Notifikacije su zamišljene da se koriste sa Slack's Incoming webhooks, ali takođe isporučuju simple payload do bilo koje endpoint. Trenutno je aktivno jedino za `npm publish` komandu.
 
+<div id="codefund">''</div>
+
 ## Korišćenje
 
 Na primer sa **HipChat**, **Stride** i **Google Hangouts Chat** hook:
@@ -39,7 +41,7 @@ notify:
      method: POST
      headers: [{'Content-Type': 'application/json'}, {'authorization': 'Bearer secretToken'}]
      endpoint: https://api.atlassian.com/site/{cloudId}/conversation/{conversationId}/message
-     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
+     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'
 ```
 
 ## Templat

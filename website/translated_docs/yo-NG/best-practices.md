@@ -5,6 +5,8 @@ title: "Awọn iṣeṣi to Darajulọ"
 
 Itọsọna yii jẹ akojọ ti awọn iṣeṣi to dara julọ ti o jẹ gbigba ati eyi ti a saba maa n gba niyanju fun gbogbo awọn olumulo. Maṣe mu itọsọna yi bi dandan, o le mu diẹ ninu wọn ni ibamu si awọn inilo rẹ.
 
+<div id="codefund">''</div>
+
 **Ma se mikan lati dabaa awọn iṣesi to dara julọ pẹlu awujọ Verdaccio naa**.
 
 ## Ibi iforukọsilẹ Ikọkọ

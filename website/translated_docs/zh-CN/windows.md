@@ -13,6 +13,8 @@ title: "作为 Windows 服务安装"
 3. 在此位置`(c:\verdaccio\config.yaml)`创建`config.yaml`文件
 4. Windows服务设置
 
+<div id="codefund">''</div>
+
 ## 使用NSSM
 
 替代方法: (当我尝试下载的时候，WinSW 包缺失)

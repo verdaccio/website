@@ -7,6 +7,8 @@ Ovo je serija kontejnera koja dozvoljava ili zabranjuje pristup do local storage
 
 Sigurnost pada na pleća plugina koji se koristi. Po pravilu, `verdaccio` koristi [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Ako koristite različit plugin, način izvršavanja (behaviour) bi takođe mogao biti promenjen. Podrazumevani plugin ne rukovodi (handle) sa `allow_access` i `allow_publish` samostalno, već koristi interni fallback u slučaju da ne postoji spremni plugin.
 
+<div id="codefund">''</div>
+
 Za više informacija o dozvolama, posetite [authentification sekciju na wiki](auth.md).
 
 ### Korišćenje
@@ -149,7 +151,7 @@ packages:
   'my-company-*':
     access: $all
     publish: $authenticated
-    unpublish: 
+    unpublish:
   '@my-local-scope/*':
     access: $all
     publish: $authenticated

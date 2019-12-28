@@ -7,6 +7,8 @@ This file is the cornerstone of verdaccio where you can modify the default behav
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
+<div id="codefund">''</div>
+
 ## Default Configuration
 
 The default configuration has support for **scoped** packages and allow any user to access all packages but only **authenticated users to publish**.

@@ -5,6 +5,8 @@ title: "Protecting packages"
 
 `verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
 
+<div id="codefund">''</div>
+
 ### Конфигурисање пакета
 
 Погледајмо наведена подешавања као пример. Потребно је да подесите dependencies које имају префикс у виду `my-company-*` и треба да их заштитите од анонимних или других пријављених корисника који су без одговарајућих овлашћења (credentials).

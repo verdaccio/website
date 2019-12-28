@@ -5,6 +5,8 @@ title: "Protegiendo paquetes"
 
 `verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
 
+<div id="codefund">''</div>
+
 ### Configuración del paquete
 
 Veamos por ejemplo la siguiente configuración. Tienes un conjunto de dependencias con prefijo `my-company-*` y necesitas protegerlas de anónimos o de otro usuario registrado sin credenciales.

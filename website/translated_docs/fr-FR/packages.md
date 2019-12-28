@@ -7,6 +7,8 @@ Il s'agit d'une série de restrictions qui permettent ou restreignent l'accès a
 
 Les restrictions de sécurité dépendent du plugin que vous utilisez. `verdaccio` utilise par défaut le plugin [htpasswd](https://github.com/verdaccio/verdaccio-htpasswd). Si vous utilisez un autre plugin, l'opération peut être différente. Le plugin par défaut ne gère pas directement `allow_access` et `allow_publish`, mais utilise une alternative interne au cas où le plugin ne serait pas prêt pour cela.
 
+<div id="codefund">''</div>
+
 Pour plus d'informations sur les autorisations, consultez la [section d'authentification du wiki](auth.md).
 
 ### Utilisation
@@ -149,7 +151,7 @@ packages:
   'my-company-*':
     access: $all
     publish: $authenticated
-    unpublish: 
+    unpublish:
   '@my-local-scope/*':
     access: $all
     publish: $authenticated

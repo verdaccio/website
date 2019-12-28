@@ -5,6 +5,8 @@ title: "로거"
 
 As any web application, verdaccio has a customisable built-in logger. You can define multiple types of outputs.
 
+<div id="codefund">''</div>
+
 ```yaml
 logs:
   # console output

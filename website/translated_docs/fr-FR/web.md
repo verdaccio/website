@@ -5,6 +5,8 @@ title: "Interface d'Utilisateur Web"
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
+<div id="codefund">''</div>
+
 Verdaccio dispoe d'une interface d'utilisateur web pour afficher uniquement les paquets privés et qui peut être personnalisée.
 
 ```yaml

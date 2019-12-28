@@ -7,6 +7,8 @@ Questo file è il fondamento di verdaccio nel quale è possibile modificare il c
 
 La prima volta in assoluto che si esegue `verdaccio` viene creato un file di configurazione `config.yaml` predefinito.
 
+<div id="codefund">''</div>
+
 ## Configurazione Predefinita
 
 La configurazione predefinita dispone del supporto per pacchetti ** scoped** e permette a qualsiasi utente di accedere a tutti i pacchetti ma solo **agli utenti autenticati di pubblicare**.

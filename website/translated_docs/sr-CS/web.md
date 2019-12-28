@@ -5,6 +5,8 @@ title: "Web User Interface"
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
+<div id="codefund">''</div>
+
 Verdaccio poseduje prilagodivi web korisnički interfejs koji prikazuje samo privatne pakete.
 
 ```yaml

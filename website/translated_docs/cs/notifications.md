@@ -5,6 +5,8 @@ title: "Upozornění"
 
 Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
 
+<div id="codefund">''</div>
+
 ## Použití
 
 Příklad pro **HipChat**, **Stride** a **Google Hangouts Chat**:
@@ -39,7 +41,7 @@ notify:
      method: POST
      headers: [{'Content-Type': 'application/json'}, {'authorization': 'Bearer secretToken'}]
      endpoint: https://api.atlassian.com/site/{cloudId}/conversation/{conversationId}/message
-     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "Publikován nový balíček: * {{ name }}* Jméno vydavatele: * {{ publisher.name }}"}]}]}}'     
+     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "Publikován nový balíček: * {{ name }}* Jméno vydavatele: * {{ publisher.name }}"}]}]}}'
 ```
 
 ## Šablona

@@ -9,6 +9,8 @@ This document describes several approaches for deploying Verdaccio in the AWS cl
 
 [CloudFormation template for deploying this stack.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
+<div id="codefund">''</div>
+
 Architecture:
 
     Clients

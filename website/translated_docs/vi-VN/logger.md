@@ -5,6 +5,8 @@ title: "Logger"
 
 Cũng như bất kỳ ứng dụng web nào, verdaccio có trình ghi nhật ký tích hợp tùy chỉnh. Bạn có thể lựa chọn nhiều loại đầu ra.
 
+<div id="codefund">''</div>
+
 ```yaml
 logs:
   # console output

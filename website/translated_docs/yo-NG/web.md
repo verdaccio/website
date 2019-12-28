@@ -5,6 +5,8 @@ title: "Intafeesi Olumulo ti Ayelujara"
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
+<div id="codefund">''</div>
+
 Verdaccio ni intafeesi olumulo ayelujara kan lati safihan awọn akopọ aladani naa nikan atipe o le jẹ sise ni akanṣe.
 
 ```yaml

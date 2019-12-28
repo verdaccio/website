@@ -5,6 +5,8 @@ title: "Github Actions"
 
 With [GitHub Actions](https://github.com/features/actions) you can automate your workflow, each GitHub Action performs a specific step in a process.
 
+<div id="codefund">''</div>
+
 ![actions](/img/github-actions.png)
 
 ## Testing your packages

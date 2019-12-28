@@ -5,6 +5,8 @@ title: "Olugbasilẹ"
 
 Gẹgẹbi eyikeyi ohun elo ayelujara, verdaccio ni olugbasilẹ alabawa ti alakanṣe kan. O le ṣe asọye awọn orisirisi oniruuru awọn abajade.
 
+<div id="codefund">''</div>
+
 ```yaml
 logs:
   # console output

@@ -5,6 +5,8 @@ title: "保护包"
 
 `verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
 
+<div id="codefund">''</div>
+
 ### 包配置
 
 例如，让我们一起来看以下设置。 您有一组前缀为`my-company-*`的依赖项，您要保护它们不让匿名或另一个没有正确证书的已登录用户使用。

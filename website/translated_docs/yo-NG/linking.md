@@ -13,6 +13,8 @@ uplinks:
 
 O le ṣe asopọ awọn ibi iforukọsilẹ ọlọpọlọpọ, iwe wọnyii yoo ṣe atọkun rẹ bi iranlọwọ diẹ lara awọn iṣeto.
 
+<div id="codefund">''</div>
+
 ## Lilo Ilana ti Alabasepọ
 
 Ọna ara lati wọle si awọn ibi iforukọsilẹ ọlọpọlọpọ nipa lilo `.npmrc` jẹ ilana ẹya ara bi atẹle yii:

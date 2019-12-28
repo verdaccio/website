@@ -5,6 +5,8 @@ title: "Настройка SSL-сертификатов"
 
 Следуйте этой инструкции по конфигурации SSL сертификатов, чтобы получить репозиторий с HTTPS.
 
+<div id="codefund">''</div>
+
 * Обновите свойство `listen` в вашем `~/.config/verdaccio/config.yaml`:
 
     listen: 'https://your.domain.com/'

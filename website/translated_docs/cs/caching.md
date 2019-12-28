@@ -5,6 +5,8 @@ title: "Strategie ukládání do mezipaměti"
 
 Verdaccio standardně ukládá všechny balíčky do složky `/storage`. Můžete se však rozhodnout, zda chcete použít jinou strategii. Pomocí doplňků můžete použít cloud nebo libovolnou databázi.
 
+<div id="codefund">''</div>
+
 ## Scénáře ukládání do mezipaměti
 
 * Build a Node.js project on **Continous Integration** (Bamboo, GitLab, Jenkins, etc) servers is a task that might take several times at a day, thus, the server will download tons of tarballs from the registry every time takes place. Jako obvykle, nástroje CI vymažou mezipaměť po každém sestavení a proces začne znovu a znovu. To je ztráta šířky pásma a snižuje externí komunikaci. **Verdaccio můžete použít pro ukládání do mezipaměti a metadat v naší interní síti a zrychlit build time.**

@@ -9,6 +9,8 @@ Iwe yii n ṣe apejuwe awọn orisirisi ọna fun sisẹ amulo Verdaccio ni ipam
 
 [Awoṣe CloudFormation fun ṣiṣe amulo eto akopọ yii.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
+<div id="codefund">''</div>
+
 Iyaworan:
 
     Clients

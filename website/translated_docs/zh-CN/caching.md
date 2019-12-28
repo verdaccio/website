@@ -5,6 +5,8 @@ title: "Caching strategies"
 
 Verdaccio 默认将所有的包缓存到`/storage`文件夹中。 But you can decide whether you want to follow a different strategy. Using of plugins you might use the cloud or any sort of database.
 
+<div id="codefund">''</div>
+
 ## Caching scenarios
 
 * Build a Node.js project on **Continous Integration** (Bamboo, GitLab, Jenkins, etc) servers is a task that might take several times at a day, thus, the server will download tons of tarballs from the registry every time takes place. As usual, the CI tools clear the cache after each build and the process start over and over again. That is a waste of bandwidth and reduces the external traffic. **You can use Verdaccio for caching tarballs and metadata in our internal network and give a boost in your build time.**

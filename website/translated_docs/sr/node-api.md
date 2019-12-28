@@ -3,14 +3,16 @@ id: node-api
 title: "Node API"
 ---
 
-Verdaccio подржава опцију invoqued programmatically. Nod API је уведен после верзије `verdaccio@3.0.0-alpha.10`.
+Verdaccio can be invoked programmatically. The node API was introduced after version `verdaccio@3.0.0`.
 
 ## Коришћење
+
+<div id="codefund">''</div>
 
 #### Programmatically
 
 ```js
- import startServer from 'verdaccio';   
+ import startServer from 'verdaccio';
 
  startServer(configJsonFormat, 6000, store, '1.0.0', 'verdaccio',
     (webServer, addrs, pkgName, pkgVersion) => {

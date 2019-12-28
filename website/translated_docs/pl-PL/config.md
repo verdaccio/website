@@ -7,6 +7,8 @@ Plik ten jest podstawą verdaccio, ponieważ to w nim możesz modyfikować domy�
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
+<div id="codefund">''</div>
+
 ## Podstawowa konfiguracja
 
 Domyślna konfiguracja obsługuje pakiety **o zakresie** i umożliwia każdemu użytkownikowi dostęp do wszystkich pakietów, ale tylko **uwierzytelnionych użytkowników do publikowania**.

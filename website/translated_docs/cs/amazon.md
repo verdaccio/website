@@ -9,6 +9,8 @@ Tento dokument popisuje několik postupů jak nasadit Verdaccio v AWS cloud.
 
 [CloudFormation šablona pro nasazení tohoto stacku.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
+<div id="codefund">''</div>
+
 Architektura:
 
     Clients

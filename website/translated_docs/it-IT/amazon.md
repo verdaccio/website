@@ -9,6 +9,8 @@ Questo documento descrive i vari approcci per sviluppare Verdaccio nell'AWS clou
 
 [Il CloudFormation template per sviluppare questo stack.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
+<div id="codefund">''</div>
+
 Architettura:
 
     Clients

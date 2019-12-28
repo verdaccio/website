@@ -5,6 +5,8 @@ title: "Autenticación"
 
 La autenticación esta atada al [plugin](plugins.md) de autenticación que estes usando. Las restricciones de paquetes es manejado por el [maneador de acceso de paquetes](packages.md).
 
+<div id="codefund">''</div>
+
 El cliente de autenticación es manejado por el cliente `npm` en su mismo. Una vez has iniciado sesión en la aplicación:
 
 ```bash

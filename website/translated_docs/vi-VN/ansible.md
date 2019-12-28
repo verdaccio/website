@@ -7,6 +7,8 @@ Chúng tôi có một giải pháp tuỳ chỉnh cho `verdaccio` trong tổ ch�
 
 <https://github.com/verdaccio/ansible-verdaccio>
 
+<div id="codefund">''</div>
+
 #### Những lựa chọn khác
 
 * Vai trò của phần mềm Ansible đối với người dùng Gentoo: [jirutka/ansible-role-sinopia](https://github.com/jirutka/ansible-role-sinopia).

@@ -5,6 +5,8 @@ title: "Веб-интерфейс пользователя"
 
 ![Аплинки](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
+<div id="codefund">''</div>
+
 У Verdaccio есть веб-интерфейс, чтобы отображать информацию о приватных пакетах, он настраиваемый.
 
 ```yaml

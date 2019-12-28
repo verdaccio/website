@@ -7,6 +7,8 @@ Este archivo es la piedra angular de verdaccio donde puedes modificar su comport
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
+<div id="codefund">''</div>
+
 ## Configuración por Defecto
 
 La configuración por defecto tiene soporte para paquetes con **enfoque** y permite a los usuarios acceder a todos los paquetes pero solo **a los usuarios autentificados a publicarlos**.
