@@ -81,12 +81,24 @@
               }
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/ru-RU" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Настройка reverse proxy</h1></header><article><div><span><p>Использрвание reverse proxy является обычной практикой. Конфигурация ниже - рекомендованная, и наиболее часто используется.</p>
+<div id="codefund">''</div>
 <h1><a class="anchor" aria-hidden="true" id="apache"></a><a href="#apache" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Apache</h1>
 <p>Apache и <code>mod_proxy</code> <strong>не должны кодировать/декодировать слэши</strong>, то есть нужно просто ничего не делать (со слэшами):</p>
+<p>For installing at relative path, <code>/npm</code>, on the server</p>
 <pre><code class="hljs">&lt;VirtualHost *:80&gt;
   AllowEncodedSlashes NoDecode
   ProxyPass /npm http://127.0.0.1:4873 nocanon
   ProxyPassReverse /npm http://127.0.0.1:4873
+&lt;/VirtualHost&gt;
+</code></pre>
+<p>For installing at root path, <code>/</code>, on the server</p>
+<pre><code class="hljs">&lt;VirtualHost *:80&gt;
+  ServerName your.domain.com
+  ServerAdmin hello@your.domain.com
+  ProxyPreserveHost On
+  AllowEncodedSlashes NoDecode
+  ProxyPass / http://127.0.0.1:4873/ nocanon
+  ProxyPassReverse / http://127.0.0.1:4873/
 &lt;/VirtualHost&gt;
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="конфигурация-с-ssl"></a><a href="#конфигурация-с-ssl" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Конфигурация с SSL</h3>
@@ -200,12 +212,12 @@ server {
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="запуск-за-reverse-proxy-с-другими-доменом-и-портом"></a><a href="#запуск-за-reverse-proxy-с-другими-доменом-и-портом" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Запуск за reverse proxy с другими доменом и портом</h2>
 <h3><a class="anchor" aria-hidden="true" id="префикс"></a><a href="#префикс" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Префикс</h3>
-<p>Если вы испольузете данные домен-порт только для Verdaccio, вам не нужен определять <code>url_prefix</code>, а в противном случе, нам нужна следующая строчка в <code>config.yaml</code>.</p>
+<p>If the whole URL is being used for Verdaccio, you don't need to define a <code>url_prefix</code>, otherwise you would need something like this in your <code>config.yaml</code>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">url_prefix:</span> <span class="hljs-string">/sub_directory/</span>
 </code></pre>
-<p>Если вы запускаете verdaccio за reverse proxy, вы заметите, что все ресурсные файлы запрашиваются по абсолютному пути, например <code>http://127.0.0.1:4873/-/static</code></p>
+<p>If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like <code>http://127.0.0.1:4873/-/static</code></p>
 <p>Чтобы решить эту проблему, **вам нужно послать реальный домен и порт для verdaccio с помощью хедера <code>Host</code> **</p>
-<p>Nginx-конфигурация должна выглядеть примерно так:</p>
+<p>Nginx configure should look like this:</p>
 <pre><code class="hljs css language-nginx"><span class="hljs-attribute">location</span> / {
     <span class="hljs-attribute">proxy_pass</span> http://127.0.0.1:4873/;
     <span class="hljs-attribute">proxy_set_header</span> Host            <span class="hljs-variable">$host</span>:<span class="hljs-variable">$server_port</span>;
@@ -215,7 +227,7 @@ server {
 </code></pre>
 <p>В этом случае, <code>url_prefix</code> <strong>НЕ НУЖНО</strong> использовать конфигурации verdaccio</p>
 <hr>
-<p>или, в случае использования подпапки в URL:</p>
+<p>or a sub-directory installation:</p>
 <pre><code class="hljs css language-nginx"><span class="hljs-attribute">location</span> <span class="hljs-regexp">~ ^/verdaccio/(.*)$</span> {
     <span class="hljs-attribute">proxy_pass</span> http://127.0.0.1:4873/<span class="hljs-variable">$1</span>;
     <span class="hljs-attribute">proxy_set_header</span> Host            <span class="hljs-variable">$host</span>:<span class="hljs-variable">$server_port</span>;
@@ -223,7 +235,7 @@ server {
     <span class="hljs-attribute">proxy_set_header</span> X-Forwarded-Proto <span class="hljs-variable">$scheme</span>;
 }
 </code></pre>
-<p>В этом случае, <code>url_prefix</code> должен быть равен <code>/verdaccio/</code></p>
+<p>For this case, <code>url_prefix</code> should set to <code>/verdaccio/</code></p>
 <blockquote>
 <p>Примечание: Слэш после пути - обязателен (<code>https://your-domain:port/verdaccio/</code>)!</p>
 </blockquote>
