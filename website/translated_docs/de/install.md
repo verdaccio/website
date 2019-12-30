@@ -10,7 +10,7 @@ Verdaccio ist eine multiplatform Webanwendung. Für die Installation gelten nur 
 1. Node größer als 
     - Für `verdaccio@3.x` wird mindestens Node `v6.12` Vorausgesetzt.
     - Für `verdaccio@4.0.0-alpha.x` oder `verdaccio@4.x` wird mindestens Node `8.x` (LTS "Carbon") Vorausgesetzt.
-2. npm `>=4.x` oder `yarn` > Wir empfehlen dringendst die neusten Node Package-Manager-Clients zu verwenden `> npm@5.x | yarn@1.x | pnpm@2.x`
+2. npm `>=5.x` or `yarn` > We highly recommend to use the latest Node Package Managers clients `> npm@6.x | yarn@1.x | pnpm@4.x`
 3. Doe Weboberfläche unterstützt die Browser `Chrome, Firefox, Edge, und IE11`.
 
 > Verdaccio wird laut [Node.js Release Working Group](https://github.com/nodejs/Release) Empfehlung die neuste Node.js Version unterstützen.
