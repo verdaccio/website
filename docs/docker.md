@@ -73,7 +73,7 @@ Verdaccio 4 provides a new set of environment variables to modify either permiss
 
 Property | default | Description
 --- | --- | ---
-VERDACCIO_APPDIR | `/opt/verdaccio-build` | the docker working directory
+VERDACCIO_APPDIR | `/opt/verdaccio` | the docker working directory
 VERDACCIO_USER_NAME | `verdaccio` | the system user
 VERDACCIO_USER_UID | `10001` | the user id being used to apply folder permissions
 VERDACCIO_PORT | `4873` | the verdaccio port
