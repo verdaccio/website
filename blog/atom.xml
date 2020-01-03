@@ -7,7 +7,7 @@
     <link rel="alternate" href="https://verdaccio.org//blog"/>
     <subtitle>The best place to stay up-to-date with the latest Verdaccio news and events.</subtitle>
     <logo>https://verdaccio.org//img/logo/symbol/svg/verdaccio-tiny.svg</logo>
-    <rights>Copyright © 2019 Verdaccio community</rights>
+    <rights>Copyright © 2020 Verdaccio community</rights>
     <entry>
         <title type="html"><![CDATA[Upgrade from v3.x to verdaccio 4.x with LDAP and Docker]]></title>
         <id>https://verdaccio.org//blog/2019/10/05/verdaccio-4-with-ldap-and-docker.html</id>
