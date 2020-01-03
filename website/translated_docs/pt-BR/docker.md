@@ -66,13 +66,13 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 O Verdaccio 4 fornece um novo conjunto de variáveis de ambiente para modificar permissões, porta ou protocolo http. Abaixo a lista completa:
 
-| Propriedade           | padrão                 | Descrição                                                    |
-| --------------------- | ---------------------- | ------------------------------------------------------------ |
-| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | o diretório de trabalho do docker                            |
-| VERDACCIO_USER_NAME | `verdaccio`            | o usuário do sistema                                         |
-| VERDACCIO_USER_UID  | `10001`                | o Id do usuário sendo usado para aplicar permissões de pasta |
-| VERDACCIO_PORT        | `4873`                 | a porta do verdaccio                                         |
-| VERDACCIO_PROTOCOL    | `http`                 | o protocolo http padrão                                      |
+| Propriedade           | padrão           | Descrição                                                    |
+| --------------------- | ---------------- | ------------------------------------------------------------ |
+| VERDACCIO_APPDIR      | `/opt/verdaccio` | o diretório de trabalho do docker                            |
+| VERDACCIO_USER_NAME | `verdaccio`      | o usuário do sistema                                         |
+| VERDACCIO_USER_UID  | `10001`          | o Id do usuário sendo usado para aplicar permissões de pasta |
+| VERDACCIO_PORT        | `4873`           | a porta do verdaccio                                         |
+| VERDACCIO_PROTOCOL    | `http`           | o protocolo http padrão                                      |
 
 ### Plugins
 
