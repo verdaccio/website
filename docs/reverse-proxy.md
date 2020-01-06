@@ -165,7 +165,7 @@ you would need something like this in your `config.yaml`.
 url_prefix: /sub_directory/
 ```
 
-If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like `http://127.0.0.1:4873/-/static`
+If you run verdaccio behind reverse proxy, you may noticed all resource file served as relative path, like `http://127.0.0.1:4873/-/static`
 
 To resolve this issue, **you should send real domain and port to verdaccio with `Host` header**
 
