@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="it-IT"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Docker · Verdaccio</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="![alt Docker Pulls Count](https://dockeri.co/image/verdaccio/verdaccio &quot;Docker Pulls Count&quot;)"/><meta name="docsearch:version" content="4.4.1"/><meta name="docsearch:language" content="it-IT"/><meta property="og:title" content="Docker · Verdaccio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://verdaccio.org//"/><meta property="og:description" content="![alt Docker Pulls Count](https://dockeri.co/image/verdaccio/verdaccio &quot;Docker Pulls Count&quot;)"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://verdaccio.org/blog/atom.xml" title="Verdaccio Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://verdaccio.org/blog/feed.xml" title="Verdaccio Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-2527438-21', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://codefund.io/properties/256/funder.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/it-IT"><img class="logo" src="/img/logo/symbol/svg/verdaccio-tiny.svg" alt="Verdaccio"/><h2 class="headerTitleWithLogo">Verdaccio</h2></a><a href="/it-IT/versions"><h3>4.4.1</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/it-IT/installation" target="_self">Documenti</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li><li class=""><a href="https://twitter.com/verdaccio_npm" target="_self">Twitter</a></li><li class=""><a href="/it-IT/help" target="_self">Aiuto</a></li><li class=""><a href="https://github.com/verdaccio" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="/it-IT/team" target="_self">Team</a></li><li class=""><a href="https://opencollective.com/verdaccio" target="_self">Donazioni</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>Italiano</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/docker">English</a></li><li><a href="/docs/es-ES/docker">Español</a></li><li><a href="/docs/fr-FR/docker">Français</a></li><li><a href="/docs/sr-CS/docker">Serbian (Latin)</a></li><li><a href="/docs/zh-CN/docker">中文</a></li><li><a href="/docs/ru-RU/docker">Russian</a></li><li><a href="https://crowdin.com/project/verdaccio" target="_blank" rel="noreferrer noopener">Aiuta a tradurre</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>DevOps</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Introduzione<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/it-IT/what-is-verdaccio">What is Verdaccio?</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/cli">Command Line Tool</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/who-is-using">Who is using Verdaccio?</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/security-policy">Security Policy</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/logo">Logotype</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Uses Cases</h4><ul><li class="navListItem"><a class="navItem" href="/docs/it-IT/e2e">End to End testing</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/caching">Caching strategies</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/github-actions">Github Actions</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/linking-remote-registry">Linking a Remote Registry</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Talks &amp; Articles</h4><ul><li class="navListItem"><a class="navItem" href="/docs/it-IT/articles">Articles</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/talks">Talks</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Funzioni<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/it-IT/configuration">Configuration File</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/uplinks">Uplinks</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/packages">Package Access</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/authentification">Authentification</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/notifications">Notifications</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/logger">Logger</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/webui">Web User Interface</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Server<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/it-IT/server-configuration">Server Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/reverse-proxy">Reverse Proxy Setup</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/ssl">Set up the SSL Certificates</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/windows">Installing As a Windows Service</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/iss-server">Installing on IIS server</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Sviluppo<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/it-IT/plugins">Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/dev-plugins">Developing Plugins</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Dev Guides</h4><ul><li class="navListItem"><a class="navItem" href="/docs/it-IT/plugin-generator">Plugin Generator</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/plugin-auth">Authentication Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/plugin-middleware">Middleware Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/plugin-storage">Storage Plugin</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/it-IT/node-api">Node API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">DevOps<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/docs/it-IT/docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/kubernetes">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/ci">Continuous Integration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cloud</h4><ul><li class="navListItem"><a class="navItem" href="/docs/it-IT/amazon">Amazon Web Services</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tools</h4><ul><li class="navListItem"><a class="navItem" href="/docs/it-IT/ansible">Ansible</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/puppet">Puppet</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/chef">Chef Cookbook</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Guide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/it-IT/best">Best Practices</a></li><li class="navListItem"><a class="navItem" href="/docs/it-IT/protect-your-dependencies">Protecting packages</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/it-IT" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Docker</h1></header><article><div><span><p><img src="https://dockeri.co/image/verdaccio/verdaccio" alt="alt Docker Pulls Count" title="Docker Pulls Count"></p>
+<p>Per scaricare la più recente <a href="https://hub.docker.com/r/verdaccio/verdaccio/">immagine docker</a> pre costruita:</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio
+</code></pre>
+<p><img src="/docs/assets/docker_verdaccio.gif" alt="Docker pull"></p>
+<div id="codefund">''</div>
+<h2><a class="anchor" aria-hidden="true" id="versioni-taggate"></a><a href="#versioni-taggate" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Versioni taggate</h2>
+<p>Dalla versione <code>v2.x</code> si possono ottenere immagini docker per <a href="https://hub.docker.com/r/verdaccio/verdaccio/tags/">tag</a>, come segue:</p>
+<p>Per una versione maggiore:</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:4
+</code></pre>
+<p>Per una versione minore:</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:4.0
+</code></pre>
+<p>Per una specifica (patch) versione:</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:4.0.0
+</code></pre>
+<blockquote>
+<p>Se si è interessati ad un elenco dei tag, <a href="https://hub.docker.com/r/verdaccio/verdaccio/tags/"> si prega di visitare il sito Docker Hub</a>.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="eseguire-verdaccio-utilizzando-docker"></a><a href="#eseguire-verdaccio-utilizzando-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Eseguire Verdaccio utilizzando Docker</h2>
+<p>Per avviare il contenitore Docker:</p>
+<pre><code class="hljs css language-bash">docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+</code></pre>
+<p>L'ultimo argomento definisce quale immagine utilizzare. La riga precedente recupererà l'ultima immagine pre costruita da dockerhub, se non è già stato fatto.</p>
+<p>Se è stata <a href="#build-your-own-docker-image">costruita un'immagine localmente</a> utilizzare <code>verdaccio</code> come ultimo argomento.</p>
+<p>È possibile utilizzare <code>-v</code> per montare <code>conf</code>, <code>storage</code> e <code>plugins</code> nel filesystem degli host:</p>
+<pre><code class="hljs css language-bash">V_PATH=/path/<span class="hljs-keyword">for</span>/verdaccio; docker run -it --rm --name verdaccio \
+  -p 4873:4873 \
+  -v <span class="hljs-variable">$V_PATH</span>/conf:/verdaccio/conf \
+  -v <span class="hljs-variable">$V_PATH</span>/storage:/verdaccio/storage \
+  -v <span class="hljs-variable">$V_PATH</span>/plugins:/verdaccio/plugins \
+  verdaccio/verdaccio
+</code></pre>
+<blockquote>
+<p>Nota: Verdaccio viene eseguito all'interno del container come utente non-root (uid=10001), se si utilizza bind mount per sovrascrivere le impostazioni predefinite, è necessario assicurarsi che la mount directory venga assegnata all'utente corretto. In above example, you need to run <code>sudo chown -R 10001:65533 /opt/verdaccio</code> otherwise you will get permission errors at runtime. Si consiglia di <a href="https://docs.docker.com/storage/volumes/">utilizzare il volume di docker</a> al posto di bind mount.</p>
+</blockquote>
+<p>Verdaccio 4 fornisce un nuovo set di variabili d'ambiente per modificare le autorizzazioni, la porta o il protocollo http. Qui l'elenco completo:</p>
+<table>
+<thead>
+<tr><th>Proprietà</th><th>default</th><th>Descrizione</th></tr>
+</thead>
+<tbody>
+<tr><td>VERDACCIO_APPDIR</td><td><code>/opt/verdaccio</code></td><td>la directory di lavoro docker</td></tr>
+<tr><td>VERDACCIO_USER_NAME</td><td><code>verdaccio</code></td><td>l'utente del sistema</td></tr>
+<tr><td>VERDACCIO_USER_UID</td><td><code>10001</code></td><td>l'id utente utilizzato per applicare le autorizzazioni della cartella</td></tr>
+<tr><td>VERDACCIO_PORT</td><td><code>4873</code></td><td>la porta di verdaccio</td></tr>
+<tr><td>VERDACCIO_PROTOCOL</td><td><code>http</code></td><td>il protocollo http predefinito</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="plugin"></a><a href="#plugin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugin</h3>
+<p>I plugin possono essere installati in una cartella separata e montati utilizzando Docker o Kubernetes, ad ogni modo assicurarsi di costruire plugin con dipendenze native adoperando la stessa immagine di base del Dockerfile di Verdaccio.</p>
+<pre><code class="hljs css language-docker"><span class="hljs-keyword">FROM</span> verdaccio/verdaccio
+
+<span class="hljs-keyword">USER</span> root
+
+<span class="hljs-keyword">ENV</span> NODE_ENV=production
+
+<span class="hljs-keyword">RUN</span><span class="bash"> npm i &amp;&amp; npm install verdaccio-s3-storage</span>
+
+<span class="hljs-keyword">USER</span> verdaccio
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="configurazione-di-docker-e-della-porta-personalizzata"></a><a href="#configurazione-di-docker-e-della-porta-personalizzata" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurazione di Docker e della porta personalizzata</h3>
+<p>Any <code>host:port</code> configured in <code>conf/config.yaml</code> under <code>listen</code> <strong>is currently ignored when using docker</strong>.</p>
+<p>Se si desidera raggiungere l'istanza docker di Verdaccio da una porta differente, diciamo <code>5000</code>, nel comando <code>docker run</code> aggiungere la variabile d'ambiente <code>VERDACCIO_PORT=5000</code> e poi esporre la porta <code>-p 5000:5000</code>.</p>
+<pre><code class="hljs css language-bash">V_PATH=/path/<span class="hljs-keyword">for</span>/verdaccio; docker run -it --rm --name verdaccio \
+  -e <span class="hljs-string">"VERDACCIO_PORT=8080"</span> -p 8080:8080 \  
+  verdaccio/verdaccio
+</code></pre>
+<p>Naturalmente il numero che viene dato al parametro <code>-p</code> deve corrispondere.</p>
+<h3><a class="anchor" aria-hidden="true" id="utilizzare-https-con-docker"></a><a href="#utilizzare-https-con-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Utilizzare HTTPS con Docker</h3>
+<p>È possibile configurare il protocollo che verdaccio andrà ad ascoltare, analogamente a come si configura la porta. È necessario sovrascrivere il valore predefinito (&quot;http&quot;) della variabile ambientale del <code>PROTOCOL</code> con &quot;https&quot;, dopo aver specificato i certificati nel config.yaml.</p>
+<pre><code class="hljs css language-bash">docker run -it --rm --name verdaccio \
+  --env <span class="hljs-string">"VERDACCIO_PROTOCOL=https"</span> -p 4873:4873
+  verdaccio/verdaccio
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="utilizzare-docker-compose"></a><a href="#utilizzare-docker-compose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Utilizzare docker-compose</h3>
+<ol>
+<li>Scaricare l'ultima versione di <a href="https://github.com/docker/compose">docker-compose</a>.</li>
+<li>Creare ed eseguire il container:</li>
+</ol>
+<pre><code class="hljs css language-bash">$ docker-compose up --build
+</code></pre>
+<p>Si può definire la porta da utilizzare (sia per il container che per l'host) anteponendo al comando precedente il prefisso <code>VERDACCIO_PORT=5000</code>.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span>
+
+<span class="hljs-attr">services:</span>
+<span class="hljs-attr">  verdaccio:</span>
+<span class="hljs-attr">    image:</span> <span class="hljs-string">verdaccio/verdaccio</span>
+<span class="hljs-attr">    container_name:</span> <span class="hljs-string">"verdaccio"</span>
+<span class="hljs-attr">    networks:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">node-network</span>
+<span class="hljs-attr">    environment:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">VERDACCIO_PORT=4873</span>
+<span class="hljs-attr">    ports:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">"4873:4873"</span>
+<span class="hljs-attr">    volumes:</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">"./storage:/verdaccio/storage"</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">"./config:/verdaccio/conf"</span>
+<span class="hljs-bullet">      -</span> <span class="hljs-string">"./plugins:/verdaccio/plugins"</span>  
+<span class="hljs-attr">networks:</span>
+<span class="hljs-attr">  node-network:</span>
+<span class="hljs-attr">    driver:</span> <span class="hljs-string">bridge</span>
+</code></pre>
+<p>Docker genererà un volume nominato nel quale immagazzinare i dati persistenti dell'applicazione. È possibile utilizzare <code>docker inspect</code> o <code>docker volume inspect</code> per rivelare l'ubicazione fisica del volume e modificare la configurazione, in questo modo:</p>
+<pre><code class="hljs css language-bash">$ docker volume inspect verdaccio_verdaccio
+[
+    {
+        <span class="hljs-string">"Name"</span>: <span class="hljs-string">"verdaccio_verdaccio"</span>,
+        <span class="hljs-string">"Driver"</span>: <span class="hljs-string">"local"</span>,
+        <span class="hljs-string">"Mountpoint"</span>: <span class="hljs-string">"/var/lib/docker/volumes/verdaccio_verdaccio/_data"</span>,
+        <span class="hljs-string">"Labels"</span>: null,
+        <span class="hljs-string">"Scope"</span>: <span class="hljs-string">"local"</span>
+    }
+]
+
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="creare-la-propria-immagine-docker"></a><a href="#creare-la-propria-immagine-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creare la propria immagine Docker</h2>
+<pre><code class="hljs css language-bash">docker build -t verdaccio .
+</code></pre>
+<p>Esiste inoltre uno script npm per creare l'immagine docker, quindi si può anche fare:</p>
+<pre><code class="hljs css language-bash">yarn run build:docker
+</code></pre>
+<p>Nota: Il primo build necessita di qualche minuto per creare perché ha bisogno di avviare <code>npm install</code>, e potrebbe impiegare lo stesso tempo ogni volta che si cambia un file che non sia elencato in <code>.dockerignore</code>.</p>
+<p>Si prega di notare che per ognuno dei comandi docker sopra citati è necessario avere docker installato sul pc e l'eseguibile docker dovrebbe essere disponibile su <code>$PATH</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="esempi-docker"></a><a href="#esempi-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Esempi Docker</h2>
+<p>Esiste una cartella separata che ospita configurazioni multiple per comporre immagini Docker con <code>verdaccio</code>, per esempio, come proxy inverso:</p>
+<p><a href="https://github.com/verdaccio/docker-examples">https://github.com/verdaccio/docker-examples</a></p>
+<h2><a class="anchor" aria-hidden="true" id="build-personalizzate-di-docker"></a><a href="#build-personalizzate-di-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Build Personalizzate di Docker</h2>
+<blockquote>
+<p>Se hai creato un'immagine basata su Verdaccio, aggiungila a questo elenco.</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/snics/docker-verdaccio-gitlab">docker-verdaccio-gitlab</a></li>
+<li><a href="https://github.com/deployable/docker-verdaccio">docker-verdaccio</a></li>
+<li><a href="https://github.com/asynchrony/docker-verdaccio-s3">docker-verdaccio-s3</a> Container privato di NPM che può eseguire il back up in s3</li>
+<li><a href="https://github.com/snadn/docker-verdaccio-ldap">docker-verdaccio-ldap</a></li>
+<li><a href="https://github.com/nathantreid/verdaccio-ldap">verdaccio-ldap</a></li>
+<li><a href="https://github.com/shingtoli/verdaccio-compose-local-bridge">verdaccio-compose-local-bridge</a></li>
+<li><a href="https://github.com/Global-Solutions/docker-verdaccio">docker-verdaccio</a></li>
+<li><a href="https://github.com/idahobean/verdaccio-docker">verdaccio-docker</a></li>
+<li><a href="https://github.com/andru255/verdaccio-server">verdaccio-server</a></li>
+<li><a href="https://github.com/coldrye-docker/coldrye-debian-verdaccio">coldrye-debian-verdaccio</a> immagine docker che fornisce verdaccio da coldrye-debian-nodejs.</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/it-IT/node-api"><span class="arrow-prev">← </span><span>Node API</span></a><a class="docs-next button" href="/docs/it-IT/kubernetes"><span>Kubernetes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#versioni-taggate">Versioni taggate</a></li><li><a href="#eseguire-verdaccio-utilizzando-docker">Eseguire Verdaccio utilizzando Docker</a><ul class="toc-headings"><li><a href="#plugin">Plugin</a></li><li><a href="#configurazione-di-docker-e-della-porta-personalizzata">Configurazione di Docker e della porta personalizzata</a></li><li><a href="#utilizzare-https-con-docker">Utilizzare HTTPS con Docker</a></li><li><a href="#utilizzare-docker-compose">Utilizzare docker-compose</a></li></ul></li><li><a href="#creare-la-propria-immagine-docker">Creare la propria immagine Docker</a></li><li><a href="#esempi-docker">Esempi Docker</a></li><li><a href="#build-personalizzate-di-docker">Build Personalizzate di Docker</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/it-IT/what-is-verdaccio.html">Getting Started</a><a href="/docs/it-IT/docker.html">Docker</a><a href="/docs/it-IT/configuration.html">Configuration</a><a href="/docs/it-IT/logo">Logos</a></div><div><h5>Community</h5><a href="/it-IT/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'a8b4d117e513cd8d71d6a95e3d9d4a91',
+                indexName: 'verdaccio',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
