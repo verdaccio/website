@@ -1,0 +1,86 @@
+{
+  "version-4.4.1-docs": {
+    "Introduction": [
+      "version-4.4.1-what-is-verdaccio",
+      "version-4.4.1-installation",
+      "version-4.4.1-cli",
+      "version-4.4.1-who-is-using",
+      "version-4.4.1-security-policy",
+      "version-4.4.1-logo",
+      {
+        "type": "subcategory",
+        "label": "Uses Cases",
+        "ids": [
+          "version-4.4.1-e2e",
+          "version-4.4.1-caching",
+          "version-4.4.1-github-actions",
+          "version-4.4.1-linking-remote-registry"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Talks & Articles",
+        "ids": [
+          "version-4.4.1-articles",
+          "version-4.4.1-talks"
+        ]
+      }
+    ],
+    "Features": [
+      "version-4.4.1-configuration",
+      "version-4.4.1-uplinks",
+      "version-4.4.1-packages",
+      "version-4.4.1-authentification",
+      "version-4.4.1-notifications",
+      "version-4.4.1-logger",
+      "version-4.4.1-webui"
+    ],
+    "Server": [
+      "version-4.4.1-server-configuration",
+      "version-4.4.1-reverse-proxy",
+      "version-4.4.1-ssl",
+      "version-4.4.1-windows",
+      "version-4.4.1-iss-server"
+    ],
+    "Development": [
+      "version-4.4.1-plugins",
+      "version-4.4.1-dev-plugins",
+      {
+        "type": "subcategory",
+        "label": "Dev Guides",
+        "ids": [
+          "version-4.4.1-plugin-generator",
+          "version-4.4.1-plugin-auth",
+          "version-4.4.1-plugin-middleware",
+          "version-4.4.1-plugin-storage"
+        ]
+      },
+      "version-4.4.1-node-api"
+    ],
+    "DevOps": [
+      "version-4.4.1-docker",
+      "version-4.4.1-kubernetes",
+      "version-4.4.1-ci",
+      {
+        "type": "subcategory",
+        "label": "Cloud",
+        "ids": [
+          "version-4.4.1-amazon"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "Tools",
+        "ids": [
+          "version-4.4.1-ansible",
+          "version-4.4.1-puppet",
+          "version-4.4.1-chef"
+        ]
+      }
+    ],
+    "Guides": [
+      "version-4.4.1-best",
+      "version-4.4.1-protect-your-dependencies"
+    ]
+  }
+}
