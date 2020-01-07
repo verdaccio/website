@@ -159,7 +159,7 @@ If the whole URL is being used for Verdaccio, you don't need to define a `url_pr
 url_prefix: /sub_directory/
 ```
 
-Jeśli uruchomisz verdaccio za odwrotnym proxy, możesz zauważyć, że cały plik zasobów służył jako relatywna ścieżka, np. `http://127.0.0.1:4873/-/static`
+If you run verdaccio behind reverse proxy, you may noticed all resource file served as relative path, like `http://127.0.0.1:4873/-/static`
 
 To resolve this issue, **you should send real domain and port to verdaccio with `Host` header**
 

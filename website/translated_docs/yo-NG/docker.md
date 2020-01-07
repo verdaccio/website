@@ -66,13 +66,13 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 Verdaccio 4 n pese awọn iyipada ayika tuntun lati ṣayipada si boya awọn igbanilaaye, ibudo tabi Ilana Http. Eyi ni akojọ pipe:
 
-| Ohun ini              | atilẹwa                | Apejuwe                                                                 |
-| --------------------- | ---------------------- | ----------------------------------------------------------------------- |
-| VERDACCIO_APPDIR      | `/opt/verdaccio-build` | ọna isisẹ ti docker naa                                                 |
-| VERDACCIO_USER_NAME | `verdaccio`            | olumulo eto naa                                                         |
-| VERDACCIO_USER_UID  | `10001`                | idanimọ olumulo naa ti o n jẹ lilo lati ṣamulo awọn igbanilaaye ti foda |
-| VERDACCIO_PORT        | `4873`                 | ibudo verdaccio naa                                                     |
-| VERDACCIO_PROTOCOL    | `http`                 | ilana http atilẹwa naa                                                  |
+| Ohun ini              | atilẹwa          | Apejuwe                                                                 |
+| --------------------- | ---------------- | ----------------------------------------------------------------------- |
+| VERDACCIO_APPDIR      | `/opt/verdaccio` | ọna isisẹ ti docker naa                                                 |
+| VERDACCIO_USER_NAME | `verdaccio`      | olumulo eto naa                                                         |
+| VERDACCIO_USER_UID  | `10001`          | idanimọ olumulo naa ti o n jẹ lilo lati ṣamulo awọn igbanilaaye ti foda |
+| VERDACCIO_PORT        | `4873`           | ibudo verdaccio naa                                                     |
+| VERDACCIO_PROTOCOL    | `http`           | ilana http atilẹwa naa                                                  |
 
 ### Awọn ohun elo
 
