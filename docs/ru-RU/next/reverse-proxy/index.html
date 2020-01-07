@@ -215,7 +215,7 @@ server {
 <p>If the whole URL is being used for Verdaccio, you don't need to define a <code>url_prefix</code>, otherwise you would need something like this in your <code>config.yaml</code>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">url_prefix:</span> <span class="hljs-string">/sub_directory/</span>
 </code></pre>
-<p>If you run verdaccio behind reverse proxy, you may noticed all resource file served as relaticve path, like <code>http://127.0.0.1:4873/-/static</code></p>
+<p>If you run verdaccio behind reverse proxy, you may noticed all resource file served as relative path, like <code>http://127.0.0.1:4873/-/static</code></p>
 <p>Чтобы решить эту проблему, **вам нужно послать реальный домен и порт для verdaccio с помощью хедера <code>Host</code> **</p>
 <p>Nginx configure should look like this:</p>
 <pre><code class="hljs css language-nginx"><span class="hljs-attribute">location</span> / {
