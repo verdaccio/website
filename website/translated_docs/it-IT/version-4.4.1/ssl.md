@@ -1,0 +1,55 @@
+---
+id: version-4.4.1-ssl
+title: Configurare i Certificati SSL
+original_id: ssl
+---
+
+Seguire queste istruzioni per configurare un certificato SSL che serva al registro NPM su HTTPS.
+
+<div id="codefund">''</div>
+
+* Aggiornare la proprietà listen in `~/.config/verdaccio/config.yaml`:
+
+````
+listen: 'https://your.domain.com/'
+````
+
+Una volta aggiornata la proprietà listen e provato ad avviare verdaccio di nuovo, chiederà i certificati.
+
+* Generare i certificati
+
+````
+ $ openssl genrsa -out /Users/user/.config/verdaccio/verdaccio-key.pem 2048
+ $ openssl req -new -sha256 -key /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-csr.pem
+ $ openssl x509 -req -in /Users/user/.config/verdaccio/verdaccio-csr.pem -signkey /Users/user/.config/verdaccio/verdaccio-key.pem -out /Users/user/.config/verdaccio/verdaccio-cert.pem
+ ````
+
+* Edit your config file `/Users/user/.config/verdaccio/config.yaml` and add the following section:
+
+````
+https:
+    key: /Users/user/.config/verdaccio/verdaccio-key.pem
+    cert: /Users/user/.config/verdaccio/verdaccio-cert.pem
+    ca: /Users/user/.config/verdaccio/verdaccio-csr.pem
+````
+
+Alternatively, if you have a certificate with the `server.pfx` format, you can add the following configuration section: (The passphrase is optional and only needed if your certificate is encrypted.)
+
+````
+https:
+  pfx: /Users/user/.config/verdaccio/server.pfx
+  passphrase: 'secret'
+````
+
+Ulteriori informazioni sugli argomenti `key`, `cert`, `ca`, `pfx` e `passphrase` nella [documentazione Node](https://nodejs.org/api/tls.html#tls_tls_createsecurecontext_options)
+
+* Eseguire `verdaccio` nella linea di comando.
+
+* Aprire il browser e visitare `https://your.domain.com:port/`
+
+Queste istruzioni sono ampiamente valide per OSX e Linux; per Windows i percorsi varieranno, ma i passaggi sono gli stessi.
+
+## Docker
+Se si sta utilizzando l'immagine Docker, è necessario impostare la variabile d'ambiente `VERDACCIO_PROTOCOL` in `https`, visto che l'argomento `listen` viene fornito nel [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) e viene quindi ignorato dal file di configurazione.
+
+Si può anche impostare la variabile d'ambiente `VERDACCIO_PORT` se si sta utilizzando una porta differente da `4873`.
