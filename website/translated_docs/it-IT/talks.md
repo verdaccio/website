@@ -7,7 +7,7 @@ Elenchiamo le presentazioni su Verdaccio: se hai fatto o se in in procinto di fa
 
 > Do not hesitate to share your content with the community, we encourage you to speak about Verdaccio. Se hai bisogno di aiuto su come iniziare, informazioni o risorse, raggiungici sulla nostra [Chat di Discord](https://chat.verdaccio.org), ti aiuteremo.
 
-## L’ultima Presentazione <iframe width="960" height="540" src="https://www.youtube.com/watch?v=gpjC8Qp9B9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+## L’ultima Presentazione <iframe width="560" height="315" src="https://www.youtube.com/embed/gpjC8Qp9B9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 > Qui viene sempre messa in evidenza l'ultima presentazione condivisa. Ti supportiamo nel condividere la tua voce con la community.
 
