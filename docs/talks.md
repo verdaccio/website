@@ -11,7 +11,7 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 
 ## The latest Talk
 
-<iframe width="960" height="540" src="https://www.youtube.com/watch?v=gpjC8Qp9B9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gpjC8Qp9B9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 > The last shared talk is always highlighted here. We help you share your voice with the community.
 
