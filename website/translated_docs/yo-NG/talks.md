@@ -7,7 +7,7 @@ A ṣe akojọ awọn ọrọ nipa Verdaccio, ti o ba sọ ọrọ kan tabi ti o
 
 > Do not hesitate to share your content with the community, we encourage you to speak about Verdaccio. Ti o ba nilo iranlọwọ lori bi o ṣe le bẹrẹ, alaye tabi awọn ohun elo, kan si wa ni [Chat at Discord](https://chat.verdaccio.org) wa, a ma ran ẹ lọwọ.
 
-## Ọrọ to n lọ lọwọ <iframe width="960" height="540" src="https://www.youtube.com/watch?v=gpjC8Qp9B9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+## Ọrọ to n lọ lọwọ <iframe width="560" height="315" src="https://www.youtube.com/embed/gpjC8Qp9B9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 > Ọrọ ikẹhin to jẹ pinpin ma n jẹ fififihan nibi nigbagbogbo. A n ṣe iranlọwọ fun ọ lati pin ohun rẹ pẹlu awujọ.
 
