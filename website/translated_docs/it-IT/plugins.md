@@ -5,7 +5,7 @@ title: "Plugin"
 
 Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, o con nuovi metodi di autenticazione, aggiungendo endpoint o utilizzando un archivio personalizzato.
 
-There are 5 types of plugins:
+Sono presenti 5 tipi di plugin:
 
 * [Autenticazione](plugin-auth.md)
 * [Middleware](plugin-middleware.md)
