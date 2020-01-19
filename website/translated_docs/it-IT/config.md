@@ -236,7 +236,7 @@ middlewares:
     enabled: true
 ```
 
-### Experiments
+### Esperimenti
 
 This release includes a new property named `experiments` that can be placed in the `config.yaml` and is completely optional.
 
@@ -244,7 +244,7 @@ We want to be able to ship new things without affecting production environments.
 
 The features that are under this flag might not be stable or might be removed in future releases.
 
-Here one example:
+Un esempio:
 
 ```yaml
 experiments:
