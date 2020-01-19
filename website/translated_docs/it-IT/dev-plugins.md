@@ -8,20 +8,20 @@ Esistono diversi modi di ampliare `verdaccio`, i tipi di estensioni supportati s
 * [Autenticazione](plugin-auth.md)
 * [Middleware](plugin-middleware.md)
 * [Archiviazione](plugin-storage.md)
-* Theme
+* Tema
 * Filter plugins
 
 > We recommend developing plugins using our [Typescript type definitions](https://github.com/verdaccio/monorepo/tree/master/core/types).
 
 <div id="codefund">''</div>
 
-# Other plugins
+# Altri plugin
 
 The following plugins are valid and in process of incubation.
 
 ## Theme Plugin
 
-The plugin must return a function that returns a **string**. The string should be the absolute location of the root of your user interface.
+Il plugin deve restituire una funzione che restituisca una **stringa**. La stringa dovrebbe essere l'ubicazione completa della root dell'interfaccia utente.
 
 ### API
 
