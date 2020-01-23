@@ -150,6 +150,13 @@ const nonSponsorUsers = [
     fbOpenSource: false,
     pinned: true,
   },
+  {
+    caption: "Wix Engineering",
+    image: "img/users/wix.png",
+    infoLink: "https://github.com/wix",
+    fbOpenSource: false,
+    pinned: true,
+  },
 ];
 
 const sponsorUsers = [
