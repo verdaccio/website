@@ -143,6 +143,13 @@ const nonSponsorUsers = [
     fbOpenSource: false,
     pinned: true,
   },
+  {
+    caption: "Apollo GraphQL",
+    image: "img/users/apollographql.png",
+    infoLink: "https://github.com/apollographql",
+    fbOpenSource: false,
+    pinned: true,
+  },
 ];
 
 const sponsorUsers = [
