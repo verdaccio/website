@@ -19,17 +19,17 @@ original_id: protect-your-dependencies
     proxy: npmjs
 ```
 
-With this configuration, basically we allow to groups **admin** and **teamA** to *publish* and **teamA**   **teamB** **teamC** *access* to such dependencies.
+С помощью этой конфигурации, в основном, мы позволяем группам **admin** и **teamA** *публиковать* зависимости, а группы **teamA**   **teamB** **teamC** получают *доступ* к таким зависимостям.
 
 ### Use case: teamD пробует получить доступ к пакету
 
-So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
+Итак, если я авторизован как **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
 
 ```bash
 ➜ npm whoami
 teamD
 ```
-I won't have access to such dependencies and also won't be visible via web for user **teamD**. If I try to access the following will happen.
+У меня не будет доступа к таким зависимостям, а также я не буду виден через Интернет для пользователя <strong x-id = "1"> teamD </strong>. If I try to access the following will happen.
 
 ```bash
 ➜ npm install my-company-core
