@@ -79,7 +79,7 @@ There's two options here:
 
 ## Безопасность
 
-The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recommendation.
+Безопасность начинается с вашего окружения, и мы настоятельно рекомендуем прочитать **[10 лучших практик npm по безопасности](https://snyk.io/blog/ten-npm-security-best-practices/)** и следовать рекомендациям.
 
 ### Доступ к пакетам
 
