@@ -8,7 +8,7 @@ original_id: best
 
 <div id="codefund">''</div>
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Не стесняйтесь предлагать свои лучшие практики сообществу Verdaccio**.
 
 ## Приватный репозиторий
 
@@ -32,11 +32,11 @@ You can add users and manage which users can access which packages.
       publish: $authenticated
    ```
 
-Always remember, **the order of packages access is important**, packages are mached always top to bottom.
+Помните, **важен порядок доступа к пакетам**, пакеты отображаются всегда сверху вниз.
 
 ### Using public packages from npmjs.org
 
-If some package doesn't exist in the storage, server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from cache pretending that no other packages exist. **Verdaccio will download only what's needed (= requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
+If some package doesn't exist in the storage, server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from cache pretending that no other packages exist. **Verdaccio скачает только то, что необходимо (= запрошено клиентами)**, и эта информация будет закэширована. Так что если клиент запросит то же самое еще раз, он может быть обслужен без запроса к npmjs.org.
 
 **Пример:**
 
@@ -44,28 +44,28 @@ If some package doesn't exist in the storage, server will try to fetch it from n
 
 ### Override public packages
 
-If you want to use a modified version of some public package `foo`, you can just publish it to your local server, so when your type `npm install foo`, **it'll consider installing your version**.
+Если вы хотите использовать модифицированную версию какого-либо публичного пакета `foo`, то просто опубликуйте его на вашем локальном сервере, и когда вы запустите команду `npm install foo`, **будет установлена именно ваша версия**.
 
 There's two options here:
 
-1. You want to create a separate **fork** and stop synchronizing with public version.
+1. Вы хотите создать отдельный **форк** и остановить синхронизацию с публичной версией.
 
    If you want to do that, you should modify your configuration file so verdaccio won't make requests regarding this package to npmjs anymore. Добавьте отдельную запись для этого пакета в `config.yaml` и удалите `npmjs` из списка `proxy`, затем перезапустите сервер.
 
    ```yaml
     packages:
-      '@my-company/*':
-        access: $all
-        publish: $authenticated
-        # comment it out or leave it empty
-        # proxy:
+  '@my-company/*':
+    access: $all
+    publish: $authenticated
+    # закомментировать или оставить пустым
+    # proxy:
    ```
 
-   When you publish your package locally, **you should probably start with version string higher than existing one**, so it won't conflict with existing package in the cache.
+   При этом, когда вы локально публикуете пакет, **рекомендуется повысить версию**, чтобы не было конфликта с версией, которая уже есть в кэше.
 
 2. You want to temporarily use your version, but return to public one as soon as it's updated.
 
-   In order to avoid version conflicts, **you should use a custom pre-release suffix of the next patch version**. Например, если публичный пакет имел версию 0.1.2, вам нужно опубликовать `0.1.3-my-temp-fix`.
+   Чтобы избежать конфликта версий, **вам нужно использовать свой пре-релизный суффикс для следующей версии**. Например, если публичный пакет имел версию 0.1.2, вам нужно опубликовать `0.1.3-my-temp-fix`.
 
    ```bash
     npm version 0.1.3-my-temp-fix
