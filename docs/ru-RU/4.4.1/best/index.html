@@ -82,7 +82,7 @@
             });
         </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/ru-RU" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Best Practices</h1></header><article><div><span><p>Это руководство - список лучших практик, которые мы собрали, и которые рекомендуем всем пользователям. Не воспринимайте это руководство как высеченную в камне неделимую истину, вы можете использовать только пару пунктов, если так будет правильно для вас.</p>
 <div id="codefund">''</div>
-<p><strong>Feel free to suggest your best practices with the Verdaccio community</strong>.</p>
+<p><strong>Не стесняйтесь предлагать свои лучшие практики сообществу Verdaccio</strong>.</p>
 <h2><a class="anchor" aria-hidden="true" id="приватный-репозиторий"></a><a href="#приватный-репозиторий" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Приватный репозиторий</h2>
 <p>You can add users and manage which users can access which packages.</p>
 <p>Мы рекомендуем определить для ваших приватных пакетов префикс, например <code>local-*</code>, или скоуп <code>@my-company/*</code>, так что все ваши приватные пакеты будут выглядеть примерно так: <code>local-foo</code>. This way you can clearly separate public packages from private ones.</p>
@@ -100,34 +100,39 @@
 <span class="hljs-attr">     access:</span> <span class="hljs-string">$all</span>
 <span class="hljs-attr">     publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
-<p>Always remember, <strong>the order of packages access is important</strong>, packages are mached always top to bottom.</p>
+<p>Помните, <strong>важен порядок доступа к пакетам</strong>, пакеты отображаются всегда сверху вниз.</p>
 <h3><a class="anchor" aria-hidden="true" id="using-public-packages-from-npmjsorg"></a><a href="#using-public-packages-from-npmjsorg" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using public packages from npmjs.org</h3>
-<p>If some package doesn't exist in the storage, server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from cache pretending that no other packages exist. <strong>Verdaccio will download only what's needed (= requested by clients)</strong>, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.</p>
+<p>If some package doesn't exist in the storage, server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from cache pretending that no other packages exist. <strong>Verdaccio скачает только то, что необходимо (= запрошено клиентами)</strong>, и эта информация будет закэширована. Так что если клиент запросит то же самое еще раз, он может быть обслужен без запроса к npmjs.org.</p>
 <p><strong>Пример:</strong></p>
 <p>Если вы запросили <code>express@4.0.1</code> с сервера и запрос был успешный, это означает, что вы сможете получить его снова (вместе со всеми зависимостями) в любое время, даже если npmjs.org не работает. Но, скажем, <code>express@4.0.0</code> не будет загружен, пока кто-нибудь его не запросит. И если npmjs.org недоступен, сервер будет отвечать, что только <code>express@4.0.1</code> (= только то, что в кэше) опубликован, и больше никих версий нет.</p>
 <h3><a class="anchor" aria-hidden="true" id="override-public-packages"></a><a href="#override-public-packages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Override public packages</h3>
-<p>If you want to use a modified version of some public package <code>foo</code>, you can just publish it to your local server, so when your type <code>npm install foo</code>, <strong>it'll consider installing your version</strong>.</p>
+<p>Если вы хотите использовать модифицированную версию какого-либо публичного пакета <code>foo</code>, то просто опубликуйте его на вашем локальном сервере, и когда вы запустите команду <code>npm install foo</code>, <strong>будет установлена именно ваша версия</strong>.</p>
 <p>There's two options here:</p>
 <ol>
-<li><p>You want to create a separate <strong>fork</strong> and stop synchronizing with public version.</p>
+<li><p>Вы хотите создать отдельный <strong>форк</strong> и остановить синхронизацию с публичной версией.</p>
 <p>If you want to do that, you should modify your configuration file so verdaccio won't make requests regarding this package to npmjs anymore. Добавьте отдельную запись для этого пакета в <code>config.yaml</code> и удалите <code>npmjs</code> из списка <code>proxy</code>, затем перезапустите сервер.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr"> packages:</span>
-   <span class="hljs-string">'@my-company/*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">     access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">     publish:</span> <span class="hljs-string">$authenticated</span>
-     <span class="hljs-comment"># comment it out or leave it empty</span>
-     <span class="hljs-comment"># proxy:</span>
-</code></pre>
-<p>When you publish your package locally, <strong>you should probably start with version string higher than existing one</strong>, so it won't conflict with existing package in the cache.</p></li>
-<li><p>You want to temporarily use your version, but return to public one as soon as it's updated.</p>
-<p>In order to avoid version conflicts, <strong>you should use a custom pre-release suffix of the next patch version</strong>. Например, если публичный пакет имел версию 0.1.2, вам нужно опубликовать <code>0.1.3-my-temp-fix</code>.</p>
-<pre><code class="hljs css language-bash"> npm version 0.1.3-my-temp-fix
- npm --publish --tag fix --registry http://localhost:4873
-</code></pre>
-<p>В этом случае ваш пакет будет использоваться до тех пор, пока владелец пакета не опубликует версию <code>0.1.3</code>.</p></li>
+</code></pre></li>
 </ol>
+<p>'@my-company/*':
+access: $all
+publish: $authenticated
+# закомментировать или оставить пустым
+# proxy:</p>
+<pre><code class="hljs">
+При этом, когда вы локально публикуете пакет, **рекомендуется повысить версию**, чтобы не было конфликта с версией, которая уже есть в кэше.
+
+<span class="hljs-number">2.</span> You want <span class="hljs-keyword">to</span> temporarily use your <span class="hljs-built_in">version</span>, <span class="hljs-keyword">but</span> <span class="hljs-literal">return</span> <span class="hljs-keyword">to</span> public one <span class="hljs-keyword">as</span> soon <span class="hljs-keyword">as</span> <span class="hljs-keyword">it</span>'s updated.
+
+Чтобы избежать конфликта версий, **вам нужно использовать свой пре-релизный суффикс для следующей версии**. Например, если публичный пакет имел версию <span class="hljs-number">0.1</span><span class="hljs-number">.2</span>, вам нужно опубликовать `<span class="hljs-number">0.1</span><span class="hljs-number">.3</span>-<span class="hljs-keyword">my</span>-temp-fix`.
+
+```bash
+ npm <span class="hljs-built_in">version</span> <span class="hljs-number">0.1</span><span class="hljs-number">.3</span>-<span class="hljs-keyword">my</span>-temp-fix
+ npm <span class="hljs-comment">--publish --tag fix --registry http://localhost:4873</span>
+</code></pre>
+<p>В этом случае ваш пакет будет использоваться до тех пор, пока владелец пакета не опубликует версию <code>0.1.3</code>.</p>
 <h2><a class="anchor" aria-hidden="true" id="безопасность"></a><a href="#безопасность" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Безопасность</h2>
-<p>The security starts in your environment, for such thing we totally recommend read <strong><a href="https://snyk.io/blog/ten-npm-security-best-practices/">10 npm Security Best Practices</a></strong> and follow the recommendation.</p>
+<p>Безопасность начинается с вашего окружения, и мы настоятельно рекомендуем прочитать <strong><a href="https://snyk.io/blog/ten-npm-security-best-practices/">10 лучших практик npm по безопасности</a></strong> и следовать рекомендациям.</p>
 <h3><a class="anchor" aria-hidden="true" id="доступ-к-пакетам"></a><a href="#доступ-к-пакетам" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Доступ к пакетам</h3>
 <p>По умолчанию все опубликованные в Verdaccio пакеты доступны всем, и мы настоятельно рекомендуем защитить ваш реестр от внешних неавторизированных пользователей, установив значение свойства <code>access</code> в <code>$authenticated</code>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">  packages:</span>
