@@ -7,13 +7,14 @@ title: "Выступления"
 
 > Не забывайте поделиться с комьюнити, мы любим, когда говорят о Verdaccio. Если вам нужны мысли тему "с чего начать", информация или материалы на эту тему, пишите нам в [чате в Discord](https://chat.verdaccio.org), и мы поможем.
 
-## Самые последние выступления <iframe width="960" height="540" src="https://www.youtube.com/embed/CnLA73E1BrE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+## Самые последние выступления <iframe width="560" height="315" src="https://www.youtube.com/embed/gpjC8Qp9B9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 > Здесь перечислены последние выступления. Мы поможем вам сделать так, чтобы вас голос был услышал комьюнити.
 
+* [GitNation Open Source Stage: How we have built a Node.js Registry with React - Juan Picado](https://www.youtube.com/watch?v=gpjC8Qp9B9A)
 * [Практический опыт работы с приватным хранилищем npm-пакетов (Verdaccio)](https://youtu.be/CnLA73E1BrE?t=10101) - [О Panda-Meetup](http://panda-meetup.ru/msk-frontend-meetup-2) - time (2:48:23)
 * [Madrid Node.js Meetup - Introducción a Verdaccio: gestión de paquetes privados, Март 2019](https://www.todojs.com/introduccion-a-verdaccio/)
-* [Vienna.js Meetuo - Introduction to Verdaccio, Январь 2019](https://www.youtube.com/watch?v=hDIFKzmoCaA)
+* [Vienna.js Meetup - Introduction to Verdaccio, January 2019](https://www.youtube.com/watch?v=hDIFKzmoCaA)
 * [#22 FloripaJS Brazil Meetup, Февраль 2019](https://www.youtube.com/watch?v=iOp70_svQ_M&feature=youtu.be&t=7578)
 * [FrankenJS Angular & Beyond - Enterprise-Architectures for huge Angular Apps by Manfred Steyer](https://youtu.be/dWdJkqhQFXU?t=613)
 * [ngPoland 2017 - Manfred Steyer - Packages for Angular](https://youtu.be/3fMTdm7k_d0?t=662)
