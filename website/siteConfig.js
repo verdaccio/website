@@ -180,7 +180,7 @@ const users = [...sponsorUsers, ...nonSponsorUsers];
 
 const siteConfig = {
   title: 'Verdaccio' /* title for your website */,
-  tagline: 'A lightweight private npm proxy registry',
+  tagline: 'A lightweight open source private npm proxy registry',
   url: 'https://verdaccio.org/' /* your website url */,
   organizationName: 'verdaccio',
   cname: 'verdaccio.org',
@@ -195,7 +195,7 @@ const siteConfig = {
     { href: "https://github.com/verdaccio", label: "GitHub" },
     { search: true },
     { page: 'team', label: 'Team'},
-    { href: "https://opencollective.com/verdaccio", label: "Donate" },
+    { href: "https://opencollective.com/verdaccio", label: "Sponsor Us" },
   ],
   nonSponsorUsers,
   sponsorUsers,
