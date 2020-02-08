@@ -547,6 +547,111 @@
       },
       "version-4.4.0/version-4.4.0-plugins": {
         "title": "Wtyczki"
+      },
+      "version-4.4.1/version-4.4.1-amazon": {
+        "title": "Amazon Web Services"
+      },
+      "version-4.4.1/version-4.4.1-ansible": {
+        "title": "Ansible"
+      },
+      "version-4.4.1/version-4.4.1-authentification": {
+        "title": "Uwierzytelnianie"
+      },
+      "version-4.4.1/version-4.4.1-best": {
+        "title": "Best Practices"
+      },
+      "version-4.4.1/version-4.4.1-caching": {
+        "title": "Caching strategies"
+      },
+      "version-4.4.1/version-4.4.1-chef": {
+        "title": "Chef Cookbook"
+      },
+      "version-4.4.1/version-4.4.1-ci": {
+        "title": "Ciągła integracja"
+      },
+      "version-4.4.1/version-4.4.1-configuration": {
+        "title": "Plik konfiguracyjny"
+      },
+      "version-4.4.1/version-4.4.1-dev-plugins": {
+        "title": "Tworzenie wtyczek"
+      },
+      "version-4.4.1/version-4.4.1-docker": {
+        "title": "Docker"
+      },
+      "version-4.4.1/version-4.4.1-e2e": {
+        "title": "End to End testing"
+      },
+      "version-4.4.1/version-4.4.1-github-actions": {
+        "title": "Github Actions"
+      },
+      "version-4.4.1/version-4.4.1-iss-server": {
+        "title": "Installing on IIS server"
+      },
+      "version-4.4.1/version-4.4.1-installation": {
+        "title": "Instalacja"
+      },
+      "version-4.4.1/version-4.4.1-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.4.1/version-4.4.1-linking-remote-registry": {
+        "title": "Linking a Remote Registry"
+      },
+      "version-4.4.1/version-4.4.1-logger": {
+        "title": "Rejestrator"
+      },
+      "version-4.4.1/version-4.4.1-node-api": {
+        "title": "Node API"
+      },
+      "version-4.4.1/version-4.4.1-notifications": {
+        "title": "Powiadomienia"
+      },
+      "version-4.4.1/version-4.4.1-packages": {
+        "title": "Dostęp do Pakietu"
+      },
+      "version-4.4.1/version-4.4.1-plugin-auth": {
+        "title": "Wtyczka uwierzytelniania"
+      },
+      "version-4.4.1/version-4.4.1-plugin-generator": {
+        "title": "Plugin Generator"
+      },
+      "version-4.4.1/version-4.4.1-plugin-middleware": {
+        "title": "Wtyczka oprogramowania pośredniego"
+      },
+      "version-4.4.1/version-4.4.1-plugin-storage": {
+        "title": "Wtyczka magazynu danych"
+      },
+      "version-4.4.1/version-4.4.1-plugins": {
+        "title": "Wtyczki"
+      },
+      "version-4.4.1/version-4.4.1-protect-your-dependencies": {
+        "title": "Protecting packages"
+      },
+      "version-4.4.1/version-4.4.1-puppet": {
+        "title": "Puppet"
+      },
+      "version-4.4.1/version-4.4.1-reverse-proxy": {
+        "title": "Ustawienie Odwrotnego Proxy"
+      },
+      "version-4.4.1/version-4.4.1-security-policy": {
+        "title": "Security Policy"
+      },
+      "version-4.4.1/version-4.4.1-server-configuration": {
+        "title": "Konfiguracja serwera"
+      },
+      "version-4.4.1/version-4.4.1-ssl": {
+        "title": "Set up the SSL Certificates"
+      },
+      "version-4.4.1/version-4.4.1-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.4.1/version-4.4.1-webui": {
+        "title": "Web User Interface"
+      },
+      "version-4.4.1/version-4.4.1-windows": {
+        "title": "Instalacja jako Usługa systemu Windows"
+      },
+      "version-4.4.2/version-4.4.2-talks": {
+        "title": "Talks"
       }
     },
     "links": {

@@ -547,6 +547,111 @@
       },
       "version-4.4.0/version-4.4.0-plugins": {
         "title": "Plugins"
+      },
+      "version-4.4.1/version-4.4.1-amazon": {
+        "title": "Amazon Web Services"
+      },
+      "version-4.4.1/version-4.4.1-ansible": {
+        "title": "Ansible"
+      },
+      "version-4.4.1/version-4.4.1-authentification": {
+        "title": "Autenticación"
+      },
+      "version-4.4.1/version-4.4.1-best": {
+        "title": "Best Practices"
+      },
+      "version-4.4.1/version-4.4.1-caching": {
+        "title": "Caching strategies"
+      },
+      "version-4.4.1/version-4.4.1-chef": {
+        "title": "Libro de Cocina del Chef"
+      },
+      "version-4.4.1/version-4.4.1-ci": {
+        "title": "Integración Continua"
+      },
+      "version-4.4.1/version-4.4.1-configuration": {
+        "title": "Archivo de Configuración"
+      },
+      "version-4.4.1/version-4.4.1-dev-plugins": {
+        "title": "Extensiones en Desarrollo"
+      },
+      "version-4.4.1/version-4.4.1-docker": {
+        "title": "Docker"
+      },
+      "version-4.4.1/version-4.4.1-e2e": {
+        "title": "Pruebas End to End"
+      },
+      "version-4.4.1/version-4.4.1-github-actions": {
+        "title": "Github Actions"
+      },
+      "version-4.4.1/version-4.4.1-iss-server": {
+        "title": "Instalación en servidor IIS"
+      },
+      "version-4.4.1/version-4.4.1-installation": {
+        "title": "Instalación"
+      },
+      "version-4.4.1/version-4.4.1-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.4.1/version-4.4.1-linking-remote-registry": {
+        "title": "Linking a Remote Registry"
+      },
+      "version-4.4.1/version-4.4.1-logger": {
+        "title": "Registrador"
+      },
+      "version-4.4.1/version-4.4.1-node-api": {
+        "title": "Nodo API"
+      },
+      "version-4.4.1/version-4.4.1-notifications": {
+        "title": "Notificaciones"
+      },
+      "version-4.4.1/version-4.4.1-packages": {
+        "title": "Acceso a Paquetes"
+      },
+      "version-4.4.1/version-4.4.1-plugin-auth": {
+        "title": "Extensión de Autenticación"
+      },
+      "version-4.4.1/version-4.4.1-plugin-generator": {
+        "title": "Plugin Generator"
+      },
+      "version-4.4.1/version-4.4.1-plugin-middleware": {
+        "title": "Extensión de Middleware"
+      },
+      "version-4.4.1/version-4.4.1-plugin-storage": {
+        "title": "Extensión de Almacenamiento"
+      },
+      "version-4.4.1/version-4.4.1-plugins": {
+        "title": "Plugins"
+      },
+      "version-4.4.1/version-4.4.1-protect-your-dependencies": {
+        "title": "Protegiendo paquetes"
+      },
+      "version-4.4.1/version-4.4.1-puppet": {
+        "title": "Puppet"
+      },
+      "version-4.4.1/version-4.4.1-reverse-proxy": {
+        "title": "Configuración de Proxy Inverso"
+      },
+      "version-4.4.1/version-4.4.1-security-policy": {
+        "title": "Security Policy"
+      },
+      "version-4.4.1/version-4.4.1-server-configuration": {
+        "title": "Configuración del Servidor"
+      },
+      "version-4.4.1/version-4.4.1-ssl": {
+        "title": "Configurar los Certificados SSL"
+      },
+      "version-4.4.1/version-4.4.1-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.4.1/version-4.4.1-webui": {
+        "title": "Interfaz Web de Usuario"
+      },
+      "version-4.4.1/version-4.4.1-windows": {
+        "title": "Instalación como un Servicio de Windows"
+      },
+      "version-4.4.2/version-4.4.2-talks": {
+        "title": "Talks"
       }
     },
     "links": {
