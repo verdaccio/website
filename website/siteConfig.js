@@ -157,6 +157,13 @@ const nonSponsorUsers = [
     fbOpenSource: false,
     pinned: true,
   },
+  {
+    caption: "Hyperledger",
+    image: "img/users/hyperledger.png",
+    infoLink: "https://www.hyperledger.org",
+    fbOpenSource: false,
+    pinned: true,
+  },
 ];
 
 const sponsorUsers = [
