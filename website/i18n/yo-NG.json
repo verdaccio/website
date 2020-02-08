@@ -547,6 +547,111 @@
       },
       "version-4.4.0/version-4.4.0-plugins": {
         "title": "Awọn ohun elo"
+      },
+      "version-4.4.1/version-4.4.1-amazon": {
+        "title": "Awọn Iṣẹ Ayelujara ti Amazon"
+      },
+      "version-4.4.1/version-4.4.1-ansible": {
+        "title": "Ansible"
+      },
+      "version-4.4.1/version-4.4.1-authentification": {
+        "title": "Sise ifasẹsi"
+      },
+      "version-4.4.1/version-4.4.1-best": {
+        "title": "Awọn iṣeṣi to Darajulọ"
+      },
+      "version-4.4.1/version-4.4.1-caching": {
+        "title": "Awọn ọna ifisapo iranti"
+      },
+      "version-4.4.1/version-4.4.1-chef": {
+        "title": "Iwe idana Alase"
+      },
+      "version-4.4.1/version-4.4.1-ci": {
+        "title": "Imuṣiṣẹpọ Alainidaduro"
+      },
+      "version-4.4.1/version-4.4.1-configuration": {
+        "title": "Faili Iṣeto"
+      },
+      "version-4.4.1/version-4.4.1-dev-plugins": {
+        "title": "Ṣiṣe agbedide Awọn ohun elo"
+      },
+      "version-4.4.1/version-4.4.1-docker": {
+        "title": "Docker"
+      },
+      "version-4.4.1/version-4.4.1-e2e": {
+        "title": "Idanwo Opin si Opin"
+      },
+      "version-4.4.1/version-4.4.1-github-actions": {
+        "title": "Awọn igbesẹ-Github"
+      },
+      "version-4.4.1/version-4.4.1-iss-server": {
+        "title": "Fifi sori olupese IIS"
+      },
+      "version-4.4.1/version-4.4.1-installation": {
+        "title": "Ifi sori ẹrọ"
+      },
+      "version-4.4.1/version-4.4.1-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.4.1/version-4.4.1-linking-remote-registry": {
+        "title": "Sise asopọ ibi iforukọsilẹ ọlọna jijin kan"
+      },
+      "version-4.4.1/version-4.4.1-logger": {
+        "title": "Olugbasilẹ"
+      },
+      "version-4.4.1/version-4.4.1-node-api": {
+        "title": "API Oju ipade"
+      },
+      "version-4.4.1/version-4.4.1-notifications": {
+        "title": "Awọn ifitonileti"
+      },
+      "version-4.4.1/version-4.4.1-packages": {
+        "title": "Iwọlesi Akopọ"
+      },
+      "version-4.4.1/version-4.4.1-plugin-auth": {
+        "title": "Ohun elo Ifasẹsi"
+      },
+      "version-4.4.1/version-4.4.1-plugin-generator": {
+        "title": "Plugin Generator"
+      },
+      "version-4.4.1/version-4.4.1-plugin-middleware": {
+        "title": "Ohun elo Middleware"
+      },
+      "version-4.4.1/version-4.4.1-plugin-storage": {
+        "title": "Ohun elo Ibi ipamọ"
+      },
+      "version-4.4.1/version-4.4.1-plugins": {
+        "title": "Awọn ohun elo"
+      },
+      "version-4.4.1/version-4.4.1-protect-your-dependencies": {
+        "title": "Didabobo awọn akopọ"
+      },
+      "version-4.4.1/version-4.4.1-puppet": {
+        "title": "Puppet"
+      },
+      "version-4.4.1/version-4.4.1-reverse-proxy": {
+        "title": "Iseto Aṣoju ikọkọ-Alayipada"
+      },
+      "version-4.4.1/version-4.4.1-security-policy": {
+        "title": "Eto imulo Aabo"
+      },
+      "version-4.4.1/version-4.4.1-server-configuration": {
+        "title": "Iṣeto Olupese"
+      },
+      "version-4.4.1/version-4.4.1-ssl": {
+        "title": "Ṣeto Awọn iwe ẹri SSL"
+      },
+      "version-4.4.1/version-4.4.1-uplinks": {
+        "title": "Uplinks"
+      },
+      "version-4.4.1/version-4.4.1-webui": {
+        "title": "Intafeesi Olumulo ti Ayelujara"
+      },
+      "version-4.4.1/version-4.4.1-windows": {
+        "title": "Fifi sori ẹrọ Bi Iṣẹ Windows kan"
+      },
+      "version-4.4.2/version-4.4.2-talks": {
+        "title": "Awọn ọrọ"
       }
     },
     "links": {
