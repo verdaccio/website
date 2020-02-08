@@ -547,6 +547,111 @@
       },
       "version-4.4.0/version-4.4.0-plugins": {
         "title": "Плагины"
+      },
+      "version-4.4.1/version-4.4.1-amazon": {
+        "title": "Amazon Web Services"
+      },
+      "version-4.4.1/version-4.4.1-ansible": {
+        "title": "Ansible"
+      },
+      "version-4.4.1/version-4.4.1-authentification": {
+        "title": "Аутентификация"
+      },
+      "version-4.4.1/version-4.4.1-best": {
+        "title": "Лучшие практики"
+      },
+      "version-4.4.1/version-4.4.1-caching": {
+        "title": "Стратегии кэширования"
+      },
+      "version-4.4.1/version-4.4.1-chef": {
+        "title": "Поваренная книга"
+      },
+      "version-4.4.1/version-4.4.1-ci": {
+        "title": "Непрерывная интеграция (CI)"
+      },
+      "version-4.4.1/version-4.4.1-configuration": {
+        "title": "Файл конфигурации"
+      },
+      "version-4.4.1/version-4.4.1-dev-plugins": {
+        "title": "Разработка плагинов"
+      },
+      "version-4.4.1/version-4.4.1-docker": {
+        "title": "Docker"
+      },
+      "version-4.4.1/version-4.4.1-e2e": {
+        "title": "End to End тестирование"
+      },
+      "version-4.4.1/version-4.4.1-github-actions": {
+        "title": "Github Actions"
+      },
+      "version-4.4.1/version-4.4.1-iss-server": {
+        "title": "Установка на IIS сервер"
+      },
+      "version-4.4.1/version-4.4.1-installation": {
+        "title": "Установка"
+      },
+      "version-4.4.1/version-4.4.1-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.4.1/version-4.4.1-linking-remote-registry": {
+        "title": "Связь с удалённым репозиторием"
+      },
+      "version-4.4.1/version-4.4.1-logger": {
+        "title": "Логи"
+      },
+      "version-4.4.1/version-4.4.1-node-api": {
+        "title": "Node API"
+      },
+      "version-4.4.1/version-4.4.1-notifications": {
+        "title": "Уведомления"
+      },
+      "version-4.4.1/version-4.4.1-packages": {
+        "title": "Доступ к пакетам"
+      },
+      "version-4.4.1/version-4.4.1-plugin-auth": {
+        "title": "Плагин аутентификации"
+      },
+      "version-4.4.1/version-4.4.1-plugin-generator": {
+        "title": "Plugin Generator"
+      },
+      "version-4.4.1/version-4.4.1-plugin-middleware": {
+        "title": "Middleware плагин"
+      },
+      "version-4.4.1/version-4.4.1-plugin-storage": {
+        "title": "Плагин хранилища"
+      },
+      "version-4.4.1/version-4.4.1-plugins": {
+        "title": "Плагины"
+      },
+      "version-4.4.1/version-4.4.1-protect-your-dependencies": {
+        "title": "Защита пакетов"
+      },
+      "version-4.4.1/version-4.4.1-puppet": {
+        "title": "Puppet"
+      },
+      "version-4.4.1/version-4.4.1-reverse-proxy": {
+        "title": "Настройка reverse proxy"
+      },
+      "version-4.4.1/version-4.4.1-security-policy": {
+        "title": "Политика безопасности"
+      },
+      "version-4.4.1/version-4.4.1-server-configuration": {
+        "title": "Конфигурация сервера"
+      },
+      "version-4.4.1/version-4.4.1-ssl": {
+        "title": "Настройка SSL-сертификатов"
+      },
+      "version-4.4.1/version-4.4.1-uplinks": {
+        "title": "Аплинки"
+      },
+      "version-4.4.1/version-4.4.1-webui": {
+        "title": "Веб-интерфейс пользователя"
+      },
+      "version-4.4.1/version-4.4.1-windows": {
+        "title": "Установка в качестве службы Windows"
+      },
+      "version-4.4.2/version-4.4.2-talks": {
+        "title": "Выступления"
       }
     },
     "links": {
