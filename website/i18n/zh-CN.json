@@ -547,6 +547,111 @@
       },
       "version-4.4.0/version-4.4.0-plugins": {
         "title": "插件"
+      },
+      "version-4.4.1/version-4.4.1-amazon": {
+        "title": "Amazon Web Services"
+      },
+      "version-4.4.1/version-4.4.1-ansible": {
+        "title": "Ansible"
+      },
+      "version-4.4.1/version-4.4.1-authentification": {
+        "title": "认证"
+      },
+      "version-4.4.1/version-4.4.1-best": {
+        "title": "Best Practices"
+      },
+      "version-4.4.1/version-4.4.1-caching": {
+        "title": "Caching strategies"
+      },
+      "version-4.4.1/version-4.4.1-chef": {
+        "title": "Chef Cookbook"
+      },
+      "version-4.4.1/version-4.4.1-ci": {
+        "title": "持续集成"
+      },
+      "version-4.4.1/version-4.4.1-configuration": {
+        "title": "配置文件"
+      },
+      "version-4.4.1/version-4.4.1-dev-plugins": {
+        "title": "插件开发"
+      },
+      "version-4.4.1/version-4.4.1-docker": {
+        "title": "Docker"
+      },
+      "version-4.4.1/version-4.4.1-e2e": {
+        "title": "End to End testing"
+      },
+      "version-4.4.1/version-4.4.1-github-actions": {
+        "title": "Github Actions"
+      },
+      "version-4.4.1/version-4.4.1-iss-server": {
+        "title": "IIS server上进行安装"
+      },
+      "version-4.4.1/version-4.4.1-installation": {
+        "title": "安装"
+      },
+      "version-4.4.1/version-4.4.1-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.4.1/version-4.4.1-linking-remote-registry": {
+        "title": "Linking a Remote Registry"
+      },
+      "version-4.4.1/version-4.4.1-logger": {
+        "title": "记录器"
+      },
+      "version-4.4.1/version-4.4.1-node-api": {
+        "title": "Node API"
+      },
+      "version-4.4.1/version-4.4.1-notifications": {
+        "title": "通知"
+      },
+      "version-4.4.1/version-4.4.1-packages": {
+        "title": "包的访问"
+      },
+      "version-4.4.1/version-4.4.1-plugin-auth": {
+        "title": "Authentication Plugin（认证插件）"
+      },
+      "version-4.4.1/version-4.4.1-plugin-generator": {
+        "title": "Plugin Generator"
+      },
+      "version-4.4.1/version-4.4.1-plugin-middleware": {
+        "title": "Middleware Plugin（Middleware 插件）"
+      },
+      "version-4.4.1/version-4.4.1-plugin-storage": {
+        "title": "Storage Plugin（存储插件）"
+      },
+      "version-4.4.1/version-4.4.1-plugins": {
+        "title": "插件"
+      },
+      "version-4.4.1/version-4.4.1-protect-your-dependencies": {
+        "title": "保护包"
+      },
+      "version-4.4.1/version-4.4.1-puppet": {
+        "title": "Puppet"
+      },
+      "version-4.4.1/version-4.4.1-reverse-proxy": {
+        "title": "逆向代理服务器设置"
+      },
+      "version-4.4.1/version-4.4.1-security-policy": {
+        "title": "Security Policy"
+      },
+      "version-4.4.1/version-4.4.1-server-configuration": {
+        "title": "服务器配置"
+      },
+      "version-4.4.1/version-4.4.1-ssl": {
+        "title": "设置SSL 证书"
+      },
+      "version-4.4.1/version-4.4.1-uplinks": {
+        "title": "上行链路"
+      },
+      "version-4.4.1/version-4.4.1-webui": {
+        "title": "Web 用户界面"
+      },
+      "version-4.4.1/version-4.4.1-windows": {
+        "title": "作为 Windows 服务安装"
+      },
+      "version-4.4.2/version-4.4.2-talks": {
+        "title": "Talks"
       }
     },
     "links": {
