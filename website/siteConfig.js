@@ -164,6 +164,13 @@ const nonSponsorUsers = [
     fbOpenSource: false,
     pinned: true,
   },
+  {
+    caption: "AWS Amplify CLI",
+    image: "img/users/amplify_logo_big.png",
+    infoLink: "https://github.com/aws-amplify/amplify-cli",
+    fbOpenSource: false,
+    pinned: true,
+  },
 ];
 
 const sponsorUsers = [
