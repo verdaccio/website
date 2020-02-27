@@ -9,7 +9,7 @@
         "title": "Amazon Web Services"
       },
       "ansible": {
-        "title": "Ansible"
+        "title": "앤서블"
       },
       "articles": {
         "title": "Articles"
@@ -141,7 +141,7 @@
         "title": "윈도우에서 설치"
       },
       "version-3.8.6/version-3.8.6-ansible": {
-        "title": "Ansible"
+        "title": "앤서블"
       },
       "version-3.8.6/version-3.8.6-authentification": {
         "title": "인증"
@@ -552,7 +552,7 @@
         "title": "Amazon Web Services"
       },
       "version-4.4.1/version-4.4.1-ansible": {
-        "title": "Ansible"
+        "title": "앤서블"
       },
       "version-4.4.1/version-4.4.1-authentification": {
         "title": "인증"
