@@ -77,6 +77,7 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 
 * [Struktur für große Angular-Anwendungen: Microservices, Module, MonoRepo?](https://jaxenter.de/struktur-angular-anwendungen-67467)
 * [Angular in einer Microservices-Welt](https://jaxenter.de/angular-microservices-66445)
+* [Privates NPM Repository mit Verdaccio (SSL & Docker)](https://blog.zotorn.de/privates-npm-repository-mit-verdaccio-ssl-docker-1/)
 
 ## Awọn ifaworanhan
 
