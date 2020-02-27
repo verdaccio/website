@@ -11,5 +11,5 @@ original_id: 앤서블
 #### 다른 옵션들
 
 * Gentoo 유저를 위한 Ansible 역할: [jirutka/ansible-role-sinopia](https://github.com/jirutka/ansible-role-sinopia).
-* Ansible role for Ubuntu users: [jagregory/sinopia-ansible](https://github.com/jagregory/sinopia-ansible).
+* Ubuntu 유저를 위한 Ansible 역할: [jagregory/sinopia-ansible](https://github.com/jagregory/sinopia-ansible)
 * ansible-verdaccio-role <https://github.com/refinery29/ansible-verdaccio-role>
