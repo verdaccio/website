@@ -77,6 +77,7 @@ Di seguito è disponibile un elenco di articoli su Verdaccio. Se hai scritto un 
 
 * [Struktur für große Angular-Anwendungen: Microservices, Module, MonoRepo?](https://jaxenter.de/struktur-angular-anwendungen-67467)
 * [Angular in einer Microservices-Welt](https://jaxenter.de/angular-microservices-66445)
+* [Privates NPM Repository mit Verdaccio (SSL & Docker)](https://blog.zotorn.de/privates-npm-repository-mit-verdaccio-ssl-docker-1/)
 
 ## Slide
 
