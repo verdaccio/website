@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Eyi tokan",
     "previous": "Titẹlẹ",
-    "tagline": "Ibi iforukọsilẹ aṣoju ikọkọ npm aladani fifuyẹ",
+    "tagline": "A lightweight open source private npm proxy registry",
     "docs": {
       "amazon": {
         "title": "Awọn Iṣẹ Ayelujara ti Amazon"
@@ -652,6 +652,9 @@
       },
       "version-4.4.2/version-4.4.2-talks": {
         "title": "Awọn ọrọ"
+      },
+      "version-4.4.3/version-4.4.3-articles": {
+        "title": "Awọn arokọ"
       }
     },
     "links": {
@@ -661,7 +664,7 @@
       "Help": "Iranlọwọ",
       "GitHub": "GitHub",
       "Team": "Ẹgbẹ",
-      "Donate": "Setọrẹ"
+      "Sponsor Us": "Sponsor Us"
     },
     "categories": {
       "Introduction": "Ifihan",

@@ -3,14 +3,12 @@ id: installation
 title: "Установка"
 ---
 
-Verdaccio — мультиплатформенное веб-приложение. Чтобы его установить, вам нужно обеспечить выполнение нескольких требований.
+Verdaccio is a multiplatform web application. To install it, you need a few basic prerequisites.
 
 #### Требования
 
-1. Версия Node 
-    - Для `verdaccio@3.x`, минимальная поддерживаемая версия - это Node `v6.12`.
-    - Для `verdaccio@4.0.0-alpha.x` или `verdaccio@4.x`, минимальная поддерживаемая версия - это Node `8.x` (LTS "Carbon").
-2. npm `>=5.x` or `yarn` > We highly recommend to use the latest Node Package Managers clients `> npm@6.x | yarn@1.x | pnpm@4.x`
+1. Node higher Node `8.x` (LTS "Carbon") is the minimum supported version.
+2. npm `>=5.x` or, `pnpm` or `yarn` > We highly recommend to use the latest Node Package Managers clients `> npm@6.x | yarn@1.x | pnpm@4.x`
 3. Веб-интерфейс поддерживает браузеры `Chrome, Firefox, Edge, и IE11`.
 
 > Verdaccio будет поддерживать последние версии Node.js version в соответствии с рекомендациями [Node.js Release Working Group](https://github.com/nodejs/Release).
@@ -42,7 +40,7 @@ yarn global add verdaccio
 ```bash
 $> verdaccio
 warn --- config file  - /home/.config/verdaccio/config.yaml
-warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
+warn --- http address - http://localhost:4873/ - verdaccio/4.4.4
 ```
 
 Больше информации об инструментах командной строки [читайте в этом разделе](cli.md).
@@ -53,18 +51,43 @@ warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 npm set registry http://localhost:4873/
 ```
 
-то же самое можно сделать флагом `--registry` при запуске.
+you can pass a `--registry` flag when needed.
 
 ```bash
 npm install --registry http://localhost:4873
 ```
 
+define in your `.npmrc` a `registry` field.
+
+```bash
+//.npmrc
+registry=http://localhost:4873
+```
+
+Or a `publishConfig` in your `package.json`
+
+```json
+{
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  }
+}
+```
+
+## Create Your Own Private NPM Package Tutorial
+
+If you still need a deep explanation, don't miss the at [thedevlife](https://mybiolink.co/thedevlife) tutorial how to publish your own private package using Verdaccio. <iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+
 ## Docker образ
+
+```bash
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+```
 
 `verdaccio` имеет официальный образ Docker, который вы можете использовать, и в большенстве случаем стандартная конфигурация отлично работает. Больше информации о том как установить официальный образ [читайте в этом разделе](docker.md).
 
 ## Cloudron
 
-`verdaccio` так же доступен для установки в один клик через [Cloudron](https://cloudron.io)
+`verdaccio` так же доступен для устновку в один клик с [Cloudron](https://cloudron.io)
 
 [![Установка](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)

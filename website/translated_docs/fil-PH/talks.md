@@ -7,10 +7,11 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 
 > Do not hesitate to share your content with the community, we encourage you to speak about Verdaccio. If need help how to start, information or resources, reach us in our [Chat at Discord](https://chat.verdaccio.org), we will help you.
 
-## The latest Talk <iframe width="560" height="315" src="https://www.youtube.com/embed/gpjC8Qp9B9A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+## Open Source - Trivago | Verdaccio (Ayush and Juan <iframe width="560" height="315" src="https://www.youtube.com/embed/A5CWxJC9xzc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 > The last shared talk is always highlighted here. We help you share your voice with the community.
 
+* [Open Source? trivago | Verdaccio (Ayush and Juan) January 2020](https://www.youtube.com/watch?v=A5CWxJC9xzc)
 * [GitNation Open Source Stage: How we have built a Node.js Registry with React - Juan Picado](https://www.youtube.com/watch?v=gpjC8Qp9B9A)
 * [Практический опыт работы с приватным хранилищем npm-пакетов (Verdaccio)](https://youtu.be/CnLA73E1BrE?t=10101) - [О Panda-Meetup](http://panda-meetup.ru/msk-frontend-meetup-2) - time (2:48:23)
 * [Madrid Node.js Meetup - Introducción a Verdaccio: gestión de paquetes privados, March 2019](https://www.todojs.com/introduccion-a-verdaccio/)

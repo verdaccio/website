@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "下一个",
     "previous": "上一个",
-    "tagline": "Verdaccio · 一个轻量的私有npm proxy registry",
+    "tagline": "Verdaccio · 一个开源轻量的npm私服",
     "docs": {
       "amazon": {
         "title": "Amazon Web Services"
@@ -652,6 +652,9 @@
       },
       "version-4.4.2/version-4.4.2-talks": {
         "title": "Talks"
+      },
+      "version-4.4.3/version-4.4.3-articles": {
+        "title": "Articles"
       }
     },
     "links": {
@@ -661,7 +664,7 @@
       "Help": "Help",
       "GitHub": "GitHub",
       "Team": "Team",
-      "Donate": "Donate"
+      "Sponsor Us": "支持我们"
     },
     "categories": {
       "Introduction": "Introduction",

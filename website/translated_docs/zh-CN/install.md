@@ -3,14 +3,12 @@ id: installation
 title: "安装"
 ---
 
-Verdaccio 是一个跨平台的 Web 应用程序。在安装之前，您需要确保系统环境已满足以下条件。
+Verdaccio 是一个跨平台的 Web 应用程序。在安装之前，您需要确保系统环境已满足以下基本条件。
 
 #### 最低要求:
 
-1. Node.js 版本 
-    - 对于 `verdaccio@3.x` 版本，Node `v6.12.` 是最低支持版本。
-    - 对于 `verdaccio@4.0.0-alpha.x` 或 `verdaccio@4.x`版本， Node `8.x` (LTS "Carbon") 是最低支持版本。
-2. npm `>=5.x` or `yarn` > We highly recommend to use the latest Node Package Managers clients `> npm@6.x | yarn@1.x | pnpm@4.x`
+1. 支持的Node最低版本为Node`8.x`(LTS "Carbon")
+2. npm `>=5.x` or, `pnpm` or `yarn` > We highly recommend to use the latest Node Package Managers clients `> npm@6.x | yarn@1.x | pnpm@4.x`
 3. Web 界面支持 `Chrome, Firefox, Edge, 和 IE11` 浏览器。
 
 > Verdaccio 将根据 [Node. js 发布工作组](https://github.com/nodejs/Release) 的推荐支持最新的 Node. js 版本。
@@ -42,7 +40,7 @@ yarn global add verdaccio
 ```bash
 $> verdaccio
 warn --- config file  - /home/.config/verdaccio/config.yaml
-warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
+warn --- http address - http://localhost:4873/ - verdaccio/4.4.4
 ```
 
 更多关于CLI的详细信息，请[阅读cli章节](cli.md)。
@@ -53,13 +51,38 @@ warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
 npm set registry http://localhost:4873/
 ```
 
-你也可以在下载的时候带上参数 `--registry`
+you can pass a `--registry` flag when needed.
 
 ```bash
 npm install --registry http://localhost:4873
 ```
 
+define in your `.npmrc` a `registry` field.
+
+```bash
+//.npmrc
+registry=http://localhost:4873
+```
+
+Or a `publishConfig` in your `package.json`
+
+```json
+{
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  }
+}
+```
+
+## 创建你自己的私有NPM包教程
+
+If you still need a deep explanation, don't miss the at [thedevlife](https://mybiolink.co/thedevlife) tutorial how to publish your own private package using Verdaccio. <iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+
 ## Docker 镜像
+
+```bash
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+```
 
 `verdaccio` 有官方 docker 镜像可以使用，在大多数情况下，默认配置已经足够了。 更多关于如何安装官方镜像的详细信息，请[阅读docker章节](docker.md)。
 
