@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Seguente",
     "previous": "Precedente",
-    "tagline": "Verdaccio · Un registro proxy npm leggero e privato",
+    "tagline": "A lightweight open source private npm proxy registry",
     "docs": {
       "amazon": {
         "title": "Amazon Web Services"
@@ -652,6 +652,9 @@
       },
       "version-4.4.2/version-4.4.2-talks": {
         "title": "Presentazioni"
+      },
+      "version-4.4.3/version-4.4.3-articles": {
+        "title": "Articoli"
       }
     },
     "links": {
@@ -661,7 +664,7 @@
       "Help": "Aiuto",
       "GitHub": "GitHub",
       "Team": "Team",
-      "Donate": "Donazioni"
+      "Sponsor Us": "Sponsor Us"
     },
     "categories": {
       "Introduction": "Introduzione",
