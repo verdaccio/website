@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "التالي",
     "previous": "السَّابق",
-    "tagline": "Verdaccio · A lightweight private npm proxy registry",
+    "tagline": "A lightweight open source private npm proxy registry",
     "docs": {
       "amazon": {
         "title": "Amazon Web Services"
@@ -652,6 +652,9 @@
       },
       "version-4.4.2/version-4.4.2-talks": {
         "title": "Talks"
+      },
+      "version-4.4.3/version-4.4.3-articles": {
+        "title": "Articles"
       }
     },
     "links": {
@@ -661,7 +664,7 @@
       "Help": "Help",
       "GitHub": "GitHub",
       "Team": "Team",
-      "Donate": "Donate"
+      "Sponsor Us": "Sponsor Us"
     },
     "categories": {
       "Introduction": "Introduction",
