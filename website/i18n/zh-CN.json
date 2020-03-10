@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "下一个",
     "previous": "上一个",
-    "tagline": "A lightweight open source private npm proxy registry",
+    "tagline": "Verdaccio · 一个开源轻量的npm私服",
     "docs": {
       "amazon": {
         "title": "Amazon Web Services"
@@ -664,7 +664,7 @@
       "Help": "Help",
       "GitHub": "GitHub",
       "Team": "Team",
-      "Sponsor Us": "Sponsor Us"
+      "Sponsor Us": "支持我们"
     },
     "categories": {
       "Introduction": "Introduction",
