@@ -75,7 +75,7 @@ Or a `publishConfig` in your `package.json`
 }
 ```
 
-## Tutorial
+## Create Your Own Private NPM Package Tutorial
 
 If you still need a deep explanation, don't miss the at [thedevlife](https://mybiolink.co/thedevlife) tutorial how to publish your
 own private package using Verdaccio. 
