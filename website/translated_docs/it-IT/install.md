@@ -3,14 +3,12 @@ id: installation
 title: "Installazione"
 ---
 
-Verdaccio è un'applicazione web multi piattaforma. Per la sua installazione sono necessari pochi prerequisiti.
+Verdaccio is a multiplatform web application. To install it, you need a few basic prerequisites.
 
 #### Prerequisiti
 
-1. Nodo maggiore di 
-    - Per la versione `verdaccio@3.x` Node `v6.12.` è la versione minima supportata.
-    - Per la versione `verdaccio@4.0.0-alpha.x` o `verdaccio@4.x` Node `8.x` (LTS "Carbon") è la versione minima supportata.
-2. npm `>=5.x` or `yarn` > We highly recommend to use the latest Node Package Managers clients `> npm@6.x | yarn@1.x | pnpm@4.x`
+1. Node higher Node `8.x` (LTS "Carbon") is the minimum supported version.
+2. npm `>=5.x` or, `pnpm` or `yarn` > We highly recommend to use the latest Node Package Managers clients `> npm@6.x | yarn@1.x | pnpm@4.x`
 3. L'interfaccia web supporta i browser `Chrome, Firefox, Edge, e IE11`.
 
 > Verdaccio supporterà l'ultima versione di Node.js secondo le raccomandazioni del [Node.js Release Working Group](https://github.com/nodejs/Release).
@@ -42,7 +40,7 @@ Una volta che è stato installato, è necessario solamente eseguire il comando C
 ```bash
 $> verdaccio
 warn --- config file  - /home/.config/verdaccio/config.yaml
-warn --- http address - http://localhost:4873/ - verdaccio/3.0.0
+warn --- http address - http://localhost:4873/ - verdaccio/4.4.4
 ```
 
 Per ulteriori informazioni riguardo a CLI, si prega di [leggere la sezione cli](cli.md).
@@ -53,13 +51,38 @@ Per ulteriori informazioni riguardo a CLI, si prega di [leggere la sezione cli](
 npm set registry http://localhost:4873/
 ```
 
-o si può passare un `--registry` flag quando necessario.
+you can pass a `--registry` flag when needed.
 
 ```bash
 npm install --registry http://localhost:4873
 ```
 
+define in your `.npmrc` a `registry` field.
+
+```bash
+//.npmrc
+registry=http://localhost:4873
+```
+
+Or a `publishConfig` in your `package.json`
+
+```json
+{
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  }
+}
+```
+
+## Create Your Own Private NPM Package Tutorial
+
+If you still need a deep explanation, don't miss the at [thedevlife](https://mybiolink.co/thedevlife) tutorial how to publish your own private package using Verdaccio. <iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+
 ## Immagine Docker
+
+```bash
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+```
 
 `verdaccio` ha un'immagine docker ufficiale disponibile da utilizzare, ed in molti casi, la configurazione predefinita è sufficientemente buona. Per ulteriori informazioni su come installare l'immagine ufficiale, [leggere la sezione docker](docker.md).
 
