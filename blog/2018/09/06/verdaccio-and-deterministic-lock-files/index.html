@@ -97,7 +97,7 @@
 <p>The snippet above is just a small part of this huge file which nobody dares to deal when conflicts arise. However, I just want you to focus on a field called <strong>resolved</strong>.</p>
 <h4><a class="anchor" aria-hidden="true" id="simple-example-with-verdaccio-as-localhost"></a><a href="#simple-example-with-verdaccio-as-localhost" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Simple example with Verdaccio as localhost</h4>
 <p>Let’s imagine you are using <strong>Verdaccio</strong> and <strong>yarn</strong> for local purposes and your registry configuration points to.</p>
-<pre><code class="hljs">yarn config <span class="hljs-keyword">set</span> <span class="hljs-keyword">registry</span> <span class="hljs-keyword">http</span>://localhost:<span class="hljs-number">4873</span>/
+<pre><code class="hljs">yarn <span class="hljs-built_in">config</span> <span class="hljs-built_in">set</span> registry http:<span class="hljs-comment">//localhost:4873/</span>
 </code></pre>
 <p>After running an installation, yarn install, a lock file is generated and each dependency will have a field called resolved that points exactly the URI where tarball should be downloaded in a future install. That meaning the package manager will rely on such URI no matter what.</p>
 <p><em>In the case of pnpm the lock file looks a bit different, we will see that in detail later on this article.</em></p>
@@ -110,7 +110,7 @@ math-random@^1.0.1:
 <p>Let’s imagine you that might want to change your domain where your registry is hosted and the resolved field still points to the previous location and your package manager won’t be able to resolve the project dependencies anymore.</p>
 <p><strong>A usual solution is to delete the whole lock file and generate a new one</strong> , but, this is not practical for large teams since will drive you to conflicts between branch hard to solve.</p>
 <p>So, <em>How can I use a private registry avoiding the</em> <em>resolved field issue?</em>. All clients handle this issue in a different way, let’s see how they do it.</p>
-<h3><a class="anchor" aria-hidden="true" id="how-does-the-resolved-field-is-being-used-by"></a><a href="#how-does-the-resolved-field-is-being-used-by" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How does the resolved field is being used by …?</h3>
+<h3><a class="anchor" aria-hidden="true" id="how-does-the-resolved-field-is-being-used-by-"></a><a href="#how-does-the-resolved-field-is-being-used-by-" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How does the resolved field is being used by …?</h3>
 <p><img src="https://cdn-images-1.medium.com/max/1024/1*kafHawK1RCt-LDsdGz6iUA.png" alt=""></p>
 <p>npm uses a JSON as a format for the lock file. The good news is since <strong>npm@5.0.0</strong> <a href="http://blog.npmjs.org/post/161081169345/v500">ignores the resolved field</a> on package-lock.json file and basically fallback to the one defined in the .npmrc or via --registry argument using the CLI in case is exist, otherwise, it will use the defined in the resolved field.</p>
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Another day, another tweet about <a href="https://twitter.com/hashtag/npm5?src=hash&amp;ref_src=twsrc%5Etfw">#npm5</a> goodies.<br><br>npm is now agnostic about which registry you used to generate the package-lock.json. <a href="https://t.co/bSAgwmbx8o">pic.twitter.com/bSAgwmbx8o</a></p>&mdash; Kat Marchán (@maybekatz) <a href="https://twitter.com/maybekatz/status/862834964932435969?ref_src=twsrc%5Etfw">May 12, 2017</a></blockquote>
@@ -128,29 +128,29 @@ math-random@^1.0.1:
 </blockquote>
 <p><img src="https://cdn-images-1.medium.com/max/1012/1*Y3jjekoNQiujCccP3bNvTg.png" alt=""><figcaption><a href="https://pnpm.js.org/">https://pnpm.js.org/</a></figcaption></p>
 <p><a href="https://pnpm.js.org/"><strong>pnpm</strong></a> follows the same approach as other package managers generating a lock file but, in this case, the file is being called shrinkwrap.yaml that is based in <strong>yaml format.</strong></p>
-<pre><code class="hljs">dependencies:
- jquery: <span class="hljs-number">3.3</span><span class="hljs-number">.1</span>
- parcel: <span class="hljs-number">1.9</span><span class="hljs-number">.7</span>
-packages:
- /@mrmlnc/readdir-enhanced/<span class="hljs-number">2.2</span><span class="hljs-number">.1</span>:
- dependencies:
- call-me-maybe: <span class="hljs-number">1.0</span><span class="hljs-number">.1</span>
- glob-to-regexp: <span class="hljs-number">0.3</span><span class="hljs-number">.0</span>
- dev: <span class="hljs-literal">false</span>
- engines:
- node: <span class="hljs-string">'\&gt;=4'</span>
- resolution:
- <span class="hljs-built_in">int</span>egrity: sha512-bPHp6Ji8b41szTOcaP63VlnbbO5Ny6dwAATtY6JTjh5N2OLrb5Qk/Th5cRkRQhkWCt+EJsYrNB0MiL+Gpn6e3g==
- tarball: /@mrmlnc%<span class="hljs-number">2f</span>readdir-enhanced/-/readdir-enhanced<span class="hljs-number">-2.2</span><span class="hljs-number">.1</span>.tgz
+<pre><code class="hljs"><span class="hljs-attr">dependencies:</span>
+ <span class="hljs-attr">jquery:</span> <span class="hljs-number">3.3</span><span class="hljs-number">.1</span>
+ <span class="hljs-attr">parcel:</span> <span class="hljs-number">1.9</span><span class="hljs-number">.7</span>
+<span class="hljs-attr">packages:</span>
+ <span class="hljs-string">/@mrmlnc/readdir-enhanced/2.2.1:</span>
+ <span class="hljs-attr">dependencies:</span>
+ <span class="hljs-attr">call-me-maybe:</span> <span class="hljs-number">1.0</span><span class="hljs-number">.1</span>
+ <span class="hljs-attr">glob-to-regexp:</span> <span class="hljs-number">0.3</span><span class="hljs-number">.0</span>
+ <span class="hljs-attr">dev:</span> <span class="hljs-literal">false</span>
+ <span class="hljs-attr">engines:</span>
+ <span class="hljs-attr">node:</span> <span class="hljs-string">'\&gt;=4'</span>
+ <span class="hljs-attr">resolution:</span>
+ <span class="hljs-attr">integrity:</span> <span class="hljs-string">sha512-bPHp6Ji8b41szTOcaP63VlnbbO5Ny6dwAATtY6JTjh5N2OLrb5Qk/Th5cRkRQhkWCt+EJsYrNB0MiL+Gpn6e3g==</span>
+ <span class="hljs-attr">tarball:</span> <span class="hljs-string">/@mrmlnc%2freaddir-enhanced/-/readdir-enhanced-2.2.1.tgz</span>
 
-....
+<span class="hljs-string">....</span>
 
-registry: <span class="hljs-string">'[http://localhost:4873/'</span>](http:<span class="hljs-comment">//localhost:4873/')</span>
-shrinkwrapMinorVersion: <span class="hljs-number">9</span>
-shrinkwrapVersion: <span class="hljs-number">3</span>
-specifiers:
- jquery: ^<span class="hljs-number">3.3</span><span class="hljs-number">.1</span>
- parcel: ^<span class="hljs-number">1.9</span><span class="hljs-number">.7</span>
+<span class="hljs-attr">registry:</span> <span class="hljs-string">'[http://localhost:4873/'</span><span class="hljs-string">](http://localhost:4873/')</span>
+<span class="hljs-attr">shrinkwrapMinorVersion:</span> <span class="hljs-number">9</span>
+<span class="hljs-attr">shrinkwrapVersion:</span> <span class="hljs-number">3</span>
+<span class="hljs-attr">specifiers:</span>
+ <span class="hljs-attr">jquery:</span> <span class="hljs-string">^3.3.1</span>
+ <span class="hljs-attr">parcel:</span> <span class="hljs-string">^1.9.7</span>
 </code></pre>
 <p>The example above is just a small snippet of how this long file looks like and you might observe that there is a field called <a href="https://github.com/pnpm/spec/blob/master/shrinkwrap/3.8.md#registry">registry</a> added at the bottom of the lock file which <a href="https://github.com/pnpm/pnpm/issues/1072">was introduced to reduce the file size of the lock file</a>, in some scenarios pnpm decides to set <a href="https://github.com/josephschmitt/pnpm-406-npmE">the domain is part of the tarball field</a>.</p>
 <p><strong>pnpm</strong> will try to fetch dependencies using the registry defined within the lockfile as yarn <strong>does</strong>. However, as a workaround, if the domain changes you must update the registry field manually, it’s not hard to do but, is better than nothing.</p>
@@ -169,7 +169,7 @@ specifiers:
 <p><strong>package managers</strong> are working to solve this issues with backward compatibility and with good performance.</p>
 <p>For now, the best solution if you share this concern is <strong>using npm until the other clients decide what to do</strong> or <strong>following the recommendations above for each client</strong>.</p>
 <hr>
-</span></div></div><div class="blogSocialSection"><div class="blogSocialSectionItem"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Verdaccio and deterministic lock files" data-url="https://verdaccio.org//blog/2018/09/06/verdaccio-and-deterministic-lock-files" data-related="true" data-show-count="false">Tweet</a></div></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/what-is-verdaccio.html">Getting Started</a><a href="/docs/en/docker.html">Docker</a><a href="/docs/en/configuration.html">Configuration</a><a href="/docs/en/logo">Logos</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+</span></div></div><div class="blogSocialSection"><div class="blogSocialSectionItem"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Verdaccio and deterministic lock files" data-url="https://verdaccio.org//blog/2018/09/06/verdaccio-and-deterministic-lock-files" data-related="true" data-show-count="false">Tweet</a></div></div></div><div class="blog-recent"><a class="button" href="/blog/">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/what-is-verdaccio.html">Getting Started</a><a href="/docs/en/docker.html">Docker</a><a href="/docs/en/configuration.html">Configuration</a><a href="/docs/en/logo">Logos</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

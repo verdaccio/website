@@ -80,13 +80,13 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Plugin Generator</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="installing-the-yeoman-generator"></a><a href="#installing-the-yeoman-generator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing the Yeoman Generator</h2>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Plugin Generator</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="installing-the-yeoman-generator"></a><a href="#installing-the-yeoman-generator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing the Yeoman Generator</h2>
 <p>Verdaccio is a pluggable application, with the objective to help developers to generate new plugins, we have a custom generator based in <strong><a href="https://yeoman.io/">Yeoman</a></strong> for generate all sort of plugins.</p>
 <p>To install the generator, as first step you must install the <em>yeoman</em> command <code>yo</code>.</p>
 <pre><code class="hljs css language-bash">npm install -g yo
 </code></pre>
 <p>then, install the custom generator running the following in your terminal.</p>
-<pre><code class="hljs">npm <span class="hljs-selector-tag">i</span> -g generator-verdaccio-plugin
+<pre><code class="hljs"><span class="hljs-built_in">npm</span> i -g generator-verdaccio-plugin
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="using-the-generator"></a><a href="#using-the-generator" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the generator</h2>
 <p>Use <code>yeoman</code> is quite straighforward, you can read more infomation about it <a href="https://yeoman.io/learning/index.html">here</a>.</p>
@@ -94,20 +94,20 @@
 <p>After a success install, run <code>yo verdaccio-plugin</code> in your terminal and follow the steps.</p>
 <pre><code class="hljs">➜ yo verdaccio-plugin
 
-Just found a `.yo-rc.json` <span class="hljs-built_in">in</span> a parent directory.
-Setting the project root <span class="hljs-built_in">at</span>: /Users/user/verdaccio_yo_generator
+Just found <span class="hljs-keyword">a</span> `.yo-rc.json` <span class="hljs-keyword">in</span> <span class="hljs-keyword">a</span> parent <span class="hljs-built_in">directory</span>.
+Setting <span class="hljs-keyword">the</span> project root <span class="hljs-keyword">at</span>: /Users/user/verdaccio_yo_generator
 
-     <span class="hljs-keyword">_</span>-----<span class="hljs-keyword">_</span>     ╭──────────────────────────╮
-    |       <span class="hljs-type">|    │        Welcome</span> to        │
-    |<span class="hljs-type">--(o</span>)--|    <span class="hljs-type">│ generator</span>-verdaccio-plug │
-   `---------´   │   <span class="hljs-built_in">in</span> plugin generator!   │
-    ( <span class="hljs-keyword">_</span>´U`<span class="hljs-keyword">_</span> )    ╰──────────────────────────╯
+     <span class="hljs-title">_-----</span>_     ╭──────────────────────────╮
+    |       |    │        Welcome <span class="hljs-built_in">to</span>        │
+    |<span class="hljs-comment">--(o)--|    │ generator-verdaccio-plug │</span>
+   `<span class="hljs-comment">---------´   │   in plugin generator!   │</span>
+    ( _´U`_ )    ╰──────────────────────────╯
     /___A___\   /
-     |  <span class="hljs-type">~  |
-   __</span>'.___.'__
- ´   `  |<span class="hljs-type">° ´ Y</span> `
+     |  ~  |
+   __<span class="hljs-string">'.___.'</span>__
+ ´   `  |° ´ Y `
 
-? What is the name of your plugin? (customname)
+? What is <span class="hljs-keyword">the</span> name <span class="hljs-keyword">of</span> your plugin? (customname)
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="best-practices"></a><a href="#best-practices" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Best practices</h3>
 <ul>

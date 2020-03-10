@@ -2,8 +2,8 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://verdaccio.org//blog</id>
     <title>Verdaccio Blog</title>
-    <updated>2019-10-05T06:00:00Z</updated>
-    <generator>Feed for Node.js</generator>
+    <updated>2019-10-05T06:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://verdaccio.org//blog"/>
     <subtitle>The best place to stay up-to-date with the latest Verdaccio news and events.</subtitle>
     <logo>https://verdaccio.org//img/logo/symbol/svg/verdaccio-tiny.svg</logo>
@@ -11,9 +11,8 @@
     <entry>
         <title type="html"><![CDATA[Upgrade from v3.x to verdaccio 4.x with LDAP and Docker]]></title>
         <id>https://verdaccio.org//blog/2019/10/05/verdaccio-4-with-ldap-and-docker.html</id>
-        <link href="https://verdaccio.org//blog/2019/10/05/verdaccio-4-with-ldap-and-docker.html">
-        </link>
-        <updated>2019-10-05T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2019/10/05/verdaccio-4-with-ldap-and-docker.html"/>
+        <updated>2019-10-05T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>I am Dimitri and I am a user and contributor of Verdaccio.</p>
 <p>Today, I will explain how I migrated my private dockerized <img height="16px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f433.png" title="docker" /> Verdaccio registry from <code>v3.x</code> to <code>v4.x</code>.</p>
 <p>I will also configure <a href="https://www.npmjs.com/package/verdaccio-ldap"><code>verdaccio-ldap</code></a> to authenticate my users against LDAP.</p>
@@ -21,15 +20,15 @@
 ]]></summary>
         <author>
             <name>Dimitri Kopriwa</name>
+            <email/>
             <uri>https://twitter.com/DimitriKopriwa</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 4.3.0]]></title>
         <id>https://verdaccio.org//blog/2019/09/30/verdaccio-430-release.html</id>
-        <link href="https://verdaccio.org//blog/2019/09/30/verdaccio-430-release.html">
-        </link>
-        <updated>2019-09-30T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2019/09/30/verdaccio-430-release.html"/>
+        <updated>2019-09-30T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>Verdaccio keeps growing thanks to their users. This release is a minor one we do every month, further
 <a href="https://github.com/verdaccio/contributing/blob/master/RELEASES.md">information about our releases can be read here</a>.</p>
 <p>Furthermore, the info about the release is also available at the <a href="https://github.com/verdaccio/verdaccio/releases/tag/v4.3.0">GitHub releases page</a>.</p>
@@ -48,15 +47,15 @@
 ]]></summary>
         <author>
             <name>Juan Picado</name>
+            <email/>
             <uri>https://twitter.com/jotadeveloper</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Managing multiples projects with Lerna and Yarn Workspaces]]></title>
         <id>https://verdaccio.org//blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces.html</id>
-        <link href="https://verdaccio.org//blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces.html">
-        </link>
-        <updated>2019-09-07T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces.html"/>
+        <updated>2019-09-07T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>Verdaccio is a project with a big ecosystem, composed by several projects, each one with its own configurations and ways to manage. This fact transforms a simple maintenance operation, like updating a common dependency, into a real hard work.</p>
 <p>We saw a problem, these configurations entropy made harder to work with all the projects. So, we needed to simplify and unify them to make it easier. We need a <strong>monorepo</strong>.</p>
 <p>A monorepo is a project configuration to manage a collection of dependencies in a simple and unified way. There are many examples out there that Javascript developer use nowadays, like <a href="https://babeljs.io/">Babel</a>, <a href="https://create-react-app.dev/">Create React App</a> or <a href="https://material-ui.com/">Material UI</a>.</p>
@@ -64,15 +63,15 @@
 ]]></summary>
         <author>
             <name>Sergio Herrera</name>
+            <email/>
             <uri>https://github.com/sergiohgz</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 4.2.0]]></title>
         <id>https://verdaccio.org//blog/2019/07/30/verdaccio-420-release.html</id>
-        <link href="https://verdaccio.org//blog/2019/07/30/verdaccio-420-release.html">
-        </link>
-        <updated>2019-07-30T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2019/07/30/verdaccio-420-release.html"/>
+        <updated>2019-07-30T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>Verdaccio keeps growing, thanks to their users. This release is a minor one we do every month, for further
 <a href="https://github.com/verdaccio/contributing/blob/master/RELEASES.md">information about our releases, it can be read here</a>.</p>
 <p>We have some highlights to share:</p>
@@ -86,15 +85,15 @@
 ]]></summary>
         <author>
             <name>Juan Picado</name>
+            <email/>
             <uri>https://twitter.com/jotadeveloper</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Release 4.1.0]]></title>
         <id>https://verdaccio.org//blog/2019/07/08/verdaccio-410-release.html</id>
-        <link href="https://verdaccio.org//blog/2019/07/08/verdaccio-410-release.html">
-        </link>
-        <updated>2019-07-08T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2019/07/08/verdaccio-410-release.html"/>
+        <updated>2019-07-08T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>Verdaccio keeps growing thanks to their users. This release is a minor one we do every month, for further
 <a href="https://github.com/verdaccio/contributing/blob/master/RELEASES.md">information about our releases can be read here</a>.</p>
 <p>Furthermore, the info about the release is also available <a href="https://github.com/verdaccio/verdaccio/releases/tag/v4.1.0">at GitHub releases page</a>.</p>
@@ -114,15 +113,15 @@ further read about this topic, <a href="https://verdaccio.org/docs/en/e2e">check
 ]]></summary>
         <author>
             <name>Juan Picado</name>
+            <email/>
             <uri>https://twitter.com/jotadeveloper</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Verdaccio 4 released !!!]]></title>
         <id>https://verdaccio.org//blog/2019/05/19/15-verdaccio-4-release.html</id>
-        <link href="https://verdaccio.org//blog/2019/05/19/15-verdaccio-4-release.html">
-        </link>
-        <updated>2019-05-19T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2019/05/19/15-verdaccio-4-release.html"/>
+        <updated>2019-05-19T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<h1><a class="anchor" aria-hidden="true" id="release-name-freedom"></a><a href="#release-name-freedom" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Release name: Freedom</h1>
 <p>Verdaccio is a free open source javascript package proxy registry. It is fully compatible with <a href="https://pnpm.js.org/">pnpm</a>, <a href="https://yarnpkg.com">yarn</a> and <a href="https://www.npmjs.com/">npm</a> package management clients. It follows the CommonJS compliant package specifications.</p>
 <p>You can install and upgrade to the latest version by following commands:</p>
@@ -139,15 +138,15 @@ further read about this topic, <a href="https://verdaccio.org/docs/en/e2e">check
 ]]></summary>
         <author>
             <name>Ayush Sharma</name>
+            <email/>
             <uri>https://twitter.com/ayusharma_</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[The new Docker image for Verdaccio 4]]></title>
         <id>https://verdaccio.org//blog/2019/05/13/the-new-docker-image-verdaccio-4.html</id>
-        <link href="https://verdaccio.org//blog/2019/05/13/the-new-docker-image-verdaccio-4.html">
-        </link>
-        <updated>2019-05-13T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2019/05/13/the-new-docker-image-verdaccio-4.html"/>
+        <updated>2019-05-13T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>Docker has been a key part of success for Verdaccio. At the time of this writing, we have more than 4 million image pulls and this number is growing rapidly. The image provides an easy way to use Verdaccio in combination with tools like Kubernetes, Docker Compose or any other container orchestration system, simplifying deployment and integration with existing infrastructure.</p>
 <p>This article will describe what has changed, all the improvements and benefits you will enjoy from migrating to the latest version.</p>
 <h2><a class="anchor" aria-hidden="true" id="whats-new"></a><a href="#whats-new" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>What’s new?</h2>
@@ -156,15 +155,15 @@ further read about this topic, <a href="https://verdaccio.org/docs/en/e2e">check
 ]]></summary>
         <author>
             <name>Juan Picado</name>
+            <email/>
             <uri>https://twitter.com/jotadeveloper</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Diving into JWT support for Verdaccio 4]]></title>
         <id>https://verdaccio.org//blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4.html</id>
-        <link href="https://verdaccio.org//blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4.html">
-        </link>
-        <updated>2019-04-19T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4.html"/>
+        <updated>2019-04-19T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p><img src="https://verdaccio.nyc3.digitaloceanspaces.com/blog/1_t9d16DIcJg_-dEg0X_qTWg.png" alt=""></p>
 <p>If you are already using <a href="https://github.com/verdaccio/verdaccio">Verdaccio 4</a> you are can immediately use the new token signature support with JWT or <a href="https://github.com/auth0/node-jsonwebtoken">JSON Web Tokens</a>.</p>
 <pre><code class="hljs"><span class="hljs-built_in">npm</span> install -g verdaccio@next
@@ -175,28 +174,28 @@ further read about this topic, <a href="https://verdaccio.org/docs/en/e2e">check
 ]]></summary>
         <author>
             <name>Juan Picado</name>
+            <email/>
             <uri>https://twitter.com/jotadeveloper</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Verdaccio Migration Guides]]></title>
         <id>https://verdaccio.org//blog/2019/02/24/migrating-verdaccio.html</id>
-        <link href="https://verdaccio.org//blog/2019/02/24/migrating-verdaccio.html">
-        </link>
-        <updated>2019-02-24T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2019/02/24/migrating-verdaccio.html"/>
+        <updated>2019-02-24T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>Verdaccio keeps backward compatibility with all versions since the first release <code>(v2.0.0)</code>, but there are some considerations you need to know before start a migration.</p>
 ]]></summary>
         <author>
             <name>Juan Picado</name>
+            <email/>
             <uri>https://twitter.com/jotadeveloper</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[The crazy story of Verdaccio]]></title>
         <id>https://verdaccio.org//blog/2019/02/08/the-crazy-story-of-verdaccio.html</id>
-        <link href="https://verdaccio.org//blog/2019/02/08/the-crazy-story-of-verdaccio.html">
-        </link>
-        <updated>2019-02-08T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2019/02/08/the-crazy-story-of-verdaccio.html"/>
+        <updated>2019-02-08T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>It’s not the first time that I’ve heard the following expression “Thanks for creating Verdaccio”, which actually flatters me, but is really hard to explain in a couple of words that <strong>I haven’t created Verdaccio</strong>. Perhaps I might be responsible for what is Verdaccio today, but that is a different story. Today I’d like to share the whole story behind this project and how I ended up working on it.</p>
 <h3><a class="anchor" aria-hidden="true" id="sinopia-the-origin"></a><a href="#sinopia-the-origin" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sinopia “The Origin”</h3>
 <p>A few years ago in 2013, the main registry <em>(npmjs)</em> was running for a while and at the same time, <a href="https://github.com/rlidwka">Alex Kocharin</a> decided to create Sinopia.</p>
@@ -205,43 +204,43 @@ further read about this topic, <a href="https://verdaccio.org/docs/en/e2e">check
 ]]></summary>
         <author>
             <name>Juan Picado</name>
+            <email/>
             <uri>https://twitter.com/jotadeveloper</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Setting up Verdaccio on DigitalOcean]]></title>
         <id>https://verdaccio.org//blog/2018/11/19/setting-up-verdaccio-on-digitalocean.html</id>
-        <link href="https://verdaccio.org//blog/2018/11/19/setting-up-verdaccio-on-digitalocean.html">
-        </link>
-        <updated>2018-11-19T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2018/11/19/setting-up-verdaccio-on-digitalocean.html"/>
+        <updated>2018-11-19T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>This one of the multiple articles I will write about running Verdaccio on multiple platforms.</p>
 <p>This time for simplicity I’ve chosen <a href="https://www.digitalocean.com/">DigitalOcean</a> that provides affordable base prices and if you want to run your own registry, it’s a good option.</p>
 ]]></summary>
         <author>
             <name>Juan Picado</name>
+            <email/>
             <uri>https://twitter.com/jotadeveloper</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Verdaccio 4 alpha release]]></title>
         <id>https://verdaccio.org//blog/2018/10/21/verdaccio-4-alpha-release.html</id>
-        <link href="https://verdaccio.org//blog/2018/10/21/verdaccio-4-alpha-release.html">
-        </link>
-        <updated>2018-10-21T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2018/10/21/verdaccio-4-alpha-release.html"/>
+        <updated>2018-10-21T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>Since a couple of months ago, <strong>verdaccio@4.0.0</strong> is under development, we want to give you a first update of the current list of features ready to be tested and incoming ones.</p>
 <p><img src="https://cdn-images-1.medium.com/max/1024/1*GK9U1wZmB0JUN2XGhu5LjA.png" alt=""></p>
 ]]></summary>
         <author>
             <name>Juan Picado</name>
+            <email/>
             <uri>https://twitter.com/jotadeveloper</uri>
         </author>
     </entry>
     <entry>
         <title type="html"><![CDATA[Verdaccio and deterministic lock files]]></title>
         <id>https://verdaccio.org//blog/2018/09/06/verdaccio-and-deterministic-lock-files.html</id>
-        <link href="https://verdaccio.org//blog/2018/09/06/verdaccio-and-deterministic-lock-files.html">
-        </link>
-        <updated>2018-09-06T06:00:00Z</updated>
+        <link href="https://verdaccio.org//blog/2018/09/06/verdaccio-and-deterministic-lock-files.html"/>
+        <updated>2018-09-06T06:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/1024/1*igz5Q878nju28EAa6RJ_Xg.png" alt=""><figcaption>Snippet of some random lock file</figcaption></p>
 <p><strong>Lockfiles</strong> on node package manager (npm) clients are not a new topic, yarn broke the node package managers world with a term called <a href="https://yarnpkg.com/blog/2017/05/31/determinism/"><strong>determinism</strong></a> providing a new file generated after install called yarn.lock to pin and freeze dependencies with the objective to avoid inconstancies across multiple installations.</p>
 <p>If you are using a private registry as <a href="https://verdaccio.org/">Verdaccio</a>, it might be a concern committing the lock file in the repo using the private or local domain as registry URL and then someone else due his environment is not able to fetch the tarballs defined in the lock file.</p>
@@ -249,6 +248,7 @@ further read about this topic, <a href="https://verdaccio.org/docs/en/e2e">check
 ]]></summary>
         <author>
             <name>Juan Picado</name>
+            <email/>
             <uri>https://twitter.com/jotadeveloper</uri>
         </author>
     </entry>

@@ -80,7 +80,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/it-IT" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Plugins</h1></header><article><div><span><p>Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, con nuovi metodi di autenticazione, aggiungendo endpoint o utilizzando un archivio personalizzato.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/it-IT" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Plugins</h1></header><article><div><span><p>Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, con nuovi metodi di autenticazione, aggiungendo endpoint o utilizzando un archivio personalizzato.</p>
 <p>Sono presenti 5 tipi di plugin:</p>
 <ul>
 <li><a href="/docs/it-IT/plugin-auth">Autenticazione</a></li>
@@ -103,33 +103,33 @@
 <p>Aprire il file <code>config.yaml</code> e aggiornare la sezione <code>auth</code> come segue:</p>
 <p>La configurazione predefinita appare così, poiché usiamo un plugin <code>htpasswd</code> incorporato di default che si può disabilitare commentando le seguenti linee.</p>
 <h3><a class="anchor" aria-hidden="true" id="configurazione-dellautenticazione"></a><a href="#configurazione-dellautenticazione" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurazione dell'Autenticazione</h3>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr"> htpasswd:</span>
-<span class="hljs-attr">    file:</span> <span class="hljs-string">./htpasswd</span>
+<pre><code class="hljs css language-yaml"> <span class="hljs-attr">htpasswd:</span>
+    <span class="hljs-attr">file:</span> <span class="hljs-string">./htpasswd</span>
     <span class="hljs-comment"># max_users: 1000</span>
 </code></pre>
 <p>e sostituendo con (in caso si decida di utilizzare un plugin <code>ldap</code>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  activedirectory:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-string">"ldap://10.0.100.1"</span>
-<span class="hljs-attr">    baseDN:</span> <span class="hljs-string">'dc=sample,dc=local'</span>
-<span class="hljs-attr">    domainSuffix:</span> <span class="hljs-string">'sample.local'</span>
+  <span class="hljs-attr">activedirectory:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">"ldap://10.0.100.1"</span>
+    <span class="hljs-attr">baseDN:</span> <span class="hljs-string">'dc=sample,dc=local'</span>
+    <span class="hljs-attr">domainSuffix:</span> <span class="hljs-string">'sample.local'</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="plugin-di-autenticazione-multipla"></a><a href="#plugin-di-autenticazione-multipla" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugin di Autenticazione Multipla</h4>
 <p>Questo è tecnicamente possibile, prestando importanza all'ordine del plugin, dato che le credenziali verranno risolte in ordine.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  htpasswd:</span>
-<span class="hljs-attr">    file:</span> <span class="hljs-string">./htpasswd</span>
+  <span class="hljs-attr">htpasswd:</span>
+    <span class="hljs-attr">file:</span> <span class="hljs-string">./htpasswd</span>
     <span class="hljs-comment">#max_users: 1000</span>
-<span class="hljs-attr">  activedirectory:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-string">"ldap://10.0.100.1"</span>
-<span class="hljs-attr">    baseDN:</span> <span class="hljs-string">'dc=sample,dc=local'</span>
-<span class="hljs-attr">    domainSuffix:</span> <span class="hljs-string">'sample.local'</span>
+  <span class="hljs-attr">activedirectory:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">"ldap://10.0.100.1"</span>
+    <span class="hljs-attr">baseDN:</span> <span class="hljs-string">'dc=sample,dc=local'</span>
+    <span class="hljs-attr">domainSuffix:</span> <span class="hljs-string">'sample.local'</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="configurazione-di-middleware"></a><a href="#configurazione-di-middleware" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurazione di Middleware</h3>
 <p>Questo è un esempio di come si configura un middleware plugin. All middleware plugins must be defined in the <strong>middlewares</strong> namespace.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">middlewares:</span>
-<span class="hljs-attr">  audit:</span>
-<span class="hljs-attr">    enabled:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">audit:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
 </code></pre>
 <blockquote>
 <p>Si potrebbe seguire l'<a href="https://github.com/verdaccio/verdaccio-audit">audit middle plugin</a> come esempio di base.</p>
@@ -137,8 +137,8 @@
 <h3><a class="anchor" aria-hidden="true" id="configurazione-dellarchiviazione"></a><a href="#configurazione-dellarchiviazione" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurazione dell'Archiviazione</h3>
 <p>Questo è un esempio di come si configura un plugin di archiviazione. All storage plugins must be defined in the <strong>store</strong> namespace.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">store:</span>
-<span class="hljs-attr">  memory:</span>
-<span class="hljs-attr">    limit:</span> <span class="hljs-number">1000</span>
+  <span class="hljs-attr">memory:</span>
+    <span class="hljs-attr">limit:</span> <span class="hljs-number">1000</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="configurazione-del-tema"></a><a href="#configurazione-del-tema" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configurazione del Tema</h3>
 <p>Verdaccio allows to replace the User Interface with a custom one, we call it <strong>theme</strong>. Di default, utilizza <code>@verdaccio/ui-theme</code> che è integrato, tuttavia è possibile usare qualcosa di diverso installando il proprio plugin.</p>
@@ -151,9 +151,9 @@ $&gt; npm install --global verdaccio-theme-dark
 </blockquote>
 <p>È possibile caricare solo un tema alla volta e considerare le opzioni se è necessario.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">theme:</span>
-<span class="hljs-attr">  dark:</span>
-<span class="hljs-attr">    option1:</span> <span class="hljs-string">foo</span>
-<span class="hljs-attr">    option2:</span> <span class="hljs-string">bar</span>
+  <span class="hljs-attr">dark:</span>
+    <span class="hljs-attr">option1:</span> <span class="hljs-string">foo</span>
+    <span class="hljs-attr">option2:</span> <span class="hljs-string">bar</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="plugin-ereditati"></a><a href="#plugin-ereditati" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugin ereditati</h2>
 <h3><a class="anchor" aria-hidden="true" id="plugin-di-sinopia"></a><a href="#plugin-di-sinopia" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Plugin di Sinopia</h3>

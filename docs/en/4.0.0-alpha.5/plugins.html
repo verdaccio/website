@@ -80,7 +80,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Plugins</h1></header><article><div><span><p>Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Plugins</h1></header><article><div><span><p>Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding
 endpoints or using a custom storage.</p>
 <blockquote>
 <p>If you are interested to develop your own plugin, read the <a href="/docs/en/4.0.0-alpha.5/dev-plugins">development</a> section.</p>
@@ -96,33 +96,33 @@ endpoints or using a custom storage.</p>
 <p>Open the <code>config.yaml</code> file and update the <code>auth</code> section as follows:</p>
 <p>The default configuration looks like this, due we use a build-in <code>htpasswd</code> plugin by default that you can disable just commenting out the following lines.</p>
 <h3><a class="anchor" aria-hidden="true" id="auth-plugin-configuration"></a><a href="#auth-plugin-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Auth Plugin Configuration</h3>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr"> htpasswd:</span>
-<span class="hljs-attr">    file:</span> <span class="hljs-string">./htpasswd</span>
+<pre><code class="hljs css language-yaml"> <span class="hljs-attr">htpasswd:</span>
+    <span class="hljs-attr">file:</span> <span class="hljs-string">./htpasswd</span>
     <span class="hljs-comment">#max_users: 1000</span>
 </code></pre>
 <p>and replacing them with (in case you decide to use a <code>ldap</code> plugin.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  activedirectory:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-string">"ldap://10.0.100.1"</span>
-<span class="hljs-attr">    baseDN:</span> <span class="hljs-string">'dc=sample,dc=local'</span>
-<span class="hljs-attr">    domainSuffix:</span> <span class="hljs-string">'sample.local'</span>
+  <span class="hljs-attr">activedirectory:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">"ldap://10.0.100.1"</span>
+    <span class="hljs-attr">baseDN:</span> <span class="hljs-string">'dc=sample,dc=local'</span>
+    <span class="hljs-attr">domainSuffix:</span> <span class="hljs-string">'sample.local'</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="multiple-auth-plugins"></a><a href="#multiple-auth-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multiple Auth plugins</h4>
 <p>This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  htpasswd:</span>
-<span class="hljs-attr">    file:</span> <span class="hljs-string">./htpasswd</span>
+  <span class="hljs-attr">htpasswd:</span>
+    <span class="hljs-attr">file:</span> <span class="hljs-string">./htpasswd</span>
     <span class="hljs-comment">#max_users: 1000</span>
-<span class="hljs-attr">  activedirectory:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-string">"ldap://10.0.100.1"</span>
-<span class="hljs-attr">    baseDN:</span> <span class="hljs-string">'dc=sample,dc=local'</span>
-<span class="hljs-attr">    domainSuffix:</span> <span class="hljs-string">'sample.local'</span>
+  <span class="hljs-attr">activedirectory:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">"ldap://10.0.100.1"</span>
+    <span class="hljs-attr">baseDN:</span> <span class="hljs-string">'dc=sample,dc=local'</span>
+    <span class="hljs-attr">domainSuffix:</span> <span class="hljs-string">'sample.local'</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="middleware-plugin-configuration"></a><a href="#middleware-plugin-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Middleware Plugin Configuration</h3>
 <p>This is an example how to set up a middleware plugin. All middleware plugins must be defined in the <strong>middlewares</strong> namespace.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">middlewares:</span>
-<span class="hljs-attr">  audit:</span>
-<span class="hljs-attr">    enabled:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">audit:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
 </code></pre>
 <blockquote>
 <p>You might follow the <a href="https://github.com/verdaccio/verdaccio-audit">audit middle plugin</a> as base example.</p>
@@ -130,8 +130,8 @@ endpoints or using a custom storage.</p>
 <h3><a class="anchor" aria-hidden="true" id="store-plugin-configuration"></a><a href="#store-plugin-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Store Plugin Configuration</h3>
 <p>This is an example how to set up a storage plugin. All storage plugins must be defined in the <strong>store</strong> namespace.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">store:</span>
-<span class="hljs-attr">  memory:</span>
-<span class="hljs-attr">    limit:</span> <span class="hljs-number">1000</span>
+  <span class="hljs-attr">memory:</span>
+    <span class="hljs-attr">limit:</span> <span class="hljs-number">1000</span>
 </code></pre>
 <blockquote>
 <p>If you define a custom store, the property <strong>storage</strong> in the configuration file will be ignored.</p>

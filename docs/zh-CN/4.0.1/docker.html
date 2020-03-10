@@ -80,7 +80,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Docker</h1></header><article><div><span><p><img src="https://dockeri.co/image/verdaccio/verdaccio" alt="alt Docker Pulls Count" title="Docker Pulls Count"></p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Docker</h1></header><article><div><span><p><img src="https://dockeri.co/image/verdaccio/verdaccio" alt="alt Docker Pulls Count" title="Docker Pulls Count"></p>
 <p>要下载(pull)最新的预先-创建的<a href="https://hub.docker.com/r/verdaccio/verdaccio/">docker镜像</a>：</p>
 <pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio
 </code></pre>
@@ -161,23 +161,23 @@
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span>
 
 <span class="hljs-attr">services:</span>
-<span class="hljs-attr">  verdaccio:</span>
-<span class="hljs-attr">    image:</span> <span class="hljs-string">verdaccio/verdaccio</span>
-<span class="hljs-attr">    container_name:</span> <span class="hljs-string">"verdaccio"</span>
-<span class="hljs-attr">    networks:</span>
+  <span class="hljs-attr">verdaccio:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">verdaccio/verdaccio</span>
+    <span class="hljs-attr">container_name:</span> <span class="hljs-string">"verdaccio"</span>
+    <span class="hljs-attr">networks:</span>
 
-<span class="hljs-bullet">      -</span> <span class="hljs-string">node-network</span>
-<span class="hljs-attr">    environment:</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">VERDACCIO_PORT=4873</span>
-<span class="hljs-attr">    ports:</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">"4873:4873"</span>
-<span class="hljs-attr">    volumes:</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">"./storage:/verdaccio/storage"</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">"./config:/verdaccio/conf"</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">"./plugins:/verdaccio/plugins"</span>  
+      <span class="hljs-bullet">-</span> <span class="hljs-string">node-network</span>
+    <span class="hljs-attr">environment:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">VERDACCIO_PORT=4873</span>
+    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"4873:4873"</span>
+    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"./storage:/verdaccio/storage"</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"./config:/verdaccio/conf"</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"./plugins:/verdaccio/plugins"</span>  
 <span class="hljs-attr">networks:</span>
-<span class="hljs-attr">  node-network:</span>
-<span class="hljs-attr">    driver:</span> <span class="hljs-string">bridge</span>
+  <span class="hljs-attr">node-network:</span>
+    <span class="hljs-attr">driver:</span> <span class="hljs-string">bridge</span>
 </code></pre>
 <p>Docker将生成一个named volume（命名卷），它用于存储持久化应用程序数据。 您可以使用<code>docker inspect</code> 或者 <code>docker volume inspect</code> 来查看此volume（卷）的物理位置并编辑配置，比如：</p>
 <pre><code class="hljs css language-bash">$ docker volume inspect verdaccio_verdaccio

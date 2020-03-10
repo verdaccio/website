@@ -80,34 +80,34 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/fr-FR" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Package Access</h1></header><article><div><span><p>Il s'agit d'une série de restrictions qui permettent ou restreignent l'accès au stockage local en fonction de critères spécifiques.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/fr-FR" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Package Access</h1></header><article><div><span><p>Il s'agit d'une série de restrictions qui permettent ou restreignent l'accès au stockage local en fonction de critères spécifiques.</p>
 <p>Les restrictions de sécurité dépendent du plugin que vous utilisez. <code>verdaccio</code> utilise par défaut le plugin <a href="https://github.com/verdaccio/verdaccio-htpasswd">htpasswd</a>. Si vous utilisez un autre plugin, l'opération peut être différente. Le plugin par défaut ne gère pas directement <code>allow_access</code> et <code>allow_publish</code>, mais utilise une alternative interne au cas où le plugin ne serait pas prêt pour cela.</p>
 <p>Pour plus d'informations sur les autorisations, consultez la <a href="/docs/fr-FR/4.2.1/authentification">section d'authentification du wiki</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="utilisation"></a><a href="#utilisation" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Utilisation</h3>
 <pre><code class="hljs css language-yalm">packages:
   # scoped packages
   <span class="hljs-string">'@scope/*'</span>:
-    access: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
-    publish: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
+    access: <span class="hljs-variable">$all</span>
+    publish: <span class="hljs-variable">$all</span>
     proxy: server2
 
   <span class="hljs-string">'private-*'</span>:
-    access: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
-    publish: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
+    access: <span class="hljs-variable">$all</span>
+    publish: <span class="hljs-variable">$all</span>
     proxy: uplink1
 
   <span class="hljs-string">'**'</span>:
-    # allow <span class="hljs-keyword">all</span> users (including non-authenticated users) to read <span class="hljs-keyword">and</span>
-    # publish <span class="hljs-keyword">all</span> packages
-    access: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
-    publish: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
+    # allow all<span class="hljs-built_in"> users </span>(including non-authenticated users) <span class="hljs-keyword">to</span> read <span class="hljs-keyword">and</span>
+    # publish all packages
+    access: <span class="hljs-variable">$all</span>
+    publish: <span class="hljs-variable">$all</span>
     proxy: uplink2
 </code></pre>
 <p>si rien n'est spécifié, le choix est par défaut</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
 <p>The list internal groups handled by <code>verdaccio</code> are:</p>
 <pre><code class="hljs css language-js"><span class="hljs-string">'$all'</span>, <span class="hljs-string">'$anonymous'</span>, <span class="hljs-string">'@all'</span>, <span class="hljs-string">'@anonymous'</span>, <span class="hljs-string">'all'</span>, <span class="hljs-string">'undefined'</span>, <span class="hljs-string">'anonymous'</span>
@@ -119,8 +119,8 @@
 <p>Si vous souhaitez protéger un ensemble spécifique de paquets au sein de votre groupe, vous devez procéder de la même manière. Utilisons un <code>Regex</code> qui couvre tous les paquets avec le préfixe <code>npmuser -</code>. We recommend using a prefix for your packages, in that way it will be easier to protect them.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
   <span class="hljs-string">'npmuser-*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">npmuser</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">npmuser</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">npmuser</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">npmuser</span>
 </code></pre>
 <p>Redémarrez <code>verdaccio</code> et essayez d'installer <code>npmuser-core</code> dans votre console.</p>
 <pre><code class="hljs css language-bash">$ npm install npmuser-core
@@ -132,42 +132,42 @@ npm ERR! A complete <span class="hljs-built_in">log</span> of this run can be fo
 npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 </code></pre>
 <p>Vous pouvez changer le comportement existant en utilisant un autre plugin d'authentification. <code>verdaccio</code> vérifie simplement si l'utilisateur qui a tenté d'accéder ou de publier un paquet spécifique appartient au groupe approprié.</p>
-<h4><a class="anchor" aria-hidden="true" id="definir-plusieurs-groupes"></a><a href="#definir-plusieurs-groupes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Définir plusieurs groupes</h4>
+<h4><a class="anchor" aria-hidden="true" id="définir-plusieurs-groupes"></a><a href="#définir-plusieurs-groupes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Définir plusieurs groupes</h4>
 <p>Il est facile de définir plusieurs groupes d’accès, définissez-les juste avec un espace blanc entre eux.</p>
 <pre><code class="hljs css language-yaml">  <span class="hljs-string">'company-*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">admin</span> <span class="hljs-string">internal</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">admin</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">server1</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">admin</span> <span class="hljs-string">internal</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">admin</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">server1</span>
   <span class="hljs-string">'supersecret-*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">secret</span> <span class="hljs-string">super-secret-area</span> <span class="hljs-string">ultra-secret-area</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">secret</span> <span class="hljs-string">ultra-secret-area</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">server1</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">secret</span> <span class="hljs-string">super-secret-area</span> <span class="hljs-string">ultra-secret-area</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">secret</span> <span class="hljs-string">ultra-secret-area</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">server1</span>
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="bloquer-lacces-a-lensemble-des-paquets"></a><a href="#bloquer-lacces-a-lensemble-des-paquets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bloquer l’accès à l’ensemble des paquets</h4>
+<h4><a class="anchor" aria-hidden="true" id="bloquer-laccès-à-lensemble-des-paquets"></a><a href="#bloquer-laccès-à-lensemble-des-paquets" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bloquer l’accès à l’ensemble des paquets</h4>
 <p>If you want to block the access/publish to a specific group of packages. Just do not define <code>access</code> and <code>publish</code>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
   <span class="hljs-string">'old-*'</span><span class="hljs-string">:</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
-<h4><a class="anchor" aria-hidden="true" id="bloquer-la-transmission-dun-groupe-de-paquets-specifiques"></a><a href="#bloquer-la-transmission-dun-groupe-de-paquets-specifiques" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bloquer la transmission d'un groupe de paquets spécifiques</h4>
+<h4><a class="anchor" aria-hidden="true" id="bloquer-la-transmission-dun-groupe-de-paquets-spécifiques"></a><a href="#bloquer-la-transmission-dun-groupe-de-paquets-spécifiques" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Bloquer la transmission d'un groupe de paquets spécifiques</h4>
 <p>Vous voudrez peut-être empêcher les registres distants d’atteindre un ou plusieurs paquets tout en autorisant les autres à accéder à différentes <em>uplinks</em>.</p>
 <p>Voyons l’exemple suivant:</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
-<span class="hljs-attr">  'jquery':</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$all</span>
+  <span class="hljs-attr">'jquery':</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$all</span>
   <span class="hljs-string">'my-company-*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
   <span class="hljs-string">'@my-local-scope/*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
 </code></pre>
 <p>Décrivons ce que nous voulons avec l'exemple ci-dessus:</p>
 <ul>

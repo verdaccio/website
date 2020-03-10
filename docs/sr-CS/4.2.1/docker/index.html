@@ -80,7 +80,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/sr-CS" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Docker</h1></header><article><div><span><p><img src="https://dockeri.co/image/verdaccio/verdaccio" alt="alt Docker Pulls Count" title="Docker Pulls Count"></p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/sr-CS" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Docker</h1></header><article><div><span><p><img src="https://dockeri.co/image/verdaccio/verdaccio" alt="alt Docker Pulls Count" title="Docker Pulls Count"></p>
 <p>Kako biste povukli (pull) najnoviji pre-built <a href="https://hub.docker.com/r/verdaccio/verdaccio/">docker image</a>:</p>
 <pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio
 </code></pre>
@@ -167,23 +167,23 @@
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span>
 
 <span class="hljs-attr">services:</span>
-<span class="hljs-attr">  verdaccio:</span>
-<span class="hljs-attr">    image:</span> <span class="hljs-string">verdaccio/verdaccio</span>
-<span class="hljs-attr">    container_name:</span> <span class="hljs-string">"verdaccio"</span>
-<span class="hljs-attr">    networks:</span>
+  <span class="hljs-attr">verdaccio:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">verdaccio/verdaccio</span>
+    <span class="hljs-attr">container_name:</span> <span class="hljs-string">"verdaccio"</span>
+    <span class="hljs-attr">networks:</span>
 
-<span class="hljs-bullet">      -</span> <span class="hljs-string">node-network</span>
-<span class="hljs-attr">    environment:</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">VERDACCIO_PORT=4873</span>
-<span class="hljs-attr">    ports:</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">"4873:4873"</span>
-<span class="hljs-attr">    volumes:</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">"./storage:/verdaccio/storage"</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">"./config:/verdaccio/conf"</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">"./plugins:/verdaccio/plugins"</span>  
+      <span class="hljs-bullet">-</span> <span class="hljs-string">node-network</span>
+    <span class="hljs-attr">environment:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">VERDACCIO_PORT=4873</span>
+    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"4873:4873"</span>
+    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"./storage:/verdaccio/storage"</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"./config:/verdaccio/conf"</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"./plugins:/verdaccio/plugins"</span>  
 <span class="hljs-attr">networks:</span>
-<span class="hljs-attr">  node-network:</span>
-<span class="hljs-attr">    driver:</span> <span class="hljs-string">bridge</span>
+  <span class="hljs-attr">node-network:</span>
+    <span class="hljs-attr">driver:</span> <span class="hljs-string">bridge</span>
 </code></pre>
 <p>Docker će napraviti imenovani volume u kome će se čuvati podaci za aplikaciju. Možete koristiti <code>docker inspect</code> ili <code>docker volume inspect</code> kako biste otkrili fiizičku lokaciju volume-a i izmenili konfiguraciju, na primer:</p>
 <pre><code class="hljs css language-bash">$ docker volume inspect verdaccio_verdaccio

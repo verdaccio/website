@@ -80,7 +80,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Kubernetes</h1></header><article><div><span><p>您可以在<a href="https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example">verdaccio/docker-例子</a>资源库找到在Kubernetes群集中配置Verdaccio的指南。 然而，建议在Kubernetes集群上安装Verdaccio的方法是使用<a href="https://helm.sh">Helm</a>。 Helm 是 <a href="https://kubernetes.io">Kubernetes</a> 包管理者，它带来很多优点。</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Kubernetes</h1></header><article><div><span><p>您可以在<a href="https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example">verdaccio/docker-例子</a>资源库找到在Kubernetes群集中配置Verdaccio的指南。 然而，建议在Kubernetes集群上安装Verdaccio的方法是使用<a href="https://helm.sh">Helm</a>。 Helm 是 <a href="https://kubernetes.io">Kubernetes</a> 包管理者，它带来很多优点。</p>
 <h2><a class="anchor" aria-hidden="true" id="helm"></a><a href="#helm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Helm</h2>
 <h3><a class="anchor" aria-hidden="true" id="设置helm"></a><a href="#设置helm" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>设置Helm</h3>
 <p>如果您以前没有使用过Helm，您需要设置叫做Tiller的Helm控制器:</p>
@@ -109,8 +109,8 @@
 <p><strong>请注意:</strong> 请确保您使用的是持续存储的正确路径:</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">torage:</span> <span class="hljs-string">/verdaccio/storage/data</span>
 <span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  htpasswd:</span>
-<span class="hljs-attr">    file:</span> <span class="hljs-string">/verdaccio/storage/htpasswd</span>
+  <span class="hljs-attr">htpasswd:</span>
+    <span class="hljs-attr">file:</span> <span class="hljs-string">/verdaccio/storage/htpasswd</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="配置configmap"></a><a href="#配置configmap" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配置configMap</h4>
 <p>配置<code>configMap</code>到集群</p>

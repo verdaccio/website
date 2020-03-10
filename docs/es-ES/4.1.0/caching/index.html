@@ -80,7 +80,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/es-ES" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Caching strategies</h1></header><article><div><span><p>Verdaccio caches all packages by default into the <code>/storage</code> folder. But you can decide whether you want to follow a different strategy. Using of plugins you might use the cloud or any sort of database.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/es-ES" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Caching strategies</h1></header><article><div><span><p>Verdaccio caches all packages by default into the <code>/storage</code> folder. But you can decide whether you want to follow a different strategy. Using of plugins you might use the cloud or any sort of database.</p>
 <h2><a class="anchor" aria-hidden="true" id="caching-scenarios"></a><a href="#caching-scenarios" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Caching scenarios</h2>
 <ul>
 <li>Build a Node.js project on <strong>Continous Integration</strong> (Bamboo, GitLab, Jenkins, etc) servers is a task that might take several times at a day, thus, the server will download tons of tarballs from the registry every time takes place. As usual, the CI tools clear the cache after each build and the process start over and over again. That is a waste of bandwidth and reduces the external traffic. <strong>You can use Verdaccio for caching tarballs and metadata in our internal network and give a boost in your build time.</strong></li>
@@ -102,9 +102,9 @@
 <h2><a class="anchor" aria-hidden="true" id="extending-cache-expiration-time"></a><a href="#extending-cache-expiration-time" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Extending Cache Expiration Time</h2>
 <p>Verdaccio by default waits 2 minutes to invalidate the cache metadata before fetching new information from the remote registry.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">uplinks:</span>
-<span class="hljs-attr">  npmjs:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-attr">https://registry.npmjs.org/</span>
-<span class="hljs-attr">    maxage:</span> <span class="hljs-number">30</span><span class="hljs-string">m</span>
+  <span class="hljs-attr">npmjs:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">https://registry.npmjs.org/</span>
+    <span class="hljs-attr">maxage:</span> <span class="hljs-string">30m</span>
 </code></pre>
 <p>Increasing the value of <code>maxage</code> in each <code>uplink</code> remotes will be asked less frequently. This might be a valid strategy if you don't update dependencies so often.</p>
 <h2><a class="anchor" aria-hidden="true" id="using-the-memory-instead-the-hardrive"></a><a href="#using-the-memory-instead-the-hardrive" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using the memory instead the hardrive</h2>
@@ -114,14 +114,14 @@
 </code></pre>
 <p>The configuration looks like this</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  auth-memory:</span>
-<span class="hljs-attr">    users:</span>
-<span class="hljs-attr">      foo:</span>
-<span class="hljs-attr">        name:</span> <span class="hljs-string">test</span>
-<span class="hljs-attr">        password:</span> <span class="hljs-string">test</span>
+  <span class="hljs-attr">auth-memory:</span>
+    <span class="hljs-attr">users:</span>
+      <span class="hljs-attr">foo:</span>
+        <span class="hljs-attr">name:</span> <span class="hljs-string">test</span>
+        <span class="hljs-attr">password:</span> <span class="hljs-string">test</span>
 <span class="hljs-attr">store:</span>
-<span class="hljs-attr">  memory:</span>
-<span class="hljs-attr">    limit:</span> <span class="hljs-number">1000</span>
+  <span class="hljs-attr">memory:</span>
+    <span class="hljs-attr">limit:</span> <span class="hljs-number">1000</span>
 </code></pre>
 <p>Remember, once the server is restarted the data is being lost, we recommend this setup in cases where you do not need to persist at all.</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/es-ES/4.1.0/e2e"><span class="arrow-prev">← </span><span>Pruebas End to End</span></a><a class="docs-next button" href="/docs/es-ES/4.1.0/github-actions"><span>Github Actions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#caching-scenarios">Caching scenarios</a></li><li><a href="#avoid-caching-tarballs">Avoid Caching tarballs</a></li><li><a href="#extending-cache-expiration-time">Extending Cache Expiration Time</a></li><li><a href="#using-the-memory-instead-the-hardrive">Using the memory instead the hardrive</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/es-ES/what-is-verdaccio.html">Getting Started</a><a href="/docs/es-ES/docker.html">Docker</a><a href="/docs/es-ES/configuration.html">Configuration</a><a href="/docs/es-ES/logo">Logos</a></div><div><h5>Community</h5><a href="/es-ES/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>

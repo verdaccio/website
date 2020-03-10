@@ -80,27 +80,27 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/sr-CS" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Fajl za konfigurisanje</h1></header><article><div><span><p>Ovaj fajl je osnova verdaccio-a. U okviru njega, možete vršiti izmene zadatih podešavanja, možete aktivirati plugin-e i spoljašnje resurse (features).</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/sr-CS" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Fajl za konfigurisanje</h1></header><article><div><span><p>Ovaj fajl je osnova verdaccio-a. U okviru njega, možete vršiti izmene zadatih podešavanja, možete aktivirati plugin-e i spoljašnje resurse (features).</p>
 <p>A default configuration file <code>config.yaml</code> is created the very first time you run <code>verdaccio</code>.</p>
 <div id="codefund">''</div>
 <h2><a class="anchor" aria-hidden="true" id="podrazumevane-postavke-default-configuration"></a><a href="#podrazumevane-postavke-default-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Podrazumevane postavke (Default Configuration)</h2>
 <p>Podrazumevane postavke podržavaju <strong>scoped</strong> pakete za sve korisnike, ali samo <strong>autorizovanim korisnicima omogućavaju da publikuju</strong>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">storage:</span> <span class="hljs-string">./storage</span>
 <span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  htpasswd:</span>
-<span class="hljs-attr">    file:</span> <span class="hljs-string">./htpasswd</span>
+  <span class="hljs-attr">htpasswd:</span>
+    <span class="hljs-attr">file:</span> <span class="hljs-string">./htpasswd</span>
 <span class="hljs-attr">uplinks:</span>
-<span class="hljs-attr">  npmjs:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-attr">https://registry.npmjs.org/</span>
+  <span class="hljs-attr">npmjs:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">https://registry.npmjs.org/</span>
 <span class="hljs-attr">packages:</span>
   <span class="hljs-string">'@*/*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
 <span class="hljs-attr">logs:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">{type:</span> <span class="hljs-string">stdout,</span> <span class="hljs-attr">format:</span> <span class="hljs-string">pretty,</span> <span class="hljs-attr">level:</span> <span class="hljs-string">http}</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">{type:</span> <span class="hljs-string">stdout,</span> <span class="hljs-attr">format:</span> <span class="hljs-string">pretty,</span> <span class="hljs-attr">level:</span> <span class="hljs-string">http}</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="sekcije"></a><a href="#sekcije" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sekcije</h2>
 <p>Sekcija u nastavku daje objašnjenja za svako svojstvo i opciju.</p>
@@ -115,9 +115,9 @@
 <h3><a class="anchor" aria-hidden="true" id="autentifikacija"></a><a href="#autentifikacija" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Autentifikacija</h3>
 <p>Ovde se vrši podešavanje (set up). Podrazumevana auth je bazirana na <code>htpasswd</code> i već je ugrađena. Možete izvršiti modifikacije načina rada (behaviour) putem <a href="/docs/sr-CS/next/plugins">plugin-a</a>. Za više informacija o ovoj sekciji pročitajte <a href="/docs/sr-CS/next/authentification">auth stranu</a>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  htpasswd:</span>
-<span class="hljs-attr">    file:</span> <span class="hljs-string">./htpasswd</span>
-<span class="hljs-attr">    max_users:</span> <span class="hljs-number">1000</span>
+  <span class="hljs-attr">htpasswd:</span>
+    <span class="hljs-attr">file:</span> <span class="hljs-string">./htpasswd</span>
+    <span class="hljs-attr">max_users:</span> <span class="hljs-number">1000</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="sigurnost"></a><a href="#sigurnost" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sigurnost</h3>
 <p><small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small></p>
@@ -146,35 +146,35 @@
 <p>Možete zadati da HTTP/1.1 server održava vreme posle kojeg se budi za dolazne konekcije. Ako zadate vrednost 0, http server će se ponašati slično kao Node.js verzije starije od 8.0.0, koje nisu imale ugrađenu funkciju: keep-alive timeout. ZAOBILAŽENJE: Datim konfigurisanjem, možete zaobići sledeći problem: <a href="https://github.com/verdaccio/verdaccio/issues/301">https://github.com/verdaccio/verdaccio/issues/301</a>. Set to 0 in case 60 is not enough.</p>
 </blockquote>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">server:</span>
-<span class="hljs-attr">  keepAliveTimeout:</span> <span class="hljs-number">60</span>
+  <span class="hljs-attr">keepAliveTimeout:</span> <span class="hljs-number">60</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="web-ui-korisnički-interfejs"></a><a href="#web-ui-korisnički-interfejs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Web UI (korisnički interfejs)</h3>
 <p>Ovo svojstvo Vam omogućava da modifikujete izgled korisničkog interfejsa. Za više informacija o ovoj sekciji, pročitajte <a href="/docs/sr-CS/next/webui">web ui stranicu</a>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">web:</span>
-<span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span>
-<span class="hljs-attr">  title:</span> <span class="hljs-string">Verdaccio</span>
-<span class="hljs-attr">  logo:</span> <span class="hljs-string">logo.png</span>
-<span class="hljs-attr">  scope:</span>
+  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">title:</span> <span class="hljs-string">Verdaccio</span>
+  <span class="hljs-attr">logo:</span> <span class="hljs-string">logo.png</span>
+  <span class="hljs-attr">scope:</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="uplinks"></a><a href="#uplinks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Uplinks</h3>
 <p>Uplinks pružaju mogućnost sistemu da hvata (fetch) pakete iz udaljenih registrija ako ti paketi nisu lokalno dostupni. Za više informacija o ovoj sekciji pročitajte na <a href="/docs/sr-CS/next/uplinks">uplinks stranici</a>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">uplinks:</span>
-<span class="hljs-attr">  npmjs:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-attr">https://registry.npmjs.org/</span>
+  <span class="hljs-attr">npmjs:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">https://registry.npmjs.org/</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="paketi"></a><a href="#paketi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Paketi</h3>
 <p>Paketi (packages) daju mogućnost korisnicima da kontrolišu kako će se pristupati paketima. Za više detalja o ovoj sekciji, pročitajte <a href="/docs/sr-CS/next/packages">stranicu &quot;paketi&quot;/ packages</a>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
   <span class="hljs-string">'@*/*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="napredna-podešavanja"></a><a href="#napredna-podešavanja" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Napredna podešavanja</h2>
 <h3><a class="anchor" aria-hidden="true" id="publikovanje-offline"></a><a href="#publikovanje-offline" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Publikovanje offline</h3>
 <p>Prema zadatim podešavanjima, <code>verdaccio</code> ne dozvoljava publikovanje onda kada je klijent offline. Takav način rada (behavior), može da se promeni ako se parametri iz primera podese na <em>true</em>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">publish:</span>
-<span class="hljs-attr">  allow_offline:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-attr">allow_offline:</span> <span class="hljs-literal">false</span>
 </code></pre>
 <p><small>Počevši od verzije: <code>verdaccio@2.3.6</code> član (due) <a href="https://github.com/verdaccio/verdaccio/pull/223">#223</a></small></p>
 <h3><a class="anchor" aria-hidden="true" id="url-prefix"></a><a href="#url-prefix" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>URL Prefix</h3>
@@ -185,7 +185,7 @@
 </blockquote>
 <h3><a class="anchor" aria-hidden="true" id="maksimalna-veličina-body-sekcije-dokumenta"></a><a href="#maksimalna-veličina-body-sekcije-dokumenta" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Maksimalna veličina body sekcije dokumenta</h3>
 <p>Prema zadatim podešavanjima, maksimalna veličina za body JSON dokumenta je <code>10mb</code>. Ako dobijete grešku <code>&quot;request entity too large&quot;</code> mogli biste da povećate ovu vrednost.</p>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr">max_body_size:</span> <span class="hljs-number">10</span><span class="hljs-string">mb</span>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">max_body_size:</span> <span class="hljs-string">10mb</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="listen-port"></a><a href="#listen-port" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Listen Port</h3>
 <p><code>verdaccio</code> runs by default in the port <code>4873</code>. Changing the port can be done via <a href="/docs/sr-CS/next/cli">cli</a> or in the configuration file, the following options are valid.</p>
@@ -200,16 +200,16 @@
 <h3><a class="anchor" aria-hidden="true" id="https"></a><a href="#https" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>HTTPS</h3>
 <p>Kako biste omogućili <code>https</code> u <code>verdaccio</code> dovoljno je da podesite <code>listen</code> flag sa protokolom <em>https://</em>. Više detalja možete naći na <a href="/docs/sr-CS/next/ssl">ssl stranici</a>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">https:</span>
-<span class="hljs-attr">    key:</span> <span class="hljs-string">./path/verdaccio-key.pem</span>
-<span class="hljs-attr">    cert:</span> <span class="hljs-string">./path/verdaccio-cert.pem</span>
-<span class="hljs-attr">    ca:</span> <span class="hljs-string">./path/verdaccio-csr.pem</span>
+    <span class="hljs-attr">key:</span> <span class="hljs-string">./path/verdaccio-key.pem</span>
+    <span class="hljs-attr">cert:</span> <span class="hljs-string">./path/verdaccio-cert.pem</span>
+    <span class="hljs-attr">ca:</span> <span class="hljs-string">./path/verdaccio-csr.pem</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="proxy"></a><a href="#proxy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Proxy</h3>
 <p>Proxies su HTTP serveri posebne namene dizajnirani da prenose podatke od udaljenih servera do lokalnih klijenata.</p>
 <h4><a class="anchor" aria-hidden="true" id="http_proxy-i-https_proxy"></a><a href="#http_proxy-i-https_proxy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>http_proxy i https_proxy</h4>
 <p>Ako imate proxy u svojoj mreži, možete podesiti <code>X-Forwarded-For</code> header koristeći sledeće unose za svojstva (properties).</p>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr">http_proxy:</span> <span class="hljs-attr">http://something.local/</span>
-<span class="hljs-attr">https_proxy:</span> <span class="hljs-attr">https://something.local/</span>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">http_proxy:</span> <span class="hljs-string">http://something.local/</span>
+<span class="hljs-attr">https_proxy:</span> <span class="hljs-string">https://something.local/</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="no_proxy"></a><a href="#no_proxy" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>no_proxy</h4>
 <p>Ova varijabla bi trebalo da sadrži comma-separated (polja odvojena zapetom) listu ekstenzija domena za koju proxy ne bi trebalo da se koristi.</p>
@@ -218,10 +218,10 @@
 <h3><a class="anchor" aria-hidden="true" id="notifikacije"></a><a href="#notifikacije" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Notifikacije</h3>
 <p>Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the <a href="/docs/sr-CS/next/notifications">notifications page</a>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">notify:</span>
-<span class="hljs-attr">  method:</span> <span class="hljs-string">POST</span>
-<span class="hljs-attr">  headers:</span> <span class="hljs-string">[{'Content-Type':</span> <span class="hljs-string">'application/json'</span><span class="hljs-string">}]</span>
-<span class="hljs-attr">  endpoint:</span> <span class="hljs-attr">https://usagge.hipchat.com/v2/room/3729485/notification?auth_token=mySecretToken</span>
-<span class="hljs-attr">  content:</span> <span class="hljs-string">'{"color":"green","message":"New package published: * <span class="hljs-template-variable">{{ name }}</span>*","notify":true,"message_format":"text"}'</span>
+  <span class="hljs-attr">method:</span> <span class="hljs-string">POST</span>
+  <span class="hljs-attr">headers:</span> <span class="hljs-string">[{'Content-Type':</span> <span class="hljs-string">'application/json'</span><span class="hljs-string">}]</span>
+  <span class="hljs-attr">endpoint:</span> <span class="hljs-string">https://usagge.hipchat.com/v2/room/3729485/notification?auth_token=mySecretToken</span>
+  <span class="hljs-attr">content:</span> <span class="hljs-string">'{"color":"green","message":"New package published: * <span class="hljs-template-variable">{{ name }}</span>*","notify":true,"message_format":"text"}'</span>
 </code></pre>
 <blockquote>
 <p>Za detaljnije opcije podešavanja, molimo Vas da <a href="https://github.com/verdaccio/verdaccio/tree/master/conf">pogledate source code</a>.</p>
@@ -233,8 +233,8 @@
 <p>Ako imate novu instalaciju, sve je već uključeno u okviru nje. U suprotnom, treba da dodate navedene dodatke (props) u Vaš config fajl</p>
 </blockquote>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">middlewares:</span>
-<span class="hljs-attr">  audit:</span>
-<span class="hljs-attr">    enabled:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">audit:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="experiments"></a><a href="#experiments" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Experiments</h3>
 <p>This release includes a new property named <code>experiments</code> that can be placed in the <code>config.yaml</code> and is completely optional.</p>
@@ -242,7 +242,7 @@
 <p>The features that are under this flag might not be stable or might be removed in future releases.</p>
 <p>Here one example:</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">experiments:</span>
-<span class="hljs-attr">  token:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-attr">token:</span> <span class="hljs-literal">false</span>
 </code></pre>
 <blockquote>
 <p>To disable the experiments warning in the console, you must comment out the whole <code>experiments</code> section.</p>

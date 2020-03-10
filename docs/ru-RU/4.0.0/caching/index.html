@@ -80,7 +80,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/ru-RU" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Caching strategies</h1></header><article><div><span><p>Verdaccio кэширует все пакеты по умолчанию в папку <code>/storage</code>. Но если вы хотите, вы можете перейти на другие стратегии. С помощью плагинов вы можете использовать облако или любую базу данных.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/ru-RU" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Caching strategies</h1></header><article><div><span><p>Verdaccio кэширует все пакеты по умолчанию в папку <code>/storage</code>. Но если вы хотите, вы можете перейти на другие стратегии. С помощью плагинов вы можете использовать облако или любую базу данных.</p>
 <h2><a class="anchor" aria-hidden="true" id="сценарии-кэширования"></a><a href="#сценарии-кэширования" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Сценарии кэширования</h2>
 <ul>
 <li>Сборка проекта на Node.js project на серверах <strong>непрерывной интеграции</strong> (Bamboo, GitLab, Jenkins, и т.д.) - это задача, которая может выполняться несколько раз в день, при этом сервер каждый раз будет загружать кучи tar-файлов. Ведь обычно CI-инструменты очищают кэш после каждой сборки, и процесс загрузки каждый раз начинается заново. Это напрасная нагрузка на сеть и напрасная трата трафика. <strong>Вы можете использовать Verdaccio для кэширования tar-файлов и метаданных в своей внутренней сети и этим ускорить сборку.</strong></li>
@@ -102,9 +102,9 @@
 <h2><a class="anchor" aria-hidden="true" id="увеличение-времени-жизни-метаданных"></a><a href="#увеличение-времени-жизни-метаданных" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Увеличение времени жизни метаданных</h2>
 <p>По умолчанию, время жизни метаданных в кэше Verdaccio составляет 2 минуты, после чего метаданные будут снова запрошены из удаленного репозитория.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">uplinks:</span>
-<span class="hljs-attr">  npmjs:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-attr">https://registry.npmjs.org/</span>
-<span class="hljs-attr">    maxage:</span> <span class="hljs-number">30</span><span class="hljs-string">m</span>
+  <span class="hljs-attr">npmjs:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">https://registry.npmjs.org/</span>
+    <span class="hljs-attr">maxage:</span> <span class="hljs-string">30m</span>
 </code></pre>
 <p>Если увеличить значение <code>maxage</code> для каждого <code>аплинка</code>, удаленный репозиторий будет опрашиваться реже. Это может стать отличной стратегией, если ваши зависимсти обновляются не слишком часто.</p>
 <h2><a class="anchor" aria-hidden="true" id="использование-памяти-вместо-диска"></a><a href="#использование-памяти-вместо-диска" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Использование памяти вместо диска</h2>
@@ -114,14 +114,14 @@
 </code></pre>
 <p>Конфиграция выглядит примерно так</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  auth-memory:</span>
-<span class="hljs-attr">    users:</span>
-<span class="hljs-attr">      foo:</span>
-<span class="hljs-attr">        name:</span> <span class="hljs-string">test</span>
-<span class="hljs-attr">        password:</span> <span class="hljs-string">test</span>
+  <span class="hljs-attr">auth-memory:</span>
+    <span class="hljs-attr">users:</span>
+      <span class="hljs-attr">foo:</span>
+        <span class="hljs-attr">name:</span> <span class="hljs-string">test</span>
+        <span class="hljs-attr">password:</span> <span class="hljs-string">test</span>
 <span class="hljs-attr">store:</span>
-<span class="hljs-attr">  memory:</span>
-<span class="hljs-attr">    limit:</span> <span class="hljs-number">1000</span>
+  <span class="hljs-attr">memory:</span>
+    <span class="hljs-attr">limit:</span> <span class="hljs-number">1000</span>
 </code></pre>
 <p>Помните, что когда сервер будет перезапущен, все данные будут потеряны, поэтому мы рекомендуем этот вариант в случаях, когда вам вообще не нужно хранить пакеты.</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ru-RU/4.0.0/e2e"><span class="arrow-prev">← </span><span>End to End тестирование</span></a><a class="docs-next button" href="/docs/ru-RU/4.0.0/github-actions"><span>Github Actions</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#сценарии-кэширования">Сценарии кэширования</a></li><li><a href="#отключение-кэширования-tar-файлов">Отключение кэширования tar-файлов</a></li><li><a href="#увеличение-времени-жизни-метаданных">Увеличение времени жизни метаданных</a></li><li><a href="#использование-памяти-вместо-диска">Использование памяти вместо диска</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/ru-RU/what-is-verdaccio.html">Getting Started</a><a href="/docs/ru-RU/docker.html">Docker</a><a href="/docs/ru-RU/configuration.html">Configuration</a><a href="/docs/ru-RU/logo">Logos</a></div><div><h5>Community</h5><a href="/ru-RU/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>

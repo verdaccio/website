@@ -80,34 +80,34 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Package Access</h1></header><article><div><span><p>It's a series of contraints that allow or restrict access to the local storage based in specific criteria.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Package Access</h1></header><article><div><span><p>It's a series of contraints that allow or restrict access to the local storage based in specific criteria.</p>
 <p>The security constraints remain on the shoulders of the plugin being used, by default <code>verdaccio</code> uses the <a href="https://github.com/verdaccio/verdaccio-htpasswd">htpasswd plugin</a>. If you use a different plugin the behaviour might be different. The default plugin does not handle <code>allow_access</code> and <code>allow_publish</code> by itself, it uses an internal fallback in case the plugin is not ready for it.</p>
 <p>For more information about permissions visit <a href="/docs/en/4.1.0/authentification">the authentification section in the wiki</a>.</p>
 <h3><a class="anchor" aria-hidden="true" id="usage"></a><a href="#usage" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Usage</h3>
 <pre><code class="hljs css language-yalm">packages:
   # scoped packages
   <span class="hljs-string">'@scope/*'</span>:
-    access: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
-    publish: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
+    access: <span class="hljs-variable">$all</span>
+    publish: <span class="hljs-variable">$all</span>
     proxy: server2
 
   <span class="hljs-string">'private-*'</span>:
-    access: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
-    publish: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
+    access: <span class="hljs-variable">$all</span>
+    publish: <span class="hljs-variable">$all</span>
     proxy: uplink1
 
   <span class="hljs-string">'**'</span>:
-    # allow <span class="hljs-keyword">all</span> users (including non-authenticated users) to read <span class="hljs-keyword">and</span>
-    # publish <span class="hljs-keyword">all</span> packages
-    access: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
-    publish: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
+    # allow all<span class="hljs-built_in"> users </span>(including non-authenticated users) <span class="hljs-keyword">to</span> read <span class="hljs-keyword">and</span>
+    # publish all packages
+    access: <span class="hljs-variable">$all</span>
+    publish: <span class="hljs-variable">$all</span>
     proxy: uplink2
 </code></pre>
 <p>if none is specified, the default one remains</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
 <p>The list internal groups handled by <code>verdaccio</code> are:</p>
 <pre><code class="hljs css language-js"><span class="hljs-string">'$all'</span>, <span class="hljs-string">'$anonymous'</span>, <span class="hljs-string">'@all'</span>, <span class="hljs-string">'@anonymous'</span>, <span class="hljs-string">'all'</span>, <span class="hljs-string">'undefined'</span>, <span class="hljs-string">'anonymous'</span>
@@ -119,8 +119,8 @@
 <p>If you want to protect specific set packages under your group, you need to do something like this. Let's use a <code>Regex</code> that covers all prefixed <code>npmuser-</code> packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
   <span class="hljs-string">'npmuser-*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">npmuser</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">npmuser</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">npmuser</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">npmuser</span>
 </code></pre>
 <p>Restart <code>verdaccio</code> and in your console try to install <code>npmuser-core</code>.</p>
 <pre><code class="hljs css language-bash">$ npm install npmuser-core
@@ -135,39 +135,39 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 <h4><a class="anchor" aria-hidden="true" id="set-multiple-groups"></a><a href="#set-multiple-groups" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Set multiple groups</h4>
 <p>Defining multiple access groups is fairly easy, just define them with a white space between them.</p>
 <pre><code class="hljs css language-yaml">  <span class="hljs-string">'company-*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">admin</span> <span class="hljs-string">internal</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">admin</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">server1</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">admin</span> <span class="hljs-string">internal</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">admin</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">server1</span>
   <span class="hljs-string">'supersecret-*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">secret</span> <span class="hljs-string">super-secret-area</span> <span class="hljs-string">ultra-secret-area</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">secret</span> <span class="hljs-string">ultra-secret-area</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">server1</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">secret</span> <span class="hljs-string">super-secret-area</span> <span class="hljs-string">ultra-secret-area</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">secret</span> <span class="hljs-string">ultra-secret-area</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">server1</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="blocking-access-to-set-of-packages"></a><a href="#blocking-access-to-set-of-packages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Blocking access to set of packages</h4>
 <p>If you want to block the access/publish to a specific group of packages. Just do not define <code>access</code> and <code>publish</code>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
   <span class="hljs-string">'old-*'</span><span class="hljs-string">:</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="blocking-proxying-a-set-of-specific-packages"></a><a href="#blocking-proxying-a-set-of-specific-packages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Blocking proxying a set of specific packages</h4>
 <p>You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different <em>uplinks</em>.</p>
 <p>Let's see the following example:</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
-<span class="hljs-attr">  'jquery':</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$all</span>
+  <span class="hljs-attr">'jquery':</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$all</span>
   <span class="hljs-string">'my-company-*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
   <span class="hljs-string">'@my-local-scope/*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
 </code></pre>
 <p>Let's describe what we want with the above example:</p>
 <ul>

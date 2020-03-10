@@ -80,7 +80,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Plugins</h1></header><article><div><span><p>Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Plugins</h1></header><article><div><span><p>Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.</p>
 <p>There are 5 types of plugins:</p>
 <ul>
 <li><a href="/docs/zh-CN/4.4.2/plugin-auth">Authentication</a></li>
@@ -103,33 +103,33 @@
 <p>打开<code>config.yaml</code>文件并按如下说明更新<code>auth</code>部分：</p>
 <p>默认配置如下所示，由于在默认情况下我们使用一个内置的<code>htpasswd</code>插件，我们可以通过注释下面几行代码来禁用它：</p>
 <h3><a class="anchor" aria-hidden="true" id="authentication-configuration"></a><a href="#authentication-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Authentication Configuration</h3>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr"> htpasswd:</span>
-<span class="hljs-attr">    file:</span> <span class="hljs-string">./htpasswd</span>
+<pre><code class="hljs css language-yaml"> <span class="hljs-attr">htpasswd:</span>
+    <span class="hljs-attr">file:</span> <span class="hljs-string">./htpasswd</span>
     <span class="hljs-comment"># max_users: 1000</span>
 </code></pre>
 <p>如果你决定使用<code>ldap</code>插件，将上述部分进行替换。</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  activedirectory:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-string">"ldap://10.0.100.1"</span>
-<span class="hljs-attr">    baseDN:</span> <span class="hljs-string">'dc=sample,dc=local'</span>
-<span class="hljs-attr">    domainSuffix:</span> <span class="hljs-string">'sample.local'</span>
+  <span class="hljs-attr">activedirectory:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">"ldap://10.0.100.1"</span>
+    <span class="hljs-attr">baseDN:</span> <span class="hljs-string">'dc=sample,dc=local'</span>
+    <span class="hljs-attr">domainSuffix:</span> <span class="hljs-string">'sample.local'</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="multiple-authentication-plugins"></a><a href="#multiple-authentication-plugins" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Multiple Authentication plugins</h4>
 <p>This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  htpasswd:</span>
-<span class="hljs-attr">    file:</span> <span class="hljs-string">./htpasswd</span>
+  <span class="hljs-attr">htpasswd:</span>
+    <span class="hljs-attr">file:</span> <span class="hljs-string">./htpasswd</span>
     <span class="hljs-comment">#max_users: 1000</span>
-<span class="hljs-attr">  activedirectory:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-string">"ldap://10.0.100.1"</span>
-<span class="hljs-attr">    baseDN:</span> <span class="hljs-string">'dc=sample,dc=local'</span>
-<span class="hljs-attr">    domainSuffix:</span> <span class="hljs-string">'sample.local'</span>
+  <span class="hljs-attr">activedirectory:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">"ldap://10.0.100.1"</span>
+    <span class="hljs-attr">baseDN:</span> <span class="hljs-string">'dc=sample,dc=local'</span>
+    <span class="hljs-attr">domainSuffix:</span> <span class="hljs-string">'sample.local'</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="middleware-configuration"></a><a href="#middleware-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Middleware Configuration</h3>
 <p>This is an example how to set up a middleware plugin. All middleware plugins must be defined in the <strong>middlewares</strong> namespace.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">middlewares:</span>
-<span class="hljs-attr">  audit:</span>
-<span class="hljs-attr">    enabled:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">audit:</span>
+    <span class="hljs-attr">enabled:</span> <span class="hljs-literal">true</span>
 </code></pre>
 <blockquote>
 <p>您可以跟着<a href="https://github.com/verdaccio/verdaccio-audit">audit middle plugin（审核中间插件）</a>的基本范例。</p>
@@ -137,8 +137,8 @@
 <h3><a class="anchor" aria-hidden="true" id="storage-configuration"></a><a href="#storage-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Storage Configuration</h3>
 <p>This is an example how to set up a storage plugin. All storage plugins must be defined in the <strong>store</strong> namespace.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">store:</span>
-<span class="hljs-attr">  memory:</span>
-<span class="hljs-attr">    limit:</span> <span class="hljs-number">1000</span>
+  <span class="hljs-attr">memory:</span>
+    <span class="hljs-attr">limit:</span> <span class="hljs-number">1000</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="theme-configuration"></a><a href="#theme-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Theme Configuration</h3>
 <p>Verdaccio allows to replace the User Interface with a custom one, we call it <strong>theme</strong>. By default, uses <code>@verdaccio/ui-theme</code> that comes built-in, but, you can use something different installing your own plugin.</p>
@@ -151,9 +151,9 @@ $&gt; npm install --global verdaccio-theme-dark
 </blockquote>
 <p>You can load only one theme at the time and pass through options if is need it.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">theme:</span>
-<span class="hljs-attr">  dark:</span>
-<span class="hljs-attr">    option1:</span> <span class="hljs-string">foo</span>
-<span class="hljs-attr">    option2:</span> <span class="hljs-string">bar</span>
+  <span class="hljs-attr">dark:</span>
+    <span class="hljs-attr">option1:</span> <span class="hljs-string">foo</span>
+    <span class="hljs-attr">option2:</span> <span class="hljs-string">bar</span>
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="旧式插件"></a><a href="#旧式插件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>旧式插件</h2>
 <h3><a class="anchor" aria-hidden="true" id="sinopia插件"></a><a href="#sinopia插件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sinopia插件</h3>

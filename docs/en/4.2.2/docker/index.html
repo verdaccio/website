@@ -80,7 +80,7 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Docker</h1></header><article><div><span><p><img src="https://dockeri.co/image/verdaccio/verdaccio" alt="alt Docker Pulls Count" title="Docker Pulls Count"></p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Docker</h1></header><article><div><span><p><img src="https://dockeri.co/image/verdaccio/verdaccio" alt="alt Docker Pulls Count" title="Docker Pulls Count"></p>
 <p>To pull the latest pre-built <a href="https://hub.docker.com/r/verdaccio/verdaccio/">docker image</a>:</p>
 <pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio
 </code></pre>
@@ -173,22 +173,22 @@ You have to overwrite the default value(&quot;http&quot;) of the <code>PROTOCOL<
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span>
 
 <span class="hljs-attr">services:</span>
-<span class="hljs-attr">  verdaccio:</span>
-<span class="hljs-attr">    image:</span> <span class="hljs-string">verdaccio/verdaccio</span>
-<span class="hljs-attr">    container_name:</span> <span class="hljs-string">"verdaccio"</span>
-<span class="hljs-attr">    networks:</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">node-network</span>
-<span class="hljs-attr">    environment:</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">VERDACCIO_PORT=4873</span>
-<span class="hljs-attr">    ports:</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">"4873:4873"</span>
-<span class="hljs-attr">    volumes:</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">"./storage:/verdaccio/storage"</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">"./config:/verdaccio/conf"</span>
-<span class="hljs-bullet">      -</span> <span class="hljs-string">"./plugins:/verdaccio/plugins"</span>  
+  <span class="hljs-attr">verdaccio:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">verdaccio/verdaccio</span>
+    <span class="hljs-attr">container_name:</span> <span class="hljs-string">"verdaccio"</span>
+    <span class="hljs-attr">networks:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">node-network</span>
+    <span class="hljs-attr">environment:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">VERDACCIO_PORT=4873</span>
+    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"4873:4873"</span>
+    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"./storage:/verdaccio/storage"</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"./config:/verdaccio/conf"</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"./plugins:/verdaccio/plugins"</span>  
 <span class="hljs-attr">networks:</span>
-<span class="hljs-attr">  node-network:</span>
-<span class="hljs-attr">    driver:</span> <span class="hljs-string">bridge</span>
+  <span class="hljs-attr">node-network:</span>
+    <span class="hljs-attr">driver:</span> <span class="hljs-string">bridge</span>
 </code></pre>
 <p>Docker will generate a named volume in which to store persistent application data. You can use <code>docker inspect</code> or <code>docker volume inspect</code> to reveal the physical location of the volume and edit the configuration, such as:</p>
 <pre><code class="hljs css language-bash">$ docker volume inspect verdaccio_verdaccio

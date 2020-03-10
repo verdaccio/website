@@ -107,7 +107,7 @@
 <h2><a class="anchor" aria-hidden="true" id="dockerfile"></a><a href="#dockerfile" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Dockerfile</h2>
 <p>This is my tree structure:</p>
 <pre><code class="hljs">├── conf
-│   └── config<span class="hljs-selector-class">.yaml</span>
+│   └── <span class="hljs-built_in">config</span>.yaml
 └── Dockerfile
 </code></pre>
 <p>First thing I had to do was to update my <code>Dockerfile</code>, this is what I have done:</p>
@@ -126,96 +126,96 @@
 <h2><a class="anchor" aria-hidden="true" id="configuration"></a><a href="#configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration</h2>
 <p>This is my <code>config.yaml</code>:</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">storage:</span> <span class="hljs-string">/verdaccio/storage</span>
-<span class="hljs-attr">max_body_size:</span> <span class="hljs-number">100</span><span class="hljs-string">mb</span>
+<span class="hljs-attr">max_body_size:</span> <span class="hljs-string">100mb</span>
 
 <span class="hljs-attr">web:</span>
-<span class="hljs-attr">  enable:</span> <span class="hljs-literal">true</span>
-<span class="hljs-attr">  title:</span> <span class="hljs-string">My</span> <span class="hljs-string">private</span> <span class="hljs-string">NPM</span> <span class="hljs-string">registry</span>
-<span class="hljs-attr">  gravatar:</span> <span class="hljs-literal">true</span>
-<span class="hljs-attr">  sort_packages:</span> <span class="hljs-string">asc</span>
+  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">title:</span> <span class="hljs-string">My</span> <span class="hljs-string">private</span> <span class="hljs-string">NPM</span> <span class="hljs-string">registry</span>
+  <span class="hljs-attr">gravatar:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">sort_packages:</span> <span class="hljs-string">asc</span>
 
 <span class="hljs-attr">security:</span>
-<span class="hljs-attr">  legacy:</span> <span class="hljs-literal">false</span>
-<span class="hljs-attr">  api:</span>
-<span class="hljs-attr">    jwt:</span>
-<span class="hljs-attr">      sign:</span>
-<span class="hljs-attr">        expiresIn:</span> <span class="hljs-number">30</span><span class="hljs-string">d</span>
-<span class="hljs-attr">        notBefore:</span> <span class="hljs-number">0</span>
-<span class="hljs-attr">  web:</span>
-<span class="hljs-attr">    sign:</span>
-<span class="hljs-attr">      expiresIn:</span> <span class="hljs-number">7</span><span class="hljs-string">d</span>
-<span class="hljs-attr">      notBefore:</span> <span class="hljs-number">1</span>
+  <span class="hljs-attr">legacy:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-attr">api:</span>
+    <span class="hljs-attr">jwt:</span>
+      <span class="hljs-attr">sign:</span>
+        <span class="hljs-attr">expiresIn:</span> <span class="hljs-string">30d</span>
+        <span class="hljs-attr">notBefore:</span> <span class="hljs-number">0</span>
+  <span class="hljs-attr">web:</span>
+    <span class="hljs-attr">sign:</span>
+      <span class="hljs-attr">expiresIn:</span> <span class="hljs-string">7d</span>
+      <span class="hljs-attr">notBefore:</span> <span class="hljs-number">1</span>
 
 <span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  ldap:</span>
-<span class="hljs-attr">    type:</span> <span class="hljs-string">ldap</span>
-<span class="hljs-attr">    client_options:</span>
-<span class="hljs-attr">      url:</span> <span class="hljs-string">"ldap://ldap.verdaccio.private.rocks"</span>
+  <span class="hljs-attr">ldap:</span>
+    <span class="hljs-attr">type:</span> <span class="hljs-string">ldap</span>
+    <span class="hljs-attr">client_options:</span>
+      <span class="hljs-attr">url:</span> <span class="hljs-string">"ldap://ldap.verdaccio.private.rocks"</span>
       <span class="hljs-comment"># Only required if you need auth to bind</span>
-<span class="hljs-attr">      adminDn:</span> <span class="hljs-string">"cn=readonly,dc=verdaccio.private,dc=rocks"</span>
-<span class="hljs-attr">      adminPassword:</span> <span class="hljs-string">"********"</span>
+      <span class="hljs-attr">adminDn:</span> <span class="hljs-string">"cn=readonly,dc=verdaccio.private,dc=rocks"</span>
+      <span class="hljs-attr">adminPassword:</span> <span class="hljs-string">"********"</span>
       <span class="hljs-comment"># Search base for users</span>
-<span class="hljs-attr">      searchBase:</span> <span class="hljs-string">"dc=verdaccio.private,dc=rocks"</span>
-<span class="hljs-attr">      searchFilter:</span> <span class="hljs-string">"(&amp;(uid=<span class="hljs-template-variable">{{username}}</span>)(memberOf=cn=npm_users,ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks))"</span>
+      <span class="hljs-attr">searchBase:</span> <span class="hljs-string">"dc=verdaccio.private,dc=rocks"</span>
+      <span class="hljs-attr">searchFilter:</span> <span class="hljs-string">"(&amp;(uid=<span class="hljs-template-variable">{{username}}</span>)(memberOf=cn=npm_users,ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks))"</span>
       <span class="hljs-comment"># # If you are using groups, this is also needed</span>
-<span class="hljs-attr">      groupDnProperty:</span> <span class="hljs-string">'cn'</span>
-<span class="hljs-attr">      groupSearchBase:</span> <span class="hljs-string">'ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks'</span>
+      <span class="hljs-attr">groupDnProperty:</span> <span class="hljs-string">'cn'</span>
+      <span class="hljs-attr">groupSearchBase:</span> <span class="hljs-string">'ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks'</span>
       <span class="hljs-comment"># If you have memberOf support on your ldap</span>
-<span class="hljs-attr">      searchAttributes:</span> <span class="hljs-string">['*',</span> <span class="hljs-string">'memberOf'</span><span class="hljs-string">]</span>
+      <span class="hljs-attr">searchAttributes:</span> <span class="hljs-string">['*',</span> <span class="hljs-string">'memberOf'</span><span class="hljs-string">]</span>
       <span class="hljs-comment"># Else, if you don't (use one or the other):</span>
       <span class="hljs-comment"># groupSearchFilter: '(memberUid={{dn}})'</span>
       <span class="hljs-comment">#</span>
       <span class="hljs-comment"># Optional, default false.</span>
       <span class="hljs-comment"># If true, then up to 100 credentials at a time will be cached for 5 minutes.</span>
-<span class="hljs-attr">      cache:</span> <span class="hljs-literal">false</span>
+      <span class="hljs-attr">cache:</span> <span class="hljs-literal">false</span>
       <span class="hljs-comment"># Optional</span>
-<span class="hljs-attr">      reconnect:</span> <span class="hljs-literal">true</span>
+      <span class="hljs-attr">reconnect:</span> <span class="hljs-literal">true</span>
 
 <span class="hljs-comment"># a list of other known repositories we can talk to</span>
 <span class="hljs-attr">uplinks:</span>
-<span class="hljs-attr">  npmjs:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-attr">https://registry.npmjs.org/</span>
+  <span class="hljs-attr">npmjs:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">https://registry.npmjs.org/</span>
 
 <span class="hljs-attr">packages:</span>
   <span class="hljs-string">'@scope-*/*'</span><span class="hljs-string">:</span>
     <span class="hljs-comment"># scoped packages</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">npm_access</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">npm_publisher</span>
-<span class="hljs-attr">    unpublish:</span> <span class="hljs-string">npm_publisher</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">npm_access</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">npm_publisher</span>
+    <span class="hljs-attr">unpublish:</span> <span class="hljs-string">npm_publisher</span>
 
   <span class="hljs-string">'@scope/*'</span><span class="hljs-string">:</span>
     <span class="hljs-comment"># scoped packages</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">npm_access</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">npm_publisher</span>
-<span class="hljs-attr">    unpublish:</span> <span class="hljs-string">npm_publisher</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">npm_access</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">npm_publisher</span>
+    <span class="hljs-attr">unpublish:</span> <span class="hljs-string">npm_publisher</span>
 
   <span class="hljs-string">'@*/*'</span><span class="hljs-string">:</span>
     <span class="hljs-comment"># scoped packages</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
     <span class="hljs-comment"># allow all users (including non-authenticated users) to read and</span>
     <span class="hljs-comment"># publish all packages</span>
     <span class="hljs-comment">#</span>
     <span class="hljs-comment"># you can specify usernames/groupnames (depending on your auth plugin)</span>
     <span class="hljs-comment"># and three keywords: "$all", "$anonymous", "$authenticated"</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
 
     <span class="hljs-comment"># allow all known users to publish packages</span>
     <span class="hljs-comment"># (anyone can register by default, remember?)</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
 
     <span class="hljs-comment"># if package is not available locally, proxy requests to 'npmjs' registry</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
 
 <span class="hljs-comment"># log settings</span>
 <span class="hljs-attr">logs:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-string">{type:</span> <span class="hljs-string">stdout,</span> <span class="hljs-attr">format:</span> <span class="hljs-string">pretty,</span> <span class="hljs-attr">level:</span> <span class="hljs-string">trace}</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-string">{type:</span> <span class="hljs-string">stdout,</span> <span class="hljs-attr">format:</span> <span class="hljs-string">pretty,</span> <span class="hljs-attr">level:</span> <span class="hljs-string">trace}</span>
 <span class="hljs-comment">#  - {type: file, path: verdaccio.log, level: info}</span>
 
 <span class="hljs-attr">listen:</span>
-<span class="hljs-bullet">  -</span> <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span><span class="hljs-string">:4873</span>
+  <span class="hljs-bullet">-</span> <span class="hljs-number">0.0</span><span class="hljs-number">.0</span><span class="hljs-number">.0</span><span class="hljs-string">:4873</span>
 </code></pre>
 <p>Available options are explained in details in <a href="https://verdaccio.org/docs/en/configuration">Configuration File documentation</a>.</p>
 <p>I will describe the most important here.</p>
@@ -236,47 +236,47 @@
 <p>Note that we do not use <code>proxy: npmjs</code> because they only exist on our private registry.</p>
 <p>I recommend you to create scope for all of your private packages, and reserve the group on npmjs registry so no one will be able to publish publicly in it in the futur.</p>
 <pre><code class="hljs css language-yaml">  <span class="hljs-string">'@scope-*/*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">npm_access</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">npm_publisher</span>
-<span class="hljs-attr">    unpublish:</span> <span class="hljs-string">npm_publisher</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">npm_access</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">npm_publisher</span>
+    <span class="hljs-attr">unpublish:</span> <span class="hljs-string">npm_publisher</span>
 
   <span class="hljs-string">'@scope/*'</span><span class="hljs-string">:</span>
     <span class="hljs-comment"># scoped packages</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">npm_access</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">npm_publisher</span>
-<span class="hljs-attr">    unpublish:</span> <span class="hljs-string">npm_publisher</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">npm_access</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">npm_publisher</span>
+    <span class="hljs-attr">unpublish:</span> <span class="hljs-string">npm_publisher</span>
 </code></pre>
 <p>They are some public package on npmjs registry which are scoped, this will proxy all the request to npmjs registry.</p>
 <p>I recommend not to change this, otherwise you might get issue to download them.</p>
 <pre><code class="hljs css language-yaml">  <span class="hljs-string">'@*/*'</span><span class="hljs-string">:</span>
     <span class="hljs-comment"># scoped packages</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
 </code></pre>
 <p>For all other packages, to prevent anyone to use our registry, we just allow <code>$authenticated</code> to publish.
 We also use <code>proxy: npmjs</code> so we also serve all the public package on npmjs registry.</p>
 <p>We allow <code>$all</code> to download from our registry, because it is public, but if you want to preserve your bandwidth or just forbid unknown user to authenticate, just use <code>$authenticated</code> as well.</p>
 <pre><code class="hljs css language-yaml">  <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">npmjs</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
 </code></pre>
 <p><strong><code>security</code></strong></p>
 <p>You should (and I recommend it) use <code>JWT</code> security, otherwise your LDAP server will received an authentication request for each request.</p>
 <p>If you don't mind, you can keep <code>legacy: true</code>.</p>
 <p>If you do use the JWT authentication, then <strong>all your users</strong> will have to re-authenticate with <code>npm adduser</code>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">security:</span>
-<span class="hljs-attr">  legacy:</span> <span class="hljs-literal">false</span>
-<span class="hljs-attr">  api:</span>
-<span class="hljs-attr">    jwt:</span>
-<span class="hljs-attr">      sign:</span>
-<span class="hljs-attr">        expiresIn:</span> <span class="hljs-number">30</span><span class="hljs-string">d</span>
-<span class="hljs-attr">        notBefore:</span> <span class="hljs-number">0</span>
-<span class="hljs-attr">  web:</span>
-<span class="hljs-attr">    sign:</span>
-<span class="hljs-attr">      expiresIn:</span> <span class="hljs-number">7</span><span class="hljs-string">d</span>
-<span class="hljs-attr">      notBefore:</span> <span class="hljs-number">0</span>
+  <span class="hljs-attr">legacy:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-attr">api:</span>
+    <span class="hljs-attr">jwt:</span>
+      <span class="hljs-attr">sign:</span>
+        <span class="hljs-attr">expiresIn:</span> <span class="hljs-string">30d</span>
+        <span class="hljs-attr">notBefore:</span> <span class="hljs-number">0</span>
+  <span class="hljs-attr">web:</span>
+    <span class="hljs-attr">sign:</span>
+      <span class="hljs-attr">expiresIn:</span> <span class="hljs-string">7d</span>
+      <span class="hljs-attr">notBefore:</span> <span class="hljs-number">0</span>
 </code></pre>
 <ul>
 <li><code>expiresIn</code>: You will have to reauthenticate after <code>30 days</code>, and <code>7 days</code> on the web UI.</li>
@@ -427,7 +427,7 @@ chown -R <span class="hljs-variable">$VERDACCIO_USER_UID</span> storage
 </ul>
 <p>If you keep having <code>403</code> issues when retrieving packages from the registry, and permissions and ownership have been fixed, we have found that adding <code>--always-auth</code> will solve the issue.</p>
 <p>In my case, I have found that <code>--always-auth</code> was required in my production environment.</p>
-</span></div></div><div class="blogSocialSection"><div class="blogSocialSectionItem"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Upgrade from v3.x to verdaccio 4.x with LDAP and Docker" data-url="https://verdaccio.org//blog/2019/10/05/verdaccio-4-with-ldap-and-docker" data-related="true" data-via="DimitriKopriwa" data-show-count="false">Tweet</a></div></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#goal">Goal</a></li><li><a href="#dockerfile">Dockerfile</a></li><li><a href="#configuration">Configuration</a><ul class="toc-headings"><li><a href="#ldap">LDAP</a></li><li><a href="#security">Security</a></li></ul></li><li><a href="#build-the-image">Build the image</a></li><li><a href="#run-the-service">Run the service</a></li><li><a href="#test-the-service">Test the service</a><ul class="toc-headings"><li><a href="#plugin">plugin</a></li><li><a href="#npm"><code>npm</code></a></li><li><a href="#web">Web</a></li><li><a href="#packages-permissions">Packages permissions</a></li><li><a href="#web-1">Web</a></li><li><a href="#npm-1">npm</a></li></ul></li><li><a href="#conclusion-and-thanks">Conclusion and thanks</a></li><li><a href="#faq">FAQ</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/what-is-verdaccio.html">Getting Started</a><a href="/docs/en/docker.html">Docker</a><a href="/docs/en/configuration.html">Configuration</a><a href="/docs/en/logo">Logos</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+</span></div></div><div class="blogSocialSection"><div class="blogSocialSectionItem"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Upgrade from v3.x to verdaccio 4.x with LDAP and Docker" data-url="https://verdaccio.org//blog/2019/10/05/verdaccio-4-with-ldap-and-docker" data-related="true" data-via="DimitriKopriwa" data-show-count="false">Tweet</a></div></div></div><div class="blog-recent"><a class="button" href="/blog/">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisite">Prerequisite</a></li><li><a href="#goal">Goal</a></li><li><a href="#dockerfile">Dockerfile</a></li><li><a href="#configuration">Configuration</a><ul class="toc-headings"><li><a href="#ldap">LDAP</a></li><li><a href="#security">Security</a></li></ul></li><li><a href="#build-the-image">Build the image</a></li><li><a href="#run-the-service">Run the service</a></li><li><a href="#test-the-service">Test the service</a><ul class="toc-headings"><li><a href="#plugin">plugin</a></li><li><a href="#npm"><code>npm</code></a></li><li><a href="#web">Web</a></li><li><a href="#packages-permissions">Packages permissions</a></li><li><a href="#web-1">Web</a></li><li><a href="#npm-1">npm</a></li></ul></li><li><a href="#conclusion-and-thanks">Conclusion and thanks</a></li><li><a href="#faq">FAQ</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/what-is-verdaccio.html">Getting Started</a><a href="/docs/en/docker.html">Docker</a><a href="/docs/en/configuration.html">Configuration</a><a href="/docs/en/logo">Logos</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;

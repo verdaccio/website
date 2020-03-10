@@ -80,19 +80,19 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Uplinks</h1></header><article><div><span><p><em>上行链路</em> 是指可以访问到外部包的外部注册服务器地址。</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/zh-CN" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Uplinks</h1></header><article><div><span><p><em>上行链路</em> 是指可以访问到外部包的外部注册服务器地址。</p>
 <p><img src="/img/uplinks.png" alt="上行链路"></p>
 <h3><a class="anchor" aria-hidden="true" id="使用"></a><a href="#使用" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>使用</h3>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">uplinks:</span>
-<span class="hljs-attr">  npmjs:</span>
-<span class="hljs-attr">   url:</span> <span class="hljs-attr">https://registry.npmjs.org/</span>
-<span class="hljs-attr">  server2:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-attr">http://mirror.local.net/</span>
-<span class="hljs-attr">    timeout:</span> <span class="hljs-number">100</span><span class="hljs-string">ms</span>
-<span class="hljs-attr">  server3:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-attr">http://mirror2.local.net:9000/</span>
-<span class="hljs-attr">  baduplink:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-attr">http://localhost:55666/</span>
+  <span class="hljs-attr">npmjs:</span>
+   <span class="hljs-attr">url:</span> <span class="hljs-string">https://registry.npmjs.org/</span>
+  <span class="hljs-attr">server2:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">http://mirror.local.net/</span>
+    <span class="hljs-attr">timeout:</span> <span class="hljs-string">100ms</span>
+  <span class="hljs-attr">server3:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">http://mirror2.local.net:9000/</span>
+  <span class="hljs-attr">baduplink:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">http://localhost:55666/</span>
 </code></pre>
 <h3><a class="anchor" aria-hidden="true" id="配置"></a><a href="#配置" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>配置</h3>
 <p>You can define mutiple uplinks and each of them must have an unique name (key). They can have two properties:</p>
@@ -116,28 +116,28 @@
 <h4><a class="anchor" aria-hidden="true" id="auth属性"></a><a href="#auth属性" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Auth属性</h4>
 <p>The <code>auth</code> property allows you to use an auth token with an uplink. Using the default environment variable:</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">uplinks:</span>
-<span class="hljs-attr">  private:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-attr">https://private-registry.domain.com/registry</span>
-<span class="hljs-attr">    auth:</span>
-<span class="hljs-attr">      type:</span> <span class="hljs-string">bearer</span>
-<span class="hljs-attr">      token_env:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># defaults to `process.env['NPM_TOKEN']`</span>
+  <span class="hljs-attr">private:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">https://private-registry.domain.com/registry</span>
+    <span class="hljs-attr">auth:</span>
+      <span class="hljs-attr">type:</span> <span class="hljs-string">bearer</span>
+      <span class="hljs-attr">token_env:</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># defaults to `process.env['NPM_TOKEN']`</span>
 </code></pre>
 <p>或者使用一个指定的环境变量</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">uplinks:</span>
-<span class="hljs-attr">  private:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-attr">https://private-registry.domain.com/registry</span>
-<span class="hljs-attr">    auth:</span>
-<span class="hljs-attr">      type:</span> <span class="hljs-string">bearer</span>
-<span class="hljs-attr">      token_env:</span> <span class="hljs-string">FOO_TOKEN</span>
+  <span class="hljs-attr">private:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">https://private-registry.domain.com/registry</span>
+    <span class="hljs-attr">auth:</span>
+      <span class="hljs-attr">type:</span> <span class="hljs-string">bearer</span>
+      <span class="hljs-attr">token_env:</span> <span class="hljs-string">FOO_TOKEN</span>
 </code></pre>
 <p><code>token_env: FOO_TOKEN</code>内部将使用 <code>process.env['FOO_TOKEN']</code></p>
 <p>或者直接指定令牌:</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">uplinks:</span>
-<span class="hljs-attr">  private:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-attr">https://private-registry.domain.com/registry</span>
-<span class="hljs-attr">    auth:</span>
-<span class="hljs-attr">      type:</span> <span class="hljs-string">bearer</span>
-<span class="hljs-attr">      token:</span> <span class="hljs-string">"token"</span>
+  <span class="hljs-attr">private:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">https://private-registry.domain.com/registry</span>
+    <span class="hljs-attr">auth:</span>
+      <span class="hljs-attr">type:</span> <span class="hljs-string">bearer</span>
+      <span class="hljs-attr">token:</span> <span class="hljs-string">"token"</span>
 </code></pre>
 <blockquote>
 <p>注意: <code>token</code>的优先级高于<code>token_env</code></p>

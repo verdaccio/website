@@ -80,10 +80,10 @@
                 };
               }
             });
-        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/ru-RU" target="_blank" rel="noreferrer noopener">Translate</a><h1 class="postHeaderTitle">Linking a Remote Registry</h1></header><article><div><span><p>Verdaccio - это прокси, и по умолчанию у него есть <a href="/docs/ru-RU/4.4.1/uplinks">аплинк</a> с публичным репозиторием.</p>
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/ru-RU" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Linking a Remote Registry</h1></header><article><div><span><p>Verdaccio - это прокси, и по умолчанию у него есть <a href="/docs/ru-RU/4.4.1/uplinks">аплинк</a> с публичным репозиторием.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">uplinks:</span>
-<span class="hljs-attr">  npmjs:</span>
-<span class="hljs-attr">    url:</span> <span class="hljs-attr">https://registry.npmjs.org/</span>
+  <span class="hljs-attr">npmjs:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">https://registry.npmjs.org/</span>
 </code></pre>
 <p>У вас могут быть аплинки на несколько репозиториев, и в этом документе вы найдете несколько полезных конфигураций.</p>
 <div id="codefund">''</div>
@@ -103,51 +103,51 @@ registry=<span class="hljs-string">https:</span><span class="hljs-comment">//reg
 <p>Полный пример смотрите <a href="https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940">здесь</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="связь-с-репозиторием"></a><a href="#связь-с-репозиторием" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Связь с репозиторием</h2>
 <p>Добавить связь с новым репозиторием очень просто. Во-первых, добавьте новый блок в секции <code>uplinks</code>. Помните, порядок имеет значение.</p>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr">  uplinks:</span>
-<span class="hljs-attr">    private:</span>
-<span class="hljs-attr">      url:</span> <span class="hljs-attr">https://private.registry.net/npm</span>
+<pre><code class="hljs css language-yaml">  <span class="hljs-attr">uplinks:</span>
+    <span class="hljs-attr">private:</span>
+      <span class="hljs-attr">url:</span> <span class="hljs-string">https://private.registry.net/npm</span>
 
     <span class="hljs-string">...</span> <span class="hljs-string">[truncated]</span> <span class="hljs-string">...</span>
 
-<span class="hljs-attr">  'webpack':</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">private</span>
+  <span class="hljs-attr">'webpack':</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">private</span>
 
 </code></pre>
 <p>Во-вторых, добавьте строчку <code>proxy</code>, чтобы определить, какой репозиторий вы хотите использовать.</p>
 <h2><a class="anchor" aria-hidden="true" id="связь-с-несколькими-репозиториями"></a><a href="#связь-с-несколькими-репозиториями" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Связь с несколькими репозиториями</h2>
-<pre><code class="hljs css language-yaml"><span class="hljs-attr">  uplinks:</span>
-<span class="hljs-attr">    server1:</span>
-<span class="hljs-attr">      url:</span> <span class="hljs-attr">https://server1.registry.net/npm</span>
-<span class="hljs-attr">    server2:</span>
-<span class="hljs-attr">      url:</span> <span class="hljs-attr">https://server2.registry.net/npm</span>
+<pre><code class="hljs css language-yaml">  <span class="hljs-attr">uplinks:</span>
+    <span class="hljs-attr">server1:</span>
+      <span class="hljs-attr">url:</span> <span class="hljs-string">https://server1.registry.net/npm</span>
+    <span class="hljs-attr">server2:</span>
+      <span class="hljs-attr">url:</span> <span class="hljs-string">https://server2.registry.net/npm</span>
 
     <span class="hljs-string">...</span> <span class="hljs-string">[truncated]</span> <span class="hljs-string">...</span>
 
-<span class="hljs-attr">  'webpack':</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
-<span class="hljs-attr">    proxy:</span> <span class="hljs-string">server1</span> <span class="hljs-string">server2</span>
+  <span class="hljs-attr">'webpack':</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">server1</span> <span class="hljs-string">server2</span>
 </code></pre>
 <p>В Verdaccio можно указать несколько репозиториев в поле <code>proxy</code>. Первым отправится запрос в первый репозиторий; если он будет недачным, будет отправлен запрос во второй, и так далее.</p>
 <h2><a class="anchor" aria-hidden="true" id="оффлайновый-репозиторий"></a><a href="#оффлайновый-репозиторий" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Оффлайновый репозиторий</h2>
 <p>Можно сделать репозиторий полностью оффлайновым. Если вы не хотите никаких соединений с удаленными репозиториями, можно сделать так.</p>
 <pre><code class="hljs css language-yaml">
 <span class="hljs-attr">auth:</span>
-<span class="hljs-attr">  htpasswd:</span>
-<span class="hljs-attr">    file:</span> <span class="hljs-string">./htpasswd</span>
+  <span class="hljs-attr">htpasswd:</span>
+    <span class="hljs-attr">file:</span> <span class="hljs-string">./htpasswd</span>
 <span class="hljs-attr">uplinks:</span>
 <span class="hljs-attr">packages:</span>
   <span class="hljs-string">'@my-company/*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">none</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">none</span>
   <span class="hljs-string">'@*/*'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-<span class="hljs-attr">    access:</span> <span class="hljs-string">$all</span>
-<span class="hljs-attr">    publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
 <p>Удалите все строчки с полем <code>proxy</code> в каждом блоке секции <code>packages</code>. Реестр станет полностью оффлайновым.</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ru-RU/4.4.1/github-actions"><span class="arrow-prev">← </span><span>Github Actions</span></a><a class="docs-next button" href="/docs/ru-RU/4.4.1/articles"><span>Статьи</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#используем-scope">Используем scope</a></li><li><a href="#связь-с-репозиторием">Связь с репозиторием</a></li><li><a href="#связь-с-несколькими-репозиториями">Связь с несколькими репозиториями</a></li><li><a href="#оффлайновый-репозиторий">Оффлайновый репозиторий</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/ru-RU/what-is-verdaccio.html">Getting Started</a><a href="/docs/ru-RU/docker.html">Docker</a><a href="/docs/ru-RU/configuration.html">Configuration</a><a href="/docs/ru-RU/logo">Logos</a></div><div><h5>Community</h5><a href="/ru-RU/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
