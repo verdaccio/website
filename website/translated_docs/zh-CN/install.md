@@ -3,11 +3,11 @@ id: installation
 title: "安装"
 ---
 
-Verdaccio is a multiplatform web application. To install it, you need a few basic prerequisites.
+Verdaccio 是一个跨平台的 Web 应用程序。在安装之前，您需要确保系统环境已满足以下基本条件。
 
 #### 最低要求:
 
-1. Node higher Node `8.x` (LTS "Carbon") is the minimum supported version.
+1. 支持的Node最低版本为Node`8.x`(LTS "Carbon")
 2. npm `>=5.x` or, `pnpm` or `yarn` > We highly recommend to use the latest Node Package Managers clients `> npm@6.x | yarn@1.x | pnpm@4.x`
 3. Web 界面支持 `Chrome, Firefox, Edge, 和 IE11` 浏览器。
 
@@ -74,7 +74,7 @@ Or a `publishConfig` in your `package.json`
 }
 ```
 
-## Create Your Own Private NPM Package Tutorial
+## 创建你自己的私有NPM包教程
 
 If you still need a deep explanation, don't miss the at [thedevlife](https://mybiolink.co/thedevlife) tutorial how to publish your own private package using Verdaccio. <iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
