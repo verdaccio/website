@@ -22,6 +22,17 @@ web:
 
 Sve restrikcije koje se odnose na pristup definisane su u okviru  i takođe će se aplicirati i na web interfejs.</p> 
 
+### Internationalization
+
+*Since v4.5.0*, there are translations available
+
+```yaml
+i18n:
+  web: en-US  
+```
+
+> ⚠️ Only the languages in this [list](https://github.com/verdaccio/ui/tree/master/i18n/translations) are available, feel free to contribute with more. The default one is es-US
+
 ### Konfigurisanje
 
 | Svojstvo      | Tip        | Neophodno | Primer                                                        | Podrška    | Opis                                                                                                                     |

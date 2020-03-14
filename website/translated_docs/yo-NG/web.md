@@ -22,6 +22,17 @@ web:
 
 Gbogbo awọn idena wiwọle ti o jẹ siseto[dabobo awọn akopọ rẹ](protect-your-dependencies.md) naa yoo jẹ sisamulo si Intafeesi Ayelujara naa.
 
+### Internationalization
+
+*Since v4.5.0*, there are translations available
+
+```yaml
+i18n:
+  web: en-US  
+```
+
+> ⚠️ Only the languages in this [list](https://github.com/verdaccio/ui/tree/master/i18n/translations) are available, feel free to contribute with more. The default one is es-US
+
 ### Iṣeto
 
 | Ohun ini      | Iru        | Ti o nilo | Apẹẹrẹ                                                        | Atilẹyin   | Apejuwe                                                                                                          |
