@@ -22,6 +22,17 @@ web:
 
 All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
 
+### Internationalization
+
+*Since v4.5.0*, there are translations available
+
+```yaml
+i18n:
+  web: en-US  
+```
+
+> ⚠️ Only the languages in this [list](https://github.com/verdaccio/ui/tree/master/i18n/translations) are available, feel free to contribute with more. The default one is es-US
+
 ### Cấu hình
 
 | Thuộc tính    | Phương thức | Yêu cầu | Ví dụ                                                         | Hỗ trợ     | Miêu tả                                                                                                                  |
