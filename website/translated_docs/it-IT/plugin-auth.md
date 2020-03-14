@@ -296,5 +296,6 @@ Dove `thpasswd` è il suffisso del nome del plugin. ad esempio: `verdaccio-htpas
 * [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Plugin di autenticazione Github oauth per verdaccio.
 * [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): Plugin GitHub OAuth per il bottone di login di verdaccio.
 * [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Plugin per gestire associazioni di gruppi dinamici utilizzando la sintassi `$group`. Funziona meglio con il ldap plugin.
+* [verdaccio-sqlite](https://github.com/bchanudet/verdaccio-sqlite): SQLite Authentication plugin for Verdaccio
 
 **Have you developed a new plugin? Add it here !**
