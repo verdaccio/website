@@ -22,6 +22,17 @@ web:
 
 Все ограничения, определенные в секции [Защита пакетов](protect-your-dependencies.md), будут действовать и для веб-интерфейса.
 
+### Internationalization
+
+*Since v4.5.0*, there are translations available
+
+```yaml
+i18n:
+  web: en-US  
+```
+
+> ⚠️ Only the languages in this [list](https://github.com/verdaccio/ui/tree/master/i18n/translations) are available, feel free to contribute with more. The default one is es-US
+
 ### Конфигурация
 
 | Свойство      | Тип        | Обязательное | Пример                                                        | Поддержка  | Описание                                                                                                                                     |
