@@ -171,6 +171,13 @@ const nonSponsorUsers = [
     fbOpenSource: false,
     pinned: true,
   },
+  {
+    caption: "React Native Windows",
+    image: "img/users/react-native-windows.png",
+    infoLink: "https://github.com/microsoft/react-native-windows",
+    fbOpenSource: false,
+    pinned: true,
+  },
 ];
 
 const sponsorUsers = [
