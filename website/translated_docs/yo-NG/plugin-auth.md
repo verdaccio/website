@@ -296,5 +296,6 @@ Nibi ti `htpasswd` ti jẹ afikun ipari ti orukọ ohun elo naa. fun apẹẹr�
 * [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Ohun elo ifasẹsi Github oauth fun verdaccio.
 * [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): Ohun elo GitHub OAuth fun bọtini iwọle verdaccio naa.
 * [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Ohun elo lati mojuto awọn ẹgbẹ akojọ alaidurolojukan ti nipa lilo sintasi `$group`. O ma n ṣiṣẹ dara julọ pẹlu ohun elo ldap.
+* [verdaccio-sqlite](https://github.com/bchanudet/verdaccio-sqlite): SQLite Authentication plugin for Verdaccio
 
 **Have you developed a new plugin? Add it here !**
