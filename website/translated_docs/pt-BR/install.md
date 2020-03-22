@@ -9,7 +9,7 @@ Verdaccio is a multiplatform web application. To install it, you need a few basi
 
 1. Node higher Node `10.x` (LTS "Carbon") is the minimum supported version.
 
-> After v4.5.0 Node v10 is now the minimum supported version.
+> After v4.5.0 *Node.js v10* is now the minimum supported version. If you cannot upgrade *Node.js v8*, keep using `v4.4.4`.
 
 1. npm `>=5.x` or, `pnpm` or `yarn` > We highly recommend to use the latest Node Package Managers clients `> npm@6.x | yarn@1.x | pnpm@4.x`
 2. A interface da web suporta os navegadores `Chrome, Firefox, Edge, and IE11`.

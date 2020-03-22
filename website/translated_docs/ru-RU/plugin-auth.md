@@ -296,5 +296,6 @@ Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and t
 * [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Github oauth authentication plugin for verdaccio.
 * [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): GitHub OAuth plugin for the verdaccio login button.
 * [verdaccio-groupnames](https://github.com/deinstapel/verdaccio-groupnames): Плагин для работы с группами с помощью синтаксиса `$group`. Лучше всего работает с плагином ldap.
+* [verdaccio-sqlite](https://github.com/bchanudet/verdaccio-sqlite): SQLite Authentication plugin for Verdaccio
 
 **Have you developed a new plugin? Add it here !**
