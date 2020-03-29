@@ -16,13 +16,13 @@ Verdaccioは、**Node.js**で構築された**軽量なプライベートnpmプ�
     $> verdaccio
     
 
-![registry](assets/verdaccio_server.gif)
+![レジストリ](assets/verdaccio_server.gif)
 
 ## Verdaccioの使用方法
 
 VerdaccioはどんなNodeパッケージマネージャクライアントとでも簡単に使用できます。
 
-![registry](assets/npm_install.gif)
+![レジストリ](assets/npm_install.gif)
 
 カスタムレジストリを使用するには、以下のようにすべてのプロジェクトに対してグローバルに設定するか
 
@@ -42,14 +42,14 @@ Verdaccioにpublishしたパッケージはすべて非公開で、アクセス�
 
 Verdaccioは、必要に応じてすべての依存関係をキャッシュし、ローカルまたはプライベートネットワークでのインストールを高速化します。
 
-## Verdaccioの概要
+## Verdaccioとは何か
 
-* It's a web app based on Node.js
-* It's a private npm registry
-* It's a local network proxy
-* It's a Pluggable application
-* It's a fairly easy install and use
-* We offer Docker and Kubernetes support
-* It is 100% compatible with yarn, npm and pnpm
-* It was **forked** based on `sinopia@1.4.0` and 100% **backward compatible**.
-* Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
+* Node.js上で動作するWebアプリ
+* プライベートnpmレジストリ
+* ローカルネットワークプロキシ
+* プラグイン対応のアプリケーション
+* とても簡単にインストールして使用できます
+* DockerとKubernetesのサポートを提供しています
+* yarn、npm、pnpmと100％互換性があります
+* `sinopia@1.4.0`から**フォーク**され、100%**後方互換性**があります。
+* Verdaccioとは、**中世後期のイタリアでフレスコ画に使われていたポピュラーな緑色**を意味します。
