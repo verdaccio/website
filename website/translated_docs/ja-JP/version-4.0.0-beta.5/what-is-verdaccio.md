@@ -4,7 +4,7 @@ title: Veridaccio とは？
 original_id: what-is-verdaccio
 ---
 
-Verdaccio は **Node.js** に組み込まれる **軽量なプライベート npm proxy registry です。** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+Verdaccioは、**Node.js**で構築された**軽量なプライベートnpmプロキシレジストリ**です。 <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
 
 <div id="codefund">''</div>
 
@@ -19,27 +19,27 @@ Verdaccio は **Node.js** に組み込まれる **軽量なプライベート np
 
 ![registry](assets/verdaccio_server.gif)
 
-## Using Verdaccio
+## Verdaccioの使用方法
 
-Using verdaccio with any node package manager client is quite straightforward.
+VerdaccioはどんなNodeパッケージマネージャクライアントとでも簡単に使用できます。
 
 ![registry](assets/npm_install.gif)
 
-You can use a custom registry either setting globally for all your projects
+カスタムレジストリを使用するには、以下のようにすべてのプロジェクトに対してグローバルに設定するか
 
     npm set registry http://localhost:4873
     
 
-or by command line as argument `--registry` in npm (slightly different in yarn)
+またはnpmでコマンドライン引数に`--registry`を指定してください (yarnではやや異なります)
 
     npm install lodash --registry http://localhost:4873
     
 
-## Private
+## プライベート
 
-All packages that you publish are private and only accessible based in your configuration.
+Verdaccioにpublishしたパッケージはすべて非公開で、アクセスできるのは設定に基づくクライアントだけです。
 
-## Proxy
+## プロキシ
 
 Verdaccio cache all dependencies by demand and speed up installations in local or private networks.
 
