@@ -191,6 +191,11 @@ const languages = [
     name: 'Russian',
     tag: 'ru-RU',
   },
+  {
+    enabled: true,
+    name: 'Yoruba',
+    tag: 'yo-NG',
+  },
   {enabled: false, name: '繁體中文', tag: 'zh-TW'},
 ];
 module.exports = languages;

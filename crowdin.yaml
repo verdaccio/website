@@ -44,8 +44,9 @@ files:
         'tr': 'tr'
         'uk': 'uk'
         'vi': 'vi-VN'
+        'yo-NG': 'yo-NG'
         'zh-CN': 'zh-CN'
-        'zh-TW': 'zh-TW'
+        'zh-TW': 'zh-TW',
   -
     source: '/website/versioned_docs/**/*.md'
     translation: '/website/translated_docs/%locale%/**/%original_file_name%'
