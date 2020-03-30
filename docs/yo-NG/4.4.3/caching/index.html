@@ -1,0 +1,146 @@
+<!DOCTYPE html><html lang="yo-NG"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Caching strategies · Verdaccio</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Verdaccio n se ipamọ gbogbo awọn akopọ ni atilẹwa sinu foda `/storage`. Ṣugbọn o le se ipinnu boya o fẹ tẹle ọna ti o yatọ. Lilo awọn ohun elo o le lo ipamọ ayelujara tabi eyikeyi iru ibi ipamọ data."/><meta name="docsearch:version" content="4.4.3"/><meta name="docsearch:language" content="yo-NG"/><meta property="og:title" content="Caching strategies · Verdaccio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://verdaccio.org//"/><meta property="og:description" content="Verdaccio n se ipamọ gbogbo awọn akopọ ni atilẹwa sinu foda `/storage`. Ṣugbọn o le se ipinnu boya o fẹ tẹle ọna ti o yatọ. Lilo awọn ohun elo o le lo ipamọ ayelujara tabi eyikeyi iru ibi ipamọ data."/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://verdaccio.org/blog/atom.xml" title="Verdaccio Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://verdaccio.org/blog/feed.xml" title="Verdaccio Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-2527438-21', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://codefund.io/properties/256/funder.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/yo-NG"><img class="logo" src="/img/logo/symbol/svg/verdaccio-tiny.svg" alt="Verdaccio"/><h2 class="headerTitleWithLogo">Verdaccio</h2></a><a href="/yo-NG/versions"><h3>4.4.3</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/yo-NG/4.4.3/installation" target="_self">Awọn iwe</a></li><li class=""><a href="/blog/" target="_self">Bulọọgi</a></li><li class=""><a href="https://twitter.com/verdaccio_npm" target="_self">Twitter</a></li><li class=""><a href="/yo-NG/help" target="_self">Iranlọwọ</a></li><li class=""><a href="https://github.com/verdaccio" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="/yo-NG/team" target="_self">Ẹgbẹ</a></li><li class=""><a href="https://opencollective.com/verdaccio" target="_self">Sponsor Us</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>Yoruba</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/4.4.3/caching">English</a></li><li><a href="/docs/es-ES/4.4.3/caching">Español</a></li><li><a href="/docs/fr-FR/4.4.3/caching">Français</a></li><li><a href="/docs/it-IT/4.4.3/caching">Italiano</a></li><li><a href="/docs/sr-CS/4.4.3/caching">Serbian (Latin)</a></li><li><a href="/docs/zh-CN/4.4.3/caching">中文</a></li><li><a href="/docs/ru-RU/4.4.3/caching">Russian</a></li><li><a href="https://crowdin.com/project/verdaccio" target="_blank" rel="noreferrer noopener">Pese iranlọwọ lati Tumọ</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Uses Cases</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Ifihan<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/what-is-verdaccio">What is Verdaccio?</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/cli">Command Line Tool</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/who-is-using">Who is using Verdaccio?</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/security-policy">Security Policy</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/logo">Logotype</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Uses Cases</h4><ul><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/e2e">End to End testing</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/yo-NG/4.4.3/caching">Caching strategies</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/github-actions">Github Actions</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/linking-remote-registry">Linking a Remote Registry</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Talks &amp; Articles</h4><ul><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/articles">Articles</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/talks">Talks</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Ẹya ara<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/configuration">Configuration File</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/uplinks">Uplinks</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/packages">Package Access</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/authentification">Authentification</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/notifications">Notifications</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/logger">Logger</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/webui">Web User Interface</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Olupese<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/server-configuration">Server Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/reverse-proxy">Reverse Proxy Setup</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/ssl">Set up the SSL Certificates</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/windows">Installing As a Windows Service</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/iss-server">Installing on IIS server</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Agbedide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/plugins">Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/dev-plugins">Developing Plugins</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Dev Guides</h4><ul><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/plugin-generator">Plugin Generator</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/plugin-auth">Authentication Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/plugin-middleware">Middleware Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/plugin-storage">Storage Plugin</a></li></ul></div><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/node-api">Node API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">DevOps<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/kubernetes">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/ci">Continuous Integration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cloud</h4><ul><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/amazon">Amazon Web Services</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tools</h4><ul><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/ansible">Ansible</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/puppet">Puppet</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/chef">Chef Cookbook</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Awọn itọsọna<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/best">Best Practices</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.4.3/protect-your-dependencies">Protecting packages</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/yo-NG" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Caching strategies</h1></header><article><div><span><p>Verdaccio n se ipamọ gbogbo awọn akopọ ni atilẹwa sinu foda <code>/storage</code>. Ṣugbọn o le se ipinnu boya o fẹ tẹle ọna ti o yatọ. Lilo awọn ohun elo o le lo ipamọ ayelujara tabi eyikeyi iru ibi ipamọ data.</p>
+<div id="codefund">''</div>
+<h2><a class="anchor" aria-hidden="true" id="awọn-iṣẹlẹ-ifisapo-iranti"></a><a href="#awọn-iṣẹlẹ-ifisapo-iranti" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Awọn iṣẹlẹ ifisapo iranti</h2>
+<ul>
+<li>Build a Node.js project on <strong>Continous Integration</strong> (Bamboo, GitLab, Jenkins, etc) servers is a task that might take several times at a day, thus, the server will download tons of tarballs from the registry every time takes place.  Bi ti gbogbo igba, awọn irinṣẹ CI n pa ibi iranti rẹ lẹhin agbedide kọọkan atipe ilana naa yoo pada bẹrẹ lati ibẹrẹ pẹpẹ lẹẹkansi. Eyi jẹ ibudanu ti itankanlẹ atipe o n mu adinku abẹwo to n ti ita wa. <strong>You can use Verdaccio for caching tarballs and metadata in our internal network and give a boost in your build time.</strong></li>
+<li><strong>Latency and Connectivity</strong>, not all countries enjoy a high-speed connection. Fun iru idi yii awọn akopọ ibi iranti ti ibilẹ ninu nẹtiwọki rẹ jẹ eyi to wulo gan. Boya ti o ba wa ni irin-ajo, tabi o ni asopọ alailagbara, ilọkiri tabi awọn orilẹ-ede ti o ni awọn aabo ayelujara ti o lagbara ti o le ni ipa lori iriri olumulo (fun apẹẹrẹ: tarballs bibajẹ).</li>
+<li><strong>Offline Mode</strong>, all Node Package Managers nowadays uses their own internal cache, but it common that different projects might use different tools, which implies lock files and so on. Awọn irinṣẹ yẹn ko ni anfani lati pin ibi iranti, ojutu to dayatọ naa jẹ eyi to wa lojukan atipe o gbẹkele ibi iforukọsilẹ aṣoju ikọkọ, Verdaccio n se ipamọ gbogbo awọn metadata ati awọn tarballs n jẹ gbigba lati ayelujara nipa ibeere nini anfani lati pin wọn kaakiri gbogbo isẹ rẹ.</li>
+<li>Avoid that any remote registry suddenly returns <em>HTTP 404</em> error for tarballs were previously available a.k.a (<a href="https://www.theregister.co.uk/2016/03/23/npm_left_pad_chaos/">left-pad issue</a>).</li>
+</ul>
+<h1><a class="anchor" aria-hidden="true" id="awọn-ọna-fun-ṣiṣe-awọn-agbedide-kiakia"></a><a href="#awọn-ọna-fun-ṣiṣe-awọn-agbedide-kiakia" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Awọn ọna fun ṣiṣe awọn agbedide kiakia</h1>
+<blockquote>
+<p>A n wa awọn ọna diẹ sii, ma se siyemeji lati pin iriri rẹ ni aaye yii</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="yago-fun-fifi-tarballs-sapo-iranti"></a><a href="#yago-fun-fifi-tarballs-sapo-iranti" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Yago fun Fifi tarballs sapo iranti</h2>
+<p>Ti o ba ni aaye ibi ipamọ ti o lopin, o le nilo lati yago fun titọju tarballs, siseto <code>cache</code> false ninu uplink kọọkan ma ṣe ipamọ iranti awọn faili metadata nikan.</p>
+<pre><code class="hljs"><span class="hljs-attribute">uplinks</span>:
+  <span class="hljs-attribute">npmjs</span>:
+    <span class="hljs-attribute">url</span>: <span class="hljs-attribute">https</span>:<span class="hljs-comment">//registry.npmjs.org/</span>
+    <span class="hljs-attribute">cache</span>: false
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="fifa-akoko-ipari-apo-iranti-gun"></a><a href="#fifa-akoko-ipari-apo-iranti-gun" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Fifa Akoko Ipari Apo iranti gun</h2>
+<p>Verdaccio ni atilẹwa ma n duro fun iṣẹju meji lati fagilee awọn metadata apo iranti ki o to sawari alaye tuntun lati ibi iforukọsilẹ ọlọna jijin.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">uplinks:</span>
+  <span class="hljs-attr">npmjs:</span>
+    <span class="hljs-attr">url:</span> <span class="hljs-string">https://registry.npmjs.org/</span>
+    <span class="hljs-attr">maxage:</span> <span class="hljs-string">30m</span>
+</code></pre>
+<p>Sise alekun iye ti <code>maxage</code> ninu awọn idari <code>uplink</code> kọọkan maa jẹ bibeere nigbagbogbo. Eyi le jẹ ilana to fẹsẹmulẹ ti o ko ba maa ṣe imudojuiwọn awọn agbẹkẹle nigbagbogbo.</p>
+<h2><a class="anchor" aria-hidden="true" id="lilo-iranti-dipo-lilo-ààyè-ìtọ́jú-lórí-kọ̀mpútà"></a><a href="#lilo-iranti-dipo-lilo-ààyè-ìtọ́jú-lórí-kọ̀mpútà" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lilo iranti dipo lilo ààyè ìtọ́jú lórí kọ̀mpútà</h2>
+<p>Nigbamiran awọn akopọ ifisapo iranti o kin ṣe igbesẹ pataki, dipo ti ọna awọn akopọ lati awọn ibi iforukọsilẹ ti o yatọ ati nini iyọrisi awọn akoko agbedide to yara. Awọn ohun elo afikun meji wa to yago patapata fun kikọ sinu ààyè ìtọ́jú alafojuri ti kọ̀mpútà nipa lilo iranti.</p>
+<pre><code class="hljs css language-bash">  npm install -g verdaccio-auth-memory
+  npm install -g verdaccio-memory
+</code></pre>
+<p>Iṣeto naa ribi iru eyi</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">auth:</span>
+  <span class="hljs-attr">auth-memory:</span>
+    <span class="hljs-attr">users:</span>
+      <span class="hljs-attr">foo:</span>
+        <span class="hljs-attr">name:</span> <span class="hljs-string">test</span>
+        <span class="hljs-attr">password:</span> <span class="hljs-string">test</span>
+<span class="hljs-attr">store:</span>
+  <span class="hljs-attr">memory:</span>
+    <span class="hljs-attr">limit:</span> <span class="hljs-number">1000</span>
+</code></pre>
+<p>Ranti, ni kete ti olupese naa ba ti jẹ atunbẹrẹ ipadanu data naa ti n waye, a ṣe igbaniyanju iṣeto yii ni awọn aaye ti o ko ba ti nilo lati ṣe atẹnumọ.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/yo-NG/4.4.3/e2e"><span class="arrow-prev">← </span><span>Idanwo Opin si Opin</span></a><a class="docs-next button" href="/docs/yo-NG/4.4.3/github-actions"><span>Awọn igbesẹ-Github</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#awọn-iṣẹlẹ-ifisapo-iranti">Awọn iṣẹlẹ ifisapo iranti</a></li><li><a href="#yago-fun-fifi-tarballs-sapo-iranti">Yago fun Fifi tarballs sapo iranti</a></li><li><a href="#fifa-akoko-ipari-apo-iranti-gun">Fifa Akoko Ipari Apo iranti gun</a></li><li><a href="#lilo-iranti-dipo-lilo-ààyè-ìtọ́jú-lórí-kọ̀mpútà">Lilo iranti dipo lilo ààyè ìtọ́jú lórí kọ̀mpútà</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/yo-NG/what-is-verdaccio.html">Getting Started</a><a href="/docs/yo-NG/docker.html">Docker</a><a href="/docs/yo-NG/configuration.html">Configuration</a><a href="/docs/yo-NG/logo">Logos</a></div><div><h5>Community</h5><a href="/yo-NG/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'a8b4d117e513cd8d71d6a95e3d9d4a91',
+                indexName: 'verdaccio',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>

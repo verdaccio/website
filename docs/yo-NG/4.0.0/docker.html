@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="yo-NG"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Docker · Verdaccio</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="![alt Docker Pulls Count](https://dockeri.co/image/verdaccio/verdaccio &quot;Docker Pulls Count&quot;)"/><meta name="docsearch:version" content="4.0.0"/><meta name="docsearch:language" content="yo-NG"/><meta property="og:title" content="Docker · Verdaccio"/><meta property="og:type" content="website"/><meta property="og:url" content="https://verdaccio.org//"/><meta property="og:description" content="![alt Docker Pulls Count](https://dockeri.co/image/verdaccio/verdaccio &quot;Docker Pulls Count&quot;)"/><meta name="twitter:card" content="summary"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://verdaccio.org/blog/atom.xml" title="Verdaccio Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://verdaccio.org/blog/feed.xml" title="Verdaccio Blog RSS Feed"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-2527438-21', 'auto');
+              ga('send', 'pageview');
+            </script><link rel="stylesheet" href="/css/code-blocks-buttons.css"/><script type="text/javascript" src="https://codefund.io/properties/256/funder.js"></script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-blocks-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/yo-NG"><img class="logo" src="/img/logo/symbol/svg/verdaccio-tiny.svg" alt="Verdaccio"/><h2 class="headerTitleWithLogo">Verdaccio</h2></a><a href="/yo-NG/versions"><h3>4.0.0</h3></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/yo-NG/4.0.0/installation" target="_self">Awọn iwe</a></li><li class=""><a href="/blog/" target="_self">Bulọọgi</a></li><li class=""><a href="https://twitter.com/verdaccio_npm" target="_self">Twitter</a></li><li class=""><a href="/yo-NG/help" target="_self">Iranlọwọ</a></li><li class=""><a href="https://github.com/verdaccio" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li><li class=""><a href="/yo-NG/team" target="_self">Ẹgbẹ</a></li><li class=""><a href="https://opencollective.com/verdaccio" target="_self">Sponsor Us</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/img/language.svg" alt="Languages icon"/>Yoruba</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docs/en/4.0.0/docker">English</a></li><li><a href="/docs/es-ES/4.0.0/docker">Español</a></li><li><a href="/docs/fr-FR/4.0.0/docker">Français</a></li><li><a href="/docs/it-IT/4.0.0/docker">Italiano</a></li><li><a href="/docs/sr-CS/4.0.0/docker">Serbian (Latin)</a></li><li><a href="/docs/zh-CN/4.0.0/docker">中文</a></li><li><a href="/docs/ru-RU/4.0.0/docker">Russian</a></li><li><a href="https://crowdin.com/project/verdaccio" target="_blank" rel="noreferrer noopener">Pese iranlọwọ lati Tumọ</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>DevOps</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Ifihan<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/what-is-verdaccio">What is Verdaccio?</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/cli">Command Line Tool</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/who-is-using">Who is using Verdaccio?</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/logo">Logotype</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Uses Cases</h4><ul><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/e2e">End to End testing</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/caching">Caching strategies</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/github-actions">Github Actions</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/linking-remote-registry">Linking a Remote Registry</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Talks &amp; Articles</h4><ul><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/articles">Articles</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/talks">Talks</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Ẹya ara<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/configuration">Configuration File</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/uplinks">Uplinks</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/packages">Package Access</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/authentification">Authentification</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/notifications">Notifications</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/logger">Logger</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/webui">Web User Interface</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Olupese<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/server-configuration">Server Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/reverse-proxy">Reverse Proxy Setup</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/ssl">Set up the SSL Certificates</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/windows">Installing As a Windows Service</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/iss-server">Installing on IIS server</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Agbedide<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/plugins">Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/dev-plugins">Developing Plugins</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/node-api">Node API</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">DevOps<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/docs/yo-NG/4.0.0/docker">Docker</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/kubernetes">Kubernetes</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/ci">Continuous Integration</a></li><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Cloud</h4><ul><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/amazon">Amazon Web Services</a></li></ul></div><div class="navGroup subNavGroup"><h4 class="navGroupSubcategoryTitle">Tools</h4><ul><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/ansible">Ansible</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/puppet">Puppet</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/chef">Chef Cookbook</a></li></ul></div></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Awọn itọsọna<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/best">Best Practices</a></li><li class="navListItem"><a class="navItem" href="/docs/yo-NG/4.0.0/protect-your-dependencies">Protecting packages</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><a class="edit-page-link button" href="https://crowdin.com/project/verdaccio/yo-NG" target="_blank" rel="noreferrer noopener">Translate</a><h1 id="__docusaurus" class="postHeaderTitle">Docker</h1></header><article><div><span><p><img src="https://dockeri.co/image/verdaccio/verdaccio" alt="alt Docker Pulls Count" title="Docker Pulls Count"></p>
+<p>Lati fa <a href="https://hub.docker.com/r/verdaccio/verdaccio/">aworan docker</a> tuntun to ti jẹ kikọ siwaju:</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio
+</code></pre>
+<p><img src="/docs/assets/docker_verdaccio.gif" alt="Docker pull"></p>
+<div id="codefund">''</div>
+<h2><a class="anchor" aria-hidden="true" id="awọn-ẹya-to-ni-isamisi"></a><a href="#awọn-ẹya-to-ni-isamisi" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Awọn ẹya to ni Isamisi</h2>
+<p>Lati ẹya <code>v2.x</code> o le fa awọn aworan docker nipasẹ <a href="https://hub.docker.com/r/verdaccio/verdaccio/tags/">aami</a>, bi iwọnyi:</p>
+<p>Fun ẹya pataki kan:</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:3
+</code></pre>
+<p>Fun ẹya kekere kan:</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:3.0
+</code></pre>
+<p>Fun ẹya (awẹ) kan pato:</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:3.0.1
+</code></pre>
+<p>Fun ifilọlẹ gboogi tokan nipa lilo ẹya <code>4.x-next</code> (ọga).</p>
+<pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio:4.x-next
+</code></pre>
+<blockquote>
+<p>Ti o ba nifẹsi akojọ lori awọn aami, <a href="https://hub.docker.com/r/verdaccio/verdaccio/tags/">jọwọ lọ si aaye ayelujara ti Docker Hub</a>.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="mimu-verdaccio-ṣiṣẹ-nipa-lilo-docker"></a><a href="#mimu-verdaccio-ṣiṣẹ-nipa-lilo-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Mimu Verdaccio ṣiṣẹ nipa lilo Docker</h2>
+<blockquote>
+<p>Awọn iṣeto wọnyi da lori Verdaccio 4 naa tabi isamisi <code>4.x-next</code>.</p>
+</blockquote>
+<p>Lati mu apoti docker ṣiṣẹ:</p>
+<pre><code class="hljs css language-bash">docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:4.x-next
+</code></pre>
+<p>Ariyanjiyan ikẹhin n sọ iru aworan to ma jẹ lilo. Ila to wa loke yoo fa aworan tuntun ti o ti wa ni kikọ tẹlẹ lati dockerhub, ti o ko ba ti ṣe bẹ tẹlẹ.</p>
+<p>Ti o ba ti <a href="#build-your-own-docker-image">kọ aworan kan ni ilana ibilẹ</a> lo <code>verdaccio</code> gẹgẹbi ariyanjiyan ikẹhin.</p>
+<p>O le lo <code>-v</code> lati de atopọ <code>conf</code>, <code>storage</code> ati <code>plugins</code> mọ eto faili ti olugbalejo naa:</p>
+<pre><code class="hljs css language-bash">V_PATH=/path/<span class="hljs-keyword">for</span>/verdaccio; docker run -it --rm --name verdaccio \
+  -p 4873:4873 \
+  -v <span class="hljs-variable">$V_PATH</span>/conf:/verdaccio/conf \
+  -v <span class="hljs-variable">$V_PATH</span>/storage:/verdaccio/storage \
+  -v <span class="hljs-variable">$V_PATH</span>/plugins:/verdaccio/plugins \
+  verdaccio/verdaccio:4.x-next
+</code></pre>
+<blockquote>
+<p>Akiyesi: Verdaccio n ṣiṣẹ bi olumulo ti ko lo gbongbo (uid=10001) ninu apoti naa, if ti o ba lo atopọ dide lati fagbara bori atilẹwa, o nilo lati rii daju pe ọna atilẹyin naa jẹ pinpin si olumulo to tọ. Ninu apẹẹrẹ ti o wa loke, o nilo lati ṣamulo <code>sudo chown -R 100:101 /opt/verdaccio</code> bibẹkọ o ma salaba pade awọn aṣiṣe igbanilaaye ni akoko iṣiṣẹ. <a href="https://docs.docker.com/storage/volumes/">Lo iwọn iye docker</a> o jẹ igbaniyanju lori lilo atopọ dide.</p>
+</blockquote>
+<p>Verdaccio 4 n pese awọn iyipada ayika tuntun lati ṣayipada si boya awọn igbanilaaye, ibudo tabi Ilana http. Eyi ni akojọ pipe:</p>
+<table>
+<thead>
+<tr><th>Ohun ini</th><th>atilẹwa</th><th>Apejuwe</th></tr>
+</thead>
+<tbody>
+<tr><td>VERDACCIO_APPDIR</td><td><code>/opt/verdaccio-build</code></td><td>ọna isisẹ ti docker naa</td></tr>
+<tr><td>VERDACCIO_USER_NAME</td><td><code>verdaccio</code></td><td>olumulo eto naa</td></tr>
+<tr><td>VERDACCIO_USER_UID</td><td><code>10001</code></td><td>idanimọ olumulo naa ti o n jẹ lilo lati ṣamulo awọn igbanilaaye ti foda</td></tr>
+<tr><td>VERDACCIO_PORT</td><td><code>4873</code></td><td>ibudo verdaccio naa</td></tr>
+<tr><td>VERDACCIO_PROTOCOL</td><td><code>http</code></td><td>ilana http atilẹwa naa</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="awọn-ohun-elo"></a><a href="#awọn-ohun-elo" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Awọn ohun elo</h3>
+<p>Awọn ohun elo afikun le ṣee fi sori ọna to yatọ ati jẹ titopọ nipa lilo Docker tabi Kubernetes, amọṣa rii daju pe o kọ awọn ohun elo afikun pẹlu awọn igbarale abinibi nipa lilo aworan ipilẹ kanna bi ti Verdaccio Dockerfile.</p>
+<pre><code class="hljs css language-docker"><span class="hljs-keyword">FROM</span> verdaccio/verdaccio
+
+<span class="hljs-keyword">RUN</span><span class="bash"> npm install verdaccio-s3-storage</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="docker-ati-iṣeto-ibudo-akanṣe"></a><a href="#docker-ati-iṣeto-ibudo-akanṣe" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker ati iṣeto ibudo akanṣe</h3>
+<p>Eyikeyi <code>host:port</code> to jẹ ṣiṣeto ni <code>conf/config.yaml</code> labẹ <code>listen</code> <strong>n lọwọlọwọ jẹ fifojufo nigbati docker ba n jẹ lilo</strong>.</p>
+<p>Ti o ba fẹ lati kansi instance docker Verdaccio labẹ ibudo to yatọ, jẹ ki a sọpe <code>5000</code> ninu aṣẹ <code>docker run</code> safikun iyipada ayika naa <code>VERDACCIO_PORT=5000</code> ati ki o wa safihan ibudo <code>-p 5000:5000</code> naa.</p>
+<pre><code class="hljs css language-bash">V_PATH=/path/<span class="hljs-keyword">for</span>/verdaccio; docker run -it --rm --name verdaccio \
+  -e <span class="hljs-string">"VERDACCIO_PORT=8080"</span> -p 8080:8080 \  
+  verdaccio/verdaccio:4.x-next
+</code></pre>
+<p>Dajudaju awọn nọmba ti o fi fun odiwọn <code>-p</code> nilo lati baramu.</p>
+<h3><a class="anchor" aria-hidden="true" id="lilo-https-pẹlu-docker"></a><a href="#lilo-https-pẹlu-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lilo HTTPS pẹlu Docker</h3>
+<p>O le ṣe iṣeto awọn ilana ti verdaccio yoo tẹtisi, ni ibaramu si iṣeto ti ibudo naa. O ni lati satunkọ iye atilẹwa(&quot;http&quot;) ti <code>PROTOCOL</code> iyipada ayika si &quot;https&quot;, lẹhin ti o ti sọ awọn iwe ẹri inu config.yaml ni pato.</p>
+<pre><code class="hljs css language-bash">docker run -it --rm --name verdaccio \
+  --env <span class="hljs-string">"VERDACCIO_PROTOCOL=https"</span> -p 4873:4873
+  verdaccio/verdaccio:4.x-next
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="lilo-docker-compose"></a><a href="#lilo-docker-compose" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Lilo docker-compose</h3>
+<ol>
+<li>Gba ẹya tuntun ti <a href="https://github.com/docker/compose">docker-compose</a>.</li>
+<li>Sagbedide ati ṣe imuṣiṣẹ apoti naa:</li>
+</ol>
+<pre><code class="hljs css language-bash">$ docker-compose up --build
+</code></pre>
+<p>O le ṣeto ibudo naa lati lo (fun awọn apoti ati agbalejo) nipasẹ fifi awọn aṣẹ ti o wa loke yii saaju pẹlu <code>VERDACCIO_PORT=5000</code>.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">version:</span> <span class="hljs-string">'3.1'</span>
+
+<span class="hljs-attr">services:</span>
+  <span class="hljs-attr">verdaccio:</span>
+    <span class="hljs-attr">image:</span> <span class="hljs-string">verdaccio/verdaccio:4.x-next</span>
+    <span class="hljs-attr">container_name:</span> <span class="hljs-string">"verdaccio"</span>
+    <span class="hljs-attr">networks:</span>
+
+      <span class="hljs-bullet">-</span> <span class="hljs-string">node-network</span>
+    <span class="hljs-attr">environment:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">VERDACCIO_PORT=4873</span>
+    <span class="hljs-attr">ports:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"4873:4873"</span>
+    <span class="hljs-attr">volumes:</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"./storage:/verdaccio/storage"</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"./config:/verdaccio/conf"</span>
+      <span class="hljs-bullet">-</span> <span class="hljs-string">"./plugins:/verdaccio/plugins"</span>  
+<span class="hljs-attr">networks:</span>
+  <span class="hljs-attr">node-network:</span>
+    <span class="hljs-attr">driver:</span> <span class="hljs-string">bridge</span>
+</code></pre>
+<p>Docker ma pilẹṣẹ iye iwọn to ni orukọ inu eyi ti data ohun elo alatẹnumọ ma jẹ fifipamọ sii. O le lo <code>docker inspect</code> tabi <code>docker volume inspect</code> lati safihan ipo afojuri ti iye iwọn naa ati ṣatunkọ iṣeto naa, bii ti:</p>
+<pre><code class="hljs css language-bash">$ docker volume inspect verdaccio_verdaccio
+[
+    {
+        <span class="hljs-string">"Name"</span>: <span class="hljs-string">"verdaccio_verdaccio"</span>,
+        <span class="hljs-string">"Driver"</span>: <span class="hljs-string">"local"</span>,
+        <span class="hljs-string">"Mountpoint"</span>: <span class="hljs-string">"/var/lib/docker/volumes/verdaccio_verdaccio/_data"</span>,
+        <span class="hljs-string">"Labels"</span>: null,
+        <span class="hljs-string">"Scope"</span>: <span class="hljs-string">"local"</span>
+    }
+]
+
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="sagbedide-aworan-docker-ti-ara-rẹ"></a><a href="#sagbedide-aworan-docker-ti-ara-rẹ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Sagbedide aworan Docker ti ara rẹ</h2>
+<pre><code class="hljs css language-bash">docker build -t verdaccio .
+</code></pre>
+<p>Iwe afọwọkọ npm kan naa tun wa fun kikọ aworan docker naa, nitorina o tun le ṣe:</p>
+<pre><code class="hljs css language-bash">yarn run build:docker
+</code></pre>
+<p>Akiyesi: Agbedide akọkọ n gba iṣẹju diẹ lati jẹ kikọ nitori pe o nilo lati samulo iṣẹ <code>npm install</code>, atipe o ma pẹ to bayii lẹẹkansi nigbakugba to ba sayipada eyikeyi faili ti ko ba si lori akojọ ti <code>.dockerignore</code>.</p>
+<p>Jọwọ kiyesi pe fun eyikeyi ninu awọn asẹ docker to wa loke yii o nilo lati ni docker lori ẹrọ rẹ atipe awọn iṣẹ ṣiṣe docker naa gbọdọ wa lori <code>$PATH</code>.</p>
+<h2><a class="anchor" aria-hidden="true" id="awọn-apẹẹrẹ-docker"></a><a href="#awọn-apẹẹrẹ-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Awọn apẹẹrẹ Docker</h2>
+<p>Ibi ipamọ kan to dayatọ wa ti o n gbalejo ọpọlọpọ awọn iṣeto lati kọ awọn aworan Docker pẹlu <code>verdaccio</code>, fun apẹẹrẹ, bi aṣoju ikọkọ alayipada:</p>
+<p><a href="https://github.com/verdaccio/docker-examples">https://github.com/verdaccio/docker-examples</a></p>
+<h2><a class="anchor" aria-hidden="true" id="awọn-agbedide-akanṣe-ti-docker"></a><a href="#awọn-agbedide-akanṣe-ti-docker" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Awọn agbedide Akanṣe ti Docker</h2>
+<blockquote>
+<p>Ti o ba ti ṣe aworan kan to da lori Verdaccio, ma se kọ lati se afikun rẹ si akojọ yii.</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/snics/docker-verdaccio-gitlab">docker-verdaccio-gitlab</a></li>
+<li><a href="https://github.com/deployable/docker-verdaccio">docker-verdaccio</a></li>
+<li><a href="https://github.com/asynchrony/docker-verdaccio-s3">docker-verdaccio-s3</a> Apoti NPM aladani ti o le ṣe atilẹyin de s3</li>
+<li><a href="https://github.com/snadn/docker-verdaccio-ldap">docker-verdaccio-ldap</a></li>
+<li><a href="https://github.com/nathantreid/verdaccio-ldap">verdaccio-ldap</a></li>
+<li><a href="https://github.com/shingtoli/verdaccio-compose-local-bridge">verdaccio-compose-local-bridge</a></li>
+<li><a href="https://github.com/Global-Solutions/docker-verdaccio">docker-verdaccio</a></li>
+<li><a href="https://github.com/idahobean/verdaccio-docker">verdaccio-docker</a></li>
+<li><a href="https://github.com/andru255/verdaccio-server">verdaccio-server</a></li>
+<li><a href="https://github.com/coldrye-docker/coldrye-debian-verdaccio">coldrye-debian-verdaccio</a> aworan docker to n pese verdaccio lati coldrye-debian-nodejs.</li>
+</ul>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/yo-NG/4.0.0/node-api"><span class="arrow-prev">← </span><span>API Oju ipade</span></a><a class="docs-next button" href="/docs/yo-NG/4.0.0/kubernetes"><span>Kubernetes</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#awọn-ẹya-to-ni-isamisi">Awọn ẹya to ni Isamisi</a></li><li><a href="#mimu-verdaccio-ṣiṣẹ-nipa-lilo-docker">Mimu Verdaccio ṣiṣẹ nipa lilo Docker</a><ul class="toc-headings"><li><a href="#awọn-ohun-elo">Awọn ohun elo</a></li><li><a href="#docker-ati-iṣeto-ibudo-akanṣe">Docker ati iṣeto ibudo akanṣe</a></li><li><a href="#lilo-https-pẹlu-docker">Lilo HTTPS pẹlu Docker</a></li><li><a href="#lilo-docker-compose">Lilo docker-compose</a></li></ul></li><li><a href="#sagbedide-aworan-docker-ti-ara-rẹ">Sagbedide aworan Docker ti ara rẹ</a></li><li><a href="#awọn-apẹẹrẹ-docker">Awọn apẹẹrẹ Docker</a></li><li><a href="#awọn-agbedide-akanṣe-ti-docker">Awọn agbedide Akanṣe ti Docker</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/yo-NG/what-is-verdaccio.html">Getting Started</a><a href="/docs/yo-NG/docker.html">Docker</a><a href="/docs/yo-NG/configuration.html">Configuration</a><a href="/docs/yo-NG/logo">Logos</a></div><div><h5>Community</h5><a href="/yo-NG/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: 'a8b4d117e513cd8d71d6a95e3d9d4a91',
+                indexName: 'verdaccio',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
