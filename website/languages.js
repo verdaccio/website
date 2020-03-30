@@ -157,9 +157,9 @@ const languages = [
     tag: 'sr-CS',
   },
   {
-    enabled: false,
-    name: 'Serbian (Latin)',
-    tag: 'sr',
+    enabled: true,
+    name: 'Serbian (Cyrillic)',
+    tag: 'sr-SP',
   },
   {
     enabled: false,
