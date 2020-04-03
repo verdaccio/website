@@ -180,7 +180,7 @@ const nonSponsorUsers = [
   },
   {
     caption: "NX Extensible Dev Tools for Monorepos",
-    image: "img/users/nx-logo-white.svg",
+    image: "img/users/nx-logo.png",
     infoLink: "https://nx.dev/react",
     fbOpenSource: false,
     pinned: true,
