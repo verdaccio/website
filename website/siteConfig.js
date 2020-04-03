@@ -178,6 +178,13 @@ const nonSponsorUsers = [
     fbOpenSource: false,
     pinned: true,
   },
+  {
+    caption: "NX Extensible Dev Tools for Monorepos",
+    image: "img/users/nx-logo-white.svg",
+    infoLink: "https://nx.dev/react",
+    fbOpenSource: false,
+    pinned: true,
+  },
 ];
 
 const sponsorUsers = [
