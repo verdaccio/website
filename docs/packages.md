@@ -138,6 +138,17 @@ Let's describe what we want with the above example:
 
 Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
 
+#### Use multiple uplinks
+
+You may assign multiple uplinks for use as a proxy to use in the case of failover, or where there may be other private registries in use.
+
+```yaml
+'**':
+  access: $all
+  publish: $authenticated
+  proxy: npmjs uplink2
+```
+
 #### Unpublishing Packages
 
 The property `publish` handle permissions for `npm publish` and `npm unpublish`.  But, if you want to be more specific, you can use the property
