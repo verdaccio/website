@@ -23,7 +23,9 @@ web:
 
 All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
 
-> The `primary_color` and `scope` must be wrapped by quotes: eg: ('#000' or "#000")
+> The `primary_color` and `scope` must be wrapped by quotes: eg: ('#000000' or "#000000")
+
+The `primary_color` **must be a valid hex representation**. 
 
 ### Internationalization
 
