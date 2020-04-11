@@ -116,4 +116,4 @@ The middleware are registrered after built-in endpoints, thus, it is not possibl
 * [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): verdacci plugin for *npm profile* cli support and *npm profile set password* for *verdaccio-htpasswd* based authentificaton
 
 * [verdaccio-https](https://github.com/honzahommer/verdaccio-https) Verdaccio middleware plugin to redirect to https if x-forwarded-proto header is set
-* [tavvy/verdaccio-badges](https://github.com/tavvy/verdaccio-badges) VA verdaccio plugin to provide a version badge generator endpoint
+* [verdaccio-badges](https://github.com/tavvy/verdaccio-badges) VA verdaccio plugin to provide a version badge generator endpoint
