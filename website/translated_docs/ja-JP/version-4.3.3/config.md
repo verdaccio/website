@@ -190,7 +190,7 @@ https:
     ca: ./path/verdaccio-csr.pem
 ```
 
-### Proxy
+### プロキシ
 
 Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 

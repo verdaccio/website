@@ -35,14 +35,17 @@ i18n:
 
 ### Konfiguracja
 
-| Właściwość    | Typ         | Wymagane | Przykład                                                      | Wsparcie   | Opis                                                                                                                     |
-| ------------- | ----------- | -------- | ------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------ |
-| enable        | boolean     | Nie      | true/false                                                    | wszystkie  | allow to display the web interface                                                                                       |
-| title         | ciąg znaków | Nie      | Verdaccio                                                     | wszystkie  | HTML head title description                                                                                              |
-| gravatar      | boolean     | Nie      | true                                                          | `>v4`   | Gravatars will be generated under the hood if this property is enabled                                                   |
-| sort_packages | [asc,desc]  | Nie      | asc                                                           | `>v4`   | By default private packages are sorted by ascending                                                                      |
-| logo          | ciąg znaków | Nie      | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | wszystkie  | a URI where logo is located (header logo)                                                                                |
-| primary_color | ciąg znaków | Nie      | "#4b5e40"                                                     | `>4`    | The primary color to use throughout the UI (header, etc)                                                                 |
-| scope         | ciąg znaków | Nie      | @myscope                                                      | `>v3.x` | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header |
+| Właściwość    | Typ         | Wymagane | Przykład                                                      | Wsparcie      | Opis                                                                                                                     |
+| ------------- | ----------- | -------- | ------------------------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| enable        | boolean     | Nie      | true/false                                                    | wszystkie     | allow to display the web interface                                                                                       |
+| title         | ciąg znaków | Nie      | Verdaccio                                                     | wszystkie     | HTML head title description                                                                                              |
+| gravatar      | boolean     | Nie      | true                                                          | `>v4`      | Gravatars will be generated under the hood if this property is enabled                                                   |
+| sort_packages | [asc,desc]  | Nie      | asc                                                           | `>v4`      | By default private packages are sorted by ascending                                                                      |
+| logo          | ciąg znaków | Nie      | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | wszystkie     | a URI where logo is located (header logo)                                                                                |
+| primary_color | ciąg znaków | Nie      | "#4b5e40"                                                     | `>4`       | The primary color to use throughout the UI (header, etc)                                                                 |
+| scope         | ciąg znaków | Nie      | @myscope                                                      | `>v3.x`    | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header |
+| darkMode      | boolean     | Nie      | false                                                         | `>=v4.5.2` | This mode is an special theme for those want to live in the dark side                                                    |
 
 > It is recommended the logo size has the following size `40x40` pixels.
+> 
+> The `darMode` can be enbled via UI and is persisted in the local storage, furthermore, also void `primary_color` and dark cannot be customized.
