@@ -45,7 +45,7 @@ helm install --name npm verdaccio/verdaccio
 ### Deploy a specific version
 
 ```bash
-helm install --name npm --set image.tag=2.6.5 verdaccio/verdaccio
+helm install --name npm --set image.tag=3.13.1 verdaccio/verdaccio
 ```
 
 ### Upgrading Verdaccio

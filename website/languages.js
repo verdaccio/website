@@ -87,7 +87,7 @@ const languages = [
     tag: 'id-ID',
   },
   {
-    enabled: true,
+    enabled: false,
     name: 'Italiano',
     tag: 'it-IT',
   },
