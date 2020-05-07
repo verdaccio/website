@@ -236,7 +236,7 @@ const siteConfig = {
     primaryColor: '#4B5E40',
     secondaryColor: '#205C3B',
   },
-  translationRecruitingLink: 'https://crowdin.com/project/verdaccio',
+  translationRecruitingLink: 'https://translate.verdaccio.org',
   copyright:
     'Copyright © ' + new Date().getFullYear() + ' Verdaccio community',
   // organizationName: 'deltice', // or set an env variable ORGANIZATION_NAME
