@@ -201,6 +201,11 @@ class HomeSplash extends React.Component {
                   data-size="default">
                   Follow @verdaccio_npm</a>
               </div>
+              <MiddleBanner>
+                  <a href="https://openjsworld2020.sched.com/event/bwIo?iframe=no" target="_blank">
+                    <img src="https://cdn.verdaccio.dev/readme/openjs-world-hd-horizontal.png" width="400px" alt="openjsworld"/>
+                  </a>
+              </MiddleBanner>
             </div>
           </div>
         </div>
@@ -229,6 +234,14 @@ const MiddleTitle = (props) => {
       <h2>
         {props.children}
       </h2>
+    </div>
+  );
+}
+
+const MiddleBanner = (props) => {
+  return (
+    <div className="conf" style={{textAlign: 'center'}}>
+      {props.children}
     </div>
   );
 }
