@@ -38,8 +38,12 @@ window.addEventListener('load', function() {
 
   clipboard.on('success', function(event) {
     event.clearSelection();
+
     const textEl = event.trigger.querySelector('.btnIcon__label');
     textEl.textContent = 'Copied';
+    if (addTrackEvent){
+      addTrackEvent('copyText', event.text);
+    }
     setTimeout(function() {
       textEl.textContent = 'Copy';
     }, 2000);
