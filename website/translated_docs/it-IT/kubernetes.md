@@ -19,22 +19,31 @@ helm init
 
 ### Installazione
 
-Sviluppare il grafico Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio). In questo esempio usiamo `npm` come nome della release:
+> ⚠️ If you are using this helm chart, please [be aware of the migration of the repository](https://github.com/verdaccio/verdaccio/issues/1767).
+
+Deploy the Helm [verdaccio/verdaccio](https://github.com/verdaccio/charts) chart.
+
+### Add repository
+
+    helm repo add verdaccio https://charts.verdaccio.org
+    
+
+In questo esempio usiamo `npm` come nome della release:
 
 ```bash
-helm install --name npm stable/verdaccio
+helm install --name npm verdaccio/verdaccio
 ```
 
 ### Sviluppare una versione specifica
 
 ```bash
-helm install --name npm --set image.tag=2.6.5 stable/verdaccio
+helm install --name npm --set image.tag=3.13.1 verdaccio/verdaccio
 ```
 
 ### Aggiornamento di Verdaccio
 
 ```bash
-helm upgrade npm stable/verdaccio
+helm upgrade npm verdaccio/verdaccio
 ```
 
 ### Disinstallazione
@@ -79,7 +88,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 Ora è possibile sviluppare il grafico Verdaccio Helm e specificare quale configurazione utilizzare:
 
 ```bash
-helm install --name npm --set customConfigMap=verdaccio-config stable/verdaccio
+helm install --name npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
 ## Supporto Rancher
