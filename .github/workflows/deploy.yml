@@ -20,13 +20,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Build Assets
-        run: npm install
-      # Runs a single command using the runners shell
-      - name: Build Assets
+      - name: Fetch dependencies
         run: |
           cd website
-          npm run build
+          yarn
+      # Runs a single command using the runners shell
+      - name: Build Docusaurus
+        run: |
+          yarn build
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v1
