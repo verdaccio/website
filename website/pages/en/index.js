@@ -339,7 +339,7 @@ class Index extends React.Component {
             />
           </Container>
 
-          <div className="productShowcaseSection paddingBottom">
+          <div className="productShowcaseSection paddingBottom" id="users">
             <h2>
               <translate>
                 Who's Using This?
