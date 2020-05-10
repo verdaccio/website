@@ -3,7 +3,7 @@ id: uwierzytelnianie
 title: "Uwierzytelnianie"
 ---
 
-Uwierzytelnianie jest powiązane z auth [wtyczką](plugins.md), której używasz. Ograniczenia dotyczące pakietów są również obsługiwane przez [Dostęp do pakietu](packages.md).
+The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
 <div id="codefund">''</div>
 
@@ -24,7 +24,7 @@ registry=http://localhost:5555/
 
 #### Anonimowa publikacja
 
-`verdaccio`umożliwia włączenie anonimowego publikowania, aby to osiągnąć, musisz poprawnie ustawić swój [dostęp do pakietów](packages.md).
+`verdaccio` allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
 
 Eg:
 
@@ -57,7 +57,7 @@ Let's recap:
 
 ## Domyślne htpasswd
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
+In order to simplify the setup, `verdaccio` uses a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
 
 ```yaml
 auth:
@@ -73,4 +73,4 @@ auth:
 | plik       | ciąg znaków | Tak      | ./htpasswd | wszystkie | plik, który udostępnia zaszyfrowane poświadczenia |
 | max_users  | numer       | Nie      | 1000       | wszystkie | ustaw limit użytkowników                          |
 
-W przypadku, gdy będziesz chciał wyłączyć możliwość zalogowania się, ustaw `max_users: -1`.
+In case you decide to not allow users to sign up, you can set `max_users: -1`.
