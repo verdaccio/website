@@ -19,22 +19,31 @@ helm init
 
 ### 安装
 
-配置Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio) chart。在这个例子里，我们用 `npm` 作为发行名称:
+> ⚠️ If you are using this helm chart, please [be aware of the migration of the repository](https://github.com/verdaccio/verdaccio/issues/1767).
+
+Deploy the Helm [verdaccio/verdaccio](https://github.com/verdaccio/charts) chart.
+
+### Add repository
+
+    helm repo add verdaccio https://charts.verdaccio.org
+    
+
+In this example we use `npm` as release name:
 
 ```bash
-helm install --name npm stable/verdaccio
+helm install --name npm verdaccio/verdaccio
 ```
 
 ### 配置特定版本
 
 ```bash
-helm install --name npm --set image.tag=2.6.5 stable/verdaccio
+helm install --name npm --set image.tag=3.13.1 verdaccio/verdaccio
 ```
 
 ### 升级Verdaccio
 
 ```bash
-helm upgrade npm stable/verdaccio
+helm upgrade npm verdaccio/verdaccio
 ```
 
 ### 卸载
@@ -79,7 +88,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 现在您可以配置Verdaccio Helm chart 并指定使用哪个配置:
 
 ```bash
-helm install --name npm --set customConfigMap=verdaccio-config stable/verdaccio
+helm install --name npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
 ## Rancher 支持

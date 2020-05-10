@@ -12,7 +12,7 @@ Notify was built primarily to use with Slack's Incoming webhooks, but will also 
 
 An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
 
-> Verdaccio supports any API, feel free to add more examples.
+> Verdaccio supporte tous les API, n'hésitez pas à ajouter d'autres exemples.
 
 #### Notification unique
 
@@ -52,11 +52,11 @@ Nous utilisons [Handlebars](https://handlebarsjs.com/) comme moteur de gabarit p
 ### Exemples de format
 
 ```
-# iterate all versions
+# itérer toutes les versions
 {{ name }}{{#each versions}} v{{version}}{{/each}}
 
-# publisher and `dist-tag` package published
-{{ publisher.name }} has published {{ publishedPackage }}
+# Publication de l'éditeur et du paquet "Dist-tag"
+{{ publisher.name }} a publié {{ publishedPackage }}
 ```
 
 ### Propriétés
@@ -150,10 +150,10 @@ notify:
 
 ### Package Publié
 
-You can access to the package is being published with the keyword `{{publishedPackage}}` as follows.
+Vous pouvez accéder au paquet est publié avec le mot-clé `{{publishedPackage}}` comme suit.
 
 ```
-{{ publisher.name }} has published {{ publishedPackage }}
+{{ publisher.name }} a publié {{ publishedPackage }}
 ```
 
 ## Configuration

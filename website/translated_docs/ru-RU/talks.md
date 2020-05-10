@@ -7,7 +7,7 @@ title: "Выступления"
 
 > Не забывайте поделиться с комьюнити, мы любим, когда говорят о Verdaccio. Если вам нужны мысли тему "с чего начать", информация или материалы на эту тему, пишите нам в [чате в Discord](https://chat.verdaccio.org), и мы поможем.
 
-## Open Source - Trivago | Verdaccio (Ayush and Juan <iframe width="560" height="315" src="https://www.youtube.com/embed/A5CWxJC9xzc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+## Open Source - Trivago | Verdaccio (Ayush and Juan <iframe width="560" height="315" src="https://www.youtube.com/embed/A5CWxJC9xzc?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 > Здесь перечислены последние выступления. Мы поможем вам сделать так, чтобы вас голос был услышал комьюнити.
 

@@ -3,7 +3,7 @@ id: 认证
 title: "认证"
 ---
 
-认证部分设置与 "Auth" [ 插件 ](plugins.md)息息相关。包的访问限制也同时通过 [ 包访问权限](packages.md) 控制。
+The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
 <div id="codefund">''</div>
 
@@ -24,7 +24,7 @@ registry=http://localhost:5555/
 
 #### 匿名发布包
 
-`verdaccio` 允许启用匿名发布，要使用这个功能，必须设置正确的 [程序包访问权限](packages.md)。
+`verdaccio` allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
 
 例如：
 
@@ -57,7 +57,7 @@ Let's recap:
 
 ## 默认 htpasswd
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
+In order to simplify the setup, `verdaccio` uses a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
 
 ```yaml
 auth:
@@ -73,4 +73,4 @@ auth:
 | 文件        | 字符串 | 是  | ./htpasswd | 任意路径 | 存储了加密认证信息的 htpasswd 文件 |
 | max_users | 数字  | 否  | 1000       | 任意数字 | 最大的用户数量                |
 
-如果需要禁止新用户注册，可将配置修改为 `max_users: -1`.
+In case you decide to not allow users to sign up, you can set `max_users: -1`.

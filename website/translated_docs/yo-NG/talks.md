@@ -7,7 +7,7 @@ A ṣe akojọ awọn ọrọ nipa Verdaccio, ti o ba sọ ọrọ kan tabi ti o
 
 > Do not hesitate to share your content with the community, we encourage you to speak about Verdaccio. Ti o ba nilo iranlọwọ lori bi o ṣe le bẹrẹ, alaye tabi awọn ohun elo, kan si wa ni [Chat at Discord](https://chat.verdaccio.org) wa, a ma ran ẹ lọwọ.
 
-## Open Source - Trivago | Verdaccio (Ayush and Juan <iframe width="560" height="315" src="https://www.youtube.com/embed/A5CWxJC9xzc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+## Open Source - Trivago | Verdaccio (Ayush and Juan <iframe width="560" height="315" src="https://www.youtube.com/embed/A5CWxJC9xzc?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 > Ọrọ ikẹhin to jẹ pinpin ma n jẹ fififihan nibi nigbagbogbo. A n ṣe iranlọwọ fun ọ lati pin ohun rẹ pẹlu awujọ.
 

@@ -18,9 +18,14 @@ web:
   gravatar: true | false
   scope: "@scope"
   sort_packages: asc | desc
+  darkMode: false
 ```
 
 Все ограничения, определенные в секции [Защита пакетов](protect-your-dependencies.md), будут действовать и для веб-интерфейса.
+
+> The `primary_color` and `scope` must be wrapped by quotes: eg: ('#000000' or "#000000")
+
+The `primary_color` **must be a valid hex representation**.
 
 ### Internationalization
 
@@ -44,7 +49,7 @@ i18n:
 | logo          | string     | Нет          | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | все           | URI логотипа (в шапке)                                                                                                                       |
 | primary_color | string     | Нет          | "#4b5e40"                                                     | `>4`       | Основной цвет UI (хедер и т.д.)                                                                                                              |
 | scope         | string     | Нет          | @myscope                                                      | `>v3.x`    | Если вы используете репозиторий для хранения пакетов определённого скоупа, укажите этот скоуп, чтобы он был показан в заголовке веб-страницы |
-| darkMode      | boolean    | Нет          | false                                                         | `>=v4.5.2` | This mode is an special theme for those want to live in the dark side                                                                        |
+| darkMode      | boolean    | Нет          | false                                                         | `>=v4.6.0` | This mode is an special theme for those want to live in the dark side                                                                        |
 
 > Рекомендованный размер логотипа `40x40` пикселей.
 > 

@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Siguiente",
     "previous": "Anterior",
-    "tagline": "A lightweight open source private npm proxy registry",
+    "tagline": "Un registro privado open source, ligero y proxy de npm",
     "docs": {
       "amazon": {
         "title": "Amazon Web Services"
@@ -655,6 +655,39 @@
       },
       "version-4.4.3/version-4.4.3-articles": {
         "title": "Articles"
+      },
+      "version-4.5.0/version-4.5.0-installation": {
+        "title": "Instalación"
+      },
+      "version-4.5.0/version-4.5.0-talks": {
+        "title": "Talks"
+      },
+      "version-4.5.0/version-4.5.0-webui": {
+        "title": "Interfaz Web de Usuario"
+      },
+      "version-4.5.1/version-4.5.1-installation": {
+        "title": "Instalación"
+      },
+      "version-4.6.0/version-4.6.0-e2e": {
+        "title": "Pruebas End to End"
+      },
+      "version-4.6.0/version-4.6.0-installation": {
+        "title": "Instalación"
+      },
+      "version-4.6.0/version-4.6.0-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.6.0/version-4.6.0-packages": {
+        "title": "Acceso a Paquetes"
+      },
+      "version-4.6.0/version-4.6.0-plugin-auth": {
+        "title": "Extensión de Autenticación"
+      },
+      "version-4.6.0/version-4.6.0-plugin-middleware": {
+        "title": "Extensión de Middleware"
+      },
+      "version-4.6.0/version-4.6.0-webui": {
+        "title": "Interfaz Web de Usuario"
       }
     },
     "links": {
@@ -664,7 +697,7 @@
       "Help": "Ayuda",
       "GitHub": "GitHub",
       "Team": "Equipo",
-      "Sponsor Us": "Sponsor Us"
+      "Sponsor Us": "Patrocinanos"
     },
     "categories": {
       "Introduction": "Introducción",
@@ -678,10 +711,10 @@
     }
   },
   "pages-strings": {
-    "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Aprende mas leyendo la [documentación en este sitio.](/docs/es-Es/installation.html)",
+    "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Aprende más leyendo la [documentación en este sitio.](/docs/es-Es/installation.html)",
     "Browse Docs|no description given": "Navegar en la Documentación",
     "Ask questions about the documentation and project|no description given": "Haz preguntas sobre la documentación y el proyecto",
-    "Join the community|no description given": "Únete a la comunidad",
+    "Join the community|no description given": "Únete a la Comunidad",
     "Find out what's new with this project|no description given": "Entérate que hay de nuevo en este proyecto",
     "Stay up to date|no description given": "Mantente actualizado",
     "Need help?|no description given": "¿Necesitas ayuda?",

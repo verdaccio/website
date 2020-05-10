@@ -19,22 +19,31 @@ helm init
 
 ### Install
 
-Rozmieść Helm wykres [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio) W tym przykładzie używamy `npm` jako nazwa wydania:
+> ⚠️ If you are using this helm chart, please [be aware of the migration of the repository](https://github.com/verdaccio/verdaccio/issues/1767).
+
+Deploy the Helm [verdaccio/verdaccio](https://github.com/verdaccio/charts) chart.
+
+### Add repository
+
+    helm repo add verdaccio https://charts.verdaccio.org
+    
+
+In this example we use `npm` as release name:
 
 ```bash
-helm install --name npm stable/verdaccio
+helm install --name npm verdaccio/verdaccio
 ```
 
 ### Deploy a specific version
 
 ```bash
-helm install --name npm --set image.tag=2.6.5 stable/verdaccio
+helm install --name npm --set image.tag=3.13.1 verdaccio/verdaccio
 ```
 
 ### Upgrading Verdaccio
 
 ```bash
-helm upgrade npm stable/verdaccio
+helm upgrade npm verdaccio/verdaccio
 ```
 
 ### Odinstalowywanie
@@ -79,7 +88,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 Teraz możesz wdrożyć wykres Verdaccio Helm i określić konfigurację, której użyć:
 
 ```bash
-helm install --name npm --set customConfigMap=verdaccio-config stable/verdaccio
+helm install --name npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
 ## Rancher Support

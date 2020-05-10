@@ -18,9 +18,14 @@ web:
   gravatar: true | false
   scope: "@scope"
   sort_packages: asc | desc
+  darkMode: false
 ```
 
 Tutte le restrizioni di accesso definite per [proteggere i pacchetti](protect-your-dependencies.md) si applicano anche all'interfaccia Web.
+
+> The `primary_color` and `scope` must be wrapped by quotes: eg: ('#000000' or "#000000")
+
+The `primary_color` **must be a valid hex representation**.
 
 ### Internationalization
 
@@ -44,7 +49,7 @@ i18n:
 | logo          | stringa            | No        | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | tutti         | un URI in cui si trova il logo (logo intestazione)                                                                                                               |
 | primary_color | stringa            | No        | "#4b5e40"                                                     | `>4`       | Il colore primario da utilizzare in tutta la IU (intestazione, ecc.)                                                                                             |
 | scope         | stringa            | No        | @myscope                                                      | `>v3.x`    | Se si utilizza questo registro per uno specifico module scope, definire tale scope per impostarlo nell'intestazione delle istruzioni dell'interfaccia web utente |
-| darkMode      | variabile booleana | No        | false                                                         | `>=v4.5.2` | This mode is an special theme for those want to live in the dark side                                                                                            |
+| darkMode      | variabile booleana | No        | false                                                         | `>=v4.6.0` | This mode is an special theme for those want to live in the dark side                                                                                            |
 
 > Si raccomanda che la dimensione del logo sia di dimensione `40x40` pixel.
 > 

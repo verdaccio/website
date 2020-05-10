@@ -129,7 +129,7 @@
         "title": "Uplinks"
       },
       "webui": {
-        "title": "Web User Interface"
+        "title": "Webユーザインターフェース"
       },
       "what-is-verdaccio": {
         "title": "Veridaccio とは？"
@@ -225,7 +225,7 @@
         "title": "Use Cases"
       },
       "version-3.8.6/version-3.8.6-webui": {
-        "title": "Web User Interface"
+        "title": "Webユーザインターフェース"
       },
       "version-3.8.6/version-3.8.6-what-is-verdaccio": {
         "title": "Veridaccio とは？"
@@ -297,7 +297,7 @@
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-webui": {
-        "title": "Web User Interface"
+        "title": "Webユーザインターフェース"
       },
       "version-4.0.0-alpha.4/version-4.0.0-alpha.4-what-is-verdaccio": {
         "title": "Veridaccio とは？"
@@ -345,7 +345,7 @@
         "title": "Uplinks"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-webui": {
-        "title": "Web User Interface"
+        "title": "Webユーザインターフェース"
       },
       "version-4.0.0-alpha.5/version-4.0.0-alpha.5-who-is-using": {
         "title": "Who is using Verdaccio?"
@@ -402,7 +402,7 @@
         "title": "Uplinks"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-webui": {
-        "title": "Web User Interface"
+        "title": "Webユーザインターフェース"
       },
       "version-4.0.0-beta.10/version-4.0.0-beta.10-who-is-using": {
         "title": "Who is using Verdaccio?"
@@ -411,7 +411,7 @@
         "title": "Installation"
       },
       "version-4.0.0-beta.2/version-4.0.0-beta.2-webui": {
-        "title": "Web User Interface"
+        "title": "Webユーザインターフェース"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-articles": {
         "title": "Articles"
@@ -429,7 +429,7 @@
         "title": "Logotype"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-webui": {
-        "title": "Web User Interface"
+        "title": "Webユーザインターフェース"
       },
       "version-4.0.0-beta.5/version-4.0.0-beta.5-what-is-verdaccio": {
         "title": "Veridaccio とは？"
@@ -489,7 +489,7 @@
         "title": "Uplinks"
       },
       "version-4.0.2/version-4.0.2-webui": {
-        "title": "Web User Interface"
+        "title": "Webユーザインターフェース"
       },
       "version-4.1.0/version-4.1.0-cli": {
         "title": "Command Line Tool"
@@ -645,7 +645,7 @@
         "title": "Uplinks"
       },
       "version-4.4.1/version-4.4.1-webui": {
-        "title": "Web User Interface"
+        "title": "Webユーザインターフェース"
       },
       "version-4.4.1/version-4.4.1-windows": {
         "title": "Installing As a Windows Service"
@@ -655,6 +655,39 @@
       },
       "version-4.4.3/version-4.4.3-articles": {
         "title": "Articles"
+      },
+      "version-4.5.0/version-4.5.0-installation": {
+        "title": "Installation"
+      },
+      "version-4.5.0/version-4.5.0-talks": {
+        "title": "Talks"
+      },
+      "version-4.5.0/version-4.5.0-webui": {
+        "title": "Webユーザインターフェース"
+      },
+      "version-4.5.1/version-4.5.1-installation": {
+        "title": "Installation"
+      },
+      "version-4.6.0/version-4.6.0-e2e": {
+        "title": "End to End testing"
+      },
+      "version-4.6.0/version-4.6.0-installation": {
+        "title": "Installation"
+      },
+      "version-4.6.0/version-4.6.0-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.6.0/version-4.6.0-packages": {
+        "title": "Package Access"
+      },
+      "version-4.6.0/version-4.6.0-plugin-auth": {
+        "title": "Authentication Plugin"
+      },
+      "version-4.6.0/version-4.6.0-plugin-middleware": {
+        "title": "Middleware Plugin"
+      },
+      "version-4.6.0/version-4.6.0-webui": {
+        "title": "Webユーザインターフェース"
       }
     },
     "links": {

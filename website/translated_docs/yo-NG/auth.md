@@ -3,7 +3,7 @@ id: sise ifasẹsi
 title: "Sise ifasẹsi"
 ---
 
-Ifasẹsi naa jẹ sisopọ mọ auth [ plugin](plugins.md) ti o n lo. Awọn idena akojọ naa n jẹ ṣiṣakoso nipasẹ [ Iwọlesi ti Akojọ](packages.md).
+The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
 <div id="codefund">''</div>
 
@@ -24,7 +24,7 @@ registry=http://localhost:5555/
 
 #### Igbejade alainidamọ
 
-`verdaccio``verdaccio`gba ọ laaye lati ṣe imuṣiṣẹ igbejade alainidamọ, lati ni aṣeyọri pẹlu iyẹn o ma nilo lati seto [Iwọlesi ti Akojọ](packages.md) rẹ daradara.
+`verdaccio` allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
 
 Fun apẹẹrẹ:
 
@@ -57,7 +57,7 @@ Jẹ ki a ṣe atungbeyẹwo ni ṣoki:
 
 ## htpasswd atilẹwa
 
-Lati mu iṣeto naa rọrun, `verdaccio` lo ohun elo to da lori `htpasswd`. Niwọnti ẹya v3.0.x `verdaccio-htpasswd` ohun elo naa ti n jẹ lilo ni atilẹ wa.
+In order to simplify the setup, `verdaccio` uses a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
 
 ```yaml
 auth:
@@ -73,4 +73,4 @@ auth:
 | faili     | okun  | Bẹẹni     | ./htpasswd | gbogbo   | faili to gbalejo awọn iwe ẹri alaroko |
 | max_users | nọmba | Rara      | 1000       | gbogbo   | ṣeto gbedeke iye awọn olumulo         |
 
-Toba sẹlẹ pe o pinnu lati ma fayegba olumulo lati wọle, o le ṣeto `max_users: -1`.
+In case you decide to not allow users to sign up, you can set `max_users: -1`.

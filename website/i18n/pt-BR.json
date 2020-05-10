@@ -655,6 +655,39 @@
       },
       "version-4.4.3/version-4.4.3-articles": {
         "title": "Artigos"
+      },
+      "version-4.5.0/version-4.5.0-installation": {
+        "title": "Instalação"
+      },
+      "version-4.5.0/version-4.5.0-talks": {
+        "title": "Palestras"
+      },
+      "version-4.5.0/version-4.5.0-webui": {
+        "title": "Interface de Usuário da Web"
+      },
+      "version-4.5.1/version-4.5.1-installation": {
+        "title": "Instalação"
+      },
+      "version-4.6.0/version-4.6.0-e2e": {
+        "title": "Teste End-to-End"
+      },
+      "version-4.6.0/version-4.6.0-installation": {
+        "title": "Instalação"
+      },
+      "version-4.6.0/version-4.6.0-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.6.0/version-4.6.0-packages": {
+        "title": "Permissões dos Pacotes"
+      },
+      "version-4.6.0/version-4.6.0-plugin-auth": {
+        "title": "Plugin de Autenticação"
+      },
+      "version-4.6.0/version-4.6.0-plugin-middleware": {
+        "title": "Plugin Middleware"
+      },
+      "version-4.6.0/version-4.6.0-webui": {
+        "title": "Interface de Usuário da Web"
       }
     },
     "links": {

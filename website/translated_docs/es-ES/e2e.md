@@ -11,7 +11,7 @@ Algunos projectos organizan paquetes en multi repositorios o [mono repositorios]
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Such approach has been really hard to achieve considering:
+Tal enfoque ha sido realmente difícil de lograr considerando:
 
 * Populate canary packages on public services seems not to be a good idea
 * Some self-hosted OSS registries are too heavy

@@ -1,6 +1,6 @@
 ---
 id: version-4.5.0-webui
-title: Web User Interface
+title: Webユーザインターフェース
 original_id: webui
 ---
 
@@ -8,7 +8,7 @@ original_id: webui
 
 <div id="codefund">''</div>
 
-Verdaccio has a web user interface to display only the private packages and can be customisable.
+Verdaccioは、プライベートパッケージのみを表示するWebユーザーインターフェースを備えており、カスタマイズも可能です。
 
 ```yaml
 web:
@@ -21,9 +21,9 @@ web:
   sort_packages: asc | desc
 ```
 
-All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
+[パッケージを保護](protect-your-dependencies.md)するために定義されたすべてのアクセス制限は、Web インターフェイスにも適用されます。
 
-### Internationalization
+### 国際化
 
 *Since v4.5.0*, there are translations available
 

@@ -138,6 +138,17 @@ packages:
 
 **注意库定义的顺序很重要同时必须使用双通配符**。 因为如果你没有包含它，`verdaccio`会帮你来包含它，这样你的依赖库解析会受到影响。
 
+#### Use multiple uplinks
+
+You may assign multiple uplinks for use as a proxy to use in the case of failover, or where there may be other private registries in use.
+
+```yaml
+'**':
+  access: $all
+  publish: $authenticated
+  proxy: npmjs uplink2
+```
+
 #### Unpublishing Packages
 
 The property `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:

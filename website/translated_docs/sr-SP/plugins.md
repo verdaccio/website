@@ -2,13 +2,23 @@
 id: plugins
 title: "Plugins"
 ---
-Verdaccio is an plugabble aplication. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
-> If you are interested to develop your own plugin, read the [development](dev-plugins.md) section.
+Verdaccio је апликација која подржава плугине. Може се проширивати на много начина, додавањем нових метода за аутентификацију, додавањем endpoints-а или коришћењем custom storage-а.
 
-## Usage
+There are 5 types of plugins:
 
-### Installation
+* [Authentication](plugin-auth.md)
+* [Middleware](plugin-middleware.md)
+* [Меморија за складиштење](plugin-storage.md)
+* Custom Theme and filters
+
+> Ако сте заинтересовани да развијете сопствени plugin, прочитајте [development](dev-plugins.md) секцију.
+
+<div id="codefund">''</div>
+
+## Коришћење
+
+### Инсталација
 
 ```bash
 $> npm install --global verdaccio-activedirectory
@@ -19,21 +29,21 @@ $> npm install --global verdaccio-activedirectory
     $> npm install --global sinopia-memory
     
 
-### Configuration
+### Конфигурисање
 
-Open the `config.yaml` file and update the `auth` section as follows:
+Отворите `config.yaml` фајл и урадите update `auth` секције према следећим упутствима:
 
-The default configuration looks like this, due we use a build-in `htpasswd` plugin by default that you can disable just commenting out the following lines.
+Подразумевана конфигурација изгледа овако, јер користимо уграђени `htpasswd` plugin као подразумеван, а који можете зауставити (disable) тако што ћете следеће линије претворити у коментар.
 
-### Auth Plugin Configuration
+### Authentication Configuration
 
 ```yaml
  htpasswd:
     file: ./htpasswd
-    #max_users: 1000
+    # max_users: 1000
 ```
 
-and replacing them with (in case you decide to use a `ldap` plugin.
+и заменити их са датим (ако се одлучите да користите `ldap` plugin).
 
 ```yaml
 auth:
@@ -43,9 +53,9 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-#### Multiple Auth plugins
+#### Multiple Authentication plugins
 
-This is tecnically possible, making the plugin order important, as the credentials will be resolved in order.
+Технички је изводиво, ако поставите да је редослед плугина важан, услед чега ће се credentials извршити по том поретку.
 
 ```yaml
 auth:
@@ -58,7 +68,7 @@ auth:
     domainSuffix: 'sample.local'
 ```
 
-### Middleware Plugin Configuration
+### Middleware Configuration
 
 This is an example how to set up a middleware plugin. All middleware plugins must be defined in the **middlewares** namespace.
 
@@ -68,9 +78,9 @@ middlewares:
     enabled: true
 ```
 
-> You might follow the [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) as base example.
+> Можете пратити [audit middle plugin](https://github.com/verdaccio/verdaccio-audit) као базични пример.
 
-### Store Plugin Configuration
+### Storage Configuration
 
 This is an example how to set up a storage plugin. All storage plugins must be defined in the **store** namespace.
 
@@ -80,64 +90,48 @@ store:
     limit: 1000
 ```
 
-> If you define a custom store, the property **storage** in the configuration file will be ignored.
+### Theme Configuration
 
-## Legacy plugins
+Verdaccio allows to replace the User Interface with a custom one, we call it **theme**. By default, uses `@verdaccio/ui-theme` that comes built-in, but, you can use something different installing your own plugin.
+
+```bash
+<br />$> npm install --global verdaccio-theme-dark
+
+```
+
+> The plugin name prefix must start with `verdaccio-theme`, otherwise the plugin won't load.
+
+You can load only one theme at the time and pass through options if is need it.
+
+```yaml
+theme:
+  dark:
+    option1: foo
+    option2: bar
+```
+
+## Традиционални плугини (Legacy plugins)
 
 ### Sinopia Plugins
 
-(compatible all versions)
+> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
 
-* [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin for sinopia supporting an npm registry.
-* [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin for sinopia that keeps users in memory.
+* [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin за sinopia који подржава npm registry.
+* [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin за sinopia који чува кориснике у меморији.
 * [sinopia-github-oauth-cli](https://www.npmjs.com/package/sinopia-github-oauth-cli).
-* [sinopia-crowd](https://www.npmjs.com/package/sinopia-crowd): auth plugin for sinopia supporting atlassian crowd.
-* [sinopia-activedirectory](https://www.npmjs.com/package/sinopia-activedirectory): Active Directory authentication plugin for sinopia.
-* [sinopia-github-oauth](https://www.npmjs.com/package/sinopia-github-oauth): authentication plugin for sinopia2, supporting github oauth web flow.
-* [sinopia-delegated-auth](https://www.npmjs.com/package/sinopia-delegated-auth): Sinopia authentication plugin that delegates authentication to another HTTP URL
-* [sinopia-altldap](https://www.npmjs.com/package/sinopia-altldap): Alternate LDAP Auth plugin for Sinopia
-* [sinopia-request](https://www.npmjs.com/package/sinopia-request): An easy and fully auth-plugin with configuration to use an external API.
-* [sinopia-htaccess-gpg-email](https://www.npmjs.com/package/sinopia-htaccess-gpg-email): Generate password in htaccess format, encrypt with GPG and send via MailGun API to users.
-* [sinopia-mongodb](https://www.npmjs.com/package/sinopia-mongodb): An easy and fully auth-plugin with configuration to use a mongodb database.
-* [sinopia-htpasswd](https://www.npmjs.com/package/sinopia-htpasswd): auth plugin for sinopia supporting htpasswd format.
-* [sinopia-leveldb](https://www.npmjs.com/package/sinopia-leveldb): a leveldb backed auth plugin for sinopia private npm.
-* [sinopia-gitlabheres](https://www.npmjs.com/package/sinopia-gitlabheres): Gitlab authentication plugin for sinopia.
-* [sinopia-gitlab](https://www.npmjs.com/package/sinopia-gitlab): Gitlab authentication plugin for sinopia
-* [sinopia-ldap](https://www.npmjs.com/package/sinopia-ldap): LDAP auth plugin for sinopia.
-* [sinopia-github-oauth-env](https://www.npmjs.com/package/sinopia-github-oauth-env) Sinopia authentication plugin with github oauth web flow.
+* [sinopia-crowd](https://www.npmjs.com/package/sinopia-crowd): auth plugin за sinopia који подржава atlassian crowd.
+* [sinopia-activedirectory](https://www.npmjs.com/package/sinopia-activedirectory): Active Directory authentication plugin за sinopia.
+* [sinopia-github-oauth](https://www.npmjs.com/package/sinopia-github-oauth): authentication plugin за sinopia2, подржава github oauth web flow.
+* [sinopia-delegated-auth](https://www.npmjs.com/package/sinopia-delegated-auth): Sinopia authentication plugin који delegira authentifikaciju за други HTTP URL
+* [sinopia-altldap](https://www.npmjs.com/package/sinopia-altldap): Алтернативни LDAP Auth plugin за Sinopia
+* [sinopia-request](https://www.npmjs.com/package/sinopia-request): Једноставан и целовит auth-plugin са конфигурацијом за коришћењем екстерних API.
+* [sinopia-htaccess-gpg-email](https://www.npmjs.com/package/sinopia-htaccess-gpg-email): Генерише password у htaccess формату, encrypt са GPG и шаље преко MailGun API до корисника.
+* [sinopia-mongodb](https://www.npmjs.com/package/sinopia-mongodb): Једноставан и целовит auth-plugin са конфигурацијом за коришћење mongodb database.
+* [sinopia-htpasswd](https://www.npmjs.com/package/sinopia-htpasswd): auth plugin за sinopia који подржава htpasswd формат.
+* [sinopia-leveldb](https://www.npmjs.com/package/sinopia-leveldb): a leveldb подржан auth plugin за sinopia private npm.
+* [sinopia-gitlabheres](https://www.npmjs.com/package/sinopia-gitlabheres): Gitlab authentication plugin за sinopia.
+* [sinopia-gitlab](https://www.npmjs.com/package/sinopia-gitlab): Gitlab authentication plugin за sinopia
+* [sinopia-ldap](https://www.npmjs.com/package/sinopia-ldap): LDAP auth plugin за sinopia.
+* [sinopia-github-oauth-env](https://www.npmjs.com/package/sinopia-github-oauth-env) Sinopia authentication plugin са github oauth web flow.
 
-> All sinopia plugins should be compatible with all future verdaccio versions. Anyhow, we encourage contributors to migrate them to the modern verdaccio API and using the prefix as *verdaccio-xx-name*.
-
-## Verdaccio Plugins
-
-(compatible since 2.1.x)
-
-### Authorization Plugins
-
-* [verdaccio-bitbucket](https://github.com/idangozlan/verdaccio-bitbucket): Bitbucket authentication plugin for verdaccio.
-* [verdaccio-bitbucket-server](https://github.com/oeph/verdaccio-bitbucket-server): Bitbucket Server authentication plugin for verdaccio.
-* [verdaccio-ldap](https://www.npmjs.com/package/verdaccio-ldap): LDAP auth plugin for verdaccio.
-* [verdaccio-active-directory](https://github.com/nowhammies/verdaccio-activedirectory): Active Directory authentication plugin for verdaccio
-* [verdaccio-gitlab](https://github.com/bufferoverflow/verdaccio-gitlab): use GitLab Personal Access Token to authenticate
-* [verdaccio-gitlab-ci](https://github.com/lab360-ch/verdaccio-gitlab-ci): Enable GitLab CI to authenticate against verdaccio.
-* [verdaccio-htpasswd](https://github.com/verdaccio/verdaccio-htpasswd): Auth based on htpasswd file plugin (built-in) for verdaccio
-* [verdaccio-github-oauth](https://github.com/aroundus-inc/verdaccio-github-oauth): Github oauth authentication plugin for verdaccio.
-* [verdaccio-github-oauth-ui](https://github.com/n4bb12/verdaccio-github-oauth-ui): GitHub OAuth plugin for the verdaccio login button.
-
-### Middleware Plugins
-
-* [verdaccio-audit](https://github.com/verdaccio/verdaccio-audit): verdaccio plugin for *npm audit* cli support (built-in) (compatible since 3.x)
-
-* [verdaccio-profile-api](https://github.com/ahoracek/verdaccio-profile-api): verdacci plugin for *npm profile* cli support and *npm profile set password* for *verdaccio-htpasswd* based authentificaton
-
-### Storage Plugins
-
-(compatible since 3.x)
-
-* [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Storage plugin to host packages in Memory
-* [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
-* [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
-
-## Caveats
-
-> Not all these plugins are been tested continuously, some of them might not work at all. Please if you found any issue feel free to notify the owner of each plugin.
+> Сви sinopia plugins-и, требало би да буду компатибилни са свим будућим верзијама verdaccio-а. Било како било, охрабрујемо наше сараднике да пређу на модерни verdaccio API и да користе префикс као *verdaccio-xx-name*.

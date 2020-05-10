@@ -18,9 +18,14 @@ web:
   gravatar: true | false
   scope: "@scope"
   sort_packages: asc | desc
+  darkMode: false
 ```
 
 Toutes les restrictions d'accès définies pour la [protection des pacquets](protect-your-dependencies.md) s'appliquent également à l'Interface Web.
+
+> The `primary_color` and `scope` must be wrapped by quotes: eg: ('#000000' or "#000000")
+
+The `primary_color` **must be a valid hex representation**.
 
 ### Internationalization
 
@@ -44,7 +49,7 @@ i18n:
 | logo          | chaîne               | Non         | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | tous          | a URI where logo is located (header logo)                                                                                |
 | primary_color | chaîne               | Non         | "#4b5e40"                                                     | `>4`       | The primary color to use throughout the UI (header, etc)                                                                 |
 | scope         | chaîne               | Non         | @myscope                                                      | `>v3.x`    | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header |
-| darkMode      | booléenne            | Non         | false                                                         | `>=v4.5.2` | This mode is an special theme for those want to live in the dark side                                                    |
+| darkMode      | booléenne            | Non         | false                                                         | `>=v4.6.0` | This mode is an special theme for those want to live in the dark side                                                    |
 
 > It is recommended the logo size has the following size `40x40` pixels.
 > 

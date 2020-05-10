@@ -7,7 +7,7 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 
 > Do not hesitate to share your content with the community, we encourage you to speak about Verdaccio. If need help how to start, information or resources, reach us in our [Chat at Discord](https://chat.verdaccio.org), we will help you.
 
-## 开源-Trivago | Verdaccio (Ayush 与 Juan <iframe width="560" height="315" src="https://www.youtube.com/embed/A5CWxJC9xzc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+## 开源-Trivago | Verdaccio (Ayush 与 Juan <iframe width="560" height="315" src="https://www.youtube.com/embed/A5CWxJC9xzc?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 > The last shared talk is always highlighted here. We help you share your voice with the community.
 

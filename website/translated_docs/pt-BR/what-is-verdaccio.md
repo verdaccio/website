@@ -3,7 +3,7 @@ id: what-is-verdaccio
 title: "O que é o Verdaccio?"
 ---
 
-O Verdaccio é um **registro de proxy npm leve e privado** escrito em **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+O Verdaccio é um **registro de proxy npm leve e privado** escrito em **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
 
 <div id="codefund">''</div>
 

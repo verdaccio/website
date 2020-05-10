@@ -18,9 +18,14 @@ web:
   gravatar: true | false
   scope: "@scope"
   sort_packages: asc | desc
+  darkMode: false
 ```
 
 所有访问限制设置可以参考 [保护包](protect-your-dependencies.md) 页面，这些规则也将应用于 Web 界面。
+
+> The `primary_color` and `scope` must be wrapped by quotes: eg: ('#000000' or "#000000")
+
+The `primary_color` **must be a valid hex representation**.
 
 ### Internationalization
 
@@ -44,7 +49,7 @@ i18n:
 | logo          | 字符串        | 否  | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | 任意路径          | logo 所在的 URI 路径（顶部 logo）                                                                                                 |
 | primary_color | 字符串        | 否  | "#4b5e40"                                                     | `>4`       | The primary color to use throughout the UI (header, etc)                                                                 |
 | scope         | 字符串        | 否  | @myscope                                                      | `>v3.x`    | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header |
-| darkMode      | boolean    | 否  | false                                                         | `>=v4.5.2` | This mode is an special theme for those want to live in the dark side                                                    |
+| darkMode      | boolean    | 否  | false                                                         | `>=v4.6.0` | This mode is an special theme for those want to live in the dark side                                                    |
 
 > 建议 logo 尺寸为 `40x40` 像素。
 > 

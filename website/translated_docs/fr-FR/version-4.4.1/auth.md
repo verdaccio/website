@@ -38,18 +38,18 @@ Par exemple :
 
 As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) until `npm@5.3.0` and all minor releases **won't allow you publish without a token**.
 
-## Understanding Groups
+## Comprendre les groupes
 
-### The meaning of `$all` and `$anonymous`
+### La signification de `$all` et `$anonymous`
 
-As you know *Verdaccio* uses the `htpasswd` by default. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
+As you know *Verdaccio* uses the `htpasswd` by default. Ce plugin ne met pas en œuvre les méthodes `permettre_accès`, `permettre_publier` and `permettre_non publié`. Thus, *Verdaccio* will handle that in the following way:
 
-* If you are not logged in (you are anonymous), `$all` and `$anonymous` means exactly the same.
+* Si vous n'êtes pas connecté (vous êtes anonyme),`$all` et `$anonymous` signifie exactement la même chose.
 * If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
 
 As a takeaway, `$all` **will match all users, independently whether is logged or not**.
 
-**The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
+**The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio ne définira que les groupes par défaut.
 
 Let's recap:
 

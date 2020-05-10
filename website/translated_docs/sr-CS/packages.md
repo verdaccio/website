@@ -138,6 +138,17 @@ Hajde da vidimo šta smo postigli u navedenom primeru:
 
 **Budite svesni toga da je redosled definisanja Vaših paketa važan i još nešto, uvek koristite double wilcard**. Jer ako ne budete toga svesni, `verdaccio` će to učiniti umesto Vas, što će uticati Vaše dependencies.
 
+#### Use multiple uplinks
+
+You may assign multiple uplinks for use as a proxy to use in the case of failover, or where there may be other private registries in use.
+
+```yaml
+'**':
+  access: $all
+  publish: $authenticated
+  proxy: npmjs uplink2
+```
+
 #### Unpublishing Packages
 
 The property `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:

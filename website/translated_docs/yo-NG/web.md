@@ -18,9 +18,14 @@ web:
   gravatar: true | false
   scope: "@scope"
   sort_packages: asc | desc
+  darkMode: false
 ```
 
 Gbogbo awọn idena wiwọle ti o jẹ siseto[dabobo awọn akopọ rẹ](protect-your-dependencies.md) naa yoo jẹ sisamulo si Intafeesi Ayelujara naa.
+
+> The `primary_color` and `scope` must be wrapped by quotes: eg: ('#000000' or "#000000")
+
+The `primary_color` **must be a valid hex representation**.
 
 ### Internationalization
 
@@ -44,7 +49,7 @@ i18n:
 | logo          | okun       | Rara      | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | gbogbo        | uRI kan nibi ti aami idanimọ wa (akọle aami idanimọ)                                                             |
 | primary_color | okun       | Rara      | "#4b5e40"                                                     | `>4`       | Awọ akọkọ lati lo jakejado UI naa(akọle, abbl)                                                                   |
 | scope         | okun       | Rara      | @myscope                                                      | `>v3.x`    | Ti o ba n lo iforukọsilẹ yii fun scope modulu kan ni pato, yan scope naa lati ṣeto rẹ ninu akọle itọnisọna webui |
-| darkMode      | boolean    | Rara      | false                                                         | `>=v4.5.2` | This mode is an special theme for those want to live in the dark side                                            |
+| darkMode      | boolean    | Rara      | false                                                         | `>=v4.6.0` | This mode is an special theme for those want to live in the dark side                                            |
 
 > O jẹ igbaniyanju pe ki iwọn aami idanimọ ni iwọn wọnyii `40x40` pixels.
 > 

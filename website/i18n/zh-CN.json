@@ -655,6 +655,39 @@
       },
       "version-4.4.3/version-4.4.3-articles": {
         "title": "Articles"
+      },
+      "version-4.5.0/version-4.5.0-installation": {
+        "title": "安装"
+      },
+      "version-4.5.0/version-4.5.0-talks": {
+        "title": "Talks"
+      },
+      "version-4.5.0/version-4.5.0-webui": {
+        "title": "Web 用户界面"
+      },
+      "version-4.5.1/version-4.5.1-installation": {
+        "title": "安装"
+      },
+      "version-4.6.0/version-4.6.0-e2e": {
+        "title": "End to End testing"
+      },
+      "version-4.6.0/version-4.6.0-installation": {
+        "title": "安装"
+      },
+      "version-4.6.0/version-4.6.0-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.6.0/version-4.6.0-packages": {
+        "title": "包的访问"
+      },
+      "version-4.6.0/version-4.6.0-plugin-auth": {
+        "title": "Authentication Plugin（认证插件）"
+      },
+      "version-4.6.0/version-4.6.0-plugin-middleware": {
+        "title": "Middleware Plugin（Middleware 插件）"
+      },
+      "version-4.6.0/version-4.6.0-webui": {
+        "title": "Web 用户界面"
       }
     },
     "links": {

@@ -137,6 +137,17 @@ Vamos descrever o que queremos com o exemplo acima:
 
 Esteja **ciente de que a ordem das suas definições de pacotes é importante e use sempre wildcard duplo **. Porque se você não incluir o `verdaccio` irá incluí-lo para você e o modo como suas dependências serão resolvidas será afetado.
 
+#### Use multiple uplinks
+
+You may assign multiple uplinks for use as a proxy to use in the case of failover, or where there may be other private registries in use.
+
+```yaml
+'**':
+  access: $all
+  publish: $authenticated
+  proxy: npmjs uplink2
+```
+
 #### Cancelando a Publicação de Pacotes
 
 A propriedade `publish` controla permissões para `npm publish` e `npm unpublish`. Mas, se você quiser ser mais específico, você pode usar a propriedade `unpublish` em sua seção de acesso a pacotes, por exemplo:

@@ -19,22 +19,31 @@ helm init
 
 ### Fi sori ẹrọ
 
-Samulo Helm atẹ [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio). Ninu apẹẹrẹ yii a lo `npm` gẹgẹbi orukọ igbejade:
+> ⚠️ If you are using this helm chart, please [be aware of the migration of the repository](https://github.com/verdaccio/verdaccio/issues/1767).
+
+Deploy the Helm [verdaccio/verdaccio](https://github.com/verdaccio/charts) chart.
+
+### Add repository
+
+    helm repo add verdaccio https://charts.verdaccio.org
+    
+
+Ninu apẹẹrẹ yii a lo `npm` gẹgẹbi orukọ ifilọlẹ:
 
 ```bash
-helm install --name npm stable/verdaccio
+helm install --name npm verdaccio/verdaccio
 ```
 
 ### Ṣamulo pato ẹya kan
 
 ```bash
-helm install --name npm --set image.tag=2.6.5 stable/verdaccio
+helm install --name npm --set image.tag=3.13.1 verdaccio/verdaccio
 ```
 
 ### Sisagbega Verdaccio
 
 ```bash
-helm upgrade npm stable/verdaccio
+helm upgrade npm verdaccio/verdaccio
 ```
 
 ### Yiyọ kuro
@@ -79,7 +88,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 Ni bayi o le ṣe amulo atẹ Verdaccio Helm ati ṣiṣe pato iru iṣeto to ma jẹ lilo:
 
 ```bash
-helm install --name npm --set customConfigMap=verdaccio-config stable/verdaccio
+helm install --name npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
 ## Atilẹyin Rancher
