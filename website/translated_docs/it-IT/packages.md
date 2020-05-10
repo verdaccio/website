@@ -138,6 +138,17 @@ Descriviamo quello che si desidera con l'esempio precedente:
 
 **Non dimenticare l'importanza dell'ordine dei pacchetti e di utilizzare sempre il doppio asterisco**. Poiché se non lo si include, `verdaccio` lo includerà per voi e questo inciderà sulla modalità con cui le dipendenze sono risolte.
 
+#### Use multiple uplinks
+
+You may assign multiple uplinks for use as a proxy to use in the case of failover, or where there may be other private registries in use.
+
+```yaml
+'**':
+  access: $all
+  publish: $authenticated
+  proxy: npmjs uplink2
+```
+
 #### Rimozione di Pacchetti Pubblicati
 
 La proprietà `publish` gestisce le autorizzazioni per `npm publish` e `npm unpublish`. Tuttavia, se si vuole essere più specifici, è possibile utilizzare la proprietà `unpublish` nella sezione di accesso ai pacchetti, per esempio:
