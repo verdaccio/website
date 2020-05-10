@@ -149,15 +149,15 @@ class HeaderButtons extends React.Component {
   render() {
     return (
       <div className="pluginRowBlock">
-        <Button href={this.buildUrl('/what-is-verdaccio.html')}>
+        <Button href={this.buildUrl('/what-is-verdaccio.html')} id="getstarted">
           <translate>
             Get Started
           </translate>
         </Button>
-        <Button href="https://github.com/verdaccio">
+        <Button href="https://github.com/verdaccio" id="goToGitHub">
           Github
         </Button>
-        <Button href={this.buildUrl('/contributing.html')}>
+        <Button href={this.buildUrl('/contributing.html')} id="contribute">
           <translate>
             Contribute
           </translate>
@@ -202,9 +202,9 @@ class HomeSplash extends React.Component {
                   Follow @verdaccio_npm</a>
               </div>
               <MiddleBanner>
-                  <a href="https://openjsworld2020.sched.com/event/bwIo?iframe=no" target="_blank">
-                    <img src="https://cdn.verdaccio.dev/readme/openjs-world-hd-horizontal.png" width="400px" alt="openjsworld"/>
-                  </a>
+                <div id="openjsworld" style={{cursor: 'pointer'}}>
+                  <img src="https://cdn.verdaccio.dev/readme/openjs-world-hd-horizontal.png" width="400px" alt="openjsworld" />
+                </div>
               </MiddleBanner>
             </div>
           </div>
