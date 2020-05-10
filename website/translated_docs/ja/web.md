@@ -1,13 +1,13 @@
 ---
 id: webui
-title: "Web User Interface"
+title: "Webユーザインターフェース"
 ---
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
 <div id="codefund">''</div>
 
-Verdaccio has a web user interface to display only the private packages and can be customisable.
+Verdaccioは、プライベートパッケージのみを表示するWebユーザーインターフェースを備えており、カスタマイズも可能です。
 
 ```yaml
 web:
@@ -18,11 +18,16 @@ web:
   gravatar: true | false
   scope: "@scope"
   sort_packages: asc | desc
+  darkMode: false
 ```
 
-All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
+[パッケージを保護](protect-your-dependencies.md)するために定義されたすべてのアクセス制限は、Web インターフェイスにも適用されます。
 
-### Internationalization
+> The `primary_color` and `scope` must be wrapped by quotes: eg: ('#000000' or "#000000")
+
+The `primary_color` **must be a valid hex representation**.
+
+### 国際化
 
 *Since v4.5.0*, there are translations available
 
@@ -44,7 +49,7 @@ i18n:
 | logo          | string     | No       | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | all           | a URI where logo is located (header logo)                                                                                |
 | primary_color | string     | No       | "#4b5e40"                                                     | `>4`       | The primary color to use throughout the UI (header, etc)                                                                 |
 | scope         | string     | No       | @myscope                                                      | `>v3.x`    | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header |
-| darkMode      | boolean    | No       | false                                                         | `>=v4.5.2` | This mode is an special theme for those want to live in the dark side                                                    |
+| darkMode      | boolean    | No       | false                                                         | `>=v4.6.0` | This mode is an special theme for those want to live in the dark side                                                    |
 
 > It is recommended the logo size has the following size `40x40` pixels.
 > 
