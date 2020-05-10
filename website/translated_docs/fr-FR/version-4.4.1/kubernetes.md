@@ -53,7 +53,7 @@ You can customize the Verdaccio configuration using a Kubernetes *configMap*.
 
 #### Préparer
 
-Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml) and adapt it for your use case:
+Copier la [configuration existante](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml) et l'adapter à votre cas d'utilisation :
 
 ```bash
 wget https://raw.githubusercontent.com/verdaccio/verdaccio/master/conf/docker.yaml -O config.yaml
