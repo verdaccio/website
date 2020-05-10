@@ -3,7 +3,7 @@ id: amazon
 title: "Amazon Web Services"
 ---
 
-This document describes several approaches for deploying Verdaccio in the AWS cloud.
+Ce document décrit plusieurs approches pour le déploiement de Verdaccio dans le cloud AWS.
 
 ## EC2
 
@@ -17,7 +17,7 @@ Architecture:
      |
      | (HTTPS)
      v
-    Application Load Balancer
+    Équilibreur de charge des demandes
      |
      | (HTTP)
      v
@@ -26,7 +26,7 @@ Architecture:
      |
      | (NFS)
      v
-    Elastic File System
+    Système de fichiers élastiques
     
 
 Architecture notes: * Deploy this stack into the region closest to your users for maximum performance. * We use an auto scaling group primarily for self-healing. The system requirements of Verdaccio are pretty low, so it's unlikely you'll need multiple instances to handle traffic load. * Because Amazon Linux 2 doesn't include Node, we run Verdaccio as a Docker image rather than natively on the instance. This is faster and more secure than relying on third party package sources for Node. * Elastic File System is cheap and stateful, and works across AZs. An alternative would be the [third-party S3 storage plugin](https://github.com/remitly/verdaccio-s3-storage). * For backup, use AWS Backup
