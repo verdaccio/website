@@ -1,51 +1,54 @@
 ---
 id: windows
-title: "Installing As a Windows Service"
+title: "Инсталирајте као Windows Service"
 ---
-Loosely based upon the instructions found [here](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). I crafted the following and it provided me with a fully working verdaccio service installation:
 
-1. Create a directory for verdaccio 
+Угрубо базирано на упутствима која се могу пронаћи [овде](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). Направили смо пример verdaccio servis инсталације која ради као сат. Швајцарски:
+
+1. Креирајте директоријум за verdaccio 
     * mkdir `c:\verdaccio`
     * cd `c:\verdaccio`
-2. Install verdaccio locally (I ran into npm issues with global installs) 
+2. Инсталирајте verdaccio локално (догађају се проблеми са npm ако је инсталација глобална) 
     * npm install verdaccio
-3. Create your `config.yaml` file in this location `(c:\verdaccio\config.yaml)`
+3. Креирајте свој `config.yaml` фајл на овој локацији `(c:\verdaccio\config.yaml)`
 4. Windows Service Setup
 
-## Using NSSM
+<div id="codefund">''</div>
 
-ALTERNATIVE METHOD: (WinSW package was missing when I tried to download it)
+## Коришћење NSSM
 
-* Download [NSSM](https://www.nssm.cc/download/) and extract
+АЛТЕРНАТИВНИ МЕТОД: (WinSW пакет је недостајао када је један од наших сарадника покушао да га преузме)
 
-* Add the path that contains nssm.exe to the PATH
+* Преузмите [NSSM](https://www.nssm.cc/download/) и екстракујте
 
-* Open an administrative command
+* Додајте путању до nssm.exe у PATH
 
-* Run nssm install verdaccio At a minimum you must fill in the Application tab Path, Startup directory and Arguments fields. Assuming an install with node in the system path and a location of c:\verdaccio the below values will work:
+* Отворите administrative command
+
+* Покрените nssm install verdaccio. Као минимум, морате попунити поља: Application tab Path, Startup directory и Arguments. Ако претпоставимо да сте инсталирали са node у system path на локацију c:\verdaccio требало би да функционише:
     
     * Path: `node`
     * Startup directory: `c:\verdaccio`
     * Arguments: `c:\verdaccio\node_modules\verdaccio\build\lib\cli.js -c c:\verdaccio\config.yaml`
     
-    You can adjust other service settings under other tabs as desired. When you are done, click Install service button
+    Можете да подесите друга сервисна подешавања у оквиру осталих табова по сопственим жељама. Када завршите, кликните дугме Install service
     
-    * Start the service sc start verdaccio
+    * Покрените service sc, покрените verdaccio
 
-## Using WinSW
+## Коришћење WinSW
 
-* As of 2015-10-27, WinSW is no longer available at the below location. Please follow the Using NSSM instructions above.
-* Download [WinSW](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/) 
-    * Place the executable (e.g. `winsw-1.9-bin.exe`) into this folder (`c:\verdaccio`) and rename it to `verdaccio-winsw.exe`
-* Create a configuration file in `c:\verdaccio`, named `verdaccio-winsw.xml` with the following configuration `xml verdaccio verdaccio verdaccio node c:\verdaccio\node_modules\verdaccio\src\lib\cli.js -c c:\verdaccio\config.yaml roll c:\verdaccio`.
-* Install your service 
+* Од 2015-10-27, WinSW више није доступан на наведеној локацији. Пратите инструкције дате у Using NSSM.
+* Преузмите [WinSW](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/) 
+    * Поставите exe (пример, `winsw-1.9-bin.exe`) у овај фолдер (`c:\verdaccio`) и преименујте у `verdaccio-winsw.exe`
+* Направите фајл за конфигурисање `c:\verdaccio`, назван `verdaccio-winsw.xml` са следећом конфигурацијом `xml verdaccio verdaccio verdaccio node c:\verdaccio\node_modules\verdaccio\src\lib\cli.js -c c:\verdaccio\config.yaml roll c:\verdaccio`.
+* Инсталирајте сервис 
     * `cd c:\verdaccio`
     * `verdaccio-winsw.exe install`
-* Start your service 
+* Покрените сервис 
     * `verdaccio-winsw.exe start`
 
-Some of the above config is more verbose than I had expected, it appears as though 'workingdirectory' is ignored, but other than that, this works for me and allows my verdaccio instance to persist between restarts of the server, and also restart itself should there be any crashes of the verdaccio process.
+Изгледа да су неки од config компликованији него што смо очекивали, изгледа да се 'working directory' игнорише, али радуцка и поред тога. Тако verdaccio инстанца опстаје између рестартовања сервера, и сама себе ресетује у случају пада неког процеса везаног за verdaccio.
 
-## Repositories
+## Репозиторијуми
 
 * [verdaccio-deamon-windows](https://github.com/davidenke/verdaccio-deamon-windows)
