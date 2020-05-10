@@ -41,8 +41,8 @@ window.addEventListener('load', function() {
 
     const textEl = event.trigger.querySelector('.btnIcon__label');
     textEl.textContent = 'Copied';
-    if (addTrackEvent){
-      addTrackEvent('copyText', event.text);
+    if (dataLayer) {
+      dataLayer.push('copyText', event.text);
     }
     setTimeout(function() {
       textEl.textContent = 'Copy';
