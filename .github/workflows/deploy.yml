@@ -24,10 +24,10 @@ jobs:
         run: |
           cd website
           yarn
-      # Runs a single command using the runners shell
+      - name: LS Docusaurus
+        run: ls -ls
       - name: Build Docusaurus
-        run: |
-          yarn build
+        run: yarn build
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v1
