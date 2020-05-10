@@ -17,7 +17,7 @@ const createShowcase = (userList) => {
     })
     .map((user, i) => {
     return (
-      <a href={user.infoLink} key={i} target="_blank" rel="noopener">
+      <a href={user.infoLink} key={i} target="_blank" class="userLink" data-caption={user.caption}>
         <img src={siteConfig.baseUrl + user.image} alt={user.caption} title={user.caption} />
       </a>
     );

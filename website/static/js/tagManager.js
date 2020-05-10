@@ -26,4 +26,15 @@ window.addEventListener('load', function() {
 	addTrackEvent('contribute', 'contribute');
 	addTrackEvent('codeInstall', 'codeInstall');
 	addTrackEvent('goToGitHub', 'goToGitHub');
+
+	const __userClick = document.getElementsByClassName('userLink');
+	for (var i = 0; i < __userClick.length; i++) {
+		const item = __userClick.item(i);
+		const caption = item.getAttribute('data-caption');
+		item.addEventListener('click', function() {
+			dataLayer.push({'event': 'userLink', 'userSource': caption});
+		});
+	}
 });
+
+
