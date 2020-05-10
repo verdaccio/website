@@ -6,33 +6,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-TC389TN');
 
-window.addEventListener('load', function() {
-	const button = document.getElementById('openjsworld');
+function addEvent(id, eventId, cb) {
+	const button = document.getElementById(id);
 	if (button) {
 		button.addEventListener('click', function() {
-			dataLayer.push({'event': 'openjsworld'});
-			window.open('https://openjsworld2020.sched.com/event/bwIo?iframe=no', '_blank');
+			dataLayer.push({'event': eventId});
+			if (cb) {
+				cb();
+			}
 		});
 	}
+}
 
-	const button2 = document.getElementById('getstarted')
-	if (button2) {
-		button2.addEventListener('click', function() {
-			dataLayer.push({'event': 'getstarted'});
-		});
-	}
-
-	const button3 = document.getElementById('contribute')
-	if (button3) {
-		button3.addEventListener('click', function() {
-			dataLayer.push({'event': 'contribute'});
-		});
-	}
-
-	const button4 = document.getElementById('codeInstall')
-	if (button4) {
-		button4.addEventListener('click', function() {
-			dataLayer.push({'event': 'codeInstall'});
-		});
-	}
+window.addEventListener('load', function() {
+	addEvent('openjsworld', 'openjsworld', function() {
+		window.open('https://openjsworld2020.sched.com/event/bwIo?iframe=no', '_blank');
+	});
+	addEvent('getstarted', 'getstarted');
+	addEvent('contribute', 'contribute');
+	addEvent('codeInstall', 'codeInstall');
+	addEvent('goToGitHub', 'goToGitHub');
 });
