@@ -655,6 +655,39 @@
       },
       "version-4.4.3/version-4.4.3-articles": {
         "title": "Статьи"
+      },
+      "version-4.5.0/version-4.5.0-installation": {
+        "title": "Установка"
+      },
+      "version-4.5.0/version-4.5.0-talks": {
+        "title": "Выступления"
+      },
+      "version-4.5.0/version-4.5.0-webui": {
+        "title": "Веб-интерфейс пользователя"
+      },
+      "version-4.5.1/version-4.5.1-installation": {
+        "title": "Установка"
+      },
+      "version-4.6.0/version-4.6.0-e2e": {
+        "title": "End to End тестирование"
+      },
+      "version-4.6.0/version-4.6.0-installation": {
+        "title": "Установка"
+      },
+      "version-4.6.0/version-4.6.0-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.6.0/version-4.6.0-packages": {
+        "title": "Доступ к пакетам"
+      },
+      "version-4.6.0/version-4.6.0-plugin-auth": {
+        "title": "Плагин аутентификации"
+      },
+      "version-4.6.0/version-4.6.0-plugin-middleware": {
+        "title": "Middleware плагин"
+      },
+      "version-4.6.0/version-4.6.0-webui": {
+        "title": "Веб-интерфейс пользователя"
       }
     },
     "links": {
