@@ -1,16 +1,19 @@
 ---
-id: notifications
-title: "Notifications"
+id: нотификације
+title: "Нотификације"
 ---
-Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. Currently only active for `npm publish` command.
 
-## Usage
+Нотификације су замишљене да се користе са Slack's Incoming webhooks, али такође испоручују simple payload до било које endpoint. Тренутно је активно једино за `npm publish` команду.
 
-An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
+<div id="codefund">''</div>
 
-> Verdaccio supports any API, feel free to ad more examples.
+## Коришћење
 
-#### Single notification
+На пример са **HipChat**, **Stride** и **Google Hangouts Chat** hook:
+
+> Verdaccio supports any API, feel free to add more examples.
+
+#### Јединствена нотификација
 
 ```yaml
 notify:
@@ -20,7 +23,7 @@ notify:
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
 
-#### Multiple notification
+#### Вишеструка нотификација
 
 ```yaml
 notify:
@@ -38,33 +41,33 @@ notify:
      method: POST
      headers: [{'Content-Type': 'application/json'}, {'authorization': 'Bearer secretToken'}]
      endpoint: https://api.atlassian.com/site/{cloudId}/conversation/{conversationId}/message
-     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'     
+     content: '{"body": {"version": 1,"type": "doc","content": [{"type": "paragraph","content": [{"type": "text","text": "New package published: * {{ name }}* Publisher name: * {{ publisher.name }}"}]}]}}'
 ```
 
-## Template
+## Темплат
 
-We use [Handlebars](https://handlebarsjs.com/) as main template engine.
+Користимо [Handlebars](https://handlebarsjs.com/) као main template engine.
 
-### Format Examples
+### Примери за формате
 
-    # iterate all versions
-    {{ name }}{{#each versions}} v{{version}}{{/each}}`"}
+    # Пролази кроз све верзије
+    {{ name }}{{#each versions}} v{{version}}{{/each}}
     
-    # publisher and `dist-tag` package published
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    # publisher и `dist-tag` package published
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
-### Properties
+### Својства (Properties)
 
-List of properties accesible via template
+Листа својстава којима се може приступити преко темплата
 
 * Metadata
-* Publisher (who is publishing)
+* Publisher (онај који публикује)
 * Package Published (package@1.0.0)
 
 ### Metadata
 
-Package metadata that the template has access
+Package metadata за које темплат има приступ
 
     {
         "_id": "@test/pkg1",
@@ -117,9 +120,9 @@ Package metadata that the template has access
 
 ### Publisher
 
-You can access to the package publisher information in the `content` of a webhook using the `publisher` object.
+Можете приступити package publisher информацијама у `content` у оквиру webhook користећи `publisher` објекат.
 
-See below the `publisher` object type:
+Погледајте пример за `publisher` object type:
 
     {
       name: string,
@@ -128,7 +131,7 @@ See below the `publisher` object type:
     }
     
 
-An example:
+Пример:
 
     notify:
       method: POST
@@ -137,22 +140,22 @@ An example:
       content: '{"color":"green","message":"New package published: * {{ name }}*. Publisher name: * {{ publisher.name }} *.","notify":true,"message_format":"text"}'
     
 
-**Note:** it's not possible to get the publisher information if the `package.json` file already has the `publisher` property.
+**Напомена:** Није могуће добити publisher information ако `package.json` фајл већ има `publisher` својство.
 
 ### Package Published
 
-You can acces to the package is being published with the keyword `{{publishedPackage}}` as follows.
+Можете приступити опцији package is being published помоћу кључне речи `{{publishedPackage}}` на следећи начин.
 
-    {{ publisher.name }} has published {{publishedPackage}}"}
+    {{ publisher.name }} has published {{ publishedPackage }}
     
 
-## Configuration
+## Конфигурисање
 
-| Property            | Type         | Required | Support | Default | Description                                                                                  |
-| ------------------- | ------------ | -------- | ------- | ------- | -------------------------------------------------------------------------------------------- |
-| method              | string       | No       | all     |         | HTTP verb                                                                                    |
-| packagePattern      | string       | No       | all     |         | Only run this notification if the package name matches the regular expression                |
-| packagePatternFlags | string       | No       | all     |         | Any flags to be used with the regular expression                                             |
-| headers             | array/object | Yes      | all     |         | If this endpoint requires specific headers, set them here as an array of key: value objects. |
-| endpoint            | string       | Yes      | all     |         | set the URL endpoint for this call                                                           |
-| content             | string       | Yes      | all     |         | any [Handlebar](https://handlebarsjs.com/) expressions                                       |
+| Својство            | Тип          | Неопходно | Подршка | Подразумевано | Опис                                                                                           |
+| ------------------- | ------------ | --------- | ------- | ------------- | ---------------------------------------------------------------------------------------------- |
+| method              | string       | Не        | all     |               | HTTP verb                                                                                      |
+| packagePattern      | string       | Не        | all     |               | Покрени ову нотификацију ако се име пакета подудара са регуларним изразом (regular expression) |
+| packagePatternFlags | string       | Не        | all     |               | Било која заставица (flags) која ће се користити са regular expression                         |
+| headers             | array/object | Да        | all     |               | Ако endpoint захтева specific headers, подесите их овде као array of key: value objects.       |
+| endpoint            | string       | Да        | all     |               | подесите URL endpoint за овај позив                                                            |
+| content             | string       | Да        | all     |               | било који [Handlebar](https://handlebarsjs.com/) expressions                                   |
