@@ -4,29 +4,29 @@ title: Articles
 original_id: articles
 ---
 
-Below is a list of articles about Verdaccio. If you have written a blog post or tutorial that mentions Verdaccio, feel free to add it here!
+Ci-dessous une liste d'articles à propos de Verdaccio. Si vous avez écrit un article de blog ou un tutoriel qui mentionne Verdaccio, n'hésitez pas à l'ajouter ici!
 
-> Any language is allowed
+> N'impote quelle langue est la bienvenue
 
-## Core Team Articles
+## Articles de l'équipe Core (en Anglais)
 
-* [An Introduction to Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
-* [Five use cases where a npm private proxy fits in your workflow](https://medium.com/@jotadeveloper/five-use-cases-where-a-npm-private-proxy-fits-in-your-workflow-632a81779c14)
-* [An Introduction to Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
-* [NPM Registry for your organisation](https://medium.com/@ayusharma.in/npm-registry-for-your-organisation-aeb8ea76144)
-* [Verdaccio 3 released 🎉!!](https://medium.com/verdaccio/verdaccio-3-released-feb06ef38558)
-* [The crazy story of Verdaccio](https://medium.com/verdaccio/the-crazy-story-of-verdaccio-d35d924728bc)
-* [Verdaccio 4 alpha release 🚀](https://medium.com/verdaccio/verdaccio-4-alpha-release-400c7ed4884d)
-* [Verdaccio and deterministic lock files](https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e)
-* [Setting up Verdaccio on DigitalOcean](https://medium.com/verdaccio/setting-up-verdaccio-on-digitalocean-61b5d08e4f0d)
-* [How I learned React Js and how you can…](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
-* [How did I fall in the open source world…and that was a nice thing!](https://medium.com/@priscilawebdev/how-do-i-fall-in-the-open-source-world-and-that-was-a-nice-thing-b0e85d05490d)
+* [Une introduction à Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
+* [Cinq cas d'utilisation où un proxy privé npm s'intègre dans votre flux de travail](https://medium.com/@jotadeveloper/five-use-cases-where-a-npm-private-proxy-fits-in-your-workflow-632a81779c14)
+* [Une introduction à Verdaccio](https://medium.com/@jotadeveloper/an-introduction-to-verdaccio-f6c72e865425)
+* [Registre NPM pour votre organisation](https://medium.com/@ayusharma.in/npm-registry-for-your-organisation-aeb8ea76144)
+* [Verdaccio 3 est sorti 🎉!!](https://medium.com/verdaccio/verdaccio-3-released-feb06ef38558)
+* [L'histoire folle de Verdaccio](https://medium.com/verdaccio/the-crazy-story-of-verdaccio-d35d924728bc)
+* [Verdaccio 4 alpha est sorti 🚀](https://medium.com/verdaccio/verdaccio-4-alpha-release-400c7ed4884d)
+* [Verdaccio et fichiers de verrouillage déterministes](https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e)
+* [Paramétrer Verdaccio sur DigitalOcean](https://medium.com/verdaccio/setting-up-verdaccio-on-digitalocean-61b5d08e4f0d)
+* [Comment j'ai appris React Js et comment vous pouvez le faire…](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
+* [Comment suis-je tombé dans le monde de l'open source... et c'était une belle chose !](https://medium.com/@priscilawebdev/how-do-i-fall-in-the-open-source-world-and-that-was-a-nice-thing-b0e85d05490d)
 
 
 
-# Articles / Blogs / Tutorials (by Language)
+# Articles / Blogs / Tutoriels (classés par langue)
 
-### Remarkable Articles
+### Meilleurs articles
 
 * [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
 * [Cover Your Apps While Still Using npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
@@ -38,7 +38,7 @@ Below is a list of articles about Verdaccio. If you have written a blog post or 
 * [Ways to have your private npm registry — and a final DIY solution](https://medium.com/engenharia-noalvo/ways-to-have-your-private-npm-registry-and-a-final-diy-solution-eed001a88e74)
 * [How to set up a free private npm registry… for Windows](https://medium.com/@Anderson7301/how-to-set-up-a-free-private-npm-registry-for-windows-f532c6a381ce)
 
-### English
+### Anglais
 
 * [Testing your npm package before releasing it using Verdaccio + ngrok](https://medium.com/strapi/testing-your-npm-package-before-releasing-it-using-verdaccio-ngrok-28e2832c850a)
 * [Host your own private NPM repository with Verdaccio](https://medium.com/devopslinks/host-your-own-private-npm-repository-with-verdaccio-e8a3202b97c5)
@@ -52,13 +52,13 @@ Below is a list of articles about Verdaccio. If you have written a blog post or 
 * [Verdaccio examples for Google Cloud and K8s setups. https://github.com/papezt/verdaccio-examples](https://github.com/papezt/verdaccio-examples)
 * [Setting up a private NPM Registry Is Easier Than You Think](https://medium.com/@902Labs/setting-up-a-private-npm-registry-is-easier-than-you-think-455e1bd438f2)
 
-### Japanese
+### Japonais
 
 * [Verdaccio でプライベート npm リポジトリをサクッと立てる](http://neos21.hatenablog.com/entry/2017/09/08/080000)
 * [verdaccioでprivateなnpmリポジトリを作成](https://qiita.com/mtokiwa/items/1bc22a2270e4408d4cdd)
 * [Version control of my own UnityPackage with Unity × Verdaccio / Unity×Verdaccioで自作UnityPackageをバージョン管理する](https://synamon.hatenablog.com/entry/2018/08/15/185607)
 
-### Chinese
+### Chinois
 
 * [使用 verdaccio 搭建 npm 私有仓储](https://blog.sigoden.com/verdaccio--private-npm-registry/)
 * [Verdaccio：一个轻量级的私有npm代理注册表（sinopia fork)](https://www.ctolib.com/verdaccio-verdaccio.html)
@@ -68,17 +68,17 @@ Below is a list of articles about Verdaccio. If you have written a blog post or 
 * [[筆記] 建立自己的 npm, 以npm Orgs跟Verdaccio為例](https://medium.com/@ceall8650/%E7%AD%86%E8%A8%98-%E5%BB%BA%E7%AB%8B%E8%87%AA%E5%B7%B1%E7%9A%84-npm-%E4%BB%A5npm-orgs%E8%B7%9Fverdaccio%E7%82%BA%E4%BE%8B-cfb83b2307e6)
 
 
-### French
+### Français
 
 * [Installer un registre NPM](https://allons-y.io/wiki/installer-un-registre-npm)
 
 
-### Spanish
+### Espagnol
 * [NPM privado: instalar y configurar Verdaccio](https://www.todojs.com/npm-privado-con-verdaccio/)
 * [NPM privado: 5 razones y 7 recomendaciones para utilizarlo](https://www.todojs.com/npm-privado-5-razones-y-7-recomendaciones/)
 
 
-### German
+### Allemand
 
 * [Struktur für große Angular-Anwendungen: Microservices, Module, MonoRepo?](https://jaxenter.de/struktur-angular-anwendungen-67467)
 * [Angular in einer Microservices-Welt](https://jaxenter.de/angular-microservices-66445)
