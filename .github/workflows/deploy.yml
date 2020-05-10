@@ -27,7 +27,9 @@ jobs:
       - name: LS Docusaurus
         run: ls -ls
       - name: Build Docusaurus
-        run: yarn build
+         run: |
+          cd website
+          yarn build
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v1
