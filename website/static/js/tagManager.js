@@ -10,7 +10,7 @@ window.addEventListener('load', function() {
 	const button = document.getElementById('openjsworld');
 	if (button) {
 		button.addEventListener('click', function() {
-			dataLayer.push({'event': 'openjsword'});
+			dataLayer.push({'event': 'openjsworld'});
 			window.open('https://openjsworld2020.sched.com/event/bwIo?iframe=no', '_blank');
 		});
 	}
