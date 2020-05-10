@@ -3,7 +3,7 @@ id: authentification
 title: "Аутентификация"
 ---
 
-Аутентификация зависит от того [плагина](plugins.md), который вы используете. Так же, есть возможность задать ограничения на пакеты через [доступ к пакетам](packages.md).
+The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
 <div id="codefund">''</div>
 
@@ -24,7 +24,7 @@ registry=http://localhost:5555/
 
 #### Анонимная публикация
 
-`verdaccio` позволяет включить анонимную публикацию. Для того, чтобы сделать это вам нужно правильно настроить ваш [доступ к пакетам](packages.md).
+`verdaccio` allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
 
 Например:
 
@@ -57,7 +57,7 @@ registry=http://localhost:5555/
 
 ## Стандартный htpasswd
 
-Чтобы упростить установку, `verdaccio` использует плагин, основанный на `htpasswd`. С версии v3.0.x, по умолчанию используется плагин `verdaccio-htpasswd`.
+In order to simplify the setup, `verdaccio` uses a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
 
 ```yaml
 auth:
@@ -73,4 +73,4 @@ auth:
 | file      | string | Да           | ./htpasswd | все       | файл, содержащий зашифрованные учетные данные |
 | max_users | number | Нет          | 1000       | все       | ограничение на количество пользователей       |
 
-Для того, чтобы запретить пользователям входить, вы можете установить `max_users: -1`.
+In case you decide to not allow users to sign up, you can set `max_users: -1`.
