@@ -655,6 +655,39 @@
       },
       "version-4.4.3/version-4.4.3-articles": {
         "title": "Articoli"
+      },
+      "version-4.5.0/version-4.5.0-installation": {
+        "title": "Installazione"
+      },
+      "version-4.5.0/version-4.5.0-talks": {
+        "title": "Presentazioni"
+      },
+      "version-4.5.0/version-4.5.0-webui": {
+        "title": "Interfaccia Utente Web"
+      },
+      "version-4.5.1/version-4.5.1-installation": {
+        "title": "Installazione"
+      },
+      "version-4.6.0/version-4.6.0-e2e": {
+        "title": "End to End testing"
+      },
+      "version-4.6.0/version-4.6.0-installation": {
+        "title": "Installazione"
+      },
+      "version-4.6.0/version-4.6.0-kubernetes": {
+        "title": "Kubernetes"
+      },
+      "version-4.6.0/version-4.6.0-packages": {
+        "title": "Accesso ai Pacchetti"
+      },
+      "version-4.6.0/version-4.6.0-plugin-auth": {
+        "title": "Plugin di autenticazione"
+      },
+      "version-4.6.0/version-4.6.0-plugin-middleware": {
+        "title": "Plugin Middleware"
+      },
+      "version-4.6.0/version-4.6.0-webui": {
+        "title": "Interfaccia Utente Web"
       }
     },
     "links": {
