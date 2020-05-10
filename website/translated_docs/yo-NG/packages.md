@@ -138,6 +138,17 @@ Jẹ ki a ṣe apejuwe ohun ti a fẹ pẹlu apẹẹrẹ oke yii:
 
 Lọ **mọ pe aṣẹ ti awọn itumọ awọn akopọ rẹ jẹ pataki ati ki o ma lo wildcard nigbagbogbo**. Nitori ti o ko ba se afikun rẹ `verdaccio` yoo se afikun rẹ fun ẹ atipe o ma kan ọna ti awọn igbarale rẹ jẹ yiyanju si.
 
+#### Use multiple uplinks
+
+You may assign multiple uplinks for use as a proxy to use in the case of failover, or where there may be other private registries in use.
+
+```yaml
+'**':
+  access: $all
+  publish: $authenticated
+  proxy: npmjs uplink2
+```
+
 #### Ṣiṣe aitẹjade Awọn akopọ
 
 Ohun ini `publish` naa n mojuto awọn igbanilaaye fun `npm publish` ati `npm unpublish`. Ṣugbọn, ti o ba fẹ lati wa ni pato, o le lo ohun ini `unpublish` naa ni abala iwọle akopọ rẹ, fun apẹẹrẹ:
