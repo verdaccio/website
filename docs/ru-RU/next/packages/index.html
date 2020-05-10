@@ -178,6 +178,13 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 <li>Я хочу проксирование для всех остальных пакетов.</li>
 </ul>
 <p><strong>Учтите, что порядок правил важен, и всегда добавляейте правило для двух звездочек</strong>. Потому что если его не будет, то <code>verdaccio</code> сам добавит его, что может повлиять на способ разрешения ваших зависимостей.</p>
+<h4><a class="anchor" aria-hidden="true" id="use-multiple-uplinks"></a><a href="#use-multiple-uplinks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use multiple uplinks</h4>
+<p>You may assign multiple uplinks for use as a proxy to use in the case of failover, or where there may be other private registries in use.</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-string">'**'</span><span class="hljs-string">:</span>
+  <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+  <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+  <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span> <span class="hljs-string">uplink2</span>
+</code></pre>
 <h4><a class="anchor" aria-hidden="true" id="удаление-опубликованных-пакетов"></a><a href="#удаление-опубликованных-пакетов" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Удаление опубликованных пакетов</h4>
 <p>Свойство <code>publish</code> определяет права доступа для команд <code>npm publish</code> и <code>npm unpublish</code>. Но, если вы хотите задать разрешение отдельно, можно использовать свойтство <code>unpublish</code> в секции доступа к пакетам, например:</p>
 <pre><code class="hljs css language-yalm">packages:
@@ -205,7 +212,7 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 <li>Если <code>unpublish</code> закомментировать, то доступ будет определяяться свойством <code>publish</code>.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="конфигурация"></a><a href="#конфигурация" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Конфигурация</h3>
-<p>Вы можете определить несколько наборов <code>пакетов</code> и для каждого из них должен быть задан уникальный <code>regex</code>. Синтаксис базируется на <a href="https://github.com/isaacs/minimatch">minimatch glob expressions</a>.</p>
+<p>You can define mutiple <code>packages</code> and each of them must have an unique <code>Regex</code>. The syntax is based on <a href="https://github.com/isaacs/minimatch">minimatch glob expressions</a>.</p>
 <table>
 <thead>
 <tr><th>Свойство</th><th>Тип</th><th>Обязательное</th><th>Пример</th><th>Поддержка</th><th>Описание</th></tr>
