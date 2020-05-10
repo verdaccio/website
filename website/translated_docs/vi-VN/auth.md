@@ -3,7 +3,7 @@ id: yêu cầu xác thực
 title: "Yêu cầu xác thực"
 ---
 
-Cài đặt yêu cầu xác thực có liên quan chặt chẽ đến [plugin](plugins.md) mà bạn đang sử dụng. Giới hạn truy cập gói cũng được kiểm soát thông qua [quyền truy cập gói](packages.md).
+The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
 <div id="codefund">''</div>
 
@@ -24,7 +24,7 @@ registry=http://localhost:5555/
 
 #### Gói phát hành ẩn danh
 
-Bạn có thể chọn gói phát hành ẩn danh khi sử dụng `verdaccio`, để bật chế độ này lên bạn cần cài đặt phần [quyền truy cập gói](packages.md) một cách chính xác.
+`verdaccio` allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
 
 Ví dụ:
 
@@ -57,7 +57,7 @@ Let's recap:
 
 ## Tự động tạo tập tin htpasswd
 
-In order to simplify the setup, `verdaccio` use a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
+In order to simplify the setup, `verdaccio` uses a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
 
 ```yaml
 auth:
@@ -73,4 +73,4 @@ auth:
 | tập tin    | chuỗi       | Có      | ./htpasswd | tất cả | tập tin lưu trữ các thông tin đã được mã hóa |
 | max_users  | số          | Không   | 1000       | tất cả | giới hạn người dùng                          |
 
-Trường hợp bạn không muốn người dùng đăng nhập, bạn cài đặt `max_users: -1`.
+In case you decide to not allow users to sign up, you can set `max_users: -1`.
