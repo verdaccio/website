@@ -138,6 +138,17 @@ packages:
 
 **Учтите, что порядок правил важен, и всегда добавляейте правило для двух звездочек**. Потому что если его не будет, то `verdaccio` сам добавит его, что может повлиять на способ разрешения ваших зависимостей.
 
+#### Use multiple uplinks
+
+You may assign multiple uplinks for use as a proxy to use in the case of failover, or where there may be other private registries in use.
+
+```yaml
+'**':
+  access: $all
+  publish: $authenticated
+  proxy: npmjs uplink2
+```
+
 #### Удаление опубликованных пакетов
 
 Свойство `publish` определяет права доступа для команд `npm publish` и `npm unpublish`. Но, если вы хотите задать разрешение отдельно, можно использовать свойтство `unpublish` в секции доступа к пакетам, например:
@@ -170,7 +181,7 @@ packages:
 
 ### Конфигурация
 
-Вы можете определить несколько наборов `пакетов` и для каждого из них должен быть задан уникальный `regex`. Синтаксис базируется на [minimatch glob expressions](https://github.com/isaacs/minimatch).
+You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
 | Свойство | Тип    | Обязательное | Пример         | Поддержка      | Описание                                                   |
 | -------- | ------ | ------------ | -------------- | -------------- | ---------------------------------------------------------- |
