@@ -4,7 +4,7 @@ title: Amazon Web Services
 original_id: amazon
 ---
 
-This document describes several approaches for deploying Verdaccio in the AWS cloud.
+Ce document décrit plusieurs approches pour le déploiement de Verdaccio dans le cloud AWS.
 
 ## EC2
 
@@ -16,7 +16,7 @@ Architecture:
      |
      | (HTTPS)
      v
-    Application Load Balancer
+    Équilibreur de charge des demandes
      |
      | (HTTP)
      v
@@ -25,7 +25,7 @@ Architecture:
      |
      | (NFS)
      v
-    Elastic File System
+    Système de fichiers élastiques
     
 
 Architecture notes:
