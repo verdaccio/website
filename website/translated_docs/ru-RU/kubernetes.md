@@ -19,22 +19,31 @@ helm init
 
 ### Установка
 
-Разверните Helm [stable/verdaccio](https://github.com/kubernetes/charts/tree/master/stable/verdaccio). В этом примере мы используем `npm` как имя релиза:
+> ⚠️ If you are using this helm chart, please [be aware of the migration of the repository](https://github.com/verdaccio/verdaccio/issues/1767).
+
+Deploy the Helm [verdaccio/verdaccio](https://github.com/verdaccio/charts) chart.
+
+### Add repository
+
+    helm repo add verdaccio https://charts.verdaccio.org
+    
+
+In this example we use `npm` as release name:
 
 ```bash
-helm install --name npm stable/verdaccio
+helm install --name npm verdaccio/verdaccio
 ```
 
 ### Установка конкретной версии
 
 ```bash
-helm install --name npm --set image.tag=2.6.5 stable/verdaccio
+helm install --name npm --set image.tag=3.13.1 verdaccio/verdaccio
 ```
 
 ### Обновление Verdaccio
 
 ```bash
-helm upgrade npm stable/verdaccio
+helm upgrade npm verdaccio/verdaccio
 ```
 
 ### Удаление
@@ -79,7 +88,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 Сейчас вы можете развернуть Verdaccio Helm пакет и указать, с какой конфигурацией его нужно развернуть: use:
 
 ```bash
-helm install --name npm --set customConfigMap=verdaccio-config stable/verdaccio
+helm install --name npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
 ## Поддержка Rancher
