@@ -7,7 +7,12 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - name: Test for public javascript library vulnerabilities 
+      - name: Verify verdaccio.org
         uses: lirantal/is-website-vulnerable@master
         with:
           scan-url: "https://verdaccio.org"
+      - name: Verify verdaccio.dev
+        uses: lirantal/is-website-vulnerable@master
+        with:
+          scan-url: "https://verdaccio.dev"
+
