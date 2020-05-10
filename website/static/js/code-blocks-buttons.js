@@ -42,7 +42,7 @@ window.addEventListener('load', function() {
     const textEl = event.trigger.querySelector('.btnIcon__label');
     textEl.textContent = 'Copied';
     if (dataLayer) {
-      dataLayer.push({'event': 'copyText', 'textCopied': event.text}};
+      dataLayer.push({'event': 'copyText', 'textCopied': event.text});
     }
     setTimeout(function() {
       textEl.textContent = 'Copy';
