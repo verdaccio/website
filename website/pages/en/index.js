@@ -266,7 +266,9 @@ class Index extends React.Component {
         <HomeSplash language={language} />
         <div className="mainContainer">
           <Container padding={['top']}>
-            <FeatureSection/>
+            <div id="codeInstall">
+              <FeatureSection/>
+            </div>
           </Container>
           <MiddleTitle>
               <translate>

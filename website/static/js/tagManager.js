@@ -28,4 +28,11 @@ window.addEventListener('load', function() {
 			dataLayer.push({'event': 'contribute'});
 		});
 	}
+
+	const button4 = document.getElementById('codeInstall')
+	if (button4) {
+		button4.addEventListener('click', function() {
+			dataLayer.push({'event': 'codeInstall'});
+		});
+	}
 });
