@@ -18,9 +18,14 @@ web:
   gravatar: true | false
   scope: "@scope"
   sort_packages: asc | desc
+  darkMode: false
 ```
 
 Todas as restrições de acesso definidas para [proteger seus pacotes](protect-your-dependencies.md) também se aplicam à interface da web.
+
+> The `primary_color` and `scope` must be wrapped by quotes: eg: ('#000000' or "#000000")
+
+The `primary_color` **must be a valid hex representation**.
 
 ### Internationalization
 
@@ -44,7 +49,7 @@ i18n:
 | logo          | string     | Não         | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | completo      | a URI onde o logotipo está localizado (logotipo do cabeçalho)                                                                                     |
 | primary_color | string     | Não         | "#4b5e40"                                                     | `>4`       | A cor principal a ser usada em toda a interface do usuário (cabeçalho, etc)                                                                       |
 | scope         | string     | Não         | @myscope                                                      | `>v3.x`    | Se você estiver usando esse registro para um escopo de módulo específico, especifique esse escopo para defini-lo no cabeçalho de instruções webui |
-| darkMode      | boolean    | Não         | false                                                         | `>=v4.5.2` | This mode is an special theme for those want to live in the dark side                                                                             |
+| darkMode      | boolean    | Não         | false                                                         | `>=v4.6.0` | This mode is an special theme for those want to live in the dark side                                                                             |
 
 > Recomenda-se que o tamanho do logotipo tenha o seguinte tamanho `40x40` pixels.
 > 
