@@ -2,88 +2,91 @@
 id: server-configuration
 title: "Server Configuration"
 ---
-This is mostly basic linux server configuration stuff but I felt it important to document and share the steps I took to get verdaccio running permanently on my server. You will need root (or sudo) permissions for the following.
 
-## Running as a separate user
+Ово је најбазичнија конфигурација за linux server али нам се чини важним да документујемо и поделимо са Вама све кораке како би verdaccio стално радио на серверу. Биће Вам потребне root (или sudo) дозволе за наведено.
 
-First create the verdaccio user:
+<div id="codefund">''</div>
+
+## Покретање, као засебан корисник
+
+Најпре креирајте verdaccio корисника:
 
 ```bash
 $ sudo adduser --system --gecos 'Verdaccio NPM mirror' --group --home /var/lib/verdaccio verdaccio
 ```
 
-Or, in case you do not have `adduser`:
+У случају да немате постојећег корисника потребно је да га додате, `adduser`:
 
 ```bash
 $ sudo useradd --system --comment 'Verdaccio NPM mirror' --create-home --home-dir /var/lib/verdaccio --shell /sbin/nologin verdaccio
 ```
 
-You create a shell as the verdaccio user using the following command:
+Затим креирате shell као verdaccio корисник, путем следеће команде:
 
 ```bash
 $ sudo su -s /bin/bash verdaccio
 $ cd
 ```
 
-The `cd` command sends you to the home directory of the verdaccio user. Make sure you run verdaccio at least once to generate the config file. Edit it according to your needs.
+Команда `cd` шаље Вас до home директоријума verdaccio корисника. Постарајте се да покренете verdaccio барем једном како бисте генерисали config фајл. Модификујте га према својим потребама.
 
-## Listening on all addresses
+## Listening на свим адресама
 
-If you want to listen to every external address set the listen directive in the config to:
+Ако желите да ослушкујете (listen to) сваку екстерну адресу, подесите listen директиву на:
 
 ```yaml
-# you can specify listen address (or simply a port)
+# можете подесити listen address (или порт)
 listen: 0.0.0.0:4873
 ```
 
-If you are running verdaccio in a Amazon EC2 Instance, [you will need set the listen in change your config file](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) as is described above.
+Ако имате покренут verdaccio у Amazon EC2 инстанци, [мораћете да подесите listen у change your config file](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) као што је приказано у наведеном примеру.
 
-> Configure Apache or nginx? Please check out the [Reverse Proxy Setup](reverse-proxy.md)
+> Конфигурисање Apache-а или nginx? Молимо Вас да погледате [Reverse Proxy Setup](reverse-proxy.md)
 
-## Keeping verdaccio running forever
+## Како да verdaccio ради непрекидно
 
-You can use node package called ['forever'](https://github.com/nodejitsu/forever) to keep verdaccio running all the time.
+Можете да користите node package звани ['forever'](https://github.com/nodejitsu/forever) како бисте имали verdaccio који ће непрекидно радити.
 
-First install `forever` globally:
+Прво инсталирајте `forever` глобално:
 
 ```bash
 $ sudo npm install -g forever
 ```
 
-Make sure you've run verdaccio at least once to generate the config file and write down the created admin user. You can then use the following command to start verdaccio:
+Проверите да ли сте покренули verdaccio барем једном како бисте генерисали config фајл и уписали админ корисника. После тога, можете користити следећу команду како бисте покренули verdaccio:
 
 ```bash
 $ forever start `which verdaccio`
 ```
 
-You can check the documentation for more information on how to use forever.
+Можете погледати документацију за више информација о томе како да користите пакет forever.
 
-## Surviving server restarts
+## Преживљавање ресетовања сервера
 
-You can use `crontab` and `forever` together to start verdaccio after a server reboot. When you're logged in as the verdaccio user do the following:
+Можете истовремено користити `crontab` и `forever` како бисте ресетовали verdaccio након сваког reboot-овања сервера. Након што сте се пријавили као verdaccio корисник, задајте следеће:
 
 ```bash
 $ crontab -e
 ```
 
-This might ask you to choose an editor. Pick your favorite and proceed. Add the following entry to the file:
+Могуће је да ћете добити питање да одаберете едитор. Одаберите свој омиљени и наставите. Унесите следећи инпут у фајл:
 
     @reboot /usr/bin/forever start /usr/lib/node_modules/verdaccio/bin/verdaccio
     
 
-The locations may vary depending on your server setup. If you want to know where your files are you can use the 'which' command:
+Локације могу варирати у зависности од подешавања сервера. Ако желите да сазнате где се налазе Ваши фајлови, можете користити команду 'which':
 
 ```bash
 $ which forever
 $ which verdaccio
 ```
 
-## Using systemd
+## Коришћење systemd
 
-Instead of `forever` you can use `systemd` for starting verdaccio and keeping it running. Verdaccio installation has systemd unit, you only need to copy it:
+Уместо `forever` можете користити `systemd` за покретање verdaccio-а и одржавање његовог рада. Verdaccio инсталација поседује systemd unit, све што треба да урадите је да је копирате:
 
 ```bash
 $ sudo cp /usr/lib/node_modules/verdaccio/systemd/verdaccio.service /lib/systemd/system/ && sudo systemctl daemon-reload
 ```
 
-This unit assumes you have configuration in `/etc/verdaccio/config.yaml` and store data in `/var/lib/verdaccio`, so either move your files to those locations or edit the unit.
+Ова јединица подразумева да имате конфигурацију у `/etc/verdaccio/config.yaml` и чува податке у `/var/lib/verdaccio`, тако да Вам остаје или да померите своје фајлове или да модификујете саму јединицу.
