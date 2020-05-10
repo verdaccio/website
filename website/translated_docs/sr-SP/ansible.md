@@ -2,9 +2,12 @@
 id: ansible
 title: "Ansible"
 ---
+
 У оквиру наше организације, нудимо прилагођена решења за `verdaccio`.
 
 <https://github.com/verdaccio/ansible-verdaccio>
+
+<div id="codefund">''</div>
 
 #### Остале могућности
 
