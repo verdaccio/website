@@ -11,7 +11,7 @@ Verdaccio is a multiplatform web application. To install it, you need a few basi
 
 > After v4.5.0 *Node.js v10* is now the minimum supported version. If you cannot upgrade *Node.js v8*, keep using `v4.4.4`.
 
-2. npm `>=5.x` or, `pnpm` or `yarn` 
+2. npm `>=5.x` or, `pnpm` or `yarn`
   > We highly recommend to use the latest Node Package Managers clients `> npm@6.x | yarn@1.x | pnpm@4.x`
 3. The web interface supports the `Chrome, Firefox, Edge, and IE11` browsers.
 
@@ -81,9 +81,9 @@ Or a `publishConfig` in your `package.json`
 ## Create Your Own Private NPM Package Tutorial
 
 If you still need a deep explanation, don't miss the at [thedevlife](https://mybiolink.co/thedevlife) tutorial how to publish your
-own private package using Verdaccio. 
+own private package using Verdaccio.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Docker Image
 

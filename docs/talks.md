@@ -11,7 +11,7 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 
 ## Open Source - Trivago | Verdaccio (Ayush and Juan
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/A5CWxJC9xzc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A5CWxJC9xzc?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 > The last shared talk is always highlighted here. We help you share your voice with the community.
 
