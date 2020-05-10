@@ -149,19 +149,25 @@ class HeaderButtons extends React.Component {
   render() {
     return (
       <div className="pluginRowBlock">
-        <Button href={this.buildUrl('/what-is-verdaccio.html')} id="getstarted">
-          <translate>
-            Get Started
-          </translate>
-        </Button>
-        <Button href="https://github.com/verdaccio" id="goToGitHub">
-          Github
-        </Button>
-        <Button href={this.buildUrl('/contributing.html')} id="contribute">
-          <translate>
-            Contribute
-          </translate>
-        </Button>
+        <span id="getstarted">
+          <Button href={this.buildUrl('/what-is-verdaccio.html')} target="_blank">
+            <translate>
+              Get Started
+            </translate>
+          </Button>
+        </span>
+        <span id="goToGitHub">
+          <Button href="https://github.com/verdaccio" target="_blank">
+            Github
+          </Button>
+        </span>
+        <span id="contribute" target="_blank">
+          <Button href={this.buildUrl('/contributing.html')}>
+            <translate>
+              Contribute
+            </translate>
+          </Button>
+        </span>
       </div>
     )
   }
