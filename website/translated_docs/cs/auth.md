@@ -3,7 +3,7 @@ id: autentizace
 title: "Autentizace"
 ---
 
-Ověření je svázené s [doplňkem](plugins.md) pro ověření, který používáte. Omezení balíčků je též zpracování v [Přístupu k balíčkům](packages.md).
+The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
 <div id="codefund">''</div>
 
@@ -24,7 +24,7 @@ registry=http://localhost:5555/
 
 #### Anonymní publikování
 
-`Verdaccio` Vám umožňuje nastavit anonymní publikování. Abyste toho dosáhli, budete muset správně nastavit svůj [přístup k balíčkům](packages.md).
+`verdaccio` allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
 
 Např.:
 
@@ -57,7 +57,7 @@ Rekapitulace:
 
 ## Default htpasswd
 
-Pro zjednodušení instalace, `verdaccio` používá doplněk založený na `htpasswd`. Od verze v3.0.x je používán `verdaccio-htpasswd` jako výchozí doplněk.
+In order to simplify the setup, `verdaccio` uses a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin is used by default.
 
 ```yaml
 auth:
@@ -73,4 +73,4 @@ auth:
 | file      | řetězec | Ano        | ./htpasswd | všechny | soubor, který obsahuje šifrované přihlašovací údaje |
 | max_users | číslo   | Ne         | 1000       | všechny | nastavit limit uživatelů                            |
 
-In case to decide do not allow user to login, you can set `max_users: -1`.
+In case you decide to not allow users to sign up, you can set `max_users: -1`.
