@@ -32,7 +32,9 @@
 <pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio
 </code></pre>
 <p>ati atilẹyin ** Kubernetes Helm ** fun iṣamulo ti o rọrun</p>
-<pre><code class="hljs css language-bash">helm install --name npm stable/verdaccio
+<pre><code class="hljs css language-bash">helm repo add verdaccio https://charts.verdaccio.org
+helm repo update
+helm install --name npm verdaccio/verdaccio
 </code></pre>
 </span></div></div></div></div></div></div><div class="container darkBackground paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide imageAlignRight twoByGridBlock"><div class="blockContent"><h2><div><span><p>Atilẹyin Ohun elo asomọ</p>
 </span></div></h2><div><span><p>Verdaccio da lori ohun asomọ, ìfàṣẹsí, middleware ati atilẹyin ibi ipamọ. Kan mu ọkan tabi ki o ṣẹda akanṣe ti ara rẹ kan.</p>

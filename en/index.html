@@ -32,7 +32,9 @@
 <pre><code class="hljs css language-bash">docker pull verdaccio/verdaccio
 </code></pre>
 <p>and <strong>Kubernetes Helm</strong> support for easy deployment</p>
-<pre><code class="hljs css language-bash">helm install --name npm stable/verdaccio
+<pre><code class="hljs css language-bash">helm repo add verdaccio https://charts.verdaccio.org
+helm repo update
+helm install --name npm verdaccio/verdaccio
 </code></pre>
 </span></div></div></div></div></div></div><div class="container darkBackground paddingBottom paddingTop"><div class="wrapper"><div class="gridBlock"><div class="blockElement imageAlignSide imageAlignRight twoByGridBlock"><div class="blockContent"><h2><div><span><p>Plugin Support</p>
 </span></div></h2><div><span><p>Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.</p>
