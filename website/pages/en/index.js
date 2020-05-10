@@ -315,7 +315,9 @@ class Index extends React.Component {
                   '```' +
                   '\n' +  <translate>and **Kubernetes Helm** support for easy deployment</translate> + '\n '+
                   '```bash\n' +
-                  'helm install --name npm stable/verdaccio\n' +
+                  'helm repo add verdaccio https://charts.verdaccio.org\n'+
+                  'helm repo update\n'+
+                  'helm install --name npm verdaccio/verdaccio\n' +
                   '```\n',
                   image: siteConfig.baseUrl + 'img/devops_support_grey.png',
                   imageAlign: 'left',
