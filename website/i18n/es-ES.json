@@ -156,7 +156,9 @@
       "Server": "Servidor",
       "Development": "Desarrollo",
       "DevOps": "DevOps",
-      "Guides": "Guías"
+      "Guides": "Guías",
+      "Configuration": "Configuración",
+      "Plugins": "Plugins"
     }
   },
   "pages-strings": {
