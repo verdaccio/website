@@ -156,7 +156,9 @@
       "Server": "Server",
       "Development": "Development",
       "DevOps": "DevOps",
-      "Guides": "Uputstva"
+      "Guides": "Uputstva",
+      "Configuration": "Konfigurisanje",
+      "Plugins": "Plugins"
     }
   },
   "pages-strings": {
