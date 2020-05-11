@@ -156,7 +156,9 @@
       "Server": "Сервер",
       "Development": "Разработка",
       "DevOps": "DevOps",
-      "Guides": "Руководства"
+      "Guides": "Руководства",
+      "Configuration": "Конфигурация",
+      "Plugins": "Плагины"
     }
   },
   "pages-strings": {
