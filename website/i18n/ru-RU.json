@@ -136,6 +136,9 @@
       },
       "who-is-using": {
         "title": "Кто использует Verdaccio?"
+      },
+      "windows": {
+        "title": "Установка в качестве службы Windows"
       }
     },
     "links": {
@@ -153,9 +156,7 @@
       "Server": "Сервер",
       "Development": "Разработка",
       "DevOps": "DevOps",
-      "Guides": "Руководства",
-      "Configuration": "Конфигурация",
-      "Plugins": "Плагины"
+      "Guides": "Руководства"
     }
   },
   "pages-strings": {
