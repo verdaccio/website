@@ -156,7 +156,9 @@
       "Server": "Server",
       "Development": "Vývoj",
       "DevOps": "DevOps",
-      "Guides": "Návody"
+      "Guides": "Návody",
+      "Configuration": "Konfigurace",
+      "Plugins": "Plugins"
     }
   },
   "pages-strings": {
