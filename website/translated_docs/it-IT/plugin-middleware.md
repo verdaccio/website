@@ -43,7 +43,7 @@ public register_middlewares(
 The `auth` and `storage` are instances and can be extended, but we don't recommend this approach unless is well founded.
 
 
-> A good example of a middleware plugin is the [verdaccio-audit](https://github.com/verdaccio/monorepo/tree/master/plugins/audi).
+> A good example of a middleware plugin is the [verdaccio-audit](https://github.com/verdaccio/monorepo/tree/master/plugins/audit).
 
 ## Generate an middleware plugin
 
