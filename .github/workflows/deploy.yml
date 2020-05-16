@@ -64,4 +64,4 @@ jobs:
         uses: muinmomin/webhook-action@v1.0.0
         env:
           url: ${{ secrets.SENTRY }}
-          data: "{'version': '${GITHUB_SHA::8}' }"
+          data: "{'version': 'release' }"
