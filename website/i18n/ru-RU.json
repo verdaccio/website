@@ -136,6 +136,9 @@
       },
       "who-is-using": {
         "title": "Кто использует Verdaccio?"
+      },
+      "windows": {
+        "title": "Установка в качестве службы Windows"
       }
     },
     "links": {
