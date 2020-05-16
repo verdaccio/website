@@ -64,4 +64,4 @@ jobs:
         uses: verdaccio/github-actions/webhook@master
         env:
           url: ${{ secrets.SENTRY }}
-          data: "{'version': 'release' }"
+          release: ${{GITHUB_SHA::8}}
