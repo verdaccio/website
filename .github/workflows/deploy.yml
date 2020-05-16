@@ -61,7 +61,7 @@ jobs:
           SOURCE_DIR: "build" # optional: defaults to entire repository
           DEST_DIR: "docu-website"
       - name: Sentry Release Tag
-        uses: joelwmale/webhook-action@1.0.0
+        uses: muinmomin/webhook-action@v1.0.0
         env:
-          WEBHOOK_URL: ${{ secrets.SENTRY }}
+          url: ${{ secrets.SENTRY }}
           data: "{'version': '${GITHUB_SHA::8}' }"
