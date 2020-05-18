@@ -182,7 +182,7 @@
     "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.|no description given": "**npm**, **yarn** a **pnpm** jsou součástí každého vývojového pracovního postupu, snažíme se dohnat nejnovější aktualizace.",
     "The most popular npm clients are supported|no description given": "Všechny nejoblíbenější npm klienti jsou podporováni",
     "We have an official **Docker** image ready to use|no description given": "Máme oficiální **Docker** obraz připravený k použití",
-    "and **Kubernetes Helm** support for easy deployment|no description given": "a podporu **Kubernetes Help* pro jednoduché nasazení",
+    "and **Kubernetes Helm** support for easy deployment|no description given": "a podporu **Kubernetes Helm** pro jednoduché nasazení",
     "Making the DevOps work easy|no description given": "Usnadňujeme práci pro DevOps",
     "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio je založený na doplňcích, s možnostmi ověřování, middlewaru a ukládání. Stačí si jeden vybrat nebo si vytvořit svůj vlastní.",
     "Plugin Support|no description given": "Podpora doplňků",
