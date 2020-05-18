@@ -3,7 +3,7 @@
   "localized-strings": {
     "next": "Další",
     "previous": "Předchozí",
-    "tagline": "A lightweight open source private npm proxy registry",
+    "tagline": "Jednoduchý otevřený soukromý npm proxy registr",
     "docs": {
       "amazon": {
         "title": "Amazon Web Services"
@@ -24,7 +24,7 @@
         "title": "Osvědčené postupy"
       },
       "build": {
-        "title": "build"
+        "title": "sestavení"
       },
       "caching": {
         "title": "Strategie ukládání do mezipaměti"
@@ -123,7 +123,7 @@
         "title": "Rozhovory"
       },
       "test": {
-        "title": "test"
+        "title": "testování"
       },
       "uplinks": {
         "title": "Uplinks"
@@ -148,7 +148,7 @@
       "Help": "Pomoc",
       "GitHub": "GitHub",
       "Team": "Tým",
-      "Sponsor Us": "Sponsor Us"
+      "Sponsor Us": "Sponzoruj nás"
     },
     "categories": {
       "Introduction": "Úvod",
@@ -170,7 +170,7 @@
     "Stay up to date|no description given": "Zůstaňte aktuální",
     "Need help?|no description given": "Potřebujete pomoci?",
     "This project is maintained by a dedicated group of people.|statement made to reader": "Tento projekt je spravován oddanou skupinou lidí.",
-    "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)|no description given": "Zjistěte více o Verdacciu pomocí [dokumentace na těchto stránkách.](/docs/en/installation.html)",
+    "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)|no description given": "Zjistěte více o Verdaccio pomocí [dokumentace na těchto stránkách.](/docs/en/installation.html)",
     "You can follow and contact us on|no description given": "Můžete nás sledovat a kontaktovat na",
     "and also you can chat with the Verdaccio community at|no description given": "a také můžete chatovat s Verdaccio komunitou na",
     "If the documentation is not enough help, you can try browsing into our|no description given": "Pokud v dokumentaci není informace, kterou hledáte, můžete se zkusit podívat na naše",
