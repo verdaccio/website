@@ -7,8 +7,8 @@ Verdaccio is an plugabble aplication. It can be extended in many ways, either ne
 
 There are 5 types of plugins:
 
-* [Authentication](plugin-auth.md)
-* [Middleware](plugin-middleware.md)
+* [Autenticación](plugin-auth.md)
+* [Mediación](plugin-middleware.md)
 * [Almacenamiento](plugin-storage.md)
 * Custom Theme and filters
 
