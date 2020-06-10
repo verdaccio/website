@@ -5,13 +5,13 @@ title: "Extensiones en Desarrollo"
 
 Existen muchas maneras de extender `verdaccio`, los tipos de extensiones soportados son:
 
-* [Authentication](plugin-auth.md)
-* [Middleware](plugin-middleware.md)
+* [Autenticación](plugin-auth.md)
+* [Mediación](plugin-middleware.md)
 * [Almacenamiento](plugin-storage.md)
-* Theme
-* Filter plugins
+* Tema
+* Filtro de plugins
 
-> We recommend developing plugins using our [Typescript type definitions](https://github.com/verdaccio/monorepo/tree/master/core/types).
+> Nosotros recomendamos desarrollar tus plugins usando [Definiciones de tipo Typescript](https://github.com/verdaccio/monorepo/tree/master/core/types).
 
 <div id="codefund">''</div>
 
