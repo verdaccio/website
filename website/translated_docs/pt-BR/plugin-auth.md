@@ -65,7 +65,7 @@ A partir da `v4.0.0`
 
 ## What should I return in each of the methods?
 
-Verdaccio relies on `callback` functions at time of this writing. Each method should call the method and what you returns is important, let's review how to do it.
+Verdaccio relies on `callback` functions at time of this writing. Each method should call the method and what you return is important, let's review how to do it.
 
 
 ### `authentication` callback
