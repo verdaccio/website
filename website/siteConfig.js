@@ -255,11 +255,13 @@ const siteConfig = {
   gaTrackingId: 'UA-2527438-21',
   twitter: true,
   scripts: [
+    'https://code.jquery.com/jquery-3.4.1.slim.min.js',
     'https://browser.sentry-cdn.com/5.15.5/bundle.min.js',
     '/js/error.js',
     'https://codefund.io/properties/256/funder.js',
     'https://buttons.github.io/buttons.js',
     'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
+    '/js/talk.js',
     '/js/tagManager.js',
     '/js/code-blocks-buttons.js',
   ],

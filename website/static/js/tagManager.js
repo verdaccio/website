@@ -26,6 +26,7 @@ window.addEventListener('load', function() {
 	addTrackEvent('contribute', 'contribute');
 	addTrackEvent('codeInstall', 'codeInstall');
 	addTrackEvent('goToGitHub', 'goToGitHub');
+  addTrackEvent('talk', 'bannerTalk');
 
 	const __userClick = document.getElementsByClassName('userLink');
 	for (var i = 0; i < __userClick.length; i++) {

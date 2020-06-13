@@ -152,3 +152,18 @@
   border: 1px solid #4b5e40;
 }
 
+.banner {
+  display: flex;
+  background-color: #f1d7d2;
+  padding: 10px 10px 0 10px;
+  font-size: 80%;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+
+.note {
+  font-size: 10px;
+}
