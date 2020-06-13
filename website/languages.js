@@ -42,7 +42,7 @@ const languages = [
     tag: 'da',
   },
   {
-    enabled: true,
+    enabled: false,
     name: 'Deutsch',
     tag: 'de',
   },
