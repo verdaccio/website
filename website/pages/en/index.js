@@ -161,8 +161,8 @@ class HeaderButtons extends React.Component {
             Github
           </Button>
         </span>
-        <span id="contribute" target="_blank">
-          <Button href={this.buildUrl('/contributing.html')}>
+        <span id="contribute">
+          <Button href="https://github.com/verdaccio/verdaccio/issues/1461" target="_blank">
             <translate>
               Contribute
             </translate>
