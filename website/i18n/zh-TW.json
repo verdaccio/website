@@ -3,45 +3,161 @@
   "localized-strings": {
     "next": "Next",
     "previous": "Previous",
-    "tagline": "A lightweight private npm proxy registry",
-    "ansible": "Installing with Ansible",
-    "authentification": "Authentification",
-    "build": "Build the source code",
-    "cli": "Command Line Tool",
-    "configuration": "Configuration File",
-    "contributing": "Contributing Verdaccio",
-    "dev-plugins": "Developing Plugins",
-    "docker": "Docker",
-    "home": "Verdaccio npm proxy private registry",
-    "iss-server": "Installing on IIS server",
-    "installation": "Installation",
-    "kubernetes": "Kubernetes",
-    "logger": "Logger",
-    "node-api": "Node API",
-    "notifications": "Notifications",
-    "packages": "Package Access",
-    "plugins": "Plugins",
-    "protect-your-dependencies": "Protecting packages",
-    "source-code": "Source Code",
-    "reverse-proxy": "Reverse Proxy Setup",
-    "server-configuration": "Server Configuration",
-    "ssl": "Set up the SSL Certificates",
-    "unit-testing": "Unit Testing",
-    "uplinks": "Uplinks",
-    "use-cases": "Use Cases",
-    "webui": "Web User Interface",
-    "what-is-verdaccio": "What is Verdaccio?",
-    "windows": "Installing As a Windows Service",
-    "Docs": "Docs",
-    "Help": "Help",
-    "Blog": "Blog",
-    "Introduction": "Introduction",
-    "Configuration": "Configuration",
-    "Server": "Server",
-    "Plugins": "Plugins",
-    "DevOps": "DevOps",
-    "Development": "Development",
-    "Guides": "Guides"
+    "tagline": "A lightweight open source private npm proxy registry",
+    "docs": {
+      "amazon": {
+        "title": "Amazon Web Services"
+      },
+      "ansible": {
+        "title": "Ansible"
+      },
+      "articles": {
+        "title": "Articles"
+      },
+      "authentification": {
+        "title": "Authentification"
+      },
+      "azure": {
+        "title": "Windows Azure"
+      },
+      "best": {
+        "title": "Best Practices"
+      },
+      "build": {
+        "title": "build"
+      },
+      "caching": {
+        "title": "Caching strategies"
+      },
+      "chef": {
+        "title": "Chef Cookbook"
+      },
+      "ci": {
+        "title": "Continuous Integration"
+      },
+      "cli": {
+        "title": "Command Line Tool"
+      },
+      "configuration": {
+        "title": "Configuration File"
+      },
+      "dev-plugins": {
+        "title": "Developing Plugins"
+      },
+      "docker": {
+        "title": "Docker"
+      },
+      "e2e": {
+        "title": "End to End testing"
+      },
+      "github-actions": {
+        "title": "Github Actions"
+      },
+      "google-cloud": {
+        "title": "Google Cloud"
+      },
+      "iss-server": {
+        "title": "Installing on IIS server"
+      },
+      "installation": {
+        "title": "Installation"
+      },
+      "kubernetes": {
+        "title": "Kubernetes"
+      },
+      "linking-remote-registry": {
+        "title": "Linking a Remote Registry"
+      },
+      "logger": {
+        "title": "Logger"
+      },
+      "logo": {
+        "title": "Logotype"
+      },
+      "node-api": {
+        "title": "Node API"
+      },
+      "notifications": {
+        "title": "Notifications"
+      },
+      "packages": {
+        "title": "Package Access"
+      },
+      "plugin-auth": {
+        "title": "Authentication Plugin"
+      },
+      "plugin-generator": {
+        "title": "Plugin Generator"
+      },
+      "plugin-middleware": {
+        "title": "Middleware Plugin"
+      },
+      "plugin-storage": {
+        "title": "Storage Plugin"
+      },
+      "plugins": {
+        "title": "Plugins"
+      },
+      "protect-your-dependencies": {
+        "title": "Protecting packages"
+      },
+      "puppet": {
+        "title": "Puppet"
+      },
+      "repositories": {
+        "title": "Source Code"
+      },
+      "reverse-proxy": {
+        "title": "Reverse Proxy Setup"
+      },
+      "security-policy": {
+        "title": "Security Policy"
+      },
+      "server-configuration": {
+        "title": "Server Configuration"
+      },
+      "ssl": {
+        "title": "Set up the SSL Certificates"
+      },
+      "talks": {
+        "title": "Talks"
+      },
+      "test": {
+        "title": "test"
+      },
+      "uplinks": {
+        "title": "Uplinks"
+      },
+      "webui": {
+        "title": "Web User Interface"
+      },
+      "what-is-verdaccio": {
+        "title": "What is Verdaccio?"
+      },
+      "who-is-using": {
+        "title": "Who is using Verdaccio?"
+      },
+      "windows": {
+        "title": "Installing As a Windows Service"
+      }
+    },
+    "links": {
+      "Docs": "Docs",
+      "Blog": "Blog",
+      "Twitter": "Twitter",
+      "Help": "Help",
+      "GitHub": "GitHub",
+      "Team": "Team",
+      "Sponsor Us": "Sponsor Us"
+    },
+    "categories": {
+      "Introduction": "Introduction",
+      "Features": "Features",
+      "Server": "Server",
+      "Development": "Development",
+      "DevOps": "DevOps",
+      "Guides": "Guides"
+    }
   },
   "pages-strings": {
     "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Learn more using the [documentation on this site.](/docs/en/installation.html)",
@@ -52,6 +168,31 @@
     "Stay up to date|no description given": "Stay up to date",
     "Need help?|no description given": "Need help?",
     "This project is maintained by a dedicated group of people.|statement made to reader": "This project is maintained by a dedicated group of people.",
+    "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)|no description given": "Learn more about Verdaccio using the [documentation on this site.](/docs/en/installation.html)",
+    "You can follow and contact us on|no description given": "You can follow and contact us on",
+    "and also you can chat with the Verdaccio community at|no description given": "and also you can chat with the Verdaccio community at",
+    "If the documentation is not enough help, you can try browsing into our|no description given": "If the documentation is not enough help, you can try browsing into our",
+    "This project is maintained by the Verdaccio community.|no description given": "This project is maintained by the Verdaccio community.",
+    "Get Started|no description given": "Get Started",
+    "Contribute|no description given": "Contribute",
+    "That’s it ! Enjoy your private package manager.|no description given": "That’s it ! Enjoy your private package manager.",
+    "Many great developers are already enjoying Verdaccio, join the community!|no description given": "Many great developers are already enjoying Verdaccio, join the community!",
+    "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.|no description given": "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.",
+    "The most popular npm clients are supported|no description given": "The most popular npm clients are supported",
+    "We have an official **Docker** image ready to use|no description given": "We have an official **Docker** image ready to use",
+    "and **Kubernetes Helm** support for easy deployment|no description given": "and **Kubernetes Helm** support for easy deployment",
+    "Making the DevOps work easy|no description given": "Making the DevOps work easy",
+    "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.|no description given": "Verdaccio is plugin based, authentication, middleware and storage support. Just pick one or create your custom one.",
+    "Plugin Support|no description given": "Plugin Support",
+    "Who's Using This?|no description given": "Who's Using This?",
+    "This project is sponsored by these awesome users|no description given": "This project is sponsored by these awesome users",
+    "and used by many more, including|no description given": "and used by many more, including",
+    "More|no description given": "More",
+    "Users|no description given": "Users",
+    "Verdaccio is sponsored by these awesome folks...|no description given": "Verdaccio is sponsored by these awesome folks...",
+    "and used by many others, including:|no description given": "and used by many others, including:",
+    "Are you using this project? Do not be shy and add your company/project logo.|no description given": "Are you using this project? Do not be shy and add your company/project logo.",
+    "Add your company|no description given": "Add your company",
     "Help Translate|recruit community translators for your project": "Help Translate",
     "Edit this Doc|recruitment message asking to edit the doc source": "Edit",
     "Translate this Doc|recruitment message asking to translate the docs": "Translate"
