@@ -255,7 +255,7 @@ const siteConfig = {
   gaTrackingId: 'UA-2527438-21',
   twitter: true,
   scripts: [
-    'https://code.jquery.com/jquery-3.4.1.slim.min.js',
+    'https://code.jquery.com/jquery-3.5.1.slim.min.js',
     'https://browser.sentry-cdn.com/5.15.5/bundle.min.js',
     '/js/error.js',
     'https://codefund.io/properties/256/funder.js',
