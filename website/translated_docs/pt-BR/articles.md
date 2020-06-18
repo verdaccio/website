@@ -67,6 +67,7 @@ Abaixo encontra-se uma lista de artigos sobre o Verdaccio. Se você escreveu uma
 ### Francês
 
 * [Installer un registre NPM](https://allons-y.io/wiki/installer-un-registre-npm)
+* [Verdaccio - Un registre de paquets npm](https://blog.yoannfleury.dev/verdaccio-un-registre-de-paquets-npm/)
 
 ### Espanhol
 
