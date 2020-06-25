@@ -17,3 +17,11 @@ https://github.com/verdaccio/ansible-verdaccio</p>
 <li>Ansible role für Ubuntu Benutzer: <a href="https://github.com/jagregory/sinopia-ansible">jagregory/sinopia-ansible</a>.</li>
 <li>ansible-verdaccio-role <a href="https://github.com/refinery29/ansible-verdaccio-role">https://github.com/refinery29/ansible-verdaccio-role</a></li>
 </ul>
+
+<h4>Related talks</h4>
+
+<blockquote>
+  <p>Only in Spanish</p>
+</blockquote>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EWAxCgZQMAY?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
