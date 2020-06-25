@@ -29,7 +29,7 @@ title: "Выступления"
 
 ## Будущие выступления
 
-* [Madrid Node.js Meetup, 5 марта 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
+No new future talks available at the moment
 
 ## Видео
 
