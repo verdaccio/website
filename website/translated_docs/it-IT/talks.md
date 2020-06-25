@@ -29,7 +29,7 @@ Elenchiamo le presentazioni su Verdaccio: se hai fatto o se in in procinto di fa
 
 ## Presentazioni Future
 
-* [Madrid Node.js Meetup 5 Marzo 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
+No new future talks available at the moment
 
 ## Video Collegati
 
