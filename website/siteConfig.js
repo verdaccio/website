@@ -261,7 +261,6 @@ const siteConfig = {
     'https://codefund.io/properties/256/funder.js',
     'https://buttons.github.io/buttons.js',
     'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js',
-    '/js/talk.js',
     '/js/tagManager.js',
     '/js/code-blocks-buttons.js',
   ],

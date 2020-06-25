@@ -207,11 +207,6 @@ class HomeSplash extends React.Component {
                   data-size="default">
                   Follow @verdaccio_npm</a>
               </div>
-              <MiddleBanner>
-                <div id="openjsworld" style={{cursor: 'pointer'}}>
-                  <img src="https://cdn.verdaccio.dev/readme/openjs-world-hd-horizontal.png" width="400px" alt="openjsworld" />
-                </div>
-              </MiddleBanner>
             </div>
           </div>
         </div>
