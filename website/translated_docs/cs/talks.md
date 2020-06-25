@@ -29,7 +29,7 @@ Vyjmenováváme rozhovory o Verdaccio, pokud jste dali rozhovor nebo se chystát
 
 ## Budoucí rozhovory
 
-* [Madrid Node.js Meetup 5h March 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
+No new future talks available at the moment
 
 ## Související videa
 
