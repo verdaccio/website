@@ -156,9 +156,7 @@
       "Server": "Server",
       "Development": "Development",
       "DevOps": "DevOps",
-      "Guides": "Guides",
-      "Configuration": "配置",
-      "Plugins": "插件"
+      "Guides": "Guides"
     }
   },
   "pages-strings": {
