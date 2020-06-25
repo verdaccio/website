@@ -33,7 +33,7 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 
 ## Future Talks
 
-* [Madrid Node.js Meetup 5h March 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
+No new future talks available at the moment
 
 ## Related Videos
 
