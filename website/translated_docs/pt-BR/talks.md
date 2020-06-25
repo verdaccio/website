@@ -29,7 +29,7 @@ Listamos as palestras sobre o Verdaccio, se você deu uma palestra ou está pres
 
 ## Palestras Futuras
 
-* [Madrid Node.js Meetup 5h March 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
+No new future talks available at the moment
 
 ## Vídeos Relacionados
 
