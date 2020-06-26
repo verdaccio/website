@@ -44,6 +44,12 @@ Verdaccio memorizza tutte le dipendenze su richiesta e velocizza le installazion
 
 ## Verdaccio in pillole
 
+### Cover your Projects with a Multi purpose Lightweight Node.js Registry
+
+This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. It explains all the benefits and good practices about how to run a registry that will make your projects look awesome, could be used for hosting a registry, emulate real testing environments or improve your developer workflow. <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+
+<div id="codefund">''</div>
+
 * È un'applicazione web basata su Node.js
 * È un registro npm privato
 * È un proxy di rete locale
