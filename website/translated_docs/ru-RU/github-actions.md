@@ -1,6 +1,6 @@
 ---
 id: github-actions
-title: "Github Actions"
+title: "GitHub Actions"
 ---
 
 С помощью [GitHub Actions](https://github.com/features/actions) вы можете автоматизировать свою работу, каждый экшн из GitHub Action выполняет определенный шаг.
