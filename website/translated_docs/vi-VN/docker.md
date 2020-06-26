@@ -189,6 +189,7 @@ Có một kho lưu trữ riêng biệt lưu nhiều cấu hình để tạo hìn
 
 > If you have made an image based on Verdaccio, feel free to add it to this list.
 
+* [docker-verdaccio-multiarch](https://github.com/hertzg/docker-verdaccio-multiarch) Multiarch image mirrors
 * [docker-verdaccio-gitlab](https://github.com/snics/docker-verdaccio-gitlab)
 * [docker-verdaccio](https://github.com/deployable/docker-verdaccio)
 * [docker-verdaccio-s3](https://github.com/asynchrony/docker-verdaccio-s3) Private NPM container that can backup to s3

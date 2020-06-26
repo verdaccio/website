@@ -7,10 +7,12 @@ Vyjmenováváme rozhovory o Verdaccio, pokud jste dali rozhovor nebo se chystát
 
 > Do not hesitate to share your content with the community, we encourage you to speak about Verdaccio. Pokud potřebujete pomoci s tím, jak začít, informace nebo zdroje, kontaktujte nás v našem [Chatu Discort](https://chat.verdaccio.org), pomůžeme vám.
 
-## Open Source - Trivago | Verdaccio (Ayush and Juan <iframe width="560" height="315" src="https://www.youtube.com/embed/A5CWxJC9xzc?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+## La Paz Cloud - Desplegando Verdaccio Junio 2020 <iframe width="560" height="315" src="https://www.youtube.com/embed/EWAxCgZQMAY?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 > Poslední sdílený rozhovor je zde vždy zvýrazněn. Pomůžeme vám sdílet váš hlas s komunitou.
 
+* [Cover your Projects with a Multi purpose Lightweight Node.js Registry **Soon will be posted**](https://openjsworld2020.sched.com/event/bwIo?iframe=no)
+* [La Paz Cloud - Desplegando Verdaccio Junio 2020](https://www.youtube.com/watch?v=EWAxCgZQMAY)
 * [Open Source? trivago | Verdaccio (Ayush and Juan) January 2020](https://www.youtube.com/watch?v=A5CWxJC9xzc)
 * [GitNation Open Source Stage: How we have built a Node.js Registry with React - Juan Picado](https://www.youtube.com/watch?v=gpjC8Qp9B9A)
 * [Практический опыт работы с приватным хранилищем npm-пакетов (Verdaccio)](https://youtu.be/CnLA73E1BrE?t=10101) - [О Panda-Meetup](http://panda-meetup.ru/msk-frontend-meetup-2) - time (2:48:23)
@@ -27,7 +29,7 @@ Vyjmenováváme rozhovory o Verdaccio, pokud jste dali rozhovor nebo se chystát
 
 ## Budoucí rozhovory
 
-* [Madrid Node.js Meetup 5h March 2019](https://www.meetup.com/es-ES/Node-js-Madrid/events/258299729/)
+No new future talks available at the moment
 
 ## Související videa
 

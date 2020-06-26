@@ -67,6 +67,7 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 ### Faranse
 
 * [Installer un registre NPM](https://allons-y.io/wiki/installer-un-registre-npm)
+* [Verdaccio - Un registre de paquets npm](https://blog.yoannfleury.dev/verdaccio-un-registre-de-paquets-npm/)
 
 ### Sipanisi
 

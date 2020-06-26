@@ -11,7 +11,7 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-You can link multiple registries, the following document will drive you through some helpful configurations.
+Du kannst mehrere Registrierungen verknüpfen. Das folgende Dokument führt dich durch einige hilfreiche Konfigurationen.
 
 <div id="codefund">''</div>
 
