@@ -150,7 +150,7 @@ class HeaderButtons extends React.Component {
     return (
       <div className="pluginRowBlock">
         <span id="getstarted">
-          <Button href={this.buildUrl('/what-is-verdaccio.html')} target="_blank">
+          <Button href={this.buildUrl('/what-is-verdaccio.html')}>
             <translate>
               Get Started
             </translate>
