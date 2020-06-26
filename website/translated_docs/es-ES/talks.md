@@ -7,11 +7,15 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 
 > Do not hesitate to share your content with the community, we encourage you to speak about Verdaccio. If need help how to start, information or resources, reach us in our [Chat at Discord](https://chat.verdaccio.org), we will help you.
 
-## La Paz Cloud - Desplegando Verdaccio Junio 2020 <iframe width="560" height="315" src="https://www.youtube.com/embed/EWAxCgZQMAY?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+## La Paz Cloud - Desplegando Verdaccio June 2020 <iframe width="560" height="315" src="https://www.youtube.com/embed/EWAxCgZQMAY?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+
+## Cover your Projects with a Multi purpose Lightweight Node.js Registry June 2020 <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+
+<div id="codefund">''</div>
 
 > The last shared talk is always highlighted here. We help you share your voice with the community.
 
-* [Cover your Projects with a Multi purpose Lightweight Node.js Registry **Soon will be posted**](https://openjsworld2020.sched.com/event/bwIo?iframe=no)
+* [OpenJS World 2020 - Cover your Projects with a Multi purpose Lightweight Node.js Registry June 2020](https://www.youtube.com/embed/oVCjDWeehAQ)
 * [La Paz Cloud - Desplegando Verdaccio Junio 2020](https://www.youtube.com/watch?v=EWAxCgZQMAY)
 * [Open Source? trivago | Verdaccio (Ayush and Juan) January 2020](https://www.youtube.com/watch?v=A5CWxJC9xzc)
 * [GitNation Open Source Stage: How we have built a Node.js Registry with React - Juan Picado](https://www.youtube.com/watch?v=gpjC8Qp9B9A)
