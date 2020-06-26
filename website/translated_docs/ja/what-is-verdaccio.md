@@ -3,9 +3,11 @@ id: what-is-verdaccio
 title: "Veridaccio とは？"
 ---
 
-Verdaccioは、**Node.js**で構築された**軽量なプライベートnpmプロキシレジストリ**です。 <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+Verdaccioは、**Node.js**で構築された**軽量なプライベートnpmプロキシレジストリ**です。
 
 <div id="codefund">''</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## レジストリとは？
 
