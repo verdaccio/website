@@ -3,9 +3,11 @@ id: what-is-verdaccio
 title: "Что такое Verdaccio?"
 ---
 
-Verdaccio - это **легкий приватный проксирующий npm-репозиторий**, сделанный на **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+Verdaccio - это **легкий приватный проксирующий npm-репозиторий**, сделанный на **Node.js**
 
 <div id="codefund">''</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## Что значит репозиторий
 
@@ -43,6 +45,12 @@ Verdaccio - это **легкий приватный проксирующий np
 Verdaccio кэширует все запрошенные зависимости и ускоряет установку пакетов в локальной или приватной сети.
 
 ## Verdaccio в двух словах
+
+### Cover your Projects with a Multi purpose Lightweight Node.js Registry
+
+This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. It explains all the benefits and good practices about how to run a registry that will make your projects look awesome, could be used for hosting a registry, emulate real testing environments or improve your developer workflow. <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+
+<div id="codefund">''</div>
 
 * Веб-приложение на Node
 * Приватный npm-реестр

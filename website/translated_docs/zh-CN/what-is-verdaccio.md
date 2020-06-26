@@ -3,9 +3,11 @@ id: what-is-verdaccio（verdaccio是什么）
 title: "Verdaccio是什么？"
 ---
 
-Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry**
 
 <div id="codefund">''</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## Registry是什么？
 
@@ -43,6 +45,12 @@ Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry** <i
 Verdaccio 按需要缓存所有相关项，并在当地或私有网络下可以加速安装。
 
 ## Verdaccio概述摘要
+
+### Cover your Projects with a Multi purpose Lightweight Node.js Registry
+
+This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. It explains all the benefits and good practices about how to run a registry that will make your projects look awesome, could be used for hosting a registry, emulate real testing environments or improve your developer workflow. <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+
+<div id="codefund">''</div>
 
 * 它是基于Node.js的网页应用程序
 * 它是私有npm registry

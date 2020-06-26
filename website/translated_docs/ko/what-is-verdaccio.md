@@ -3,9 +3,11 @@ id: what-is-verdaccio
 title: "What is Verdaccio?"
 ---
 
-Verdaccio is a **lightweight private npm proxy registry** built in **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+Verdaccio is a **lightweight private npm proxy registry** built in **Node.js**
 
 <div id="codefund">''</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## What's a registry
 
@@ -43,6 +45,12 @@ All packages that you publish are private and only accessible based in your conf
 Verdaccio cache all dependencies by demand and speed up installations in local or private networks.
 
 ## Verdaccio in a nutshell
+
+### Cover your Projects with a Multi purpose Lightweight Node.js Registry
+
+This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. It explains all the benefits and good practices about how to run a registry that will make your projects look awesome, could be used for hosting a registry, emulate real testing environments or improve your developer workflow. <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+
+<div id="codefund">''</div>
 
 * It's a web app based on Node.js
 * It's a private npm registry

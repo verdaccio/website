@@ -3,9 +3,11 @@ id: ki-ni-verdaccio
 title: "Ki ni verdaccio?"
 ---
 
-Verdaccio jẹ **ibi iforukọsilẹ aṣoju ikọkọ npm aladani fifuyẹ** to jẹ kikọ ni **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+Verdaccio jẹ **ibi iforukọsilẹ aṣoju ikọkọ npm aladani fifuyẹ** to jẹ kikọ ni **Node.js**
 
 <div id="codefund">''</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## Kini n jẹ ibi iforukọsilẹ
 
@@ -43,6 +45,12 @@ Gbogbo awọn akopọ ti o ṣe atẹjade rẹ jẹ ikọkọ atipe o se wọle 
 Verdaccio n fi gbogbo awọn igbarale si apo iranti nipasẹ ibeere ati mu ki awọn fifi sori ẹrọ yara si ni awọn nẹtiwọki ibilẹ tabi ti ikọkọ.
 
 ## Verdaccio ni soki
+
+### Cover your Projects with a Multi purpose Lightweight Node.js Registry
+
+This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. It explains all the benefits and good practices about how to run a registry that will make your projects look awesome, could be used for hosting a registry, emulate real testing environments or improve your developer workflow. <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+
+<div id="codefund">''</div>
 
 * O jẹ ohun elo ayelujara ti o da lori Node.js
 * O jẹ ibi iforukọsilẹ npm ti ikọkọ kan
