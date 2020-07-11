@@ -5,8 +5,6 @@ title: "Osvědčené postupy"
 
 Následující příručka obsahuje seznam nejlepších praktických postupů, které obvykle doporučujeme všem uživatelům. Neberte tuto příručku jako povinnou, vyberte si podle svých potřeb.
 
-<div id="codefund">''</div>
-
 **Své osvědčené postupy můžete sdílet s komunitou Verdaccio**.
 
 ## Soukromý registr
