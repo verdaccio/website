@@ -7,8 +7,6 @@ Posiadamy indywidualne rozwiązanie dla `verdaccio` w naszej organizacji.
 
 <https://github.com/verdaccio/ansible-verdaccio>
 
-<div id="codefund">''</div>
-
 #### Inne rozwiązania
 
 * Funkcja Ansible dla użytkowników Gentoo: [jirutka/ansible-role-sinopia](https://github.com/jirutka/ansible-role-sinopia).
