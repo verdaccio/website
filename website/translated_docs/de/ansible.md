@@ -8,8 +8,6 @@ https://github.com/verdaccio/ansible-verdaccio</p>
 
 <p><a href="https://github.com/verdaccio/ansible-verdaccio">https://github.com/verdaccio/ansible-verdaccio</a></p>
 
-<div id="codefund">''</div>
-
 <h4>Andere Optionen</h4>
 
 <ul>
