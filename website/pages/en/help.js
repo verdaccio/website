@@ -27,13 +27,13 @@ class Help extends React.Component {
         title: 'Twitter',
       },
       {
-        content: <translate>and also you can chat with the Verdaccio community at</translate> + ' [Discord](https://discord.gg/7qWJxBf).',
-        title: 'Discord',
+        content: <translate>If the documentation is not enough help, you can try browsing into our</translate> +
+          " [Question Database](https://github.com/verdaccio/verdaccio/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Aquestion+) ",
+        title: 'GitHub',
       },
       {
-        content: <translate>If the documentation is not enough help, you can try browsing into our</translate> +
-        " [Question Database](https://github.com/verdaccio/verdaccio/issues?utf8=%E2%9C%93&q=is%3Aissue+label%3Aquestion+) ",
-        title: 'GitHub',
+        content: <translate>and also you can chat with the Verdaccio community at</translate> + ' [Discord](https://discord.gg/7qWJxBf).',
+        title: 'Discord',
       },
     ];
 
