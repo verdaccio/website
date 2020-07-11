@@ -55,7 +55,8 @@ class Help extends React.Component {
             </p>
             <GridBlock contents={supportLinks} layout="fourColumn" />
           </div>
-          <div id="codefund">''</div>
+          <iframe src="https://discord.com/widget?id=388674437219745793&theme=dark" width="350" height="500"
+                  allowTransparency="true" frameBorder="0"></iframe>
         </Container>
       </div>
     );
