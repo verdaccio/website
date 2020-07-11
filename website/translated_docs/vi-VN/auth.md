@@ -5,8 +5,6 @@ title: "Yêu cầu xác thực"
 
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-<div id="codefund">''</div>
-
 Quá trình xác thực của khách hàng được xử lý bởi chính công cụ `npm`. Bạn có thể đăng nhập vào ứng dụng bằng lệnh sau:
 
 ```bash
