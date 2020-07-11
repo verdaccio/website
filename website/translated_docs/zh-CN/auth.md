@@ -5,8 +5,6 @@ title: "认证"
 
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-<div id="codefund">''</div>
-
 客户端的认证流程由 `npm` 自行处理，在你通过以下命令登陆后：
 
 ```bash
