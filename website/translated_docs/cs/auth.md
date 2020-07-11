@@ -5,8 +5,6 @@ title: "Autentizace"
 
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-<div id="codefund">''</div>
-
 Ověření klienta provádí sám klient `npm`. Jakmile se přihlásíte do aplikace:
 
 ```bash
