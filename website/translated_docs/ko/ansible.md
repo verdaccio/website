@@ -7,8 +7,6 @@ title: "앤서블"
 
 <https://github.com/verdaccio/ansible-verdaccio>
 
-<div id="codefund">''</div>
-
 #### 다른 옵션들
 
 * Gentoo 유저를 위한 Ansible 역할: [jirutka/ansible-role-sinopia](https://github.com/jirutka/ansible-role-sinopia).
