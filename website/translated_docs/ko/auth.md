@@ -5,8 +5,6 @@ title: "인증"
 
 The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-<div id="codefund">''</div>
-
 클라이언트 인증은 `npm` 클라이언트 자체에서 처리됩니다. 어플리케이션에 로그인하면:
 
 ```bash
