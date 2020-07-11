@@ -9,8 +9,6 @@ Dieses Dokument beschreibt die Vorgehensweise, um Verdaccio in der AWS Cloud ber
 
 [CloudFormation Template des Systems.](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
-<div id="codefund">''</div>
-
 Architektur:
 
     Clients
