@@ -10,8 +10,6 @@ title: "Поваренная книга"
 * <https://github.com/verdaccio/verdaccio-cookbook>
 * <https://supermarket.chef.io/cookbooks/verdaccio>
 
-<div id="codefund">''</div>
-
 > Мы ищем контрибьюторов для этого проекта, и если вам это интересно, пожалуйста, сообщите автору через тикет.
 
 Автор: [Keli Grubb](https://github.com/kgrubb) && Barthelemy Vessemont.
