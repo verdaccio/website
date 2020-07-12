@@ -34,6 +34,7 @@ Unten finden Sie eine Liste mit Artikeln über Verdaccio. Wenn Sie einen Blog-Be
 * [Run your own Unity Package Server!](https://medium.com/@markushofer/run-your-own-unity-package-server-b4fe9995704e)
 * [Ways to have your private npm registry — and a final DIY solution](https://medium.com/engenharia-noalvo/ways-to-have-your-private-npm-registry-and-a-final-diy-solution-eed001a88e74)
 * [How to set up a free private npm registry… for Windows](https://medium.com/@Anderson7301/how-to-set-up-a-free-private-npm-registry-for-windows-f532c6a381ce)
+* [Setup a Private NPM Server on Azure in 45 Seconds](https://edi.wang/post/2020/7/7/setup-a-private-npm-server-on-azure-in-45-seconds)
 
 ### English
 
