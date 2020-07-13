@@ -25,19 +25,19 @@ All access restrictions defined to [protect your packages](protect-your-dependen
 
 > The `primary_color` and `scope` must be wrapped by quotes: eg: ('#000000' or "#000000")
 
-The `primary_color` **must be a valid hex representation**. 
+The `primary_color` **must be a valid hex representation**.
 
 ### Internationalization
 
-*Since v4.5.0*, there are translations available 
+*Since v4.5.0*, there are translations available
 
 ```yaml
 i18n:
-  web: en-US  
+  web: en-US
 ```
 
 > ⚠️ Only the languages in this [list](https://github.com/verdaccio/ui/tree/master/i18n/translations) are available, feel free to contribute with more. The default
-> one is es-US 
+> one is es-US
 
 ### Configuration
 
@@ -55,4 +55,4 @@ darkMode | boolean | No | false | `>=v4.6.0` | This mode is an special theme for
 
 > It is recommended the logo size has the following size `40x40` pixels.
 
-> The `darkMode` can be enbled via UI and is persisted in the local storage, furthermore, also void `primary_color` and dark cannot be customized.
+> The `darkMode` can be enabled via UI and is persisted in the local storage, furthermore, also void `primary_color` and dark cannot be customized.
