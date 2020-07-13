@@ -33,7 +33,7 @@ The `primary_color` **must be a valid hex representation**.
 
 ```yaml
 i18n:
-  web: en-US  
+  web: en-US
 ```
 
 > ⚠️ Only the languages in this [list](https://github.com/verdaccio/ui/tree/master/i18n/translations) are available, feel free to contribute with more. The default one is es-US
@@ -53,4 +53,4 @@ i18n:
 
 > Препоручено је да лого буде димензија `40x40` пиксела.
 > 
-> The `darMode` can be enbled via UI and is persisted in the local storage, furthermore, also void `primary_color` and dark cannot be customized.
+> The `darkMode` can be enabled via UI and is persisted in the local storage, furthermore, also void `primary_color` and dark cannot be customized.
