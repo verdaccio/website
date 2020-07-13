@@ -55,4 +55,4 @@ darkMode | boolean | No | false | `>=v4.6.0` | This mode is an special theme for
 
 > It is recommended the logo size has the following size `40x40` pixels.
 
-> The `darMode` can be enbled via UI and is persisted in the local storage, furthermore, also void `primary_color` and dark cannot be customized.
+> The `darkMode` can be enbled via UI and is persisted in the local storage, furthermore, also void `primary_color` and dark cannot be customized.
