@@ -10,8 +10,6 @@ Další informace:
 * <https://github.com/verdaccio/verdaccio-cookbook>
 * <https://supermarket.chef.io/cookbooks/verdaccio>
 
-<div id="codefund">''</div>
-
 > Hledáme přispěvatele do tohoto repozitáře, pokud máte zájem, informujte o tom autora prostřednictvím zprávy.
 
 Autor: [Keli Grubb](https://github.com/kgrubb) && Barthelemy Vessemont.
