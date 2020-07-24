@@ -55,7 +55,7 @@ auth:
 
 #### Awọn ohun elo Ifasẹsi ọlọpọlọpọ
 
-Eyi ṣeeṣe pẹlu ọgbọn, ṣiṣe aṣẹ ohun elo naa ni pataki, gẹgẹbi awọn iwe ẹri naa yoo ṣe jẹ yiyanju lẹsẹẹsẹ.
+This is technically possible, making the plugin order important, as the credentials will be resolved in order.
 
 ```yaml
 auth:
