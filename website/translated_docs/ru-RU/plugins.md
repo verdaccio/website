@@ -55,7 +55,7 @@ auth:
 
 #### Несколько плагинов аутентификации
 
-Это технически возможно, но плагины надо расположить а правильном порядке, так как проверка кредов будет производиться по очереди.
+This is technically possible, making the plugin order important, as the credentials will be resolved in order.
 
 ```yaml
 auth:
