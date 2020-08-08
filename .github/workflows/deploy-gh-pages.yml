@@ -26,7 +26,7 @@ jobs:
         run: |
           git config --global user.email "verdacciobot@users.noreply.github.com"
           git config --global user.name "Verdaccio bot for Deployments"
-          echo "machine github.com login verdacciobot password $GITHUB_TOKEN" > ~/.netrc
+          echo "machine github.com login verdacciobot password ${{ secrets.BOT_TOKEN }} > ~/.netrc
       - name: Install pnpm
         run: npm i -g pnpm
       - name: Fetch dependencies
