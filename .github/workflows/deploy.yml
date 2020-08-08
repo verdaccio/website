@@ -19,15 +19,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      - name: Install pnpm
+        run: npm i -g pnpm
       - name: Fetch dependencies
         run: |
           cd website
-          yarn
+          pnpm install
       - name: Build Docusaurus
         run: |
           cd website
-          yarn build
+          pnpm build
       - name: Upload Artifacts
         uses: actions/upload-artifact@v1
         with:

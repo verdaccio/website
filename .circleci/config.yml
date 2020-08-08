@@ -21,8 +21,9 @@ jobs:
             git config --global user.name "Verdaccio bot for Deployments"
             echo "machine github.com login verdacciobot password $GITHUB_TOKEN" > ~/.netrc
             cd website
-            yarn install
-            GIT_USER=verdacciobot USE_SSH=false yarn run publish-gh-pages
+            npm i -g pnpm
+            pnpm install
+            GIT_USER=verdacciobot USE_SSH=false pnpm run publish-gh-pages
 workflows:
   version: 2
   build_and_deploy:
