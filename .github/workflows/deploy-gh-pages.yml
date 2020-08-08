@@ -21,7 +21,7 @@ jobs:
       - name: Checkout Commit
         uses: actions/checkout@v1
       - name: Setup Node
-        uses: actions/setup-node@v2.1.1
+        uses: actions/setup-node@v1
       - name: Config Docusaurus
         run: |
           git config --global user.email "verdacciobot@users.noreply.github.com"
