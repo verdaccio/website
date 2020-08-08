@@ -55,7 +55,7 @@ auth:
 
 #### Multiple Authentication plugins
 
-Технички је изводиво, ако поставите да је редослед плугина важан, услед чега ће се credentials извршити по том поретку.
+This is technically possible, making the plugin order important, as the credentials will be resolved in order.
 
 ```yaml
 auth:

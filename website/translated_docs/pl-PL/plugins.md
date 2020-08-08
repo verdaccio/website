@@ -55,7 +55,7 @@ auth:
 
 #### Multiple Authentication plugins
 
-Jest to technicznie możliwe, nadając ważność kolejności wtyczek, ponieważ kwalifikacje zostaną rozstrzygnięte w kolejności.
+This is technically possible, making the plugin order important, as the credentials will be resolved in order.
 
 ```yaml
 auth:
