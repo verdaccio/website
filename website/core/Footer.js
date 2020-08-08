@@ -90,7 +90,7 @@ class Footer extends React.Component {
               data-count-href="/verdaccio/verdaccio/stargazers"
               data-show-count={true}
               data-count-aria-label="# stargazers on GitHub"
-              aria-label="Star this project on GitHub TESTddd">
+              aria-label="Star this project on GitHub TESTdddd">
               Star
             </a>
           </div>
