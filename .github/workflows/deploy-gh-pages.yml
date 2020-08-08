@@ -23,6 +23,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
       - name: Install pnpm
+        run: |
+          git config --global user.email "verdacciobot@users.noreply.github.com"
+          git config --global user.name "Verdaccio bot for Deployments"
+          echo "machine github.com login verdacciobot password $GITHUB_TOKEN" > ~/.netrc
+      - name: Install pnpm
         run: npm i -g pnpm
       - name: Fetch dependencies
         run: |
