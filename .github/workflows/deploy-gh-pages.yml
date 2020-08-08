@@ -48,5 +48,6 @@ jobs:
     steps:
       - name: Deploying to GitHub Pages
         run: |
+          npm i -g pnpm
           GIT_USER=verdacciobot USE_SSH=false pnpm run publish-gh-pages
 
