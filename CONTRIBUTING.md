@@ -51,3 +51,12 @@ Build the website on `build/` folder
 ```
 pnpm run build
 ```
+
+# Pull Request
+
+For this repository there is no strict rules, please follow the basics:
+
+* Document and explain your changes for faster code reviews
+* Verify with Netlify preview (see the checks clicking on Details) to open the preview URL
+
+
