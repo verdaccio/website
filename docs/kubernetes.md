@@ -10,8 +10,6 @@ cluster is to use [Helm](https://helm.sh). Helm is a
 [Kubernetes](https://kubernetes.io) package manager which bring multiple
 advantages.
 
-<div id="codefund">''</div>
-
 ## Helm
 
 ### Setup Helm

@@ -12,8 +12,6 @@ won the [contest](https://github.com/verdaccio/verdaccio/issues/237)
 Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution
 with multiple image formats and sizes.
 
-<div id="codefund">''</div>
-
 ## Symbols
 
 __With text__

@@ -8,8 +8,6 @@ webhooks, but will also deliver a simple payload to
 any endpoint. Currently only active for `npm publish`
 command.
 
-<div id="codefund">''</div>
-
 ## Usage
 
 An example with a **HipChat**, **Stride** and **Google Hangouts Chat** hook:
