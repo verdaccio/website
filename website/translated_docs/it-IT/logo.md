@@ -9,8 +9,6 @@ Il logo è stato disegnato da **[Breno Rodrigues](https://github.com/rodriguesbr
 
 Uno speciale ringraziamento a *[@Lisapressmar](https://github.com/Lisapressmar)* per aver contribuito con diversi formati e dimensioni dell'immagine.
 
-<div id="codefund">''</div>
-
 ## Simboli
 
 **Con testo**
