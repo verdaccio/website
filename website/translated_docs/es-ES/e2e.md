@@ -5,8 +5,6 @@ title: "Pruebas End to End"
 
 Algunos projectos organizan paquetes en multi repositorios o [mono repositorios](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). Pruebas E2E es un tema que usualmente es solo relevante para Interfaces de Usuario, pero desde el punto de vista de Node.js, **los paquetes que publicamos tambien debe ser probados**.
 
-<div id="codefund">''</div>
-
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Solution: a local npm registry. <a href="https://t.co/kvcyVANVSK">https://t.co/kvcyVANVSK</a></p>&mdash; Dan Abramov (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/951427674844680192?ref_src=twsrc%5Etfw">11 de enero de 2018</a></blockquote>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
