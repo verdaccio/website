@@ -14,8 +14,6 @@ There are 5 types of plugins:
 
 > Ако сте заинтересовани да развијете сопствени plugin, прочитајте [development](dev-plugins.md) секцију.
 
-<div id="codefund">''</div>
-
 ## Коришћење
 
 ### Инсталација
