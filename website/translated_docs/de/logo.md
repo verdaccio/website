@@ -9,8 +9,6 @@ Das Verdaccio Logo wurde vom Gewinner des Finales ([last stage](https://github.c
 
 Besonderer Dank gilt *[@Lisapressmar](https://github.com/Lisapressmar)* für Ihren Beitrag mit verschiedenen Grafikformaten.
 
-<div id="codefund">''</div>
-
 ## Symbole
 
 **Mit Text**
