@@ -9,8 +9,6 @@ The logotype was designed by **[Breno Rodrigues](https://github.com/rodriguesbre
 
 Special thanks to *[@Lisapressmar](https://github.com/Lisapressmar)* for her contribution with multiple image formats and sizes.
 
-<div id="codefund">''</div>
-
 ## Symboles
 
 **Avec texte**
