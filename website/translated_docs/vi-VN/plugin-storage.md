@@ -7,8 +7,6 @@ title: "Phần mềm bổ trợ lưu trữ"
 
 Verdaccio by default uses a file system storage plugin [local-storage](https://github.com/verdaccio/local-storage). The default storge can be easily replaced, either using a community plugin or creating one by your own.
 
-<div id="codefund">''</div>
-
 ### API
 
 Storage plugins are composed of two objects, the `IPluginStorage<T>` and the `IPackageStorage`.
