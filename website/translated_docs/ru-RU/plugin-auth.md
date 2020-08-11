@@ -7,8 +7,6 @@ title: "Плагин аутентификации"
 
 Is a sort plugin that allows to handle who access or publish to a specific package. By default the `htpasswd` is built-in, but can easily be replaced by your own.
 
-<div id="codefund">''</div>
-
  ## Getting Started
 
 The authentication plugins are defined in the `auth:` section, as follows:
