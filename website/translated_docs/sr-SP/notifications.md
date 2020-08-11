@@ -5,8 +5,6 @@ title: "Нотификације"
 
 Нотификације су замишљене да се користе са Slack's Incoming webhooks, али такође испоручују simple payload до било које endpoint. Тренутно је активно једино за `npm publish` команду.
 
-<div id="codefund">''</div>
-
 ## Коришћење
 
 На пример са **HipChat**, **Stride** и **Google Hangouts Chat** hook:
