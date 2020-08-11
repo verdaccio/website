@@ -13,8 +13,6 @@ uplinks:
 
 Du kannst mehrere Registrierungen verknüpfen. Das folgende Dokument führt dich durch einige hilfreiche Konfigurationen.
 
-<div id="codefund">''</div>
-
 ## Using Associating Scope
 
 The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
