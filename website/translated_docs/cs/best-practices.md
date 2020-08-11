@@ -5,7 +5,7 @@ title: "Osvědčené postupy"
 
 Následující příručka obsahuje seznam nejlepších praktických postupů, které obvykle doporučujeme všem uživatelům. Neberte tuto příručku jako povinnou, vyberte si podle svých potřeb.
 
-**Své osvědčené postupy můžete sdílet s komunitou Verdaccio**.
+**Feel free to suggest your best practices to the Verdaccio community**.
 
 ## Soukromý registr
 
@@ -28,15 +28,15 @@ Doporučujeme, abyste definovali předponu pro vaše soukromé balíčky, např�
           access: $all
           publish: $authenticated
 
-Vždy si pamatujte, že **pořadí přístupu k balíčkům je důležité**, balíčky jsou vždy porovnávány shora dolů.
+Always remember, **the order of packages access is important**, packages are matched always top to bottom.
 
 ### Using public packages from npmjs.org
 
-If some package doesn't exist in the storage, server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from cache pretending that no other packages exist. **Verdaccio stáhne pouze to, co je potřeba (= co požadují klienti)**, a tyto informace budou ukládány do mezipaměti, takže pokud se klient zeptá podruhé na stejnou věc, může být doručena bez požadavku na npmjs.org.
+If some package doesn't exist in the storage, server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from cache pretending that no other packages exist. **Verdaccio will download only what's needed (requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
 
 **Příklad:**
 
-Pokud jste jednou úspěšně požádali o `express@4.0.1` z tohoto serveru, můžete to provést znovu (se všemi závislostmi) kdykoliv, i když je npmjs.org vypnutý. Ale např. `express@4.0. ` nebude staženo, dokud ho někdo nepotřebuje. A pokud je npmjs.org offline, tento server by oznámil, že je publikován pouze `express@4.0.1` (= pouze to, co je v mezipaměti), ale nic jiného.
+If you successfully request `express@4.0.1` from this server once, you'll be able to do it again (with all it's dependencies) anytime even if npmjs.org is down. Ale např. `express@4.0. ` nebude staženo, dokud ho někdo nepotřebuje. And if npmjs.org is offline, this server would say that only `express@4.0.1` (only what's in the cache) is published, but nothing else.
 
 ### Override public packages
 
@@ -91,7 +91,7 @@ Ve výchozím nastavení jsou všechny balíčky, které publikujete ve Verdacci
       publish: $authenticated
    ```
 
-Tímto způsobem, ** nikdo nebude mít zálohu vašeho registru, pokud není autorizován a soukromé balíčky nebudou zobrazeny v uživatelském rozhraní **.
+That way, **nobody will take advantage of your registry unless it's authorized and private packages won't be displayed in the User Interface**.
 
 ## Server
 
