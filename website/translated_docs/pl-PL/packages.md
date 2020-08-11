@@ -7,8 +7,6 @@ Jest to seria ograniczeń, która pozwala lub zabrania dostępu do pamięci loka
 
 Ograniczenia bezpieczeństwa pozostają na ramkach używanej wtyczki, domyślnie `verdaccio` używa [wtyczki htpasswd](https://github.com/verdaccio/verdaccio-htpasswd). Jeśli używasz innej wtyczki, zachowanie może być inne. Domyślna wtyczka nie obsługuje samodzielnie `allow_access` i `allow_publish`, korzysta z wewnętrznego mechanizmu zastępczego w przypadku, gdy wtyczka nie jest gotowa.
 
-<div id="codefund">''</div>
-
 Aby uzyskać więcej informacji o uprawnieniach, odwiedź [sekcję uwierzytelniania na wiki](auth.md).
 
 ### Użycie
