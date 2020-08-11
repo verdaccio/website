@@ -13,8 +13,6 @@ docker pull verdaccio/verdaccio
 
 ![Docker pull](assets/docker_verdaccio.gif)
 
-<div id="codefund">''</div>
-
 ## Tagged Versions
 
 Почевши од верзије `v2.x` можете повући docker images преко [таг](https://hub.docker.com/r/verdaccio/verdaccio/tags/), и онда:
