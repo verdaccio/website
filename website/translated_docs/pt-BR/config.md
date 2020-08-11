@@ -7,8 +7,6 @@ Este arquivo é a peça chave do verdaccio, onde você pode modificar o comporta
 
 Um arquivo de configuração padrão `config.yaml` é criado na primeira vez que você executa `verdaccio`.
 
-<div id="codefund">''</div>
-
 ## Configuração Padrão
 
 A configuração padrão tem suporte para pacotes **com escopo (scoped)** e permite que qualquer usuário acesse todos os pacotes, mas somente que os **usuários autenticados publiquem**.
