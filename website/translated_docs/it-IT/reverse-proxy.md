@@ -5,8 +5,6 @@ title: "Configurazione di Proxy inverso"
 
 L'utilizzo di un proxy inverso è una pratica comune. Le configurazioni seguenti sono le più raccomandate e utilizzate.
 
-<div id="codefund">''</div>
-
 # Apache
 
 Apache e `mod_proxy` **non dovrebbero decodificare/codificare gli slash** e dovrebbero lasciarli così come sono:
