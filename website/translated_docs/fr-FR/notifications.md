@@ -5,8 +5,6 @@ title: "Notifications"
 
 Notify a été créé principalement pour être utilisé avec les Webhooks entrants de Slack, mais fournira également une charge utile simple à chaque terminal. Pour le moment, il n'est actif que pour la commande `npm publish`.
 
-<div id="codefund">''</div>
-
 ## Utilisation
 
 Un exemple avec **HipChat**, **Stride** et **Google Hangouts Chat**, cliquez sur:
