@@ -9,9 +9,7 @@ A ṣe akojọ awọn ọrọ nipa Verdaccio, ti o ba sọ ọrọ kan tabi ti o
 
 ## La Paz Cloud - Desplegando Verdaccio June 2020 <iframe width="560" height="315" src="https://www.youtube.com/embed/EWAxCgZQMAY?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-## Cover your Projects with a Multi purpose Lightweight Node.js Registry June 2020 <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
-
-<div id="codefund">''</div>
+## Cover your Projects with a Multi purpose Lightweight Node.js Registry June 2020 <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 > Ọrọ ikẹhin to jẹ pinpin ma n jẹ fififihan nibi nigbagbogbo. A n ṣe iranlọwọ fun ọ lati pin ohun rẹ pẹlu awujọ.
 
