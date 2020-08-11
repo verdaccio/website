@@ -18,8 +18,6 @@ These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.
 - 请确保您有入站规则来接受TCP流量到Windows防火墙的端口
 - 就这样！现在您可以导航到您指定的主机和端口
 
-<div id="codefund">''</div>
-
 我希望 `verdaccio`站点成为IIS中默认的站点，因此我执行了以下操作：
 
 - 我中止“默认网站”，并且只在IIS 里启动"verdaccio"站点
