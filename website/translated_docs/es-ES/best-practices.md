@@ -5,7 +5,7 @@ title: "Mejores Prácticas"
 
 La siguiente guía es una lista de las mejores prácticas recopiladas y que generalmente recomendamos a todos los usuarios. No tome esta guía como obligatoria, eliga algunas recomendaciones según sus necesidades.
 
-**No dude en compartir sus mejores prácticas con la comuidad de Verdaccio.**
+**Feel free to suggest your best practices to the Verdaccio community**.
 
 ## Registro Privado
 
@@ -28,15 +28,15 @@ It is recommended that you define a prefix for your private packages, for exampl
           access: $all
           publish: $authenticated
 
-Simpre recuerda, **el orden de acceso de los paquetes es importante**, los paquetes son procesados siempre de arriba hacia abajo.
+Always remember, **the order of packages access is important**, packages are matched always top to bottom.
 
 ### Uso de paquetes públicos desde npmjs.org
 
-Si algún paquete no existe en el almacenamiento, el servidor intentará recuperarlo desde npmjs.org. Si npmjs.org está fuera de línea, este proporciona paquetes desde el caché que simulan que no existen otros paquetes. **Verdaccio will download only what's needed (= requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
+Si algún paquete no existe en el almacenamiento, el servidor intentará recuperarlo desde npmjs.org. Si npmjs.org está fuera de línea, este proporciona paquetes desde el caché que simulan que no existen otros paquetes. **Verdaccio will download only what's needed (requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
 
 **Ejemplo:**
 
-If you successfully request `express@4.0.1` from this server once, you'll able to do that again (with all it's dependencies) anytime even if npmjs.org is down. But say `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, this server would say that only `express@4.0.1` (= only what's in the cache) is published, but nothing else.
+If you successfully request `express@4.0.1` from this server once, you'll be able to do it again (with all it's dependencies) anytime even if npmjs.org is down. But say `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, this server would say that only `express@4.0.1` (only what's in the cache) is published, but nothing else.
 
 ### Anular paquetes públicos
 
@@ -91,7 +91,7 @@ By default all packages are you publish in Verdaccio are accessible for all publ
       publish: $authenticated
    ```
 
-In that way, **nobody will take advance of your registry unless is authorized and private packages won't be displayed in the User Interface**.
+That way, **nobody will take advantage of your registry unless it's authorized and private packages won't be displayed in the User Interface**.
 
 ## Server
 
