@@ -18,8 +18,6 @@ Estas instruções foram escritas para o Windows Server 2016, IIS 10, [Node.js 1
 - Verifique se você tem uma regra de entrada aceitando o tráfego TCP na porta do Firewall do Windows
 - E é isto! Agora você pode navegar para o host e a porta que você especificou
 
-<div id="codefund">''</div>
-
 Eu queria que o site do `verdaccio` fosse o site padrão no IIS, então fiz o seguinte:
 
 - I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS
