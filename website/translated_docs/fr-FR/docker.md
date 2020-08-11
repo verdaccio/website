@@ -13,8 +13,6 @@ docker pull verdaccio/verdaccio
 
 ![Docker pull](assets/docker_verdaccio.gif)
 
-<div id="codefund">''</div>
-
 ## Versions marquées
 
 À partir de la version `v2.x`, vous pouvez obtenir des images du menu fixe pour la [tag](https://hub.docker.com/r/verdaccio/verdaccio/tags/), comme suit:
