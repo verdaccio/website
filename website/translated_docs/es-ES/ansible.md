@@ -15,4 +15,4 @@ Tenemos una solución hecha específicamente para `verdaccio` en nuestra organiz
 
 #### Charlas relacionadas
 
-> Only in Spanish <iframe width="560" height="315" src="https://www.youtube.com/embed/EWAxCgZQMAY?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
+> Solamente en Español <iframe width="560" height="315" src="https://www.youtube.com/embed/EWAxCgZQMAY?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe>
