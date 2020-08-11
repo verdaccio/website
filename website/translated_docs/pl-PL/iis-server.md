@@ -18,8 +18,6 @@ These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.
 - Upewnij się, że w Zaporze systemu Windows masz regułę ruchu przychodzącego akceptującą ruch TCP przez dany port
 - To wszystko! Teraz można przejść do hosta i portu, który został określony
 
-<div id="codefund">''</div>
-
 Chciałem, aby strona `verdaccio` była domyślną stroną w IIS, więc wykonałem następujące czynności:
 
 - Zatrzymałem "Domyślną witrynę sieci Web" i uruchomiłem tylko witrynę "verdaccio" w IIS
