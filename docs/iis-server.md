@@ -25,8 +25,6 @@ npm install
 * Make sure you have an inbound rule accepting TCP traffic to the port in Windows Firewall
 * Thats it! Now you can navigate to the host and port that you specified
 
-<div id="codefund">''</div>
-
 I wanted the `verdaccio` site to be the default site in IIS so I did the following:
 
 * I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS

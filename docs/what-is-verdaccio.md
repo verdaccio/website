@@ -5,8 +5,6 @@ title: "What is Verdaccio?"
 
 Verdaccio is a **lightweight private npm proxy registry** built in **Node.js**
 
-<div id="codefund">''</div>
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## What's a registry
@@ -56,7 +54,6 @@ It explains all the benefits and good practices about how to run a registry that
 could be used for hosting a registry, emulate real testing environments or improve your developer workflow. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<div id="codefund">''</div>
 
 * It's a web app based on Node.js
 * It's a private npm registry

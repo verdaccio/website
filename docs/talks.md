@@ -16,7 +16,6 @@ We list the talks about Verdaccio, if you gave a talk or you are about to give o
 ## Cover your Projects with a Multi purpose Lightweight Node.js Registry June 2020
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<div id="codefund">''</div>
 
 > The last shared talk is always highlighted here. We help you share your voice with the community.
 
