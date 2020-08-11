@@ -1,9 +1,9 @@
 ---
 id: best
-title: "Best Practices"
+title: "Mejores Prácticas"
 ---
 
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+La siguiente guía es una lista de las mejores prácticas recopiladas y que generalmente recomendamos a todos los usuarios. No tome esta guía como obligatoria, eliga algunas recomendaciones según sus necesidades.
 
 **Feel free to suggest your best practices with the Verdaccio community**.
 
