@@ -13,8 +13,6 @@ docker pull verdaccio/verdaccio
 
 ![Docker pull](assets/docker_verdaccio.gif)
 
-<div id="codefund">''</div>
-
 ## Awọn ẹya to ni Isamisi
 
 Lati ẹya `v2.x` o le fa awọn aworan docker nipasẹ [aami](https://hub.docker.com/r/verdaccio/verdaccio/tags/), bi iwọnyi:
