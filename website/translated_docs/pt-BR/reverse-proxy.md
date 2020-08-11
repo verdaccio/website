@@ -5,8 +5,6 @@ title: "Configuração de Proxy Reverso"
 
 Usar um proxy reverso é uma prática comum. As seguintes configurações são as mais recomendadas e usadas.
 
-<div id="codefund">''</div>
-
 # Apache
 
 Apache e `mod_proxy` **não devem decodificar/codificar barras** e deixa-las como estão:
