@@ -9,8 +9,6 @@ Logotip je dizajnirao **[Breno Rodrigues](https://github.com/rodriguesbreno)** k
 
 Posebno se zahvaljujemo *[@Lisapressmar](https://github.com/Lisapressmar)* za njen doprinos u vidu slika raznih formata i veličina.
 
-<div id="codefund">''</div>
-
 ## Simboli
 
 **Sa tekstom**
