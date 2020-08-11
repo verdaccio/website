@@ -5,8 +5,6 @@ title: "通知"
 
 创建通知主要是与Slack的输入webhooks一起使用，但它也会传递简单的载荷到任何末端。目前只对 `npm publish`命令有效。
 
-<div id="codefund">''</div>
-
 ## 使用
 
 **HipChat**, **Stride** 和 **Google Hangouts Chat** hook的一个范例:
