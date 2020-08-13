@@ -9,8 +9,6 @@ Irulogo jẹ didalara nipasẹ **[Breno Rodrigues](https://github.com/rodriguesb
 
 Ọpẹ pataki si *[@Lisapressmar](https://github.com/Lisapressmar)* fun ilọwọsi rẹ pẹlu awọn ọpọlọpọ ọna ati iwọn aworan.
 
-<div id="codefund">''</div>
-
 ## Awọn aami
 
 **Pẹlu ọrọ**

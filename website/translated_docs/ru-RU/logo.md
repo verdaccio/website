@@ -9,8 +9,6 @@ title: "Логотип"
 
 Отдельная благодарность *[@Lisapressmar](https://github.com/Lisapressmar)* за ее различные форматы и размеры логотипа.
 
-<div id="codefund">''</div>
-
 ## Логотип
 
 **С текстом**

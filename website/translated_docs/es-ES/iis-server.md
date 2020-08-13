@@ -18,8 +18,6 @@ These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.
 - Asegúrate de tener una regla de entrada que acepte Tráfico de TCP al puerto en Windows Firewall
 - ¡Y listo! Ahora puedes navegar al host y al puerto que especificaste
 
-<div id="codefund">''</div>
-
 Quería que la página `verdaccio` fuese la página predeterminada en IIS así que hice lo siguiente:
 
 - Detuve el "Sitio Web Predeterminado" y solo empiezo el sitio "verdaccio" en IIS

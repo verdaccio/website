@@ -23,8 +23,6 @@ npm i -g generator-verdaccio-plugin
 
 Use `yeoman` is quite straighforward, you can read more infomation about it [here](https://yeoman.io/learning/index.html).
 
-<div id="codefund">''</div>
-
 After a success install, run `yo verdaccio-plugin` in your terminal and follow the steps.
 
 ```

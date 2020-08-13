@@ -5,8 +5,6 @@ title: "GitHub Actions"
 
 Pẹlu [Awọn igbesẹ Github](https://github.com/features/actions) o le ṣe ilana iṣẹ rẹ ni aifọwọyi, Igbesẹ Github kọọkan n ṣe igbesẹ kan ni pato ninu ilana kan.
 
-<div id="codefund">''</div>
-
 ![awọn igbesẹ](/img/github-actions.png)
 
 ## Sisedanwo awọn akopọ rẹ

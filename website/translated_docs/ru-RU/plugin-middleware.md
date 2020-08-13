@@ -7,8 +7,6 @@ title: "Middleware плагин"
 
 Middleware plugins have the capability to modify the API (web and cli) layer, either adding new endpoints or intercepting requests.
 
-<div id="codefund">''</div>
-
 ### API
 
 ```typescript

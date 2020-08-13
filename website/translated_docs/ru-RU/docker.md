@@ -13,8 +13,6 @@ docker pull verdaccio/verdaccio
 
 ![Docker pull](assets/docker_verdaccio.gif)
 
-<div id="codefund">''</div>
-
 ## Версии с меткой
 
 Начиная с версии `v2.x` вы можете скачать Docker образ с помощью [метки](https://hub.docker.com/r/verdaccio/verdaccio/tags/), вот так:

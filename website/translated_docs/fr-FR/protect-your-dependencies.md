@@ -5,8 +5,6 @@ title: "Protection des paquets"
 
 `verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
 
-<div id="codefund">''</div>
-
 ### Configuration du paquet
 
 Voyons, par exemple, la configuration suivante. Vous avez une série de dépendances préfixées par `my-company - *` et vous devez les protéger contre les utilisateurs anonymes ou contre les autres utilisateurs connectés sans informations d'identification correctes.

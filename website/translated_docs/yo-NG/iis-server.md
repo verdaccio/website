@@ -18,8 +18,6 @@ Awọn ilana wọnyi ni a kọ fun Windows Server 2016, IIS 10, [Node.js 10.15.0
 - Ri daju pe o ni ofin to n wọle bọ to tẹwọgba abẹwo TCP si ibudo naa ni Awọn aabo ayelujara ti Windows
 - Ohun niyẹn! Bayi o le ṣe ilọ kiri si agbalejo naa ati ibudo ti o yan ni pato
 
-<div id="codefund">''</div>
-
 Mo fẹ jẹ ki aaye ayelujara `verdaccio` jẹ aaye ayelujara atilẹwa ni IIS fun idi eyi mo se awọn ohun wọnyii:
 
 - Mo da "Aaye Ayelujara Atilẹwa" duro atipe mo kan bẹrẹ aaye ayelujara "verdaccio" nikan ni IIS

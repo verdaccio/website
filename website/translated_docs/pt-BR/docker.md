@@ -13,8 +13,6 @@ docker pull verdaccio/verdaccio
 
 ![Docker pull](assets/docker_verdaccio.gif)
 
-<div id="codefund">''</div>
-
 ## Versões com Tags
 
 Desde a versão `v2.x`, você pode fazer o pull das imagens pela [tag](https://hub.docker.com/r/verdaccio/verdaccio/tags/), por exemplo:

@@ -1,13 +1,13 @@
 ---
-id: best
-title: "Best Practices"
+id: mejor
+title: "Mejores Prácticas"
 ---
 
-The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as mandatory, you might pick some of them according your needs.
+La siguiente guía es una lista de las mejores prácticas recopiladas y que generalmente recomendamos a todos los usuarios. No tome esta guía como obligatoria, eliga algunas recomendaciones según sus necesidades.
 
-**Feel free to suggest your best practices with the Verdaccio community**.
+**Feel free to suggest your best practices to the Verdaccio community**.
 
-## Private Registry
+## Registro Privado
 
 Puede agregar usuarios y administrar qué usuarios pueden acceder a cuáles paquetes.
 
@@ -28,15 +28,15 @@ It is recommended that you define a prefix for your private packages, for exampl
           access: $all
           publish: $authenticated
 
-Always remember, **the order of packages access is important**, packages are mached always top to bottom.
+Always remember, **the order of packages access is important**, packages are matched always top to bottom.
 
 ### Uso de paquetes públicos desde npmjs.org
 
-Si algún paquete no existe en el almacenamiento, el servidor intentará recuperarlo desde npmjs.org. Si npmjs.org está fuera de línea, este proporciona paquetes desde el caché que simulan que no existen otros paquetes. **Verdaccio will download only what's needed (= requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
+Si algún paquete no existe en el almacenamiento, el servidor intentará recuperarlo desde npmjs.org. Si npmjs.org está fuera de línea, este proporciona paquetes desde el caché que simulan que no existen otros paquetes. **Verdaccio will download only what's needed (requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
 
-**Example:**
+**Ejemplo:**
 
-If you successfully request `express@4.0.1` from this server once, you'll able to do that again (with all it's dependencies) anytime even if npmjs.org is down. But say `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, this server would say that only `express@4.0.1` (= only what's in the cache) is published, but nothing else.
+If you successfully request `express@4.0.1` from this server once, you'll be able to do it again (with all it's dependencies) anytime even if npmjs.org is down. But say `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, this server would say that only `express@4.0.1` (only what's in the cache) is published, but nothing else.
 
 ### Anular paquetes públicos
 
@@ -70,7 +70,7 @@ Hay dos opciones aquí:
     
     This way your package will be used until its original maintainer updates his public package to `0.1.3`.
 
-## Security
+## Seguridad
 
 The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recommendation.
 
@@ -91,7 +91,7 @@ By default all packages are you publish in Verdaccio are accessible for all publ
       publish: $authenticated
    ```
 
-In that way, **nobody will take advance of your registry unless is authorized and private packages won't be displayed in the User Interface**.
+That way, **nobody will take advantage of your registry unless it's authorized and private packages won't be displayed in the User Interface**.
 
 ## Server
 
@@ -115,7 +115,7 @@ security:
       expiresIn: 7d
 ```
 
-**Using this configuration will override the current system and you will be able to control how long the token will live**.
+**Al usar esta configuración invalidará el sistema actual y podrá controlar por cuánto tiempo vivirá el token**.
 
 Using JWT also improves the performance with authentication plugins, the old system will perform an unpackage and validating the credentials in each request, while JWT will rely on the token signature avoiding the overhead for the plugin.
 

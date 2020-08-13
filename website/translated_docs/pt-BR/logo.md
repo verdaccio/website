@@ -9,8 +9,6 @@ O logotipo foi desenvolvido por **[Breno Rodrigues](https://github.com/rodrigues
 
 Agradecimentos especiais a *[@Lisapressmar](https://github.com/Lisapressmar)* por sua contribuição com vários formatos e tamanhos de imagem.
 
-<div id="codefund">''</div>
-
 ## Símbolos
 
 **Com texto**

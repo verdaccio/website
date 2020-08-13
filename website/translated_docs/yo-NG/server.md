@@ -5,8 +5,6 @@ title: "Iṣeto Olupese"
 
 Eyi jẹ ohun ipilẹ iṣeto olupese ti linux ṣugbọn mo lero pe o ṣe pataki lati ṣe akosile ati pin awọn igbesẹ ti mo gbe lati mu ki verdaccio ma ṣiṣẹ titilailai lori olupese mi. O ma nilo awọn igbanilaaye ipile (tabi sudo) fun awọn wọnyii.
 
-<div id="codefund">''</div>
-
 ## Nṣiṣẹ gẹgẹbi olumulo ti o yatọ
 
 Kọkọ ṣẹda olumulo verdaccio naa:

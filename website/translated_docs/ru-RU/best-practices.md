@@ -5,7 +5,7 @@ title: "Лучшие практики"
 
 Это руководство - список лучших практик, которые мы собрали, и которые рекомендуем всем пользователям. Не воспринимайте это руководство как высеченную в камне неделимую истину, вы можете использовать только пару пунктов, если так будет правильно для вас.
 
-**Не стесняйтесь предлагать ваши лучшие практики комьюнити Verdaccio**.
+**Feel free to suggest your best practices to the Verdaccio community**.
 
 ## Приватный репозиторий
 
@@ -28,15 +28,15 @@ title: "Лучшие практики"
           access: $all
           publish: $authenticated
 
-Помните, **порядок пакетов в списке доступа - важен**, потому что совпадения всегда ищутся сверху вниз.
+Always remember, **the order of packages access is important**, packages are matched always top to bottom.
 
 ### Использование публичных пакетов с npmjs.org
 
-Если какого-то пакета нет в хранилище, сервер попробует скачать его с npmjs.org. Если npmjs.org недоступен, то сервер будет брать пакеты из кэша, исходя из предположения, что других пакетов нет. **Verdaccio скачивает только то, что нужно (= то, что запросил пользователь)**, и эта информация кэшируется, так что когда клиент запросит то же самое второй раз, сервер вернёт требуемое, не запрашивая npmjs.org.
+Если какого-то пакета нет в хранилище, сервер попробует скачать его с npmjs.org. Если npmjs.org недоступен, то сервер будет брать пакеты из кэша, исходя из предположения, что других пакетов нет. **Verdaccio will download only what's needed (requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
 
 **Пример:**
 
-Если вы запросили `express@4.0.1` с сервера и запрос был успешный, это означает, что вы сможете получить его снова (вместе со всеми зависимостями) в любое время, даже если npmjs.org не работает. Но, скажем, `express@4.0.0` не будет загружен, пока кто-нибудь его не запросит. И если npmjs.org недоступен, сервер будет отвечать, что только `express@4.0.1` (= только то, что в кэше) опубликован, и больше никих версий нет.
+If you successfully request `express@4.0.1` from this server once, you'll be able to do it again (with all it's dependencies) anytime even if npmjs.org is down. Но, скажем, `express@4.0.0` не будет загружен, пока кто-нибудь его не запросит. And if npmjs.org is offline, this server would say that only `express@4.0.1` (only what's in the cache) is published, but nothing else.
 
 ### Переопределение публичных пакетов
 
@@ -91,7 +91,7 @@ title: "Лучшие практики"
       publish: $authenticated
    ```
 
-В этом случае, **никто не сможет пользоваться вашим реестром, пока не авторизуется, и приватные пакеты не будут показываться в интерфейса пользователя**.
+That way, **nobody will take advantage of your registry unless it's authorized and private packages won't be displayed in the User Interface**.
 
 ## Сервер
 

@@ -7,8 +7,6 @@ Verdaccio can be invoked programmatically. The node API was introduced after ver
 
 ## Uso
 
-<div id="codefund">''</div>
-
 #### Programáticamente
 
 ```js

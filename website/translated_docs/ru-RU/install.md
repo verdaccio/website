@@ -16,8 +16,6 @@ Verdaccio is a multiplatform web application. To install it, you need a few basi
 
 > Verdaccio будет поддерживать последние версии Node.js version в соответствии с рекомендациями [Node.js Release Working Group](https://github.com/nodejs/Release).
 
-<div id="codefund">''</div>
-
 ## Установка инструмента командной строки
 
 `verdaccio` должен быть установлен глобально, использовав один из следующих путей:

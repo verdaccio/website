@@ -13,8 +13,6 @@ docker pull verdaccio/verdaccio
 
 ![Docker pull](assets/docker_verdaccio.gif)
 
-<div id="codefund">''</div>
-
 ## Những phiên bản thẻ
 
 Bắt đầu với phiên bản `v2.x`, bạn có thể tải những hình ảnh này qua [tag](https://hub.docker.com/r/verdaccio/verdaccio/tags/), cụ thể như sau:

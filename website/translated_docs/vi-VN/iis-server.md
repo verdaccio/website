@@ -18,8 +18,6 @@ These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.
 - Hãy chắc chắn bạn có yêu cầu gửi đến rằng chấp nhận lưu lượng truy cập TCP vào cổng tường lửa của Windows
 - Sau đấy bạn có thể điều hướng đến máy chủ và cổng mà bạn chỉ định
 
-<div id="codefund">''</div>
-
 Tôi muốn trang web `verdaccio` trở thành trang mặc định trong IIS, vì vậy tôi đã làm như sau:
 
 - Tôi đã hủy bỏ "trang web mặc định" và chỉ bắt đầu trang "verdaccio" trong IIS

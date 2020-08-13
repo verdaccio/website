@@ -18,8 +18,6 @@ These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.
 - Assurez-vous de disposer d'une règle entrante acceptant le trafic TCP sur le port du pare-feu Windows
 - C'est ça! Maintenant, vous pouvez parcourir l'hôte et le port que vous avez spécifiés
 
-<div id="codefund">''</div>
-
 Je voulais que `verdaccio` soit le site par défaut sur IIS, j'ai donc pris les mesures suivantes:
 
 - J'ai arrêté le "site Web par défaut" et n'ai démarré que le site "verdaccio" sur IIS

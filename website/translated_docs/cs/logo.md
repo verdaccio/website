@@ -9,8 +9,6 @@ Logotyp byl navrhnut **[Breno Rodrigues](https://github.com/rodriguesbreno)**, k
 
 Zvláštní poděkování patří *[@Lisapressmar](https://github.com/Lisapressmar)* za její příspěvek s více formáty a velikostmi obrázků.
 
-<div id="codefund">''</div>
-
 ## Symboly
 
 **S textem**

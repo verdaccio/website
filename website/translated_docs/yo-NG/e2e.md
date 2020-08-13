@@ -5,8 +5,6 @@ title: "Idanwo Opin si Opin"
 
 Awọn iṣẹ akanṣe kan ma n ṣeto awọn akojọ ni awọn ibi ipamọ ti ọlọpọlọpọ-akojọ tabi [onibi ipamọ kan](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). Idanwo E2E jẹ akọle ti o ma n saba yẹ fun Awọn Intafeesi Olumulo nikan, ṣugbọn lati oju iwoye ti Node.js, **sise atẹjade awọn akojọ naa tun nilo lati ni idanwo**.
 
-<div id="codefund">''</div>
-
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Ọna abayọ: ibi iforukọsilẹ npm ibilẹ kan. <a href="https://t.co/kvcyVANVSK">https://t.co/kvcyVANVSK</a></p>&mdash; Dan Abramov (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/951427674844680192?ref_src=twsrc%5Etfw">osu kini ọjọ kọkanla ọdun 2018</a></blockquote>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

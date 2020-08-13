@@ -5,8 +5,6 @@ title: "End to End тестирование"
 
 Некоторые проекты организуют свой код, разделяя его на много пакетов, другие используют [монорепо](https://github.com/babel/babel/blob/master/doc/design/monorepo.md). E2E-тестирование используется обычно только для тестировани пользовательских интерфейсов, но, с точки зрения Node.js, **публикацию пакетов тоже нужно тестировать**.
 
-<div id="codefund">''</div>
-
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Solution: a local npm registry. <a href="https://t.co/kvcyVANVSK">https://t.co/kvcyVANVSK</a></p>&mdash; Dan Abramov (@dan_abramov) <a href="https://twitter.com/dan_abramov/status/951427674844680192?ref_src=twsrc%5Etfw">11 января 2018</a></blockquote>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

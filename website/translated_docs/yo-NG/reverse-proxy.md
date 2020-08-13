@@ -5,8 +5,6 @@ title: "Iseto Aṣoju ikọkọ-Alayipada"
 
 Lilo aṣoju ikọkọ alayipada jẹ iṣe ti o wọpọ. Awọn iṣeto wọnyi jẹ awọn ti a gba gẹgẹ bi iyanju​ ati ti o jẹ lilo julọ.
 
-<div id="codefund">''</div>
-
 # Apache
 
 Apache ati `mod_proxy` ko **yẹ ko tumọ koodu/di koodu awọn slash** ki o si fi wọn silẹ bi wọn se wa:

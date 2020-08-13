@@ -5,8 +5,6 @@ title: "Powiadomienia"
 
 Powiadomienie zostało zbudowane głównie z myślą o użyciu przychodzących webhooks Slacka, ale dostarczy również prosty ładunek do dowolnego punktu końcowego. Obecnie aktywny tylko dla polecenia`npm publish`.
 
-<div id="codefund">''</div>
-
 ## Użycie
 
 Przykład z zaczepką **HipChat**, **Krok** i **Czat Google Hangouts**:
