@@ -42,7 +42,7 @@ registry=http://localhost:5555/
 *Verdaccio* 默认使用 `htpasswd` 插件。 这个插件没有实现 `allow_access`, `allow_publish` 和`allow_unpublish` 方法。 因此， *Verdaccio* 将会以下面的逻辑来处理这些情况：
 
 * 如果你没有登录（即匿名状态），`$all` 和 `$anonymous` 是等价的。
-* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
+* 如果你已经登录，那么你所属的用户组将不包括 `$anonymous` ，且 `$all` 将会匹配所有已登录用户。你将会被加入`$authenticated`用户组。
 
 As a takeaway, `$all` **will match all users, independently whether is logged or not**.
 
