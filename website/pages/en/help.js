@@ -32,8 +32,20 @@ class Help extends React.Component {
         title: 'GitHub',
       },
       {
-        content: <translate>and also you can chat with the Verdaccio community at</translate> + ' [Discord](https://discord.gg/7qWJxBf).',
-        title: 'Discord',
+        content: "Browse questions at Stackoverflow also could be useful [Questions](https://stackoverflow.com/questions/tagged/verdaccio) ",
+        title: 'Stackoverflow',
+      },
+      {
+        content: <translate>and also you can chat with the Verdaccio community at</translate> + ' [Community Chat](http://chat.verdaccio.org).',
+        title: 'Verdaccio Chat',
+      },
+      {
+        content: 'If you have specific pnpm questions, join their community chat [Community Chat](https://discord.gg/PKwUpW).',
+        title: 'pnpm Chat',
+      },
+      {
+        content: 'If you have specific yarn questions, join their community chat [Community Chat](https://discord.gg/x9F2jJ).',
+        title: 'Yarn Chat',
       },
     ];
 
