@@ -22,7 +22,7 @@ registry=http://localhost:5555/
 
 #### 匿名发布包
 
-`verdaccio` allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
+`verdaccio` 允许启用匿名发布，要使用这个功能，必须设置正确的 [程序包访问权限](packages.md)。
 
 例如：
 
@@ -35,14 +35,14 @@ registry=http://localhost:5555/
 
 如 [Issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) 所述，截至 `npm@5.3.0` 你仍然 **无法在没有 Token 的情况下发布包**。
 
-## Understanding Groups
+## 分组
 
-### The meaning of `$all` and `$anonymous`
+### `$all` 和 `$anonymous` 的含义
 
-As you know *Verdaccio* uses the `htpasswd` by default. That plugin does not implement the methods `allow_access`, `allow_publish` and `allow_unpublish`. Thus, *Verdaccio* will handle that in the following way:
+*Verdaccio* 默认使用 `htpasswd` 插件。 这个插件没有实现 `allow_access`, `allow_publish` 和`allow_unpublish` 方法。 因此， *Verdaccio* 将会以下面的逻辑来处理这些情况：
 
-* If you are not logged in (you are anonymous), `$all` and `$anonymous` means exactly the same.
-* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to the list.
+* 如果你没有登录（即匿名状态），`$all` 和 `$anonymous` 是等价的。
+* 如果你已经登录，那么你所属的用户组将不包括 `$anonymous` ，且 `$all` 将会匹配所有已登录用户。你将会被加入`$authenticated`用户组。
 
 As a takeaway, `$all` **will match all users, independently whether is logged or not**.
 
