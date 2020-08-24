@@ -1,9 +1,9 @@
 ---
 id: linking-remote-registry
-title: "Linking a Remote Registry"
+title: "链接远程Registry"
 ---
 
-Verdaccio is a proxy and by default [links](uplinks.md) the public registry.
+Verdaccio将会代理，并在默认情况下链接公共registry。
 
 ```yaml
 uplinks:
@@ -11,11 +11,11 @@ uplinks:
     url: https://registry.npmjs.org/
 ```
 
-You can link multiple registries, the following document will drive you through some helpful configurations.
+你可以关联多个registries，下述文档将会用一些有帮助的配置指引你。
 
 ## 使用关联范围
 
-The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
+使用多个registries的唯一可行的方式，就是使用`.npmrc`。其功能如下：
 
     // .npmrc
     registry=https://registry.npmjs.org
