@@ -13,7 +13,7 @@ uplinks:
 
 You can link multiple registries, the following document will drive you through some helpful configurations.
 
-## Using Associating Scope
+## 使用关联范围
 
 The unique way to access multiple registries using the `.npmrc` is the scope feature as follows:
 
