@@ -249,7 +249,7 @@ const siteConfig = {
     theme: 'atom-one-dark',
   },
   algolia: {
-    apiKey: 'a8b4d117e513cd8d71d6a95e3d9d4a91',
+    apiKey: '6e563a022dbfeeafa8835729063dcbe4',
     indexName: 'verdaccio'
   },
   gaTrackingId: 'UA-2527438-21',
