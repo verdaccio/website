@@ -49,10 +49,22 @@ If you are willing to translate and language is not available, feel free to requ
 
 Privates messages here [https://crowdin.com/profile/juanpicado](https://crowdin.com/profile/juanpicado)
 
+
+# Search Algolia configuration
+
+Can be modified here: https://github.com/algolia/docsearch-configs/blob/master/configs/verdaccio.json
+
 ### Translation stats the last year
 
 ![screen shot 2019-02-22 at 6 58 54 am](https://user-images.githubusercontent.com/558752/53222809-60835400-366f-11e9-9edb-f235b3e88c80.png)
 
+## Special Thanks
+
+Thanks to the following companies to help us to achieve our goals providing free open source licenses.
+
+[![jetbrain](https://cdn.verdaccio.dev/sponsor/logo/jetbrains/logo.png)](https://www.jetbrains.com/)
+[![crowdin](https://cdn.verdaccio.dev/sponsor/logo/crowdin/logo.png)](https://crowdin.com/)
+[![algolia](https://cdn.verdaccio.dev/sponsor/logo/algolia/logo.png)](https://algolia.com/)
 
 # Contributing
 
