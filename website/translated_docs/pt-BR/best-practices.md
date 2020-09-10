@@ -65,7 +65,7 @@ There's two options here:
     
     ```bash
     npm version 0.1.3-my-temp-fix
-    npm --publish --tag fix --registry http://localhost:4873
+    npm publish --tag fix --registry http://localhost:4873
     ```
     
     Desta forma, o seu pacote será usado até que seu mantenedor original atualize seu pacote público para `0.1.3`.
