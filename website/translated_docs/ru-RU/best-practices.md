@@ -65,7 +65,7 @@ If you successfully request `express@4.0.1` from this server once, you'll be abl
     
     ```bash
     npm version 0.1.3-my-temp-fix
-    npm --publish --tag fix --registry http://localhost:4873
+    npm publish --tag fix --registry http://localhost:4873
     ```
     
     В этом случае ваш пакет будет использоваться до тех пор, пока владелец пакета не опубликует версию `0.1.3`.
