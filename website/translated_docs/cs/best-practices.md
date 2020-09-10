@@ -64,8 +64,8 @@ There's two options here:
     Chcete-li se vyhnout konfliktům verzí, **měli byste použít vlastní příponu předběžného vydání další verze opravy**. Pokud má například veřejný balíček verzi 0.1.2, můžete nahrát `0.1.3-moje-docasna-oprava`.
     
     ```bash
-    npm version 0.1.3-moje-docasna-oprava
-    npm --publish --tag fix --registry http://localhost:4873
+    npm version 0.1.3-my-temp-fix
+    npm publish --tag fix --registry http://localhost:4873
     ```
     
     Tímto způsobem bude váš balíček používán, dokud jeho původní správce nezmění svůj veřejný balíček na `0.1.3`.

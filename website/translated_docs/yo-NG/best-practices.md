@@ -65,7 +65,7 @@ Awọn aṣayan meji lo wa nibi:
     
     ```bash
     npm version 0.1.3-my-temp-fix
-    npm --publish --tag fix --registry http://localhost:4873
+    npm publish --tag fix --registry http://localhost:4873
     ```
     
     Ni ọna yii akopọ rẹ ma jẹ lilo titi ti oulowo olutọju rẹ yoo fi ṣe imudojuiwọn akopọ gbogbogbo ti ara rẹ si `0.1.3`.
