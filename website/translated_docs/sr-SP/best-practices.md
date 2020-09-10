@@ -65,7 +65,7 @@ If you want to use a modified version of some public package `foo`, you can just
     
     ```bash
     npm version 0.1.3-my-temp-fix
-    npm --publish --tag fix --registry http://localhost:4873
+    npm publish --tag fix --registry http://localhost:4873
     ```
     
     This way your package will be used until its original maintainer updates his public package to `0.1.3`.
