@@ -7,9 +7,7 @@ Verdaccio is a multiplatform web application. To install it, you need a few basi
 
 ## Prerequisites
 
-1. **Node.js** `v10.x (LTS "Dubnium")` or higher.
-
-> Verdaccio >v4.5.0, requieres *Node.js >v10*. If you can not upgrade from *Node.js v8*, you can keep using Verdaccio `v4.4.4`.
+1. **Node.js** `v8.x (LTS "Carbon")` or higher.
 
 2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn`.
 
