@@ -10,18 +10,26 @@ https://www.verdaccio.org
 
 Documentation files are hosted under `/docs` folder.
 
+Install [`pnpm`](https://pnpm.js.org/) globally
+
+```
+npm i -g pnpm
+```
+
 # Running the website locally
 You should run all these tasks from the inner `/website` folder.
 
 The commands you need to use for serving the site locally:
-- `yarn install` - installs all dependencies.
-- `yarn start` - runs a local server that launches the Verdaccio documentation site on http://localhost:3000/
+- `cd website/` - Move to website folder, it contains docusaurus source code.
+- `pnpm install` - Install all dependencies.
+- `pnpm run start` - Runs Verdaccio documentation site on http://localhost:3000/
+- `pnpm run build` - Build the website on build/ folder.
 
-# Running the website as a Docker container 
+# Running the website as a Docker container
 
 The Verdaccio documentation website can run as a Docker container
 (useful for offline usage of the website).
- 
+
  In order to run the website on Docker, use the following commands (run commands from the outer **/website** folder):
 
 `docker build -t verdaccio-docs:4.0.1 . `- building the Verdaccio documentation site image
