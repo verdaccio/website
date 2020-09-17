@@ -5,20 +5,21 @@ title: "Ifi sori ẹrọ"
 
 Verdaccio is a multiplatform web application. To install it, you need a few basic prerequisites.
 
-#### Awọn ohun inilo iṣaaju
+## Prerequisites
 
-1. Node higher Node `10.x` (LTS "Carbon") is the minimum supported version.
+1. **Node.js** `v8.x (LTS "Carbon")` or higher.
 
-> After v4.5.0 *Node.js v10* is now the minimum supported version. If you cannot upgrade *Node.js v8*, keep using `v4.4.4`.
+2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn`.
 
-1. npm `>=5.x` or, `pnpm` or `yarn` > We highly recommend to use the latest Node Package Managers clients `> npm@6.x | yarn@1.x | pnpm@4.x`
-2. Intafeesi wẹẹbu naa n ṣe atilẹyin fun awọn ẹrọ aṣàwákiri ayelujara `Chrome, Firefox, Edge, ati IE11`.
+> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | pnpm@4.x`
+
+1. A modern web browser to run the web interface. We actually support `Chrome, Firefox, Edge, and IE11`.
 
 > Verdaccio ma se atilẹyin fun ẹya Node.js to tuntun julọ ni ibamu si awọn igbaniyanju [Node.js Release Working Group](https://github.com/nodejs/Release).
 
-## Fifi CLI naa sori ẹrọ
+## Installing the CLI
 
-`verdaccio` gbọdọ jẹ fifi sori ẹrọ lagbaye nipa lilo boya ọkan ninu awọn ọna wọnyi:
+`Verdaccio` must be installed globally using either of the following methods:
 
 Lilo `npm`
 
@@ -34,7 +35,7 @@ yarn global add verdaccio
 
 ![fi verdaccio sori ẹrọ](assets/install_verdaccio.gif)
 
-## Ilo Ipilẹ
+## Basic Usage
 
 Lọgan to ti jẹ fifi sori ẹrọ, iwọ kan nilo lati ṣe abayọri aṣẹ CLI naa:
 
@@ -77,18 +78,18 @@ Or a `publishConfig` in your `package.json`
 
 ## Create Your Own Private NPM Package Tutorial
 
-If you still need a deep explanation, don't miss the at [thedevlife](https://mybiolink.co/thedevlife) tutorial how to publish your own private package using Verdaccio. <iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+If you'd like a broader explanation, don't miss the tutorial created by [thedevlife](https://mybiolink.co/thedevlife) on how to Create Your Own Private NPM Package using Verdaccio. <iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-## Aworan Docker
+## Docker Image
 
 ```bash
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-`verdaccio` ni aworan docker ti o le lo, atipe ni ọpọlọpọ igba, iṣeto atilẹwa naa ti dara to. Fun alaye siwaju sii nipa bi o ṣe le fi aworan naa sori ẹrọ, [ka abala docker naa](docker.md).
+`Verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. Fun alaye siwaju sii nipa bi o ṣe le fi aworan naa sori ẹrọ, [ka abala docker naa](docker.md).
 
 ## Cloudron
 
-`verdaccio` tun wa gẹgẹbi ifisori ẹrọ olontẹ-ẹẹkan lori [Cloudron](https://cloudron.io)
+`Verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
 
 [![Fi sori ẹrọ](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
