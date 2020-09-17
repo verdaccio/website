@@ -1,13 +1,13 @@
 ---
-id: amazon
-title: "Amazon Web Services"
+id: 亚马逊
+title: "亚马逊Web服务"
 ---
 
-This document describes several approaches for deploying Verdaccio in the AWS cloud.
+该篇文档描述了部署Verdaccio于AWS云的几种方式
 
 ## EC2
 
-[CloudFormation 模板发布这个栈](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
+[用于部署此堆栈的CloudFormation 模板](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
 Architecture:
 
