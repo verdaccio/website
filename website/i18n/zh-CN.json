@@ -6,7 +6,7 @@
     "tagline": "Verdaccio · 一个开源轻量的npm私服",
     "docs": {
       "amazon": {
-        "title": "Amazon Web Services"
+        "title": "亚马逊Web服务"
       },
       "ansible": {
         "title": "Ansible"
