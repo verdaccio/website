@@ -5,11 +5,11 @@ title: "Veridaccio とは？"
 
 Verdaccioは、**Node.js**で構築された**軽量なプライベートnpmプロキシレジストリ**です。 <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-## レジストリとは？
+## What's a registry?
 
-* パッケージ情報を読み込むために **CommonJS パッケージレジストリ仕様に準拠した** パッケージリポジトリです
-* npm クライアント **(yarn/npm/pnpm)** と互換性のある API を提供します
-* セマンティックバージョニング **(semver)** に従います
+* A registry is a repository for packages, that implements the **CommonJS Compliant Package Registry specification** for reading package's information.
+* Provide a compatible API with npm clients **(yarn/npm/pnpm)**.
+* Semantic Versioning compatible **(semver)**.
 
     $> verdaccio
     
@@ -18,18 +18,21 @@ Verdaccioは、**Node.js**で構築された**軽量なプライベートnpmプ�
 
 ## Verdaccioの使用方法
 
-VerdaccioはどんなNodeパッケージマネージャクライアントとでも簡単に使用できます。
+Using Verdaccio with any Node.js package manager client is quite straightforward.
 
 ![レジストリ](assets/npm_install.gif)
 
-カスタムレジストリを使用するには、以下のようにすべてのプロジェクトに対してグローバルに設定するか
+You can use a custom registry either by setting it globally for all your projects
 
     npm set registry http://localhost:4873
     
 
-またはnpmでコマンドライン引数に`--registry`を指定してください (yarnではやや異なります)
+or by using it in command line as an argument `--registry` in npm (slightly different in yarn)
 
     npm install lodash --registry http://localhost:4873
+    
+
+    yarn config set registry http:///localhost:4873
     
 
 ## プライベート
@@ -38,19 +41,19 @@ Verdaccioにpublishしたパッケージはすべて非公開で、アクセス�
 
 ## プロキシ
 
-Verdaccioは、必要に応じてすべての依存関係をキャッシュし、ローカルまたはプライベートネットワークでのインストールを高速化します。
+Verdaccio cache all dependencies on demand and speed up installations in local or private networks.
 
 ## Verdaccioとは何か
 
-### Cover your Projects with a Multi purpose Lightweight Node.js Registry
+### Cover your projects with a multi purpose lightweight Node.js registry
 
-This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. It explains all the benefits and good practices about how to run a registry that will make your projects look awesome, could be used for hosting a registry, emulate real testing environments or improve your developer workflow. <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. In it Juan Picado explains the benefits and good practices when running a private registry that will make your projects look awesome. Verdaccio could also be used for hosting a registry, emulate real testing environments or improve your developer workflow. <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 * Node.js上で動作するWebアプリ
 * プライベートnpmレジストリ
 * ローカルネットワークプロキシ
 * プラグイン対応のアプリケーション
-* とても簡単にインストールして使用できます
+* It's fairly easy to install and to use
 * DockerとKubernetesのサポートを提供しています
 * yarn、npm、pnpmと100％互換性があります
 * `sinopia@1.4.0`から**フォーク**され、100%**後方互換性**があります。
