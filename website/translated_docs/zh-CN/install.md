@@ -5,20 +5,21 @@ title: "安装"
 
 Verdaccio 是一个跨平台的 Web 应用程序。在安装之前，您需要确保系统环境已满足以下基本条件。
 
-#### 最低要求:
+## Prerequisites
 
-1. Node higher Node `10.x` (LTS "Carbon") is the minimum supported version.
+1. **Node.js** `v8.x (LTS "Carbon")` or higher.
 
-> After v4.5.0 *Node.js v10* is now the minimum supported version. If you cannot upgrade *Node.js v8*, keep using `v4.4.4`.
+2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn`.
 
-1. npm `>=5.x` or, `pnpm` or `yarn` > We highly recommend to use the latest Node Package Managers clients `> npm@6.x | yarn@1.x | pnpm@4.x`
-2. Web 界面支持 `Chrome, Firefox, Edge, 和 IE11` 浏览器。
+> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | pnpm@4.x`
+
+1. A modern web browser to run the web interface. We actually support `Chrome, Firefox, Edge, and IE11`.
 
 > Verdaccio 将根据 [Node. js 发布工作组](https://github.com/nodejs/Release) 的推荐支持最新的 Node. js 版本。
 
-## 安装CLI
+## Installing the CLI
 
-`verdaccio` 需要使用以下两种方法之一安装到全局环境：
+`Verdaccio` must be installed globally using either of the following methods:
 
 使用 `npm`
 
@@ -34,7 +35,7 @@ yarn global add verdaccio
 
 ![安装verdaccio](assets/install_verdaccio.gif)
 
-## 基本使用
+## Basic Usage
 
 一旦安装后，您只需要执行命令：
 
@@ -75,20 +76,20 @@ Or a `publishConfig` in your `package.json`
 }
 ```
 
-## 创建你自己的私有NPM包教程
+## Create Your Own Private NPM Package Tutorial
 
-If you still need a deep explanation, don't miss the at [thedevlife](https://mybiolink.co/thedevlife) tutorial how to publish your own private package using Verdaccio. <iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+If you'd like a broader explanation, don't miss the tutorial created by [thedevlife](https://mybiolink.co/thedevlife) on how to Create Your Own Private NPM Package using Verdaccio. <iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-## Docker 镜像
+## Docker Image
 
 ```bash
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-`verdaccio` 有官方 docker 镜像可以使用，在大多数情况下，默认配置已经足够了。 更多关于如何安装官方镜像的详细信息，请[阅读docker章节](docker.md)。
+`Verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. 更多关于如何安装官方镜像的详细信息，请[阅读docker章节](docker.md)。
 
 ## Cloudron
 
-`verdaccio` 可以使用 [Cloudron](https://cloudron.io) 一键安装
+`Verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
 
 [![安装](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
