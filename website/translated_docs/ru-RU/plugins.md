@@ -3,7 +3,7 @@ id: plugins
 title: "Плагины"
 ---
 
-Verdaccio поддерживает плагины. Плагины позволяют расширить функциональность Verdaccio разными способами - добавить методы аутентификации, добавить эндпоинты или создать своё хранилище.
+Verdaccio is a pluggable application. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
 There are 5 types of plugins:
 
@@ -36,7 +36,7 @@ $> npm install --global verdaccio-activedirectory
 ### Конфигурирование аутентификации
 
 ```yaml
- htpasswd:
+  htpasswd:
     file: ./htpasswd
     # max_users: 1000
 ```
@@ -99,7 +99,7 @@ Verdaccio позволяет заменить веб-интерфейс, и мы
 
 > Имя плагина должно начинаться с `verdaccio-theme`, иначе плагин не будет загружен.
 
-Вы можете загрузить только одну тему. Так же, можно передать параметры в тему.
+You can load only one theme at a time and pass through options if you need it.
 
 ```yaml
 theme:
