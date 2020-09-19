@@ -1,11 +1,11 @@
 ---
-id: 认证
-title: "认证"
+id: authentication
+title: "Authentication"
 ---
 
-The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
+The authentication is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-客户端的认证流程由 `npm` 自行处理，在你通过以下命令登陆后：
+The client authentication is handled by `npm` client itself. Once you login to the application:
 
 ```bash
 npm adduser --registry http://localhost:4873
