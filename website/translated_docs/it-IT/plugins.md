@@ -3,7 +3,7 @@ id: plugins
 title: "Plugin"
 ---
 
-Verdaccio è un'applicazione estensibile. Si può espandere in molti modi, o con nuovi metodi di autenticazione, aggiungendo endpoint o utilizzando un archivio personalizzato.
+Verdaccio is a pluggable application. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
 Sono presenti 5 tipi di plugin:
 
@@ -36,7 +36,7 @@ La configurazione predefinita appare così, poiché usiamo un plugin `htpasswd` 
 ### Configurazione dell'Autenticazione
 
 ```yaml
- htpasswd:
+  htpasswd:
     file: ./htpasswd
     # max_users: 1000
 ```
@@ -99,7 +99,7 @@ Verdaccio consente di sostituire l'Interfaccia Utente con una personalizzata, ch
 
 > Il prefisso del nome del plugin deve cominciare con `verdaccio-theme`, altrimenti il plugin non caricherà.
 
-È possibile caricare solo un tema alla volta e considerare le opzioni se è necessario.
+You can load only one theme at a time and pass through options if you need it.
 
 ```yaml
 theme:
