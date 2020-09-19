@@ -3,7 +3,7 @@ id: plugins
 title: "插件"
 ---
 
-Verdaccio是一个可插入式应用程序。它可以通过多种方式扩展，可以是新的认证方法，添加端点或者使用定制存储。
+Verdaccio is a pluggable application. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
 There are 5 types of plugins:
 
@@ -36,7 +36,7 @@ $> npm install --global verdaccio-activedirectory
 ### Authentication Configuration
 
 ```yaml
- htpasswd:
+  htpasswd:
     file: ./htpasswd
     # max_users: 1000
 ```
@@ -99,7 +99,7 @@ Verdaccio allows to replace the User Interface with a custom one, we call it **t
 
 > The plugin name prefix must start with `verdaccio-theme`, otherwise the plugin won't load.
 
-You can load only one theme at the time and pass through options if is need it.
+You can load only one theme at a time and pass through options if you need it.
 
 ```yaml
 theme:
