@@ -22,7 +22,7 @@
       "configuration",
       "uplinks",
       "packages",
-      "authentification",
+      "authentication",
       "notifications",
       "logger",
       "webui"
