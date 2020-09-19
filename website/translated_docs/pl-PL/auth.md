@@ -1,11 +1,11 @@
 ---
-id: uwierzytelnianie
-title: "Uwierzytelnianie"
+id: authentication
+title: "Authentication"
 ---
 
-The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
+The authentication is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-Uwierzytelnianie klienta jest obsługiwane przez samego klienta `npm`. Kiedy już zalogujesz się do aplikacji:
+The client authentication is handled by `npm` client itself. Once you login to the application:
 
 ```bash
 npm adduser --registry http://localhost:4873
