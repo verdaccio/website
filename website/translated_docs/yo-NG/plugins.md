@@ -3,7 +3,7 @@ id: awọn ohun elo
 title: "Awọn ohun elo"
 ---
 
-Verdaccio jẹ ohun elo alasomọ. O le se fagun ni ọpọlọpọ awọn ọna, boya awọn ọna ifasẹsi tuntun, sise afikun awọn aaye opin tabi lilo akanṣe ibi ipamọ.
+Verdaccio is a pluggable application. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
 There are 5 types of plugins:
 
@@ -36,7 +36,7 @@ Iṣeto atilẹwa naa dabi iru eyi, nitoripe a lo ohun elo alakọmọ `htpasswd
 ### Iṣeto Ifasẹsi
 
 ```yaml
- htpasswd:
+  htpasswd:
     file: ./htpasswd
     # max_users: 1000
 ```
@@ -99,7 +99,7 @@ Verdaccio n gbanilaaye lati rọpo Intafeesi olumulo pẹlu eyi to jẹ akanṣe
 
 > Orukọ iṣaaju ohun asomọ naa gbọdọ bẹrẹ pẹlu `verdaccio-theme`, bibẹkọ ohun asomọ naa koni ṣiṣẹ.
 
-O le lo akori kan ṣoṣo ni akoko kan ati ki o kọja laarin awọn aṣayan ti o ba nilo rẹ.
+You can load only one theme at a time and pass through options if you need it.
 
 ```yaml
 theme:
