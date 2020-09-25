@@ -54,7 +54,7 @@ If you have [build an image locally](#build-your-own-docker-image) use `verdacci
 You can use `-v` to bind mount `conf`, `storage` and `plugins` to the hosts filesystem:
 
 ```bash
-V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+V_PATH=/path/for/verdaccio; docker run -it -d --rm --name verdaccio \
   -p 4873:4873 \
   -v $V_PATH/conf:/verdaccio/conf \
   -v $V_PATH/storage:/verdaccio/storage \
