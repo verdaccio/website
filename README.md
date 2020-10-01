@@ -7,6 +7,7 @@
 https://www.verdaccio.org
 
 # Documentation
+it is use for pratice only
 
 Documentation files are hosted under `/docs` folder.
 
