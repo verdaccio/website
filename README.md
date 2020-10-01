@@ -1,4 +1,4 @@
-# Verdaccio website
+# Verdaccio website  is amazing project  webiste using docker and javascript
 
 [![backers](https://opencollective.com/verdaccio/tiers/backer/badge.svg?label=Backer&color=brightgreen)](https://opencollective.com/verdaccio)
 [![discord](https://img.shields.io/discord/388674437219745793.svg)](http://chat.verdaccio.org/)
