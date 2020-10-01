@@ -1,11 +1,11 @@
 ---
-id: authentification
+id: authentication
 title: "Autenticazione"
 ---
 
-The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
+The authentication is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-L'autenticazione del client viene gestita dal `npm` client stesso. Una volta che si effettua il login all'applicazione:
+The client authentication is handled by `npm` client itself. Once you login to the application:
 
 ```bash
 npm adduser --registry http://localhost:4873

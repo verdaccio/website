@@ -3,7 +3,7 @@ id: plugins
 title: "Plugins"
 ---
 
-Verdaccio é uma aplicação versátil. Pode ser estendido de várias maneiras, seja com novos métodos de autenticação, adicionando endpoints ou usando um armazenamento personalizado.
+Verdaccio is a pluggable application. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
 There are 5 types of plugins:
 
@@ -36,7 +36,7 @@ The default configuration looks like this, due we use a build-in `htpasswd` plug
 ### Configuração de Autenticação
 
 ```yaml
- htpasswd:
+  htpasswd:
     file: ./htpasswd
     # max_users: 1000
 ```
@@ -99,7 +99,7 @@ O Verdaccio permite substituir a interface do usuário por uma personalizada, ch
 
 > O prefixo do nome do plugin deve começar com `verdaccio-theme`, caso contrário o plugin não carregará.
 
-Você só pode usar um tema por vez e percorrer as opções, se for necessário.
+You can load only one theme at a time and pass through options if you need it.
 
 ```yaml
 theme:

@@ -1,11 +1,11 @@
 ---
-id: sise ifasẹsi
-title: "Sise ifasẹsi"
+id: authentication
+title: "Ifasẹsi"
 ---
 
-The authentification is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
+The authentication is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-Ifasẹsi onibara naa n jẹ ṣiṣakoso nipasẹ `npm` onibara funrarẹ. Lọgan ti o ba wọle si ohun elo naa:
+The client authentication is handled by `npm` client itself. Once you login to the application:
 
 ```bash
 npm adduser --registry http://localhost:4873
