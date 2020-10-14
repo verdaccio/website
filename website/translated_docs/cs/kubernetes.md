@@ -89,8 +89,24 @@ Nyní můžete nasadit Verdaccio Helm graf a specifikovat, jakou konfiguraci pou
 helm install --name npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
+#### NGINX proxy body-size limit
+
+The standard k8s NGINX ingress proxy allows for 1MB for body-size which can be increased by modifying the default deployment options according to the [documentation](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/#custom-max-body-size):
+
+```yaml
+...
+
+annotations:
+...
+
+    kubernetes.io/proxy-body-size: 20m
+....    
+...
+
+```
+
 ## Podpora Rancher
 
-[Rancher](http://rancher.com/) je platforma pro kompletní správu kontejnerů která nabízí velice jednoduchou správu a používání kontejnerá na produkci.
+[Rancher](http://rancher.com/) is a complete container management platform that makes managing and using containers in production really easy.
 
 * [verdaccio-rancher](https://github.com/lgaticaq/verdaccio-rancher)
