@@ -89,8 +89,24 @@ Ni bayi o le ṣe amulo atẹ Verdaccio Helm ati ṣiṣe pato iru iṣeto to ma
 helm install --name npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
+#### NGINX proxy body-size limit
+
+The standard k8s NGINX ingress proxy allows for 1MB for body-size which can be increased by modifying the default deployment options according to the [documentation](https://kubernetes.github.io/ingress-nginx/user-guide/nginx-configuration/annotations/#custom-max-body-size):
+
+```yaml
+...
+
+annotations:
+...
+
+    kubernetes.io/proxy-body-size: 20m
+....    
+...
+
+```
+
 ## Atilẹyin Rancher
 
-[Rancher](http://rancher.com/) jẹ pilatifọọmu isakoso apoti pipe ti o n jẹ ki iṣakoso ati lilo awọn apoti ni iṣelọpọ rọrun gidi gan.
+[Rancher](http://rancher.com/) is a complete container management platform that makes managing and using containers in production really easy.
 
 * [verdaccio-rancher](https://github.com/lgaticaq/verdaccio-rancher)
