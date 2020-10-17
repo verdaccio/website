@@ -9,9 +9,9 @@ Verdaccio is a multiplatform web application. To install it, you need a few basi
 
 1. **Node.js** `v8.x (LTS "Carbon")` or higher.
 
-2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn`.
+2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn` (classic and berry).
 
-> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | pnpm@4.x`
+> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@4.x`
 
 1. A modern web browser to run the web interface. We actually support `Chrome, Firefox, Edge, and IE11`.
 
@@ -33,19 +33,25 @@ hoặc sử dụng `yarn`
 yarn global add verdaccio
 ```
 
-![cài đặt verdaccio](assets/install_verdaccio.gif)
+or using `pnpm`
+
+```bash
+pnpm install -g verdaccio
+```
+
+![install verdaccio](assets/install_verdaccio.gif)
 
 ## Basic Usage
 
-Sau khi cài đặt, bạn chỉ cần thực hiện lệnh CLI:
+Once it has been installed, you only need to execute the CLI command:
 
 ```bash
 $> verdaccio
 warn --- config file  - /home/.config/verdaccio/config.yaml
-warn --- http address - http://localhost:4873/ - verdaccio/4.5.0
+warn --- http address - http://localhost:4873/ - verdaccio/4.8.1
 ```
 
-Để biết thêm thông tin về CLI, vui lòng [ đọc phần cli](cli.md).
+For more information about the CLI, please [read the cli section](cli.md).
 
 You can set the registry by using the following command.
 
@@ -86,7 +92,7 @@ If you'd like a broader explanation, don't miss the tutorial created by [thedevl
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-`Verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. Để biết thêm chi tiết về cách cài đặt hình ảnh chính thức, vui lòng [đọc phần docker](docker.md).
+`Verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. For more information about how to install the official image, [read the docker section](docker.md).
 
 ## Cloudron
 

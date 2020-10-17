@@ -14,7 +14,7 @@
       "articles": {
         "title": "Статьи"
       },
-      "authentification": {
+      "authentication": {
         "title": "Аутентификация"
       },
       "azure": {
@@ -34,6 +34,9 @@
       },
       "ci": {
         "title": "Непрерывная интеграция (CI)"
+      },
+      "cli-registry": {
+        "title": "Using a private registry"
       },
       "cli": {
         "title": "Инструмент командной строки"

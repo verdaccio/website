@@ -14,8 +14,8 @@
       "articles": {
         "title": "Articles"
       },
-      "authentification": {
-        "title": "认证"
+      "authentication": {
+        "title": "Authentication"
       },
       "azure": {
         "title": "Windows Azure"
@@ -34,6 +34,9 @@
       },
       "ci": {
         "title": "持续集成"
+      },
+      "cli-registry": {
+        "title": "Using a private registry"
       },
       "cli": {
         "title": "命令行工具"

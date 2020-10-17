@@ -9,9 +9,9 @@ Verdaccio 是一个跨平台的 Web 应用程序。在安装之前，您需要�
 
 1. **Node.js** `v8.x (LTS "Carbon")` or higher.
 
-2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn`.
+2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn` (classic and berry).
 
-> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | pnpm@4.x`
+> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@4.x`
 
 1. A modern web browser to run the web interface. We actually support `Chrome, Firefox, Edge, and IE11`.
 
@@ -33,21 +33,27 @@ npm install -g verdaccio
 yarn global add verdaccio
 ```
 
-![安装verdaccio](assets/install_verdaccio.gif)
+or using `pnpm`
+
+```bash
+pnpm install -g verdaccio
+```
+
+![install verdaccio](assets/install_verdaccio.gif)
 
 ## Basic Usage
 
-一旦安装后，您只需要执行命令：
+Once it has been installed, you only need to execute the CLI command:
 
 ```bash
 $> verdaccio
 warn --- config file  - /home/.config/verdaccio/config.yaml
-warn --- http address - http://localhost:4873/ - verdaccio/4.5.0
+warn --- http address - http://localhost:4873/ - verdaccio/4.8.1
 ```
 
-更多关于CLI的详细信息，请[阅读cli章节](cli.md)。
+For more information about the CLI, please [read the cli section](cli.md).
 
-你可以通过以下命令来设置npm从哪个源下载
+You can set the registry by using the following command.
 
 ```bash
 npm set registry http://localhost:4873/
@@ -86,7 +92,7 @@ If you'd like a broader explanation, don't miss the tutorial created by [thedevl
 docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-`Verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. 更多关于如何安装官方镜像的详细信息，请[阅读docker章节](docker.md)。
+`Verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. For more information about how to install the official image, [read the docker section](docker.md).
 
 ## Cloudron
 

@@ -14,8 +14,8 @@
       "articles": {
         "title": "Awọn arokọ"
       },
-      "authentification": {
-        "title": "Sise ifasẹsi"
+      "authentication": {
+        "title": "Ifasẹsi"
       },
       "azure": {
         "title": "Windows Azure"
@@ -34,6 +34,9 @@
       },
       "ci": {
         "title": "Imuṣiṣẹpọ Alainidaduro"
+      },
+      "cli-registry": {
+        "title": "Using a private registry"
       },
       "cli": {
         "title": "Irinṣẹ Ila aṣẹ"

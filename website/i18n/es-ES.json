@@ -14,8 +14,8 @@
       "articles": {
         "title": "Articles"
       },
-      "authentification": {
-        "title": "Autentificación"
+      "authentication": {
+        "title": "Autenticación"
       },
       "azure": {
         "title": "Windows Azure"
@@ -34,6 +34,9 @@
       },
       "ci": {
         "title": "Integración Continua"
+      },
+      "cli-registry": {
+        "title": "Using a private registry"
       },
       "cli": {
         "title": "Herramienta de Linea de Comando"

@@ -14,8 +14,8 @@
       "articles": {
         "title": "Articles"
       },
-      "authentification": {
-        "title": "Yêu cầu xác thực"
+      "authentication": {
+        "title": "Authentication"
       },
       "azure": {
         "title": "Windows Azure"
@@ -34,6 +34,9 @@
       },
       "ci": {
         "title": "Tích hợp liên tục"
+      },
+      "cli-registry": {
+        "title": "Using a private registry"
       },
       "cli": {
         "title": "Công cụ dòng lệnh Command line"
