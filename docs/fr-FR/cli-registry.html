@@ -92,6 +92,9 @@
 <pre><code class="hljs css language-bash">//.npmrc
 registry=http://localhost:4873
 </code></pre>
+<blockquote>
+<p>Since <code>npm@5.x</code> <a href="https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e">ignores the <code>resolve</code> field in defined in the lock files</a>, while <code>pnpm@4.x</code> and <code>yarn@1.x</code> does the opposite.</p>
+</blockquote>
 <p>Or a <code>publishConfig</code> in your <code>package.json</code></p>
 <pre><code class="hljs css language-json">{
   <span class="hljs-attr">"publishConfig"</span>: {
@@ -103,9 +106,52 @@ registry=http://localhost:4873
 <p>By using the <code>publishConfig</code> the previous two options would be ignored, only use this option if you want to ensure the package is not being published anywhere else.</p>
 </blockquote>
 <p>If you are using either <code>npm@5.4.x</code> or <code>npm@5.5.x</code>, there are <a href="https://github.com/verdaccio/verdaccio/issues/509#issuecomment-359193762">known issues with tokens</a>, please upgrade to either <code>6.x</code> or downgrade to <code>npm@5.3.0</code>.</p>
+<h4><a class="anchor" aria-hidden="true" id="ssl-and-certificates"></a><a href="#ssl-and-certificates" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>SSL and certificates</h4>
+<p>When using verdaccio under SSL without a valid certificate, define <code>strict-ssl</code> in your config file is required otherwise you will get <code>SSL Error: SELF_SIGNED_CERT_IN_CHAIN</code> errors.</p>
+<p><code>npm</code> does not support <a href="https://blog.npmjs.org/post/78085451721/npms-self-signed-certificate-is-no-more">invalid certificates anymore</a> since 2014.</p>
+<pre><code class="hljs css language-bash">npm config <span class="hljs-built_in">set</span> ca <span class="hljs-string">""</span>
+npm config <span class="hljs-built_in">set</span> strict-ssl <span class="hljs-literal">false</span>
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="npm-7x"></a><a href="#npm-7x" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>npm (7.x)</h3>
+<p>The <code>v7.0.0</code> is more strict with the new <code>v2</code> lock file, if you have mixed <code>resolved</code> fields in your lock file, for instance, having this in your lockfile:</p>
+<pre><code class="hljs css language-json">{
+  "name": "npm7",
+  "version": "1.0.0",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "version": "1.0.0",
+      "license": "ISC",
+      "dependencies": {
+        "lodash": "4.17.20",
+        "underscore": "^1.11.0"
+      }
+    },
+    ..... // removed for simplicity
+  },
+  "dependencies": {
+    "lodash": {
+      "version": "4.17.20",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz",
+      "integrity": "sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA=="
+    },
+    "underscore": {
+      "version": "1.11.0",
+      "resolved": "http://localhost:4873/underscore/-/underscore-1.11.0.tgz",
+      "integrity": "sha512-xY96SsN3NA461qIRKZ/+qox37YXPtSBswMGfiNptr+wrt6ds4HaMw23TP612fEyGekRE6LNRiLYr/aqbHXNedw=="
+    }
+  }
+}
+</code></pre>
+<p>Either running <code>npm i --registry https://registry.npmjs.org</code> or using <code>.npmrc</code> will fail your installation.</p>
 <h3><a class="anchor" aria-hidden="true" id="yarn"></a><a href="#yarn" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>yarn</h3>
 <h4><a class="anchor" aria-hidden="true" id="yarn-1x"></a><a href="#yarn-1x" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Yarn (1.x)</h4>
-<p>The classic version is able to regonize the <code>.npmrc</code> file, but also provides their own configuration file named <code>.yarnrc</code>. To setup a registry you</p>
+<blockquote>
+<p>Be aware npm configurations are valid on the classic version</p>
+</blockquote>
+<p>The classic version is able to regonize the <code>.npmrc</code> file, but, also provides their own configuration file named <code>.yarnrc</code>.</p>
+<p>To setup a registry create a file and define a registry.</p>
 <pre><code class="hljs"><span class="hljs-string">//</span> <span class="hljs-string">.yarnrc</span>
 registry <span class="hljs-string">"http://localhost:4873"</span>
 </code></pre>
