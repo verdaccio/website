@@ -12,19 +12,17 @@ Furthermore, the info about the release is also available at the [GitHub release
 
 We have some highlights to share:
 
-* At this stage, Docker 🐳 pulls [have grown to **5.7 million pulls**](https://dockeri.co/image/verdaccio/verdaccio).
-* We just reached **7.9k 🌟**, *would you help us to reach 10k?* Give us your star ⭐️!
-* **Blog** 🗒: Don't miss our new entry [**Managing multiple projects with Lerna and Yarn Workspaces**](https://verdaccio.org/blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces) by [@sergiohgz](https://github.com/sergiohgz).
-* **[Monorepo](https://github.com/verdaccio/monorepo)**: Along the last months we have crafted our monorepo for grouping all our ecosystem, plugin, core and tooling packages. This does not mean Verdaccio will become a monorepo, rather it will help us to grow without affecting the main repository and do easy updates or respond fast to mistakes in any release.
-* **Hacktoberfest 🎃 is here**: We have prepared a guide if you want to contribute to Verdaccio, feel free to [read it](https://github.com/verdaccio/verdaccio/issues/1461) and give us feedback.
+- At this stage, Docker 🐳 pulls [have grown to **5.7 million pulls**](https://dockeri.co/image/verdaccio/verdaccio).
+- We just reached **7.9k 🌟**, _would you help us to reach 10k?_ Give us your star ⭐️!
+- **Blog** 🗒: Don't miss our new entry [**Managing multiple projects with Lerna and Yarn Workspaces**](https://verdaccio.org/blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces) by [@sergiohgz](https://github.com/sergiohgz).
+- **[Monorepo](https://github.com/verdaccio/monorepo)**: Along the last months we have crafted our monorepo for grouping all our ecosystem, plugin, core and tooling packages. This does not mean Verdaccio will become a monorepo, rather it will help us to grow without affecting the main repository and do easy updates or respond fast to mistakes in any release.
+- **Hacktoberfest 🎃 is here**: We have prepared a guide if you want to contribute to Verdaccio, feel free to [read it](https://github.com/verdaccio/verdaccio/issues/1461) and give us feedback.
 
 > If you 😍 Verdaccio as we do, help us to grow more by donating to the project via [OpenCollective](https://opencollective.com/verdaccio).
 
 Thanks for supporting Verdaccio ! 👏👏👏👏.
 
 <!--truncate-->
-
-<div id="codefund">''</div>
 
 ## Use this version
 
@@ -82,18 +80,16 @@ You can find further technical information [here](https://github.com/verdaccio/v
 - **Monorepo**: fix(security): Cross-site Scripting (XSS) for readme [#145](https://github.com/verdaccio/monorepo/pull/145) by [@juanpicado](https://github.com/juanpicado)
 - **Monorepo**: remove eslint warnings [#112](https://github.com/verdaccio/monorepo/pull/112) by [@sergiohgz](https://github.com/sergiohgz)
 - **Monorepo**: chore: use Alpine image in DevContainers [#100](https://github.com/verdaccio/monorepo/pull/100) by [@sergiohgz](https://github.com/sergiohgz)
-- **Monorepo**: ci: publish every commit in a temporal in-memory registry  [#74](https://github.com/verdaccio/monorepo/pull/74) by [@sergiohgz](https://github.com/sergiohgz)
-
+- **Monorepo**: ci: publish every commit in a temporal in-memory registry [#74](https://github.com/verdaccio/monorepo/pull/74) by [@sergiohgz](https://github.com/sergiohgz)
 
 # Verdaccio v3
 
 Verdaccio 3 is still under our **security maintenance state**, thus we just shipped a minor update `v3.13.1`.
 
-* Docker image updated to Node.js **v10.16.3**
-* Update core dependencies
+- Docker image updated to Node.js **v10.16.3**
+- Update core dependencies
 
 > We update as much as possible without breaking the current implementation, thus storage or htpasswd are not part of this update.
-
 
 ## Use this version
 

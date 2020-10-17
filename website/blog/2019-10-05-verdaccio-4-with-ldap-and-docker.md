@@ -16,8 +16,6 @@ I will also configure [`verdaccio-ldap`](https://www.npmjs.com/package/verdaccio
 
 <!--truncate-->
 
-<div id="codefund">''</div>
-
 First of all, I wante to congratulate everyone who tested, contributed to Verdaccio <img height="16px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f389.png" title="congrats" /> v4 <img height="16px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f388.png" title="congrats" />.
 
 V4 include bunch of improvment, optimization, starting with the Web UI made completely redesigned with ReactJS and MaterialUI.
@@ -42,7 +40,6 @@ Let's upgrade it!
 
 ## Dockerfile
 
-
 This is my tree structure:
 
 ```
@@ -63,7 +60,7 @@ USER verdaccio
 ```
 
 - `v3.x` is now using by default `verdaccio` user for security reason. This is why need to switch to `root` user to use `npm`.
-- We install `verdaccio-ldap` but you can install any plugin. *(Only if you don't want the `verdaccio-htaccess` builtin solution to be your user database)*
+- We install `verdaccio-ldap` but you can install any plugin. _(Only if you don't want the `verdaccio-htaccess` builtin solution to be your user database)_
 - Later, you **MUST** solve the `storage` directory **permissions** and **ownership**.
 
 ## Configuration
@@ -104,10 +101,10 @@ auth:
       searchBase: "dc=verdaccio.private,dc=rocks"
       searchFilter: "(&(uid={{username}})(memberOf=cn=npm_users,ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks))"
       # # If you are using groups, this is also needed
-      groupDnProperty: 'cn'
-      groupSearchBase: 'ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks'
+      groupDnProperty: "cn"
+      groupSearchBase: "ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks"
       # If you have memberOf support on your ldap
-      searchAttributes: ['*', 'memberOf']
+      searchAttributes: ["*", "memberOf"]
       # Else, if you don't (use one or the other):
       # groupSearchFilter: '(memberUid={{dn}})'
       #
@@ -123,24 +120,24 @@ uplinks:
     url: https://registry.npmjs.org/
 
 packages:
-  '@scope-*/*':
+  "@scope-*/*":
     # scoped packages
     access: npm_access
     publish: npm_publisher
     unpublish: npm_publisher
 
-  '@scope/*':
+  "@scope/*":
     # scoped packages
     access: npm_access
     publish: npm_publisher
     unpublish: npm_publisher
 
-  '@*/*':
+  "@*/*":
     # scoped packages
     access: $all
     publish: $authenticated
     proxy: npmjs
-  '**':
+  "**":
     # allow all users (including non-authenticated users) to read and
     # publish all packages
     #
@@ -157,7 +154,7 @@ packages:
 
 # log settings
 logs:
-  - {type: stdout, format: pretty, level: trace}
+  - { type: stdout, format: pretty, level: trace }
 #  - {type: file, path: verdaccio.log, level: info}
 
 listen:
@@ -187,7 +184,7 @@ searchFilter: "(&(uid={{username}}))"
 I use an organization unit to store all my group for verdaccio-ldap security.
 
 ```yaml
-groupSearchBase: 'ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks'
+groupSearchBase: "ou=npm,ou=groups,ou=developers,dc=verdaccio.private,dc=rocks"
 ```
 
 ### Security
@@ -201,16 +198,16 @@ Note that we do not use `proxy: npmjs` because they only exist on our private re
 I recommend you to create scope for all of your private packages, and reserve the group on npmjs registry so no one will be able to publish publicly in it in the futur.
 
 ```yaml
-  '@scope-*/*':
-    access: npm_access
-    publish: npm_publisher
-    unpublish: npm_publisher
+"@scope-*/*":
+  access: npm_access
+  publish: npm_publisher
+  unpublish: npm_publisher
 
-  '@scope/*':
-    # scoped packages
-    access: npm_access
-    publish: npm_publisher
-    unpublish: npm_publisher
+"@scope/*":
+  # scoped packages
+  access: npm_access
+  publish: npm_publisher
+  unpublish: npm_publisher
 ```
 
 They are some public package on npmjs registry which are scoped, this will proxy all the request to npmjs registry.
@@ -218,11 +215,11 @@ They are some public package on npmjs registry which are scoped, this will proxy
 I recommend not to change this, otherwise you might get issue to download them.
 
 ```yaml
-  '@*/*':
-    # scoped packages
-    access: $all
-    publish: $authenticated
-    proxy: npmjs
+"@*/*":
+  # scoped packages
+  access: $all
+  publish: $authenticated
+  proxy: npmjs
 ```
 
 For all other packages, to prevent anyone to use our registry, we just allow `$authenticated` to publish.
@@ -231,10 +228,10 @@ We also use `proxy: npmjs` so we also serve all the public package on npmjs regi
 We allow `$all` to download from our registry, because it is public, but if you want to preserve your bandwidth or just forbid unknown user to authenticate, just use `$authenticated` as well.
 
 ```yaml
-  '**':
-    access: $all
-    publish: $authenticated
-    proxy: npmjs
+"**":
+  access: $all
+  publish: $authenticated
+  proxy: npmjs
 ```
 
 **`security`**
@@ -269,23 +266,22 @@ Use [`docker build`](https://docs.docker.com/engine/reference/commandline/build/
 - `-t` will give the name `verdaccio-3-ldap` to the new image
 - `.` means that the Dockerfile is in the current working directory.
 
-
 ```bash
 $ docker build -t verdaccio-3-ldap .
 
 Sending build context to Docker daemon  14.34kB
 Step 1/7 : FROM verdaccio/verdaccio:4.3
 4.3: Pulling from verdaccio/verdaccio
-e7c96db7181b: Already exists 
-50958466d97a: Already exists 
-56174ae7ed1d: Already exists 
-284842a36c0d: Already exists 
-38829697cf41: Pull complete 
-67d4be407dc1: Pull complete 
-75921a7a709e: Pull complete 
-27621c093247: Pull complete 
-b5dd63eea3d5: Pull complete 
-3d5fd2ab9d4d: Pull complete 
+e7c96db7181b: Already exists
+50958466d97a: Already exists
+56174ae7ed1d: Already exists
+284842a36c0d: Already exists
+38829697cf41: Pull complete
+67d4be407dc1: Pull complete
+75921a7a709e: Pull complete
+27621c093247: Pull complete
+b5dd63eea3d5: Pull complete
+3d5fd2ab9d4d: Pull complete
 Digest: sha256:2a79d82601596f1889f2fe99d397c8900bf473c6682624cc0c37288896617e99
 Status: Downloaded newer image for verdaccio/verdaccio:4.3
  ---> 03eefd251eef
@@ -321,9 +317,7 @@ docker run -v $(pwd)/config.yaml:/verdaccio/conf/config.yaml verdaccio-3-ldap
 
 ## Run the service
 
-
-You will have to mount the `storage` volume when using `Docker`,  to do that, just use `-v` with `docker run` command:
-
+You will have to mount the `storage` volume when using `Docker`, to do that, just use `-v` with `docker run` command:
 
 ```bash
 docker run -v /srv/verdaccio/storage:/verdaccio/storage verdaccio-3-ldap
@@ -354,7 +348,7 @@ This is all the test I have done while configurating verdaccio, before going to 
 - `[x]` it should work with `verdaccio-htaccess` when `auth.ldap` is disabled and `verdaccio-ldap` is installed. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
 - `[x]` it should work with one `verdaccio-ldap`. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
 - `[x]` it should work with `verdaccio-htaccess` and fallback to `verdaccio-ldap` through **web**. <img src="https://github.githubassets.com/images/icons/emoji/unicode/2714.png" title="OK" name="OK" height="16px" />
-- `[x]` it should work with `verdaccio-htaccess` and fallback to `verdaccio-ldap` through **npm**. <img src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png" title="NOK" name="NOK" height="16px" /> *Either use `verdaccio-htaccess` or `verdaccio-ldap`, it is useless to use both, even if the web work with the two, the `npm --add-user` command will fail.*
+- `[x]` it should work with `verdaccio-htaccess` and fallback to `verdaccio-ldap` through **npm**. <img src="https://github.githubassets.com/images/icons/emoji/unicode/274c.png" title="NOK" name="NOK" height="16px" /> _Either use `verdaccio-htaccess` or `verdaccio-ldap`, it is useless to use both, even if the web work with the two, the `npm --add-user` command will fail._
 
 ### `npm`
 
@@ -414,12 +408,11 @@ If you want to use it as your default proxy for npm:
 npm set registry http://$IP
 ```
 
-
 ## Conclusion and thanks
 
 Docker, LDAP are a great way to authenticate users from your organization. In this article, you have learned how to setup verdaccion with LDAP and Docker.
 
-I have to thank the teams and community behind verdaccio projects, specially [Juan Picado](https://twitter.com/jotadeveloper), [Daniel Refde](https://twitter.com/DanielRufde) and [Sergio Hg](https://github.com/sergiohgz) for their help on the GitHub issues and the discord [chat](http://chat.verdaccio.org/). 
+I have to thank the teams and community behind verdaccio projects, specially [Juan Picado](https://twitter.com/jotadeveloper), [Daniel Refde](https://twitter.com/DanielRufde) and [Sergio Hg](https://github.com/sergiohgz) for their help on the GitHub issues and the discord [chat](http://chat.verdaccio.org/).
 
 Also, but not less important, I want to thank all the people that makes Verdaccio possible, contributing, donating, documenting, and more.
 
@@ -432,7 +425,6 @@ If you have any question, please check at the FAQ below, or feel free to reply t
 > If you 😍 Verdaccio as I do, helps them to grow by donating to the project via [OpenCollective](https://opencollective.com/verdaccio).
 
 Thanks for reading and long life to Verdaccio !
-
 
 ## FAQ
 
@@ -453,4 +445,3 @@ This is due to wrong permissions or ownership in `storage` directory, dont forge
 If you keep having `403` issues when retrieving packages from the registry, and permissions and ownership have been fixed, we have found that adding `--always-auth` will solve the issue.
 
 In my case, I have found that `--always-auth` was required in my production environment.
-

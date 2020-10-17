@@ -17,8 +17,6 @@ The original objective was to create a Private registry and Cache to reduce late
 
 <!--truncate-->
 
-<div id="codefund">''</div>
-
 In fact **, Sinopia was created before** [**the big npm fall**](https://nodejs.org/en/blog/npm/2013-outage-postmortem/#what-went-wrong-and-how-was-it-fixed) **of November 4th** and much after the first registry was running. That incident put on the spotlight that having a packages _proxy/cache_ registry in-house makes total sense, at the same time the project evolved adding interesting features as _scopes packages, search on UI, plugins, override public packages_ etc.
 
 It was clear the project was growing, but something happened in **October 2015** where is the date of the latest commit and Alex which is still the current owner decided do not reply to anyone anymore, the reasons are unknown and seem will remain like that forever _(he has recent activity in other projects)_ and **since is the unique owner the project remains frozen.**
@@ -112,4 +110,4 @@ Even if some initial developers are not contributing anymore _(all we have a lif
 
 I’m telling this story based on my own research and all the information collected along the latest 2 years, comments, private chats, and social networks.
 
-* * *
+---
