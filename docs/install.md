@@ -9,10 +9,10 @@ Verdaccio is a multiplatform web application. To install it, you need a few basi
 
 1. **Node.js** `v8.x (LTS "Carbon")` or higher.
 
-2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn`.
+2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn` (classic and berry).
 
-> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | pnpm@4.x`
-  
+> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@4.x`
+
 3. A modern web browser to run the web interface. We actually support `Chrome, Firefox, Edge, and IE11`.
 
 > Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
@@ -26,14 +26,20 @@ Using `npm`
 ```bash
 npm install -g verdaccio
 ```
+
 or using `yarn`
 
 ```bash
 yarn global add verdaccio
 ```
 
-![install verdaccio](assets/install_verdaccio.gif)
+or using `pnpm`
 
+```bash
+pnpm install -g verdaccio
+```
+
+![install verdaccio](assets/install_verdaccio.gif)
 
 ## Basic Usage
 
@@ -42,7 +48,7 @@ Once it has been installed, you only need to execute the CLI command:
 ```bash
 $> verdaccio
 warn --- config file  - /home/.config/verdaccio/config.yaml
-warn --- http address - http://localhost:4873/ - verdaccio/4.5.0
+warn --- http address - http://localhost:4873/ - verdaccio/4.8.1
 ```
 
 For more information about the CLI, please [read the cli section](cli.md).
@@ -53,7 +59,7 @@ You can set the registry by using the following command.
 npm set registry http://localhost:4873/
 ```
 
-you can pass a ``--registry`` flag when needed.
+you can pass a `--registry` flag when needed.
 
 ```bash
 npm install --registry http://localhost:4873
@@ -95,4 +101,3 @@ docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 `Verdaccio` is also available as a 1-click install on [Cloudron](https://cloudron.io)
 
 [![Install](https://cloudron.io/img/button.svg)](https://cloudron.io/button.html?app=org.eggertsson.verdaccio)
-
