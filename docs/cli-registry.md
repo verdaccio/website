@@ -26,6 +26,8 @@ Write it yourself by defining in your `.npmrc` a `registry` field.
 registry=http://localhost:4873
 ```
 
+> Since `npm@5.x` [ignores the `resolve` field in defined in the lock files](https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e), while `pnpm@4.x` and `yarn@1.x` does the opposite.
+
 Or a `publishConfig` in your `package.json`
 
 ```json
@@ -40,11 +42,64 @@ Or a `publishConfig` in your `package.json`
 
 If you are using either `npm@5.4.x` or `npm@5.5.x`, there are [known issues with tokens](https://github.com/verdaccio/verdaccio/issues/509#issuecomment-359193762), please upgrade to either `6.x` or downgrade to `npm@5.3.0`.
 
+#### SSL and certificates
+
+When using verdaccio under SSL without a valid certificate, define `strict-ssl` in your config file is required otherwise you will get `SSL Error: SELF_SIGNED_CERT_IN_CHAIN` errors.
+
+`npm` does not support [invalid certificates anymore](https://blog.npmjs.org/post/78085451721/npms-self-signed-certificate-is-no-more) since 2014.
+
+```bash
+npm config set ca ""
+npm config set strict-ssl false
+```
+
+### npm (7.x)
+
+The `v7.0.0` is more strict with the new `v2` lock file, if you have mixed `resolved` fields in your lock file, for instance, having this in your lockfile:
+
+```json
+{
+  "name": "npm7",
+  "version": "1.0.0",
+  "lockfileVersion": 2,
+  "requires": true,
+  "packages": {
+    "": {
+      "version": "1.0.0",
+      "license": "ISC",
+      "dependencies": {
+        "lodash": "4.17.20",
+        "underscore": "^1.11.0"
+      }
+    },
+    ..... // removed for simplicity
+  },
+  "dependencies": {
+    "lodash": {
+      "version": "4.17.20",
+      "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz",
+      "integrity": "sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA=="
+    },
+    "underscore": {
+      "version": "1.11.0",
+      "resolved": "http://localhost:4873/underscore/-/underscore-1.11.0.tgz",
+      "integrity": "sha512-xY96SsN3NA461qIRKZ/+qox37YXPtSBswMGfiNptr+wrt6ds4HaMw23TP612fEyGekRE6LNRiLYr/aqbHXNedw=="
+    }
+  }
+}
+```
+
+Either running `npm i --registry https://registry.npmjs.org` or using `.npmrc` will fail your installation.
+
 ### yarn
 
 #### Yarn (1.x)
 
-The classic version is able to regonize the `.npmrc` file, but also provides their own configuration file named `.yarnrc`. To setup a registry you
+> Be aware npm configurations are valid on the classic version
+
+The classic version is able to regonize the `.npmrc` file, but, also provides their own configuration file named `.yarnrc`.
+
+To setup a registry create a file and define a registry.
 
 ```
 // .yarnrc
@@ -101,3 +156,7 @@ yarn npm login --scope my-company
 > This includes 4.x and 5.x series.
 
 `pnpm` recognize by default the configuration at `.npmrc` and also the `--registry` value, there is no difference in the implementation.
+
+```
+
+```
