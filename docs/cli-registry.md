@@ -156,7 +156,3 @@ yarn npm login --scope my-company
 > This includes 4.x and 5.x series.
 
 `pnpm` recognize by default the configuration at `.npmrc` and also the `--registry` value, there is no difference in the implementation.
-
-```
-
-```
