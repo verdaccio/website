@@ -5,14 +5,11 @@ authorFBID: 1122901551
 title: Setting up Verdaccio on DigitalOcean
 ---
 
-
 This one of the multiple articles I will write about running Verdaccio on multiple platforms.
 
 This time for simplicity I’ve chosen [DigitalOcean](https://www.digitalocean.com/) that provides affordable base prices and if you want to run your own registry, it’s a good option.
 
 <!--truncate-->
-
-<div id="codefund">''</div>
 
 ### Create a Droplet
 
@@ -127,4 +124,4 @@ As you can see, **host a registry is quite cheap and the initial set up might ta
 
 If you are willing to share your experience in our blog writing about **_verdaccio_** being installed on other platforms, just [send me a message over our chat at Discord](http://chat.verdaccio.org) for easy coordination.
 
-* * *
+---

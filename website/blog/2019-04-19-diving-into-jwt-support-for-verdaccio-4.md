@@ -21,8 +21,6 @@ I’d recommend reading the following article before continue the reading.
 
 <!--truncate-->
 
-<div id="codefund">''</div>
-
 ### Context
 
 **Verdaccio 3** uses by default a token signature are based on [AES192 encryption](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard), that has been a legacy implementation inherited by [Sinopia](https://www.npmjs.com/package/sinopia).
@@ -81,7 +79,7 @@ Similar as the **web** section inside of security also contains different option
 
 #### Signature and Verify
 
-The options for **sign** or **verify** defined inside of either web or apiare well explained in the section by the [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken#usage) library from  **Auth0**.
+The options for **sign** or **verify** defined inside of either web or apiare well explained in the section by the [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken#usage) library from **Auth0**.
 
 You can use them freely according to your needs, Verdaccio will just delegate whatever you define within such sections directly to the jsonwebtoken library.
 
@@ -113,4 +111,4 @@ If you are willing to support the project, feel free donate over OpenCollective.
 
 Thanks, [Luiz Filipe Machado Barni](https://medium.com/u/34137e4bcaf7) for the contribution to this article.
 
-* * *
+---

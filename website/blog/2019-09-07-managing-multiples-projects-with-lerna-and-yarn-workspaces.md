@@ -16,13 +16,11 @@ Now, we are proud to announce our [monorepo](https://github.com/verdaccio/monore
 
 <!--truncate-->
 
-<div id="codefund">''</div>
-
 ## Background and tools
 
 A year ago, [Juan](https://twitter.com/jotadeveloper) and I met in Madrid, Spain, and were talking about the roadmap for Verdaccio 4, the scope of the projects and more. We had some concerns about the Verdaccio ecosystem we want to build, such amount of repositories requires hard work for maintenance by each one with their own dependencies, scripts, configurations, etc.
 
-We decided to unify all configurations, because handle several repositories would not be realistic  and would have all things replicated in all repositories. In order to achieve our goal, and we found [Lerna](https://lerna.js.org/) and [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/).
+We decided to unify all configurations, because handle several repositories would not be realistic and would have all things replicated in all repositories. In order to achieve our goal, and we found [Lerna](https://lerna.js.org/) and [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/).
 
 As a first step, we created the basic architecture of the monorepo and moved the first dependencies in, an ESLint config and a Babel preset.
 

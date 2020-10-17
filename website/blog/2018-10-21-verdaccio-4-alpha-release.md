@@ -5,14 +5,11 @@ authorFBID: 1122901551
 title: Verdaccio 4 alpha release
 ---
 
-
 Since a couple of months ago, **verdaccio@4.0.0** is under development, we want to give you a first update of the current list of features ready to be tested and incoming ones.
 
 ![](https://cdn-images-1.medium.com/max/1024/1*GK9U1wZmB0JUN2XGhu5LjA.png)
 
 <!--truncate-->
-
-<div id="codefund">''</div>
 
 ### What’s new in Verdaccio 4 Alpha? 🐣
 
@@ -68,7 +65,7 @@ We are open to new ideas, feel free to suggest or share your thoughts during thi
 
 #### Docker 🐳
 
-We have reduced the size of the image and following the best practices adding a namespace VERDACCIO\_XXX\_XXX for environment variables. Many other new things are planned for our popular image that **to this day we have almost 2,5 millions pulls**.
+We have reduced the size of the image and following the best practices adding a namespace VERDACCIO_XXX_XXX for environment variables. Many other new things are planned for our popular image that **to this day we have almost 2,5 millions pulls**.
 
 #### Future 🔮
 
@@ -108,7 +105,6 @@ I’d like to reminder our readers that there are other ways to contribute to th
 
 For those are already backers and sponsors, thanks so much 👏👏👏.
 
-
 If you have the chance to meet any of our team members, feel free to ask for stickers (hopefully they will carry some), we use our budget mostly for promotion and you can help us to spread the voice, give your start or just recommend with your colleagues how great is Verdaccio.
 
 ### Wrapping Up 👋🏼
@@ -119,4 +115,4 @@ If you live near Vienna (Austria), **we will have a presentation in early next y
 
 A future core team meeting will take place between 29th and 30th November at **Berlin** , we are attending [React Day Berlin](https://reactday.berlin/), feel free to DM if you want to have a chat to any of us.
 
-* * *
+---

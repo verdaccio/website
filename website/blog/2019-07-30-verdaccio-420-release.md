@@ -10,17 +10,15 @@ Verdaccio keeps growing, thanks to their users. This release is a minor one we d
 
 We have some highlights to share:
 
-* At this stage, Docker downloads [have grown to 5.1 million pulls](https://dockeri.co/image/verdaccio/verdaccio).
-* **New Verdaccio Monorepo** development has begun early this month, we are migrating small repositories, plugins and other tools to create a unique ecosystem, [feel free to contribute](https://github.com/verdaccio/monorepo). This first steps are developed by [**@sergiohgz**](https://github.com/sergiohgz) with the contributions of [@griffithtp](https://github.com/griffithtp).
-* We finally migrated all repositories to **Typescript**, we do not support Flow types anymore.
+- At this stage, Docker downloads [have grown to 5.1 million pulls](https://dockeri.co/image/verdaccio/verdaccio).
+- **New Verdaccio Monorepo** development has begun early this month, we are migrating small repositories, plugins and other tools to create a unique ecosystem, [feel free to contribute](https://github.com/verdaccio/monorepo). This first steps are developed by [**@sergiohgz**](https://github.com/sergiohgz) with the contributions of [@griffithtp](https://github.com/griffithtp).
+- We finally migrated all repositories to **Typescript**, we do not support Flow types anymore.
 
 If you 😍 Verdaccio as we do, helps us to grow more donating to the project via [OpenCollective](https://opencollective.com/verdaccio), this project is addressed by **voluntaries**, help us to be sustainable.
 
 Thanks for support Verdaccio ! 👏👏👏👏.
 
 <!--truncate-->
-
-<div id="codefund">''</div>
 
 ## Use this version
 
@@ -55,7 +53,6 @@ middlewares:
     strict_ssl: true # optional, defaults to true
 ```
 
-
 ## Development
 
 ### [prevent secrets from leaking to source control](https://github.com/verdaccio/verdaccio/pull/1373) by @lirantal
@@ -68,10 +65,7 @@ The detect-secrets npm package will try different methods of invoking the detect
 
 The storage plugins were forced to return some specific error codes that are not part of Node.js. Now we allow storage plugins to return the same error codes that Verdaccio returns to the Node Package Manager. Read more context in the PR.
 
-
 ## Bugs
 
-* [**Download button is not displayed if the tarball dist URI has localhost as domain**](https://github.com/verdaccio/ui/issues/76) by @juanpicado
-* [**download button hidden for localhost**](https://github.com/verdaccio/ui/pull/101) by @griffithtp
-
-
+- [**Download button is not displayed if the tarball dist URI has localhost as domain**](https://github.com/verdaccio/ui/issues/76) by @juanpicado
+- [**download button hidden for localhost**](https://github.com/verdaccio/ui/pull/101) by @griffithtp

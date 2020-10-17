@@ -12,20 +12,18 @@ Furthermore, the info about the release is also available [at GitHub releases pa
 
 We have some highlights to share:
 
-* At this stage, Docker downloads [have grown to 4.8 million pulls](https://dockeri.co/image/verdaccio/verdaccio).
-* **Angular CLI** just started to uses [Verdaccio 4 for E2E testing](https://twitter.com/jotadeveloper/status/1146415913396318208). For
-further read about this topic, [check our docs](https://verdaccio.org/docs/en/e2e).
-* This release **has been fully developed by contributors**, kudos to them.
-* We just reached 7k stars, **would you help us to reach 10k?** Give us your star ⭐️!
-* We have a new [Security Policy Document](https://github.com/verdaccio/verdaccio/security/policy) 🛡, helps us to keep Verdaccio secure for their users.
+- At this stage, Docker downloads [have grown to 4.8 million pulls](https://dockeri.co/image/verdaccio/verdaccio).
+- **Angular CLI** just started to uses [Verdaccio 4 for E2E testing](https://twitter.com/jotadeveloper/status/1146415913396318208). For
+  further read about this topic, [check our docs](https://verdaccio.org/docs/en/e2e).
+- This release **has been fully developed by contributors**, kudos to them.
+- We just reached 7k stars, **would you help us to reach 10k?** Give us your star ⭐️!
+- We have a new [Security Policy Document](https://github.com/verdaccio/verdaccio/security/policy) 🛡, helps us to keep Verdaccio secure for their users.
 
 > If you 😍 Verdaccio as we do, helps us to grow more donating to the project via [OpenCollective](https://opencollective.com/verdaccio).
 
 Thanks for support Verdaccio ! 👏👏👏👏.
 
 <!--truncate-->
-
-<div id="codefund">''</div>
 
 ## Use this version
 
@@ -48,10 +46,10 @@ npm install -g verdaccio@4.1.0
 Verdaccio now support plugin filters, we are just starting with filter metadata.
 
 > It gets a current copy of a package metadata and may choose to modify it as required.
-For example, this may be used to block a bad version of a package or
-add a time delay from when new packages can be used from your
-registry. Errors in a filter will cause a 404, similar to upLinkErrors
-as it is not safe to recover gracefully from them.
+> For example, this may be used to block a bad version of a package or
+> add a time delay from when new packages can be used from your
+> registry. Errors in a filter will cause a 404, similar to upLinkErrors
+> as it is not safe to recover gracefully from them.
 
 The configuration would looks like
 
@@ -65,7 +63,7 @@ The current API for the plugin is
 
 ```javascript
 interface IPluginStorageFilter<T> extends IPlugin<T> {
-    filter_metadata(packageInfo: Package): Promise<Package>;
+  filter_metadata(packageInfo: Package): Promise<Package>;
 }
 ```
 
