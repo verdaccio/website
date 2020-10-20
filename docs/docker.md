@@ -61,6 +61,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   -v $V_PATH/plugins:/verdaccio/plugins \
   verdaccio/verdaccio
 ```
+> if you are running in a server, you might want to add -d to run it in the background
 
 >Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, 
 you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 10001:65533 /opt/verdaccio` otherwise 
