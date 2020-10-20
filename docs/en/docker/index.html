@@ -115,6 +115,9 @@ The above line will pull the latest prebuilt image from dockerhub, if you haven'
   verdaccio/verdaccio
 </code></pre>
 <blockquote>
+<p>if you are running in a server, you might want to add -d to run it in the background</p>
+</blockquote>
+<blockquote>
 <p>Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default,
 you need to make sure the mount directory is assigned to the right user. In above example, you need to run <code>sudo chown -R 10001:65533 /opt/verdaccio</code> otherwise
 you will get permission errors at runtime.
