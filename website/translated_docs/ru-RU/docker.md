@@ -60,7 +60,9 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-> Примечание: внутри контейнера Verdaccio запускается не из под root (uid=10001), и если вы используете кастомное монтирование каталогов, вам необходимо убедиться, что у пользователя будет доступ к этим каталогам. In above example, you need to run `sudo chown -R 10001:65533 /opt/verdaccio` otherwise you will get permission errors at runtime. [Используйте docker разделы](https://docs.docker.com/storage/volumes/) при монтировании каталогов.
+> if you are running in a server, you might want to add -d to run it in the background
+> 
+> Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 10001:65533 /opt/verdaccio` otherwise you will get permission errors at runtime. [Use docker volume](https://docs.docker.com/storage/volumes/) is recommended over using bind mount.
 
 Verdaccio 4 предоставляет новый набор переменных окружения для модификации прав доступа, порта и http-протокола. Вот полный список:
 
