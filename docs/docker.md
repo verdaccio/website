@@ -54,13 +54,14 @@ If you have [build an image locally](#build-your-own-docker-image) use `verdacci
 You can use `-v` to bind mount `conf`, `storage` and `plugins` to the hosts filesystem:
 
 ```bash
-V_PATH=/path/for/verdaccio; docker run -it -d --rm --name verdaccio \
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   -p 4873:4873 \
   -v $V_PATH/conf:/verdaccio/conf \
   -v $V_PATH/storage:/verdaccio/storage \
   -v $V_PATH/plugins:/verdaccio/plugins \
   verdaccio/verdaccio
 ```
+> if you are running in a server, you might want to add -d to run it in the background
 
 >Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, 
 you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 10001:65533 /opt/verdaccio` otherwise 
