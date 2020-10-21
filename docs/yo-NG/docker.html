@@ -114,7 +114,8 @@
   verdaccio/verdaccio
 </code></pre>
 <blockquote>
-<p>Akiyesi: Verdaccio n ṣiṣẹ bi olumulo ti ko lo gbongbo (uid=10001) ninu apoti naa, if ti o ba lo atopọ dide lati fagbara bori atilẹwa, o nilo lati rii daju pe ọna atilẹyin naa jẹ pinpin si olumulo to tọ. In above example, you need to run <code>sudo chown -R 10001:65533 /opt/verdaccio</code> otherwise you will get permission errors at runtime. <a href="https://docs.docker.com/storage/volumes/">Lo iwọn iye docker</a> o jẹ igbaniyanju lori lilo atopọ dide.</p>
+<p>if you are running in a server, you might want to add -d to run it in the background</p>
+<p>Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run <code>sudo chown -R 10001:65533 /opt/verdaccio</code> otherwise you will get permission errors at runtime. <a href="https://docs.docker.com/storage/volumes/">Use docker volume</a> is recommended over using bind mount.</p>
 </blockquote>
 <p>Verdaccio 4 n pese awọn iyipada ayika tuntun lati ṣayipada si boya awọn igbanilaaye, ibudo tabi Ilana Http. Eyi ni akojọ pipe:</p>
 <table>
