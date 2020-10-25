@@ -60,6 +60,6 @@
         "ids": ["ansible", "puppet", "chef"]
       }
     ],
-    "Guides": ["best", "protect-your-dependencies"]
+    "Guides": ["best", "protect-your-dependencies", "aws"]
   }
 }
