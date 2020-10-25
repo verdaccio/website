@@ -3,7 +3,7 @@ id: aws
 title: "Amazon Web Services"
 ---
 
-This document describes simple steps to setup Verdaccio private registry on Amazon Web Services platform using EC2 service. Considering you already created EC2 Amazon Linux instance, if not then please check this tutorial [AWS EC2 Setup](https://tinyurl.com/y2ozksyc).
+This document describes simple steps to setup Verdaccio private registry on Amazon Web Services platform using EC2 service. Considering you already created EC2 Amazon Linux instance, if not then please check this tutorial [AWS EC2 Setup](https://www.howtoinmagento.com/2018/04/aws-cli-commands-for-aws-ec2-amazon.html).
 
 ## Setup & Configuration
 
@@ -87,7 +87,7 @@ Login into verdaccio registry. Enter the same username, password and email id se
 
 **Step 12:** Go to your custom library package path. In my case this is my Angular 7 package path -> `/libraries/dist/your-library-name/your-library-name-0.0.1.tgz`
 
-If you like to know how to create angular 7 library/package then [(click here)](https://tinyurl.com/yxefgldp)
+If you like to know how to create angular 7 library/package then [(click here)](https://www.howtoinmagento.com/2019/11/how-to-create-your-first-angular-7.html)
 
  ```   cd [custom library package path] ```
 
