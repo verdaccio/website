@@ -72,8 +72,9 @@ title: "The Title of my article"
 
 your content ...
 ````
-3. Edit [(`sidebar.json`](https://github.com/verdaccio/website/blob/master/website/sidebars.json) and add the reference **using the ID in the previous section**.
-4. PR your changes
-5. Wait until finish the build and preview your changes
+3. Edit [`sidebar.json`](https://github.com/verdaccio/website/blob/master/website/sidebars.json) and add the reference **using the ID in the previous section**.
+4. If you need to refernces images, use this syntax `![install verdaccio](assets/install_verdaccio.gif)` and copy all files to the [assets folder](https://github.com/verdaccio/website/tree/master/docs/assets)
+5. PR your changes
+6. Wait until finish the build and preview your changes
 
 <img width="1130" alt="New_Crowdin_updates_by_juanpicado_·_Pull_Request__304_·_verdaccio_website" src="https://user-images.githubusercontent.com/558752/97103693-57e9e900-16ae-11eb-8a3b-5728f211e052.png">
