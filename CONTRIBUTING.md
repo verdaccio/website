@@ -59,4 +59,21 @@ For this repository there is no strict rules, please follow the basics:
 * Document and explain your changes for faster code reviews
 * Verify with Netlify preview (see the checks clicking on Details) to open the preview URL
 
+# How to add a new page
 
+1. Add a new markdown document on [this location](https://github.com/verdaccio/website/tree/master/docs)
+2. Define the header for the markdow like this:
+
+```
+---
+id: idOfTheArticlePleaseUseCamelCase
+title: "The Title of my article"
+---
+
+your content ...
+````
+3. Edit [(`sidebar.json`](https://github.com/verdaccio/website/blob/master/website/sidebars.json) and add the reference **using the ID in the previous section**.
+4. PR your changes
+5. Wait until finish the build and preview your changes
+
+<img width="1130" alt="New_Crowdin_updates_by_juanpicado_·_Pull_Request__304_·_verdaccio_website" src="https://user-images.githubusercontent.com/558752/97103693-57e9e900-16ae-11eb-8a3b-5728f211e052.png">
