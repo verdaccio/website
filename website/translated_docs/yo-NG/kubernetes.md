@@ -29,13 +29,13 @@ Deploy the Helm [verdaccio/verdaccio](https://github.com/verdaccio/charts) chart
 Ninu apẹẹrẹ yii a lo `npm` gẹgẹbi orukọ ifilọlẹ:
 
 ```bash
-helm install --name npm verdaccio/verdaccio
+helm install npm verdaccio/verdaccio
 ```
 
 ### Ṣamulo pato ẹya kan
 
 ```bash
-helm install --name npm --set image.tag=3.13.1 verdaccio/verdaccio
+helm install npm --set image.tag=3.13.1 verdaccio/verdaccio
 ```
 
 ### Sisagbega Verdaccio
@@ -47,7 +47,7 @@ helm upgrade npm verdaccio/verdaccio
 ### Yiyọ kuro
 
 ```bash
-helm del --purge npm
+helm uninstall npm
 ```
 
 **Akiyesi:** aṣẹ yi n pa gbogbo awọn ohun elo rẹ, pẹlu awọn akopọ ti o le ti gbejade tẹlẹ si ibi iforukọsilẹ naa.
@@ -86,7 +86,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 Ni bayi o le ṣe amulo atẹ Verdaccio Helm ati ṣiṣe pato iru iṣeto to ma jẹ lilo:
 
 ```bash
-helm install --name npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
+helm install npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
 #### NGINX proxy body-size limit
