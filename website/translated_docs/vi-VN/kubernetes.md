@@ -29,13 +29,13 @@ Deploy the Helm [verdaccio/verdaccio](https://github.com/verdaccio/charts) chart
 In this example we use `npm` as release name:
 
 ```bash
-helm install --name npm verdaccio/verdaccio
+helm install npm verdaccio/verdaccio
 ```
 
 ### Sử dụng cấu hình phiên bản cụ thể
 
 ```bash
-helm install --name npm --set image.tag=3.13.1 verdaccio/verdaccio
+helm install npm --set image.tag=3.13.1 verdaccio/verdaccio
 ```
 
 ### Nâng cấp Verdaccio
@@ -47,7 +47,7 @@ helm upgrade npm verdaccio/verdaccio
 ### Gỡ cài đặt
 
 ```bash
-helm del --purge npm
+helm uninstall npm
 ```
 
 **Lưu ý:** Lệnh này sẽ xóa tất cả mã nguồn, bao gồm các gói mà bạn đã đăng trước đó vào sổ đăng ký.
@@ -86,7 +86,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 Bây giờ bạn có thể cài đặt cấu hình biểu đồ Verdaccio Helm và chỉ định cấu hình nào sẽ sử dụng:
 
 ```bash
-helm install --name npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
+helm install npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
 #### NGINX proxy body-size limit
