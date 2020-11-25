@@ -29,13 +29,13 @@ Deploy the Helm [verdaccio/verdaccio](https://github.com/verdaccio/charts) chart
 In this example we use `npm` as release name:
 
 ```bash
-helm install --name npm verdaccio/verdaccio
+helm install npm verdaccio/verdaccio
 ```
 
 ### Nasazení specifické verze
 
 ```bash
-helm install --name npm --set image.tag=3.13.1 verdaccio/verdaccio
+helm install npm --set image.tag=3.13.1 verdaccio/verdaccio
 ```
 
 ### Aktualizace Verdaccia
@@ -47,7 +47,7 @@ helm upgrade npm verdaccio/verdaccio
 ### Odinstalace
 
 ```bash
-helm del --purge npm
+helm uninstall npm
 ```
 
 **Poznámka:** tento příkaz odstraní všechny prostředky včetně balíčků, které jste dříve publikovali do registru.
@@ -86,7 +86,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 Nyní můžete nasadit Verdaccio Helm graf a specifikovat, jakou konfiguraci použít:
 
 ```bash
-helm install --name npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
+helm install npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
 #### NGINX proxy body-size limit

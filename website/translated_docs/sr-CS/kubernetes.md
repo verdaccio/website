@@ -29,13 +29,13 @@ Deploy the Helm [verdaccio/verdaccio](https://github.com/verdaccio/charts) chart
 U ovom primeru koristimo `npm` kao ime izdanja:
 
 ```bash
-helm install --name npm verdaccio/verdaccio
+helm install npm verdaccio/verdaccio
 ```
 
 ### Postavljanje specifične verzije (deploy)
 
 ```bash
-helm install --name npm --set image.tag=3.13.1 verdaccio/verdaccio
+helm install npm --set image.tag=3.13.1 verdaccio/verdaccio
 ```
 
 ### Nadogradjivanje Verdaccio-a
@@ -47,7 +47,7 @@ helm upgrade npm verdaccio/verdaccio
 ### Deinstaliranje
 
 ```bash
-helm del --purge npm
+helm uninstall npm
 ```
 
 **Napomena:** ova komanda briše sve resurse, uključujući i pakete koji su možda ranije objavljeni u registriju.
@@ -86,7 +86,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 Sada možete postaviti Verdaccio Helm chart i detaljno definisati konfiguraciju da koristi:
 
 ```bash
-helm install --name npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
+helm install npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
 #### NGINX proxy body-size limit
