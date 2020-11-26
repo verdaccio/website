@@ -3,7 +3,7 @@ id: aws
 title: "Amazon Web Services"
 ---
 
-This document describes simple steps to setup Verdaccio private registry on Amazon Web Services platform using EC2 service. Considering you already created EC2 Amazon Linux instance, if not then please check this tutorial [AWS EC2 Setup](https://www.howtoinmagento.com/2018/04/aws-cli-commands-for-aws-ec2-amazon.html).
+This document describes simple steps to setup Verdaccio private registry on Amazon Web Services platform using EC2 service. This assumes you have already created an EC2 Amazon Linux instance; if not then please check this tutorial on [AWS EC2 Setup](https://www.howtoinmagento.com/2018/04/aws-cli-commands-for-aws-ec2-amazon.html).
 
 ## Setup & Configuration
 
