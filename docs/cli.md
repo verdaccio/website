@@ -3,7 +3,7 @@ id: cli
 title: "Command Line Tool"
 ---
 
-The Verdaccio CLI is your tool to start the application.
+The Verdaccio CLI is your tool to start and stop the application.
 
 ## Commands
 

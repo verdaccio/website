@@ -64,7 +64,7 @@ The URL will look like something:
 
  ``` http://your-ec2-public-ip-address:4873 (You can check your EC2 instance public ip from AWS console) ```
 
-To confirm verdaccio running status, run the command below
+To confirm Verdaccio's running status, run the command below:
 
  ```  pm2 list ```
 

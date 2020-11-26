@@ -7,7 +7,7 @@ This is mostly basic Linux server configuration stuff but I felt it important to
 
 ## Running as a separate user
 
-First create a verdaccio user:
+First create a Verdaccio user:
 
 ```bash
 $ sudo adduser --system --gecos 'Verdaccio NPM mirror' --group --home /var/lib/verdaccio verdaccio
@@ -19,14 +19,14 @@ Or, in case you do not have `adduser`:
 $ sudo useradd --system --comment 'Verdaccio NPM mirror' --create-home --home-dir /var/lib/verdaccio --shell /sbin/nologin verdaccio
 ```
 
-You create a shell as the verdaccio user using the following command:
+You create a shell as the Verdaccio user using the following command:
 
 ```bash
 $ sudo su -s /bin/bash verdaccio
 $ cd
 ```
 
-The `cd` command sends you to the home directory of the verdaccio user. Make sure you run verdaccio at least once to generate the config file. Edit it according to your needs.
+The `cd` command sends you to the home directory of the Verdaccio user. Make sure you run Verdaccio at least once to generate the config file. Edit it according to your needs.
 
 ## Listening on all addresses
 
@@ -36,7 +36,7 @@ If you want to listen to every external address set the listen directive in the 
 listen: 0.0.0.0:4873
 ```
 
-If you are running verdaccio in a Amazon EC2 Instance, [you will need set the listen in change your config file](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) as is described above.
+If you are running Verdaccio in a Amazon EC2 Instance, [you will need set the listen in change your config file](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) as is described above.
 
 > Configure Apache or nginx? Please check out the [Reverse Proxy Setup](reverse-proxy.md)
 
@@ -84,7 +84,7 @@ $ which verdaccio
 
 ## Using systemd
 
-Instead of `forever` you can use `systemd` for starting verdaccio and keeping it running. Verdaccio installation has systemd unit, you only need to copy it:
+Instead of `forever` you can use `systemd` for starting Verdaccio and keeping it running. Verdaccio installation has systemd unit, you only need to copy it:
 ```bash
 $ sudo cp /usr/lib/node_modules/verdaccio/systemd/verdaccio.service /lib/systemd/system/ && sudo systemctl daemon-reload
 ```

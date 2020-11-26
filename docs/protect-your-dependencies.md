@@ -3,7 +3,7 @@ id: protect-your-dependencies
 title: "Protecting packages"
 ---
 
-`verdaccio` allows you protect publishing to your registry. To achieve that you will need to set up correctly configure your [packages access](packages).
+Verdaccio allows you protect publishing to your registry. To achieve that you will need to set up correctly configure your [packages access](packages).
 
 ### Package configuration
 
