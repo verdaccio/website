@@ -3,11 +3,11 @@ id: server-configuration
 title: "Configurazione del server"
 ---
 
-Questa è principalmente la documentazione della configurazione di base per il server di linux ma credo sia importante documentare e condividere i passi che ho seguito per avviare permanentemente verdaccio sul mio server. Serviranno le autorizzazioni di root (o sudo) per quello che segue.
+This is mostly basic Linux server configuration stuff but I felt it important to document and share the steps I took to get Verdaccio running permanently on my server. You will need root (or sudo) permissions for the following steps.
 
 ## Gestire come utente separato
 
-Come prima cosa creare l'utente verdaccio:
+First create a Verdaccio user:
 
 ```bash
 $ sudo adduser --system --gecos 'Verdaccio NPM mirror' --group --home /var/lib/verdaccio verdaccio
@@ -19,14 +19,14 @@ O, nel caso in cui non si abbia `adduser`:
 $ sudo useradd --system --comment 'Verdaccio NPM mirror' --create-home --home-dir /var/lib/verdaccio --shell /sbin/nologin verdaccio
 ```
 
-Creare una shell come utente di verdaccio utilizzando il seguente comando:
+You create a shell as the Verdaccio user using the following command:
 
 ```bash
 $ sudo su -s /bin/bash verdaccio
 $ cd
 ```
 
-Il comando `cd` manda alla cartella home dell'utente verdaccio. Assicurarsi di eseguire verdaccio almeno una volta per generare il file di configurazione. Modificarlo a seconda delle proprie esigenze.
+The `cd` command sends you to the home directory of the Verdaccio user. Make sure you run Verdaccio at least once to generate the config file. Edit it according to your needs.
 
 ## Ascolto di tutti gli indirizzi
 
@@ -37,13 +37,13 @@ Se si desidera ascoltare ogni indirizzo esterno, impostare la direttiva listen n
 listen: 0.0.0.0:4873
 ```
 
-Se si sta eseguendo verdaccio in un'istanza di Amazon EC2, [ sarà necessario impostare il listen nel cambiare il file di configurazione](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) come viene descritto sopra.
+If you are running Verdaccio in a Amazon EC2 Instance, [you will need set the listen in change your config file](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) as is described above.
 
 > Bisogno di configurare Apache o nginx? Controllare la [Configurazione Inversa del Proxy](reverse-proxy.md)
 
-## Mantenere verdaccio in funzione
+## Keeping Verdaccio running forever
 
-È possibile utilizzare il pacchetto di nodi chiamato ['forever'](https://github.com/nodejitsu/forever) per mantenere verdaccio in esecuzione continuamente.
+You can use a Node package called ['forever'](https://github.com/nodejitsu/forever) to keep Verdaccio running all the time.
 
 Innanzitutto installare `forever` globalmente:
 
@@ -51,7 +51,7 @@ Innanzitutto installare `forever` globalmente:
 $ sudo npm install -g forever
 ```
 
-Assicurarsi di aver eseguito verdaccio almeno una volta per generare il file di configurazione ed annotare l'utente amministratore creato. Successivamente può essere usato il seguente comando per avviare verdaccio:
+Make sure you've run Verdaccio at least once to generate the config file and write down the created admin user. You can then use the following command to start Verdaccio:
 
 ```bash
 $ forever start `which verdaccio`
@@ -61,18 +61,20 @@ Per ulteriori informazioni su come utilizzare forever consultare la documentazio
 
 ## Durata dei riavvi del server
 
-Si possono utilizzare `crontab` e `forever` contemporaneamente per avviare verdaccio in seguito ad una reinizializzazione del server. Quando si è loggati come utenti verdaccio, effettuare le seguenti operazioni:
+You can use `crontab` and `forever` together to start Verdaccio after a server reboot.
+
+When you're logged in as the Verdaccio user do the following:
 
 ```bash
 $ crontab -e
 ```
 
-Questo potrebbe richiedere di scegliere un editor. Selezionare il preferito e procedere. Aggiungere la seguente annotazione al file:
+This might ask you to choose an editor. Pick your favorite and proceed. Add the following entry to the file:
 
     @reboot /usr/bin/forever start /usr/lib/node_modules/verdaccio/bin/verdaccio
     
 
-I percorsi potrebbero variare a seconda della configurazione del server. Se si desidera sapere dove si trovano i file, è possibile utilizzare il comando 'which':
+The locations may vary depending on your server setup. If you want to know where your files are you can use the 'which' command:
 
 ```bash
 $ which forever
@@ -81,10 +83,10 @@ $ which verdaccio
 
 ## Utilizzo di systemd
 
-È possibile utilizzare `systemd` invece di `forever` per avviare verdaccio e mantenerlo in esecuzione. L'installazione di Verdaccio possiede l'unità systemd, è necessario solamente copiarla:
+Instead of `forever` you can use `systemd` for starting Verdaccio and keeping it running. Verdaccio installation has systemd unit, you only need to copy it:
 
 ```bash
 $ sudo cp /usr/lib/node_modules/verdaccio/systemd/verdaccio.service /lib/systemd/system/ && sudo systemctl daemon-reload
 ```
 
-Questa unità presuppone che la configurazione sia in `/etc/verdaccio/config.yaml` e l'archiviazione dei dati in `/var/lib/verdaccio`, quindi spostare i file in quelle posizioni o modificare l'unità.
+This unit assumes you have configuration in `/etc/verdaccio/config.yaml` and store data in `/var/lib/verdaccio`, so either move your files to those locations or edit the unit.
