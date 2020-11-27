@@ -3,7 +3,7 @@ id: cli-registry
 title: "Using a private registry"
 ---
 
-Setting up a private registry can be achieved in few ways, let's review all of them, this formula might be different based on the package manager you are using.
+Setting up a private registry can be achieved in a few ways, let's review all of them. The following commands might be different based on the package manager you are using.
 
 ### npm (5.x, 6.x)
 
@@ -44,7 +44,7 @@ If you are using either `npm@5.4.x` or `npm@5.5.x`, there are [known issues with
 
 #### SSL and certificates
 
-When using verdaccio under SSL without a valid certificate, define `strict-ssl` in your config file is required otherwise you will get `SSL Error: SELF_SIGNED_CERT_IN_CHAIN` errors.
+When using Verdaccio under SSL without a valid certificate, defining `strict-ssl` in your config file is required otherwise you will get `SSL Error: SELF_SIGNED_CERT_IN_CHAIN` errors.
 
 `npm` does not support [invalid certificates anymore](https://blog.npmjs.org/post/78085451721/npms-self-signed-certificate-is-no-more) since 2014.
 
@@ -55,7 +55,7 @@ npm config set strict-ssl false
 
 ### npm (7.x)
 
-The `v7.0.0` is more strict with the new `v2` lock file, if you have mixed `resolved` fields in your lock file, for instance, having this in your lockfile:
+npm `v7.0.0` is more strict with the new `v2` lockfile. If you have mixed `resolved` fields in your lockfile, for instance, having this in your lockfile:
 
 ```json
 {
@@ -97,9 +97,9 @@ Either running `npm i --registry https://registry.npmjs.org` or using `.npmrc` w
 
 > Be aware npm configurations are valid on the classic version
 
-The classic version is able to regonize the `.npmrc` file, but, also provides their own configuration file named `.yarnrc`.
+The classic version is able to regonize the `.npmrc` file, but also provides their own configuration file named `.yarnrc`.
 
-To setup a registry create a file and define a registry.
+To set up a registry, create a file and define a registry.
 
 ```
 // .yarnrc
