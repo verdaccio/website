@@ -34,11 +34,11 @@ Always remember, **the order of packages access is important**, packages are mat
 
 ### Using public packages from npmjs.org
 
-If some package doesn't exist in the storage, server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from cache pretending that no other packages exist. **Verdaccio will download only what's needed (requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
+If a package doesn't exist in the storage, the server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from the cache pretending that no other packages exist. **Verdaccio will download only what's needed (requested by clients)**, and this information will be cached, so if the client requests the same thing a second time it can be served without asking npmjs.org for it.
 
 **Example:**
 
-If you successfully request `express@4.0.1` from this server once, you'll be able to do it again (with all it's dependencies) anytime even if npmjs.org is down. But say `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, this server would say that only `express@4.0.1` (only what's in the cache) is published, but nothing else.
+If you successfully request `express@4.0.1` from the server once, you'll be able to do it again (with all of it's dependencies) any time, even if npmjs.org is down. Though note that `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, the server will say that only `express@4.0.1` (what's in the cache) is published, but nothing else.
 
 ### Override public packages
 
@@ -48,7 +48,7 @@ There's two options here:
 
 1. You want to create a separate **fork** and stop synchronizing with public version.
 
-   If you want to do that, you should modify your configuration file so verdaccio won't make requests regarding this package to npmjs anymore. Add a separate entry for this package to `config.yaml` and remove `npmjs` from `proxy` list and restart the server.
+   If you want to do that, you should modify your configuration file so Verdaccio won't make requests regarding this package to npmjs anymore. Add a separate entry for this package to `config.yaml` and remove `npmjs` from `proxy` list and restart the server.
 
    ```yaml
     packages:
@@ -59,9 +59,9 @@ There's two options here:
         # proxy:
    ```
 
-   When you publish your package locally, **you should probably start with version string higher than existing one**, so it won't conflict with existing package in the cache.
+   When you publish your package locally, **you should probably start with a version string higher than the existing package** so it won't conflict with that package in the cache.
 
-2. You want to temporarily use your version, but return to public one as soon as it's updated.
+2. You want to temporarily use your version, but return to the public one as soon as it's updated.
 
    In order to avoid version conflicts, **you should use a custom pre-release suffix of the next patch version**. For example, if a public package has version 0.1.2, you can upload `0.1.3-my-temp-fix`.
 
@@ -77,11 +77,11 @@ There's two options here:
 
 ## Security
 
-The security starts in your environment, for such thing we totally recommend read **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and follow the recommendation.
+Security starts in your environment. For such things we recommend reading **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and following the steps outlined there.
 
 ### Package Access
 
-By default all packages are you publish in Verdaccio are accessible for all public, we totally recommend protect your registry from external non authorized users updating `access` property to `$authenticated`.
+By default all packages you publish in Verdaccio are accessible for all users. We recommend protecting your registry from external non-authorized users by updating the `access` property of your packages to `$authenticated`.
 
 ```yaml
   packages:
@@ -96,13 +96,13 @@ By default all packages are you publish in Verdaccio are accessible for all publ
       publish: $authenticated
    ```
 
-That way, **nobody will take advantage of your registry unless it's authorized and private packages won't be displayed in the User Interface**.
+That way, **nobody can access your registry unless they are authorized, and private packages won't be displayed in the web interface**.
 
 ## Server
 
 ### Secured Connections
 
-Using **HTTPS** is a common recomendation, for such reason we recommend read the [SSL](ssl.md) section to make Verdaccio secure or using a HTTPS [reverse proxy](reverse-proxy.md) on top of Verdaccio.
+Using **HTTPS** is a common recommendation. For this reason we recommend reading the [SSL](ssl.md) section to make Verdaccio secure, or alternatively using an HTTPS [reverse proxy](reverse-proxy.md) on top of Verdaccio.
 
 ### Expiring Tokens
 
@@ -122,6 +122,6 @@ security:
 
 **Using this configuration will override the current system and you will be able to control how long the token will live**.
 
-Using JWT also improves the performance with authentication plugins, the old system will perform an unpackage and validating the credentials in each request, while JWT will rely on the token signature avoiding the overhead for the plugin.
+Using JWT also improves the performance with authentication plugins. The old system will perform an unpackage and validate the credentials on every request, while JWT will rely on the token signature instead, avoiding the overhead for the plugin.
 
 As a side note, at **npmjs the token never expires**.
