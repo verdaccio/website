@@ -3,13 +3,13 @@ id: configuration
 title: "File di configurazione"
 ---
 
-Questo file è il fondamento di verdaccio nel quale è possibile modificare il comportamento predefinito, attivare i plugin ed estendere le funzionalità.
+This file is the cornerstone of Verdaccio where you can modify the default behaviour, enable plugins and extend features.
 
 La prima volta in assoluto che si esegue `verdaccio` viene creato un file di configurazione `config.yaml` predefinito.
 
 ## Configurazione Predefinita
 
-La configurazione predefinita dispone del supporto per pacchetti ** scoped** e permette a qualsiasi utente di accedere a tutti i pacchetti ma solo **agli utenti autenticati di pubblicare**.
+The default configuration has support for **scoped** packages and allows any user to **access** all packages, but only authenticated users to **publish**.
 
 ```yaml
 storage: ./storage
@@ -32,7 +32,7 @@ logs:
 
 ## Sezioni
 
-Le sezioni seguenti spiegano cosa significa ogni proprietà e le diverse opzioni possibili.
+The following sections explain what each property means and their different options.
 
 ### Archiviazione
 
@@ -44,7 +44,7 @@ storage: ./storage
 
 ### Plugin
 
-È il percorso della directory dei plugin. Utile per distribuzioni basate su Docker/Kubernetes.
+Is the location of the plugin directory. Useful for Docker/Kubernetes-based deployments.
 
 ```yaml
 plugins: ./plugins
@@ -52,7 +52,7 @@ plugins: ./plugins
 
 ### Autenticazione
 
-L'impostazione dell'autenticazione viene fatta qui, l'autenticazione predefinita è basata su `htpasswd` ed è incorporata. È possibile modificare questa condotta tramite [plugin](plugins.md). Per ulteriori informazioni su questa sezione leggere la [ pagina dell'autenticazione](auth.md).
+The authentication setup is done here. The default auth is based on `htpasswd` and is built in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
 
 ```yaml
 auth:
@@ -65,9 +65,9 @@ auth:
 
 <small>A partire da: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-Il blocco di sicurezza consente di personalizzare la firma del token. Per abilitare la nuova firma di [JWT (json web token)](https://jwt.io/) è necessario aggiungere il blocco `jwt` alla sezione `api`, `web` utilizza di default `jwt`.
+Il blocco di sicurezza consente di personalizzare la firma del token. To enable a new [JWT (JSON Web Tokens)](https://jwt.io/) signature you need to add the block `jwt` to the `api` section; `web` uses `jwt` by default.
 
-La configurazione è divisa in due sezioni, `api` e `web`. Per utilizzare JWT sull'`api`, è necessario definirlo, altrimenti si utilizzerà la firma del token ereditato (`aes192`). Per JWT è possibile personalizzare [la firma](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) e la [verifica](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) del token con le proprie configurazioni.
+La configurazione è divisa in due sezioni, `api` e `web`. To use JWT on `api` it has to be defined, otherwise the legacy token signature (`aes192`) will be used. For JWT you might want to customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
 
     security:
       api:
@@ -99,7 +99,7 @@ server:
 
 ### Interfaccia Utente Web
 
-Questa proprietà consente di modificare le caratteristiche dell'interfaccia utente web. Per ulteriori informazioni su questa sezione leggere la [pagina dell'interfaccia utente web](web.md).
+This property allow you to modify the look and feel of the web UI. For more information about this section read the [web UI page](web.md).
 
 ```yaml
 web:
@@ -111,7 +111,7 @@ web:
 
 ### Uplink
 
-Uplink è la capacità del sistema di recuperare i pacchetti da registri remoti quando quei pacchetti non sono disponibili localmente. Per ulteriori informazioni su questa sezione leggere la [ pagina degli uplink](uplinks.md).
+Uplinks add the ability to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
 
 ```yaml
 uplinks:
@@ -121,7 +121,7 @@ uplinks:
 
 ### Pacchetti
 
-La funzione "Pacchetti" consente all'utente di controllare come i pacchetti vengono resi accessibili. Per ulteriori informazioni su questa sezione leggere la [pagina dei pacchetti](packages.md).
+This section allows you to control how packages are accessed. For more information about this section read the [packages page](packages.md).
 
 ```yaml
 packages:
@@ -135,7 +135,7 @@ packages:
 
 ### Pubblicazione Non in Linea
 
-Per impostazione predefinita `verdaccio` non consente di pubblicare quando il client è offline, questa condotta può essere modificata impostandola su *true*.
+By default `verdaccio` does not allow you to publish packages when the client is offline. This can be can be overridden by setting this value to *true*.
 
 ```yaml
 publish:
@@ -154,7 +154,7 @@ url_prefix: /verdaccio/
 
 ### Dimensione Massima del Corpo
 
-Per impostazione predefinita la dimensione massima del corpo per un documento JSON è di `10mb`, se si incontrano errori come `"request entity too large"` si può aumentare questo valore.
+By default the maximum body size for a JSON document is `10mb`, if you run into errors that state `"request entity too large"` you may increase this value.
 
 ```yaml
 max_body_size: 10mb
@@ -162,7 +162,7 @@ max_body_size: 10mb
 
 ### Porta in ascolto
 
-`verdaccio` viene eseguito per impostazione predefinita nella porta `4873`. È possibile cambiare la porta tramite [cli](cli.md) o nel file di configurazione, le seguenti opzioni sono valide.
+`verdaccio` runs by default on the port `4873`. Changing the port can be done via [CLI](cli.md) or in the configuration file. The following options are valid:
 
 ```yaml
 listen:
@@ -176,7 +176,7 @@ listen:
 
 ### HTTPS
 
-Per abilitare `https` in `verdaccio` è sufficiente impostare il `listen` flag con il protocollo *https://*. Per ulteriori informazioni su questa sezione leggere la [ pagina del ssl](ssl.md).
+Per abilitare `https` in `verdaccio` è sufficiente impostare il `listen` flag con il protocollo *https://*. For more information about this section read the [SSL page](ssl.md).
 
 ```yaml
 https:
@@ -191,7 +191,7 @@ I proxy sono speciali Server HTTP progettati per trasferire dati da server remot
 
 #### http_proxy and https_proxy
 
-Se si ha un proxy nella propria rete è possibile impostare un'intestazione di `X-Forwarded-For` utilizzando le seguenti proprietà.
+If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties:
 
 ```yaml
 http_proxy: http://something.local/
@@ -200,7 +200,7 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-Questa variabile deve contenere un elenco di estensioni di dominio separate da virgole per cui il proxy non deve essere utilizzato.
+This variable should contain a comma-separated list of domain extensions that the proxy should not be used for.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
@@ -208,7 +208,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Notifiche
 
-Abilitare le notifiche di strumenti di terze parti tramite web hook è abbastanza facile. Per ulteriori informazioni su questa sezione leggere la [pagina delle notifiche](notifications.md).
+Enabling notifications to third-party tools is fairly easy via webhooks. For more information about this section read the [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -238,11 +238,11 @@ middlewares:
 
 This release includes a new property named `experiments` that can be placed in the `config.yaml` and is completely optional.
 
-We want to be able to ship new things without affecting production environments. This flag allows us to add new features and get feedback from the community that wants to use them.
+We want to be able to ship new things without affecting production environments. This flag allows us to add new features and get feedback from the community who decides to use them.
 
-The features that are under this flag might not be stable or might be removed in future releases.
+The features under this flag might not be stable or might be removed in future releases.
 
-Un esempio:
+Here is one example:
 
 ```yaml
 experiments:
