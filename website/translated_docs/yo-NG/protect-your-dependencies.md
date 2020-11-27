@@ -3,11 +3,11 @@ id: dabobo-awọn igbarale-rẹ
 title: "Didabobo awọn akopọ"
 ---
 
-`verdaccio` faye gba ọ lati dabobo atẹjade, lati ṣe aṣeyọri pẹlu iyẹn o ma nilo lati ṣeto [iwọlesi awọn akopọ](packages) rẹ dardara.
+Verdaccio allows you protect publishing to your registry. To achieve that you will need to set up correctly configure your [packages access](packages).
 
 ### Iṣeto akopọ
 
-Jẹ ki a wo fun apẹẹrẹ awọn iseto wọnyi. O ni eto ti awọn igbarale kan ti o wa lati ilẹ tẹlẹ pẹlu `my-company-*` atipe o nilo lati dabobo wọn kuro lọdọ alainidamọ tabi olumulo miiran ti o wọle laini awọn iwe ẹri to tọ.
+Jẹ ki a wo fun apẹẹrẹ awọn iseto wọnyi. You have a set of dependencies that are prefixed with `my-company-*` and you need to protect them from anonymous or other non-authorized logged-in users.
 
 ```yaml
   'my-company-*':
@@ -16,18 +16,18 @@ Jẹ ki a wo fun apẹẹrẹ awọn iseto wọnyi. O ni eto ti awọn igbarale 
     proxy: npmjs
 ```
 
-Pẹlu iṣeto yii, lakotan a fayegba awọn ẹgbẹ **admin** ati **teamA** lati *se atẹjade* ati **teamA** **teamB** **teamC** *wiwọle* si awọn igbarale bẹ.
+With this configuration, we allow the groups **admin** and **teamA** to *publish* and **teamA**, **teamB** and **teamC** to *access* the specified dependencies.
 
-### Lo apẹẹrẹ: teamD gbiyanju lati wọle si igbarale naa
+### Use case: teamD tries to access the dependency
 
-Nitorina, ti mo ba wọle bi **teamD**. Ko yẹ ki n ni anfani lati wọle si gbogbo awọn igbarale ti o ni baamu pẹlu ilana `my-company-*`.
+So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match the `my-company-*` pattern.
 
 ```bash
 ➜ npm whoami
 teamD
 ```
 
-Mi koni raye wọle si awọn igbarale bẹ atipe kii yoo han nipasẹ ayelujara fun olumulo **teamD**. Ti mo ba gbiyanju lati wọle awọn wọnyi yoo ṣẹlẹ.
+I won't have access to such dependencies and they also won't be visible via the web interface for user **teamD**. If I try to access it, the following will happen:
 
 ```bash
 ➜ npm install my-company-core
@@ -35,7 +35,7 @@ npm ERR! code E403
 npm ERR! 403 Forbidden: webpack-1@latest
 ```
 
-tabi pẹlu `yarn`
+or with `yarn`:
 
 ```bash
 ➜ yarn add my-company-core
