@@ -3,11 +3,11 @@ id: protect-your-dependencies
 title: "Protecting packages"
 ---
 
-`verdaccio` allows you protect publish, to achieve that you will need to set up correctly your [packages access](packages).
+Verdaccio allows you protect publishing to your registry. To achieve that you will need to set up correctly configure your [packages access](packages).
 
 ### Package configuration
 
-Let's see for instance the following set up. You have a set of dependencies what are prefixed with `my-company-*` and you need to protect them from anonymous or another logged user without right credentials.
+Let's see for instance the following set up. You have a set of dependencies that are prefixed with `my-company-*` and you need to protect them from anonymous or other non-authorized logged-in users.
 
 ```yaml
   'my-company-*':
@@ -16,18 +16,18 @@ Let's see for instance the following set up. You have a set of dependencies what
     proxy: npmjs
 ```
 
-With this configuration, basically we allow to groups **admin** and **teamA** to *publish* and **teamA** **teamB** **teamC** *access* to such dependencies.
+With this configuration, we allow the groups **admin** and **teamA** to *publish* and **teamA**, **teamB** and **teamC** to *access* the specified dependencies.
 
-### Use case: teamD try to access the dependency
+### Use case: teamD tries to access the dependency
 
-So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match with `my-company-*` pattern.
+So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match the `my-company-*` pattern.
 
 ```bash
 ➜ npm whoami
 teamD
 ```
 
-I won't have access to such dependencies and also won't be visible via web for user **teamD**. If I try to access the following will happen.
+I won't have access to such dependencies and they also won't be visible via the web interface for user **teamD**. If I try to access it, the following will happen:
 
 ```bash
 ➜ npm install my-company-core
@@ -35,7 +35,7 @@ npm ERR! code E403
 npm ERR! 403 Forbidden: webpack-1@latest
 ```
 
-or with `yarn`
+or with `yarn`:
 
 ```bash
 ➜ yarn add my-company-core
