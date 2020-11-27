@@ -3,7 +3,7 @@ id: нотификације
 title: "Нотификације"
 ---
 
-Нотификације су замишљене да се користе са Slack's Incoming webhooks, али такође испоручују simple payload до било које endpoint. Тренутно је активно једино за `npm publish` команду.
+Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. This is currently only active for the `npm publish` command.
 
 ## Коришћење
 
@@ -118,7 +118,7 @@ Package metadata за које темплат има приступ
 
 ### Publisher
 
-Можете приступити package publisher информацијама у `content` у оквиру webhook користећи `publisher` објекат.
+You can get access to the package publisher information in the `content` of a webhook using the `publisher` object.
 
 Погледајте пример за `publisher` object type:
 
