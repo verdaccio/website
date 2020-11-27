@@ -3,7 +3,7 @@ id: pakiety
 title: "Dostęp do Pakietu"
 ---
 
-Jest to seria ograniczeń, która pozwala lub zabrania dostępu do pamięci lokalnej bazując na konkretnych kryteriach.
+This is a series of constraints that allow or restrict access to the local storage based on specific criteria.
 
 Ograniczenia bezpieczeństwa pozostają na ramkach używanej wtyczki, domyślnie `verdaccio` używa [wtyczki htpasswd](https://github.com/verdaccio/verdaccio-htpasswd). Jeśli używasz innej wtyczki, zachowanie może być inne. Domyślna wtyczka nie obsługuje samodzielnie `allow_access` i `allow_publish`, korzysta z wewnętrznego mechanizmu zastępczego w przypadku, gdy wtyczka nie jest gotowa.
 
