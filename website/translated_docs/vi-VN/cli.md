@@ -3,7 +3,7 @@ id: cli
 title: "Công cụ dòng lệnh Command line"
 ---
 
-Dòng lệnh CLI của Verdaccio là công cụ để bạn bắt đầu khởi động và kiểm soát ứng dụng này.
+The Verdaccio CLI is your tool to start and stop the application.
 
 ## Các lệnh
 
@@ -19,15 +19,15 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 ## Vị trí đường dẫn tệp cấu hình mặc định
 
-Để tìm thư mục chính, trước hết chúng ta chọn **$XDG_DATA_HOME**, sau đó tìm [biến môi trường APPDATA](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/) trong Window.
+To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and for Windows environments we look for the [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
 ## Config file format
 
-Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+Config files should be YAML, JSON or a NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
 
 ## Vị trí lưu trữ mặc định
 
-Chúng tôi sử dụng biến môi trường **$XDG_DATA_HOME **làm mặc định để tìm bộ nhớ theo mặc định, <a href = "https://askubuntu.com/questions/538526/is-home-local-share-the-default- Value-for-xdg-data-home-in-ubuntu-14-04 "> cũng giống như </a> $HOME/.local/share. Vị trí này sẽ không liên quan đến bạn nếu bạn đang sử dụng bộ nhớ tùy chỉnh.
+We use the **$XDG_DATA_HOME** environment by variable default to locate the storage by default which [should be the same](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) as $HOME/.local/share. Vị trí này sẽ không liên quan đến bạn nếu bạn đang sử dụng bộ nhớ tùy chỉnh.
 
 ## Default database file location
 
