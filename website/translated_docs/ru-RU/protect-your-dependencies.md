@@ -3,11 +3,11 @@ id: protect-your-dependencies
 title: "Защита пакетов"
 ---
 
-`verdaccio` позволяет ограничить права на публикацию, с тем, чтобы достичь правильного распределения [прав на пакеты](packages).
+Verdaccio allows you protect publishing to your registry. To achieve that you will need to set up correctly configure your [packages access](packages).
 
 ### Конфигурирование доступа к пакетам
 
-Рассмотрим пример. У вас есть набор пакетов с префиксом `my-company-*` и вам нужно ограничить к доступ к ним, для анонимных пользователей, или для аутентифицированных пользователей без нужных прав.
+Рассмотрим пример. You have a set of dependencies that are prefixed with `my-company-*` and you need to protect them from anonymous or other non-authorized logged-in users.
 
 ```yaml
   'my-company-*':
@@ -16,18 +16,18 @@ title: "Защита пакетов"
     proxy: npmjs
 ```
 
-В этой конфигурации, мы разрешили группам **admin** и **teamA** *публикацию* и группам **teamA** **teamB** **teamC** *доступ* к этим пакетам.
+With this configuration, we allow the groups **admin** and **teamA** to *publish* and **teamA**, **teamB** and **teamC** to *access* the specified dependencies.
 
-### Use case: teamD пробует получить доступ к пакету
+### Use case: teamD tries to access the dependency
 
-Итак, если я залогинен как **teamD**, у меня не должно быть доступа к пакетам, удовлетворяющем паттерну `my-company-*`.
+So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match the `my-company-*` pattern.
 
 ```bash
 ➜ npm whoami
 teamD
 ```
 
-У меня нет доступа к этим пакетам и, так же, они не должны быть видны через веб-интерфейс для пользователя **teamD**. Если я попытаюсь усчтановить этот пакет, произойдет следующее.
+I won't have access to such dependencies and they also won't be visible via the web interface for user **teamD**. If I try to access it, the following will happen:
 
 ```bash
 ➜ npm install my-company-core
@@ -35,7 +35,7 @@ npm ERR! code E403
 npm ERR! 403 Forbidden: webpack-1@latest
 ```
 
-или, если использовать `yarn`
+or with `yarn`:
 
 ```bash
 ➜ yarn add my-company-core
