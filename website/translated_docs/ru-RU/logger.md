@@ -3,7 +3,7 @@ id: logger
 title: "Логи"
 ---
 
-Как любое веб-приложение, у verdaccio есть встроенный логгер. Вы можете указать несколько устройств вывода.
+As with any web application, Verdaccio has a customisable built-in logger. You can define multiple types of outputs.
 
 ```yaml
 logs:
