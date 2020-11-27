@@ -5,7 +5,7 @@ title: "Authentication"
 
 The authentication is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-The client authentication is handled by `npm` client itself. Once you login to the application:
+The client authentication is handled by the `npm` client itself. Once you log in to the application:
 
 ```bash
 npm adduser --registry http://localhost:4873
@@ -22,7 +22,7 @@ registry=http://localhost:5555/
 
 #### Anonymní publikování
 
-`verdaccio` allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
+`verdaccio` allows you to enable anonymous publish. To achieve that you will need to correctly set up your [packages access](packages.md).
 
 Např.:
 
@@ -39,19 +39,19 @@ As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/21
 
 ### Význam `$all` a `$anonymous`
 
-Jak víte, *Verdaccio* používá ve výchozím nastavení `htpasswd`. Tento doplňek neimplementuje metody `allow_access`, `allow_publish` a `allow_unpublish`. Tím pádem bude *Verdaccio* řešit tyto případy následujícím způsobem:
+As you know *Verdaccio* uses `htpasswd` by default. Tento doplňek neimplementuje metody `allow_access`, `allow_publish` a `allow_unpublish`. Tím pádem bude *Verdaccio* řešit tyto případy následujícím způsobem:
 
 * Pokud nejste přihlášení (jste anonymní), `$all` a `$anonymous` znamenají to samé.
-* Pokud jste přihlášení, `$anonymous` nebude součástí Vaší skupiny a `$all` bude odpovídat jakémukoliv přihlášenému uživateli. Nová skupina `$authenticated` bude přidána do seznamu.
+* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to your group list.
 
-Nastavení `$all` **bude odpovídat všem uživatelům, přihlášeným i nepřihlášeným**.
+Please note: `$all` **will match all users, whether logged in or not**.
 
 **Výše popsané chování se vztahuje pouze na výchozí doplněk pro ověřovaní**. Pokud používáte vlastní doplněk a tento doplněk implementuje použití `allow_access`, `allow_publish` nebo `allow_unpublish`, řešení přístupu závisí na plugin samotném. Verdaccio nastaví pouze výchozí skupiny.
 
 Rekapitulace:
 
-* **logged**: `$all`, `$authenticated`, + skupiny přidané doplňkem
-* **anonymous (odhlášený)**: `$all` a `$anonymous`.
+* **logged in**: `$all` and `$authenticated` + groups added by the plugin.
+* **logged out (anonymous)**: `$all` and `$anonymous`.
 
 ## Default htpasswd
 
@@ -71,4 +71,4 @@ auth:
 | file      | řetězec | Ano        | ./htpasswd | všechny | soubor, který obsahuje šifrované přihlašovací údaje |
 | max_users | číslo   | Ne         | 1000       | všechny | nastavit limit uživatelů                            |
 
-In case you decide to not allow users to sign up, you can set `max_users: -1`.
+In case you decide to prevent users from signing up themselves, you can set `max_users: -1`.
