@@ -3,7 +3,7 @@ id: 通知
 title: "通知"
 ---
 
-创建通知主要是与Slack的输入webhooks一起使用，但它也会传递简单的载荷到任何末端。目前只对 `npm publish`命令有效。
+Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. This is currently only active for the `npm publish` command.
 
 ## 使用
 
@@ -118,7 +118,7 @@ notify:
 
 ### 发表人
 
-您可以用`publisher` object(对象）在webhook的`content`里访问包发表人信息。
+You can get access to the package publisher information in the `content` of a webhook using the `publisher` object.
 
 请参阅以下`publisher` object（对象）类别：
 
