@@ -3,7 +3,7 @@ id: notifications
 title: "Уведомления"
 ---
 
-Уведомления изначально были сделаны, чтобы использовать Slack's Incoming webhooks, но их так же можно использовать и для любого другого эндпоинта. В данный момент поддерживается только `npm publish`.
+Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. This is currently only active for the `npm publish` command.
 
 ## Использование
 
@@ -118,7 +118,7 @@ notify:
 
 ### Публикатор
 
-Вы можете получить доступ данным пользователя-публикатора в секции `content` веб-хука, используя объект `publisher`.
+You can get access to the package publisher information in the `content` of a webhook using the `publisher` object.
 
 Описание типа `publisher`:
 
