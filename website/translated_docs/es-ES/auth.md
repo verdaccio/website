@@ -5,7 +5,7 @@ title: "Autenticación"
 
 The authentication is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-The client authentication is handled by `npm` client itself. Once you login to the application:
+The client authentication is handled by the `npm` client itself. Once you log in to the application:
 
 ```bash
 npm adduser --registry http://localhost:4873
@@ -22,7 +22,7 @@ registry=http://localhost:5555/
 
 #### Publicar anónimamente
 
-`verdaccio` allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
+`verdaccio` allows you to enable anonymous publish. To achieve that you will need to correctly set up your [packages access](packages.md).
 
 Por ejemplo:
 
@@ -39,19 +39,19 @@ Como se describe en [el ticket #212](https://github.com/verdaccio/verdaccio/issu
 
 ### El significado de `$all` y `$anonymous`
 
-Como sabes *Verdaccio* usa `htpasswd` por defecto. Dicha extensión no implementa los métodos `allow_access`, `allow_publish` ni `allow_unpublish`. En consecuencia, *Verdaccio* manejará eso de la siguiente manera:
+As you know *Verdaccio* uses `htpasswd` by default. Dicha extensión no implementa los métodos `allow_access`, `allow_publish` ni `allow_unpublish`. En consecuencia, *Verdaccio* manejará eso de la siguiente manera:
 
 * Si tú no iniciaste sesión (eres anónimo), `$all` y `$anonymous` significarán exactamente lo mismo.
-* Si tú iniciaste sesión, `$anonymous` no formará parte de tus grupos y `$all` coincidirá con cualquier usuario con sesión. Un nuevo grupo `$authenticated` será añadido a la lista.
+* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to your group list.
 
-Como nota, `$all` **coincidirá con todos los usuarios, independientemente si han iniciado sesión o no**.
+Please note: `$all` **will match all users, whether logged in or not**.
 
 **El comportamiento anterior solo aplica a la extensión de autenticación por defecto**. Si tú estás usando una extensión personalizada y dicha extensión implementa `allow_access`, `allow_publish` o `allow_unpublish`, la resolución del acceso dependerá de dicha extensión. Verdaccio establecerá solamente los grupos por defecto.
 
 Entonces recapitulando:
 
-* **logged**: `$all`, `$authenticated`, + grupos añadidos por la extensión
-* **anonymous (sin sesión)**: `$all` y `$anonymous`.
+* **logged in**: `$all` and `$authenticated` + groups added by the plugin.
+* **logged out (anonymous)**: `$all` and `$anonymous`.
 
 ## Htpasswd por defecto
 
@@ -71,4 +71,4 @@ auth:
 | file      | string | Si        | ./htpasswd | all     | archivo que aloja las credenciales encriptadas |
 | max_users | number | No        | 1000       | all     | limita los usuarios que pueden registrarse     |
 
-In case you decide to not allow users to sign up, you can set `max_users: -1`.
+In case you decide to prevent users from signing up themselves, you can set `max_users: -1`.

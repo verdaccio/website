@@ -3,7 +3,7 @@ id: pacotes
 title: "Permissões dos Pacotes"
 ---
 
-É uma série de restrições que permitem ou restringem o acesso ao armazenamento local com base em critérios específicos.
+This is a series of constraints that allow or restrict access to the local storage based on specific criteria.
 
 As restrições de segurança permanecem dependentes do plugin em uso, por padrão o `verdaccio` usa o [htpasswd plugin](https://github.com/verdaccio/verdaccio-htpasswd). Se você usar um plugin diferente, o comportamento poderá ser diferente. O plugin padrão não suporta `allow_access` e `allow_publish` por si só, ele usa um fallback interno caso o plugin não esteja pronto para isso.
 

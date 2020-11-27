@@ -5,7 +5,7 @@ title: "Authentication"
 
 The authentication is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-The client authentication is handled by `npm` client itself. Once you login to the application:
+The client authentication is handled by the `npm` client itself. Once you log in to the application:
 
 ```bash
 npm adduser --registry http://localhost:4873
@@ -22,7 +22,7 @@ registry=http://localhost:5555/
 
 #### 匿名发布包
 
-`verdaccio` 允许启用匿名发布，要使用这个功能，必须设置正确的 [程序包访问权限](packages.md)。
+`verdaccio` allows you to enable anonymous publish. To achieve that you will need to correctly set up your [packages access](packages.md).
 
 例如：
 
@@ -39,19 +39,19 @@ registry=http://localhost:5555/
 
 ### `$all` 和 `$anonymous` 的含义
 
-*Verdaccio* 默认使用 `htpasswd` 插件。 这个插件没有实现 `allow_access`, `allow_publish` 和`allow_unpublish` 方法。 因此， *Verdaccio* 将会以下面的逻辑来处理这些情况：
+As you know *Verdaccio* uses `htpasswd` by default. 这个插件没有实现 `allow_access`, `allow_publish` 和`allow_unpublish` 方法。 因此， *Verdaccio* 将会以下面的逻辑来处理这些情况：
 
 * 如果你没有登录（即匿名状态），`$all` 和 `$anonymous` 是等价的。
-* 如果你已经登录，那么你所属的用户组将不包括 `$anonymous` ，且 `$all` 将会匹配所有已登录用户。你将会被加入`$authenticated`用户组。
+* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to your group list.
 
-As a takeaway, `$all` **will match all users, independently whether is logged or not**.
+Please note: `$all` **will match all users, whether logged in or not**.
 
 **The previous behavior only applies to the default authentication plugin**. If you are using a custom plugin and such plugin implements `allow_access`, `allow_publish` or `allow_unpublish`, the resolution of the access depends on the plugin itself. Verdaccio will only set the default groups.
 
 Let's recap:
 
-* **logged**: `$all`, `$authenticated`, + groups added by the plugin
-* **anonymous (logged out)**: `$all` and `$anonymous`.
+* **logged in**: `$all` and `$authenticated` + groups added by the plugin.
+* **logged out (anonymous)**: `$all` and `$anonymous`.
 
 ## 默认 htpasswd
 
@@ -71,4 +71,4 @@ auth:
 | 文件        | 字符串 | 是  | ./htpasswd | 任意路径 | 存储了加密认证信息的 htpasswd 文件 |
 | max_users | 数字  | 否  | 1000       | 任意数字 | 最大的用户数量                |
 
-In case you decide to not allow users to sign up, you can set `max_users: -1`.
+In case you decide to prevent users from signing up themselves, you can set `max_users: -1`.

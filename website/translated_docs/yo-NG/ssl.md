@@ -3,7 +3,7 @@ id: ssl
 title: "Ṣeto Awọn iwe ẹri SSL"
 ---
 
-Tẹle awọn itọsọna wọnyi lati seto iwe ẹri SSL kan lati ṣiṣẹ bi ibiiforukọsilẹ NPM kan lori HTTPS.
+Follow these instructions to configure an SSL certificate to serve an npm registry over HTTPS.
 
 * Ṣe imudojuiwọn ohun elo itẹtisi ni `~/.config/verdaccio/config.yaml` rẹ:
 

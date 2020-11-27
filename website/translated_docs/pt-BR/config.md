@@ -3,13 +3,13 @@ id: configuration
 title: "Arquivo de Configuração"
 ---
 
-Este arquivo é a peça chave do verdaccio, onde você pode modificar o comportamento padrão, habilitar plugins e estender recursos.
+This file is the cornerstone of Verdaccio where you can modify the default behaviour, enable plugins and extend features.
 
 Um arquivo de configuração padrão `config.yaml` é criado na primeira vez que você executa `verdaccio`.
 
 ## Configuração Padrão
 
-A configuração padrão tem suporte para pacotes **com escopo (scoped)** e permite que qualquer usuário acesse todos os pacotes, mas somente que os **usuários autenticados publiquem**.
+The default configuration has support for **scoped** packages and allows any user to **access** all packages, but only authenticated users to **publish**.
 
 ```yaml
 storage: ./storage
@@ -32,7 +32,7 @@ logs:
 
 ## Seções
 
-As seções a seguir explicam o que cada propriedade significa e as diferentes opções.
+The following sections explain what each property means and their different options.
 
 ### Armazenamento
 
@@ -44,7 +44,7 @@ storage: ./storage
 
 ### Plugins
 
-É a localização do diretório de plugins. Útil para implementações baseadas em Docker/Kubernetes.
+Is the location of the plugin directory. Useful for Docker/Kubernetes-based deployments.
 
 ```yaml
 plugins: ./plugins
@@ -52,7 +52,7 @@ plugins: ./plugins
 
 ### Autenticação
 
-A configuração de autenticação é feita aqui, por padrão é baseada em `htpasswd` e é embutida. Você pode modificar este comportamento via [plugins](plugins.md). Para maiores informações sobre esta seção, leia a [página sobre autenticação](auth.md).
+The authentication setup is done here. The default auth is based on `htpasswd` and is built in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
 
 ```yaml
 auth:
@@ -65,9 +65,9 @@ auth:
 
 <small>A partir de: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-O bloco de segurança permite personalizar o token de assinatura. Para habilitar a nova assinatura do [JWT (json web token)](https://jwt.io/) é necessário adicionar o bloco `jwt` à seção `api`, `web` usa `jwt` por padrão.
+O bloco de segurança permite personalizar o token de assinatura. To enable a new [JWT (JSON Web Tokens)](https://jwt.io/) signature you need to add the block `jwt` to the `api` section; `web` uses `jwt` by default.
 
-A configuração é separada em duas seções, `api` e `web`. Para usar o JWT na `api` você precisará defini-lo, caso contrário, você usará a assinatura de token herdada (`aes192`). Para o JWT, você pode personalizar a [assinatura](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) e a [verificação](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) do token com suas próprias propriedades.
+A configuração é separada em duas seções, `api` e `web`. To use JWT on `api` it has to be defined, otherwise the legacy token signature (`aes192`) will be used. For JWT you might want to customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
 
     security:
       api:
@@ -99,7 +99,7 @@ server:
 
 ### Web UI
 
-Esta propriedade permite que você modifique a aparência da interface do usuário da web. Para mais informações sobre esta seção, leia a [página sobre web ui](web.md).
+This property allow you to modify the look and feel of the web UI. For more information about this section read the [web UI page](web.md).
 
 ```yaml
 web:
@@ -111,7 +111,7 @@ web:
 
 ### Uplinks
 
-Uplinks is the ability of the system to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
+Uplinks add the ability to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
 
 ```yaml
 uplinks:
@@ -121,7 +121,7 @@ uplinks:
 
 ### Packages
 
-Pacotes permitem que o usuário controle como os pacotes serão acessados. Para mais informações sobre esta seção, leia a [página sobre pacotes](packages.md).
+This section allows you to control how packages are accessed. For more information about this section read the [packages page](packages.md).
 
 ```yaml
 packages:
@@ -135,7 +135,7 @@ packages:
 
 ### Offline Publish
 
-By default `verdaccio` does not allow to publish when the client is offline, that behavior can be overridden by setting this to *true*.
+By default `verdaccio` does not allow you to publish packages when the client is offline. This can be can be overridden by setting this value to *true*.
 
 ```yaml
 publish:
@@ -154,7 +154,7 @@ url_prefix: /verdaccio/
 
 ### Max Body Size
 
-By default the maximum body size for a JSON document is `10mb`, if you run in errors as `"request entity too large"` you may increase this value.
+By default the maximum body size for a JSON document is `10mb`, if you run into errors that state `"request entity too large"` you may increase this value.
 
 ```yaml
 max_body_size: 10mb
@@ -162,7 +162,7 @@ max_body_size: 10mb
 
 ### Listen Port
 
-O `verdaccio` é executado por padrão na porta `4873`. A alteração da porta pode ser feita via [cli](cli.md) ou no arquivo de configuração, as seguintes opções são válidas.
+`verdaccio` runs by default on the port `4873`. Changing the port can be done via [CLI](cli.md) or in the configuration file. The following options are valid:
 
 ```yaml
 listen:
@@ -176,7 +176,7 @@ listen:
 
 ### HTTPS
 
-To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [ssl page](ssl.md).
+To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [SSL page](ssl.md).
 
 ```yaml
 https:
@@ -191,7 +191,7 @@ Proxies are special-purpose HTTP servers designed to transfer data from remote s
 
 #### http_proxy e https_proxy
 
-If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties.
+If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties:
 
 ```yaml
 http_proxy: http://something.local/
@@ -200,7 +200,7 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-This variable should contain a comma-separated list of domain extensions proxy should not be used for.
+This variable should contain a comma-separated list of domain extensions that the proxy should not be used for.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
@@ -208,7 +208,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Notificações
 
-Habilitar notificações para ferramentas de terceiros é bastante fácil através de web hooks. Para mais informações sobre esta seção, leia a [página sobre notificações](notifications.md).
+Enabling notifications to third-party tools is fairly easy via webhooks. For more information about this section read the [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -238,11 +238,11 @@ middlewares:
 
 This release includes a new property named `experiments` that can be placed in the `config.yaml` and is completely optional.
 
-We want to be able to ship new things without affecting production environments. This flag allows us to add new features and get feedback from the community that wants to use them.
+We want to be able to ship new things without affecting production environments. This flag allows us to add new features and get feedback from the community who decides to use them.
 
-The features that are under this flag might not be stable or might be removed in future releases.
+The features under this flag might not be stable or might be removed in future releases.
 
-Here one example:
+Here is one example:
 
 ```yaml
 experiments:

@@ -3,7 +3,7 @@ id: api-oju ipade
 title: "API Oju ipade"
 ---
 
-Verdaccio can be invoked programmatically. The node API was introduced after version `verdaccio@3.0.0`.
+Verdaccio can be invoked programmatically. The Node API was introduced after version `verdaccio@3.0.0`.
 
 ## Ilo
 

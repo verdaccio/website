@@ -3,7 +3,7 @@ id: notifications
 title: "Notificações"
 ---
 
-Notify foi criado principalmente para ser usado com webhooks entrantes para Slack, mas também fornecerá uma carga útil simples para qualquer endpoint. Atualmente, apenas ativo para comando `npm publish`.
+Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. This is currently only active for the `npm publish` command.
 
 ## Utilização
 
@@ -118,7 +118,7 @@ Pacote de metadata que o modelo tem acesso
 
 ### Editor
 
-Você pode acessar as informações do editor do pacote no `content` de um webhook usando o objeto `publisher`.
+You can get access to the package publisher information in the `content` of a webhook using the `publisher` object.
 
 Veja abaixo o tipo de objeto `publisher`:
 

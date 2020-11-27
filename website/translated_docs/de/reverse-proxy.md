@@ -157,9 +157,9 @@ If the whole URL is being used for Verdaccio, you don't need to define a `url_pr
 url_prefix: /sub_directory/
 ```
 
-If you run verdaccio behind reverse proxy, you may noticed all resource file served as relative path, like `http://127.0.0.1:4873/-/static`
+If you run Verdaccio behind reverse proxy, you may noticed all resource file served as relative path, like `http://127.0.0.1:4873/-/static`
 
-To resolve this issue, **you should send real domain and port to verdaccio with `Host` header**
+To resolve this issue, **you should send real domain and port to Verdaccio with `Host` header**
 
 Nginx configure should look like this:
 
@@ -172,7 +172,7 @@ location / {
 }
 ```
 
-For this case, `url_prefix` should **NOT** set in verdaccio config
+For this case, `url_prefix` should **NOT** set in Verdaccio config
 
 * * *
 
@@ -189,4 +189,4 @@ location ~ ^/verdaccio/(.*)$ {
 
 For this case, `url_prefix` should set to `/verdaccio/`
 
-> Note: There is a Slash after install path (`https://your-domain:port/verdaccio/`)!
+> Note: There is a slash after the install path (`https://your-domain:port/verdaccio/`)!

@@ -5,7 +5,7 @@ title: "Interfaz Web de Usuario"
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
 
-Verdaccio ofrece un interfaz web de usuario para mostrar solo los paquetes privados y puede ser personalizable.
+Verdaccio has a web user interface to display only the private packages and can be customised to your liking.
 
 ```yaml
 web:
@@ -27,7 +27,7 @@ The `primary_color` **must be a valid hex representation**.
 
 ### Internationalization
 
-*Since v4.5.0*, there are translations available
+*Since v4.5.0*, there are translations available.
 
 ```yaml
 i18n:
@@ -49,6 +49,6 @@ i18n:
 | scope         | string     | No        | @myscope                                                      | `>v3.x`    | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header |
 | darkMode      | boolean    | No        | false                                                         | `>=v4.6.0` | This mode is an special theme for those want to live in the dark side                                                    |
 
-> It is recommended the logo size has the following size `40x40` pixels.
+> The recommended logo size is `40x40` pixels.
 > 
-> The `darkMode` can be enabled via UI and is persisted in the local storage, furthermore, also void `primary_color` and dark cannot be customized.
+> The `darkMode` can be enabled via UI and is persisted in the browser local storage. Furthermore, also void `primary_color` and dark cannot be customized.

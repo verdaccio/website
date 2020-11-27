@@ -33,7 +33,7 @@ auth:
 
 > If one of the plugin in the chain is able to resolve the request, the next ones will be ignored.
 
-## How to the authentication plugin works?
+## How do the authentication plugin works?
 
 Ni pataki julọ a ni lati da ohun kan pada pẹlu ọna kan ti a n pe ni `ifasẹsi` ti o ma gba awọn ariyanjiyan mẹta (`olumulo, ọrọ igbaniwọle, ipe pada`).
 
@@ -126,7 +126,7 @@ callback(err);
 
 ### `changePassword` callback
 
-##### If the request success
+##### If the request is successful
 
 If the service is able to create an user, return `true` as the second argument.
 

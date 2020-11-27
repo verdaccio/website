@@ -3,7 +3,7 @@ id: cli
 title: "命令行工具"
 ---
 
-Verdaccio 命令行是启动和控制此应用的工具。
+The Verdaccio CLI is your tool to start and stop the application.
 
 ## 命令
 
@@ -19,15 +19,15 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 ## 默认配置文件路径位置
 
-要找到主目录，我们首先选择 **$XDG_DATA_HOME**，接着寻找Windows 环境 [APPDATA 环境变量](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/)。
+To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and for Windows environments we look for the [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
 ## Config file format
 
-Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+Config files should be YAML, JSON or a NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
 
 ## 默认存储位置
 
-我们以**$XDG_DATA_HOME** 环境变量为默认值来默认查找存储，[这应该和](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) $HOME/.local/share一样。 如果您正在使用自定义存储，则与此位置不相干。
+We use the **$XDG_DATA_HOME** environment by variable default to locate the storage by default which [should be the same](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) as $HOME/.local/share. 如果您正在使用自定义存储，则与此位置不相干。
 
 ## Default database file location
 

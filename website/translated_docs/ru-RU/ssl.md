@@ -3,7 +3,7 @@ id: ssl
 title: "Настройка SSL-сертификатов"
 ---
 
-Следуйте этой инструкции по конфигурации SSL сертификатов, чтобы получить репозиторий с HTTPS.
+Follow these instructions to configure an SSL certificate to serve an npm registry over HTTPS.
 
 * Обновите свойство `listen` в вашем `~/.config/verdaccio/config.yaml`:
 

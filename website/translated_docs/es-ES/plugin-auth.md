@@ -33,7 +33,7 @@ auth:
 
 > If one of the plugin in the chain is able to resolve the request, the next ones will be ignored.
 
-## How to the authentication plugin works?
+## How do the authentication plugin works?
 
 Basicamente tenemos que retornar un objecto con un simple método llamado `authenticate`que recivirá 3 argumentos (`user, password, callback`).
 
@@ -126,7 +126,7 @@ callback(err);
 
 ### `changePassword` callback
 
-##### If the request success
+##### If the request is successful
 
 If the service is able to create an user, return `true` as the second argument.
 

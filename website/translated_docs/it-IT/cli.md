@@ -3,7 +3,7 @@ id: cli
 title: "Strumento riga di comando"
 ---
 
-Il CLI di verdaccio è la modalità per avviare l'applicazione.
+The Verdaccio CLI is your tool to start and stop the application.
 
 ## Comandi
 
@@ -19,15 +19,15 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 ## Posizione predefinita dei file config
 
-Per individuare la home directory, ci si affida a **$XDG_DATA_HOME** come prima scelta ed in un ambiente Windows si usa [variabile di ambiente APPDATA](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
+To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and for Windows environments we look for the [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
 ## Formato del file di configurazione
 
-Il file di configurazione dovrebbe essere un modulo YAML, JSON o NodeJS. Il formato YAML viene individuato analizzando l'estensione del file di configurazione (yaml o yml, case insensitive).
+Config files should be YAML, JSON or a NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
 
 ## Percorso di archiviazione predefinito
 
-Si usa la variabile di ambiente **$XDG_DATA_HOME** di default per individuare l'archiviazione predefinita che [dovrebbe essere la stessa](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) di $HOME/.local/share. Se si utilizza un'archiviazione dati personalizzata, questo percorso è irrilevante.
+We use the **$XDG_DATA_HOME** environment by variable default to locate the storage by default which [should be the same](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) as $HOME/.local/share. Se si utilizza un'archiviazione dati personalizzata, questo percorso è irrilevante.
 
 ## Percorso predefinito del file database
 

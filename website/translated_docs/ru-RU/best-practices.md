@@ -32,11 +32,11 @@ Always remember, **the order of packages access is important**, packages are mat
 
 ### Использование публичных пакетов с npmjs.org
 
-Если какого-то пакета нет в хранилище, сервер попробует скачать его с npmjs.org. Если npmjs.org недоступен, то сервер будет брать пакеты из кэша, исходя из предположения, что других пакетов нет. **Verdaccio will download only what's needed (requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
+If a package doesn't exist in the storage, the server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from the cache pretending that no other packages exist. **Verdaccio will download only what's needed (requested by clients)**, and this information will be cached, so if the client requests the same thing a second time it can be served without asking npmjs.org for it.
 
 **Пример:**
 
-If you successfully request `express@4.0.1` from this server once, you'll be able to do it again (with all it's dependencies) anytime even if npmjs.org is down. Но, скажем, `express@4.0.0` не будет загружен, пока кто-нибудь его не запросит. And if npmjs.org is offline, this server would say that only `express@4.0.1` (only what's in the cache) is published, but nothing else.
+If you successfully request `express@4.0.1` from the server once, you'll be able to do it again (with all of it's dependencies) any time, even if npmjs.org is down. Though note that `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, the server will say that only `express@4.0.1` (what's in the cache) is published, but nothing else.
 
 ### Переопределение публичных пакетов
 
@@ -46,7 +46,7 @@ If you successfully request `express@4.0.1` from this server once, you'll be abl
 
 1. Вы хотите создать отдельный **форк** и остановить синхронизацию с публичной версией.
     
-    Если вы хотите сделать это, то надо изменить конфигурационный файл так, чтобы verdaccio не делал больше запросы к npmjs. Добавьте отдельную запись для этого пакета в `config.yaml` и удалите `npmjs` из списка `proxy`, затем перезапустите сервер.
+    If you want to do that, you should modify your configuration file so Verdaccio won't make requests regarding this package to npmjs anymore. Добавьте отдельную запись для этого пакета в `config.yaml` и удалите `npmjs` из списка `proxy`, затем перезапустите сервер.
     
     ```yaml
     packages:
@@ -57,9 +57,9 @@ If you successfully request `express@4.0.1` from this server once, you'll be abl
         # proxy:
     ```
     
-    При этом, когда вы локально публикуете пакет, **рекомендуется повысить версию**, чтобы не было конфликта с версией, которая же есть в кэше.
+    When you publish your package locally, **you should probably start with a version string higher than the existing package** so it won't conflict with that package in the cache.
 
-2. Вы хотите временно использовать свою версию, но вернуться к публичному пакету, когда выйдет обновление.
+2. You want to temporarily use your version, but return to the public one as soon as it's updated.
     
     Чтобы избежать конфликта версий, **вам нужно использовать свой пре-релизный суффикс для следующей версии**. Например, если публичный пакет имел версию 0.1.2, вам нужно опубликовать `0.1.3-my-temp-fix`.
     
@@ -72,11 +72,11 @@ If you successfully request `express@4.0.1` from this server once, you'll be abl
 
 ## Безопасность
 
-Безопасность начинается с окружения вашего сервера, так что очень рекомендуем прочитать **[10 лучших практик npm по безопасности](https://snyk.io/blog/ten-npm-security-best-practices/)** и следовать рекомендациям.
+Security starts in your environment. For such things we recommend reading **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and following the steps outlined there.
 
 ### Доступ к пакетам
 
-По умолчанию все опубликованные в Verdaccio пакеты доступны всем, и мы настоятельно рекомендуем защитить ваш реестр от внешних неавторизированных пользователей, установив значение свойства `access` в `$authenticated`.
+By default all packages you publish in Verdaccio are accessible for all users. We recommend protecting your registry from external non-authorized users by updating the `access` property of your packages to `$authenticated`.
 
 ```yaml
   packages:
@@ -91,17 +91,17 @@ If you successfully request `express@4.0.1` from this server once, you'll be abl
       publish: $authenticated
    ```
 
-That way, **nobody will take advantage of your registry unless it's authorized and private packages won't be displayed in the User Interface**.
+That way, **nobody can access your registry unless they are authorized, and private packages won't be displayed in the web interface**.
 
-## Сервер
+## Server
 
-### Защищенные соединения
+### Secured Connections
 
-Использовать **HTTPS** - это частая рекомендация, и мы рекомендуем прочитать раздел [SSL](ssl.md), чтобы включить защиту внутри Verdaccio, или использовать HTTPS [reverse proxy](reverse-proxy.md) поверх Verdaccio.
+Using **HTTPS** is a common recommendation. For this reason we recommend reading the [SSL](ssl.md) section to make Verdaccio secure, or alternatively using an HTTPS [reverse proxy](reverse-proxy.md) on top of Verdaccio.
 
-### Ограничения по времени для токенов
+### Expiring Tokens
 
-В `verdaccio@3.x` токены не имеют ограничений по времени. Поэтому мы ввели в `verdaccio@4.x` новую фичу - JWT [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+In `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
@@ -117,6 +117,6 @@ security:
 
 **Использование этой конфигурации изменит текущее поведение сервера и вы сможете управлять временим жизни токенов**.
 
-Использование JWT так же увеличивает производительность плагинов аутентификации, так как старая система производила распаковку и проверку credentials во время каждого запроса, тогда как JWT полагается на подпись токена, устраняя эти накладные расходы для плагина.
+Using JWT also improves the performance with authentication plugins. The old system will perform an unpackage and validate the credentials on every request, while JWT will rely on the token signature instead, avoiding the overhead for the plugin.
 
 В качестве примечания, **npmjs токены не имеют ограничений по времени**.

@@ -3,13 +3,13 @@ id: конфигурисање
 title: "Фајл за конфигурисање"
 ---
 
-Овај фајл је основа verdaccio-a. У оквиру њега, можете вршити измене задатих подешавања, можете активирати plugin-е и спољашње ресурсе (features).
+This file is the cornerstone of Verdaccio where you can modify the default behaviour, enable plugins and extend features.
 
 A default configuration file `config.yaml` is created the very first time you run `verdaccio`.
 
 ## Подразумеване поставке (Default Configuration)
 
-Подразумеване поставке подржавају **scoped** пакете за све кориснике, али само **ауторизованим корисницима омогућавају да публикују**.
+The default configuration has support for **scoped** packages and allows any user to **access** all packages, but only authenticated users to **publish**.
 
 ```yaml
 storage: ./storage
@@ -32,7 +32,7 @@ logs:
 
 ## Секције
 
-Секција у наставку даје објашњења за свако својство и опцију.
+The following sections explain what each property means and their different options.
 
 ### Меморија за складиштење
 
@@ -44,15 +44,15 @@ storage: ./storage
 
 ### Plugins
 
-Је локација plugin директоријума. Ово је корисно за deployment базиран на Docker/Kubernetes.
+Is the location of the plugin directory. Useful for Docker/Kubernetes-based deployments.
 
 ```yaml
 plugins: ./plugins
 ```
 
-### Authentification
+### Authentication
 
-Овде се врши подешавање (set up). Подразумевана auth је базирана на `htpasswd` и већ је уграђена. Можете извршити модификације начина рада (behaviour) путем [plugin-a](plugins.md). За више информација о овој секцији, прочитајте [auth страну](auth.md).
+The authentication setup is done here. The default auth is based on `htpasswd` and is built in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
 
 ```yaml
 auth:
@@ -65,9 +65,9 @@ auth:
 
 <small>Since: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-Сигурносни блок Вам омогућава да прилагодите потпис за токен (token signature). Како бисте [JWT (json web token) учинили активним ](https://jwt.io/) нови потпис који требате за додавање блока `jwt` у `api` секцију, `web` по правилу користи `jwt`.
+Сигурносни блок Вам омогућава да прилагодите потпис за токен (token signature). To enable a new [JWT (JSON Web Tokens)](https://jwt.io/) signature you need to add the block `jwt` to the `api` section; `web` uses `jwt` by default.
 
-Конфигурација је подељена у две секције, `api` и `web`. Како бисте користили JWT у `api`, морате га дефинисати, у супротном ће користити наслеђени потпис за токен (legacy token signature) (`aes192`). За JWT можете прилагодити [потпис](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) и токен [верификацију](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) уписивањем параметара по својој жељи.
+Конфигурација је подељена у две секције, `api` и `web`. To use JWT on `api` it has to be defined, otherwise the legacy token signature (`aes192`) will be used. For JWT you might want to customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
 
     security:
       api:
@@ -99,7 +99,7 @@ server:
 
 ### Web UI (кориснички интерфејс)
 
-Ово својство Вам омогућава да модификујете изглед корисничког интерфејса. За више информација о овој секцији, прочитајте [web ui страницу](web.md).
+This property allow you to modify the look and feel of the web UI. For more information about this section read the [web UI page](web.md).
 
 ```yaml
 web:
@@ -111,7 +111,7 @@ web:
 
 ### Uplinks
 
-Uplinks пружају могућност систему да хвата (fetch) пакете из удаљених регистрија ако ти пакети нису локално доступни. За више информација о овој секцији прочитајте на [uplinks страници](uplinks.md).
+Uplinks add the ability to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
 
 ```yaml
 uplinks:
@@ -121,7 +121,7 @@ uplinks:
 
 ### Пакети
 
-Пакети (packages) дају могућност корисницима да контролишу како ће се приступати пакетима. За више детаља о овој секцији, прочитајте [страницу "пакети"/ packages](packages.md).
+This section allows you to control how packages are accessed. For more information about this section read the [packages page](packages.md).
 
 ```yaml
 packages:
@@ -135,7 +135,7 @@ packages:
 
 ### Публиковање offline
 
-Према задатим подешавањима, `verdaccio` не дозвољава публиковање онда када је клијент offline. Такав начин рада (behavior), може да се промени ако се параметри из примера подесе на *true*.
+By default `verdaccio` does not allow you to publish packages when the client is offline. This can be can be overridden by setting this value to *true*.
 
 ```yaml
 publish:
@@ -154,7 +154,7 @@ url_prefix: /verdaccio/
 
 ### Максимална величина body секције документа
 
-Према задатим подешавањима, максимална величина за body JSON документа је `10mb`. Ако добијете грешку `"request entity too large"` могли бисте да повећате ову вредност.
+By default the maximum body size for a JSON document is `10mb`, if you run into errors that state `"request entity too large"` you may increase this value.
 
 ```yaml
 max_body_size: 10mb
@@ -162,7 +162,7 @@ max_body_size: 10mb
 
 ### Listen Порт
 
-`verdaccio` runs by default in the port `4873`. Changing the port can be done via [cli](cli.md) or in the configuration file, the following options are valid.
+`verdaccio` runs by default on the port `4873`. Changing the port can be done via [CLI](cli.md) or in the configuration file. The following options are valid:
 
 ```yaml
 listen:
@@ -176,7 +176,7 @@ listen:
 
 ### HTTPS
 
-Како бисте омогућили `https` у `verdaccio` довољно је да подесите `listen` flag са протоколом *https://*. Више детаља можете наћи на [ssl страници](ssl.md).
+Како бисте омогућили `https` у `verdaccio` довољно је да подесите `listen` flag са протоколом *https://*. For more information about this section read the [SSL page](ssl.md).
 
 ```yaml
 https:
@@ -191,7 +191,7 @@ Proxies су HTTP сервери посебне намене дизајнира�
 
 #### http_proxy i https_proxy
 
-Ако имате proxy у својој мрежи, можете подесити `X-Forwarded-For` header користећи следеће уносе за својствa (properties).
+If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties:
 
 ```yaml
 http_proxy: http://something.local/
@@ -200,7 +200,7 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-Ова варијабла би требало да садржи comma-separated (поља одвојена запетом) листу екстензија домена за коју proxy не би требало да се користи.
+This variable should contain a comma-separated list of domain extensions that the proxy should not be used for.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
@@ -208,7 +208,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Нотификације
 
-Enabling notifications to third-party tools is fairly easy via web hooks. For more information about this section read the [notifications page](notifications.md).
+Enabling notifications to third-party tools is fairly easy via webhooks. For more information about this section read the [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -238,11 +238,11 @@ middlewares:
 
 This release includes a new property named `experiments` that can be placed in the `config.yaml` and is completely optional.
 
-We want to be able to ship new things without affecting production environments. This flag allows us to add new features and get feedback from the community that wants to use them.
+We want to be able to ship new things without affecting production environments. This flag allows us to add new features and get feedback from the community who decides to use them.
 
-The features that are under this flag might not be stable or might be removed in future releases.
+The features under this flag might not be stable or might be removed in future releases.
 
-Here one example:
+Here is one example:
 
 ```yaml
 experiments:

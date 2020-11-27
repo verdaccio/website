@@ -3,13 +3,13 @@ id: iṣeto
 title: "Faili Iṣeto"
 ---
 
-Faili yii ni pataki igun ti verdaccio nibi ti o ti le se aiyipada iwa atilẹwa naa, ṣe imuṣiṣẹ awọn ohun elo ati awọn ẹya ara to jẹ afikun.
+This file is the cornerstone of Verdaccio where you can modify the default behaviour, enable plugins and extend features.
 
 Faili iṣeto atilẹwa kan `config.yaml` jẹ ṣiṣẹda ni igba akọkọ ti o ba ṣe amulo `verdaccio`.
 
 ## Iṣeto Atilẹwa
 
-Iṣeto atilẹwa naa ni atilẹyin fun **scoped** awọn akopọ ati fayegba eyikeyi olumulo lati wọle si gbogbo awọn akopọ ṣugbọn nikan jẹki **awọn olumulo ti o ni ifasẹsi lati se atẹjade**.
+The default configuration has support for **scoped** packages and allows any user to **access** all packages, but only authenticated users to **publish**.
 
 ```yaml
 storage: ./storage
@@ -32,7 +32,7 @@ logs:
 
 ## Awọn abala
 
-Awọn abala wọnyi ṣe alaye nipa nkan ti ohun ini kọọkan tumọ si ati awọn aṣaayan oriṣiriṣi.
+The following sections explain what each property means and their different options.
 
 ### Ibi ipamọ
 
@@ -44,15 +44,15 @@ storage: ./storage
 
 ### Awọn ohun elo
 
-Ni aaye ti ọna ohun elo naa. O wulo fun awọn iṣamulo to da lori Docker/Kubernetes.
+Is the location of the plugin directory. Useful for Docker/Kubernetes-based deployments.
 
 ```yaml
 plugins: ./plugins
 ```
 
-### Sise ifasẹsi
+### Ifasẹsi
 
-Ibi ni iṣeto sise ifasẹsi ti ma n waye, ifasẹsi atilẹwa da lori `htpasswd` atipe o jẹ kikọ sinu rẹ. O le se ayipada iwa yi nipasẹ [plugins](plugins.md). Fun alaye siwaju sii nipa abala yii ka [oju ewe ifasẹsi](auth.md).
+The authentication setup is done here. The default auth is based on `htpasswd` and is built in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
 
 ```yaml
 auth:
@@ -65,9 +65,9 @@ auth:
 
 <small>Niwọn: <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-Bulọọku aabo fayegba ọ lati ṣe aami ibuwọlu naa ni akanṣe. Lati ṣe imuṣiṣẹ ibuwọlu tuntun [JWT (json web token)](https://jwt.io/) o nilo lati se afikun bulọọku `jwt` si abala `api`, `web` n lo `jwt` ni atilẹwa.
+Bulọọku aabo fayegba ọ lati ṣe aami ibuwọlu naa ni akanṣe. To enable a new [JWT (JSON Web Tokens)](https://jwt.io/) signature you need to add the block `jwt` to the `api` section; `web` uses `jwt` by default.
 
-Iṣeto naa jẹ pinpin si abala meji, `api` ati `web`. Lati lo JWT lori `api`, o nilo lati leto, bibẹkọ o ma lo ibuwọlu aami ijogun (`aes192`). Fun JWT o le ṣe [ibuwọlu](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) naa ni akanṣe ati [idaniloju](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) aami naa pẹlu awọn dukia ara rẹ.
+Iṣeto naa jẹ pinpin si abala meji, `api` ati `web`. To use JWT on `api` it has to be defined, otherwise the legacy token signature (`aes192`) will be used. For JWT you might want to customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
 
     security:
       api:
@@ -99,7 +99,7 @@ server:
 
 ### UI Ayelujara
 
-Ohun ini yii gba ọ laaye lati se ayipada si ifihan ati irisi web UI. Fun alaye siwaju sii nipa abala yii ka [ oju ewe web ui](web.md).
+This property allow you to modify the look and feel of the web UI. For more information about this section read the [web UI page](web.md).
 
 ```yaml
 web:
@@ -111,7 +111,7 @@ web:
 
 ### Uplinks
 
-Uplinks ni agbara eto naa lati sawari awọn akopọ lati awọn ibi iforukọsilẹ ọlọna jijin nigbati awọn akopọ naa ko ba si ni agbegbe. Fun alaye siwaju sii nipa abala yii ka [oju ewe uplinks](uplinks.md).
+Uplinks add the ability to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
 
 ```yaml
 uplinks:
@@ -121,7 +121,7 @@ uplinks:
 
 ### Awọn akopọ
 
-Awọn akojọ gba olumulo laaye lati ṣe idari bi wiwọle si awọn akojọ naa ṣe ma ma waye. Fun alaye siwaju sii nipa abala yi ka [oju ewe awọn akojọ](packages.md).
+This section allows you to control how packages are accessed. For more information about this section read the [packages page](packages.md).
 
 ```yaml
 packages:
@@ -135,7 +135,7 @@ packages:
 
 ### Atẹjade Alaisilorila
 
-Nipa atilẹwa `verdaccio` ko kin fayegba sise atẹjade nigbati onibara ko ba si lori ila, ihuwasi naa le se bori nipasẹ siseto eyi si *true*.
+By default `verdaccio` does not allow you to publish packages when the client is offline. This can be can be overridden by setting this value to *true*.
 
 ```yaml
 publish:
@@ -154,7 +154,7 @@ url_prefix: /verdaccio/
 
 ### Iwọn Ara to Pọju
 
-Nipa atilẹwa iwọn ara to pọju fun iwe akọsilẹ JSON jẹ `10mb`, ti o ba salabapade awọn aṣiṣe bi `"request entity too large"` o le se alekun iye yii.
+By default the maximum body size for a JSON document is `10mb`, if you run into errors that state `"request entity too large"` you may increase this value.
 
 ```yaml
 max_body_size: 10mb
@@ -162,7 +162,7 @@ max_body_size: 10mb
 
 ### Ibudo Itẹtisi
 
-`verdaccio` n ṣiṣẹ ni atilẹwa ni ibudo naa `4873`. Yiyi ibudo naa pada le ṣee ṣe nipasẹ [cli](cli.md) tabi ninu faili iṣeto naa, awọn aṣayan wọnyi fẹsẹmulẹ.
+`verdaccio` runs by default on the port `4873`. Changing the port can be done via [CLI](cli.md) or in the configuration file. The following options are valid:
 
 ```yaml
 listen:
@@ -176,7 +176,7 @@ listen:
 
 ### HTTPS
 
-Lati mu `https` ṣiṣẹ ninu `verdaccio` o to lati ṣeto asia `listen` pẹlu Ilana *https://*. Fun alaye siwaju sii nipa abala yii ka [oju ewe ssl](ssl.md).
+Lati mu `https` ṣiṣẹ ninu `verdaccio` o to lati ṣeto asia `listen` pẹlu Ilana *https://*. For more information about this section read the [SSL page](ssl.md).
 
 ```yaml
 https:
@@ -191,7 +191,7 @@ Awọn aṣoju ikọkọ jẹ awọn olupese HTTP oniṣẹ-pataki ti o jẹ did
 
 #### http_proxy ati https_proxy
 
-Ti o ba ni aṣoju ikọkọ kan ninu nẹtiwọki rẹ o le ṣeto akọle `X-Forwarded-For` kan nipa lilo awọn ohun ini wọnyi.
+If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties:
 
 ```yaml
 http_proxy: http://something.local/
@@ -200,7 +200,7 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-Alayipada yii yẹ ki o ni awọn akojọpọ awọn afikun ibudo ti o jẹ yiya sọtọ pẹlu aami idanuduro diẹ ti aṣoju ikọkọ ko gbọdọ jẹ lilo fun.
+This variable should contain a comma-separated list of domain extensions that the proxy should not be used for.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
@@ -208,7 +208,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Awọn ifitonileti
 
-Ṣiṣe imuṣiṣẹ awọn ifitonileti si awọn irinṣẹ alagata rọrun diẹ nipasẹ awọn ikọ ayelujara. Fun alaye siwaju sii nipa abala yii ka [oju ewe awọn ifitonileti](notifications.md).
+Enabling notifications to third-party tools is fairly easy via webhooks. For more information about this section read the [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -238,11 +238,11 @@ middlewares:
 
 This release includes a new property named `experiments` that can be placed in the `config.yaml` and is completely optional.
 
-We want to be able to ship new things without affecting production environments. This flag allows us to add new features and get feedback from the community that wants to use them.
+We want to be able to ship new things without affecting production environments. This flag allows us to add new features and get feedback from the community who decides to use them.
 
-The features that are under this flag might not be stable or might be removed in future releases.
+The features under this flag might not be stable or might be removed in future releases.
 
-Here one example:
+Here is one example:
 
 ```yaml
 experiments:

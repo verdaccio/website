@@ -3,7 +3,7 @@ id: awọn ifitonileti
 title: "Awọn ifitonileti"
 ---
 
-Fifitonileti jẹ gbigbedide ni pataki lati jẹ lilo pẹlu awọn webhooks Slack ti n wọle bọ, ṣugbọn o tun ma ṣe ifijiṣẹ fi ifiranṣẹ to rọrun kan si eyikeyi opin. Lọwọlọwọ o n ṣiṣẹ fun aṣẹ `npm publish` nikan.
+Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. This is currently only active for the `npm publish` command.
 
 ## Ilo
 
@@ -118,7 +118,7 @@ Mẹtadata akopọ ti awoṣe naa ni iwọle si
 
 ### Olugbejade
 
-O le wọle si alaye olugbejade akopọ naa ni `akoonu` ti webhook kan nipa lilo `olugbejade` nkan.
+You can get access to the package publisher information in the `content` of a webhook using the `publisher` object.
 
 Wo labẹ yii `olugbejade` iru nkan:
 

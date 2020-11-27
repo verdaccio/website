@@ -3,13 +3,13 @@ id: configuration
 title: "Файл конфигурации"
 ---
 
-Этот файл является краеугольным камнем verdaccio. В нём вы можете изменить стандартное поведение, включить плагины и расширенные возможности.
+This file is the cornerstone of Verdaccio where you can modify the default behaviour, enable plugins and extend features.
 
 Файл конфигурации по умолчанию `config.yaml` будет создан, когда вы самый первый раз запустите `verdaccio`.
 
 ## Конфигурация по умолчанию
 
-Стандартная конфигурация поддерживает **scoped**-пакеты и позволяет любым пользователям получить доступ ко всем пакетам, но только **авторизованные пользователи могут публиковать пакеты**.
+The default configuration has support for **scoped** packages and allows any user to **access** all packages, but only authenticated users to **publish**.
 
 ```yaml
 storage: ./storage
@@ -32,7 +32,7 @@ logs:
 
 ## Разделы
 
-Следующие разделы пояснят, что каждое свойство означает, и какими дополнительными опциями обладает.
+The following sections explain what each property means and their different options.
 
 ### Хранилище
 
@@ -44,7 +44,7 @@ storage: ./storage
 
 ### Плагины
 
-Местоположения директории с плагинами. Полезно при развёртывании при помощи Docker/Kubernetes.
+Is the location of the plugin directory. Useful for Docker/Kubernetes-based deployments.
 
 ```yaml
 plugins: ./plugins
@@ -52,7 +52,7 @@ plugins: ./plugins
 
 ### Аутентификация
 
-Настройка аутентификация делается здесь. По умолчанию аутентификация основана на `htpasswd` и является встроенной. Вы можете изменить это при помощи [плагинов](plugins.md). Читайте об этом в разделе [Аутентификация](auth.md).
+The authentication setup is done here. The default auth is based on `htpasswd` and is built in. You can modify this behaviour via [plugins](plugins.md). For more information about this section read the [auth page](auth.md).
 
 ```yaml
 auth:
@@ -65,9 +65,9 @@ auth:
 
 <small>Работает, начиная с <code>verdaccio@4.0.0</code> <a href="https://github.com/verdaccio/verdaccio/pull/168">#168</a></small>
 
-Этот блок позволяет кастомизировать авторизацию токенами. Чтобы включить авторизацию по [JWT (json web token)](https://jwt.io/), вам надо добавить блок `jwt` к разделу `api`, а раздел `web` успользует `jwt` по умолчанию.
+Этот блок позволяет кастомизировать авторизацию токенами. To enable a new [JWT (JSON Web Tokens)](https://jwt.io/) signature you need to add the block `jwt` to the `api` section; `web` uses `jwt` by default.
 
-Конфигурация разделена на две части, `api` и `web`. Чтобы использовать JWT в `api`, его надо прописать там в явном виде, иначе будут использоваться "старые" токены (`aes192`). Для JWT, вы можете кастомизировать свойства токена [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) и [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback), добавивив свои собственные поля.
+Конфигурация разделена на две части, `api` и `web`. To use JWT on `api` it has to be defined, otherwise the legacy token signature (`aes192`) will be used. For JWT you might want to customize the [signature](https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback) and the token [verification](https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback) with your own properties.
 
     security:
       api:
@@ -99,7 +99,7 @@ server:
 
 ### Веб-интерфейс
 
-Это свойство позволяет модифицировать внешний вид веб UI. Чтобы получить больше информации, почитайте страницу [web ui page](web.md).
+This property allow you to modify the look and feel of the web UI. For more information about this section read the [web UI page](web.md).
 
 ```yaml
 web:
@@ -111,7 +111,7 @@ web:
 
 ### Аплинки
 
-Аплинки - это способ получать пакеты из удаленных репозиториев, когда пакетов нет в локальном хранилище. Чтобы получить больше информации, почитайте [страницу аплинков](uplinks.md).
+Uplinks add the ability to fetch packages from remote registries when those packages are not available locally. For more information about this section read the [uplinks page](uplinks.md).
 
 ```yaml
 uplinks:
@@ -121,7 +121,7 @@ uplinks:
 
 ### Пакеты
 
-Это свойство позволяет пользователю управлять доступом к пакетам. Чтобы получить больше информации, почитайте страницу [packages page](packages.md).
+This section allows you to control how packages are accessed. For more information about this section read the [packages page](packages.md).
 
 ```yaml
 packages:
@@ -135,7 +135,7 @@ packages:
 
 ### Публикация в офлайне
 
-По умолчанию, `verdaccio` не разрешает публиковать пакеты, когда клиент в оффлайне, но вы можете разрешить это, установив значение *true* для этой настройки.
+By default `verdaccio` does not allow you to publish packages when the client is offline. This can be can be overridden by setting this value to *true*.
 
 ```yaml
 publish:
@@ -154,7 +154,7 @@ url_prefix: /verdaccio/
 
 ### Максимальный размер сообщения
 
-По умолчанию, максимальный размер JSON-документа ограничен `10mb`, и если вы стали получать ошибки `"request entity too large"`, то вы можете увеличить это значение.
+By default the maximum body size for a JSON document is `10mb`, if you run into errors that state `"request entity too large"` you may increase this value.
 
 ```yaml
 max_body_size: 10mb
@@ -162,7 +162,7 @@ max_body_size: 10mb
 
 ### Порт
 
-По умолчанию, `verdaccio` запущен на порту `4873`. Изменить этот порт можно через [cli](cli.md) или в конфигурационном файле, например так:
+`verdaccio` runs by default on the port `4873`. Changing the port can be done via [CLI](cli.md) or in the configuration file. The following options are valid:
 
 ```yaml
 listen:
@@ -176,7 +176,7 @@ listen:
 
 ### HTTPS
 
-Чтобы включить `https` в `verdaccio`, достаточно добавить протокол *https://* в секции `listen`. Для получения большей информации, обратитесь на [страницу ssl](ssl.md).
+Чтобы включить `https` в `verdaccio`, достаточно добавить протокол *https://* в секции `listen`. For more information about this section read the [SSL page](ssl.md).
 
 ```yaml
 https:
@@ -191,7 +191,7 @@ https:
 
 #### http_proxy и https_proxy
 
-Если у вас есть прокси в вашей сети, вы модете установить хедер `X-Forwarded-For`, используя следующие свойства.
+If you have a proxy in your network you can set a `X-Forwarded-For` header using the following properties:
 
 ```yaml
 http_proxy: http://something.local/
@@ -200,7 +200,7 @@ https_proxy: https://something.local/
 
 #### no_proxy
 
-Эта переменная должна содержать список доменов, разделённых запятыми, для которых не нужно использовать прокси.
+This variable should contain a comma-separated list of domain extensions that the proxy should not be used for.
 
 ```yaml
 no_proxy: localhost,127.0.0.1
@@ -208,7 +208,7 @@ no_proxy: localhost,127.0.0.1
 
 ### Уведомления
 
-Включить уведомления для сторонных инструментов - довольно легко через web hooks. Для получения большей информации, обратитесь к [странице уведомлений](notifications.md).
+Enabling notifications to third-party tools is fairly easy via webhooks. For more information about this section read the [notifications page](notifications.md).
 
 ```yaml
 notify:
@@ -238,11 +238,11 @@ middlewares:
 
 This release includes a new property named `experiments` that can be placed in the `config.yaml` and is completely optional.
 
-We want to be able to ship new things without affecting production environments. This flag allows us to add new features and get feedback from the community that wants to use them.
+We want to be able to ship new things without affecting production environments. This flag allows us to add new features and get feedback from the community who decides to use them.
 
-The features that are under this flag might not be stable or might be removed in future releases.
+The features under this flag might not be stable or might be removed in future releases.
 
-Here one example:
+Here is one example:
 
 ```yaml
 experiments:

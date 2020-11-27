@@ -3,11 +3,11 @@ id: protect-your-dependencies
 title: "Protezione dei pacchetti"
 ---
 
-`verdaccio` consente di proteggere la pubblicazione. Per ottenere ciò è necessario configurare correttamente l'[accesso ai pacchetti](packages).
+Verdaccio allows you protect publishing to your registry. To achieve that you will need to set up correctly configure your [packages access](packages).
 
 ### Configurazione del pacchetto
 
-Vediamo, per esempio, la seguente configurazione. Si dispone di una serie di dipendenze che hanno come prefisso `my-company-*` e si necessita di proteggerle da anonimi o da altri utenti loggati senza credenziali.
+Vediamo, per esempio, la seguente configurazione. You have a set of dependencies that are prefixed with `my-company-*` and you need to protect them from anonymous or other non-authorized logged-in users.
 
 ```yaml
   'my-company-*':
@@ -16,18 +16,18 @@ Vediamo, per esempio, la seguente configurazione. Si dispone di una serie di dip
     proxy: npmjs
 ```
 
-Con questa configurazione, si permette fondamentalmente di raggruppare **admin** e **teamA** per *pubblicare* e **teamA** **teamB** **teamC** *per accedere* a tali dipendenze.
+With this configuration, we allow the groups **admin** and **teamA** to *publish* and **teamA**, **teamB** and **teamC** to *access* the specified dependencies.
 
-### Caso d'uso: teamD prova ad accedere alla dipendenza
+### Use case: teamD tries to access the dependency
 
-Quindi, se io sono loggato come **teamD** non dovrei poter accedere a tutte quelle dipendenze che corrispondono al modello `my-company-*`.
+So, if I am logged as **teamD**. I shouldn't be able to access all dependencies that match the `my-company-*` pattern.
 
 ```bash
 ➜ npm whoami
 teamD
 ```
 
-Non solo non avrò accesso a tali dipendenze ma non saranno nemmeno visibili via web per l'utente **teamD**.
+I won't have access to such dependencies and they also won't be visible via the web interface for user **teamD**. If I try to access it, the following will happen:
 
 ```bash
 ➜ npm install my-company-core
@@ -35,7 +35,7 @@ npm ERR! code E403
 npm ERR! 403 Forbidden: webpack-1@latest
 ```
 
-o con `yarn`
+or with `yarn`:
 
 ```bash
 ➜ yarn add my-company-core

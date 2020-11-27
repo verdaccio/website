@@ -5,7 +5,7 @@ title: "Ifasẹsi"
 
 The authentication is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-The client authentication is handled by `npm` client itself. Once you login to the application:
+The client authentication is handled by the `npm` client itself. Once you log in to the application:
 
 ```bash
 npm adduser --registry http://localhost:4873
@@ -22,7 +22,7 @@ registry=http://localhost:5555/
 
 #### Igbejade alainidamọ
 
-`verdaccio` allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
+`verdaccio` allows you to enable anonymous publish. To achieve that you will need to correctly set up your [packages access](packages.md).
 
 Fun apẹẹrẹ:
 
@@ -39,19 +39,19 @@ Bi apejuwe rẹ ti ṣe jẹ ṣiṣe [lori ọrọ #212](https://github.com/ver
 
 ### Itunmọ `$all` ati `$anonymous`
 
-Bi o se mọ *Verdaccio* n lo `htpasswd` ni atilẹwa. Ohun elo yẹn ko ṣe amuṣiṣẹ awọn ọna naa `allow_access`, `allow_publish` and `allow_unpublish`. Nitorina, *Verdaccio* ma mojuto iyẹn ni ọna wọnyi:
+As you know *Verdaccio* uses `htpasswd` by default. Ohun elo yẹn ko ṣe amuṣiṣẹ awọn ọna naa `allow_access`, `allow_publish` and `allow_unpublish`. Nitorina, *Verdaccio* ma mojuto iyẹn ni ọna wọnyi:
 
 * Ti o ko ba wọle (o jẹ alainidamọ), `$all` ati `$anonymous` tumọ si nkankan na.
-* Ti o ba wọle, `$anonymous` ko ni jẹ ara awọn ẹgbẹ akojọpọ rẹ ati `$all` ma se asopọ pẹlu eyikeyi olumulo ti o ba ti wọle. Ẹgbẹ akojọpọ tuntun kan `$authenticated` ma jẹ fifikun si akojọ naa.
+* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to your group list.
 
-Bi amulọ, `$all` **ma se asopọ gbogbo awọn olumulo, ni alaigbarale boya o ti wọle tabi ko wọle**.
+Please note: `$all` **will match all users, whether logged in or not**.
 
 **Ohun elo ifasẹsi atilẹwa nikan ni iwa iṣaaju yẹn bawi**. Ti o ba n lo ohun elo akanṣe ati ti iru ohun elo bẹ ba n se imuṣiṣẹ `allow_access`, `allow_publish` tabi `allow_unpublish`, awọn ipinnu ti iwọle naa da lori ohun elo naa funrararẹ. Verdaccio ma ṣeto awọn ẹgbẹ akojọpọ atilẹwa nikan.
 
 Jẹ ki a ṣe atungbeyẹwo ni ṣoki:
 
-* **ti wọle**: `$all`, `$authenticated`, + awọn ẹgbẹ akojọpọ ti o jẹ fifikun nipasẹ ohun elo naa
-* **alainidamọ (ti jade sita)**: `$all` ati `$anonymous`.
+* **logged in**: `$all` and `$authenticated` + groups added by the plugin.
+* **logged out (anonymous)**: `$all` and `$anonymous`.
 
 ## htpasswd atilẹwa
 
@@ -71,4 +71,4 @@ auth:
 | faili     | okun  | Bẹẹni     | ./htpasswd | gbogbo   | faili to gbalejo awọn iwe ẹri alaroko |
 | max_users | nọmba | Rara      | 1000       | gbogbo   | ṣeto gbedeke iye awọn olumulo         |
 
-In case you decide to not allow users to sign up, you can set `max_users: -1`.
+In case you decide to prevent users from signing up themselves, you can set `max_users: -1`.

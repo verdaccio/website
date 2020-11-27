@@ -3,7 +3,7 @@ id: enregistreur
 title: "Enregistreur"
 ---
 
-Comme toute application Web, verdaccio dispose d'un enregistreur intégré personnalisable. Vous pouvez définir différents types de sorties.
+As with any web application, Verdaccio has a customisable built-in logger. You can define multiple types of outputs.
 
 ```yaml
 logs:

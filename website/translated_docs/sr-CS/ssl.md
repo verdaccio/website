@@ -3,7 +3,7 @@ id: ssl
 title: "Podešavanje SSL Sertifikata"
 ---
 
-Follow these instructions to configure an SSL certificate to serve an NPM registry over HTTPS.
+Follow these instructions to configure an SSL certificate to serve an npm registry over HTTPS.
 
 * Ažurirajte svojstvo listen u svom `~/.config/verdaccio/config.yaml`:
 

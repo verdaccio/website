@@ -3,7 +3,7 @@ id: powiadomienia
 title: "Powiadomienia"
 ---
 
-Powiadomienie zostało zbudowane głównie z myślą o użyciu przychodzących webhooks Slacka, ale dostarczy również prosty ładunek do dowolnego punktu końcowego. Obecnie aktywny tylko dla polecenia`npm publish`.
+Notify was built primarily to use with Slack's Incoming webhooks, but will also deliver a simple payload to any endpoint. This is currently only active for the `npm publish` command.
 
 ## Użycie
 
@@ -118,7 +118,7 @@ Package metadata that the template has access
 
 ### Publisher
 
-Możesz uzyskać dostęp do informacji o wydawcy pakietu w `content` wehbook za pomocą obiektu `publisher`.
+You can get access to the package publisher information in the `content` of a webhook using the `publisher` object.
 
 Zobacz poniżej `publisher` typ obiektu:
 
