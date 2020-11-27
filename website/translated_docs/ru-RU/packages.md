@@ -3,7 +3,7 @@ id: packages
 title: "Доступ к пакетам"
 ---
 
-Это набор ограничений, которые разрешают или запрещают доступ к локальному хранилищу по определенному критерию.
+This is a series of constraints that allow or restrict access to the local storage based on specific criteria.
 
 Ограничения реализуются плагинами, по умолчанию `verdaccio` использует [плагин htpasswd](https://github.com/verdaccio/verdaccio-htpasswd). Если вы используете другой плагин, то детали могут отличаться. Плагин по умолчанию не реализует `allow_access` and `allow_publish`, использется встроенная реализация, которая включается именно в такой ситуации - когда плагин не реализовал эти методы.
 
