@@ -32,11 +32,11 @@ Always remember, **the order of packages access is important**, packages are mat
 
 ### Using public packages from npmjs.org
 
-If some package doesn't exist in the storage, server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from cache pretending that no other packages exist. **Verdaccio will download only what's needed (requested by clients)**, and this information will be cached, so if client will ask the same thing second time, it can be served without asking npmjs.org for it.
+If a package doesn't exist in the storage, the server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from the cache pretending that no other packages exist. **Verdaccio will download only what's needed (requested by clients)**, and this information will be cached, so if the client requests the same thing a second time it can be served without asking npmjs.org for it.
 
 **Exemplo:**
 
-If you successfully request `express@4.0.1` from this server once, you'll be able to do it again (with all it's dependencies) anytime even if npmjs.org is down. Entretanto `express@4.0.0` não será baixado até que seja realmente necessário para alguém. And if npmjs.org is offline, this server would say that only `express@4.0.1` (only what's in the cache) is published, but nothing else.
+If you successfully request `express@4.0.1` from the server once, you'll be able to do it again (with all of it's dependencies) any time, even if npmjs.org is down. Though note that `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, the server will say that only `express@4.0.1` (what's in the cache) is published, but nothing else.
 
 ### Override public packages
 
@@ -46,7 +46,7 @@ There's two options here:
 
 1. Você deseja criar um **fork** separado e parar de sincronizar com a versão pública.
     
-    If you want to do that, you should modify your configuration file so verdaccio won't make requests regarding this package to npmjs anymore. Inclua uma entrada separada para este pacote no `config.yaml` e remova a lista `npmjs` do `proxy` e reinicie o servidor.
+    If you want to do that, you should modify your configuration file so Verdaccio won't make requests regarding this package to npmjs anymore. Inclua uma entrada separada para este pacote no `config.yaml` e remova a lista `npmjs` do `proxy` e reinicie o servidor.
     
     ```yaml
     packages:
@@ -57,9 +57,9 @@ There's two options here:
         # proxy:
     ```
     
-    Quando você publicar o seu pacote localmente, **você provavelmente deve começar com uma string de versão maior que a existente**, para que ela não entre em conflito com o pacote existente no cache.
+    When you publish your package locally, **you should probably start with a version string higher than the existing package** so it won't conflict with that package in the cache.
 
-2. You want to temporarily use your version, but return to public one as soon as it's updated.
+2. You want to temporarily use your version, but return to the public one as soon as it's updated.
     
     Para evitar conflitos de versões, **você deve usar um sufixo de pré-lançamento personalizado da próxima versão do patch**. Por exemplo, se um pacote público tiver a versão 0.1.2, você poderá fazer upload de `0.1.3-my-temp-fix`.
     
@@ -72,11 +72,11 @@ There's two options here:
 
 ## Segurança
 
-A segurança começa no seu ambiente, por isso recomendamos que leia **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** e siga a recomendação.
+Security starts in your environment. For such things we recommend reading **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and following the steps outlined there.
 
 ### Permissões dos Pacotes
 
-Por padrão, todos os pacotes que você publica no Verdaccio são acessíveis para todos os públicos, nós recomendamos que você proteja seu registro de usuários externos não autorizados, atualizando a propriedade `access` para `$authenticated`.
+By default all packages you publish in Verdaccio are accessible for all users. We recommend protecting your registry from external non-authorized users by updating the `access` property of your packages to `$authenticated`.
 
 ```yaml
   packages:
@@ -91,17 +91,17 @@ Por padrão, todos os pacotes que você publica no Verdaccio são acessíveis pa
       publish: $authenticated
    ```
 
-That way, **nobody will take advantage of your registry unless it's authorized and private packages won't be displayed in the User Interface**.
+That way, **nobody can access your registry unless they are authorized, and private packages won't be displayed in the web interface**.
 
-## Servidor
+## Server
 
-### Conexões Seguras
+### Secured Connections
 
-O uso de **HTTPS** é uma recomendação comum, por essa razão recomendamos a leitura da seção [SSL](ssl.md) para tornar o Verdaccio seguro ou usar um HTTPS [reverse proxy](reverse-proxy.md) no topo do Verdaccio.
+Using **HTTPS** is a common recommendation. For this reason we recommend reading the [SSL](ssl.md) section to make Verdaccio secure, or alternatively using an HTTPS [reverse proxy](reverse-proxy.md) on top of Verdaccio.
 
-### Validando Tokens
+### Expiring Tokens
 
-No `verdaccio@3.x` os tokens não têm data de validade. Por essa razão, introduzimos no próximo `verdaccio@4.x` o recurso JWT [PR#896] (https://github.com/verdaccio/verdaccio/pull/896)
+In `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
 
 ```yaml
 security:
@@ -117,6 +117,6 @@ security:
 
 **O uso desta configuração substituirá o sistema atual e você poderá controlar por quanto tempo o token ficará ativo**.
 
-O uso do JWT também melhora o desempenho com plug-ins de autenticação, o sistema antigo executará um desempacotamento e validará as credenciais em cada solicitação, enquanto o JWT dependerá da assinatura do token, evitando a sobrecarga do plug-in.
+Using JWT also improves the performance with authentication plugins. The old system will perform an unpackage and validate the credentials on every request, while JWT will rely on the token signature instead, avoiding the overhead for the plugin.
 
 Como anotação, no **npmjs o token nunca expira **.
