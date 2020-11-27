@@ -3,7 +3,7 @@ id: cli
 title: "Command Line Tool"
 ---
 
-Verdaccio је Ваша почетна станица за покретање апликације.
+The Verdaccio CLI is your tool to start and stop the application.
 
 ## Команде
 
@@ -19,15 +19,15 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 ## Подразумевана локација config file-a
 
-Како бисмо лоцирали home directory, ослањамо се на **$XDG_DATA_HOME** као први избор у Windows окружењу где трагамо за [APPDATA environment variablom](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
+To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and for Windows environments we look for the [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
 ## Config file format
 
-Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+Config files should be YAML, JSON or a NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
 
 ## Подразумевана локација за чување
 
-Користимо **$XDG_DATA_HOME** environment варијаблу као подразумевано подешавање како бисмо лоцирали подразумевано место за чување које би требало [да буде исто](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) као $HOME/.local/share. Ако користите прилагођено место за чување података (custom storage), онда је локација ирелевантна.
+We use the **$XDG_DATA_HOME** environment by variable default to locate the storage by default which [should be the same](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) as $HOME/.local/share. Ако користите прилагођено место за чување података (custom storage), онда је локација ирелевантна.
 
 ## Подразумевана локација базе података
 
