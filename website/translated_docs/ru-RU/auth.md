@@ -5,7 +5,7 @@ title: "Аутентификация"
 
 The authentication is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
 
-The client authentication is handled by `npm` client itself. Once you login to the application:
+The client authentication is handled by the `npm` client itself. Once you log in to the application:
 
 ```bash
 npm adduser --registry http://localhost:4873
@@ -22,7 +22,7 @@ registry=http://localhost:5555/
 
 #### Анонимная публикация
 
-`verdaccio` allows you to enable anonymous publish, to achieve that you will need to set up correctly your [packages access](packages.md).
+`verdaccio` allows you to enable anonymous publish. To achieve that you will need to correctly set up your [packages access](packages.md).
 
 Например:
 
@@ -39,19 +39,19 @@ registry=http://localhost:5555/
 
 ### Как понимать `$all` и `$anonymous`
 
-Как вы знаете, *Verdaccio* использует `htpasswd` по умолчанию. Этот плагин не реализует методы `allow_access`, `allow_publish` и `allow_unpublish`. И *Verdaccio* будет действовать таким образом:
+As you know *Verdaccio* uses `htpasswd` by default. Этот плагин не реализует методы `allow_access`, `allow_publish` и `allow_unpublish`. И *Verdaccio* будет действовать таким образом:
 
 * Если вы не залогинены (вы - аноним), `$all` and `$anonymous` означают одно и то же.
-* Если вы залогинены, `$anonymous` не будет в списке ваших групп, а `$all` будет у любого залогиненого пользователя. Так же, в список добавится новая группа `$authenticated`.
+* If you are logged in, `$anonymous` won't be part of your groups and `$all` will match any logged user. A new group `$authenticated` will be added to your group list.
 
-В общем, `$all` **означает всех пользователей, независимо от того, залогинены они или нет**.
+Please note: `$all` **will match all users, whether logged in or not**.
 
 **Все описанное выше - только про плагин аутентификации по умолчанию**. Если вы используете кастомный плагин и этот плагин реализует `allow_access`, `allow_publish` или `allow_unpublish`, то разрешения будут зависет от этого вашего плагина. Verdaccio установит только группы по умолчанию.
 
 Отметим еще раз:
 
-* **залогиненные**: `$all`, `$authenticated`, + группы, добавленные плагином
-* **анонимы (не залогиненные)**: `$all` и `$anonymous`.
+* **logged in**: `$all` and `$authenticated` + groups added by the plugin.
+* **logged out (anonymous)**: `$all` and `$anonymous`.
 
 ## Стандартный htpasswd
 
@@ -71,4 +71,4 @@ auth:
 | file      | string | Да           | ./htpasswd | все       | файл, содержащий зашифрованные учетные данные |
 | max_users | number | Нет          | 1000       | все       | ограничение на количество пользователей       |
 
-In case you decide to not allow users to sign up, you can set `max_users: -1`.
+In case you decide to prevent users from signing up themselves, you can set `max_users: -1`.
