@@ -216,8 +216,8 @@ most recommended and used ones.</p>
 you would need something like this in your <code>config.yaml</code>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">url_prefix:</span> <span class="hljs-string">/sub_directory/</span>
 </code></pre>
-<p>If you run verdaccio behind reverse proxy, you may noticed all resource file served as relative path, like <code>http://127.0.0.1:4873/-/static</code></p>
-<p>To resolve this issue, <strong>you should send real domain and port to verdaccio with <code>Host</code> header</strong></p>
+<p>If you run Verdaccio behind reverse proxy, you may noticed all resource file served as relative path, like <code>http://127.0.0.1:4873/-/static</code></p>
+<p>To resolve this issue, <strong>you should send real domain and port to Verdaccio with <code>Host</code> header</strong></p>
 <p>Nginx configure should look like this:</p>
 <pre><code class="hljs css language-nginx"><span class="hljs-attribute">location</span> / {
     <span class="hljs-attribute">proxy_pass</span> http://127.0.0.1:4873/;
@@ -226,7 +226,7 @@ you would need something like this in your <code>config.yaml</code>.</p>
     <span class="hljs-attribute">proxy_set_header</span> X-Forwarded-Proto <span class="hljs-variable">$scheme</span>;
 }
 </code></pre>
-<p>For this case, <code>url_prefix</code> should <strong>NOT</strong> set in verdaccio config</p>
+<p>For this case, <code>url_prefix</code> should <strong>NOT</strong> set in Verdaccio config</p>
 <hr>
 <p>or a sub-directory installation:</p>
 <pre><code class="hljs css language-nginx"><span class="hljs-attribute">location</span> <span class="hljs-regexp">~ ^/verdaccio/(.*)$</span> {
@@ -238,7 +238,7 @@ you would need something like this in your <code>config.yaml</code>.</p>
 </code></pre>
 <p>For this case, <code>url_prefix</code> should set to <code>/verdaccio/</code></p>
 <blockquote>
-<p>Note: There is a Slash after install path (<code>https://your-domain:port/verdaccio/</code>)!</p>
+<p>Note: There is a slash after the install path (<code>https://your-domain:port/verdaccio/</code>)!</p>
 </blockquote>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/server-configuration"><span class="arrow-prev">← </span><span>Server Configuration</span></a><a class="docs-next button" href="/docs/en/ssl"><span>Set up the SSL Certificates</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#ssl-example">SSL example</a></li><li><a href="#run-behind-reverse-proxy-with-different-domain-and-port">Run behind reverse proxy with different domain and port</a><ul class="toc-headings"><li><a href="#sub-directory">Sub-directory</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/what-is-verdaccio.html">Getting Started</a><a href="/docs/en/docker.html">Docker</a><a href="/docs/en/configuration.html">Configuration</a><a href="/docs/en/logo">Logos</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
