@@ -3,7 +3,7 @@ id: cli
 title: "Outil de ligne de commande"
 ---
 
-La CLI de Verdaccio est votre moyen de lancer l'application.
+The Verdaccio CLI is your tool to start and stop the application.
 
 ## Commandes
 
@@ -19,15 +19,15 @@ verdaccio --listen 4000 --config ~./config.yaml
 
 ## Emplacement du fichier de configuration par défaut
 
-Pour localiser le répertoire de base, nous nous appuyons sur **$XDG_DATA_HOME** comme premier choix et sur l'environnement Windows que nous cherchons [Variable d’environnement APPDATA ](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
+To locate the home directory, we rely on **$XDG_DATA_HOME** as a first choice and for Windows environments we look for the [APPDATA environment variable](https://www.howtogeek.com/318177/what-is-the-appdata-folder-in-windows/).
 
 ## Config file format
 
-Config file should be YAML, JSON or NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+Config files should be YAML, JSON or a NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
 
 ## Emplacement de stockage par défaut
 
-On utilise **$XDG_DATA_HOME**la variable d'environnement par défaut pour trouver le stockage par défaut qui [ devrait être identique ](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) de $HOME/ .local / share. Si vous utilisez un stockage personnalisé, cet emplacement est sans importance.
+We use the **$XDG_DATA_HOME** environment by variable default to locate the storage by default which [should be the same](https://askubuntu.com/questions/538526/is-home-local-share-the-default-value-for-xdg-data-home-in-ubuntu-14-04) as $HOME/.local/share. Si vous utilisez un stockage personnalisé, cet emplacement est sans importance.
 
 ## Default database file location
 
