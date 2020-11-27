@@ -3,11 +3,11 @@ id: iṣeto-olupese
 title: "Iṣeto Olupese"
 ---
 
-Eyi jẹ ohun ipilẹ iṣeto olupese ti linux ṣugbọn mo lero pe o ṣe pataki lati ṣe akosile ati pin awọn igbesẹ ti mo gbe lati mu ki verdaccio ma ṣiṣẹ titilailai lori olupese mi. O ma nilo awọn igbanilaaye ipile (tabi sudo) fun awọn wọnyii.
+This is mostly basic Linux server configuration stuff but I felt it important to document and share the steps I took to get Verdaccio running permanently on my server. You will need root (or sudo) permissions for the following steps.
 
 ## Nṣiṣẹ gẹgẹbi olumulo ti o yatọ
 
-Kọkọ ṣẹda olumulo verdaccio naa:
+First create a Verdaccio user:
 
 ```bash
 $ sudo adduser --system --gecos 'Verdaccio NPM mirror' --group --home /var/lib/verdaccio verdaccio
@@ -19,14 +19,14 @@ Tabi, toba sẹlẹ pe o ko ni `adduser`:
 $ sudo useradd --system --comment 'Verdaccio NPM mirror' --create-home --home-dir /var/lib/verdaccio --shell /sbin/nologin verdaccio
 ```
 
-O ṣẹda ikarahun gẹgẹbi olumulo verdaccio nipa lilo aṣẹ wọnyi:
+You create a shell as the Verdaccio user using the following command:
 
 ```bash
 $ sudo su -s /bin/bash verdaccio
 $ cd
 ```
 
-Aṣẹ `cd` n rán ẹ lọ si itọsọna ile ti olumulo verdaccio naa. Rii daju pe o mu verdaccio ṣiṣẹ ni o kere ju lẹẹkan lati ṣe ipilẹṣẹ faili iṣeto naa. Ṣatunkọ rẹ ni ibaamu pẹlu awọn inilo rẹ.
+The `cd` command sends you to the home directory of the Verdaccio user. Make sure you run Verdaccio at least once to generate the config file. Edit it according to your needs.
 
 ## Gbigbọ lori gbogbo awọn adirẹsi
 
@@ -37,13 +37,13 @@ Ti o ba fẹ lati tẹtisi gbogbo adirẹsi itagbangba ṣeto ilana igbọran ni
 gbọ: 0.0.0.0:4873
 ```
 
-Ti o ba n mu verdaccio ṣiṣẹ ninu Ilana Amazon EC2 kan, [o ma nilo lati ṣeto itẹtisi naa ni aaye ayipada faili iṣeto rẹ](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) bi a ti salaye loke.
+If you are running Verdaccio in a Amazon EC2 Instance, [you will need set the listen in change your config file](https://github.com/verdaccio/verdaccio/issues/314#issuecomment-327852203) as is described above.
 
 > Ṣeto Apache tabi nginx? Jọwọ ṣabẹwo [Iseto Aṣoju ikọkọ Alayipada](reverse-proxy.md)
 
-## Mimu verdaccio ṣiṣẹ titilailai
+## Keeping Verdaccio running forever
 
-O le lo akopọ oju ipade ti a n pe ni ['forever'](https://github.com/nodejitsu/forever) lati mu ki verdaccio ma ṣiṣẹ ni gbogbo igba.
+You can use a Node package called ['forever'](https://github.com/nodejitsu/forever) to keep Verdaccio running all the time.
 
 Kọkọ fi `forever` sori ẹrọ kaakiri agbaye:
 
@@ -51,7 +51,7 @@ Kọkọ fi `forever` sori ẹrọ kaakiri agbaye:
 $ sudo npm install -g forever
 ```
 
-Rii daju pe o ti ṣe imuṣiṣẹ verdaccio ni o kere ju lẹẹkan lati ṣe ipilẹsẹ faili iṣeto ati ki o si kọ olumulo alakoso ti o jẹ ṣiṣẹda silẹ. O le wa lo awọn aṣẹ wọnyi lati bẹrẹ verdaccio:
+Make sure you've run Verdaccio at least once to generate the config file and write down the created admin user. You can then use the following command to start Verdaccio:
 
 ```bash
 $ forever start `which verdaccio`
@@ -61,18 +61,20 @@ O le ṣayẹwo awọn iwe akọsilẹ fun alaye diẹ sii lori bi o ṣe le lo 
 
 ## Olupese ti o ye ti n bẹrẹ lẹẹkansi
 
-O le lo `crontab` ati `forever` papọ lati bẹrẹ verdaccio lẹhin atunbẹrẹ olupese. Nigba ti o ba wọle gẹgẹbi olumulo verdaccio naa ṣe awọn wọnyii:
+You can use `crontab` and `forever` together to start Verdaccio after a server reboot.
+
+When you're logged in as the Verdaccio user do the following:
 
 ```bash
 $ crontab -e
 ```
 
-Eyi le beere lọwọ rẹ lati yan olusatunkọ kan. Mu ayanfẹ rẹ ki o si tẹsiwaju. Se afikun awọn atẹwọle wọnyii si faili naa:
+This might ask you to choose an editor. Pick your favorite and proceed. Add the following entry to the file:
 
     @reboot /usr/bin/forever start /usr/lib/node_modules/verdaccio/bin/verdaccio
     
 
-Awọn ipo le yatọ si dida lori iṣeto olupese rẹ. Ti o ba fẹ lati mọ ibi ti awọn faili rẹ wa o le lo aṣẹ 'which':
+The locations may vary depending on your server setup. If you want to know where your files are you can use the 'which' command:
 
 ```bash
 $ which forever
@@ -81,10 +83,10 @@ $ which verdaccio
 
 ## Lilo systemd
 
-Dipo `forever` o le lo `systemd` fun bibẹrẹ verdaccio ati mi ma mu ṣiṣẹ lọ. Fifi Verdaccio sori ẹrọ ni ẹya systemd, o kan nilo lati se adaakọ rẹ ni:
+Instead of `forever` you can use `systemd` for starting Verdaccio and keeping it running. Verdaccio installation has systemd unit, you only need to copy it:
 
 ```bash
 $ sudo cp /usr/lib/node_modules/verdaccio/systemd/verdaccio.service /lib/systemd/system/ && sudo systemctl daemon-reload
 ```
 
-Ẹya yii gba wipe o ni iṣeto ni `/etc/verdaccio/config.yaml` ati tọju data ni `/var/lib/verdaccio`, nitorina boya ki o gbe awọn faili rẹ lọ si awọn aaye yẹn tabi satunkọ ẹya naa.
+This unit assumes you have configuration in `/etc/verdaccio/config.yaml` and store data in `/var/lib/verdaccio`, so either move your files to those locations or edit the unit.
