@@ -3,7 +3,7 @@ id: logger
 title: "Registrador"
 ---
 
-As with any web application, Verdaccio has a customisable built-in logger. You can define multiple types of outputs.
+Como cualquier aplicación web, verdaccio tiene un registrador personalizable integrado. Puedes definir varios tipos de salidas.
 
 ```yaml
 logs:
@@ -21,7 +21,7 @@ Use `SIGUSR2` to notify the application, the log-file was rotated and it needs t
 
 | Propiedad | Tipo   | Requerido | Ejemplo                                        | Soporte | Descripción                                               |
 | --------- | ------ | --------- | ---------------------------------------------- | ------- | --------------------------------------------------------- |
-| type      | string | No        | [stdout, file]                                 | todos   | define la salida                                          |
+| tipo      | string | No        | [stdout, file]                                 | todos   | define la salida                                          |
 | path      | string | No        | verdaccio.log                                  | todos   | si el tipo es archivo, define la ubicación de ese archivo |
 | format    | string | No        | [pretty, pretty-timestamped]                   | todos   | formato de salida                                         |
 | level     | string | No        | [fatal, error, warn, http, info, debug, trace] | todos   | nivel verboso                                             |
