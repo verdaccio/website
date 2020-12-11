@@ -74,6 +74,28 @@ O Verdaccio 4 fornece um novo conjunto de variáveis de ambiente para modificar 
 | VERDACCIO_PORT        | `4873`           | a porta do verdaccio                                         |
 | VERDACCIO_PROTOCOL    | `http`           | o protocolo http padrão                                      |
 
+### SELinux
+
+If SELinux is enforced in your system, the directories to be bind-mounted in the container need to be relabeled. Otherwise verdaccio will be forbidden from reading those files.
+
+     fatal--- cannot open config file /verdaccio/conf/config.yaml: Error: CONFIG: it does not look like a valid config file
+    
+
+If verdaccio can't read files on a bind-mounted directory and you are unsure, please check `/var/log/audit/audit.log` to confirm that it's a SELinux issue. In this example, the error above produced the following AVC denial.
+
+    type=AVC msg=audit(1606833420.789:9331): avc:  denied  { read } for  pid=1251782 comm="node" name="config.yaml" dev="dm-2" ino=8178250 scontext=system_u:system_r:container_t:s0:c32,c258 tcontext=unconfined_u:object_r:user_home_t:s0 tclass=file permissive=0
+    
+
+`chcon` can change the labels of shared files and directories. To make a directory accessible to containers, change the directory type to `container_file_t`.
+
+```sh
+$ chcon -Rt container_file_t ./conf
+```
+
+If you want to make the directory accessible only to a specific container, use `chcat` to specify a matching SELinux category.
+
+An alternative solution is to use [z and Z flags](https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label). To add the `z` flag to the mountpoint `./conf:/verdaccio/conf` simply change it to `./conf:/verdaccio/conf:z`. The `z` flag relabels the directory and makes it accessible by every container while the `Z` flags relables the directory and makes it accessible only to that specific container. However using these flags is dangerous. A small configuration mistake, like mounting `/home/user` or `/var` can mess up the labels on those directories and make the system unbootable.
+
 ### Plugins
 
 Plugins can be installed in a separate directory and mounted using Docker or Kubernetes, however make sure you build plugins with native dependencies using the same base image as the Verdaccio Dockerfile.
@@ -90,7 +112,7 @@ RUN npm i && npm install verdaccio-s3-storage
 USER verdaccio
 ```
 
-### Configuração de Docker e porta customizada
+### Docker and custom port configuration
 
 Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
 
@@ -104,7 +126,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 Of course the numbers you give to `-p` paremeter need to match.
 
-### Usando HTTPS com Docker
+### Using HTTPS with Docker
 
 You can configure the protocol verdaccio is going to listen on, similarly to the port configuration. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
 
@@ -114,7 +136,7 @@ docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-### Usando docker-compose
+### Using docker-compose
 
 1. Obtenha a última versão do [docker-compose](https://github.com/docker/compose).
 2. Construa e execute o contêiner:
