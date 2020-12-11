@@ -74,9 +74,31 @@ Verdaccio 4 provides a new set of environment variables to modify either permiss
 | VERDACCIO_PORT        | `4873`           | the verdaccio port                                 |
 | VERDACCIO_PROTOCOL    | `http`           | the default http protocol                          |
 
+### SELinux
+
+If SELinux is enforced in your system, the directories to be bind-mounted in the container need to be relabeled. Otherwise verdaccio will be forbidden from reading those files.
+
+     fatal--- cannot open config file /verdaccio/conf/config.yaml: Error: CONFIG: it does not look like a valid config file
+    
+
+If verdaccio can't read files on a bind-mounted directory and you are unsure, please check `/var/log/audit/audit.log` to confirm that it's a SELinux issue. In this example, the error above produced the following AVC denial.
+
+    type=AVC msg=audit(1606833420.789:9331): avc:  denied  { read } for  pid=1251782 comm="node" name="config.yaml" dev="dm-2" ino=8178250 scontext=system_u:system_r:container_t:s0:c32,c258 tcontext=unconfined_u:object_r:user_home_t:s0 tclass=file permissive=0
+    
+
+`chcon` can change the labels of shared files and directories. To make a directory accessible to containers, change the directory type to `container_file_t`.
+
+```sh
+$ chcon -Rt container_file_t ./conf
+```
+
+If you want to make the directory accessible only to a specific container, use `chcat` to specify a matching SELinux category.
+
+An alternative solution is to use [z and Z flags](https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label). To add the `z` flag to the mountpoint `./conf:/verdaccio/conf` simply change it to `./conf:/verdaccio/conf:z`. The `z` flag relabels the directory and makes it accessible by every container while the `Z` flags relables the directory and makes it accessible only to that specific container. However using these flags is dangerous. A small configuration mistake, like mounting `/home/user` or `/var` can mess up the labels on those directories and make the system unbootable.
+
 ### 插件
 
-插件可以在单独的目录里安装，并用Docker或者Kubernetes挂载，然而，请确保使用与Verdaccio Dockerfile相同的基镜像的本地依赖项来创建插件。
+Plugins can be installed in a separate directory and mounted using Docker or Kubernetes, however make sure you build plugins with native dependencies using the same base image as the Verdaccio Dockerfile.
 
 ```docker
 FROM verdaccio/verdaccio
@@ -90,7 +112,7 @@ RUN npm i && npm install verdaccio-s3-storage
 USER verdaccio
 ```
 
-### Docker和自定义端口配置
+### Docker and custom port configuration
 
 Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
 
@@ -104,9 +126,9 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 Of course the numbers you give to `-p` paremeter need to match.
 
-### 在Docker中使用HTTPS
+### Using HTTPS with Docker
 
-您可以配置 verdaccio 要监听的协议，类似于端口配置。 在 config.yaml里指定证书后，您必须用"https"覆盖`PROTOCOL` 环境变量中的默认值("http")。
+You can configure the protocol verdaccio is going to listen on, similarly to the port configuration. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
 
 ```bash
 docker run -it --rm --name verdaccio \
@@ -114,7 +136,7 @@ docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-### 使用docker-compose
+### Using docker-compose
 
 1. 获取[docker-compose](https://github.com/docker/compose)的最新版本。
 2. 创建并运行容器：
@@ -147,7 +169,7 @@ networks:
     driver: bridge
 ```
 
-Docker将生成一个named volume（命名卷），它用于存储持久化应用程序数据。 您可以使用`docker inspect` 或者 `docker volume inspect` 来查看此volume（卷）的物理位置并编辑配置，比如：
+Docker will generate a named volume in which to store persistent application data. You can use `docker inspect` or `docker volume inspect` to reveal the physical location of the volume and edit the configuration, such as:
 
 ```bash
 $ docker volume inspect verdaccio_verdaccio
@@ -169,19 +191,19 @@ $ docker volume inspect verdaccio_verdaccio
 docker build -t verdaccio .
 ```
 
-还有一个创建docker image（镜像）的npm脚本，因此您还可以执行以下操作：
+There is also an npm script for building the docker image, so you can also do:
 
 ```bash
 yarn run build:docker
 ```
 
-请注意：第一个镜像的创建要花费几分钟时间，因为它需要运行`npm install`，而且，当您任何时候更改任何没有列在`.dockerignore`里的文件，它也需要运行那么长的时间。
+Note: The first build takes some minutes to build because it needs to run `npm install`, and it will take that long again whenever you change any file that is not listed in `.dockerignore`.
 
-请注意，您需要在您的机器上安装 docker 来执行以上任何docker命令， docker 可执行程序应该在您的`$PATH`里。
+Please note that for any of the above docker commands you need to have docker installed on your machine and the docker executable should be available on your `$PATH`.
 
 ## Docker示例
 
-有个分开的 repository（资源库）承载多个配置来用 `verdaccio`生成Docker镜像，例如，reverse proxy（反向代理服务器）:
+There is a separate repository that hosts multiple configurations to compose Docker images with `verdaccio`, for instance, as reverse proxy:
 
 <https://github.com/verdaccio/docker-examples>
 
