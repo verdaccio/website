@@ -74,9 +74,31 @@ Verdaccio 4 provides a new set of environment variables to modify either permiss
 | VERDACCIO_PORT        | `4873`           | the verdaccio port                                 |
 | VERDACCIO_PROTOCOL    | `http`           | the default http protocol                          |
 
+### SELinux
+
+If SELinux is enforced in your system, the directories to be bind-mounted in the container need to be relabeled. Otherwise verdaccio will be forbidden from reading those files.
+
+     fatal--- cannot open config file /verdaccio/conf/config.yaml: Error: CONFIG: it does not look like a valid config file
+    
+
+If verdaccio can't read files on a bind-mounted directory and you are unsure, please check `/var/log/audit/audit.log` to confirm that it's a SELinux issue. In this example, the error above produced the following AVC denial.
+
+    type=AVC msg=audit(1606833420.789:9331): avc:  denied  { read } for  pid=1251782 comm="node" name="config.yaml" dev="dm-2" ino=8178250 scontext=system_u:system_r:container_t:s0:c32,c258 tcontext=unconfined_u:object_r:user_home_t:s0 tclass=file permissive=0
+    
+
+`chcon` can change the labels of shared files and directories. To make a directory accessible to containers, change the directory type to `container_file_t`.
+
+```sh
+$ chcon -Rt container_file_t ./conf
+```
+
+If you want to make the directory accessible only to a specific container, use `chcat` to specify a matching SELinux category.
+
+An alternative solution is to use [z and Z flags](https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label). To add the `z` flag to the mountpoint `./conf:/verdaccio/conf` simply change it to `./conf:/verdaccio/conf:z`. The `z` flag relabels the directory and makes it accessible by every container while the `Z` flags relables the directory and makes it accessible only to that specific container. However using these flags is dangerous. A small configuration mistake, like mounting `/home/user` or `/var` can mess up the labels on those directories and make the system unbootable.
+
 ### Plugins
 
-Plugins se mogu instalirati u posebnom direktorijumu i mountovati korišćenjem Docker-a ili Kubernetes. Ipak, postarajte se da "build" plugins sa native dependencies korišćenjem iste base image kao Verdaccio Dockerfile-a.
+Plugins can be installed in a separate directory and mounted using Docker or Kubernetes, however make sure you build plugins with native dependencies using the same base image as the Verdaccio Dockerfile.
 
 ```docker
 FROM verdaccio/verdaccio
@@ -90,7 +112,7 @@ RUN npm i && npm install verdaccio-s3-storage
 USER verdaccio
 ```
 
-### Docker i custom port konfiguracija
+### Docker and custom port configuration
 
 Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
 
@@ -104,9 +126,9 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 Of course the numbers you give to `-p` paremeter need to match.
 
-### Korišćenje HTTPS sa Docker-om
+### Using HTTPS with Docker
 
-Možete konfigurisati protokol koji će verdaccio slušati (listen on) i to na sličan način kao što ste podesili port configuration. Potrebno je da zamenite zadatu vrednost("http") u `PROTOCOL` environment variabl-i sa "https",nakon što ste odredili sertifikate u config.yaml.
+You can configure the protocol verdaccio is going to listen on, similarly to the port configuration. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
 
 ```bash
 docker run -it --rm --name verdaccio \
@@ -114,7 +136,7 @@ docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-### Korišćenje docker-compose
+### Using docker-compose
 
 1. Nabavite poslednju verziju [docker-compose](https://github.com/docker/compose).
 2. Build i pokrenite kontejner:
@@ -147,7 +169,7 @@ networks:
     driver: bridge
 ```
 
-Docker će napraviti imenovani volume u kome će se čuvati podaci za aplikaciju. Možete koristiti `docker inspect` ili `docker volume inspect` kako biste otkrili fiizičku lokaciju volume-a i izmenili konfiguraciju, na primer:
+Docker will generate a named volume in which to store persistent application data. You can use `docker inspect` or `docker volume inspect` to reveal the physical location of the volume and edit the configuration, such as:
 
 ```bash
 $ docker volume inspect verdaccio_verdaccio
@@ -169,19 +191,19 @@ $ docker volume inspect verdaccio_verdaccio
 docker build -t verdaccio .
 ```
 
-Postoji takođe i npm script za building docker image-a, tako da možete da zadate i ovako:
+There is also an npm script for building the docker image, so you can also do:
 
 ```bash
 yarn run build:docker
 ```
 
-Napomena: Prvi build može potrajati nekoliko minuta pošto mora da pokrene `npm install`, i ponovo će trajati dugo ako promenite bilo koji fajl koji nije izlistan u `.dockerignore`.
+Note: The first build takes some minutes to build because it needs to run `npm install`, and it will take that long again whenever you change any file that is not listed in `.dockerignore`.
 
-Primite k znanju da za svaku docker komandu morate imati na svojoj mašini instaliran docker zajedno sa docker executable koja mora biti dostupna na `$PATH`.
+Please note that for any of the above docker commands you need to have docker installed on your machine and the docker executable should be available on your `$PATH`.
 
 ## Docker Primeri
 
-Postoji zaseban repozitorijum koji hostuje multiple konfiguracije kako bi komponovao Docker images sa `verdaccio`, na primer, reverse proxy:
+There is a separate repository that hosts multiple configurations to compose Docker images with `verdaccio`, for instance, as reverse proxy:
 
 <https://github.com/verdaccio/docker-examples>
 

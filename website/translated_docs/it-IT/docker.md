@@ -74,9 +74,31 @@ Verdaccio 4 fornisce un nuovo set di variabili d'ambiente per modificare le auto
 | VERDACCIO_PORT        | `4873`           | la porta di verdaccio                                                 |
 | VERDACCIO_PROTOCOL    | `http`           | il protocollo http predefinito                                        |
 
-### Estensioni
+### SELinux
 
-I plugin possono essere installati in una cartella separata e montati utilizzando Docker o Kubernetes, ad ogni modo assicurarsi di costruire plugin con dipendenze native adoperando la stessa immagine di base del Dockerfile di Verdaccio.
+If SELinux is enforced in your system, the directories to be bind-mounted in the container need to be relabeled. Otherwise verdaccio will be forbidden from reading those files.
+
+     fatal--- cannot open config file /verdaccio/conf/config.yaml: Error: CONFIG: it does not look like a valid config file
+    
+
+If verdaccio can't read files on a bind-mounted directory and you are unsure, please check `/var/log/audit/audit.log` to confirm that it's a SELinux issue. In this example, the error above produced the following AVC denial.
+
+    type=AVC msg=audit(1606833420.789:9331): avc:  denied  { read } for  pid=1251782 comm="node" name="config.yaml" dev="dm-2" ino=8178250 scontext=system_u:system_r:container_t:s0:c32,c258 tcontext=unconfined_u:object_r:user_home_t:s0 tclass=file permissive=0
+    
+
+`chcon` can change the labels of shared files and directories. To make a directory accessible to containers, change the directory type to `container_file_t`.
+
+```sh
+$ chcon -Rt container_file_t ./conf
+```
+
+If you want to make the directory accessible only to a specific container, use `chcat` to specify a matching SELinux category.
+
+An alternative solution is to use [z and Z flags](https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label). To add the `z` flag to the mountpoint `./conf:/verdaccio/conf` simply change it to `./conf:/verdaccio/conf:z`. The `z` flag relabels the directory and makes it accessible by every container while the `Z` flags relables the directory and makes it accessible only to that specific container. However using these flags is dangerous. A small configuration mistake, like mounting `/home/user` or `/var` can mess up the labels on those directories and make the system unbootable.
+
+### Plugin
+
+Plugins can be installed in a separate directory and mounted using Docker or Kubernetes, however make sure you build plugins with native dependencies using the same base image as the Verdaccio Dockerfile.
 
 ```docker
 FROM verdaccio/verdaccio
@@ -90,11 +112,11 @@ RUN npm i && npm install verdaccio-s3-storage
 USER verdaccio
 ```
 
-### Configurazione di Docker e della porta personalizzata
+### Docker and custom port configuration
 
-Qualsiasi `host:port` configurato in `conf/config.yaml` sotto a `listen` **viene attualmente ignorato quando si utilizza docker**.
+Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
 
-Se si desidera raggiungere l'istanza docker di Verdaccio da una porta differente, diciamo `5000`, nel comando `docker run` aggiungere la variabile d'ambiente `VERDACCIO_PORT=5000` e poi esporre la porta `-p 5000:5000`.
+If you want to reach Verdaccio docker instance under different port, lets say `5000` in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
 
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
@@ -102,11 +124,11 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-Naturalmente il numero che viene dato al parametro `-p` deve corrispondere.
+Of course the numbers you give to `-p` paremeter need to match.
 
-### Utilizzare HTTPS con Docker
+### Using HTTPS with Docker
 
-È possibile configurare il protocollo che verdaccio andrà ad ascoltare, analogamente a come si configura la porta. È necessario sovrascrivere il valore predefinito ("http") della variabile ambientale del `PROTOCOL` con "https", dopo aver specificato i certificati nel config.yaml.
+You can configure the protocol verdaccio is going to listen on, similarly to the port configuration. You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
 
 ```bash
 docker run -it --rm --name verdaccio \
@@ -114,7 +136,7 @@ docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-### Utilizzare docker-compose
+### Using docker-compose
 
 1. Scaricare l'ultima versione di [docker-compose](https://github.com/docker/compose).
 2. Creare ed eseguire il container:
@@ -123,7 +145,7 @@ docker run -it --rm --name verdaccio \
 $ docker-compose up --build
 ```
 
-Si può definire la porta da utilizzare (sia per il container che per l'host) anteponendo al comando precedente il prefisso `VERDACCIO_PORT=5000`.
+You can set the port to use (for both container and host) by prefixing the above command with `VERDACCIO_PORT=5000`.
 
 ```yaml
 version: '3.1'
@@ -147,7 +169,7 @@ networks:
     driver: bridge
 ```
 
-Docker genererà un volume nominato nel quale immagazzinare i dati persistenti dell'applicazione. È possibile utilizzare `docker inspect` o `docker volume inspect` per rivelare l'ubicazione fisica del volume e modificare la configurazione, in questo modo:
+Docker will generate a named volume in which to store persistent application data. You can use `docker inspect` or `docker volume inspect` to reveal the physical location of the volume and edit the configuration, such as:
 
 ```bash
 $ docker volume inspect verdaccio_verdaccio
@@ -169,19 +191,19 @@ $ docker volume inspect verdaccio_verdaccio
 docker build -t verdaccio .
 ```
 
-Esiste inoltre uno script npm per creare l'immagine docker, quindi si può anche fare:
+There is also an npm script for building the docker image, so you can also do:
 
 ```bash
 yarn run build:docker
 ```
 
-Nota: Il primo build necessita di qualche minuto per creare perché ha bisogno di avviare `npm install`, e potrebbe impiegare lo stesso tempo ogni volta che si cambia un file che non sia elencato in `.dockerignore`.
+Note: The first build takes some minutes to build because it needs to run `npm install`, and it will take that long again whenever you change any file that is not listed in `.dockerignore`.
 
-Si prega di notare che per ognuno dei comandi docker sopra citati è necessario avere docker installato sul pc e l'eseguibile docker dovrebbe essere disponibile su `$PATH`.
+Please note that for any of the above docker commands you need to have docker installed on your machine and the docker executable should be available on your `$PATH`.
 
 ## Esempi Docker
 
-Esiste una cartella separata che ospita configurazioni multiple per comporre immagini Docker con `verdaccio`, per esempio, come proxy inverso:
+There is a separate repository that hosts multiple configurations to compose Docker images with `verdaccio`, for instance, as reverse proxy:
 
 <https://github.com/verdaccio/docker-examples>
 
