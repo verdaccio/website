@@ -185,6 +185,14 @@ const nonSponsorUsers = [
     fbOpenSource: false,
     pinned: true,
   },
+  {
+    caption: "TIKAJ Engineering",
+    image: "img/users/tikaj.png",
+    infoLink: "https://www.tikaj.com/",
+    fbOpenSource: false,
+    pinned: true,
+  },
+
 ];
 
 const sponsorUsers = [

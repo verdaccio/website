@@ -164,7 +164,7 @@ class Team extends React.Component {
       <div className="mainContainer">
         <Container padding={['bottom']}>
           <BannerTitle title={"Team Members"}/>
-          <div class="team_container">
+          <div className="team_container">
             <MemberSection title="Core" members={admons} imageSize={100}/>
             <MemberSection title="Maintainers" members={maintainers} imageSize={80}/>
             <CrowdinTranslators translators={translators} />

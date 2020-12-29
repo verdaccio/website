@@ -17,7 +17,7 @@ const createShowcase = (userList) => {
     })
     .map((user, i) => {
     return (
-      <a href={user.infoLink} key={i} target="_blank" class="userLink" data-caption={user.caption} rel="noopener/noreferrer">
+      <a href={user.infoLink} key={i} target="_blank" className="userLink" data-caption={user.caption} rel="noopener/noreferrer">
         <img src={siteConfig.baseUrl + user.image} alt={user.caption} title={user.caption} />
       </a>
     );
@@ -110,7 +110,7 @@ class TweetsSection extends React.Component {
 
   renderSnyk(language) {
     return (
-      <blockquote class="twitter-tweet">
+      <blockquote className="twitter-tweet">
         <p lang="en" dir="ltr">The 10 <a href="https://twitter.com/npmjs?ref_src=twsrc%5Etfw">@npmjs</a> security best practices with
           <a href="https://twitter.com/liran_tal?ref_src=twsrc%5Etfw">@liran_tal</a>
             and
@@ -202,7 +202,7 @@ class HomeSplash extends React.Component {
                 style={{marginTop: '8px'}}
               />
               <div style={{marginTop: '8px'}}>
-                <a class="twitter-follow-button"
+                <a className="twitter-follow-button"
                   href="https://twitter.com/verdaccio_npm"
                   data-size="default">
                   Follow @verdaccio_npm</a>
