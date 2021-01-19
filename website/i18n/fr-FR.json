@@ -59,6 +59,9 @@
       "google-cloud": {
         "title": "Google Cloud"
       },
+      "aws": {
+        "title": "Amazon Web Services"
+      },
       "iss-server": {
         "title": "Installation sur le serveur IIS"
       },
@@ -177,7 +180,7 @@
     "and also you can chat with the Verdaccio community at|no description given": "et aussi vous pouvez discuter avec la communauté Verdaccio sur",
     "This project is maintained by the Verdaccio community.|no description given": "Ce projet est soutenu par la communauté Verdaccio.",
     "Get Started|no description given": "Commencer",
-    "Contribute|no description given": "Contribuer",
+    "Contributors|no description given": "Contributors",
     "That’s it ! Enjoy your private package manager.|no description given": "Voilà ! Profitez de votre gestionnaire de paquets privé.",
     "Many great developers are already enjoying Verdaccio, join the community!|no description given": "Beaucoup de grands développeurs jouissent déjà de Verdaccio, rejoignez la communauté!",
     "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.|no description given": "**npm**, **yarn** et **pnpm** font partie de tous les flux de développement que nous essayons de suivre avec les dernières mises à jour.",
