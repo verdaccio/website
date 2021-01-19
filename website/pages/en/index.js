@@ -162,9 +162,9 @@ class HeaderButtons extends React.Component {
           </Button>
         </span>
         <span id="contribute">
-          <Button href="https://github.com/verdaccio/verdaccio/issues/1461" target="_blank">
+          <Button href="/contributors">
             <translate>
-              Contribute
+              Contributors
             </translate>
           </Button>
         </span>
@@ -277,7 +277,6 @@ class Index extends React.Component {
               </translate>
           </MiddleTitle>
           <Container>
-            <div id="codefund">''</div>
             <TweetsSection/>
           </Container>
           <MiddleTitle>

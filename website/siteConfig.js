@@ -1,7 +1,3 @@
-
-const {loadYaml} = require('./utils');
-
-const team = loadYaml("./data/team.yml");
 const nonSponsorUsers = [
   {
     caption: "Filiosoft",
@@ -228,7 +224,6 @@ const siteConfig = {
   nonSponsorUsers,
   sponsorUsers,
   users,
-  team,
   headerIcon: 'img/logo/symbol/svg/verdaccio-tiny.svg',
   footerIcon: 'img/logo/symbol/svg/verdaccio-blackwhite.svg',
   favicon: 'img/favicon/favicon.ico',
