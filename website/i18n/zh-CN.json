@@ -59,6 +59,9 @@
       "google-cloud": {
         "title": "Google Cloud"
       },
+      "aws": {
+        "title": "亚马逊Web服务"
+      },
       "iss-server": {
         "title": "IIS server上进行安装"
       },
@@ -177,7 +180,7 @@
     "and also you can chat with the Verdaccio community at|no description given": "你也可以在这里与 Verdaccio 社区交流",
     "This project is maintained by the Verdaccio community.|no description given": "这个项目由 Verdaccio 社区维护。",
     "Get Started|no description given": "开始",
-    "Contribute|no description given": "贡献",
+    "Contributors|no description given": "Contributors",
     "That’s it ! Enjoy your private package manager.|no description given": "就这么简单! 开始使用你的 私有 npm 仓库吧。",
     "Many great developers are already enjoying Verdaccio, join the community!|no description given": "很多好的开发人员已经开始享受使用Verdaccio, 请加入社区！",
     "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.|no description given": "**npm**, **yarn** 和**pnpm**是任何开发流程的一部分，我们试图在最新版本中赶上。",

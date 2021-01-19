@@ -59,6 +59,9 @@
       "google-cloud": {
         "title": "Google Cloud"
       },
+      "aws": {
+        "title": "Awọn Iṣẹ Ayelujara ti Amazon"
+      },
       "iss-server": {
         "title": "Fifi sori olupese IIS"
       },
@@ -177,7 +180,7 @@
     "and also you can chat with the Verdaccio community at|no description given": "ati pe o tun le takurọsọ pẹlu awujọ Verdaccio ni",
     "This project is maintained by the Verdaccio community.|no description given": "Iṣẹ yi n jẹ mimojuto nipasẹ awujọ Verdaccio.",
     "Get Started|no description given": "Bẹrẹ",
-    "Contribute|no description given": "Ilọwọsi",
+    "Contributors|no description given": "Contributors",
     "That’s it ! Enjoy your private package manager.|no description given": "Ohun niyẹn ! Jẹ igbaladun oluṣakoso akopọ ikọkọ rẹ.",
     "Many great developers are already enjoying Verdaccio, join the community!|no description given": "Ọpọlọpọ awọn olugbedide nla nla ti n jẹ igbaladun Verdaccio, darapọ mọ awujọ!",
     "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.|no description given": "**npm**, **yarn** ati **pnpm** jẹ ara eyikeyi ilana iṣe agbedide ti a n gbiyanju lati le ba pẹlu awọn imudojuiwọn titun.",
