@@ -1,6 +1,5 @@
 devDependencies:
   docusaurus: 1.14.4
-  js-yaml: 3.13.1
 lockfileVersion: 5.2
 packages:
   /@babel/code-frame/7.10.4:
@@ -6996,4 +6995,3 @@ packages:
       integrity: sha1-x+sXyT4RLLEIb6bY5R+wZnt5pfk=
 specifiers:
   docusaurus: 1.14.4
-  js-yaml: 3.13.1
