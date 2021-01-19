@@ -1,28 +1,30 @@
-const React = require('react');
-const CompLibrary = require('docusaurus/lib/core/CompLibrary.js');
+const React = require("react");
+const ReactDOM = require("react-dom");
+const CompLibrary = require("docusaurus/lib/core/CompLibrary.js");
 const Container = CompLibrary.Container;
 
 const BannerTitle = (props) => {
-  return (
-    <h1 className="header_title">
-      {props.title}
-    </h1>
-  );
+  return <h1 className="header_title">{props.title}</h1>;
 };
 
 class Team extends React.Component {
-  render() {
+  componentDidMount() {
+    const obj = ReactDOM.findDOMNode(this);
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+    console.lo
+  }
 
+  render() {
     return (
       <div className="mainContainer">
-        <Container padding={['bottom']}>
-          <BannerTitle title={"Contributors"}/>
-          <div class="team_container">
-            <iframe src="https://verdacciocontributors.gtsb.io/" 
-             frameborder="0" scrolling="no"
-            width="100%" height="1500px"/>
-          </div>
-        </Container>
+        <iframe
+          src="https://verdacciocontributors.gtsb.io/"
+          id="iframeC"
+          frameborder="0"
+          scrolling="no"          
+          width="100%"
+          style={{height:'2000px'}}
+        />
       </div>
     );
   }
