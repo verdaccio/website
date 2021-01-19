@@ -21,9 +21,9 @@ class Team extends React.Component {
           src="https://verdacciocontributors.gtsb.io/"
           id="iframeC"
           frameborder="0"
-          scrolling="no"          
+          scrolling="yes"          
           width="100%"
-          style={{height:'2000px'}}
+          style={{height:'100vh'}}
         />
       </div>
     );
