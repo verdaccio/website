@@ -84,7 +84,7 @@ Or a `publishConfig` in your `package.json`
 
 ## 创建属于你自己的私有NPM包教程
 
-如果你想要更详细的介绍，不要错过 thedevlife 写的关于如何使用Verdaccio创建你自己的私有NPM包的教程。 <iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+如果你想要更详细的介绍，不要错过 [thedevlife](https://mybiolink.co/thedevlife) 编写的关于如何使用 Verdaccio 创建你自己的私有NPM包的教程。 <iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## Docker 镜像
 
