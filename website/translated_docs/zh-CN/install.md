@@ -7,17 +7,17 @@ Verdaccio 是一个跨平台的 Web 应用程序。在安装之前，您需要�
 
 ## 最低要求
 
-1. **Node.js** `v8.x (长期支持版 "Carbon")` 或更高版本.
+1. **Node.js** `v8.x （长期支持版“Carbon”）` 或更高版本.
 
-2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn` (classic and berry).
+2. 你喜爱的Node包管理器 `npm`、`pnpm` 或 `yarn`（classic 以及 berry）。
 
-> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@4.x`
+> 我们强烈推荐使用最新版本的Node包管理器 `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@4.x`
 
-1. A modern web browser to run the web interface. We actually support `Chrome, Firefox, Edge, and IE11`.
+1. 一个现代Web浏览器用于使用网页界面，我们实际上支持 `Chrome, Firefox, Edge, and IE11`。
 
 > Verdaccio 将根据 [Node. js 发布工作组](https://github.com/nodejs/Release) 的推荐支持最新的 Node. js 版本。
 
-## Installing the CLI
+## 安装命令行界面（CLI）
 
 `Verdaccio` must be installed globally using either of the following methods:
 
