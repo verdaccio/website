@@ -3,11 +3,11 @@ id: installation
 title: "安装"
 ---
 
-Verdaccio 是一个跨平台的 Web 应用程序。在安装之前，您需要确保系统环境已满足以下基本条件。
+Verdaccio 是一个跨平台的 Web 应用程序。在安装前，你需要满足一些基础的最低要求。
 
 ## 最低要求
 
-1. **Node.js** `v8.x （长期支持版“Carbon”）` 或更高版本.
+1. **Node.js** `v8.x（长期支持版“Carbon”）` 或更高版本。
 
 2. 你喜爱的Node包管理器 `npm`、`pnpm` 或 `yarn`（classic 以及 berry）。
 
