@@ -15,11 +15,11 @@ Verdaccio 是一个跨平台的 Web 应用程序。在安装之前，您需要�
 
 1. 一个现代Web浏览器用于使用网页界面，我们实际上支持 `Chrome, Firefox, Edge, and IE11`。
 
-> Verdaccio 将根据 [Node. js 发布工作组](https://github.com/nodejs/Release) 的推荐支持最新的 Node. js 版本。
+> Verdaccio 会根据 [Node. js 发布工作组](https://github.com/nodejs/Release) 的推荐以支持最新的 Node. js 版本。
 
 ## 安装命令行界面（CLI）
 
-`Verdaccio` must be installed globally using either of the following methods:
+`Verdaccio` 必须通过以下任意方式安装到全局环境：
 
 使用 `npm`
 
@@ -33,7 +33,7 @@ npm install -g verdaccio
 yarn global add verdaccio
 ```
 
-or using `pnpm`
+或使用 `pnpm`
 
 ```bash
 pnpm install -g verdaccio
@@ -41,9 +41,9 @@ pnpm install -g verdaccio
 
 ![install verdaccio](assets/install_verdaccio.gif)
 
-## Basic Usage
+## 基本用法
 
-Once it has been installed, you only need to execute the CLI command:
+一旦安装完成后，你只需要执行命令行命令：
 
 ```bash
 $> verdaccio
