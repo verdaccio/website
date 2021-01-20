@@ -11,7 +11,7 @@ Verdaccio 是一个跨平台的 Web 应用程序。在安装前，你需要满�
 
 2. 你喜爱的Node包管理器 `npm`、`pnpm` 或 `yarn`（classic 以及 berry）。
 
-> 我们强烈推荐使用最新版本的Node包管理器 `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@4.x`
+> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@5.x`
 
 1. 一个现代Web浏览器用于使用网页界面，我们实际上支持 `Chrome, Firefox, Edge, and IE11`。
 
