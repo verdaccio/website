@@ -218,7 +218,7 @@ const siteConfig = {
     { page: 'help', label: 'Help'},
     { href: "https://github.com/verdaccio", label: "GitHub" },
     { search: true },
-    { page: 'team', label: 'Team'},
+    { page: 'contributors', label: 'Contributors'},
     { href: "https://opencollective.com/verdaccio", label: "Sponsor Us" },
   ],
   nonSponsorUsers,
