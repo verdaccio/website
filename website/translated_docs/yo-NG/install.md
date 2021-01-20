@@ -11,7 +11,7 @@ Verdaccio is a multiplatform web application. To install it, you need a few basi
 
 2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn` (classic and berry).
 
-> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@4.x`
+> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@5.x`
 
 1. A modern web browser to run the web interface. We actually support `Chrome, Firefox, Edge, and IE11`.
 
