@@ -5,9 +5,9 @@ title: "安装"
 
 Verdaccio 是一个跨平台的 Web 应用程序。在安装之前，您需要确保系统环境已满足以下基本条件。
 
-## Prerequisites
+## 最低要求
 
-1. **Node.js** `v8.x (LTS "Carbon")` or higher.
+1. **Node.js** `v8.x (长期支持版 "Carbon")` 或更高版本.
 
 2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn` (classic and berry).
 
