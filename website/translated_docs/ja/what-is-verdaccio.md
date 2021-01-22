@@ -3,7 +3,7 @@ id: what-is-verdaccio
 title: "Veridaccio とは？"
 ---
 
-Verdaccioは、**Node.js**で構築された**軽量なプライベートnpmプロキシレジストリ**です。 <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+Verdaccioは、**Node.js**で構築された**軽量なプライベートnpmプロキシレジストリ**です。 <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## What's a registry?
 
@@ -43,11 +43,9 @@ Verdaccioにpublishしたパッケージはすべて非公開で、アクセス�
 
 Verdaccio cache all dependencies on demand and speed up installations in local or private networks.
 
-## Verdaccioとは何か
+## Introduction to Verdaccio
 
-### Cover your projects with a multi purpose lightweight Node.js registry
-
-This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. In it Juan Picado explains the benefits and good practices when running a private registry that will make your projects look awesome. Verdaccio could also be used for hosting a registry, emulate real testing environments or improve your developer workflow. <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. In it **Priscila Olivera** and **Juan Picado** explains details what a private registry is need it for your development. <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 * Node.js上で動作するWebアプリ
 * プライベートnpmレジストリ
@@ -56,5 +54,4 @@ This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, 
 * It's fairly easy to install and to use
 * DockerとKubernetesのサポートを提供しています
 * yarn、npm、pnpmと100％互換性があります
-* `sinopia@1.4.0`から**フォーク**され、100%**後方互換性**があります。
-* Verdaccioとは、**中世後期のイタリアでフレスコ画に使われていたポピュラーな緑色**を意味します。
+* Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
