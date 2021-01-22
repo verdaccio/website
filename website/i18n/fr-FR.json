@@ -153,7 +153,7 @@
       "Twitter": "Twitter",
       "Help": "Help",
       "GitHub": "GitHub",
-      "Team": "Team",
+      "Contributors": "Contributors",
       "Sponsor Us": "Sponsor Us"
     },
     "categories": {
@@ -166,6 +166,7 @@
     }
   },
   "pages-strings": {
+    "Contributors|no description given": "Contributors",
     "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "En savoir plus à l’aide de la [documentation sur ce site.] (/docs/en/installation.html)",
     "Browse Docs|no description given": "Parcourir les Docs",
     "Ask questions about the documentation and project|no description given": "Posez des questions sur la documentation et le projet",
@@ -180,7 +181,6 @@
     "and also you can chat with the Verdaccio community at|no description given": "et aussi vous pouvez discuter avec la communauté Verdaccio sur",
     "This project is maintained by the Verdaccio community.|no description given": "Ce projet est soutenu par la communauté Verdaccio.",
     "Get Started|no description given": "Commencer",
-    "Contributors|no description given": "Contributors",
     "That’s it ! Enjoy your private package manager.|no description given": "Voilà ! Profitez de votre gestionnaire de paquets privé.",
     "Many great developers are already enjoying Verdaccio, join the community!|no description given": "Beaucoup de grands développeurs jouissent déjà de Verdaccio, rejoignez la communauté!",
     "**npm**, **yarn** and **pnpm** are part of any development workflow we try to catch up with the latest updates.|no description given": "**npm**, **yarn** et **pnpm** font partie de tous les flux de développement que nous essayons de suivre avec les dernières mises à jour.",
