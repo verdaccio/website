@@ -3,7 +3,7 @@ id: what-is-verdaccio
 title: "Co to jest Verdaccio?"
 ---
 
-Verdaccio is a **lightweight private npm proxy registry** built in **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+Verdaccio is a **lightweight private npm proxy registry** built in **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## What's a registry?
 
@@ -43,11 +43,9 @@ All packages that you publish are private and only accessible based in your conf
 
 Verdaccio cache all dependencies on demand and speed up installations in local or private networks.
 
-## Verdaccio w skrócie
+## Introduction to Verdaccio
 
-### Cover your projects with a multi purpose lightweight Node.js registry
-
-This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. In it Juan Picado explains the benefits and good practices when running a private registry that will make your projects look awesome. Verdaccio could also be used for hosting a registry, emulate real testing environments or improve your developer workflow. <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. In it **Priscila Olivera** and **Juan Picado** explains details what a private registry is need it for your development. <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 * Jest to internetowa aplikacja oparta na Node.js
 * Jest to prywatny rejestr npm
@@ -56,5 +54,4 @@ This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, 
 * It's fairly easy to install and to use
 * Oferujemy wsparcie Docker i Kubernetes
 * Jest w 100% kompatybilny z yarn, npm i pnpm
-* It was **forked** based on `sinopia@1.4.0` and 100% **backward compatible**.
-* Słowo Verdaccio oznacza **zielony kolor popularny w późnych średniowiecznych włochach w malarstwie freskowym**.
+* Verdaccio means **A green color popular in late medieval Italy for fresco painting**.

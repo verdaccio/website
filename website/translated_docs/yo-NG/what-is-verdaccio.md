@@ -3,7 +3,7 @@ id: ki-ni-verdaccio
 title: "Ki ni verdaccio?"
 ---
 
-Verdaccio jẹ **ibi iforukọsilẹ aṣoju ikọkọ npm aladani fifuyẹ** to jẹ kikọ ni **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+Verdaccio jẹ **ibi iforukọsilẹ aṣoju ikọkọ npm aladani fifuyẹ** to jẹ kikọ ni **Node.js** <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## What's a registry?
 
@@ -43,11 +43,9 @@ Gbogbo awọn akopọ ti o ṣe atẹjade rẹ jẹ ikọkọ atipe o se wọle 
 
 Verdaccio cache all dependencies on demand and speed up installations in local or private networks.
 
-## Verdaccio ni soki
+## Introduction to Verdaccio
 
-### Cover your projects with a multi purpose lightweight Node.js registry
-
-This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. In it Juan Picado explains the benefits and good practices when running a private registry that will make your projects look awesome. Verdaccio could also be used for hosting a registry, emulate real testing environments or improve your developer workflow. <iframe width="560" height="315" src="https://www.youtube.com/embed/oVCjDWeehAQ?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. In it **Priscila Olivera** and **Juan Picado** explains details what a private registry is need it for your development. <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 * O jẹ ohun elo ayelujara ti o da lori Node.js
 * O jẹ ibi iforukọsilẹ npm ti ikọkọ kan
@@ -56,5 +54,4 @@ This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, 
 * It's fairly easy to install and to use
 * A pese atilẹyin Docker ati Kubernetes
 * O ni ibamu 100% pẹlu yarn, npm ati pnpm
-* O jẹ **fifayọ** dida lori `sinopia@1.4.0` ati 100% **ibasisẹpọ ẹlẹyin**.
-* Verdaccio tumọ si **Awọ ewe ti o gbajumọ ni aaye atijọ ni Italy fun aworan fresco**.
+* Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
