@@ -95,32 +95,34 @@
 <blockquote>
 <p>Verdaccio 会根据 <a href="https://github.com/nodejs/Release">Node. js 发布工作组</a> 的推荐以支持最新的 Node. js 版本。</p>
 </blockquote>
+<h3><a class="anchor" aria-hidden="true" id="quick-introduction"></a><a href="#quick-introduction" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Quick Introduction</h3>
+<p>Learn the basics before getting started, how to install, where is the location file and more. <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe></p>
 <h2><a class="anchor" aria-hidden="true" id="安装命令行界面（cli）"></a><a href="#安装命令行界面（cli）" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>安装命令行界面（CLI）</h2>
-<p><code>Verdaccio</code> 必须通过以下任意方式安装到全局环境：</p>
-<p>使用 <code>npm</code></p>
+<p><code>Verdaccio</code> must be installed globally using either of the following methods:</p>
+<p>Using <code>npm</code></p>
 <pre><code class="hljs css language-bash">npm install -g verdaccio
 </code></pre>
-<p>或使用 <code>yarn</code></p>
+<p>or using <code>yarn</code></p>
 <pre><code class="hljs css language-bash">yarn global add verdaccio
 </code></pre>
-<p>或使用 <code>pnpm</code></p>
+<p>or using <code>pnpm</code></p>
 <pre><code class="hljs css language-bash">pnpm install -g verdaccio
 </code></pre>
-<p><img src="/docs/assets/install_verdaccio.gif" alt="安装 Verdaccio"></p>
+<p><img src="/docs/assets/install_verdaccio.gif" alt="install verdaccio"></p>
 <h2><a class="anchor" aria-hidden="true" id="基本用法"></a><a href="#基本用法" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>基本用法</h2>
-<p>一旦安装完成后，你只需要执行命令行界面（CLI）命令：</p>
+<p>Once it has been installed, you only need to execute the CLI command:</p>
 <pre><code class="hljs css language-bash">$&gt; verdaccio
 warn --- config file  - /home/.config/verdaccio/config.yaml
 warn --- http address - http://localhost:4873/ - verdaccio/4.8.1
 </code></pre>
-<p>更多有关命令行界面（CLI）的信息，请<a href="/docs/zh-CN/cli">阅读命令行界面（CLI）章节</a>。</p>
-<p>你可以通过以下命令来设置NPM源</p>
+<p>For more information about the CLI, please <a href="/docs/zh-CN/cli">read the cli section</a>.</p>
+<p>You can set the registry by using the following command.</p>
 <pre><code class="hljs css language-bash">npm <span class="hljs-built_in">set</span> registry http://localhost:4873/
 </code></pre>
-<p>你可以在安装时传递参数 <code>--registry</code></p>
+<p>you can pass a <code>--registry</code> flag when needed.</p>
 <pre><code class="hljs css language-bash">npm install --registry http://localhost:4873
 </code></pre>
-<p>在你的<code>.npmrc</code> 设置一个 <code>registry</code> 属性</p>
+<p>define in your <code>.npmrc</code> a <code>registry</code> field.</p>
 <pre><code class="hljs css language-bash">//.npmrc
 registry=http://localhost:4873
 </code></pre>
@@ -132,15 +134,15 @@ registry=http://localhost:4873
 }
 </code></pre>
 <h2><a class="anchor" aria-hidden="true" id="创建属于你自己的私有npm包教程"></a><a href="#创建属于你自己的私有npm包教程" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>创建属于你自己的私有NPM包教程</h2>
-<p>如果你想要更详细的介绍，不要错过 <a href="https://mybiolink.co/thedevlife">thedevlife</a> 编写的关于如何使用 Verdaccio 创建你自己的私有NPM包的教程。 <iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe></p>
+<p>If you'd like a broader explanation, don't miss the tutorial created by <a href="https://mybiolink.co/thedevlife">thedevlife</a> on how to Create Your Own Private NPM Package using Verdaccio. <iframe width="560" height="315" src="https://www.youtube.com/embed/Co0RwdpEsag?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe></p>
 <h2><a class="anchor" aria-hidden="true" id="docker-镜像"></a><a href="#docker-镜像" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Docker 镜像</h2>
 <pre><code class="hljs css language-bash">docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 </code></pre>
-<p><code>Verdaccio</code> 提供可运行的官方 docker 镜像。在大多数情况下，默认配置已经足够了。 更多有关如何安装官方镜像的信息，请<a href="/docs/zh-CN/docker">阅读 docker 章节</a>。</p>
+<p><code>Verdaccio</code> has an official docker image you can use, and in most cases, the default configuration is good enough. For more information about how to install the official image, <a href="/docs/zh-CN/docker">read the docker section</a>.</p>
 <h2><a class="anchor" aria-hidden="true" id="cloudron"></a><a href="#cloudron" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cloudron</h2>
-<p><code>Verdaccio</code> 也可以使用 <a href="https://cloudron.io">Cloudron</a> 一键安装</p>
+<p><code>Verdaccio</code> is also available as a 1-click install on <a href="https://cloudron.io">Cloudron</a></p>
 <p><a href="https://cloudron.io/button.html?app=org.eggertsson.verdaccio"><img src="https://cloudron.io/img/button.svg" alt="安装"></a></p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/what-is-verdaccio"><span class="arrow-prev">← </span><span>Verdaccio是什么？</span></a><a class="docs-next button" href="/docs/zh-CN/cli"><span>命令行工具</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#最低要求">最低要求</a></li><li><a href="#安装命令行界面（cli）">安装命令行界面（CLI）</a></li><li><a href="#基本用法">基本用法</a></li><li><a href="#创建属于你自己的私有npm包教程">创建属于你自己的私有NPM包教程</a></li><li><a href="#docker-镜像">Docker 镜像</a></li><li><a href="#cloudron">Cloudron</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/zh-CN/what-is-verdaccio.html">Getting Started</a><a href="/docs/zh-CN/docker.html">Docker</a><a href="/docs/zh-CN/configuration.html">Configuration</a><a href="/docs/zh-CN/logo">Logos</a></div><div><h5>Community</h5><a href="/zh-CN/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/zh-CN/what-is-verdaccio"><span class="arrow-prev">← </span><span>Verdaccio是什么？</span></a><a class="docs-next button" href="/docs/zh-CN/cli"><span>命令行工具</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#最低要求">最低要求</a><ul class="toc-headings"><li><a href="#quick-introduction">Quick Introduction</a></li></ul></li><li><a href="#安装命令行界面（cli）">安装命令行界面（CLI）</a></li><li><a href="#基本用法">基本用法</a></li><li><a href="#创建属于你自己的私有npm包教程">创建属于你自己的私有NPM包教程</a></li><li><a href="#docker-镜像">Docker 镜像</a></li><li><a href="#cloudron">Cloudron</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/zh-CN/what-is-verdaccio.html">Getting Started</a><a href="/docs/zh-CN/docker.html">Docker</a><a href="/docs/zh-CN/configuration.html">Configuration</a><a href="/docs/zh-CN/logo">Logos</a></div><div><h5>Community</h5><a href="/zh-CN/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
