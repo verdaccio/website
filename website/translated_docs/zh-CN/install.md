@@ -19,7 +19,7 @@ Verdaccio 是一个跨平台的 Web 应用程序。在安装前，你需要满�
 
 ### Quick Introduction
 
-Learn the basics before getting started, how to install, where is the location file and more. <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+Learn the basics before getting started, how to install, where is the location of the configuration file and more. <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## 安装命令行界面（CLI）
 
