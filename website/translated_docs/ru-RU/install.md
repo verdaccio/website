@@ -17,17 +17,21 @@ Verdaccio is a multiplatform web application. To install it, you need a few basi
 
 > Verdaccio будет поддерживать последние версии Node.js version в соответствии с рекомендациями [Node.js Release Working Group](https://github.com/nodejs/Release).
 
+### Quick Introduction
+
+Learn the basics before getting started, how to install, where is the location file and more. <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+
 ## Installing the CLI
 
 `Verdaccio` must be installed globally using either of the following methods:
 
-С помощью `npm`
+Using `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-или с помощью `yarn`
+or using `yarn`
 
 ```bash
 yarn global add verdaccio
