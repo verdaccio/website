@@ -3,41 +3,41 @@ id: installation
 title: "Installation"
 ---
 
-Verdaccio is a multiplatform web application. To install it, you need a few basic prerequisites.
+Verdaccio es una aplicación multi plataforma. Para instalarlo, necesitas unos requerimientos básicos.
 
 ## Prerequisites
 
-1. **Node.js** `v8.x (LTS "Carbon")` or higher.
+1. **Node.js** `v8.x (LTS "Carbon")` o mayor.
 
-2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn` (classic and berry).
+2. Tu manejador de paquetes favorito `npm`, `pnpm` or `yarn` (classic y berry).
 
-> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@5.x`
+> Se recomienda usar las ultimas versiones de los manejadores de paquetes `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@5.x`
 
-1. A modern web browser to run the web interface. We actually support `Chrome, Firefox, Edge, and IE11`.
+1. Un explorador moderno para ejecutar la interfaz web. Actualmente soporta `Chrome, Firefox, Edge, and IE11`.
 
-> Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
+> Verdaccio soporta las ultimas versiones de Node.js de acuerdo a las recomendaciones del[Node.js Release Working Group](https://github.com/nodejs/Release).
 
-### Quick Introduction
+### Introducción rapida
 
-Learn the basics before getting started, how to install, where is the location file and more. <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+Aprende los primeros pasos antes de empezar, como instalar, donde esta el archivo de configuración y mas cosas. <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-## Installing the CLI
+## Instalando el CLI
 
-`Verdaccio` must be installed globally using either of the following methods:
+`Verdaccio` debe instalarse globalmente o usando los siguientes metodos:
 
-Using `npm`
+Usando `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-or using `yarn`
+o usando `yarn`
 
 ```bash
 yarn global add verdaccio
 ```
 
-or using `pnpm`
+o usando `pnpm`
 
 ```bash
 pnpm install -g verdaccio
