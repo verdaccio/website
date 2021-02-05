@@ -42,6 +42,13 @@ const nonSponsorUsers = [
     pinned: false,
   },
   {
+    caption: "Gatsby",
+    image: "img/users/gatsby.svg",
+    infoLink: "https://www.gatsbyjs.org/",
+    fbOpenSource: false,
+    pinned: true,
+  },
+  {
     caption: "Innovaccer",
     image: "img/users/innovaccer.png",
     infoLink: "http://innovaccer.com/",
@@ -84,9 +91,23 @@ const nonSponsorUsers = [
     pinned: true,
   },
   {
+    caption: "AWS Amplify CLI",
+    image: "img/users/amplify_logo_big.png",
+    infoLink: "https://github.com/aws-amplify/amplify-cli",
+    fbOpenSource: false,
+    pinned: true,
+  },
+  {
     caption: "Babel.js",
     image: "img/users/babel.png",
     infoLink: "https://babeljs.io/",
+    fbOpenSource: false,
+    pinned: true,
+  },
+  {
+    caption: "React Native Windows",
+    image: "img/users/react-native-windows.png",
+    infoLink: "https://github.com/microsoft/react-native-windows",
     fbOpenSource: false,
     pinned: true,
   },
@@ -124,6 +145,13 @@ const nonSponsorUsers = [
     infoLink: "https://www.webiny.com",
     fbOpenSource: false,
     pinned: false,
+  },
+  {
+    caption: "SheetJS",
+    image: "img/users/sheetjs.png",
+    infoLink: "https://sheetjs.com/",
+    fbOpenSource: false,
+    pinned: true,
   },
   {
     caption: "embark",
@@ -168,20 +196,6 @@ const nonSponsorUsers = [
     pinned: true,
   },
   {
-    caption: "AWS Amplify CLI",
-    image: "img/users/amplify_logo_big.png",
-    infoLink: "https://github.com/aws-amplify/amplify-cli",
-    fbOpenSource: false,
-    pinned: true,
-  },
-  {
-    caption: "React Native Windows",
-    image: "img/users/react-native-windows.png",
-    infoLink: "https://github.com/microsoft/react-native-windows",
-    fbOpenSource: false,
-    pinned: true,
-  },
-  {
     caption: "NX Extensible Dev Tools for Monorepos",
     image: "img/users/nx-logo.png",
     infoLink: "https://nx.dev/react",
@@ -190,22 +204,7 @@ const nonSponsorUsers = [
   },
 ];
 
-const sponsorUsers = [
-  {
-    caption: "Gatsby",
-    image: "img/users/gatsby.svg",
-    infoLink: "https://www.gatsbyjs.org/",
-    fbOpenSource: false,
-    pinned: true,
-  },
-  {
-    caption: "SheetJS",
-    image: "img/users/sheetjs.png",
-    infoLink: "https://sheetjs.com/",
-    fbOpenSource: false,
-    pinned: true,
-  },
-];
+const sponsorUsers = [];
 
 const users = [...sponsorUsers, ...nonSponsorUsers];
 
