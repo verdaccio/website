@@ -341,20 +341,6 @@ class Index extends React.Component {
                 Who's Using This?
               </translate>
             </h2>
-            {siteConfig.sponsorUsers.length > 0 && (
-              <>
-              <p>
-              <translate>
-                This project is sponsored by these awesome users
-              </translate>
-            </p>
-            <div className="logos">{createShowcase(siteConfig.sponsorUsers)}</div>
-              </>)}
-            {siteConfig.sponsorUsers.length > 0 && (<p>
-              <translate>
-                and used by many more, including
-              </translate>
-            </p>)}
             <div className="logos">{createShowcase(siteConfig.nonSponsorUsers)}</div>
             <div className="more-users">
               <a

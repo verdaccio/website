@@ -27,20 +27,21 @@ class Users extends React.Component {
                   Who's Using This?
                 </translate>
               </h1>
-              <p>
+              {siteConfig.sponsorUsers.length >= 1 && (<p>
                 <translate>
                   Verdaccio is sponsored by these awesome folks...
                 </translate>
-              </p>
+              </p>)}
             </div>
-            <div className="logos">{createShowcase(siteConfig.sponsorUsers)}</div>
-            <div className="prose">
+            {siteConfig.sponsorUsers.length >= 1 && (
+            <div className="logos">{createShowcase(siteConfig.sponsorUsers)}</div>)}
+            {siteConfig.sponsorUsers.length >= 1 && (<div className="prose">
               <p>
                 <translate>
                   and used by many others, including:
                 </translate>
               </p>
-            </div>
+            </div>)}
             <div className="logos">{createShowcase(siteConfig.nonSponsorUsers)}</div>
             <p>
               <translate>
@@ -51,7 +52,7 @@ class Users extends React.Component {
               href="https://github.com/verdaccio/website/edit/master/website/siteConfig.js"
               className="button">
               <translate>
-                Add your company
+                Add your project
               </translate>
             </a>
           </div>
