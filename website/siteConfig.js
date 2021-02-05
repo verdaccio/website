@@ -77,6 +77,13 @@ const nonSponsorUsers = [
     pinned: true,
   },
   {
+    caption: "Vue CLI",
+    image: "img/users/vue_logo.png",
+    infoLink: "https://cli.vuejs.org/",
+    fbOpenSource: false,
+    pinned: true,
+  },
+  {
     caption: "Babel.js",
     image: "img/users/babel.png",
     infoLink: "https://babeljs.io/",
