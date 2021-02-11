@@ -6,6 +6,8 @@
       "cli",
       "cli-registry",
       "who-is-using",
+      "best", 
+      "protect-your-dependencies", 
       "security-policy",
       "logo",
       "contributors",
@@ -61,6 +63,6 @@
         "ids": ["ansible", "puppet", "chef"]
       }
     ],
-    "Guides": ["best", "protect-your-dependencies", "aws"]
+    "Guides": ["aws"]
   }
 }
