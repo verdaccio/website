@@ -10,10 +10,9 @@ Verdaccio allows you protect publishing to your registry. To achieve that you wi
 例如，让我们一起来看以下设置。 You have a set of dependencies that are prefixed with `my-company-*` and you need to protect them from anonymous or other non-authorized logged-in users.
 
 ```yaml
-  'my-company-*':
-    access: admin teamA teamB teamC
-    publish: admin teamA
-    proxy: npmjs
+"my-company-*":
+  access: admin teamA teamB teamC
+  publish: admin teamA
 ```
 
 With this configuration, we allow the groups **admin** and **teamA** to *publish* and **teamA**, **teamB** and **teamC** to *access* the specified dependencies.
