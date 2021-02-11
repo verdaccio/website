@@ -43,9 +43,7 @@ Tous les paqutes que vous publiez sont privés et accessibles uniquement sur la 
 
 Verdaccio cache all dependencies on demand and speed up installations in local or private networks.
 
-## Introduction to Verdaccio
-
-This talk is about Verdaccio, an open-source, multi-purpose, lightweight proxy, and private registry. In it **Priscila Olivera** and **Juan Picado** explains details what a private registry is need it for your development. <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+## In a Nutshell
 
 * C'est une application web basée sur Node.js
 * C'est un registre npm privé
