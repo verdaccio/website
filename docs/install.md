@@ -25,6 +25,8 @@ Learn the basics before getting started, how to install, where is the location o
 
 ## Installing the CLI
 
+> Before using Verdaccio in production, please read and be [aware of the best practices](best-practices.md).
+
 `Verdaccio` must be installed globally using either of the following methods:
 
 Using `npm`
