@@ -85,38 +85,37 @@
 <h2><a class="anchor" aria-hidden="true" id="приватный-репозиторий"></a><a href="#приватный-репозиторий" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Приватный репозиторий</h2>
 <p>Вы можете добавлять пользователей и определять, какие пользователи имеют доступ к пакетам.</p>
 <p>Мы рекомендуем определить для ваших приватных пакетов префикс, например <code>local-*</code>, или скоуп <code>@my-company/*</code>, так что все ваши приватные пакеты будут выглядеть примерно так: <code>local-foo</code>. Таким образом вы отделите публичные пакеты от приватных.</p>
-<pre><code class="hljs">yaml
-  packages:
-    '@my-company/*':
-      access: $all
-      publish: $authenticated
-     'local-*':
-      access: $all
-      publish: $authenticated
-    '@*/*':
-      access: $all
-      publish: $authenticated
-    '**':
-      access: $all
-      publish: $authenticated
+<pre><code class="hljs css language-yaml"> <span class="hljs-attr">packages:</span>
+   <span class="hljs-string">'@my-company/*'</span><span class="hljs-string">:</span>
+     <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+     <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-string">'local-*'</span><span class="hljs-string">:</span>
+     <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+     <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+   <span class="hljs-string">'@*/*'</span><span class="hljs-string">:</span>
+     <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+     <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
+     <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+     <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
 <p>Always remember, <strong>the order of packages access is important</strong>, packages are matched always top to bottom.</p>
 <h3><a class="anchor" aria-hidden="true" id="использование-публичных-пакетов-с-npmjsorg"></a><a href="#использование-публичных-пакетов-с-npmjsorg" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Использование публичных пакетов с npmjs.org</h3>
 <p>If a package doesn't exist in the storage, the server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from the cache pretending that no other packages exist. <strong>Verdaccio will download only what's needed (requested by clients)</strong>, and this information will be cached, so if the client requests the same thing a second time it can be served without asking npmjs.org for it.</p>
-<p><strong>Пример:</strong></p>
+<p><strong>Example:</strong></p>
 <p>If you successfully request <code>express@4.0.1</code> from the server once, you'll be able to do it again (with all of it's dependencies) any time, even if npmjs.org is down. Though note that <code>express@4.0.0</code> will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, the server will say that only <code>express@4.0.1</code> (what's in the cache) is published, but nothing else.</p>
 <h3><a class="anchor" aria-hidden="true" id="переопределение-публичных-пакетов"></a><a href="#переопределение-публичных-пакетов" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Переопределение публичных пакетов</h3>
-<p>Если вы хотите использовать модифицированную версию какого-либо публичного пакета <code>foo</code>, то просто опубликуйте его на вашем локальном сервере, и когда вы запустите команду <code>npm install foo</code>, <strong>будет становлена именно ваша версия</strong>.</p>
-<p>Возможны две ситуации:</p>
+<p>If you want to use a modified version of some public package <code>foo</code>, you can just publish it to your local server, so when your type <code>npm install foo</code>, <strong>it'll consider installing your version</strong>.</p>
+<p>There's two options here:</p>
 <ol>
 <li><p>Вы хотите создать отдельный <strong>форк</strong> и остановить синхронизацию с публичной версией.</p>
 <p>If you want to do that, you should modify your configuration file so Verdaccio won't make requests regarding this package to npmjs anymore. Добавьте отдельную запись для этого пакета в <code>config.yaml</code> и удалите <code>npmjs</code> из списка <code>proxy</code>, затем перезапустите сервер.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
-  <span class="hljs-string">'@my-company/*'</span><span class="hljs-string">:</span>
-    <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
-    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
-    <span class="hljs-comment"># comment it out or leave it empty</span>
-    <span class="hljs-comment"># proxy:</span>
+ <span class="hljs-string">"@my-company/*"</span><span class="hljs-string">:</span>
+   <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
+   <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+   <span class="hljs-comment"># comment it out or leave it empty</span>
+   <span class="hljs-comment"># proxy:</span>
 </code></pre>
 <p>When you publish your package locally, <strong>you should probably start with a version string higher than the existing package</strong> so it won't conflict with that package in the cache.</p></li>
 <li><p>You want to temporarily use your version, but return to the public one as soon as it's updated.</p>
@@ -128,25 +127,53 @@ npm publish --tag fix --registry http://localhost:4873
 </ol>
 <h2><a class="anchor" aria-hidden="true" id="безопасность"></a><a href="#безопасность" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Безопасность</h2>
 <p>Security starts in your environment. For such things we recommend reading <strong><a href="https://snyk.io/blog/ten-npm-security-best-practices/">10 npm Security Best Practices</a></strong> and following the steps outlined there.</p>
-<h3><a class="anchor" aria-hidden="true" id="доступ-к-пакетам"></a><a href="#доступ-к-пакетам" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Доступ к пакетам</h3>
+<h3><a class="anchor" aria-hidden="true" id="strong-package-access-with-authenticated"></a><a href="#strong-package-access-with-authenticated" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Strong package access with <code>$authenticated</code></h3>
 <p>By default all packages you publish in Verdaccio are accessible for all users. We recommend protecting your registry from external non-authorized users by updating the <code>access</code> property of your packages to <code>$authenticated</code>.</p>
-<pre><code class="hljs css language-yaml">  <span class="hljs-attr">packages:</span>
-    <span class="hljs-string">'@my-company/*'</span><span class="hljs-string">:</span>
-      <span class="hljs-attr">access:</span> <span class="hljs-string">$authenticated</span>
-      <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
-    <span class="hljs-string">'@*/*'</span><span class="hljs-string">:</span>
-      <span class="hljs-attr">access:</span> <span class="hljs-string">$authenticated</span>
-      <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
-    <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
-      <span class="hljs-attr">access:</span> <span class="hljs-string">$authenticated</span>
-      <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
+  <span class="hljs-string">"@my-company/*"</span><span class="hljs-string">:</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+  <span class="hljs-string">"@*/*"</span><span class="hljs-string">:</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+  <span class="hljs-string">"**"</span><span class="hljs-string">:</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
 <p>That way, <strong>nobody can access your registry unless they are authorized, and private packages won't be displayed in the web interface</strong>.</p>
-<h2><a class="anchor" aria-hidden="true" id="server"></a><a href="#server" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Server</h2>
+<h3><a class="anchor" aria-hidden="true" id="remove-proxy-to-increase-security-at-private-packages"></a><a href="#remove-proxy-to-increase-security-at-private-packages" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Remove <code>proxy</code> to increase security at private packages</h3>
+<p>After a clean installation, by default all packages will be resolved to the default uplink (the public registry <code>npmjs</code>).</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
+  <span class="hljs-string">"@*/*"</span><span class="hljs-string">:</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
+  <span class="hljs-string">"**"</span><span class="hljs-string">:</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
+</code></pre>
+<p>This means, if a private packaged eg: <code>@my-company/auth</code> is published locally, the registry will look up at the public registry. If your intention is fully protection, remove the <code>proxy</code> property from your configuration, for instance:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
+  <span class="hljs-string">"@my-company/*"</span><span class="hljs-string">:</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">unpublish:</span> <span class="hljs-string">$authenticated</span>
+  <span class="hljs-string">"@*/*"</span><span class="hljs-string">:</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
+  <span class="hljs-string">"**"</span><span class="hljs-string">:</span>
+    <span class="hljs-attr">access:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
+    <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
+</code></pre>
+<p>This configuration will <strong>avoid to looking up incessably to external registries</strong>, merging external metadata and download external tarballs.</p>
+<h2><a class="anchor" aria-hidden="true" id="сервер"></a><a href="#сервер" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Сервер</h2>
 <h3><a class="anchor" aria-hidden="true" id="secured-connections"></a><a href="#secured-connections" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Secured Connections</h3>
 <p>Using <strong>HTTPS</strong> is a common recommendation. For this reason we recommend reading the <a href="/docs/ru-RU/ssl">SSL</a> section to make Verdaccio secure, or alternatively using an HTTPS <a href="/docs/ru-RU/reverse-proxy">reverse proxy</a> on top of Verdaccio.</p>
 <h3><a class="anchor" aria-hidden="true" id="expiring-tokens"></a><a href="#expiring-tokens" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Expiring Tokens</h3>
-<p>In <code>verdaccio@3.x</code> the tokens have no expiration date. For such reason we introduced in the next <code>verdaccio@4.x</code> the JWT feature <a href="https://github.com/verdaccio/verdaccio/pull/896">PR#896</a></p>
+<p>Since <code>verdaccio@3.x</code> the tokens have no expiration date. For such reason we introduced in the next <code>verdaccio@4.x</code> the JWT feature <a href="https://github.com/verdaccio/verdaccio/pull/896">PR#896</a></p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">security:</span>
   <span class="hljs-attr">api:</span>
     <span class="hljs-attr">jwt:</span>
@@ -157,10 +184,10 @@ npm publish --tag fix --registry http://localhost:4873
     <span class="hljs-attr">sign:</span>
       <span class="hljs-attr">expiresIn:</span> <span class="hljs-string">7d</span>
 </code></pre>
-<p><strong>Использование этой конфигурации изменит текущее поведение сервера и вы сможете управлять временим жизни токенов</strong>.</p>
+<p><strong>Using this configuration will override the current system and you will be able to control how long the token will live</strong>.</p>
 <p>Using JWT also improves the performance with authentication plugins. The old system will perform an unpackage and validate the credentials on every request, while JWT will rely on the token signature instead, avoiding the overhead for the plugin.</p>
-<p>В качестве примечания, <strong>npmjs токены не имеют ограничений по времени</strong>.</p>
-</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ru-RU/who-is-using"><span class="arrow-prev">← </span><span>Кто использует Verdaccio?</span></a><a class="docs-next button" href="/docs/ru-RU/protect-your-dependencies"><span>Защита пакетов</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#приватный-репозиторий">Приватный репозиторий</a><ul class="toc-headings"><li><a href="#использование-публичных-пакетов-с-npmjsorg">Использование публичных пакетов с npmjs.org</a></li><li><a href="#переопределение-публичных-пакетов">Переопределение публичных пакетов</a></li></ul></li><li><a href="#безопасность">Безопасность</a><ul class="toc-headings"><li><a href="#доступ-к-пакетам">Доступ к пакетам</a></li></ul></li><li><a href="#server">Server</a><ul class="toc-headings"><li><a href="#secured-connections">Secured Connections</a></li><li><a href="#expiring-tokens">Expiring Tokens</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/ru-RU/what-is-verdaccio.html">Getting Started</a><a href="/docs/ru-RU/docker.html">Docker</a><a href="/docs/ru-RU/configuration.html">Configuration</a><a href="/docs/ru-RU/logo">Logos</a></div><div><h5>Community</h5><a href="/ru-RU/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
+<p>As a side note, at <strong>npmjs the token never expires</strong>.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/ru-RU/who-is-using"><span class="arrow-prev">← </span><span>Кто использует Verdaccio?</span></a><a class="docs-next button" href="/docs/ru-RU/protect-your-dependencies"><span>Защита пакетов</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#приватный-репозиторий">Приватный репозиторий</a><ul class="toc-headings"><li><a href="#использование-публичных-пакетов-с-npmjsorg">Использование публичных пакетов с npmjs.org</a></li><li><a href="#переопределение-публичных-пакетов">Переопределение публичных пакетов</a></li></ul></li><li><a href="#безопасность">Безопасность</a><ul class="toc-headings"><li><a href="#strong-package-access-with-authenticated">Strong package access with <code>$authenticated</code></a></li><li><a href="#remove-proxy-to-increase-security-at-private-packages">Remove <code>proxy</code> to increase security at private packages</a></li></ul></li><li><a href="#сервер">Сервер</a><ul class="toc-headings"><li><a href="#secured-connections">Secured Connections</a></li><li><a href="#expiring-tokens">Expiring Tokens</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/ru-RU/what-is-verdaccio.html">Getting Started</a><a href="/docs/ru-RU/docker.html">Docker</a><a href="/docs/ru-RU/configuration.html">Configuration</a><a href="/docs/ru-RU/logo">Logos</a></div><div><h5>Community</h5><a href="/ru-RU/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
                     return;
