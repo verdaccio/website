@@ -73,7 +73,12 @@ There's two options here:
 
 ## Segurança
 
-Security starts in your environment. For such things we recommend reading **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and following the steps outlined there.
+Security starts in your environment. For such things we recommend reading:
+
+* **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and following the steps outlined there.
+* **[Avoiding npm substitution attacks](https://github.blog/2021-02-12-avoiding-npm-substitution-attacks/)**
+
+> Feel free to attach here new useful articles to improve the security.
 
 ### Strong package access with `$authenticated`
 
@@ -156,4 +161,4 @@ security:
 
 Using JWT also improves the performance with authentication plugins. The old system will perform an unpackage and validate the credentials on every request, while JWT will rely on the token signature instead, avoiding the overhead for the plugin.
 
-As a side note, at **npmjs the token never expires**.
+As a side note, be aware at **npmjs** and the **legacy** verdaccio token never expires** unless you invalidate manually.
