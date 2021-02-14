@@ -75,8 +75,8 @@ There's two options here:
 
 Security starts in your environment. For such things we recommend reading:
 
-* **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and following the steps outlined there.
-* **[Avoiding npm substitution attacks](https://github.blog/2021-02-12-avoiding-npm-substitution-attacks/)**
+- **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and following the steps outlined there.
+- **[Avoiding npm substitution attacks](https://github.blog/2021-02-12-avoiding-npm-substitution-attacks/)**
 
 > Feel free to attach here new useful articles to improve the security.
 
@@ -133,7 +133,7 @@ packages:
     proxy: npmjs
 ```
 
-This configuration will **avoid to looking up incessably to external registries**, merging external metadata and download external tarballs.
+This configuration will **avoid downloading needlessly to external registries**, merging external metadata and download external tarballs.
 
 ## Server
 
