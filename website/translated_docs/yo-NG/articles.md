@@ -25,6 +25,7 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 
 ### Awọn arokọ ti o Tayọ
 
+* [Automating package publishing in JavaScript projects](https://blog.codecentric.de/en/2021/02/automating-package-publishing-in-javascript-projects/)
 * [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
 * [Bo Awọn Ohun elo Rẹ Nigba Ti o Ṣi N lo Npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
 * [Containerizing Node.js Applications with Docker](https://nodesource.com/blog/containerizing-node-js-applications-with-docker)
@@ -33,7 +34,7 @@ Ni isalẹ ni akojọ ti awọn arokọ kan nipa Verdaccio. Ti o ba ti kọ ak�
 * [Free Private NPM with Verdaccio and AWS](https://medium.com/@odahcam/free-private-npm-with-verdaccio-and-aws-a88e6f0f4beb)
 * [Run your own Unity Package Server!](https://medium.com/@markushofer/run-your-own-unity-package-server-b4fe9995704e)
 * [Ways to have your private npm registry — and a final DIY solution](https://medium.com/engenharia-noalvo/ways-to-have-your-private-npm-registry-and-a-final-diy-solution-eed001a88e74)
-* [Bi o ṣe le ṣeto ibi iforukọsilẹ npm aladani ni ọfẹ... fun Windows](https://medium.com/@Anderson7301/how-to-set-up-a-free-private-npm-registry-for-windows-f532c6a381ce)
+* [How to set up a free private npm registry… for Windows](https://medium.com/@Anderson7301/how-to-set-up-a-free-private-npm-registry-for-windows-f532c6a381ce)
 * [Setup a Private NPM Server on Azure in 45 Seconds](https://edi.wang/post/2020/7/7/setup-a-private-npm-server-on-azure-in-45-seconds)
 
 ### Gẹẹsi

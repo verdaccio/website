@@ -25,6 +25,7 @@ Abaixo encontra-se uma lista de artigos sobre o Verdaccio. Se você escreveu uma
 
 ### Artigos Notáveis
 
+* [Automating package publishing in JavaScript projects](https://blog.codecentric.de/en/2021/02/automating-package-publishing-in-javascript-projects/)
 * [10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)
 * [Cover Your Apps While Still Using npm](https://nodesource.com/blog/cover-your-apps-while-still-using-npm/)
 * [Containerizing Node.js Applications with Docker](https://nodesource.com/blog/containerizing-node-js-applications-with-docker)
