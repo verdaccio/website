@@ -21,7 +21,7 @@
             <description><![CDATA[<p>I am Dimitri and I am a user and contributor of Verdaccio.</p>
 <p>Today, I will explain how I migrated my private dockerized <img height="16px" src="https://github.githubassets.com/images/icons/emoji/unicode/1f433.png" title="docker" /> Verdaccio registry from <code>v3.x</code> to <code>v4.x</code>.</p>
 <p>I will also configure <a href="https://www.npmjs.com/package/verdaccio-ldap"><code>verdaccio-ldap</code></a> to authenticate my users against LDAP.</p>
-<p><a href="https://github.com/verdaccio/docker-examples/tree/master/ldap-verdaccio-v4">Working demo here</a></p>
+<p><a href="https://github.com/verdaccio/verdaccio/tree/5.x/docker-examples/ldap-verdaccio-v4">Working demo here</a></p>
 ]]></description>
         </item>
         <item>
