@@ -54,7 +54,7 @@ Iṣeto olupese aifojuri ti Apache
 
 # Nginx
 
-Ege wọnyii jẹ `docker` kikun apẹẹrẹ le jẹ didanwo ni [Awọn apẹẹrẹ ibi ipamọ Docker](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx) wa.
+Ege wọnyii jẹ `docker` kikun apẹẹrẹ le jẹ didanwo ni [Awọn apẹẹrẹ ibi ipamọ Docker](https://github.com/verdaccio/verdaccio/tree/5.x/docker-examples/reverse_proxy/nginx) wa.
 
     upstream verdaccio_v4 {
         server verdaccio_relative_path_v4:4873;
