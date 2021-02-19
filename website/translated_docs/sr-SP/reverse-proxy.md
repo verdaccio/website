@@ -54,7 +54,7 @@ For installing at root path, `/`, on the server
 
 # Nginx
 
-The following snippet is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
+The following snippet is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/verdaccio/tree/5.x/docker-examples/reverse_proxy/nginx).
 
     upstream verdaccio_v4 {
         server verdaccio_relative_path_v4:4873;

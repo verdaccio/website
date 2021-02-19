@@ -54,7 +54,7 @@ Configuração do servidor virtual Apache
 
 # Nginx
 
-O trecho a seguir é um exemplo completo de `docker` que está disponível para ser testado no [repositório de exemplos de Docker](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
+O trecho a seguir é um exemplo completo de `docker` que está disponível para ser testado no [repositório de exemplos de Docker](https://github.com/verdaccio/verdaccio/tree/5.x/docker-examples/reverse_proxy/nginx).
 
     upstream verdaccio_v4 {
         server verdaccio_relative_path_v4:4873;
