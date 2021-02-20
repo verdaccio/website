@@ -45,7 +45,7 @@ yarn global add verdaccio
 pnpm install -g verdaccio
 ```
 
-![安装 Verdaccio](assets/install_verdaccio.gif)
+![install verdaccio](assets/install_verdaccio.gif)
 
 ## 基本用法
 
