@@ -5,7 +5,7 @@ title: "Verdaccio是什么？"
 
 Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-## 什么是源（Registry）？
+## 源（Registry）是什么？
 
 * 源（Registry）是用于管理包（Package）信息的存储库，其实现了**存储 CommonJS 兼容包的源规范（CommonJS Compliant Package Registry specification）**。
 * 提供兼容 npm 客户端**（yarn、npm 或 pnpm）**的接口（API）。
@@ -52,4 +52,4 @@ Verdaccio可以按需缓存所有依赖项，以加快在本地或专用网络�
 * 它非常容易安装和使用
 * 我们提供Docker和Kubernetes支持
 * 它与yarn, npm 和pnpm 100% 兼容
-* Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
+* Verdaccio 是**一种绿色，在中世纪后期的意大利很流行，常用于壁画**。
