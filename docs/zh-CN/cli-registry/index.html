@@ -95,7 +95,7 @@ registry=http://localhost:4873
 <blockquote>
 <p>Since <code>npm@5.x</code> <a href="https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e">ignores the <code>resolve</code> field in defined in the lock files</a>, while <code>pnpm@4.x</code> and <code>yarn@1.x</code> does the opposite.</p>
 </blockquote>
-<p>Or a <code>publishConfig</code> in your <code>package.json</code></p>
+<p>或在你的 <code>package.json</code> 中设置 <code>publishConfig</code></p>
 <pre><code class="hljs css language-json">{
   <span class="hljs-attr">"publishConfig"</span>: {
     <span class="hljs-attr">"registry"</span>: <span class="hljs-string">"http://localhost:4873"</span>
