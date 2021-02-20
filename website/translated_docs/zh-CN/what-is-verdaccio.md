@@ -41,15 +41,15 @@ Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry** <i
 
 ## Proxy
 
-Verdaccio cache all dependencies on demand and speed up installations in local or private networks.
+Verdaccio可以按需缓存所有依赖项，以加快在本地或专用网络环境中的安装速度。
 
-## In a Nutshell
+## 简而言之
 
 * 它是基于Node.js的网页应用程序
 * 它是私有npm registry
 * 它是本地网络proxy
 * 它是可插入式应用程序
-* It's fairly easy to install and to use
+* 它非常容易安装和使用
 * 我们提供Docker和Kubernetes支持
 * 它与yarn, npm 和pnpm 100% 兼容
 * Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
