@@ -19,11 +19,11 @@ Verdaccio 是一个跨平台的 Web 应用程序。在安装前，你需要满�
 
 ### 快速介绍
 
-Learn the basics before getting started, how to install, where is the location of the configuration file and more. <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+在开始之前学习基础：如何安装、配置文件的位置在哪里等等。 <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## 安装命令行界面（CLI）
 
-> Before using Verdaccio in production, please read and be [aware of the best practices](best-practices.md).
+> 在生产环境中使用Verdaccio前，请先阅读并了解 [最佳实践](best-practices.md)。
 
 `Verdaccio` must be installed globally using either of the following methods:
 
