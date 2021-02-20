@@ -7,9 +7,9 @@ Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry** <i
 
 ## 什么是源（Registry）？
 
-* A registry is a repository for packages, that implements the **CommonJS Compliant Package Registry specification** for reading package's information.
-* Provide a compatible API with npm clients **(yarn/npm/pnpm)**.
-* Semantic Versioning compatible **(semver)**.
+* 源（Registry）是用于管理包（Package）信息的存储库，其实现了**存储 CommonJS 兼容包的源规范（CommonJS Compliant Package Registry specification）**。
+* 提供兼容 npm 客户端**（yarn、npm 或 pnpm）**的接口（API）。
+* 语义版本号（Semantic Versioning）兼容**（semver）**。
 
     $> verdaccio
     
@@ -18,7 +18,7 @@ Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry** <i
 
 ## 使用Verdaccio
 
-Using Verdaccio with any Node.js package manager client is quite straightforward.
+任何 Node.js 包管理器使用 Verdaccio 都是相当简单的。
 
 ![registry](assets/npm_install.gif)
 
