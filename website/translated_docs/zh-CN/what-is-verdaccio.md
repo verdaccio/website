@@ -22,12 +22,12 @@ Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry** <i
 
 ![registry](assets/npm_install.gif)
 
-You can use a custom registry either by setting it globally for all your projects
+你可以通过在全局环境下设置，让你的所有项目使用上自定义的源（Registry）
 
     npm set registry http://localhost:4873
     
 
-or by using it in command line as an argument `--registry` in npm (slightly different in yarn)
+或者在命令行中使用 npm 参数 `--registry`（在 yarn 里稍微有些不同）
 
     npm install lodash --registry http://localhost:4873
     
