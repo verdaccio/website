@@ -25,21 +25,21 @@ Verdaccio 是一个跨平台的 Web 应用程序。在安装前，你需要满�
 
 > 在生产环境中使用Verdaccio前，请先阅读并了解 [最佳实践](best-practices.md)。
 
-`Verdaccio` must be installed globally using either of the following methods:
+`Verdaccio` 必须通过以下任意方式安装到全局环境：
 
-Using `npm`
+使用 `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-or using `yarn`
+或使用 `yarn`
 
 ```bash
 yarn global add verdaccio
 ```
 
-or using `pnpm`
+或使用 `pnpm`
 
 ```bash
 pnpm install -g verdaccio
@@ -49,7 +49,7 @@ pnpm install -g verdaccio
 
 ## 基本用法
 
-Once it has been installed, you only need to execute the CLI command:
+一旦安装完成后，你只需要执行命令行界面（CLI）命令：
 
 ```bash
 $> verdaccio
@@ -57,15 +57,15 @@ warn --- config file  - /home/.config/verdaccio/config.yaml
 warn --- http address - http://localhost:4873/ - verdaccio/4.8.1
 ```
 
-For more information about the CLI, please [read the cli section](cli.md).
+更多关于命令行界面（CLI）的信息，请[阅读命令行界面（CLI）章节](cli.md)。
 
-You can set the registry by using the following command.
+你可以通过以下命令设置NPM源
 
 ```bash
 npm set registry http://localhost:4873/
 ```
 
-you can pass a `--registry` flag when needed.
+你可以在需要时带上参数 `--registry`
 
 ```bash
 npm install --registry http://localhost:4873
@@ -78,7 +78,7 @@ define in your `.npmrc` a `registry` field.
 registry=http://localhost:4873
 ```
 
-Or a `publishConfig` in your `package.json`
+或者在你的`package.json`中的`publishConfig` 定义
 
 ```json
 {
