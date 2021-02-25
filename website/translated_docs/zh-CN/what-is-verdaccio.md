@@ -32,7 +32,7 @@ Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry** <i
     npm install lodash --registry http://localhost:4873
     
 
-    yarn config set registry http:///localhost:4873
+    yarn config set registry http://localhost:4873
     
 
 ## 私有
