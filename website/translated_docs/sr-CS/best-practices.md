@@ -77,8 +77,7 @@ Security starts in your environment. For such things we recommend reading:
 
 - **[10 npm Security Best Practices](https://snyk.io/blog/ten-npm-security-best-practices/)** and following the steps outlined there.
 - **[Avoiding npm substitution attacks](https://github.blog/2021-02-12-avoiding-npm-substitution-attacks/)**
-
-> Feel free to attach here new useful articles to improve the security.
+- **[Practical Mitigations For Dependency Confusion Attack](https://www.kernelcrypt.com/posts/depedency-confusion-explained/)** > Feel free to attach here new useful articles to improve the security.
 
 ### Strong package access with `$authenticated`
 
