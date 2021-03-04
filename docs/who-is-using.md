@@ -26,6 +26,7 @@ title: "Who is using Verdaccio?"
 * [bit](https://github.com/teambit/bit)
 * [Wix Yoshi](https://github.com/wix/yoshi)
 * [The AWS Cloud Development Kit](https://github.com/awslabs/aws-cdk)
+* [Hyperledger Caliper](https://github.com/hyperledger/caliper)
 
 #### Readme Recommendations
 
