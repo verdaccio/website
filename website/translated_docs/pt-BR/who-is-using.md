@@ -21,11 +21,11 @@ title: "Quem está usando o Verdaccio?"
 * [Gatsby](https://github.com/gatsbyjs/gatsby)
 * [Apollo GraphQL](https://github.com/apollographql)
 * [Uppy](https://github.com/transloadit/uppy)
-* [Aurelia Framework](https://github.com/aurelia)
+* [Aurelia Framework](https://github.com/aurelia/framework)
 * [bit](https://github.com/teambit/bit)
-* [Hyperledger Composer](https://github.com/hyperledger/composer)
 * [Wix Yoshi](https://github.com/wix/yoshi)
 * [The AWS Cloud Development Kit](https://github.com/awslabs/aws-cdk)
+* [Hyperledger Caliper](https://github.com/hyperledger/caliper)
 
 #### Readme Recommendations
 
