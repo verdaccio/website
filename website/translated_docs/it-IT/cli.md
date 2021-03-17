@@ -32,3 +32,9 @@ We use the **$XDG_DATA_HOME** environment by variable default to locate the stor
 ## Percorso predefinito del file database
 
 Il percorso predefinito del file di database è il percorso dell'archiviazione. A partire dalla versione 4.0.0, il nome del file di database per una nuova installazione di Verdaccio sarà **.verdaccio-db.json**. Quando si esegue l'upgrade di un server Verdaccio esistente, il nome del file rimarrà **.sinopia-db.json**.
+
+## Environment variables
+
+[Full list of environment variables](https://github.com/verdaccio/verdaccio/blob/master/docs/env.variables.md).
+
+* `VERDACCIO_HANDLE_KILL_SIGNALS` to enable gracefully shutdown (since v4.12.0)
