@@ -32,3 +32,9 @@ We use the **$XDG_DATA_HOME** environment by variable default to locate the stor
 ## Podrazumevana lokacija baze podataka
 
 Po pravilu, lokacija fajla baze podataka je podrazumevana lokacija za čuvanje (storage). Počevši od verzije 4.0.0, ime baze podataka će biti **.verdaccio-db.json** za novu instalaciju Verdaccio-a. Prilikom nadogradnje postojećeg Verdaccio servera, ime fajla će ostati **.sinopia-db.json**.
+
+## Environment variables
+
+[Full list of environment variables](https://github.com/verdaccio/verdaccio/blob/master/docs/env.variables.md).
+
+* `VERDACCIO_HANDLE_KILL_SIGNALS` to enable gracefully shutdown (since v4.12.0)

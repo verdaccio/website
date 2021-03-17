@@ -32,3 +32,9 @@ We use the **$XDG_DATA_HOME** environment by variable default to locate the stor
 ## Aaye faili ibi ipamọ data atilẹwa
 
 Aaye faili ibi ipamọ data atilẹwa wa ninu aaye ibi ipamọ. Bibẹrẹ pẹlu ẹya 4.0.0, orukọ faili ibi ipamọ data yoo jẹ **.verdaccio-db.json** fun ifisori ẹrọ tuntun ti Verdaccio. Nigbati isagbega olupese Verdaccio kan to ti wa tẹlẹ ba n waye, orukọ faili naa yoo si ma jẹ **.sinopia-db.json**.
+
+## Environment variables
+
+[Full list of environment variables](https://github.com/verdaccio/verdaccio/blob/master/docs/env.variables.md).
+
+* `VERDACCIO_HANDLE_KILL_SIGNALS` to enable gracefully shutdown (since v4.12.0)
