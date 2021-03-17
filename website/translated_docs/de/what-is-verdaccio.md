@@ -32,7 +32,7 @@ or by using it in command line as an argument `--registry` in npm (slightly diff
     npm set registry http://localhost:4873
     
 
-    yarn config set registry http:///localhost:4873
+    yarn config set registry http://localhost:4873
     
 
 ## Private

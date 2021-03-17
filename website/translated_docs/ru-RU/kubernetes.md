@@ -3,7 +3,7 @@ id: kubernetes
 title: "Kubernetes"
 ---
 
- Вы можете найти инструкции для развёртывания Verdaccio на кластере Kubernetes в репозитории [verdaccio/docker-example](https://github.com/verdaccio/docker-examples/tree/master/kubernetes-example). Однако, рекомендуемым методом установки Verdaccio на кластер Kubernetes является использование [Helm](https://helm.sh). Helm это пакетный менеджер [Kubernetes](https://kubernetes.io) который даёт некоторые приемущества.
+ You can find instructions to deploy Verdaccio on a Kubernetes cluster on the [verdaccio/docker-example](https://github.com/verdaccio/verdaccio/tree/5.x/docker-examples/kubernetes-example) repository. Однако, рекомендуемым методом установки Verdaccio на кластер Kubernetes является использование [Helm](https://helm.sh). Helm это пакетный менеджер [Kubernetes](https://kubernetes.io) который даёт некоторые приемущества.
 
 ## Helm
 

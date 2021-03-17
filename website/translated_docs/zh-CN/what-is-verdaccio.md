@@ -5,11 +5,11 @@ title: "Verdaccio是什么？"
 
 Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry** <iframe width="560" height="315" src="https://www.youtube.com/embed/hDIFKzmoCaA?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
-## What's a registry?
+## 源（Registry）是什么？
 
-* A registry is a repository for packages, that implements the **CommonJS Compliant Package Registry specification** for reading package's information.
-* Provide a compatible API with npm clients **(yarn/npm/pnpm)**.
-* Semantic Versioning compatible **(semver)**.
+* 源（Registry）是用于管理包（Package）信息的存储库，其实现了**存储 CommonJS 兼容包的源规范（CommonJS Compliant Package Registry specification）**。
+* 提供兼容 npm 客户端**（yarn、npm 或 pnpm）**的接口（API）。
+* 语义版本号（Semantic Versioning）兼容**（semver）**。
 
     $> verdaccio
     
@@ -18,21 +18,21 @@ Verdaccio 是一个 **Node.js**创建的**轻量的私有npm proxy registry** <i
 
 ## 使用Verdaccio
 
-Using Verdaccio with any Node.js package manager client is quite straightforward.
+任何 Node.js 包管理器使用 Verdaccio 都是相当简单的。
 
 ![registry](assets/npm_install.gif)
 
-You can use a custom registry either by setting it globally for all your projects
+你可以通过在全局环境下设置，让你的所有项目使用上自定义的源（Registry）
 
     npm set registry http://localhost:4873
     
 
-or by using it in command line as an argument `--registry` in npm (slightly different in yarn)
+或者在命令行中使用 npm 参数 `--registry`（在 yarn 里稍微有些不同）
 
     npm install lodash --registry http://localhost:4873
     
 
-    yarn config set registry http:///localhost:4873
+    yarn config set registry http://localhost:4873
     
 
 ## 私有
@@ -41,15 +41,15 @@ or by using it in command line as an argument `--registry` in npm (slightly diff
 
 ## Proxy
 
-Verdaccio cache all dependencies on demand and speed up installations in local or private networks.
+Verdaccio可以按需缓存所有依赖项，以加快在本地或专用网络环境中的安装速度。
 
-## In a Nutshell
+## 简而言之
 
 * 它是基于Node.js的网页应用程序
 * 它是私有npm registry
 * 它是本地网络proxy
 * 它是可插入式应用程序
-* It's fairly easy to install and to use
+* 它非常容易安装和使用
 * 我们提供Docker和Kubernetes支持
 * 它与yarn, npm 和pnpm 100% 兼容
-* Verdaccio means **A green color popular in late medieval Italy for fresco painting**.
+* Verdaccio 是**一种绿色，在中世纪后期的意大利很流行，常用于壁画**。

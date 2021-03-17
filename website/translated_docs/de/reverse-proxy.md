@@ -54,7 +54,7 @@ Apache virtual server configuration
 
 # Nginx
 
-The following snippet is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/docker-examples/tree/master/reverse_proxy/nginx).
+The following snippet is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/verdaccio/tree/5.x/docker-examples/reverse_proxy/nginx).
 
     upstream verdaccio_v4 {
         server verdaccio_relative_path_v4:4873;
@@ -120,7 +120,6 @@ The following snippet is a full `docker` example can be tested in our [Docker ex
         ssl_certificate     /etc/nginx/cert.crt;
         ssl_certificate_key /etc/nginx/cert.key;
     
-        ssl on;
         ssl_session_cache  builtin:1000  shared:SSL:10m;
         ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
         ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;

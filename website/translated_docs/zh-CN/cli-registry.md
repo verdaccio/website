@@ -28,7 +28,7 @@ registry=http://localhost:4873
 
 > Since `npm@5.x` [ignores the `resolve` field in defined in the lock files](https://medium.com/verdaccio/verdaccio-and-deterministic-lock-files-5339d82d611e), while `pnpm@4.x` and `yarn@1.x` does the opposite.
 
-Or a `publishConfig` in your `package.json`
+或在你的 `package.json` 中设置 `publishConfig`
 
 ```json
 {

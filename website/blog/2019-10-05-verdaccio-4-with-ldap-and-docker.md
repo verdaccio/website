@@ -12,7 +12,7 @@ Today, I will explain how I migrated my private dockerized <img height="16px" sr
 
 I will also configure [`verdaccio-ldap`](https://www.npmjs.com/package/verdaccio-ldap) to authenticate my users against LDAP.
 
-[Working demo here](https://github.com/verdaccio/docker-examples/tree/master/ldap-verdaccio-v4)
+[Working demo here](https://github.com/verdaccio/verdaccio/tree/5.x/docker-examples/ldap-verdaccio-v4)
 
 <!--truncate-->
 
