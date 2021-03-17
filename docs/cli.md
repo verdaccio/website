@@ -35,3 +35,10 @@ If you are using a custom storage, this location is irrelevant.
 The default database file location is in the storage location.
 Starting with version 4.0.0, the database file name will be **.verdaccio-db.json** for a new installation of Verdaccio.
 When upgrading an existing Verdaccio server, the file name will remain **.sinopia-db.json**.
+
+
+## Environment variables
+
+[Full list of environment variables](https://github.com/verdaccio/verdaccio/blob/master/docs/env.variables.md).
+
+* `VERDACCIO_HANDLE_KILL_SIGNALS` to enable gracefully shutdown (since v4.12.0)
