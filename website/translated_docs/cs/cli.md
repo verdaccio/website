@@ -32,3 +32,9 @@ We use the **$XDG_DATA_HOME** environment by variable default to locate the stor
 ## Výchozí umístění databázového souboru
 
 Výchozí umístění databázového souboru v úložišti. Počínaje verzí 4.0.0, pro nové instalace Verdaccia bude název souboru databáze **.verdaccio-db.json**. Při aktualizaci existujícího serveru Verdaccia zůstane název souboru **.sinopia-db.json**.
+
+## Environment variables
+
+[Full list of environment variables](https://github.com/verdaccio/verdaccio/blob/master/docs/env.variables.md).
+
+* `VERDACCIO_HANDLE_KILL_SIGNALS` to enable gracefully shutdown (since v4.12.0)
