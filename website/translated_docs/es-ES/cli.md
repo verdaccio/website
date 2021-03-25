@@ -3,7 +3,7 @@ id: cli
 title: "Herramienta de Linea de Comando"
 ---
 
-The Verdaccio CLI is your tool to start and stop the application.
+Verdaccio CLI es su herramienta para iniciar y detener la aplicación.
 
 ## Comandos
 
