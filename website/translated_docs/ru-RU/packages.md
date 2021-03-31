@@ -77,9 +77,15 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 
 Вы можете изменить описанное поведение, используя другой плагин аутентификации. `verdaccio` всего лишь проверяет, входит ли пользователь, который пытается загрузить или опубликовать пакет, в правильную группу.
 
+Please note that if you set the `access` permission of a package to something that requires Verdaccio to check your identity, for example `$authenticated`, npm does not send your access key by default when fetching packages. This means all requests for downloading packages will be rejected as they are made anonymously even if you have logged in. To make npm include you access key with all requests, you should set the [always-auth](https://docs.npmjs.com/cli/v7/using-npm/config#always-auth) npm setting to true on any client machines. This can be accomplished by running:
+
+```bash
+$ npm config set always-auth=true
+```
+
 #### Установка нескольких групп
 
-Указать несколько групп - очень просто, нужно просто записать их через пробел.
+Defining multiple access groups is fairly easy, just define them with a white space between them.
 
 ```yaml
   'company-*':
@@ -94,7 +100,7 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 
 #### Блокировка доступа к набору пакетов
 
-Если вы хотите заблокировать доступ и публикацию для определённой группы пакетов, просто удалите строчки `access` и `publish`.
+If you want to block the access/publish to a specific group of packages. Just do not define `access` and `publish`.
 
 ```yaml
 packages:
@@ -106,9 +112,9 @@ packages:
 
 #### Запрещение проксирования для набора пакетов
 
-Вы можете захотеть запретить, для одного или нескольких пакетов, получение из удаленного репозитория, но, в то же время, разрешить остальным пакетом доступ к *аплинкам*.
+You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
 
-Рассмотрим следующий пример:
+Let's see the following example:
 
 ```yaml
 packages:
@@ -127,14 +133,14 @@ packages:
     proxy: npmjs
 ```
 
-Опишем, что мы хотели в примере выше:
+Let's describe what we want with the above example:
 
 * Я хочу хранить свой собственный пакет `jquery`, и мне нужно запретить проксирование для него.
 * Я хочу хранить пакеты, удовлетворяющие паттерну `my-company-*`, и мне нужно запретить проксирование для них.
 * Я хочу хранить пакеты из скоупа `my-local-scope`, и мне нужно запретить проксирование для них.
 * Я хочу проксирование для всех остальных пакетов.
 
-**Учтите, что порядок правил важен, и всегда добавляейте правило для двух звездочек**. Потому что если его не будет, то `verdaccio` сам добавит его, что может повлиять на способ разрешения ваших зависимостей.
+Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
 
 #### Use multiple uplinks
 
@@ -149,7 +155,7 @@ You may assign multiple uplinks for use as a proxy to use in the case of failove
 
 #### Удаление опубликованных пакетов
 
-Свойство `publish` определяет права доступа для команд `npm publish` и `npm unpublish`. Но, если вы хотите задать разрешение отдельно, можно использовать свойтство `unpublish` в секции доступа к пакетам, например:
+The property `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
 
 ```yalm
 packages:
@@ -171,7 +177,7 @@ packages:
     proxy: npmjs
 ```
 
-В примере выше, было описано такое поведение:
+In the previous example, the behaviour would be described:
 
 * все пользователи могут публиковать пакет `jquery`, но только пользователь `root` может удалять любые версии.
 * только аутентифицированные пользователи могут публиковать покаты `my-company-*`, но **никто не может удалять их**.
@@ -190,4 +196,4 @@ You can define mutiple `packages` and each of them must have an unique `Regex`. 
 
 > Хочется отдельно отметить, что мы рекомендуем не использовать **allow_access**/**allow_publish** и **proxy_access**, они - deprecated и скоро будут удалены, пожалуйста, используйте короткие версии (**access**/**publish**/**proxy**).
 
-Если вы хотите получить больше информации о том, как использовать свойство **storage**, пожалуйста, обратитесь к этом [комментарию](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
