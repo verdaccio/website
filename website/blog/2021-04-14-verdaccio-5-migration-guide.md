@@ -13,7 +13,7 @@ Verdaccio 5 will introduce a few breaking changes, either way the migration shou
 
 The latest Node.js v12 is required to run verdaccio. The upgrade only affects those are not using the Docker.
 
-Verdaccio goes hand to hand with the official Node.js releases roadmap.
+> Verdaccio goes hand to hand with the official Node.js releases roadmap.
 
 ![noderelease](https://raw.githubusercontent.com/nodejs/Release/master/schedule.svg?sanitize=true)
 
@@ -25,7 +25,7 @@ Verdaccio replaces Bunyan by [Pino.js](https://github.com/pinojs/pino) as logger
 
 ### Pretty loggin
 
-Verdaccio logging pretty print is a distinguished feature the very first time `verdaccio` commands runs, but is expensive in and not recommended to using in production environment, thus, if the environment variable `NODE_ENV=production` is detected, it will fall back automatically to `json` format.
+Verdaccio logging pretty print is a distinguished feature the very first time `verdaccio` commands runs.
 
 ```
  http <-- 200, user: test(127.0.0.1), req: 'GET /is-accessor-descriptor/-/is-accessor-descriptor-1.0.0.tgz', bytes: 0/3250
@@ -36,9 +36,11 @@ Verdaccio logging pretty print is a distinguished feature the very first time `v
  http <-- 200, user: test(127.0.0.1), req: 'GET /mkdirp/-/mkdirp-0.5.1.tgz', bytes: 0/4991
 ```
 
-One of the reasons, is that `pino.final` [does not work with prettier option](https://github.com/pinojs/pino-pretty/issues/37).
+But is expensive in and not recommended to using in production environment, thus, if the environment variable `NODE_ENV=production` is detected, it will fall back automatically to `json` format.
 
-To improve the performance of your registry, always use `json` in production.
+One tecnical reasons is that `pino.final` [does not work with prettier option](https://github.com/pinojs/pino-pretty/issues/37).
+
+To improve the performance of your registry, always use `format: json` in production.
 
 ### Multiple streams
 
@@ -123,7 +125,7 @@ The new internal logic builds correctly the public url, validates the `host` hea
 
 eg: `url_prefix: /verdaccio`, `url_prefix: verdaccio/`, `url_prefix: verdaccio` would be `/verdaccio/`
 
-### Public URL
+### A new public url environment variable
 
 The new `VERDACCIO_PUBLIC_URL` is intended to be used behind proxies, this variable will be used for:
 
@@ -153,7 +155,7 @@ url_prefix: '/second_prefix'
 
 ## Custom favicon
 
-The _favicon_ can be replaced in 2 ways:
+The _favicon_ can be set either as url or absolute path in your system.
 
 ### Local absolute path
 
@@ -162,6 +164,8 @@ web:
   title: Verdaccio
   logo: /home/user/favicon.ico
 ```
+
+Ensure the same user that runs the server also has permissions to access the resource you define here.
 
 ### By URL
 
@@ -173,11 +177,13 @@ web:
 
 If the logo is not defined, will fetch (and bundled in) the custom verdaccio favicon
 
-## UI
+## UI changes to consider
 
-- Does not contain any CSS, SVG or Fonts anymore
-- Only JS
-- Ability add your own CSS, JS at the HTML
+The new UI may looks the same, but under the hood has consideriable changes:
+
+- Does not contain any CSS, SVG or Fonts anymore: The UI is JS 100% based.
+- It uses emotion and `<styles>` are generated on runtime by JS.
+- Fonts now depends of your system, by default define a set of the most common ones.
 
 ## Web new properties for dynamic template
 
