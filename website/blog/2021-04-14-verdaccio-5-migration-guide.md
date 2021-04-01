@@ -1,24 +1,31 @@
+---
+author: Juan Picado
+authorURL: https://twitter.com/jotadeveloper
+authorFBID: 1122901551
+title: Verdaccio 5 migration guidelines
+---
+
 # Verdaccio 5 migration guidelines
 
 Verdaccio 5 will introduce a few breaking changes, either way the migration should be light for the most of the users, here the big details.
 
 # Node.js requirements
 
-The latest Node.js v12 is required to run verdaccio. The upgrade only affects those are not using the Docker. 
+The latest Node.js v12 is required to run verdaccio. The upgrade only affects those are not using the Docker.
 
-Verdaccio goes hand to hand with the official Node.js releases roadmap.  
+Verdaccio goes hand to hand with the official Node.js releases roadmap.
 
 ![noderelease](https://raw.githubusercontent.com/nodejs/Release/master/schedule.svg?sanitize=true)
 
 We recommend, always try to use the latest LTS version to avoid next major forces you to upgrade Node.js again.
 
-# Pino.js is the new logger 
+# Pino.js is the new logger
 
 Verdaccio replaces Bunyan by [Pino.js](https://github.com/pinojs/pino) as logger, with the objective to improve the performance and delegate some features to the external tools. The new logger configuration does not support multiple streams, thus the configuration must contain one single object.
 
 ### Pretty loggin
 
-Verdaccio logging pretty print is a distinguished feature the very first time `verdaccio` commands runs, but is  expensive in and not recommended to using in production environment, thus, if the environment variable `NODE_ENV=production` is detected, it will fall back automatically to `json` format. 
+Verdaccio logging pretty print is a distinguished feature the very first time `verdaccio` commands runs, but is expensive in and not recommended to using in production environment, thus, if the environment variable `NODE_ENV=production` is detected, it will fall back automatically to `json` format.
 
 ```
  http <-- 200, user: test(127.0.0.1), req: 'GET /is-accessor-descriptor/-/is-accessor-descriptor-1.0.0.tgz', bytes: 0/3250
@@ -33,13 +40,12 @@ One of the reasons, is that `pino.final` [does not work with prettier option](ht
 
 To improve the performance of your registry, always use `json` in production.
 
-
 ### Multiple streams
 
 Even if is [supported by Pino.js](https://getpino.io/#/docs/help?id=log-to-different-streams) is not recommended for performance reasons. The log property only recognize one single option. If you were using this feature and want it back, [feel free to open a discussion](https://github.com/verdaccio/verdaccio/discussions/new?category=ideas) or contribute as opt-in feature.
 
 ```yaml
-logs:  {type: stdout, format: pretty, level: http}
+logs: { type: stdout, format: pretty, level: http }
 ```
 
 ### Rotating file is not longer supported
@@ -55,7 +61,7 @@ Pino.js does not support log rotation, thus if you were using this feature is re
 
 **Old configuration won't crash the application**, rather will display a deprecation warning and will use the very first option in your configuration as fallback. Consider update your configuration due in the next major will throw an error.
 
-````bash
+```bash
 ➜  verdaccio
  warn --- config file  - /home/xxxx/.config/verdaccio/config.yaml
 (node:22047) Warning: deprecate: multiple logger configuration is deprecated, please check the migration guide.
@@ -63,14 +69,13 @@ Pino.js does not support log rotation, thus if you were using this feature is re
  warn --- Plugin successfully loaded: verdaccio-htpasswd
  warn --- Plugin successfully loaded: verdaccio-audit
  warn --- http address - http://localhost:4873/ - verdaccio/5.0.0-alpha.0
-````
-
+```
 
 ## `npm token`
 
 The command `npm token` has been an experiment in Verdaccio 4, but was based on _LevelDB_ which requires a C and Python compiler on install to make it work. By [request](https://github.com/verdaccio/verdaccio/issues/1925) has been removed and replaced by a pure JS solution.
 
-The default token database now is plain json file `.token-db.json` and is located in the same directory as `.verdaccio-db.json`,  with this format: 
+The default token database now is plain json file `.token-db.json` and is located in the same directory as `.verdaccio-db.json`, with this format:
 
 ```
 {
@@ -110,22 +115,22 @@ Tokens are not being storage, just small part of it, the `key` is just a random 
 
 ### Breaking Changes
 
-If you were using `npm token` in verdaccio 4, most likely the database would need to be removed and created from scratch. Remove the old database and on restart Verdaccio will generate a new one. 
+If you were using `npm token` in verdaccio 4, most likely the database would need to be removed and created from scratch. Remove the old database and on restart Verdaccio will generate a new one.
 
 ## `url_prefix` improved behavior
 
 The new internal logic builds correctly the public url, validates the `host` header and and bad shaped `url_prefix`.
 
-eg: `url_prefix: /verdaccio`, `url_prefix: verdaccio/`, `url_prefix: verdaccio` would be `/verdaccio/`   
+eg: `url_prefix: /verdaccio`, `url_prefix: verdaccio/`, `url_prefix: verdaccio` would be `/verdaccio/`
 
 ### Public URL
 
 The new `VERDACCIO_PUBLIC_URL` is intended to be used behind proxies, this variable will be used for:
 
-* Used as base path to serve UI resources as (js, favicon, etc)
-* Used on return metadata `dist` base path 
-* Ignores `host` and `X-Forwarded-Proto` headers
-* If `url_prefix` is defined would be appened to the env variable. 
+- Used as base path to serve UI resources as (js, favicon, etc)
+- Used on return metadata `dist` base path
+- Ignores `host` and `X-Forwarded-Proto` headers
+- If `url_prefix` is defined would be appened to the env variable.
 
 ```
 VERDACCIO_PUBLIC_URL='https://somedomain.org';
@@ -144,9 +149,7 @@ url_prefix: '/second_prefix'
 // url -> https://somedomain.org/second_prefix/'
 ```
 
-
 ![Screenshot from 2021-03-24 20-20-11](https://user-images.githubusercontent.com/558752/112371003-5fa1ce00-8cde-11eb-888c-70c4e9776c57.png)
-
 
 ## Custom favicon
 
@@ -158,7 +161,7 @@ The _favicon_ can be replaced in 2 ways:
 web:
   title: Verdaccio
   logo: /home/user/favicon.ico
-````
+```
 
 ### By URL
 
@@ -166,11 +169,11 @@ web:
 web:
   title: Verdaccio
   logo: https://somedomain.org/favicon.ico
-````
+```
 
 If the logo is not defined, will fetch (and bundled in) the custom verdaccio favicon
 
-## UI 
+## UI
 
 - Does not contain any CSS, SVG or Fonts anymore
 - Only JS
@@ -196,6 +199,3 @@ web:
   scriptsbodyBefore:
     - '<div id="myId">html before webpack scripts</div>'
 ```
-
-
-
