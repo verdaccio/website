@@ -5,9 +5,7 @@ authorFBID: 1122901551
 title: Verdaccio 5 migration guidelines
 ---
 
-# Verdaccio 5 migration guidelines
-
-Verdaccio 5 will introduce a few breaking changes, either way the migration should be light for the most of the users, here the big details.
+**Verdaccio 5** will introduce a few breaking changes, either way the migration should be light for the most of the users, here the big details.
 
 # Node.js requirements
 
