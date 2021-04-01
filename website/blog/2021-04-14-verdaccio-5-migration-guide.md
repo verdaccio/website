@@ -73,7 +73,7 @@ Pino.js does not support log rotation, thus if you were using this feature is re
 
 ## `npm token`
 
-The command `npm token` has been an experiment in Verdaccio 4, but was based on _LevelDB_ which requires a C and Python compiler on install to make it work. By [request](https://github.com/verdaccio/verdaccio/issues/1925) has been removed and replaced by a pure JS solution.
+The command `npm token` has been an experiment in Verdaccio 4 and on this major release is enabled by default, but was based on _LevelDB_ which requires a C and Python compiler on install to make it work. By [request](https://github.com/verdaccio/verdaccio/issues/1925) has been removed and replaced by a pure JS solution.
 
 The default token database now is plain json file `.token-db.json` and is located in the same directory as `.verdaccio-db.json`, with this format:
 
