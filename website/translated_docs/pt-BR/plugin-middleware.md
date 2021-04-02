@@ -115,3 +115,6 @@ The middleware are registrered after built-in endpoints, thus, it is not possibl
 
 * [verdaccio-https](https://github.com/honzahommer/verdaccio-https): plugin middleware de Verdaccio para redirecionar para https se o cabeçalho x-forwarded-proto estiver definido
 * [verdaccio-badges](https://github.com/tavvy/verdaccio-badges) A verdaccio plugin to provide a version badge generator endpoint
+* [verdaccio-openmetrics](https://github.com/freight-hub/verdaccio-openmetrics) Verdaccio plugin exposing an OpenMetrics/Prometheus endpoint with health and traffic metrics
+* [verdaccio-sentry](https://github.com/juanpicado/verdaccio-sentry) sentry loggin errors
+* [verdaccio-pacman](https://github.com/PaddeK/verdaccio-pacman) Verdaccio Middleware Plugin to manage tags and versions of packages

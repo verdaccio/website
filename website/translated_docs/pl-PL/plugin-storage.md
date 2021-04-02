@@ -108,3 +108,4 @@ Poniższa lista wtyczek wdraża API magazynu danych oraz mogą być użyte jako 
 * [verdaccio-aws-s3-storage](https://github.com/verdaccio/monorepo/tree/master/plugins/aws-s3-storage) Storage plugin to host packages **Amazon S3** (maintained by Verdaccio core team)
 * [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
 * [verdaccio-minio](https://github.com/barolab/verdaccio-minio) A verdaccio plugin for storing data in Minio
+* [verdaccio-offline-storage](https://github.com/g3ngar/verdaccio-offline-storage)   local-storage plugin BUT with locally available packages as first class citizens.
