@@ -49,6 +49,14 @@ pnpm install -g verdaccio
 
 ![install verdaccio](assets/install_verdaccio.gif)
 
+### Verdaccio 5
+
+You can star testing now **Verdaccio 5**
+
+```bash
+npm install -g verdaccio@next
+```
+
 ## Basic Usage
 
 Once it has been installed, you only need to execute the CLI command:
