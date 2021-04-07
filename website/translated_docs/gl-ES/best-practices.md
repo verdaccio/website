@@ -135,7 +135,7 @@ packages:
 
 This configuration will **avoid downloading needlessly to external registries**, merging external metadata and download external tarballs.
 
-## Server
+## Servidor
 
 ### Secured Connections
 
