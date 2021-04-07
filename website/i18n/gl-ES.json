@@ -159,17 +159,17 @@
     "categories": {
       "Introduction": "Introducción",
       "Features": "Características",
-      "Server": "Server",
-      "Development": "Development",
+      "Server": "Servidor",
+      "Development": "Desenvolvemento",
       "DevOps": "DevOps",
-      "Guides": "Guides"
+      "Guides": "Guías"
     }
   },
   "pages-strings": {
     "Contributors|no description given": "Contributors",
-    "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Learn more using the [documentation on this site.](/docs/en/installation.html)",
-    "Browse Docs|no description given": "Browse Docs",
-    "Ask questions about the documentation and project|no description given": "Ask questions about the documentation and project",
+    "Learn more using the [documentation on this site.](/docs/en/installation.html)|no description given": "Máis información usando a [documentación deste sitio.] (/ Docs/gl/installation.html)",
+    "Browse Docs|no description given": "Explorar Documentación",
+    "Ask questions about the documentation and project|no description given": "Fai preguntas sobre a documentación e o proxecto",
     "Join the community|no description given": "Join the community",
     "Find out what's new with this project|no description given": "Find out what's new with this project",
     "Stay up to date|no description given": "Stay up to date",
