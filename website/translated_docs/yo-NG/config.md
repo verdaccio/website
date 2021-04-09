@@ -20,14 +20,14 @@ uplinks:
   npmjs:
     url: https://registry.npmjs.org/
 packages:
-  '@*/*':
+  "@*/*":
     access: $all
     publish: $authenticated
     proxy: npmjs
-  '**':
+  "**":
     proxy: npmjs
 logs:
-  - {type: stdout, format: pretty, level: http}
+  - { type: stdout, format: pretty, level: http }
 ```
 
 ## Awọn abala
@@ -125,7 +125,7 @@ This section allows you to control how packages are accessed. For more informati
 
 ```yaml
 packages:
-  '@*/*':
+  "@*/*":
     access: $all
     publish: $authenticated
     proxy: npmjs
@@ -146,11 +146,13 @@ publish:
 
 ### Ibẹrẹ URL
 
+The prefix is intended to be used when the server runs behinds the proxy, check the **reverse proxy setup** page for more details.
+
 ```yaml
 url_prefix: /verdaccio/
 ```
 
-> A ṣe igbaniyanju pe ki o lo ipin-ọna kan `/verdaccio/` dipo URI kan.
+> Verdaccio 5 has an improved prefix behaviour, [check here details](https://verdaccio.org/blog/2021/04/14/verdaccio-5-migration-guide#url_prefix-improved-behavior).
 
 ### Iwọn Ara to Pọju
 
@@ -176,18 +178,18 @@ listen:
 
 ### HTTPS
 
-Lati mu `https` ṣiṣẹ ninu `verdaccio` o to lati ṣeto asia `listen` pẹlu Ilana *https://*. For more information about this section read the [SSL page](ssl.md).
+To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [SSL page](ssl.md).
 
 ```yaml
 https:
-    key: ./path/verdaccio-key.pem
-    cert: ./path/verdaccio-cert.pem
-    ca: ./path/verdaccio-csr.pem
+  key: ./path/verdaccio-key.pem
+  cert: ./path/verdaccio-cert.pem
+  ca: ./path/verdaccio-csr.pem
 ```
 
 ### Aṣoju ikọkọ
 
-Awọn aṣoju ikọkọ jẹ awọn olupese HTTP oniṣẹ-pataki ti o jẹ didalara lati gbe data kuro lati awọn olupese ọlọna jinjin lọ si awọn onibara agbegbe.
+Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
 #### http_proxy ati https_proxy
 
@@ -213,7 +215,7 @@ Enabling notifications to third-party tools is fairly easy via webhooks. For mor
 ```yaml
 notify:
   method: POST
-  headers: [{'Content-Type': 'application/json'}]
+  headers: [{ "Content-Type": "application/json" }]
   endpoint: https://usagge.hipchat.com/v2/room/3729485/notification?auth_token=mySecretToken
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
@@ -222,9 +224,9 @@ notify:
 
 ### Ayẹwo
 
-<small>Lati: <code>verdaccio@3.0.0</code></small>
+<small>Since: <code>verdaccio@3.0.0</code></small>
 
-`ayẹwo npmt` jẹ aṣẹ tuntun kan ti o jẹ pipese pẹlu [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio wa pẹlu ohun elo middleware ti o jẹ kikọ sinu rẹ lati sakoso aṣẹ yii.
+`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
 
 > Ti o ba sẹsẹ fi sori ẹrọ o ma n ba wa ni atilẹwa, bibẹkọ o nilo lati se afikun awọn atilẹyin wọnyi sinu faili iṣeto rẹ
 
