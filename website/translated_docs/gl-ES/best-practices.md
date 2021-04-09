@@ -62,7 +62,7 @@ Aquí hai dúas opcións:
 
 2. Quere usar a súa versión temporalmente, pero volva á pública en canto se actualice.
     
-    Para evitar conflitos de versións, **debes usar un sufixo personalizado de pre-lanzamento da seguinte versión de parche**. For example, if a public package has version 0.1.2, you can upload `0.1.3-my-temp-fix`.
+    Para evitar conflitos de versións, **debes usar un sufixo personalizado de pre-lanzamento da seguinte versión de parche**. Por exemplo, se un paquete público ten a versión 0.1.2, pode cargar `0.1.3-my-temp-fix`.
     
     ```bash
     npm version 0.1.3-my-temp-fix
