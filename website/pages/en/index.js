@@ -78,7 +78,7 @@ class TweetsSection extends React.Component {
         lightweight npm registry &amp; cache. Just two commands to install + use it. <a
           href="https://twitter.com/hashtag/incredibile?src=hash&amp;ref_src=twsrc%5Etfw">#incredibile</a> <a
           href="https://t.co/X0uNgS6UMz">https://t.co/X0uNgS6UMz</a></p>&mdash; Manfred Steyer (@ManfredSteyer) <a
-        href="https://twitter.com/arcanis/status/1291334001286881281?ref_src=twsrc%5Etfw">31 de mayo de 2018</a>
+        href="https://twitter.com/arcanis/status/1291333754372399105?ref_src=twsrc%5Etfw">31 de mayo de 2018</a>
       </blockquote>)
   }
 
