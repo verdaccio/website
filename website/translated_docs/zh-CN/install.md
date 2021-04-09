@@ -7,13 +7,13 @@ Verdaccio 是一个跨平台的 Web 应用程序。在安装前，你需要满�
 
 ## 最低要求
 
-1. **Node.js** `v8.x（长期支持版“Carbon”）` 或更高版本。
+1. **Node.js** `v12` or higher.
 
 2. 你喜爱的Node包管理器 `npm`、`pnpm` 或 `yarn`（classic 以及 berry）。
 
-> 我们强烈推荐使用最新版本的Node包管理器 `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@5.x`
+> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@6.x`. Don't support `npm@5.x` or older.
 
-1. 一个现代Web浏览器用于使用网页界面，我们实际上支持 `Chrome, Firefox, Edge, and IE11`。
+1. A modern web browser to run the web interface. We actually support `Chrome, Firefox, Edge`.
 
 > Verdaccio 会根据 [Node. js 发布工作组](https://github.com/nodejs/Release) 的推荐以支持最新的 Node. js 版本。
 
@@ -47,14 +47,6 @@ pnpm install -g verdaccio
 
 ![install verdaccio](assets/install_verdaccio.gif)
 
-### Verdaccio 5
-
-You can star testing now **Verdaccio 5**
-
-```bash
-npm install -g verdaccio@next
-```
-
 ## 基本用法
 
 Once it has been installed, you only need to execute the CLI command:
@@ -62,7 +54,7 @@ Once it has been installed, you only need to execute the CLI command:
 ```bash
 $> verdaccio
 warn --- config file  - /home/.config/verdaccio/config.yaml
-warn --- http address - http://localhost:4873/ - verdaccio/4.8.1
+warn --- http address - http://localhost:4873/ - verdaccio/5.0.0
 ```
 
 For more information about the CLI, please [read the cli section](cli.md).
