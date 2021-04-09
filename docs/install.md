@@ -49,6 +49,8 @@ pnpm install -g verdaccio
 
 ![install verdaccio](assets/install_verdaccio.gif)
 
+Are you still using **Verdaccio 4**?. Check the [migration guide](https://verdaccio.org/blog/2021/04/14/verdaccio-5-migration-guide).
+
 ## Basic Usage
 
 Once it has been installed, you only need to execute the CLI command:
