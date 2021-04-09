@@ -17,6 +17,8 @@ Verdaccio is a multiplatform web application. To install it, you need a few basi
 
 > Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
 
+Are you still using **Verdaccio 4**?. Check the [migration guide](https://verdaccio.org/blog/2021/04/14/verdaccio-5-migration-guide).
+
 ### Quick Introduction
 
 Learn the basics before getting started, how to install, where is the location of the configuration file and more.
@@ -48,8 +50,6 @@ pnpm install -g verdaccio
 ```
 
 ![install verdaccio](assets/install_verdaccio.gif)
-
-Are you still using **Verdaccio 4**?. Check the [migration guide](https://verdaccio.org/blog/2021/04/14/verdaccio-5-migration-guide).
 
 ## Basic Usage
 
