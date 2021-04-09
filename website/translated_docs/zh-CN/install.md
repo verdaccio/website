@@ -17,29 +17,31 @@ Verdaccio 是一个跨平台的 Web 应用程序。在安装前，你需要满�
 
 > Verdaccio 会根据 [Node. js 发布工作组](https://github.com/nodejs/Release) 的推荐以支持最新的 Node. js 版本。
 
+Are you still using **Verdaccio 4**?. Check the [migration guide](https://verdaccio.org/blog/2021/04/14/verdaccio-5-migration-guide).
+
 ### 快速介绍
 
-在开始之前学习基础：如何安装、配置文件的位置在哪里等等。 <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
+Learn the basics before getting started, how to install, where is the location of the configuration file and more. <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
 
 ## 安装命令行界面（CLI）
 
 > 在生产环境中使用Verdaccio前，请先阅读并了解 [最佳实践](best-practices.md)。
 
-`Verdaccio` 必须通过以下任意方式安装到全局环境：
+`Verdaccio` must be installed globally using either of the following methods:
 
-使用 `npm`
+Using `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-或使用 `yarn`
+or using `yarn`
 
 ```bash
 yarn global add verdaccio
 ```
 
-或使用 `pnpm`
+or using `pnpm`
 
 ```bash
 pnpm install -g verdaccio
