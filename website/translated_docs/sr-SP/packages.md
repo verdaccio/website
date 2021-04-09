@@ -77,9 +77,15 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 
 Можете променити постојећи behaviour коришћењем различите plugin аутентификације. `verdaccio` проверава да ли корисник који је покушао да приступи неком пакету или публикује пакет припада исправној групи корисника.
 
+Please note that if you set the `access` permission of a package to something that requires Verdaccio to check your identity, for example `$authenticated`, npm does not send your access key by default when fetching packages. This means all requests for downloading packages will be rejected as they are made anonymously even if you have logged in. To make npm include you access key with all requests, you should set the [always-auth](https://docs.npmjs.com/cli/v7/using-npm/config#always-auth) npm setting to true on any client machines. This can be accomplished by running:
+
+```bash
+$ npm config set always-auth=true
+```
+
 #### Подешавање мултиплих група
 
-Дефинисање multiple access groups је релативно једноставно, само је потребно да их дефинишете са размаком између.
+Defining multiple access groups is fairly easy, just define them with a white space between them.
 
 ```yaml
   'company-*':
@@ -98,6 +104,7 @@ If you want to block the access/publish to a specific group of packages. Just do
 
 ```yaml
 packages:
+  'old-*':
   '**':
     access: $all
     publish: $authenticated
@@ -105,9 +112,9 @@ packages:
 
 #### Блокирање proxying-а за сет специфичних пакета
 
-Можда ћете пожелети да блокирате један или више пакета од ухваћених (fetching) из удаљеног репозиторијума, али да истовремено дозволите другима да приступе различитим *uplinks-има*.
+You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
 
-Хајде да погледамо пример:
+Let's see the following example:
 
 ```yaml
 packages:
@@ -126,14 +133,14 @@ packages:
     proxy: npmjs
 ```
 
-Хајде да видимо шта смо постигли у наведеном примеру:
+Let's describe what we want with the above example:
 
 * Желим да хостујем свој `jquery` dependency али истовремено желим да избегнем њено proxying-овање.
 * Желим све dependencies које се поклапају са `my-company-*` али уједно имам потребу да избегнем њихово proxying-овање.
 * Желим све dependencies које су у `my-local-scope` али уједно желим да избегнем њихово proxying-овање.
 * Желим да proxying-ујем све остале dependencies.
 
-**Будите свесни тога да је редослед дефинисања Ваших пакета важан, и још нешто, увек користите double wilcard**. Јер ако не будете тога свесни, `verdaccio` ће то учинити уместо Вас, што ће утицати Ваше dependencies.
+Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
 
 #### Use multiple uplinks
 
@@ -178,7 +185,7 @@ In the previous example, the behaviour would be described:
 
 ### Конфигурисање
 
-Можете дефинисати мултипле `packages` при чему сваки од њих мора имати јединствени `Regex`. Синтакса је базирана на [minimatch glob expressions](https://github.com/isaacs/minimatch).
+You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
 | Својство | Тип    | Неопходно | Пример         | Подршка        | Опис                                                                |
 | -------- | ------ | --------- | -------------- | -------------- | ------------------------------------------------------------------- |
