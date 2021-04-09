@@ -45,9 +45,9 @@ Se desexa usar unha versión modificada dalgún paquete público `foo`, só pode
 
 Aquí hai dúas opcións:
 
-1. You want to create a separate **fork** and stop synchronizing with public version.
+1. Queres crear un **fork** separado e deixar de sincronizar coa versión pública.
     
-    If you want to do that, you should modify your configuration file so Verdaccio won't make requests regarding this package to npmjs anymore. Add a separate entry for this package to `config.yaml` and remove `npmjs` from `proxy` list and restart the server.
+    Se queres facelo, debes modificar o ficheiro de configuración para que Verdaccio xa non realice solicitudes relativas a este paquete a npmjs. Engade unha entrada separada para este paquete a `config.yaml` e elimina `npmjs` da lista `proxy` e reinicia o servidor.
     
     ```yaml
     packages:
@@ -58,11 +58,11 @@ Aquí hai dúas opcións:
        # proxy:
     ```
     
-    When you publish your package locally, **you should probably start with a version string higher than the existing package** so it won't conflict with that package in the cache.
+    Cando publique o seu paquete localmente, **probablemente debería comezar cunha cadea de versión superior á do paquete existente** polo que non entrará en conflito con ese paquete na caché.
 
-2. You want to temporarily use your version, but return to the public one as soon as it's updated.
+2. Quere usar a súa versión temporalmente, pero volva á pública en canto se actualice.
     
-    In order to avoid version conflicts, **you should use a custom pre-release suffix of the next patch version**. For example, if a public package has version 0.1.2, you can upload `0.1.3-my-temp-fix`.
+    Para evitar conflitos de versións, **debes usar un sufixo personalizado de pre-lanzamento da seguinte versión de parche**. For example, if a public package has version 0.1.2, you can upload `0.1.3-my-temp-fix`.
     
     ```bash
     npm version 0.1.3-my-temp-fix
