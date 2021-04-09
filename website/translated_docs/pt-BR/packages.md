@@ -76,9 +76,15 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 
 Você pode alterar o atual comportamento usando uma autenticação de plugin diferente. O `verdaccio` apenas verifica se o usuário que tentou acessar ou publicar um pacote específico pertence ao grupo correto.
 
+Please note that if you set the `access` permission of a package to something that requires Verdaccio to check your identity, for example `$authenticated`, npm does not send your access key by default when fetching packages. This means all requests for downloading packages will be rejected as they are made anonymously even if you have logged in. To make npm include you access key with all requests, you should set the [always-auth](https://docs.npmjs.com/cli/v7/using-npm/config#always-auth) npm setting to true on any client machines. This can be accomplished by running:
+
+```bash
+$ npm config set always-auth=true
+```
+
 #### Definir vários grupos
 
-Definir vários grupos de acesso é bastante fácil, basta defini-los com um espaço em branco entre eles.
+Defining multiple access groups is fairly easy, just define them with a white space between them.
 
 ```yaml
   'company-*':
@@ -93,7 +99,7 @@ Definir vários grupos de acesso é bastante fácil, basta defini-los com um esp
 
 #### Bloqueando o acesso ao conjunto de pacotes
 
-Se você quiser bloquear o acesso/publicação para um grupo específico de pacotes. Apenas não defina `access` e `publish`.
+If you want to block the access/publish to a specific group of packages. Just do not define `access` and `publish`.
 
 ```yaml
 packages:
@@ -105,9 +111,9 @@ packages:
 
 #### Bloqueando a transmissão de um conjunto de pacotes específicos
 
-Você pode querer bloquear um ou vários pacotes de buscar nos repositórios remotos, mas ao mesmo tempo, permitir que outros acessem *uplinks* diferentes.
+You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
 
-Vamos ver o seguinte exemplo:
+Let's see the following example:
 
 ```yaml
 packages:
@@ -126,14 +132,14 @@ packages:
     proxy: npmjs
 ```
 
-Vamos descrever o que queremos com o exemplo acima:
+Let's describe what we want with the above example:
 
 * Eu quero hospedar minha própria dependência `jquery`, mas eu preciso evitar o proxy.
 * Eu quero todas as dependências que combinam com `my-company-*`, mas eu preciso que os pacotes não se realizem via proxy.
 * Eu quero todas as dependências que estão no escopo `my-local-scope`, mas eu preciso que os pacotes não se realizem via proxy.
 * Eu quero que o resto das dependências se realizem via proxy.
 
-Esteja **ciente de que a ordem das suas definições de pacotes é importante e use sempre wildcard duplo **. Porque se você não incluir o `verdaccio` irá incluí-lo para você e o modo como suas dependências serão resolvidas será afetado.
+Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
 
 #### Use multiple uplinks
 
@@ -148,7 +154,7 @@ You may assign multiple uplinks for use as a proxy to use in the case of failove
 
 #### Cancelando a Publicação de Pacotes
 
-A propriedade `publish` controla permissões para `npm publish` e `npm unpublish`. Mas, se você quiser ser mais específico, você pode usar a propriedade `unpublish` em sua seção de acesso a pacotes, por exemplo:
+The property `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
 
 ```yalm
 packages:
@@ -170,7 +176,7 @@ packages:
     proxy: npmjs
 ```
 
-No exemplo anterior, o comportamento seria descrito como:
+In the previous example, the behaviour would be described:
 
 * todos os usuários podem publicar o pacote `jquery`, mas somente o usuário `root` poderá cancelar a publicação de qualquer versão.
 * somente usuários autenticados podem publicar pacotes `my-company-*`, mas **ninguém poderá cancelar a publicação deles**.
@@ -189,4 +195,4 @@ You can define mutiple `packages` and each of them must have an unique `Regex`. 
 
 > Salientamos a recomendação de não usar mais **allow_access**/**allow_publish** e **proxy_access**, eles estão obsoletos e serão removidos em breve. Use a versão curta de cada um deles (**access**/**publish**/**proxy**).
 
-Se você quiser mais informações sobre como usar a propriedade **storage**, consulte este [comentário](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).
