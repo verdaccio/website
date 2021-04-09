@@ -9,9 +9,9 @@ A seguinte guía é unha lista das mellores prácticas recollidas e que normalme
 
 ## Rexistro Privado
 
-You can add users and manage which users can access which packages.
+Podes engadir usuarios e xestionar que usuarios poden acceder a que paquetes.
 
-It is recommended that you define a prefix for your private packages, for example `local-*` or scoped `@my-company/*`, so all your private things will look like this: `local-foo`. This way you can clearly separate public packages from private ones.
+Recoméndase que defina un prefixo para os seus paquetes privados, por exemplo `local- *` ou con alcance `@ my-company/*`, polo que todas as súas cousas privadas terán este aspecto: `local-foo`. Deste xeito pode separar claramente os paquetes públicos dos privados.
 
 ```yaml
  packages:
@@ -29,21 +29,21 @@ It is recommended that you define a prefix for your private packages, for exampl
      publish: $authenticated
 ```
 
-Always remember, **the order of packages access is important**, packages are matched always top to bottom.
+Lembre sempre, **a orde de acceso aos paquetes é importante**, os paquetes coinciden sempre de arriba a abaixo.
 
-### Using public packages from npmjs.org
+### Usando paquetes públicos de npmjs.org
 
-If a package doesn't exist in the storage, the server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from the cache pretending that no other packages exist. **Verdaccio will download only what's needed (requested by clients)**, and this information will be cached, so if the client requests the same thing a second time it can be served without asking npmjs.org for it.
+Se non existe un paquete no almacenamento, o servidor tentará buscalo en npmjs.org. Se npmjs.org está desactivado, serve paquetes da caché simulando que non existen outros paquetes. **Verdaccio descargará só o necesario (solicitado polos clientes)** e esta información gardarase na memoria caché, polo que se o cliente solicita o mesmo por segunda vez pódese servir sen pedilo a npmjs.org.
 
-**Example:**
+**Exemplo:**
 
-If you successfully request `express@4.0.1` from the server once, you'll be able to do it again (with all of it's dependencies) any time, even if npmjs.org is down. Though note that `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, the server will say that only `express@4.0.1` (what's in the cache) is published, but nothing else.
+Se solicita con éxito `express@4.0.1` ao servidor unha vez, poderá facelo de novo (con todas as súas dependencias) en calquera momento, aínda que npmjs.org estea inactivo. Aínda que teña en conta que `express@4.0.0` non se descargará ata que alguén o precise. E se npmjs.org está fóra de liña, o servidor dirá que só se publica `express@4.0.1` (o que hai na caché), pero nada máis.
 
-### Override public packages
+### Anular os paquetes públicos
 
-If you want to use a modified version of some public package `foo`, you can just publish it to your local server, so when your type `npm install foo`, **it'll consider installing your version**.
+Se desexa usar unha versión modificada dalgún paquete público `foo`, só pode publicala no seu servidor local, polo que cando o seu tipo `npm instale foo`, **Consideraremos instalar a súa versión **.
 
-There's two options here:
+Aquí hai dúas opcións:
 
 1. You want to create a separate **fork** and stop synchronizing with public version.
     
