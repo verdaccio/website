@@ -132,8 +132,11 @@ npm ERR! A complete <span class="hljs-built_in">log</span> of this run can be fo
 npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 </code></pre>
 <p>O le sayipada awọn ihuwasi to ti wa tẹlẹ nipa lilo ifasẹsi ohun elo to yatọ. <code>verdaccio</code> kan ma n sayẹwo boya olumulo naa ti o gbiyanju lati wọle si tabi ṣagbejade pato akopọ kan jẹ ara ẹgbẹ ti o yẹ.</p>
+<p>Please note that if you set the <code>access</code> permission of a package to something that requires Verdaccio to check your identity, for example <code>$authenticated</code>, npm does not send your access key by default when fetching packages. This means all requests for downloading packages will be rejected as they are made anonymously even if you have logged in. To make npm include you access key with all requests, you should set the <a href="https://docs.npmjs.com/cli/v7/using-npm/config#always-auth">always-auth</a> npm setting to true on any client machines. This can be accomplished by running:</p>
+<pre><code class="hljs css language-bash">$ npm config <span class="hljs-built_in">set</span> always-auth=<span class="hljs-literal">true</span>
+</code></pre>
 <h4><a class="anchor" aria-hidden="true" id="seto-awọn-akopọ-ọlọpọ"></a><a href="#seto-awọn-akopọ-ọlọpọ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Seto awọn akopọ ọlọpọ</h4>
-<p>Ṣiṣagbekalẹ awọn ẹgbẹ ọlọpọ iwọle jẹ irọrun, kan ṣagbekalẹ wọn pẹlu alafo funfun kan laarin wọn.</p>
+<p>Defining multiple access groups is fairly easy, just define them with a white space between them.</p>
 <pre><code class="hljs css language-yaml">  <span class="hljs-string">'company-*'</span><span class="hljs-string">:</span>
     <span class="hljs-attr">access:</span> <span class="hljs-string">admin</span> <span class="hljs-string">internal</span>
     <span class="hljs-attr">publish:</span> <span class="hljs-string">admin</span>
@@ -144,7 +147,7 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
     <span class="hljs-attr">proxy:</span> <span class="hljs-string">server1</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="didena-wiwọle-si-iṣeto-ti-awọn-akojọ"></a><a href="#didena-wiwọle-si-iṣeto-ti-awọn-akojọ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Didena wiwọle si iṣeto ti awọn akojọ</h4>
-<p>Ti o ba fẹ lati dènà wiwọle/atẹjade si pato ẹgbẹ ti awọn akojọ kan. Sa ma ṣeto <code>access</code> ati <code>publish</code>.</p>
+<p>If you want to block the access/publish to a specific group of packages. Just do not define <code>access</code> and <code>publish</code>.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
   <span class="hljs-string">'old-*'</span><span class="hljs-string">:</span>
   <span class="hljs-string">'**'</span><span class="hljs-string">:</span>
@@ -152,8 +155,8 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
     <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="didena-ṣiṣe-aṣoju-ikọkọ-ti-eto-pato-awọn-akojọ-kan"></a><a href="#didena-ṣiṣe-aṣoju-ikọkọ-ti-eto-pato-awọn-akojọ-kan" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Didena ṣiṣe aṣoju ikọkọ ti eto pato awọn akojọ kan</h4>
-<p>O le fẹ dènà ọkan tabi ọpọlọpọ awọn akojọ lati sawari lati awọn ibi ipamọ latọna jijin., sugbọn, ni bakanna, fayegba awọn ẹlomiran lati wọle si awọn orisirisi <em>uplinks</em>.</p>
-<p>Jẹ ki a wo apẹẹrẹ wọnyii:</p>
+<p>You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different <em>uplinks</em>.</p>
+<p>Let's see the following example:</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-attr">packages:</span>
   <span class="hljs-attr">'jquery':</span>
     <span class="hljs-attr">access:</span> <span class="hljs-string">$all</span>
@@ -169,14 +172,14 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
     <span class="hljs-attr">publish:</span> <span class="hljs-string">$authenticated</span>
     <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span>
 </code></pre>
-<p>Jẹ ki a ṣe apejuwe ohun ti a fẹ pẹlu apẹẹrẹ oke yii:</p>
+<p>Let's describe what we want with the above example:</p>
 <ul>
 <li>Mo fẹ lati gbalejo igbarale <code>jquery</code> ti ara mi ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ rẹ.</li>
 <li>Mo fẹ ki gbogbo awọn igbarale ti o ni ibaamu pẹlu <code>my-company-*</code> ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ qọn.</li>
 <li>Mo fẹ ki gbogbo awọn igbarale ti o wa ni iwoye <code>my-local-scope</code> scope ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ wọn.</li>
 <li>Mo fẹ ki ṣe aṣoju ikọkọ wa fun gbogbo awọn igbarale yoku.</li>
 </ul>
-<p>Lọ <strong>mọ pe aṣẹ ti awọn itumọ awọn akopọ rẹ jẹ pataki ati ki o ma lo wildcard nigbagbogbo</strong>. Nitori ti o ko ba se afikun rẹ <code>verdaccio</code> yoo se afikun rẹ fun ẹ atipe o ma kan ọna ti awọn igbarale rẹ jẹ yiyanju si.</p>
+<p>Be <strong>aware that the order of your packages definitions is important and always use double wilcard</strong>. Because if you do not include it <code>verdaccio</code> will include it for you and the way that your dependencies are resolved will be affected.</p>
 <h4><a class="anchor" aria-hidden="true" id="use-multiple-uplinks"></a><a href="#use-multiple-uplinks" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Use multiple uplinks</h4>
 <p>You may assign multiple uplinks for use as a proxy to use in the case of failover, or where there may be other private registries in use.</p>
 <pre><code class="hljs css language-yaml"><span class="hljs-string">'**'</span><span class="hljs-string">:</span>
@@ -185,7 +188,7 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
   <span class="hljs-attr">proxy:</span> <span class="hljs-string">npmjs</span> <span class="hljs-string">uplink2</span>
 </code></pre>
 <h4><a class="anchor" aria-hidden="true" id="ṣiṣe-aitẹjade-awọn-akopọ"></a><a href="#ṣiṣe-aitẹjade-awọn-akopọ" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Ṣiṣe aitẹjade Awọn akopọ</h4>
-<p>Ohun ini <code>publish</code> naa n mojuto awọn igbanilaaye fun <code>npm publish</code> ati <code>npm unpublish</code>. Ṣugbọn, ti o ba fẹ lati wa ni pato, o le lo ohun ini <code>unpublish</code> naa ni abala iwọle akopọ rẹ, fun apẹẹrẹ:</p>
+<p>The property <code>publish</code> handle permissions for <code>npm publish</code> and <code>npm unpublish</code>. But, if you want to be more specific, you can use the property <code>unpublish</code> in your package access section, for instance:</p>
 <pre><code class="hljs css language-yalm">packages:
   <span class="hljs-string">'jquery'</span>:
     access: <span class="hljs-symbol">$</span><span class="hljs-keyword">all</span>
@@ -204,14 +207,14 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
     publish: <span class="hljs-symbol">$</span>authenticated
     proxy: npmjs
 </code></pre>
-<p>Ninu apẹẹrẹ titẹlẹ, ihuwasi naa yoo jẹ jijuwe:</p>
+<p>In the previous example, the behaviour would be described:</p>
 <ul>
 <li>gbogbo awọn olumulo le ṣe atẹjade akopọ <code>jquery</code>, ṣugbọn olumulo <code>root</code> nikan ni yoo ni anfani lati ṣe aitẹjade eyikeyi ti ẹya.</li>
 <li>awọn olumulo to ni ifasẹsi nikan ni o le ṣe atẹjade awọn akopọ <code>my-company-*</code>, sugbọn ** ko si aaye fun ẹnikẹni lati aitẹjade wọn**.</li>
 <li>Ti <code>unpublish</code> ba ti jẹ sisọ jade, iwọle naa yoo jẹ fifọwọsi tabi kikọ nipasẹ agbekalẹ <code>publish</code> naa.</li>
 </ul>
 <h3><a class="anchor" aria-hidden="true" id="iṣeto"></a><a href="#iṣeto" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Iṣeto</h3>
-<p>O le ṣe asọye ọpọ <code>packages</code> atipe ikọọkan ninu wọn gbọdọ ni <code>Regex</code> to dayatọ. Sintasi naa da lori <a href="https://github.com/isaacs/minimatch">minimatch glob expressions</a>.</p>
+<p>You can define mutiple <code>packages</code> and each of them must have an unique <code>Regex</code>. The syntax is based on <a href="https://github.com/isaacs/minimatch">minimatch glob expressions</a>.</p>
 <table>
 <thead>
 <tr><th>Ohun ini</th><th>Iru</th><th>Ti o nilo</th><th>Apẹẹrẹ</th><th>Atilẹyin</th><th>Apejuwe</th></tr>
@@ -226,7 +229,7 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 <blockquote>
 <p>A ṣafihan pe a ṣe igbaniyanju lati ma se lo <strong>allow_access</strong>/<strong>allow_publish</strong> ati <strong>proxy_access</strong> rara mọ, adinku ti ba iwulo wọn atipe wọn ma jẹ yiyọ kuro laipẹ, jọwọ lo ẹya kukuru ti ọkọọkan wọn (<strong>access</strong>/<strong>publish</strong>/<strong>proxy</strong>).</p>
 </blockquote>
-<p>Ti o ba fẹ alaye siwaju sii nipa bi o ṣe le lo ohun ini <strong>ibi ipamọ</strong>, jọwọ lọ si <a href="https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674">ọrọ iwoye</a> yii.</p>
+<p>If you want more information about how to use the <strong>storage</strong> property, please refer to this <a href="https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674">comment</a>.</p>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/yo-NG/uplinks"><span class="arrow-prev">← </span><span>Uplinks</span></a><a class="docs-next button" href="/docs/yo-NG/authentication"><span>Ifasẹsi</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/logo/symbol/svg/verdaccio-blackwhite.svg" alt="Verdaccio" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/yo-NG/what-is-verdaccio.html">Getting Started</a><a href="/docs/yo-NG/docker.html">Docker</a><a href="/docs/yo-NG/configuration.html">Configuration</a><a href="/docs/yo-NG/logo">Logos</a></div><div><h5>Community</h5><a href="/yo-NG/users.html">User Showcase</a><a href="https://stackoverflow.com/search?q=verdaccio" target="_blank">Stack Overflow</a><a href="http://chat.verdaccio.org" target="_blank">Project Chat</a><a href="https://twitter.com/verdaccio_npm" target="_blank"><img alt="Follow Verdaccio on Twitter" src="https://img.shields.io/twitter/follow/verdaccio_npm.svg?label=Follow+Verdaccio&amp;style=social"/></a></div><div><h5>More</h5><a href="https://medium.com/verdaccio" target="_blank">Blog</a><a href="https://github.com/verdaccio" target="_blank">GitHub</a><a class="github-button" href="https://github.com/verdaccio/verdaccio" data-icon="octicon-star" data-count-href="/verdaccio/verdaccio/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script><script>
                 document.addEventListener('keyup', function(e) {
                   if (e.target !== document.body) {
