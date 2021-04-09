@@ -17,6 +17,8 @@ Verdaccio es una aplicación multi plataforma. Para instalarlo, necesitas unos r
 
 > Verdaccio soporta las ultimas versiones de Node.js de acuerdo a las recomendaciones del[Node.js Release Working Group](https://github.com/nodejs/Release).
 
+Are you still using **Verdaccio 4**?. Check the [migration guide](https://verdaccio.org/blog/2021/04/14/verdaccio-5-migration-guide).
+
 ### Introducción rapida
 
 Learn the basics before getting started, how to install, where is the location of the configuration file and more. <iframe width="560" height="315" src="https://www.youtube.com/embed/P_hxy7W-IL4?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen mark="crwd-mark"></iframe> 
@@ -25,21 +27,21 @@ Learn the basics before getting started, how to install, where is the location o
 
 > Before using Verdaccio in production, please read and be [aware of the best practices](best-practices.md).
 
-`Verdaccio` debe instalarse globalmente o usando los siguientes metodos:
+`Verdaccio` must be installed globally using either of the following methods:
 
-Usando `npm`
+Using `npm`
 
 ```bash
 npm install -g verdaccio
 ```
 
-o usando `yarn`
+or using `yarn`
 
 ```bash
 yarn global add verdaccio
 ```
 
-o usando `pnpm`
+or using `pnpm`
 
 ```bash
 pnpm install -g verdaccio
