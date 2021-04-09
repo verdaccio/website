@@ -77,9 +77,15 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 
 È possibile modificare la condotta esistente utilizzando un plugin di autenticazione differente. `verdaccio` verifica semplicemente che l'utente che ha provato ad accedere o pubblicare un pacchetto specifico appartenga al gruppo corretto.
 
+Please note that if you set the `access` permission of a package to something that requires Verdaccio to check your identity, for example `$authenticated`, npm does not send your access key by default when fetching packages. This means all requests for downloading packages will be rejected as they are made anonymously even if you have logged in. To make npm include you access key with all requests, you should set the [always-auth](https://docs.npmjs.com/cli/v7/using-npm/config#always-auth) npm setting to true on any client machines. This can be accomplished by running:
+
+```bash
+$ npm config set always-auth=true
+```
+
 #### Definire gruppi multipli
 
-Definire gruppi di accesso multipli è abbastanza facile, è sufficiente distinguerli semplicemente con uno spazio bianco tra di essi.
+Defining multiple access groups is fairly easy, just define them with a white space between them.
 
 ```yaml
   'company-*':
@@ -94,7 +100,7 @@ Definire gruppi di accesso multipli è abbastanza facile, è sufficiente disting
 
 #### Bloccare l'accesso a gruppi di pacchetti
 
-Se si desidera bloccare l'accesso/pubblicazione ad uno specifico gruppo di pacchetti. È sufficiente non definire `access` e `publish`.
+If you want to block the access/publish to a specific group of packages. Just do not define `access` and `publish`.
 
 ```yaml
 packages:
@@ -106,9 +112,9 @@ packages:
 
 #### Bloccare l'inoltro di un gruppo di pacchetti specifici
 
-Si potrebbe voler impedire che uno o vari pacchetti vengano raggiunti dai registri remoti, ma allo stesso tempo, permettere ad altri l'accesso a differenti *uplink*.
+You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
 
-Vediamo l'esempio seguente:
+Let's see the following example:
 
 ```yaml
 packages:
@@ -127,14 +133,14 @@ packages:
     proxy: npmjs
 ```
 
-Descriviamo quello che si desidera con l'esempio precedente:
+Let's describe what we want with the above example:
 
 * Desidero ospitare la mia dipendenza `jquery` ma ho necessità di evitare il suo inoltro.
 * Desidero tutte le dipendenze che coincidano con `my-company-*` ma ho necessità di evitare di inoltrarle.
 * Desidero tutte le dipendenze che si trovino nell'ambito `my-local-scope` ma ho necessità di evitare di inoltrarle.
 * Desidero l'inoltro per tutte le dipendenze rimanenti.
 
-**Non dimenticare l'importanza dell'ordine dei pacchetti e di utilizzare sempre il doppio asterisco**. Poiché se non lo si include, `verdaccio` lo includerà per voi e questo inciderà sulla modalità con cui le dipendenze sono risolte.
+Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
 
 #### Use multiple uplinks
 
@@ -149,7 +155,7 @@ You may assign multiple uplinks for use as a proxy to use in the case of failove
 
 #### Rimozione di Pacchetti Pubblicati
 
-La proprietà `publish` gestisce le autorizzazioni per `npm publish` e `npm unpublish`. Tuttavia, se si vuole essere più specifici, è possibile utilizzare la proprietà `unpublish` nella sezione di accesso ai pacchetti, per esempio:
+The property `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
 
 ```yalm
 packages:
@@ -171,7 +177,7 @@ packages:
     proxy: npmjs
 ```
 
-Nell'esempio precedente, il comportamento verrebbe descritto così:
+In the previous example, the behaviour would be described:
 
 * tutti gli utenti possono pubblicare il pacchetto `jquery`, tuttavia solo l'utente `root` potrebbe annullare la pubblicazione di ogni versione.
 * solo gli utenti autenticati possono pubblicare i pacchetti `my-company-*`, tuttavia **nessuno sarebbe autorizzato ad annullare la loro pubblicazione**.
@@ -179,7 +185,7 @@ Nell'esempio precedente, il comportamento verrebbe descritto così:
 
 ### Configurazione
 
-Si possono definire `pacchetti` multipli ed ognuno di essi deve avere un `Regex` unico. La sintassi è basata su [ espressioni minimatch glob](https://github.com/isaacs/minimatch).
+You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
 | Proprietà     | Tipo    | Richiesto | Esempio        | Supporto       | Descrizione                                                                                      |
 | ------------- | ------- | --------- | -------------- | -------------- | ------------------------------------------------------------------------------------------------ |

@@ -77,9 +77,15 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 
 O le sayipada awọn ihuwasi to ti wa tẹlẹ nipa lilo ifasẹsi ohun elo to yatọ. `verdaccio` kan ma n sayẹwo boya olumulo naa ti o gbiyanju lati wọle si tabi ṣagbejade pato akopọ kan jẹ ara ẹgbẹ ti o yẹ.
 
+Please note that if you set the `access` permission of a package to something that requires Verdaccio to check your identity, for example `$authenticated`, npm does not send your access key by default when fetching packages. This means all requests for downloading packages will be rejected as they are made anonymously even if you have logged in. To make npm include you access key with all requests, you should set the [always-auth](https://docs.npmjs.com/cli/v7/using-npm/config#always-auth) npm setting to true on any client machines. This can be accomplished by running:
+
+```bash
+$ npm config set always-auth=true
+```
+
 #### Seto awọn akopọ ọlọpọ
 
-Ṣiṣagbekalẹ awọn ẹgbẹ ọlọpọ iwọle jẹ irọrun, kan ṣagbekalẹ wọn pẹlu alafo funfun kan laarin wọn.
+Defining multiple access groups is fairly easy, just define them with a white space between them.
 
 ```yaml
   'company-*':
@@ -94,7 +100,7 @@ O le sayipada awọn ihuwasi to ti wa tẹlẹ nipa lilo ifasẹsi ohun elo to y
 
 #### Didena wiwọle si iṣeto ti awọn akojọ
 
-Ti o ba fẹ lati dènà wiwọle/atẹjade si pato ẹgbẹ ti awọn akojọ kan. Sa ma ṣeto `access` ati `publish`.
+If you want to block the access/publish to a specific group of packages. Just do not define `access` and `publish`.
 
 ```yaml
 packages:
@@ -106,9 +112,9 @@ packages:
 
 #### Didena ṣiṣe aṣoju ikọkọ ti eto pato awọn akojọ kan
 
-O le fẹ dènà ọkan tabi ọpọlọpọ awọn akojọ lati sawari lati awọn ibi ipamọ latọna jijin., sugbọn, ni bakanna, fayegba awọn ẹlomiran lati wọle si awọn orisirisi *uplinks*.
+You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
 
-Jẹ ki a wo apẹẹrẹ wọnyii:
+Let's see the following example:
 
 ```yaml
 packages:
@@ -127,14 +133,14 @@ packages:
     proxy: npmjs
 ```
 
-Jẹ ki a ṣe apejuwe ohun ti a fẹ pẹlu apẹẹrẹ oke yii:
+Let's describe what we want with the above example:
 
 * Mo fẹ lati gbalejo igbarale `jquery` ti ara mi ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ rẹ.
 * Mo fẹ ki gbogbo awọn igbarale ti o ni ibaamu pẹlu `my-company-*` ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ qọn.
 * Mo fẹ ki gbogbo awọn igbarale ti o wa ni iwoye `my-local-scope` scope ṣugbọn mo nilo lati yago fun ṣiṣe aṣoju ikọkọ wọn.
 * Mo fẹ ki ṣe aṣoju ikọkọ wa fun gbogbo awọn igbarale yoku.
 
-Lọ **mọ pe aṣẹ ti awọn itumọ awọn akopọ rẹ jẹ pataki ati ki o ma lo wildcard nigbagbogbo**. Nitori ti o ko ba se afikun rẹ `verdaccio` yoo se afikun rẹ fun ẹ atipe o ma kan ọna ti awọn igbarale rẹ jẹ yiyanju si.
+Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
 
 #### Use multiple uplinks
 
@@ -149,7 +155,7 @@ You may assign multiple uplinks for use as a proxy to use in the case of failove
 
 #### Ṣiṣe aitẹjade Awọn akopọ
 
-Ohun ini `publish` naa n mojuto awọn igbanilaaye fun `npm publish` ati `npm unpublish`. Ṣugbọn, ti o ba fẹ lati wa ni pato, o le lo ohun ini `unpublish` naa ni abala iwọle akopọ rẹ, fun apẹẹrẹ:
+The property `publish` handle permissions for `npm publish` and `npm unpublish`. But, if you want to be more specific, you can use the property `unpublish` in your package access section, for instance:
 
 ```yalm
 packages:
@@ -171,7 +177,7 @@ packages:
     proxy: npmjs
 ```
 
-Ninu apẹẹrẹ titẹlẹ, ihuwasi naa yoo jẹ jijuwe:
+In the previous example, the behaviour would be described:
 
 * gbogbo awọn olumulo le ṣe atẹjade akopọ `jquery`, ṣugbọn olumulo `root` nikan ni yoo ni anfani lati ṣe aitẹjade eyikeyi ti ẹya.
 * awọn olumulo to ni ifasẹsi nikan ni o le ṣe atẹjade awọn akopọ `my-company-*`, sugbọn ** ko si aaye fun ẹnikẹni lati aitẹjade wọn**.
@@ -179,7 +185,7 @@ Ninu apẹẹrẹ titẹlẹ, ihuwasi naa yoo jẹ jijuwe:
 
 ### Iṣeto
 
-O le ṣe asọye ọpọ `packages` atipe ikọọkan ninu wọn gbọdọ ni `Regex` to dayatọ. Sintasi naa da lori [minimatch glob expressions](https://github.com/isaacs/minimatch).
+You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
 | Ohun ini    | Iru  | Ti o nilo | Apẹẹrẹ         | Atilẹyin         | Apejuwe                                                           |
 | ----------- | ---- | --------- | -------------- | ---------------- | ----------------------------------------------------------------- |
@@ -190,4 +196,4 @@ O le ṣe asọye ọpọ `packages` atipe ikọọkan ninu wọn gbọdọ ni `
 
 > A ṣafihan pe a ṣe igbaniyanju lati ma se lo **allow_access**/**allow_publish** ati **proxy_access** rara mọ, adinku ti ba iwulo wọn atipe wọn ma jẹ yiyọ kuro laipẹ, jọwọ lo ẹya kukuru ti ọkọọkan wọn (**access**/**publish**/**proxy**).
 
-Ti o ba fẹ alaye siwaju sii nipa bi o ṣe le lo ohun ini **ibi ipamọ**, jọwọ lọ si [ọrọ iwoye](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674) yii.
+If you want more information about how to use the **storage** property, please refer to this [comment](https://github.com/verdaccio/verdaccio/issues/1383#issuecomment-509933674).

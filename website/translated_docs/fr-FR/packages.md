@@ -77,9 +77,15 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 
 Vous pouvez changer le comportement existant en utilisant un autre plugin d'authentification. `verdaccio` vérifie simplement si l'utilisateur qui a tenté d'accéder ou de publier un paquet spécifique appartient au groupe approprié.
 
+Please note that if you set the `access` permission of a package to something that requires Verdaccio to check your identity, for example `$authenticated`, npm does not send your access key by default when fetching packages. This means all requests for downloading packages will be rejected as they are made anonymously even if you have logged in. To make npm include you access key with all requests, you should set the [always-auth](https://docs.npmjs.com/cli/v7/using-npm/config#always-auth) npm setting to true on any client machines. This can be accomplished by running:
+
+```bash
+$ npm config set always-auth=true
+```
+
 #### Définir plusieurs groupes
 
-Il est facile de définir plusieurs groupes d’accès, définissez-les juste avec un espace blanc entre eux.
+Defining multiple access groups is fairly easy, just define them with a white space between them.
 
 ```yaml
   'company-*':
@@ -106,9 +112,9 @@ packages:
 
 #### Bloquer la transmission d'un groupe de paquets spécifiques
 
-Vous voudrez peut-être empêcher les registres distants d’atteindre un ou plusieurs paquets tout en autorisant les autres à accéder à différentes *uplinks*.
+You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
 
-Voyons l’exemple suivant:
+Let's see the following example:
 
 ```yaml
 packages:
@@ -127,14 +133,14 @@ packages:
     proxy: npmjs
 ```
 
-Décrivons ce que nous voulons avec l'exemple ci-dessus:
+Let's describe what we want with the above example:
 
 * Je souhaite héberger ma propre dépendance `jquery` mais je dois éviter de la transférer.
 * Je veux toutes les dépendances qui coïncident avec <`my-company - *` mais je dois éviter de les transférer.
 * Je veux toutes les dépendances qui se trouvent dans la portée `my-local-scope`, mais je dois éviter de les transférer.
 * Je veux transférer toutes les dépendances restantes.
 
-**N'oubliez pas l'importance de la commande de colis et utilisez toujours le double astérisque**. Parce que si vous ne l'incluez pas, `verdaccio` l'inclura à votre place et cela affectera la manière dont vos dépendances seront résolues.
+Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
 
 #### Use multiple uplinks
 
@@ -179,7 +185,7 @@ In the previous example, the behaviour would be described:
 
 ### Configuration
 
-Vous pouvez définir mutiple `packages` et chacun d’eux doit avoir un unique `Regex`. La syntaxe est basée sur [minimatch glob expressions](https://github.com/isaacs/minimatch).
+You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
 | Propriété | Type                 | Obligatoire | Exemple        | Soutien        | Description                                                               |
 | --------- | -------------------- | ----------- | -------------- | -------------- | ------------------------------------------------------------------------- |

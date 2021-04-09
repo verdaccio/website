@@ -20,14 +20,14 @@ uplinks:
   npmjs:
     url: https://registry.npmjs.org/
 packages:
-  '@*/*':
+  "@*/*":
     access: $all
     publish: $authenticated
     proxy: npmjs
-  '**':
+  "**":
     proxy: npmjs
 logs:
-  - {type: stdout, format: pretty, level: http}
+  - { type: stdout, format: pretty, level: http }
 ```
 
 ## Разделы
@@ -125,7 +125,7 @@ This section allows you to control how packages are accessed. For more informati
 
 ```yaml
 packages:
-  '@*/*':
+  "@*/*":
     access: $all
     publish: $authenticated
     proxy: npmjs
@@ -146,11 +146,13 @@ publish:
 
 ### URL префикс
 
+The prefix is intended to be used when the server runs behinds the proxy, check the **reverse proxy setup** page for more details.
+
 ```yaml
 url_prefix: /verdaccio/
 ```
 
-> Мы рекомендуем использовать подпапку `/verdaccio/` вместо URI.
+> Verdaccio 5 has an improved prefix behaviour, [check here details](https://verdaccio.org/blog/2021/04/14/verdaccio-5-migration-guide#url_prefix-improved-behavior).
 
 ### Максимальный размер сообщения
 
@@ -176,18 +178,18 @@ listen:
 
 ### HTTPS
 
-Чтобы включить `https` в `verdaccio`, достаточно добавить протокол *https://* в секции `listen`. For more information about this section read the [SSL page](ssl.md).
+To enable `https` in `verdaccio` it's enough to set the `listen` flag with the protocol *https://*. For more information about this section read the [SSL page](ssl.md).
 
 ```yaml
 https:
-    key: ./path/verdaccio-key.pem
-    cert: ./path/verdaccio-cert.pem
-    ca: ./path/verdaccio-csr.pem
+  key: ./path/verdaccio-key.pem
+  cert: ./path/verdaccio-cert.pem
+  ca: ./path/verdaccio-csr.pem
 ```
 
 ### Прокси
 
-Прокси - это специализированные HTTP-сервера, предназначенные для передачи данных от удаленных серверов к локальным клиентам.
+Proxies are special-purpose HTTP servers designed to transfer data from remote servers to local clients.
 
 #### http_proxy и https_proxy
 
@@ -213,7 +215,7 @@ Enabling notifications to third-party tools is fairly easy via webhooks. For mor
 ```yaml
 notify:
   method: POST
-  headers: [{'Content-Type': 'application/json'}]
+  headers: [{ "Content-Type": "application/json" }]
   endpoint: https://usagge.hipchat.com/v2/room/3729485/notification?auth_token=mySecretToken
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
@@ -222,9 +224,9 @@ notify:
 
 ### Аудит
 
-<small>С версии: <code>verdaccio@3.0.0</code></small>
+<small>Since: <code>verdaccio@3.0.0</code></small>
 
-`npm audit` - это новая команда, появившаяся в [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio включает в себя middleware-плагин для обеспечения работоспособности ээтой команды.
+`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes a built-in middleware plugin to handle this command.
 
 > Если вы сделали новую установку, у вас это будет по умолчанию, в противном случае нужно добавить эти настройки самому в конфигурационный файл
 

@@ -20,14 +20,14 @@ uplinks:
   npmjs:
     url: https://registry.npmjs.org/
 packages:
-  '@*/*':
+  "@*/*":
     access: $all
     publish: $authenticated
     proxy: npmjs
-  '**':
+  "**":
     proxy: npmjs
 logs:
-  - {type: stdout, format: pretty, level: http}
+  - { type: stdout, format: pretty, level: http }
 ```
 
 ## Sections
@@ -125,7 +125,7 @@ This section allows you to control how packages are accessed. For more informati
 
 ```yaml
 packages:
-  '@*/*':
+  "@*/*":
     access: $all
     publish: $authenticated
     proxy: npmjs
@@ -146,11 +146,13 @@ publish:
 
 ### URL Prefix
 
+The prefix is intended to be used when the server runs behinds the proxy, check the **reverse proxy setup** page for more details.
+
 ```yaml
 url_prefix: /verdaccio/
 ```
 
-> We recommend use a subdirectory `/verdaccio/` instead a URI.
+> Verdaccio 5 has an improved prefix behaviour, [check here details](https://verdaccio.org/blog/2021/04/14/verdaccio-5-migration-guide#url_prefix-improved-behavior).
 
 ### Max Body Size
 
@@ -180,9 +182,9 @@ To enable `https` in `verdaccio` it's enough to set the `listen` flag with the p
 
 ```yaml
 https:
-    key: ./path/verdaccio-key.pem
-    cert: ./path/verdaccio-cert.pem
-    ca: ./path/verdaccio-csr.pem
+  key: ./path/verdaccio-key.pem
+  cert: ./path/verdaccio-cert.pem
+  ca: ./path/verdaccio-csr.pem
 ```
 
 ### Proxy
@@ -213,7 +215,7 @@ Enabling notifications to third-party tools is fairly easy via webhooks. For mor
 ```yaml
 notify:
   method: POST
-  headers: [{'Content-Type': 'application/json'}]
+  headers: [{ "Content-Type": "application/json" }]
   endpoint: https://usagge.hipchat.com/v2/room/3729485/notification?auth_token=mySecretToken
   content: '{"color":"green","message":"New package published: * {{ name }}*","notify":true,"message_format":"text"}'
 ```
