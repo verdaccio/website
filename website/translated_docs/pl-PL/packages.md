@@ -76,9 +76,15 @@ npm ERR! Kompletny dziennik tego przebiegu można znaleźć w: npm ERR!     /Use
 
 Możesz zmienić istniejące zachowanie, korzystając z innego uwierzytelniania wtyczki. `verdaccio` po prostu sprawdza, czy użytkownik, który próbował uzyskać dostęp lub opublikował konkretny pakiet, należy do właściwej grupy.
 
+Please note that if you set the `access` permission of a package to something that requires Verdaccio to check your identity, for example `$authenticated`, npm does not send your access key by default when fetching packages. This means all requests for downloading packages will be rejected as they are made anonymously even if you have logged in. To make npm include you access key with all requests, you should set the [always-auth](https://docs.npmjs.com/cli/v7/using-npm/config#always-auth) npm setting to true on any client machines. This can be accomplished by running:
+
+```bash
+$ npm config set always-auth=true
+```
+
 #### Ustaw wiele grup
 
-Definiowanie wielu grup dostępu jest dość łatwe, wystarczy je zdefiniować z białymi znakami między nimi.
+Defining multiple access groups is fairly easy, just define them with a white space between them.
 
 ```yaml
   'company-*':
@@ -105,9 +111,9 @@ packages:
 
 #### Blokowanie proxy dla zestawu określonych pakietów
 
-Możesz zablokować jeden lub kilka pakietów z pobierania ze zdalnych repozytoriów, ale jednocześnie umożliwić innym dostęp do różnych *uplinks*.
+You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
 
-Zobaczmy następujący przykład:
+Let's see the following example:
 
 ```yaml
 packages:
@@ -126,7 +132,7 @@ packages:
     proxy: npmjs
 ```
 
-Opiszmy, czego chcemy w powyższym przykładzie:
+Let's describe what we want with the above example:
 
 * Chcę hostować własną `jquery` zależność, ale muszę unikać proxy.
 * I want all dependencies that match with `my-company-*` but I need to avoid proxying them.
