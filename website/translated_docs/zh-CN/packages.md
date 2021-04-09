@@ -77,9 +77,15 @@ npm ERR!     /Users/user/.npm/_logs/2017-07-02T12_20_14_834Z-debug.log
 
 你可以使用不同的插件认证来更改现有行为。 `verdaccio`只是检查试图访问或发布特定包的用户是否属于正确的组。
 
+Please note that if you set the `access` permission of a package to something that requires Verdaccio to check your identity, for example `$authenticated`, npm does not send your access key by default when fetching packages. This means all requests for downloading packages will be rejected as they are made anonymously even if you have logged in. To make npm include you access key with all requests, you should set the [always-auth](https://docs.npmjs.com/cli/v7/using-npm/config#always-auth) npm setting to true on any client machines. This can be accomplished by running:
+
+```bash
+$ npm config set always-auth=true
+```
+
 #### 设置多个组
 
-定义多个访问组非常简单，只需要在它们之间加入一个空格。
+Defining multiple access groups is fairly easy, just define them with a white space between them.
 
 ```yaml
   'company-*':
@@ -106,9 +112,9 @@ packages:
 
 #### 阻止代理一组特定包
 
-你可能想要阻止一个或多个包从远程库获取数据，但在同时，允许其他包访问不同的*uplinks*。
+You might want to block one or several packages from fetching from remote repositories., but, at the same time, allow others to access different *uplinks*.
 
-请看如下示例：
+Let's see the following example:
 
 ```yaml
 packages:
@@ -127,14 +133,14 @@ packages:
     proxy: npmjs
 ```
 
-让我们描述一下在上面的示例中我们想要做什么：
+Let's describe what we want with the above example:
 
 * 我想要自己的服务器上放置`jquery`依赖库但需要避免代理它。
 * 我想要所有和`my-company-*`匹配的依赖库但我需要避免代理它们。
 * 我想要在`my-local-scope`范围内的所有依赖库但我需要避免代理它们。
 * 我想要代理所有剩余的依赖库。
 
-**注意库定义的顺序很重要同时必须使用双通配符**。 因为如果你没有包含它，`verdaccio`会帮你来包含它，这样你的依赖库解析会受到影响。
+Be **aware that the order of your packages definitions is important and always use double wilcard**. Because if you do not include it `verdaccio` will include it for you and the way that your dependencies are resolved will be affected.
 
 #### Use multiple uplinks
 
