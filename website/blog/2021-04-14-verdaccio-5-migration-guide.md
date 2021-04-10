@@ -151,7 +151,7 @@ url_prefix: '/second_prefix'
 
 ![Screenshot from 2021-03-24 20-20-11](https://user-images.githubusercontent.com/558752/112371003-5fa1ce00-8cde-11eb-888c-70c4e9776c57.png)
 
-## Custom favicon
+## Custom favicon, the new `web.favicon` property
 
 The _favicon_ can be set either as url or absolute path in your system.
 
@@ -160,7 +160,7 @@ The _favicon_ can be set either as url or absolute path in your system.
 ```
 web:
   title: Verdaccio
-  logo: /home/user/favicon.ico
+  favicon: /home/user/favicon.ico
 ```
 
 Ensure the same user that runs the server also has permissions to access the resource you define here.
@@ -170,7 +170,7 @@ Ensure the same user that runs the server also has permissions to access the res
 ```
 web:
   title: Verdaccio
-  logo: https://somedomain.org/favicon.ico
+  favicon: https://somedomain.org/favicon.ico
 ```
 
 If the logo is not defined, will fetch (and bundled in) the custom verdaccio favicon
