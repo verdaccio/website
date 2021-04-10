@@ -11,12 +11,13 @@ Verdaccio has a web user interface to display only the private packages and can 
 web:
   enable: true
   title: Verdaccio
-  logo: logo.png
+  logo: http://somedomain/somelogo.png
   primary_color: "#4b5e40"
   gravatar: true | false
   scope: "@scope"
   sort_packages: asc | desc
   darkMode: false
+  favicon: http://somedomain/favicon.ico | /path/favicon.ico
 ```
 
 Tutte le restrizioni di accesso definite per [proteggere i pacchetti](protect-your-dependencies.md) si applicano anche all'interfaccia Web.
@@ -48,6 +49,7 @@ i18n:
 | primary_color | stringa            | No        | "#4b5e40"                                                     | `>4`       | Il colore primario da utilizzare in tutta la IU (intestazione, ecc.)                                                                                             |
 | scope         | stringa            | No        | @myscope                                                      | `>v3.x`    | Se si utilizza questo registro per uno specifico module scope, definire tale scope per impostarlo nell'intestazione delle istruzioni dell'interfaccia web utente |
 | darkMode      | variabile booleana | No        | false                                                         | `>=v4.6.0` | This mode is an special theme for those want to live in the dark side                                                                                            |
+| favicon       | stringa            | No        | false                                                         | `>=v5.0.1` | Display a custom favicon, can be local resource or valid url                                                                                                     |
 
 > The recommended logo size is `40x40` pixels.
 > 

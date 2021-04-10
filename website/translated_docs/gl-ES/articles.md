@@ -1,9 +1,9 @@
 ---
-id: articles
-title: "Articles"
+id: artigos
+title: "Artigos"
 ---
 
-Below is a list of articles about Verdaccio. If you have written a blog post or tutorial that mentions Verdaccio, feel free to add it here!
+Abaixo amósase unha lista de artigos sobre Verdaccio. If you have written a blog post or tutorial that mentions Verdaccio, feel free to add it here!
 
 > Any language is allowed
 

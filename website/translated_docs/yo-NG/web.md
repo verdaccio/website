@@ -11,12 +11,13 @@ Verdaccio has a web user interface to display only the private packages and can 
 web:
   enable: true
   title: Verdaccio
-  logo: logo.png
+  logo: http://somedomain/somelogo.png
   primary_color: "#4b5e40"
   gravatar: true | false
   scope: "@scope"
   sort_packages: asc | desc
   darkMode: false
+  favicon: http://somedomain/favicon.ico | /path/favicon.ico
 ```
 
 Gbogbo awọn idena wiwọle ti o jẹ siseto[dabobo awọn akopọ rẹ](protect-your-dependencies.md) naa yoo jẹ sisamulo si Intafeesi Ayelujara naa.
@@ -48,6 +49,7 @@ i18n:
 | primary_color | okun       | Rara      | "#4b5e40"                                                     | `>4`       | Awọ akọkọ lati lo jakejado UI naa(akọle, abbl)                                                                   |
 | scope         | okun       | Rara      | @myscope                                                      | `>v3.x`    | Ti o ba n lo iforukọsilẹ yii fun scope modulu kan ni pato, yan scope naa lati ṣeto rẹ ninu akọle itọnisọna webui |
 | darkMode      | boolean    | Rara      | false                                                         | `>=v4.6.0` | This mode is an special theme for those want to live in the dark side                                            |
+| favicon       | okun       | Rara      | false                                                         | `>=v5.0.1` | Display a custom favicon, can be local resource or valid url                                                     |
 
 > The recommended logo size is `40x40` pixels.
 > 
