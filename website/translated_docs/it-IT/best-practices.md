@@ -33,11 +33,11 @@ Always remember, **the order of packages access is important**, packages are mat
 
 ### Utilizzo dei pacchetti pubblici da npmjs.org
 
-If a package doesn't exist in the storage, the server will try to fetch it from npmjs.org. If npmjs.org is down, it serves packages from the cache pretending that no other packages exist. **Verdaccio will download only what's needed (requested by clients)**, and this information will be cached, so if the client requests the same thing a second time it can be served without asking npmjs.org for it.
+Se un pacchetto non esiste nell'archivio, il server proverà a recuperarlo da npmjs.org. Se npmjs.org non risponde, fornirà solo i pacchetti presenti nella cache. **Verdaccio scaricherà solo ciò che è necessario (richiesto dai client)** e questa informazione verrà memorizzata nella cache, così se il client chiederà la stessa cosa una seconda volta, potrà ottenerla senza la necessità di interrogare nuovamente npmjs.org.
 
-**Example:**
+**Esempio:**
 
-If you successfully request `express@4.0.1` from the server once, you'll be able to do it again (with all of it's dependencies) any time, even if npmjs.org is down. Though note that `express@4.0.0` will not be downloaded until it's actually needed by somebody. And if npmjs.org is offline, the server will say that only `express@4.0.1` (what's in the cache) is published, but nothing else.
+Se fai una richiesta per il pacchetto `express@4.0.1` da questo server che va a buon fine una volta, sarà possibile farla un'altra volta (con tutte le sue dipendenze) in ogni momento, anche con npmjs.org non funzionante. Nota bene che `express@4.0.0` non verrà scaricato fino a quando non sarà effettivamente necessario a qualcuno. And if npmjs.org is offline, the server will say that only `express@4.0.1` (what's in the cache) is published, but nothing else.
 
 ### Annullare pacchetti pubblici
 
