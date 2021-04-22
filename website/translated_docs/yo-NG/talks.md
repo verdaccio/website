@@ -13,6 +13,7 @@ A ṣe akojọ awọn ọrọ nipa Verdaccio, ti o ba sọ ọrọ kan tabi ti o
 
 > Ọrọ ikẹhin to jẹ pinpin ma n jẹ fififihan nibi nigbagbogbo. A n ṣe iranlọwọ fun ọ lati pin ohun rẹ pẹlu awujọ.
 
+* [DevSecCon Germany - Protecting my Node.js project of dependency confusion attacks April 2021](https://www.youtube.com/embed/oVCjDWeehAQ)
 * [OpenJS World 2020 - Cover your Projects with a Multi purpose Lightweight Node.js Registry June 2020](https://www.youtube.com/embed/oVCjDWeehAQ)
 * [La Paz Cloud - Desplegando Verdaccio Junio 2020](https://www.youtube.com/watch?v=EWAxCgZQMAY)
 * [Open Source? trivago | Verdaccio (Ayush and Juan) January 2020](https://www.youtube.com/watch?v=A5CWxJC9xzc)
