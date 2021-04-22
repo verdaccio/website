@@ -9,7 +9,7 @@ title: "亚马逊Web服务"
 
 [用于部署此堆栈的CloudFormation 模板](https://github.com/verdaccio/verdaccio/blob/master/contrib/aws/cloudformation-ec2-efs.yaml)
 
-Architecture:
+架构
 
     Clients
      |

@@ -48,6 +48,8 @@ Even if is [supported by Pino.js](https://getpino.io/#/docs/help?id=log-to-diffe
 logs: { type: stdout, format: pretty, level: http }
 ```
 
+> FYI: pino v7 might bring back a good performant multi-streams support, this feature might be restored in the future.
+
 ### Rotating file is not longer supported
 
 Pino.js does not support log rotation, thus if you were using this feature is recommended use an [external tool](https://getpino.io/#/docs/help?id=log-rotation).
