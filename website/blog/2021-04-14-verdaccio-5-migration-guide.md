@@ -205,3 +205,16 @@ web:
   scriptsbodyBefore:
     - '<div id="myId">html before webpack scripts</div>'
 ```
+
+# Troubleshooting
+
+### After upgrade I don't see packages on the UI
+
+This migth be the storage is not being located, if you are using this format in your `config.yaml`
+
+```
+storage: ./storage
+```
+
+Use an absolute path instead, more info [here](https://github.com/verdaccio/verdaccio/issues/2204).
+
