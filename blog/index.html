@@ -228,6 +228,59 @@ might be useful for scenarios like Google Analytics scripts or custom html in an
   <span class="hljs-attr">scriptsbodyBefore:</span>
     <span class="hljs-bullet">-</span> <span class="hljs-string">'&lt;div id="myId"&gt;html before webpack scripts&lt;/div&gt;'</span>
 </code></pre>
+<h2><a class="anchor" aria-hidden="true" id="using-custon-ui-theme"></a><a href="#using-custon-ui-theme" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using custon UI Theme</h2>
+<p>If you have a custom UI plugin for the them you will need to adapt your build to the new requirements.</p>
+<p>The previous version you only need to return a function with a string and the path of the directory.</p>
+<pre><code class="hljs">const path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-keyword">return</span> path.join(__dirname, <span class="hljs-string">'static'</span>);
+};
+</code></pre>
+<p>Since Verdaccio 5 the module must return an object and the <code>index.html</code> is ignored since support dynamic rendering, eg:</p>
+<pre><code class="hljs">  staticPath: '/somePath/node_modules/verdaccio-theme-custom/static',
+  manifest: {
+    'main.js': '-/static/main.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'runtime.js': '-/static/runtime.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'NotFound.js': '-/static/NotFound.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'Provider.js': '-/static/Provider.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'Version.js': '-/static/Version.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'Home.js': '-/static/Home.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'Versions.js': '-/static/Versions.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'UpLinks.js': '-/static/UpLinks.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'Dependencies.js': '-/static/Dependencies.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'Engines.js': '-/static/Engines.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'Dist.js': '-/static/Dist.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'Install.js': '-/static/Install.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'Repository.js': '-/static/Repository.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    'vendors.js': '-/static/vendors.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    '718.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js': '-/static/718.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    '238.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js': '-/static/238.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js',
+    '73.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js': '-/static/73.c21a97b1dbe<span class="hljs-number">8456</span>a9c76.js'
+  },
+  manifestFiles: { js: [ 'runtime.js', 'vendors.js', 'main.js' ] }
+</code></pre>
+<ul>
+<li><code>staticPath</code>: is the same data returned in Verdaccio 4.</li>
+<li><code>manifest</code>: A webpack manifest object.</li>
+<li><code>manifestFiles</code>: A object with one property <code>js</code> and the array (order matters) of the manifest id to be loaded in the template dynamically.</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="manifest-and-webpack"></a><a href="#manifest-and-webpack" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Manifest and Webpack</h4>
+<p>Verdaccio uses the webpack <a href="https://webpack.js.org/concepts/manifest/">manifest</a> object to render the html dynamically, in combination with the <code>manifestFiles</code> the application understand what to render.</p>
+<blockquote>
+<p>Currently only support <code>js</code> but if you also need <code>css</code>, we are open to discuss it and further improvements.</p>
+</blockquote>
+<pre><code class="hljs">const { WebpackManifestPlugin } = <span class="hljs-keyword">require</span>(<span class="hljs-string">'webpack-manifest-plugin'</span>);
+
+  plugins: <span class="hljs-meta">[</span>
+    <span class="hljs-params">...</span>
+    <span class="hljs-literal">new</span> WebpackManifestPlugin({
+      removeKeyHash: <span class="hljs-literal">true</span>,
+    }),
+    <span class="hljs-params">...</span>
+  <span class="hljs-meta">]</span>,
+
+</code></pre>
 <h1><a class="anchor" aria-hidden="true" id="troubleshooting"></a><a href="#troubleshooting" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Troubleshooting</h1>
 <h3><a class="anchor" aria-hidden="true" id="after-upgrade-i-dont-see-packages-on-the-ui"></a><a href="#after-upgrade-i-dont-see-packages-on-the-ui" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>After upgrade I don't see packages on the UI</h3>
 <p>This migth be the storage is not being located, if you are using this format in your <code>config.yaml</code></p>
