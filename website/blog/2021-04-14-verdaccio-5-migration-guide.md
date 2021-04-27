@@ -206,7 +206,7 @@ web:
     - '<div id="myId">html before webpack scripts</div>'
 ```
 
-## Using custon UI Theme
+### UI custom plugins themes
 
 If you have a custom UI plugin for the them you will need to adapt your build to the new requirements.
 
