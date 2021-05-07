@@ -86,7 +86,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 Сейчас вы можете развернуть Verdaccio Helm пакет и указать, с какой конфигурацией его нужно развернуть: use:
 
 ```bash
-helm install npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
+helm install npm --set existingConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
 #### NGINX proxy body-size limit
