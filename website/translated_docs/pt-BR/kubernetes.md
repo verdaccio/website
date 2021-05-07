@@ -86,7 +86,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 Agora você pode lançar a tabela Verdaccio Helm e especificar qual configuração usar:
 
 ```bash
-helm install npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
+helm install npm --set existingConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
 #### NGINX proxy body-size limit
