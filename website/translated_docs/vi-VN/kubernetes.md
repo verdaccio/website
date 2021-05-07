@@ -86,7 +86,7 @@ kubectl create configmap verdaccio-config --from-file ./config.yaml
 Bây giờ bạn có thể cài đặt cấu hình biểu đồ Verdaccio Helm và chỉ định cấu hình nào sẽ sử dụng:
 
 ```bash
-helm install npm --set customConfigMap=verdaccio-config verdaccio/verdaccio
+helm install npm --set existingConfigMap=verdaccio-config verdaccio/verdaccio
 ```
 
 #### NGINX proxy body-size limit
