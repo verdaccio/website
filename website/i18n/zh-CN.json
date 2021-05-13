@@ -129,7 +129,7 @@
         "title": "Talks"
       },
       "test": {
-        "title": "test"
+        "title": "测试"
       },
       "uplinks": {
         "title": "上行链路"
@@ -158,10 +158,10 @@
     },
     "categories": {
       "Introduction": "Introduction",
-      "Features": "Features",
+      "Features": "新特性",
       "Server": "Server",
       "Development": "Development",
-      "DevOps": "DevOps",
+      "DevOps": "运维",
       "Guides": "Guides"
     }
   },
