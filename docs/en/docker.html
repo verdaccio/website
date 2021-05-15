@@ -115,7 +115,10 @@ The above line will pull the latest prebuilt image from dockerhub, if you haven'
   verdaccio/verdaccio
 </code></pre>
 <blockquote>
-<p>if you are running in a server, you might want to add -d to run it in the background</p>
+<p>If you're going to map the <code>conf</code> folder, do not forget to create a <code>config.yaml</code> file into that given folder on the host before you start the container. Otherwise you will get parse errors and the container won't start up. An example configuration file can be obtained here: <a href="https://verdaccio.org/docs/en/configuration#default-configuration">https://verdaccio.org/docs/en/configuration#default-configuration</a></p>
+</blockquote>
+<blockquote>
+<p>If you are running in a server, you might want to add -d to run it in the background</p>
 </blockquote>
 <blockquote>
 <p>Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default,
