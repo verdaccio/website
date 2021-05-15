@@ -61,7 +61,9 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   -v $V_PATH/plugins:/verdaccio/plugins \
   verdaccio/verdaccio
 ```
-> if you are running in a server, you might want to add -d to run it in the background
+> If you're going to map the `conf` folder, do not forget to create a `config.yaml` file into that given folder on the host before you start the container. Otherwise you will get parse errors and the container won't start up. An example configuration file can be obtained here: https://verdaccio.org/docs/en/configuration#default-configuration
+
+> If you are running in a server, you might want to add -d to run it in the background
 
 >Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, 
 you need to make sure the mount directory is assigned to the right user. In above example, you need to run `sudo chown -R 10001:65533 /path/for/verdaccio` otherwise 
