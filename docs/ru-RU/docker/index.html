@@ -114,7 +114,8 @@
   verdaccio/verdaccio
 </code></pre>
 <blockquote>
-<p>if you are running in a server, you might want to add -d to run it in the background</p>
+<p>If you're going to map the <code>conf</code> folder, do not forget to create a <code>config.yaml</code> file into that given folder on the host before you start the container. Otherwise you will get parse errors and the container won't start up. An example configuration file can be obtained here: <a href="https://verdaccio.org/docs/en/configuration#default-configuration">https://verdaccio.org/docs/en/configuration#default-configuration</a></p>
+<p>If you are running in a server, you might want to add -d to run it in the background</p>
 <p>Note: Verdaccio runs as a non-root user (uid=10001) inside the container, if you use bind mount to override default, you need to make sure the mount directory is assigned to the right user. In above example, you need to run <code>sudo chown -R 10001:65533 /path/for/verdaccio</code> otherwise you will get permission errors at runtime. <a href="https://docs.docker.com/storage/volumes/">Use docker volume</a> is recommended over using bind mount.</p>
 </blockquote>
 <p>Verdaccio 4 предоставляет новый набор переменных окружения для модификации прав доступа, порта и http-протокола. Вот полный список:</p>
