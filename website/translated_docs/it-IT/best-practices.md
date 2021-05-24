@@ -43,7 +43,7 @@ Se fai una richiesta per il pacchetto `express@4.0.1` da questo server che va a 
 
 If you want to use a modified version of some public package `foo`, you can just publish it to your local server, so when your type `npm install foo`, **it'll consider installing your version**.
 
-There's two options here:
+Ci sono due opzioni utilizzabili:
 
 1. Desideri creare un **fork** separato e interrompere la sincronizzazione con la versione pubblica.
     
