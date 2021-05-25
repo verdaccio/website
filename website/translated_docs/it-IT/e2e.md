@@ -45,7 +45,7 @@ sh -c "npm-auth-to-token -u test -p test -e test@test.com -r $local_registry"
 sh -c "npm --registry $local_registry publish"
 ```
 
-## Who is using it for E2E?
+## Chi lo sta usando per E2E?
 
 * [create-react-app](https://github.com/facebook/create-react-app/blob/master/CONTRIBUTING.md#contributing-to-e2e-end-to-end-tests) *(+73.5k ⭐️)*
 * [Storybook](https://github.com/storybooks/storybook) *(+44k ⭐️)*
