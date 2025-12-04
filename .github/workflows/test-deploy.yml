@@ -1,11 +1,7 @@
-name: Deploy to GitHub Pages
+name: Test Deploy
 
 on:
-  pull_request:  
-    branches:
-      - master
-    # Review gh actions docs if you want to further define triggers, paths, etc
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+  pull_request: 
 
 jobs:
   build:
