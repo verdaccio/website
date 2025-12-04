@@ -1,11 +1,9 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches:
-      - master
-    # Review gh actions docs if you want to further define triggers, paths, etc
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
+  workflow_dispatch:
+  schedule:
+    - cron: '0 2 * * 0'  # every Sunday at 2am UTC  (10pm EST)
 
 jobs:
   build:
