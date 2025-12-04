@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 22
       - name: Config Docusaurus
         run: |
           git config --global user.email "verdacciobot@users.noreply.github.com"

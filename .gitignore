@@ -1,7 +1,44 @@
+*.log*
 verdaccio-*.tgz
 .DS_Store
 build/
+dist/
+.eslintcache
 node_modules
-package-lock.json
-*.log
+
+### database
+.verdaccio-db.json
+.sinopia-db.json
+
+### test
+test-storage*
+.verdaccio_test_env
+
+# jest
+reports/
+coverage/
+
+## IDE
 .idea/
+
+# Compiled script
+packages/partials
+tsconfig.tsbuildinfo
+
+
+## ui
+packages/plugins/ui-theme/static
+/packages/plugins/ui-theme/src/i18n/download_translations/
+!/packages/plugins/ui-theme/src/i18n/crowdin/ui.json
+/packages/core/**/download_translations/
+
+
+# CI Pnpm cache
+.pnpm-store/
+
+#docs
+website/docs/api/**/*.md
+website/docs/api/**/*.yml
+!website/docs/api/index.md
+packages/**/docs
+

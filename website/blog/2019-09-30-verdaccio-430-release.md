@@ -1,7 +1,5 @@
 ---
-author: Juan Picado
-authorURL: https://twitter.com/jotadeveloper
-authorFBID: 1122901551
+authors: juan_picado
 title: Release 4.3.0
 ---
 
@@ -24,21 +22,21 @@ Thanks for supporting Verdaccio ! 👏👏👏👏.
 
 <!--truncate-->
 
-## Use this version
+## Use this version {#use-this-version}
 
-### Docker
+### Docker {#docker}
 
 ```bash
 docker pull verdaccio/verdaccio:4.3.0
 ```
 
-### npmjs
+### npmjs {#npmjs}
 
 ```bash
 npm install -g verdaccio@4.3.0
 ```
 
-## Experiment Flags
+## Experiment Flags {#experiment-flags}
 
 This release includes a new property named `experiments` that can be placed in the `config.yaml` and is completely optional.
 
@@ -46,17 +44,17 @@ We want to be able to ship new things without affecting production environments.
 
 The features that are under this flag might not be stable or might be removed in future releases.
 
-## New Features
+## New Features {#new-features}
 
-### [Browse web packages by version](https://github.com/verdaccio/verdaccio/issues/1457) by @juanpicado
+### [Browse web packages by version](https://github.com/verdaccio/verdaccio/issues/1457) by @juanpicado {#browse-web-packages-by-version-by-juanpicado}
 
 When you publish a new version of your package, you want to be able to access the previous ones, that's exactly what you can do with this new release.
 
-![verdaccio browse by version](https://nyc3.digitaloceanspaces.com/verdaccio/blog/4.3.0/version_ui_navigation.gif)
+![verdaccio browse by version](https://cdn.verdaccio.dev/verdaccio/blog/4.3.0/version_ui_navigation.gif)
 
 > Note the README always points to the latest release, Verdaccio does not persist the readme on each publish. This might change in the future, file a ticket if you are interested and might be considered if there is enough 👍🏻 votes.
 
-### [npm token command support ](https://github.com/verdaccio/verdaccio/issues/1427) by @juanpicado, @Eomm and @juangabreil.
+### [npm token command support ](https://github.com/verdaccio/verdaccio/issues/1427) by @juanpicado, @Eomm and @juangabreil. {#npm-token-command-support--by-juanpicado-eomm-and-juangabreil}
 
 The command `npm token` is really useful to generate multiple tokens. This release ships some partial support for it and is flagged as **experiment**, to enable it you must do the following in your config file.
 
@@ -65,11 +63,11 @@ experiments:
   token: true
 ```
 
-![npm token list](https://nyc3.digitaloceanspaces.com/verdaccio/blog/4.3.0/token_list.png)
+![npm token list](https://cdn.verdaccio.dev/verdaccio/blog/4.3.0/token_list.png)
 
 You can find further technical information [here](https://github.com/verdaccio/verdaccio/pull/1427).
 
-### Other updates
+### Other updates {#other-updates}
 
 - (Docker) Node.js update to v10.16.3 [#1473](https://github.com/verdaccio/verdaccio/issues/1473) by [@juanpicado](https://github.com/juanpicado)
 - (Logging) Ensure every log file has at least one record [#1414](https://github.com/verdaccio/verdaccio/issues/1414) by [@mlucool](https://github.com/mlucool)
@@ -91,15 +89,15 @@ Verdaccio 3 is still under our **security maintenance state**, thus we just ship
 
 > We update as much as possible without breaking the current implementation, thus storage or htpasswd are not part of this update.
 
-## Use this version
+## Use this version {#use-this-version-1}
 
-### Docker
+### Docker {#docker-1}
 
 ```bash
 docker pull verdaccio/verdaccio:3.13.1
 ```
 
-### npmjs
+### npmjs {#npmjs-1}
 
 ```bash
 npm install -g verdaccio@3.13.1

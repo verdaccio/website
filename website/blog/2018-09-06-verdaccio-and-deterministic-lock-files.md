@@ -1,7 +1,5 @@
 ---
-author: Juan Picado
-authorURL: https://twitter.com/jotadeveloper
-authorFBID: 1122901551
+authors: juan_picado
 title: Verdaccio and deterministic lock files
 ---
 
@@ -15,7 +13,7 @@ This is merely an issue that all package managers have to resolve, nowadays is n
 
 <!--truncate-->
 
-### How does a lock file look like?
+### How does a lock file look like? {#how-does-a-lock-file-look-like}
 
 Lock file looks different based on the package manager you are using, in the case of npm as an example looks like this
 
@@ -29,9 +27,9 @@ Lock file looks different based on the package manager you are using, in the cas
 
 The snippet above is just a small part of this huge file which nobody dares to deal when conflicts arise. However, I just want you to focus on a field called **resolved**.
 
-#### Simple example with Verdaccio as localhost
+#### Simple example with Verdaccio as localhost {#simple-example-with-verdaccio-as-localhost}
 
-Let’s imagine you are using **Verdaccio** and **yarn** for local purposes and your registry configuration points to.
+Let's imagine you are using **Verdaccio** and **yarn** for local purposes and your registry configuration points to.
 
 ```
 yarn config set registry http://localhost:4873/
@@ -49,21 +47,26 @@ math-random@^1.0.1:
  resolved "[http://localhost:4873/math-random/-/math-random-1.0.1.tgz#8b3aac588b8a66e4975e3cdea67f7bb329601fac](http://localhost:4873/math-random/-/math-random-1.0.1.tgz#8b3aac588b8a66e4975e3cdea67f7bb329601fac)"
 ```
 
-Let’s imagine you that might want to change your domain where your registry is hosted and the resolved field still points to the previous location and your package manager won’t be able to resolve the project dependencies anymore.
+Let's imagine you that might want to change your domain where your registry is hosted and the resolved field still points to the previous location and your package manager won't be able to resolve the project dependencies anymore.
 
 **A usual solution is to delete the whole lock file and generate a new one** , but, this is not practical for large teams since will drive you to conflicts between branch hard to solve.
 
-So, _How can I use a private registry avoiding the_ _resolved field issue?_. All clients handle this issue in a different way, let’s see how they do it.
+So, _How can I use a private registry avoiding the_ _resolved field issue?_. All clients handle this issue in a different way, let's see how they do it.
 
-### How does the resolved field is being used by …?
+### How does the resolved field is being used by ...? {#how-does-the-resolved-field-is-being-used-by-}
 
 ![](https://cdn-images-1.medium.com/max/1024/1*kafHawK1RCt-LDsdGz6iUA.png)
 
 npm uses a JSON as a format for the lock file. The good news is since **npm@5.0.0** [ignores the resolved field](http://blog.npmjs.org/post/161081169345/v500) on package-lock.json file and basically fallback to the one defined in the .npmrc or via --registry argument using the CLI in case is exist, otherwise, it will use the defined in the resolved field.
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Another day, another tweet about <a href="https://twitter.com/hashtag/npm5?src=hash&amp;ref_src=twsrc%5Etfw">#npm5</a> goodies.<br><br>npm is now agnostic about which registry you used to generate the package-lock.json. <a href="https://t.co/bSAgwmbx8o">pic.twitter.com/bSAgwmbx8o</a></p>&mdash; Kat Marchán (@maybekatz) <a href="https://twitter.com/maybekatz/status/862834964932435969?ref_src=twsrc%5Etfw">May 12, 2017</a></blockquote>
+import { Tweet } from "react-twitter-widgets"
 
-Nowadays you can use the npm cli with lock file safely with Verdaccio independently the URL where tarball was served. But, I’d recommend to share a local .npmrc file with the registry set by default locally or notify your team about it.
+<Tweet tweetId="862834964932435969" options={{
+  dnt: true,
+  align: 'center'
+}} />
+
+Nowadays you can use the npm cli with lock file safely with Verdaccio independently the URL where tarball was served. But, I'd recommend to share a local .npmrc file with the registry set by default locally or notify your team about it.
 
 ![](https://cdn-images-1.medium.com/max/1024/1*0pWUcgRyhax5KVJKsnbgkA.png)
 
@@ -109,13 +112,13 @@ specifiers:
 
 The example above is just a small snippet of how this long file looks like and you might observe that there is a field called [registry](https://github.com/pnpm/spec/blob/master/shrinkwrap/3.8.md#registry) added at the bottom of the lock file which [was introduced to reduce the file size of the lock file](https://github.com/pnpm/pnpm/issues/1072), in some scenarios pnpm decides to set [the domain is part of the tarball field](https://github.com/josephschmitt/pnpm-406-npmE).
 
-**pnpm** will try to fetch dependencies using the registry defined within the lockfile as yarn **does**. However, as a workaround, if the domain changes you must update the registry field manually, it’s not hard to do but, is better than nothing.
+**pnpm** will try to fetch dependencies using the registry defined within the lockfile as yarn **does**. However, as a workaround, if the domain changes you must update the registry field manually, it's not hard to do but, is better than nothing.
 
-pnpm has already opened a ticket to drive this issue, I’ll let below the link to it.
+pnpm has already opened a ticket to drive this issue, I'll let below the link to it.
 
 [Remove the "registry" field from "shrinkwrap.yaml" · Issue #1353 · pnpm/pnpm](https://github.com/pnpm/pnpm/issues/1353)
 
-### Scoped Registry Workaround
+### Scoped Registry Workaround {#scoped-registry-workaround}
 
 A common way to route private packages is route scoped dependencies through a different registry. This works on npm and pnpm
 
@@ -126,9 +129,9 @@ registry=[https://registry.npmjs.org](https://registry.npmjs.org/)
 
 > It does exist any support for at the time of this writing.
 
-In my opinion, this is just a workaround, which depends on the number or scopes you handle to decide whether or not worth it. Furthermore, the package manager will bypass those packages that do not match with the scope and won’t be resolved by your private registry.
+In my opinion, this is just a workaround, which depends on the number or scopes you handle to decide whether or not worth it. Furthermore, the package manager will bypass those packages that do not match with the scope and won't be resolved by your private registry.
 
-### Conclusion
+### Conclusion {#conclusion}
 
 **package managers** are working to solve this issues with backward compatibility and with good performance.
 
