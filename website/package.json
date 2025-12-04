@@ -12,8 +12,8 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "netlify:deploy": "npx netlify-cli deploy --dir=./website/build --prod",
-    "netlify:build": "docusaurus write-translations && pnpm -w crowdin:sync && NODE_OPTIONS=--max-old-space-size=8192 docusaurus build",
+    "publish-gh-pages": "docusaurus-publish",
+    "deploy:build": "docusaurus write-translations && pnpm -w crowdin:sync && NODE_OPTIONS=--max-old-space-size=8192 docusaurus build",
     "eslint:check": "eslint src/**/*.tsx",
     "eslint:write": "eslint src/**/*.tsx --fix"
   },
