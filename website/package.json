@@ -12,7 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "publish-gh-pages": "docusaurus-publish",
+    "deploy-gh-pages": "docusaurus deploy",
     "deploy:build": "docusaurus write-translations && pnpm -w crowdin:sync && NODE_OPTIONS=--max-old-space-size=8192 docusaurus build",
     "eslint:check": "eslint src/**/*.tsx",
     "eslint:write": "eslint src/**/*.tsx --fix"

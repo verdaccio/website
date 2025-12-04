@@ -119,7 +119,7 @@
     "contributors": "ts-node ./scripts/contributors-update.ts",
     "ts:ref": "update-ts-references --discardComments --rootConfigName tsconfig.base.json",
     "website": "pnpm --filter ...@verdaccio/website build",
-    "deploy:gh-pages": "pnpm --filter ...@verdaccio/website publish-gh-pages",
+    "deploy:gh-pages": "pnpm --filter ...@verdaccio/website deploy-gh-pages",
     "translations": "local-crowdin-api translations",
     "crowdin:upload": "crowdin upload sources --auto-update --config ./crowdin.yaml --dryrun",
     "crowdin:download": "crowdin download --verbose --config ./crowdin.yaml",
