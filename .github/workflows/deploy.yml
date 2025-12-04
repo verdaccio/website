@@ -1,71 +1,64 @@
-# This is a basic workflow to help you get started with Actions
+name: Deploy to GitHub Pages
 
-name: Deploy CDN
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
 on:
   push:
-    branches: [master]
+    branches:
+      - master
+    # Review gh actions docs if you want to further define triggers, paths, etc
+    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#on
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
+    name: Build Docusaurus
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout Commit
-        uses: actions/checkout@v2.3.4
-      - name: Setup Node
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
         with:
-          node-version: 14
+          node-version-file: '.nvmrc'
+      - name: Config Docusaurus
+        run: |
+          git config --global user.email "verdacciobot@users.noreply.github.com"
+          git config --global user.name "Verdaccio bot for Deployments"
+          echo "machine github.com login verdacciobot password ${{ secrets.BOT_TOKEN }}" > ~/.netrc
       - name: Install pnpm
-        run: sudo npm i -g pnpm
+        run: |
+          npm install --global corepack@latest
+          corepack enable
+          corepack install
       - name: Fetch dependencies
-        run: |
-          cd website
-          pnpm install
-      - name: Build Docusaurus
-        run: |
-          cd website
-          pnpm build
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v2.1.4
-        with:
-          name: build
-          path: website/build/website
-  deploy:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+        run: pnpm install
+      - name: Build Packages
+        run: pnpm build         
+      - name: Build Translations percentage
+        run: pnpm --filter @verdaccio/local-scripts build        
+      - name: Build Production
+        env:
+          CROWDIN_VERDACCIO_API_KEY: ${{ secrets.CROWDIN_VERDACCIO_API_KEY }}
+          CONTEXT: production
+        run: pnpm --filter @verdaccio/website deploy:build             
 
-    # needs build
+      - name: Upload Build Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: website/build
+
+  deploy:
+    name: Deploy to GitHub Pages
     needs: build
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write # to deploy to Pages
+      id-token: write # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
     steps:
-      - name: Download Artifacts
-        uses: actions/download-artifact@v1
-        with:
-          name: build
-      - name: "Uploading..."
-        uses: jakejarvis/s3-sync-action@master
-        with:
-          args: --acl public-read --follow-symlinks --delete
-        env:
-          AWS_S3_ENDPOINT: https://nyc3.digitaloceanspaces.com
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: "nyc3" # optional: defaults to us-east-1
-          SOURCE_DIR: "build" # optional: defaults to entire repository
-          DEST_DIR: "docu-website"
-      - name: Sentry Release Tag.
-        uses: verdaccio/github-actions/webhook@master
-        with:
-          url: ${{ secrets.SENTRY }}
-          release: ${{ github.sha }}
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

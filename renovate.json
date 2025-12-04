@@ -1,0 +1,165 @@
+{
+  "extends": ["config:base", "helpers:pinGitHubActionDigests"],
+  "prConcurrentLimit": 8,
+  "ignorePaths": ["docker-examples/**"],
+  "schedule": ["before 3:00am on the 3 day of the month"],
+  "ignoreDeps": [
+    "customprefix-auth",
+    "eslint-plugin-verdaccio",
+    "@verdaccio/test-helper",
+    "docker/setup-buildx-action",
+    "docker/login-action",
+    "docker/build-push-action",
+    "crazy-max/ghaction-docker-meta",
+    "pnpm",
+    "yarn",
+    "npm",
+    "@yarnpkg/cli-dist"
+  ],
+  "baseBranches": ["master", "6.x"],
+  "semanticCommitType": "fix",
+  "major": true,
+  "labels": ["bot: dependencies"],
+  "packageRules": [
+    {
+      "packageNames": ["actions/*", "github/codeql-action/*"],
+      "groupName": "all actions",
+      "groupSlug": "github-actions",
+      "schedule": ["every 4 month"]
+    },
+    {
+      "packageNames": ["aws-sdk"],
+      "allowedVersions": "2.607.0"
+    },
+    {
+      "packageNames": ["@verdaccio/local-storage"],
+      "allowedVersions": "^10.3.4",
+      "matchBaseBranches": ["7.x"]
+    },
+    {
+      "packageNames": ["@emotion/*"],
+      "matchFileNames": ["./package.json", "./packages/**/package.json"],
+      "matchBaseBranches": ["master"]
+    },
+    {
+      "packageNames": ["got"],
+      "allowedVersions": "^11.8.5"
+    },
+    {
+      "packageNames": ["globby"],
+      "allowedVersions": "^12.2.0"
+    },
+    {
+      "packageNames": ["get-port"],
+      "allowedVersions": "^5.1.1"
+    },
+    {
+      "packageNames": ["@google-cloud/datastore"],
+      "allowedVersions": "4.5.0"
+    },
+    {
+      "packageNames": ["@google-cloud/storage"],
+      "allowedVersions": "3.5.0"
+    },
+    {
+      "packageNames": ["fast-crc32c"],
+      "allowedVersions": "1.0.7"
+    },
+    {
+      "packageNames": ["lowdb"],
+      "allowedVersions": "1.0.0"
+    },
+    {
+      "packageNames": ["node-fetch"],
+      "allowedVersions": "< 3.0.0"
+    },
+    {
+      "matchDatasources": ["docker"],
+      "labels": ["bot: docker-update"]
+    },
+    {
+      "matchDatasources": ["crazy-max/ghaction-docker-meta"],
+      "allowedVersions": "1.12.0"
+    },
+    {
+      "matchDatasources": ["react-router"],
+      "allowedVersions": "5.2.1"
+    },
+    {
+      "matchDatasources": ["react-router-dom"],
+      "allowedVersions": "5.2.1"
+    },
+    {
+      "matchDatasources": ["actions/github-script"],
+      "allowedVersions": "v3"
+    },
+    {
+      "matchDatasources": ["lint-staged"],
+      "allowedVersions": "11.2.6"
+    },
+    {
+      "matchDatasources": ["get-port"],
+      "allowedVersions": "5.1.1"
+    },
+    {
+      "matchPackagePatterns": [
+        "@verdaccio/*",
+        "verdaccio-audit",
+        "verdaccio-htpasswd",
+        "verdaccio-auth-memory",
+        "verdaccio-memory"
+      ],
+      "matchUpdateTypes": ["minor", "patch", "major"],
+      "groupName": "core verdaccio dependencies",
+      "groupSlug": "all-verdaccio",
+      "baseBranchList": ["6.x"]
+    },
+    {
+      "matchPackagePatterns": [
+        "@trivago/*",
+        "prettier",
+        "eslint-*",
+        "eslint",
+        "stylelint",
+        "@typescript-eslint/*"
+      ],
+      "matchUpdateTypes": ["minor", "patch", "major"],
+      "groupName": "all linting dependencies",
+      "groupSlug": "all-linting",
+      "baseBranchList": ["master", "6.x"]
+    },
+    {
+      "matchPackagePatterns": [
+        "webpack",
+        "css-loader",
+        "eslint-loader",
+        "file-loader",
+        "sass-loader",
+        "url-loader",
+        "styles-loader",
+        "source-map-loader",
+        "babel-loader",
+        "webpack-*"
+      ],
+      "matchUpdateTypes": ["minor", "patch", "major"],
+      "groupName": "all build dependencies",
+      "groupSlug": "all-build",
+      "baseBranchList": ["master"]
+    },
+    {
+      "matchPackagePatterns": ["supertest", "nock"],
+      "matchUpdateTypes": ["minor", "patch", "major"],
+      "groupName": "all test dependencies",
+      "groupSlug": "all-test",
+      "baseBranchList": ["master", "6.x"]
+    },
+    {
+      "matchPackagePatterns": ["@type/*", "typescript"],
+      "matchUpdateTypes": ["minor", "patch", "major"],
+      "groupName": "typescript dependencies",
+      "groupSlug": "all-types",
+      "baseBranchList": ["master", "6.x"]
+    }
+  ],
+  "pinVersions": false
+}
