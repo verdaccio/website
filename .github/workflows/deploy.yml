@@ -59,8 +59,6 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      # - name: Deploy to GitHub Pages
-      #   id: deployment
-      #   uses: actions/deploy-pages@v4
       - name: Deploy to GitHub Pages
-        run: 'echo hello world'
+        id: deployment
+        uses: actions/deploy-pages@v4
