@@ -26,6 +26,8 @@ jobs:
           npm install --global corepack@latest
           corepack enable
           corepack install
+      - name: Fetch dependencies
+        run: pnpm install          
       - name: Build Translations percentage
         run: pnpm --filter @verdaccio/local-scripts build        
       - name: Build Production
