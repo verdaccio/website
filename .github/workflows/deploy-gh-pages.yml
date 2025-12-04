@@ -49,6 +49,6 @@ jobs:
           CROWDIN_VERDACCIO_API_KEY: ${{ secrets.CROWDIN_VERDACCIO_API_KEY }}
           CONTEXT: production
         run: pnpm --filter @verdaccio/website deploy:build        
-      # - name: Deploying to GitHub Pages
-      #   run: |
-      #     GIT_USER=verdacciobot USE_SSH=false pnpm --filter @verdaccio/website deploy:gh-pages
+      - name: Deploying to GitHub Pages
+        run: |
+          GIT_USER=verdacciobot USE_SSH=false pnpm --filter @verdaccio/website deploy:gh-pages
