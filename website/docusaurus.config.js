@@ -98,7 +98,7 @@ module.exports = {
   projectName: 'verdaccio.github.io',
   url: 'https://verdaccio.github.io/',
   trailingSlash: false,
-  baseUrl: '/',
+  baseUrl: '/website',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   onBrokenAnchors: 'warn',
