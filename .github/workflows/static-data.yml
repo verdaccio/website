@@ -24,10 +24,15 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-      - name: Install dependencies with a custom registry
-        uses: ./.github/actions/install-app
-        with:
-          reporter: 'default'
+      - name: Install pnpm
+        run: |
+          npm install --global corepack@latest
+          corepack enable
+          corepack install
+      - name: Fetch dependencies
+        run: pnpm install
+      - name: Build Packages
+        run: pnpm build     
       - name: Build package
         run: pnpm --filter @verdaccio/local-scripts run build
       - name: Get npmjs downloads
