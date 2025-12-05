@@ -45,6 +45,7 @@
     "p-cancelable": "4.0.1",
     "react": "18.3.1",
     "react-dom": "18.3.1",
+    "ts-node": "10.9.2",
     "react-iframe": "1.8.5",
     "chart.js": "4.5.0",
     "react-chartjs-2": "5.3.0",
