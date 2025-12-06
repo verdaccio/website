@@ -35,16 +35,16 @@ jobs:
         run: pnpm build     
       - name: Build package
         run: pnpm --filter @verdaccio/local-scripts run build
-      - name: Get npmjs downloads
-        run: pnpm --filter @verdaccio/local-scripts run downloads:npmjs
-      - name: Get docker downloads
-        run: pnpm --filter @verdaccio/local-scripts run pull:docker
-      - name: Get npmjs monhtly downloads
-        run: pnpm --filter @verdaccio/local-scripts run downloads:monthly
-      - name: Get npmjs year downloads
-        run: pnpm --filter @verdaccio/local-scripts run downloads:yearly
-      - name: update contributors
-        run: pnpm run contributors
+      # - name: Get npmjs downloads
+      #   run: pnpm --filter @verdaccio/local-scripts run downloads:npmjs
+      # - name: Get docker downloads
+      #   run: pnpm --filter @verdaccio/local-scripts run pull:docker
+      # - name: Get npmjs monhtly downloads
+      #   run: pnpm --filter @verdaccio/local-scripts run downloads:monthly
+      # - name: Get npmjs year downloads
+      #   run: pnpm --filter @verdaccio/local-scripts run downloads:yearly
+      - name: Contributors update
+        run: pnpm --filter @verdaccio/local-scripts run contributors:update
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: update addson data

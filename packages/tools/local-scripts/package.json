@@ -17,6 +17,7 @@
     "downloads:npmjs": "node build/run.js npmjs-api-download",
     "downloads:monthly": "node build/run.js fetch-monthly-data",
     "downloads:yearly": "node build/run.js fetch-yearly-data",
+    "contributors:update": "node build/run.js contributors-update",
     "pull:docker": "node build/run.js docker-pull-api-download"
   },
   "keywords": [],

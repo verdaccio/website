@@ -4,6 +4,7 @@ import { DockerPullCommand } from './api/dockerPullCommand';
 import { NpmjsApiDownloadCommand } from './api/npmjsApiDownloadCommand';
 import { FetchMonthlyDataCommand, FetchYearlyDataCommand } from './api/npmjsApiDownloadPoints';
 import { TranslationsApiCommand } from './api/translationsCommand';
+import { ContributorsUpdateCommand } from './api/contributors';
 
 const [node, app, ...args] = process.argv;
 
@@ -18,6 +19,7 @@ cli.register(NpmjsApiDownloadCommand);
 cli.register(DockerPullCommand);
 cli.register(FetchMonthlyDataCommand);
 cli.register(FetchYearlyDataCommand);
+cli.register(ContributorsUpdateCommand);
 cli.runExit(args, Cli.defaultContext);
 
 process.on('uncaughtException', function (err) {
