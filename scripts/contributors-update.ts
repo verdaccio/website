@@ -27,21 +27,12 @@ const excludedAccounts = [
       allowFork: false,
       allowPrivateRepo: false,
     });
-    const pathContributorsFile = path.join(
+    const pathContributorsFile = path.resolve(path.join(
       __dirname,
       '../../../tools/docusaurus-plugin-contributors/src/contributors.json'
-    );
+    ));
     // for the website
-    await fs.writeFile(pathContributorsFile, JSON.stringify(result, null, 4));
-    const contributorsListId = result.contributors.map((contributor: any) => {
-      return { username: contributor?.login, id: contributor.id };
-    });
-    // for the  ui, list of ids to be added on the contributors.
-    const pathContributorsUIFile = path.join(
-      __dirname,
-      '../../../plugins/ui-theme/src/components/Contributors/generated_contributors_list.json'
-    );
-    await fs.writeFile(pathContributorsUIFile, JSON.stringify(contributorsListId, null, 4));
+    await fs.writeFile(pathContributorsFile, JSON.stringify(result, null, 4));    
   } catch (err) {
     // eslint-disable-next-line no-console
     console.error('error on update', err);
