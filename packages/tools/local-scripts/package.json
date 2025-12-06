@@ -23,7 +23,8 @@
   "keywords": [],
   "author": "Juan Picado <juanpicado19@gmail.com>",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
+    "@dianmora/contributors": "5.0.0",
     "@crowdin/crowdin-api-client": "1.46.0",
     "clipanion": "4.0.0-rc.4",
     "got": "11.8.6",
