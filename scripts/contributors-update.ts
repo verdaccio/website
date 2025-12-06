@@ -28,8 +28,8 @@ const excludedAccounts = [
       allowPrivateRepo: false,
     });
     const pathContributorsFile = path.join(
-      __dirname,
-      '../packages/tools/docusaurus-plugin-contributors/src/contributors.json'
+      process.cwd(),
+      './packages/tools/docusaurus-plugin-contributors/src/contributors.json'
     );
     // for the website
     await fs.writeFile(pathContributorsFile, JSON.stringify(result, null, 4));
@@ -38,8 +38,8 @@ const excludedAccounts = [
     });
     // for the  ui, list of ids to be added on the contributors.
     const pathContributorsUIFile = path.join(
-      __dirname,
-      '../packages/plugins/ui-theme/src/components/Contributors/generated_contributors_list.json'
+      process.cwd(),
+      './packages/plugins/ui-theme/src/components/Contributors/generated_contributors_list.json'
     );
     await fs.writeFile(pathContributorsUIFile, JSON.stringify(contributorsListId, null, 4));
   } catch (err) {
