@@ -371,8 +371,8 @@ importers:
         specifier: 5.18.0
         version: 5.18.0(@types/react@18.3.3)(react@18.3.1)
       '@orama/orama':
-        specifier: 1.2.4
-        version: 1.2.4
+        specifier: 1.2.11
+        version: 1.2.11
       '@verdaccio/ui-components':
         specifier: latest
         version: 1.0.0(@emotion/react@11.11.4(@types/react@18.3.3)(react@18.3.1))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.3.3)(react@18.3.1))(@types/react@18.3.3)(react@18.3.1))(@mui/icons-material@5.17.1(@mui/material@5.17.1(@emotion/react@11.11.4(@types/react@18.3.3)(react@18.3.1))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.3.3)(react@18.3.1))(@types/react@18.3.3)(react@18.3.1))(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(@types/react@18.3.3)(react@18.3.1))(@mui/material@5.17.1(@emotion/react@11.11.4(@types/react@18.3.3)(react@18.3.1))(@emotion/styled@11.11.5(@emotion/react@11.11.4(@types/react@18.3.3)(react@18.3.1))(@types/react@18.3.3)(react@18.3.1))(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -2358,8 +2358,8 @@ packages:
     resolution: {integrity: sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg==}
     engines: {node: '>=8.0.0'}
 
-  '@orama/orama@1.2.4':
-    resolution: {integrity: sha512-uErUVnH5tRzixinitpl0Zkn7Vo2b9cH9UpKbYk6FmYaQghx2NH7GY6bcZ1oAZj/Cvty0cE7+b1x2PZbTa80f9g==}
+  '@orama/orama@1.2.11':
+    resolution: {integrity: sha512-0yDcWgxOX0je18Z5dR64r4L3Jzm6bDNIpqM7qSu7H+9qhf6EsnlJbICrjt/oJ+WYnwiog4T0OXduVfLwAX+NVA==}
     engines: {node: '>= 16.0.0'}
 
   '@parcel/watcher-android-arm64@2.5.1':
@@ -11485,7 +11485,7 @@ snapshots:
 
   '@opentelemetry/api@1.9.0': {}
 
-  '@orama/orama@1.2.4': {}
+  '@orama/orama@1.2.11': {}
 
   '@parcel/watcher-android-arm64@2.5.1':
     optional: true
