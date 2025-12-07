@@ -5,8 +5,8 @@
   "main": "./build/index.js",
   "types": "build/index.d.ts",
   "dependencies": {
-    "@docusaurus/types": "2.4.3",
-    "@docusaurus/utils": "2.4.3"
+    "@docusaurus/types": "3.9.2",
+    "@docusaurus/utils": "3.9.2"
   },
   "devDependencies": {
     "react": "18.3.1",
