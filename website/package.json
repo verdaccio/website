@@ -33,7 +33,7 @@
     "@mui/icons-material": "5.17.1",
     "@mui/material": "5.17.1",
     "@mui/styles": "5.18.0",
-    "@orama/orama": "1.2.4",
+    "@orama/orama": "1.2.11",
     "@verdaccio/ui-components": "latest",
     "classnames": "2.5.1",
     "clsx": "2.1.1",
