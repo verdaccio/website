@@ -2,8 +2,7 @@ module.exports = {
   extends: [
     './rules/base.js',
     './rules/prettier.js',
-    './rules/react.js',
-    './rules/vitest.js',
+    './rules/react.js',    
     './rules/cypress.js',
   ],
   env: {
