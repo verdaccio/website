@@ -5,7 +5,7 @@ title: 'yarn'
 
 # yarn {#yarn}
 
-#### Yarn (1.x) {#yarn-1x}
+#### `yarn` classic (1.x) {#yarn-classic-1x}
 
 > Be aware npm configurations are valid on the classic version
 
@@ -26,9 +26,9 @@ npm config set always-auth true
 
 `yarn@1.x` does not send the authorization header on `yarn install` if your packages requires authentication, by enabling `always-auth` will force yarn do it on each request.
 
-#### Yarn Berry (>=2.x) {#yarn-berry-2x}
+#### `yarn` modern (>=2.x) {#yarn-modern-2x}
 
-> Yarn berry does not recognize `--registry` or `.npmrc` file anymore.
+> Yarn modern does not recognize `--registry` or `.npmrc` file anymore.
 
 For defining a registry you must use the `.yarnrc.yml` located in the root of your project or global configuration.
 
@@ -62,3 +62,9 @@ for logging via CLi use:
 ```
 yarn npm login --scope my-company
 ```
+
+## Troubleshooting {#troubleshooting}
+
+### Known issues
+- `yarn npm login` issues, read [verdaccio#1737](https://github.com/verdaccio/verdaccio/issues/1737) or [yarn-berry#1848](https://github.com/yarnpkg/berry/pull/1848).
+- `yarn npm publish` does not send README, read [verdaccio#1905](https://github.com/verdaccio/verdaccio/issues/1905) or [yarn-berry#1702](https://github.com/yarnpkg/berry/issues/1702).

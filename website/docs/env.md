@@ -16,7 +16,7 @@ To change the behavior on runtime on running the image, these are the list of av
 | VERDACCIO_USER_UID  | `10001`          | the user id being used to apply folder permissions |
 | VERDACCIO_PORT      | `4873`           | the verdaccio port                                 |
 | VERDACCIO_PROTOCOL  | `http`           | the default http protocol                          |
-| VERDACCIO_ADDRESS   | `0.0.0.0`        | the default address to listen on                   |
+| VERDACCIO_ADDRESS   | `0.0.0.0`        | the default address to listen on `0.0.0.0`         |
 
 ### VERDACCIO_HANDLE_KILL_SIGNALS {#handle-kill-signals}
 
@@ -62,11 +62,3 @@ By default, the storage is taken from config file, but using this variable allow
 ### VERDACCIO_STORAGE_NAME
 
 The database name for `@verdaccio/local-storage` is by default `.verdaccio-db.json`, but this can be update by using this variable.
-
-### EXPERIMENTAL_VERDACCIO_LOGGER_COLORS {#logger-colors}
-
-Overrides `logs.colors` from the `config.yaml`.
-
-Note that any value that other than `false` will result in `true`.
-
-When both are not provided - the colors are on by default for TTY processes, and off for processes that are not.

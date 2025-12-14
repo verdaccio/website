@@ -32,19 +32,19 @@ Learn the basics before getting started, how to install, where is the location o
 Using `npm`
 
 ```bash
-npm install -g verdaccio@next-7
+npm install -g verdaccio
 ```
 
 or using `yarn@1.x` _classic_,
 
 ```bash
-yarn global add verdaccio@next-7
+yarn global add verdaccio
 ```
 
 or using `pnpm`
 
 ```bash
-pnpm install -g verdaccio@next-7
+pnpm install -g verdaccio
 ```
 
 ![install verdaccio](/img/install_verdaccio.gif)
@@ -58,7 +58,7 @@ $> verdaccio
  info -=- local storage path /Users/user/.local/share/verdaccio/storage/.verdaccio-db.json
  info --- using htpasswd file: /Users/user/.config/verdaccio/htpasswd
  info --- http address http://localhost:4873/
- info --- version: 6.0.0-6-next.48
+ info --- version: 6.0.0
  info --- server started
 ```
 
@@ -103,7 +103,7 @@ If you'd like a broader explanation, don't miss the tutorial created by [thedevl
 ## Docker Image {#docker-image}
 
 ```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:nightly-master
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
 `Verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. For more information about how to install the official image, [read the docker section](docker.md), furthermore you can learn more about combining Docker images in our [docker-examples](https://github.com/verdaccio/verdaccio/tree/master/docker-examples) repository.
@@ -113,5 +113,5 @@ docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:nightly-ma
 ```bash
 $ helm repo add verdaccio https://charts.verdaccio.org
 $ helm repo update
-$ helm install registry --set image.tag=nightly-master verdaccio/verdaccio
+$ helm install registry --set image.tag=6 verdaccio/verdaccio
 ```

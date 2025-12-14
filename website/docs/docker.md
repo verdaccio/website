@@ -17,10 +17,28 @@ docker pull verdaccio/verdaccio
 
 ![alt Docker Pulls Count](https://img.shields.io/docker/pulls/verdaccio/verdaccio?color=f02e65&style=flat-square)
 
-Since version `v2.x` you can pull docker images by [tag](https://hub.docker.com/r/verdaccio/verdaccio/tags/), as follows:
+You can pull Docker images by [tag](https://hub.docker.com/r/verdaccio/verdaccio/tags/) as follows:
 
 ```bash
 docker pull verdaccio/verdaccio:latest
+```
+
+For a major version:
+
+```bash
+docker pull verdaccio/verdaccio:6
+```
+
+For a minor version:
+
+```bash
+docker pull verdaccio/verdaccio:6.2
+```
+
+For a specific (patch) version:
+
+```bash
+docker pull verdaccio/verdaccio:6.2.1
 ```
 
 > If you are interested on a list of tags, [please visit the Docker Hub website](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
@@ -40,7 +58,11 @@ If you have [build an image locally](#build-your-own-docker-image) use `verdacci
 
 You can use `-v` to bind mount `conf`, `storage` and `plugins` to the hosts filesystem (example below).
 
-Note that if you do mount conf like this, that you will first need to supply a copy of config.yaml in that directory; the Docker container will not start properly if this file is missing. You can copy this file initially from https://github.com/verdaccio/verdaccio/blob/5.x/conf/docker.yaml. However, note the security warnings in that file; you will definitely want to lock it down in production.
+> **Note:**  `If you mount the configuration like this, you must first provide a copy of `config.yaml` in that directory ([see here](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v5/plugins/docker-build-install-plugin)).  
+> The Docker container will not start properly if this file is missing.
+> **However, note the security warnings in that file; you will definitely want to lock it down in production.**
+
+You can initially copy this file from [https://github.com/verdaccio/verdaccio/blob/master/packages/config/src/conf/docker.yaml](https://github.com/verdaccio/verdaccio/blob/master/packages/config/src/conf/docker.yaml).
 
 ```bash
 V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
@@ -58,16 +80,9 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 > you will get permission errors at runtime.
 > [Use docker volume](https://docs.docker.com/storage/volumes/) is recommended over using bind mount.
 
-Verdaccio 4 provides a new set of environment variables to modify either permissions, port or http protocol. Here the complete list:
+### Environment variables {#env}
 
-| Property            | default          | Description                                        |
-| ------------------- | ---------------- | -------------------------------------------------- |
-| VERDACCIO_APPDIR    | `/opt/verdaccio` | the docker working directory                       |
-| VERDACCIO_USER_NAME | `verdaccio`      | the system user                                    |
-| VERDACCIO_USER_UID  | `10001`          | the user id being used to apply folder permissions |
-| VERDACCIO_PORT      | `4873`           | the verdaccio port                                 |
-| VERDACCIO_PROTOCOL  | `http`           | the default http protocol                          |
-| VERDACCIO_ADDRESS   | `[::]`           | the default address to listen on                   |
+Verdaccio provides a new set of environment variables to modify either permissions, port or http protocol, see them at [the environment variables page](env.md#docker).
 
 ### SELinux {#selinux}
 
@@ -97,6 +112,17 @@ An alternative solution is to use [z and Z flags](https://docs.docker.com/storag
 
 Plugins can be installed in a separate directory and mounted using Docker or Kubernetes, however make sure you build plugins with native dependencies using the same base image as the Verdaccio Dockerfile.
 
+If you don't have the packages available some registry and you want to try out a local plugin, you can use the folder `/verdaccio/plugins` for it, _verdaccio_ will look at this folder for plugins on startup.
+
+
+### Adding plugins with local plugins a `Dockerfile`
+
+1. Create a base image with multi stage support.
+2. `ADD` the local plugin into the image
+3. Install dependencies, required if your plugin has dependencies, you might need to build in case you need a transpilation step (tsc, babel).
+4. Copying the final folder into the final image and applying permissions so verdaccio can find the folders (verdaccio uses custom user `$VERDACCIO_USER_UID`, read more [here](env.md#docker)).
+
+
 ```docker
 FROM node:lts-alpine as builder
 RUN mkdir -p /verdaccio/plugins \
@@ -110,6 +136,22 @@ COPY --chown=$VERDACCIO_USER_UID:root --from=builder \
 ```
 
 For more information check real plugin examples with Docker in our [source code](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v6/plugins).
+
+
+### Adding plugins without creating a new image
+
+1. Using `docker-compose.yaml` [example below](docker.md#using-docker-compose).
+2. Mapping volumes in docker, verdaccio will look up for plugins at `/verdaccio/plugins` by default.
+
+```
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -p 4873:4873 \
+  -v $V_PATH/conf:/verdaccio/conf \
+  -v $V_PATH/storage:/verdaccio/storage \
+  -v $V_PATH/plugins:/verdaccio/plugins \
+  verdaccio/verdaccio
+```
+
 
 ### Docker and custom port configuration {#docker-and-custom-port-configuration}
 
@@ -199,7 +241,7 @@ docker build -t verdaccio .
 There is also an npm script for building the docker image, so you can also do:
 
 ```bash
-yarn run build:docker
+yarn (or pnpm) run build:docker
 ```
 
 Note: The first build takes some minutes to build because it needs to run `npm install`,

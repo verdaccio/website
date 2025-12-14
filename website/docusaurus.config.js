@@ -320,13 +320,7 @@ module.exports = {
               return `https://crowdin.com/project/verdaccio/${locale}`;
             }
             return `https://github.com/verdaccio/verdaccio/edit/master/website/docs/${docPath}`;
-          },
-          lastVersion: '6.x',
-          versions: {
-            '6.x': {
-              label: `6.x`,
-            },
-          },
+          },                    
         },
         googleAnalytics: {
           trackingID: 'G-PCYM9FYJZT',
