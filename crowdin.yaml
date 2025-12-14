@@ -11,5 +11,3 @@ files:
   - source: /website/docs/**/*
     translation: '/website/i18n/%locale%/docusaurus-plugin-content-docs/current/**/%original_file_name%'
     ignore: [/website/docs/api/**/*]
-  - source: /website/versioned_docs/**/*
-    translation: /website/i18n/%locale%/docusaurus-plugin-content-docs/**/%original_file_name%
