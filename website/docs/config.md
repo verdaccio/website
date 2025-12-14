@@ -68,6 +68,40 @@ The location of the database is based on the `config.yaml` folder location, for 
 
 If the `config.yaml` is located in `/some_local_path/config.yaml`, the database will be created in `/some_local_path/storage/.verdaccio-db`.
 
+:::info
+
+For users who have been using Verdaccio for an extended period and the `.verdaccio-db` file already exist the secret
+may be **64 characters** long. However, for newer installations, the length will be generated as **32 characters** long.
+
+If the secret length is **64 characters** long:
+
+- For users running Verdaccio 5.x on **Node.js 22** or higher, **the application will fail to start** if the secret length **is not** 32 characters long.
+- For users running Verdaccio 5.x on **Node.js 21** or lower, the application will start, but it will display a deprecation warning at the console.
+
+#### How to upgrade the token secret at the storage?
+
+:warning: **If the secret is updated will invalidate all previous generated tokens.**
+
+##### Option 1: Manually
+
+Go to the [storage location](cli.md) and edit manually the secret to be 32 characters long.
+
+##### Option 2: Automatically (since v5.31.0)
+
+The `migrateToSecureLegacySignature` property is used to generate a new secret token if the length is 64 characters.
+
+```
+security:
+  api:
+    migrateToSecureLegacySignature: true
+```
+
+The token will be automatically updated to 32 characters long and the application will start without any issues.
+The property won't have any other effect on the application and could be removed after the secret is updated.
+
+:::
+
+
 _The `.verdaccio-db` file database is only available if user does not use a custom storage_, by default verdaccio uses a tiny database to store private packages the `storage` property is defined in the `config.yaml` file.
 The location might change based on your operating system. [Read the CLI section](cli.md) for more details about the location of files.
 
@@ -119,6 +153,17 @@ the secret token is fetched from the plugin implementation itself. In any case t
 #### Legacy Token Signature
 
 The `legacy` property is used to enable the legacy token signature. **By default is enabled**. The legacy feature only applies to the API, the web UI uses JWT by default.
+
+:::info
+
+In 5.x versions using Node.js 21 or lower, there will see the warning `[DEP0106] DeprecationWarning: crypto.createDecipher is deprecated`. printed in your terminal.
+This warning indicates that Node.js has deprecated a function utilized by the legacy signature.
+
+If verdaccio runs on **Node.js 22** or higher, you will not see this warning since a new modern legacy signature has been implemented.
+
+The **migrateToSecureLegacySignature** property is only available for versions higher than 5.31.0 and is **false** by default.
+
+:::
 
 ```yaml
 security:
@@ -209,6 +254,12 @@ publish:
 
 ### Checking Package Ownership {#check-owner}
 
+:::info
+ 
+ Only available on experimental versions >8.x and higher
+
+:::  
+
 By default, [package access](packages.md) defines who is allowed to publish and unpublish packages. By setting `check_owners` to _true_, only package owners are allowed to make changes to a package. The first owner of a package is the user who published the first version. Further owners can be added or removed using [`npm owner`](https://docs.npmjs.com/cli/v10/commands/npm-owner). You can find the list of current owners using `npm owner list` or by checking the package manifest under `maintainers`.
 
 ```yaml
@@ -217,6 +268,12 @@ publish:
 ```
 
 ### Keep Readmes {#keep-readmes}
+
+:::info
+ 
+ Only available on experimental versions >8.x and higher
+
+:::  
 
 By default, Verdaccio stores only the readme markdown of the latest version for each package. Setting `keep_readmes` to `'tagged'` keeps the readmes of versions with `dist-tags` (for example, `latest`, `next`, and major branches). Using the `'all'` setting will retain the complete history of readme versions. Note that `'all'` can significantly increase the required storage space for packages published to Verdaccio!
 
@@ -371,6 +428,12 @@ notify:
 > For more detailed configuration settings, please [check the source code](https://github.com/verdaccio/verdaccio/tree/master/packages/config/src/conf).
 
 ### Logger {#logger}
+
+:::warning
+
+Since v5.22.0 the logger property is renamed to `logs` but `log` still compatible but displaying a warning
+
+:::
 
 Two logger types are supported, you may chose only one of them:
 

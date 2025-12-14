@@ -24,12 +24,12 @@ module.exports = {
         'who-is-using',
         'best',
         'docker',
+        'env',
         'protect-your-dependencies',
         'e2e',
         'verdaccio-programmatically',
         'security-policy',
         'logo',
-        'third-party',
         {
           type: 'category',
           label: 'Use Cases',
