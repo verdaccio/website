@@ -319,7 +319,7 @@ module.exports = {
             if (locale !== 'en') {
               return `https://crowdin.com/project/verdaccio/${locale}`;
             }
-            return `https://github.com/verdaccio/verdaccio/edit/master/website/docs/${docPath}`;
+            return `https://github.com/verdaccio/website/edit/master/website/docs/${docPath}`;
           },                    
         },
         googleAnalytics: {
