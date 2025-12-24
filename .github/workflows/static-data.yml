@@ -4,7 +4,7 @@ name: static data
 on:
   workflow_dispatch:
 #  pull_request:
-  schedule:
+  # schedule:
     # twice peer week
     # - cron: "0 0 * * 1,4"
   # for now, scheduled, we can enable on push master but not make much sense now
