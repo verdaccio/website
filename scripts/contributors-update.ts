@@ -27,12 +27,11 @@ const excludedAccounts = [
       allowFork: false,
       allowPrivateRepo: false,
     });
-    const pathContributorsFile = path.resolve(path.join(
-      __dirname,
-      '../../../tools/docusaurus-plugin-contributors/src/contributors.json'
-    ));
+    const pathContributorsFile = path.resolve(
+      path.join(__dirname, '../../../tools/docusaurus-plugin-contributors/src/contributors.json')
+    );
     // for the website
-    await fs.writeFile(pathContributorsFile, JSON.stringify(result, null, 4));    
+    await fs.writeFile(pathContributorsFile, JSON.stringify(result, null, 4));
   } catch (err) {
     // eslint-disable-next-line no-console
     console.error('error on update', err);

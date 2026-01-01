@@ -1,5 +1,8 @@
-import { Command } from 'clipanion';
+/* eslint-disable new-cap */
+
+/* eslint-disable no-console */
 import contributors from '@dianmora/contributors';
+import { Command } from 'clipanion';
 import fs from 'fs/promises';
 import path from 'path';
 
@@ -55,7 +58,6 @@ export class ContributorsUpdateCommand extends Command {
         '../packages/plugins/ui-theme/src/components/Contributors/generated_contributors_list.json'
       );
       await fs.writeFile(pathContributorsUIFile, JSON.stringify(contributorsListId, null, 4));
-
     } catch (err) {
       console.error('error on update', err);
       process.exit(1);

@@ -289,7 +289,7 @@ module.exports = {
             {
               label: 'GitHub',
               href: 'https://github.com/verdaccio/verdaccio',
-            },           
+            },
           ],
         },
       ],
@@ -320,7 +320,7 @@ module.exports = {
               return `https://crowdin.com/project/verdaccio/${locale}`;
             }
             return `https://github.com/verdaccio/website/edit/master/website/docs/${docPath}`;
-          },                    
+          },
         },
         googleAnalytics: {
           trackingID: 'G-PCYM9FYJZT',

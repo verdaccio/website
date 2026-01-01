@@ -22,7 +22,7 @@ const UsedBy = (): React.ReactElement => (
           image: useBaseUrl('/img/sponsors/crowdin.svg'),
           url: 'https://crowdin.com',
         },
-       {
+        {
           name: 'jetbrains',
           image: useBaseUrl('/img/sponsors/jetbrains.svg'),
           url: 'https://www.jetbrains.com',

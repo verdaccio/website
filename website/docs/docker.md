@@ -58,7 +58,7 @@ If you have [build an image locally](#build-your-own-docker-image) use `verdacci
 
 You can use `-v` to bind mount `conf`, `storage` and `plugins` to the hosts filesystem (example below).
 
-> **Note:**  `If you mount the configuration like this, you must first provide a copy of `config.yaml` in that directory ([see here](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v5/plugins/docker-build-install-plugin)).  
+> **Note:** `If you mount the configuration like this, you must first provide a copy of `config.yaml` in that directory ([see here](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v5/plugins/docker-build-install-plugin)).  
 > The Docker container will not start properly if this file is missing.
 > **However, note the security warnings in that file; you will definitely want to lock it down in production.**
 
@@ -114,14 +114,12 @@ Plugins can be installed in a separate directory and mounted using Docker or Kub
 
 If you don't have the packages available some registry and you want to try out a local plugin, you can use the folder `/verdaccio/plugins` for it, _verdaccio_ will look at this folder for plugins on startup.
 
-
 ### Adding plugins with local plugins a `Dockerfile`
 
 1. Create a base image with multi stage support.
 2. `ADD` the local plugin into the image
 3. Install dependencies, required if your plugin has dependencies, you might need to build in case you need a transpilation step (tsc, babel).
 4. Copying the final folder into the final image and applying permissions so verdaccio can find the folders (verdaccio uses custom user `$VERDACCIO_USER_UID`, read more [here](env.md#docker)).
-
 
 ```docker
 FROM node:lts-alpine as builder
@@ -137,7 +135,6 @@ COPY --chown=$VERDACCIO_USER_UID:root --from=builder \
 
 For more information check real plugin examples with Docker in our [source code](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v6/plugins).
 
-
 ### Adding plugins without creating a new image
 
 1. Using `docker-compose.yaml` [example below](docker.md#using-docker-compose).
@@ -151,7 +148,6 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   -v $V_PATH/plugins:/verdaccio/plugins \
   verdaccio/verdaccio
 ```
-
 
 ### Docker and custom port configuration {#docker-and-custom-port-configuration}
 

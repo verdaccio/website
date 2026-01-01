@@ -101,7 +101,6 @@ The property won't have any other effect on the application and could be removed
 
 :::
 
-
 _The `.verdaccio-db` file database is only available if user does not use a custom storage_, by default verdaccio uses a tiny database to store private packages the `storage` property is defined in the `config.yaml` file.
 The location might change based on your operating system. [Read the CLI section](cli.md) for more details about the location of files.
 
@@ -255,10 +254,10 @@ publish:
 ### Checking Package Ownership {#check-owner}
 
 :::info
- 
- Only available on experimental versions >8.x and higher
 
-:::  
+Only available on experimental versions >8.x and higher
+
+:::
 
 By default, [package access](packages.md) defines who is allowed to publish and unpublish packages. By setting `check_owners` to _true_, only package owners are allowed to make changes to a package. The first owner of a package is the user who published the first version. Further owners can be added or removed using [`npm owner`](https://docs.npmjs.com/cli/v10/commands/npm-owner). You can find the list of current owners using `npm owner list` or by checking the package manifest under `maintainers`.
 
@@ -270,10 +269,10 @@ publish:
 ### Keep Readmes {#keep-readmes}
 
 :::info
- 
- Only available on experimental versions >8.x and higher
 
-:::  
+Only available on experimental versions >8.x and higher
+
+:::
 
 By default, Verdaccio stores only the readme markdown of the latest version for each package. Setting `keep_readmes` to `'tagged'` keeps the readmes of versions with `dist-tags` (for example, `latest`, `next`, and major branches). Using the `'all'` setting will retain the complete history of readme versions. Note that `'all'` can significantly increase the required storage space for packages published to Verdaccio!
 
