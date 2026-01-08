@@ -118,7 +118,8 @@ a[aria-current='page'] {
 }
 
 html[data-theme='dark'] {
-  .header-github-link:before {
+  .header-github-link:before,
+  .header-bluesky-link:before {
     filter: invert(1);
   }
 
