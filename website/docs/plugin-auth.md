@@ -301,5 +301,7 @@ Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and t
 - [verdaccio-okta-auth](https://github.com/hogarthww-labs/verdaccio-okta-auth) Verdaccio Okta Auth
 - [verdaccio-azure-ad-login](https://github.com/IhToN/verdaccio-azure-ad-login) Let your users authenticate into Verdaccio via Azure AD OAuth 2.0 API
 - [verdaccio-auth-gitlab](https://github.com/pfdgithub/verdaccio-auth-gitlab) Verdaccio authentication plugin by gitlab personal access tokens.
+- [verdaccio-api-token](https://github.com/practical-at/verdaccio-api-token) Authentication plugin for dynamic AuthTokens validated by a custom Endpoint.
+
 
 **Have you developed a new plugin? Add it here !**
