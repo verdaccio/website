@@ -196,10 +196,6 @@ module.exports = {
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          type: 'docsVersionDropdown',
-          position: 'right',
-        },
-        {
           href: 'https://opencollective.com/verdaccio',
           label: 'Sponsor Us',
           position: 'right',
