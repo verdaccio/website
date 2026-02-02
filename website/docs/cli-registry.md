@@ -8,3 +8,5 @@ Setting up a private registry is quite easy on all major Package managers and ca
 - [npm](setup-npm.md)
 - [yarn](setup-yarn.md)
 - [pnpm](setup-pnpm.md)
+- [deno](setup-deno.md)
+- [bun](setup-bun.md)
