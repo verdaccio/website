@@ -31,22 +31,7 @@ const UsedBy = (): React.ReactElement => (
           name: 'algolia',
           image: useBaseUrl('/img/sponsors/algolia.svg'),
           url: 'https://www.algolia.com',
-        },
-        {
-          name: 'SheetJs',
-          image: useBaseUrl('/img/sponsors/sheetjs.png'),
-          url: 'https://sheetjs.com/',
-        },
-        {
-          name: 'GatsbyJs',
-          image: useBaseUrl('/img/sponsors/gatsbysvg.svg'),
-          url: 'https://www.gatsbyjs.com/',
-        },
-        {
-          name: 'pintura',
-          image: useBaseUrl('/img/sponsors/pqina.svg'),
-          url: 'https://pqina.nl/pintura/',
-        },
+        },        
       ].map((sponsor) => (
         <SponsorImage
           key={sponsor.name}
@@ -90,6 +75,11 @@ const UsedBy = (): React.ReactElement => (
           name: 'aurelia',
           image: useBaseUrl('/img/users/aurelia.svg'),
           url: 'https://aurelia.io/',
+        },
+        {
+          name: 'SheetJs',
+          image: useBaseUrl('/img/sponsors/sheetjs.png'),
+          url: 'https://sheetjs.com/',
         },
         {
           name: 'Storybook',

@@ -5,7 +5,6 @@ import React from 'react';
 import Feature from '../components/Features';
 import Header from '../components/Header';
 import PackageManagers from '../components/PackageManagers';
-import Testimonial from '../components/Testimonials';
 import UsedBy from '../components/UsedBy';
 import Wave from '../components/Wave';
 import WhatIsVerdaccio from '../components/WhatIsVerdaccio';
@@ -24,7 +23,6 @@ const Home = (): React.ReactElement => {
         <WhatIsVerdaccio />
         <Feature />
         <PackageManagers />
-        <Testimonial />
       </main>
     </Layout>
   );
