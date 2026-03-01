@@ -9,6 +9,30 @@ The security constraints remain on the shoulders of the plugin being used, by de
 
 For more information about permissions visit [the authentification section in the wiki](auth.md).
 
+### Default {#default}
+
+Using the default configuration, allows all users - including non-authenticated users - to read all packages. All known and authenticated users are allowed to publish/unpublish packages. If a package is not available in Verdaccio, Verdaccio will request it from the NPM registry and store it locally (if it exists). 
+
+```yaml
+packages:
+  '@*/*':
+    access: $all
+    publish: $authenticated
+    unpublish: $authenticated
+    proxy: npmjs
+  '**':
+    access: $all
+    publish: $authenticated
+    unpublish: $authenticated
+    proxy: npmjs
+```
+
+:::info
+The default `htpasswd` auth plugin allows anyone to register! If you want to restrict package access, you will need to either [limit registration](https://www.verdaccio.org/docs/authentication#default-htpasswd) to existing users or use a [different auth plugin](https://www.verdaccio.org/dev/plugins-search).
+
+If the `packages` section is missing in your configuration, users will not be able to access any packages nor will they be allowed to publish or unpublish packages.
+:::
+
 ### Usage {#usage}
 
 ```yaml
@@ -30,15 +54,6 @@ packages:
     access: $all
     publish: $all
     proxy: uplink2
-```
-
-if none is specified, the default one remains
-
-```yaml
-packages:
-  '**':
-    access: $all
-    publish: $authenticated
 ```
 
 The list internal groups handled by `verdaccio` are:
