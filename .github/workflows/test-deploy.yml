@@ -32,4 +32,4 @@ jobs:
         env:
           CROWDIN_VERDACCIO_API_KEY: ${{ secrets.CROWDIN_VERDACCIO_API_KEY }}
           CONTEXT: production
-        run: pnpm --filter @verdaccio/website deploy:build
+        run: pnpm --filter @verdaccio/website deploy:build:test
