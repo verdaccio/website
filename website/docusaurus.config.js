@@ -31,12 +31,6 @@ const ANALYTICS = {
   GA_TRACKING_ID: 'G-PCYM9FYJZT',
 };
 
-const ALGOLIA = {
-  APP_ID: 'B3TG5CBF5H',
-  API_KEY: 'ed054733cb03418e9af25b7beb82c924',
-  INDEX_NAME: 'verdaccio',
-};
-
 // ── i18n ──────────────────────────────────────────────────────────────────────
 
 /** @type {Record<string, string>} Maps Docusaurus locale codes to Crowdin language codes */
@@ -160,6 +154,7 @@ module.exports = {
   },
 
   plugins: [
+    require.resolve('docusaurus-lunr-search'),
     'docusaurus-plugin-sass',
     'docusaurus-plugin-contributors',
     'docusaurus-plugin-downloads',
@@ -180,12 +175,6 @@ module.exports = {
         isCloseable: false,
         backgroundColor: '#1595de',
         textColor: '#ffffff',
-      },
-      algolia: {
-        appId: ALGOLIA.APP_ID,
-        apiKey: ALGOLIA.API_KEY,
-        indexName: ALGOLIA.INDEX_NAME,
-        contextualSearch: true,
       },
       docs: {
         sidebar: {
