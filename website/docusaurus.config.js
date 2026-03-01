@@ -155,7 +155,7 @@ module.exports = {
 
   plugins: [
      [ require.resolve('docusaurus-lunr-search'), {
-      languages: ['en', 'it-IT', 'ga-IE', 'zh-CN']
+      languages: ['en', 'it', 'zh']
     }],
     'docusaurus-plugin-sass',
     'docusaurus-plugin-contributors',
