@@ -43,7 +43,7 @@ const PACKAGE_NAME = 'verdaccio';
 
 const MAX_RETRIES = 3;
 const INITIAL_RETRY_DELAY_MS = 2000;
-const REQUEST_DELAY_MS = 500;
+const REQUEST_DELAY_MS = 3000;
 
 export const getISODateOnly = () => {
   const now = new Date();
@@ -91,14 +91,18 @@ async function fetchDownloadData(
 ): Promise<MonthlyDownloadEntry | null> {
   const startDate = getMonthKey(year, month);
   const endDate = `${year}-${String(month).padStart(2, '0')}-${new Date(year, month, 0).getDate()}`;
-  debug('fetching data for %s to %s', startDate, endDate);
   const url = `${API_URL}/${startDate}:${endDate}/${PACKAGE_NAME}`;
 
   try {
-    return await fetchWithRetry<MonthlyDownloadEntry>(url);
+    const data = await fetchWithRetry<MonthlyDownloadEntry>(url);
+    // eslint-disable-next-line no-console
+    console.info(
+      `  [monthly] fetched ${startDate} -> ${endDate}: ${data.downloads.toLocaleString()} downloads`
+    );
+    return data;
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.error(`Failed to fetch data for ${startDate} to ${endDate}:`, error);
+    console.error(`  [monthly] failed ${startDate} -> ${endDate}:`, error);
     return null;
   }
 }
@@ -109,8 +113,11 @@ export async function fetchMonthlyData() {
   let existing: MonthlyDownloadEntry[] = [];
   try {
     existing = JSON.parse(await fs.readFile(npmjsFile, 'utf8'));
+    // eslint-disable-next-line no-console
+    console.info(`[monthly] Loaded ${existing.length} existing entries`);
   } catch {
-    // file doesn't exist yet, start fresh
+    // eslint-disable-next-line no-console
+    console.info('[monthly] No existing data, starting fresh');
   }
 
   const existingKeys = new Set(existing.map((e) => e.start));
@@ -132,7 +139,6 @@ export async function fetchMonthlyData() {
         continue;
       }
 
-      debug('fetching data for %s %s', year, month);
       if (fetched > 0) await delay(REQUEST_DELAY_MS);
       const data = await fetchDownloadData(year, month);
       if (data) results.push(data);
@@ -143,7 +149,7 @@ export async function fetchMonthlyData() {
   results.sort((a, b) => a.start.localeCompare(b.start));
   await fs.writeFile(npmjsFile, JSON.stringify(results));
   // eslint-disable-next-line no-console
-  console.info(`[monthly] Done: ${fetched} fetched, ${skipped} cached`);
+  console.info(`[monthly] Done: ${fetched} fetched, ${skipped} cached, ${results.length} total`);
 }
 
 export async function fetchYearlyData() {
@@ -159,10 +165,29 @@ export async function fetchYearlyData() {
     return;
   }
 
+  let existingYearly: YearlyDownloadsEntry = {};
+  try {
+    existingYearly = JSON.parse(await fs.readFile(yearlyFile, 'utf8'));
+  } catch {
+    // no existing yearly data
+  }
+
   const results: YearlyDownloadsEntry = {};
   for (const entry of monthlyData) {
     const year = entry.start.slice(0, 4);
     results[year] = (results[year] || 0) + entry.downloads;
+  }
+
+  // Log changes compared to previous data
+  for (const [year, total] of Object.entries(results)) {
+    const prev = existingYearly[year] || 0;
+    const diff = total - prev;
+    if (diff !== 0) {
+      // eslint-disable-next-line no-console
+      console.info(
+        `  [yearly] ${year}: ${total.toLocaleString()} downloads (${diff > 0 ? '+' : ''}${diff.toLocaleString()})`
+      );
+    }
   }
 
   await fs.writeFile(yearlyFile, JSON.stringify(results));
@@ -174,11 +199,13 @@ export async function fetchNpmjsApiDownloadsWeekly() {
   try {
     const npmjsFile = path.join(__dirname, '../../src/npmjs_downloads.json');
     const currentDate = getISODateOnly();
-    debug('current date %s', currentDate);
     const npmjsDownloads: NpmjsDownloadsEntry = JSON.parse(await fs.readFile(npmjsFile, 'utf8'));
+
+    const totalEntries = Object.keys(npmjsDownloads).length;
+
     if (npmjsDownloads[currentDate]) {
       // eslint-disable-next-line no-console
-      console.info('already fetched for today');
+      console.info(`[weekly] Already fetched for ${currentDate} (${totalEntries} total entries)`);
       return;
     }
 
@@ -190,10 +217,12 @@ export async function fetchNpmjsApiDownloadsWeekly() {
 
     await fs.writeFile(npmjsFile, JSON.stringify(npmjsDownloads));
     // eslint-disable-next-line no-console
-    console.info(`[weekly] npmjs downloads saved for ${currentDate}`);
+    console.info(
+      `[weekly] Saved ${currentDate}: ${response.downloads.toLocaleString()} downloads (${totalEntries + 1} total entries)`
+    );
   } catch (err: any) {
     // eslint-disable-next-line no-console
-    console.error(`error on process npmjs downloads run`, err);
+    console.error(`[weekly] Error:`, err);
     process.exit(1);
   }
 }
@@ -201,11 +230,11 @@ export async function fetchNpmjsApiDownloadsWeekly() {
 export async function dockerPullWeekly() {
   try {
     const npmjsFile = path.join(__dirname, '../../src/docker_pull.json');
-    const currentDate = getISODateOnly();
-    debug('current date %s', currentDate);
     const pullCounts: { [date: string]: DockerPullEntry } = JSON.parse(
       await fs.readFile(npmjsFile, 'utf8')
     );
+
+    const existingCount = Object.keys(pullCounts).length;
 
     const response = await fetchWithRetry<{
       repos: {
@@ -220,43 +249,54 @@ export async function dockerPullWeekly() {
     let added = 0;
     currentPulls.forEach(({ end, pullCount, ipCount }) => {
       if (pullCounts[end]) {
-        debug(`docker ${end} already fetched`);
         return;
       }
       pullCounts[end] = { pullCount, ipCount };
+      // eslint-disable-next-line no-console
+      console.info(
+        `  [docker] New: ${end} - ${pullCount.toLocaleString()} pulls, ${ipCount.toLocaleString()} unique IPs`
+      );
       added++;
     });
     await fs.writeFile(npmjsFile, JSON.stringify(pullCounts));
     // eslint-disable-next-line no-console
-    console.info(`[docker] ${added} new entries added`);
+    console.info(
+      `[docker] ${added} new entries added (${existingCount} existing, ${existingCount + added} total)`
+    );
   } catch (err: any) {
     // eslint-disable-next-line no-console
-    console.error(`error on process docker downloads run`, err);
+    console.error(`[docker] Error:`, err);
     process.exit(1);
   }
 }
 
 export async function fetchAllDownloads() {
   // eslint-disable-next-line no-console
-  console.info('[downloads] Starting all download fetches...');
+  console.info('[downloads] Starting all download fetches...\n');
 
-  // Docker + npmjs weekly are single API calls, run first
   // eslint-disable-next-line no-console
-  console.info('[downloads] Fetching npmjs weekly...');
+  console.info('[downloads] 1/4 Fetching npmjs weekly...');
   await fetchNpmjsApiDownloadsWeekly();
+  // eslint-disable-next-line no-console
+  console.info('');
 
   // eslint-disable-next-line no-console
-  console.info('[downloads] Fetching docker pulls...');
+  console.info('[downloads] 2/4 Fetching docker pulls...');
   await dockerPullWeekly();
-
-  // Monthly is incremental (only fetches missing months), then yearly aggregates from it
   // eslint-disable-next-line no-console
-  console.info('[downloads] Fetching monthly downloads...');
+  console.info('');
+
+  // eslint-disable-next-line no-console
+  console.info('[downloads] 3/4 Fetching monthly downloads (incremental)...');
   await fetchMonthlyData();
+  // eslint-disable-next-line no-console
+  console.info('');
 
   // eslint-disable-next-line no-console
-  console.info('[downloads] Aggregating yearly downloads...');
+  console.info('[downloads] 4/4 Aggregating yearly downloads...');
   await fetchYearlyData();
+  // eslint-disable-next-line no-console
+  console.info('');
 
   // eslint-disable-next-line no-console
   console.info('[downloads] All done.');
