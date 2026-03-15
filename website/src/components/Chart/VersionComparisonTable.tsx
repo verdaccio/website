@@ -197,7 +197,7 @@ const VersionComparisonTable: React.FC = () => {
         </table>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+      <div className={styles.splitGrid}>
         <div>
           <h3 style={{ marginBottom: '0.5rem' }}>v5.x Detail</h3>
           <div className={styles.tableWrapper}>

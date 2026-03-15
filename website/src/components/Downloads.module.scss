@@ -43,6 +43,8 @@
   padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.2s ease;
+  overflow: hidden;
+  min-width: 0;
 
   &:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
@@ -50,6 +52,8 @@
 
   canvas {
     max-height: none;
+    width: 100% !important;
+    height: auto !important;
   }
 }
 
@@ -59,22 +63,31 @@
 
 @media only screen and (max-width: 768px) {
   .downloadsPage {
-    padding: 1.5rem 1rem 3rem;
+    padding: 1rem 0.5rem 2rem;
   }
 
-  .header h1 {
-    font-size: 1.8rem;
+  .header {
+    h1 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .sectionTitle {
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.75rem;
   }
 
   .grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .card {
-    padding: 1rem;
-
-    canvas {
-      max-height: none;
-    }
+    padding: 0.75rem;
+    border-radius: 8px;
   }
 }

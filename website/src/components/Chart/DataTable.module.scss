@@ -101,3 +101,29 @@
 .arrow {
   font-size: 0.85rem;
 }
+
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .splitGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .table {
+    font-size: 0.7rem;
+
+    th,
+    td {
+      padding: 0.3rem 0.5rem;
+    }
+  }
+
+  .trendBadge {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+  }
+}
