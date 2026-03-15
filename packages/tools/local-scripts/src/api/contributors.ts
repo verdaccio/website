@@ -42,9 +42,12 @@ export class ContributorsUpdateCommand extends Command {
         allowPrivateRepo: false,
       });
 
+      // __dirname at runtime is build/api/, go up to packages/tools/
+      const toolsDir = path.resolve(__dirname, '../../..');
+
       const pathContributorsFile = path.join(
-        __dirname,
-        '../packages/tools/docusaurus-plugin-contributors/src/contributors.json'
+        toolsDir,
+        'docusaurus-plugin-contributors/src/contributors.json'
       );
       await fs.writeFile(pathContributorsFile, JSON.stringify(result, null, 4));
 
@@ -54,10 +57,14 @@ export class ContributorsUpdateCommand extends Command {
       }));
 
       const pathContributorsUIFile = path.join(
-        __dirname,
-        '../packages/plugins/ui-theme/src/components/Contributors/generated_contributors_list.json'
+        toolsDir,
+        '../../packages/plugins/ui-theme/src/components/Contributors/generated_contributors_list.json'
       );
-      await fs.writeFile(pathContributorsUIFile, JSON.stringify(contributorsListId, null, 4));
+      try {
+        await fs.writeFile(pathContributorsUIFile, JSON.stringify(contributorsListId, null, 4));
+      } catch {
+        console.warn(`[contributors] Skipped UI file (path not found): ${pathContributorsUIFile}`);
+      }
     } catch (err) {
       console.error('error on update', err);
       process.exit(1);
