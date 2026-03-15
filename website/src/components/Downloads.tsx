@@ -2,13 +2,19 @@ import Translate from '@docusaurus/Translate';
 import Layout from '@theme/Layout';
 import React from 'react';
 
+import ActiveVersionsChart from './Chart/ActiveVersionsChart';
+import CumulativeAdoptionChart from './Chart/CumulativeAdoptionChart';
 import DockerPullChart from './Chart/DockerPullChart';
 import DockerTotalPull from './Chart/DockerTotalPull';
+import LatestAdoptionChart from './Chart/LatestAdoptionChart';
 import MajorVersionsStackedChart from './Chart/MajorVersionsStackedChart';
+import MigrationShareChart from './Chart/MigrationShareChart';
 import NpmjsMonthlyDownloadsChart from './Chart/MonhtlyNpmjsDownloadsChart';
 import NpmjsVersionsChart from './Chart/NpmjsVersionsChart';
+import TotalDownloadsHero from './Chart/TotalDownloadsHero';
 import VersionComparisonTable from './Chart/VersionComparisonTable';
 import VersionDownloadsChart from './Chart/VersionDownloadsChart';
+import YearOverYearChart from './Chart/YearOverYearChart';
 import NpmjsYearlyDownloadsChart from './Chart/YearlyNpmjsDownloadsChart';
 import styles from './Downloads.module.scss';
 
@@ -32,6 +38,8 @@ const Downloads: React.FC<{}> = (): React.ReactElement => {
           </p>
         </header>
 
+        <TotalDownloadsHero />
+
         <h2 className={styles.sectionTitle}>
           <Translate>npm Downloads</Translate>
         </h2>
@@ -44,6 +52,9 @@ const Downloads: React.FC<{}> = (): React.ReactElement => {
           </div>
           <div className={`${styles.card} ${styles.cardFullWidth}`}>
             <NpmjsMonthlyDownloadsChart />
+          </div>
+          <div className={`${styles.card} ${styles.cardFullWidth}`}>
+            <YearOverYearChart />
           </div>
           <div className={`${styles.card} ${styles.cardFullWidth}`}>
             <NpmjsVersionsChart majorFilter="v5" />
@@ -62,6 +73,24 @@ const Downloads: React.FC<{}> = (): React.ReactElement => {
           </div>
           <div className={`${styles.card} ${styles.cardFullWidth}`}>
             <NpmjsVersionsChart prerelease />
+          </div>
+        </div>
+
+        <h2 className={styles.sectionTitle}>
+          <Translate>Version Adoption</Translate>
+        </h2>
+        <div className={styles.grid}>
+          <div className={`${styles.card} ${styles.cardFullWidth}`}>
+            <MigrationShareChart />
+          </div>
+          <div className={`${styles.card} ${styles.cardFullWidth}`}>
+            <CumulativeAdoptionChart />
+          </div>
+          <div className={`${styles.card} ${styles.cardFullWidth}`}>
+            <ActiveVersionsChart />
+          </div>
+          <div className={`${styles.card} ${styles.cardFullWidth}`}>
+            <LatestAdoptionChart />
           </div>
         </div>
 
