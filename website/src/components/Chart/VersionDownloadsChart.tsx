@@ -4,6 +4,8 @@ import { Bar } from 'react-chartjs-2';
 
 import { npmjsDownloads } from '@verdaccio/local-scripts';
 
+import DataTable from './DataTable';
+
 ChartJS.register(BarElement, CategoryScale, LinearScale, Title, Tooltip);
 
 // @ts-ignore
@@ -14,17 +16,23 @@ const data = npmjsDownloads[lastDate];
 function reduceDownloads(downloads) {
   const result = {};
   Object.entries(downloads).forEach(([version, count]) => {
-    if (/(alpha|beta|next)/i.test(version)) {
-      return;
-    }
-
     const majorVersion = version.split('.')[0];
-
     result[majorVersion] = (result[majorVersion] || 0) + count;
   });
 
   return result;
 }
+
+const majorColors: Record<string, { bg: string; border: string }> = {
+  '3': { bg: 'rgba(255, 152, 0, 0.7)', border: 'rgba(255, 152, 0, 1)' },
+  '4': { bg: 'rgba(233, 30, 99, 0.7)', border: 'rgba(233, 30, 99, 1)' },
+  '5': { bg: 'rgba(75, 94, 64, 0.7)', border: 'rgba(75, 94, 64, 1)' },
+  '6': { bg: 'rgba(33, 150, 243, 0.7)', border: 'rgba(33, 150, 243, 1)' },
+  '7': { bg: 'rgba(156, 39, 176, 0.7)', border: 'rgba(156, 39, 176, 1)' },
+  '8': { bg: 'rgba(0, 188, 212, 0.7)', border: 'rgba(0, 188, 212, 1)' },
+};
+
+const defaultColor = { bg: 'rgba(158, 158, 158, 0.7)', border: 'rgba(158, 158, 158, 1)' };
 
 const VersionDownloadsChart = () => {
   const processedData = reduceDownloads(data);
@@ -42,62 +50,54 @@ const VersionDownloadsChart = () => {
       {
         label: 'Downloads',
         data: dataPoints,
-        backgroundColor: [
-          'rgba(75, 192, 192, 0.6)',
-          'rgba(54, 162, 235, 0.6)',
-          'rgba(255, 206, 86, 0.6)',
-          'rgba(153, 102, 255, 0.6)',
-          'rgba(255, 99, 132, 0.6)',
-        ],
-        borderColor: [
-          'rgba(75, 192, 192, 1)',
-          'rgba(54, 162, 235, 1)',
-          'rgba(255, 206, 86, 1)',
-          'rgba(153, 102, 255, 1)',
-          'rgba(255, 99, 132, 1)',
-        ],
+        backgroundColor: filteredData.map(([major]) => (majorColors[major] || defaultColor).bg),
+        borderColor: filteredData.map(([major]) => (majorColors[major] || defaultColor).border),
         borderWidth: 1,
+        borderRadius: 4,
       },
     ],
   };
 
   const options = {
     responsive: true,
+    maintainAspectRatio: true,
     plugins: {
       title: {
         display: true,
-        text: `Downloads by Major Version ${lastDate}`,
+        text: `Downloads by Major Version (${lastDate})`,
+        font: { size: 14, weight: 'bold' as const },
+        padding: { bottom: 16 },
       },
       tooltip: {
         callbacks: {
           label: function (context) {
-            const label = context.dataset.label || ''; // General label
-            const value = context.raw; // Tooltip value
-            return `${context.label}: ${value}`; // Format each tooltip item as "vX: Y"
+            const value = context.raw;
+            return `${context.label}: ${Number(value).toLocaleString()}`;
           },
         },
       },
     },
     scales: {
       x: {
-        title: {
-          display: true,
-          text: 'Version',
-        },
+        title: { display: true, text: 'Version' },
+        grid: { display: false },
       },
       y: {
-        title: {
-          display: true,
-          text: 'Downloads',
-        },
+        title: { display: true, text: 'Downloads' },
         beginAtZero: true,
+        ticks: {
+          callback: (value) => Number(value).toLocaleString(),
+        },
       },
     },
   };
 
+  const tableRows = filteredData.map(([version, count]) => [`v${version}`, count as number]);
+
   return (
-    <div style={{ width: '80%', margin: '0 auto' }}>
+    <div>
       <Bar data={chartData} options={options} />
+      <DataTable headers={['Version', 'Downloads']} rows={tableRows} />
     </div>
   );
 };

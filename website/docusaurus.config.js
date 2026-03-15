@@ -221,6 +221,7 @@ module.exports = {
           { to: '/blog', position: 'left', label: 'Blog' },
           { href: '/community', position: 'left', label: 'Community' },
           { href: '/talks', position: 'left', label: 'Video Talks' },
+          { to: '/downloads', position: 'left', label: 'Downloads' },
           { href: SOCIAL.OPEN_COLLECTIVE, position: 'right', label: 'Sponsor Us' },
           {
             type: 'localeDropdown',

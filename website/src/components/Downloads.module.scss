@@ -1,0 +1,80 @@
+.downloadsPage {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 2.5rem 4rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--ifm-heading-color);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: var(--ifm-color-emphasis-600);
+    font-size: 1.1rem;
+    margin: 0;
+  }
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ifm-heading-color);
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--ifm-navbar-background-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  canvas {
+    max-height: none;
+  }
+}
+
+.cardFullWidth {
+  grid-column: 1 / -1;
+}
+
+@media only screen and (max-width: 768px) {
+  .downloadsPage {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .header h1 {
+    font-size: 1.8rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1rem;
+
+    canvas {
+      max-height: none;
+    }
+  }
+}

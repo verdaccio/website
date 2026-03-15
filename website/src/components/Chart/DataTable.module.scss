@@ -1,0 +1,103 @@
+.container {
+  margin-top: 1rem;
+}
+
+.toggle {
+  background: none;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-700);
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--ifm-color-emphasis-100);
+  }
+}
+
+.tableWrapper {
+  margin-top: 0.75rem;
+  max-height: 300px;
+  overflow: auto;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+
+  th,
+  td {
+    padding: 0.4rem 0.75rem;
+    text-align: right;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--ifm-color-emphasis-100);
+  }
+
+  th {
+    position: sticky;
+    top: 0;
+    background: var(--ifm-color-emphasis-100);
+    font-weight: 600;
+    text-align: right;
+    z-index: 1;
+  }
+
+  th:first-child,
+  td:first-child {
+    text-align: left;
+    position: sticky;
+    left: 0;
+    background: var(--ifm-navbar-background-color);
+    z-index: 1;
+  }
+
+  th:first-child {
+    z-index: 2;
+    background: var(--ifm-color-emphasis-100);
+  }
+
+  tr:hover td {
+    background: var(--ifm-color-emphasis-50);
+  }
+}
+
+.trendList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.trendBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.trendUp {
+  background: rgba(76, 175, 80, 0.12);
+  color: #2e7d32;
+}
+
+.trendDown {
+  background: rgba(244, 67, 54, 0.12);
+  color: #c62828;
+}
+
+.trendFlat {
+  background: rgba(158, 158, 158, 0.12);
+  color: #616161;
+}
+
+.arrow {
+  font-size: 0.85rem;
+}
