@@ -3,7 +3,7 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5462,
+      "contributions": 5470,
       "repositories": [
         {
           "name": "verdaccio",
@@ -67,7 +67,7 @@
         },
         {
           "name": "website",
-          "contributions": 526
+          "contributions": 534
         },
         {
           "name": "eslint-plugin-verdaccio",
