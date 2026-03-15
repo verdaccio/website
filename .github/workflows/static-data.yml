@@ -41,8 +41,8 @@ jobs:
         run: pnpm --filter @verdaccio/local-scripts run contributors:update
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: update addon data
-        run: pnpm script:addon
+      # - name: update addon data
+      #   run: pnpm script:addon
       - name: update translations
         run: pnpm run translations
         env:
@@ -55,5 +55,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           message: "chore: updated static data"
           branch: master
-          author_email: verdaccio.npm@gmail.com
-          author_name: verdacciobot
+          # author_email: verdaccio.npm@gmail.com
+          # author_name: verdacciobot
