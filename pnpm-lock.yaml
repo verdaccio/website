@@ -253,6 +253,9 @@ importers:
       chart.js:
         specifier: 4.5.1
         version: 4.5.1
+      chartjs-chart-treemap:
+        specifier: ^3.1.0
+        version: 3.1.0(chart.js@4.5.1)
       classnames:
         specifier: 2.5.1
         version: 2.5.1
@@ -3366,6 +3369,11 @@ packages:
   chart.js@4.5.1:
     resolution: {integrity: sha512-GIjfiT9dbmHRiYi6Nl2yFCq7kkwdkp1W/lp2J99rX0yo9tgJGn3lKQATztIjb5tVtevcBtIdICNWqlq5+E8/Pw==}
     engines: {pnpm: '>=8'}
+
+  chartjs-chart-treemap@3.1.0:
+    resolution: {integrity: sha512-0LJxj4J9sCTHmrXCFlqtoBKMJDcS7VzFeRgNBRZRwU1QSpCXJKTNk5TysPEs5/YW0XYvZoN8u44RqqLf0pAzQw==}
+    peerDependencies:
+      chart.js: '>=3.0.0'
 
   cheerio-select@2.1.0:
     resolution: {integrity: sha512-9v9kG0LvzrlcungtnJtpGNxY+fzECQKhK4EGJX2vByejiMX84MFNQw4UxPJl3bFbTMw+Dfs37XaIkCwTZfLh4g==}
@@ -12239,6 +12247,10 @@ snapshots:
   chart.js@4.5.1:
     dependencies:
       '@kurkle/color': 0.3.4
+
+  chartjs-chart-treemap@3.1.0(chart.js@4.5.1):
+    dependencies:
+      chart.js: 4.5.1
 
   cheerio-select@2.1.0:
     dependencies:

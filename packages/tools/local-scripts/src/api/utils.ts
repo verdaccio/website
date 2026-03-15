@@ -41,6 +41,27 @@ const END_MONTH = new Date().getMonth() + 1;
 const API_URL = 'https://api.npmjs.org/downloads/point';
 const PACKAGE_NAME = 'verdaccio';
 
+const ECOSYSTEM_PACKAGES = [
+  '@verdaccio/auth',
+  '@verdaccio/config',
+  '@verdaccio/core',
+  '@verdaccio/hooks',
+  '@verdaccio/loaders',
+  '@verdaccio/local-storage-legacy',
+  '@verdaccio/logger',
+  '@verdaccio/middleware',
+  '@verdaccio/proxy',
+  '@verdaccio/search-indexer',
+  '@verdaccio/signature',
+  '@verdaccio/streams',
+  '@verdaccio/tarball',
+  '@verdaccio/ui-theme',
+  '@verdaccio/url',
+  '@verdaccio/utils',
+  'verdaccio-auth-memory',
+  'verdaccio-memory',
+];
+
 const MAX_RETRIES = 3;
 const INITIAL_RETRY_DELAY_MS = 2000;
 const REQUEST_DELAY_MS = 3000;
@@ -268,31 +289,94 @@ export async function dockerPullWeekly() {
   }
 }
 
+export interface EcosystemDownloadsEntry {
+  [packageName: string]: { [month: string]: number };
+}
+
+export async function fetchEcosystemDownloads() {
+  const ecosystemFile = path.join(__dirname, '../../src/ecosystem_downloads.json');
+
+  let existing: EcosystemDownloadsEntry = {};
+  try {
+    existing = JSON.parse(await fs.readFile(ecosystemFile, 'utf8'));
+    // eslint-disable-next-line no-console
+    console.info(`[ecosystem] Loaded existing data for ${Object.keys(existing).length} packages`);
+  } catch {
+    // eslint-disable-next-line no-console
+    console.info('[ecosystem] No existing data, starting fresh');
+  }
+
+  for (const pkg of ECOSYSTEM_PACKAGES) {
+    if (!existing[pkg]) {
+      existing[pkg] = {};
+    }
+
+    // Only fetch months we don't have yet + always re-fetch current month
+    for (let year = 2025; year <= END_YEAR; year++) {
+      for (let month = 1; month <= 12; month++) {
+        if (year === END_YEAR && month > END_MONTH) break;
+
+        const key = getMonthKey(year, month);
+        if (existing[pkg][key] !== undefined) {
+          // eslint-disable-next-line no-console
+          console.info(`  [ecosystem] ${pkg} ${key}: skipped (cached)`);
+          continue;
+        }
+
+        const startDate = key;
+        const endDate = `${year}-${String(month).padStart(2, '0')}-${new Date(year, month, 0).getDate()}`;
+        const url = `${API_URL}/${startDate}:${endDate}/${encodeURIComponent(pkg)}`;
+
+        try {
+          await delay(REQUEST_DELAY_MS);
+          const data = await fetchWithRetry<{ downloads: number }>(url);
+          existing[pkg][key] = data.downloads;
+          // eslint-disable-next-line no-console
+          console.info(`  [ecosystem] ${pkg} ${startDate}: ${data.downloads.toLocaleString()}`);
+        } catch (error) {
+          // eslint-disable-next-line no-console
+          console.error(`  [ecosystem] ${pkg} ${startDate}: failed`, error);
+        }
+      }
+    }
+  }
+
+  await fs.writeFile(ecosystemFile, JSON.stringify(existing));
+  // eslint-disable-next-line no-console
+  console.info(`[ecosystem] Done: ${Object.keys(existing).length} packages saved`);
+}
+
 export async function fetchAllDownloads() {
   // eslint-disable-next-line no-console
   console.info('[downloads] Starting all download fetches...\n');
 
   // eslint-disable-next-line no-console
-  console.info('[downloads] 1/4 Fetching npmjs weekly...');
+  console.info('[downloads] 1/5 Fetching npmjs weekly...');
   await fetchNpmjsApiDownloadsWeekly();
   // eslint-disable-next-line no-console
   console.info('');
 
   // eslint-disable-next-line no-console
-  console.info('[downloads] 2/4 Fetching docker pulls...');
+  console.info('[downloads] 2/5 Fetching docker pulls...');
   await dockerPullWeekly();
   // eslint-disable-next-line no-console
   console.info('');
 
   // eslint-disable-next-line no-console
-  console.info('[downloads] 3/4 Fetching monthly downloads (incremental)...');
+  console.info('[downloads] 3/5 Fetching monthly downloads (incremental)...');
   await fetchMonthlyData();
   // eslint-disable-next-line no-console
   console.info('');
 
   // eslint-disable-next-line no-console
-  console.info('[downloads] 4/4 Aggregating yearly downloads...');
+  console.info('[downloads] 4/5 Aggregating yearly downloads...');
   await fetchYearlyData();
+  // eslint-disable-next-line no-console
+  console.info('');
+
+  // eslint-disable-next-line no-console
+  console.info('[downloads] 5/5 Fetching ecosystem package downloads...');
+  await fetchEcosystemDownloads();
   // eslint-disable-next-line no-console
   console.info('');
 
