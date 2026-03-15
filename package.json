@@ -75,7 +75,8 @@
     "translations": "local-crowdin-api translations",
     "crowdin:upload": "crowdin upload sources --auto-update --config ./crowdin.yaml",
     "crowdin:download": "crowdin download --verbose --config ./crowdin.yaml",
-    "crowdin:sync": "pnpm crowdin:upload && pnpm crowdin:download"
+    "crowdin:sync": "pnpm crowdin:upload && pnpm crowdin:download",
+    "script:addon": "ts-node ./scripts/addon-update.ts"
   },
   "license": "MIT",
   "packageManager": "pnpm@10.24.0"

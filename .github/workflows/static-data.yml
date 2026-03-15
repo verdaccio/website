@@ -41,8 +41,8 @@ jobs:
         run: pnpm --filter @verdaccio/local-scripts run contributors:update
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: update addson data
-        run: pnpm script:addson
+      - name: update addon data
+        run: pnpm script:addon
       - name: update translations
         run: pnpm run translations
         env:
