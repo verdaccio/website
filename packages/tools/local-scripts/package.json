@@ -18,7 +18,8 @@
     "downloads:monthly": "node build/run.js fetch-monthly-data",
     "downloads:yearly": "node build/run.js fetch-yearly-data",
     "contributors:update": "node build/run.js contributors-update",
-    "pull:docker": "node build/run.js docker-pull-api-download"
+    "pull:docker": "node build/run.js docker-pull-api-download",
+    "downloads:all": "node build/run.js fetch-all-downloads"
   },
   "keywords": [],
   "author": "Juan Picado <juanpicado19@gmail.com>",

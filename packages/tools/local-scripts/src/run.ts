@@ -2,6 +2,7 @@ import { Cli } from 'clipanion';
 
 import { ContributorsUpdateCommand } from './api/contributors';
 import { DockerPullCommand } from './api/dockerPullCommand';
+import { FetchAllDownloadsCommand } from './api/fetchAllDownloadsCommand';
 import { NpmjsApiDownloadCommand } from './api/npmjsApiDownloadCommand';
 import { FetchMonthlyDataCommand, FetchYearlyDataCommand } from './api/npmjsApiDownloadPoints';
 import { TranslationsApiCommand } from './api/translationsCommand';
@@ -19,6 +20,7 @@ cli.register(NpmjsApiDownloadCommand);
 cli.register(DockerPullCommand);
 cli.register(FetchMonthlyDataCommand);
 cli.register(FetchYearlyDataCommand);
+cli.register(FetchAllDownloadsCommand);
 cli.register(ContributorsUpdateCommand);
 cli.runExit(args, Cli.defaultContext);
 
