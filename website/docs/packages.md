@@ -11,7 +11,7 @@ For more information about permissions visit [the authentification section in th
 
 ### Default {#default}
 
-Using the default configuration, allows all users - including non-authenticated users - to read all packages. All known and authenticated users are allowed to publish/unpublish packages. If a package is not available in Verdaccio, Verdaccio will request it from the NPM registry and store it locally (if it exists). 
+Using the default configuration, allows all users - including non-authenticated users - to read all packages. All known and authenticated users are allowed to publish/unpublish packages. If a package is not available in Verdaccio, Verdaccio will request it from the NPM registry and store it locally (if it exists).
 
 ```yaml
 packages:

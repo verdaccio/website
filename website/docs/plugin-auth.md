@@ -303,5 +303,4 @@ Where `htpasswd` is the sufix of the plugin name. eg: `verdaccio-htpasswd` and t
 - [verdaccio-auth-gitlab](https://github.com/pfdgithub/verdaccio-auth-gitlab) Verdaccio authentication plugin by gitlab personal access tokens.
 - [verdaccio-api-token](https://github.com/practical-at/verdaccio-api-token) Authentication plugin for dynamic AuthTokens validated by a custom Endpoint.
 
-
 **Have you developed a new plugin? Add it here !**

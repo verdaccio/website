@@ -242,9 +242,7 @@ export async function dockerPullWeekly() {
           pulls: { end: string; pullCount: number; ipCount: number }[];
         };
       };
-    }>(
-      'https://hub.docker.com/api/publisher/proxylytics/v1/repos/pulls?repos=verdaccio/verdaccio'
-    );
+    }>('https://hub.docker.com/api/publisher/proxylytics/v1/repos/pulls?repos=verdaccio/verdaccio');
     const currentPulls = response.repos['verdaccio/verdaccio'].pulls;
     let added = 0;
     currentPulls.forEach(({ end, pullCount, ipCount }) => {

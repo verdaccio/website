@@ -126,7 +126,7 @@ module.exports = {
     defaultLocale: 'en',
     locales,
     localeConfigs: {
-      en:      { label: 'English' },
+      en: { label: 'English' },
       'it-IT': { label: localeLabel('Italiano', 'it') },
       'es-ES': { label: localeLabel('Español', 'es-ES') },
       'de-DE': { label: localeLabel('Deutsch', 'de') },
@@ -158,9 +158,36 @@ module.exports = {
     'docusaurus-plugin-sass',
     'docusaurus-plugin-contributors',
     'docusaurus-plugin-downloads',
-    ['content-docs', { id: 'community', path: 'community', routeBasePath: 'community', sidebarPath: require.resolve('./sidebarsCommunity.js'), showLastUpdateTime: true }],
-    ['content-docs', { id: 'dev',       path: 'dev',       routeBasePath: 'dev',       sidebarPath: require.resolve('./sidebarsDev.js'),       showLastUpdateTime: true }],
-    ['content-docs', { id: 'talks',     path: 'talks',     routeBasePath: 'talks',     sidebarPath: require.resolve('./sidebarsTalk.js'),      showLastUpdateTime: true }],
+    [
+      'content-docs',
+      {
+        id: 'community',
+        path: 'community',
+        routeBasePath: 'community',
+        sidebarPath: require.resolve('./sidebarsCommunity.js'),
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      'content-docs',
+      {
+        id: 'dev',
+        path: 'dev',
+        routeBasePath: 'dev',
+        sidebarPath: require.resolve('./sidebarsDev.js'),
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      'content-docs',
+      {
+        id: 'talks',
+        path: 'talks',
+        routeBasePath: 'talks',
+        sidebarPath: require.resolve('./sidebarsTalk.js'),
+        showLastUpdateTime: true,
+      },
+    ],
   ],
 
   themeConfig:
@@ -189,19 +216,29 @@ module.exports = {
           src: 'img/logo/uk/verdaccio-tiny-uk-no-bg.svg',
         },
         items: [
-          { type: 'doc', docId: 'what-is-verdaccio', position: 'left',  label: 'Docs' },
-          { type: 'doc', docId: 'node-api',          position: 'left',  label: 'API' },
-          { to: '/blog',                              position: 'left',  label: 'Blog' },
-          { href: '/community',                       position: 'left',  label: 'Community' },
-          { href: '/talks',                           position: 'left',  label: 'Video Talks' },
-          { href: SOCIAL.OPEN_COLLECTIVE,             position: 'right', label: 'Sponsor Us' },
+          { type: 'doc', docId: 'what-is-verdaccio', position: 'left', label: 'Docs' },
+          { type: 'doc', docId: 'node-api', position: 'left', label: 'API' },
+          { to: '/blog', position: 'left', label: 'Blog' },
+          { href: '/community', position: 'left', label: 'Community' },
+          { href: '/talks', position: 'left', label: 'Video Talks' },
+          { href: SOCIAL.OPEN_COLLECTIVE, position: 'right', label: 'Sponsor Us' },
           {
             type: 'localeDropdown',
             position: 'right',
             dropdownItemsAfter: [{ href: CROWDIN.PROJECT, label: 'Help Us Translate' }],
           },
-          { href: GITHUB.REPO,    position: 'right', className: 'header-github-link',  'aria-label': 'GitHub Repository' },
-          { href: SOCIAL.BLUESKY, position: 'right', className: 'header-bluesky-link', 'aria-label': 'Follow Us on Bluesky' },
+          {
+            href: GITHUB.REPO,
+            position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub Repository',
+          },
+          {
+            href: SOCIAL.BLUESKY,
+            position: 'right',
+            className: 'header-bluesky-link',
+            'aria-label': 'Follow Us on Bluesky',
+          },
         ],
       },
       footer: {
@@ -211,23 +248,23 @@ module.exports = {
             title: 'Docs',
             items: [
               { label: 'Getting Started', to: '/docs/what-is-verdaccio' },
-              { label: 'Docker',          to: '/docs/docker' },
-              { label: 'Configuration',   to: '/docs/configuration' },
-              { label: 'Logos',           to: '/docs/logo' },
+              { label: 'Docker', to: '/docs/docker' },
+              { label: 'Configuration', to: '/docs/configuration' },
+              { label: 'Logos', to: '/docs/logo' },
             ],
           },
           {
             title: 'Community',
             items: [
               { label: 'Stack Overflow', href: SOCIAL.STACK_OVERFLOW },
-              { label: 'Discord',        href: SOCIAL.DISCORD },
-              { label: 'Bluesky',        href: SOCIAL.BLUESKY },
+              { label: 'Discord', href: SOCIAL.DISCORD },
+              { label: 'Bluesky', href: SOCIAL.BLUESKY },
             ],
           },
           {
             title: 'More',
             items: [
-              { label: 'Blog',   to: '/blog' },
+              { label: 'Blog', to: '/blog' },
               { label: 'GitHub', href: GITHUB.REPO },
             ],
           },
@@ -257,12 +294,10 @@ module.exports = {
           sidebarCollapsible: true,
           remarkPlugins: [[require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]],
           editUrl: ({ locale, docPath }) =>
-            locale !== 'en'
-              ? `${CROWDIN.PROJECT}/${locale}`
-              : `${GITHUB.EDIT_DOCS}/${docPath}`,
+            locale !== 'en' ? `${CROWDIN.PROJECT}/${locale}` : `${GITHUB.EDIT_DOCS}/${docPath}`,
         },
         googleAnalytics: { trackingID: ANALYTICS.GA_TRACKING_ID },
-        gtag:            { trackingID: ANALYTICS.GA_TRACKING_ID },
+        gtag: { trackingID: ANALYTICS.GA_TRACKING_ID },
         blog: {
           blogTitle: 'Verdaccio Official Blog',
           blogDescription: 'The official Verdaccio Node.js proxy registry blog',

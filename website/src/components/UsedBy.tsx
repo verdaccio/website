@@ -31,7 +31,7 @@ const UsedBy = (): React.ReactElement => (
           name: 'algolia',
           image: useBaseUrl('/img/sponsors/algolia.svg'),
           url: 'https://www.algolia.com',
-        },        
+        },
       ].map((sponsor) => (
         <SponsorImage
           key={sponsor.name}
