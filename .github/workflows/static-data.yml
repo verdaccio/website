@@ -52,8 +52,8 @@ jobs:
       - name: Commit & Push changes
         uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # tag=v1.5
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.TOKEN_VERDACCIOBOT_GITHUB }}
           message: "chore: updated static data"
           branch: master
-          # author_email: verdaccio.npm@gmail.com
-          # author_name: verdacciobot
+          author_email: verdaccio.npm@gmail.com
+          author_name: verdacciobot
