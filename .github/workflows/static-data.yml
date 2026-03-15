@@ -13,7 +13,7 @@ on:
   #     - master
 
 permissions:
-  contents: read  #  to fetch code (actions/checkout)
+  contents: write
 
 jobs:
   prepare:
@@ -22,7 +22,6 @@ jobs:
     steps:
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
         with:
-          persist-credentials: false
           fetch-depth: 0
       - name: Install pnpm
         run: |
@@ -32,7 +31,7 @@ jobs:
       - name: Fetch dependencies
         run: pnpm install
       - name: Build Packages
-        run: pnpm build     
+        run: pnpm build
       - name: Build package
         run: pnpm --filter @verdaccio/local-scripts run build
       - name: Fetch all download stats
@@ -50,10 +49,10 @@ jobs:
       - name: format
         run: pnpm format
       - name: Commit & Push changes
-        uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # tag=v1.5
-        with:
-          github_token: ${{ secrets.TOKEN_VERDACCIOBOT_GITHUB }}
-          message: "chore: updated static data"
-          branch: master
-          author_email: verdaccio.npm@gmail.com
-          author_name: verdacciobot
+        run: |
+          git config user.name "verdacciobot"
+          git config user.email "verdaccio.npm@gmail.com"
+          git add -A
+          git diff --staged --quiet && echo "No changes to commit" && exit 0
+          git commit -m "chore: updated static data"
+          git push origin master
