@@ -3,11 +3,11 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5470,
+      "contributions": 5473,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3158
+          "contributions": 3160
         },
         {
           "name": "verdaccio-cookbook",
@@ -115,7 +115,7 @@
         },
         {
           "name": "charts",
-          "contributions": 45
+          "contributions": 46
         },
         {
           "name": "verdaccio-e2e-example",
@@ -228,11 +228,11 @@
     {
       "id": 59966492,
       "login": "mbtools",
-      "contributions": 235,
+      "contributions": 237,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 230
+          "contributions": 232
         },
         {
           "name": "website",
@@ -5310,7 +5310,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17526,
+      "stargazers_count": 17536,
       "archived": false
     },
     {
@@ -5454,7 +5454,7 @@
       "full_name": "verdaccio/website",
       "html_url": "https://github.com/verdaccio/website",
       "description": "📺Verdaccio documentation website",
-      "stargazers_count": 38,
+      "stargazers_count": 37,
       "archived": false
     },
     {
@@ -5490,7 +5490,7 @@
       "full_name": "verdaccio/ui",
       "html_url": "https://github.com/verdaccio/ui",
       "description": "🖼🎨 Verdaccio UI (deprecated, use verdaccio/verdaccio)",
-      "stargazers_count": 121,
+      "stargazers_count": 120,
       "archived": true
     },
     {
@@ -5562,7 +5562,7 @@
       "full_name": "verdaccio/charts",
       "html_url": "https://github.com/verdaccio/charts",
       "description": "☸️🐳 Verdaccio Helm chart repository",
-      "stargazers_count": 74,
+      "stargazers_count": 76,
       "archived": false
     },
     {
@@ -5616,7 +5616,7 @@
       "full_name": "verdaccio/mcp-server",
       "html_url": "https://github.com/verdaccio/mcp-server",
       "description": "An MCP (Model Context Protocol) server that connects any MCP-compatible AI client to a Verdaccio private npm registry.",
-      "stargazers_count": 0,
+      "stargazers_count": 1,
       "archived": false
     }
   ]
