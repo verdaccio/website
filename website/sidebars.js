@@ -74,6 +74,7 @@ module.exports = {
           type: 'category',
           label: 'Plugins',
           items: [
+            'dev-plugins',
             'plugin-generator',
             'plugin-auth',
             'plugin-middleware',
