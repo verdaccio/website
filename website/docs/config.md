@@ -195,7 +195,7 @@ security:
 
 A set of properties to modify the behavior of the server application, specifically the API (Express.js).
 
-> You can specify HTTP/1.1 server keep alive timeout in seconds for incomming connections.
+> You can specify HTTP/1.1 server keep alive timeout in seconds for incoming connections.
 > A value of 0 makes the http server behave similarly to Node.js versions prior to 8.0.0, which did not have a keep-alive timeout.
 > WORKAROUND: Through given configuration you can workaround following issue https://github.com/verdaccio/verdaccio/issues/301. Set to 0 in case 60 is not enough.
 
@@ -298,7 +298,7 @@ The new `VERDACCIO_PUBLIC_URL` is intended to be used behind proxies, this varia
 - Used as base path to serve UI resources as (js, favicon, etc)
 - Used on return metadata `dist` base path
 - Ignores `host` and `X-Forwarded-Proto` headers
-- If `url_prefix` is defined would be appened to the env variable.
+- If `url_prefix` is defined would be appended to the env variable.
 
 ```
 VERDACCIO_PUBLIC_URL='https://somedomain.org';
@@ -466,22 +466,24 @@ middlewares:
     # timeout: 10000
 ```
 
-### Experiments {#experiments}
+### Feature Flags (former Experiments) {#experiments}
 
-This release includes a new property named `experiments` that can be placed in the `config.yaml` and is completely optional.
+Verdaccio includes a `flags` configuration setting (formerly named `experiments`) that can be placed in the `config.yaml` and is completely optional.
 
-We want to be able to ship new things without affecting production environments. This flag allows us to add new features and get feedback from the community who decides to use them.
+This allows shipping new things without affecting production environments. We can add new features and get feedback from the community who decides to use them.
 
-The features under this flag might not be stable or might be removed in future releases.
+The features under this setting might not be stable and might be removed in future releases. By default, all flags are off (false).
 
-Here is one example:
+Examples:
 
 ```yaml
-experiments:
+flags:
   changePassword: false
+  searchRemote: true
+  webLogin: true
 ```
 
-> To disable the experiments warning in the console, you must comment out the whole `experiments` section.
+> To disable console warnings related to the flags or experiments, you must comment out the complete `flags` and `experiments` sections.
 
 ### Config Builder API {#builder}
 
