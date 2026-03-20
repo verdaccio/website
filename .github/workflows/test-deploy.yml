@@ -25,8 +25,12 @@ jobs:
           corepack install
       - name: Fetch dependencies
         run: pnpm install
+      - name: Check formatting
+        run: pnpm format:check
+      - name: Lint
+        run: pnpm lint
       - name: Build Packages
-        run: pnpm build         
+        run: pnpm build
       - name: Build Translations percentage
         run: pnpm --filter @verdaccio/local-scripts build        
       - name: Build Production
