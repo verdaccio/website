@@ -1,6 +1,6 @@
 {
   "extends": ["config:base", "helpers:pinGitHubActionDigests"],
-  "prConcurrentLimit": 5,
+  "prConcurrentLimit": 1,
   "minimumReleaseAge": "30 days",
   "baseBranches": ["master"],
   "semanticCommitType": "fix",
