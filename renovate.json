@@ -1,7 +1,7 @@
 {
   "extends": ["config:base", "helpers:pinGitHubActionDigests"],
-  "prConcurrentLimit": 2,
-  "minimumReleaseAge": "15 days",
+  "prConcurrentLimit": 5,
+  "minimumReleaseAge": "30 days",
   "baseBranches": ["master"],
   "semanticCommitType": "fix",
   "major": true,
@@ -16,6 +16,60 @@
     {
       "matchDatasources": ["docker"],
       "labels": ["bot: docker-update"]
+    },
+    {
+      "matchPackagePatterns": ["^@babel/", "^babel-"],
+      "groupName": "babel",
+      "groupSlug": "babel",
+      "minimumReleaseAge": "30 days"
+    },
+    {
+      "matchPackagePatterns": [
+        "^@docusaurus/",
+        "^docusaurus-",
+        "^@mdx-js/",
+        "^@emotion/",
+        "^@mui/",
+        "^react-chartjs",
+        "^chart\\.js",
+        "^chartjs-",
+        "^classnames",
+        "^clsx",
+        "^copy-text-to-clipboard",
+        "^dompurify",
+        "^lunr",
+        "^react-iframe",
+        "^react-player",
+        "^react-twitter-widgets",
+        "^semver",
+        "^use-is-in-viewport",
+        "^usehooks-ts",
+        "^prism-react-renderer",
+        "^sass",
+        "^sass-loader",
+        "^url-loader",
+        "^@tsconfig/docusaurus",
+        "^@orama/"
+      ],
+      "groupName": "docusaurus & website",
+      "groupSlug": "docusaurus",
+      "minimumReleaseAge": "60 days"
+    },
+    {
+      "matchPackagePatterns": ["^@verdaccio/", "^verdaccio-"],
+      "groupName": "verdaccio",
+      "groupSlug": "verdaccio",
+      "minimumReleaseAge": "0 days"
+    },
+    {
+      "matchPackagePatterns": ["^eslint", "^@eslint/", "^@typescript-eslint/", "^prettier"],
+      "groupName": "eslint & prettier",
+      "groupSlug": "eslint-prettier"
+    },
+    {
+      "matchPackagePatterns": ["^@types/", "^typescript"],
+      "groupName": "typescript",
+      "groupSlug": "typescript"
     }
   ],
   "pinVersions": true
