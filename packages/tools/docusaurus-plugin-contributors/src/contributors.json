@@ -3,11 +3,11 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5473,
+      "contributions": 5523,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3160
+          "contributions": 3165
         },
         {
           "name": "verdaccio-cookbook",
@@ -15,7 +15,7 @@
         },
         {
           "name": "generator-verdaccio-plugin",
-          "contributions": 125
+          "contributions": 129
         },
         {
           "name": "puppet-verdaccio",
@@ -47,7 +47,7 @@
         },
         {
           "name": "verdaccio-google-cloud",
-          "contributions": 89
+          "contributions": 94
         },
         {
           "name": "verdaccio-audit",
@@ -55,7 +55,7 @@
         },
         {
           "name": "monorepo",
-          "contributions": 244
+          "contributions": 245
         },
         {
           "name": "authentication-plugin-sample",
@@ -67,7 +67,7 @@
         },
         {
           "name": "website",
-          "contributions": 534
+          "contributions": 539
         },
         {
           "name": "eslint-plugin-verdaccio",
@@ -91,7 +91,7 @@
         },
         {
           "name": "verdaccio-aws-s3-storage",
-          "contributions": 20
+          "contributions": 41
         },
         {
           "name": "eslint-config-verdaccio",
@@ -127,7 +127,7 @@
         },
         {
           "name": "e2e-tests",
-          "contributions": 99
+          "contributions": 108
         },
         {
           "name": ".github",
@@ -228,15 +228,15 @@
     {
       "id": 59966492,
       "login": "mbtools",
-      "contributions": 237,
+      "contributions": 250,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 232
+          "contributions": 243
         },
         {
           "name": "website",
-          "contributions": 5
+          "contributions": 7
         }
       ]
     },
@@ -5310,7 +5310,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17536,
+      "stargazers_count": 17553,
       "archived": false
     },
     {
@@ -5410,7 +5410,7 @@
       "html_url": "https://github.com/verdaccio/verdaccio-google-cloud",
       "description": "☁️📦 Google Cloud storage plugin for verdaccio",
       "stargazers_count": 17,
-      "archived": true
+      "archived": false
     },
     {
       "name": "verdaccio-audit",
@@ -5509,7 +5509,7 @@
       "html_url": "https://github.com/verdaccio/verdaccio-aws-s3-storage",
       "description": "📦 Amazon Web Services S3 storage plugin",
       "stargazers_count": 7,
-      "archived": true
+      "archived": false
     },
     {
       "name": "eslint-config-verdaccio",
@@ -5588,7 +5588,7 @@
       "login": "verdaccio",
       "full_name": "verdaccio/e2e-tests",
       "html_url": "https://github.com/verdaccio/e2e-tests",
-      "description": "run e2e tests for 6.x and 7.x branches",
+      "description": "A standalone CLI tool that runs the full Verdaccio e2e test suite against any running registry",
       "stargazers_count": 3,
       "archived": false
     },
