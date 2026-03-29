@@ -47,6 +47,8 @@ const ECOSYSTEM_PACKAGES = [
   '@verdaccio/core',
   '@verdaccio/hooks',
   '@verdaccio/loaders',
+  '@verdaccio/node-api',
+  '@verdaccio/server',
   '@verdaccio/local-storage-legacy',
   '@verdaccio/logger',
   '@verdaccio/middleware',
