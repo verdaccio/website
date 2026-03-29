@@ -3,11 +3,11 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5523,
+      "contributions": 5540,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3165
+          "contributions": 3180
         },
         {
           "name": "verdaccio-cookbook",
@@ -67,7 +67,7 @@
         },
         {
           "name": "website",
-          "contributions": 539
+          "contributions": 540
         },
         {
           "name": "eslint-plugin-verdaccio",
@@ -127,7 +127,7 @@
         },
         {
           "name": "e2e-tests",
-          "contributions": 108
+          "contributions": 109
         },
         {
           "name": ".github",
@@ -228,11 +228,11 @@
     {
       "id": 59966492,
       "login": "mbtools",
-      "contributions": 250,
+      "contributions": 256,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 243
+          "contributions": 249
         },
         {
           "name": "website",
@@ -3092,6 +3092,17 @@
       ]
     },
     {
+      "id": 271138151,
+      "login": "CRohrer",
+      "contributions": 1,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 1
+        }
+      ]
+    },
+    {
       "id": 39583780,
       "login": "moglerdev",
       "contributions": 1,
@@ -5310,7 +5321,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17556,
+      "stargazers_count": 17567,
       "archived": false
     },
     {
@@ -5355,7 +5366,7 @@
       "full_name": "verdaccio/docker-examples",
       "html_url": "https://github.com/verdaccio/docker-examples",
       "description": "🐳 ⛴A collection of Docker and Kubernetes examples for verdaccio",
-      "stargazers_count": 178,
+      "stargazers_count": 177,
       "archived": true
     },
     {
@@ -5562,7 +5573,7 @@
       "full_name": "verdaccio/charts",
       "html_url": "https://github.com/verdaccio/charts",
       "description": "☸️🐳 Verdaccio Helm chart repository",
-      "stargazers_count": 76,
+      "stargazers_count": 77,
       "archived": false
     },
     {
