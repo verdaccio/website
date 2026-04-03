@@ -1,18 +1,18 @@
 ---
-name: static data
+name: addon data
 
 on:
   workflow_dispatch:
   schedule:
-    # twice peer week
-    - cron: "0 0 * * 1,4"
+    # once per week on Wednesday
+    - cron: "0 0 * * 3"
 
 permissions:
   contents: write
 
 jobs:
-  prepare:
-    name: Run script
+  update-addons:
+    name: Update addon data
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
@@ -28,25 +28,15 @@ jobs:
         run: pnpm install
       - name: Build Packages
         run: pnpm build
-      - name: Build package
-        run: pnpm --filter @verdaccio/local-scripts run build
-      - name: Fetch all download stats
-        run: pnpm --filter @verdaccio/local-scripts run downloads:all
-      - name: Contributors update
-        run: pnpm --filter @verdaccio/local-scripts run contributors:update
-        env:
-          TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: update translations
-        run: pnpm run translations
-        env:
-          TOKEN: ${{ secrets.CROWDIN_VERDACCIO_API_KEY }}
+      - name: Update addon data
+        run: pnpm script:addon
       - name: format
         run: pnpm format
       - name: Commit & Push changes
         uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # tag=v1.5
         with:
           github_token: ${{ secrets.TOKEN_VERDACCIOBOT_GITHUB }}
-          message: "chore: updated static data"
+          message: "chore: updated addon data"
           branch: master
           author_email: verdaccio.npm@gmail.com
           author_name: verdacciobot

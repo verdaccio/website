@@ -4,7 +4,7 @@ import path from 'path';
 
 const MAX_RETRIES = 3;
 const INITIAL_RETRY_DELAY_MS = 2000;
-const REQUEST_DELAY_MS = 500;
+const REQUEST_DELAY_MS = 1500;
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -42,6 +42,7 @@ async function fetchWithRetry<T>(url: string, retries = MAX_RETRIES): Promise<T>
       if (processed > 0) await delay(REQUEST_DELAY_MS);
 
       const d: any = await fetchWithRetry(`https://registry.npmjs.org/${item.name}`);
+      await delay(REQUEST_DELAY_MS);
       const apiDownloads: any = await fetchWithRetry(
         `https://api.npmjs.org/downloads/point/last-month/${item.name}`
       );
