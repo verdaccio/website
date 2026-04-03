@@ -49,11 +49,12 @@ const ECOSYSTEM_PACKAGES = [
   '@verdaccio/loaders',
   '@verdaccio/node-api',
   '@verdaccio/server',
+  '@verdaccio/active-directory',
   '@verdaccio/local-storage',
   '@verdaccio/package-filter',
-  '@verdaccio/google-cloud-storage',
+  'verdaccio-google-cloud',
   '@verdaccio/azure-storage',
-  '@verdaccio/aws-s3-storage',
+  'verdaccio-aws-s3-storage',
   '@verdaccio/local-storage-legacy',
   '@verdaccio/logger',
   '@verdaccio/middleware',
@@ -65,6 +66,7 @@ const ECOSYSTEM_PACKAGES = [
   '@verdaccio/ui-theme',
   '@verdaccio/url',
   '@verdaccio/utils',
+  'verdaccio-audit',
   'verdaccio-auth-memory',
   'verdaccio-memory',
 ];
@@ -304,6 +306,22 @@ export interface EcosystemVersionDownloadsEntry {
   [packageName: string]: { [majorVersion: string]: number };
 }
 
+async function packageExistsOnRegistry(pkg: string): Promise<boolean> {
+  try {
+    await got.get(`https://registry.npmjs.org/${encodeURIComponent(pkg)}`, {
+      timeout: { request: 15000 },
+      headers: { Accept: 'application/vnd.npm.install-v1+json' },
+    });
+    return true;
+  } catch (error: any) {
+    if (error?.response?.statusCode === 404) {
+      return false;
+    }
+    // For non-404 errors (network issues, etc.), assume it exists to avoid skipping valid packages
+    return true;
+  }
+}
+
 export async function fetchEcosystemDownloads() {
   const ecosystemFile = path.join(__dirname, '../../src/ecosystem_downloads.json');
 
@@ -318,6 +336,13 @@ export async function fetchEcosystemDownloads() {
   }
 
   for (const pkg of ECOSYSTEM_PACKAGES) {
+    const exists = await packageExistsOnRegistry(pkg);
+    if (!exists) {
+      // eslint-disable-next-line no-console
+      console.warn(`  [ecosystem] ${pkg}: not found on registry, skipping`);
+      continue;
+    }
+
     if (!existing[pkg]) {
       existing[pkg] = {};
     }
@@ -363,6 +388,13 @@ export async function fetchEcosystemVersionDownloads() {
   const result: EcosystemVersionDownloadsEntry = {};
 
   for (const pkg of ECOSYSTEM_PACKAGES) {
+    const exists = await packageExistsOnRegistry(pkg);
+    if (!exists) {
+      // eslint-disable-next-line no-console
+      console.warn(`  [ecosystem-versions] ${pkg}: not found on registry, skipping`);
+      continue;
+    }
+
     const url = `https://api.npmjs.org/versions/${encodeURIComponent(pkg)}/last-week`;
 
     try {
