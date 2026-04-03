@@ -295,6 +295,10 @@ export interface EcosystemDownloadsEntry {
   [packageName: string]: { [month: string]: number };
 }
 
+export interface EcosystemVersionDownloadsEntry {
+  [packageName: string]: { [majorVersion: string]: number };
+}
+
 export async function fetchEcosystemDownloads() {
   const ecosystemFile = path.join(__dirname, '../../src/ecosystem_downloads.json');
 
@@ -348,37 +352,79 @@ export async function fetchEcosystemDownloads() {
   console.info(`[ecosystem] Done: ${Object.keys(existing).length} packages saved`);
 }
 
+export async function fetchEcosystemVersionDownloads() {
+  const versionFile = path.join(__dirname, '../../src/ecosystem_version_downloads.json');
+
+  const result: EcosystemVersionDownloadsEntry = {};
+
+  for (const pkg of ECOSYSTEM_PACKAGES) {
+    const url = `https://api.npmjs.org/versions/${encodeURIComponent(pkg)}/last-week`;
+
+    try {
+      await delay(REQUEST_DELAY_MS);
+      const data = await fetchWithRetry<{ downloads: Record<string, number> }>(url);
+
+      const byMajor: Record<string, number> = {};
+      for (const [version, downloads] of Object.entries(data.downloads)) {
+        const major = version.split('.')[0];
+        byMajor[major] = (byMajor[major] || 0) + downloads;
+      }
+
+      result[pkg] = byMajor;
+      // eslint-disable-next-line no-console
+      console.info(
+        `  [ecosystem-versions] ${pkg}: ${Object.entries(byMajor)
+          .map(([v, d]) => `v${v}=${d.toLocaleString()}`)
+          .join(', ')}`
+      );
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(`  [ecosystem-versions] ${pkg}: failed`, error);
+    }
+  }
+
+  await fs.writeFile(versionFile, JSON.stringify(result));
+  // eslint-disable-next-line no-console
+  console.info(`[ecosystem-versions] Done: ${Object.keys(result).length} packages saved`);
+}
+
 export async function fetchAllDownloads() {
   // eslint-disable-next-line no-console
   console.info('[downloads] Starting all download fetches...\n');
 
   // eslint-disable-next-line no-console
-  console.info('[downloads] 1/5 Fetching npmjs weekly...');
+  console.info('[downloads] 1/6 Fetching npmjs weekly...');
   await fetchNpmjsApiDownloadsWeekly();
   // eslint-disable-next-line no-console
   console.info('');
 
   // eslint-disable-next-line no-console
-  console.info('[downloads] 2/5 Fetching docker pulls...');
+  console.info('[downloads] 2/6 Fetching docker pulls...');
   await dockerPullWeekly();
   // eslint-disable-next-line no-console
   console.info('');
 
   // eslint-disable-next-line no-console
-  console.info('[downloads] 3/5 Fetching monthly downloads (incremental)...');
+  console.info('[downloads] 3/6 Fetching monthly downloads (incremental)...');
   await fetchMonthlyData();
   // eslint-disable-next-line no-console
   console.info('');
 
   // eslint-disable-next-line no-console
-  console.info('[downloads] 4/5 Aggregating yearly downloads...');
+  console.info('[downloads] 4/6 Aggregating yearly downloads...');
   await fetchYearlyData();
   // eslint-disable-next-line no-console
   console.info('');
 
   // eslint-disable-next-line no-console
-  console.info('[downloads] 5/5 Fetching ecosystem package downloads...');
+  console.info('[downloads] 5/6 Fetching ecosystem package downloads...');
   await fetchEcosystemDownloads();
+  // eslint-disable-next-line no-console
+  console.info('');
+
+  // eslint-disable-next-line no-console
+  console.info('[downloads] 6/6 Fetching ecosystem version downloads...');
+  await fetchEcosystemVersionDownloads();
   // eslint-disable-next-line no-console
   console.info('');
 

@@ -3,6 +3,7 @@ import { Cli } from 'clipanion';
 import { ContributorsUpdateCommand } from './api/contributors';
 import { DockerPullCommand } from './api/dockerPullCommand';
 import { EcosystemDownloadsCommand } from './api/ecosystemDownloadsCommand';
+import { EcosystemVersionDownloadsCommand } from './api/ecosystemVersionDownloadsCommand';
 import { FetchAllDownloadsCommand } from './api/fetchAllDownloadsCommand';
 import { NpmjsApiDownloadCommand } from './api/npmjsApiDownloadCommand';
 import { FetchMonthlyDataCommand, FetchYearlyDataCommand } from './api/npmjsApiDownloadPoints';
@@ -23,6 +24,7 @@ cli.register(FetchMonthlyDataCommand);
 cli.register(FetchYearlyDataCommand);
 cli.register(FetchAllDownloadsCommand);
 cli.register(EcosystemDownloadsCommand);
+cli.register(EcosystemVersionDownloadsCommand);
 cli.register(ContributorsUpdateCommand);
 cli.runExit(args, Cli.defaultContext);
 

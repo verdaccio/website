@@ -7,6 +7,7 @@ import CumulativeAdoptionChart from './Chart/CumulativeAdoptionChart';
 import DockerPullChart from './Chart/DockerPullChart';
 import DockerTotalPull from './Chart/DockerTotalPull';
 import EcosystemDownloadsChart from './Chart/EcosystemDownloadsChart';
+import EcosystemVersionDownloadsChart from './Chart/EcosystemVersionDownloadsChart';
 import LatestAdoptionChart from './Chart/LatestAdoptionChart';
 import MajorVersionsStackedChart from './Chart/MajorVersionsStackedChart';
 import MigrationShareChart from './Chart/MigrationShareChart';
@@ -83,6 +84,9 @@ const Downloads: React.FC<{}> = (): React.ReactElement => {
         <div className={styles.grid}>
           <div className={`${styles.card} ${styles.cardFullWidth}`}>
             <EcosystemDownloadsChart />
+          </div>
+          <div className={`${styles.card} ${styles.cardFullWidth}`}>
+            <EcosystemVersionDownloadsChart />
           </div>
         </div>
 
