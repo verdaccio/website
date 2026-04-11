@@ -466,6 +466,53 @@ middlewares:
     # timeout: 10000
 ```
 
+### Package Filter {#package-filter}
+
+<small>Since: `verdaccio@6.4.0`</small>
+
+Verdaccio ships with a bundled, optional filter plugin [`@verdaccio/package-filter`](https://www.npmjs.com/package/@verdaccio/package-filter) that controls which package versions are visible to consumers by filtering manifest responses.
+
+:::info
+
+It is disabled by default. To enable it, add it under `filters` in `config.yaml` (with no rules it is a no-op):
+
+```yaml
+filters:
+  '@verdaccio/package-filter':
+```
+
+:::
+
+Supported options:
+
+- `minAgeDays`: hide versions published less than N days ago (quarantine window).
+- `dateThreshold`: only serve versions published before a given date (e.g. `'2024-01-01'`). When combined with `minAgeDays`, the earlier cutoff wins.
+- `block`: list of rules to hide versions. Each rule can target a `scope`, a `package` name, or a `package` + `versions` semver range. Add `strategy: replace` to substitute a blocked version with the nearest older safe one (useful for transitive deps).
+- `allow`: same shape as `block`, but exempts the matching scope/package/versions from all rules (including `minAgeDays` and `dateThreshold`). `allow` takes precedence over `block`.
+
+Example combining all options:
+
+```yaml
+filters:
+  '@verdaccio/package-filter':
+    minAgeDays: 7
+    dateThreshold: '2025-01-01'
+    block:
+      - scope: '@malicious'
+      - package: 'typosquat-pkg'
+      - package: 'compromised-lib'
+        versions: '>=3.0.0'
+      - package: 'legacy-lib'
+        versions: '>=2.0.0'
+        strategy: replace
+    allow:
+      - scope: '@my-org'
+      - package: 'compromised-lib'
+        versions: '3.0.1'
+```
+
+See the [plugin README](https://www.npmjs.com/package/@verdaccio/package-filter) for manifest cleanup behavior and debug namespaces.
+
 ### Feature Flags (former Experiments) {#experiments}
 
 Verdaccio includes a `flags` configuration setting (formerly named `experiments`) that can be placed in the `config.yaml` and is completely optional.
