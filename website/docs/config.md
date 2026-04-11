@@ -526,7 +526,6 @@ Examples:
 ```yaml
 flags:
   changePassword: false
-  searchRemote: true
   webLogin: true
 ```
 
