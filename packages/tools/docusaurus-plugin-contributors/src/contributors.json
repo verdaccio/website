@@ -3,7 +3,7 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5566,
+      "contributions": 5568,
       "repositories": [
         {
           "name": "verdaccio",
@@ -140,6 +140,10 @@
         {
           "name": "mcp-server",
           "contributions": 4
+        },
+        {
+          "name": "verdaccio-auth-ldap",
+          "contributions": 2
         }
       ]
     },
@@ -228,11 +232,11 @@
     {
       "id": 59966492,
       "login": "mbtools",
-      "contributions": 261,
+      "contributions": 262,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 254
+          "contributions": 255
         },
         {
           "name": "website",
@@ -1824,6 +1828,21 @@
         },
         {
           "name": "monorepo",
+          "contributions": 1
+        }
+      ]
+    },
+    {
+      "id": 649392,
+      "login": "louwers",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 1
+        },
+        {
+          "name": "website",
           "contributions": 1
         }
       ]
@@ -3490,17 +3509,6 @@
     {
       "id": 7684575,
       "login": "4SS1S",
-      "contributions": 1,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 1
-        }
-      ]
-    },
-    {
-      "id": 649392,
-      "login": "louwers",
       "contributions": 1,
       "repositories": [
         {
@@ -5332,7 +5340,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17596,
+      "stargazers_count": 17598,
       "archived": false
     },
     {
@@ -5638,6 +5646,15 @@
       "full_name": "verdaccio/mcp-server",
       "html_url": "https://github.com/verdaccio/mcp-server",
       "description": "An MCP (Model Context Protocol) server that connects any MCP-compatible AI client to a Verdaccio private npm registry.",
+      "stargazers_count": 1,
+      "archived": false
+    },
+    {
+      "name": "verdaccio-auth-ldap",
+      "login": "verdaccio",
+      "full_name": "verdaccio/verdaccio-auth-ldap",
+      "html_url": "https://github.com/verdaccio/verdaccio-auth-ldap",
+      "description": "LDAP / Active Directory authentication plugin for Verdaccio private npm registry",
       "stargazers_count": 1,
       "archived": false
     }
