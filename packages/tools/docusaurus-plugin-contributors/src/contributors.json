@@ -3,7 +3,7 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5568,
+      "contributions": 5580,
       "repositories": [
         {
           "name": "verdaccio",
@@ -47,7 +47,7 @@
         },
         {
           "name": "verdaccio-google-cloud",
-          "contributions": 94
+          "contributions": 95
         },
         {
           "name": "verdaccio-audit",
@@ -67,7 +67,7 @@
         },
         {
           "name": "website",
-          "contributions": 547
+          "contributions": 548
         },
         {
           "name": "eslint-plugin-verdaccio",
@@ -91,7 +91,7 @@
         },
         {
           "name": "verdaccio-aws-s3-storage",
-          "contributions": 49
+          "contributions": 50
         },
         {
           "name": "eslint-config-verdaccio",
@@ -127,7 +127,7 @@
         },
         {
           "name": "e2e-tests",
-          "contributions": 112
+          "contributions": 116
         },
         {
           "name": ".github",
@@ -143,7 +143,7 @@
         },
         {
           "name": "verdaccio-auth-ldap",
-          "contributions": 2
+          "contributions": 7
         }
       ]
     },
@@ -1101,6 +1101,17 @@
       ]
     },
     {
+      "id": 17563226,
+      "login": "alan-agius4",
+      "contributions": 3,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 3
+        }
+      ]
+    },
+    {
       "id": 803101,
       "login": "osher",
       "contributions": 3,
@@ -1376,17 +1387,6 @@
       ]
     },
     {
-      "id": 16936908,
-      "login": "s-h-a-d-o-w",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
       "id": 2946823,
       "login": "plitex",
       "contributions": 2,
@@ -1552,8 +1552,8 @@
       ]
     },
     {
-      "id": 17563226,
-      "login": "alan-agius4",
+      "id": 18176417,
+      "login": "awshanks",
       "contributions": 2,
       "repositories": [
         {
@@ -1563,8 +1563,8 @@
       ]
     },
     {
-      "id": 18176417,
-      "login": "awshanks",
+      "id": 16936908,
+      "login": "s-h-a-d-o-w",
       "contributions": 2,
       "repositories": [
         {
@@ -1629,74 +1629,8 @@
       ]
     },
     {
-      "id": 1845314,
-      "login": "MasterOdin",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 161571,
-      "login": "aledbf",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 3189424,
-      "login": "marnel",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 6905832,
-      "login": "somethingSTRANGE",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 273367,
-      "login": "kba",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 47413,
-      "login": "josephg",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 7316730,
-      "login": "monkeywithacupcake",
+      "id": 1991021,
+      "login": "idangozlan",
       "contributions": 2,
       "repositories": [
         {
@@ -1717,8 +1651,74 @@
       ]
     },
     {
-      "id": 1991021,
-      "login": "idangozlan",
+      "id": 7316730,
+      "login": "monkeywithacupcake",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 47413,
+      "login": "josephg",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 273367,
+      "login": "kba",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 6905832,
+      "login": "somethingSTRANGE",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 3189424,
+      "login": "marnel",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 161571,
+      "login": "aledbf",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 1845314,
+      "login": "MasterOdin",
       "contributions": 2,
       "repositories": [
         {
@@ -5340,7 +5340,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17598,
+      "stargazers_count": 17603,
       "archived": false
     },
     {
@@ -5619,7 +5619,7 @@
       "full_name": "verdaccio/e2e-tests",
       "html_url": "https://github.com/verdaccio/e2e-tests",
       "description": "A standalone CLI tool that runs the full Verdaccio e2e test suite against any running registry",
-      "stargazers_count": 3,
+      "stargazers_count": 4,
       "archived": false
     },
     {
