@@ -3,7 +3,7 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5589,
+      "contributions": 5616,
       "repositories": [
         {
           "name": "verdaccio",
@@ -55,7 +55,7 @@
         },
         {
           "name": "monorepo",
-          "contributions": 248
+          "contributions": 249
         },
         {
           "name": "authentication-plugin-sample",
@@ -144,6 +144,10 @@
         {
           "name": "verdaccio-auth-ldap",
           "contributions": 7
+        },
+        {
+          "name": "yarn-plugin-npm",
+          "contributions": 26
         }
       ]
     },
@@ -232,11 +236,11 @@
     {
       "id": 59966492,
       "login": "mbtools",
-      "contributions": 267,
+      "contributions": 268,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 260
+          "contributions": 261
         },
         {
           "name": "website",
@@ -3496,17 +3500,6 @@
       ]
     },
     {
-      "id": 5359825,
-      "login": "sethidden",
-      "contributions": 1,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 1
-        }
-      ]
-    },
-    {
       "id": 7684575,
       "login": "4SS1S",
       "contributions": 1,
@@ -5340,7 +5333,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17607,
+      "stargazers_count": 17609,
       "archived": false
     },
     {
@@ -5656,6 +5649,15 @@
       "html_url": "https://github.com/verdaccio/verdaccio-auth-ldap",
       "description": "LDAP / Active Directory authentication plugin for Verdaccio private npm registry",
       "stargazers_count": 1,
+      "archived": false
+    },
+    {
+      "name": "yarn-plugin-npm",
+      "login": "verdaccio",
+      "full_name": "verdaccio/yarn-plugin-npm",
+      "html_url": "https://github.com/verdaccio/yarn-plugin-npm",
+      "description": "yarn plugins (experimental) ",
+      "stargazers_count": 0,
       "archived": false
     }
   ]
