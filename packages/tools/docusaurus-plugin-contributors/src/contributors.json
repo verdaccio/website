@@ -3,11 +3,11 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5616,
+      "contributions": 5619,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3192
+          "contributions": 3193
         },
         {
           "name": "verdaccio-cookbook",
@@ -15,7 +15,7 @@
         },
         {
           "name": "generator-verdaccio-plugin",
-          "contributions": 129
+          "contributions": 130
         },
         {
           "name": "puppet-verdaccio",
@@ -127,7 +127,7 @@
         },
         {
           "name": "e2e-tests",
-          "contributions": 118
+          "contributions": 119
         },
         {
           "name": ".github",
@@ -5333,7 +5333,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17612,
+      "stargazers_count": 17620,
       "archived": false
     },
     {
@@ -5378,7 +5378,7 @@
       "full_name": "verdaccio/docker-examples",
       "html_url": "https://github.com/verdaccio/docker-examples",
       "description": "🐳 ⛴A collection of Docker and Kubernetes examples for verdaccio",
-      "stargazers_count": 177,
+      "stargazers_count": 178,
       "archived": true
     },
     {
