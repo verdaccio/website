@@ -5333,7 +5333,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17620,
+      "stargazers_count": 17628,
       "archived": false
     },
     {
@@ -5531,7 +5531,7 @@
       "full_name": "verdaccio/verdaccio-aws-s3-storage",
       "html_url": "https://github.com/verdaccio/verdaccio-aws-s3-storage",
       "description": "📦 Amazon Web Services S3 storage plugin",
-      "stargazers_count": 8,
+      "stargazers_count": 9,
       "archived": false
     },
     {
@@ -5585,7 +5585,7 @@
       "full_name": "verdaccio/charts",
       "html_url": "https://github.com/verdaccio/charts",
       "description": "☸️🐳 Verdaccio Helm chart repository",
-      "stargazers_count": 77,
+      "stargazers_count": 78,
       "archived": false
     },
     {
