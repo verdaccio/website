@@ -5639,7 +5639,7 @@
       "full_name": "verdaccio/mcp-server",
       "html_url": "https://github.com/verdaccio/mcp-server",
       "description": "An MCP (Model Context Protocol) server that connects any MCP-compatible AI client to a Verdaccio private npm registry.",
-      "stargazers_count": 1,
+      "stargazers_count": 2,
       "archived": false
     },
     {
