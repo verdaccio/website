@@ -1,3 +1,8 @@
 packages:
   - packages/tools/*
   - website
+minimumReleaseAge: 10080
+minimumReleaseAgeExclude:
+  - '@verdaccio/*'
+  - 'verdaccio-*'
+saveExact: true
