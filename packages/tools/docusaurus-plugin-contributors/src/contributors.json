@@ -3,11 +3,11 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5625,
+      "contributions": 5634,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3197
+          "contributions": 3202
         },
         {
           "name": "verdaccio-cookbook",
@@ -67,7 +67,7 @@
         },
         {
           "name": "website",
-          "contributions": 548
+          "contributions": 552
         },
         {
           "name": "eslint-plugin-verdaccio",
@@ -5333,7 +5333,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17634,
+      "stargazers_count": 17638,
       "archived": false
     },
     {
@@ -5432,7 +5432,7 @@
       "full_name": "verdaccio/verdaccio-google-cloud",
       "html_url": "https://github.com/verdaccio/verdaccio-google-cloud",
       "description": "☁️📦 Google Cloud storage plugin for verdaccio",
-      "stargazers_count": 17,
+      "stargazers_count": 18,
       "archived": false
     },
     {
