@@ -6,3 +6,8 @@ minimumReleaseAgeExclude:
   - '@verdaccio/*'
   - 'verdaccio-*'
 saveExact: true
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - core-js
+  - core-js-pure
+  - esbuild
