@@ -3,11 +3,11 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5635,
+      "contributions": 5686,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3202
+          "contributions": 3210
         },
         {
           "name": "verdaccio-cookbook",
@@ -15,7 +15,7 @@
         },
         {
           "name": "generator-verdaccio-plugin",
-          "contributions": 130
+          "contributions": 133
         },
         {
           "name": "puppet-verdaccio",
@@ -47,7 +47,7 @@
         },
         {
           "name": "verdaccio-google-cloud",
-          "contributions": 95
+          "contributions": 100
         },
         {
           "name": "verdaccio-audit",
@@ -55,7 +55,7 @@
         },
         {
           "name": "monorepo",
-          "contributions": 250
+          "contributions": 253
         },
         {
           "name": "authentication-plugin-sample",
@@ -91,7 +91,7 @@
         },
         {
           "name": "verdaccio-aws-s3-storage",
-          "contributions": 50
+          "contributions": 55
         },
         {
           "name": "eslint-config-verdaccio",
@@ -143,11 +143,15 @@
         },
         {
           "name": "verdaccio-auth-ldap",
-          "contributions": 7
+          "contributions": 9
+        },
+        {
+          "name": "registry-cli",
+          "contributions": 20
         },
         {
           "name": "yarn-plugin-npm",
-          "contributions": 26
+          "contributions": 31
         }
       ]
     },
@@ -5333,7 +5337,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17641,
+      "stargazers_count": 17653,
       "archived": false
     },
     {
@@ -5451,7 +5455,7 @@
       "html_url": "https://github.com/verdaccio/monorepo",
       "description": "🏰 Core dependencies and plugins for verdaccio 6.x branch ⚠️ DEPRECATED",
       "stargazers_count": 85,
-      "archived": false
+      "archived": true
     },
     {
       "name": "authentication-plugin-sample",
@@ -5649,6 +5653,15 @@
       "html_url": "https://github.com/verdaccio/verdaccio-auth-ldap",
       "description": "LDAP / Active Directory authentication plugin for Verdaccio private npm registry",
       "stargazers_count": 1,
+      "archived": false
+    },
+    {
+      "name": "registry-cli",
+      "login": "verdaccio",
+      "full_name": "verdaccio/registry-cli",
+      "html_url": "https://github.com/verdaccio/registry-cli",
+      "description": null,
+      "stargazers_count": 0,
       "archived": false
     },
     {
