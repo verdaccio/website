@@ -104,7 +104,7 @@ const AddonCard: FC<Addon> = ({
                 title="Show package on npmjs.com"
                 variant="text"
                 onClick={() => {
-                  window.open(url, '_blank');
+                  window.open(url, '_blank', 'noopener,noreferrer');
                 }}
               >
                 <Translate>Visit</Translate>

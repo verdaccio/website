@@ -99,6 +99,7 @@ const UsedBy = (): React.ReactElement => (
       <a
         href="https://github.com/verdaccio/verdaccio?tab=readme-ov-file#who-is-using-verdaccio"
         target="_blank"
+        rel="noopener noreferrer"
       >
         <Translate>And many more...</Translate>
       </a>
