@@ -10,15 +10,12 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemSecondaryAction from '@mui/material/ListItemSecondaryAction';
 import ListItemText from '@mui/material/ListItemText';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
-import { createTheme } from '@mui/material/styles';
-import { ThemeProvider } from '@mui/styles';
-import { makeStyles, withStyles } from '@mui/styles';
+import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
 import Layout from '@theme/Layout';
 import React from 'react';
 
@@ -35,20 +32,16 @@ const theme = createTheme({
   },
 });
 
-const useStyles = makeStyles(({ theme }: { theme: any }) => ({
-  '@global': {},
-}));
-
-const StyledBadge = withStyles(() => ({
-  badge: {
+const StyledBadge = styled(Badge)({
+  '& .MuiBadge-badge': {
     right: -3,
     top: 8,
     padding: '0 4px',
   },
-}))(Badge);
+});
 
 function ListItemLink(props) {
-  return <ListItem button component="a" {...props} />;
+  return <ListItemButton component="a" {...props} />;
 }
 
 type ContributorsProps = {
@@ -70,7 +63,6 @@ function convertItemTo(item) {
 const Contributors: React.FC<ContributorsProps> = ({ data }): React.ReactElement => {
   const [user, setUser] = React.useState(null);
   const [open, setOpen] = React.useState(false);
-  const classes = useStyles();
   const { contributors, repositories } = data;
 
   const handleClickOpen = (item) => {
@@ -140,8 +132,8 @@ const Contributors: React.FC<ContributorsProps> = ({ data }): React.ReactElement
           {user && (
             <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
               <DialogTitle id="simple-dialog-title">
-                <Grid container={true} spacing={2}>
-                  <Grid item lg={3} md={3} sm={3}>
+                <Grid container spacing={2}>
+                  <Grid size={{ lg: 3, md: 3, sm: 3 }}>
                     <a
                       href={'https://github.com/' + user.node.url}
                       target="_blank"
@@ -150,18 +142,17 @@ const Contributors: React.FC<ContributorsProps> = ({ data }): React.ReactElement
                       <img
                         src={generateImage(user.node.userId)}
                         alt={user.node.url}
-                        className={classes.medium}
                         width="40px"
                         style={{ borderRadius: '10px' }}
                       />
                     </a>
                   </Grid>
-                  <Grid item lg={6} md={6} sm={6}>
+                  <Grid size={{ lg: 6, md: 6, sm: 6 }}>
                     <Typography variant="h6">{user.node.url}</Typography>
                   </Grid>
-                  <Grid item lg={2} md={2} sm={2}>
+                  <Grid size={{ lg: 2, md: 2, sm: 2 }}>
                     <Chip
-                      icon={<EmojiEventsIcon className={classes.emojiEvent} />}
+                      icon={<EmojiEventsIcon />}
                       label={user.node.contributions}
                       color="default"
                     />
@@ -170,67 +161,59 @@ const Contributors: React.FC<ContributorsProps> = ({ data }): React.ReactElement
               </DialogTitle>
 
               <DialogContent>
-                <div className={classes.root}>
-                  <List component="nav" aria-label="main mailbox folders">
-                    {user.node.repositories.map(({ name, contributions }) => {
-                      const repo = repositories.find((repo) => repo.name === name);
-                      if (!repo) {
-                        return null;
-                      }
+                <List component="nav" aria-label="main mailbox folders">
+                  {user.node.repositories.map(({ name, contributions }) => {
+                    const repo = repositories.find((repo) => repo.name === name);
+                    if (!repo) {
+                      return null;
+                    }
 
-                      console.log('-->', repo);
-
-                      return (
-                        <ListItemLink
-                          className={repo.archived ? classes.archived : ''}
-                          key={repo.name}
-                          href={`${repo.html_url}/pulls?q=is%3Apr+author%3A${user.node.url}+is%3Aclosed`}
+                    return (
+                      <ListItemLink
+                        key={repo.name}
+                        href={`${repo.html_url}/pulls?q=is%3Apr+author%3A${user.node.url}+is%3Aclosed`}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <ListItemIcon>
+                          <Badge
+                            badgeContent={contributions}
+                            color="primary"
+                            max={9999}
+                            anchorOrigin={{
+                              vertical: 'top',
+                              horizontal: 'right',
+                            }}
+                          >
+                            <MergeTypeIcon />
+                          </Badge>
+                        </ListItemIcon>
+                        <Tooltip title={repo.archived ? 'archived' : ''}>
+                          <ListItemText
+                            primary={<Typography color="primary">{repo.name}</Typography>}
+                            secondary={
+                              <Typography color="secondary" variant="body2">
+                                {repo.description}
+                              </Typography>
+                            }
+                          />
+                        </Tooltip>
+                        <a
+                          href={'https://github.com/' + repo.full_name + '/stargazers'}
                           target="_blank"
                           rel="noreferrer"
+                          style={{ marginLeft: 'auto' }}
                         >
-                          <ListItemIcon>
-                            <Badge
-                              badgeContent={contributions}
-                              color="primary"
-                              max={9999}
-                              anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                              }}
-                            >
-                              <MergeTypeIcon />
-                            </Badge>
-                          </ListItemIcon>
-                          <Tooltip title={repo.archived ? 'archived' : ''}>
-                            <ListItemText
-                              primary={<Typography color="primary">{repo.name}</Typography>}
-                              secondary={
-                                <Typography color="secondary" variant="body2">
-                                  {repo.description}
-                                </Typography>
-                              }
-                            />
-                          </Tooltip>
-                          <ListItemSecondaryAction
-                            className={repo.archived ? classes.archived : ''}
-                          >
-                            <a
-                              href={'https://github.com/' + repo.full_name + '/stargazers'}
-                              target="_blank"
-                              rel="noreferrer"
-                            >
-                              <IconButton edge="end" aria-label="delete">
-                                <StyledBadge badgeContent={repo.staergezers} max={999}>
-                                  <StarIcon className={classes.starColor} />
-                                </StyledBadge>
-                              </IconButton>
-                            </a>
-                          </ListItemSecondaryAction>
-                        </ListItemLink>
-                      );
-                    })}
-                  </List>
-                </div>
+                          <IconButton edge="end" aria-label="stargazers">
+                            <StyledBadge badgeContent={repo.staergezers} max={999}>
+                              <StarIcon />
+                            </StyledBadge>
+                          </IconButton>
+                        </a>
+                      </ListItemLink>
+                    );
+                  })}
+                </List>
               </DialogContent>
             </Dialog>
           )}

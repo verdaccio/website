@@ -1,7 +1,7 @@
 import Translate, { translate } from '@docusaurus/Translate';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Unstable_Grid2';
-import { useTheme } from '@mui/styles';
+import Grid from '@mui/material/Grid';
+import { useTheme } from '@mui/material/styles';
 import { Orama, ProvidedTypes, create, insertMultiple, search } from '@orama/orama';
 import * as React from 'react';
 import { useState } from 'react';
@@ -46,6 +46,11 @@ const filterByProperty = (addsOns: Addon[], filters: Filters): Addon[] => {
       return false;
     }
 
+    // Hide packages with known CVEs when the toggle is on
+    if (filters.excludeVulnerable && (item.vulnerabilities?.count ?? 0) > 0) {
+      return false;
+    }
+
     return true;
   });
 };
@@ -86,6 +91,8 @@ const ToolList: FC<Props> = ({ addons = [], filters }): React.ReactElement => {
       }
       // Apply advanced filters (origin, category, bundled)
       const filteredResults = filterByProperty(results, filters);
+      // Sort by monthly downloads descending so most popular surface first
+      filteredResults.sort((a, b) => (b.downloads ?? 0) - (a.downloads ?? 0));
       setFilteredAddsOn(filteredResults);
     };
     if (db || filters.keyword === '') {
@@ -102,10 +109,10 @@ const ToolList: FC<Props> = ({ addons = [], filters }): React.ReactElement => {
       >
         <Translate>Total results:</Translate> {filteredAddsOn.length}
       </Typography>
-      <Grid container rowSpacing={4} columnSpacing={{ xs: 1, sm: 2, md: 3, xl: 4 }}>
+      <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2, xl: 2 }}>
         {filteredAddsOn.map((item) => {
           return (
-            <Grid xs={12} md={12} lg={6} xl={4} key={item.name}>
+            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }} key={item.name}>
               <AddonCard {...item} />
             </Grid>
           );

@@ -7,7 +7,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import Grid from '@mui/material/Unstable_Grid2';
+import Grid from '@mui/material/Grid';
 import React, { ReactElement } from 'react';
 import { FC } from 'react';
 
@@ -26,7 +26,7 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
   const handleOnChange = (event) => {
     const { name } = event.target;
     let _filters = { ...filters };
-    const validation = [...origins, ...categories, 'bundled', 'keyword'];
+    const validation = [...origins, ...categories, 'bundled', 'excludeVulnerable', 'keyword'];
     if (!validation.includes(name)) {
       return;
     }
@@ -53,7 +53,7 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
         <Translate>Items qualified as core are maintained actively by the verdaccio team</Translate>
       </Alert>
       <Grid container spacing={1}>
-        <Grid xs={12}>
+        <Grid size={12}>
           <TextField
             name="keyword"
             fullWidth
@@ -64,13 +64,13 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
             variant="outlined"
           />
         </Grid>
-        <Grid xs={12} container spacing={2}>
-          <Grid xs={12} md={3}>
+        <Grid size={12} container spacing={2}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <Typography fontSize="lg" fontWeight="lg" sx={{ paddingTop: '5px' }}>
               <Translate>Origin</Translate>:
             </Typography>
           </Grid>
-          <Grid xs={12} md={9}>
+          <Grid size={{ xs: 12, md: 9 }}>
             <FormGroup row>
               {Object.values(origins).map((name) => (
                 <FormControlLabel
@@ -89,13 +89,13 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
             </FormGroup>
           </Grid>
         </Grid>
-        <Grid xs={12} container spacing={2}>
-          <Grid xs={12} md={3}>
+        <Grid size={12} container spacing={2}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <Typography fontSize="lg" fontWeight="lg" sx={{ paddingTop: '5px' }}>
               <Translate>Categories</Translate>:
             </Typography>
           </Grid>
-          <Grid xs={12} md={9}>
+          <Grid size={{ xs: 12, md: 9 }}>
             <FormGroup row>
               {Object.values(categories).map((name) => (
                 <FormControlLabel
@@ -114,13 +114,13 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
             </FormGroup>
           </Grid>
         </Grid>
-        <Grid xs={12} container spacing={2}>
-          <Grid xs={12} md={3}>
+        <Grid size={12} container spacing={2}>
+          <Grid size={{ xs: 12, md: 3 }}>
             <Typography fontSize="lg" fontWeight="lg" sx={{ paddingTop: '5px' }}>
               <Translate>Options</Translate>:
             </Typography>
           </Grid>
-          <Grid xs={12} md={9}>
+          <Grid size={{ xs: 12, md: 9 }}>
             <FormGroup row>
               <FormControlLabel
                 control={
@@ -131,7 +131,18 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
                     onChange={handleOnChange}
                   />
                 }
-                label="included with Verdaccio"
+                label={translate({ message: 'included with Verdaccio' })}
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    name="excludeVulnerable"
+                    checked={filters.excludeVulnerable}
+                    size="small"
+                    onChange={handleOnChange}
+                  />
+                }
+                label={translate({ message: 'hide packages with known CVEs' })}
               />
             </FormGroup>
           </Grid>

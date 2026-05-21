@@ -1,5 +1,4 @@
-import { createTheme } from '@mui/material/styles';
-import { ThemeProvider } from '@mui/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import React from 'react';
 import { useState } from 'react';
 
@@ -33,6 +32,7 @@ const EcosystemSearch = (): React.ReactElement => {
 
   const [filters, setFilters] = useState<Filters>({
     bundled: false,
+    excludeVulnerable: false,
     core: true,
     community: true,
     middleware: true,
