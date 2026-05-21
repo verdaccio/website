@@ -41,4 +41,5 @@ website/docs/api/**/*.md
 website/docs/api/**/*.yml
 !website/docs/api/index.md
 packages/**/docs
+.claude
 
