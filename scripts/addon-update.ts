@@ -6,6 +6,7 @@ import sanitizeHtml from 'sanitize-html';
 const MAX_RETRIES = 3;
 const INITIAL_RETRY_DELAY_MS = 2000;
 const REQUEST_DELAY_MS = 1500;
+const PRUNE_AFTER_DAYS = 30;
 
 const SEVERITY_RANK: Record<string, number> = {
   LOW: 1,
@@ -86,6 +87,22 @@ async function fetchVulnerabilities(name: string) {
       if (processed > 0) await delay(REQUEST_DELAY_MS);
 
       const d: any = await fetchWithRetry(`https://registry.npmjs.org/${item.name}`);
+      const latest = d?.['dist-tags']?.latest;
+      if (!latest) {
+        // Package was unpublished or has no published versions — mark missing and skip
+        if (!item.missingSince) {
+          item.missingSince = new Date().toISOString();
+        }
+        const missingDays = Math.floor(
+          (Date.now() - new Date(item.missingSince).getTime()) / 86_400_000
+        );
+        console.warn(
+          `[skip] ${item.name}: no dist-tags.latest (missing for ${missingDays}d, prunes at ${PRUNE_AFTER_DAYS}d)`
+        );
+        continue;
+      }
+      delete item.missingSince;
+
       await delay(REQUEST_DELAY_MS);
       const apiDownloads: any = await fetchWithRetry(
         `https://api.npmjs.org/downloads/point/last-month/${item.name}`
@@ -102,9 +119,9 @@ async function fetchVulnerabilities(name: string) {
       item.bundled = typeof item.bundled === 'boolean' ? item.bundled : false;
       item.origin = item.origin ? item.origin : 'community';
       item.category = item.category ? item.category : 'authentication';
-      item.latest = d['dist-tags'].latest;
+      item.latest = latest;
       item.downloads = apiDownloads.downloads;
-      item.modified = d.time?.modified ?? d.time?.[item.latest];
+      item.modified = d.time?.modified ?? d.time?.[latest];
 
       await delay(REQUEST_DELAY_MS);
       const vulnerabilities = await fetchVulnerabilities(item.name);
@@ -117,15 +134,45 @@ async function fetchVulnerabilities(name: string) {
       processed++;
       // eslint-disable-next-line no-console
       console.info(`[addon] ${processed}/${data.addons.length} ${item.name}`);
-    } catch (err) {
-      // eslint-disable-next-line no-console
-      console.error('error for %s', item.name, err);
+    } catch (err: any) {
+      const status = err?.response?.statusCode;
+      if (status === 404) {
+        if (!item.missingSince) {
+          item.missingSince = new Date().toISOString();
+        }
+        // eslint-disable-next-line no-console
+        console.warn(`[skip] ${item.name}: 404 from registry, marked missing`);
+      } else {
+        // eslint-disable-next-line no-console
+        console.error('error for %s', item.name, err);
+      }
     }
   }
+
+  // Prune entries that have been missing longer than PRUNE_AFTER_DAYS
+  const cutoff = Date.now() - PRUNE_AFTER_DAYS * 86_400_000;
+  const before = data.addons.length;
+  const pruned: string[] = [];
+  data.addons = data.addons.filter((item: any) => {
+    if (!item.missingSince) return true;
+    if (new Date(item.missingSince).getTime() <= cutoff) {
+      pruned.push(item.name);
+      return false;
+    }
+    return true;
+  });
+  if (pruned.length > 0) {
+    // eslint-disable-next-line no-console
+    console.info(
+      `[prune] dropped ${pruned.length}/${before} addon(s) missing > ${PRUNE_AFTER_DAYS}d:`,
+      pruned.join(', ')
+    );
+  }
+
   await fs.writeFile(
     path.join(__dirname, '../website/src/components/EcosystemSearch/addons.json'),
     JSON.stringify({ ...data }, null, 4)
   );
   // eslint-disable-next-line no-console
-  console.info(`[addon] Done: ${processed} addons updated`);
+  console.info(`[addon] Done: ${processed} addons updated, ${pruned.length} pruned`);
 })();
