@@ -33,6 +33,7 @@ const EcosystemSearch = (): React.ReactElement => {
   const [filters, setFilters] = useState<Filters>({
     bundled: false,
     excludeVulnerable: false,
+    onlyVulnerable: false,
     core: true,
     community: true,
     middleware: true,

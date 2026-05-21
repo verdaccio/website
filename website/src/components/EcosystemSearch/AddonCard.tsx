@@ -1,5 +1,6 @@
 import Translate from '@docusaurus/Translate';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import LinkOffIcon from '@mui/icons-material/LinkOff';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -48,10 +49,15 @@ const AddonCard: FC<Addon> = ({
   origin,
   modified,
   vulnerabilities,
+  missingSince,
 }): React.ReactElement => {
   const openPackage = () => window.open(url, '_blank', 'noopener,noreferrer');
   const updatedLabel = formatRelativeTime(modified);
   const updatedTitle = modified ? new Date(modified).toLocaleDateString() : undefined;
+  const isMissing = !!missingSince;
+  const missingTitle = missingSince
+    ? `Not found in registry since ${new Date(missingSince).toLocaleDateString()} — data shown is from the last successful fetch`
+    : undefined;
   const hasCves = !!vulnerabilities && vulnerabilities.count > 0;
   const cveLabel = hasCves
     ? vulnerabilities!.count === 1
@@ -71,6 +77,9 @@ const AddonCard: FC<Addon> = ({
         display: 'flex',
         flexDirection: 'column',
         minWidth: 240,
+        opacity: isMissing ? 0.65 : 1,
+        outline: isMissing ? '1px dashed' : 'none',
+        outlineColor: 'warning.main',
       }}
     >
       <CardActionArea
@@ -82,12 +91,23 @@ const AddonCard: FC<Addon> = ({
           slotProps={{
             title: {
               variant: 'subtitle2',
-              noWrap: true,
               title: name,
-              sx: { fontWeight: 600 },
+              sx: {
+                fontWeight: 600,
+                display: '-webkit-box',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+                wordBreak: 'break-word',
+                lineHeight: 1.25,
+              },
             },
           }}
-          sx={{ padding: 1.25, paddingBottom: 0.5 }}
+          sx={{
+            padding: 1.25,
+            paddingBottom: 0.5,
+            '& .MuiCardHeader-content': { minWidth: 0 },
+          }}
           avatar={
             <Avatar
               alt={name}
@@ -176,6 +196,17 @@ const AddonCard: FC<Addon> = ({
           variant="outlined"
           sx={{ fontSize: '0.7rem' }}
         />
+        {isMissing && (
+          <Chip
+            size="small"
+            title={missingTitle}
+            label="UNPUBLISHED"
+            icon={<LinkOffIcon sx={{ fontSize: 14 }} />}
+            variant="filled"
+            color="warning"
+            sx={{ fontSize: '0.7rem', fontWeight: 600 }}
+          />
+        )}
         {hasCves && (
           <Chip
             size="small"

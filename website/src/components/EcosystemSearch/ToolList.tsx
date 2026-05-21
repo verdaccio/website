@@ -51,6 +51,11 @@ const filterByProperty = (addsOns: Addon[], filters: Filters): Addon[] => {
       return false;
     }
 
+    // Show only packages with known CVEs when that toggle is on
+    if (filters.onlyVulnerable && (item.vulnerabilities?.count ?? 0) === 0) {
+      return false;
+    }
+
     return true;
   });
 };

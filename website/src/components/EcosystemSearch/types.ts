@@ -19,11 +19,13 @@ export type Addon = {
   description: string;
   modified?: string;
   vulnerabilities?: Vulnerabilities;
+  missingSince?: string;
 };
 
 export type Filters = {
   bundled: boolean;
   excludeVulnerable: boolean;
+  onlyVulnerable: boolean;
   core: boolean;
   community: boolean;
   middleware: boolean;

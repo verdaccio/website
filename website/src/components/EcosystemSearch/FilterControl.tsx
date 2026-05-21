@@ -26,12 +26,25 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
   const handleOnChange = (event) => {
     const { name } = event.target;
     let _filters = { ...filters };
-    const validation = [...origins, ...categories, 'bundled', 'excludeVulnerable', 'keyword'];
+    const validation = [
+      ...origins,
+      ...categories,
+      'bundled',
+      'excludeVulnerable',
+      'onlyVulnerable',
+      'keyword',
+    ];
     if (!validation.includes(name)) {
       return;
     }
     if (name !== 'keyword') {
       _filters = { ..._filters, [name]: event.target.checked };
+      // excludeVulnerable and onlyVulnerable are mutually exclusive
+      if (name === 'excludeVulnerable' && event.target.checked) {
+        _filters.onlyVulnerable = false;
+      } else if (name === 'onlyVulnerable' && event.target.checked) {
+        _filters.excludeVulnerable = false;
+      }
     } else {
       _filters = { ..._filters, keyword: event.target.value };
     }
@@ -143,6 +156,17 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
                   />
                 }
                 label={translate({ message: 'hide packages with known CVEs' })}
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    name="onlyVulnerable"
+                    checked={filters.onlyVulnerable}
+                    size="small"
+                    onChange={handleOnChange}
+                  />
+                }
+                label={translate({ message: 'only packages with known CVEs' })}
               />
             </FormGroup>
           </Grid>
