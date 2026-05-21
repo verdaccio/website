@@ -35,9 +35,8 @@ const formatRelativeTime = (iso?: string): string | null => {
   return `${years}y ago`;
 };
 
-const severityColor = (
-  s: VulnerabilitySeverity
-): 'warning' | 'error' => (s === 'HIGH' || s === 'CRITICAL' ? 'error' : 'warning');
+const severityColor = (s: VulnerabilitySeverity): 'warning' | 'error' =>
+  s === 'HIGH' || s === 'CRITICAL' ? 'error' : 'warning';
 
 const AddonCard: FC<Addon> = ({
   url,

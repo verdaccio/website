@@ -1,6 +1,6 @@
 import Translate, { translate } from '@docusaurus/Translate';
-import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 import { Orama, ProvidedTypes, create, insertMultiple, search } from '@orama/orama';
 import * as React from 'react';
