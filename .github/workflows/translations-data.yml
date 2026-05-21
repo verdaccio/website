@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          persist-credentials: false
+          token: ${{ secrets.CHANGESET_RELEASE_TOKEN }}
           fetch-depth: 0
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
@@ -39,11 +39,10 @@ jobs:
           TOKEN: ${{ secrets.CROWDIN_VERDACCIO_API_KEY }}
       - name: format
         run: pnpm format
-      - name: Commit & Push changes
-        uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # tag=v1.5
-        with:
-          github_token: ${{ secrets.CHANGESET_RELEASE_TOKEN }}
-          message: "chore: updated translations data"
-          branch: master
-          author_email: verdaccio.npm@gmail.com
-          author_name: verdacciobot
+      - name: Commit & push
+        run: |
+          git config user.name  verdacciopack
+          git config user.email verdaccio.npm@gmail.com
+          git add -A
+          git diff --cached --quiet || git commit -m "chore: updated translations data"
+          git push origin master
