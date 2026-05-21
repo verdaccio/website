@@ -3,7 +3,7 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5688,
+      "contributions": 5684,
       "repositories": [
         {
           "name": "verdaccio",
@@ -15,7 +15,7 @@
         },
         {
           "name": "generator-verdaccio-plugin",
-          "contributions": 133
+          "contributions": 134
         },
         {
           "name": "puppet-verdaccio",
@@ -67,7 +67,7 @@
         },
         {
           "name": "website",
-          "contributions": 552
+          "contributions": 556
         },
         {
           "name": "eslint-plugin-verdaccio",
@@ -102,16 +102,8 @@
           "contributions": 25
         },
         {
-          "name": "security",
-          "contributions": 7
-        },
-        {
           "name": "commons-api",
           "contributions": 7
-        },
-        {
-          "name": "awesome",
-          "contributions": 2
         },
         {
           "name": "charts",
@@ -127,15 +119,11 @@
         },
         {
           "name": "e2e-tests",
-          "contributions": 121
+          "contributions": 122
         },
         {
           "name": ".github",
           "contributions": 3
-        },
-        {
-          "name": "verdaccio-vscode",
-          "contributions": 1
         },
         {
           "name": "mcp-server",
@@ -5337,7 +5325,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17662,
+      "stargazers_count": 17663,
       "archived": false
     },
     {
@@ -5535,7 +5523,7 @@
       "full_name": "verdaccio/verdaccio-aws-s3-storage",
       "html_url": "https://github.com/verdaccio/verdaccio-aws-s3-storage",
       "description": "📦 Amazon Web Services S3 storage plugin",
-      "stargazers_count": 9,
+      "stargazers_count": 8,
       "archived": false
     },
     {
@@ -5557,15 +5545,6 @@
       "archived": true
     },
     {
-      "name": "security",
-      "login": "verdaccio",
-      "full_name": "verdaccio/security",
-      "html_url": "https://github.com/verdaccio/security",
-      "description": "🛡⚔️ Security guidelines for Verdaccio",
-      "stargazers_count": 1,
-      "archived": false
-    },
-    {
       "name": "commons-api",
       "login": "verdaccio",
       "full_name": "verdaccio/commons-api",
@@ -5573,15 +5552,6 @@
       "description": null,
       "stargazers_count": 0,
       "archived": true
-    },
-    {
-      "name": "awesome",
-      "login": "verdaccio",
-      "full_name": "verdaccio/awesome",
-      "html_url": "https://github.com/verdaccio/awesome",
-      "description": "An open list of awesome Verdaccio modules and resources.",
-      "stargazers_count": 2,
-      "archived": false
     },
     {
       "name": "charts",
@@ -5626,15 +5596,6 @@
       "html_url": "https://github.com/verdaccio/.github",
       "description": null,
       "stargazers_count": 0,
-      "archived": false
-    },
-    {
-      "name": "verdaccio-vscode",
-      "login": "verdaccio",
-      "full_name": "verdaccio/verdaccio-vscode",
-      "html_url": "https://github.com/verdaccio/verdaccio-vscode",
-      "description": "visual code extension (experiment)",
-      "stargazers_count": 1,
       "archived": false
     },
     {
