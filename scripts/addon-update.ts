@@ -7,6 +7,14 @@ const MAX_RETRIES = 3;
 const INITIAL_RETRY_DELAY_MS = 2000;
 const REQUEST_DELAY_MS = 1500;
 
+const SEVERITY_RANK: Record<string, number> = {
+  LOW: 1,
+  MODERATE: 2,
+  MEDIUM: 2,
+  HIGH: 3,
+  CRITICAL: 4,
+};
+
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function fetchWithRetry<T>(url: string, retries = MAX_RETRIES): Promise<T> {
@@ -35,6 +43,41 @@ async function fetchWithRetry<T>(url: string, retries = MAX_RETRIES): Promise<T>
   throw new Error(`Failed to fetch ${url} after ${retries} attempts`);
 }
 
+async function fetchVulnerabilities(name: string) {
+  try {
+    const res: any = await got
+      .post('https://api.osv.dev/v1/query', {
+        json: { package: { name, ecosystem: 'npm' } },
+        timeout: { request: 30000 },
+      })
+      .json();
+    const vulns: any[] = res?.vulns ?? [];
+    if (vulns.length === 0) return undefined;
+
+    let highestRank = 0;
+    let highest: string = 'LOW';
+    const ids = new Set<string>();
+    for (const v of vulns) {
+      const raw = (v.database_specific?.severity ?? '').toString().toUpperCase();
+      const rank = SEVERITY_RANK[raw] ?? 0;
+      if (rank > highestRank) {
+        highestRank = rank;
+        highest = raw === 'MEDIUM' ? 'MODERATE' : raw;
+      }
+      if (v.id) ids.add(v.id);
+      for (const alias of v.aliases ?? []) ids.add(alias);
+    }
+    return {
+      count: vulns.length,
+      highest_severity: highest,
+      ids: Array.from(ids).slice(0, 10),
+    };
+  } catch (err) {
+    console.warn('[osv] failed for', name, (err as any)?.message ?? err);
+    return undefined;
+  }
+}
+
 (async () => {
   const data = require('../website/src/components/EcosystemSearch/addons.json');
   let processed = 0;
@@ -61,6 +104,16 @@ async function fetchWithRetry<T>(url: string, retries = MAX_RETRIES): Promise<T>
       item.category = item.category ? item.category : 'authentication';
       item.latest = d['dist-tags'].latest;
       item.downloads = apiDownloads.downloads;
+      item.modified = d.time?.modified ?? d.time?.[item.latest];
+
+      await delay(REQUEST_DELAY_MS);
+      const vulnerabilities = await fetchVulnerabilities(item.name);
+      if (vulnerabilities) {
+        item.vulnerabilities = vulnerabilities;
+      } else {
+        delete item.vulnerabilities;
+      }
+
       processed++;
       // eslint-disable-next-line no-console
       console.info(`[addon] ${processed}/${data.addons.length} ${item.name}`);
