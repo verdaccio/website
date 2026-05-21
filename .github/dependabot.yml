@@ -1,0 +1,32 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    # Version updates are handled by Renovate (see renovate.json).
+    # Setting the limit to 0 disables version-update PRs while still
+    # allowing Dependabot security updates from advisories.
+    open-pull-requests-limit: 0
+    labels:
+      - "bot: dependencies"
+      - "security"
+    cooldown:
+      default-days: 30
+      semver-major-days: 30
+      semver-minor-days: 14
+      semver-patch-days: 7
+      exclude:
+        - "@verdaccio/*"
+        - "verdaccio-*"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 0
+    labels:
+      - "bot: dependencies"
+      - "security"
+    cooldown:
+      default-days: 30
