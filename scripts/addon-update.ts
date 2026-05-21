@@ -1,6 +1,7 @@
 import fs from 'fs/promises';
 import got from 'got';
 import path from 'path';
+import sanitizeHtml from 'sanitize-html';
 
 const MAX_RETRIES = 3;
 const INITIAL_RETRY_DELAY_MS = 2000;
@@ -47,14 +48,10 @@ async function fetchWithRetry<T>(url: string, retries = MAX_RETRIES): Promise<T>
         `https://api.npmjs.org/downloads/point/last-month/${item.name}`
       );
 
-      item.description = d.description;
-      // remove html tags from description (e.g. <h1...>)
-      // CodeQL js/incomplete-multi-character-sanitization
-      let previous;
-      do {
-        previous = item.description;
-        item.description = item.description.replace(/<[^>]*>?/gm, '');
-      } while (item.description !== previous);
+      item.description = sanitizeHtml(d.description ?? '', {
+        allowedTags: [],
+        allowedAttributes: {},
+      });
       // remove markdown links from description (e.g. [link](url))
       item.description = item.description.trim().replace(/\[(.*?)\]\(.*?\)/gm, '$1');
       item.url = `https://www.npmjs.org/${item.name}`;
