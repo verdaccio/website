@@ -1721,6 +1721,21 @@
       "repository": "https://github.com/xoapit/verdaccio-auth0-ui",
       "license": "MIT",
       "hasTypes": false
+    },
+    {
+      "name": "verdaccio-bitbucket-auth",
+      "bundled": false,
+      "origin": "community",
+      "category": "authentication",
+      "description": "An actively maintained Verdaccio authentication plugin for Bitbucket, kept up to date with the latest code and compatible with Bitbucket's new authentication methods, allowing users to log in and publish packages using their Bitbucket credentials and group/role permissions.",
+      "url": "https://www.npmjs.org/verdaccio-bitbucket-auth",
+      "registry": "https://registry.npmjs.org/verdaccio-bitbucket-auth",
+      "latest": "0.1.0",
+      "downloads": 129,
+      "modified": "2026-05-15T13:01:55.770Z",
+      "repository": "https://github.com/ideasolutions/verdaccio-bitbucket-auth",
+      "license": "MIT",
+      "hasTypes": false
     }
   ]
 }
