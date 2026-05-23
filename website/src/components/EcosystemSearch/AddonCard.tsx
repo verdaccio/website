@@ -56,6 +56,7 @@ const AddonCard: FC<Addon> = ({
   vulnerabilities,
   missingSince,
   repository,
+  license,
 }): React.ReactElement => {
   const openPackage = () => window.open(url, '_blank', 'noopener,noreferrer');
   const updatedLabel = formatRelativeTime(modified);
@@ -265,7 +266,16 @@ const AddonCard: FC<Addon> = ({
           color: 'text.secondary',
         }}
       >
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, minHeight: 18 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 0.5,
+            minHeight: 18,
+            justifyContent: 'space-between',
+          }}
+        >
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, minWidth: 0, flex: 1 }}>
           {hasRepository ? (
             <>
               {isGithubRepo ? (
@@ -304,6 +314,40 @@ const AddonCard: FC<Addon> = ({
                 <Translate>Source code unavailable</Translate>
               </Typography>
             </>
+          )}
+          </Box>
+          {license ? (
+            <Typography
+              component="span"
+              title={`License: ${license}`}
+              sx={{
+                fontSize: 'inherit',
+                color: 'text.secondary',
+                paddingX: 0.75,
+                paddingY: 0.125,
+                borderRadius: 0.5,
+                border: '1px solid',
+                borderColor: 'divider',
+                whiteSpace: 'nowrap',
+                flexShrink: 0,
+              }}
+            >
+              {license}
+            </Typography>
+          ) : (
+            <Typography
+              component="span"
+              title="No license field declared in package.json"
+              sx={{
+                fontSize: 'inherit',
+                color: 'text.disabled',
+                fontStyle: 'italic',
+                whiteSpace: 'nowrap',
+                flexShrink: 0,
+              }}
+            >
+              <Translate>No license provided</Translate>
+            </Typography>
           )}
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, minHeight: 18 }}>
@@ -348,8 +392,18 @@ const AddonCard: FC<Addon> = ({
             <>
               <CheckCircleIcon sx={{ fontSize: 12, color: 'success.main' }} />
               <Typography
-                component="span"
-                sx={{ fontSize: 'inherit', color: 'text.secondary' }}
+                component="a"
+                href={`https://osv.dev/list?ecosystem=npm&q=${encodeURIComponent(name)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`Verify on OSV.dev: ${name}`}
+                onClick={(e) => e.stopPropagation()}
+                sx={{
+                  fontSize: 'inherit',
+                  color: 'text.secondary',
+                  textDecoration: 'none',
+                  '&:hover': { color: 'primary.main', textDecoration: 'underline' },
+                }}
               >
                 <Translate>No vulnerabilities found</Translate>
               </Typography>

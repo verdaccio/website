@@ -1,0 +1,113 @@
+name: Suggest a new addon 🧩
+description: Propose a Verdaccio plugin or tool to be listed in the Ecosystem search.
+title: "[Addon]: "
+labels: ["ecosystem", "addon-request", "issue_needs_triage"]
+assignees:
+  - verdacciobot
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing a new addon for the Verdaccio Ecosystem!
+
+        Before opening, please check:
+        - The package is **published on the public npm registry at npmjs.org**.
+        - The package declares a **`repository` URL** in its `package.json`.
+        - The package is **actively maintained** (a new version published in the last 12 months).
+        - There are **no unfixed HIGH/CRITICAL CVEs** (see https://osv.dev).
+
+        Approved addons are added to
+        [`website/src/components/EcosystemSearch/addons.json`](https://github.com/verdaccio/website/blob/master/website/src/components/EcosystemSearch/addons.json).
+        Metadata (downloads, version, license, vulnerabilities, repository, …) is fetched
+        automatically — you don't need to provide it.
+  - type: input
+    id: name
+    attributes:
+      label: Package name
+      description: The exact npm package name.
+      placeholder: ex. verdaccio-example-plugin
+    validations:
+      required: true
+  - type: input
+    id: npmurl
+    attributes:
+      label: npm URL
+      description: Link to the package on npmjs.com.
+      placeholder: https://www.npmjs.com/package/<your-package>
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Repository URL
+      description: Link to the public source code repository (GitHub, GitLab, Bitbucket, …).
+      placeholder: https://github.com/<owner>/<repo>
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which category does the addon fit into?
+      options:
+        - middleware
+        - authentication
+        - filter
+        - storage
+        - ui
+        - tool
+    validations:
+      required: true
+  - type: dropdown
+    id: origin
+    attributes:
+      label: Origin
+      description: "`core` is reserved for packages maintained by the Verdaccio team. Community submissions should pick `community`."
+      options:
+        - community
+        - core
+      default: 0
+    validations:
+      required: true
+  - type: input
+    id: license
+    attributes:
+      label: License (SPDX identifier)
+      description: Preferably an OSI-approved license (MIT, Apache-2.0, BSD-3-Clause, ISC, MPL-2.0, …).
+      placeholder: ex. MIT
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: Short description
+      description: One or two sentences describing what the addon does. Will be overridden by the npm description on the next refresh.
+      placeholder: Tell us what your plugin does.
+    validations:
+      required: false
+  - type: checkboxes
+    id: eligibility
+    attributes:
+      label: Eligibility checklist
+      description: Confirm the addon meets the listing requirements.
+      options:
+        - label: Published on the public npm registry at npmjs.org
+          required: true
+        - label: "`repository` field declared in `package.json`"
+          required: true
+        - label: A new version was published within the last 12 months
+          required: true
+        - label: No known HIGH or CRITICAL CVEs (or all are fixed in a published version)
+          required: true
+        - label: Repository accepts issues / pull requests (not archived)
+          required: true
+        - label: I am the author OR I have permission from the maintainer to request this listing
+          required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional notes
+      description: Anything else maintainers should know (e.g., bundled with Verdaccio, related plugins, migration notes).
+      placeholder: Optional context for the reviewer.
+    validations:
+      required: false

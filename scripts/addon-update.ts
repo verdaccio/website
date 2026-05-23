@@ -7,6 +7,8 @@ const MAX_RETRIES = 3;
 const INITIAL_RETRY_DELAY_MS = 2000;
 const REQUEST_DELAY_MS = 1500;
 const PRUNE_AFTER_DAYS = 30;
+const NO_SOURCE_PRUNE_AFTER_DAYS = 90;
+const HIGH_CVE_PRUNE_AFTER_DAYS = 365;
 
 const SEVERITY_RANK: Record<string, number> = {
   LOW: 1,
@@ -28,6 +30,28 @@ function extractRepository(repository: any): string | undefined {
     .replace(/^ssh:\/\/git@/, 'https://')
     .replace(/\.git$/, '')
     .trim();
+}
+
+function extractLicense(license: any): string | undefined {
+  if (!license) return undefined;
+  if (typeof license === 'string') return license.trim() || undefined;
+  if (typeof license === 'object') {
+    const type = license.type ?? license.name;
+    if (typeof type === 'string' && type.trim() !== '') return type.trim();
+  }
+  if (Array.isArray(license) && license.length > 0) {
+    return extractLicense(license[0]);
+  }
+  return undefined;
+}
+
+function detectHasTypes(versionMeta: any): boolean {
+  if (!versionMeta) return false;
+  if (typeof versionMeta.types === 'string' && versionMeta.types.trim() !== '') return true;
+  if (typeof versionMeta.typings === 'string' && versionMeta.typings.trim() !== '') return true;
+  const files: string[] = Array.isArray(versionMeta.files) ? versionMeta.files : [];
+  if (files.some((f) => typeof f === 'string' && /\.d\.[cm]?ts$/i.test(f))) return true;
+  return false;
 }
 
 async function fetchWithRetry<T>(url: string, retries = MAX_RETRIES): Promise<T> {
@@ -138,9 +162,23 @@ async function fetchVulnerabilities(name: string) {
       const repository = extractRepository(d.repository);
       if (repository) {
         item.repository = repository;
+        delete item.noSourceSince;
       } else {
         delete item.repository;
+        if (!item.noSourceSince) {
+          item.noSourceSince = new Date().toISOString();
+        }
       }
+
+      const versionMeta = d.versions?.[latest];
+      const license = extractLicense(versionMeta?.license ?? d.license);
+      if (license) {
+        item.license = license;
+      } else {
+        delete item.license;
+      }
+
+      item.hasTypes = detectHasTypes(versionMeta);
 
       await delay(REQUEST_DELAY_MS);
       const vulnerabilities = await fetchVulnerabilities(item.name);
@@ -148,6 +186,17 @@ async function fetchVulnerabilities(name: string) {
         item.vulnerabilities = vulnerabilities;
       } else {
         delete item.vulnerabilities;
+      }
+
+      const hasCritical =
+        vulnerabilities?.highest_severity === 'HIGH' ||
+        vulnerabilities?.highest_severity === 'CRITICAL';
+      if (hasCritical) {
+        if (!item.criticalCveSince) {
+          item.criticalCveSince = new Date().toISOString();
+        }
+      } else {
+        delete item.criticalCveSince;
       }
 
       processed++;
@@ -170,12 +219,26 @@ async function fetchVulnerabilities(name: string) {
 
   // Prune entries that have been missing longer than PRUNE_AFTER_DAYS
   const cutoff = Date.now() - PRUNE_AFTER_DAYS * 86_400_000;
+  const noSourceCutoff = Date.now() - NO_SOURCE_PRUNE_AFTER_DAYS * 86_400_000;
+  const criticalCveCutoff = Date.now() - HIGH_CVE_PRUNE_AFTER_DAYS * 86_400_000;
   const before = data.addons.length;
   const pruned: string[] = [];
+  const prunedNoSource: string[] = [];
+  const prunedCritical: string[] = [];
   data.addons = data.addons.filter((item: any) => {
-    if (!item.missingSince) return true;
-    if (new Date(item.missingSince).getTime() <= cutoff) {
+    if (item.missingSince && new Date(item.missingSince).getTime() <= cutoff) {
       pruned.push(item.name);
+      return false;
+    }
+    if (item.noSourceSince && new Date(item.noSourceSince).getTime() <= noSourceCutoff) {
+      prunedNoSource.push(item.name);
+      return false;
+    }
+    if (
+      item.criticalCveSince &&
+      new Date(item.criticalCveSince).getTime() <= criticalCveCutoff
+    ) {
+      prunedCritical.push(item.name);
       return false;
     }
     return true;
@@ -187,11 +250,27 @@ async function fetchVulnerabilities(name: string) {
       pruned.join(', ')
     );
   }
+  if (prunedNoSource.length > 0) {
+    // eslint-disable-next-line no-console
+    console.info(
+      `[prune] dropped ${prunedNoSource.length}/${before} addon(s) without source code > ${NO_SOURCE_PRUNE_AFTER_DAYS}d:`,
+      prunedNoSource.join(', ')
+    );
+  }
+  if (prunedCritical.length > 0) {
+    // eslint-disable-next-line no-console
+    console.info(
+      `[prune] dropped ${prunedCritical.length}/${before} addon(s) with HIGH/CRITICAL CVE > ${HIGH_CVE_PRUNE_AFTER_DAYS}d:`,
+      prunedCritical.join(', ')
+    );
+  }
 
   await fs.writeFile(
     path.join(__dirname, '../website/src/components/EcosystemSearch/addons.json'),
     JSON.stringify({ ...data }, null, 4)
   );
   // eslint-disable-next-line no-console
-  console.info(`[addon] Done: ${processed} addons updated, ${pruned.length} pruned`);
+  console.info(
+    `[addon] Done: ${processed} addons updated, ${pruned.length + prunedNoSource.length + prunedCritical.length} pruned (${pruned.length} unpublished, ${prunedNoSource.length} no source, ${prunedCritical.length} unfixed HIGH/CRITICAL CVE)`
+  );
 })();
