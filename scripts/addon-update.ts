@@ -160,10 +160,22 @@ async function fetchVulnerabilities(name: string) {
       item.modified = d.time?.modified ?? d.time?.[latest];
 
       const repository = extractRepository(d.repository);
-      if (repository) {
+      // A community package that points to the verdaccio org is almost certainly
+      // a fork that didn't update its `repository` field — treat it as having no
+      // source code so the user isn't sent to the wrong codebase.
+      const pointsToVerdaccioOrg =
+        !!repository && /github\.com\/verdaccio(?:\/|$)/i.test(repository);
+      const repoLooksLikeFork = pointsToVerdaccioOrg && item.origin !== 'core';
+      if (repository && !repoLooksLikeFork) {
         item.repository = repository;
         delete item.noSourceSince;
       } else {
+        if (repoLooksLikeFork) {
+          // eslint-disable-next-line no-console
+          console.warn(
+            `[repo] ${item.name}: community package points to verdaccio org (${repository}); treating as no source`
+          );
+        }
         delete item.repository;
         if (!item.noSourceSince) {
           item.noSourceSince = new Date().toISOString();
