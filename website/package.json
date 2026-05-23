@@ -4,7 +4,7 @@
   "version": "1.0.1-next-8.8",
   "scripts": {
     "docusaurus": "docusaurus",
-    "start": "docusaurus start --no-open",
+    "start": "docusaurus start --no-open --host 0.0.0.0",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

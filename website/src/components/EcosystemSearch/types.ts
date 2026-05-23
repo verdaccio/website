@@ -27,6 +27,7 @@ export type Filters = {
   bundled: boolean;
   excludeVulnerable: boolean;
   onlyVulnerable: boolean;
+  hideNoSource: boolean;
   core: boolean;
   community: boolean;
   middleware: boolean;

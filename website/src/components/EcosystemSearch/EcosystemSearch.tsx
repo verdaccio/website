@@ -34,6 +34,7 @@ const EcosystemSearch = (): React.ReactElement => {
     bundled: false,
     excludeVulnerable: false,
     onlyVulnerable: false,
+    hideNoSource: false,
     core: true,
     community: true,
     middleware: true,

@@ -32,6 +32,7 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
       'bundled',
       'excludeVulnerable',
       'onlyVulnerable',
+      'hideNoSource',
       'keyword',
     ];
     if (!validation.includes(name)) {
@@ -167,6 +168,17 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
                   />
                 }
                 label={translate({ message: 'only packages with known CVEs' })}
+              />
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    name="hideNoSource"
+                    checked={filters.hideNoSource}
+                    size="small"
+                    onChange={handleOnChange}
+                  />
+                }
+                label={translate({ message: 'hide packages without source code' })}
               />
             </FormGroup>
           </Grid>

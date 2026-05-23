@@ -1,8 +1,13 @@
 import Translate from '@docusaurus/Translate';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import CodeIcon from '@mui/icons-material/Code';
+import CodeOffIcon from '@mui/icons-material/CodeOff';
+import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkOffIcon from '@mui/icons-material/LinkOff';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Avatar from '@mui/material/Avatar';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActionArea';
@@ -50,6 +55,7 @@ const AddonCard: FC<Addon> = ({
   modified,
   vulnerabilities,
   missingSince,
+  repository,
 }): React.ReactElement => {
   const openPackage = () => window.open(url, '_blank', 'noopener,noreferrer');
   const updatedLabel = formatRelativeTime(modified);
@@ -70,6 +76,17 @@ const AddonCard: FC<Addon> = ({
   const cveAdvisoryUrl = hasCves
     ? `https://osv.dev/vulnerability/${vulnerabilities!.ids[0]}`
     : undefined;
+  const hasRepository = !!repository;
+  const isGithubRepo = hasRepository && /github\.com/i.test(repository!);
+  const repositoryLabel = hasRepository
+    ? repository!.replace(/^https?:\/\//, '').replace(/\/$/, '')
+    : null;
+  const openRepository = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (repository) {
+      window.open(repository, '_blank', 'noopener,noreferrer');
+    }
+  };
   return (
     <Card
       sx={{
@@ -235,6 +252,111 @@ const AddonCard: FC<Addon> = ({
           <Translate>Visit</Translate>
         </Button>
       </CardActions>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 0.25,
+          paddingX: 1.25,
+          paddingY: 0.5,
+          borderTop: '1px solid',
+          borderColor: 'divider',
+          fontSize: '0.65rem',
+          color: 'text.secondary',
+        }}
+      >
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, minHeight: 18 }}>
+          {hasRepository ? (
+            <>
+              {isGithubRepo ? (
+                <GitHubIcon sx={{ fontSize: 12 }} />
+              ) : (
+                <CodeIcon sx={{ fontSize: 12 }} />
+              )}
+              <Typography
+                component="a"
+                href={repository}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`Open source code: ${repository}`}
+                onClick={openRepository}
+                sx={{
+                  fontSize: 'inherit',
+                  color: 'text.secondary',
+                  textDecoration: 'none',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                  '&:hover': { color: 'primary.main', textDecoration: 'underline' },
+                }}
+              >
+                {repositoryLabel}
+              </Typography>
+            </>
+          ) : (
+            <>
+              <CodeOffIcon sx={{ fontSize: 12, color: 'text.disabled' }} />
+              <Typography
+                component="span"
+                sx={{ fontSize: 'inherit', color: 'text.disabled', fontStyle: 'italic' }}
+                title="No repository URL declared in package.json"
+              >
+                <Translate>Source code unavailable</Translate>
+              </Typography>
+            </>
+          )}
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, minHeight: 18 }}>
+          {hasCves ? (
+            <>
+              <WarningAmberIcon
+                sx={{
+                  fontSize: 12,
+                  color:
+                    severityColor(vulnerabilities!.highest_severity) === 'error'
+                      ? 'error.main'
+                      : 'warning.main',
+                }}
+              />
+              <Typography
+                component="a"
+                href={cveAdvisoryUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={cveTitle}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (cveAdvisoryUrl) {
+                    window.open(cveAdvisoryUrl, '_blank', 'noopener,noreferrer');
+                  }
+                }}
+                sx={{
+                  fontSize: 'inherit',
+                  color: 'text.secondary',
+                  textDecoration: 'none',
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                  '&:hover': { color: 'primary.main', textDecoration: 'underline' },
+                }}
+              >
+                {vulnerabilities!.ids[0]}
+                {vulnerabilities!.count > 1 ? ` +${vulnerabilities!.count - 1} more` : ''}
+              </Typography>
+            </>
+          ) : (
+            <>
+              <CheckCircleIcon sx={{ fontSize: 12, color: 'success.main' }} />
+              <Typography
+                component="span"
+                sx={{ fontSize: 'inherit', color: 'text.secondary' }}
+              >
+                <Translate>No vulnerabilities found</Translate>
+              </Typography>
+            </>
+          )}
+        </Box>
+      </Box>
     </Card>
   );
 };

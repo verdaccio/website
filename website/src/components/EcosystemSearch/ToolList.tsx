@@ -56,6 +56,11 @@ const filterByProperty = (addsOns: Addon[], filters: Filters): Addon[] => {
       return false;
     }
 
+    // Hide packages without a declared source code repository when the toggle is on
+    if (filters.hideNoSource && !item.repository) {
+      return false;
+    }
+
     return true;
   });
 };
@@ -96,8 +101,13 @@ const ToolList: FC<Props> = ({ addons = [], filters }): React.ReactElement => {
       }
       // Apply advanced filters (origin, category, bundled)
       const filteredResults = filterByProperty(results, filters);
-      // Sort by monthly downloads descending so most popular surface first
-      filteredResults.sort((a, b) => (b.downloads ?? 0) - (a.downloads ?? 0));
+      // Demote packages without a repository link to the end, then sort by monthly downloads
+      filteredResults.sort((a, b) => {
+        const aHasRepo = !!a.repository;
+        const bHasRepo = !!b.repository;
+        if (aHasRepo !== bHasRepo) return aHasRepo ? -1 : 1;
+        return (b.downloads ?? 0) - (a.downloads ?? 0);
+      });
       setFilteredAddsOn(filteredResults);
     };
     if (db || filters.keyword === '') {
@@ -114,7 +124,7 @@ const ToolList: FC<Props> = ({ addons = [], filters }): React.ReactElement => {
       >
         <Translate>Total results:</Translate> {filteredAddsOn.length}
       </Typography>
-      <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 2, xl: 2 }}>
+      <Grid container rowSpacing={3} columnSpacing={{ xs: 2, sm: 3, md: 3, xl: 3 }}>
         {filteredAddsOn.map((item) => {
           return (
             <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }} key={item.name}>
