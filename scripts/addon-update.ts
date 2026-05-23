@@ -18,6 +18,18 @@ const SEVERITY_RANK: Record<string, number> = {
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
+function extractRepository(repository: any): string | undefined {
+  if (!repository) return undefined;
+  const raw = typeof repository === 'string' ? repository : repository.url;
+  if (typeof raw !== 'string' || raw.trim() === '') return undefined;
+  return raw
+    .replace(/^git\+/, '')
+    .replace(/^git:\/\//, 'https://')
+    .replace(/^ssh:\/\/git@/, 'https://')
+    .replace(/\.git$/, '')
+    .trim();
+}
+
 async function fetchWithRetry<T>(url: string, retries = MAX_RETRIES): Promise<T> {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
@@ -122,6 +134,13 @@ async function fetchVulnerabilities(name: string) {
       item.latest = latest;
       item.downloads = apiDownloads.downloads;
       item.modified = d.time?.modified ?? d.time?.[latest];
+
+      const repository = extractRepository(d.repository);
+      if (repository) {
+        item.repository = repository;
+      } else {
+        delete item.repository;
+      }
 
       await delay(REQUEST_DELAY_MS);
       const vulnerabilities = await fetchVulnerabilities(item.name);

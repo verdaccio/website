@@ -20,6 +20,7 @@ export type Addon = {
   modified?: string;
   vulnerabilities?: Vulnerabilities;
   missingSince?: string;
+  repository?: string;
 };
 
 export type Filters = {
