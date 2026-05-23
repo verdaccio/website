@@ -1,11 +1,11 @@
 import Translate from '@docusaurus/Translate';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CodeIcon from '@mui/icons-material/Code';
 import CodeOffIcon from '@mui/icons-material/CodeOff';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkOffIcon from '@mui/icons-material/LinkOff';
 import WarningAmberIcon from '@mui/icons-material/WarningAmber';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -276,45 +276,45 @@ const AddonCard: FC<Addon> = ({
           }}
         >
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, minWidth: 0, flex: 1 }}>
-          {hasRepository ? (
-            <>
-              {isGithubRepo ? (
-                <GitHubIcon sx={{ fontSize: 12 }} />
-              ) : (
-                <CodeIcon sx={{ fontSize: 12 }} />
-              )}
-              <Typography
-                component="a"
-                href={repository}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={`Open source code: ${repository}`}
-                onClick={openRepository}
-                sx={{
-                  fontSize: 'inherit',
-                  color: 'text.secondary',
-                  textDecoration: 'none',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  whiteSpace: 'nowrap',
-                  '&:hover': { color: 'primary.main', textDecoration: 'underline' },
-                }}
-              >
-                {repositoryLabel}
-              </Typography>
-            </>
-          ) : (
-            <>
-              <CodeOffIcon sx={{ fontSize: 12, color: 'text.disabled' }} />
-              <Typography
-                component="span"
-                sx={{ fontSize: 'inherit', color: 'text.disabled', fontStyle: 'italic' }}
-                title="No repository URL declared in package.json"
-              >
-                <Translate>Source code unavailable</Translate>
-              </Typography>
-            </>
-          )}
+            {hasRepository ? (
+              <>
+                {isGithubRepo ? (
+                  <GitHubIcon sx={{ fontSize: 12 }} />
+                ) : (
+                  <CodeIcon sx={{ fontSize: 12 }} />
+                )}
+                <Typography
+                  component="a"
+                  href={repository}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`Open source code: ${repository}`}
+                  onClick={openRepository}
+                  sx={{
+                    fontSize: 'inherit',
+                    color: 'text.secondary',
+                    textDecoration: 'none',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                    '&:hover': { color: 'primary.main', textDecoration: 'underline' },
+                  }}
+                >
+                  {repositoryLabel}
+                </Typography>
+              </>
+            ) : (
+              <>
+                <CodeOffIcon sx={{ fontSize: 12, color: 'text.disabled' }} />
+                <Typography
+                  component="span"
+                  sx={{ fontSize: 'inherit', color: 'text.disabled', fontStyle: 'italic' }}
+                  title="No repository URL declared in package.json"
+                >
+                  <Translate>Source code unavailable</Translate>
+                </Typography>
+              </>
+            )}
           </Box>
           {license ? (
             <Typography

@@ -13,7 +13,9 @@
       "downloads": 3023655,
       "registry": "https://registry.npmjs.org/verdaccio-audit",
       "modified": "2026-05-14T17:05:01.022Z",
-      "repository": "https://github.com/verdaccio/verdaccio"
+      "repository": "https://github.com/verdaccio/verdaccio",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "@verdaccio/local-storage",
@@ -26,7 +28,9 @@
       "downloads": 317735,
       "registry": "https://registry.npmjs.org/@verdaccio/local-storage",
       "modified": "2026-05-14T17:05:00.484Z",
-      "repository": "https://github.com/verdaccio/monorepo"
+      "repository": "https://github.com/verdaccio/monorepo",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "@verdaccio/ui-theme",
@@ -39,7 +43,9 @@
       "downloads": 3050486,
       "registry": "https://registry.npmjs.org/@verdaccio/ui-theme",
       "modified": "2026-05-14T17:05:02.717Z",
-      "repository": "https://github.com/verdaccio/ui"
+      "repository": "https://github.com/verdaccio/ui",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-memory",
@@ -52,7 +58,9 @@
       "downloads": 34296,
       "registry": "https://registry.npmjs.org/verdaccio-memory",
       "modified": "2026-05-14T17:05:00.735Z",
-      "repository": "https://github.com/verdaccio/verdaccio"
+      "repository": "https://github.com/verdaccio/verdaccio",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-aws-s3-storage",
@@ -65,7 +73,9 @@
       "downloads": 15123,
       "registry": "https://registry.npmjs.org/verdaccio-aws-s3-storage",
       "modified": "2026-05-14T11:58:55.520Z",
-      "repository": "https://github.com/verdaccio/verdaccio-aws-s3-storage"
+      "repository": "https://github.com/verdaccio/verdaccio-aws-s3-storage",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-google-cloud",
@@ -78,7 +88,9 @@
       "downloads": 2480,
       "registry": "https://registry.npmjs.org/verdaccio-google-cloud",
       "modified": "2026-05-14T11:56:00.680Z",
-      "repository": "https://github.com/verdaccio/verdaccio-google-cloud"
+      "repository": "https://github.com/verdaccio/verdaccio-google-cloud",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-auth-memory",
@@ -91,7 +103,9 @@
       "downloads": 123722,
       "registry": "https://registry.npmjs.org/verdaccio-auth-memory",
       "modified": "2026-05-14T17:05:01.894Z",
-      "repository": "https://github.com/verdaccio/verdaccio"
+      "repository": "https://github.com/verdaccio/verdaccio",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-htpasswd",
@@ -104,7 +118,9 @@
       "downloads": 3074426,
       "registry": "https://registry.npmjs.org/verdaccio-htpasswd",
       "modified": "2026-05-14T17:05:00.912Z",
-      "repository": "https://github.com/verdaccio/verdaccio"
+      "repository": "https://github.com/verdaccio/verdaccio",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-plugin-secfilter",
@@ -117,7 +133,9 @@
       "downloads": 655,
       "registry": "https://registry.npmjs.org/verdaccio-plugin-secfilter",
       "modified": "2024-03-05T10:57:42.032Z",
-      "repository": "https://github.com/Ansile/verdaccio-plugin-secfilter"
+      "repository": "https://github.com/Ansile/verdaccio-plugin-secfilter",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-ldap-port",
@@ -130,7 +148,9 @@
       "downloads": 62,
       "registry": "https://registry.npmjs.org/verdaccio-ldap-port",
       "modified": "2022-05-23T05:03:46.944Z",
-      "repository": "https://github.com/Ronny-Gallin-Software-Engineering/verdaccio-ldap-port"
+      "repository": "https://github.com/Ronny-Gallin-Software-Engineering/verdaccio-ldap-port",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "@playerdata/verdaccio-storage-expiry",
@@ -143,7 +163,9 @@
       "downloads": 69,
       "registry": "https://registry.npmjs.org/@playerdata/verdaccio-storage-expiry",
       "modified": "2025-11-25T09:53:02.757Z",
-      "repository": "https://github.com/playerdata/verdaccio-storage-expiry"
+      "repository": "https://github.com/playerdata/verdaccio-storage-expiry",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-ldap-memcached",
@@ -156,7 +178,9 @@
       "downloads": 15,
       "registry": "https://registry.npmjs.org/verdaccio-ldap-memcached",
       "modified": "2022-06-28T10:08:00.473Z",
-      "repository": "https://github.com/Alexandre-io/verdaccio-ldap"
+      "repository": "https://github.com/Alexandre-io/verdaccio-ldap",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-bitbucket",
@@ -169,7 +193,9 @@
       "downloads": 96,
       "registry": "https://registry.npmjs.org/verdaccio-bitbucket",
       "modified": "2022-06-28T10:07:39.726Z",
-      "repository": "https://github.com/idangozlan/verdaccio-bitbucket"
+      "repository": "https://github.com/idangozlan/verdaccio-bitbucket",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-redis-search-patch",
@@ -182,7 +208,9 @@
       "downloads": 246,
       "registry": "https://registry.npmjs.org/verdaccio-redis-search-patch",
       "modified": "2026-05-03T09:20:57.744Z",
-      "repository": "https://github.com/openupm/verdaccio-redis-search-patch"
+      "repository": "https://github.com/openupm/verdaccio-redis-search-patch",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-auther-memory",
@@ -194,7 +222,10 @@
       "latest": "2.0.6",
       "downloads": 18,
       "registry": "https://registry.npmjs.org/verdaccio-auther-memory",
-      "modified": "2022-05-23T05:01:39.482Z"
+      "modified": "2022-05-23T05:01:39.482Z",
+      "noSourceSince": "2026-05-23T15:33:08.082Z",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-git",
@@ -207,7 +238,9 @@
       "downloads": 351,
       "registry": "https://registry.npmjs.org/verdaccio-git",
       "modified": "2025-01-27T17:35:18.392Z",
-      "repository": "AmazeeLabs/storage-git"
+      "repository": "AmazeeLabs/storage-git",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-ldap",
@@ -220,7 +253,9 @@
       "downloads": 483,
       "registry": "https://registry.npmjs.org/verdaccio-ldap",
       "modified": "2022-10-05T19:08:03.624Z",
-      "repository": "https://github.com/Alexandre-io/verdaccio-ldap"
+      "repository": "https://github.com/Alexandre-io/verdaccio-ldap",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-ldap-node",
@@ -233,7 +268,9 @@
       "downloads": 32,
       "registry": "https://registry.npmjs.org/verdaccio-ldap-node",
       "modified": "2022-05-23T05:03:44.052Z",
-      "repository": "https://github.com/NathanCong/verdaccio-ldap-node"
+      "repository": "https://github.com/NathanCong/verdaccio-ldap-node",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-badger",
@@ -246,7 +283,9 @@
       "downloads": 17,
       "registry": "https://registry.npmjs.org/verdaccio-badger",
       "modified": "2022-05-23T05:01:46.688Z",
-      "repository": "https://github.com/PaddeK/verdaccio-badger"
+      "repository": "https://github.com/PaddeK/verdaccio-badger",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "@hamstudy/verdaccio-aws-s3-storage-sse",
@@ -259,7 +298,9 @@
       "downloads": 11,
       "registry": "https://registry.npmjs.org/@hamstudy/verdaccio-aws-s3-storage-sse",
       "modified": "2022-10-04T21:39:05.056Z",
-      "repository": "https://github.com/taxilian/verdaccio-monorepo"
+      "repository": "https://github.com/taxilian/verdaccio-monorepo",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "@xlts.dev/verdaccio-prometheus-middleware",
@@ -272,7 +313,9 @@
       "downloads": 49,
       "registry": "https://registry.npmjs.org/@xlts.dev/verdaccio-prometheus-middleware",
       "modified": "2023-10-18T18:11:19.936Z",
-      "repository": "https://github.com/xlts-dev/verdaccio-prometheus-middleware"
+      "repository": "https://github.com/xlts-dev/verdaccio-prometheus-middleware",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-github-auth",
@@ -285,7 +328,9 @@
       "downloads": 66,
       "registry": "https://registry.npmjs.org/verdaccio-github-auth",
       "modified": "2022-05-23T05:02:27.093Z",
-      "repository": "https://github.com/cthos/verdaccio-github-auth"
+      "repository": "https://github.com/cthos/verdaccio-github-auth",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-gitlab",
@@ -298,7 +343,9 @@
       "downloads": 202,
       "registry": "https://registry.npmjs.org/verdaccio-gitlab",
       "modified": "2022-06-28T10:07:48.492Z",
-      "repository": "https://github.com/bufferoverflow/verdaccio-gitlab"
+      "repository": "https://github.com/bufferoverflow/verdaccio-gitlab",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-bitbucket-server",
@@ -311,7 +358,9 @@
       "downloads": 106,
       "registry": "https://registry.npmjs.org/verdaccio-bitbucket-server",
       "modified": "2022-05-23T05:01:53.614Z",
-      "repository": "https://github.com/oeph/verdaccio-bitbucket-server"
+      "repository": "https://github.com/oeph/verdaccio-bitbucket-server",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-package-count",
@@ -324,7 +373,9 @@
       "downloads": 157,
       "registry": "https://registry.npmjs.org/verdaccio-package-count",
       "modified": "2023-03-28T08:25:29.908Z",
-      "repository": "https://github.com/joebnb/verdaccio-package-count"
+      "repository": "https://github.com/joebnb/verdaccio-package-count",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-activedirectory",
@@ -337,7 +388,9 @@
       "downloads": 68,
       "registry": "https://registry.npmjs.org/verdaccio-activedirectory",
       "modified": "2022-06-28T10:07:36.856Z",
-      "repository": "https://github.com/nowhammies/verdaccio-activedirectory"
+      "repository": "https://github.com/nowhammies/verdaccio-activedirectory",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-profile-api",
@@ -350,7 +403,9 @@
       "downloads": 43,
       "registry": "https://registry.npmjs.org/verdaccio-profile-api",
       "modified": "2022-05-23T05:04:40.188Z",
-      "repository": "https://github.com/adamko147/verdaccio-profile-api"
+      "repository": "https://github.com/adamko147/verdaccio-profile-api",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-dynamodb",
@@ -363,7 +418,9 @@
       "downloads": 14,
       "registry": "https://registry.npmjs.org/verdaccio-dynamodb",
       "modified": "2022-05-23T05:02:11.640Z",
-      "repository": "https://github.com/pusherman/verdaccio-dynamodb"
+      "repository": "https://github.com/pusherman/verdaccio-dynamodb",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-minio",
@@ -376,7 +433,9 @@
       "downloads": 91,
       "registry": "https://registry.npmjs.org/verdaccio-minio",
       "modified": "2022-05-23T05:04:00.987Z",
-      "repository": "https://github.com/barolab/verdaccio-minio"
+      "repository": "https://github.com/barolab/verdaccio-minio",
+      "license": "Apache-2.0",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-redis-storage",
@@ -389,7 +448,9 @@
       "downloads": 200,
       "registry": "https://registry.npmjs.org/verdaccio-redis-storage",
       "modified": "2023-10-24T18:07:27.031Z",
-      "repository": "https://github.com/openupm/verdaccio-redis-storage"
+      "repository": "https://github.com/openupm/verdaccio-redis-storage",
+      "license": "BSD-3-Clause",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-mongodb",
@@ -402,7 +463,9 @@
       "downloads": 62,
       "registry": "https://registry.npmjs.org/verdaccio-mongodb",
       "modified": "2022-06-05T18:34:27.518Z",
-      "repository": "https://github.com/joergrech/verdaccio-mongodb"
+      "repository": "https://github.com/joergrech/verdaccio-mongodb",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-ldap5",
@@ -415,7 +478,9 @@
       "downloads": 29,
       "registry": "https://registry.npmjs.org/verdaccio-ldap5",
       "modified": "2022-04-08T05:37:38.091Z",
-      "repository": "https://github.com/Ronny-Gallin-Software-Engineering/verdaccio-ldap5"
+      "repository": "https://github.com/Ronny-Gallin-Software-Engineering/verdaccio-ldap5",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "@m03geek/verdaccio-google-cloud",
@@ -428,7 +493,9 @@
       "latest": "0.1.0",
       "downloads": 42,
       "modified": "2022-04-06T03:00:04.265Z",
-      "repository": "https://github.com/verdaccio/verdaccio-google-cloud"
+      "repository": "https://github.com/verdaccio/verdaccio-google-cloud",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-storage-proxy",
@@ -441,7 +508,9 @@
       "latest": "0.0.11",
       "downloads": 192,
       "modified": "2022-10-16T15:58:25.875Z",
-      "repository": "https://github.com/openupm/verdaccio-storage-proxy"
+      "repository": "https://github.com/openupm/verdaccio-storage-proxy",
+      "license": "BSD-3-Clause",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-local-storage-advance",
@@ -454,7 +523,9 @@
       "latest": "0.0.10",
       "downloads": 43,
       "modified": "2022-09-05T09:22:03.978Z",
-      "repository": "https://github.com/joebnb/uplink-db"
+      "repository": "https://github.com/joebnb/uplink-db",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-kuzzle",
@@ -467,7 +538,9 @@
       "latest": "1.2.2",
       "downloads": 63,
       "modified": "2025-08-04T13:25:47.859Z",
-      "repository": "https://github.com/kuzzleio/verdaccio-kuzzle"
+      "repository": "https://github.com/kuzzleio/verdaccio-kuzzle",
+      "license": "Apache-2.0",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-dist-tag-control",
@@ -479,7 +552,10 @@
       "registry": "https://registry.npmjs.org/verdaccio-dist-tag-control",
       "latest": "1.0.2",
       "downloads": 20,
-      "modified": "2022-05-23T05:02:07.458Z"
+      "modified": "2022-05-23T05:02:07.458Z",
+      "noSourceSince": "2026-05-23T15:34:59.106Z",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-doreamon-oauth2",
@@ -492,7 +568,9 @@
       "latest": "1.2.1",
       "downloads": 50,
       "modified": "2023-08-18T19:56:56.900Z",
-      "repository": "https://github.com/szymondukla/verdaccio-doreamon-oauth2"
+      "repository": "https://github.com/szymondukla/verdaccio-doreamon-oauth2",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "@outcome-co/verdaccio-google-cloud",
@@ -505,7 +583,9 @@
       "latest": "1.1.8",
       "downloads": 71,
       "modified": "2022-04-06T12:31:16.035Z",
-      "repository": "https://github.com/outcome-co/verdaccio-google-cloud-js"
+      "repository": "https://github.com/outcome-co/verdaccio-google-cloud-js",
+      "license": "ISC",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-pg-storage",
@@ -518,7 +598,9 @@
       "latest": "1.0.3",
       "downloads": 32,
       "modified": "2022-05-23T05:04:31.706Z",
-      "repository": "https://github.com/yckao/verdaccio-pg-storage"
+      "repository": "https://github.com/yckao/verdaccio-pg-storage",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-local-storage-with-cache-db",
@@ -531,7 +613,9 @@
       "latest": "9.7.7",
       "downloads": 21,
       "modified": "2022-05-23T05:03:53.868Z",
-      "repository": "https://github.com/verdaccio/monorepo"
+      "repository": "https://github.com/verdaccio/monorepo",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-offline-storage",
@@ -544,7 +628,9 @@
       "latest": "2.0.0",
       "downloads": 50,
       "modified": "2022-05-23T05:04:12.064Z",
-      "repository": "https://github.com/g3ngar/verdaccio-offline-storage"
+      "repository": "https://github.com/g3ngar/verdaccio-offline-storage",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-aliyunoss-storage",
@@ -557,7 +643,9 @@
       "latest": "1.0.10",
       "downloads": 48,
       "modified": "2022-05-23T05:00:58.833Z",
-      "repository": "https://github.com/daichangxin/verdaccio-aliyunoss-storage"
+      "repository": "https://github.com/daichangxin/verdaccio-aliyunoss-storage",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-openid-connect",
@@ -570,7 +658,9 @@
       "latest": "3.0.0",
       "downloads": 98,
       "modified": "2024-10-18T07:12:11.249Z",
-      "repository": "https://github.com/deeplay-io/verdaccio-openid-connect"
+      "repository": "https://github.com/deeplay-io/verdaccio-openid-connect",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-github-oauth-ui",
@@ -583,7 +673,9 @@
       "downloads": 861,
       "description": "📦🔐 Verdaccio GitHub OAuth",
       "modified": "2026-04-13T21:43:45.389Z",
-      "repository": "https://github.com/n4bb12/verdaccio-github-oauth-ui"
+      "repository": "https://github.com/n4bb12/verdaccio-github-oauth-ui",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-github-oauth",
@@ -596,7 +688,9 @@
       "latest": "1.1.0",
       "downloads": 69,
       "modified": "2022-06-28T10:07:45.506Z",
-      "repository": "https://github.com/aroundus-inc/verdaccio-github-oauth"
+      "repository": "https://github.com/aroundus-inc/verdaccio-github-oauth",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-auth-gitlab",
@@ -609,7 +703,9 @@
       "latest": "2.0.0-beta.11",
       "downloads": 150,
       "modified": "2022-12-07T11:00:06.876Z",
-      "repository": "https://github.com/pfdgithub/verdaccio-auth-gitlab"
+      "repository": "https://github.com/pfdgithub/verdaccio-auth-gitlab",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-auth0-ui",
@@ -622,7 +718,9 @@
       "latest": "4.0.1",
       "downloads": 40,
       "modified": "2023-10-02T11:43:47.198Z",
-      "repository": "https://github.com/matterway/verdaccio-auth0-ui"
+      "repository": "https://github.com/matterway/verdaccio-auth0-ui",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-tagauth",
@@ -646,7 +744,9 @@
       "latest": "0.1.4",
       "downloads": 17,
       "modified": "2022-05-23T05:02:25.633Z",
-      "repository": "https://git@github.com/youreadforme/verdaccio-gitea-auth"
+      "repository": "https://git@github.com/youreadforme/verdaccio-gitea-auth",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-platformatic-auth",
@@ -659,7 +759,9 @@
       "latest": "0.0.4",
       "downloads": 16,
       "modified": "2022-07-27T21:54:35.903Z",
-      "repository": "https://github.com/MzUgM/authtest"
+      "repository": "https://github.com/MzUgM/authtest",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-google-oauth",
@@ -672,7 +774,9 @@
       "latest": "1.0.1",
       "downloads": 34,
       "modified": "2022-05-23T05:03:09.034Z",
-      "repository": "https://github.com/edydeleon/verdaccio-google-oauth"
+      "repository": "https://github.com/edydeleon/verdaccio-google-oauth",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-passport-google-oauth-ui",
@@ -685,7 +789,9 @@
       "latest": "0.1.9",
       "downloads": 131,
       "modified": "2025-12-15T08:30:33.197Z",
-      "repository": "https://github.com/okayasu/verdaccio-passport-google-oauth-ui"
+      "repository": "https://github.com/okayasu/verdaccio-passport-google-oauth-ui",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-aukilabs-npm-auth",
@@ -698,7 +804,9 @@
       "latest": "0.0.2",
       "downloads": 14,
       "modified": "2022-06-08T09:47:38.787Z",
-      "repository": "https://github.com/jb-san/aukilabs-npm-auth"
+      "repository": "https://github.com/jb-san/aukilabs-npm-auth",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-gitlab-hilio",
@@ -711,7 +819,9 @@
       "latest": "1.1.17",
       "downloads": 92,
       "modified": "2022-05-23T05:02:53.886Z",
-      "repository": "https://github.com/bufferoverflow/verdaccio-gitlab"
+      "repository": "https://github.com/bufferoverflow/verdaccio-gitlab",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-auth-knex",
@@ -724,7 +834,9 @@
       "latest": "1.0.3",
       "downloads": 35,
       "modified": "2022-05-23T05:01:25.469Z",
-      "repository": "https://github.com/ntfs32/verdaccio-auth-knex"
+      "repository": "https://github.com/ntfs32/verdaccio-auth-knex",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-qnapldap",
@@ -736,7 +848,10 @@
       "registry": "https://registry.npmjs.org/verdaccio-qnapldap",
       "latest": "0.0.6",
       "downloads": 25,
-      "modified": "2026-04-07T10:14:48.075Z"
+      "modified": "2026-04-07T10:14:48.075Z",
+      "noSourceSince": "2026-05-23T15:36:37.078Z",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-fast-ldap",
@@ -749,7 +864,9 @@
       "latest": "4.2.1",
       "downloads": 7,
       "modified": "2022-05-23T05:02:17.255Z",
-      "repository": "https://github.com/Alexandre-io/verdaccio-ldap"
+      "repository": "https://github.com/Alexandre-io/verdaccio-ldap",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-gitlab-oauth",
@@ -762,7 +879,9 @@
       "latest": "1.0.4",
       "downloads": 53,
       "modified": "2022-05-23T05:02:56.477Z",
-      "repository": "https://github.com/bizneo/verdaccio-gitlab-oauth"
+      "repository": "https://github.com/bizneo/verdaccio-gitlab-oauth",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-group-htpasswd",
@@ -775,7 +894,9 @@
       "latest": "1.0.0",
       "downloads": 10,
       "modified": "2022-05-23T05:03:13.233Z",
-      "repository": "https://github.com/deeputkarsh/verdaccio-group-htpasswd"
+      "repository": "https://github.com/deeputkarsh/verdaccio-group-htpasswd",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-groups",
@@ -788,7 +909,9 @@
       "latest": "1.2.0",
       "downloads": 9,
       "modified": "2022-05-23T05:03:18.863Z",
-      "repository": "https://github.com/ankitjain28may/verdaccio-groups"
+      "repository": "https://github.com/ankitjain28may/verdaccio-groups",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-github-token",
@@ -801,7 +924,9 @@
       "latest": "1.0.0",
       "downloads": 24,
       "modified": "2022-05-23T05:02:42.420Z",
-      "repository": "https://github.com/reklatsmasters/verdaccio-github-token"
+      "repository": "https://github.com/reklatsmasters/verdaccio-github-token",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-mysql",
@@ -814,7 +939,9 @@
       "latest": "1.0.1",
       "downloads": 18,
       "modified": "2022-05-23T05:04:05.066Z",
-      "repository": "https://github.com/bchanudet/verdaccio-mysql"
+      "repository": "https://github.com/bchanudet/verdaccio-mysql",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-qlchatauth",
@@ -827,7 +954,9 @@
       "latest": "0.0.9",
       "downloads": 41,
       "modified": "2022-05-23T05:04:44.372Z",
-      "repository": "https://github.com/ldlh615/ql-auth"
+      "repository": "https://github.com/ldlh615/ql-auth",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-azure-ad-login",
@@ -840,7 +969,9 @@
       "latest": "2.0.0",
       "downloads": 539,
       "modified": "2026-05-21T14:58:05.427Z",
-      "repository": "https://github.com/IhToN/verdaccio-azure-ad-login"
+      "repository": "https://github.com/IhToN/verdaccio-azure-ad-login",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-oidc",
@@ -853,7 +984,9 @@
       "latest": "0.0.0-namesquat",
       "downloads": 6,
       "modified": "2022-05-23T05:04:14.835Z",
-      "repository": "https://github.com/ClarkSource/verdaccio-oidc"
+      "repository": "https://github.com/ClarkSource/verdaccio-oidc",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-regman",
@@ -866,7 +999,9 @@
       "latest": "1.0.5",
       "downloads": 13,
       "modified": "2022-05-23T05:04:48.513Z",
-      "repository": "https://github.com/andris9/verdaccio-regman"
+      "repository": "https://github.com/andris9/verdaccio-regman",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-level-auth",
@@ -879,7 +1014,9 @@
       "latest": "1.0.12",
       "downloads": 26,
       "modified": "2022-05-23T05:03:49.748Z",
-      "repository": "https://github.com/Devpodio/verdaccio-level-auth"
+      "repository": "https://github.com/Devpodio/verdaccio-level-auth",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-activedirectory-extended",
@@ -892,7 +1029,9 @@
       "latest": "1.4.3",
       "downloads": 28,
       "modified": "2022-05-23T05:00:53.217Z",
-      "repository": "https://github.com/tutu-ru/verdaccio-activedirectory"
+      "repository": "https://github.com/tutu-ru/verdaccio-activedirectory",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-acl-plugin",
@@ -905,7 +1044,9 @@
       "latest": "1.0.1",
       "downloads": 20,
       "modified": "2022-05-23T05:00:50.391Z",
-      "repository": "https://gitlab.com/t3o/verdaccio-acl-plugin"
+      "repository": "https://gitlab.com/t3o/verdaccio-acl-plugin",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-auth-bearer",
@@ -917,7 +1058,10 @@
       "registry": "https://registry.npmjs.org/verdaccio-auth-bearer",
       "latest": "2.5.0",
       "downloads": 7,
-      "modified": "2022-05-23T05:01:18.413Z"
+      "modified": "2022-05-23T05:01:18.413Z",
+      "noSourceSince": "2026-05-23T15:37:47.159Z",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-steedos",
@@ -930,7 +1074,9 @@
       "latest": "1.0.0",
       "downloads": 6,
       "modified": "2022-05-23T05:05:07.899Z",
-      "repository": "https://github.com/steedos/steedos"
+      "repository": "https://github.com/steedos/steedos",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-sqlite",
@@ -943,7 +1089,9 @@
       "latest": "1.0.2",
       "downloads": 21,
       "modified": "2022-05-23T05:05:03.937Z",
-      "repository": "https://github.com/bchanudet/verdaccio-sqlite"
+      "repository": "https://github.com/bchanudet/verdaccio-sqlite",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-simplegroup",
@@ -956,7 +1104,9 @@
       "latest": "1.0.2",
       "downloads": 25,
       "modified": "2022-05-23T05:04:59.492Z",
-      "repository": "https://github.com/btshj-snail/snail-verdaccio-group"
+      "repository": "https://github.com/btshj-snail/snail-verdaccio-group",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-betaversion",
@@ -969,7 +1119,9 @@
       "latest": "1.0.3",
       "downloads": 15,
       "modified": "2022-05-23T05:01:50.750Z",
-      "repository": "https://github.com/neptunix/verdaccio-betaversion"
+      "repository": "https://github.com/neptunix/verdaccio-betaversion",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-auth-username",
@@ -982,7 +1134,9 @@
       "latest": "1.1.2",
       "downloads": 30,
       "modified": "2022-05-23T05:01:35.377Z",
-      "repository": "https://github.com/wizardpisces/verdaccio-auth-username"
+      "repository": "https://github.com/wizardpisces/verdaccio-auth-username",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-apm-login",
@@ -995,7 +1149,9 @@
       "latest": "1.0.6",
       "downloads": 33,
       "modified": "2022-05-23T05:01:08.643Z",
-      "repository": "https://github.com/aroundus-inc/verdaccio-github-oauth"
+      "repository": "https://github.com/aroundus-inc/verdaccio-github-oauth",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-auth-stack",
@@ -1008,7 +1164,9 @@
       "latest": "1.0.3",
       "downloads": 23,
       "modified": "2022-05-23T05:01:33.819Z",
-      "repository": "https://gitlab.com/stack-library-open/verdaccio-auth-stack"
+      "repository": "https://gitlab.com/stack-library-open/verdaccio-auth-stack",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-auth-capi",
@@ -1021,7 +1179,9 @@
       "latest": "1.0.2",
       "downloads": 10,
       "modified": "2022-05-23T05:01:21.243Z",
-      "repository": "https://gitlab.com/privac-open-source/libs/verdaccio-auth-capi"
+      "repository": "https://gitlab.com/privac-open-source/libs/verdaccio-auth-capi",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-groupnames",
@@ -1033,7 +1193,10 @@
       "registry": "https://registry.npmjs.org/verdaccio-groupnames",
       "latest": "1.1.0",
       "downloads": 44,
-      "modified": "2022-05-23T05:03:16.080Z"
+      "modified": "2022-05-23T05:03:16.080Z",
+      "noSourceSince": "2026-05-23T15:38:31.823Z",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-auth-mongo",
@@ -1046,7 +1209,9 @@
       "latest": "1.0.2",
       "downloads": 15,
       "modified": "2022-05-23T05:01:28.210Z",
-      "repository": "https://gitlab.com/stack-library-open/verdaccio-auth-mongo"
+      "repository": "https://gitlab.com/stack-library-open/verdaccio-auth-mongo",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-coauth",
@@ -1059,7 +1224,9 @@
       "latest": "0.0.2",
       "downloads": 17,
       "modified": "2022-05-23T05:01:57.634Z",
-      "repository": "https://github.com/nicolindemann/sinopia-delegated-auth"
+      "repository": "https://github.com/nicolindemann/sinopia-delegated-auth",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-simpleldap",
@@ -1072,7 +1239,9 @@
       "latest": "0.1.1",
       "downloads": 15,
       "modified": "2022-05-23T05:05:02.374Z",
-      "repository": "https://github.com/bruceman/verdaccio-auth-ldap"
+      "repository": "https://github.com/bruceman/verdaccio-auth-ldap",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-github-team",
@@ -1084,7 +1253,10 @@
       "registry": "https://registry.npmjs.org/verdaccio-github-team",
       "latest": "0.1.2",
       "downloads": 9,
-      "modified": "2022-05-23T05:02:39.644Z"
+      "modified": "2022-05-23T05:02:39.644Z",
+      "noSourceSince": "2026-05-23T15:38:51.621Z",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-api-auth",
@@ -1097,7 +1269,9 @@
       "latest": "0.0.9",
       "downloads": 47,
       "modified": "2022-05-23T05:01:05.844Z",
-      "repository": "https://github.com/alleshq/verdaccio-alles-auth"
+      "repository": "https://github.com/alleshq/verdaccio-alles-auth",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-delegated-auth",
@@ -1110,7 +1284,9 @@
       "latest": "0.1.1",
       "downloads": 34,
       "modified": "2022-05-23T05:02:01.870Z",
-      "repository": "https://github.com/yansenlei/verdaccio-delegated-auth"
+      "repository": "https://github.com/yansenlei/verdaccio-delegated-auth",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-delegated-basic-auth",
@@ -1123,7 +1299,9 @@
       "latest": "0.0.2",
       "downloads": 10,
       "modified": "2022-05-23T05:02:03.224Z",
-      "repository": "https://github.com/pendexgabo/verdaccio-delegated-basic-auth"
+      "repository": "https://github.com/pendexgabo/verdaccio-delegated-basic-auth",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-fixed-token",
@@ -1135,7 +1313,10 @@
       "registry": "https://registry.npmjs.org/verdaccio-fixed-token",
       "latest": "0.0.2",
       "downloads": 31,
-      "modified": "2025-09-04T09:35:52.719Z"
+      "modified": "2025-09-04T09:35:52.719Z",
+      "noSourceSince": "2026-05-23T15:39:11.507Z",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "@wunderwerk/verdaccio-static-access-token-middleware-plugin",
@@ -1147,7 +1328,10 @@
       "latest": "1.0.2",
       "downloads": 35,
       "description": "",
-      "modified": "2022-10-06T10:16:15.119Z"
+      "modified": "2022-10-06T10:16:15.119Z",
+      "noSourceSince": "2026-05-23T15:39:16.622Z",
+      "license": "ISC",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-sentryrich",
@@ -1160,7 +1344,9 @@
       "latest": "0.1.3",
       "downloads": 10,
       "modified": "2022-05-23T05:04:54.133Z",
-      "repository": "https://github.com/verdaccio/sentry"
+      "repository": "https://github.com/verdaccio/sentry",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-sentry",
@@ -1173,7 +1359,9 @@
       "latest": "0.0.2-beta",
       "downloads": 1,
       "modified": "2022-05-23T05:04:52.704Z",
-      "repository": "https://github.com/verdaccio/sentry"
+      "repository": "https://github.com/verdaccio/sentry",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-openmetrics",
@@ -1186,7 +1374,9 @@
       "latest": "1.2.0",
       "downloads": 302,
       "modified": "2022-05-23T05:04:21.868Z",
-      "repository": "https://github.com/freight-hub/verdaccio-openmetrics"
+      "repository": "https://github.com/freight-hub/verdaccio-openmetrics",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-https",
@@ -1199,7 +1389,9 @@
       "latest": "1.0.11",
       "downloads": 47,
       "modified": "2022-05-23T05:03:25.986Z",
-      "repository": "https://github.com/honzahommer/verdaccio-https"
+      "repository": "https://github.com/honzahommer/verdaccio-https",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-badges",
@@ -1212,7 +1404,9 @@
       "latest": "1.1.2",
       "downloads": 92,
       "modified": "2022-05-23T05:01:47.893Z",
-      "repository": "https://github.com/tavvy/verdaccio-badges"
+      "repository": "https://github.com/tavvy/verdaccio-badges",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-npm-urls",
@@ -1225,7 +1419,9 @@
       "latest": "1.0.1",
       "downloads": 34,
       "modified": "2022-05-23T05:04:09.332Z",
-      "repository": "https://github.com/n4bb12/verdaccio-npm-urls"
+      "repository": "https://github.com/n4bb12/verdaccio-npm-urls",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-static-token",
@@ -1238,7 +1434,9 @@
       "latest": "1.0.1",
       "downloads": 342,
       "modified": "2022-05-23T05:05:06.707Z",
-      "repository": "https://github.com/Eomm/verdaccio-static-token"
+      "repository": "https://github.com/Eomm/verdaccio-static-token",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-apm-server",
@@ -1251,7 +1449,9 @@
       "latest": "1.0.14",
       "downloads": 74,
       "modified": "2022-05-23T05:01:10.323Z",
-      "repository": "https://github.com/soul244/apm-server"
+      "repository": "https://github.com/soul244/apm-server",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-gae-ah",
@@ -1264,7 +1464,9 @@
       "latest": "0.0.3",
       "downloads": 18,
       "modified": "2022-05-23T05:02:20.167Z",
-      "repository": "https://github.com/rkretzschmar/verdaccio-gae-ah"
+      "repository": "https://github.com/rkretzschmar/verdaccio-gae-ah",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-oidc-ui",
@@ -1277,7 +1479,9 @@
       "latest": "2.2.7",
       "downloads": 80,
       "modified": "2025-10-23T18:49:26.507Z",
-      "repository": "https://github.com/TuneZilla-Development/verdaccio-oidc-ui"
+      "repository": "https://github.com/TuneZilla-Development/verdaccio-oidc-ui",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-github-oauth-ui-without-groups",
@@ -1290,7 +1494,9 @@
       "latest": "1.0.1",
       "downloads": 24,
       "modified": "2022-05-23T05:02:36.832Z",
-      "repository": "https://github.com/n4bb12/verdaccio-github-oauth-ui"
+      "repository": "https://github.com/n4bb12/verdaccio-github-oauth-ui",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-downloads-count",
@@ -1303,7 +1509,9 @@
       "latest": "1.0.2",
       "downloads": 21,
       "modified": "2024-11-14T11:45:15.950Z",
-      "repository": "https://github.com/Voltstro/verdaccio-downloads-count"
+      "repository": "https://github.com/Voltstro/verdaccio-downloads-count",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-openid",
@@ -1316,7 +1524,9 @@
       "latest": "0.17.1",
       "downloads": 771,
       "modified": "2026-04-15T06:30:33.752Z",
-      "repository": "https://github.com/kuoruan/verdaccio-openid"
+      "repository": "https://github.com/kuoruan/verdaccio-openid",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-package-age-filter",
@@ -1328,7 +1538,9 @@
       "registry": "https://registry.npmjs.org/verdaccio-package-age-filter",
       "latest": "1.0.2",
       "downloads": 26,
-      "modified": "2025-10-07T07:44:52.724Z"
+      "modified": "2025-10-07T07:44:52.724Z",
+      "noSourceSince": "2026-05-23T15:40:26.127Z",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-plugin-delay-filter",
@@ -1341,7 +1553,9 @@
       "latest": "1.2.0",
       "downloads": 192,
       "modified": "2025-11-29T21:02:20.267Z",
-      "repository": "https://github.com/vsugrob/verdaccio-plugin-delay-filter"
+      "repository": "https://github.com/vsugrob/verdaccio-plugin-delay-filter",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-sec",
@@ -1353,7 +1567,10 @@
       "registry": "https://registry.npmjs.org/verdaccio-sec",
       "latest": "1.6.10",
       "downloads": 17,
-      "modified": "2025-09-19T17:01:33.249Z"
+      "modified": "2025-09-19T17:01:33.249Z",
+      "noSourceSince": "2026-05-23T15:40:36.100Z",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-ssh-upload",
@@ -1365,7 +1582,10 @@
       "registry": "https://registry.npmjs.org/verdaccio-ssh-upload",
       "latest": "1.0.0",
       "downloads": 8,
-      "modified": "2025-08-13T03:32:27.618Z"
+      "modified": "2025-08-13T03:32:27.618Z",
+      "noSourceSince": "2026-05-23T15:40:41.014Z",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-az-storage",
@@ -1378,7 +1598,9 @@
       "latest": "1.3.0",
       "downloads": 57,
       "modified": "2025-07-15T09:14:42.491Z",
-      "repository": "https://github.com/Voltstro/verdaccio-az-storage"
+      "repository": "https://github.com/Voltstro/verdaccio-az-storage",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-plugin-community-nodes",
@@ -1391,7 +1613,9 @@
       "latest": "0.2.6",
       "downloads": 54,
       "modified": "2025-12-09T22:31:14.586Z",
-      "repository": "https://github.com/Joffcom/verdaccio-plugin-community-nodes"
+      "repository": "https://github.com/Joffcom/verdaccio-plugin-community-nodes",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-auth-db",
@@ -1404,7 +1628,9 @@
       "latest": "0.1.1",
       "downloads": 8,
       "modified": "2025-06-30T11:25:50.928Z",
-      "repository": "https://github.com/JuniorAndria/verdaccio-auth-db"
+      "repository": "https://github.com/JuniorAndria/verdaccio-auth-db",
+      "license": "MIT",
+      "hasTypes": false
     },
     {
       "name": "verdaccio-stats",
@@ -1417,7 +1643,9 @@
       "latest": "0.4.4",
       "downloads": 117,
       "modified": "2026-02-28T06:08:14.345Z",
-      "repository": "https://github.com/kuoruan/verdaccio-stats"
+      "repository": "https://github.com/kuoruan/verdaccio-stats",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-tfs",
@@ -1429,7 +1657,10 @@
       "registry": "https://registry.npmjs.org/verdaccio-tfs",
       "latest": "1.0.3",
       "downloads": 28,
-      "modified": "2025-03-20T09:47:35.753Z"
+      "modified": "2025-03-20T09:47:35.753Z",
+      "noSourceSince": "2026-05-23T15:41:06.699Z",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-nexus-auth-proxy",
@@ -1442,7 +1673,9 @@
       "latest": "0.1.0",
       "downloads": 50,
       "modified": "2025-02-25T10:46:08.859Z",
-      "repository": "https://github.com/schmitch/nexus-auth-proxy"
+      "repository": "https://github.com/schmitch/nexus-auth-proxy",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "@anddev-oss/verdaccio-auth-az-tables",
@@ -1455,7 +1688,9 @@
       "latest": "0.0.6",
       "downloads": 89,
       "modified": "2025-01-28T22:11:33.496Z",
-      "repository": "https://github.com/ANDDEV-OSS/verdaccio-auth-az-tables"
+      "repository": "https://github.com/ANDDEV-OSS/verdaccio-auth-az-tables",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "@anddev-oss/verdaccio-htpasswd-azure",
@@ -1468,7 +1703,9 @@
       "latest": "0.0.6",
       "downloads": 83,
       "modified": "2025-01-23T18:52:34.551Z",
-      "repository": "https://github.com/ANDDEV-OSS/verdaccio-htpasswd-azure"
+      "repository": "https://github.com/ANDDEV-OSS/verdaccio-htpasswd-azure",
+      "license": "MIT",
+      "hasTypes": true
     },
     {
       "name": "verdaccio-auth0-ui2",
@@ -1481,7 +1718,9 @@
       "latest": "4.0.51",
       "downloads": 108,
       "modified": "2025-01-21T22:03:09.261Z",
-      "repository": "https://github.com/xoapit/verdaccio-auth0-ui"
+      "repository": "https://github.com/xoapit/verdaccio-auth0-ui",
+      "license": "MIT",
+      "hasTypes": false
     }
   ]
 }

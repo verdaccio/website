@@ -234,10 +234,7 @@ async function fetchVulnerabilities(name: string) {
       prunedNoSource.push(item.name);
       return false;
     }
-    if (
-      item.criticalCveSince &&
-      new Date(item.criticalCveSince).getTime() <= criticalCveCutoff
-    ) {
+    if (item.criticalCveSince && new Date(item.criticalCveSince).getTime() <= criticalCveCutoff) {
       prunedCritical.push(item.name);
       return false;
     }

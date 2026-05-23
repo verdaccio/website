@@ -30,8 +30,7 @@ type Props = {
 
 const ADDONS_FILE_PATH = 'website/src/components/EcosystemSearch/addons.json';
 const ADDONS_FILE_EDIT_URL = `https://github.com/verdaccio/website/edit/master/${ADDONS_FILE_PATH}`;
-const ADDON_ISSUE_URL =
-  'https://github.com/verdaccio/website/issues/new?template=addon.yml';
+const ADDON_ISSUE_URL = 'https://github.com/verdaccio/website/issues/new?template=addon.yml';
 const ADDON_ENTRY_EXAMPLE = `{
   "name": "verdaccio-example-plugin",
   "category": "authentication",
@@ -105,12 +104,12 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
         <DialogContent dividers>
           <Typography variant="body2" sx={{ marginBottom: theme.spacing(1) }}>
             <Translate>
-              The list is hand-curated — packages are NOT auto-discovered from npm keywords.
-              The easiest way to propose a new plugin or tool is to file a "Suggest a new
-              addon" issue using the template below; a maintainer will review and add it.
-              Power users can skip the issue and open a PR directly against the JSON file.
-              Once merged, the next scheduled run of the update script fills in the live
-              metadata (downloads, version, license, vulnerabilities, etc.).
+              The list is hand-curated — packages are NOT auto-discovered from npm keywords. The
+              easiest way to propose a new plugin or tool is to file a "Suggest a new addon" issue
+              using the template below; a maintainer will review and add it. Power users can skip
+              the issue and open a PR directly against the JSON file. Once merged, the next
+              scheduled run of the update script fills in the live metadata (downloads, version,
+              license, vulnerabilities, etc.).
             </Translate>
           </Typography>
           <Typography
@@ -159,9 +158,9 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
             sx={{ display: 'block', marginTop: theme.spacing(0.75), color: 'text.secondary' }}
           >
             <Translate>
-              Only `name`, `category`, and `origin` are required. `bundled` defaults to false.
-              The script fills in url, registry, description, latest, downloads, modified,
-              repository, license, hasTypes, and vulnerabilities on the next run.
+              Only `name`, `category`, and `origin` are required. `bundled` defaults to false. The
+              script fills in url, registry, description, latest, downloads, modified, repository,
+              license, hasTypes, and vulnerabilities on the next run.
             </Translate>
           </Typography>
           <Typography
@@ -178,16 +177,21 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
               </Translate>
             </li>
             <li>
-              <Translate>Declares a `repository` URL in `package.json` (packages without one are dropped after 90 days).</Translate>
-            </li>
-            <li>
-              <Translate>Fits one of the categories: middleware, authentication, filter, storage, ui, tool.</Translate>
+              <Translate>
+                Declares a `repository` URL in `package.json` (packages without one are dropped
+                after 90 days).
+              </Translate>
             </li>
             <li>
               <Translate>
-                Community packages should declare a `license` field in package.json — preferably
-                an OSI-approved SPDX identifier. Packages without one are still listed but
-                flagged as "No license provided" on the card.
+                Fits one of the categories: middleware, authentication, filter, storage, ui, tool.
+              </Translate>
+            </li>
+            <li>
+              <Translate>
+                Community packages should declare a `license` field in package.json — preferably an
+                OSI-approved SPDX identifier. Packages without one are still listed but flagged as
+                "No license provided" on the card.
               </Translate>
             </li>
             <li>
@@ -198,13 +202,15 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
             </li>
             <li>
               <Translate>
-                HIGH or CRITICAL CVEs (per OSV.dev) are flagged on the card; if left unfixed
-                for more than 12 months the package is dropped from the list. MODERATE/LOW
-                advisories are allowed and only flagged.
+                HIGH or CRITICAL CVEs (per OSV.dev) are flagged on the card; if left unfixed for
+                more than 12 months the package is dropped from the list. MODERATE/LOW advisories
+                are allowed and only flagged.
               </Translate>
             </li>
             <li>
-              <Translate>"Core" is reserved for packages maintained by the Verdaccio team.</Translate>
+              <Translate>
+                "Core" is reserved for packages maintained by the Verdaccio team.
+              </Translate>
             </li>
           </Box>
           <Typography
@@ -212,8 +218,8 @@ const FilterControl: FC<Props> = ({ categories, origins, filters, onChange }): R
             sx={{ display: 'block', marginTop: theme.spacing(1.5), color: 'text.secondary' }}
           >
             <Translate>
-              Metadata (downloads, version, vulnerabilities) is refreshed periodically from npm
-              and OSV.
+              Metadata (downloads, version, vulnerabilities) is refreshed periodically from npm and
+              OSV.
             </Translate>
           </Typography>
         </DialogContent>
