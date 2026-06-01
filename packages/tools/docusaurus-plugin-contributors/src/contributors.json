@@ -228,15 +228,19 @@
     {
       "id": 59966492,
       "login": "mbtools",
-      "contributions": 271,
+      "contributions": 277,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 264
+          "contributions": 266
         },
         {
           "name": "website",
           "contributions": 7
+        },
+        {
+          "name": "verdaccio-aws-s3-storage",
+          "contributions": 4
         }
       ]
     },
@@ -4597,7 +4601,7 @@
     },
     {
       "id": 97917457,
-      "login": "xkcdstickfigure",
+      "login": "xkcdstickfig",
       "contributions": 1,
       "repositories": [
         {
