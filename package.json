@@ -82,5 +82,5 @@
     "script:addon": "tsx ./scripts/addon-update.ts"
   },
   "license": "MIT",
-  "packageManager": "pnpm@11.1.2"
+  "packageManager": "pnpm@11.5.0"
 }
