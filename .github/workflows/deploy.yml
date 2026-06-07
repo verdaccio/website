@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * 0'  # every Sunday at 2am UTC  (10pm EST)
+    - cron: '0 18 * * 0'  # once per week, Sunday 18:00 UTC (~1-2pm US Eastern)
 
 permissions:
   contents: read

@@ -1,0 +1,7 @@
+# Default code owner for the whole repository.
+# GitHub automatically requests a review from verdacciobot on every PR.
+#
+# Note: verdacciobot must remain a repo collaborator (read access) for this to
+# take effect, and this file must live on the default branch (master).
+
+* @verdacciobot
