@@ -21,9 +21,9 @@ In this talk, you will discover a deep understanding of how a Node.js registry w
 ### Video
 
 ```mdx-code-block
-import ReactPlayer from 'react-player/youtube'
+import ReactPlayer from 'react-player'
 
-<ReactPlayer url='https://youtu.be/qRMucS3i3kQ' height="600px" width="100%" pip controls/>
+<ReactPlayer src='https://youtu.be/qRMucS3i3kQ' height="600px" width="100%" pip controls/>
 ```
 
 ### Slides

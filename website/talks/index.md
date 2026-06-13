@@ -18,35 +18,35 @@ Subscribe to the channel watch more talks in the future.
 ## The Latest Talks
 
 ```mdx-code-block
-import ReactPlayer from 'react-player/youtube'
+import ReactPlayer from 'react-player'
 
-<ReactPlayer url='https://youtube.com/playlist?list=PLP8UI_MhLljLk-HtxaEyOAPfEaVU6W1Q_' height="600px" width="100%" pip controls/>
+<ReactPlayer src='https://youtube.com/playlist?list=PLP8UI_MhLljLk-HtxaEyOAPfEaVU6W1Q_' height="600px" width="100%" pip controls/>
 ```
 
 ## Verdaccio Public Talks
 
 ```mdx-code-block
 
-<ReactPlayer url='https://www.youtube.com/embed/videoseries?list=PLP8UI_MhLljL5B4DEh20b1dfYI_DGj5IG' height="600px" width="100%" pip controls/>
+<ReactPlayer src='https://www.youtube.com/embed/videoseries?list=PLP8UI_MhLljL5B4DEh20b1dfYI_DGj5IG' height="600px" width="100%" pip controls/>
 ```
 
 ## Must Watch
 
 ```mdx-code-block
 
-<ReactPlayer url='https://youtube.com/playlist?list=PLP8UI_MhLljIDZOFHd7YlvUVhV89caeyu' height="600px" width="100%" pip controls/>
+<ReactPlayer src='https://youtube.com/playlist?list=PLP8UI_MhLljIDZOFHd7YlvUVhV89caeyu' height="600px" width="100%" pip controls/>
 ```
 
 ## Contributors Tutorials
 
 ```mdx-code-block
 
-<ReactPlayer url='https://youtube.com/playlist?list=PLP8UI_MhLljIkGcN-czMCR3ET82prbs0O' height="600px" width="100%" pip controls/>
+<ReactPlayer src='https://youtube.com/playlist?list=PLP8UI_MhLljIkGcN-czMCR3ET82prbs0O' height="600px" width="100%" pip controls/>
 ```
 
 ## Tutoriales en Español
 
 ```mdx-code-block
 
-<ReactPlayer url='https://youtube.com/playlist?list=PLP8UI_MhLljIfH7rVncmRmj_nScZFywaG' height="600px" width="100%" pip controls/>
+<ReactPlayer src='https://youtube.com/playlist?list=PLP8UI_MhLljIfH7rVncmRmj_nScZFywaG' height="600px" width="100%" pip controls/>
 ```
