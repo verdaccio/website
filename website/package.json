@@ -74,7 +74,7 @@
     "@verdaccio/local-scripts": "workspace:*",
     "docusaurus-plugin-sass": "0.2.6",
     "prism-react-renderer": "2.4.1",
-    "sass": "1.98.0",
+    "sass": "1.99.0",
     "sass-loader": "16.0.7",
     "url-loader": "4.1.1"
   }
