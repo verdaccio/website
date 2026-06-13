@@ -47,7 +47,7 @@
     "@types/react-dom": "19.2.3",
     "@types/react-router-dom": "5.3.3",
     "@types/sanitize-html": "2.16.1",
-    "@verdaccio/eslint-config": "11.0.1",
+    "@verdaccio/eslint-config": "13.1.2",
     "@verdaccio/local-scripts": "workspace:*",
     "babel-plugin-dynamic-import-node": "2.3.3",
     "babel-plugin-emotion": "11.0.0",
