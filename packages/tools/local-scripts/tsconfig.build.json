@@ -2,7 +2,12 @@
   "extends": "../../../tsconfig.base",
   "compilerOptions": {
     "rootDir": "./src",
-    "outDir": "./build"
+    "outDir": "./build",
+    // got@15 is ESM-only and exposes its types via package "exports"; the
+    // legacy "node" resolution (the default under module:commonjs) can't read
+    // it. tsc only emits declarations here, so a modern resolver is safe.
+    "module": "esnext",
+    "moduleResolution": "bundler"
   },
   "include": ["src/**/*.ts"],
   "exclude": ["src/**/*.test.ts"]
