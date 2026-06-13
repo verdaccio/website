@@ -10,7 +10,11 @@ most recommended and used ones.
 
 # Apache
 
-Apache and `mod_proxy` should **not decode/encode slashes** and leave them as they are:
+A full `docker` example using the official `httpd:2.4` image can be found in our [Docker examples repository](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7/reverse_proxy/apache).
+
+Apache and `mod_proxy` should **not decode/encode slashes** and leave them as they are.
+
+> **Publishing large packages:** Apache limits request bodies via `LimitRequestBody` (and front proxies may add their own limit). If `npm publish` of a big tarball fails with HTTP `413 Request Entity Too Large`, add `LimitRequestBody 0` (unlimited) inside the `VirtualHost`. The nginx equivalent is `client_max_body_size 0;`.
 
 For installing at relative path, `/npm`, on the server
 
@@ -50,6 +54,7 @@ Apache virtual server configuration.
         ProxyRequests           Off
         ProxyPreserveHost       On
         AllowEncodedSlashes     NoDecode
+        LimitRequestBody        0
         ProxyPass               /       http://127.0.0.1:4873/ nocanon
         ProxyPassReverse        /       http://127.0.0.1:4873/
         RequestHeader set       X-Forwarded-Proto "https"
@@ -87,7 +92,7 @@ You should only add it to your virtual host config, if you are experiencing the 
 
 # Nginx
 
-The following snippet is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v6/reverse_proxy/nginx).
+The following snippet is a full `docker` example can be tested in our [Docker examples repository](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7/reverse_proxy/nginx).
 
 ```nginx
 upstream verdaccio_v4 {
@@ -110,11 +115,15 @@ server {
     access_log /var/log/nginx/verdaccio.log;
     charset utf-8;
 
+    # nginx limits request bodies to 1 MB by default, which makes `npm publish`
+    # of larger package tarballs fail with HTTP 413. Set 0 to disable the limit.
+    client_max_body_size 0;
+
     location / {
       proxy_set_header X-Real-IP $remote_addr;
       proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+      proxy_set_header X-Forwarded-Proto $scheme;
       proxy_set_header Host $host;
-      proxy_set_header X-NginX-Proxy true;
       proxy_pass http://verdaccio_v4_root;
       proxy_redirect off;
     }
@@ -149,15 +158,18 @@ server {
 }
 
 server {
-    listen 443 ssl http2;
+    # `listen ... ssl` enables TLS. The standalone `ssl on;` directive was
+    # removed in nginx 1.25.1, and the `http2` listen parameter is deprecated
+    # in favour of the `http2 on;` directive.
+    listen 443 ssl;
+    http2 on;
     server_name localhost;
 
     ssl_certificate     /etc/nginx/cert.crt;
     ssl_certificate_key /etc/nginx/cert.key;
 
-    ssl on;
     ssl_session_cache  builtin:1000  shared:SSL:10m;
-    ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
+    ssl_protocols  TLSv1.2 TLSv1.3;
     ssl_ciphers HIGH:!aNULL:!eNULL:!EXPORT:!CAMELLIA:!DES:!MD5:!PSK:!RC4;
     ssl_prefer_server_ciphers on;
 
