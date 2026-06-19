@@ -3,11 +3,11 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5737,
+      "contributions": 5741,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3224
+          "contributions": 3225
         },
         {
           "name": "verdaccio-cookbook",
@@ -67,7 +67,7 @@
         },
         {
           "name": "website",
-          "contributions": 571
+          "contributions": 572
         },
         {
           "name": "eslint-plugin-verdaccio",
@@ -119,7 +119,7 @@
         },
         {
           "name": "e2e-tests",
-          "contributions": 128
+          "contributions": 130
         },
         {
           "name": ".github",
@@ -228,11 +228,11 @@
     {
       "id": 59966492,
       "login": "mbtools",
-      "contributions": 287,
+      "contributions": 289,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 276
+          "contributions": 278
         },
         {
           "name": "website",
@@ -458,6 +458,29 @@
       ]
     },
     {
+      "id": 284604232,
+      "login": "verdacciopack",
+      "contributions": 11,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 5
+        },
+        {
+          "name": "generator-verdaccio-plugin",
+          "contributions": 1
+        },
+        {
+          "name": "verdaccio-google-cloud",
+          "contributions": 1
+        },
+        {
+          "name": "e2e-tests",
+          "contributions": 4
+        }
+      ]
+    },
+    {
       "id": 4052340,
       "login": "rblaine95",
       "contributions": 11,
@@ -499,29 +522,6 @@
         {
           "name": "ui",
           "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 284604232,
-      "login": "verdacciopack",
-      "contributions": 10,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 5
-        },
-        {
-          "name": "generator-verdaccio-plugin",
-          "contributions": 1
-        },
-        {
-          "name": "verdaccio-google-cloud",
-          "contributions": 1
-        },
-        {
-          "name": "e2e-tests",
-          "contributions": 3
         }
       ]
     },
@@ -5341,7 +5341,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17692,
+      "stargazers_count": 17708,
       "archived": false
     },
     {
