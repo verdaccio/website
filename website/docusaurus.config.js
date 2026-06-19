@@ -154,6 +154,7 @@ module.exports = {
   },
 
   plugins: [
+    'docusaurus-plugin-copy-page-button',
     require.resolve('docusaurus-lunr-search'),
     'docusaurus-plugin-sass',
     'docusaurus-plugin-contributors',

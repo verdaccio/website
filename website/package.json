@@ -42,6 +42,7 @@
     "copy-text-to-clipboard": "3.2.2",
     "docusaurus-lunr-search": "3.6.0",
     "docusaurus-plugin-contributors": "workspace:*",
+    "docusaurus-plugin-copy-page-button": "0.8.2",
     "docusaurus-plugin-downloads": "workspace:*",
     "dompurify": "3.4.0",
     "lunr": "2.3.9",
