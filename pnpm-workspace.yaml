@@ -5,8 +5,8 @@ minimumReleaseAge: 10080
 minimumReleaseAgeExclude:
   - '@verdaccio/*'
   - 'verdaccio-*'
-  # Renovate security update: dompurify@3.4.9
-  - dompurify@3.4.9
+  # Renovate security update: dompurify@3.4.9 || 3.4.11
+  - dompurify@3.4.9 || 3.4.11
 saveExact: true
 onlyBuiltDependencies:
   - '@parcel/watcher'
