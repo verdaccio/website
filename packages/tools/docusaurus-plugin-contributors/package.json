@@ -9,8 +9,8 @@
     "@docusaurus/utils": "3.10.1"
   },
   "devDependencies": {
-    "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
   },
   "scripts": {
     "clean": "rimraf ./build",
