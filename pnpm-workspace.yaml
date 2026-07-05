@@ -7,6 +7,8 @@ minimumReleaseAgeExclude:
   - 'verdaccio-*'
   # Renovate security update: dompurify@3.4.9 || 3.4.11
   - dompurify@3.4.9 || 3.4.11
+  # Renovate security update: @babel/core@7.29.6
+  - "@babel/core@7.29.6"
 saveExact: true
 onlyBuiltDependencies:
   - '@parcel/watcher'
