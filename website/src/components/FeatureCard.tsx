@@ -1,6 +1,6 @@
-import React from 'react';
-
 import styles from './FeatureCard.module.scss';
+
+import React from 'react';
 
 type FeatureCardProps = {
   title: string;

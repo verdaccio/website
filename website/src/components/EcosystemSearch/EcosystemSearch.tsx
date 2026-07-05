@@ -1,11 +1,11 @@
+import data from './addons.json';
+import FilterControl from './FilterControl';
+import ToolList from './ToolList';
+import { Filters } from './types';
+
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import React from 'react';
 import { useState } from 'react';
-
-import FilterControl from './FilterControl';
-import ToolList from './ToolList';
-import data from './addons.json';
-import { Filters } from './types';
 
 const theme = createTheme({
   breakpoints: {

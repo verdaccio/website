@@ -1,6 +1,6 @@
-import { Command } from 'clipanion';
-
 import { fetchEcosystemDownloads } from './utils';
+
+import { Command } from 'clipanion';
 
 export class EcosystemDownloadsCommand extends Command {
   public static paths = [['fetch-ecosystem-downloads']];

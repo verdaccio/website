@@ -1,10 +1,10 @@
+import Divider from './Divider';
+import styles from './WhatIsVerdaccio.module.scss';
+
 import Link from '@docusaurus/Link';
 import Translate from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import React from 'react';
-
-import Divider from './Divider';
-import styles from './WhatIsVerdaccio.module.scss';
 
 const WhatIs = (): React.ReactElement => (
   <section className={styles.whatIs}>

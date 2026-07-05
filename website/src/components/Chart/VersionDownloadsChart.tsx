@@ -1,15 +1,15 @@
-import { BarElement, CategoryScale, Chart as ChartJS, LinearScale, Title, Tooltip } from 'chart.js';
-import React from 'react';
-import { Bar } from 'react-chartjs-2';
-
 import { npmjsDownloads } from '@verdaccio/local-scripts';
 
 import DataTable from './DataTable';
 
+import { BarElement, CategoryScale, Chart as ChartJS, LinearScale, Title, Tooltip } from 'chart.js';
+import React from 'react';
+import { Bar } from 'react-chartjs-2';
+
 ChartJS.register(BarElement, CategoryScale, LinearScale, Title, Tooltip);
 
 // @ts-ignore
-const dates = [...Object.keys(npmjsDownloads)].sort((a, b) => new Date(b) - new Date(a));
+const dates = Object.keys(npmjsDownloads).sort((a, b) => new Date(b) - new Date(a));
 const lastDate = dates[0];
 const data = npmjsDownloads[lastDate];
 

@@ -1,7 +1,3 @@
-import Translate from '@docusaurus/Translate';
-import Layout from '@theme/Layout';
-import React from 'react';
-
 import ActiveVersionsChart from './Chart/ActiveVersionsChart';
 import CumulativeAdoptionChart from './Chart/CumulativeAdoptionChart';
 import DockerPullChart from './Chart/DockerPullChart';
@@ -17,9 +13,13 @@ import NpmjsVersionsChart from './Chart/NpmjsVersionsChart';
 import TotalDownloadsHero from './Chart/TotalDownloadsHero';
 import VersionComparisonTable from './Chart/VersionComparisonTable';
 import VersionDownloadsChart from './Chart/VersionDownloadsChart';
-import YearOverYearChart from './Chart/YearOverYearChart';
 import NpmjsYearlyDownloadsChart from './Chart/YearlyNpmjsDownloadsChart';
+import YearOverYearChart from './Chart/YearOverYearChart';
 import styles from './Downloads.module.scss';
+
+import Translate from '@docusaurus/Translate';
+import Layout from '@theme/Layout';
+import React from 'react';
 
 const Downloads: React.FC<{}> = (): React.ReactElement => {
   return (

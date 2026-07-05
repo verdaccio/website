@@ -1,15 +1,15 @@
-import Translate, { translate } from '@docusaurus/Translate';
+import AddonCard from './AddonCard';
+import { Addon, Filters } from './types';
+
+import Translate from '@docusaurus/Translate';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
+import Typography from '@mui/material/Typography';
 import { Orama, ProvidedTypes, create, insertMultiple, search } from '@orama/orama';
 import * as React from 'react';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { FC } from 'react';
-
-import AddonCard from './AddonCard';
-import { Addon, Filters } from './types';
 
 type Props = {
   addons: Addon[];

@@ -1,6 +1,6 @@
-import React from 'react';
-
 import styles from './DataTable.module.scss';
+
+import React from 'react';
 
 export interface TrendInfo {
   label: string;

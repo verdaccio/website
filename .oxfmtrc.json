@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "ignorePatterns": [],
+  "printWidth": 100,
+  "semi": true,
+  "singleQuote": true,
+  "sortImports": {
+    "customGroups": [
+      {
+        "groupName": "verdaccio",
+        "elementNamePattern": ["@verdaccio/**"],
+        "selector": "import"
+      }
+    ],
+    "groups": ["verdaccio", ["parent", "sibling", "index"]],
+    "newlinesBetween": true
+  },
+  "sortPackageJson": false,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "useTabs": false
+}

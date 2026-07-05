@@ -1,3 +1,5 @@
+import { Category, Filters, Origin } from './types';
+
 import Translate, { translate } from '@docusaurus/Translate';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
@@ -18,8 +20,6 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React, { ReactElement, useState } from 'react';
 import { FC } from 'react';
-
-import { Category, Filters, Origin } from './types';
 
 type Props = {
   categories: Category[];

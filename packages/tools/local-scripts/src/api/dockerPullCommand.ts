@@ -1,6 +1,6 @@
-import { Command } from 'clipanion';
-
 import { dockerPullWeekly } from './utils';
+
+import { Command } from 'clipanion';
 
 export class DockerPullCommand extends Command {
   public static paths = [['docker-pull-api-download']];

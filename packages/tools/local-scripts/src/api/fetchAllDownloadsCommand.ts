@@ -1,6 +1,6 @@
-import { Command } from 'clipanion';
-
 import { fetchAllDownloads } from './utils';
+
+import { Command } from 'clipanion';
 
 export class FetchAllDownloadsCommand extends Command {
   public static paths = [['fetch-all-downloads']];

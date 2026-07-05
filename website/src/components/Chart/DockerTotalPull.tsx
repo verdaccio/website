@@ -1,3 +1,7 @@
+import { dockerPulls } from '@verdaccio/local-scripts';
+
+import DataTable from './DataTable';
+
 import {
   BarElement,
   CategoryScale,
@@ -9,10 +13,6 @@ import {
 } from 'chart.js';
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
-
-import { dockerPulls } from '@verdaccio/local-scripts';
-
-import DataTable from './DataTable';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 

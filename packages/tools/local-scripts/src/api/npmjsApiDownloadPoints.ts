@@ -1,6 +1,6 @@
-import { Command } from 'clipanion';
-
 import { fetchMonthlyData, fetchYearlyData } from './utils';
+
+import { Command } from 'clipanion';
 
 export class FetchMonthlyDataCommand extends Command {
   public static paths = [['fetch-monthly-data']];

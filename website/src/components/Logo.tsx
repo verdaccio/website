@@ -1,8 +1,8 @@
+import styles from './Header.module.scss';
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import * as React from 'react';
 import { FC } from 'react';
-
-import styles from './Header.module.scss';
 
 const Logo: FC = (): React.ReactElement => {
   return (

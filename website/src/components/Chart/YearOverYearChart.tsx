@@ -1,3 +1,7 @@
+import { monthlyDownloads } from '@verdaccio/local-scripts';
+
+import DataTable from './DataTable';
+
 import {
   CategoryScale,
   Chart as ChartJS,
@@ -10,10 +14,6 @@ import {
 } from 'chart.js';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
-
-import { monthlyDownloads } from '@verdaccio/local-scripts';
-
-import DataTable from './DataTable';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -53,7 +53,7 @@ function groupByYear() {
     const monthIdx = date.getMonth();
 
     if (!byYear[year]) {
-      byYear[year] = new Array(12).fill(null);
+      byYear[year] = Array.from({ length: 12 }, () => null);
     }
     byYear[year][monthIdx] = entry.downloads;
   });

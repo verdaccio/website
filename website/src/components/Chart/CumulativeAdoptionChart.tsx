@@ -1,3 +1,7 @@
+import { npmjsDownloads } from '@verdaccio/local-scripts';
+
+import DataTable from './DataTable';
+
 import {
   CategoryScale,
   Chart as ChartJS,
@@ -11,10 +15,6 @@ import {
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import semver from 'semver';
-
-import { npmjsDownloads } from '@verdaccio/local-scripts';
-
-import DataTable from './DataTable';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
