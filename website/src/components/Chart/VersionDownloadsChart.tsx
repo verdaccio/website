@@ -37,9 +37,13 @@ const defaultColor = { bg: 'rgba(158, 158, 158, 0.7)', border: 'rgba(158, 158, 1
 const VersionDownloadsChart = () => {
   const processedData = reduceDownloads(data);
 
-  // Filter out versions with less than 400 downloads (mostly very old deprecated versions)
+  // Filter out versions with less than 400 downloads (mostly very old deprecated versions),
+  // but always keep v7 so the upcoming release (including prereleases) is visible.
+  // v8 is excluded intentionally.
   // @ts-ignore
-  const filteredData = Object.entries(processedData).filter(([_, count]) => count > 400);
+  const filteredData = Object.entries(processedData).filter(
+    ([version, count]) => version !== '8' && (count > 400 || Number(version) >= 7)
+  );
 
   const labels = filteredData.map(([version]) => `v${version}`);
   const dataPoints = filteredData.map(([_, count]) => count);
