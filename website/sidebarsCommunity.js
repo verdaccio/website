@@ -31,11 +31,6 @@ module.exports = {
     },
     {
       type: 'link',
-      label: 'GitHub Sponsors',
-      href: 'https://github.com/sponsors/verdaccio',
-    },
-    {
-      type: 'link',
       label: 'LICENSE',
       href: 'https://github.com/verdaccio/verdaccio/blob/master/LICENSE',
     },
