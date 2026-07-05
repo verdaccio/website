@@ -1,6 +1,6 @@
-import { Command } from 'clipanion';
-
 import { fetchTranslationsAPI } from './utils';
+
+import { Command } from 'clipanion';
 
 export class TranslationsApiCommand extends Command {
   public static paths = [['translations']];

@@ -1,3 +1,9 @@
+import { npmjsDownloads } from '@verdaccio/local-scripts';
+
+import DataTable from './DataTable';
+import TrendBadges, { computeTrend } from './TrendBadges';
+import type { TrendInfo } from './TrendBadges';
+
 import {
   CategoryScale,
   Chart as ChartJS,
@@ -11,12 +17,6 @@ import {
 } from 'chart.js';
 import React from 'react';
 import { Line } from 'react-chartjs-2';
-
-import { npmjsDownloads } from '@verdaccio/local-scripts';
-
-import DataTable from './DataTable';
-import TrendBadges, { computeTrend } from './TrendBadges';
-import type { TrendInfo } from './TrendBadges';
 
 ChartJS.register(
   CategoryScale,
@@ -54,7 +54,7 @@ const MajorVersionsStackedChart: React.FC = () => {
       const major = version.split('.')[0];
       if (Number(major) < 3) return;
       if (!majorTotals[major]) {
-        majorTotals[major] = new Array(allDates.length).fill(0);
+        majorTotals[major] = Array.from({ length: allDates.length }, () => 0);
       }
       majorTotals[major][dateIndex] += count as number;
     });

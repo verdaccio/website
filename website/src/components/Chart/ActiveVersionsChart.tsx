@@ -1,3 +1,7 @@
+import { npmjsDownloads } from '@verdaccio/local-scripts';
+
+import DataTable from './DataTable';
+
 import {
   BarElement,
   CategoryScale,
@@ -9,10 +13,6 @@ import {
 } from 'chart.js';
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
-
-import { npmjsDownloads } from '@verdaccio/local-scripts';
-
-import DataTable from './DataTable';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
@@ -51,7 +51,7 @@ const ActiveVersionsChart: React.FC = () => {
 
     Object.entries(majorVersions).forEach(([major, versions]) => {
       if (!majorActiveByDate[major]) {
-        majorActiveByDate[major] = new Array(allDates.length).fill(0);
+        majorActiveByDate[major] = Array.from({ length: allDates.length }, () => 0);
       }
       majorActiveByDate[major][dateIndex] = versions.size;
     });

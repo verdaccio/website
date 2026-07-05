@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-
 import styles from './DataTable.module.scss';
+
+import React, { useState } from 'react';
 
 interface DataTableProps {
   headers: string[];

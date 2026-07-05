@@ -1,3 +1,7 @@
+import CardLogo from './CardLogo';
+import Icon from './Icon';
+import { Addon, VulnerabilitySeverity } from './types';
+
 import Translate from '@docusaurus/Translate';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -15,14 +19,10 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import Chip from '@mui/material/Chip';
-import Typography from '@mui/material/Typography';
 import { green, red } from '@mui/material/colors';
+import Typography from '@mui/material/Typography';
 import * as React from 'react';
 import { FC } from 'react';
-
-import CardLogo from './CardLogo';
-import Icon from './Icon';
-import { Addon, VulnerabilitySeverity } from './types';
 
 const AVATAR_SIZE = 28;
 

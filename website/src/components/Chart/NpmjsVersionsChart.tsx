@@ -1,3 +1,9 @@
+import { npmjsDownloads } from '@verdaccio/local-scripts';
+
+import DataTable from './DataTable';
+import TrendBadges, { computeTrend } from './TrendBadges';
+import type { TrendInfo } from './TrendBadges';
+
 import {
   CategoryScale,
   Chart as ChartJS,
@@ -12,12 +18,6 @@ import {
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import semver from 'semver';
-
-import { npmjsDownloads } from '@verdaccio/local-scripts';
-
-import DataTable from './DataTable';
-import TrendBadges, { computeTrend } from './TrendBadges';
-import type { TrendInfo } from './TrendBadges';
 
 ChartJS.register(
   CategoryScale,
@@ -58,16 +58,6 @@ const majorBaseColors: Record<string, [number, number, number]> = {
   '8': [233, 30, 99], // pink
 };
 
-function getMajorGradientColor(major: string, index: number, total: number): string {
-  const base = majorBaseColors[major] || [100, 100, 100];
-  // Vary lightness: first version is darkest, last is lightest
-  const lightnessFactor = total > 1 ? 0.3 + (index / (total - 1)) * 0.5 : 0.5;
-  const r = Math.round(base[0] + (255 - base[0]) * lightnessFactor);
-  const g = Math.round(base[1] + (255 - base[1]) * lightnessFactor);
-  const b = Math.round(base[2] + (255 - base[2]) * lightnessFactor);
-  return `rgb(${r}, ${g}, ${b})`;
-}
-
 const isPrerelease = (version: string) =>
   semver.prerelease(version) || /(alpha|beta|next)/i.test(version);
 
@@ -85,7 +75,7 @@ const processPrereleaseData = (data) => {
       if (!isPrerelease(version)) return;
       const major = version.split('.')[0];
       if (!majorTotals[major]) {
-        majorTotals[major] = new Array(dates.length).fill(0);
+        majorTotals[major] = Array.from({ length: dates.length }, () => 0);
       }
       majorTotals[major][dateIndex] += count as number;
     });

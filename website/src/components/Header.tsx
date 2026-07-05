@@ -1,12 +1,12 @@
+import Command from './Command';
+import styles from './Header.module.scss';
+import Logo from './Logo';
+
 import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import cx from 'classnames';
 import React from 'react';
-
-import Command from './Command';
-import styles from './Header.module.scss';
-import Logo from './Logo';
 
 const Header = (): React.ReactElement => {
   return (

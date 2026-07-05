@@ -1,10 +1,10 @@
+import FeatureCard from './FeatureCard';
+import styles from './Features.module.scss';
+
 import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
 import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import React from 'react';
-
-import FeatureCard from './FeatureCard';
-import styles from './Features.module.scss';
 
 const FEATURES = [
   {

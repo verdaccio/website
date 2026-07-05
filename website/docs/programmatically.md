@@ -43,13 +43,13 @@ There are three ways to use it:
 - With an object (there is a catch here, see below).
 
 ```js
-    const {runServer} = require('verdaccio');
-    const app = await runServer(); // default configuration
-    const app = await runServer('./config/config.yaml');
-    const app = await runServer({ configuration });
-    app.listen(4000, (event) => {
-      // do something
-    });
+const { runServer } = require('verdaccio');
+const app = await runServer(); // default configuration
+const app = await runServer('./config/config.yaml');
+const app = await runServer({ configuration });
+app.listen(4000, (event) => {
+  // do something
+});
 ```
 
 With an object you need to add `self_path`, manually (it's not nice but would be a breaking change changing it now) on v6 this is not longer need it.

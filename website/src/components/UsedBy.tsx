@@ -1,9 +1,9 @@
+import SponsorImage from './SponsorImage';
+import styles from './UsedBy.module.scss';
+
 import Translate from '@docusaurus/Translate';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import React from 'react';
-
-import SponsorImage from './SponsorImage';
-import styles from './UsedBy.module.scss';
 
 const UsedBy = (): React.ReactElement => (
   <section className={styles.usedBy}>

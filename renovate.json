@@ -62,9 +62,9 @@
       "minimumReleaseAge": "0 days"
     },
     {
-      "matchPackagePatterns": ["^eslint", "^@eslint/", "^@typescript-eslint/", "^prettier"],
-      "groupName": "eslint & prettier",
-      "groupSlug": "eslint-prettier"
+      "matchPackagePatterns": ["^oxlint", "^oxfmt"],
+      "groupName": "oxlint & oxfmt",
+      "groupSlug": "oxlint-oxfmt"
     },
     {
       "matchPackagePatterns": ["^@types/", "^typescript"],

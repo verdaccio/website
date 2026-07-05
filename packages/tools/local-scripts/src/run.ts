@@ -1,5 +1,3 @@
-import { Cli } from 'clipanion';
-
 import { ContributorsUpdateCommand } from './api/contributors';
 import { DockerPullCommand } from './api/dockerPullCommand';
 import { EcosystemDownloadsCommand } from './api/ecosystemDownloadsCommand';
@@ -8,6 +6,8 @@ import { FetchAllDownloadsCommand } from './api/fetchAllDownloadsCommand';
 import { NpmjsApiDownloadCommand } from './api/npmjsApiDownloadCommand';
 import { FetchMonthlyDataCommand, FetchYearlyDataCommand } from './api/npmjsApiDownloadPoints';
 import { TranslationsApiCommand } from './api/translationsCommand';
+
+import { Cli } from 'clipanion';
 
 const [node, app, ...args] = process.argv;
 

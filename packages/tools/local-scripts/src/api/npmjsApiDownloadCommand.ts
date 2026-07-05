@@ -1,6 +1,6 @@
-import { Command } from 'clipanion';
-
 import { fetchNpmjsApiDownloadsWeekly } from './utils';
+
+import { Command } from 'clipanion';
 
 export class NpmjsApiDownloadCommand extends Command {
   public static paths = [['npmjs-api-download']];

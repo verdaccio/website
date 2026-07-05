@@ -59,14 +59,14 @@ packages:
 The list internal groups handled by `verdaccio` are:
 
 ```js
-'$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous';
+('$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous');
 ```
 
 All users receive all those set of permissions independently of is anonymous or not plus the groups provided by the plugin, in case of `htpasswd` return the username as a group. For instance, if you are logged as `npmUser` the list of groups will be.
 
 ```js
 // groups without '$' are going to be deprecated eventually
-'$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser';
+('$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser');
 ```
 
 If you want to protect specific set packages under your group, you need to do something like this. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.

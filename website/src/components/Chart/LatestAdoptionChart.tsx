@@ -1,3 +1,7 @@
+import { npmjsDownloads } from '@verdaccio/local-scripts';
+
+import DataTable from './DataTable';
+
 import {
   CategoryScale,
   Chart as ChartJS,
@@ -11,10 +15,6 @@ import {
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import semver from 'semver';
-
-import { npmjsDownloads } from '@verdaccio/local-scripts';
-
-import DataTable from './DataTable';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -50,7 +50,7 @@ const LatestAdoptionChart: React.FC = () => {
     percentData[m] = [];
   });
 
-  allDates.forEach((date, dateIdx) => {
+  allDates.forEach((date) => {
     const downloads = npmjsDownloads[date];
     latestVersionByDate[date] = [];
 
@@ -103,7 +103,7 @@ const LatestAdoptionChart: React.FC = () => {
     });
   });
 
-  const datasets = majorsToTrack.map((major, mIdx) => {
+  const datasets = majorsToTrack.map((major) => {
     const releases = releasePoints[major];
     const releaseIndices = new Set(releases.map((r) => r.dateIndex));
 

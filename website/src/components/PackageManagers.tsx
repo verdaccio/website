@@ -1,10 +1,10 @@
-import Translate, { translate } from '@docusaurus/Translate';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import React from 'react';
-
 import Command from './Command';
 import Divider from './Divider';
 import styles from './PackageManagers.module.scss';
+
+import Translate, { translate } from '@docusaurus/Translate';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import React from 'react';
 
 const PackageManagers = (): React.ReactElement => (
   <section className={styles.packageManagers}>

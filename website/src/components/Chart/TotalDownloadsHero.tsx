@@ -1,8 +1,8 @@
-import React from 'react';
-
 import { dockerPulls, monthlyDownloads, yearlyDownloads } from '@verdaccio/local-scripts';
 
 import styles from './TotalDownloadsHero.module.scss';
+
+import React from 'react';
 
 // Total npm downloads across all years
 const totalNpmDownloads = Object.values(yearlyDownloads).reduce(

@@ -1,9 +1,9 @@
-import React from 'react';
-import semver from 'semver';
-
 import { npmjsDownloads } from '@verdaccio/local-scripts';
 
 import styles from './DataTable.module.scss';
+
+import React from 'react';
+import semver from 'semver';
 
 interface VersionStats {
   version: string;
