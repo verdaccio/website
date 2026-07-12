@@ -3,11 +3,11 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5746,
+      "contributions": 5750,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3228
+          "contributions": 3229
         },
         {
           "name": "verdaccio-cookbook",
@@ -67,7 +67,7 @@
         },
         {
           "name": "website",
-          "contributions": 572
+          "contributions": 575
         },
         {
           "name": "eslint-plugin-verdaccio",
@@ -228,11 +228,11 @@
     {
       "id": 59966492,
       "login": "mbtools",
-      "contributions": 291,
+      "contributions": 293,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 280
+          "contributions": 282
         },
         {
           "name": "website",
@@ -428,6 +428,29 @@
       ]
     },
     {
+      "id": 284604232,
+      "login": "verdacciopack",
+      "contributions": 15,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 7
+        },
+        {
+          "name": "generator-verdaccio-plugin",
+          "contributions": 2
+        },
+        {
+          "name": "verdaccio-google-cloud",
+          "contributions": 1
+        },
+        {
+          "name": "e2e-tests",
+          "contributions": 5
+        }
+      ]
+    },
+    {
       "id": 25279263,
       "login": "jamesgeorge007",
       "contributions": 14,
@@ -443,29 +466,6 @@
         {
           "name": "ui",
           "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 284604232,
-      "login": "verdacciopack",
-      "contributions": 14,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 6
-        },
-        {
-          "name": "generator-verdaccio-plugin",
-          "contributions": 2
-        },
-        {
-          "name": "verdaccio-google-cloud",
-          "contributions": 1
-        },
-        {
-          "name": "e2e-tests",
-          "contributions": 5
         }
       ]
     },
@@ -593,8 +593,8 @@
       ]
     },
     {
-      "id": 1486340,
-      "login": "UnitedMarsupials-zz",
+      "id": 9048902,
+      "login": "ryan-codingintrigue",
       "contributions": 7,
       "repositories": [
         {
@@ -615,8 +615,8 @@
       ]
     },
     {
-      "id": 9048902,
-      "login": "ryan-codingintrigue",
+      "id": 1486340,
+      "login": "UnitedMarsupials-zz",
       "contributions": 7,
       "repositories": [
         {
@@ -2738,8 +2738,8 @@
       ]
     },
     {
-      "id": 17271745,
-      "login": "vegawong",
+      "id": 300298506,
+      "login": "vegaw1024",
       "contributions": 1,
       "repositories": [
         {
@@ -5341,7 +5341,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17740,
+      "stargazers_count": 17754,
       "archived": false
     },
     {
