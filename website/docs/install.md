@@ -7,11 +7,17 @@ Verdaccio is a Node.js private and proxy registry. To install it, you need a few
 
 ## Prerequisites {#prerequisites}
 
-1. **Node.js** `v18` or higher.
+1. **Node.js** `v22` or higher for Verdaccio 6.x.
+
+   :::warning
+
+   Since Verdaccio 7.x, the minimum supported runtime is **Node.js 24**.
+
+   :::
 
 2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn` (classic and modern).
 
-> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@6.x`. Don't support `npm@5.x` or older.
+> We highly recommend using modern package manager clients: `npm@11` or higher, `pnpm@11` or higher, and `yarn@4` or higher. Verdaccio does not support `npm@5.x` or older.
 
 3. A modern web browser to run the web interface. We actually support `Chrome, Firefox, Edge`.
 
@@ -58,7 +64,7 @@ $> verdaccio
  info -=- local storage path /Users/user/.local/share/verdaccio/storage/.verdaccio-db.json
  info --- using htpasswd file: /Users/user/.config/verdaccio/htpasswd
  info --- http address http://localhost:4873/
- info --- version: 6.0.0
+ info --- version: 7.0.0
  info --- server started
 ```
 
@@ -113,5 +119,5 @@ docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```bash
 $ helm repo add verdaccio https://charts.verdaccio.org
 $ helm repo update
-$ helm install registry --set image.tag=6 verdaccio/verdaccio
+$ helm install registry --set image.tag=7 verdaccio/verdaccio
 ```

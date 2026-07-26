@@ -3,26 +3,66 @@ id: verdaccio-programmatically
 title: 'Node.js API'
 ---
 
-Verdaccio is a binary command which is available in your enviroment when you install globally the package eg `npm i -g verdaccio`, but also can be dependency in your project and use it programmatically.
+Verdaccio is a binary command available in your environment when you install the package globally, for example `npm i -g verdaccio`. It can also be used as a dependency in your project through the Node.js API.
 
-### Using `fork` from `child_process` module
+### Using `spawn` from `node:child_process`
 
-Using the binary is the faster way to use verdaccio programatically, you need to add to the config file the `_debug: true` to enable the messaging system, when verdaccio is ready will send `verdaccio_started` string as message as the following example.
+Using the binary is the fastest way to run Verdaccio from another Node.js process. Prefer `spawn` with the public `verdaccio` executable instead of resolving internal package files.
 
-> If you are using ESM modules the `require` won't be available.
+The following example starts Verdaccio, waits until `/-/ping` responds, and returns a cleanup function that stops the child process.
 
 ```typescript
-export function runRegistry(args: string[] = [], childOptions: {}): Promise<ChildProcess> {
-  return new Promise((resolve, reject) => {
-    const childFork = fork(require.resolve('verdaccio/bin/verdaccio'), args, childOptions);
-    childFork.on('message', (msg: { verdaccio_started: boolean }) => {
-      if (msg.verdaccio_started) {
-        resolve(childFork);
-      }
-    });
-    childFork.on('error', (err: any) => reject([err]));
-    childFork.on('disconnect', (err: any) => reject([err]));
+import { spawn, type ChildProcessWithoutNullStreams } from 'node:child_process';
+import { setTimeout as delay } from 'node:timers/promises';
+
+type VerdaccioProcess = {
+  child: ChildProcessWithoutNullStreams;
+  stop: () => Promise<void>;
+};
+
+export async function startVerdaccio(configPath: string, port = 4873): Promise<VerdaccioProcess> {
+  const controller = new AbortController();
+  const registry = `http://localhost:${port}`;
+  const child = spawn('verdaccio', ['--config', configPath, '--listen', String(port)], {
+    signal: controller.signal,
+    stdio: ['ignore', 'pipe', 'pipe'],
   });
+  let startupError: Error | undefined;
+
+  child.once('error', (error) => {
+    startupError = error;
+  });
+
+  for (let attempt = 0; attempt < 60; attempt++) {
+    if (startupError) {
+      throw startupError;
+    }
+
+    try {
+      const response = await fetch(`${registry}/-/ping`);
+      if (response.ok) {
+        return {
+          child,
+          stop: async () => {
+            if (child.exitCode !== null) {
+              return;
+            }
+            await new Promise<void>((resolve) => {
+              child.once('exit', () => resolve());
+              controller.abort();
+            });
+          },
+        };
+      }
+    } catch {
+      // Verdaccio is still starting.
+    }
+
+    await delay(250);
+  }
+
+  controller.abort();
+  throw new Error(`Verdaccio did not start at ${registry}`);
 }
 ```
 
@@ -34,39 +74,65 @@ You can see the full example on this repository.
 
 Feature available in `v5.11.0` and higher.
 
-> Using const verdaccio = require('verdaccio'); as the default module is not encoraged, it's deprecated and recommend use `runServer` for future compability.
+:::info
+
+Since Verdaccio 6.x, the recommended API is `runServer(...)`, which can be awaited.
+
+:::
+
+:::warning
+
+Since Verdaccio 7.x, the deprecated callback-style API and `self_path` programmatic config property were removed. Use `await runServer(...)` and `configPath`.
+
+:::
+
+Using `const verdaccio = require('verdaccio');` as the default module is deprecated. Use `runServer` for future compatibility.
 
 There are three ways to use it:
 
 - No input, it will find the `config.yaml` as is you would run `verdaccio` in the console.
-- With a absolute path.
-- With an object (there is a catch here, see below).
+- With an absolute path.
+- With a config object.
 
 ```js
-const { runServer } = require('verdaccio');
-const app = await runServer(); // default configuration
-const app = await runServer('./config/config.yaml');
-const app = await runServer({ configuration });
-app.listen(4000, (event) => {
+import { runServer } from 'verdaccio';
+
+// Default configuration
+const app = await runServer();
+
+// Or a config file path
+const appWithConfigPath = await runServer('./config/config.yaml');
+
+// Or a config object
+const appWithConfigObject = await runServer({ configuration });
+
+app.listen(4000, () => {
   // do something
 });
 ```
 
-With an object you need to add `self_path`, manually (it's not nice but would be a breaking change changing it now) on v6 this is not longer need it.
+When using a config object, Verdaccio 6.x and newer can use `configPath` to identify the active configuration file.
 
 ```js
-const { runServer, parseConfigFile } = require('verdaccio');
-const configPath = join(__dirname, './config.yaml');
-const c = parseConfigFile(configPath);
-// workaround
-// on v5 the `self_path` still exists and will be removed in v6
-c.self_path = 'foo';
-runServer(c).then(() => {});
+import { parseConfigFile, runServer } from 'verdaccio';
+import { fileURLToPath } from 'node:url';
+
+const configPath = fileURLToPath(new URL('./config.yaml', import.meta.url));
+const config = parseConfigFile(configPath);
+
+config.configPath = configPath;
+
+const app = await runServer(config);
+app.listen(4000);
 ```
 
-Feature available minor than `v5.11.0`.
+For versions older than `v5.11.0`.
 
-> This is a valid way but is discoragued for future releases.
+:::warning
+
+The following API is deprecated and was removed in Verdaccio 7.x. It is kept here only for older Verdaccio versions.
+
+:::
 
 ```js
 const fs = require('fs');

@@ -24,7 +24,13 @@ To locate the home directory, verdaccio relies on **$XDG_DATA_HOME** as a first 
 
 ## Config file format {#config-file-format}
 
-Config files should be YAML, JSON or a NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+Before Verdaccio 7.x, config files could be YAML, JSON, or a Node.js module. YAML format was detected by parsing the config file extension (`.yaml` or `.yml`, case insensitive).
+
+:::warning
+
+Since Verdaccio 7.x, configuration files must be YAML only (`.yaml` or `.yml`). JSON files and Node.js module config files are no longer loaded.
+
+:::
 
 ## Default storage location {#default-storage-location}
 
