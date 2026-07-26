@@ -121,3 +121,5 @@ $ helm repo add verdaccio https://charts.verdaccio.org
 $ helm repo update
 $ helm install registry --set image.tag=7 verdaccio/verdaccio
 ```
+
+For a local Kubernetes setup, see the Verdaccio 7 Helm example in [docker-examples/v7/kubernetes/helm](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7/kubernetes/helm).
