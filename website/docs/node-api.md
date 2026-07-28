@@ -7,7 +7,34 @@ Verdaccio can be invoked programmatically. The Node API was introduced after ver
 
 ## Usage {#usage}
 
+:::info
+
+Since Verdaccio 6.x, the recommended Node.js API is asynchronous. Use `await runServer(...)` and then call `.listen(...)` on the returned app/server.
+
+:::
+
+```js
+import { runServer } from 'verdaccio';
+
+const app = await runServer('./config/config.yaml');
+
+app.listen(4873, () => {
+  console.log('verdaccio running on http://localhost:4873');
+});
+```
+
+:::warning
+
+Since Verdaccio 7.x, the deprecated programmatic API surface was removed:
+
+- Callback-style server startup is no longer supported.
+- `config.self_path` was removed; use `config.configPath` instead.
+
+:::
+
 #### Programmatically {#programmatically}
+
+The following callback-style example is deprecated. It only applies to older Verdaccio versions and should not be used for Verdaccio 7.x.
 
 ```js
 const startServer = require("verdaccio").default;
@@ -24,7 +51,7 @@ let config = {
             url: "https://registry.npmjs.org/",
         }
     },
-    self_path: "./",
+    configPath: "./config.yaml",
     packages: {
         "@*/*": {
             access: "$all",

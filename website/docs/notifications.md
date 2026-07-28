@@ -5,8 +5,13 @@ title: 'Notifications'
 
 Notify was built primarily to use with Slack's Incoming
 webhooks, but will also deliver a simple payload to
-any endpoint. This is currently only active for the `npm publish`
-command.
+any endpoint. Notifications are available for package publish events.
+
+:::info
+
+Since Verdaccio 6.8.0, notifications can also be emitted for unpublish events.
+
+:::
 
 ## Usage {#usage}
 

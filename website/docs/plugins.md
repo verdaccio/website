@@ -5,6 +5,12 @@ title: 'Plugins'
 
 Verdaccio is a pluggable application. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.
 
+:::info
+
+Since Verdaccio 7.x, plugins can be loaded through the async plugin loading path with CommonJS and ESM interop. This allows plugin authors to publish pure ESM plugins, while existing CommonJS plugins remain supported.
+
+:::
+
 There are 5 types of plugins:
 
 - [Authentication](plugin-auth.md)

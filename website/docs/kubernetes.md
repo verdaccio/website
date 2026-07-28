@@ -38,10 +38,16 @@ In this example we use `npm` as release name:
 helm install npm verdaccio/verdaccio
 ```
 
+### Run locally with Helm {#run-locally-with-helm}
+
+If you want to test Verdaccio with Helm on a local Kubernetes cluster, use the Verdaccio 7 Helm example in the repository:
+
+[docker-examples/v7/kubernetes/helm](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7/kubernetes/helm)
+
 ### Deploy a specific version {#deploy-a-specific-version}
 
 ```bash
-helm install npm --set image.tag=3.13.1 verdaccio/verdaccio
+helm install npm --set image.tag=7 verdaccio/verdaccio
 ```
 
 ### Upgrading Verdaccio {#upgrading-verdaccio}

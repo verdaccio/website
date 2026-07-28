@@ -5,6 +5,8 @@ title: 'yarn'
 
 # yarn {#yarn}
 
+We recommend Yarn 4 or higher for modern projects.
+
 #### `yarn` classic (1.x) {#yarn-classic-1x}
 
 > Be aware npm configurations are valid on the classic version
@@ -34,9 +36,8 @@ For defining a registry you must use the `.yarnrc.yml` located in the root of yo
 
 When you publish a package the `npmRegistryServer` must be used. Keep in mind the `publishConfig.registry` in the `package.json` will override this configuration.
 
-```yaml
-// .yarnrc.yml
-npmRegistryServer: "http://localhost:4873"
+```yaml title=".yarnrc.yml"
+npmRegistryServer: 'http://localhost:4873'
 
 unsafeHttpWhitelist:
   - localhost
@@ -46,9 +47,11 @@ unsafeHttpWhitelist:
 
 Using scopes is also possible and more segmented, you can define a token peer scope if is required.
 
-```
+```yaml title=".yarnrc.yml"
+npmRegistryServer: 'https://registry.npmjs.org'
+
 npmRegistries:
-  "https://registry.myverdaccio.org":
+  'https://registry.myverdaccio.org':
     npmAlwaysAuth: true
     npmAuthToken: <TOKEN>
 npmScopes:
@@ -57,11 +60,62 @@ npmScopes:
     npmPublishRegistry: https://registry.myverdaccio.org
 ```
 
-for logging via CLi use:
+With this configuration, unscoped packages continue resolving from the public registry, while `@my-company/*` packages resolve and publish through Verdaccio.
+
+### Minimum release age with a private scope {#minimum-release-age}
+
+Yarn 4.12 and newer can delay newly published package versions with `npmMinimalAgeGate`. If your private scope publishes internal packages that must be available immediately, add the scope to `npmPreapprovedPackages`.
+
+```yaml title=".yarnrc.yml"
+npmRegistryServer: 'https://registry.npmjs.org'
+
+npmMinimalAgeGate: '1d'
+npmPreapprovedPackages:
+  - '@my-company/*'
+
+npmRegistries:
+  'https://registry.myverdaccio.org':
+    npmAlwaysAuth: true
+    npmAuthToken: <TOKEN>
+npmScopes:
+  my-company:
+    npmRegistryServer: https://registry.myverdaccio.org
+    npmPublishRegistry: https://registry.myverdaccio.org
+```
+
+Packages matching `npmPreapprovedPackages` bypass Yarn package gates, but still use the registry configured for their scope.
+
+See also [Yarn security: `npmMinimalAgeGate`](https://yarnpkg.com/features/security).
+
+For logging via CLI use:
 
 ```
 yarn npm login --scope my-company
 ```
+
+### Verdaccio npm commands plugin for Yarn 4 {#verdaccio-yarn-plugin-npm}
+
+Yarn 4 does not include every npm registry command by default. Verdaccio maintains Yarn plugins for npm registry commands such as `yarn npm ping`, `yarn npm login`, `yarn npm deprecate`, `yarn npm unpublish`, `yarn npm star`, and `yarn npm unstar`.
+
+To add Verdaccio-compatible `yarn npm login` support, import the login plugin:
+
+```bash
+yarn dlx @verdaccio/yarn-import npm-login
+```
+
+Then log in to Verdaccio with the legacy auth flow:
+
+```bash
+yarn npm login --auth-type=legacy --registry http://localhost:4873
+```
+
+For a scoped registry, use the scope configured in `.yarnrc.yml`:
+
+```bash
+yarn npm login --scope my-company
+```
+
+See the plugin README for the full command list: [verdaccio/yarn-plugin-npm](https://github.com/verdaccio/yarn-plugin-npm).
 
 ## Troubleshooting {#troubleshooting}
 

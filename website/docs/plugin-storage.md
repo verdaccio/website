@@ -9,6 +9,12 @@ Verdaccio by default uses a file system storage plugin [local-storage](https://g
 
 ### API {#api}
 
+:::info
+
+Since Verdaccio 7.x, storage plugins can use the promise-based async storage API. Existing callback/stream-based storage plugins are detected and wrapped for backward compatibility, so legacy storage plugins can continue working while authors migrate.
+
+:::
+
 Storage plugins are composed of two objects, the `IPluginStorage<T>` and the `IPackageStorage`.
 
 - The `IPluginStorage` object handle the local database for private packages.

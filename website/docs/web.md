@@ -43,6 +43,8 @@ web:
   showSearch: true
   showDownloadTarball: true
   showRaw: true
+  # Since Verdaccio 7.x
+  assetFolder: /verdaccio/storage/assets
 ```
 
 All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
@@ -90,6 +92,7 @@ i18n:
 | showSearch          | boolean           | No       | true                                                          | `>=v5.10.0` | allow hide search component                                                                                                             |
 | showDownloadTarball | boolean           | No       | true                                                          | `>=v5.10.0` | allow hide download button on the sidebar                                                                                               |
 | showRaw             | boolean           | No       | true                                                          | `>=v5.10.0` | allow hide manifest button on the sidebar (experimental feature)                                                                        |
+| assetFolder         | string            | No       | `/verdaccio/storage/assets`                                   | `>=v7.0.0`  | serve custom static assets under `/-/assets/`, useful for Docker and volume-based deployments                                           |
 
 > The recommended logo size is `40x40` pixels.
 
