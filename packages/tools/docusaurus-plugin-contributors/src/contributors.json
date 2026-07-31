@@ -406,24 +406,13 @@
       ]
     },
     {
-      "id": 8471701,
-      "login": "kgrubb",
+      "id": 284604232,
+      "login": "verdacciopack",
       "contributions": 17,
       "repositories": [
         {
-          "name": "verdaccio-cookbook",
-          "contributions": 17
-        }
-      ]
-    },
-    {
-      "id": 284604232,
-      "login": "verdacciopack",
-      "contributions": 16,
-      "repositories": [
-        {
           "name": "verdaccio",
-          "contributions": 7
+          "contributions": 8
         },
         {
           "name": "generator-verdaccio-plugin",
@@ -436,6 +425,17 @@
         {
           "name": "e2e-tests",
           "contributions": 6
+        }
+      ]
+    },
+    {
+      "id": 8471701,
+      "login": "kgrubb",
+      "contributions": 17,
+      "repositories": [
+        {
+          "name": "verdaccio-cookbook",
+          "contributions": 17
         }
       ]
     },
@@ -593,8 +593,8 @@
       ]
     },
     {
-      "id": 9048902,
-      "login": "ryan-codingintrigue",
+      "id": 1486340,
+      "login": "UnitedMarsupials-zz",
       "contributions": 7,
       "repositories": [
         {
@@ -615,8 +615,8 @@
       ]
     },
     {
-      "id": 1486340,
-      "login": "UnitedMarsupials-zz",
+      "id": 9048902,
+      "login": "ryan-codingintrigue",
       "contributions": 7,
       "repositories": [
         {
@@ -5341,7 +5341,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17770,
+      "stargazers_count": 17786,
       "archived": false
     },
     {
