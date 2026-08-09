@@ -3,11 +3,11 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5758,
+      "contributions": 5759,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3232
+          "contributions": 3233
         },
         {
           "name": "verdaccio-cookbook",
@@ -228,11 +228,11 @@
     {
       "id": 59966492,
       "login": "mbtools",
-      "contributions": 295,
+      "contributions": 298,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 284
+          "contributions": 287
         },
         {
           "name": "website",
@@ -408,11 +408,11 @@
     {
       "id": 284604232,
       "login": "verdacciopack",
-      "contributions": 17,
+      "contributions": 19,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 8
+          "contributions": 10
         },
         {
           "name": "generator-verdaccio-plugin",
@@ -2199,17 +2199,6 @@
       ]
     },
     {
-      "id": 6181,
-      "login": "btucker",
-      "contributions": 1,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 1
-        }
-      ]
-    },
-    {
       "id": 374671,
       "login": "fhp",
       "contributions": 1,
@@ -3068,6 +3057,17 @@
       ]
     },
     {
+      "id": 6181,
+      "login": "btucker",
+      "contributions": 1,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 1
+        }
+      ]
+    },
+    {
       "id": 47446,
       "login": "bwalding",
       "contributions": 1,
@@ -3785,6 +3785,17 @@
     {
       "id": 793406,
       "login": "MichielDeMey",
+      "contributions": 1,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 1
+        }
+      ]
+    },
+    {
+      "id": 20754428,
+      "login": "davidus27",
       "contributions": 1,
       "repositories": [
         {
@@ -5341,7 +5352,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17786,
+      "stargazers_count": 17817,
       "archived": false
     },
     {
@@ -5629,7 +5640,7 @@
       "full_name": "verdaccio/verdaccio-auth-ldap",
       "html_url": "https://github.com/verdaccio/verdaccio-auth-ldap",
       "description": "LDAP / Active Directory authentication plugin for Verdaccio private npm registry",
-      "stargazers_count": 3,
+      "stargazers_count": 4,
       "archived": false
     },
     {
