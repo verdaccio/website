@@ -3,11 +3,11 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5759,
+      "contributions": 5781,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3233
+          "contributions": 3235
         },
         {
           "name": "verdaccio-cookbook",
@@ -140,6 +140,10 @@
         {
           "name": "yarn-plugin-npm",
           "contributions": 31
+        },
+        {
+          "name": "benchmark",
+          "contributions": 20
         }
       ]
     },
@@ -5352,7 +5356,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17817,
+      "stargazers_count": 17829,
       "archived": false
     },
     {
@@ -5658,6 +5662,15 @@
       "full_name": "verdaccio/yarn-plugin-npm",
       "html_url": "https://github.com/verdaccio/yarn-plugin-npm",
       "description": "yarn plugins (experimental) ",
+      "stargazers_count": 0,
+      "archived": false
+    },
+    {
+      "name": "benchmark",
+      "login": "verdaccio",
+      "full_name": "verdaccio/benchmark",
+      "html_url": "https://github.com/verdaccio/benchmark",
+      "description": null,
       "stargazers_count": 0,
       "archived": false
     }
