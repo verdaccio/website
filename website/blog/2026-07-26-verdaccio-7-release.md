@@ -74,11 +74,15 @@ The Web UI login flow **no longer sends a Basic auth challenge for login failure
 
 This fix is also available in Verdaccio 6.x through a backport.
 
+Verdaccio 7 also improves **uplink tarball error handling**. When an upstream registry rejects or cannot find a tarball, Verdaccio now maps common upstream responses to clearer registry errors: unauthorized access for `401`, forbidden with upstream details for `403`, not found for `404`, and a bad uplink status error for other unexpected responses. This landed in [#6022](https://github.com/verdaccio/verdaccio/pull/6022) by [@mbtools](https://github.com/mbtools).
+
 ### Updated Docker examples
 
 The Docker examples for Verdaccio 7 were refreshed, including local storage, reverse proxy, plugin examples, and Kubernetes Helm examples.
 
 If you deploy Verdaccio through containers, the examples should be a better starting point for modern setups.
+
+The Helm chart release is tracked separately in [verdaccio/charts#198](https://github.com/verdaccio/charts/pull/198).
 
 ### Pure ESM plugins
 

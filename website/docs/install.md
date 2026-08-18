@@ -38,19 +38,19 @@ Learn the basics before getting started, how to install, where is the location o
 Using `npm`
 
 ```bash
-npm install -g verdaccio
+npm install -g verdaccio@7
 ```
 
 or using `yarn@1.x` _classic_,
 
 ```bash
-yarn global add verdaccio
+yarn global add verdaccio@7
 ```
 
 or using `pnpm`
 
 ```bash
-pnpm install -g verdaccio
+pnpm install -g verdaccio@7
 ```
 
 ![install verdaccio](/img/install_verdaccio.gif)
@@ -109,7 +109,7 @@ If you'd like a broader explanation, don't miss the tutorial created by [thedevl
 ## Docker Image {#docker-image}
 
 ```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:7
 ```
 
 `Verdaccio` has an official docker image you can use, and in most cases, the default configuration is good enough. For more information about how to install the official image, [read the docker section](docker.md), furthermore you can learn more about combining Docker images in our [docker-examples](https://github.com/verdaccio/verdaccio/tree/master/docker-examples) repository.

@@ -204,6 +204,32 @@ server:
   keepAliveTimeout: 60
 ```
 
+#### `dotfiles` {#server-dotfiles}
+
+Controls how requests to dotfile paths (path segments starting with a dot, e.g. `/.env` or `/.well-known/`) are handled. Available since Verdaccio 7.
+
+| Value | Behavior |
+| --- | --- |
+| `ignore` | Returns `404 Not Found` (**default**). |
+| `deny` | Returns `403 Forbidden`. |
+| `allow` | Passes the request through to the next middleware. |
+
+```yaml
+server:
+  dotfiles: ignore
+```
+
+#### `hideStaticLogs` {#server-hidestaticlogs}
+
+Suppresses request logging for static assets served under `/-/static/` to keep the logs less noisy. Defaults to `true`. Available since Verdaccio 7.
+
+When enabled, those requests remain visible through the debug namespace `DEBUG=verdaccio:middleware:log`.
+
+```yaml
+server:
+  hideStaticLogs: true
+```
+
 ### Web UI {#web-ui}
 
 This property allow you to modify the look and feel of the web UI. For more information about this section read the [web UI page](web.md).
