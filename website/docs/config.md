@@ -204,6 +204,28 @@ server:
   keepAliveTimeout: 60
 ```
 
+#### Legacy auth cache {#legacy-auth-cache}
+
+Available since Verdaccio `6.10.0`.
+
+The `legacyAuthCache` option caches successful legacy token authentication results for a short period of time. This avoids running password verification through the authentication plugin for every request that reuses the same legacy bearer token.
+
+The cache is disabled by default. Enable it only when you accept that changed or revoked credentials may remain valid until the cached entry expires.
+
+```yaml
+server:
+  legacyAuthCache:
+    enabled: true
+    ttlMs: 15000
+    maxEntries: 1000
+```
+
+| Property   | Type    | Required | Default | Description                                              |
+| ---------- | ------- | -------- | ------- | -------------------------------------------------------- |
+| enabled    | boolean | No       | false   | Enables the legacy token authentication cache.           |
+| ttlMs      | number  | No       | 15000   | Time in milliseconds before a cached validation expires. |
+| maxEntries | number  | No       | 1000    | Maximum number of cached legacy tokens.                  |
+
 ### Web UI {#web-ui}
 
 This property allow you to modify the look and feel of the web UI. For more information about this section read the [web UI page](web.md).
