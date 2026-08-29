@@ -107,7 +107,14 @@ That way, **nobody can access your registry unless they are authorized, and priv
 
 ### Require a second factor for publishing {#two-factor}
 
-> Requires Verdaccio **7.x** or later, not **6.x**. To evaluate it, use the **9.x experimental** line (`verdaccio@next-9`), which is where it lands first.
+:::caution Experimental
+Requires Verdaccio **7.x** or later, not **6.x**. To evaluate it, use the **9.x
+experimental** line (`verdaccio@next-9`), where it lands first.
+
+**Not recommended for production yet** — the advice below is what we think good
+practice looks like once the feature settles, and trying it out is exactly the
+feedback that gets it there.
+:::
 
 A leaked or committed token is enough to publish in someone's name. Enabling
 [two-factor authentication](two-factor-authentication) in `auth-and-writes` mode
@@ -132,7 +139,14 @@ Two things to plan for before rolling this out to a team:
 
 ### Review releases before they are installable {#staged-publishing}
 
-> Requires Verdaccio **7.x** or later, not **6.x**. To evaluate it, use the **9.x experimental** line (`verdaccio@next-9`), which is where it lands first.
+:::caution Experimental
+Requires Verdaccio **7.x** or later, not **6.x**. To evaluate it, use the **9.x
+experimental** line (`verdaccio@next-9`), where it lands first.
+
+**Not recommended for production yet** — the advice below is what we think good
+practice looks like once the feature settles, and trying it out is exactly the
+feedback that gets it there.
+:::
 
 Protecting *who* can publish still means the publish takes effect immediately.
 [Staged publishing](staged-publishing) adds a review step: the version is

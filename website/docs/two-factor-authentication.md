@@ -31,6 +31,9 @@ early feedback. Node.js `>= 24` is required.
 This is an experimental feature behind the `tfa` flag. It is off by default, and
 the shape of the flag or its behaviour may change in a future release. See
 [feature flags](configuration#experiments).
+
+**Not recommended for production yet.** We would rather gather enough real usage
+first — see below on how to help with that.
 :::
 
 :::info Feedback wanted

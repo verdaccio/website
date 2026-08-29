@@ -32,6 +32,9 @@ early feedback. Node.js `>= 24` is required.
 This is an experimental feature behind the `stage` flag. It is off by default,
 and the shape of the flag or its behaviour may change in a future release. See
 [feature flags](configuration#experiments).
+
+**Not recommended for production yet.** We would rather gather enough real usage
+first — see below on how to help with that.
 :::
 
 :::info Feedback wanted
@@ -64,15 +67,7 @@ flags:
 
 Restart the registry afterwards: the configuration is read at startup.
 
-To confirm it is on, the flag is reported to the web UI and you can read it back
-from a running server:
-
-```bash
-curl -s http://localhost:4873/-/static/ui-options.js | grep -o '"stage":[^,]*'
-# "stage":true
-```
-
-With the flag off, none of the routes below exist and the registry behaves
+With the flag off, the `npm stage` commands answer `404` and the registry behaves
 exactly as it always has.
 
 ## The flow {#flow}
@@ -308,9 +303,8 @@ Worth knowing before you turn this on:
 
 **`404 Not Found - POST http://localhost:4873/-/stage/package/...`**
 
-The flag is off, or the server was not restarted after enabling it. Check it
-with the `curl` above; if it reports `"stage":false`, the running server is not
-using the configuration you edited.
+The flag is off, or the server was not restarted after enabling it. Check that
+the running server is using the configuration file you edited.
 
 **`npm error code E404` on `npm stage list`**
 
