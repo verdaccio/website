@@ -226,6 +226,111 @@ server:
 | ttlMs      | number  | No       | 15000   | Time in milliseconds before a cached validation expires. |
 | maxEntries | number  | No       | 1000    | Maximum number of cached legacy tokens.                  |
 
+#### Dotfile requests {#dotfiles}
+
+:::info Available from 7.x
+:::
+
+Controls how requests whose path contains a dotfile segment — `/.env`,
+`/.git/config`, `/.well-known/…` — are answered. It mirrors the semantics of
+`serve-static`'s option of the same name.
+
+```yaml
+server:
+  dotfiles: ignore
+```
+
+| Value | Behaviour |
+| --- | --- |
+| `ignore` | answers `404`, as if the path did not exist (**default**) |
+| `deny` | answers `403` |
+| `allow` | passes the request through to the rest of the middleware |
+
+`ignore` is the default because it does not confirm to a scanner that the path
+exists. Choose `deny` only if you prefer an explicit refusal in your logs, and
+`allow` only if something in your setup legitimately serves dotfile paths.
+
+#### Hiding static asset logs {#hide-static-logs}
+
+:::info Available from 7.x
+:::
+
+Requests for the web UI assets (`/-/static/*`) are noisy and rarely interesting.
+They are hidden from the logger by default:
+
+```yaml
+server:
+  hideStaticLogs: true
+```
+
+Set it to `false` to log them like any other request. They are always available
+regardless of this setting by running with `DEBUG=verdaccio:middleware:log`.
+
+#### Running behind a proxy {#trust-proxy}
+
+When Verdaccio sits behind a reverse proxy or a load balancer, every request
+appears to come from the proxy. `trustProxy` tells Express which upstream
+addresses to trust, so `req.ip` resolves to the real client:
+
+```yaml
+server:
+  trustProxy: '127.0.0.1'
+```
+
+The value is passed straight to Express' [`trust proxy`
+setting](https://expressjs.com/en/guide/behind-proxies.html), so it accepts the
+same forms: an address, a subnet, a comma-separated list, or a hop count.
+
+:::caution
+This is not cosmetic. Two features depend on the client address being correct:
+
+- [rate limiting](#user-rate-limit), which otherwise counts every request as
+  coming from the proxy and throttles all your users as if they were one
+- the CIDR whitelist of [npm tokens](#security), which cannot enforce anything
+  useful if it only ever sees the proxy's address
+
+Set it whenever there is a proxy in front, and only list addresses you actually
+control — trusting an address means believing the `X-Forwarded-For` header it
+sends.
+:::
+
+See also the [reverse proxy setup](reverse-proxy.md) page.
+
+#### Password policy {#password-validation}
+
+The minimum a password must satisfy when a user registers. It defaults to three
+characters:
+
+```yaml
+server:
+  # at least 10 characters
+  passwordValidationRegex: /.{10}$/
+```
+
+The value is a regular expression. Written in YAML it arrives as a string and is
+compiled at runtime; an invalid pattern makes every password fail validation
+rather than being ignored, so test it after changing it.
+
+This only applies where Verdaccio itself validates the password — user
+registration and password changes. An [authentication plugin](authentication)
+that manages its own users is not affected.
+
+#### Custom plugin prefix {#plugin-prefix}
+
+Plugins are resolved as `verdaccio-<name>` by default. If you publish your
+plugins under a different prefix, declare it here:
+
+```yaml
+server:
+  pluginPrefix: acme
+```
+
+With that, a plugin configured as `s3` resolves to the package `acme-s3` instead
+of `verdaccio-s3`. Do **not** include the dash — it is added for you.
+
+The prefix applies to every plugin category: authentication, storage, middleware
+and filters.
+
 ### Web UI {#web-ui}
 
 This property allow you to modify the look and feel of the web UI. For more information about this section read the [web UI page](web.md).
