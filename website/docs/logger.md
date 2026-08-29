@@ -3,10 +3,9 @@ id: logger
 title: 'Logger'
 ---
 
-:::info
-
-Since v5.22.0 the logger property is renamed from `logs` to `log`, but still compatible with v6 but not recommended to use, could be removed any time.
-
+:::caution Deprecated: `logs`
+The property is `log`. The older `logs` spelling is still accepted but emits a
+deprecation warning (`VERWAR002`) on startup and may be removed at any time.
 :::
 
 As with any web application, Verdaccio has a customizable built-in logger. You can define multiple types of outputs.
@@ -58,6 +57,6 @@ log:
 | path     | string  | No       | verdaccio.log                                  | all     | if type is file, define the location of that file |
 | format   | string  | No       | [pretty, pretty-timestamped]                   | all     | output format                                     |
 | level    | string  | No       | [fatal, error, warn, info, http, debug, trace] | all     | verbose level                                     |
-| colors   | boolean | No       | false                                          | v5.7.0  | disable or enable colors                          |
+| colors   | boolean | No       | false                                          | all  | disable or enable colors                          |
 | redact   | object  | No       | see above                                      |         | redact sensitive data                             |
 | sync     | boolean | No       | true                                           |         | turn on synchronous logging                       |

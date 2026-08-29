@@ -56,7 +56,7 @@ Is the location of the default storage. **Verdaccio is by default based on local
 storage: ./storage
 ```
 
-> Released at v5.6.0: The environment variable `VERDACCIO_STORAGE_PATH` could be used to replace the location of the storage (only for the default storage, does not apply to plugins unless it is implemented independently).
+> The environment variable `VERDACCIO_STORAGE_PATH` can be used to replace the location of the storage (only for the default storage; it does not apply to plugins unless they implement it independently).
 
 ### The `.verdaccio-db` database {#.verdaccio-db}
 
@@ -86,7 +86,7 @@ If the secret length is **64 characters** long:
 
 Go to the [storage location](cli.md) and edit manually the secret to be 32 characters long.
 
-##### Option 2: Automatically (since v5.31.0)
+##### Option 2: Automatically
 
 The `migrateToSecureLegacySignature` property is used to generate a new secret token if the length is 64 characters.
 
@@ -160,7 +160,7 @@ This warning indicates that Node.js has deprecated a function utilized by the le
 
 If verdaccio runs on **Node.js 22** or higher, you will not see this warning since a new modern legacy signature has been implemented.
 
-The **migrateToSecureLegacySignature** property is only available for versions higher than 5.31.0 and is **false** by default.
+The **migrateToSecureLegacySignature** property is **false** by default.
 
 :::
 
@@ -446,7 +446,6 @@ url_prefix: '/second_prefix'
 
 ### User Agent {#user-agent}
 
-<small>Since: `verdaccio@5.4.0`</small>
 
 The user agent is disabled by default, in exchange the user agent client (package manager, browser, etc ...) is being bypassed to the remote. To enable the previous behaviour use boolean values.
 
@@ -458,7 +457,6 @@ user_agent: 'custom user agent'
 
 ### User Rate Limit {#user-rate-limit}
 
-<small>Since: [verdaccio@5.4.0](https://github.com/verdaccio/verdaccio/releases/tag/v5.4.0)</small>
 
 Add default rate limit to user endpoints, `npm token`, `npm profile`, `npm login/adduser` and login website to 100 request peer 15 min, customizable via:
 
@@ -555,10 +553,10 @@ notify:
 
 ### Logger {#logger}
 
-:::warning
-
-Since v5.22.0 the logger property is renamed to `logs` but `log` still compatible but displaying a warning
-
+:::caution Deprecated: `logs`
+The property is `log`. The older `logs` spelling still works but emits a
+deprecation warning (`VERWAR002`) on startup and may be removed at any time —
+rename it to `log`.
 :::
 
 Two logger types are supported, you may chose only one of them:
@@ -672,7 +670,7 @@ The `stage` and `tfa` flags are not available in **6.x**.
 
 ### Config Builder API {#builder}
 
-After version `v5.23.1` the new advanced configuration builder API is available. The API is a flexible way to generate programmatically configuration outputs either in JSON or YAML using the builder pattern, for example:
+The advanced configuration builder API is a flexible way to generate programmatically configuration outputs either in JSON or YAML using the builder pattern, for example:
 
 ```typescript
 import { ConfigBuilder } from 'verdaccio';

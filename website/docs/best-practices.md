@@ -226,7 +226,7 @@ As a side note, be aware at **npmjs** and the **legacy** verdaccio token never e
 
 ### Rate Limit {#rate-limit}
 
-Since version `v5.4.0` critical endpoints have enabled by default rate limit. The following commands are considered user endpoints:
+Critical endpoints have rate limiting enabled by default. The following commands are considered user endpoints:
 
 - `npm token` all variants
 - `npm login/adduser`

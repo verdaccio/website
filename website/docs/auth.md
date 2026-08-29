@@ -89,8 +89,8 @@ auth:
 | --------- | ------ | -------- | --------------------- | -------- | ---------------------------------------------------------------- |
 | file      | string | Yes      | ./htpasswd            | all      | file that host the encrypted credentials                         |
 | max_users | number | No       | 1000                  | all      | set limit of users                                               |
-| algorithm | string | No       | bcrypt/md5/sha1/crypt | >=5.13.0 | set hasing password algorithm                                    |
-| rounds    | number | No       | 10                    | >=5.13.0 | Rounds number for "bcrypt", will be ignored for other algorithms |
+| algorithm | string | No       | bcrypt/md5/sha1/crypt | all | set hasing password algorithm                                    |
+| rounds    | number | No       | 10                    | all | Rounds number for "bcrypt", will be ignored for other algorithms |
 
 > In case you decide to prevent users from signing up themselves, you can set `max_users: -1`.
 

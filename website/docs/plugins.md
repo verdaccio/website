@@ -40,7 +40,7 @@ Since version `2.0.0` until version plugins must start with the following conven
 - `sinopia-xxx` (deprecated and will be removed on 6.x.x)
 - `verdaccio-xxx`
 
-After version `5.12.0` scoped plugins are supported, for example:
+Scoped plugins are supported, for example:
 
 ```yaml
 auth:

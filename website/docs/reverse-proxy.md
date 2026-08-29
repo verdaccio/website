@@ -256,7 +256,6 @@ For this case, `url_prefix` should set to `/verdaccio/`
 
 ### Overriding the public url
 
-> Since `verdaccio@5.0.0`
 
 The new `VERDACCIO_PUBLIC_URL` is intended to be used behind proxies, this variable will be used for:
 
