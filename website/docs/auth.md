@@ -33,7 +33,16 @@ Eg:
   proxy: npmjs
 ```
 
-As is described [on issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500) until `npm@5.3.0` and all minor releases **won't allow you publish without a token**.
+:::caution
+Allowing `$anonymous` to publish is not enough on its own: **npm still refuses to
+publish without being logged in**, answering `ENEEDAUTH`, no matter what the
+registry permits. This is current behaviour, not a historical quirk — it was
+originally reported in
+[issue #212](https://github.com/verdaccio/verdaccio/issues/212#issuecomment-308578500)
+against `npm@5.3.0` and still applies to `npm@11`.
+
+Run `npm adduser` first, even when the package itself needs no permissions.
+:::
 
 ## Understanding Groups {#understanding-groups}
 

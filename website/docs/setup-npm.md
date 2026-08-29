@@ -5,7 +5,11 @@ title: 'npm'
 
 # npm {#npm}
 
-The minimum supported NPM version is 5.
+The minimum supported npm version is **10**. Every supported Verdaccio requires a
+Node.js release that already bundles npm 10 or 11, so older clients are neither
+tested nor supported.
+
+Some features need more than that: `npm stage` requires **npm 11.17**.
 
 ## Setting up global registry for all projects {#all}
 
@@ -58,27 +62,26 @@ If you only want to publish your package to Verdaccio but keep installing from o
 
 ## Creating user {#creating-user}
 
-With npm 8 or below, either `adduser` or `login` are able to create users and login at the same time.
+Since `npm@9` the two commands do separate things, which is the behaviour on
+every supported version:
 
-```bash
-npm adduser --registry http://localhost:4873
-```
-
-after version `npm@9` the commands works separately:
-
-- `login` does not create users.
+- `login` authenticates an existing user and does **not** create one:
 
 ```bash
 npm login --registry http://localhost:4873
 ```
 
-- `adduser` does not login users.
+- `adduser` creates a user and does **not** log them in:
 
 ```bash
 npm adduser --registry http://localhost:4873
 ```
 
-Both commands relies on web login by default, but adding `--auth-type=legacy` you can get back the previous behaviour.
+Both rely on web login by default; adding `--auth-type=legacy` gets the previous
+behaviour back.
+
+> On `npm@8` and older, either command both created the user and logged them in.
+> Those versions are no longer supported.
 
 > [Web login is not supported for verdaccio.](https://github.com/verdaccio/verdaccio/issues/3413)
 
@@ -148,10 +151,6 @@ involved.
 If you are running into issues login with `npm@9.x` or higher you could try use the legacy mode (see above).
 
 For progress on the native support on future you can track the following [issue#3413](https://github.com/verdaccio/verdaccio/issues/3413).
-
-### npm does not save authToken when authenticating to Verdaccio
-
-If you are using either `npm@5.4.x` or `npm@5.5.x`, there are [known issues with tokens](https://github.com/verdaccio/verdaccio/issues/509#issuecomment-359193762), please upgrade to either `6.x` or downgrade to `npm@5.3.0`.
 
 ### SSL and certificates {#ssl-and-certificates}
 
