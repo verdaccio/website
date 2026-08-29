@@ -63,6 +63,102 @@ for logging via CLi use:
 yarn npm login --scope my-company
 ```
 
+## Extra registry commands {#yarn-plugin-npm}
+
+Yarn 4 ships a smaller set of registry commands than npm. There is no
+`yarn npm ping`, no `yarn npm unpublish`, no `yarn npm deprecate` and no
+`yarn npm star`, and `yarn npm login` only speaks the web flow.
+
+[`verdaccio/yarn-plugin-npm`](https://github.com/verdaccio/yarn-plugin-npm) is a
+set of Yarn 4 plugins that add them. They are maintained by the Verdaccio team
+and work against any npm-compatible registry, not only Verdaccio.
+
+### Installing {#yarn-plugin-npm-install}
+
+The quickest way is the importer, which downloads a plugin and registers it in
+your `.yarnrc.yml`:
+
+```bash
+yarn dlx @verdaccio/yarn-import npm-ping
+yarn dlx @verdaccio/yarn-import npm-login
+yarn dlx @verdaccio/yarn-import npm-unpublish
+yarn dlx @verdaccio/yarn-import npm-deprecate
+yarn dlx @verdaccio/yarn-import npm-star
+```
+
+Pin a version by appending it: `yarn dlx @verdaccio/yarn-import npm-ping 0.0.1`.
+
+Check what is installed with `yarn plugin list`.
+
+Requires Yarn **4.x** and Node.js **>= 24**.
+
+### What each one adds {#yarn-plugin-npm-commands}
+
+| Plugin | Commands |
+| --- | --- |
+| `npm-ping` | `yarn npm ping` |
+| `npm-login` | `yarn npm login` with a legacy flow |
+| `npm-unpublish` | `yarn npm unpublish` |
+| `npm-deprecate` | `yarn npm deprecate` |
+| `npm-star` | `yarn npm star`, `yarn npm unstar` |
+
+All of them accept `--registry <url>`, `--scope <scope>` and `--json`.
+
+```bash
+yarn npm ping --registry http://localhost:4873
+yarn npm unpublish my-package@1.0.0
+yarn npm unpublish my-package --force            # every version
+yarn npm deprecate my-package@"<2.0.0" "Upgrade to v2"
+yarn npm deprecate my-package@1.0.0 ""           # un-deprecate
+yarn npm star lodash
+```
+
+### Logging in to a self-hosted registry {#yarn-plugin-npm-login}
+
+The built-in `yarn npm login` assumes the web flow, which is the source of the
+long-standing friction listed under [known issues](#known-issues). The
+`npm-login` plugin adds `--auth-type`, so you can ask for the legacy
+username/password exchange that a self-hosted Verdaccio understands:
+
+```bash
+yarn npm login --auth-type=legacy --registry http://localhost:4873
+```
+
+`--auth-type=auto` is the default and tries the web flow first, falling back to
+legacy on `404`/`501`. For CI, pass the credentials directly instead of being
+prompted:
+
+```bash
+yarn npm login --auth-type=legacy \
+  --user "$NPM_USER" --password "$NPM_PASS" --email "$NPM_EMAIL"
+```
+
+Note the legacy flow creates users on registries that accept CouchDB user
+documents; logging in as an existing user only works when the registry exposes
+revision metadata without Basic authentication.
+
+## Two-factor authentication {#two-factor}
+
+Yarn works with [two-factor authentication](two-factor-authentication) out of the
+box. When the registry asks for a one-time password, Yarn prompts for it:
+
+```bash
+yarn npm publish
+# Provide a one-time password from your authenticator app.
+# One-time password: ‹
+```
+
+The `unpublish` and `deprecate` plugins above also take `--otp <code>` for
+non-interactive use.
+
+Enrolling still has to be done with npm — `npm profile enable-2fa` — since Yarn
+has no equivalent command.
+
+:::note
+[Staged publishing](staged-publishing) has no Yarn equivalent at all. `npm stage`
+is npm-only, so a Yarn-based workflow cannot stage or approve versions.
+:::
+
 ## Troubleshooting {#troubleshooting}
 
 ### Known issues
