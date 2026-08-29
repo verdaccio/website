@@ -551,6 +551,16 @@ flags:
   webLogin: true
 ```
 
+The flags currently available are:
+
+| Flag | What it enables |
+| --- | --- |
+| `changePassword` | the change-password form in the web UI |
+| `createUser` | user registration through the web UI |
+| `webLogin` | the browser-based login flow for the CLI |
+| `stage` | [staged publishing](staged-publishing) (`npm stage`) |
+| `tfa` | [two-factor authentication](two-factor-authentication) |
+
 > To disable console warnings related to the flags or experiments, you must comment out the complete `flags` and `experiments` sections.
 
 ### Config Builder API {#builder}

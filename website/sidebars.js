@@ -46,6 +46,8 @@ module.exports = {
         'uplinks',
         'packages',
         'authentication',
+        'two-factor-authentication',
+        'staged-publishing',
         'notifications',
         'logger',
         {

@@ -84,3 +84,9 @@ auth:
 | rounds    | number | No       | 10                    | >=5.13.0 | Rounds number for "bcrypt", will be ignored for other algorithms |
 
 > In case you decide to prevent users from signing up themselves, you can set `max_users: -1`.
+
+## Two-factor authentication {#two-factor}
+
+Independently of which authentication plugin you use, users can add a
+time-based one-time password on top of their password. See
+[two-factor authentication](two-factor-authentication).
