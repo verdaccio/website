@@ -73,6 +73,19 @@ Yarn 4 ships a smaller set of registry commands than npm. There is no
 set of Yarn 4 plugins that add them. They are maintained by the Verdaccio team
 and work against any npm-compatible registry, not only Verdaccio.
 
+:::caution Experimental
+These plugins are **experimental** and still on `0.0.x`. Commands, flags and
+output may change between releases, so pin a version if you depend on them in
+CI.
+
+**Feedback is what moves them forward.** If you try them, tell us which commands
+you actually needed, what behaved differently from npm, and what is still
+missing: open a thread in
+[GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions) or come
+to [Discord](https://discord.gg/7qWJxBf). Reports about what does not work are
+the most useful ones at this stage.
+:::
+
 ### Installing {#yarn-plugin-npm-install}
 
 The quickest way is the importer, which downloads a plugin and registers it in
