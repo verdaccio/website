@@ -380,14 +380,11 @@ publish:
   allow_offline: false
 ```
 
-<small>Since: `verdaccio@2.3.6` due [#223](https://github.com/verdaccio/verdaccio/pull/223)</small>
-
 ### Checking Package Ownership {#check-owner}
 
-:::info
-
-Only available on experimental versions >8.x and higher
-
+:::info Available from 7.x
+Ships in **7.x** and later, and in the **9.x experimental** line
+(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
 :::
 
 By default, [package access](packages.md) defines who is allowed to publish and unpublish packages. By setting `check_owners` to _true_, only package owners are allowed to make changes to a package. The first owner of a package is the user who published the first version. Further owners can be added or removed using [`npm owner`](https://docs.npmjs.com/cli/v10/commands/npm-owner). You can find the list of current owners using `npm owner list` or by checking the package manifest under `maintainers`.
@@ -399,10 +396,9 @@ publish:
 
 ### Keep Readmes {#keep-readmes}
 
-:::info
-
-Only available on experimental versions >8.x and higher
-
+:::info Available from 7.x
+Ships in **7.x** and later, and in the **9.x experimental** line
+(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
 :::
 
 By default, Verdaccio stores only the readme markdown of the latest version for each package. Setting `keep_readmes` to `'tagged'` keeps the readmes of versions with `dist-tags` (for example, `latest`, `next`, and major branches). Using the `'all'` setting will retain the complete history of readme versions. Note that `'all'` can significantly increase the required storage space for packages published to Verdaccio!
@@ -581,10 +577,7 @@ For full information - see here: [Features/logger](logger.md)
 
 ### Audit {#audit}
 
-<small>Since: `verdaccio@3.0.0`</small>
-
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes
-a built-in middleware plugin to handle this command.
+Verdaccio includes a built-in middleware plugin to handle `npm audit`.
 
 > If you have a new installation it comes by default, otherwise you need to add the following props to your config file
 

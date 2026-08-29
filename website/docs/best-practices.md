@@ -204,7 +204,7 @@ Using **HTTPS** is a common recommendation. For this reason we recommend reading
 
 ### Expiring Tokens {#expiring-tokens}
 
-Since `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+Tokens have no expiration date by default. Enabling [JWT](configuration#token) gives them one:
 
 ```yaml
 security:
