@@ -267,6 +267,24 @@ way npmjs intends:
 That combination is the reason `npm stage` exists on npmjs, and it is what lets
 an automated pipeline prepare a release without holding a second factor.
 
+## Notifications {#notifications}
+
+If you have [notifications](notifications) configured, staging fires one with
+`publishType: stage`, and rejecting fires `publishType: unstage`. Approving fires
+`publish`, like any other publish.
+
+That is what makes the review step workable in practice — otherwise a staged
+version waits until somebody happens to run `npm stage list`:
+
+```yaml
+notify:
+  method: POST
+  endpoint: https://hooks.example.org/reviews
+  content: '{"type":"{{ publishType }}","package":"{{ publishedPackage }}","by":"{{ publisher.name }}"}'
+```
+
+See [publish type](notifications#publish-type) for the full list of values.
+
 ## Where staged versions are stored {#storage}
 
 Staged items live under a reserved namespace in whatever storage backend you
