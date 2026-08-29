@@ -160,34 +160,59 @@ same `name@version` can be staged again later.
 
 ## Who can do what {#permissions}
 
-Permissions reuse your existing [package access](packages) rules. There is no
-separate configuration.
-
-| Action | Who |
-| --- | --- |
-| `npm stage publish` | anyone allowed to `publish` that package |
-| `npm stage list` | shows items you staged, plus items on packages you may `publish` |
-| `npm stage view` / `download` | the person who staged it, or anyone who may `publish` it |
-| `npm stage approve` / `reject` | anyone allowed to `publish` that package |
-
-Asking about a staged item you are not allowed to see answers `404`, not `403`.
-A `403` would confirm the id exists to someone who has no business knowing that.
-
-Note that approval only requires publish rights, so with a permissive
-`packages` configuration the same person can stage and approve their own
-version. If you want a genuine four-eyes review, the reviewing group needs
-publish rights that the publishing group does not have:
+Staging has its own entry in [package access](packages), alongside `access`,
+`publish` and `unpublish`:
 
 ```yaml
 packages:
   'my-company-*':
     access: $authenticated
-    # only release managers can approve, but any developer can stage
+    stage: developers
     publish: release-managers
 ```
 
-With that, a developer without `publish` cannot stage either — staging and
-approving are the same permission today. Splitting them is not possible yet.
+| Action | Who |
+| --- | --- |
+| `npm stage publish` | anyone allowed to `stage` that package |
+| `npm stage list` | items you staged, plus items on packages you may `publish` |
+| `npm stage view` / `download` | the person who staged it, or anyone who may `publish` it |
+| `npm stage approve` | anyone allowed to `publish` that package |
+| `npm stage reject` | the person who staged it, or anyone who may `publish` it |
+
+Asking about a staged item you are not allowed to see answers `404`, not `403`.
+A `403` would confirm the id exists to someone who has no business knowing that.
+
+### The fallback {#permission-fallback}
+
+**`stage` is optional.** When a package entry does not mention it, whoever may
+`publish` may also stage — exactly the behaviour before the permission existed —
+so no existing configuration changes meaning. This mirrors how `unpublish`
+already falls back to `publish`.
+
+### Making review a real gate {#four-eyes}
+
+`stage` only becomes interesting when it is granted to a group that does **not**
+have `publish`:
+
+```yaml
+packages:
+  'my-company-*':
+    access: $authenticated
+    stage: developers        # may propose a release
+    publish: release-managers # may actually make one
+```
+
+With that configuration a developer can run `npm stage publish` but cannot
+`npm publish`, and cannot approve their own submission either. A release manager
+reviews the tarball and approves it. That is a genuine four-eyes workflow rather
+than a convention people can bypass.
+
+Without the split — that is, with `stage` unset — the same person can stage and
+approve their own version. Staging is then a convenience, not a control.
+
+Note that a developer can always **withdraw** their own submission with
+`npm stage reject`, even without publish rights. Retracting your own proposal is
+not the same as rejecting somebody else's.
 
 ## The web interface {#web-ui}
 

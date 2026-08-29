@@ -195,6 +195,28 @@ In the previous example, the behaviour would be described:
 - only authenticated users can publish `my-company-*` packages, but **nobody would be allowed to unpublish them**.
 - If `unpublish` is commented out, the access will be granted or denied by the `publish` definition.
 
+#### Staging Packages {#staging-packages}
+
+When [staged publishing](staged-publishing) is enabled, the `stage` property
+decides who may submit a version for review with `npm stage publish`. Like
+`unpublish`, it falls back to `publish` when omitted, so leaving it out changes
+nothing.
+
+Its purpose is to grant a group *less* than publishing:
+
+```yaml
+packages:
+  'my-company-*':
+    access: $authenticated
+    stage: developers
+    publish: release-managers
+```
+
+Here developers can propose a release but cannot publish one, and only a release
+manager can approve what they staged. Granting `stage` to a group that already
+has `publish` adds nothing, since those users can publish directly anyway.
+
+
 ### Configuration {#configuration}
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
@@ -204,6 +226,7 @@ You can define mutiple `packages` and each of them must have an unique `Regex`. 
 | access    | string | No       | $all           | all            | define groups allowed to access the package                               |
 | publish   | string | No       | $authenticated | all            | define groups allowed to publish                                          |
 | unpublish | string | No       | $authenticated | all            | define groups allowed to unpublish                                        |
+| stage     | string | No       | developers     | >=9.x          | define groups allowed to stage a version for review, falls back to `publish` |
 | proxy     | string | No       | npmjs          | all            | limit look ups for specific uplink                                        |
 | storage   | string | No       | string         | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
 
