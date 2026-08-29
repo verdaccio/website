@@ -229,6 +229,8 @@ server:
 #### Dotfile requests {#dotfiles}
 
 :::info Available from 7.x
+Ships in **7.x** and later, and in the **9.x experimental** line
+(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
 :::
 
 Controls how requests whose path contains a dotfile segment — `/.env`,
@@ -253,6 +255,8 @@ exists. Choose `deny` only if you prefer an explicit refusal in your logs, and
 #### Hiding static asset logs {#hide-static-logs}
 
 :::info Available from 7.x
+Ships in **7.x** and later, and in the **9.x experimental** line
+(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
 :::
 
 Requests for the web UI assets (`/-/static/*`) are noisy and rarely interesting.
