@@ -90,7 +90,9 @@ behaviour back.
 :::info Depends on the registry
 Requires the `tfa` [feature flag](configuration#experiments) enabled on the
 Verdaccio side. It is experimental, off by default, and available from **7.x** —
-it does not exist in **6.x**. Nothing is configured on the npm side.
+it does not exist in **6.x**. To try it, run the **9.x experimental** line
+(`verdaccio@next-9`), which is where it lands first. Nothing is configured on the
+npm side.
 :::
 
 With the flag enabled you can protect your account with a time-based one-time
@@ -119,8 +121,9 @@ recovery codes and the caveats around publishing from CI.
 :::info Depends on the registry
 Requires the `stage` [feature flag](configuration#experiments) enabled on the
 Verdaccio side. It is experimental, off by default, and available from **7.x** —
-it does not exist in **6.x**. With the flag off, the `npm stage` commands answer
-`404`.
+it does not exist in **6.x**. To try it, run the **9.x experimental** line
+(`verdaccio@next-9`), which is where it lands first. With the flag off, the
+`npm stage` commands answer `404`.
 :::
 
 With the flag enabled, `npm stage` uploads a version for review instead of

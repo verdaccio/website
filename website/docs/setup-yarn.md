@@ -155,8 +155,9 @@ revision metadata without Basic authentication.
 :::info Depends on the registry
 This only applies when the operator has enabled the `tfa`
 [feature flag](configuration#experiments) on the Verdaccio side. It is an
-experimental flag, off by default, and available from **7.x** — see
-[two-factor authentication](two-factor-authentication).
+experimental flag, off by default, and available from **7.x**; to try it, run the
+**9.x experimental** line (`verdaccio@next-9`), which is where it lands first.
+See [two-factor authentication](two-factor-authentication).
 
 Nothing is configured on the Yarn side.
 :::

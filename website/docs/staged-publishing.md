@@ -11,9 +11,21 @@ version.
 It is driven entirely by `npm stage`, so no extra tooling is needed on the
 client side.
 
-:::info Available from 7.x
+:::info Available from 7.x — test it on 9.x
 This feature ships in Verdaccio **7.x** and later. It is **not** available in
 **6.x**, which does not receive new features.
+
+To try it today, use the **9.x experimental** line, which is where it lands
+first:
+
+```bash
+npm install -g verdaccio@next-9
+# or
+docker pull verdaccio/verdaccio:nightly-master
+```
+
+Experimental releases are **not production-ready** and are meant for testing and
+early feedback. Node.js `>= 24` is required.
 :::
 
 :::caution
