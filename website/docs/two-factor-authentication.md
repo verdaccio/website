@@ -19,6 +19,8 @@ This feature ships in Verdaccio **7.x** and later. It is **not** available in
 This is an experimental feature behind the `tfa` flag. It is off by default, and
 the shape of the flag or its behaviour may change in a future release. See
 [feature flags](configuration#experiments).
+
+**We want to hear from you** — see [feedback wanted](#feedback).
 :::
 
 ## Requirements {#requirements}
@@ -78,6 +80,57 @@ Verify it took effect:
 npm profile get
 # two-factor auth: auth-and-writes
 ```
+
+## How it works {#how-it-works}
+
+There is no external service involved, no email and no SMS. Everything is
+[RFC 6238](https://datatracker.ietf.org/doc/html/rfc6238) TOTP: the registry and
+your authenticator app share one random secret, and both derive the same
+six-digit code from it and the current time.
+
+### Enrolment, step by step {#enrolment-internals}
+
+1. `npm profile enable-2fa` asks for your account password and posts it to the
+   registry.
+2. The registry re-checks the password through your auth plugin, generates a
+   random 160-bit secret, and stores it as *pending*.
+3. It answers with a plain `otpauth://` URI:
+
+   ```
+   otpauth://totp/My%20Registry:alice?issuer=My%20Registry&secret=JBSWY3DPEHPK3PXP&algorithm=SHA1&digits=6&period=30
+   ```
+
+4. **npm turns that URI into the QR code**, using
+   [`qrcode-terminal`](https://www.npmjs.com/package/qrcode-terminal) to draw it
+   in your terminal. The registry never produces an image — it only returns the
+   string. That is why the QR appears even though Verdaccio has no web page for
+   it.
+5. You scan it, or paste the `secret` value by hand if your app prefers that.
+   Both carry exactly the same information.
+6. npm asks for the first code and sends it back. The registry checks it, marks
+   the secret as confirmed, and returns the recovery codes.
+
+The pending state matters: until step 6 succeeds, the account is **not**
+protected. That is what `pending: true` means in
+[the profile response](#api).
+
+### Verifying a code {#verification-internals}
+
+When a code is required, the registry recomputes what the code should be for the
+current 30-second window and compares. One step either side is accepted, giving
+about a minute of tolerance for clock drift — which is why an inaccurate server
+clock rejects everything.
+
+The comparison is constant-time, and repeated failures
+[lock the account out](#lockout), because six digits are otherwise cheap to guess
+at scale.
+
+### What is stored {#storage-internals}
+
+The secret, the hashed recovery codes and the failure counters live in the
+storage plugin's token store, encrypted at rest with the server secret. Nothing
+is written to the user's htpasswd entry, which is why this works the same with
+any [auth plugin](authentication).
 
 ## Modes {#modes}
 
@@ -273,6 +326,24 @@ header.
 - **No recovery from a rotated server secret.** See
   [above](#secret-rotation).
 - **Enrolment is CLI-only for now.** There is no web UI to scan the QR code yet.
+
+## Feedback wanted {#feedback}
+
+This feature is experimental and shaped by what people report while using it. If
+you try it, we would like to hear about it — especially:
+
+- whether the workflow fits how your team actually releases
+- anything the two available modes does not cover for your setup
+- rough edges, confusing errors, or gaps in this page
+
+Open a thread in
+[GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions), file an
+issue at [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio/issues), or
+come and talk to us on [Discord](https://discord.gg/7qWJxBf).
+
+Reports about what does **not** work for you are the most useful thing you can
+send while a feature is still experimental: it is the input that decides whether
+it graduates, changes shape, or gets dropped.
 
 ## Troubleshooting {#troubleshooting}
 

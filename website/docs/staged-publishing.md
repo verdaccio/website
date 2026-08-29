@@ -20,6 +20,8 @@ This feature ships in Verdaccio **7.x** and later. It is **not** available in
 This is an experimental feature behind the `stage` flag. It is off by default,
 and the shape of the flag or its behaviour may change in a future release. See
 [feature flags](configuration#experiments).
+
+**We want to hear from you** — see [feedback wanted](#feedback).
 :::
 
 ## Requirements {#requirements}
@@ -298,6 +300,24 @@ Worth knowing before you turn this on:
 - **Staging and approving are the same permission.** See
   [who can do what](#permissions).
 - **npm only.** Yarn and pnpm have no equivalent command.
+
+## Feedback wanted {#feedback}
+
+This feature is experimental and shaped by what people report while using it. If
+you try it, we would like to hear about it — especially:
+
+- whether the workflow fits how your team actually releases
+- anything the stage permission and the approval flow does not cover for your setup
+- rough edges, confusing errors, or gaps in this page
+
+Open a thread in
+[GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions), file an
+issue at [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio/issues), or
+come and talk to us on [Discord](https://discord.gg/7qWJxBf).
+
+Reports about what does **not** work for you are the most useful thing you can
+send while a feature is still experimental: it is the input that decides whether
+it graduates, changes shape, or gets dropped.
 
 ## Troubleshooting {#troubleshooting}
 
