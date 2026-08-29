@@ -32,9 +32,21 @@ early feedback. Node.js `>= 24` is required.
 This is an experimental feature behind the `stage` flag. It is off by default,
 and the shape of the flag or its behaviour may change in a future release. See
 [feature flags](configuration#experiments).
-
-**We want to hear from you** — see [feedback wanted](#feedback).
 :::
+
+:::info Feedback wanted
+This feature is experimental and shaped by what people report while using it.
+Tell us whether the workflow fits how your team releases, what it does not cover
+for your setup, and any rough edge or confusing error — in
+[GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions), as an
+issue at [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio/issues),
+or on [Discord](https://discord.gg/7qWJxBf).
+
+Reports about what does **not** work are the most useful thing you can send
+while a feature is still experimental: they decide whether it graduates, changes
+shape, or gets dropped.
+:::
+
 
 ## Requirements {#requirements}
 
@@ -260,27 +272,6 @@ way npmjs intends:
 That combination is the reason `npm stage` exists on npmjs, and it is what lets
 an automated pipeline prepare a release without holding a second factor.
 
-## HTTP API {#api}
-
-The routes match what npmjs documents, so any client that speaks `npm stage`
-works.
-
-| Method | Route | Command |
-| --- | --- | --- |
-| `POST` | `/-/stage/package/:package` | `npm stage publish` |
-| `GET` | `/-/stage?package=&page=&perPage=` | `npm stage list` |
-| `GET` | `/-/stage/:stageId` | `npm stage view` |
-| `GET` | `/-/stage/:stageId/tarball` | `npm stage download` |
-| `POST` | `/-/stage/:stageId/approve` | `npm stage approve` |
-| `DELETE` | `/-/stage/:stageId` | `npm stage reject` |
-
-All of them require authentication. `:stageId` is a UUID; the npm CLI validates
-the format before it even calls the registry.
-
-The body of `POST /-/stage/package/:package` is the same packument a normal
-publish sends, which is why staging reuses every validation the publish path
-already does.
-
 ## Where staged versions are stored {#storage}
 
 Staged items live under a reserved namespace in whatever storage backend you
@@ -312,24 +303,6 @@ Worth knowing before you turn this on:
 - **Staging and approving are the same permission.** See
   [who can do what](#permissions).
 - **npm only.** Yarn and pnpm have no equivalent command.
-
-## Feedback wanted {#feedback}
-
-This feature is experimental and shaped by what people report while using it. If
-you try it, we would like to hear about it — especially:
-
-- whether the workflow fits how your team actually releases
-- anything the stage permission and the approval flow does not cover for your setup
-- rough edges, confusing errors, or gaps in this page
-
-Open a thread in
-[GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions), file an
-issue at [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio/issues), or
-come and talk to us on [Discord](https://discord.gg/7qWJxBf).
-
-Reports about what does **not** work for you are the most useful thing you can
-send while a feature is still experimental: it is the input that decides whether
-it graduates, changes shape, or gets dropped.
 
 ## Troubleshooting {#troubleshooting}
 

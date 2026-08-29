@@ -31,9 +31,21 @@ early feedback. Node.js `>= 24` is required.
 This is an experimental feature behind the `tfa` flag. It is off by default, and
 the shape of the flag or its behaviour may change in a future release. See
 [feature flags](configuration#experiments).
-
-**We want to hear from you** — see [feedback wanted](#feedback).
 :::
+
+:::info Feedback wanted
+This feature is experimental and shaped by what people report while using it.
+Tell us whether the workflow fits how your team releases, what it does not cover
+for your setup, and any rough edge or confusing error — in
+[GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions), as an
+issue at [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio/issues),
+or on [Discord](https://discord.gg/7qWJxBf).
+
+Reports about what does **not** work are the most useful thing you can send
+while a feature is still experimental: they decide whether it graduates, changes
+shape, or gets dropped.
+:::
+
 
 ## Requirements {#requirements}
 
@@ -281,15 +293,10 @@ at rest. They are deliberately hidden from the token APIs: `npm token ls` does
 not list them, and `npm token rm` refuses to delete them — otherwise anybody
 holding a token could switch off their own second factor without a password.
 
-## HTTP API {#api}
+## What the registry reports {#api}
 
-Two-factor is configured through the standard npm profile endpoint.
-
-**Reading the status**
-
-```
-GET /-/npm/v1/user
-```
+`npm profile get` reads the state from `GET /-/npm/v1/user`, which reports one
+of:
 
 ```json
 { "tfa": false }
@@ -297,25 +304,10 @@ GET /-/npm/v1/user
 ```
 
 `pending: true` means enrolment was started but the first code was never
-confirmed. That state does not protect the account.
+confirmed. **That state does not protect the account** — finish enrolling, or
+disable and start again.
 
-**Enrolling**, in two steps:
-
-```
-POST /-/npm/v1/user   { "tfa": { "mode": "auth-and-writes", "password": "..." } }
-→ { "tfa": "otpauth://totp/...?secret=..." }
-
-POST /-/npm/v1/user   { "tfa": ["123456"] }
-→ { "tfa": ["recovery-code", "..."] }
-```
-
-**Disabling**
-
-```
-POST /-/npm/v1/user   { "tfa": { "mode": "disable", "password": "..." } }
-```
-
-**The challenge.** When a code is needed but not supplied, the registry answers:
+When a code is required but not supplied, the registry answers:
 
 ```
 401 Unauthorized
@@ -338,24 +330,6 @@ header.
 - **No recovery from a rotated server secret.** See
   [above](#secret-rotation).
 - **Enrolment is CLI-only for now.** There is no web UI to scan the QR code yet.
-
-## Feedback wanted {#feedback}
-
-This feature is experimental and shaped by what people report while using it. If
-you try it, we would like to hear about it — especially:
-
-- whether the workflow fits how your team actually releases
-- anything the two available modes does not cover for your setup
-- rough edges, confusing errors, or gaps in this page
-
-Open a thread in
-[GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions), file an
-issue at [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio/issues), or
-come and talk to us on [Discord](https://discord.gg/7qWJxBf).
-
-Reports about what does **not** work for you are the most useful thing you can
-send while a feature is still experimental: it is the input that decides whether
-it graduates, changes shape, or gets dropped.
 
 ## Troubleshooting {#troubleshooting}
 
