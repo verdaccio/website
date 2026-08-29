@@ -84,11 +84,14 @@ Both commands relies on web login by default, but adding `--auth-type=legacy` yo
 
 ## Two-factor authentication {#two-factor}
 
-Requires a registry running Verdaccio **7.x** or later; the flag does not exist
-in **6.x**.
+:::info Depends on the registry
+Requires the `tfa` [feature flag](configuration#experiments) enabled on the
+Verdaccio side. It is experimental, off by default, and available from **7.x** —
+it does not exist in **6.x**. Nothing is configured on the npm side.
+:::
 
-If the registry has the `tfa` flag enabled, you can protect your account with a
-time-based one-time password using the standard npm commands:
+With the flag enabled you can protect your account with a time-based one-time
+password using the standard npm commands:
 
 ```bash
 npm profile enable-2fa auth-and-writes
@@ -110,12 +113,16 @@ recovery codes and the caveats around publishing from CI.
 
 ## Staged publishing {#staged-publishing}
 
-Requires a registry running Verdaccio **7.x** or later; the flag does not exist
-in **6.x**.
+:::info Depends on the registry
+Requires the `stage` [feature flag](configuration#experiments) enabled on the
+Verdaccio side. It is experimental, off by default, and available from **7.x** —
+it does not exist in **6.x**. With the flag off, the `npm stage` commands answer
+`404`.
+:::
 
-If the registry has the `stage` flag enabled, `npm stage` uploads a version for
-review instead of publishing it outright. It only becomes installable once a
-maintainer approves it.
+With the flag enabled, `npm stage` uploads a version for review instead of
+publishing it outright. It only becomes installable once a maintainer approves
+it.
 
 ```bash
 npm stage publish            # upload for review, nothing is installable yet

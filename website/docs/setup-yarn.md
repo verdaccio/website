@@ -139,8 +139,17 @@ revision metadata without Basic authentication.
 
 ## Two-factor authentication {#two-factor}
 
-Yarn works with [two-factor authentication](two-factor-authentication) out of the
-box. When the registry asks for a one-time password, Yarn prompts for it:
+:::info Depends on the registry
+This only applies when the operator has enabled the `tfa`
+[feature flag](configuration#experiments) on the Verdaccio side. It is an
+experimental flag, off by default, and available from **7.x** — see
+[two-factor authentication](two-factor-authentication).
+
+Nothing is configured on the Yarn side.
+:::
+
+When the registry has it enabled and your account is enrolled, Yarn handles the
+one-time password on its own and prompts for it:
 
 ```bash
 yarn npm publish
@@ -154,9 +163,17 @@ non-interactive use.
 Enrolling still has to be done with npm — `npm profile enable-2fa` — since Yarn
 has no equivalent command.
 
-:::note
-[Staged publishing](staged-publishing) has no Yarn equivalent at all. `npm stage`
-is npm-only, so a Yarn-based workflow cannot stage or approve versions.
+## Staged publishing {#staged-publishing}
+
+:::note Not available in Yarn
+[Staged publishing](staged-publishing) is driven by `npm stage`, which is an npm
+command with no Yarn equivalent. Even with the `stage`
+[feature flag](configuration#experiments) enabled on the registry, a Yarn-based
+workflow cannot stage or approve versions — the registry endpoints are there,
+but no Yarn command calls them.
+
+Publishing normally with `yarn npm publish` keeps working as usual, and is not
+affected by the flag.
 :::
 
 ## Troubleshooting {#troubleshooting}
