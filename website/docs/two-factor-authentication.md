@@ -10,6 +10,11 @@ mode — publishes.
 
 It works with the standard `npm profile` commands and with both npm and Yarn.
 
+:::info Available from 7.x
+This feature ships in Verdaccio **7.x** and later. It is **not** available in
+**6.x**, which does not receive new features.
+:::
+
 :::caution
 This is an experimental feature behind the `tfa` flag. It is off by default, and
 the shape of the flag or its behaviour may change in a future release. See

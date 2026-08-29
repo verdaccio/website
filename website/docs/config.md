@@ -553,13 +553,15 @@ flags:
 
 The flags currently available are:
 
-| Flag | What it enables |
-| --- | --- |
-| `changePassword` | the change-password form in the web UI |
-| `createUser` | user registration through the web UI |
-| `webLogin` | the browser-based login flow for the CLI |
-| `stage` | [staged publishing](staged-publishing) (`npm stage`) |
-| `tfa` | [two-factor authentication](two-factor-authentication) |
+| Flag | Since | What it enables |
+| --- | --- | --- |
+| `changePassword` | all | the change-password form in the web UI |
+| `createUser` | all | user registration through the web UI |
+| `webLogin` | all | the browser-based login flow for the CLI |
+| `stage` | 7.x | [staged publishing](staged-publishing) (`npm stage`) |
+| `tfa` | 7.x | [two-factor authentication](two-factor-authentication) |
+
+The `stage` and `tfa` flags are not available in **6.x**.
 
 > To disable console warnings related to the flags or experiments, you must comment out the complete `flags` and `experiments` sections.
 

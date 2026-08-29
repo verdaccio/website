@@ -197,6 +197,8 @@ In the previous example, the behaviour would be described:
 
 #### Staging Packages {#staging-packages}
 
+Available from Verdaccio **7.x**, not in **6.x**.
+
 When [staged publishing](staged-publishing) is enabled, the `stage` property
 decides who may submit a version for review with `npm stage publish`. Like
 `unpublish`, it falls back to `publish` when omitted, so leaving it out changes
@@ -226,7 +228,7 @@ You can define mutiple `packages` and each of them must have an unique `Regex`. 
 | access    | string | No       | $all           | all            | define groups allowed to access the package                               |
 | publish   | string | No       | $authenticated | all            | define groups allowed to publish                                          |
 | unpublish | string | No       | $authenticated | all            | define groups allowed to unpublish                                        |
-| stage     | string | No       | developers     | >=9.x          | define groups allowed to stage a version for review, falls back to `publish` |
+| stage     | string | No       | developers     | >=7.x          | define groups allowed to stage a version for review, falls back to `publish` |
 | proxy     | string | No       | npmjs          | all            | limit look ups for specific uplink                                        |
 | storage   | string | No       | string         | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
 

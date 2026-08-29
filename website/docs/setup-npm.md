@@ -82,6 +82,58 @@ Both commands relies on web login by default, but adding `--auth-type=legacy` yo
 
 > [Web login is not supported for verdaccio.](https://github.com/verdaccio/verdaccio/issues/3413)
 
+## Two-factor authentication {#two-factor}
+
+Requires a registry running Verdaccio **7.x** or later; the flag does not exist
+in **6.x**.
+
+If the registry has the `tfa` flag enabled, you can protect your account with a
+time-based one-time password using the standard npm commands:
+
+```bash
+npm profile enable-2fa auth-and-writes
+npm profile get                          # two-factor auth: auth-and-writes
+npm profile disable-2fa
+```
+
+Once enabled, publishing asks for a code. npm prompts for it in an interactive
+terminal; in a script pass it directly:
+
+```bash
+npm publish --otp=123456
+```
+
+Without a TTY and without `--otp`, npm fails with `EOTP` rather than hanging.
+
+See [two-factor authentication](two-factor-authentication) for the modes,
+recovery codes and the caveats around publishing from CI.
+
+## Staged publishing {#staged-publishing}
+
+Requires a registry running Verdaccio **7.x** or later; the flag does not exist
+in **6.x**.
+
+If the registry has the `stage` flag enabled, `npm stage` uploads a version for
+review instead of publishing it outright. It only becomes installable once a
+maintainer approves it.
+
+```bash
+npm stage publish            # upload for review, nothing is installable yet
+npm stage list               # see what is waiting
+npm stage download <id>      # inspect the tarball before deciding
+npm stage approve <id>       # publish it for real
+npm stage reject <id>        # discard it
+```
+
+**These commands require npm 11.17 or newer.** They do not exist in earlier
+versions, and there is no Yarn or pnpm equivalent.
+
+`npm stage publish` never asks for a one-time password, which is what lets a CI
+pipeline prepare a release that a human approves later with theirs.
+
+See [staged publishing](staged-publishing) for the full flow and the permissions
+involved.
+
 ## Troubleshooting {#troubleshooting}
 
 ### `npm login` with npm@9 or higher
