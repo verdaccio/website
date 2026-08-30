@@ -46,8 +46,17 @@ module.exports = {
         'uplinks',
         'packages',
         'authentication',
-        'two-factor-authentication',
-        'staged-publishing',
+        {
+          type: 'category',
+          label: 'Feature flags',
+          items: [
+            'two-factor-authentication',
+            'staged-publishing',
+            'web-login',
+            'user-registration',
+            'change-password',
+          ],
+        },
         'notifications',
         'logger',
         {

@@ -653,9 +653,9 @@ The flags currently available are:
 
 | Flag             | Since | What it enables                                        |
 | ---------------- | ----- | ------------------------------------------------------ |
-| `changePassword` | all   | the change-password form in the web UI                 |
-| `createUser`     | all   | user registration through the web UI                   |
-| `webLogin`       | all   | the browser-based login flow for the CLI               |
+| `changePassword` | all   | [changing a password](change-password) from the web UI |
+| `createUser`     | all   | [user registration](user-registration) from the web UI |
+| `webLogin`       | all   | [browser-based login](web-login) for the CLI           |
 | `stage`          | 7.x   | [staged publishing](staged-publishing) (`npm stage`)   |
 | `tfa`            | 7.x   | [two-factor authentication](two-factor-authentication) |
 
