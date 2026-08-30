@@ -104,17 +104,31 @@ npm profile get                          # two-factor auth: auth-and-writes
 npm profile disable-2fa
 ```
 
-Once enabled, publishing asks for a code. npm prompts for it in an interactive
-terminal; in a script pass it directly:
+Which commands ask for a code depends on the mode you enrol in. Both `auth-only`
+and `auth-and-writes` ask when you log in or create a token; only
+`auth-and-writes` asks again on every write.
+
+So with `auth-only`, `npm publish` never asks for a code even though two-factor
+is on. The second factor guards the door rather than each write, which is what
+keeps a pipeline working: a person creates the token once, with their code, and
+CI publishes with that token afterwards. The trade-off is that a leaked token
+can publish.
+
+With `auth-and-writes`, publishing asks. npm prompts for the code in an
+interactive terminal; in a script pass it directly:
 
 ```bash
 npm publish --otp=123456
 ```
 
 Without a TTY and without `--otp`, npm fails with `EOTP` rather than hanging.
+A code is single use and lives about ninety seconds, so it cannot be stored in a
+CI secret — to keep `auth-and-writes` and still release from a pipeline, see
+[staged publishing](#staged-publishing) below.
 
-See [two-factor authentication](two-factor-authentication) for the modes,
-recovery codes and the caveats around publishing from CI.
+See [two-factor authentication](two-factor-authentication) for the full table of
+what each mode asks for, recovery codes, and what happens if the server secret is
+rotated.
 
 ## Staged publishing {#staged-publishing}
 
@@ -141,8 +155,14 @@ npm stage reject <id>        # discard it
 **These commands require npm 11.17 or newer.** They do not exist in earlier
 versions, and there is no Yarn or pnpm equivalent.
 
-`npm stage publish` never asks for a one-time password, which is what lets a CI
-pipeline prepare a release that a human approves later with theirs.
+`npm stage publish` never asks for a one-time password, in either two-factor
+mode, which is what lets a CI pipeline prepare a release that a human approves
+later with theirs.
+
+That pairing is the answer to the CI problem above: keep `auth-and-writes`, let
+the pipeline stage without a code, and require the code at `npm stage approve`,
+where there is a person to type it. Every write stays protected and nothing
+needs a code stored in a secret.
 
 See [staged publishing](staged-publishing) for the full flow and the permissions
 involved.
