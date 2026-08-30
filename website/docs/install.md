@@ -7,11 +7,19 @@ Verdaccio is a Node.js private and proxy registry. To install it, you need a few
 
 ## Prerequisites {#prerequisites}
 
-1. **Node.js** `v18` or higher.
+1. **Node.js**, matching the version of Verdaccio you install:
+
+   | Verdaccio       | Node.js |
+   | --------------- | ------- |
+   | `6.x` (current) | `>= 22` |
+   | `7.x` and later | `>= 24` |
 
 2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn` (classic and modern).
 
-> We highly recommend to use the latest versions of Node Package Manager clients `> npm@6.x | yarn@1.x | | yarn@2.x | pnpm@6.x`. Don't support `npm@5.x` or older.
+> **`npm@10` or newer is recommended.** Every supported Verdaccio already
+> requires a Node.js release that bundles npm 10 or 11, so anything older is
+> neither tested nor supported. Some features ask for more: `npm stage` needs
+> `npm@11.17`, and the yarn plugins need `yarn@4`.
 
 3. A modern web browser to run the web interface. We actually support `Chrome, Firefox, Edge`.
 

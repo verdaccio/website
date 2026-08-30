@@ -105,6 +105,75 @@ packages:
 
 That way, **nobody can access your registry unless they are authorized, and private packages won't be displayed in the web interface**.
 
+### Require a second factor for publishing {#two-factor}
+
+:::caution Experimental
+Requires Verdaccio **7.x** or later, not **6.x**. To evaluate it, use the **9.x
+experimental** line (`verdaccio@next-9`), where it lands first.
+
+**Not recommended for production yet** — the advice below is what we think good
+practice looks like once the feature settles, and trying it out is exactly the
+feedback that gets it there.
+:::
+
+A leaked or committed token is enough to publish in someone's name. Enabling
+[two-factor authentication](two-factor-authentication) in `auth-and-writes` mode
+means a token alone is no longer enough — publishing also needs a code from the
+maintainer's authenticator:
+
+```yaml
+flags:
+  tfa: true
+```
+
+Turning the flag on does not enable anything by itself; each user opts in with
+`npm profile enable-2fa auth-and-writes`.
+
+Two things to plan for before rolling this out to a team:
+
+- **Publishing from CI breaks**, because a pipeline cannot produce a code. Either
+  publish from an account in `auth-only` mode, or pair this with staged
+  publishing (below), which is designed for exactly that case.
+- **Rotating the server secret locks every enrolled user out**, with no
+  self-service recovery. Ask users to disable two-factor before a rotation.
+
+### Review releases before they are installable {#staged-publishing}
+
+:::caution Experimental
+Requires Verdaccio **7.x** or later, not **6.x**. To evaluate it, use the **9.x
+experimental** line (`verdaccio@next-9`), where it lands first.
+
+**Not recommended for production yet** — the advice below is what we think good
+practice looks like once the feature settles, and trying it out is exactly the
+feedback that gets it there.
+:::
+
+Protecting _who_ can publish still means the publish takes effect immediately.
+[Staged publishing](staged-publishing) adds a review step: the version is
+uploaded but nobody can install it until a maintainer inspects the tarball and
+approves it.
+
+```yaml
+flags:
+  stage: true
+
+packages:
+  '@my-company/*':
+    access: $authenticated
+    stage: developers
+    publish: release-managers
+```
+
+The `stage` permission is what makes this a control rather than a convention.
+Granting it to a group that does **not** have `publish` means those users can
+propose a release but cannot make one, and cannot approve their own submission.
+Leave `stage` out and it falls back to `publish`, in which case the same person
+can stage and approve — convenient, but it enforces nothing.
+
+This also solves the CI problem above: `npm stage publish` never asks for a
+one-time password, so a pipeline can prepare a release that a maintainer
+approves with theirs.
+
 ### Remove `proxy` to increase security at private packages {#remove-proxy-to-increase-security-at-private-packages}
 
 After a clean installation, by default all packages will be resolved to the default uplink (the public registry `npmjs`).
@@ -149,7 +218,7 @@ Using **HTTPS** is a common recommendation. For this reason we recommend reading
 
 ### Expiring Tokens {#expiring-tokens}
 
-Since `verdaccio@3.x` the tokens have no expiration date. For such reason we introduced in the next `verdaccio@4.x` the JWT feature [PR#896](https://github.com/verdaccio/verdaccio/pull/896)
+Tokens have no expiration date by default. Enabling [JWT](configuration#token) gives them one:
 
 ```yaml
 security:
@@ -171,7 +240,7 @@ As a side note, be aware at **npmjs** and the **legacy** verdaccio token never e
 
 ### Rate Limit {#rate-limit}
 
-Since version `v5.4.0` critical endpoints have enabled by default rate limit. The following commands are considered user endpoints:
+Critical endpoints have rate limiting enabled by default. The following commands are considered user endpoints:
 
 - `npm token` all variants
 - `npm login/adduser`

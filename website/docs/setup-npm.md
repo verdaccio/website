@@ -5,7 +5,11 @@ title: 'npm'
 
 # npm {#npm}
 
-The minimum supported NPM version is 5.
+The minimum supported npm version is **10**. Every supported Verdaccio requires a
+Node.js release that already bundles npm 10 or 11, so older clients are neither
+tested nor supported.
+
+Some features need more than that: `npm stage` requires **npm 11.17**.
 
 ## Setting up global registry for all projects {#all}
 
@@ -58,29 +62,110 @@ If you only want to publish your package to Verdaccio but keep installing from o
 
 ## Creating user {#creating-user}
 
-With npm 8 or below, either `adduser` or `login` are able to create users and login at the same time.
+Since `npm@9` the two commands do separate things, which is the behaviour on
+every supported version:
 
-```bash
-npm adduser --registry http://localhost:4873
-```
-
-after version `npm@9` the commands works separately:
-
-- `login` does not create users.
+- `login` authenticates an existing user and does **not** create one:
 
 ```bash
 npm login --registry http://localhost:4873
 ```
 
-- `adduser` does not login users.
+- `adduser` creates a user and does **not** log them in:
 
 ```bash
 npm adduser --registry http://localhost:4873
 ```
 
-Both commands relies on web login by default, but adding `--auth-type=legacy` you can get back the previous behaviour.
+Both rely on web login by default; adding `--auth-type=legacy` gets the previous
+behaviour back.
+
+> On `npm@8` and older, either command both created the user and logged them in.
+> Those versions are no longer supported.
 
 > [Web login is not supported for verdaccio.](https://github.com/verdaccio/verdaccio/issues/3413)
+
+## Two-factor authentication {#two-factor}
+
+:::info Depends on the registry
+Requires the `tfa` [feature flag](configuration#experiments) enabled on the
+Verdaccio side. It is experimental, off by default, and available from **7.x** —
+it does not exist in **6.x**. To try it, run the **9.x experimental** line
+(`verdaccio@next-9`), which is where it lands first. Not recommended for production yet. Nothing is
+configured on the npm side.
+:::
+
+With the flag enabled you can protect your account with a time-based one-time
+password using the standard npm commands:
+
+```bash
+npm profile enable-2fa auth-and-writes
+npm profile get                          # two-factor auth: auth-and-writes
+npm profile disable-2fa
+```
+
+Which commands ask for a code depends on the mode you enrol in. Both `auth-only`
+and `auth-and-writes` ask when you log in or create a token; only
+`auth-and-writes` asks again on every write.
+
+So with `auth-only`, `npm publish` never asks for a code even though two-factor
+is on. The second factor guards the door rather than each write, which is what
+keeps a pipeline working: a person creates the token once, with their code, and
+CI publishes with that token afterwards. The trade-off is that a leaked token
+can publish.
+
+With `auth-and-writes`, publishing asks. npm prompts for the code in an
+interactive terminal; in a script pass it directly:
+
+```bash
+npm publish --otp=123456
+```
+
+Without a TTY and without `--otp`, npm fails with `EOTP` rather than hanging.
+A code is single use and lives about ninety seconds, so it cannot be stored in a
+CI secret — to keep `auth-and-writes` and still release from a pipeline, see
+[staged publishing](#staged-publishing) below.
+
+See [two-factor authentication](two-factor-authentication) for the full table of
+what each mode asks for, recovery codes, and what happens if the server secret is
+rotated.
+
+## Staged publishing {#staged-publishing}
+
+:::info Depends on the registry
+Requires the `stage` [feature flag](configuration#experiments) enabled on the
+Verdaccio side. It is experimental, off by default, and available from **7.x** —
+it does not exist in **6.x**. To try it, run the **9.x experimental** line
+(`verdaccio@next-9`), which is where it lands first. Not recommended for production yet. With the
+flag off, the `npm stage` commands answer `404`.
+:::
+
+With the flag enabled, `npm stage` uploads a version for review instead of
+publishing it outright. It only becomes installable once a maintainer approves
+it.
+
+```bash
+npm stage publish            # upload for review, nothing is installable yet
+npm stage list               # see what is waiting
+npm stage download <id>      # inspect the tarball before deciding
+npm stage approve <id>       # publish it for real
+npm stage reject <id>        # discard it
+```
+
+**These commands require npm 11.17 or newer.** They do not exist in earlier
+versions, and there is no Yarn or pnpm equivalent.
+
+`npm stage publish` never asks for a one-time password, in either two-factor
+mode, which is what lets a CI pipeline prepare a release that a human approves
+later with theirs.
+
+That pairing is the answer to the CI problem above: keep `auth-and-writes`, let
+the pipeline stage without a code, and require the code at `npm stage approve`,
+where there is a person to type it. Every write stays protected and nothing
+needs a code stored in a secret.
+
+See [staged publishing](staged-publishing) for the full flow and the permissions
+involved.
 
 ## Troubleshooting {#troubleshooting}
 
@@ -89,10 +174,6 @@ Both commands relies on web login by default, but adding `--auth-type=legacy` yo
 If you are running into issues login with `npm@9.x` or higher you could try use the legacy mode (see above).
 
 For progress on the native support on future you can track the following [issue#3413](https://github.com/verdaccio/verdaccio/issues/3413).
-
-### npm does not save authToken when authenticating to Verdaccio
-
-If you are using either `npm@5.4.x` or `npm@5.5.x`, there are [known issues with tokens](https://github.com/verdaccio/verdaccio/issues/509#issuecomment-359193762), please upgrade to either `6.x` or downgrade to `npm@5.3.0`.
 
 ### SSL and certificates {#ssl-and-certificates}
 

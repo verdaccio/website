@@ -8,6 +8,21 @@ most recommended and used ones.
 
 **Important**, the headers are considered to resolve the public are `X-Forwarded-Proto` for the protocol and `Host` for the domain, please include them in your configuration.
 
+:::caution Set `trustProxy`
+Forwarding the headers is only half of it. Verdaccio also has to be told which
+upstream addresses to believe, otherwise every request looks like it comes from
+the proxy:
+
+```yaml
+server:
+  trustProxy: '127.0.0.1'
+```
+
+Without it, rate limiting throttles all your users as if they were a single
+client, and the CIDR whitelist on npm tokens has nothing real to check against.
+See [`trustProxy`](configuration#trust-proxy).
+:::
+
 # Apache
 
 A full `docker` example using the official `httpd:2.4` image can be found in our [Docker examples repository](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7/reverse_proxy/apache).
@@ -240,8 +255,6 @@ For this case, `url_prefix` should set to `/verdaccio/`
 > Note: There is a slash after the install path (`https://your-domain:port/verdaccio/`)!
 
 ### Overriding the public url
-
-> Since `verdaccio@5.0.0`
 
 The new `VERDACCIO_PUBLIC_URL` is intended to be used behind proxies, this variable will be used for:
 

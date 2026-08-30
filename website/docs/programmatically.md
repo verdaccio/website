@@ -32,8 +32,6 @@ You can see the full example on this repository.
 
 ### Using the module API
 
-Feature available in `v5.11.0` and higher.
-
 > Using const verdaccio = require('verdaccio'); as the default module is not encoraged, it's deprecated and recommend use `runServer` for future compability.
 
 There are three ways to use it:
@@ -59,12 +57,15 @@ const { runServer, parseConfigFile } = require('verdaccio');
 const configPath = join(__dirname, './config.yaml');
 const c = parseConfigFile(configPath);
 // workaround
-// on v5 the `self_path` still exists and will be removed in v6
+// self_path still exists in 6.x; it was removed in 7.x
 c.self_path = 'foo';
 runServer(c).then(() => {});
 ```
 
-Feature available minor than `v5.11.0`.
+:::caution Legacy
+This form predates `runServer` and relies on the default export, which **no
+longer exists from 7.x onwards**. Use `runServer` above.
+:::
 
 > This is a valid way but is discoragued for future releases.
 

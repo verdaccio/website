@@ -56,7 +56,7 @@ Is the location of the default storage. **Verdaccio is by default based on local
 storage: ./storage
 ```
 
-> Released at v5.6.0: The environment variable `VERDACCIO_STORAGE_PATH` could be used to replace the location of the storage (only for the default storage, does not apply to plugins unless it is implemented independently).
+> The environment variable `VERDACCIO_STORAGE_PATH` can be used to replace the location of the storage (only for the default storage; it does not apply to plugins unless they implement it independently).
 
 ### The `.verdaccio-db` database {#.verdaccio-db}
 
@@ -86,7 +86,7 @@ If the secret length is **64 characters** long:
 
 Go to the [storage location](cli.md) and edit manually the secret to be 32 characters long.
 
-##### Option 2: Automatically (since v5.31.0)
+##### Option 2: Automatically
 
 The `migrateToSecureLegacySignature` property is used to generate a new secret token if the length is 64 characters.
 
@@ -160,7 +160,7 @@ This warning indicates that Node.js has deprecated a function utilized by the le
 
 If verdaccio runs on **Node.js 22** or higher, you will not see this warning since a new modern legacy signature has been implemented.
 
-The **migrateToSecureLegacySignature** property is only available for versions higher than 5.31.0 and is **false** by default.
+The **migrateToSecureLegacySignature** property is **false** by default.
 
 :::
 
@@ -226,6 +226,115 @@ server:
 | ttlMs      | number  | No       | 15000   | Time in milliseconds before a cached validation expires. |
 | maxEntries | number  | No       | 1000    | Maximum number of cached legacy tokens.                  |
 
+#### Dotfile requests {#dotfiles}
+
+:::info Available from 7.x
+Ships in **7.x** and later, and in the **9.x experimental** line
+(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
+:::
+
+Controls how requests whose path contains a dotfile segment — `/.env`,
+`/.git/config`, `/.well-known/…` — are answered. It mirrors the semantics of
+`serve-static`'s option of the same name.
+
+```yaml
+server:
+  dotfiles: ignore
+```
+
+| Value    | Behaviour                                                 |
+| -------- | --------------------------------------------------------- |
+| `ignore` | answers `404`, as if the path did not exist (**default**) |
+| `deny`   | answers `403`                                             |
+| `allow`  | passes the request through to the rest of the middleware  |
+
+`ignore` is the default because it does not confirm to a scanner that the path
+exists. Choose `deny` only if you prefer an explicit refusal in your logs, and
+`allow` only if something in your setup legitimately serves dotfile paths.
+
+#### Hiding static asset logs {#hide-static-logs}
+
+:::info Available from 7.x
+Ships in **7.x** and later, and in the **9.x experimental** line
+(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
+:::
+
+Requests for the web UI assets (`/-/static/*`) are noisy and rarely interesting.
+They are hidden from the logger by default:
+
+```yaml
+server:
+  hideStaticLogs: true
+```
+
+Set it to `false` to log them like any other request. They are always available
+regardless of this setting by running with `DEBUG=verdaccio:middleware:log`.
+
+#### Running behind a proxy {#trust-proxy}
+
+When Verdaccio sits behind a reverse proxy or a load balancer, every request
+appears to come from the proxy. `trustProxy` tells Express which upstream
+addresses to trust, so `req.ip` resolves to the real client:
+
+```yaml
+server:
+  trustProxy: '127.0.0.1'
+```
+
+The value is passed straight to Express' [`trust proxy`
+setting](https://expressjs.com/en/guide/behind-proxies.html), so it accepts the
+same forms: an address, a subnet, a comma-separated list, or a hop count.
+
+:::caution
+This is not cosmetic. Two features depend on the client address being correct:
+
+- [rate limiting](#user-rate-limit), which otherwise counts every request as
+  coming from the proxy and throttles all your users as if they were one
+- the CIDR whitelist of [npm tokens](#security), which cannot enforce anything
+  useful if it only ever sees the proxy's address
+
+Set it whenever there is a proxy in front, and only list addresses you actually
+control — trusting an address means believing the `X-Forwarded-For` header it
+sends.
+:::
+
+See also the [reverse proxy setup](reverse-proxy.md) page.
+
+#### Password policy {#password-validation}
+
+The minimum a password must satisfy when a user registers. It defaults to three
+characters:
+
+```yaml
+server:
+  # at least 10 characters
+  passwordValidationRegex: /.{10}$/
+```
+
+The value is a regular expression. Written in YAML it arrives as a string and is
+compiled at runtime; an invalid pattern makes every password fail validation
+rather than being ignored, so test it after changing it.
+
+This only applies where Verdaccio itself validates the password — user
+registration and password changes. An [authentication plugin](authentication)
+that manages its own users is not affected.
+
+#### Custom plugin prefix {#plugin-prefix}
+
+Plugins are resolved as `verdaccio-<name>` by default. If you publish your
+plugins under a different prefix, declare it here:
+
+```yaml
+server:
+  pluginPrefix: acme
+```
+
+With that, a plugin configured as `s3` resolves to the package `acme-s3` instead
+of `verdaccio-s3`. Do **not** include the dash — it is added for you.
+
+The prefix applies to every plugin category: authentication, storage, middleware
+and filters.
+
 ### Web UI {#web-ui}
 
 This property allow you to modify the look and feel of the web UI. For more information about this section read the [web UI page](web.md).
@@ -271,14 +380,11 @@ publish:
   allow_offline: false
 ```
 
-<small>Since: `verdaccio@2.3.6` due [#223](https://github.com/verdaccio/verdaccio/pull/223)</small>
-
 ### Checking Package Ownership {#check-owner}
 
-:::info
-
-Only available on experimental versions >8.x and higher
-
+:::info Available from 7.x
+Ships in **7.x** and later, and in the **9.x experimental** line
+(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
 :::
 
 By default, [package access](packages.md) defines who is allowed to publish and unpublish packages. By setting `check_owners` to _true_, only package owners are allowed to make changes to a package. The first owner of a package is the user who published the first version. Further owners can be added or removed using [`npm owner`](https://docs.npmjs.com/cli/v10/commands/npm-owner). You can find the list of current owners using `npm owner list` or by checking the package manifest under `maintainers`.
@@ -290,10 +396,9 @@ publish:
 
 ### Keep Readmes {#keep-readmes}
 
-:::info
-
-Only available on experimental versions >8.x and higher
-
+:::info Available from 7.x
+Ships in **7.x** and later, and in the **9.x experimental** line
+(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
 :::
 
 By default, Verdaccio stores only the readme markdown of the latest version for each package. Setting `keep_readmes` to `'tagged'` keeps the readmes of versions with `dist-tags` (for example, `latest`, `next`, and major branches). Using the `'all'` setting will retain the complete history of readme versions. Note that `'all'` can significantly increase the required storage space for packages published to Verdaccio!
@@ -341,8 +446,6 @@ url_prefix: '/second_prefix'
 
 ### User Agent {#user-agent}
 
-<small>Since: `verdaccio@5.4.0`</small>
-
 The user agent is disabled by default, in exchange the user agent client (package manager, browser, etc ...) is being bypassed to the remote. To enable the previous behaviour use boolean values.
 
 ```yaml
@@ -352,8 +455,6 @@ user_agent: 'custom user agent'
 ```
 
 ### User Rate Limit {#user-rate-limit}
-
-<small>Since: [verdaccio@5.4.0](https://github.com/verdaccio/verdaccio/releases/tag/v5.4.0)</small>
 
 Add default rate limit to user endpoints, `npm token`, `npm profile`, `npm login/adduser` and login website to 100 request peer 15 min, customizable via:
 
@@ -450,10 +551,10 @@ notify:
 
 ### Logger {#logger}
 
-:::warning
-
-Since v5.22.0 the logger property is renamed to `logs` but `log` still compatible but displaying a warning
-
+:::caution Deprecated: `logs`
+The property is `log`. The older `logs` spelling still works but emits a
+deprecation warning (`VERWAR002`) on startup and may be removed at any time —
+rename it to `log`.
 :::
 
 Two logger types are supported, you may chose only one of them:
@@ -474,10 +575,7 @@ For full information - see here: [Features/logger](logger.md)
 
 ### Audit {#audit}
 
-<small>Since: `verdaccio@3.0.0`</small>
-
-`npm audit` is a new command released with [npm 6.x](https://github.com/npm/npm/releases/tag/v6.1.0). Verdaccio includes
-a built-in middleware plugin to handle this command.
+Verdaccio includes a built-in middleware plugin to handle `npm audit`.
 
 > If you have a new installation it comes by default, otherwise you need to add the following props to your config file
 
@@ -551,11 +649,23 @@ flags:
   webLogin: true
 ```
 
+The flags currently available are:
+
+| Flag             | Since | What it enables                                        |
+| ---------------- | ----- | ------------------------------------------------------ |
+| `changePassword` | all   | [changing a password](change-password) from the web UI |
+| `createUser`     | all   | [user registration](user-registration) from the web UI |
+| `webLogin`       | all   | [browser-based login](web-login) for the CLI           |
+| `stage`          | 7.x   | [staged publishing](staged-publishing) (`npm stage`)   |
+| `tfa`            | 7.x   | [two-factor authentication](two-factor-authentication) |
+
+The `stage` and `tfa` flags are not available in **6.x**.
+
 > To disable console warnings related to the flags or experiments, you must comment out the complete `flags` and `experiments` sections.
 
 ### Config Builder API {#builder}
 
-After version `v5.23.1` the new advanced configuration builder API is available. The API is a flexible way to generate programmatically configuration outputs either in JSON or YAML using the builder pattern, for example:
+The advanced configuration builder API is a flexible way to generate programmatically configuration outputs either in JSON or YAML using the builder pattern, for example:
 
 ```typescript
 import { ConfigBuilder } from 'verdaccio';

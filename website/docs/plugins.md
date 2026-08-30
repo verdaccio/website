@@ -35,12 +35,14 @@ The default configuration looks like this, due we use a build-in `htpasswd` plug
 
 ### Naming convention {#naming-convention}
 
-Since version `2.0.0` until version plugins must start with the following convention:
+Plugins must be named with the following convention:
 
-- `sinopia-xxx` (deprecated and will be removed on 6.x.x)
 - `verdaccio-xxx`
 
-After version `5.12.0` scoped plugins are supported, for example:
+The prefix can be changed with [`server.pluginPrefix`](configuration#plugin-prefix).
+The legacy `sinopia-xxx` prefix is no longer resolved.
+
+Scoped plugins are supported, for example:
 
 ```yaml
 auth:
@@ -154,12 +156,10 @@ filters:
 ### Sinopia Plugins {#sinopia-plugins}
 
 :::caution
-
-After version 6 sinopia plugins are not longer supported due the naming convention.
-
+The legacy `sinopia-xxx` prefix is no longer resolved by any supported version.
+Plugins must be named `verdaccio-xxx`, or match your own
+[`server.pluginPrefix`](configuration#plugin-prefix).
 :::
-
-> If you are relying on any sinopia plugin, remember are deprecated and might no work in the future.
 
 - [sinopia-npm](https://www.npmjs.com/package/sinopia-npm): auth plugin for sinopia supporting an npm registry.
 - [sinopia-memory](https://www.npmjs.com/package/sinopia-memory): auth plugin for sinopia that keeps users in memory.

@@ -66,6 +66,7 @@ List of properties accesible via template:
 - Metadata
 - Publisher (who is publishing)
 - Package Published (package@1.0.0)
+- Publish Type (what happened)
 
 ### Metadata {#metadata}
 
@@ -154,6 +155,37 @@ You can access to the package is being published with the keyword `{{publishedPa
 ```
 {{ publisher.name }} has published {{ publishedPackage }}
 ```
+
+### Publish Type {#publish-type}
+
+`{{publishType}}` tells you which event fired the notification:
+
+| Value       | What happened                                            |
+| ----------- | -------------------------------------------------------- |
+| `publish`   | a version became installable                             |
+| `unpublish` | a version or a whole package was removed                 |
+| `stage`     | a version was submitted for review (`npm stage publish`) |
+| `unstage`   | a staged version was discarded (`npm stage reject`)      |
+
+`stage` and `unstage` only ever fire when [staged publishing](staged-publishing)
+is enabled, and neither changes what is installable. Approving a staged version
+reports `publish`, because that is exactly what it does — a webhook listening for
+publishes still sees it.
+
+Include it in the payload so the receiving end can route on it:
+
+```yaml
+notify:
+  method: POST
+  endpoint: https://hooks.example.org/registry
+  content: '{"type":"{{ publishType }}","package":"{{ publishedPackage }}","by":"{{ publisher.name }}"}'
+```
+
+:::note
+Templates are plain [Handlebars](https://handlebarsjs.com/) with no extra helpers
+registered, so there is no way to compare `publishType` against a string inside
+the template. Send every event and filter where you receive it.
+:::
 
 ## Configuration {#configuration}
 

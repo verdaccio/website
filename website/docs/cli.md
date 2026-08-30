@@ -41,4 +41,4 @@ The default database file location is within the storage location.
 
 [Full list of environment variables](https://github.com/verdaccio/verdaccio/blob/master/docs/env.variables.md).
 
-- `VERDACCIO_HANDLE_KILL_SIGNALS` to enable gracefully shutdown (since v4.12.0)
+- `VERDACCIO_HANDLE_KILL_SIGNALS` to enable graceful shutdown. Only applies to `6.x`: from `7.x` graceful shutdown is always on and the variable was removed, see [environment variables](env).
