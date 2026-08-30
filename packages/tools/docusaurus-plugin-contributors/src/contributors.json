@@ -3,11 +3,11 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5789,
+      "contributions": 5791,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3236
+          "contributions": 3238
         },
         {
           "name": "verdaccio-cookbook",
@@ -389,11 +389,11 @@
     {
       "id": 284604232,
       "login": "verdacciopack",
-      "contributions": 24,
+      "contributions": 25,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 13
+          "contributions": 14
         },
         {
           "name": "generator-verdaccio-plugin",
@@ -897,8 +897,8 @@
       ]
     },
     {
-      "id": 2132722,
-      "login": "CrispyConductor",
+      "id": 1180931,
+      "login": "BartDubois",
       "contributions": 4,
       "repositories": [
         {
@@ -908,8 +908,8 @@
       ]
     },
     {
-      "id": 1180931,
-      "login": "BartDubois",
+      "id": 2132722,
+      "login": "CrispyConductor",
       "contributions": 4,
       "repositories": [
         {
@@ -930,6 +930,21 @@
       ]
     },
     {
+      "id": 116422,
+      "login": "jotadeveloper",
+      "contributions": 4,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 3
+        },
+        {
+          "name": "e2e-tests",
+          "contributions": 1
+        }
+      ]
+    },
+    {
       "id": 16447219,
       "login": "KukuruzaAndrii",
       "contributions": 4,
@@ -941,21 +956,6 @@
         {
           "name": "monorepo",
           "contributions": 1
-        }
-      ]
-    },
-    {
-      "id": 22656541,
-      "login": "semoal",
-      "contributions": 4,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        },
-        {
-          "name": "ui",
-          "contributions": 2
         }
       ]
     },
@@ -975,6 +975,21 @@
         {
           "name": "charts",
           "contributions": 1
+        }
+      ]
+    },
+    {
+      "id": 22656541,
+      "login": "semoal",
+      "contributions": 4,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        },
+        {
+          "name": "ui",
+          "contributions": 2
         }
       ]
     },
@@ -1128,41 +1143,8 @@
       ]
     },
     {
-      "id": 17563226,
-      "login": "alan-agius4",
-      "contributions": 3,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 3
-        }
-      ]
-    },
-    {
-      "id": 803101,
-      "login": "osher",
-      "contributions": 3,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 3
-        }
-      ]
-    },
-    {
-      "id": 3647678,
-      "login": "wiggisser",
-      "contributions": 3,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 3
-        }
-      ]
-    },
-    {
-      "id": 30793,
-      "login": "Tobbe",
+      "id": 38713281,
+      "login": "rmkanda",
       "contributions": 3,
       "repositories": [
         {
@@ -1183,8 +1165,41 @@
       ]
     },
     {
-      "id": 38713281,
-      "login": "rmkanda",
+      "id": 30793,
+      "login": "Tobbe",
+      "contributions": 3,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 3
+        }
+      ]
+    },
+    {
+      "id": 3647678,
+      "login": "wiggisser",
+      "contributions": 3,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 3
+        }
+      ]
+    },
+    {
+      "id": 803101,
+      "login": "osher",
+      "contributions": 3,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 3
+        }
+      ]
+    },
+    {
+      "id": 17563226,
+      "login": "alan-agius4",
       "contributions": 3,
       "repositories": [
         {
@@ -1248,21 +1263,6 @@
         },
         {
           "name": "monorepo",
-          "contributions": 1
-        }
-      ]
-    },
-    {
-      "id": 116422,
-      "login": "jotadeveloper",
-      "contributions": 3,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        },
-        {
-          "name": "e2e-tests",
           "contributions": 1
         }
       ]
@@ -1429,52 +1429,8 @@
       ]
     },
     {
-      "id": 18176417,
-      "login": "awshanks",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 2946823,
-      "login": "plitex",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 172697,
-      "login": "naveensrinivasan",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 6487450,
-      "login": "nphyatt",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 13708162,
-      "login": "mysiar",
+      "id": 49131888,
+      "login": "Marin-Kitagawa",
       "contributions": 2,
       "repositories": [
         {
@@ -1495,8 +1451,41 @@
       ]
     },
     {
-      "id": 49131888,
-      "login": "Marin-Kitagawa",
+      "id": 13708162,
+      "login": "mysiar",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 6487450,
+      "login": "nphyatt",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 172697,
+      "login": "naveensrinivasan",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 2946823,
+      "login": "plitex",
       "contributions": 2,
       "repositories": [
         {
@@ -1605,6 +1594,17 @@
       ]
     },
     {
+      "id": 18176417,
+      "login": "awshanks",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
       "id": 16936908,
       "login": "s-h-a-d-o-w",
       "contributions": 2,
@@ -1682,63 +1682,8 @@
       ]
     },
     {
-      "id": 1845314,
-      "login": "MasterOdin",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 161571,
-      "login": "aledbf",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 3189424,
-      "login": "marnel",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 6905832,
-      "login": "somethingSTRANGE",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 273367,
-      "login": "kba",
-      "contributions": 2,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 2
-        }
-      ]
-    },
-    {
-      "id": 47413,
-      "login": "josephg",
+      "id": 3856350,
+      "login": "guitarrapc",
       "contributions": 2,
       "repositories": [
         {
@@ -1759,8 +1704,63 @@
       ]
     },
     {
-      "id": 3856350,
-      "login": "guitarrapc",
+      "id": 47413,
+      "login": "josephg",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 273367,
+      "login": "kba",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 6905832,
+      "login": "somethingSTRANGE",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 3189424,
+      "login": "marnel",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 161571,
+      "login": "aledbf",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 1845314,
+      "login": "MasterOdin",
       "contributions": 2,
       "repositories": [
         {
@@ -5373,6 +5373,17 @@
           "contributions": 1
         }
       ]
+    },
+    {
+      "id": 34608113,
+      "login": "pyhp2017",
+      "contributions": 1,
+      "repositories": [
+        {
+          "name": "charts",
+          "contributions": 1
+        }
+      ]
     }
   ],
   "repositories": [
@@ -5382,7 +5393,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17834,
+      "stargazers_count": 17846,
       "archived": false
     },
     {
@@ -5670,7 +5681,7 @@
       "full_name": "verdaccio/verdaccio-auth-ldap",
       "html_url": "https://github.com/verdaccio/verdaccio-auth-ldap",
       "description": "LDAP / Active Directory authentication plugin for Verdaccio private npm registry",
-      "stargazers_count": 4,
+      "stargazers_count": 3,
       "archived": false
     },
     {
