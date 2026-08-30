@@ -256,7 +256,6 @@ For this case, `url_prefix` should set to `/verdaccio/`
 
 ### Overriding the public url
 
-
 The new `VERDACCIO_PUBLIC_URL` is intended to be used behind proxies, this variable will be used for:
 
 - Used as base path to serve UI resources as (js, favicon, etc)

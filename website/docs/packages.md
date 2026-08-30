@@ -204,7 +204,7 @@ decides who may submit a version for review with `npm stage publish`. Like
 `unpublish`, it falls back to `publish` when omitted, so leaving it out changes
 nothing.
 
-Its purpose is to grant a group *less* than publishing:
+Its purpose is to grant a group _less_ than publishing:
 
 ```yaml
 packages:
@@ -218,19 +218,18 @@ Here developers can propose a release but cannot publish one, and only a release
 manager can approve what they staged. Granting `stage` to a group that already
 has `publish` adds nothing, since those users can publish directly anyway.
 
-
 ### Configuration {#configuration}
 
 You can define mutiple `packages` and each of them must have an unique `Regex`. The syntax is based on [minimatch glob expressions](https://github.com/isaacs/minimatch).
 
-| Property  | Type   | Required | Example        | Support        | Description                                                               |
-| --------- | ------ | -------- | -------------- | -------------- | ------------------------------------------------------------------------- |
-| access    | string | No       | $all           | all            | define groups allowed to access the package                               |
-| publish   | string | No       | $authenticated | all            | define groups allowed to publish                                          |
-| unpublish | string | No       | $authenticated | all            | define groups allowed to unpublish                                        |
+| Property  | Type   | Required | Example        | Support        | Description                                                                  |
+| --------- | ------ | -------- | -------------- | -------------- | ---------------------------------------------------------------------------- |
+| access    | string | No       | $all           | all            | define groups allowed to access the package                                  |
+| publish   | string | No       | $authenticated | all            | define groups allowed to publish                                             |
+| unpublish | string | No       | $authenticated | all            | define groups allowed to unpublish                                           |
 | stage     | string | No       | developers     | >=7.x          | define groups allowed to stage a version for review, falls back to `publish` |
-| proxy     | string | No       | npmjs          | all            | limit look ups for specific uplink                                        |
-| storage   | string | No       | string         | `/some-folder` | it creates a subfolder whithin the storage folder for each package access |
+| proxy     | string | No       | npmjs          | all            | limit look ups for specific uplink                                           |
+| storage   | string | No       | string         | `/some-folder` | it creates a subfolder whithin the storage folder for each package access    |
 
 > We higlight that we recommend to not use **allow_access**/**allow_publish** and **proxy_access** anymore, those are deprecated and will soon be removed, please use the short version of each of those (**access**/**publish**/**proxy**).
 

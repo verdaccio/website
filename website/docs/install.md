@@ -9,8 +9,8 @@ Verdaccio is a Node.js private and proxy registry. To install it, you need a few
 
 1. **Node.js**, matching the version of Verdaccio you install:
 
-   | Verdaccio | Node.js |
-   | --- | --- |
+   | Verdaccio       | Node.js |
+   | --------------- | ------- |
    | `6.x` (current) | `>= 22` |
    | `7.x` and later | `>= 24` |
 

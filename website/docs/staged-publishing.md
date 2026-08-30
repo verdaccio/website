@@ -50,7 +50,6 @@ while a feature is still experimental: they decide whether it graduates, changes
 shape, or gets dropped.
 :::
 
-
 ## Requirements {#requirements}
 
 - **npm 11.17 or newer** on the client. `npm stage` does not exist in older
@@ -197,13 +196,13 @@ packages:
     publish: release-managers
 ```
 
-| Action | Who |
-| --- | --- |
-| `npm stage publish` | anyone allowed to `stage` that package |
-| `npm stage list` | items you staged, plus items on packages you may `publish` |
-| `npm stage view` / `download` | the person who staged it, or anyone who may `publish` it |
-| `npm stage approve` | anyone allowed to `publish` that package |
-| `npm stage reject` | the person who staged it, or anyone who may `publish` it |
+| Action                        | Who                                                        |
+| ----------------------------- | ---------------------------------------------------------- |
+| `npm stage publish`           | anyone allowed to `stage` that package                     |
+| `npm stage list`              | items you staged, plus items on packages you may `publish` |
+| `npm stage view` / `download` | the person who staged it, or anyone who may `publish` it   |
+| `npm stage approve`           | anyone allowed to `publish` that package                   |
+| `npm stage reject`            | the person who staged it, or anyone who may `publish` it   |
 
 Asking about a staged item you are not allowed to see answers `404`, not `403`.
 A `403` would confirm the id exists to someone who has no business knowing that.
@@ -224,7 +223,7 @@ have `publish`:
 packages:
   'my-company-*':
     access: $authenticated
-    stage: developers        # may propose a release
+    stage: developers # may propose a release
     publish: release-managers # may actually make one
 ```
 

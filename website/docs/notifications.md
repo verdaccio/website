@@ -160,12 +160,12 @@ You can access to the package is being published with the keyword `{{publishedPa
 
 `{{publishType}}` tells you which event fired the notification:
 
-| Value | What happened |
-| --- | --- |
-| `publish` | a version became installable |
-| `unpublish` | a version or a whole package was removed |
-| `stage` | a version was submitted for review (`npm stage publish`) |
-| `unstage` | a staged version was discarded (`npm stage reject`) |
+| Value       | What happened                                            |
+| ----------- | -------------------------------------------------------- |
+| `publish`   | a version became installable                             |
+| `unpublish` | a version or a whole package was removed                 |
+| `stage`     | a version was submitted for review (`npm stage publish`) |
+| `unstage`   | a staged version was discarded (`npm stage reject`)      |
 
 `stage` and `unstage` only ever fire when [staged publishing](staged-publishing)
 is enabled, and neither changes what is installable. Approving a staged version

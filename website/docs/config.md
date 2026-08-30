@@ -242,11 +242,11 @@ server:
   dotfiles: ignore
 ```
 
-| Value | Behaviour |
-| --- | --- |
+| Value    | Behaviour                                                 |
+| -------- | --------------------------------------------------------- |
 | `ignore` | answers `404`, as if the path did not exist (**default**) |
-| `deny` | answers `403` |
-| `allow` | passes the request through to the rest of the middleware |
+| `deny`   | answers `403`                                             |
+| `allow`  | passes the request through to the rest of the middleware  |
 
 `ignore` is the default because it does not confirm to a scanner that the path
 exists. Choose `deny` only if you prefer an explicit refusal in your logs, and
@@ -446,7 +446,6 @@ url_prefix: '/second_prefix'
 
 ### User Agent {#user-agent}
 
-
 The user agent is disabled by default, in exchange the user agent client (package manager, browser, etc ...) is being bypassed to the remote. To enable the previous behaviour use boolean values.
 
 ```yaml
@@ -456,7 +455,6 @@ user_agent: 'custom user agent'
 ```
 
 ### User Rate Limit {#user-rate-limit}
-
 
 Add default rate limit to user endpoints, `npm token`, `npm profile`, `npm login/adduser` and login website to 100 request peer 15 min, customizable via:
 
@@ -653,13 +651,13 @@ flags:
 
 The flags currently available are:
 
-| Flag | Since | What it enables |
-| --- | --- | --- |
-| `changePassword` | all | the change-password form in the web UI |
-| `createUser` | all | user registration through the web UI |
-| `webLogin` | all | the browser-based login flow for the CLI |
-| `stage` | 7.x | [staged publishing](staged-publishing) (`npm stage`) |
-| `tfa` | 7.x | [two-factor authentication](two-factor-authentication) |
+| Flag             | Since | What it enables                                        |
+| ---------------- | ----- | ------------------------------------------------------ |
+| `changePassword` | all   | the change-password form in the web UI                 |
+| `createUser`     | all   | user registration through the web UI                   |
+| `webLogin`       | all   | the browser-based login flow for the CLI               |
+| `stage`          | 7.x   | [staged publishing](staged-publishing) (`npm stage`)   |
+| `tfa`            | 7.x   | [two-factor authentication](two-factor-authentication) |
 
 The `stage` and `tfa` flags are not available in **6.x**.
 

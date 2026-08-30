@@ -49,7 +49,6 @@ while a feature is still experimental: they decide whether it graduates, changes
 shape, or gets dropped.
 :::
 
-
 ## Requirements {#requirements}
 
 - **A storage plugin that supports tokens.** The bundled `local-storage` and
@@ -120,7 +119,7 @@ six-digit code from it and the current time.
 1. `npm profile enable-2fa` asks for your account password and posts it to the
    registry.
 2. The registry re-checks the password through your auth plugin, generates a
-   random 160-bit secret, and stores it as *pending*.
+   random 160-bit secret, and stores it as _pending_.
 3. It answers with a plain `otpauth://` URI:
 
    ```
@@ -163,15 +162,15 @@ any [auth plugin](authentication).
 
 There are two, and the difference is only about writes.
 
-| | `auth-only` | `auth-and-writes` |
-| --- | --- | --- |
-| `npm login` | code required | code required |
-| `npm token create` | code required | code required |
-| `npm publish` | not asked | **code required** |
-| `npm unpublish` | not asked | **code required** |
-| `npm dist-tag add` / `rm` | not asked | **code required** |
-| `npm stage approve` / `reject` | not asked | **code required** |
-| `npm stage publish` | never asked | **never asked** |
+|                                | `auth-only`   | `auth-and-writes` |
+| ------------------------------ | ------------- | ----------------- |
+| `npm login`                    | code required | code required     |
+| `npm token create`             | code required | code required     |
+| `npm publish`                  | not asked     | **code required** |
+| `npm unpublish`                | not asked     | **code required** |
+| `npm dist-tag add` / `rm`      | not asked     | **code required** |
+| `npm stage approve` / `reject` | not asked     | **code required** |
+| `npm stage publish`            | never asked   | **never asked**   |
 
 `auth-and-writes` is the default when you do not pass a mode, and it is the one
 worth having: it is the mode that stops a leaked token from publishing.

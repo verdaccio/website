@@ -57,6 +57,6 @@ log:
 | path     | string  | No       | verdaccio.log                                  | all     | if type is file, define the location of that file |
 | format   | string  | No       | [pretty, pretty-timestamped]                   | all     | output format                                     |
 | level    | string  | No       | [fatal, error, warn, info, http, debug, trace] | all     | verbose level                                     |
-| colors   | boolean | No       | false                                          | all  | disable or enable colors                          |
+| colors   | boolean | No       | false                                          | all     | disable or enable colors                          |
 | redact   | object  | No       | see above                                      |         | redact sensitive data                             |
 | sync     | boolean | No       | true                                           |         | turn on synchronous logging                       |

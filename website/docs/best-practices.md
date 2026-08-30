@@ -148,7 +148,7 @@ practice looks like once the feature settles, and trying it out is exactly the
 feedback that gets it there.
 :::
 
-Protecting *who* can publish still means the publish takes effect immediately.
+Protecting _who_ can publish still means the publish takes effect immediately.
 [Staged publishing](staged-publishing) adds a review step: the version is
 uploaded but nobody can install it until a maintainer inspects the tarball and
 approves it.

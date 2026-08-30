@@ -107,13 +107,13 @@ Requires Yarn **4.x** and Node.js **>= 24**.
 
 ### What each one adds {#yarn-plugin-npm-commands}
 
-| Plugin | Commands |
-| --- | --- |
-| `npm-ping` | `yarn npm ping` |
-| `npm-login` | `yarn npm login` with a legacy flow |
-| `npm-unpublish` | `yarn npm unpublish` |
-| `npm-deprecate` | `yarn npm deprecate` |
-| `npm-star` | `yarn npm star`, `yarn npm unstar` |
+| Plugin          | Commands                            |
+| --------------- | ----------------------------------- |
+| `npm-ping`      | `yarn npm ping`                     |
+| `npm-login`     | `yarn npm login` with a legacy flow |
+| `npm-unpublish` | `yarn npm unpublish`                |
+| `npm-deprecate` | `yarn npm deprecate`                |
+| `npm-star`      | `yarn npm star`, `yarn npm unstar`  |
 
 All of them accept `--registry <url>`, `--scope <scope>` and `--json`.
 
