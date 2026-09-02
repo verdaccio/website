@@ -7,6 +7,8 @@ minimumReleaseAgeExclude:
   - 'verdaccio-*'
   # Renovate security update: dompurify@3.4.9 || 3.4.11 || 3.4.13
   - dompurify@3.4.9 || 3.4.11 || 3.4.13
+  # Renovate security update: sanitize-html@2.17.7
+  - sanitize-html@2.17.7
 saveExact: true
 onlyBuiltDependencies:
   - '@parcel/watcher'
