@@ -251,8 +251,8 @@ importers:
         specifier: 4.5.1
         version: 4.5.1
       chartjs-chart-treemap:
-        specifier: 3.1.0
-        version: 3.1.0(chart.js@4.5.1)
+        specifier: 4.1.1
+        version: 4.1.1(chart.js@4.5.1)
       classnames:
         specifier: 2.5.1
         version: 2.5.1
@@ -327,8 +327,8 @@ importers:
         specifier: 1.99.0
         version: 1.99.0
       sass-loader:
-        specifier: 16.0.7
-        version: 16.0.7(sass@1.99.0)(webpack@5.103.0)
+        specifier: 17.0.0
+        version: 17.0.0(sass@1.99.0)(webpack@5.103.0)
       url-loader:
         specifier: 4.1.1
         version: 4.1.1(file-loader@6.2.0(webpack@5.103.0))(webpack@5.103.0)
@@ -3899,8 +3899,8 @@ packages:
     resolution: {integrity: sha512-GIjfiT9dbmHRiYi6Nl2yFCq7kkwdkp1W/lp2J99rX0yo9tgJGn3lKQATztIjb5tVtevcBtIdICNWqlq5+E8/Pw==}
     engines: {pnpm: '>=8'}
 
-  chartjs-chart-treemap@3.1.0:
-    resolution: {integrity: sha512-0LJxj4J9sCTHmrXCFlqtoBKMJDcS7VzFeRgNBRZRwU1QSpCXJKTNk5TysPEs5/YW0XYvZoN8u44RqqLf0pAzQw==}
+  chartjs-chart-treemap@4.1.1:
+    resolution: {integrity: sha512-XEzCXq1G0d37rz35KrJxocH1EOjvBq62R0TV+STh8L+rHxZk88rGtJvZDVSKal/skGnL4cnkj8RjIg6SZqupNA==}
     peerDependencies:
       chart.js: '>=3.0.0'
 
@@ -7376,11 +7376,11 @@ packages:
     resolution: {integrity: sha512-M4bo9tfv1yfhQZZKkc6dL07ALrGJtfvNOuhX3hU9AVPR/uPQ+nKOJBqTYc7LfMQblTW04mtSWDJWEyLvygJsLA==}
     engines: {node: '>=22.12.0'}
 
-  sass-loader@16.0.6:
-    resolution: {integrity: sha512-sglGzId5gmlfxNs4gK2U3h7HlVRfx278YK6Ono5lwzuvi1jxig80YiuHkaDBVsYIKFhx8wN7XSCI0M2IDS/3qA==}
+  sass-loader@16.0.7:
+    resolution: {integrity: sha512-w6q+fRHourZ+e+xA1kcsF27iGM6jdB8teexYCfdUw0sYgcDNeZESnDNT9sUmmPm3ooziwUJXGwZJSTF3kOdBfA==}
     engines: {node: '>= 18.12.0'}
     peerDependencies:
-      '@rspack/core': 0.x || 1.x
+      '@rspack/core': 0.x || ^1.0.0 || ^2.0.0-0
       node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
       sass: ^1.3.0
       sass-embedded: '*'
@@ -7397,19 +7397,16 @@ packages:
       webpack:
         optional: true
 
-  sass-loader@16.0.7:
-    resolution: {integrity: sha512-w6q+fRHourZ+e+xA1kcsF27iGM6jdB8teexYCfdUw0sYgcDNeZESnDNT9sUmmPm3ooziwUJXGwZJSTF3kOdBfA==}
-    engines: {node: '>= 18.12.0'}
+  sass-loader@17.0.0:
+    resolution: {integrity: sha512-0Ybm8ohBQ9LcrycVrFQp/KQBNX5a3Wda9/smS0mE/xLffzEnwvV8nykOzrbiSWNzTE3IB/jiXx8O4QmDPG2+Gw==}
+    engines: {node: '>= 22.11.0'}
     peerDependencies:
       '@rspack/core': 0.x || ^1.0.0 || ^2.0.0-0
-      node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
       sass: ^1.3.0
       sass-embedded: '*'
       webpack: ^5.0.0
     peerDependenciesMeta:
       '@rspack/core':
-        optional: true
-      node-sass:
         optional: true
       sass:
         optional: true
@@ -13069,7 +13066,7 @@ snapshots:
     dependencies:
       '@kurkle/color': 0.3.4
 
-  chartjs-chart-treemap@3.1.0(chart.js@4.5.1):
+  chartjs-chart-treemap@4.1.1(chart.js@4.5.1):
     dependencies:
       chart.js: 4.5.1
 
@@ -13819,7 +13816,7 @@ snapshots:
     dependencies:
       '@docusaurus/core': 3.10.1(@mdx-js/react@3.1.1(@types/react@19.2.17)(react@19.2.6))(debug@4.4.3)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(typescript@5.9.3)
       sass: 1.99.0
-      sass-loader: 16.0.6(sass@1.99.0)(webpack@5.103.0)
+      sass-loader: 16.0.7(sass@1.99.0)(webpack@5.103.0)
     transitivePeerDependencies:
       - '@rspack/core'
       - node-sass
@@ -17259,16 +17256,14 @@ snapshots:
       parse-srcset: 1.0.2
       postcss: 8.5.14
 
-  sass-loader@16.0.6(sass@1.99.0)(webpack@5.103.0):
+  sass-loader@16.0.7(sass@1.99.0)(webpack@5.103.0):
     dependencies:
       neo-async: 2.6.2
     optionalDependencies:
       sass: 1.99.0
       webpack: 5.103.0
 
-  sass-loader@16.0.7(sass@1.99.0)(webpack@5.103.0):
-    dependencies:
-      neo-async: 2.6.2
+  sass-loader@17.0.0(sass@1.99.0)(webpack@5.103.0):
     optionalDependencies:
       sass: 1.99.0
       webpack: 5.103.0
