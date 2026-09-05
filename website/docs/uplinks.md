@@ -87,7 +87,7 @@ uplinks:
 
 ### You Must know {#you-must-know}
 
-- Uplinks must be registries compatible with the `npm` endpoints. Eg: _verdaccio_, `sinopia@1.4.0`, _npmjs registry_, _yarn registry_, _JFrog_, _Nexus_ and more.
+- Uplinks must be registries compatible with the `npm` endpoints. Eg: _verdaccio_, _npmjs registry_, _yarn registry_, _JFrog_, _Nexus_ and more.
 - Setting `cache` to false will help to save space in your hard drive. This will avoid store `tarballs` but [it will keep metadata in folders](https://github.com/verdaccio/verdaccio/issues/391).
 - Multiple uplinks might slow down the lookup of your packages. For each request an npm client makes, verdaccio makes 1 call to each configured uplink.
 - The (timeout, maxage and fail_timeout) format follow the [NGINX measurement units](http://nginx.org/en/docs/syntax.html)
