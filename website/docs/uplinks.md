@@ -109,3 +109,13 @@ uplinks:
         'Accept-Encoding': 'gzip, deflate, br'
         'Cache-Control': 'no-cache'
   ```
+
+- For security reasons, Verdaccio only downloads a tarball from a URL that a configured
+  uplink actually serves. This matters for registries that host their tarballs on a
+  **separate host** than the uplink URL (CDN-backed registries such as GitHub Packages or
+  AWS CodeArtifact): if a package was cached by an **older** Verdaccio that did not record
+  its internal tarball bookkeeping (`_distfiles`), and that tarball is no longer stored
+  locally, requesting it can return `404 no such file available`. To recover, remove the
+  cached package from your `storage` folder (`storage/<package>`) so Verdaccio re-syncs it
+  from the uplink and rebuilds the bookkeeping. Packages whose tarballs are still on disk,
+  or whose tarballs are served from the uplink's own host, are not affected.
