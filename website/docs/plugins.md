@@ -143,4 +143,3 @@ filters:
         versions: '>2.0.1' # block some malicious versions of previously ok package
                            # uses https://www.npmjs.com/package/semver syntax
 ```
-
