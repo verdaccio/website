@@ -78,7 +78,7 @@ Below is a list of articles about Verdaccio. If you have written a blog post or 
 ### Chinese {#chinese}
 
 - [使用 verdaccio 搭建 npm 私有仓储](https://blog.sigoden.com/verdaccio--private-npm-registry/)
-- [Verdaccio：一个轻量级的私有 npm 代理注册表（sinopia fork)](https://www.ctolib.com/verdaccio-verdaccio.html)
+- [Verdaccio：一个轻量级的私有 npm 代理注册表](https://www.ctolib.com/verdaccio-verdaccio.html)
 - [npm 私服工具 verdaccio 安装配置试用](http://www.cnblogs.com/rongfengliang/p/7811838.html)
 - [搭建私有 npm 镜像](http://www.blackcater.win/2018/03/01/%E6%90%AD%E5%BB%BA%E7%A7%81%E6%9C%89npm%E9%95%9C%E5%83%8F/)
 - [搭建离线 npm 私库——verdaccio](https://www.jishux.com/plus/view-765581-1.html)

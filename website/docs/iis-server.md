@@ -30,7 +30,7 @@ I wanted the `verdaccio` site to be the default site in IIS so I did the followi
 - I stopped the "Default Web Site" and only start the site "verdaccio" site in IIS
 - I set the bindings to "http", ip address "All Unassigned" on port 80, ok any warning or prompts
 
-These instructions are based on [Host Sinopia in IIS
+These instructions are based on [this guide to hosting a registry in IIS
 on Windows](https://gist.github.com/HCanber/4dd8409f79991a09ac75). I had to tweak my web config as per below but you may find the original from the
 for mentioned link works better
 
