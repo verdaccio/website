@@ -270,6 +270,54 @@ server:
 Set it to `false` to log them like any other request. They are always available
 regardless of this setting by running with `DEBUG=verdaccio:middleware:log`.
 
+#### CORS {#cors}
+
+:::info Available from 7.x
+Ships in **7.x** and later, and in the **9.x experimental** line
+(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
+:::
+
+Verdaccio answers every request with permissive CORS headers
+(`Access-Control-Allow-Origin: *`). `server.cors` replaces that with your own
+options, passed straight to the [`cors`
+middleware](https://github.com/expressjs/cors#configuration-options):
+
+```yaml
+server:
+  cors:
+    origin: 'https://apps.example.com'
+    methods: ['GET', 'PUT']
+    allowedHeaders: ['Authorization']
+    exposedHeaders: ['X-Custom-Header']
+    credentials: true
+    maxAge: 600
+```
+
+| Property               | Type                             | Default when `cors` is omitted   | Description                                                       |
+| ---------------------- | -------------------------------- | -------------------------------- | ----------------------------------------------------------------- |
+| `origin`               | string, boolean, regexp or array | `*`                              | Which origins may read the response.                              |
+| `methods`              | string or array                  | `GET,HEAD,PUT,PATCH,POST,DELETE` | Methods advertised in the preflight response.                     |
+| `allowedHeaders`       | string or array                  | reflects the requested headers   | Request headers the browser may send.                             |
+| `exposedHeaders`       | string or array                  | none                             | Response headers the browser may read.                            |
+| `credentials`          | boolean                          | `false`                          | Adds `Access-Control-Allow-Credentials`.                          |
+| `maxAge`               | number                           | not sent                         | Seconds a browser may cache the preflight.                        |
+| `preflightContinue`    | boolean                          | `false`                          | Passes the preflight to the next handler instead of answering it. |
+| `optionsSuccessStatus` | number                           | `204`                            | Status for a successful preflight.                                |
+
+Omit the whole section to keep the current behavior — the defaults above are the
+`cors` middleware's own.
+
+:::caution
+CORS is a browser rule, not an access control. Package managers such as npm,
+yarn and pnpm do not send an `Origin` header and are unaffected by anything you
+set here; restricting `origin` does not protect a registry that is otherwise
+reachable. Use [`packages` access rules](packages.md) for that.
+
+`origin: '*'` together with `credentials: true` is rejected by browsers — name
+the origins explicitly when you need credentials. The web UI is served from the
+registry's own origin, so tightening this does not affect it.
+:::
+
 #### Running behind a proxy {#trust-proxy}
 
 When Verdaccio sits behind a reverse proxy or a load balancer, every request
