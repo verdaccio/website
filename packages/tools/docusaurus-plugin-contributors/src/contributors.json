@@ -232,11 +232,11 @@
     {
       "id": 59966492,
       "login": "mbtools",
-      "contributions": 311,
+      "contributions": 319,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 300
+          "contributions": 308
         },
         {
           "name": "website",
@@ -372,13 +372,28 @@
       ]
     },
     {
-      "id": 284604232,
-      "login": "verdacciopack",
-      "contributions": 35,
+      "id": 558740,
+      "login": "dianmorales",
+      "contributions": 39,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 17
+          "contributions": 37
+        },
+        {
+          "name": "monorepo",
+          "contributions": 2
+        }
+      ]
+    },
+    {
+      "id": 284604232,
+      "login": "verdacciopack",
+      "contributions": 36,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 18
         },
         {
           "name": "generator-verdaccio-plugin",
@@ -395,17 +410,21 @@
       ]
     },
     {
-      "id": 558740,
-      "login": "dianmorales",
-      "contributions": 34,
+      "id": 116422,
+      "login": "jotadeveloper",
+      "contributions": 21,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 32
+          "contributions": 14
         },
         {
-          "name": "monorepo",
-          "contributions": 2
+          "name": "website",
+          "contributions": 3
+        },
+        {
+          "name": "e2e-tests",
+          "contributions": 4
         }
       ]
     },
@@ -429,25 +448,6 @@
         {
           "name": "ui",
           "contributions": 3
-        }
-      ]
-    },
-    {
-      "id": 116422,
-      "login": "jotadeveloper",
-      "contributions": 19,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 12
-        },
-        {
-          "name": "website",
-          "contributions": 3
-        },
-        {
-          "name": "e2e-tests",
-          "contributions": 4
         }
       ]
     },
@@ -683,8 +683,8 @@
       ]
     },
     {
-      "id": 316371,
-      "login": "lirantal",
+      "id": 2025661,
+      "login": "yifeiw3",
       "contributions": 6,
       "repositories": [
         {
@@ -694,8 +694,8 @@
       ]
     },
     {
-      "id": 2025661,
-      "login": "yifeiw3",
+      "id": 316371,
+      "login": "lirantal",
       "contributions": 6,
       "repositories": [
         {
@@ -2211,17 +2211,6 @@
       ]
     },
     {
-      "id": 22884999,
-      "login": "hedocode",
-      "contributions": 1,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 1
-        }
-      ]
-    },
-    {
       "id": 14912729,
       "login": "Skn0tt",
       "contributions": 1,
@@ -3102,6 +3091,17 @@
       ]
     },
     {
+      "id": 22884999,
+      "login": "hedocode",
+      "contributions": 1,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 1
+        }
+      ]
+    },
+    {
       "id": 47446,
       "login": "bwalding",
       "contributions": 1,
@@ -3676,6 +3676,17 @@
     {
       "id": 415836,
       "login": "speier",
+      "contributions": 1,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 1
+        }
+      ]
+    },
+    {
+      "id": 35852680,
+      "login": "koliveira15",
       "contributions": 1,
       "repositories": [
         {
@@ -5397,7 +5408,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17887,
+      "stargazers_count": 17898,
       "archived": false
     },
     {
@@ -5631,7 +5642,7 @@
       "full_name": "verdaccio/charts",
       "html_url": "https://github.com/verdaccio/charts",
       "description": "☸️🐳 Verdaccio Helm chart repository",
-      "stargazers_count": 81,
+      "stargazers_count": 82,
       "archived": false
     },
     {
