@@ -49,16 +49,23 @@ Verdaccio 7 also exports `initServer(config, port, version, pkgName)`, which cre
 server **and** starts it listening. `runServer` is the one to prefer: it hands you the
 server so you can shut it down, which is what a test harness needs.
 
-## What `default` points at {#default-export}
+## What the package exports {#exports}
 
-The default export is not the same thing on every line, so import `runServer` by name
-rather than relying on it:
+The surface is not the same on every line. Import `runServer` **by name** — it is the only
+thing all three agree on, and the default export means something different on each:
 
-| Verdaccio | `require('verdaccio').default` |
-| --- | --- |
-| **6.x** | `startVerdaccio`, the legacy callback entry point below |
-| **7.x** | `runServer` |
-| **9.x** | nothing — the package has no default export |
+| Export | 6.x | 7.x | 9.x |
+| --- | --- | --- | --- |
+| `runServer` | yes | yes | yes |
+| `default` | `startVerdaccio` | `runServer` | *(none)* |
+| `initServer` | no | yes | no |
+| `startVerdaccio` | yes | no | no |
+| `ConfigBuilder`, `parseConfigFile`, `getDefaultConfig`, `Config` | yes | yes | no |
+| `fileUtils`, `errorUtils`, `cryptoUtils`, `pkgUtils` | yes | no | no |
+
+Anything the `verdaccio` package no longer re-exports is still available from the module it
+came from — `@verdaccio/config` and `@verdaccio/core` — so the fix when upgrading is to
+import from there instead.
 
 ## The old callback API {#legacy-api}
 
