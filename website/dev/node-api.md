@@ -3,59 +3,76 @@ id: node-api
 title: 'Node API'
 ---
 
-Verdaccio can be invoked programmatically. The Node API was introduced after version `verdaccio@3.0.0`.
+Verdaccio can be started programmatically instead of from the command line, which is what
+test harnesses and embedded registries usually want.
 
-## Usage {#usage}
+## `runServer` {#runserver}
 
-#### Programmatically {#programmatically}
+```ts
+runServer(config?: string | ConfigYaml): Promise<http.Server | https.Server>
+```
+
+It resolves with a **native Node server that is not listening yet**, so you decide the port
+and when to start it. Whether it is `http` or `https` follows the `https` block of the
+configuration.
+
+It accepts the configuration in three ways: nothing at all for the defaults, a path to a
+config file, or the configuration inline.
 
 ```js
-const startServer = require("verdaccio").default;
+import { runServer } from 'verdaccio';
 
-let config = {
-    storage: "./storage",
-    auth: {
-        htpasswd: {
-            file: "./htpasswd"
-        }
-    },
-    uplinks: {
-        npmjs: {
-            url: "https://registry.npmjs.org/",
-        }
-    },
-    self_path: "./",
-    packages: {
-        "@*/*": {
-            access: "$all",
-            publish: "$authenticated",
-            proxy: "npmjs",
-        },
-        "**": {
-            proxy: "npmjs"
-        }
-    },
-    log: {
-            type: "stdout",
-            format: "pretty",
-            level: "http",
-        };
-};
+// const app = await runServer();
+// const app = await runServer('./config/config.yaml');
 
-startServer(
-    config,
-    6000,
-    undefined,
-    "1.0.0",
-    "verdaccio",
-    (webServer, addrs) => {
-        webServer.listen(
-            addrs.port || addrs.path,
-            addrs.host,
-            () => {
-                console.log(`verdaccio running on : ${addrs.host}:${addrs.port}`);
-            }
-        );
-    }
-);
+const app = await runServer({
+  storage: './storage',
+  auth: { htpasswd: { file: './htpasswd' } },
+  uplinks: { npmjs: { url: 'https://registry.npmjs.org/' } },
+  packages: {
+    '@*/*': { access: '$all', publish: '$authenticated', proxy: 'npmjs' },
+    '**': { access: '$all', proxy: 'npmjs' },
+  },
+  log: { type: 'stdout', format: 'pretty', level: 'http' },
+});
+
+app.listen(4000, () => {
+  console.log('verdaccio running on http://localhost:4000');
+});
 ```
+
+On Verdaccio 6 `runServer` takes a second optional argument, `{ listenArg }`, which
+overrides the `listen` entry of the configuration. Verdaccio 7 and newer do not have it —
+pass the port to `listen()` instead, as above.
+
+Verdaccio 7 also exports `initServer(config, port, version, pkgName)`, which creates the
+server **and** starts it listening. `runServer` is the one to prefer: it hands you the
+server so you can shut it down, which is what a test harness needs.
+
+## What `default` points at {#default-export}
+
+The default export is not the same thing on every line, so import `runServer` by name
+rather than relying on it:
+
+| Verdaccio | `require('verdaccio').default` |
+| --- | --- |
+| **6.x** | `startVerdaccio`, the legacy callback entry point below |
+| **7.x** | `runServer` |
+| **9.x** | nothing — the package has no default export |
+
+## The old callback API {#legacy-api}
+
+Verdaccio 6 still exports an entry point taking six positional arguments and a callback:
+
+```js
+// deprecated, Verdaccio 6 only
+const startServer = require('verdaccio').default;
+startServer(config, 6000, undefined, '1.0.0', 'verdaccio', (webServer, addrs) => {
+  webServer.listen(addrs.port || addrs.path, addrs.host);
+});
+```
+
+It is gone from Verdaccio 7 onwards. On 7.x the same call silently does something else —
+`default` is `runServer`, which ignores every argument after the first — and on 9.x it
+throws `startServer is not a function`, because there is no default export at all. Use
+`runServer` instead.
