@@ -295,7 +295,6 @@ module.exports = {
           editUrl: ({ locale, docPath }) =>
             locale !== 'en' ? `${CROWDIN.PROJECT}/${locale}` : `${GITHUB.EDIT_DOCS}/${docPath}`,
         },
-        googleAnalytics: { trackingID: ANALYTICS.GA_TRACKING_ID },
         gtag: { trackingID: ANALYTICS.GA_TRACKING_ID },
         blog: {
           blogTitle: 'Verdaccio Official Blog',
