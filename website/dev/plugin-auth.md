@@ -37,7 +37,50 @@ auth:
     bar: foo
 ```
 
-> If one of the plugin in the chain is able to resolve the request, the next ones will be ignored.
+### How the chain works {#chaining}
+
+Plugins are consulted **in the order they appear in `auth:`**, and Verdaccio appends its own
+built-in plugin at the end — that last one is what terminates the chain, so it always ends.
+
+What "resolve the request" means is not the same for authentication and for permissions, and
+the difference is where chained setups usually go wrong.
+
+#### `authenticate` — first success wins {#chaining-authenticate}
+
+| Your plugin calls                                 | What happens                                                   |
+| ------------------------------------------------- | -------------------------------------------------------------- |
+| `cb(null, ['group-a'])`                           | authenticated, the remaining plugins are skipped               |
+| `cb(null, false)` — or an empty/absent group list | **not a failure**: the next plugin is tried                    |
+| `cb(err)`                                         | **the chain stops here** and the request fails with that error |
+| _(no `authenticate` method)_                      | the plugin is skipped                                          |
+
+If nobody authenticates, the built-in plugin answers `403 bad username/password`.
+
+:::caution
+An error **aborts the chain**. If your LDAP is unreachable and you answer
+`errorUtils.getInternalError(...)`, an `htpasswd` plugin listed after it is never consulted
+and every login fails. Answer `false` when you simply cannot vouch for this user; keep errors
+for "nobody else should decide either".
+:::
+
+Returning a string instead of an array of groups throws a `TypeError` at runtime.
+
+#### `allow_access` and friends — first grant wins {#chaining-access}
+
+`allow_access`, `allow_publish`, `allow_unpublish` and `allow_stage` all behave the same way:
+
+| Your plugin calls     | What happens                                  |
+| --------------------- | --------------------------------------------- |
+| `cb(null, true)`      | granted, the remaining plugins are skipped    |
+| `cb(null, false)`     | **not a veto**: the next plugin is asked      |
+| `cb(err)`             | denied with that error, the chain stops       |
+| `cb(null, undefined)` | `allow_stage` only: defers to `allow_publish` |
+
+:::caution
+**You cannot deny with `false`.** A plugin answering `false` only steps aside, and a later
+plugin — including the built-in one, which applies the `packages:` block — can still grant
+the request. A hard denial has to be an error.
+:::
 
 ## How do the authentication plugin works? {#how-do-the-authentication-plugin-works}
 
