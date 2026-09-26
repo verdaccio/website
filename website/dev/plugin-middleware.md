@@ -44,7 +44,8 @@ it unless well founded.
 This is the same shape the [plugin generator](plugin-generator.md) scaffolds, so running it
 is the quickest way to get a compiling starting point.
 
-> A good example of a middleware plugin is the [verdaccio-audit](https://github.com/verdaccio/monorepo/tree/master/plugins/audit).
+> The built-in [`verdaccio-audit`](https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/audit)
+> is a real middleware plugin and the shortest one to read.
 
 ## Where your middleware runs {#ordering}
 
