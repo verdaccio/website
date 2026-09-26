@@ -9,9 +9,79 @@ Verdaccio by default uses a file system storage plugin [local-storage](https://g
 
 ### API {#api}
 
-Storage plugins are composed of two objects, the `IPluginStorage<T>` and the `IPackageStorage`.
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+```
 
-- The `IPluginStorage` object handle the local database for private packages.
+Storage is the one plugin type whose contract changed: it moved from callbacks to
+promises. Which one you implement depends on the Verdaccio you target.
+
+| Verdaccio | Native contract | A callback plugin |
+| --- | --- | --- |
+| **6.x** | callbacks | works — it is the native one |
+| **7.x** | promises | works, wrapped by a compatibility adapter (since `7.0.0-next-7.28`) |
+| **9.x** | promises | **not supported** |
+
+New plugins should implement the promise contract. It is the only one 9.x accepts, and 7.x
+runs it natively rather than through the adapter.
+
+<Tabs groupId="storage-contract">
+<TabItem value="promise" label="Promises (Verdaccio 7 and newer)" default>
+
+Two interfaces, both from `pluginUtils` in `@verdaccio/core`. `Storage` handles the local
+database of private packages:
+
+```typescript
+import { pluginUtils } from '@verdaccio/core';
+
+interface Storage<PluginConfig> extends Plugin<PluginConfig> {
+  add(packageName: string): Promise<void>;
+  remove(packageName: string): Promise<void>;
+  get(): Promise<string[]>;
+  init(): Promise<void>;
+  getSecret(): Promise<string>;
+  setSecret(secret: string): Promise<any>;
+  getPackageStorage(packageName: string): StorageHandler;
+  search(query: searchUtils.SearchQuery): Promise<searchUtils.SearchItem[]>;
+  saveToken(token: Token): Promise<any>;
+  deleteToken(user: string, tokenKey: string): Promise<any>;
+  readTokens(filter: TokenFilter): Promise<Token[]>;
+}
+```
+
+`StorageHandler` is returned by `getPackageStorage` and does the I/O for one package's
+manifest and tarballs:
+
+```typescript
+interface StorageHandler {
+  logger: Logger;
+  createPackage(packageName: string, manifest: Manifest): Promise<void>;
+  readPackage(packageName: string): Promise<Manifest>;
+  savePackage(packageName: string, manifest: Manifest): Promise<void>;
+  deletePackage(fileName: string): Promise<void>;
+  removePackage(packageName: string): Promise<void>;
+  updatePackage(
+    packageName: string,
+    handleUpdate: (manifest: Manifest) => Promise<Manifest>
+  ): Promise<Manifest>;
+  readTarball(fileName: string, { signal }: { signal: AbortSignal }): Promise<Readable>;
+  writeTarball(fileName: string, { signal }: { signal: AbortSignal }): Promise<Writable>;
+  hasTarball(fileName: string): Promise<boolean>;
+  hasPackage(packageName: string): Promise<boolean>;
+}
+```
+
+Note that `readTarball` and `writeTarball` return real Node streams and receive an
+`AbortSignal`: a plugin is expected to stop the transfer when the client disconnects.
+
+</TabItem>
+<TabItem value="callback" label="Callbacks (Verdaccio 6)">
+
+:::caution
+This is the legacy contract. Verdaccio 9 does not support it, and 7.x only runs it through
+a compatibility adapter. Do not start a new plugin with it.
+:::
 
 ```typescript
 interface IPluginStorage<T> extends IPlugin<T>, ITokenActions {
@@ -30,8 +100,6 @@ interface IPluginStorage<T> extends IPlugin<T>, ITokenActions {
   ): void;
 }
 ```
-
-- The `IPackageStorage` is an object that is created by each request that handles the I/O actions for the metadata and tarballs.
 
 ```typescript
 interface IPackageStorage {
@@ -53,64 +121,17 @@ interface IPackageStorage {
 }
 ```
 
-## Generate an middleware plugin {#generate-an-middleware-plugin}
+</TabItem>
+</Tabs>
 
-For detailed info check our [plugin generator page](plugin-generator). Run the `yo` command in your terminal and follow the steps.
+### How Verdaccio tells them apart {#contract-detection}
 
-```
-➜ yo verdaccio-plugin
+7.x decides by arity, not by configuration: a `get` that takes an argument and an `add`
+that takes two are read as the callback contract, and the plugin is wrapped. There is
+nothing to declare — but it also means a promise-based `get()` must take no parameters.
 
-Just found a `.yo-rc.json` in a parent directory.
-Setting the project root at: /Users/user/verdaccio_yo_generator
+## Generate a storage plugin {#generate-an-middleware-plugin}
 
-     _-----_     ╭──────────────────────────╮
-    |       |    │        Welcome to        │
-    |--(o)--|    │ generator-verdaccio-plug │
-   `---------´   │   in plugin generator!   │
-    ( _´U`_ )    ╰──────────────────────────╯
-    /___A___\   /
-     |  ~  |
-   __'.___.'__
- ´   `  |° ´ Y `
-
-? What is the name of your plugin? custom-endpoint
-? Select Language typescript
-? What kind of plugin you want to create? storage
-? Please, describe your plugin awesome storage plugin
-? GitHub username or organization myusername
-? Author's Name Juan Picado
-? Author's Email jotadeveloper@gmail.com
-? Key your keywords (comma to split) verdaccio,plugin,storage,awesome,verdaccio-plugin
-   create verdaccio-plugin-storage-package-database/package.json
-   create verdaccio-plugin-storage-package-database/.gitignore
-   create verdaccio-plugin-storage-package-database/.npmignore
-   create verdaccio-plugin-storage-package-database/jest.config.js
-   create verdaccio-plugin-storage-package-database/.babelrc
-   create verdaccio-plugin-storage-package-database/.travis.yml
-   create verdaccio-plugin-storage-package-database/README.md
-   create verdaccio-plugin-storage-package-database/.eslintrc
-   create verdaccio-plugin-storage-package-database/.eslintignore
-   create verdaccio-plugin-storage-package-database/src/PackageStorage.ts
-   create verdaccio-plugin-storage-package-database/src/index.ts
-   create verdaccio-plugin-storage-package-database/src/plugin.ts
-   create verdaccio-plugin-storage-package-database/index.ts
-   create verdaccio-plugin-storage-package-database/tsconfig.json
-   create verdaccio-plugin-storage-package-database/types/index.ts
-   create verdaccio-plugin-storage-package-database/.editorconfig
-
-I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
-
-
-⸨ ░░░░░░░░░░░░░░░░░⸩ ⠋ fetchMetadata: sill pacote range manifest for @babel/plugin-syntax-jsx@^7.7.4 fetc
-```
-
-### List Community Storage Plugins {#list-community-storage-plugins}
-
-The following list of plugins are implementing the Storage API and might be used them as example.
-
-- [verdaccio-memory](https://github.com/verdaccio/verdaccio-memory) Storage plugin to host packages in Memory
-- [verdaccio-s3-storage](https://github.com/remitly/verdaccio-s3-storage) Storage plugin to host packages **Amazon S3**
-- [verdaccio-aws-s3-storage](https://github.com/verdaccio/monorepo/tree/verdaccio-aws-s3-storage%4010.3.0/plugins/aws-s3-storage) Storage plugin to host packages **Amazon S3** (maintained by Verdaccio core team)
-- [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud) Storage plugin to host packages **Google Cloud Storage**
-- [verdaccio-minio](https://github.com/barolab/verdaccio-minio) A verdaccio plugin for storing data in Minio
-- [verdaccio-offline-storage](https://github.com/g3ngar/verdaccio-offline-storage) local-storage plugin BUT with locally available packages as first class citizens.
+Run `yo verdaccio-plugin` and pick `storage` when asked for the plugin type; the
+[plugin generator page](plugin-generator.md) covers installation and the prompts. The
+scaffold implements the promise contract against the current `@verdaccio/core`.

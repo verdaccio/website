@@ -9,36 +9,64 @@ Middleware plugins have the capability to modify the API (web and cli) layer, ei
 
 ### API {#api}
 
+The interface lives in `@verdaccio/core`, under the `pluginUtils` namespace:
+
 ```typescript
-interface IPluginMiddleware<T> extends IPlugin<T> {
-  register_middlewares(app: any, auth: IBasicAuth<T>, storage: IStorageManager<T>): void;
+import { pluginUtils } from '@verdaccio/core';
+
+interface ExpressMiddleware<PluginConfig, Storage, Auth> extends Plugin<PluginConfig> {
+  register_middlewares(app: Express, auth: Auth, storage: Storage): void;
 }
 ```
 
+:::note
+The type parameters are declared in the order `<PluginConfig, Storage, Auth>`, but
+`register_middlewares` receives **`auth` before `storage`**. The compiler will not catch
+the two being swapped when both are `any`.
+:::
+
+`Storage` and `Auth` are the types of the instances Verdaccio injects. A plugin that only
+needs `auth` can declare `{}` for `Storage`, as the generator template does.
+
 ### `register_middlewares` {#register_middlewares}
 
-The method provide full access to the authentification and storage via `auth` and `storage`. `app` is the express application that allows you to add new endpoints.
+`app` is the Express application, so the method can mount any router or middleware on it.
+`auth` and `storage` are the live instances and can be extended, though we don't recommend
+it unless well founded.
 
 ```typescript
-public register_middlewares(
-    app: Application,
-    auth: IBasicAuth<CustomConfig>,
-    storage: IStorageManager<CustomConfig>
-  ): void {
-    const router = Router();
-    router.post(
-      '/custom-endpoint',
-      (req: Request, res: Response & { report_error?: Function }, next: NextFunction): void => {
-        const encryptedString = auth.aesEncrypt(Buffer.from(this.foo, 'utf8'));
-        res.setHeader('X-Verdaccio-Token-Plugin', encryptedString.toString());
-        next();
-      }
-    );
-    app.use('/-/npm/something-new', router);
+import express, { type Express } from 'express';
+import type { Auth } from '@verdaccio/auth';
+import { pluginUtils } from '@verdaccio/core';
+import type { Logger } from '@verdaccio/types';
+
+export default class CustomEndpoint
+  extends pluginUtils.Plugin<CustomConfig>
+  implements pluginUtils.ExpressMiddleware<CustomConfig, {}, Auth>
+{
+  readonly logger: Logger;
+
+  public constructor(config: CustomConfig, options: pluginUtils.PluginOptions) {
+    super(config, options);
+    this.logger = options.logger;
   }
+
+  public register_middlewares(app: Express, _auth: Auth): void {
+    const router = express.Router();
+
+    router.post('/custom-endpoint', express.json({ limit: '10mb' }), (req, res, next) => {
+      this.logger.info({ url: req.url }, 'custom-endpoint: incoming request');
+      res.setHeader('x-verdaccio-middleware', 'demo');
+      next();
+    });
+
+    app.use('/-/npm/v2/my-endpoint', router);
+  }
+}
 ```
 
-The `auth` and `storage` are instances and can be extended, but we don't recommend this approach unless is well founded.
+This is the same shape the [plugin generator](plugin-generator.md) scaffolds, so running it
+is the quickest way to get a compiling starting point.
 
 > A good example of a middleware plugin is the [verdaccio-audit](https://github.com/verdaccio/monorepo/tree/master/plugins/audit).
 
@@ -55,65 +83,10 @@ By default, Verdaccio sets the following HTTP headers. If you have other securit
 
 ## Generate a middleware plugin {#generate-a-middleware-plugin}
 
-For detailed info check our [plugin generator page](plugin-generator). Run the `yo` command in your terminal and follow the steps.
-
-```
-➜ yo verdaccio-plugin
-
-Just found a `.yo-rc.json` in a parent directory.
-Setting the project root at: /Users/user/verdaccio_yo_generator
-
-     _-----_     ╭──────────────────────────╮
-    |       |    │        Welcome to        │
-    |--(o)--|    │ generator-verdaccio-plug │
-   `---------´   │   in plugin generator!   │
-    ( _´U`_ )    ╰──────────────────────────╯
-    /___A___\   /
-     |  ~  |
-   __'.___.'__
- ´   `  |° ´ Y `
-
-? What is the name of your plugin? custom-endpoint
-? Select Language typescript
-? What kind of plugin you want to create? middleware
-? Please, describe your plugin awesome middleware plugin
-? GitHub username or organization myusername
-? Author's Name Juan Picado
-? Author's Email jotadeveloper@gmail.com
-? Key your keywords (comma to split) verdaccio,plugin,middleware,awesome,verdaccio-plugin
-   create verdaccio-plugin-custom-endpoint/package.json
-   create verdaccio-plugin-custom-endpoint/.gitignore
-   create verdaccio-plugin-custom-endpoint/.npmignore
-   create verdaccio-plugin-custom-endpoint/jest.config.js
-   create verdaccio-plugin-custom-endpoint/.babelrc
-   create verdaccio-plugin-custom-endpoint/.travis.yml
-   create verdaccio-plugin-custom-endpoint/README.md
-   create verdaccio-plugin-custom-endpoint/.eslintrc
-   create verdaccio-plugin-custom-endpoint/.eslintignore
-   create verdaccio-plugin-custom-endpoint/src/index.ts
-   create verdaccio-plugin-custom-endpoint/index.ts
-   create verdaccio-plugin-custom-endpoint/tsconfig.json
-   create verdaccio-plugin-custom-endpoint/types/index.ts
-   create verdaccio-plugin-custom-endpoint/.editorconfig
-
-I'm all done. Running npm install for you to install the required dependencies. If this fails, try running the command yourself.
-
-
-⸨ ░░░░░░░░░░░░░░░░░⸩ ⠋ fetchMetadata: sill pacote range manifest for @babel/plugin-syntax-jsx@^7.7.4 fetc
-```
-
-After the install finish, access to your project scalfold.
-
-```
-➜ cd verdaccio-plugin-auth-service-name
-➜ cat package.json
-
-  {
-  "name": "verdaccio-plugin-custom-endpoint",
-  "version": "0.0.1",
-  "description": "awesome middleware plugin",
-  ...
-```
+Run `yo verdaccio-plugin` and pick `middleware` when asked for the plugin type; the
+[plugin generator page](plugin-generator.md) covers installation and the full prompt list.
+The scaffold it produces is the example shown above, already compiling against the current
+`@verdaccio/core`.
 
 The middleware are registrered after built-in endpoints, thus, it is not possible to override the implemented ones.
 
