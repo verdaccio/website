@@ -22,6 +22,7 @@ module.exports = {
           ],
         },
         'who-is-using',
+        { type: 'link', label: 'Metrics', href: '/downloads' },
         'best',
         'docker',
         'env',
@@ -76,16 +77,6 @@ module.exports = {
       type: 'category',
       label: 'Server',
       items: ['server-configuration', 'reverse-proxy', 'ssl', 'windows', 'iss-server'],
-    },
-    {
-      type: 'category',
-      label: 'Development',
-      items: [
-        // The plugin and Node API docs live in the `dev` instance, which is not
-        // translated because it documents type signatures. See sidebarsDev.js.
-        { type: 'link', label: 'Developing Plugins', href: '/dev/dev-plugins' },
-        { type: 'link', label: 'Node API', href: '/dev/node-api' },
-      ],
     },
     {
       type: 'category',
