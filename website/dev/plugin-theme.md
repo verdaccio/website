@@ -20,7 +20,7 @@ stateDiagram-v2
     No: Custom plugin not found
     Yes_loads: Plugin loads successfully
     No_loads: Plugin fails on load
-    load_default: Load default theme (@verdaccio/theme-ui)
+    load_default: Load default theme (@verdaccio/ui-theme)
     Crash: Verdaccio stops
 
     [*] --> start
@@ -47,26 +47,40 @@ The theme loads only in the client side, the application renders HTML with `<scr
 
 ### The `__VERDACCIO_BASENAME_UI_OPTIONS` object
 
-The `window.__VERDACCIO_BASENAME_UI_OPTIONS` is available in the browser global context, the shape is documented is defined by the [here](https://verdaccio.org/docs/next/api/types/modules/#templateuioptions) at the `TemplateUIOptions` types definitions.
+`window.__VERDACCIO_BASENAME_UI_OPTIONS` is available in the browser global context. Its
+shape is the `TemplateUIOptions` type, defined in
+[`@verdaccio/types`](https://github.com/verdaccio/verdaccio/blob/master/packages/core/types/src/configuration.ts):
+
+```ts
+type TemplateUIOptions = {
+  uri?: string;
+  protocol?: string;
+  host?: string;
+  base: string;
+  basename?: string; // deprecated, use base
+  version?: string;
+  flags?: FlagsConfig;
+} & CommonWebConf;
+```
+
+`CommonWebConf` carries what the `web` block of `config.yaml` sets — `title`, `logo`,
+`logoDark`, `favicon`, `darkMode`, `language`, `login`, `scope`, `pkgManagers`,
+`sort_packages`, and the `show*` toggles (`showInfo`, `showSettings`, `showSearch`,
+`showFooter`, `showThemeSwitch`, `showDownloadTarball`, `showUplinks`).
 
 ```js
 // output example
 {
     "darkMode": false,
-    "basename": "/",
     "base": "https://registry.my.org/",
     "primaryColor": "#4b5e40",
-    "version": "5.20.1",
-    "pkgManagers": [
-        "yarn",
-        "pnpm",
-        "npm"
-    ],
+    "version": "9.0.0",
+    "pkgManagers": ["yarn", "pnpm", "npm"],
     "login": true,
     "logo": "",
     "title": "Verdaccio Registry",
     "scope": "",
-    "language": "es-US"
+    "language": "en-US"
 }
 ```
 
@@ -162,21 +176,25 @@ Alternatives:
 
 ## Components UI {#components}
 
-:::note
+Building a user interface from scratch is a big effort, so the pieces the default theme is
+made of are published on their own as
+[`@verdaccio/ui-components`](https://www.npmjs.com/package/@verdaccio/ui-components)
+([source](https://github.com/verdaccio/verdaccio/tree/master/packages/ui-components)).
+They are built with **React** and **Material UI**.
 
-The components UI is an experimental feature can be used since verdccio@5.x, it's open to changes and **feedback is welcome**.
+The package exports the parts that can be reused:
 
-:::
-
-Create a new user interface from scratch is big effort, to facilitate the task exist the [@verdaccio/ui-components](https://www.npmjs.com/package/@verdaccio/ui-components) package. The components are based on the **React** library and **Material UI**.
-
-The package export parts of the user interface that could be reused:
-
-- React Hooks
+- React hooks
 - Providers (React Context API)
 - Components
-- Sections: **(Sidebar, Detail, Header, Home Page and Footer)**
+- Sections: **Sidebar, Detail, Header, Home Page and Footer**
 
-https://ui-components.verdaccio.org
+Pick the release line that matches your Verdaccio: the `next-9` tag tracks Verdaccio 9,
+`next-7` tracks Verdaccio 7, and `6-next` tracks Verdaccio 6.
 
-<iframe src="https://ui-components.verdaccio.org" height="900"></iframe>
+:::note
+The components are published for reuse but their API is not frozen, and there is no
+separate documentation site for them — read the source, or the default theme
+([`@verdaccio/ui-theme`](https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme))
+as the reference consumer. **Feedback is welcome.**
+:::

@@ -58,4 +58,4 @@ Changing a password is delegated to the authentication plugin, and not every
 plugin can do it. The bundled htpasswd plugin implements it. A plugin backed by
 a directory it does not own — LDAP or an identity provider, for example —
 typically does not, and the request fails even with the flag on. See
-[auth plugins](plugin-auth) for the callback involved.
+[auth plugins](/dev/plugin-auth) for the callback involved.

@@ -202,9 +202,6 @@ importers:
       '@docusaurus/plugin-content-docs':
         specifier: 3.10.1
         version: 3.10.1(@mdx-js/react@3.1.1(@types/react@19.2.17)(react@19.2.6))(debug@4.4.3)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(typescript@5.9.3)
-      '@docusaurus/plugin-google-analytics':
-        specifier: 3.10.1
-        version: 3.10.1(@mdx-js/react@3.1.1(@types/react@19.2.17)(react@19.2.6))(debug@4.4.3)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(typescript@5.9.3)
       '@docusaurus/preset-classic':
         specifier: 3.10.1
         version: 3.10.1(@algolia/client-search@5.46.0)(@mdx-js/react@3.1.1(@types/react@19.2.17)(react@19.2.6))(@types/react@19.2.17)(debug@4.4.3)(react-dom@19.2.6(react@19.2.6))(react@19.2.6)(search-insights@2.17.3)(typescript@5.9.3)

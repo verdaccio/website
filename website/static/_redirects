@@ -15,3 +15,15 @@
 /docs/zh-CN/* /zh-cn/docs/:splat
 /chat https://discord.gg/7qWJxBf 200
 https://chat.verdaccio.org https://discord.gg/7qWJxBf 200
+
+# Plugin and Node API docs moved to the untranslated /dev instance (see crowdin.yaml).
+# These paths are linked from @verdaccio/core JSDoc and from plugins in the wild,
+# so they must keep resolving.
+/docs/dev-plugins /dev/dev-plugins 301
+/docs/plugin-generator /dev/plugin-generator 301
+/docs/plugin-auth /dev/plugin-auth 301
+/docs/plugin-middleware /dev/plugin-middleware 301
+/docs/plugin-storage /dev/plugin-storage 301
+/docs/plugin-theme /dev/plugin-theme 301
+/docs/plugin-filter /dev/plugin-filter 301
+/docs/node-api /dev/node-api 301
