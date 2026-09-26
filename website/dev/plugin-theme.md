@@ -148,31 +148,50 @@ If any of the following properties are not available, the plugin won't load, thu
 
 #### Manifest file {#manifest-and-webpack}
 
-Verdaccio requires a [manifest](https://webpack.js.org/concepts/manifest/) object to render the html dynamically, in combination with the `manifestFiles` the application understand what to render.
+Verdaccio resolves each entry in `manifestFiles` against the `manifest` object and injects
+the result into the HTML. The lookup is a plain property access — `manifest[name]` — and the
+value has to be a **string path**:
 
-> Currently only support `js` but if you also need `css`, we are open to discuss it and further improvements.
-
+```json
+{
+  "main.js": "/-/static/main.4f2a1c.js",
+  "main.css": "/-/static/main.9b3e77.css",
+  "favicon.ico": "/-/static/favicon.ico"
+}
 ```
+
+So there is **one supported manifest shape**, not one per bundler: a flat map from name to
+path. `manifestFiles.js` and `.css` are arrays of keys into it, `.ico` a single key, and
+order matters for `js`.
+
+#### Any bundler works, as long as it emits that shape {#manifest-bundlers}
+
+`webpack-manifest-plugin` produces it directly, which is why it is the usual example:
+
+```js
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
-  plugins: [
-    ...
-    new WebpackManifestPlugin({
-      // this is optional depends of your implementation
-      removeKeyHash: true,
-    }),
-    ...
-  ],
-
+plugins: [
+  new WebpackManifestPlugin({
+    // optional, depends on your implementation
+    removeKeyHash: true,
+  }),
+];
 ```
 
-#### Manifest with other bundlers
+**Vite's built-in manifest does not.** With `build.manifest`, Vite emits entries keyed by
+source path whose values are _objects_ (`{ file, imports, css }`), so `manifest[name]` gives
+you `[object Object]` in the `<script src>`.
 
-There is no feedback with other bundlers being used with theme plugins, but with `esbuild` could be possible generate manifests.
+The default theme is built with Vite and solves this with a small `generateBundle` plugin
+that writes the flat shape itself — read
+[`vite.config.mjs`](https://github.com/verdaccio/verdaccio/blob/master/packages/plugins/ui-theme/vite.config.mjs)
+in `@verdaccio/ui-theme`, it is about thirty lines and it is the reference for any bundler
+Verdaccio does not document.
 
-Alternatives:
-
-- https://www.npmjs.com/package/esbuild-plugin-manifest
+Its [`index.js`](https://github.com/verdaccio/verdaccio/blob/master/packages/plugins/ui-theme/index.js)
+is worth reading next to it: rather than hardcoding a file list, it derives `manifestFiles`
+from the manifest keys, so a hash change never needs a code change.
 
 ## Components UI {#components}
 

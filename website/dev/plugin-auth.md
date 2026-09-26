@@ -3,6 +3,11 @@ id: plugin-auth
 title: 'Authentication Plugin'
 ---
 
+```mdx-code-block
+import CodeBlock from '@theme/CodeBlock';
+import AuthExample from '!!raw-loader!./examples/auth-plugin.ts';
+```
+
 ## What's an authentication plugin? {#whats-an-authentication-plugin}
 
 Is a sort plugin that allows to handle who access or publish to a specific package. By default the `htpasswd` is built-in, but can
@@ -74,6 +79,10 @@ interface Auth<T> extends Plugin<T> {
 `allow_stage` gates `npm stage publish`. Answering `undefined` defers to `allow_publish`,
 which is what the built-in plugin does when the packages configuration has no `stage` entry.
 
+### A complete plugin {#example}
+
+<CodeBlock language="ts">{AuthExample}</CodeBlock>
+
 #### `apiJWTmiddleware` method {#apijwtmiddleware-method}
 
 `apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
@@ -109,9 +118,9 @@ The auth was successful.
 The authentication service might fails, and you might want to reflect that in the user response, eg: service is unavailable.
 
 ```
- import { getInternalError } from '@verdaccio/commons-api';
+ import { errorUtils } from '@verdaccio/core';
 
- callback(getInternalError('something bad message), null);
+ callback(errorUtils.getInternalError('the auth service is unavailable'));
 ```
 
 > A failure on login is not the same as service error, if you want to notify user the credentials are wrong, just return `false` instead string of groups. The behaviour mostly depends of you.
@@ -131,9 +140,9 @@ callback(null, true);
 Any other action different than success must return an error.
 
 ```typescript
-import { getConflict } from '@verdaccio/commons-api';
+import { errorUtils } from '@verdaccio/core';
 
-const err = getConflict('maximum amount of users reached');
+const err = errorUtils.getConflict('maximum amount of users reached');
 
 callback(err);
 ```
@@ -155,9 +164,9 @@ callback(null, user);
 Any other action different than success must return an error.
 
 ```typescript
-import { getNotFound } from '@verdaccio/commons-api';
+import { errorUtils } from '@verdaccio/core';
 
-const err = getNotFound('user not found');
+const err = errorUtils.getNotFound('user not found');
 
 callback(err);
 ```
@@ -184,7 +193,7 @@ allow_access(user: RemoteUser, pkg: PackageAccess, cb: Callback): void {
 Any other action different than success must return an error.
 
 ```typescript
-import { getNotFound } from '@verdaccio/commons-api';
+import { errorUtils } from '@verdaccio/core';
 
 const err = getForbidden('not allowed to access package');
 
