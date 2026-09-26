@@ -217,9 +217,15 @@ module.exports = {
         },
         items: [
           { type: 'doc', docId: 'what-is-verdaccio', position: 'left', label: 'Docs' },
+          {
+            type: 'docSidebar',
+            sidebarId: 'dev',
+            docsPluginId: 'dev',
+            position: 'left',
+            label: 'Developers',
+          },
           { to: '/blog', position: 'left', label: 'Blog' },
           { href: '/community', position: 'left', label: 'Community' },
-          { to: '/downloads', position: 'left', label: 'Metrics' },
           { href: SOCIAL.OPEN_COLLECTIVE, position: 'right', label: 'Sponsor Us' },
           {
             type: 'localeDropdown',
@@ -295,7 +301,6 @@ module.exports = {
           editUrl: ({ locale, docPath }) =>
             locale !== 'en' ? `${CROWDIN.PROJECT}/${locale}` : `${GITHUB.EDIT_DOCS}/${docPath}`,
         },
-        googleAnalytics: { trackingID: ANALYTICS.GA_TRACKING_ID },
         gtag: { trackingID: ANALYTICS.GA_TRACKING_ID },
         blog: {
           blogTitle: 'Verdaccio Official Blog',

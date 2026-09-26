@@ -13,11 +13,18 @@ The UI components are in _experimental_ mode, currently used to build the main u
 
 :::
 
+Install the dist-tag that matches your Verdaccio: `next-9` for Verdaccio 9, `next-7` for
+Verdaccio 7, `6-next` for Verdaccio 6.
+
 ```bash
-npm i -D @verdaccio/ui-components@6-next
+npm i -D @verdaccio/ui-components@next-9
 ```
 
-Browser all available components at [https://ui-components.verdaccio.org/](https://ui-components.verdaccio.org/)
+There is no component gallery site; the default theme
+[`@verdaccio/ui-theme`](https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme)
+is the reference consumer, and the
+[source](https://github.com/verdaccio/verdaccio/tree/master/packages/ui-components) lists
+everything that is exported.
 
 ## How to use it {#how-to-useit}
 

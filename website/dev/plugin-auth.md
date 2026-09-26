@@ -42,23 +42,37 @@ On each request, `authenticate` will be triggered and the plugin should return t
 
 ### API {#api}
 
+The interface lives in `@verdaccio/core`, under the `pluginUtils` namespace. Unlike storage,
+authentication is still callback-based:
+
 ```typescript
-interface IPluginAuth<T> extends IPlugin<T> {
+import { pluginUtils } from '@verdaccio/core';
+
+interface Auth<T> extends Plugin<T> {
   authenticate(user: string, password: string, cb: AuthCallback): void;
-  adduser?(user: string, password: string, cb: AuthCallback): void;
-  changePassword?(user: string, password: string, newPassword: string, cb: AuthCallback): void;
+  adduser?(user: string, password: string, cb: AuthUserCallback): void;
+  changePassword?(
+    user: string,
+    password: string,
+    newPassword: string,
+    cb: AuthChangePasswordCallback
+  ): void;
   allow_publish?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: AuthAccessCallback): void;
-  allow_access?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: AuthAccessCallback): void;
+  allow_access?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: AccessCallback): void;
   allow_unpublish?(
     user: RemoteUser,
     pkg: AllowAccess & PackageAccess,
     cb: AuthAccessCallback
   ): void;
-  apiJWTmiddleware?(helpers: any): Function;
+  allow_stage?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: AuthAccessCallback): void;
+  apiJWTmiddleware?(helpers: any): RequestHandler;
 }
 ```
 
-> Only `adduser`, `allow_access`, `apiJWTmiddleware`, `allow_publish` and `allow_unpublish` are optional, verdaccio provide a fallback in all those cases.
+> Only `adduser`, `allow_access`, `apiJWTmiddleware`, `allow_publish`, `allow_unpublish` and `allow_stage` are optional, verdaccio provide a fallback in all those cases.
+
+`allow_stage` gates `npm stage publish`. Answering `undefined` defers to `allow_publish`,
+which is what the built-in plugin does when the packages configuration has no `stage` entry.
 
 #### `apiJWTmiddleware` method {#apijwtmiddleware-method}
 

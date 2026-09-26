@@ -22,6 +22,7 @@ module.exports = {
           ],
         },
         'who-is-using',
+        { type: 'link', label: 'Metrics', href: '/downloads' },
         'best',
         'docker',
         'env',
@@ -76,26 +77,6 @@ module.exports = {
       type: 'category',
       label: 'Server',
       items: ['server-configuration', 'reverse-proxy', 'ssl', 'windows', 'iss-server'],
-    },
-    {
-      type: 'category',
-      label: 'Development',
-      items: [
-        {
-          type: 'category',
-          label: 'Plugins',
-          items: [
-            'dev-plugins',
-            'plugin-generator',
-            'plugin-auth',
-            'plugin-middleware',
-            'plugin-storage',
-            'plugin-theme',
-            'plugin-filter',
-          ],
-        },
-        'node-api',
-      ],
     },
     {
       type: 'category',
