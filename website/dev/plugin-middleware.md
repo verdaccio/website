@@ -3,6 +3,11 @@ id: plugin-middleware
 title: 'Middleware Plugin'
 ---
 
+```mdx-code-block
+import CodeBlock from '@theme/CodeBlock';
+import MiddlewareExample from '!!raw-loader!./examples/middleware-plugin.ts';
+```
+
 ## What's a Middleware Plugin? {#whats-a-middleware-plugin}
 
 Middleware plugins have the capability to modify the API (web and cli) layer, either adding new endpoints or intercepting requests.
@@ -34,36 +39,7 @@ needs `auth` can declare `{}` for `Storage`, as the generator template does.
 `auth` and `storage` are the live instances and can be extended, though we don't recommend
 it unless well founded.
 
-```typescript
-import express, { type Express } from 'express';
-import type { Auth } from '@verdaccio/auth';
-import { pluginUtils } from '@verdaccio/core';
-import type { Logger } from '@verdaccio/types';
-
-export default class CustomEndpoint
-  extends pluginUtils.Plugin<CustomConfig>
-  implements pluginUtils.ExpressMiddleware<CustomConfig, {}, Auth>
-{
-  readonly logger: Logger;
-
-  public constructor(config: CustomConfig, options: pluginUtils.PluginOptions) {
-    super(config, options);
-    this.logger = options.logger;
-  }
-
-  public register_middlewares(app: Express, _auth: Auth): void {
-    const router = express.Router();
-
-    router.post('/custom-endpoint', express.json({ limit: '10mb' }), (req, res, next) => {
-      this.logger.info({ url: req.url }, 'custom-endpoint: incoming request');
-      res.setHeader('x-verdaccio-middleware', 'demo');
-      next();
-    });
-
-    app.use('/-/npm/v2/my-endpoint', router);
-  }
-}
-```
+<CodeBlock language="ts">{MiddlewareExample}</CodeBlock>
 
 This is the same shape the [plugin generator](plugin-generator.md) scaffolds, so running it
 is the quickest way to get a compiling starting point.
