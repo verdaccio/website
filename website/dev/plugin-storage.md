@@ -17,11 +17,11 @@ import TabItem from '@theme/TabItem';
 Storage is the one plugin type whose contract changed: it moved from callbacks to
 promises. Which one you implement depends on the Verdaccio you target.
 
-| Verdaccio | Native contract | A callback plugin |
-| --- | --- | --- |
-| **6.x** | callbacks | works — it is the native one |
-| **7.x** | promises | works, wrapped by a compatibility adapter (since `7.0.0-next-7.28`) |
-| **9.x** | promises | **not supported** |
+| Verdaccio | Native contract | A callback plugin                                                   |
+| --------- | --------------- | ------------------------------------------------------------------- |
+| **6.x**   | callbacks       | works — it is the native one                                        |
+| **7.x**   | promises        | works, wrapped by a compatibility adapter (since `7.0.0-next-7.28`) |
+| **9.x**   | promises        | **not supported**                                                   |
 
 New plugins should implement the promise contract. It is the only one 9.x accepts, and 7.x
 runs it natively rather than through the adapter.

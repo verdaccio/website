@@ -54,14 +54,14 @@ server so you can shut it down, which is what a test harness needs.
 The surface is not the same on every line. Import `runServer` **by name** — it is the only
 thing all three agree on, and the default export means something different on each:
 
-| Export | 6.x | 7.x | 9.x |
-| --- | --- | --- | --- |
-| `runServer` | yes | yes | yes |
-| `default` | `startVerdaccio` | `runServer` | *(none)* |
-| `initServer` | no | yes | no |
-| `startVerdaccio` | yes | no | no |
-| `ConfigBuilder`, `parseConfigFile`, `getDefaultConfig`, `Config` | yes | yes | no |
-| `fileUtils`, `errorUtils`, `cryptoUtils`, `pkgUtils` | yes | no | no |
+| Export                                                           | 6.x              | 7.x         | 9.x      |
+| ---------------------------------------------------------------- | ---------------- | ----------- | -------- |
+| `runServer`                                                      | yes              | yes         | yes      |
+| `default`                                                        | `startVerdaccio` | `runServer` | _(none)_ |
+| `initServer`                                                     | no               | yes         | no       |
+| `startVerdaccio`                                                 | yes              | no          | no       |
+| `ConfigBuilder`, `parseConfigFile`, `getDefaultConfig`, `Config` | yes              | yes         | no       |
+| `fileUtils`, `errorUtils`, `cryptoUtils`, `pkgUtils`             | yes              | no          | no       |
 
 Anything the `verdaccio` package no longer re-exports is still available from the module it
 came from — `@verdaccio/config` and `@verdaccio/core` — so the fix when upgrading is to
