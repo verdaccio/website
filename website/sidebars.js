@@ -63,7 +63,7 @@ module.exports = {
         {
           type: 'category',
           label: 'User Interface',
-          items: ['webui', 'ui-components'],
+          items: ['webui'],
         },
         'plugins',
         {

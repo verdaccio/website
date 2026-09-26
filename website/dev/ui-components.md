@@ -3,7 +3,7 @@ id: ui-components
 title: 'UI Components'
 ---
 
-If you need a more advanced user interface, the option might be use the UI components that provides a set of reusable React components just to plug and play. **The UI components are compatible with v5.x and ahead**.
+Building a [theme plugin](plugin-theme.md) from scratch is a lot of work. `@verdaccio/ui-components` publishes the pieces the default theme is built from, as reusable React components you can plug together.
 
 To install install the dependency in a local project.
 

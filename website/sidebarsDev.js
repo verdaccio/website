@@ -16,7 +16,11 @@ module.exports = {
         'plugin-auth',
         'plugin-middleware',
         'plugin-storage',
-        'plugin-theme',
+        {
+          type: 'category',
+          label: 'Theme',
+          items: ['plugin-theme', 'ui-components'],
+        },
         'plugin-filter',
       ],
     },

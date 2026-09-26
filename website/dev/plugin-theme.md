@@ -209,24 +209,7 @@ from the manifest keys, so a hash change never needs a code change.
 ## Components UI {#components}
 
 Building a user interface from scratch is a big effort, so the pieces the default theme is
-made of are published on their own as
-[`@verdaccio/ui-components`](https://www.npmjs.com/package/@verdaccio/ui-components)
-([source](https://github.com/verdaccio/verdaccio/tree/master/packages/ui-components)).
-They are built with **React** and **Material UI**.
+made of are published on their own as `@verdaccio/ui-components` — React hooks, providers,
+components and whole sections (sidebar, header, detail, home, footer).
 
-The package exports the parts that can be reused:
-
-- React hooks
-- Providers (React Context API)
-- Components
-- Sections: **Sidebar, Detail, Header, Home Page and Footer**
-
-Pick the release line that matches your Verdaccio: the `next-9` tag tracks Verdaccio 9,
-`next-7` tracks Verdaccio 7, and `6-next` tracks Verdaccio 6.
-
-:::note
-The components are published for reuse but their API is not frozen, and there is no
-separate documentation site for them — read the source, or the default theme
-([`@verdaccio/ui-theme`](https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme))
-as the reference consumer. **Feedback is welcome.**
-:::
+See [UI Components](ui-components.md) for installation, requirements and a worked example.
