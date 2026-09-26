@@ -130,6 +130,84 @@ interface IPackageStorage {
 that takes two are read as the callback contract, and the plugin is wrapped. There is
 nothing to declare — but it also means a promise-based `get()` must take no parameters.
 
+## How the store drives your plugin {#lifecycle}
+
+The interfaces above do not say _when_ Verdaccio calls what, and the tarball path in
+particular has a contract that is easy to get wrong. This is what
+`packages/store/src/storage.ts` actually does.
+
+### Publishing a tarball {#publish-lifecycle}
+
+```mermaid
+sequenceDiagram
+    participant S as Verdaccio store
+    participant P as Your plugin
+
+    S->>P: hasTarball(filename)
+    Note over S: a conflict is the store's call, not yours
+    S->>P: writeTarball(filename, { signal })
+    P-->>S: Writable
+    P->>S: emit 'open'
+    S->>P: pipeline(upload → your stream)
+    P->>S: emit 'close'
+    Note over S: only now is the manifest updated
+```
+
+Three rules follow, and breaking any of them fails in a way that is hard to read:
+
+- **You must emit `open`, and not before the store is listening.** The store attaches the
+  listener _after_ awaiting `writeTarball`, so an `open` emitted synchronously — or on
+  `process.nextTick`, which runs before promise continuations — is missed and **the publish
+  hangs forever with no error**. Emit it from a real async source, or with `setImmediate`.
+- **You must emit `close` once the bytes are durable.** That is the store's signal to write
+  the manifest. No `close`, no published version, even though the upload succeeded.
+- **Emit `error` at most once.** After a failure the store may have dropped its listener, and
+  a second `error` on a stream with no listener is an uncaught exception that **takes the
+  whole registry down**. Guard the emit with a flag.
+
+The `signal` is an `AbortSignal` wired to the client connection. When a client disconnects
+mid-upload the pipeline is destroyed, and any promise your backend still has in flight must
+have its rejection consumed — an unhandled rejection is, again, a dead process.
+
+### Reading a tarball {#read-lifecycle}
+
+`readTarball(filename, { signal })` returns a `Readable` that the store pipes to the
+response. The same once-only rule applies to `error`: a missing object typically surfaces
+through two different channels (a status code and a stream error), and emitting `getNotFound()`
+for both is the most common way to crash a storage plugin.
+
+### What is never called {#not-called}
+
+`filterByQuery` and `getScore` appear in several published plugins because they were copied
+from `@verdaccio/local-storage`. Nothing in the store, the API or the web calls them — the
+query filtering happens inside your `search`. They are dead weight.
+
+## Reference implementations {#reference-implementations}
+
+Two maintained plugins are worth reading before writing your own; both back a remote object
+store, which is the interesting case:
+
+| Plugin                                                                            | Backend         | Good for learning                                                                                                                                  |
+| --------------------------------------------------------------------------------- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [verdaccio-aws-s3-storage](https://github.com/verdaccio/verdaccio-aws-s3-storage) | S3              | resumable uploads, abort handling, the `AbortSignal` path                                                                                          |
+| [verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)     | GCS + Datastore | splitting bytes from registry state, and its [architecture notes](https://github.com/verdaccio/verdaccio-google-cloud/blob/master/ARCHITECTURE.md) |
+
+Both learned the rules above the hard way, and their regression tests are the clearest
+statement of each one.
+
+Two things they expose that a filesystem plugin never has to think about:
+
+- **Object stores have no directories.** `removePackage` cannot delete a folder: there is no
+  object at `my-package`, only objects under the `my-package/` prefix. Deleting the name
+  404s and leaves every tarball orphaned in the bucket.
+- **Nothing serialises writes across processes.** Verdaccio serialises concurrent writes to
+  a package _within one process_. Two instances publishing different versions of the same
+  package at the same moment are not serialised by the plugin, and the last writer wins on
+  the manifest.
+
+Finally, `max_body_size` (default `10mb`) rejects larger tarballs before your plugin is ever
+called. Registries holding big artifacts need it raised.
+
 ## Generate a storage plugin {#generate-an-middleware-plugin}
 
 Run `yo verdaccio-plugin` and pick `storage` when asked for the plugin type; the
