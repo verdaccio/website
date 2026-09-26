@@ -7,32 +7,45 @@ title: 'Theme Plugin'
 
 Verdaccio uses by default a [custom UI](https://www.npmjs.com/package/@verdaccio/ui-theme) that provides a good set of feature to visualize the packages, but might be case your team needs some custom extra features and here is where a custom theme is an option. The plugin store static assets that will be loaded in the client side when the page is being rendered.
 
-### How a theme plugin load phase works?
+### How a theme plugin is loaded {#load-phase}
 
 ```mermaid
-stateDiagram-v2
-    state if_loads <<choice>>
-    state if_load_fails <<choice>>
+flowchart TD
+    start["Verdaccio starts"] --> hasTheme{"is `theme:` set<br/>in config.yaml?"}
+    hasTheme -->|no| default["load @verdaccio/ui-theme"]
+    hasTheme -->|yes| resolve{"can the module<br/>be resolved?"}
+    resolve -->|no| logged["log an error"]
+    resolve -->|yes| sanity{"does it return staticPath,<br/>manifest and manifestFiles?"}
+    sanity -->|no| logged
+    sanity -->|yes| custom["use your theme"]
+    logged --> default
+```
 
+**A theme that fails to load does not stop Verdaccio.** Whatever goes wrong — the package is
+not installed, the name is misspelled, the export is missing a required property — the loader
+writes one line to the log and moves on, and the web UI comes up with the **default theme**.
+The startup then reports `plugin @verdaccio/ui-theme successfully loaded`, which is true and
+also exactly what you would see if your plugin had never been configured.
 
-    start : Verdaccio start
-    Yes: Loading custom plugin
-    No: Custom plugin not found
-    Yes_loads: Plugin loads successfully
-    No_loads: Plugin fails on load
-    load_default: Load default theme (@verdaccio/ui-theme)
-    Crash: Verdaccio stops
+So when a custom theme "does nothing", read the log rather than the screen. The two lines to
+look for are:
 
-    [*] --> start
-    start --> if_loads
-    if_loads --> No: false
-    if_loads --> Yes : true
-    Yes --> if_load_fails
-    No --> load_default
+```
+error  <name> doesn't look like a valid plugin
+error  package not found, try to install <name> with a package manager
+```
 
-    if_load_fails --> No_loads: false
-    if_load_fails --> Yes_loads : true
-    No_loads --> Crash
+Two more rules the loader applies:
+
+- The package name must start with **`verdaccio-theme-`**, unless `server.pluginPrefix`
+  says otherwise. Anything else is not even looked up.
+- Only **one** theme is used. Configuring several logs
+  `multiple ui themes are not supported; only the first plugin is used` and takes the first.
+
+The validity check is exactly this — all three properties, or the plugin is discarded:
+
+```js
+plugin.staticPath && plugin.manifest && plugin.manifestFiles;
 ```
 
 ### How the assets of the theme loads? {#loads}
