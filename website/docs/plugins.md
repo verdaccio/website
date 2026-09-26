@@ -129,7 +129,7 @@ theme:
     option2: bar
 ```
 
-### Filter Configuration (Experimental) {#filter-configuration}
+### Filter Configuration {#filter-configuration}
 
 A real example from [npm i -g verdaccio-plugin-secfilter](https://github.com/Ansile/verdaccio-plugin-secfilter) filter plugin.
 
