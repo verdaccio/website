@@ -7,11 +7,11 @@ Verdaccio is a pluggable application. It can be extended in many ways, either ne
 
 There are 5 types of plugins:
 
-- [Authentication](plugin-auth.md)
-- [Middleware](plugin-middleware.md)
-- [Storage](plugin-storage.md)
-- [Theme UI](plugin-theme.md)
-- [Filters](plugin-filter.md)
+- [Authentication](/dev/plugin-auth)
+- [Middleware](/dev/plugin-middleware)
+- [Storage](/dev/plugin-storage)
+- [Theme UI](/dev/plugin-theme)
+- [Filters](/dev/plugin-filter)
 
 ## Usage {#usage}
 

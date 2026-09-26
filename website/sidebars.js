@@ -81,20 +81,10 @@ module.exports = {
       type: 'category',
       label: 'Development',
       items: [
-        {
-          type: 'category',
-          label: 'Plugins',
-          items: [
-            'dev-plugins',
-            'plugin-generator',
-            'plugin-auth',
-            'plugin-middleware',
-            'plugin-storage',
-            'plugin-theme',
-            'plugin-filter',
-          ],
-        },
-        'node-api',
+        // The plugin and Node API docs live in the `dev` instance, which is not
+        // translated because it documents type signatures. See sidebarsDev.js.
+        { type: 'link', label: 'Developing Plugins', href: '/dev/dev-plugins' },
+        { type: 'link', label: 'Node API', href: '/dev/node-api' },
       ],
     },
     {

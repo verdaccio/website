@@ -5,6 +5,10 @@ api_token_env: CROWDIN_VERDACCIO_API_KEY
 
 preserve_hierarchy: true
 
+# Only /website/docs is translated. Developer reference lives in /website/dev
+# (plugin API, Node API, generated @verdaccio/core reference) and is deliberately
+# left out: it is mostly type signatures, and a translated signature that drifts
+# from the code is worse than an untranslated one. Do not add /website/dev here.
 files:
   - source: /website/i18n/en/**/*
     translation: '/website/i18n/%locale%/**/%original_file_name%'
