@@ -119,6 +119,38 @@ Call `next(err)` and let the error handler at step 10 format the response; it un
 the errors from `errorUtils` in `@verdaccio/core`. Throwing asynchronously outside a request
 handler takes the process down, as it would in any Express app.
 
+## Express 5 route syntax {#express-5}
+
+Verdaccio 7 and newer run **Express 5** (`path-to-regexp` 8); Verdaccio 6 runs Express 4.
+Route patterns that were valid in Express 4 now **throw**, and the throw happens while your
+plugin is registering — which is during startup.
+
+Nothing catches it. `register_middlewares` is called in a plain loop, so a plugin with an
+old-style route **stops Verdaccio from booting**. Unlike a theme plugin, which falls back to
+the default, a middleware plugin cannot fail quietly here.
+
+Measured against Express 5.2.1:
+
+| Pattern         | Express 4 | Express 5                                 |
+| --------------- | --------- | ----------------------------------------- |
+| `/foo/*`        | ok        | ✗ `Missing parameter name at index 6`     |
+| `/foo/:id?`     | ok        | ✗ `Unexpected ? at index 8, expected end` |
+| `/foo/:id(\d+)` | ok        | ✗ `Unexpected ( at index 8, expected end` |
+| `/foo/{*rest}`  | —         | ok, the replacement for `*`               |
+| `/foo/*rest`    | —         | ok, a named wildcard                      |
+| `/foo{/:id}`    | —         | ok, the replacement for `:id?`            |
+
+So: **wildcards must be named**, **optional segments move into braces**, and **inline regular
+expressions are gone** — a pattern like `/:id(\d+)` has to become a plain parameter plus a
+check inside the handler.
+
+Verdaccio's own routes are the shortest reference for the new spelling: `/-/static/{*all}`,
+`/-/user/token/{*subject}`, `/{*any}`.
+
+The [Express 5 migration guide](https://expressjs.com/en/guide/migrating-5.html) covers the
+rest, including `res.sendFile`, which the Verdaccio 7 release notes also flag for plugin
+authors.
+
 ## Overwriting HTTP Security Headers {#overwrite-http-security-headers]
 
 By default, Verdaccio sets the following HTTP headers. If you have other security requirements, you can overwrite these settings using a middleware plugin (Verdaccio 6.2.5 or higher).
