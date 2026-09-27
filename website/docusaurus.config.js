@@ -59,6 +59,8 @@ module.exports = {
 
   plugins: [
     require.resolve('docusaurus-lunr-search'),
+    // bundles static/img/logo into a downloadable archive at build time
+    require.resolve('./plugins/docusaurus-plugin-logo-zip'),
     [
       'docusaurus-plugin-llms',
       {
