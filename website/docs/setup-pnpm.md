@@ -8,6 +8,20 @@ pnpm reads the same `.npmrc` files as npm, in the same order — project, then u
 — so most npm instructions apply unchanged. What follows is the short path, and then the
 places where pnpm behaves differently and npm's answer will not help you.
 
+:::warning pnpm 11 hides packages published in the last day
+Since **pnpm 11**, `minimumReleaseAge` defaults to **1440 minutes — one day**. pnpm will not
+install a version published more recently than that, so a package you just pushed to
+Verdaccio looks as if it does not exist:
+
+```
+No matching version found for @my-company/widget@^1.0.0
+```
+
+It is a supply-chain precaution and it is worth keeping for public packages, but it catches
+everyone who publishes to their own registry and installs it straight away — in CI end-to-end
+jobs especially. [How to exclude your own scope, or switch it off](#minimum-release-age).
+:::
+
 ## Point pnpm at the registry {#registry}
 
 For **one project**, which is what you usually want, write it next to `package.json`:
@@ -76,9 +90,23 @@ In CI, do not run `login` at all — write that line directly, with the token fr
 echo "//localhost:4873/:_authToken=${VERDACCIO_TOKEN}" >> .npmrc
 ```
 
-:::caution `_auth` does not work on Verdaccio 7
-Some older recipes put a base64 `user:password` in `_auth`. Verdaccio **6.x** accepts it;
-**7.x** does not, because it only accepts Bearer tokens. `_authToken` works on both.
+:::caution `_auth` stops working on Verdaccio 7
+Older recipes put a base64 `user:password` in `_auth`. That makes npm send an
+`Authorization: Basic` header, and **Verdaccio 7 no longer accepts incoming Basic
+authentication** — only Bearer tokens. The same `.npmrc` that publishes fine against **6.x**
+fails against **7.x** with:
+
+```
+npm error code E401
+npm error Unable to authenticate, your authentication token seems to be invalid.
+```
+
+Which is misleading: the credentials are correct, the *scheme* is not accepted. Use
+`_authToken`, which sends a Bearer token and works on both lines.
+
+Note also that npm itself rejects a bare `_auth` in a project `.npmrc`
+(`ERR_INVALID_AUTH`) — it has to be host-scoped, `//localhost:4873/:_auth=…`, the same shape
+as `_authToken`.
 :::
 
 ## Publish {#publish}

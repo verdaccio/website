@@ -21,6 +21,17 @@ two-factor and the problems specific to that client:
   commands Yarn 4 does not ship
 - **[deno](setup-deno.md)** and **[bun](setup-bun.md)**
 
+:::warning Recent versions are hidden by default, on pnpm and Yarn
+Both clients now refuse versions published in the **last day**, as a supply-chain
+precaution — `minimumReleaseAge` since **pnpm 11**, `npmMinimalAgeGate` since **Yarn 4.15**.
+Against a private registry that usually means the package you just published cannot be
+installed yet, and the error says the version does not exist rather than that it was
+filtered. npm has the same idea behind `min-release-age`, off unless you set it.
+
+Each client page has the setting to exempt your own scope:
+[pnpm](setup-pnpm.md#minimum-release-age) · [yarn](setup-yarn.md).
+:::
+
 ## The short version {#cheatsheet}
 
 The same settings side by side, if you already know what you are looking for:

@@ -4,6 +4,33 @@ title: 'yarn'
 description: 'Use Verdaccio with yarn, both classic 1.x and modern, including the plugins needed for authentication.'
 ---
 
+:::warning Yarn 4.15 hides packages published in the last day
+Yarn has a **`npmMinimalAgeGate`** setting: a version published more recently than the gate
+is refused. It arrived in **4.10** switched off, and **since 4.15 it defaults to `1d`** — one
+day. A package you just published to Verdaccio and try to install straight away is therefore
+invisible, which looks like the version does not exist.
+
+Keep the protection and exempt your own scope, or the specific packages:
+
+```yaml title=".yarnrc.yml"
+npmScopes:
+  my-company:
+    npmMinimalAgeGate: 0
+
+# or by name, including glob patterns
+npmPreapprovedPackages:
+  - '@my-company/*'
+```
+
+Setting `npmMinimalAgeGate: 0` at the top level turns it off entirely, which is what a
+throwaway registry in CI wants.
+
+One more thing worth knowing: Yarn quarantines a version **whose publish date it cannot
+read**, not just one that is too recent. Verdaccio does record a `time` entry per version, so
+this works — but a storage plugin that drops `time` would block every install with the gate
+on.
+:::
+
 #### `yarn` classic (1.x) {#yarn-classic-1x}
 
 > Be aware npm configurations are valid on the classic version
