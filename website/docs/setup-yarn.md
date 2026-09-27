@@ -39,9 +39,8 @@ For defining a registry you must use the `.yarnrc.yml` located in the root of yo
 
 When you publish a package the `npmRegistryServer` must be used. Keep in mind the `publishConfig.registry` in the `package.json` will override this configuration.
 
-```yaml
-// .yarnrc.yml
-npmRegistryServer: "http://localhost:4873"
+```yaml title=".yarnrc.yml"
+npmRegistryServer: 'http://localhost:4873'
 
 unsafeHttpWhitelist:
   - localhost
@@ -51,9 +50,11 @@ unsafeHttpWhitelist:
 
 Using scopes is also possible and more segmented, you can define a token peer scope if is required.
 
-```
+```yaml title=".yarnrc.yml"
+npmRegistryServer: 'https://registry.npmjs.org'
+
 npmRegistries:
-  "https://registry.myverdaccio.org":
+  'https://registry.myverdaccio.org':
     npmAlwaysAuth: true
     npmAuthToken: <TOKEN>
 npmScopes:
@@ -62,7 +63,34 @@ npmScopes:
     npmPublishRegistry: https://registry.myverdaccio.org
 ```
 
-for logging via CLi use:
+With this configuration, unscoped packages continue resolving from the public registry, while `@my-company/*` packages resolve and publish through Verdaccio.
+
+### Minimum release age with a private scope {#minimum-release-age}
+
+Yarn 4.12 and newer can delay newly published package versions with `npmMinimalAgeGate`. If your private scope publishes internal packages that must be available immediately, add the scope to `npmPreapprovedPackages`.
+
+```yaml title=".yarnrc.yml"
+npmRegistryServer: 'https://registry.npmjs.org'
+
+npmMinimalAgeGate: '1d'
+npmPreapprovedPackages:
+  - '@my-company/*'
+
+npmRegistries:
+  'https://registry.myverdaccio.org':
+    npmAlwaysAuth: true
+    npmAuthToken: <TOKEN>
+npmScopes:
+  my-company:
+    npmRegistryServer: https://registry.myverdaccio.org
+    npmPublishRegistry: https://registry.myverdaccio.org
+```
+
+Packages matching `npmPreapprovedPackages` bypass Yarn package gates, but still use the registry configured for their scope.
+
+See also [Yarn security: `npmMinimalAgeGate`](https://yarnpkg.com/features/security).
+
+For logging via CLI use:
 
 ```
 yarn npm login --scope my-company
@@ -195,6 +223,12 @@ but no Yarn command calls them.
 Publishing normally with `yarn npm publish` keeps working as usual, and is not
 affected by the flag.
 :::
+
+For a scoped registry, log in against the scope configured in `.yarnrc.yml`:
+
+```bash
+yarn npm login --scope my-company
+```
 
 ## Troubleshooting {#troubleshooting}
 

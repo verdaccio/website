@@ -182,6 +182,12 @@ You do not have to remember which is which: `pnpm config set <key> --location=pr
 each key to the right file. Setting `registry` writes `.npmrc`; setting `minimumReleaseAge`
 writes `pnpm-workspace.yaml`, creating it if needed.
 
+### Commands pnpm 11 no longer has {#pnpm-11-command-changes}
+
+Since pnpm 11, pnpm no longer falls back to the npm CLI for commands it does not implement. Commands such as `pnpm search`, `pnpm star`, `pnpm stars`, `pnpm unstar`, `pnpm token`, `pnpm whoami`, `pnpm owner` and `pnpm profile` return a "not implemented" error. Use the npm CLI directly for those.
+
+Other registry commands were reimplemented natively in pnpm 11, including `pnpm login`, `pnpm adduser`, `pnpm logout`, `pnpm publish`, `pnpm view`, `pnpm deprecate`, `pnpm unpublish` and `pnpm dist-tag`.
+
 ### The lockfile records the registry {#lockfile}
 
 `pnpm-lock.yaml` stores the resolved URL of every package. A lockfile produced against

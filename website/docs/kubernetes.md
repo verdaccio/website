@@ -45,11 +45,18 @@ In this example we use `npm` as release name:
 helm install npm verdaccio/verdaccio
 ```
 
+### Run locally with Helm {#run-locally-with-helm}
+
+If you want to test Verdaccio with Helm on a local Kubernetes cluster, use the Verdaccio 7 Helm example in the repository:
+
+[docker-examples/v7/kubernetes/helm](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7/kubernetes/helm)
+
 ### Deploy a specific version {#deploy-a-specific-version}
 
 `image.tag` selects the Verdaccio image, and pinning it is what you want in production:
 
 ```bash
+helm install npm --set image.tag=7 verdaccio/verdaccio       # latest 7.x
 helm install npm --set image.tag=6 verdaccio/verdaccio       # latest 6.x
 helm install npm --set image.tag=6.10.3 verdaccio/verdaccio  # exactly this release
 helm install npm --set image.tag=7.x-next verdaccio/verdaccio # nightly of the next major
