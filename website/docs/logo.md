@@ -61,5 +61,6 @@ won the [contest](https://github.com/verdaccio/verdaccio/issues/237)
 ([last stage](https://github.com/verdaccio/verdaccio/issues/328)) and donated his work to the
 project.
 
-Thanks to **[@Lisapressmar](https://github.com/Lisapressmar)** for contributing the multiple
-formats and sizes offered here.
+Thanks to **[@Lisapressmar](https://github.com/Lisapressmar)** for contributing the SVG and
+PNG versions in multiple sizes, in
+[#941](https://github.com/verdaccio/verdaccio/pull/941) (August 2018).
