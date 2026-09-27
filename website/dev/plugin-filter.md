@@ -13,7 +13,40 @@ import FilterExample from '!!raw-loader!./examples/filter-plugin.ts';
 
 ### When to use a filter plugin? {#when-to-use}
 
-If you need to mutate the metadata for different reasons this is a way to do it, all manifest request are intercepted, but the tarballs, user, profile or tokens requests are not included. A good example to review is the [verdaccio-plugin-secfilter](https://github.com/Ansile/verdaccio-plugin-secfilter).
+Use one when the metadata a client receives has to differ from what is stored: hiding versions
+by policy, rewriting a field, enforcing an internal rule on what may be installed.
+
+**Every manifest request goes through it. Tarball, user, profile and token requests do not.**
+
+### What that looks like per command {#per-command}
+
+```mermaid
+flowchart LR
+    A["GET /lodash<br/><i>npm install — manifest</i>"] --> F1(["filter_metadata<br/><b>×1</b>"])
+    F1 --> R1["client sees the<br/>versions you left"]
+
+    B["GET /lodash/-/lodash-4.17.21.tgz<br/><i>npm install — tarball</i>"] --> R2["client gets the bytes<br/><b>filter never runs</b>"]
+
+    C["GET /-/v1/search?text=lo<br/><i>npm search — 200 matches</i>"] --> F2(["filter_metadata<br/><b>×200</b>, one per match"])
+    F2 --> R3["client sees the<br/>result page"]
+
+    classDef f fill:#e8f4ea,stroke:#2e7d32,stroke-width:2px
+    classDef warn fill:#fdeaea,stroke:#c62828,stroke-width:2px
+    class F1,F2 f
+    class R2 warn
+```
+
+Two consequences, and both bite people:
+
+- **A hidden version is still downloadable.** Removing it from `versions` only changes what the
+  manifest advertises; the tarball route never consults a filter, so anyone who knows the URL
+  gets the file. A filter is a presentation rule, not an access control — that is what
+  [auth plugins](plugin-auth.md) are for.
+- **Search multiplies the cost.** A single search that matches two hundred packages calls your
+  filter two hundred times before answering. This is why the [caveats](#caveats) below insist on
+  bailing out before doing any work.
+
+A worked example to read is [verdaccio-plugin-secfilter](https://github.com/Ansile/verdaccio-plugin-secfilter).
 
 ### Plugin structure {#build-structure}
 
