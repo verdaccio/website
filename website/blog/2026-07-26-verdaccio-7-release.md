@@ -14,9 +14,9 @@ For most users, Verdaccio 7 should feel like Verdaccio: a lightweight private np
 
 ## Try Verdaccio 7
 
-Install Verdaccio 7 from npm:
+Install Verdaccio 7 with your package manager of choice:
 
-```bash
+```bash npm2yarn
 npm install -g verdaccio@7
 ```
 
