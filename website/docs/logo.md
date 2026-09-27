@@ -9,10 +9,10 @@ Every file on this page is free to use under
 adapt them, including commercially, as long as you credit the project.
 
 <a
-  href="/verdaccio-logos.zip"
-  download
-  className="button button--primary button--lg"
-  style={{
+href="/verdaccio-logos.zip"
+download
+className="button button--primary button--lg"
+style={{
     marginBottom: '1.5rem',
     display: 'inline-block',
     // markdown styles every `a` with the link colour, which on this button is the

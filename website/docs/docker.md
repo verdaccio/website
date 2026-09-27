@@ -253,9 +253,22 @@ Please note that for any of the above docker commands you need to have docker in
 
 ## Docker Examples {#docker-examples}
 
-There is a separate repository that hosts multiple configurations to compose Docker images with `verdaccio`, for instance, as reverse proxy:
+The repository carries a set of runnable examples in
+[`docker-examples/`](https://github.com/verdaccio/verdaccio/tree/master/docker-examples).
+Each one is self-contained: `cd` into its folder and follow its `README.md`.
 
-[https://github.com/verdaccio/docker-examples](https://github.com/verdaccio/verdaccio/tree/master/docker-examples)
+They are grouped by the major version they target, so pick the set that matches the image
+you run:
+
+| Set                                                                                  | Image                    |
+| ------------------------------------------------------------------------------------ | ------------------------ |
+| [v6](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v6) — current stable | `verdaccio/verdaccio:6`  |
+| [v7](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7) — next major     | `7.x-next`               |
+| [v9](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v9) — experimental   | `nightly-master`         |
+
+Between them they cover a local storage volume, reverse proxies with nginx and Apache,
+building an image with a local plugin, S3 storage, GitHub OAuth,
+[Kubernetes with Helm](kubernetes.md), and the `stage` and `tfa` feature flags.
 
 ## Docker Custom Builds {#docker-custom-builds}
 

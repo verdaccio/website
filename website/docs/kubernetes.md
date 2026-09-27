@@ -4,23 +4,29 @@ title: 'Kubernetes'
 description: 'Deploy Verdaccio on Kubernetes with the official Helm chart, including persistent storage and the configuration configMap.'
 ---
 
-You can find instructions to deploy Verdaccio on a Kubernetes cluster on the
-[verdaccio/docker-example](https://github.com/verdaccio/verdaccio/tree/5.x/docker-examples/kubernetes-example)
-repository. However, the recommended method to install Verdaccio on a Kubernetes
-cluster is to use [Helm](https://helm.sh). Helm is a
-[Kubernetes](https://kubernetes.io) package manager which bring multiple
-advantages.
+The recommended way to run Verdaccio on [Kubernetes](https://kubernetes.io) is the official
+[Helm](https://helm.sh) chart, maintained at
+[verdaccio/charts](https://github.com/verdaccio/charts).
+
+:::tip Start from the worked example
+The repository ships a complete, runnable example — a
+[`values.yaml`](https://github.com/verdaccio/verdaccio/blob/master/docker-examples/v7/kubernetes/helm/values.yaml)
+with its own [README](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7/kubernetes/helm),
+covering persistence, resource limits, an Ingress block ready to uncomment, and an inline
+`config.yaml`. Copying that and editing it is usually faster than assembling the flags on
+this page one at a time.
+
+It is part of the
+[Docker and Kubernetes examples](https://github.com/verdaccio/verdaccio/tree/master/docker-examples),
+grouped by the major version they target: `v6` for the current stable line, `v7` for the next
+major, `v9` for the experimental one. The example above pins the `7.x-next` image; change
+`image.tag` to `6` to run the stable line instead.
+:::
 
 ## Helm {#helm}
 
-### Setup Helm {#setup-helm}
-
-If you haven't used Helm before, you need to setup the Helm controller called
-Tiller:
-
-```bash
-helm init
-```
+Helm **3** is what these instructions assume. It needs no cluster-side component — the
+`helm init` and Tiller setup of Helm 2 is gone, and so is Helm 2 itself.
 
 ### Install {#install}
 
@@ -41,9 +47,15 @@ helm install npm verdaccio/verdaccio
 
 ### Deploy a specific version {#deploy-a-specific-version}
 
+`image.tag` selects the Verdaccio image, and pinning it is what you want in production:
+
 ```bash
-helm install npm --set image.tag=3.13.1 verdaccio/verdaccio
+helm install npm --set image.tag=6 verdaccio/verdaccio       # latest 6.x
+helm install npm --set image.tag=6.10.3 verdaccio/verdaccio  # exactly this release
+helm install npm --set image.tag=7.x-next verdaccio/verdaccio # nightly of the next major
 ```
+
+See [Docker](docker.md#tagged-versions) for what each tag means.
 
 ### Upgrading Verdaccio {#upgrading-verdaccio}
 

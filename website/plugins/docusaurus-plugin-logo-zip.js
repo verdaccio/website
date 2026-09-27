@@ -127,7 +127,9 @@ module.exports = function logoZipPlugin(context) {
       }
       const zip = buildZip(files);
       fs.writeFileSync(path.join(outDir, OUTPUT_NAME), zip);
-      console.log(`[logo-zip] ${OUTPUT_NAME}: ${files.length} files, ${(zip.length / 1024).toFixed(0)} KB`);
+      console.log(
+        `[logo-zip] ${OUTPUT_NAME}: ${files.length} files, ${(zip.length / 1024).toFixed(0)} KB`
+      );
     },
   };
 };
