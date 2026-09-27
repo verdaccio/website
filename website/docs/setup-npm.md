@@ -36,6 +36,31 @@ or by specific scope eg: `@my-scope/auth`:
 npm config set @my-scope:registry http://localhost:4873
 ```
 
+You can also define both the private registry and the scoped registry directly in your project `.npmrc`:
+
+```ini title=".npmrc"
+registry=https://registry.npmjs.org/
+@my-company:registry=http://localhost:4873/
+```
+
+With this configuration, unscoped packages continue resolving from the public registry, while `@my-company/*` packages resolve from Verdaccio.
+
+### Minimum release age with a private scope {#minimum-release-age}
+
+npm can delay installing newly published package versions with `min-release-age`. This is useful for reducing supply-chain risk for third-party dependencies. If your private scope publishes internal packages that must be available immediately, exclude that scope from the age gate.
+
+```ini title=".npmrc"
+registry=https://registry.npmjs.org/
+@my-company:registry=http://localhost:4873/
+
+min-release-age=7
+min-release-age-exclude[]=@my-company/*
+```
+
+`min-release-age` is measured in days. Packages matching `min-release-age-exclude[]` bypass the age gate, but still use the registry configured for their scope.
+
+See also [npm config: `min-release-age`](https://docs.npmjs.com/cli/using-npm/config#min-release-age).
+
 ## Using registry only on specific command {#command}
 
 If you want one single use append `--registry http://localhost:4873/` to the required command.
@@ -61,19 +86,25 @@ If you only want to publish your package to Verdaccio but keep installing from o
 
 ## Creating user {#creating-user}
 
+:::warning `npm adduser` is gone in npm 12
+`npm adduser` was **removed in npm 12**. Use `npm login` against an existing Verdaccio
+user, and create users through your authentication backend — or stay on npm 11 or older if
+you depend on creating them from the CLI.
+:::
+
 Since `npm@9` the two commands do separate things, which is the behaviour on
 every supported version:
 
 - `login` authenticates an existing user and does **not** create one:
 
 ```bash
-npm login --registry http://localhost:4873
+npm login --registry http://localhost:4873 --auth-type=legacy
 ```
 
 - `adduser` creates a user and does **not** log them in:
 
 ```bash
-npm adduser --registry http://localhost:4873
+npm adduser --registry http://localhost:4873 --auth-type=legacy
 ```
 
 Both rely on web login by default; adding `--auth-type=legacy` gets the previous
@@ -170,7 +201,11 @@ involved.
 
 ### `npm login` with npm@9 or higher
 
-If you are running into issues login with `npm@9.x` or higher you could try use the legacy mode (see above).
+If you are running into issues logging in with `npm@9.x` or higher, try legacy mode:
+
+```bash
+npm login --registry http://localhost:4873 --auth-type=legacy
+```
 
 For progress on the native support on future you can track the following [issue#3413](https://github.com/verdaccio/verdaccio/issues/3413).
 
