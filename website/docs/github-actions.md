@@ -1,6 +1,7 @@
 ---
 id: github-actions
 title: 'GitHub Actions'
+description: 'Publish and test packages against Verdaccio from a GitHub Actions workflow.'
 ---
 
 With [GitHub Actions](https://github.com/features/actions) you can automate your workflow, each GitHub Action performs a specific step in a process.
@@ -19,6 +20,6 @@ Verdaccio provides a custom action for easy integration in your flow by adding t
 The action will perform a `npm publish` and if the publishing finishes successfully, the workflow will continue to the next step, otherwise the step will fail.
 If there are any issues publishing a package you will notice using this action.
 
-Within the image uses `verdaccio-auth-memory` and `verdaccio-memory` plugins to handle authentification and storage to speed up the process.
+Inside the image it uses the `verdaccio-auth-memory` and `verdaccio-memory` plugins for authentication and storage, which keeps the run fast by never touching the disk.
 
 If you want to know more about the action, [visit our repository](https://github.com/verdaccio/github-actions) dedicated for GitHub Actions.

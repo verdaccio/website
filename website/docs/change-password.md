@@ -1,6 +1,7 @@
 ---
 id: change-password
 title: 'Changing a password'
+description: 'Let users change their own password from the web UI, and the password policy you can enforce.'
 ---
 
 With the `changePassword` flag on, users can change their own password from the

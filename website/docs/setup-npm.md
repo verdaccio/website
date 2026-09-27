@@ -1,9 +1,8 @@
 ---
 id: setup-npm
 title: 'npm'
+description: 'Use Verdaccio with npm: registry configuration, login, publishing, tokens, and the auth and lockfile problems people hit.'
 ---
-
-# npm {#npm}
 
 The minimum supported npm version is **10**. Every supported Verdaccio requires a
 Node.js release that already bundles npm 10 or 11, so older clients are neither

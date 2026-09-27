@@ -1,6 +1,7 @@
 ---
 id: server-configuration
 title: 'Server Configuration'
+description: 'Run Verdaccio permanently on a Linux server: a dedicated user, a process manager, and binding to a privileged port.'
 ---
 
 This is mostly basic Linux server configuration stuff but I felt it important to document and share the steps I took to get Verdaccio running permanently on my server. You will need root (or sudo) permissions for the following steps.

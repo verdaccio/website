@@ -1,6 +1,7 @@
 ---
 id: staged-publishing
 title: 'Staged publishing'
+description: 'Put a review step in front of every publish with npm stage, so a version only becomes installable once a maintainer approves it.'
 ---
 
 Staged publishing puts a review step in front of every publish. A version is

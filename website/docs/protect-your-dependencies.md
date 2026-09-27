@@ -1,6 +1,7 @@
 ---
 id: protect-your-dependencies
 title: 'Protecting packages'
+description: 'Stop private packages from being published or read by the wrong people, and avoid dependency confusion with upstream registries.'
 ---
 
 Verdaccio allows you protect publishing to your registry. To achieve that you will need to set up correctly configure your [packages access](packages).

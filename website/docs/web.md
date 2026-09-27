@@ -1,6 +1,7 @@
 ---
 id: webui
 title: 'Web Configuration'
+description: 'Configure the web interface: title, logo, colours, dark mode, which features are visible, and injecting your own scripts.'
 ---
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)
@@ -9,10 +10,11 @@ Verdaccio has a web user interface to display only the private packages and can 
 
 ```yaml
 web:
-  enable: true
+  enabled: true
   title: Verdaccio
   logo: http://somedomain/somelogo.png
-  primary_color: '#4b5e40'
+  logoDark: http://somedomain/somelogo-dark.png
+  primaryColor: '#4b5e40'
   gravatar: true | false
   scope: '@scope'
   sort_packages: asc | desc
@@ -42,14 +44,26 @@ web:
   showFooter: true
   showSearch: true
   showDownloadTarball: true
+  showUplinks: true
   showRaw: true
+  hideDeprecatedVersions: false
+  assetFolder: ./storage/assets
 ```
 
 All access restrictions defined to [protect your packages](protect-your-dependencies.md) will also apply to the Web Interface.
 
-> The `primary_color` and `scope` must be wrapped by quotes: eg: ('#000000' or "#000000")
+:::caution `enabled` and `primaryColor`, not `enable` and `primary_color`
+The old spellings `enable` and `primary_color` are still read, but they are **deprecated**.
+Use `enabled` and `primaryColor` in new configuration files; the `config.yaml` Verdaccio
+generates already uses those.
 
-The `primary_color` **must be a valid hex representation**.
+If you set **both** spellings of the colour, the deprecated `primary_color` is the one that
+wins — so remove it rather than leaving both in place. An invalid hex value is ignored and
+the default is used.
+:::
+
+`primaryColor` and `scope` must be wrapped in quotes — `'#000000'` or `"#000000"` — and
+`primaryColor` **must be a valid hex representation**.
 
 ### Internationalization {#internationalization}
 
@@ -65,32 +79,47 @@ i18n:
 
 ### Configuration {#configuration}
 
-| Property            | Type              | Required | Example                                                       | Support | Description                                                                                                                             |
-| ------------------- | ----------------- | -------- | ------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| enable              | boolean           | No       | true/false                                                    | all     | allow to display the web interface                                                                                                      |
-| title               | string            | No       | Verdaccio                                                     | all     | HTML head title description (if is not define set "Verdaccio" by default).                                                              |
-| gravatar            | boolean           | No       | true                                                          | all     | Gravatars will be generated under the hood if this property is enabled                                                                  |
-| sort_packages       | [asc,desc]        | No       | asc                                                           | all     | By default private packages are sorted by ascending                                                                                     |
-| logo                | string            | No       | `/local/path/to/my/logo.png` `http://my.logo.domain/logo.png` | all     | a URI where logo is located (header logo)                                                                                               |
-| primary_color       | string            | No       | "#4b5e40"                                                     | all     | The primary color to use throughout the UI (header, etc)                                                                                |
-| scope               | string            | No       | @myscope                                                      | `>v3.x` | If you're using this registry for a specific module scope, specify that scope to set it in the webui instructions header                |
-| darkMode            | boolean           | No       | false                                                         | all     | This mode is an special theme for those want to live in the dark side                                                                   |
-| favicon             | string            | No       | false                                                         | all     | Display a custom favicon, can be local resource or valid url                                                                            |
-| rateLimit           | object            | No       | use `userRateLimit` configuration                             | all     | Increase or decrease rate limit, by default is 5k request every 2 minutes, only limit web api endpoints, the CSS, JS, etcc are ingnored |
-| pkgManagers         | npm, pnpm or yarn | No       | npm                                                           | all     | Allow customise which package managers on the side bar and registry information dialog are visible                                      |
-| login               | boolean           | No       | true or false                                                 | all     | Allow disable login on the UI (also include web endpoints).                                                                             |
-| scriptsBodyAfter    | string[]          | No       | any list of strings                                           | all     | inject scripts after the <body/> tag                                                                                                    |
-| metaScripts         | string[]          | No       | any list of strings                                           | all     | inject scripts inside <head/>                                                                                                           |
-| scriptsbodyBefore   | string[]          | No       | any list of strings                                           | all     | inject scripts before the <body/>                                                                                                       |
-| html_cache          | boolean           | No       | true                                                          | all     | whether the html cache is enabled, default true                                                                                         |
-| showInfo            | boolean           | No       | true                                                          | all     | display the info button on the header                                                                                                   |
-| showSettings        | boolean           | No       | true                                                          | all     | display the settings button on the header                                                                                               |
-| showThemeSwitch     | boolean           | No       | true                                                          | all     | display the theme switch button on the header                                                                                           |
-| showFooter          | boolean           | No       | true                                                          | all     | allow hide footer                                                                                                                       |
-| showSearch          | boolean           | No       | true                                                          | all     | allow hide search component                                                                                                             |
-| showDownloadTarball | boolean           | No       | true                                                          | all     | allow hide download button on the sidebar                                                                                               |
-| showRaw             | boolean           | No       | true                                                          | all     | allow hide manifest button on the sidebar (experimental feature)                                                                        |
+| Property                 | Type            | Default                         | Description                                                                                                                    |
+| ------------------------ | --------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `enabled`                | boolean         | `true`                          | Serve the web interface. `enable` is the deprecated spelling                                                                   |
+| `title`                  | string          | Verdaccio                       | HTML head title                                                                                                                |
+| `gravatar`               | boolean         | `true`                          | Generate Gravatars for user avatars                                                                                            |
+| `sort_packages`          | `asc` \| `desc` | `asc`                           | Direction of the package list ordering                                                                                         |
+| `sort_field`             | string          | `name`                          | Package field the list is ordered by                                                                                           |
+| `logo`                   | string          | —                               | URI of the header logo, a local path or a URL                                                                                  |
+| `logoDark`               | string          | —                               | Logo used when the dark theme is active; falls back to `logo`                                                                  |
+| `favicon`                | string          | —                               | Custom favicon, a local path or a URL                                                                                          |
+| `primaryColor`           | string          | `#4b5e40`                       | Primary colour of the UI. `primary_color` is the deprecated spelling                                                           |
+| `darkMode`               | boolean         | `false`                         | Start in the dark theme                                                                                                        |
+| `scope`                  | string          | `''`                            | Scope shown in the registry instructions header, e.g. `'@myscope'`                                                             |
+| `pkgManagers`            | list            | `yarn`, `pnpm`, `npm`           | Which package managers appear in the sidebar and the registry dialog                                                           |
+| `login`                  | boolean         | `true`                          | Allow logging in from the UI. `false` also disables the web login endpoints                                                    |
+| `rateLimit`              | object          | `max: 5000`, `windowMs: 120000` | Rate limit of the web data endpoints only; CSS and JS are not counted. Prefer [`userRateLimit`](configuration#user-rate-limit) |
+| `html_cache`             | boolean         | `true`                          | Cache the rendered HTML shell                                                                                                  |
+| `assetFolder`            | string          | —                               | Folder served as extra static assets, for logos and files referenced by the options above                                      |
+| `metaScripts`            | string[]        | —                               | Tags injected before `</head>`                                                                                                 |
+| `scriptsBodyBefore`      | string[]        | —                               | Tags injected as the first child of `<body>`                                                                                   |
+| `scriptsBodyAfter`       | string[]        | —                               | Tags injected as the last child of `</body>`                                                                                   |
+| `showInfo`               | boolean         | `true`                          | Show the info button in the header                                                                                             |
+| `showSettings`           | boolean         | `true`                          | Show the settings button in the header                                                                                         |
+| `showThemeSwitch`        | boolean         | `true`                          | Show the theme switch. Combine with `darkMode` to force one theme                                                              |
+| `showFooter`             | boolean         | `true`                          | Show the footer                                                                                                                |
+| `showSearch`             | boolean         | `true`                          | Show the search box                                                                                                            |
+| `showDownloadTarball`    | boolean         | `true`                          | Show the download button in the sidebar                                                                                        |
+| `showUplinks`            | boolean         | `true`                          | Show the uplinks section of the package detail                                                                                 |
+| `showRaw`                | boolean         | `true`                          | Show the raw manifest button in the sidebar                                                                                    |
+| `hideDeprecatedVersions` | boolean         | `false`                         | Leave deprecated versions out of the version list                                                                              |
+
+Every option above works on both **6.x** and **7.x**.
+
+:::note `scriptsbodyBefore` with a lowercase `b`
+Both `scriptsBodyBefore` and the misspelled `scriptsbodyBefore` are accepted, because the
+typo shipped first and configurations in the wild rely on it. Use `scriptsBodyBefore`.
+:::
 
 > The recommended logo size is `40x40` pixels.
 
-> The `darkMode` can be enabled via UI and is persisted in the browser local storage. If you combine `showThemeSwitch: false` with `darkMode` users will be forced to use an specific theme. Furthermore, also void `primary_color` and dark cannot be customized.
+> `darkMode` can also be toggled from the UI, where the choice is persisted in the
+> browser's local storage. Combining `showThemeSwitch: false` with `darkMode` forces one
+> theme for everybody. Note that the dark theme ignores `primaryColor`: its palette is not
+> customisable.

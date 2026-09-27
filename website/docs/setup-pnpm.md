@@ -1,9 +1,8 @@
 ---
 id: setup-pnpm
 title: 'pnpm'
+description: 'Use Verdaccio with pnpm: registry and scope configuration, authentication, and where it differs from npm.'
 ---
-
-### pnpm {#pnpm}
 
 > This includes 6.x or higher series.
 

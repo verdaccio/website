@@ -1,6 +1,7 @@
 ---
 id: logo
 title: 'Logotype'
+description: 'The Verdaccio logotype, its variants and how to use them.'
 ---
 
 The logotype was designed by **[Breno Rodrigues](https://github.com/rodriguesbreno)** which

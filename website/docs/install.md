@@ -1,6 +1,7 @@
 ---
 id: installation
 title: 'Installation'
+description: 'Install Verdaccio with npm, pnpm, yarn, Docker or Helm, and the Node.js version each line requires.'
 ---
 
 Verdaccio is a Node.js private and proxy registry. To install it, you need a few basic prerequisites.
@@ -21,9 +22,9 @@ Verdaccio is a Node.js private and proxy registry. To install it, you need a few
 > neither tested nor supported. Some features ask for more: `npm stage` needs
 > `npm@11.17`, and the yarn plugins need `yarn@4`.
 
-3. A modern web browser to run the web interface. We actually support `Chrome, Firefox, Edge`.
+3. A modern web browser to use the web interface: `Chrome`, `Firefox` or `Edge`.
 
-> Verdaccio will support latest Node.js version according the [Node.js Release Working Group](https://github.com/nodejs/Release) recomendations.
+> Verdaccio follows the [Node.js Release Working Group](https://github.com/nodejs/Release) recommendations for which Node.js versions it supports.
 
 ### Quick Introduction {#quick-introduction}
 
@@ -66,7 +67,7 @@ $> verdaccio
  info -=- local storage path /Users/user/.local/share/verdaccio/storage/.verdaccio-db.json
  info --- using htpasswd file: /Users/user/.config/verdaccio/htpasswd
  info --- http address http://localhost:4873/
- info --- version: 6.0.0
+ info --- version: 6.10.3
  info --- server started
 ```
 

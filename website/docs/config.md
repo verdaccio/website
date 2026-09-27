@@ -1,6 +1,7 @@
 ---
 id: configuration
 title: 'Configuration File'
+description: 'The config.yaml reference: storage, authentication, uplinks, package access, the token secret, server and security settings, notifications, logging, filters and feature flags.'
 ---
 
 This file is the cornerstone of Verdaccio where you can modify the default behaviour, enable plugins and extend features.
@@ -73,10 +74,16 @@ If the `config.yaml` is located in `/some_local_path/config.yaml`, the database 
 For users who have been using Verdaccio for an extended period and the `.verdaccio-db` file already exist the secret
 may be **64 characters** long. However, for newer installations, the length will be generated as **32 characters** long.
 
-If the secret length is **64 characters** long:
+The secret **must be exactly 32 characters** on every supported version. What happens when
+it is not depends on the line:
 
-- For users running Verdaccio 5.x on **Node.js 22** or higher, **the application will fail to start** if the secret length **is not** 32 characters long.
-- For users running Verdaccio 5.x on **Node.js 21** or lower, the application will start, but it will display a deprecation warning at the console.
+- On **7.x**, the application **fails to start**, with `Invalid storage secret key length,
+must be 32 characters long but is N`.
+- On **6.x**, the default is to **silently generate a new secret instead of failing**,
+  because `security.api.migrateToSecureLegacySignature` defaults to `true` there. The
+  registry starts, but **every token issued with the old secret stops working**. Set that
+  property to `false` if you would rather have 6.x fail loudly and fix the secret
+  yourself.
 
 #### How to upgrade the token secret at the storage?
 
@@ -153,14 +160,16 @@ the secret token is fetched from the plugin implementation itself. In any case t
 
 The `legacy` property is used to enable the legacy token signature. **By default is enabled**. The legacy feature only applies to the API, the web UI uses JWT by default.
 
-:::info
+:::info `migrateToSecureLegacySignature` is **6.x** only
+`security.api.migrateToSecureLegacySignature` exists **only on 6.x**, where it defaults to
+**`true`**: a stored secret whose length is not 32 characters is replaced with a freshly
+generated one at startup, which **invalidates every previously issued token**. Set it to
+`false` to get a startup error instead and migrate on your own terms.
 
-In 5.x versions using Node.js 21 or lower, there will see the warning `[DEP0106] DeprecationWarning: crypto.createDecipher is deprecated`. printed in your terminal.
-This warning indicates that Node.js has deprecated a function utilized by the legacy signature.
-
-If verdaccio runs on **Node.js 22** or higher, you will not see this warning since a new modern legacy signature has been implemented.
-
-The **migrateToSecureLegacySignature** property is **false** by default.
+The property was **removed in 7.x**, where a secret of the wrong length is always a
+startup error. Older releases needed it because the legacy signature used
+`crypto.createDecipher`, deprecated as `[DEP0106]`; every supported version now uses
+`createDecipheriv` with a 256-bit key, which is why the length is strict.
 
 :::
 
@@ -229,8 +238,7 @@ server:
 #### Dotfile requests {#dotfiles}
 
 :::info Available from 7.x
-Ships in **7.x** and later, and in the **9.x experimental** line
-(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
+Ships in **7.x** and later. **Not available in 6.x**, which does not receive new features.
 :::
 
 Controls how requests whose path contains a dotfile segment — `/.env`,
@@ -255,8 +263,7 @@ exists. Choose `deny` only if you prefer an explicit refusal in your logs, and
 #### Hiding static asset logs {#hide-static-logs}
 
 :::info Available from 7.x
-Ships in **7.x** and later, and in the **9.x experimental** line
-(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
+Ships in **7.x** and later. **Not available in 6.x**, which does not receive new features.
 :::
 
 Requests for the web UI assets (`/-/static/*`) are noisy and rarely interesting.
@@ -270,11 +277,28 @@ server:
 Set it to `false` to log them like any other request. They are always available
 regardless of this setting by running with `DEBUG=verdaccio:middleware:log`.
 
+#### Hiding successful ping logs {#hide-ping-logs}
+
+:::info Available from 7.x
+Ships in **7.x** and later. **Not available in 6.x**, which does not receive new features.
+:::
+
+Health checks hitting `/-/ping` produce one log line per probe, which on a Kubernetes
+readiness probe means a line every few seconds. Successful pings are hidden by default:
+
+```yaml
+server:
+  hidePingLogs: true
+```
+
+Only **successful** pings are hidden. A ping answering `>= 400` is still logged, so a
+failing health check never becomes invisible. As with `hideStaticLogs`, `DEBUG=verdaccio:middleware:log`
+shows them regardless.
+
 #### CORS {#cors}
 
 :::info Available from 7.x
-Ships in **7.x** and later, and in the **9.x experimental** line
-(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
+Ships in **7.x** and later. **Not available in 6.x**, which does not receive new features.
 :::
 
 Verdaccio answers every request with permissive CORS headers
@@ -431,8 +455,7 @@ publish:
 ### Checking Package Ownership {#check-owner}
 
 :::info Available from 7.x
-Ships in **7.x** and later, and in the **9.x experimental** line
-(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
+Ships in **7.x** and later. **Not available in 6.x**, which does not receive new features.
 :::
 
 By default, [package access](packages.md) defines who is allowed to publish and unpublish packages. By setting `check_owners` to _true_, only package owners are allowed to make changes to a package. The first owner of a package is the user who published the first version. Further owners can be added or removed using [`npm owner`](https://docs.npmjs.com/cli/v10/commands/npm-owner). You can find the list of current owners using `npm owner list` or by checking the package manifest under `maintainers`.
@@ -445,8 +468,7 @@ publish:
 ### Keep Readmes {#keep-readmes}
 
 :::info Available from 7.x
-Ships in **7.x** and later, and in the **9.x experimental** line
-(`verdaccio@next-9`) where it lands first. **Not available in 6.x.**
+Ships in **7.x** and later. **Not available in 6.x**, which does not receive new features.
 :::
 
 By default, Verdaccio stores only the readme markdown of the latest version for each package. Setting `keep_readmes` to `'tagged'` keeps the readmes of versions with `dist-tags` (for example, `latest`, `next`, and major branches). Using the `'all'` setting will retain the complete history of readme versions. Note that `'all'` can significantly increase the required storage space for packages published to Verdaccio!
@@ -601,7 +623,7 @@ notify:
 
 :::caution Deprecated: `logs`
 The property is `log`. The older `logs` spelling still works but emits a
-deprecation warning (`VERWAR002`) on startup and may be removed at any time —
+deprecation warning ([`VERWAR002`](https://github.com/verdaccio/verdaccio/blob/master/docs/warnings.md)) on startup and may be removed at any time —
 rename it to `log`.
 :::
 
@@ -699,15 +721,23 @@ flags:
 
 The flags currently available are:
 
-| Flag             | Since | What it enables                                        |
-| ---------------- | ----- | ------------------------------------------------------ |
-| `changePassword` | all   | [changing a password](change-password) from the web UI |
-| `createUser`     | all   | [user registration](user-registration) from the web UI |
-| `webLogin`       | all   | [browser-based login](web-login) for the CLI           |
-| `stage`          | 7.x   | [staged publishing](staged-publishing) (`npm stage`)   |
-| `tfa`            | 7.x   | [two-factor authentication](two-factor-authentication) |
+| Flag             | Lines    | What it enables                                        |
+| ---------------- | -------- | ------------------------------------------------------ |
+| `changePassword` | 6.x, 7.x | [changing a password](change-password) from the web UI |
+| `createUser`     | 6.x, 7.x | [user registration](user-registration) from the web UI |
+| `webLogin`       | 6.x, 7.x | [browser-based login](web-login) for the CLI           |
+| `stage`          | **7.x**  | [staged publishing](staged-publishing) (`npm stage`)   |
+| `tfa`            | **7.x**  | [two-factor authentication](two-factor-authentication) |
 
-The `stage` and `tfa` flags are not available in **6.x**.
+`stage` and `tfa` are not available in **6.x**, which does not receive new features.
+
+:::note `searchRemote` does nothing
+You may find a `searchRemote` flag in old configuration files and in the 6.x type
+definitions. It is **inert**: 6.x overrides it to `false` before anything reads it, and no
+code consumes it. Searching the uplinks is not gated by it on either line. It is gone
+from 7.x. Remove it from your config; keeping it only produces a startup warning about
+enabled experiments.
+:::
 
 > To disable console warnings related to the flags or experiments, you must comment out the complete `flags` and `experiments` sections.
 
@@ -716,7 +746,7 @@ The `stage` and `tfa` flags are not available in **6.x**.
 The advanced configuration builder API is a flexible way to generate programmatically configuration outputs either in JSON or YAML using the builder pattern, for example:
 
 ```typescript
-import { ConfigBuilder } from 'verdaccio';
+import { ConfigBuilder } from '@verdaccio/config';
 
 const config = ConfigBuilder.build();
 config

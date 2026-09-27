@@ -1,6 +1,7 @@
 ---
 id: two-factor-authentication
 title: 'Two-factor authentication'
+description: 'Protect accounts with a time-based one-time password, using the standard npm profile commands.'
 ---
 
 Two-factor authentication adds a time-based one-time password (TOTP) on top of a

@@ -1,9 +1,8 @@
 ---
 id: setup-bun
 title: 'bun'
+description: 'Use Verdaccio with bun.'
 ---
-
-# bun {#bun}
 
 - [Example repository](https://github.com/juanpicado/verdaccio-with-bun)
 

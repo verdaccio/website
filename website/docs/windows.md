@@ -1,6 +1,7 @@
 ---
 id: windows
 title: 'Installing As a Windows Service'
+description: 'Run Verdaccio as a Windows service so it starts with the machine.'
 ---
 
 Loosely based upon the instructions found [here](http://asysadmin.tumblr.com/post/32941224574/running-nginx-on-windows-as-a-service). I crafted the following and it provided me with a fully working verdaccio service installation:

@@ -1,11 +1,10 @@
 ---
 id: setup-deno
 title: 'deno'
+description: 'Use Verdaccio with deno.'
 ---
 
 - [Example repository](https://github.com/juanpicado/verdaccio-with-deno)
-
-# deno {#deno}
 
 The minimum supported [deno](https://deno.com/blog/v1.44) version is >1.44.0
 

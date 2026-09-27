@@ -28,8 +28,6 @@ module.exports = {
         'env',
         'protect-your-dependencies',
         'e2e',
-        'verdaccio-programmatically',
-        'security-policy',
         'logo',
         {
           type: 'category',
@@ -37,6 +35,7 @@ module.exports = {
           items: ['caching', 'linking-remote-registry'],
         },
         'articles',
+        'repositories',
       ],
     },
     {
@@ -83,11 +82,10 @@ module.exports = {
       label: 'DevOps',
       items: [
         'kubernetes',
-        'ci',
         {
           type: 'category',
-          label: 'Cloud',
-          items: ['amazon'],
+          label: 'Continuous Integration',
+          items: ['ci', 'github-actions'],
         },
         {
           type: 'category',

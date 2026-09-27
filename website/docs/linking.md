@@ -1,6 +1,7 @@
 ---
 id: linking-remote-registry
 title: 'Linking a Remote Registry'
+description: 'Link Verdaccio to another registry so it proxies and caches packages it does not host itself.'
 ---
 
 Verdaccio is a proxy and by default [links](uplinks.md) the public registry.

@@ -1,6 +1,7 @@
 ---
 id: user-registration
 title: 'User registration'
+description: 'Let people create their own account from the web UI instead of an administrator editing the credentials file.'
 ---
 
 With the `createUser` flag on, the web UI grows a sign-up form so people can

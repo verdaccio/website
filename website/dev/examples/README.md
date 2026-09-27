@@ -19,8 +19,8 @@ When adding an example:
 Bumping `@verdaccio/core` is how the docs follow the latest release; Renovate does it, and
 a contract change shows up as a red build.
 
-**The one thing this cannot cover** is the Verdaccio 6 callback storage contract: it is not
-published as a type anywhere. `verdaccio@6`'s own `StoragePlugin` is
+**The one thing this cannot cover** is the 6.x callback storage contract: it is not
+published as a type anywhere. The `StoragePlugin` of `verdaccio@6` is
 `pluginUtils.Storage<Config> | any`, and the `| any` is what lets its callback calls
 type-check. That half of `plugin-storage.md` stays hand-written, which is safe because
 6.x is in maintenance and the contract no longer moves.

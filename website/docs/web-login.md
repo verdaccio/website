@@ -1,6 +1,7 @@
 ---
 id: web-login
 title: 'Browser-based login'
+description: 'Let npm login authenticate through the browser instead of prompting for a username and password in the terminal.'
 ---
 
 With the `webLogin` flag on, `npm login` hands the browser the job of

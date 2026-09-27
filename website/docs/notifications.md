@@ -1,6 +1,7 @@
 ---
 id: notifications
 title: 'Notifications'
+description: 'Send a webhook when a package is published, with templated payloads for Slack, Teams and anything else that accepts JSON.'
 ---
 
 Notify was built primarily to use with Slack's Incoming

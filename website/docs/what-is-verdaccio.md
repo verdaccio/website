@@ -1,6 +1,7 @@
 ---
 id: what-is-verdaccio
 title: 'What is Verdaccio?'
+description: 'What Verdaccio is, what problems a private npm proxy registry solves, and when you want one.'
 ---
 
 Verdaccio is a **lightweight private npm proxy registry** built in **Node.js**
@@ -44,7 +45,7 @@ npm install lodash --registry http://localhost:4873
 yarn config set registry http://localhost:4873
 ```
 
-To have a more detailed explanation, I invite you to watch the full explanation **Angular Library: How To Use a Library in a poly-repo Using Verdaccio** by [_Fanis Prodromou_](https://twitter.com/prodromouf) on his [YouTube channel](https://www.youtube.com/channel/UCgJAoZCYx1Dk3iGPHSIgV1A).
+To have a more detailed explanation, I invite you to watch the full explanation **Angular Library: How To Use a Library in a poly-repo Using Verdaccio** by _Fanis Prodromou_ on his [YouTube channel](https://www.youtube.com/channel/UCgJAoZCYx1Dk3iGPHSIgV1A).
 
 <iframe width="560" height="515" src="https://www.youtube.com/embed/tSIC3wna_d0?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
