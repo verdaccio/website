@@ -157,6 +157,6 @@ Some plugins were relocated from the monorepo into their own repositories:
 
 ## Thanks
 
-Thanks to everyone who contributed to the Verdaccio 7 release line and the related 6.x backports, including [@juanpicado](https://github.com/juanpicado), [@mbtools](https://github.com/mbtools), [@moglerdev](https://github.com/moglerdev), [@tmota900](https://github.com/tmota900), and [@vsugrob](https://github.com/vsugrob).
+Thanks to everyone who contributed to the Verdaccio 7 release line and the related 6.x backports, including [@dianmorales](https://github.com/dianmorales), [@juanpicado](https://github.com/juanpicado), [@mbtools](https://github.com/mbtools), [@moglerdev](https://github.com/moglerdev), [@tmota900](https://github.com/tmota900), and [@vsugrob](https://github.com/vsugrob).
 
 You can follow the full release checklist in [Verdaccio 7 Release Notes](https://github.com/verdaccio/verdaccio/issues/5680).
