@@ -2,7 +2,7 @@
   "name": "@verdaccio/local-scripts",
   "version": "1.0.1-next-8.2",
   "bin": {
-    "local-crowdin-api": "./index.js"
+    "local-scripts": "./index.js"
   },
   "private": "true",
   "description": "Update Website Data",
@@ -28,7 +28,6 @@
   "license": "MIT",
   "dependencies": {
     "@dianmora/contributors": "5.0.0",
-    "@crowdin/crowdin-api-client": "1.55.2",
     "clipanion": "4.0.0-rc.4",
     "got": "15.0.6"
   }

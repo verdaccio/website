@@ -1,4 +1,3 @@
-import { Credentials, TranslationStatus } from '@crowdin/crowdin-api-client';
 import got from 'got';
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -23,18 +22,6 @@ export interface YearlyDownloadsEntry {
   [year: string]: number;
 }
 
-export interface TranslationProgress {
-  translationProgress: number;
-  approvalProgress: number;
-}
-
-export interface ProgressLangEntry {
-  [language: string]: TranslationProgress;
-}
-
-const debug = require('debug')('verdaccio:local-scripts');
-
-const token = process.env.TOKEN || '';
 const START_YEAR = 2016;
 const END_YEAR = new Date().getFullYear();
 const END_MONTH = new Date().getMonth() + 1;
@@ -476,28 +463,4 @@ export async function fetchAllDownloads() {
 
   // eslint-disable-next-line no-console
   console.info('[downloads] All done.');
-}
-
-export async function fetchTranslationsAPI() {
-  try {
-    debug('api report start');
-    const credentials: Credentials = {
-      token,
-    };
-    const api: TranslationStatus = new TranslationStatus(credentials);
-    const progress = await api.getProjectProgress(295539, { limit: 100 });
-    const final: ProgressLangEntry = progress.data.reduce((acc: ProgressLangEntry, item) => {
-      const { languageId, translationProgress, approvalProgress } = item.data;
-      acc[languageId] = { translationProgress, approvalProgress };
-      return acc;
-    }, {});
-    const location = path.join(__dirname, '../../src/progress_lang.json');
-    await fs.writeFile(location, JSON.stringify(final));
-    // eslint-disable-next-line no-console
-    debug('translations written at %s ends', location);
-  } catch (err: any) {
-    // eslint-disable-next-line no-console
-    console.error(`error on process crowdin translations run`, err);
-    process.exit(1);
-  }
 }

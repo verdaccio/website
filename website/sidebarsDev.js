@@ -1,9 +1,7 @@
 // @ts-check
 // Developer docs: plugin API and Node API.
 //
-// This instance is intentionally NOT translated. Its sources live in `website/dev`,
-// outside the `/website/docs/**` glob that crowdin.yaml uploads, so Crowdin never
-// sees them. Do not move these pages back into `website/docs`.
+// Developer reference: plugin API and Node API.
 module.exports = {
   dev: [
     {
