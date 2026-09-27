@@ -42,10 +42,10 @@ Each active line also publishes a nightly image built from the tip of its branch
 **not releases**: they are rebuilt automatically, are not production-ready, and exist so
 that fixes and new features can be tried before they ship.
 
-| Tag         | Line                       |
-| ----------- | -------------------------- |
-| `6.x-next`  | tip of the **6.x** branch  |
-| `7.x-next`  | tip of the **7.x** branch  |
+| Tag        | Line                      |
+| ---------- | ------------------------- |
+| `6.x-next` | tip of the **6.x** branch |
+| `7.x-next` | tip of the **7.x** branch |
 
 > If you are interested in the full list of tags, [please visit the Docker Hub website](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 

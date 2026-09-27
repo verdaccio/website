@@ -10,13 +10,13 @@ Verdaccio provides a set of environment variables to modify either permissions, 
 
 To change the behavior on runtime on running the image, these are the list of available variables.
 
-| Variable            | Default          | Description                                                    |
-| ------------------- | ---------------- | -------------------------------------------------------------- |
-| VERDACCIO_APPDIR    | `/opt/verdaccio` | the docker working directory                                   |
-| VERDACCIO_USER_NAME | `verdaccio`      | the system user                                                |
-| VERDACCIO_USER_UID  | `10001`          | the user id being used to apply folder permissions             |
-| VERDACCIO_PORT      | `4873`           | the verdaccio port                                             |
-| VERDACCIO_PROTOCOL  | `http`           | the default http protocol                                      |
+| Variable            | Default          | Description                                                                      |
+| ------------------- | ---------------- | -------------------------------------------------------------------------------- |
+| VERDACCIO_APPDIR    | `/opt/verdaccio` | the docker working directory                                                     |
+| VERDACCIO_USER_NAME | `verdaccio`      | the system user                                                                  |
+| VERDACCIO_USER_UID  | `10001`          | the user id being used to apply folder permissions                               |
+| VERDACCIO_PORT      | `4873`           | the verdaccio port                                                               |
+| VERDACCIO_PROTOCOL  | `http`           | the default http protocol                                                        |
 | VERDACCIO_ADDRESS   | `[::]`           | the default address to listen on (IPv6 `[::]`, all interfaces); `0.0.0.0` on 6.x |
 
 :::info Changed in 7.x

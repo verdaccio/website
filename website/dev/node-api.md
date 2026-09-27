@@ -175,7 +175,7 @@ An endpoint that reports the state of the process:
 ```
 
 `mem` is `process.memoryUsage()`, and `conf` is the resolved path of the configuration
-file in use — handy to confirm *which* config a process actually picked up. If Node.js
+file in use — handy to confirm _which_ config a process actually picked up. If Node.js
 was started with `--expose-gc`, the handler **runs a full garbage collection before
 answering**, which is what makes the endpoint useful for leak hunting: request it, force
 a collection, and compare `mem` across requests.

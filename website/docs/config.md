@@ -78,7 +78,7 @@ The secret **must be exactly 32 characters** on every supported version. What ha
 it is not depends on the line:
 
 - On **7.x**, the application **fails to start**, with `Invalid storage secret key length,
-  must be 32 characters long but is N`.
+must be 32 characters long but is N`.
 - On **6.x**, the default is to **silently generate a new secret instead of failing**,
   because `security.api.migrateToSecureLegacySignature` defaults to `true` there. The
   registry starts, but **every token issued with the old secret stops working**. Set that
@@ -721,13 +721,13 @@ flags:
 
 The flags currently available are:
 
-| Flag             | Lines      | What it enables                                         |
-| ---------------- | ---------- | ------------------------------------------------------- |
-| `changePassword` | 6.x, 7.x   | [changing a password](change-password) from the web UI  |
-| `createUser`     | 6.x, 7.x   | [user registration](user-registration) from the web UI  |
-| `webLogin`       | 6.x, 7.x   | [browser-based login](web-login) for the CLI            |
-| `stage`          | **7.x**    | [staged publishing](staged-publishing) (`npm stage`)    |
-| `tfa`            | **7.x**    | [two-factor authentication](two-factor-authentication)  |
+| Flag             | Lines    | What it enables                                        |
+| ---------------- | -------- | ------------------------------------------------------ |
+| `changePassword` | 6.x, 7.x | [changing a password](change-password) from the web UI |
+| `createUser`     | 6.x, 7.x | [user registration](user-registration) from the web UI |
+| `webLogin`       | 6.x, 7.x | [browser-based login](web-login) for the CLI           |
+| `stage`          | **7.x**  | [staged publishing](staged-publishing) (`npm stage`)   |
+| `tfa`            | **7.x**  | [two-factor authentication](two-factor-authentication) |
 
 `stage` and `tfa` are not available in **6.x**, which does not receive new features.
 

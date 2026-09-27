@@ -12,14 +12,14 @@ The Verdaccio CLI is your tool to start and stop the application.
 verdaccio --listen 4000 --config ./config.yaml
 ```
 
-| Command                                  | Default                          | Example          | Description                                     |
-| ---------------------------------------- | -------------------------------- | ---------------- | ----------------------------------------------- |
-| `--listen` / `-l`                        | `localhost:4873`                 | `7000`           | Protocol + host + port to listen on (see below) |
-| `--port` / `-p` <small>7.x</small>       | `localhost:4873`                 | `7000`           | Aliases of `--listen`                           |
-| `--config` / `-c`                        | `~/.config/verdaccio/config.yaml` | `./config.yaml` | Location of the configuration file              |
-| `--info` / `-i`                          |                                  |                  | Print local environment information             |
-| `--mask` <small>7.x</small>              | `false`                          |                  | With `--info`, obscures file paths in the report |
-| `--version` / `-v`                       |                                  |                  | Show version information                        |
+| Command                            | Default                           | Example         | Description                                      |
+| ---------------------------------- | --------------------------------- | --------------- | ------------------------------------------------ |
+| `--listen` / `-l`                  | `localhost:4873`                  | `7000`          | Protocol + host + port to listen on (see below)  |
+| `--port` / `-p` <small>7.x</small> | `localhost:4873`                  | `7000`          | Aliases of `--listen`                            |
+| `--config` / `-c`                  | `~/.config/verdaccio/config.yaml` | `./config.yaml` | Location of the configuration file               |
+| `--info` / `-i`                    |                                   |                 | Print local environment information              |
+| `--mask` <small>7.x</small>        | `false`                           |                 | With `--info`, obscures file paths in the report |
+| `--version` / `-v`                 |                                   |                 | Show version information                         |
 
 `--listen` accepts `port`, `host:port`, `proto://host:port`, an IPv6 address in brackets
 and a `unix:/path/to.sock` socket — the same values as the `listen` key of the
