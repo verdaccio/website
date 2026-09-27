@@ -22,11 +22,11 @@ registry lets you do that in CI, in seconds, without touching npmjs.
 
 ## Pick how you run it {#how-to-run}
 
-| Approach | Good for | Trade-off |
-| --- | --- | --- |
-| **Docker** | CI, and anything that already uses containers | Needs Docker available |
-| **The binary in the background** | shell scripts, Makefiles | You manage the process and wait for readiness |
-| **Programmatically** | test suites that start and stop it per file | Ties the registry to your test runner |
+| Approach                         | Good for                                      | Trade-off                                     |
+| -------------------------------- | --------------------------------------------- | --------------------------------------------- |
+| **Docker**                       | CI, and anything that already uses containers | Needs Docker available                        |
+| **The binary in the background** | shell scripts, Makefiles                      | You manage the process and wait for readiness |
+| **Programmatically**             | test suites that start and stop it per file   | Ties the registry to your test runner         |
 
 ### Docker {#docker}
 
@@ -143,7 +143,7 @@ Two deliberate choices:
   to keep in a secret. This is only safe because the registry is thrown away — never do it
   on a real one, see [best practices](best-practices.md).
 - **`proxy: npmjs` on `**`.** Your package's own dependencies still install. Drop the
-  `uplinks` and the `proxy` if you want a fully offline registry, but then everything you
+`uplinks`and the`proxy` if you want a fully offline registry, but then everything you
   install must already be published locally.
 
 ## Publishing and installing {#the-loop}
@@ -225,8 +225,8 @@ If you publish to a **real** registry from Actions rather than a throwaway one, 
 belongs in a secret and never in a committed `.npmrc`:
 
 ```yaml
-      - run: echo "//registry.company.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
-      - run: npm publish --registry https://registry.company.com
+- run: echo "//registry.company.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
+- run: npm publish --registry https://registry.company.com
 ```
 
 ## Four things that will bite you {#gotchas}
@@ -279,7 +279,7 @@ npm error code ENOVERSIONS
 npm error No versions available for @my-company/widget
 ```
 
-Both npm and pnpm can refuse versions that are *too new*, to reduce supply-chain risk.
+Both npm and pnpm can refuse versions that are _too new_, to reduce supply-chain risk.
 **pnpm 11 enables it by default with a one-day delay**, so a package published one second ago
 does not exist as far as the install is concerned. Turn it off for the run, or exclude your
 own scope:
@@ -327,7 +327,6 @@ It drives real package managers (npm, pnpm, Yarn, Bun, Deno) through publish, in
 audit, deprecate, dist-tags, search and unpublish against the registry you point it at, and
 it includes a scenario for the release-age behaviour described above. The suite lives in
 [verdaccio/e2e-tests](https://github.com/verdaccio/e2e-tests).
-
 
 ### `verdaccioctl` {#verdaccioctl}
 

@@ -18,9 +18,7 @@ function isNpm2YarnTabs(node) {
     node.type === 'mdxJsxFlowElement' &&
     node.name === 'Tabs' &&
     Array.isArray(node.attributes) &&
-    node.attributes.some(
-      (attr) => attr.name === 'groupId' && attr.value === NPM2YARN_GROUP_ID
-    )
+    node.attributes.some((attr) => attr.name === 'groupId' && attr.value === NPM2YARN_GROUP_ID)
   );
 }
 
