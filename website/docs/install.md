@@ -55,7 +55,7 @@ $> verdaccio
  info -=- local storage path /Users/user/.local/share/verdaccio/storage/.verdaccio-db.json
  info --- using htpasswd file: /Users/user/.config/verdaccio/htpasswd
  info --- http address http://localhost:4873/
- info --- version: 6.10.3
+ info --- version: 7.0.0
  info --- server started
 ```
 
@@ -110,5 +110,7 @@ docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```bash
 $ helm repo add verdaccio https://charts.verdaccio.org
 $ helm repo update
-$ helm install registry --set image.tag=6 verdaccio/verdaccio
+$ helm install registry --set image.tag=7 verdaccio/verdaccio
 ```
+
+For a local Kubernetes setup, see the Verdaccio 7 Helm example in [docker-examples/v7/kubernetes/helm](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7/kubernetes/helm).
