@@ -54,16 +54,24 @@ Verdaccio builds one Express application and registers everything in this order
 (`packages/server/express/src/server.ts`). Since Express runs middleware in registration
 order, this is also the order a request travels:
 
-1. CORS, rate limiting, dotfiles
-2. request logging, error reporting, `X-Powered-By`
-3. compression — skipped for `application/octet-stream`, so tarballs are not re-gzipped
-4. **the JSON body parser**
-5. `/favicon.ico`
-6. **JWT authentication**
-7. **your middleware plugins, in the order they appear in `middlewares:`**
-8. the package manager API
-9. the web UI
-10. the 404 catch-all and the error handler
+```mermaid
+flowchart TD
+    req["request"] --> a["cors · rate limit · dotfiles"]
+    a --> b["logging · error reporting · X-Powered-By"]
+    b --> c["compression<br/><i>skipped for tarballs</i>"]
+    c --> d["JSON body parser<br/><b>req.body is ready</b>"]
+    d --> e["/favicon.ico"]
+    e --> f["JWT auth<br/><b>req.remote_user is ready</b><br/><i>skipped under /-/verdaccio/</i>"]
+    f --> g(["your middleware plugins<br/>in <code>middlewares:</code> order"])
+    g -->|"you answer"| done(["response — the API never runs"])
+    g -->|"next()"| h["package manager API"]
+    g -->|"next()"| i["web UI"]
+    h --> j["404 catch-all · error handler"]
+    i --> j
+
+    classDef plugin fill:#e8f4ea,stroke:#2e7d32,stroke-width:2px
+    class g plugin
+```
 
 Four consequences are worth spelling out, because they are the ones people get wrong.
 

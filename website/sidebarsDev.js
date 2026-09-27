@@ -13,6 +13,7 @@ module.exports = {
       items: [
         'dev-plugins',
         'plugin-generator',
+        'plugin-verifier',
         'plugin-auth',
         'plugin-middleware',
         'plugin-storage',

@@ -116,6 +116,11 @@ Run the [plugin generator](plugin-generator.md). It scaffolds a project that alr
 against the current interfaces, which saves you the most common first problem — the types
 moved names between major versions, and old tutorials still use the old ones.
 
+Two checks are worth running from the start, and the scaffold wires both: `npm run build`
+type-checks against the real interfaces, and `npm run verify` uses
+[the plugin verifier](plugin-verifier.md) to confirm Verdaccio can actually load what you
+built — a broken export is not something the compiler catches.
+
 The contracts themselves live in `pluginUtils` in
 [`@verdaccio/core`](https://github.com/verdaccio/verdaccio/blob/master/packages/core/core/src/plugin-utils.ts);
 that file is the authority when a doc page and your compiler disagree.

@@ -172,10 +172,28 @@ have its rejection consumed — an unhandled rejection is, again, a dead process
 
 ### Reading a tarball {#read-lifecycle}
 
-`readTarball(filename, { signal })` returns a `Readable` that the store pipes to the
-response. The same once-only rule applies to `error`: a missing object typically surfaces
-through two different channels (a status code and a stream error), and emitting `getNotFound()`
-for both is the most common way to crash a storage plugin.
+`readTarball(filename, { signal })` returns a `Readable` that the store pipes to the response.
+Simpler than writing — except for one way of dying, which is worth seeing:
+
+```mermaid
+sequenceDiagram
+    participant S as Verdaccio store
+    participant P as Your plugin
+    participant B as Your backend
+
+    S->>P: readTarball(filename, { signal })
+    P->>B: fetch the object
+    B--)P: 404 on the response channel
+    P->>S: emit 'error' → getNotFound()
+    Note over S: the store handles it<br/>and stops listening
+    B--)P: 404 again, on the stream
+    P--xS: emit 'error' a second time
+    Note over P,S: no listener left → uncaught<br/>exception → the registry dies
+```
+
+A missing object usually surfaces **twice** in object-store SDKs: once as a status code on the
+response, once as an error on the stream. Emitting `getNotFound()` for both is the most common
+way to crash a storage plugin. Guard the emit with a flag so only the first one gets through.
 
 ### What is never called {#not-called}
 
