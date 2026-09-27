@@ -1,6 +1,7 @@
 ---
 id: node-api
 title: 'Node API'
+description: 'Start Verdaccio programmatically with runServer, and build its configuration with ConfigBuilder.'
 ---
 
 ```mdx-code-block

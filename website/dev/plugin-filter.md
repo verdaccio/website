@@ -1,6 +1,7 @@
 ---
 id: plugin-filter
 title: 'Filter Plugin'
+description: 'Write a filter plugin to rewrite package manifests, and the performance caveats of running on the search path.'
 ---
 
 ```mdx-code-block

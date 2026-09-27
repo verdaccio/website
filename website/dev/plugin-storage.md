@@ -1,6 +1,7 @@
 ---
 id: plugin-storage
 title: 'Storage Plugin'
+description: 'Write a storage plugin: the promise contract, the legacy callback one, and the tarball lifecycle that decides whether a publish succeeds.'
 ---
 
 ## What's a Storage Plugin? {#whats-a-storage-plugin}

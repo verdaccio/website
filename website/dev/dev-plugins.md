@@ -1,6 +1,7 @@
 ---
 id: dev-plugins
 title: 'Developing Plugins'
+description: 'When a Verdaccio plugin is the right answer, the five kinds you can write, and what each one costs you.'
 ---
 
 Verdaccio ships with sensible defaults: users in an `htpasswd` file, packages on local disk,

@@ -1,6 +1,7 @@
 ---
 id: plugin-theme
 title: 'Theme Plugin'
+description: 'Write a theme plugin: how Verdaccio loads it, what it must export, and the asset manifest contract.'
 ---
 
 ## What's a theme plugin? {#whats-a-theme-plugin}

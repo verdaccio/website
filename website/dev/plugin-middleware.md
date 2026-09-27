@@ -1,6 +1,7 @@
 ---
 id: plugin-middleware
 title: 'Middleware Plugin'
+description: 'Write a middleware plugin: where it runs in the request chain, what is already parsed, and the Express 5 route syntax.'
 ---
 
 ```mdx-code-block

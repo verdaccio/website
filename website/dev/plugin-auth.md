@@ -1,6 +1,7 @@
 ---
 id: plugin-auth
 title: 'Authentication Plugin'
+description: 'Write an authentication plugin: the callback contract, what each answer means, and how a chain of plugins resolves a request.'
 ---
 
 ```mdx-code-block

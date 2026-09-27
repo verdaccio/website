@@ -1,6 +1,7 @@
 ---
 id: ui-components
 title: 'UI Components'
+description: 'Reuse the React components the default Verdaccio theme is built from.'
 ---
 
 Building a [theme plugin](plugin-theme.md) from scratch is a lot of work. `@verdaccio/ui-components` publishes the pieces the default theme is built from, as reusable React components you can plug together.
