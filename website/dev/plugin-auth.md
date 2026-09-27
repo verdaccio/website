@@ -46,6 +46,54 @@ built-in plugin at the end — that last one is what terminates the chain, so it
 What "resolve the request" means is not the same for authentication and for permissions, and
 the difference is where chained setups usually go wrong.
 
+#### The chain, at a glance {#chaining-diagram}
+
+```mermaid
+flowchart TD
+    req["a request with credentials"] --> p1["your plugin"]
+
+    p1 -->|"cb(null, ['group'])"| ok(["authenticated<br/>the rest are skipped"])
+    p1 -->|"cb(null, false)"| p2["next plugin in auth:"]
+    p1 -->|"cb(err)"| stop(["request fails<br/><b>the rest never run</b>"])
+
+    p2 -->|"cb(null, ['group'])"| ok
+    p2 -->|"cb(null, false)"| last["built-in plugin<br/><i>always appended last</i>"]
+    p2 -->|"cb(err)"| stop
+
+    last --> denied(["403 bad username/password"])
+
+    classDef good fill:#e8f4ea,stroke:#2e7d32,stroke-width:2px
+    classDef bad fill:#fdeaea,stroke:#c62828,stroke-width:2px
+    class ok good
+    class stop,denied bad
+```
+
+The red path is the one that surprises people: **an error is not "try the next one"**, it ends
+the chain. `false` is how you say "not mine".
+
+For `allow_access` and friends the shape is the same but the roles swap — `true` is what stops
+the chain, and `false` hands the decision on:
+
+```mermaid
+flowchart TD
+    req["may this user read/publish?"] --> p1["your plugin"]
+
+    p1 -->|"cb(null, true)"| ok(["granted<br/>the rest are skipped"])
+    p1 -->|"cb(null, false)"| p2["next plugin<br/><b>which may still grant</b>"]
+    p1 -->|"cb(err)"| stop(["denied<br/>chain stops"])
+
+    p2 -->|"cb(null, true)"| ok
+    p2 -->|"cb(null, false)"| last["built-in plugin<br/><i>applies packages: rules</i>"]
+    p2 -->|"cb(err)"| stop
+
+    last --> outcome(["granted or denied<br/>by config"])
+
+    classDef good fill:#e8f4ea,stroke:#2e7d32,stroke-width:2px
+    classDef bad fill:#fdeaea,stroke:#c62828,stroke-width:2px
+    class ok good
+    class stop bad
+```
+
 #### `authenticate` — first success wins {#chaining-authenticate}
 
 | Your plugin calls                                 | What happens                                                   |
