@@ -24,9 +24,23 @@ roughly the order you will hit it. For what is new, see the release notes.
 
 ## The good news first: your storage is not touched
 
-**There is no data migration.** Verdaccio 7 reads a Verdaccio 6 storage folder as it is. The
-database file is still `.verdaccio-db.json`, tokens still live in `.token-db.json`, and each
-package still keeps its manifest in a `package.json` inside its own folder.
+**There is no data migration**, and this was checked by running it rather than by reading the
+code. Pointing both versions at the same storage folder, in order:
+
+1. Verdaccio 6 published a package into an empty storage folder.
+2. Verdaccio 7 started on that same folder, served the package, and `npm install` fetched and
+   unpacked it — manifest and tarball both.
+3. Verdaccio 7 published a second version into the same folder.
+4. Verdaccio 6, restarted on that folder, listed **both** versions with the right `latest`
+   tag, and installed the one Verdaccio 7 had written.
+
+So the format is compatible **in both directions**: a rollback to 6.x after running 7.x also
+works. The database file is still `.verdaccio-db.json` with the same `{ list, secret }` shape,
+tokens still live in `.token-db.json` keyed by user, and each package still keeps its manifest
+in a `package.json` beside its tarballs.
+
+**Tokens survive too.** A login token issued by Verdaccio 6 authenticated against Verdaccio 7
+without re-logging in, and still worked on 6.x after the round trip.
 
 You still want a backup before upgrading a real registry, but you are not converting
 anything.
@@ -50,40 +64,37 @@ config file must be a YAML file (.yaml or .yml)
 
 Convert the file before upgrading. This is a straightforward one, and it fails loudly.
 
-### A secret that is not 32 characters will stop the server
-
-This is the one that catches long-lived installations, so it deserves the most attention.
+### A secret that is not 32 characters stops the server, and the escape hatch is gone
 
 The server secret stored in `.verdaccio-db.json` must be **exactly 32 characters**. Registries
-created years ago often hold a **64-character** secret instead.
+created years ago sometimes hold a **64-character** secret instead.
 
-What each line does with that differs, and the difference is the whole problem:
+On a default configuration **both versions refuse to start** with that, so if this affects you
+there is a good chance you already know:
 
-- **Verdaccio 6 hides it from you.** `security.api.migrateToSecureLegacySignature` defaults to
-  **`true`**, so a secret of the wrong length is quietly replaced with a freshly generated one
-  at startup. The registry comes up and nothing is reported.
-- **Verdaccio 7 removed that property**, and a wrong-length secret is a hard startup error:
+```
+Invalid storage secret key length, must be 32 characters long but is 64.
+```
 
-  ```
-  Invalid storage secret key length, must be 32 characters long but is 64
-  ```
-
-So a registry that 6.x had been silently patching on every boot simply **does not start**
-after the upgrade.
-
-Deal with it *before* you upgrade, while you can still choose the moment, because the fix has
-a cost: **regenerating the secret invalidates every token that was issued with the old one**,
-and every CI job and developer using one will have to log in again.
-
-To see what you are dealing with on 6.x, set the property to `false` and start the server: it
-will now fail instead of rewriting the secret, telling you whether you are affected.
+The difference is the way out. Verdaccio 6 has an opt-in that rewrites the secret for you:
 
 ```yaml
 security:
   api:
     legacy: true
-    migrateToSecureLegacySignature: false # 6.x only, to surface the problem
+    migrateToSecureLegacySignature: true # 6.x only
 ```
+
+With that set, 6.x starts and replaces the 64-character secret with a fresh 32-character one —
+verified: the file goes from 64 to 32 characters and the registry comes up.
+
+**Verdaccio 7 removed the property.** Given the same configuration and the same 64-character
+secret, 7.x refuses to start and leaves the secret alone. The deprecated AES helpers that could
+read data encrypted with an over-long key were deleted too, so there is no fallback path left.
+
+If you are relying on `migrateToSecureLegacySignature`, generate a 32-character secret **before
+upgrading**, while you still choose the moment: replacing it **invalidates every token issued
+with the old one**, so every CI job and developer has to log in again.
 
 ## After it starts
 
@@ -102,6 +113,36 @@ VERDACCIO_ADDRESS=0.0.0.0
 `VERDACCIO_HANDLE_KILL_SIGNALS` only exists in 6.x, where graceful shutdown had to be turned
 on with it. **Verdaccio 7 removed the variable** and always shuts down gracefully. Setting it
 does nothing; remove it from your deployment.
+
+### HTTP Basic authentication is no longer accepted
+
+This is the one most likely to break a working setup, because it does not look like an
+upgrade problem — it looks like wrong credentials.
+
+Verdaccio 6 accepts an `Authorization: Basic <base64 user:password>` header for API requests.
+**Verdaccio 7 does not.** Only Bearer tokens are accepted, and `WWW-Authenticate` advertises
+only `Bearer`. Verified against both: the same Basic header that authenticates on 6.x gets
+
+```json
+{ "error": "bad username/password, access denied" }
+```
+
+on 7.x, and a write that needs authentication answers `401` — exactly as if no credentials had
+been sent.
+
+What sends Basic auth in practice:
+
+- an `.npmrc` using **`_auth`** (or `_password` plus `username`) instead of `_authToken`
+- `always-auth` configurations carried over from very old setups
+- `curl`, scripts and internal tooling that build the header by hand
+- anything that never logged in and just encodes `user:password`
+
+The fix is to use a token: log in against the registry and put `_authToken` in `.npmrc`.
+Tokens issued by 6.x keep working on 7.x, so an existing login does not need redoing — it is
+specifically the username-and-password header that stops being accepted.
+
+As part of the same change, **Web UI session tokens are now accepted as Bearer tokens for
+package API requests**, so the same package access rules apply to browser and client traffic.
 
 ### Two endpoints are gone
 
@@ -163,6 +204,19 @@ which the default export does not.
 - **`self_path` no longer exists.** The workaround of setting it manually when passing a
   configuration object is not needed, and the property is gone from the configuration type.
   Use `configPath`.
+- **The deprecated AES helpers are gone.** `aesEncryptDeprecated`, `aesDecryptDeprecated` and
+  `generateRandomSecretKeyDeprecated` are no longer exported from `@verdaccio/signature`, and
+  the `legacy-signature` module was deleted. Encryption is `aes-256-ctr` through
+  `createCipheriv` / `createDecipheriv` only.
+- **The logger packages were merged.** `@verdaccio/logger-commons` and
+  `@verdaccio/logger-prettify` are now a single `@verdaccio/logger`. Update imports if you
+  depended on either directly.
+- **`isNodeVersionGreaterThan21()` was removed** from `@verdaccio/config`.
+- **The `Config` constructor no longer takes `configOverrideOptions`**, which is what carried
+  `forceMigrateToSecureLegacySignature`.
+- **Packages ship dual ESM and CJS.** Every `@verdaccio/*` package now builds with Vite and
+  emits `.mjs` alongside `.js` with generated type declarations. Importing by package name is
+  unaffected; reaching into `build/` paths directly is not.
 
 ## If you maintain a plugin
 
@@ -217,8 +271,18 @@ been using it.
 
 ## Tell us what is missing
 
-This guide is written from the differences we could verify between the two lines. If your
-upgrade broke on something that is not here, that gap is the useful part — report it in
+Everything above was checked against `verdaccio@6.10.3` and `verdaccio@7.0.0-next-7.28`, in
+most cases by running both against the same storage folder rather than by reading release
+notes. Two things were deliberately left out after checking them: the plugin interface names
+did **not** change between 6 and 7, and the YAML parser change is compensated internally, so
+neither is something you have to act on.
+
+Bear in mind that 7.x is still a pre-release and assembles its internals from the development
+line, so a change can be in the source before it reaches a published 7.x build. Where that
+mattered, the behaviour described here is the one the **published** `next-7` binary actually
+has.
+
+If your upgrade broke on something that is not here, that gap is the useful part — report it in
 [GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions), as an issue at
 [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio/issues), or on
 [Discord](https://discord.gg/7qWJxBf), and it will end up in this post.
