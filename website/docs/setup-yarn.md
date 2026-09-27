@@ -31,28 +31,7 @@ this works — but a storage plugin that drops `time` would block every install 
 on.
 :::
 
-#### `yarn` classic (1.x) {#yarn-classic-1x}
-
-> Be aware npm configurations are valid on the classic version
-
-The classic version is able to regonize the `.npmrc` file, but also provides their own configuration file named `.yarnrc`.
-
-To set up a registry, create a file and define a registry.
-
-```
-// .yarnrc
-registry "http://localhost:4873"
-```
-
-By using this version you should enable `always-auth` in your configuration running:
-
-```
-npm config set always-auth true
-```
-
-`yarn@1.x` does not send the authorization header on `yarn install` if your packages requires authentication, by enabling `always-auth` will force yarn do it on each request.
-
-#### `yarn` modern (>=2.x) {#yarn-modern-2x}
+## Setting up the registry {#yarn-modern-2x}
 
 > Yarn modern does not recognize `--registry` or `.npmrc` file anymore.
 
@@ -223,3 +202,29 @@ affected by the flag.
 
 - `yarn npm login` issues, read [verdaccio#1737](https://github.com/verdaccio/verdaccio/issues/1737) or [yarn-berry#1848](https://github.com/yarnpkg/berry/pull/1848).
 - `yarn npm publish` does not send README, read [verdaccio#1905](https://github.com/verdaccio/verdaccio/issues/1905) or [yarn-berry#1702](https://github.com/yarnpkg/berry/issues/1702).
+
+## `yarn` classic (1.x) {#yarn-classic-1x}
+
+:::caution No longer maintained
+Yarn `1.x` has been in maintenance since Yarn 2 and receives no new features. Everything
+above assumes **Yarn 4**; if you are still on classic, migrating is the better use of your
+time than configuring it.
+:::
+
+Classic reads `.npmrc`, so the [npm instructions](setup-npm.md) apply, and it also has its
+own `.yarnrc`:
+
+```
+registry "http://localhost:4873"
+```
+
+The one classic-specific trap: it does **not** send the authorization header on
+`yarn install` unless `always-auth` is on, so private packages fail to resolve until you set
+it:
+
+```bash
+npm config set always-auth true
+```
+
+Note that `always-auth` is itself deprecated in modern npm, which is a fair summary of where
+this combination stands.

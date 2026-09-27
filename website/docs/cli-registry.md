@@ -21,17 +21,23 @@ two-factor and the problems specific to that client:
   commands Yarn 4 does not ship
 - **[deno](setup-deno.md)** and **[bun](setup-bun.md)**
 
-:::warning Recent versions are hidden by default, on pnpm and Yarn
-Both clients now refuse versions published in the **last day**, as a supply-chain
-precaution — `minimumReleaseAge` since **pnpm 11**, `npmMinimalAgeGate` since **Yarn 4.15**.
+:::warning Recent versions are hidden by default on pnpm and Yarn
+Both clients refuse versions published in the **last day**, as a supply-chain precaution.
 Against a private registry that usually means the package you just published cannot be
-installed yet, and the error says the version does not exist rather than that it was
-filtered. npm has the same idea behind `min-release-age`, off unless you set it.
+installed yet — and the error says the version does not exist, not that it was filtered.
 
-Each client page has the setting to exempt your own scope:
-[pnpm](setup-pnpm.md#minimum-release-age) · [yarn](setup-yarn.md).
+|            | Setting                    | Unit        | Default                  | Exempt your own packages       |
+| ---------- | -------------------------- | ----------- | ------------------------ | ------------------------------ |
+| **pnpm**   | `minimumReleaseAge`        | **minutes** | `1440` (1 day) since pnpm 11 | `minimumReleaseAgeExclude` |
+| **Yarn**   | `npmMinimalAgeGate`        | **minutes**, accepts `1d` | `1d` since Yarn 4.15 | `npmPreapprovedPackages`, or per scope |
+| **npm**    | `min-release-age`          | **days**    | off (`null`), still in npm 12 | `min-release-age-exclude`  |
+
+Note the units differ: `min-release-age=1` is one **day** in npm, while `1` in pnpm or Yarn
+is one **minute**. Copying a value between them does not do what it looks like.
+
+Details and how to exempt a scope: [pnpm](setup-pnpm.md#minimum-release-age) ·
+[yarn](setup-yarn.md) · [npm](setup-npm.md#min-release-age).
 :::
-
 ## The short version {#cheatsheet}
 
 The same settings side by side, if you already know what you are looking for:

@@ -166,6 +166,35 @@ needs a code stored in a secret.
 See [staged publishing](staged-publishing) for the full flow and the permissions
 involved.
 
+## Hiding recently published versions {#min-release-age}
+
+npm can refuse versions published less than N **days** ago, as a supply-chain precaution:
+
+```ini title=".npmrc"
+min-release-age=7
+min-release-age-exclude[]=@my-company/*
+```
+
+Unlike pnpm and Yarn, npm leaves this **off by default** — it is `null` in npm 11 and still
+`null` in npm 12 — so you only meet it if someone turned it on. When it is on and you publish
+to Verdaccio and install straight away, the version is filtered and npm reports:
+
+```
+npm error code ENOVERSIONS
+npm error No versions available for @my-company/widget
+```
+
+which reads as if the package had no versions at all. Exempt your own packages with
+`min-release-age-exclude`, or pass `--min-release-age=0` for a single command.
+
+:::note The unit is days here
+`min-release-age` counts **days**, while pnpm's `minimumReleaseAge` and Yarn's
+`npmMinimalAgeGate` count **minutes**. `1` means a day in npm and a minute in the others.
+:::
+
+It also affects `npm audit fix`: when the patched version is too recent, npm keeps the
+vulnerable one, warns that the fix was blocked, and exits non-zero.
+
 ## Troubleshooting {#troubleshooting}
 
 ### `npm login` with npm@9 or higher
