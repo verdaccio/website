@@ -63,20 +63,51 @@ signal, and it needs no configuration — see
 
 ### Programmatically {#programmatically}
 
-`runServer` gives you a server that is not listening yet, so your test decides the port and
-when to stop it:
+`runServer` gives you a server that is **not listening yet**, so your test decides the port
+and when to stop it. And rather than keeping a `verdaccio.yaml` next to your tests, build the
+configuration in code with `ConfigBuilder`: it is typed, so a misspelled key is a compile
+error instead of a setting that silently does nothing, and the storage can be a fresh
+temporary directory on every run.
 
 ```js
+import { mkdtempSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+import { ConfigBuilder } from '@verdaccio/config';
 import { runServer } from 'verdaccio';
 
-const app = await runServer('./verdaccio.yaml');
-const server = app.listen(4873);
-// ... run your tests ...
+const config = ConfigBuilder.build()
+  // a new empty storage per run, so nothing leaks between tests
+  .addStorage(mkdtempSync(join(tmpdir(), 'e2e-storage-')))
+  .addAuth({ htpasswd: { file: join(mkdtempSync(join(tmpdir(), 'e2e-auth-')), 'htpasswd') } })
+  .addPackageAccess('@my-company/*', { access: '$all', publish: '$all', unpublish: '$all' })
+  .addPackageAccess('**', { access: '$all', proxy: 'npmjs' })
+  .addUplink('npmjs', { url: 'https://registry.npmjs.org/' })
+  .addLogger({ type: 'stdout', format: 'pretty', level: 'warn' })
+  .getConfig();
+
+const server = (await runServer(config)).listen(4873);
+// ... publish, install, assert ...
 server.close();
 ```
 
-The full surface, including which exports exist on which line, is in
-[the Node API](/dev/node-api).
+Two things that will stop you on the way:
+
+- **Always call `addAuth`.** A configuration with no auth section starts, answers `/-/ping`,
+  and then a publish hangs instead of failing. The `htpasswd` file does not need to exist;
+  it is created on first use.
+- **On 6.x, an inline configuration object needs its path set**, or `runServer` throws
+  `configPath property is required`:
+
+  ```js
+  config.configPath = config.self_path = process.cwd(); // 6.x only
+  ```
+
+  **7.x does not need this** — `self_path` was removed there. See
+  [the Node API](/dev/node-api) for the rest of the differences between the lines.
+
+`getAsYaml()` on the same builder prints the configuration, which is worth doing once when a
+test behaves unexpectedly and you want to see what the registry was actually given.
 
 ## A configuration for throwaway registries {#configuration}
 
@@ -134,6 +165,70 @@ node -e "require('@my-company/widget')"
 Step 3 is the whole point: it runs the code from the tarball, through the `exports` map, with
 the dependencies that were actually declared.
 
+## A GitHub Actions workflow {#github-actions}
+
+Putting the pieces together. The registry runs as a service container, so nothing has to be
+installed or waited for by hand, and every job starts from an empty one:
+
+```yaml title=".github/workflows/e2e.yml"
+name: e2e
+
+on: [push, pull_request]
+
+jobs:
+  publish-and-install:
+    runs-on: ubuntu-latest
+
+    services:
+      verdaccio:
+        image: verdaccio/verdaccio:6
+        ports:
+          - 4873:4873
+
+    env:
+      REGISTRY: http://localhost:4873
+
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Wait for the registry
+        run: until npx @verdaccio/registry-cli ping -r "$REGISTRY"; do sleep 1; done
+
+      - name: Build
+        run: |
+          npm ci
+          npm run build
+
+      - name: Publish to the throwaway registry
+        working-directory: packages/widget
+        run: |
+          echo "//localhost:4873/:_authToken=e2e-dummy-token" >> .npmrc
+          npm publish --registry "$REGISTRY"
+
+      - name: Install it as a consumer would
+        run: |
+          mkdir -p /tmp/consumer && cd /tmp/consumer
+          npm init -y
+          npm install @my-company/widget --registry "$REGISTRY" --min-release-age=0
+          node -e "require('@my-company/widget')"
+```
+
+The service container uses the **default** configuration, which allows anonymous publishing —
+fine for a registry that dies with the job. Mount your own `config.yaml` if you need
+[access rules](packages.md), and note that the default image has no uplink restrictions, so
+dependencies are proxied from npmjs.
+
+If you publish to a **real** registry from Actions rather than a throwaway one, the token
+belongs in a secret and never in a committed `.npmrc`:
+
+```yaml
+      - run: echo "//registry.company.com/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
+      - run: npm publish --registry https://registry.company.com
+```
+
 ## Four things that will bite you {#gotchas}
 
 ### `npm` refuses to publish without credentials, even when the registry allows it
@@ -154,15 +249,21 @@ registry=http://localhost:4873/
 
 Note the host-scoped key: it must match the registry URL, port included.
 
-If you would rather use a real account than a dummy token — because you are testing the
-access rules themselves, or the registry is shared — log in without a prompt:
+If you need a real account rather than a dummy token — you are testing the access rules
+themselves, or the registry is shared — get the token from the registry API and write it
+yourself:
 
 ```bash
-npx @verdaccio/registry-cli login -u ci-bot -p "$CI_REGISTRY_PASSWORD" -r http://localhost:4873
+TOKEN=$(curl -s -X PUT "$REGISTRY/-/user/org.couchdb.user:ci-bot" \
+  -H 'Content-Type: application/json' \
+  -H "Authorization: Basic $(printf '%s' "ci-bot:$PASSWORD" | base64)" \
+  -d "{\"name\":\"ci-bot\",\"password\":\"$PASSWORD\"}" | jq -r .token)
+
+echo "//localhost:4873/:_authToken=$TOKEN" >> .npmrc
 ```
 
-It writes the host-scoped `_authToken` for you, so `npm publish` works straight after. See
-[below](#verdaccioctl).
+The `Authorization` header is what makes this a **login** rather than a registration: without
+it, the same request answers `409 username is already registered` once the account exists.
 
 :::caution Basic auth is gone in 7.x
 Recipes that put `_auth` (a base64 `user:password`) in `.npmrc` work on **6.x** and fail on
@@ -227,9 +328,6 @@ audit, deprecate, dist-tags, search and unpublish against the registry you point
 it includes a scenario for the release-age behaviour described above. The suite lives in
 [verdaccio/e2e-tests](https://github.com/verdaccio/e2e-tests).
 
-For tests of Verdaccio's own API from Node.js, [`@verdaccio/test-helper`](https://www.npmjs.com/package/@verdaccio/test-helper)
-exposes the helpers the project uses internally, such as `initializeServer` and
-`publishVersion`.
 
 ### `verdaccioctl` {#verdaccioctl}
 
@@ -242,20 +340,26 @@ dependencies and works with any auth plugin, since it only speaks the registry A
 # is it up? exit code 1 when it is not, so it works in a wait loop
 verdaccioctl ping -r http://localhost:4873
 
-# log in with no prompt; writes the host-scoped _authToken to ~/.npmrc
-verdaccioctl login -u ci-bot -p "$CI_REGISTRY_PASSWORD" -r http://localhost:4873
-
 # which account the stored token belongs to, and its groups when it has any
 verdaccioctl whoami -r http://localhost:4873
 ```
 
-`login` also takes `--token` instead of a username and password, for a token minted
-elsewhere — an OIDC or Azure AD flow, for instance.
+`ping` is the useful one here: it is the only command in this page that reports "not
+reachable" as an exit code, which is exactly what a wait loop or a health check needs.
 
-Two things to keep in mind: it **writes to `~/.npmrc`**, which is what you want in a
-container or a CI runner and less so on your own machine, and the registry must allow the
-account to be created if it does not exist yet — with the default `htpasswd` plugin, the
-first `login` registers the user.
+:::caution `verdaccioctl login` only works for a user that does not exist yet
+As of `1.1.0`, `login` sends the registration request without an `Authorization` header, so
+the registry treats it as a sign-up. The first call creates the account and works; every call
+after that answers `409 username is already registered` — **and the command still exits `0`**,
+so a pipeline does not notice.
+
+Until that is fixed, do not use it to log in to a registry where the account already exists.
+The `curl` above does the same job in one line. It also takes `--token` for a token minted
+elsewhere, which sidesteps the problem entirely.
+
+It also **writes to `~/.npmrc`**, which is what you want in a container and less so on your
+own machine.
+:::
 
 ## Projects doing this in the wild {#examples}
 
