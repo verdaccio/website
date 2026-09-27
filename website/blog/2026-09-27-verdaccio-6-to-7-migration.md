@@ -3,6 +3,7 @@ authors: juan_picado
 title: Migrating from Verdaccio 6 to Verdaccio 7
 description: What actually breaks when you upgrade a Verdaccio 6 registry to 7, in the order you hit it.
 tags: [migration, verdaccio]
+hide_table_of_contents: true
 ---
 
 :::danger Work in progress
