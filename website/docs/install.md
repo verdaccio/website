@@ -1,7 +1,7 @@
 ---
 id: installation
 title: 'Installation'
-description: 'Install Verdaccio with npm, pnpm, yarn, Docker or Helm, and the Node.js version each line requires.'
+description: 'Install Verdaccio with pnpm, npm, yarn, Docker or Helm, and the Node.js version each line requires.'
 ---
 
 Verdaccio is a Node.js private and proxy registry. To install it, you need a few basic prerequisites.
@@ -15,7 +15,7 @@ Verdaccio is a Node.js private and proxy registry. To install it, you need a few
    | `6.x` (current) | `>= 22` |
    | `7.x` and later | `>= 24` |
 
-2. Your favorite Node Package Manager `npm`, `pnpm` or `yarn` (classic and modern).
+2. A Node package manager: `pnpm`, `npm` or `yarn` (classic and modern).
 
 > **`npm@10` or newer is recommended.** Every supported Verdaccio already
 > requires a Node.js release that bundles npm 10 or 11, so anything older is
@@ -36,24 +36,47 @@ Learn the basics before getting started, how to install, where is the location o
 
 > Before using Verdaccio in production, please read and be [aware of the best practices](best-practices.md).
 
-`Verdaccio` must be installed globally using either of the following methods:
+`Verdaccio` must be installed globally:
 
-Using `npm`
+```mdx-code-block
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs groupId="package-manager" defaultValue="pnpm" values={[
+  {label: 'pnpm', value: 'pnpm'},
+  {label: 'npm', value: 'npm'},
+  {label: 'Yarn', value: 'yarn'},
+]}>
+<TabItem value="pnpm">
+```
+
+```bash
+pnpm add -g verdaccio
+```
+
+```mdx-code-block
+</TabItem>
+<TabItem value="npm">
+```
 
 ```bash
 npm install -g verdaccio
 ```
 
-or using `yarn@1.x` _classic_,
+```mdx-code-block
+</TabItem>
+<TabItem value="yarn">
+```
 
 ```bash
 yarn global add verdaccio
 ```
 
-or using `pnpm`
+Yarn `1.x` _classic_ only; modern Yarn has no global install.
 
-```bash
-pnpm install -g verdaccio
+```mdx-code-block
+</TabItem>
+</Tabs>
 ```
 
 ![install verdaccio](/img/install_verdaccio.gif)

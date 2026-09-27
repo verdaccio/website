@@ -14,9 +14,9 @@ module.exports = {
           label: 'Setting up Verdaccio',
           items: [
             'cli-registry',
+            'setup-pnpm',
             'setup-npm',
             'setup-yarn',
-            'setup-pnpm',
             'setup-deno',
             'setup-bun',
           ],
