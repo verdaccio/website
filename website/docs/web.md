@@ -85,7 +85,7 @@ i18n:
 | `title`                  | string          | Verdaccio                       | HTML head title                                                                                                                |
 | `gravatar`               | boolean         | `true`                          | Generate Gravatars for user avatars                                                                                            |
 | `sort_packages`          | `asc` \| `desc` | `asc`                           | Direction of the package list ordering                                                                                         |
-| `sort_field`             | string          | `name`                          | Package field the list is ordered by                                                                                           |
+| `sort_field` <small>7.x</small> | string          | `name`                          | Package field the list is ordered by                                                                                           |
 | `logo`                   | string          | —                               | URI of the header logo, a local path or a URL                                                                                  |
 | `logoDark`               | string          | —                               | Logo used when the dark theme is active; falls back to `logo`                                                                  |
 | `favicon`                | string          | —                               | Custom favicon, a local path or a URL                                                                                          |
@@ -96,7 +96,7 @@ i18n:
 | `login`                  | boolean         | `true`                          | Allow logging in from the UI. `false` also disables the web login endpoints                                                    |
 | `rateLimit`              | object          | `max: 5000`, `windowMs: 120000` | Rate limit of the web data endpoints only; CSS and JS are not counted. Prefer [`userRateLimit`](configuration#user-rate-limit) |
 | `html_cache`             | boolean         | `true`                          | Cache the rendered HTML shell                                                                                                  |
-| `assetFolder`            | string          | —                               | Folder served as extra static assets, for logos and files referenced by the options above                                      |
+| `assetFolder` <small>7.x</small> | string          | —                               | Folder served under `/-/assets/`, for logos and files referenced above; handy with Docker volumes                                      |
 | `metaScripts`            | string[]        | —                               | Tags injected before `</head>`                                                                                                 |
 | `scriptsBodyBefore`      | string[]        | —                               | Tags injected as the first child of `<body>`                                                                                   |
 | `scriptsBodyAfter`       | string[]        | —                               | Tags injected as the last child of `</body>`                                                                                   |
@@ -110,7 +110,8 @@ i18n:
 | `showRaw`                | boolean         | `true`                          | Show the raw manifest button in the sidebar                                                                                    |
 | `hideDeprecatedVersions` | boolean         | `false`                         | Leave deprecated versions out of the version list                                                                              |
 
-Every option above works on both **6.x** and **7.x**.
+`sort_field` and `assetFolder` are **7.x** only; every other option above works on both
+**6.x** and **7.x**.
 
 :::note `scriptsbodyBefore` with a lowercase `b`
 Both `scriptsBodyBefore` and the misspelled `scriptsbodyBefore` are accepted, because the
