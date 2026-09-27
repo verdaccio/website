@@ -79,36 +79,36 @@ i18n:
 
 ### Configuration {#configuration}
 
-| Property                 | Type            | Default                         | Description                                                                                                                    |
-| ------------------------ | --------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `enabled`                | boolean         | `true`                          | Serve the web interface. `enable` is the deprecated spelling                                                                   |
-| `title`                  | string          | Verdaccio                       | HTML head title                                                                                                                |
-| `gravatar`               | boolean         | `true`                          | Generate Gravatars for user avatars                                                                                            |
-| `sort_packages`          | `asc` \| `desc` | `asc`                           | Direction of the package list ordering                                                                                         |
-| `sort_field` <small>7.x</small> | string          | `name`                          | Package field the list is ordered by                                                                                           |
-| `logo`                   | string          | —                               | URI of the header logo, a local path or a URL                                                                                  |
-| `logoDark`               | string          | —                               | Logo used when the dark theme is active; falls back to `logo`                                                                  |
-| `favicon`                | string          | —                               | Custom favicon, a local path or a URL                                                                                          |
-| `primaryColor`           | string          | `#4b5e40`                       | Primary colour of the UI. `primary_color` is the deprecated spelling                                                           |
-| `darkMode`               | boolean         | `false`                         | Start in the dark theme                                                                                                        |
-| `scope`                  | string          | `''`                            | Scope shown in the registry instructions header, e.g. `'@myscope'`                                                             |
-| `pkgManagers`            | list            | `yarn`, `pnpm`, `npm`           | Which package managers appear in the sidebar and the registry dialog                                                           |
-| `login`                  | boolean         | `true`                          | Allow logging in from the UI. `false` also disables the web login endpoints                                                    |
-| `rateLimit`              | object          | `max: 5000`, `windowMs: 120000` | Rate limit of the web data endpoints only; CSS and JS are not counted. Prefer [`userRateLimit`](configuration#user-rate-limit) |
-| `html_cache`             | boolean         | `true`                          | Cache the rendered HTML shell                                                                                                  |
-| `assetFolder` <small>7.x</small> | string          | —                               | Folder served under `/-/assets/`, for logos and files referenced above; handy with Docker volumes                                      |
-| `metaScripts`            | string[]        | —                               | Tags injected before `</head>`                                                                                                 |
-| `scriptsBodyBefore`      | string[]        | —                               | Tags injected as the first child of `<body>`                                                                                   |
-| `scriptsBodyAfter`       | string[]        | —                               | Tags injected as the last child of `</body>`                                                                                   |
-| `showInfo`               | boolean         | `true`                          | Show the info button in the header                                                                                             |
-| `showSettings`           | boolean         | `true`                          | Show the settings button in the header                                                                                         |
-| `showThemeSwitch`        | boolean         | `true`                          | Show the theme switch. Combine with `darkMode` to force one theme                                                              |
-| `showFooter`             | boolean         | `true`                          | Show the footer                                                                                                                |
-| `showSearch`             | boolean         | `true`                          | Show the search box                                                                                                            |
-| `showDownloadTarball`    | boolean         | `true`                          | Show the download button in the sidebar                                                                                        |
-| `showUplinks`            | boolean         | `true`                          | Show the uplinks section of the package detail                                                                                 |
-| `showRaw`                | boolean         | `true`                          | Show the raw manifest button in the sidebar                                                                                    |
-| `hideDeprecatedVersions` | boolean         | `false`                         | Leave deprecated versions out of the version list                                                                              |
+| Property                         | Type            | Default                         | Description                                                                                                                    |
+| -------------------------------- | --------------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `enabled`                        | boolean         | `true`                          | Serve the web interface. `enable` is the deprecated spelling                                                                   |
+| `title`                          | string          | Verdaccio                       | HTML head title                                                                                                                |
+| `gravatar`                       | boolean         | `true`                          | Generate Gravatars for user avatars                                                                                            |
+| `sort_packages`                  | `asc` \| `desc` | `asc`                           | Direction of the package list ordering                                                                                         |
+| `sort_field` <small>7.x</small>  | string          | `name`                          | Package field the list is ordered by                                                                                           |
+| `logo`                           | string          | —                               | URI of the header logo, a local path or a URL                                                                                  |
+| `logoDark`                       | string          | —                               | Logo used when the dark theme is active; falls back to `logo`                                                                  |
+| `favicon`                        | string          | —                               | Custom favicon, a local path or a URL                                                                                          |
+| `primaryColor`                   | string          | `#4b5e40`                       | Primary colour of the UI. `primary_color` is the deprecated spelling                                                           |
+| `darkMode`                       | boolean         | `false`                         | Start in the dark theme                                                                                                        |
+| `scope`                          | string          | `''`                            | Scope shown in the registry instructions header, e.g. `'@myscope'`                                                             |
+| `pkgManagers`                    | list            | `yarn`, `pnpm`, `npm`           | Which package managers appear in the sidebar and the registry dialog                                                           |
+| `login`                          | boolean         | `true`                          | Allow logging in from the UI. `false` also disables the web login endpoints                                                    |
+| `rateLimit`                      | object          | `max: 5000`, `windowMs: 120000` | Rate limit of the web data endpoints only; CSS and JS are not counted. Prefer [`userRateLimit`](configuration#user-rate-limit) |
+| `html_cache`                     | boolean         | `true`                          | Cache the rendered HTML shell                                                                                                  |
+| `assetFolder` <small>7.x</small> | string          | —                               | Folder served under `/-/assets/`, for logos and files referenced above; handy with Docker volumes                              |
+| `metaScripts`                    | string[]        | —                               | Tags injected before `</head>`                                                                                                 |
+| `scriptsBodyBefore`              | string[]        | —                               | Tags injected as the first child of `<body>`                                                                                   |
+| `scriptsBodyAfter`               | string[]        | —                               | Tags injected as the last child of `</body>`                                                                                   |
+| `showInfo`                       | boolean         | `true`                          | Show the info button in the header                                                                                             |
+| `showSettings`                   | boolean         | `true`                          | Show the settings button in the header                                                                                         |
+| `showThemeSwitch`                | boolean         | `true`                          | Show the theme switch. Combine with `darkMode` to force one theme                                                              |
+| `showFooter`                     | boolean         | `true`                          | Show the footer                                                                                                                |
+| `showSearch`                     | boolean         | `true`                          | Show the search box                                                                                                            |
+| `showDownloadTarball`            | boolean         | `true`                          | Show the download button in the sidebar                                                                                        |
+| `showUplinks`                    | boolean         | `true`                          | Show the uplinks section of the package detail                                                                                 |
+| `showRaw`                        | boolean         | `true`                          | Show the raw manifest button in the sidebar                                                                                    |
+| `hideDeprecatedVersions`         | boolean         | `false`                         | Leave deprecated versions out of the version list                                                                              |
 
 `sort_field` and `assetFolder` are **7.x** only; every other option above works on both
 **6.x** and **7.x**.
