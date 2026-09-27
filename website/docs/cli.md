@@ -54,7 +54,15 @@ does the `conf` field of the [`/-/_debug` endpoint](/dev/node-api#debug-endpoint
 
 ## Config file format {#config-file-format}
 
-Config files should be YAML, JSON or a NodeJS module. YAML format is detected by parsing config file extension (yaml or yml, case insensitive).
+The configuration must be **YAML**, in a file ending in `.yaml` or `.yml` (case
+insensitive).
+
+:::caution JSON and JavaScript configs are 6.x only
+**6.x** also accepts a `.json` file or a Node.js module, which it loads with `require` while
+emitting the `VERDEP004` deprecation warning. **7.x removed that**: any other extension
+fails at startup with `config file must be a YAML file (.yaml or .yml)`. Convert the file
+before upgrading.
+:::
 
 ## Default storage location {#default-storage-location}
 
