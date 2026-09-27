@@ -1,6 +1,5 @@
 // @ts-check
 
-const { translationsData } = require('@verdaccio/local-scripts');
 const { themes } = require('prism-react-renderer');
 
 // ── External URLs & credentials ───────────────────────────────────────────────
@@ -10,10 +9,6 @@ const GITHUB = {
   EDIT_DOCS: 'https://github.com/verdaccio/website/edit/master/website/docs',
   EDIT_BLOG: 'https://github.com/verdaccio/verdaccio/edit/master/website',
   BUTTONS: 'https://buttons.github.io/buttons.js',
-};
-
-const CROWDIN = {
-  PROJECT: 'https://crowdin.com/project/verdaccio',
 };
 
 const SOCIAL = {
@@ -30,80 +25,6 @@ const DONATE = {
 const ANALYTICS = {
   GA_TRACKING_ID: 'G-PCYM9FYJZT',
 };
-
-// ── i18n ──────────────────────────────────────────────────────────────────────
-
-/** @type {Record<string, string>} Maps Docusaurus locale codes to Crowdin language codes */
-const LOCALE_TO_CROWDIN = {
-  'de-DE': 'de',
-  'pl-PL': 'pl',
-  'cs-CZ': 'cs',
-  'ga-IE': 'ga-IE',
-  'fr-FR': 'fr',
-  'it-IT': 'it',
-  'ru-RU': 'ru',
-  'vi-VN': 'vi',
-  'yo-NG': 'yo',
-};
-
-const MIN_TRANSLATION_PROGRESS = 80;
-
-/**
- * Filters locales by translation progress threshold.
- * English is always included regardless of progress.
- *
- * @param {string[]} locales
- * @returns {string[]}
- */
-const filterByProgress = (locales) => {
-  return locales.filter((locale) => {
-    if (locale === 'en') return true;
-
-    const crowdinKey = LOCALE_TO_CROWDIN[locale] ?? locale;
-    const localeData = translationsData[crowdinKey];
-
-    if (!localeData) {
-      console.warn(`[i18n] Locale "${crowdinKey}" excluded — not found in translations data`);
-      return false;
-    }
-
-    const { translationProgress } = localeData;
-    if (translationProgress <= MIN_TRANSLATION_PROGRESS) {
-      console.warn(
-        `[i18n] Locale "${crowdinKey}" excluded — progress ${translationProgress}% is below threshold ${MIN_TRANSLATION_PROGRESS}%`
-      );
-      return false;
-    }
-
-    return true;
-  });
-};
-
-/** @param {string} crowdinKey @returns {number} */
-const progress = (crowdinKey) => translationsData[crowdinKey]?.translationProgress ?? 0;
-
-/** @param {string} label @param {string} crowdinKey @returns {string} */
-const localeLabel = (label, crowdinKey) => `${label} (${progress(crowdinKey)}%)`;
-
-const locales = filterByProgress([
-  'en',
-  'cs-CZ',
-  'de-DE',
-  'es-ES',
-  'fr-FR',
-  'it-IT',
-  'ga-IE',
-  'pl-PL',
-  'pt-BR',
-  'ru-RU',
-  'sr-CS',
-  'vi-VN',
-  'yo-NG',
-  'zh-TW',
-  'zh-CN',
-]);
-
-console.log('[i18n] Active locales:', locales);
 
 // ── Config ────────────────────────────────────────────────────────────────────
 
@@ -124,23 +45,7 @@ module.exports = {
 
   i18n: {
     defaultLocale: 'en',
-    locales,
-    localeConfigs: {
-      en: { label: 'English' },
-      'it-IT': { label: localeLabel('Italiano', 'it') },
-      'es-ES': { label: localeLabel('Español', 'es-ES') },
-      'de-DE': { label: localeLabel('Deutsch', 'de') },
-      'cs-CZ': { label: localeLabel('Čeština (Česko)', 'cs') },
-      'fr-FR': { label: localeLabel('Français', 'fr') },
-      'pl-PL': { label: localeLabel('Polski (Polska)', 'pl') },
-      'pt-BR': { label: localeLabel('Português (Brasil)', 'pt-BR') },
-      'ru-RU': { label: localeLabel('Русский (Россия)', 'ru') },
-      'zh-CN': { label: localeLabel('中文（中国）', 'zh-CN') },
-      'zh-TW': { label: localeLabel('中文（台灣）', 'zh-TW') },
-      'yo-NG': { label: localeLabel('Èdè Yorùbá (Nàìjíríà)', 'yo') },
-      'sr-CS': { label: localeLabel('Српски (Србија)', 'sr-CS') },
-      'vi-VN': { label: localeLabel('Tiếng Việt (Việt Nam)', 'vi') },
-    },
+    locales: ['en'],
   },
 
   markdown: {
@@ -258,11 +163,6 @@ module.exports = {
           { href: '/community', position: 'left', label: 'Community' },
           { href: SOCIAL.OPEN_COLLECTIVE, position: 'right', label: 'Sponsor Us' },
           {
-            type: 'localeDropdown',
-            position: 'right',
-            dropdownItemsAfter: [{ href: CROWDIN.PROJECT, label: 'Help Us Translate' }],
-          },
-          {
             href: GITHUB.REPO,
             position: 'right',
             className: 'header-github-link',
@@ -328,8 +228,7 @@ module.exports = {
           showLastUpdateTime: true,
           sidebarCollapsible: true,
           remarkPlugins: [[require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]],
-          editUrl: ({ locale, docPath }) =>
-            locale !== 'en' ? `${CROWDIN.PROJECT}/${locale}` : `${GITHUB.EDIT_DOCS}/${docPath}`,
+          editUrl: ({ docPath }) => `${GITHUB.EDIT_DOCS}/${docPath}`,
         },
         gtag: { trackingID: ANALYTICS.GA_TRACKING_ID },
         blog: {
@@ -341,10 +240,7 @@ module.exports = {
           blogSidebarCount: 'ALL',
           blogSidebarTitle: 'All our posts',
           authorsMapPath: 'authors.yml',
-          editUrl: ({ locale, blogDirPath, blogPath }) =>
-            locale !== 'en'
-              ? `${CROWDIN.PROJECT}/${locale}`
-              : `${GITHUB.EDIT_BLOG}/${blogDirPath}/${blogPath}`,
+          editUrl: ({ blogDirPath, blogPath }) => `${GITHUB.EDIT_BLOG}/${blogDirPath}/${blogPath}`,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.scss'),

@@ -12,8 +12,8 @@
     "serve": "docusaurus serve",
     "write-heading-ids": "docusaurus write-heading-ids",
     "deploy-gh-pages": "docusaurus deploy",
-    "deploy:build:test": "docusaurus write-translations && NODE_OPTIONS=--max-old-space-size=8192 docusaurus build --locale en",
-    "deploy:build": "docusaurus write-translations && pnpm -w crowdin:sync && NODE_OPTIONS=--max-old-space-size=8192 docusaurus build",
+    "deploy:build:test": "NODE_OPTIONS=--max-old-space-size=8192 docusaurus build",
+    "deploy:build": "NODE_OPTIONS=--max-old-space-size=8192 docusaurus build",
     "check:examples": "tsc --noEmit -p tsconfig.examples.json",
     "lint:check": "oxlint --deny-warnings src",
     "lint:write": "oxlint --fix src"

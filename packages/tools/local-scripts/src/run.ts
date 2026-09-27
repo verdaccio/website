@@ -5,19 +5,17 @@ import { EcosystemVersionDownloadsCommand } from './api/ecosystemVersionDownload
 import { FetchAllDownloadsCommand } from './api/fetchAllDownloadsCommand';
 import { NpmjsApiDownloadCommand } from './api/npmjsApiDownloadCommand';
 import { FetchMonthlyDataCommand, FetchYearlyDataCommand } from './api/npmjsApiDownloadPoints';
-import { TranslationsApiCommand } from './api/translationsCommand';
 
 import { Cli } from 'clipanion';
 
 const [node, app, ...args] = process.argv;
 
 const cli = new Cli({
-  binaryLabel: `translations`,
+  binaryLabel: `local-scripts`,
   binaryName: `${node} ${app}`,
   binaryVersion: require('../package.json').version,
 });
 
-cli.register(TranslationsApiCommand);
 cli.register(NpmjsApiDownloadCommand);
 cli.register(DockerPullCommand);
 cli.register(FetchMonthlyDataCommand);
