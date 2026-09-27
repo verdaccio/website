@@ -47,4 +47,20 @@ https://chat.verdaccio.org https://discord.gg/7qWJxBf 200
 /docs/security-policy /community/security 301
 # The AWS page documented an Amazon Linux 2 / nvm setup that no longer applies.
 /docs/amazon /docs/docker 301
+
+# The 2018-2019 posts documented Verdaccio 3 and 4, both long end of life. Only the
+# Verdaccio 5 migration guide is kept; the rest land on the home page.
+/blog/2018/09/06/verdaccio-and-deterministic-lock-files / 301
+/blog/2018/10/21/verdaccio-4-alpha-release / 301
+/blog/2018/11/19/setting-up-verdaccio-on-digitalocean / 301
+/blog/2019/02/08/the-crazy-story-of-verdaccio / 301
+/blog/2019/02/24/migrating-verdaccio / 301
+/blog/2019/04/19/diving-into-jwt-support-for-verdaccio-4 / 301
+/blog/2019/05/13/the-new-docker-image-verdaccio-4 / 301
+/blog/2019/05/19/15-verdaccio-4-release / 301
+/blog/2019/07/08/verdaccio-410-release / 301
+/blog/2019/07/30/verdaccio-420-release / 301
+/blog/2019/09/07/managing-multiples-projects-with-lerna-and-yarn-workspaces / 301
+/blog/2019/09/30/verdaccio-430-release / 301
+/blog/2019/10/05/verdaccio-4-with-ldap-and-docker / 301
 /docs/ui-components /dev/ui-components 301

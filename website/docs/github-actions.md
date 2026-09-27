@@ -1,6 +1,7 @@
 ---
 id: github-actions
 title: 'GitHub Actions'
+description: 'Publish and test packages against Verdaccio from a GitHub Actions workflow.'
 ---
 
 With [GitHub Actions](https://github.com/features/actions) you can automate your workflow, each GitHub Action performs a specific step in a process.

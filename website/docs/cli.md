@@ -1,6 +1,7 @@
 ---
 id: cli
 title: 'Command Line Tool'
+description: 'The verdaccio command: its options, where the configuration file and the storage are resolved from, and the config file formats accepted.'
 ---
 
 The Verdaccio CLI is your tool to start and stop the application.

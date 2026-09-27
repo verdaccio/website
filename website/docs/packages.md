@@ -1,6 +1,7 @@
 ---
 id: packages
 title: 'Package Access'
+description: 'The packages block: grant or deny access, publish and unpublish per package pattern, and how the groups $all, $anonymous and $authenticated resolve.'
 ---
 
 This is a series of constraints that allow or restrict access to the local storage based on specific criteria.

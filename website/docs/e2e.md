@@ -1,6 +1,7 @@
 ---
 id: e2e
 title: 'End to End testing'
+description: 'Use a private registry to run end-to-end tests against packages as they will actually be published.'
 ---
 
 ### Testing the integrity of React components by publishing in a private registry

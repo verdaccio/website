@@ -1,6 +1,7 @@
 ---
 id: plugins
 title: 'Plugins'
+description: 'The five kinds of plugin Verdaccio accepts, how to install and configure them, and where to find published ones.'
 ---
 
 Verdaccio is a pluggable application. It can be extended in many ways, either new authentication methods, adding endpoints or using a custom storage.

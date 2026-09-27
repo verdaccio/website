@@ -1,6 +1,7 @@
 ---
 id: docker
 title: Docker
+description: 'Run Verdaccio from the official Docker image: tags, mounting configuration and storage, building your own image, and docker-compose.'
 ---
 
 <iframe width="560" height="515" src="https://www.youtube.com/embed/zRI0skF1f8I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

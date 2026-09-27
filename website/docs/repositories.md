@@ -1,6 +1,7 @@
 ---
 id: repositories
 title: Source Code
+description: 'The repositories Verdaccio is developed in, and which part of the project lives in each one.'
 ---
 
 Verdaccio is not a single repository: the registry, its plugins, the Docker images, the

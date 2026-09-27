@@ -1,6 +1,7 @@
 ---
 id: webui
 title: 'Web Configuration'
+description: 'Configure the web interface: title, logo, colours, dark mode, which features are visible, and injecting your own scripts.'
 ---
 
 ![Uplinks](https://user-images.githubusercontent.com/558752/52916111-fa4ba980-32db-11e9-8a64-f4e06eb920b3.png)

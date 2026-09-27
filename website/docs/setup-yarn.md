@@ -1,9 +1,8 @@
 ---
 id: setup-yarn
 title: 'yarn'
+description: 'Use Verdaccio with yarn, both classic 1.x and modern, including the plugins needed for authentication.'
 ---
-
-# yarn {#yarn}
 
 #### `yarn` classic (1.x) {#yarn-classic-1x}
 

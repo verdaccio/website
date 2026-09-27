@@ -1,6 +1,7 @@
 ---
 id: configuration
 title: 'Configuration File'
+description: 'The config.yaml reference: storage, authentication, uplinks, package access, the token secret, server and security settings, notifications, logging, filters and feature flags.'
 ---
 
 This file is the cornerstone of Verdaccio where you can modify the default behaviour, enable plugins and extend features.

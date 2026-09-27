@@ -1,6 +1,7 @@
 ---
 id: best
 title: 'Best Practices'
+description: 'Recommended practices for running Verdaccio: locking down access, protecting private packages, tokens, HTTPS and what to avoid in production.'
 ---
 
 The following guide is a list of the best practices collected and that we usually recommend to all users. Do not take this guide as

@@ -1,6 +1,7 @@
 ---
 id: iss-server
 title: 'Installing on IIS server'
+description: 'Run Verdaccio behind IIS on Windows Server. Community-maintained and written for a much older stack.'
 ---
 
 :::caution Community-maintained, and written for a much older stack

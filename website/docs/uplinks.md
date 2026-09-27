@@ -1,6 +1,7 @@
 ---
 id: uplinks
 title: 'Uplinks'
+description: 'Configure upstream registries: authentication, timeouts, retries, caching and failover between several uplinks.'
 ---
 
 An _uplink_ is a link with an external registry that provides access to external packages.

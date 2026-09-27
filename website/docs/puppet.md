@@ -1,6 +1,7 @@
 ---
 id: puppet
 title: 'Puppet'
+description: 'Install and configure Verdaccio with Puppet, on Debian, Ubuntu, Fedora and RedHat.'
 ---
 
 Install verdaccio for Debian, Ubuntu, Fedora, and RedHat.

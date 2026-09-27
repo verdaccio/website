@@ -1,6 +1,7 @@
 ---
 id: logger
 title: 'Logger'
+description: 'Configure Verdaccio logging: output type, level, pretty or JSON format, redaction of sensitive fields, and log rotation.'
 ---
 
 :::caution Deprecated: `logs`
@@ -23,9 +24,8 @@ log: { type: file, path: verdaccio.log, level: info }
 ```
 
 :::note No built-in log rotation
-Verdaccio does **not** rotate log files itself — it dropped that when it
-[moved to pino](https://verdaccio.org/blog/2021/04/14/verdaccio-5-migration-guide#pinojs-is-the-new-logger),
-and neither **6.x** nor **7.x** brings it back. Use `logrotate`, or your platform's
+Verdaccio does **not** rotate log files itself — it dropped that when the logger became
+[pino](https://getpino.io/), and neither **6.x** nor **7.x** brings it back. Use `logrotate`, or your platform's
 equivalent, and send `SIGUSR2` afterwards so Verdaccio reopens the file it was writing to.
 :::
 

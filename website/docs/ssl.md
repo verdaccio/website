@@ -1,6 +1,7 @@
 ---
 id: ssl
 title: 'Set up the SSL Certificates'
+description: 'Serve the registry over HTTPS, either with Verdaccio own certificates or from behind a proxy.'
 ---
 
 Follow these instructions to configure an SSL certificate to serve an npm registry over HTTPS.

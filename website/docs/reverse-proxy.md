@@ -1,6 +1,7 @@
 ---
 id: reverse-proxy
 title: 'Reverse Proxy Setup'
+description: 'Put Verdaccio behind nginx, Apache or another reverse proxy, including the headers and the trustProxy setting it needs.'
 ---
 
 Using a reverse proxy is a common practice. The following configurations are the

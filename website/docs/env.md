@@ -1,6 +1,7 @@
 ---
 id: env
 title: Environment Variables
+description: 'Every environment variable Verdaccio reads: the Docker ones, the public URL and proxy headers, storage paths and the legacy token key.'
 ---
 
 Verdaccio provides a set of environment variables to modify either permissions, port or http protocol. Here the complete list:

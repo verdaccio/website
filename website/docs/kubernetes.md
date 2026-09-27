@@ -1,6 +1,7 @@
 ---
 id: kubernetes
 title: 'Kubernetes'
+description: 'Deploy Verdaccio on Kubernetes with the official Helm chart, including persistent storage and the configuration configMap.'
 ---
 
 You can find instructions to deploy Verdaccio on a Kubernetes cluster on the

@@ -1,6 +1,7 @@
 ---
 id: ci
 title: 'Continuous Integration'
+description: 'Use Verdaccio from a CI pipeline to install or publish private packages without an interactive npm login.'
 ---
 
 Verdaccio can be used with continuous integration (CI) platforms to install or publish packages.

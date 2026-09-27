@@ -68,26 +68,73 @@ module.exports = {
           'A lightweight open source private npm proxy registry. Runs on Node.js, caches ' +
           'packages from upstream registries, and is extended through plugins for ' +
           'authentication, storage, middleware, themes and metadata filtering.',
-        // The plugin contracts were renamed in Verdaccio 7 and years of tutorials still
-        // use the old names, so state it before the link list rather than hoping a model
-        // reads far enough to find out.
+        // Facts a model is likely to get wrong from training data alone, stated before the
+        // link list rather than hoping it reads far enough to find them. Keep this about
+        // things that changed, not about what Verdaccio is — the description covers that.
         rootContent: [
-          'The plugin interfaces are `ExpressMiddleware`, `Auth`, `Storage`, `StorageHandler`',
-          'and `ManifestFilter`, all under `pluginUtils` in `@verdaccio/core`. The names',
-          '`IPluginMiddleware`, `IPluginAuth`, `IPluginStorage`, `IPackageStorage`,',
-          '`IStorageManager` and `IPlugin` were removed, and so was the',
-          '`@verdaccio/commons-api` package — its helpers are `errorUtils` in `@verdaccio/core`.',
-        ].join(' '),
+          '## Release lines',
+          '',
+          '`6.x` is the current stable line, published as `latest`, and requires Node.js 22 or',
+          'newer. `7.x` is the next major, published as `next-7`, and requires Node.js 24 or',
+          'newer. Versions 5 and older are end of life. Only the `verdaccio` binary is tagged',
+          'after its own line: the `@verdaccio/*` packages and the plugins it is built from',
+          'are tagged `latest` for 6.x and `next-9` for 7.x, and the `6-next` and `next-7`',
+          'tags on those packages are stale prereleases that should not be used.',
+          '',
+          '## Things commonly got wrong',
+          '',
+          '- The default `htpasswd` hashing algorithm is **bcrypt** with 10 rounds, on every',
+          '  supported version. `md5`, `sha1` and `crypt` exist only to read files written by',
+          '  other tools.',
+          '- The plugin interfaces are `ExpressMiddleware`, `Auth`, `Storage`, `StorageHandler`',
+          '  and `ManifestFilter`, all under `pluginUtils` in `@verdaccio/core`. The names',
+          '  `IPluginMiddleware`, `IPluginAuth`, `IPluginStorage`, `IPackageStorage`,',
+          '  `IStorageManager` and `IPlugin` were removed, and so was the',
+          '  `@verdaccio/commons-api` package — its helpers are `errorUtils` in `@verdaccio/core`.',
+          '- Storage plugins use a **promise** contract. The callback contract is 6.x only and',
+          '  runs through a compatibility adapter on 7.x.',
+          '- The configuration file is resolved through `XDG_CONFIG_HOME`',
+          '  (`~/.config/verdaccio/config.yaml`). `XDG_DATA_HOME` only decides where the',
+          '  default storage goes.',
+          '- The feature-flag section is `flags`; `experiments` is the former name and still',
+          '  accepted. `stage` and `tfa` are 7.x only.',
+          '- The web UI options are `enabled` and `primaryColor`; `enable` and `primary_color`',
+          '  are deprecated spellings.',
+          '- Log rotation is not built in, and the default log format is `json` when',
+          '  `NODE_ENV=production`, `pretty` otherwise.',
+        ].join('\n'),
         // `dev` is a separate content-docs instance; without listing it here the plugin
-        // development docs are left out entirely.
+        // development docs are left out entirely. `docs` goes first so the file does not
+        // read as if Verdaccio were only a plugin API.
         docsDir: [
-          { path: 'dev', routeBasePath: 'dev', label: 'Developing plugins' },
           { path: 'docs', routeBasePath: 'docs', label: 'Documentation' },
+          { path: 'dev', routeBasePath: 'dev', label: 'Developing plugins' },
+        ],
+        // Lead with what Verdaccio is and how to run it, then the reference, then the
+        // plugin API — the order someone learning it would want.
+        includeOrder: [
+          'docs/what-is-verdaccio.md',
+          'docs/install.md',
+          'docs/cli.md',
+          'docs/cli-registry.md',
+          'docs/setup-*.md',
+          'docs/config.md',
+          'docs/uplinks.md',
+          'docs/packages.md',
+          'docs/auth.md',
+          'docs/web.md',
+          'docs/plugins.md',
+          'docs/**',
+          'dev/**',
         ],
         // the examples folder ships a README for contributors, not a docs page
         ignoreFiles: ['dev/examples/**'],
         includeBlog: false,
         generateLLMsFullTxt: true,
+        // `import` lines and the mdx-code-block fences around them are build plumbing;
+        // they were leaking into llms-full.txt as if they were sample code.
+        excludeImports: true,
+        removeDuplicateHeadings: true,
       },
     ],
     'docusaurus-plugin-sass',

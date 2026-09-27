@@ -1,6 +1,7 @@
 ---
 id: who-is-using
 title: 'Who is using Verdaccio?'
+description: 'Companies and open source projects using Verdaccio in production.'
 ---
 
 ### As a Business {#as-a-business}

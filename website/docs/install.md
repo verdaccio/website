@@ -1,6 +1,7 @@
 ---
 id: installation
 title: 'Installation'
+description: 'Install Verdaccio with npm, pnpm, yarn, Docker or Helm, and the Node.js version each line requires.'
 ---
 
 Verdaccio is a Node.js private and proxy registry. To install it, you need a few basic prerequisites.

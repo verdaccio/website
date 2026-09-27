@@ -1,6 +1,7 @@
 ---
 id: chef
 title: 'Chef Cookbook'
+description: 'Install and configure Verdaccio with the Chef cookbook.'
 ---
 
 Using Chef Cookbook for Verdaccio

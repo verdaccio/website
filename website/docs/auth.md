@@ -1,6 +1,7 @@
 ---
 id: authentication
 title: 'Authentication'
+description: 'How authentication works: the default htpasswd plugin and its hashing algorithms, the built-in groups, and how access is resolved with a custom plugin.'
 ---
 
 The authentication is tied to the auth [plugin](plugins.md) you are using. The package restrictions are also handled by the [Package Access](packages.md).
