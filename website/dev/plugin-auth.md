@@ -179,6 +179,25 @@ which is what the built-in plugin does when the packages configuration has no `s
 
 `apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
 
+### Error messages come from `API_ERROR` {#api-error}
+
+`@verdaccio/core` exports `API_ERROR`, a list of the messages the registry already uses —
+`BAD_USERNAME_PASSWORD`, `NO_CREDENTIALS_PROVIDED`, `MAX_USERS_REACHED`,
+`REGISTRATION_DISABLED`, `UNAUTHORIZED_ACCESS` and around forty more.
+
+Most `errorUtils` helpers **already default to the right one**, so the common case takes no
+argument at all:
+
+```ts
+errorUtils.getUnauthorized(); // → API_ERROR.NO_CREDENTIALS_PROVIDED
+errorUtils.getNotFound(); //     → API_ERROR.NO_PACKAGE
+errorUtils.getConflict(); //     → API_ERROR.PACKAGE_EXIST
+```
+
+Passing a hand-written string usually means retyping a constant, and your plugin's errors then
+read differently from the registry's for the same situation. Write your own message only when
+nothing in the list fits.
+
 ## What should I return in each of the methods? {#what-should-i-return-in-each-of-the-methods}
 
 Verdaccio relies on `callback` functions at time of this writing. Each method should call the method and what you return is important, let's review how to do it.
@@ -210,9 +229,9 @@ The auth was successful.
 The authentication service might fails, and you might want to reflect that in the user response, eg: service is unavailable.
 
 ```
- import { errorUtils } from '@verdaccio/core';
+ import { API_ERROR, errorUtils } from '@verdaccio/core';
 
- callback(errorUtils.getInternalError('the auth service is unavailable'));
+ callback(errorUtils.getInternalError(API_ERROR.RESOURCE_UNAVAILABLE));
 ```
 
 > A failure on login is not the same as service error, if you want to notify user the credentials are wrong, just return `false` instead string of groups. The behaviour mostly depends of you.
@@ -232,9 +251,9 @@ callback(null, true);
 Any other action different than success must return an error.
 
 ```typescript
-import { errorUtils } from '@verdaccio/core';
+import { API_ERROR, errorUtils } from '@verdaccio/core';
 
-const err = errorUtils.getConflict('maximum amount of users reached');
+const err = errorUtils.getConflict(API_ERROR.MAX_USERS_REACHED);
 
 callback(err);
 ```
@@ -258,6 +277,8 @@ Any other action different than success must return an error.
 ```typescript
 import { errorUtils } from '@verdaccio/core';
 
+// `API_ERROR` has no entry for an unknown user, and the default for getNotFound is
+// NO_PACKAGE — 'no such package available' — which would be misleading here.
 const err = errorUtils.getNotFound('user not found');
 
 callback(err);
@@ -285,7 +306,7 @@ allow_access(user: RemoteUser, pkg: PackageAccess, cb: Callback): void {
 Any other action different than success must return an error.
 
 ```typescript
-import { errorUtils } from '@verdaccio/core';
+import { API_ERROR, errorUtils } from '@verdaccio/core';
 
 const err = getForbidden('not allowed to access package');
 

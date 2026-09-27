@@ -1,4 +1,4 @@
-import { errorUtils, pluginUtils } from '@verdaccio/core';
+import { API_ERROR, errorUtils, pluginUtils } from '@verdaccio/core';
 import type { AllowAccess, PackageAccess, RemoteUser } from '@verdaccio/types';
 
 /**
@@ -36,12 +36,17 @@ export default class ServiceAuth
    * - `cb(null, ['group-a'])` — authenticated, with the groups the user belongs to.
    * - `cb(null, false)` — **wrong credentials**. Not an error; the request falls back to
    *   `$anonymous`, or to the next plugin in the chain.
-   * - `cb(errorUtils.getInternalError('...'))` — the auth *service* failed. Use this only
+   * - `cb(errorUtils.getInternalError(...))` — the auth *service* failed. Use this only
    *   when you could not decide, never for a bad password.
+   *
+   * Messages live in `API_ERROR` (`@verdaccio/core`); most `errorUtils` helpers already
+   * default to the right one, so passing a hand-written string usually means duplicating
+   * a constant.
    */
   public authenticate(user: string, password: string, cb: pluginUtils.AuthCallback): void {
     if (!password) {
-      return cb(errorUtils.getUnauthorized('no credentials provided'));
+      // no argument: the default is already API_ERROR.NO_CREDENTIALS_PROVIDED
+      return cb(errorUtils.getUnauthorized());
     }
 
     if (user === 'known-user' && password === 'secret') {
@@ -61,7 +66,7 @@ export default class ServiceAuth
   public adduser(user: string, password: string, cb: pluginUtils.AuthUserCallback): void {
     this.authenticate(user, password, (err, groups) => {
       if (err || !groups) {
-        return cb(errorUtils.getConflict('registration is not allowed'));
+        return cb(errorUtils.getConflict(API_ERROR.REGISTRATION_DISABLED));
       }
       return cb(null, true);
     });
@@ -70,7 +75,9 @@ export default class ServiceAuth
   /**
    * Handle `npm profile set password`. Optional.
    *
-   * `getNotFound()` is the right answer when the user does not exist in your backend.
+   * There is no `API_ERROR` for an unknown user — `getNotFound()` defaults to
+   * `NO_PACKAGE`, which would be wrong here — so this is one of the few places a custom
+   * message is the right call.
    */
   public changePassword(
     user: string,
