@@ -68,21 +68,28 @@ existing YAML file.
 
 ## What the package exports {#exports}
 
-The surface is not the same on every line. Import `runServer` **by name** — it is the only
-thing all three agree on, and the default export means something different on each:
+The surface has not been the same on every line. `runServer` is the one name all three agree
+on, so importing it **by name** is what always works:
 
-| Export                                                           | 6.x              | 7.x         | 9.x      |
-| ---------------------------------------------------------------- | ---------------- | ----------- | -------- |
-| `runServer`                                                      | yes              | yes         | yes      |
-| `default`                                                        | `startVerdaccio` | `runServer` | _(none)_ |
-| `initServer`                                                     | no               | yes         | no       |
-| `startVerdaccio`                                                 | yes              | no          | no       |
-| `ConfigBuilder`, `parseConfigFile`, `getDefaultConfig`, `Config` | yes              | yes         | no       |
-| `fileUtils`, `errorUtils`, `cryptoUtils`, `pkgUtils`             | yes              | no          | no       |
+| Export                                                           | 6.x              | 7.x         | 9.x                  |
+| ---------------------------------------------------------------- | ---------------- | ----------- | -------------------- |
+| `runServer`                                                      | yes              | yes         | yes                  |
+| `default`                                                        | `startVerdaccio` | `runServer` | `runServer` &dagger; |
+| `initServer`                                                     | no               | yes         | yes &dagger;         |
+| `startVerdaccio`                                                 | yes              | no          | no                   |
+| `ConfigBuilder`, `parseConfigFile`, `getDefaultConfig`, `Config` | yes              | yes         | yes &dagger;         |
+| `fileUtils`, `errorUtils`, `cryptoUtils`, `pkgUtils`             | yes              | no          | no                   |
 
-Anything the `verdaccio` package no longer re-exports is still available from the module it
-came from — `@verdaccio/config` and `@verdaccio/core` — so the fix when upgrading is to
-import from there instead.
+&dagger; Up to and including `9.0.0-next-9.32` the package exported **only** `runServer`, so
+`require('verdaccio').default` was `undefined` and the configuration helpers had to come from
+`@verdaccio/config`. That was unintended — the three lines build this entry point from
+different files and drifted apart — and it is restored in the next 9.x release.
+
+Whatever a given version does not re-export is still available from the package it comes
+from: the configuration helpers from
+[`@verdaccio/config`](https://www.npmjs.com/package/@verdaccio/config) and the utilities from
+[`@verdaccio/core`](https://www.npmjs.com/package/@verdaccio/core). Importing from there
+works on every line, which makes it the safer habit for code that has to span versions.
 
 ## The old callback API {#legacy-api}
 
