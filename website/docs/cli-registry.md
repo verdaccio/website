@@ -106,3 +106,14 @@ Worth doing whichever approach you chose, because it does not depend on anyone's
 A publish now goes to that registry regardless of local configuration. For the stronger
 version of this — making the package unpublishable anywhere else — see
 [protecting packages](protect-your-dependencies.md).
+
+## Package manager compatibility {#package-manager-compatibility}
+
+Verdaccio validates package manager compatibility in a dedicated end-to-end test suite. The list of tested npm, Yarn, pnpm and Bun versions is maintained manually by contributors so each compatibility update is explicit and reviewable.
+
+| Package manager | Setup guide | Tested versions |
+| --- | --- | --- |
+| pnpm | [pnpm](setup-pnpm.md) | Maintained in [verdaccio/e2e-tests](https://github.com/verdaccio/e2e-tests/blob/main/README.md) |
+| npm | [npm](setup-npm.md) | Maintained in [verdaccio/e2e-tests](https://github.com/verdaccio/e2e-tests/blob/main/README.md) |
+| Yarn | [yarn](setup-yarn.md) | Maintained in [verdaccio/e2e-tests](https://github.com/verdaccio/e2e-tests/blob/main/README.md) |
+| Bun | [bun](setup-bun.md) | Maintained in [verdaccio/e2e-tests](https://github.com/verdaccio/e2e-tests/blob/main/README.md) |
