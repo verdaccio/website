@@ -4,15 +4,26 @@ title: 'Using a private registry'
 description: 'Point npm, pnpm or yarn at Verdaccio: the four steps every setup needs, and where each client keeps its configuration.'
 ---
 
-Whatever client you use, pointing it at Verdaccio is the same four steps. What changes is
-which file holds the setting and what the commands are called.
+Pointing a client at Verdaccio is the same four steps everywhere — point it at the registry,
+authenticate, publish, and keep the lockfile from undoing it. What changes is which file
+holds the setting and what the commands are called.
 
-1. **Point the client at the registry** — all of it, or just your own scope.
-2. **Authenticate**, if publishing or reading private packages.
-3. **Publish**, ideally pinned so a private package cannot reach npmjs by accident.
-4. **Keep it out of the lockfile's way**, since lockfiles record where each package came from.
+## Per client {#per-client}
+
+**Start here.** Each page covers registry configuration, authentication, publishing,
+two-factor and the problems specific to that client:
+
+- **[pnpm](setup-pnpm.md)** — including the release-age gate that hides packages you have
+  just published
+- **[npm](setup-npm.md)** — including `npm login` behaviour across versions and mixed
+  registries in a lockfile
+- **[yarn](setup-yarn.md)** — classic and modern, plus the plugins that add the registry
+  commands Yarn 4 does not ship
+- **[deno](setup-deno.md)** and **[bun](setup-bun.md)**
 
 ## The short version {#cheatsheet}
+
+The same settings side by side, if you already know what you are looking for:
 
 <div style={{overflowX: 'auto'}}>
 
@@ -77,16 +88,3 @@ Worth doing whichever approach you chose, because it does not depend on anyone's
 A publish now goes to that registry regardless of local configuration. For the stronger
 version of this — making the package unpublishable anywhere else — see
 [protecting packages](protect-your-dependencies.md).
-
-## Per client {#per-client}
-
-The pages below cover authentication, publishing, two-factor, and the problems specific to
-each client:
-
-- **[pnpm](setup-pnpm.md)** — including the release-age gate that hides packages you have
-  just published
-- **[npm](setup-npm.md)** — including `npm login` behaviour across versions and mixed
-  registries in a lockfile
-- **[yarn](setup-yarn.md)** — classic and modern, plus the plugins that add the registry
-  commands Yarn 4 does not ship
-- **[deno](setup-deno.md)** and **[bun](setup-bun.md)**
