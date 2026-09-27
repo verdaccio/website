@@ -25,6 +25,60 @@ Write a plugin when the answer has to come from **your** system:
   clients see it.
 - The UI has to look like the rest of your internal tooling.
 
+## Where a plugin plugs in {#where}
+
+Verdaccio is one Express application with five points where your code can take over. Nothing
+else changes: the registry keeps serving, caching and proxying around you.
+
+```mermaid
+flowchart TB
+    client["npm · pnpm · yarn · browser"]
+
+    subgraph http ["HTTP layer"]
+        builtin["cors · rate limit · logging<br/>body parser · JWT"]
+        mw(["middleware plugin"])
+    end
+
+    subgraph registry ["Registry"]
+        api["package manager API"]
+        web["web UI"]
+        auth(["auth plugin"])
+        filter(["filter plugin"])
+    end
+
+    subgraph persist ["Persistence"]
+        storage(["storage plugin"])
+        uplink["uplinks"]
+    end
+
+    theme(["theme plugin"])
+
+    client --> builtin --> mw
+    mw --> api
+    mw --> web
+    api -.->|"may this user?"| auth
+    api --> storage
+    api -.->|"cache miss"| uplink
+    uplink --> storage
+    storage -.->|"manifest on the way out"| filter
+    web --> theme
+
+    classDef plugin fill:#e8f4ea,stroke:#2e7d32,stroke-width:2px
+    class mw,auth,storage,filter,theme plugin
+```
+
+Reading it as a request:
+
+1. A request arrives and passes Verdaccio's own layers — CORS, rate limiting, the body parser,
+   the JWT that resolves `req.remote_user`.
+2. **Middleware plugins** see it next, _before_ the registry API, so they can add endpoints or
+   intercept existing ones.
+3. The API asks **auth plugins** whether this user may read, publish or unpublish.
+4. It reads and writes through the **storage plugin** — the only one Verdaccio cannot do
+   without a default for — falling back to **uplinks** on a cache miss.
+5. Manifests pass through **filter plugins** before they reach the client.
+6. Anything aimed at the web UI is rendered by the **theme plugin**.
+
 ## The five kinds {#kinds}
 
 | Plugin                             | Replaces or extends                  | Typical reason                                |
