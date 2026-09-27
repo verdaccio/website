@@ -12,9 +12,14 @@ adapt them, including commercially, as long as you credit the project.
   href="/verdaccio-logos.zip"
   download
   className="button button--primary button--lg"
-  style={{ marginBottom: '1.5rem', display: 'inline-block' }}>
-  ⬇ Download every logo (ZIP, ~160 KB)
-</a>
+  style={{
+    marginBottom: '1.5rem',
+    display: 'inline-block',
+    // markdown styles every `a` with the link colour, which on this button is the
+    // same green as its background; inline wins over that rule in every state
+    color: 'var(--ifm-button-color, #fff)',
+    textDecoration: 'none',
+  }}>Download every logo (ZIP, ~110&nbsp;KB)</a>
 
 The archive holds all 12 files below, in the same folder layout. Or pick one:
 
