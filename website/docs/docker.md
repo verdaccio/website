@@ -260,11 +260,11 @@ Each one is self-contained: `cd` into its folder and follow its `README.md`.
 They are grouped by the major version they target, so pick the set that matches the image
 you run:
 
-| Set                                                                                  | Image                    |
-| ------------------------------------------------------------------------------------ | ------------------------ |
-| [v6](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v6) — current stable | `verdaccio/verdaccio:6`  |
-| [v7](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7) — next major     | `7.x-next`               |
-| [v9](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v9) — experimental   | `nightly-master`         |
+| Set                                                                                          | Image                   |
+| -------------------------------------------------------------------------------------------- | ----------------------- |
+| [v6](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v6) — current stable | `verdaccio/verdaccio:6` |
+| [v7](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7) — next major     | `7.x-next`              |
+| [v9](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v9) — experimental   | `nightly-master`        |
 
 Between them they cover a local storage volume, reverse proxies with nginx and Apache,
 building an image with a local plugin, S3 storage, GitHub OAuth,
