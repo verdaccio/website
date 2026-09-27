@@ -249,9 +249,9 @@ your middleware plugin registers routes, review them: the wildcard syntax change
 ### `req.body` is already parsed
 
 On 7.x the body parser runs **before** middleware plugins, so `req.body` is populated when
-your plugin's handler is called. On 6.x there is no parser at that point and `req.body` is
-`undefined`, so plugins that installed their own parser should check they are not now parsing
-twice.
+your plugin's handler is called. Since 6.10.4 the same is true on 6.x; on earlier 6.x releases
+there is no parser at that point and `req.body` is `undefined`. Plugins that installed their
+own parser should check they are not now parsing twice.
 
 ### Storage plugins: callbacks became promises
 

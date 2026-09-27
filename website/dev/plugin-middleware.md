@@ -85,7 +85,7 @@ That is easy to do by accident: a broad `app.use()` with no path prefix sees eve
 Mount on a prefix — `app.use('/-/npm/v2/my-endpoint', router)` — unless overriding is what
 you want.
 
-### `req.body` is already parsed on 7.x {#body-parser}
+### `req.body` is already parsed {#body-parser}
 
 The parser at step 4 is `express.json({ strict: false, limit: config.max_body_size })`, so:
 
@@ -93,17 +93,19 @@ The parser at step 4 is `express.json({ strict: false, limit: config.max_body_si
   yourself fails with `stream is not readable`.
 - **`max_body_size` from `config.yaml` is your limit too** (default `10mb`). A plugin
   accepting larger payloads needs that raised.
-- If a plugin registers its own JSON parser first, Verdaccio detects it and does not add a
-  second one.
+- Registering `express.json()` in your own plugin is harmless — it sees the body already
+  parsed and skips — but it cannot replace Verdaccio's, which always runs first.
 
-**On 6.x there is no body parser before plugins.** `req.body` is `undefined` and the
-plugin has to parse the stream itself, or register `express.json()` on the app.
+**On 6.x this holds since 6.10.4** ([#6249](https://github.com/verdaccio/verdaccio/pull/6249)),
+which moved the parser ahead of the plugins there too. On earlier 6.x releases `req.body` is
+`undefined` and the plugin has to parse the stream itself.
 
 ### `req.remote_user` is populated, except under `/-/verdaccio/` {#remote-user}
 
-The JWT middleware at step 6 exists so plugins can read the authenticated user. It is
+The JWT middleware at step 6 exists so plugins can read the authenticated user. On 7.x it is
 deliberately skipped for the web UI namespace (`/-/verdaccio/`), which has its own token
-handling — a plugin mounted under that prefix will not see `req.remote_user`.
+handling — a plugin mounted under that prefix will not see `req.remote_user`. On 6.x the same
+middleware is mounted globally, so it runs for that namespace as well.
 
 ### Defining `middlewares:` replaces the default list {#audit}
 
