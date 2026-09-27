@@ -38,46 +38,11 @@ Learn the basics before getting started, how to install, where is the location o
 
 `Verdaccio` must be installed globally:
 
-```mdx-code-block
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs groupId="package-manager" defaultValue="pnpm" values={[
-  {label: 'pnpm', value: 'pnpm'},
-  {label: 'npm', value: 'npm'},
-  {label: 'Yarn', value: 'yarn'},
-]}>
-<TabItem value="pnpm">
-```
-
-```bash
-pnpm add -g verdaccio
-```
-
-```mdx-code-block
-</TabItem>
-<TabItem value="npm">
-```
-
-```bash
+```bash npm2yarn
 npm install -g verdaccio
 ```
 
-```mdx-code-block
-</TabItem>
-<TabItem value="yarn">
-```
-
-```bash
-yarn global add verdaccio
-```
-
-Yarn `1.x` _classic_ only; modern Yarn has no global install.
-
-```mdx-code-block
-</TabItem>
-</Tabs>
-```
+Global installs are Yarn `1.x` _classic_ only; modern Yarn has no equivalent.
 
 ![install verdaccio](/img/install_verdaccio.gif)
 

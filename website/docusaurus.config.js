@@ -274,7 +274,11 @@ module.exports = {
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           sidebarCollapsible: true,
-          remarkPlugins: [[require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }]],
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+            // must run after npm2yarn: it preselects the pnpm tab it generated
+            require('./plugins/remark-npm2yarn-default-pnpm'),
+          ],
           editUrl: ({ docPath }) => `${GITHUB.EDIT_DOCS}/${docPath}`,
         },
         gtag: { trackingID: ANALYTICS.GA_TRACKING_ID },
