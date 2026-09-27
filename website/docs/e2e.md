@@ -49,11 +49,11 @@ npm install -g verdaccio
 verdaccio --config ./verdaccio.yaml --listen 4873 &
 ```
 
-Do not `sleep` and hope. The registry logs its address when it is listening, so wait for
-that:
+Do not `sleep` and hope. Poll the registry until it answers, which
+[`verdaccioctl`](#verdaccioctl) does with a real exit code:
 
 ```bash
-npx wait-on http://localhost:4873/-/ping
+until npx @verdaccio/registry-cli ping -r http://localhost:4873; do sleep 0.5; done
 ```
 
 If you start it as a **forked child process** from Node.js, it tells you itself: it sends
@@ -154,6 +154,16 @@ registry=http://localhost:4873/
 
 Note the host-scoped key: it must match the registry URL, port included.
 
+If you would rather use a real account than a dummy token — because you are testing the
+access rules themselves, or the registry is shared — log in without a prompt:
+
+```bash
+npx @verdaccio/registry-cli login -u ci-bot -p "$CI_REGISTRY_PASSWORD" -r http://localhost:4873
+```
+
+It writes the host-scoped `_authToken` for you, so `npm publish` works straight after. See
+[below](#verdaccioctl).
+
 :::caution Basic auth is gone in 7.x
 Recipes that put `_auth` (a base64 `user:password`) in `.npmrc` work on **6.x** and fail on
 **7.x**, which only accepts Bearer tokens. Use `_authToken`, as above, and it works on both.
@@ -220,6 +230,32 @@ it includes a scenario for the release-age behaviour described above. The suite 
 For tests of Verdaccio's own API from Node.js, [`@verdaccio/test-helper`](https://www.npmjs.com/package/@verdaccio/test-helper)
 exposes the helpers the project uses internally, such as `initializeServer` and
 `publishVersion`.
+
+### `verdaccioctl` {#verdaccioctl}
+
+[`@verdaccio/registry-cli`](https://www.npmjs.com/package/@verdaccio/registry-cli) installs a
+`verdaccioctl` binary that covers the two things a pipeline always needs and `npm` makes
+awkward: logging in without a prompt, and knowing whether the registry is up. It has no
+dependencies and works with any auth plugin, since it only speaks the registry API.
+
+```bash
+# is it up? exit code 1 when it is not, so it works in a wait loop
+verdaccioctl ping -r http://localhost:4873
+
+# log in with no prompt; writes the host-scoped _authToken to ~/.npmrc
+verdaccioctl login -u ci-bot -p "$CI_REGISTRY_PASSWORD" -r http://localhost:4873
+
+# which account the stored token belongs to, and its groups when it has any
+verdaccioctl whoami -r http://localhost:4873
+```
+
+`login` also takes `--token` instead of a username and password, for a token minted
+elsewhere — an OIDC or Azure AD flow, for instance.
+
+Two things to keep in mind: it **writes to `~/.npmrc`**, which is what you want in a
+container or a CI runner and less so on your own machine, and the registry must allow the
+account to be created if it does not exist yet — with the default `htpasswd` plugin, the
+first `login` registers the user.
 
 ## Projects doing this in the wild {#examples}
 
