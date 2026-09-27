@@ -6,7 +6,7 @@ description: 'Configure Verdaccio logging: output type, level, pretty or JSON fo
 
 :::caution Deprecated: `logs`
 The property is `log`. The older `logs` spelling is still accepted but emits a
-deprecation warning (`VERWAR002`) on startup and may be removed at any time.
+deprecation warning ([`VERWAR002`](https://github.com/verdaccio/verdaccio/blob/master/docs/warnings.md)) on startup and may be removed at any time.
 :::
 
 As with any web application, Verdaccio has a customizable built-in logger. You can define multiple types of outputs.

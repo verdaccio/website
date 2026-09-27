@@ -623,7 +623,7 @@ notify:
 
 :::caution Deprecated: `logs`
 The property is `log`. The older `logs` spelling still works but emits a
-deprecation warning (`VERWAR002`) on startup and may be removed at any time —
+deprecation warning ([`VERWAR002`](https://github.com/verdaccio/verdaccio/blob/master/docs/warnings.md)) on startup and may be removed at any time —
 rename it to `log`.
 :::
 
