@@ -314,6 +314,9 @@ importers:
       '@types/express':
         specifier: 5.0.6
         version: 5.0.6
+      '@verdaccio/config':
+        specifier: 9.0.0-next-9.32
+        version: 9.0.0-next-9.32
       '@verdaccio/core':
         specifier: 9.0.0-next-9.32
         version: 9.0.0-next-9.32
@@ -3474,6 +3477,10 @@ packages:
     resolution: {integrity: sha512-fnYhv671l+eTTp48gB4zEsTW/YtRgRPnkI2nT7x6qw5rkI1Lq2hTmQIpHPgyThI0znLK+vX2n9XxKdXZ7BUbbw==}
     engines: {node: '>= 20'}
 
+  '@verdaccio/config@9.0.0-next-9.32':
+    resolution: {integrity: sha512-j19x7FeSIDPsLc2imN0cTgBWQ1lk7jRq9x2xAAc5GV2erPUGGKm7UguWBc+6GCKmBvYaPbal/wc3lSlok9SXzw==}
+    engines: {node: '>=24'}
+
   '@verdaccio/core@9.0.0-next-9.32':
     resolution: {integrity: sha512-7oEE5rlJ7E3gtHfVMUQr++R1vxyAmPHtPqYTxLrlFgBENed++6sDfBfFhw1M8rOoS9aUTW3CzQUwF7Uf4yNWzw==}
     engines: {node: '>=24'}
@@ -5751,6 +5758,10 @@ packages:
     resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
     hasBin: true
 
+  js-yaml@5.2.2:
+    resolution: {integrity: sha512-dayzUzKkJ1MkuUtZglSebU43utNXH0OWQByK9rKOOuYIO8M5TV1y+n8ALMdG0rdzBnfNkOmZEqrURepb0ejqBw==}
+    hasBin: true
+
   jsesc@3.1.0:
     resolution: {integrity: sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==}
     engines: {node: '>=6'}
@@ -5876,6 +5887,9 @@ packages:
 
   lodash-es@4.17.21:
     resolution: {integrity: sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==}
+
+  lodash-es@4.18.1:
+    resolution: {integrity: sha512-J8xewKD/Gk22OZbhpOVSwcs60zhd95ESDwezOFuA3/099925PdHJ7OFHNTGtajL3AlZkykD32HykiMo+BIBI8A==}
 
   lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
@@ -12606,6 +12620,15 @@ snapshots:
 
   '@vercel/oidc@3.0.5': {}
 
+  '@verdaccio/config@9.0.0-next-9.32':
+    dependencies:
+      '@verdaccio/core': 9.0.0-next-9.32
+      debug: 4.4.3
+      js-yaml: 5.2.2
+      lodash-es: 4.18.1
+    transitivePeerDependencies:
+      - supports-color
+
   '@verdaccio/core@9.0.0-next-9.32':
     dependencies:
       ajv: 8.20.0
@@ -15287,6 +15310,10 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
+  js-yaml@5.2.2:
+    dependencies:
+      argparse: 2.0.1
+
   jsesc@3.1.0: {}
 
   json-buffer@3.0.1: {}
@@ -15412,6 +15439,8 @@ snapshots:
       p-locate: 6.0.0
 
   lodash-es@4.17.21: {}
+
+  lodash-es@4.18.1: {}
 
   lodash.debounce@4.0.8: {}
 

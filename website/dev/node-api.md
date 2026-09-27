@@ -3,6 +3,11 @@ id: node-api
 title: 'Node API'
 ---
 
+```mdx-code-block
+import CodeBlock from '@theme/CodeBlock';
+import ConfigBuilderExample from '!!raw-loader!./examples/config-builder.ts';
+```
+
 Verdaccio can be started programmatically instead of from the command line, which is what
 test harnesses and embedded registries usually want.
 
@@ -48,6 +53,18 @@ pass the port to `listen()` instead, as above.
 Verdaccio 7 also exports `initServer(config, port, version, pkgName)`, which creates the
 server **and** starts it listening. `runServer` is the one to prefer: it hands you the
 server so you can shut it down, which is what a test harness needs.
+
+## Building the configuration {#config-builder}
+
+Passing a big literal to `runServer` gets unwieldy, and a typo in a nested key is silent.
+`ConfigBuilder` from `@verdaccio/config` builds the same object with a typed, chainable API,
+and can also serialise it to a real `config.yaml`.
+
+<CodeBlock language="ts">{ConfigBuilderExample}</CodeBlock>
+
+`getDefaultConfig()` and `parseConfigFile()` live in the same package and are the other two
+pieces: the first gives you Verdaccio's defaults as a starting point, the second reads an
+existing YAML file.
 
 ## What the package exports {#exports}
 
