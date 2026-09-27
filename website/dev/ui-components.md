@@ -14,12 +14,23 @@ The UI components are in _experimental_ mode, currently used to build the main u
 
 :::
 
-Install the dist-tag that matches your Verdaccio: `next-9` for Verdaccio 9, `next-7` for
-Verdaccio 7, `6-next` for Verdaccio 6.
-
 ```bash
 npm i -D @verdaccio/ui-components@next-9
 ```
+
+:::caution `next-9` whichever line you target — not `latest`, not `6-next`, not `next-7`
+Unlike the rest of the packages, the UI is the **same on both lines**: `verdaccio@6.10.4`
+and `verdaccio@7.0.0-next-7.28` both ship `@verdaccio/ui-theme@9.0.0-next-9.31`, and that
+theme is built against `@verdaccio/ui-components@5.0.0-next-9.22` — the `next-9` tag. So
+`next-9` is the right tag for a theme targeting 6.x as well.
+
+The alternatives all point somewhere stale: `@verdaccio/ui-components@latest` is `1.0.0`,
+`6-next` is `2.0.0-6-next.10` and `next-7` is `3.0.0-next-7.9`. None of them matches the UI
+any supported Verdaccio actually runs.
+
+This is the one place where the tag differs from the rule for other packages, where 6.x
+takes `latest` — see [which version to depend on](dev-plugins.md#core-version).
+:::
 
 There is no component gallery site; the default theme
 [`@verdaccio/ui-theme`](https://github.com/verdaccio/verdaccio/tree/master/packages/plugins/ui-theme)

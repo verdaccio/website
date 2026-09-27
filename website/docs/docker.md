@@ -17,31 +17,36 @@ docker pull verdaccio/verdaccio
 
 ![alt Docker Pulls Count](https://img.shields.io/docker/pulls/verdaccio/verdaccio?color=f02e65&style=flat-square)
 
-You can pull Docker images by [tag](https://hub.docker.com/r/verdaccio/verdaccio/tags/) as follows:
+You can pull Docker images by [tag](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
+`latest` always points at the current stable release, which is **6.x**:
 
 ```bash
 docker pull verdaccio/verdaccio:latest
 ```
 
-For a major version:
+Pin as narrowly as the environment needs — a major, a minor, or an exact patch:
 
 ```bash
-docker pull verdaccio/verdaccio:6
+docker pull verdaccio/verdaccio:6       # latest 6.x
+docker pull verdaccio/verdaccio:6.10    # latest 6.10.x
+docker pull verdaccio/verdaccio:6.10.3  # exactly this release
 ```
 
-For a minor version:
+For production, pin at least the major. `latest` will move to the next stable line when
+one is released.
 
-```bash
-docker pull verdaccio/verdaccio:6.2
-```
+### Nightly builds {#nightly-tags}
 
-For a specific (patch) version:
+Each active line also publishes a nightly image built from the tip of its branch. These are
+**not releases**: they are rebuilt automatically, are not production-ready, and exist so
+that fixes and new features can be tried before they ship.
 
-```bash
-docker pull verdaccio/verdaccio:6.2.1
-```
+| Tag         | Line                       |
+| ----------- | -------------------------- |
+| `6.x-next`  | tip of the **6.x** branch  |
+| `7.x-next`  | tip of the **7.x** branch  |
 
-> If you are interested on a list of tags, [please visit the Docker Hub website](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
+> If you are interested in the full list of tags, [please visit the Docker Hub website](https://hub.docker.com/r/verdaccio/verdaccio/tags/).
 
 ## Running Verdaccio using Docker {#running-verdaccio-using-docker}
 
@@ -58,7 +63,7 @@ If you have [build an image locally](#build-your-own-docker-image) use `verdacci
 
 You can use `-v` to bind mount `conf`, `storage` and `plugins` to the hosts filesystem (example below).
 
-> **Note:** `If you mount the configuration like this, you must first provide a copy of `config.yaml` in that directory ([see here](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v5/plugins/docker-build-install-plugin)).  
+> **Note:** `If you mount the configuration like this, you must first provide a copy of `config.yaml` in that directory ([see here](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v6/docker-local-storage-volume)).  
 > The Docker container will not start properly if this file is missing.
 > **However, note the security warnings in that file; you will definitely want to lock it down in production.**
 

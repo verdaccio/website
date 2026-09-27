@@ -39,7 +39,7 @@ export default class CustomEndpoint
    * By the time a request reaches this router, Verdaccio has already:
    *
    * - parsed the JSON body, so `req.body` is an object and reading the raw stream fails
-   *   (Verdaccio 7 and newer; on 6 there is no parser and `req.body` is `undefined`);
+   *   (7.x; on 6.x there is no parser and `req.body` is `undefined`);
    * - run the JWT middleware, so `req.remote_user` is set — except under `/-/verdaccio/`,
    *   the web UI namespace, which is skipped on purpose.
    *

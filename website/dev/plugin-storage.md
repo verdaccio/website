@@ -22,13 +22,14 @@ promises. Which one you implement depends on the Verdaccio you target.
 | --------- | --------------- | ------------------------------------------------------------------- |
 | **6.x**   | callbacks       | works — it is the native one                                        |
 | **7.x**   | promises        | works, wrapped by a compatibility adapter (since `7.0.0-next-7.28`) |
-| **9.x**   | promises        | **not supported**                                                   |
 
-New plugins should implement the promise contract. It is the only one 9.x accepts, and 7.x
-runs it natively rather than through the adapter.
+New plugins should implement the **promise** contract: 7.x runs it natively instead of
+going through the adapter, and the adapter is a compatibility shim that will not be kept
+forever. A callback plugin written for 6.x keeps working on 7.x, but it is the slower path
+and it will be the first thing to break.
 
 <Tabs groupId="storage-contract">
-<TabItem value="promise" label="Promises (Verdaccio 7 and newer)" default>
+<TabItem value="promise" label="Promises (7.x)" default>
 
 Two interfaces, both from `pluginUtils` in `@verdaccio/core`. `Storage` handles the local
 database of private packages:
@@ -77,11 +78,12 @@ Note that `readTarball` and `writeTarball` return real Node streams and receive 
 `AbortSignal`: a plugin is expected to stop the transfer when the client disconnects.
 
 </TabItem>
-<TabItem value="callback" label="Callbacks (Verdaccio 6)">
+<TabItem value="callback" label="Callbacks (6.x)">
 
 :::caution
-This is the legacy contract. Verdaccio 9 does not support it, and 7.x only runs it through
-a compatibility adapter. Do not start a new plugin with it.
+This is the legacy contract: **6.x** only. On **7.x** it runs through a compatibility
+adapter, not natively, and that adapter is not intended to stay forever. Do not start a
+new plugin with it.
 :::
 
 ```typescript

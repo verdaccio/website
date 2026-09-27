@@ -65,7 +65,7 @@ You can customize the Verdaccio configuration using a Kubernetes _configMap_.
 
 #### Prepare {#prepare}
 
-Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/conf/docker.yaml)
+Copy the [existing configuration](https://github.com/verdaccio/verdaccio/blob/master/packages/config/src/conf/docker.yaml)
 and adapt it for your use case:
 
 ```bash

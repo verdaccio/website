@@ -22,10 +22,19 @@ or file output.
 log: { type: file, path: verdaccio.log, level: info }
 ```
 
-> Verdaccio 5 does not support rotation file anymore, [here more details](https://verdaccio.org/blog/2021/04/14/verdaccio-5-migration-guide#pinojs-is-the-new-logger).
+:::note No built-in log rotation
+Verdaccio does **not** rotate log files itself — it dropped that when it
+[moved to pino](https://verdaccio.org/blog/2021/04/14/verdaccio-5-migration-guide#pinojs-is-the-new-logger),
+and neither **6.x** nor **7.x** brings it back. Use `logrotate`, or your platform's
+equivalent, and send `SIGUSR2` afterwards so Verdaccio reopens the file it was writing to.
+:::
 
-Use `SIGUSR2` to notify the application, the log-file was rotated and it needs to reopen it.
-Note: Rotating log stream is not supported in cluster mode. [See here](https://github.com/trentm/node-bunyan#stream-type-rotating-file)
+### The default format depends on `NODE_ENV` {#default-format}
+
+When `format` is not set, it is **`json` if `NODE_ENV=production`** and `pretty` otherwise.
+This catches people out on first deploy: the same configuration that prints colourised
+lines on a laptop prints one JSON object per line in production. Set `format` explicitly if
+you want the same output in both places.
 
 Sensitive data can be masked or removed using [log redaction](https://getpino.io/#/docs/redaction).
 

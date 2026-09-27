@@ -1,22 +1,38 @@
 /docs/en/docker.html /docs/docker 301
 /docs/en/* /docs/:splat
-/docs/cs-CZ/* /cs-cz/docs/:splat
-/docs/de-DE/* /de-de/docs/:splat
-/docs/es-ES/* /es-es/docs/:splat
-/docs/fr-FR/* /fr-fr/docs/:splat
-/docs/it-IT/* /it-it/docs/:splat
-/docs/pl-PL/* /pl-pl/docs/:splat
-/docs/pt-BR/* /pt-br/docs/:splat
-/docs/ru-RU/* /ru-ru/docs/:splat
-/docs/sr-CS/* /sr-cs/docs/:splat
-/docs/yo-NG/* /yo-NG/docs/:splat
-/docs/vi-VN/* /vi-vn/docs/:splat
-/docs/zh-TW/* /zh-tw/docs/:splat
-/docs/zh-CN/* /zh-cn/docs/:splat
+# The translations were removed: the site is English-only now, so both the legacy
+# /docs/<locale>/ URLs and the localized /<locale>/docs/ routes land on the English docs
+# instead of 404ing.
+/docs/cs-CZ/* /docs/:splat 301
+/docs/de-DE/* /docs/:splat 301
+/docs/es-ES/* /docs/:splat 301
+/docs/fr-FR/* /docs/:splat 301
+/docs/it-IT/* /docs/:splat 301
+/docs/pl-PL/* /docs/:splat 301
+/docs/pt-BR/* /docs/:splat 301
+/docs/ru-RU/* /docs/:splat 301
+/docs/sr-CS/* /docs/:splat 301
+/docs/yo-NG/* /docs/:splat 301
+/docs/vi-VN/* /docs/:splat 301
+/docs/zh-TW/* /docs/:splat 301
+/docs/zh-CN/* /docs/:splat 301
+/cs-cz/docs/* /docs/:splat 301
+/de-de/docs/* /docs/:splat 301
+/es-es/docs/* /docs/:splat 301
+/fr-fr/docs/* /docs/:splat 301
+/it-it/docs/* /docs/:splat 301
+/pl-pl/docs/* /docs/:splat 301
+/pt-br/docs/* /docs/:splat 301
+/ru-ru/docs/* /docs/:splat 301
+/sr-cs/docs/* /docs/:splat 301
+/yo-NG/docs/* /docs/:splat 301
+/vi-vn/docs/* /docs/:splat 301
+/zh-tw/docs/* /docs/:splat 301
+/zh-cn/docs/* /docs/:splat 301
 /chat https://discord.gg/7qWJxBf 200
 https://chat.verdaccio.org https://discord.gg/7qWJxBf 200
 
-# Plugin and Node API docs moved to the untranslated /dev instance (see crowdin.yaml).
+# Plugin and Node API docs live in the separate /dev instance.
 # These paths are linked from @verdaccio/core JSDoc and from plugins in the wild,
 # so they must keep resolving.
 /docs/dev-plugins /dev/dev-plugins 301
@@ -27,4 +43,8 @@ https://chat.verdaccio.org https://discord.gg/7qWJxBf 200
 /docs/plugin-theme /dev/plugin-theme 301
 /docs/plugin-filter /dev/plugin-filter 301
 /docs/node-api /dev/node-api 301
+/docs/verdaccio-programmatically /dev/node-api 301
+/docs/security-policy /community/security 301
+# The AWS page documented an Amazon Linux 2 / nvm setup that no longer applies.
+/docs/amazon /docs/docker 301
 /docs/ui-components /dev/ui-components 301

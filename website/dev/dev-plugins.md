@@ -125,5 +125,31 @@ The contracts themselves live in `pluginUtils` in
 [`@verdaccio/core`](https://github.com/verdaccio/verdaccio/blob/master/packages/core/core/src/plugin-utils.ts);
 that file is the authority when a doc page and your compiler disagree.
 
+### Which version of `@verdaccio/core` to depend on {#core-version}
+
+```bash
+npm i -D @verdaccio/core@latest   # building against 6.x
+npm i -D @verdaccio/core@next-9   # building against 7.x
+```
+
+:::caution Do not use the tag named after the line
+`6-next` and `next-7` look like the obvious choices and are both **wrong**. They are left
+over from prereleases those lines stopped using years ago, and nothing updates them, so
+installing one compiles you against interfaces that have since moved. They do not fail —
+they just give you something old.
+
+The tags that track what actually ships are:
+
+| Building against | The `verdaccio` binary | `@verdaccio/*` packages and plugins |
+| ---------------- | ---------------------- | ----------------------------------- |
+| **6.x**          | `latest`               | **`latest`**                        |
+| **7.x**          | `next-7`               | **`next-9`**                        |
+
+Only the binary is tagged after its own line. The packages it is built from are versioned
+independently, so `verdaccio@6.10.4` depends on `@verdaccio/core@8.3.0` (`latest`) and
+`verdaccio@7.0.0-next-7.28` depends on `@verdaccio/core@9.0.0-next-9.31` (`next-9`). For
+comparison, `@verdaccio/core@6-next` is still `6.0.0-6-next.1`.
+:::
+
 The [plugin search](/dev/plugins-search) lists what the community already published — worth a
 look before writing, and a good source of working examples either way.

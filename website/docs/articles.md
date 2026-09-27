@@ -21,7 +21,7 @@ Below is a list of articles about Verdaccio. If you have written a blog post or 
 - [How I learned React Js and how you can…](https://medium.com/verdaccio/how-i-learned-react-js-and-how-you-can-8663f938426c)
 - [How did I fall in the open source world…and that was a nice thing!](https://medium.com/@priscilawebdev/how-do-i-fall-in-the-open-source-world-and-that-was-a-nice-thing-b0e85d05490d)
 - [Warning and Deprecation Codes](https://github.com/verdaccio/verdaccio/blob/master/docs/warnings.md)
-- [Migration Guide](https://github.com/verdaccio/verdaccio/blob/master/docs/migration-guide.md)
+- [Migration Guide](https://github.com/verdaccio/verdaccio/blob/master/docs/migrations-guide.md)
 - [Debugging Guidelines](https://github.com/verdaccio/verdaccio/wiki/Debugging-Verdaccio)
 
 # Articles / Blogs / Tutorials (by Language)

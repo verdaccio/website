@@ -85,7 +85,7 @@ That is easy to do by accident: a broad `app.use()` with no path prefix sees eve
 Mount on a prefix — `app.use('/-/npm/v2/my-endpoint', router)` — unless overriding is what
 you want.
 
-### `req.body` is already parsed, on Verdaccio 7 and newer {#body-parser}
+### `req.body` is already parsed on 7.x {#body-parser}
 
 The parser at step 4 is `express.json({ strict: false, limit: config.max_body_size })`, so:
 
@@ -96,7 +96,7 @@ The parser at step 4 is `express.json({ strict: false, limit: config.max_body_si
 - If a plugin registers its own JSON parser first, Verdaccio detects it and does not add a
   second one.
 
-**On Verdaccio 6 there is no body parser before plugins.** `req.body` is `undefined` and the
+**On 6.x there is no body parser before plugins.** `req.body` is `undefined` and the
 plugin has to parse the stream itself, or register `express.json()` on the app.
 
 ### `req.remote_user` is populated, except under `/-/verdaccio/` {#remote-user}
@@ -119,7 +119,7 @@ middlewares:
     option: value
 ```
 
-On Verdaccio 7 and newer, audit is loaded automatically **only** when no middleware plugin
+On 7.x, audit is loaded automatically **only** when no middleware plugin
 is configured at all.
 
 ### Errors {#errors}
@@ -130,7 +130,7 @@ handler takes the process down, as it would in any Express app.
 
 ## Express 5 route syntax {#express-5}
 
-Verdaccio 7 and newer run **Express 5** (`path-to-regexp` 8); Verdaccio 6 runs Express 4.
+7.x runs **Express 5** (`path-to-regexp` 8); 6.x runs Express 4.
 Route patterns that were valid in Express 4 now **throw**, and the throw happens while your
 plugin is registering — which is during startup.
 
@@ -157,12 +157,12 @@ Verdaccio's own routes are the shortest reference for the new spelling: `/-/stat
 `/-/user/token/{*subject}`, `/{*any}`.
 
 The [Express 5 migration guide](https://expressjs.com/en/guide/migrating-5.html) covers the
-rest, including `res.sendFile`, which the Verdaccio 7 release notes also flag for plugin
+rest, including `res.sendFile`, which the 7.x release notes also flag for plugin
 authors.
 
 ## Overwriting HTTP Security Headers {#overwrite-http-security-headers]
 
-By default, Verdaccio sets the following HTTP headers. If you have other security requirements, you can overwrite these settings using a middleware plugin (Verdaccio 6.2.5 or higher).
+By default, Verdaccio sets the following HTTP headers. If you have other security requirements, you can overwrite these settings using a middleware plugin (6.2.5 or newer).
 
 | Header                  | Verdaccio Setting  |
 | ----------------------- | ------------------ |

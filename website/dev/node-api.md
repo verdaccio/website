@@ -47,13 +47,14 @@ app.listen(4000, () => {
 });
 ```
 
-On Verdaccio 6 `runServer` takes a second optional argument, `{ listenArg }`, which
-overrides the `listen` entry of the configuration. Verdaccio 7 and newer do not have it —
-pass the port to `listen()` instead, as above.
+On **6.x** `runServer` takes a second optional argument, `{ listenArg }`, which overrides
+the `listen` entry of the configuration. **7.x** does not have it — pass the port to
+`listen()` instead, as above.
 
-Verdaccio 7 also exports `initServer(config, port, version, pkgName)`, which creates the
-server **and** starts it listening. `runServer` is the one to prefer: it hands you the
-server so you can shut it down, which is what a test harness needs.
+Verdaccio **7.x** also exports `initServer(config, port, version, pkgName)`, which creates
+the server **and** starts it listening. `runServer` is the one to prefer: it hands you the
+server so you can shut it down, which is what a test harness needs. `initServer` is also
+the path that emits the [`verdaccio_started` message](#verdaccio-started).
 
 ## Building the configuration {#config-builder}
 
@@ -69,42 +70,152 @@ existing YAML file.
 
 ## What the package exports {#exports}
 
-The surface has not been the same on every line. `runServer` is the one name all three agree
-on, so importing it **by name** is what always works:
+The surface is not the same on both lines. `runServer` is the one name they agree on, so
+importing it **by name** is what always works:
 
-| Export                                                           | 6.x              | 7.x         | 9.x                  |
-| ---------------------------------------------------------------- | ---------------- | ----------- | -------------------- |
-| `runServer`                                                      | yes              | yes         | yes                  |
-| `default`                                                        | `startVerdaccio` | `runServer` | `runServer` &dagger; |
-| `initServer`                                                     | no               | yes         | yes &dagger;         |
-| `startVerdaccio`                                                 | yes              | no          | no                   |
-| `ConfigBuilder`, `parseConfigFile`, `getDefaultConfig`, `Config` | yes              | yes         | yes &dagger;         |
-| `fileUtils`, `errorUtils`, `cryptoUtils`, `pkgUtils`             | yes              | no          | no                   |
+| Export                                                           | 6.x              | 7.x         |
+| ---------------------------------------------------------------- | ---------------- | ----------- |
+| `runServer`                                                      | yes              | yes         |
+| `default`                                                        | `startVerdaccio` | `runServer` |
+| `initServer`                                                     | no               | yes         |
+| `startVerdaccio`                                                 | yes              | no          |
+| `ConfigBuilder`, `parseConfigFile`, `getDefaultConfig`, `Config` | yes              | yes         |
+| `fileUtils`, `errorUtils`, `cryptoUtils`, `pkgUtils`             | yes              | no          |
 
-&dagger; Up to and including `9.0.0-next-9.32` the package exported **only** `runServer`, so
-`require('verdaccio').default` was `undefined` and the configuration helpers had to come from
-`@verdaccio/config`. That was unintended — the three lines build this entry point from
-different files and drifted apart — and it is restored in the next 9.x release.
+Note that `default` is **not** the same function on both: on 6.x it is the deprecated
+callback API described below, on 7.x it is `runServer`. Code that does
+`require('verdaccio')(...)` and is moved from 6.x to 7.x will not fail — it will silently
+do something else, because `runServer` ignores every argument after the first. Always
+import by name.
 
 Whatever a given version does not re-export is still available from the package it comes
 from: the configuration helpers from
 [`@verdaccio/config`](https://www.npmjs.com/package/@verdaccio/config) and the utilities from
 [`@verdaccio/core`](https://www.npmjs.com/package/@verdaccio/core). Importing from there
-works on every line, which makes it the safer habit for code that has to span versions.
+works on both lines, which makes it the safer habit for code that has to span versions.
+
+## Running the binary in a child process {#fork}
+
+Instead of importing the package, you can `fork` the binary and wait until it is up.
+
+### The `verdaccio_started` message {#verdaccio-started}
+
+When Verdaccio is started as a **forked child process**, it sends this message to its
+parent over the IPC channel the moment the HTTP server is listening:
+
+```json
+{ "verdaccio_started": true }
+```
+
+That is the signal to wait for. It is what makes forking worth using in a test harness:
+you get a precise "ready" event instead of polling the port or sleeping.
+
+Three things to know about it:
+
+- **No configuration is needed.** The only condition is that `process.send` exists,
+  which Node.js provides whenever the process was created by `fork()` (or by `spawn()`
+  with `stdio` including `'ipc'`). It is **not** gated by `_debug` or by any config key.
+- **It is sent once**, from the `listen` callback, so it arrives after the port is
+  actually accepting connections.
+- **Only the binary sends it.** `runServer` hands you a server that is not listening
+  yet, so nothing is emitted; the message comes from the code path that listens —
+  `initServer`, which is what `bin/verdaccio` runs.
+
+```ts
+import { type ChildProcess, fork } from 'child_process';
+
+export function runRegistry(args: string[] = [], childOptions = {}): Promise<ChildProcess> {
+  return new Promise((resolve, reject) => {
+    const childFork = fork(require.resolve('verdaccio/bin/verdaccio'), args, childOptions);
+    childFork.on('message', (msg: { verdaccio_started?: boolean }) => {
+      if (msg.verdaccio_started) {
+        resolve(childFork);
+      }
+    });
+    childFork.on('error', (err) => reject(err));
+    childFork.on('disconnect', () => reject(new Error('verdaccio disconnected before start')));
+  });
+}
+```
+
+`require.resolve` is not available in ESM; use
+`import.meta.resolve('verdaccio/bin/verdaccio')` there.
+
+A full example lives in
+[juanpicado/verdaccio-fork](https://github.com/juanpicado/verdaccio-fork).
+
+## The `_debug` flag {#debug-flag}
+
+`_debug` is a **top-level** key of `config.yaml`. The leading underscore marks it as
+internal: it exists for Verdaccio's own test suites and for harnesses built on top of
+it, it is not part of the supported configuration surface, and it should never be set on
+a real registry.
+
+```yaml title="config.yaml"
+_debug: true
+```
+
+It is unrelated to the `verdaccio_started` message above — that one needs no
+configuration at all.
+
+Setting it changes two things on every line, plus one more on 6.x:
+
+### 1. It mounts `GET /-/_debug` {#debug-endpoint}
+
+An endpoint that reports the state of the process:
+
+```json
+{
+  "pid": 51234,
+  "main": "/usr/local/lib/node_modules/verdaccio/bin/verdaccio",
+  "conf": "/Users/you/.config/verdaccio/config.yaml",
+  "mem": { "rss": 98500608, "heapTotal": 44072960, "heapUsed": 31240328 },
+  "gc": null
+}
+```
+
+`mem` is `process.memoryUsage()`, and `conf` is the resolved path of the configuration
+file in use — handy to confirm *which* config a process actually picked up. If Node.js
+was started with `--expose-gc`, the handler **runs a full garbage collection before
+answering**, which is what makes the endpoint useful for leak hunting: request it, force
+a collection, and compare `mem` across requests.
+
+The endpoint has no authentication of its own, which is the main reason not to enable
+this outside a test run.
+
+### 2. It freezes the packument revision {#debug-rev}
+
+With `_debug` present, the storage layer stops bumping the `_rev` of a package's
+manifest when it writes it. Tests that assert on stored metadata want a stable
+revision; a live registry wants the opposite, since `_rev` is what makes concurrent
+writes detectable.
+
+:::caution `_debug: false` is not "off"
+The check is for the key being **absent**, not for it being false. `_debug: false` still
+freezes the revision. The only way to get normal behaviour back is to **remove the key**
+(or comment it out).
+:::
+
+### 3. On 6.x only: an extra publish route {#debug-add-version}
+
+Verdaccio **6.x** additionally registers `PUT /:package/:version/-tag/:tag`, a
+development-only route for adding a single version to a manifest. It was removed in
+**7.x**, so do not build anything on it.
 
 ## The old callback API {#legacy-api}
 
-Verdaccio 6 still exports an entry point taking six positional arguments and a callback:
+Verdaccio **6.x** still exports an entry point taking six positional arguments and a
+callback:
 
 ```js
-// deprecated, Verdaccio 6 only
+// deprecated, 6.x only
 const startServer = require('verdaccio').default;
 startServer(config, 6000, undefined, '1.0.0', 'verdaccio', (webServer, addrs) => {
   webServer.listen(addrs.port || addrs.path, addrs.host);
 });
 ```
 
-It is gone from Verdaccio 7 onwards. On 7.x the same call silently does something else —
-`default` is `runServer`, which ignores every argument after the first — and on 9.x it
-throws `startServer is not a function`, because there is no default export at all. Use
-`runServer` instead.
+It is gone from **7.x** onwards. There the same call silently does something else, because
+`default` is `runServer` and it ignores every argument after the first: you get a server
+that is not listening, on the default configuration, and no error. Use `runServer`
+instead.

@@ -48,6 +48,6 @@ These instructions are mostly valid under OSX and Linux; on Windows the paths wi
 
 ## Docker
 
-If you are using the Docker image, you have to set the `VERDACCIO_PROTOCOL` environment variable to `https`, as the `listen` argument is provided in the [Dockerfile](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile#L43) and thus ignored from your config file.
+If you are using the Docker image, you have to set the `VERDACCIO_PROTOCOL` environment variable to `https`, as the `listen` argument is provided by the image's [`CMD`](https://github.com/verdaccio/verdaccio/blob/master/Dockerfile) and thus overrides the `listen` entry of your config file.
 
 You can also set the `VERDACCIO_PORT` environment variable if you are using a port other than `4873`.

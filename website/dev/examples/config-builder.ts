@@ -7,8 +7,8 @@ import { ConfigBuilder } from '@verdaccio/config';
  * It is the practical companion to `runServer`, which accepts the same object, and it is what
  * Verdaccio's own tests use to spin up a registry per case.
  *
- * On Verdaccio 6 and 7 it is re-exported from `verdaccio`; on 9 it lives only in
- * `@verdaccio/config`, so import it from there and your code works on every line.
+ * `verdaccio` re-exports it on both 6.x and 7.x, but importing it straight from
+ * `@verdaccio/config` — as here — is the habit that keeps working across lines.
  */
 export function buildConfig() {
   return (

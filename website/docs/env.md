@@ -16,16 +16,16 @@ To change the behavior on runtime on running the image, these are the list of av
 | VERDACCIO_USER_UID  | `10001`          | the user id being used to apply folder permissions             |
 | VERDACCIO_PORT      | `4873`           | the verdaccio port                                             |
 | VERDACCIO_PROTOCOL  | `http`           | the default http protocol                                      |
-| VERDACCIO_ADDRESS   | `[::]`           | the default address to listen on (IPv6 `[::]`, all interfaces) |
+| VERDACCIO_ADDRESS   | `[::]`           | the default address to listen on (IPv6 `[::]`, all interfaces); `0.0.0.0` on 6.x |
 
-:::info Changed in the next major (`next`)
-The default value of `VERDACCIO_ADDRESS` changed from `0.0.0.0` (IPv4, in **6.x**) to `[::]` (IPv6, in the **next major (`next`)** and later). On dual-stack hosts `[::]` also accepts IPv4 connections, but in environments where IPv6 is not available you may need to set `VERDACCIO_ADDRESS=0.0.0.0` explicitly.
+:::info Changed in 7.x
+The default value of `VERDACCIO_ADDRESS` changed from `0.0.0.0` (IPv4) in **6.x** to `[::]` (IPv6) in **7.x**. On dual-stack hosts `[::]` also accepts IPv4 connections, but in environments where IPv6 is not available you may need to set `VERDACCIO_ADDRESS=0.0.0.0` explicitly.
 :::
 
 ### VERDACCIO_HANDLE_KILL_SIGNALS {#handle-kill-signals}
 
 :::caution Deprecated
-This variable only applies to **Verdaccio 6.x**, where graceful shutdown is opt-in by setting `VERDACCIO_HANDLE_KILL_SIGNALS=true`. Starting with the **next major (`next`)** it has been **removed** and graceful shutdown is always enabled, so the variable has no effect.
+This variable only applies to **6.x**, where graceful shutdown is opt-in by setting `VERDACCIO_HANDLE_KILL_SIGNALS=true`. It was **removed in 7.x**, where graceful shutdown is always enabled, so the variable has no effect there.
 :::
 
 Enables gracefully shutdown, more info at the [pull request #2121](https://github.com/verdaccio/verdaccio/pull/2121).
@@ -65,7 +65,7 @@ $ VERDACCIO_FORWARDED_PROTO=CloudFront-Forwarded-Proto verdaccio --listen 5000
 
 ### VERDACCIO_STORAGE_PATH {#storage-path}
 
-By default, the storage is taken from config file, but using this variable allows to set it from environment variable.
+By default the storage path comes from the configuration file; this variable overrides it.
 
 ### VERDACCIO_STORAGE_NAME
 

@@ -3,7 +3,17 @@ id: iss-server
 title: 'Installing on IIS server'
 ---
 
-These instructions were written for Windows Server 2016, IIS 10, [Node.js 10.15.0](https://nodejs.org/), [iisnode 0.2.26](https://github.com/Azure/iisnode) and [verdaccio 3.11.0](https://github.com/verdaccio/verdaccio).
+:::caution Community-maintained, and written for a much older stack
+These instructions were originally written for Windows Server 2016, IIS 10,
+Node.js 10.15.0, [iisnode 0.2.26](https://github.com/Azure/iisnode) and Verdaccio 3.11.0.
+They have **not** been revalidated against a supported Verdaccio (**6.x** needs Node.js
+22 or newer), and `iisnode` itself is no longer actively maintained.
+
+Treat the steps as a starting point rather than a tested recipe. If you only need
+Verdaccio to run as a Windows service, [installing it as a service](windows.md) is the
+better-supported route, and putting it behind a
+[reverse proxy](reverse-proxy.md) covers the IIS-in-front case.
+:::
 
 - Install IIS Install [iisnode](https://github.com/Azure/iisnode).
   Make sure you install prerequisites (Url Rewrite Module & node) as explained in the instructions for iisnode.

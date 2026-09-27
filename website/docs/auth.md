@@ -66,8 +66,9 @@ Let's recap:
 
 ## Default htpasswd {#default-htpasswd}
 
-In order to simplify the setup, `verdaccio` uses a plugin based on `htpasswd`. Since version v3.0.x the `verdaccio-htpasswd` plugin
-is used by default.
+In order to simplify the setup, `verdaccio` ships with the `verdaccio-htpasswd` plugin
+enabled by default, so a fresh installation authenticates against an `htpasswd` file
+without any extra configuration.
 
 ```yaml
 auth:
@@ -76,20 +77,29 @@ auth:
     # Maximum amount of users allowed to register, defaults to "+inf".
     # You can set this to -1 to disable registration.
     # max_users: 1000
-    # Hash algorithm, possible options are: "bcrypt", "md5", "sha1", "crypt".
-    algorithm: bcrypt # by default is crypt, but is recommended use bcrypt for new installations
+    # Hash algorithm. The default is "bcrypt"; "md5", "sha1" and "crypt" exist only to
+    # keep reading htpasswd files written by other tools.
+    algorithm: bcrypt
     # Rounds number for "bcrypt", will be ignored for other algorithms.
     rounds: 10
 ```
 
-> The default algorithm is `crypt`, considered not secure for production environments, it's recommended for new installations use `bcrypt` instead. Note after verdaccio 6.x
-> the default will be `bcrypt`.
+:::info The default is `bcrypt`
+**You do not need to set `algorithm` to get a secure hash.** On both **6.x** and **7.x**,
+omitting it means `bcrypt` with 10 rounds. An unrecognised value also falls back to
+`bcrypt`, with a warning in the log.
+
+`md5`, `sha1` and `crypt` are accepted so that Verdaccio can read `htpasswd` files
+produced elsewhere. None of them is suitable for a password you care about, so do not
+pick them for a new registry. Existing entries hashed with them keep working — they are
+only rehashed when the user changes their password.
+:::
 
 | Property  | Type   | Required | Example               | Support | Description                                                      |
 | --------- | ------ | -------- | --------------------- | ------- | ---------------------------------------------------------------- |
 | file      | string | Yes      | ./htpasswd            | all     | file that host the encrypted credentials                         |
 | max_users | number | No       | 1000                  | all     | set limit of users                                               |
-| algorithm | string | No       | bcrypt/md5/sha1/crypt | all     | set hasing password algorithm                                    |
+| algorithm | string | No       | bcrypt/md5/sha1/crypt | all     | password hashing algorithm, defaults to `bcrypt`                 |
 | rounds    | number | No       | 10                    | all     | Rounds number for "bcrypt", will be ignored for other algorithms |
 
 > In case you decide to prevent users from signing up themselves, you can set `max_users: -1`.
