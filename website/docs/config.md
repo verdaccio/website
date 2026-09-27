@@ -721,8 +721,8 @@ flags:
 
 The flags currently available are:
 
-| Flag             | Lines    | What it enables                                        |
-| ---------------- | -------- | ------------------------------------------------------ |
+| Flag             | Lines    | What it enables                                           |
+| ---------------- | -------- | --------------------------------------------------------- |
 | `changePassword` | 6.x, 7.x | [changing a password](change-password.md) from the web UI |
 | `createUser`     | 6.x, 7.x | [user registration](user-registration.md) from the web UI |
 | `webLogin`       | 6.x, 7.x | [browser-based login](web-login.md) for the CLI           |

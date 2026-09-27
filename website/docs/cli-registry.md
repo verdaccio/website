@@ -26,11 +26,11 @@ Both clients refuse versions published in the **last day**, as a supply-chain pr
 Against a private registry that usually means the package you just published cannot be
 installed yet — and the error says the version does not exist, not that it was filtered.
 
-|            | Setting                    | Unit        | Default                  | Exempt your own packages       |
-| ---------- | -------------------------- | ----------- | ------------------------ | ------------------------------ |
-| **pnpm**   | `minimumReleaseAge`        | **minutes** | `1440` (1 day) since pnpm 11 | `minimumReleaseAgeExclude` |
-| **Yarn**   | `npmMinimalAgeGate`        | **minutes**, accepts `1d` | `1d` since Yarn 4.15 | `npmPreapprovedPackages`, or per scope |
-| **npm**    | `min-release-age`          | **days**    | off (`null`), still in npm 12 | `min-release-age-exclude`  |
+|          | Setting             | Unit                      | Default                       | Exempt your own packages               |
+| -------- | ------------------- | ------------------------- | ----------------------------- | -------------------------------------- |
+| **pnpm** | `minimumReleaseAge` | **minutes**               | `1440` (1 day) since pnpm 11  | `minimumReleaseAgeExclude`             |
+| **Yarn** | `npmMinimalAgeGate` | **minutes**, accepts `1d` | `1d` since Yarn 4.15          | `npmPreapprovedPackages`, or per scope |
+| **npm**  | `min-release-age`   | **days**                  | off (`null`), still in npm 12 | `min-release-age-exclude`              |
 
 Note the units differ: `min-release-age=1` is one **day** in npm, while `1` in pnpm or Yarn
 is one **minute**. Copying a value between them does not do what it looks like.
@@ -38,21 +38,22 @@ is one **minute**. Copying a value between them does not do what it looks like.
 Details and how to exempt a scope: [pnpm](setup-pnpm.md#minimum-release-age) ·
 [yarn](setup-yarn.md) · [npm](setup-npm.md#min-release-age).
 :::
+
 ## The short version {#cheatsheet}
 
 The same settings side by side, if you already know what you are looking for:
 
 <div style={{overflowX: 'auto'}}>
 
-|                          | **pnpm**                                   | **npm**                                | **Yarn 4**                              |
-| ------------------------ | ------------------------------------------ | -------------------------------------- | --------------------------------------- |
-| Configuration file       | `.npmrc`                                   | `.npmrc`                               | `.yarnrc.yml`                           |
-| Registry for everything  | `registry=<url>`                           | `registry=<url>`                       | `npmRegistryServer: <url>`              |
-| Registry for one scope   | `@scope:registry=<url>`                    | `@scope:registry=<url>`                | `npmScopes:` → `npmRegistryServer`      |
-| Authentication           | `//host/:_authToken=<token>`               | `//host/:_authToken=<token>`           | `npmAuthToken` under `npmRegistries:`   |
-| Log in                   | `pnpm login --registry <url>`              | `npm login --registry <url>`           | `yarn npm login --auth-type=legacy`     |
-| Publish                  | `pnpm publish --registry <url>`            | `npm publish --registry <url>`         | `yarn npm publish`                      |
-| One-off, no config       | `pnpm install --registry <url>`            | `npm install --registry <url>`         | not supported — use the config          |
+|                         | **pnpm**                        | **npm**                        | **Yarn 4**                            |
+| ----------------------- | ------------------------------- | ------------------------------ | ------------------------------------- |
+| Configuration file      | `.npmrc`                        | `.npmrc`                       | `.yarnrc.yml`                         |
+| Registry for everything | `registry=<url>`                | `registry=<url>`               | `npmRegistryServer: <url>`            |
+| Registry for one scope  | `@scope:registry=<url>`         | `@scope:registry=<url>`        | `npmScopes:` → `npmRegistryServer`    |
+| Authentication          | `//host/:_authToken=<token>`    | `//host/:_authToken=<token>`   | `npmAuthToken` under `npmRegistries:` |
+| Log in                  | `pnpm login --registry <url>`   | `npm login --registry <url>`   | `yarn npm login --auth-type=legacy`   |
+| Publish                 | `pnpm publish --registry <url>` | `npm publish --registry <url>` | `yarn npm publish`                    |
+| One-off, no config      | `pnpm install --registry <url>` | `npm install --registry <url>` | not supported — use the config        |
 
 </div>
 

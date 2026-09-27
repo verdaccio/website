@@ -101,7 +101,7 @@ npm error code E401
 npm error Unable to authenticate, your authentication token seems to be invalid.
 ```
 
-Which is misleading: the credentials are correct, the *scheme* is not accepted. Use
+Which is misleading: the credentials are correct, the _scheme_ is not accepted. Use
 `_authToken`, which sends a Bearer token and works on both lines.
 
 Note also that npm itself rejects a bare `_auth` in a project `.npmrc`
