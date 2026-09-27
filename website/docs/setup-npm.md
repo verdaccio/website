@@ -8,7 +8,9 @@ The minimum supported npm version is **10**. Every supported Verdaccio requires 
 Node.js release that already bundles npm 10 or 11, so older clients are neither
 tested nor supported.
 
-Some features need more than that: `npm stage` requires **npm 11.17**.
+Some features need more than that: `npm stage` requires **npm 11.17**. Verdaccio supports it
+as an experimental feature, and it is worth a try — see
+[staged publishing](#staged-publishing) below.
 
 ## Setting up global registry for all projects {#all}
 
