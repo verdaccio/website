@@ -1,7 +1,13 @@
 ---
 id: node-api
 title: 'Node API'
+description: 'Start Verdaccio programmatically with runServer, and build its configuration with ConfigBuilder.'
 ---
+
+```mdx-code-block
+import CodeBlock from '@theme/CodeBlock';
+import ConfigBuilderExample from '!!raw-loader!./examples/config-builder.ts';
+```
 
 Verdaccio can be started programmatically instead of from the command line, which is what
 test harnesses and embedded registries usually want.
@@ -49,23 +55,42 @@ Verdaccio 7 also exports `initServer(config, port, version, pkgName)`, which cre
 server **and** starts it listening. `runServer` is the one to prefer: it hands you the
 server so you can shut it down, which is what a test harness needs.
 
+## Building the configuration {#config-builder}
+
+Passing a big literal to `runServer` gets unwieldy, and a typo in a nested key is silent.
+`ConfigBuilder` from `@verdaccio/config` builds the same object with a typed, chainable API,
+and can also serialise it to a real `config.yaml`.
+
+<CodeBlock language="ts">{ConfigBuilderExample}</CodeBlock>
+
+`getDefaultConfig()` and `parseConfigFile()` live in the same package and are the other two
+pieces: the first gives you Verdaccio's defaults as a starting point, the second reads an
+existing YAML file.
+
 ## What the package exports {#exports}
 
-The surface is not the same on every line. Import `runServer` **by name** — it is the only
-thing all three agree on, and the default export means something different on each:
+The surface has not been the same on every line. `runServer` is the one name all three agree
+on, so importing it **by name** is what always works:
 
-| Export                                                           | 6.x              | 7.x         | 9.x      |
-| ---------------------------------------------------------------- | ---------------- | ----------- | -------- |
-| `runServer`                                                      | yes              | yes         | yes      |
-| `default`                                                        | `startVerdaccio` | `runServer` | _(none)_ |
-| `initServer`                                                     | no               | yes         | no       |
-| `startVerdaccio`                                                 | yes              | no          | no       |
-| `ConfigBuilder`, `parseConfigFile`, `getDefaultConfig`, `Config` | yes              | yes         | no       |
-| `fileUtils`, `errorUtils`, `cryptoUtils`, `pkgUtils`             | yes              | no          | no       |
+| Export                                                           | 6.x              | 7.x         | 9.x                  |
+| ---------------------------------------------------------------- | ---------------- | ----------- | -------------------- |
+| `runServer`                                                      | yes              | yes         | yes                  |
+| `default`                                                        | `startVerdaccio` | `runServer` | `runServer` &dagger; |
+| `initServer`                                                     | no               | yes         | yes &dagger;         |
+| `startVerdaccio`                                                 | yes              | no          | no                   |
+| `ConfigBuilder`, `parseConfigFile`, `getDefaultConfig`, `Config` | yes              | yes         | yes &dagger;         |
+| `fileUtils`, `errorUtils`, `cryptoUtils`, `pkgUtils`             | yes              | no          | no                   |
 
-Anything the `verdaccio` package no longer re-exports is still available from the module it
-came from — `@verdaccio/config` and `@verdaccio/core` — so the fix when upgrading is to
-import from there instead.
+&dagger; Up to and including `9.0.0-next-9.32` the package exported **only** `runServer`, so
+`require('verdaccio').default` was `undefined` and the configuration helpers had to come from
+`@verdaccio/config`. That was unintended — the three lines build this entry point from
+different files and drifted apart — and it is restored in the next 9.x release.
+
+Whatever a given version does not re-export is still available from the package it comes
+from: the configuration helpers from
+[`@verdaccio/config`](https://www.npmjs.com/package/@verdaccio/config) and the utilities from
+[`@verdaccio/core`](https://www.npmjs.com/package/@verdaccio/core). Importing from there
+works on every line, which makes it the safer habit for code that has to span versions.
 
 ## The old callback API {#legacy-api}
 

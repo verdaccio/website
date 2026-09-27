@@ -1,6 +1,7 @@
 ---
 id: plugin-generator
 title: 'Plugin Generator'
+description: 'Scaffold a Verdaccio plugin with the Yeoman generator.'
 ---
 
 ## Installing the Yeoman Generator {#installing-the-yeoman-generator}

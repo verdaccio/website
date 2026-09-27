@@ -1,7 +1,13 @@
 ---
 id: plugin-auth
 title: 'Authentication Plugin'
+description: 'Write an authentication plugin: the callback contract, what each answer means, and how a chain of plugins resolves a request.'
 ---
+
+```mdx-code-block
+import CodeBlock from '@theme/CodeBlock';
+import AuthExample from '!!raw-loader!./examples/auth-plugin.ts';
+```
 
 ## What's an authentication plugin? {#whats-an-authentication-plugin}
 
@@ -32,7 +38,98 @@ auth:
     bar: foo
 ```
 
-> If one of the plugin in the chain is able to resolve the request, the next ones will be ignored.
+### How the chain works {#chaining}
+
+Plugins are consulted **in the order they appear in `auth:`**, and Verdaccio appends its own
+built-in plugin at the end — that last one is what terminates the chain, so it always ends.
+
+What "resolve the request" means is not the same for authentication and for permissions, and
+the difference is where chained setups usually go wrong.
+
+#### The chain, at a glance {#chaining-diagram}
+
+```mermaid
+flowchart TD
+    req["a request with credentials"] --> p1["your plugin"]
+
+    p1 -->|"cb(null, ['group'])"| ok(["authenticated<br/>the rest are skipped"])
+    p1 -->|"cb(null, false)"| p2["next plugin in auth:"]
+    p1 -->|"cb(err)"| stop(["request fails<br/><b>the rest never run</b>"])
+
+    p2 -->|"cb(null, ['group'])"| ok
+    p2 -->|"cb(null, false)"| last["built-in plugin<br/><i>always appended last</i>"]
+    p2 -->|"cb(err)"| stop
+
+    last --> denied(["403 bad username/password"])
+
+    classDef good fill:#e8f4ea,stroke:#2e7d32,stroke-width:2px
+    classDef bad fill:#fdeaea,stroke:#c62828,stroke-width:2px
+    class ok good
+    class stop,denied bad
+```
+
+The red path is the one that surprises people: **an error is not "try the next one"**, it ends
+the chain. `false` is how you say "not mine".
+
+For `allow_access` and friends the shape is the same but the roles swap — `true` is what stops
+the chain, and `false` hands the decision on:
+
+```mermaid
+flowchart TD
+    req["may this user read/publish?"] --> p1["your plugin"]
+
+    p1 -->|"cb(null, true)"| ok(["granted<br/>the rest are skipped"])
+    p1 -->|"cb(null, false)"| p2["next plugin<br/><b>which may still grant</b>"]
+    p1 -->|"cb(err)"| stop(["denied<br/>chain stops"])
+
+    p2 -->|"cb(null, true)"| ok
+    p2 -->|"cb(null, false)"| last["built-in plugin<br/><i>applies packages: rules</i>"]
+    p2 -->|"cb(err)"| stop
+
+    last --> outcome(["granted or denied<br/>by config"])
+
+    classDef good fill:#e8f4ea,stroke:#2e7d32,stroke-width:2px
+    classDef bad fill:#fdeaea,stroke:#c62828,stroke-width:2px
+    class ok good
+    class stop bad
+```
+
+#### `authenticate` — first success wins {#chaining-authenticate}
+
+| Your plugin calls                                 | What happens                                                   |
+| ------------------------------------------------- | -------------------------------------------------------------- |
+| `cb(null, ['group-a'])`                           | authenticated, the remaining plugins are skipped               |
+| `cb(null, false)` — or an empty/absent group list | **not a failure**: the next plugin is tried                    |
+| `cb(err)`                                         | **the chain stops here** and the request fails with that error |
+| _(no `authenticate` method)_                      | the plugin is skipped                                          |
+
+If nobody authenticates, the built-in plugin answers `403 bad username/password`.
+
+:::caution
+An error **aborts the chain**. If your LDAP is unreachable and you answer
+`errorUtils.getInternalError(...)`, an `htpasswd` plugin listed after it is never consulted
+and every login fails. Answer `false` when you simply cannot vouch for this user; keep errors
+for "nobody else should decide either".
+:::
+
+Returning a string instead of an array of groups throws a `TypeError` at runtime.
+
+#### `allow_access` and friends — first grant wins {#chaining-access}
+
+`allow_access`, `allow_publish`, `allow_unpublish` and `allow_stage` all behave the same way:
+
+| Your plugin calls     | What happens                                  |
+| --------------------- | --------------------------------------------- |
+| `cb(null, true)`      | granted, the remaining plugins are skipped    |
+| `cb(null, false)`     | **not a veto**: the next plugin is asked      |
+| `cb(err)`             | denied with that error, the chain stops       |
+| `cb(null, undefined)` | `allow_stage` only: defers to `allow_publish` |
+
+:::caution
+**You cannot deny with `false`.** A plugin answering `false` only steps aside, and a later
+plugin — including the built-in one, which applies the `packages:` block — can still grant
+the request. A hard denial has to be an error.
+:::
 
 ## How do the authentication plugin works? {#how-do-the-authentication-plugin-works}
 
@@ -74,9 +171,32 @@ interface Auth<T> extends Plugin<T> {
 `allow_stage` gates `npm stage publish`. Answering `undefined` defers to `allow_publish`,
 which is what the built-in plugin does when the packages configuration has no `stage` entry.
 
+### A complete plugin {#example}
+
+<CodeBlock language="ts">{AuthExample}</CodeBlock>
+
 #### `apiJWTmiddleware` method {#apijwtmiddleware-method}
 
 `apiJWTmiddleware` was introduced on [PR#1227](https://github.com/verdaccio/verdaccio/pull/1227) in order to have full control of the token handler, overriding this method will disable `login/adduser` support. We recommend don't implement this method unless is totally necessary. See a full example [here](https://github.com/verdaccio/verdaccio/pull/1227#issuecomment-463235068).
+
+### Error messages come from `API_ERROR` {#api-error}
+
+`@verdaccio/core` exports `API_ERROR`, a list of the messages the registry already uses —
+`BAD_USERNAME_PASSWORD`, `NO_CREDENTIALS_PROVIDED`, `MAX_USERS_REACHED`,
+`REGISTRATION_DISABLED`, `UNAUTHORIZED_ACCESS` and around forty more.
+
+Most `errorUtils` helpers **already default to the right one**, so the common case takes no
+argument at all:
+
+```ts
+errorUtils.getUnauthorized(); // → API_ERROR.NO_CREDENTIALS_PROVIDED
+errorUtils.getNotFound(); //     → API_ERROR.NO_PACKAGE
+errorUtils.getConflict(); //     → API_ERROR.PACKAGE_EXIST
+```
+
+Passing a hand-written string usually means retyping a constant, and your plugin's errors then
+read differently from the registry's for the same situation. Write your own message only when
+nothing in the list fits.
 
 ## What should I return in each of the methods? {#what-should-i-return-in-each-of-the-methods}
 
@@ -109,9 +229,9 @@ The auth was successful.
 The authentication service might fails, and you might want to reflect that in the user response, eg: service is unavailable.
 
 ```
- import { getInternalError } from '@verdaccio/commons-api';
+ import { API_ERROR, errorUtils } from '@verdaccio/core';
 
- callback(getInternalError('something bad message), null);
+ callback(errorUtils.getInternalError(API_ERROR.RESOURCE_UNAVAILABLE));
 ```
 
 > A failure on login is not the same as service error, if you want to notify user the credentials are wrong, just return `false` instead string of groups. The behaviour mostly depends of you.
@@ -131,9 +251,9 @@ callback(null, true);
 Any other action different than success must return an error.
 
 ```typescript
-import { getConflict } from '@verdaccio/commons-api';
+import { API_ERROR, errorUtils } from '@verdaccio/core';
 
-const err = getConflict('maximum amount of users reached');
+const err = errorUtils.getConflict(API_ERROR.MAX_USERS_REACHED);
 
 callback(err);
 ```
@@ -155,9 +275,11 @@ callback(null, user);
 Any other action different than success must return an error.
 
 ```typescript
-import { getNotFound } from '@verdaccio/commons-api';
+import { errorUtils } from '@verdaccio/core';
 
-const err = getNotFound('user not found');
+// `API_ERROR` has no entry for an unknown user, and the default for getNotFound is
+// NO_PACKAGE — 'no such package available' — which would be misleading here.
+const err = errorUtils.getNotFound('user not found');
 
 callback(err);
 ```
@@ -184,7 +306,7 @@ allow_access(user: RemoteUser, pkg: PackageAccess, cb: Callback): void {
 Any other action different than success must return an error.
 
 ```typescript
-import { getNotFound } from '@verdaccio/commons-api';
+import { API_ERROR, errorUtils } from '@verdaccio/core';
 
 const err = getForbidden('not allowed to access package');
 

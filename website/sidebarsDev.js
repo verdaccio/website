@@ -13,10 +13,15 @@ module.exports = {
       items: [
         'dev-plugins',
         'plugin-generator',
+        'plugin-verifier',
         'plugin-auth',
         'plugin-middleware',
         'plugin-storage',
-        'plugin-theme',
+        {
+          type: 'category',
+          label: 'Theme',
+          items: ['plugin-theme', 'ui-components'],
+        },
         'plugin-filter',
       ],
     },

@@ -155,6 +155,36 @@ module.exports = {
 
   plugins: [
     require.resolve('docusaurus-lunr-search'),
+    [
+      'docusaurus-plugin-llms',
+      {
+        title: 'Verdaccio',
+        description:
+          'A lightweight open source private npm proxy registry. Runs on Node.js, caches ' +
+          'packages from upstream registries, and is extended through plugins for ' +
+          'authentication, storage, middleware, themes and metadata filtering.',
+        // The plugin contracts were renamed in Verdaccio 7 and years of tutorials still
+        // use the old names, so state it before the link list rather than hoping a model
+        // reads far enough to find out.
+        rootContent: [
+          'The plugin interfaces are `ExpressMiddleware`, `Auth`, `Storage`, `StorageHandler`',
+          'and `ManifestFilter`, all under `pluginUtils` in `@verdaccio/core`. The names',
+          '`IPluginMiddleware`, `IPluginAuth`, `IPluginStorage`, `IPackageStorage`,',
+          '`IStorageManager` and `IPlugin` were removed, and so was the',
+          '`@verdaccio/commons-api` package — its helpers are `errorUtils` in `@verdaccio/core`.',
+        ].join(' '),
+        // `dev` is a separate content-docs instance; without listing it here the plugin
+        // development docs are left out entirely.
+        docsDir: [
+          { path: 'dev', routeBasePath: 'dev', label: 'Developing plugins' },
+          { path: 'docs', routeBasePath: 'docs', label: 'Documentation' },
+        ],
+        // the examples folder ships a README for contributors, not a docs page
+        ignoreFiles: ['dev/examples/**'],
+        includeBlog: false,
+        generateLLMsFullTxt: true,
+      },
+    ],
     'docusaurus-plugin-sass',
     'docusaurus-plugin-contributors',
     'docusaurus-plugin-downloads',
