@@ -10,7 +10,6 @@ This project is maintained by the Verdaccio community, maintainers and users tha
 
 If you have a question, most probably has already been answer, few ways to discover questions are:
 
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/verdaccio)
 - [Question Issues](https://github.com/verdaccio/verdaccio/issues?utf8=✓&q=is%3Aissue+label%3Aquestion+)
 - [Discussions Q&A](https://github.com/verdaccio/verdaccio/discussions/categories/q-a)
 - At the **Discord** chat you can also ask questions on the `#help` channel.

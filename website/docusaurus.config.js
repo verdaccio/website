@@ -14,7 +14,6 @@ const GITHUB = {
 const SOCIAL = {
   DISCORD: 'https://discord.gg/7qWJxBf',
   BLUESKY: 'https://bsky.app/profile/verdaccio.org',
-  STACK_OVERFLOW: 'https://stackoverflow.com/questions/tagged/verdaccio',
   OPEN_COLLECTIVE: 'https://opencollective.com/verdaccio',
 };
 
@@ -238,7 +237,6 @@ module.exports = {
           {
             title: 'Community',
             items: [
-              { label: 'Stack Overflow', href: SOCIAL.STACK_OVERFLOW },
               { label: 'Discord', href: SOCIAL.DISCORD },
               { label: 'Bluesky', href: SOCIAL.BLUESKY },
             ],

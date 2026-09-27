@@ -31,7 +31,22 @@ This approach is valid, but comes with several disadvantages:
 - One scope **cannot fetch from multiple registries**
 - Tokens/passwords **must be defined within** `.npmrc` and checked in into the repo.
 
-See a full example [here](https://stackoverflow.com/questions/54543979/npmrc-multiple-registries-for-the-same-scope/54550940#54550940).
+A complete `.npmrc` for one private scope alongside the public registry looks like this:
+
+```ini title=".npmrc"
+registry=https://registry.npmjs.org/
+@mycompany:registry=http://localhost:4873/
+//localhost:4873/:_authToken=${VERDACCIO_TOKEN}
+always-auth=true
+```
+
+Everything unscoped resolves from npmjs, and `@mycompany/*` resolves from Verdaccio.
+Reading the token from the environment keeps it out of the repository — npm expands
+`${VERDACCIO_TOKEN}` when it reads the file.
+
+The alternative, and usually the better one, is to point the client at **only** Verdaccio
+and let it proxy npmjs for you with an [uplink](uplinks.md): one registry to configure, one
+place to apply [access rules](packages.md), and a cache of everything you install.
 
 ## Linking a Registry {#linking-a-registry}
 
