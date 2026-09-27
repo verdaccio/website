@@ -200,7 +200,7 @@ In the previous example, the behaviour would be described:
 
 Available from Verdaccio **7.x**, not in **6.x**.
 
-When [staged publishing](staged-publishing) is enabled, the `stage` property
+When [staged publishing](staged-publishing.md) is enabled, the `stage` property
 decides who may submit a version for review with `npm stage publish`. Like
 `unpublish`, it falls back to `publish` when omitted, so leaving it out changes
 nothing.

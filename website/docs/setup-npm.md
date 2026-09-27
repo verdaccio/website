@@ -89,7 +89,7 @@ behaviour back.
 ## Two-factor authentication {#two-factor}
 
 :::info Depends on the registry
-Requires the `tfa` [feature flag](configuration#experiments) enabled on the
+Requires the `tfa` [feature flag](config.md#experiments) enabled on the
 Verdaccio side. It is experimental, off by default, and available from **7.x** —
 it does not exist in **6.x**. To try it, run the **9.x experimental** line
 (`verdaccio@next-9`), which is where it lands first. Not recommended for production yet. Nothing is
@@ -127,14 +127,14 @@ A code is single use and lives about ninety seconds, so it cannot be stored in a
 CI secret — to keep `auth-and-writes` and still release from a pipeline, see
 [staged publishing](#staged-publishing) below.
 
-See [two-factor authentication](two-factor-authentication) for the full table of
+See [two-factor authentication](two-factor-authentication.md) for the full table of
 what each mode asks for, recovery codes, and what happens if the server secret is
 rotated.
 
 ## Staged publishing {#staged-publishing}
 
 :::info Depends on the registry
-Requires the `stage` [feature flag](configuration#experiments) enabled on the
+Requires the `stage` [feature flag](config.md#experiments) enabled on the
 Verdaccio side. It is experimental, off by default, and available from **7.x** —
 it does not exist in **6.x**. To try it, run the **9.x experimental** line
 (`verdaccio@next-9`), which is where it lands first. Not recommended for production yet. With the
@@ -165,7 +165,7 @@ the pipeline stage without a code, and require the code at `npm stage approve`,
 where there is a person to type it. Every write stays protected and nothing
 needs a code stored in a secret.
 
-See [staged publishing](staged-publishing) for the full flow and the permissions
+See [staged publishing](staged-publishing.md) for the full flow and the permissions
 involved.
 
 ## Hiding recently published versions {#min-release-age}

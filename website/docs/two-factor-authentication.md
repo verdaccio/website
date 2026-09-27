@@ -31,7 +31,7 @@ early feedback. Node.js `>= 24` is required.
 :::caution
 This is an experimental feature behind the `tfa` flag. It is off by default, and
 the shape of the flag or its behaviour may change in a future release. See
-[feature flags](configuration#experiments).
+[feature flags](config.md#experiments).
 
 **Not recommended for production yet.** We would rather gather enough real usage
 first — see below on how to help with that.
@@ -157,7 +157,7 @@ at scale.
 The secret, the hashed recovery codes and the failure counters live in the
 storage plugin's token store, encrypted at rest with the server secret. Nothing
 is written to the user's htpasswd entry, which is why this works the same with
-any [auth plugin](authentication).
+any [auth plugin](auth.md).
 
 ## Modes {#modes}
 
@@ -274,8 +274,8 @@ With `auth-and-writes`, any pipeline that publishes needs a one-time password,
 which a pipeline cannot produce. There are two ways around it today:
 
 - Publish from CI with an account that uses `auth-only`, or no two-factor at
-  all, and protect it with [package access rules](packages) instead.
-- Use [staged publishing](staged-publishing): CI runs `npm stage publish`, which
+  all, and protect it with [package access rules](packages.md) instead.
+- Use [staged publishing](staged-publishing.md): CI runs `npm stage publish`, which
   never asks for a code, and a human approves the release afterwards with theirs.
   This is what the two features are designed to do together.
 
@@ -339,7 +339,7 @@ header.
 **`npm error code EOTP` in a script**
 
 Expected: npm cannot prompt without a TTY. Pass `--otp=<code>`, or use
-[staged publishing](staged-publishing) so the pipeline does not need a code at
+[staged publishing](staged-publishing.md) so the pipeline does not need a code at
 all.
 
 **"Unable to authenticate, need: Bearer"**

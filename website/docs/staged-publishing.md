@@ -32,7 +32,7 @@ early feedback. Node.js `>= 24` is required.
 :::caution
 This is an experimental feature behind the `stage` flag. It is off by default,
 and the shape of the flag or its behaviour may change in a future release. See
-[feature flags](configuration#experiments).
+[feature flags](config.md#experiments).
 
 **Not recommended for production yet.** We would rather gather enough real usage
 first — see below on how to help with that.
@@ -170,7 +170,7 @@ Staged package 9efe8b0c-50b3-4183-ba3f-c46dfc784adb approved and published succe
 Approval replays the ordinary publish path, so everything that normally happens
 on a publish happens here too: the version is checked against upstreams,
 dist-tags are merged, filter plugins run, and
-[notifications](notifications) fire. The staged copy is removed once the version
+[notifications](notifications.md) fire. The staged copy is removed once the version
 is really published.
 
 The version is installable immediately afterwards.
@@ -186,7 +186,7 @@ same `name@version` can be staged again later.
 
 ## Who can do what {#permissions}
 
-Staging has its own entry in [package access](packages), alongside `access`,
+Staging has its own entry in [package access](packages.md), alongside `access`,
 `publish` and `unpublish`:
 
 ```yaml
@@ -254,7 +254,7 @@ You must be logged in: the page needs your session to call the registry.
 
 ## Interaction with two-factor authentication {#with-2fa}
 
-Staged publishing and [two-factor authentication](two-factor-authentication) are
+Staged publishing and [two-factor authentication](two-factor-authentication.md) are
 independent — you can run either on its own. When both are on, they compose the
 way npmjs intends:
 
@@ -269,7 +269,7 @@ an automated pipeline prepare a release without holding a second factor.
 
 ## Notifications {#notifications}
 
-If you have [notifications](notifications) configured, staging fires one with
+If you have [notifications](notifications.md) configured, staging fires one with
 `publishType: stage`, and rejecting fires `publishType: unstage`. Approving fires
 `publish`, like any other publish.
 
@@ -283,7 +283,7 @@ notify:
   content: '{"type":"{{ publishType }}","package":"{{ publishedPackage }}","by":"{{ publisher.name }}"}'
 ```
 
-See [publish type](notifications#publish-type) for the full list of values.
+See [publish type](notifications.md#publish-type) for the full list of values.
 
 ## Where staged versions are stored {#storage}
 

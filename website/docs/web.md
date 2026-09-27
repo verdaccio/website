@@ -94,7 +94,7 @@ i18n:
 | `scope`                          | string          | `''`                            | Scope shown in the registry instructions header, e.g. `'@myscope'`                                                             |
 | `pkgManagers`                    | list            | `yarn`, `pnpm`, `npm`           | Which package managers appear in the sidebar and the registry dialog                                                           |
 | `login`                          | boolean         | `true`                          | Allow logging in from the UI. `false` also disables the web login endpoints                                                    |
-| `rateLimit`                      | object          | `max: 5000`, `windowMs: 120000` | Rate limit of the web data endpoints only; CSS and JS are not counted. Prefer [`userRateLimit`](configuration#user-rate-limit) |
+| `rateLimit`                      | object          | `max: 5000`, `windowMs: 120000` | Rate limit of the web data endpoints only; CSS and JS are not counted. Prefer [`userRateLimit`](config.md#user-rate-limit) |
 | `html_cache`                     | boolean         | `true`                          | Cache the rendered HTML shell                                                                                                  |
 | `assetFolder` <small>7.x</small> | string          | —                               | Folder served under `/-/assets/`, for logos and files referenced above; handy with Docker volumes                              |
 | `metaScripts`                    | string[]        | —                               | Tags injected before `</head>`                                                                                                 |

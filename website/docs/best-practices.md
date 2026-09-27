@@ -118,7 +118,7 @@ feedback that gets it there.
 :::
 
 A leaked or committed token is enough to publish in someone's name. Enabling
-[two-factor authentication](two-factor-authentication) in `auth-and-writes` mode
+[two-factor authentication](two-factor-authentication.md) in `auth-and-writes` mode
 means a token alone is no longer enough — publishing also needs a code from the
 maintainer's authenticator:
 
@@ -150,7 +150,7 @@ feedback that gets it there.
 :::
 
 Protecting _who_ can publish still means the publish takes effect immediately.
-[Staged publishing](staged-publishing) adds a review step: the version is
+[Staged publishing](staged-publishing.md) adds a review step: the version is
 uploaded but nobody can install it until a maintainer inspects the tarball and
 approves it.
 
@@ -219,7 +219,7 @@ Using **HTTPS** is a common recommendation. For this reason we recommend reading
 
 ### Expiring Tokens {#expiring-tokens}
 
-Tokens have no expiration date by default. Enabling [JWT](configuration#token) gives them one:
+Tokens have no expiration date by default. Enabling [JWT](config.md#token) gives them one:
 
 ```yaml
 security:

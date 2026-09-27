@@ -11,7 +11,7 @@ the token once you are done.
 
 :::info Off by default, but not experimental
 This is a long-standing feature gated by the `webLogin`
-[feature flag](configuration#experiments), which is `false` unless you turn it
+[feature flag](config.md#experiments), which is `false` unless you turn it
 on. The flag exists so operators opt into the browser flow deliberately, not
 because the feature is unfinished.
 :::
@@ -67,5 +67,5 @@ Verdaccio on the same port it listens on.
 :::
 
 If you run Verdaccio behind a proxy and want this flow, keep the public port and
-the listening port the same. See [reverse proxy](reverse-proxy) for the rest of
+the listening port the same. See [reverse proxy](reverse-proxy.md) for the rest of
 the headers involved.

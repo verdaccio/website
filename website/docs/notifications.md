@@ -168,7 +168,7 @@ You can access to the package is being published with the keyword `{{publishedPa
 | `stage`     | a version was submitted for review (`npm stage publish`) |
 | `unstage`   | a staged version was discarded (`npm stage reject`)      |
 
-`stage` and `unstage` only ever fire when [staged publishing](staged-publishing)
+`stage` and `unstage` only ever fire when [staged publishing](staged-publishing.md)
 is enabled, and neither changes what is installable. Approving a staged version
 reports `publish`, because that is exactly what it does — a webhook listening for
 publishes still sees it.

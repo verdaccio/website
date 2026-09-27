@@ -9,7 +9,7 @@ web UI instead of asking an administrator to rewrite the credentials file.
 
 :::info Off by default, but not experimental
 This is a long-standing feature gated by the `changePassword`
-[feature flag](configuration#experiments), which is `false` unless you turn it
+[feature flag](config.md#experiments), which is `false` unless you turn it
 on.
 :::
 
@@ -28,7 +28,7 @@ the route answers `404`.
 
 The form asks for the current password and the new one twice. The registry
 identifies you from **the token of your session**, never from anything typed in
-the form, and then asks your [authentication plugin](authentication) to make the
+the form, and then asks your [authentication plugin](auth.md) to make the
 change. The default htpasswd plugin rewrites the hash in the htpasswd file.
 
 The current password is verified before anything changes, so a session on its

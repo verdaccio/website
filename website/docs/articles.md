@@ -16,7 +16,7 @@ a supported version of Verdaccio.
 Many of these articles are several years old and were written against Verdaccio 3, 4 or 5,
 all of which are end of life. Treat them as background reading, not as instructions. When an
 article and this documentation disagree, **the documentation is the one that is kept up to
-date** — start from [configuration](configuration) and [installation](installation).
+date** — start from [configuration](config.md) and [installation](install.md).
 :::
 
 ## Remarkable Articles {#remarkable-articles}

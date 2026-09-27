@@ -21,7 +21,7 @@ server:
 
 Without it, rate limiting throttles all your users as if they were a single
 client, and the CIDR whitelist on npm tokens has nothing real to check against.
-See [`trustProxy`](configuration#trust-proxy).
+See [`trustProxy`](config.md#trust-proxy).
 :::
 
 # Apache

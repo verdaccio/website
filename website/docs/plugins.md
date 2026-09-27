@@ -34,7 +34,7 @@ Plugins must be named with the following convention:
 
 - `verdaccio-xxx`
 
-The prefix can be changed with [`server.pluginPrefix`](configuration#plugin-prefix).
+The prefix can be changed with [`server.pluginPrefix`](config.md#plugin-prefix).
 
 Scoped plugins are supported, for example:
 

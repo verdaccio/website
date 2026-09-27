@@ -23,7 +23,7 @@ verdaccio --listen 4000 --config ./config.yaml
 
 `--listen` accepts `port`, `host:port`, `proto://host:port`, an IPv6 address in brackets
 and a `unix:/path/to.sock` socket — the same values as the `listen` key of the
-[configuration file](configuration#listen-port). Passing it on the command line overrides
+[configuration file](config.md#listen-port). Passing it on the command line overrides
 that key.
 
 `--port` / `-p` and `--mask` exist on **7.x**; on **6.x** use `--listen` and `--info`.
@@ -78,8 +78,8 @@ The default database file location is within the storage location.
 
 ## Environment variables {#environment-variables}
 
-[Full list of environment variables](env).
+[Full list of environment variables](env.md).
 
 - `VERDACCIO_HANDLE_KILL_SIGNALS` to enable graceful shutdown. Only applies to **6.x**: on
   **7.x** graceful shutdown is always on and the variable was removed, see
-  [environment variables](env#handle-kill-signals).
+  [environment variables](env.md#handle-kill-signals).

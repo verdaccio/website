@@ -159,11 +159,11 @@ revision metadata without Basic authentication.
 
 :::info Depends on the registry
 This only applies when the operator has enabled the `tfa`
-[feature flag](configuration#experiments) on the Verdaccio side. It is an
+[feature flag](config.md#experiments) on the Verdaccio side. It is an
 experimental flag, off by default, and available from **7.x**; to try it, run the
 **9.x experimental** line (`verdaccio@next-9`), which is where it lands first.
 Not recommended for production yet. See
-[two-factor authentication](two-factor-authentication).
+[two-factor authentication](two-factor-authentication.md).
 
 Nothing is configured on the Yarn side.
 :::
@@ -186,9 +186,9 @@ has no equivalent command.
 ## Staged publishing {#staged-publishing}
 
 :::note Not available in Yarn
-[Staged publishing](staged-publishing) is driven by `npm stage`, which is an npm
+[Staged publishing](staged-publishing.md) is driven by `npm stage`, which is an npm
 command with no Yarn equivalent. Even with the `stage`
-[feature flag](configuration#experiments) enabled on the registry, a Yarn-based
+[feature flag](config.md#experiments) enabled on the registry, a Yarn-based
 workflow cannot stage or approve versions — the registry endpoints are there,
 but no Yarn command calls them.
 

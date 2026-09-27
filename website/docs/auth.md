@@ -109,4 +109,4 @@ only rehashed when the user changes their password.
 
 Independently of which authentication plugin you use, users can add a
 time-based one-time password on top of their password. See
-[two-factor authentication](two-factor-authentication).
+[two-factor authentication](two-factor-authentication.md).

@@ -33,8 +33,14 @@ module.exports = {
   tagline: 'A lightweight Node.js private proxy registry',
   organizationName: 'verdaccio',
   projectName: 'verdaccio',
-  url: 'https://verdaccio.org',
+  // the apex 301s to www, so www is the host that actually serves the site; pointing
+  // `url` at the apex made every canonical and every sitemap entry name a URL that
+  // redirects
+  url: 'https://www.verdaccio.org',
   baseUrl: '/',
+  // GitHub Pages 301s /docs/page to /docs/page/, so emitting the slash ourselves drops
+  // a redirect hop from every link, canonical and sitemap entry
+  trailingSlash: true,
   onBrokenLinks: 'throw',
   // FUTURE: migrate into markdown section on migrate 4.0
   onBrokenMarkdownLinks: 'warn',
@@ -176,6 +182,10 @@ module.exports = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      // social card; without it a shared link shows no preview anywhere.
+      // 903x300 is the largest artwork we have — a purpose-made 1200x630 would fill
+      // the card properly
+      image: 'img/logo/banner/png/verdaccio-banner@3x.png',
       mermaid: {
         theme: { light: 'neutral', dark: 'forest' },
       },

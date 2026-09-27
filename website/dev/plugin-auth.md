@@ -315,7 +315,7 @@ callback(err);
 
 ## Generate an authentication plugin {#generate-an-authentication-plugin}
 
-For detailed info check our [plugin generator page](plugin-generator). Run the `yo` command in your terminal and follow the steps.
+For detailed info check our [plugin generator page](plugin-generator.md). Run the `yo` command in your terminal and follow the steps.
 
 ```
 ➜ yo verdaccio-plugin
