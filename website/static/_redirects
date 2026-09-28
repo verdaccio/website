@@ -47,6 +47,7 @@ https://chat.verdaccio.org https://discord.gg/7qWJxBf 200
 /docs/security-policy /community/security 301
 # The AWS page documented an Amazon Linux 2 / nvm setup that no longer applies.
 /docs/amazon /docs/docker 301
+/docs/ci /docs/github-actions 301
 
 # The 2018-2019 posts documented Verdaccio 3 and 4, both long end of life. Only the
 # Verdaccio 5 migration guide is kept; the rest land on the home page.

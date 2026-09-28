@@ -82,11 +82,7 @@ module.exports = {
       label: 'DevOps',
       items: [
         'kubernetes',
-        {
-          type: 'category',
-          label: 'Continuous Integration',
-          items: ['ci', 'github-actions'],
-        },
+        'github-actions',
         {
           type: 'category',
           label: 'Tools',
