@@ -3,11 +3,11 @@
     {
       "id": 558752,
       "login": "juanpicado",
-      "contributions": 5798,
+      "contributions": 5836,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3239
+          "contributions": 3240
         },
         {
           "name": "verdaccio-cookbook",
@@ -15,7 +15,7 @@
         },
         {
           "name": "generator-verdaccio-plugin",
-          "contributions": 138
+          "contributions": 139
         },
         {
           "name": "puppet-verdaccio",
@@ -47,7 +47,7 @@
         },
         {
           "name": "verdaccio-google-cloud",
-          "contributions": 102
+          "contributions": 103
         },
         {
           "name": "verdaccio-audit",
@@ -67,7 +67,7 @@
         },
         {
           "name": "website",
-          "contributions": 576
+          "contributions": 606
         },
         {
           "name": "eslint-plugin-verdaccio",
@@ -91,7 +91,7 @@
         },
         {
           "name": "verdaccio-aws-s3-storage",
-          "contributions": 57
+          "contributions": 62
         },
         {
           "name": "eslint-config-verdaccio",
@@ -232,11 +232,11 @@
     {
       "id": 59966492,
       "login": "mbtools",
-      "contributions": 319,
+      "contributions": 320,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 308
+          "contributions": 309
         },
         {
           "name": "website",
@@ -334,6 +334,41 @@
       ]
     },
     {
+      "id": 558740,
+      "login": "dianmorales",
+      "contributions": 52,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 41
+        },
+        {
+          "name": "generator-verdaccio-plugin",
+          "contributions": 1
+        },
+        {
+          "name": "verdaccio-google-cloud",
+          "contributions": 1
+        },
+        {
+          "name": "monorepo",
+          "contributions": 2
+        },
+        {
+          "name": "verdaccio-aws-s3-storage",
+          "contributions": 3
+        },
+        {
+          "name": "verdaccio-auth-ldap",
+          "contributions": 1
+        },
+        {
+          "name": "yarn-plugin-npm",
+          "contributions": 3
+        }
+      ]
+    },
+    {
       "id": 827205,
       "login": "DanielRuf",
       "contributions": 47,
@@ -372,35 +407,24 @@
       ]
     },
     {
-      "id": 558740,
-      "login": "dianmorales",
-      "contributions": 39,
-      "repositories": [
-        {
-          "name": "verdaccio",
-          "contributions": 37
-        },
-        {
-          "name": "monorepo",
-          "contributions": 2
-        }
-      ]
-    },
-    {
       "id": 284604232,
       "login": "verdacciopack",
-      "contributions": 36,
+      "contributions": 40,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 18
+          "contributions": 19
         },
         {
           "name": "generator-verdaccio-plugin",
-          "contributions": 2
+          "contributions": 3
         },
         {
           "name": "verdaccio-google-cloud",
+          "contributions": 2
+        },
+        {
+          "name": "verdaccio-aws-s3-storage",
           "contributions": 1
         },
         {
@@ -412,19 +436,31 @@
     {
       "id": 116422,
       "login": "jotadeveloper",
-      "contributions": 21,
+      "contributions": 32,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 14
+          "contributions": 16
         },
         {
-          "name": "website",
+          "name": "generator-verdaccio-plugin",
           "contributions": 3
         },
         {
+          "name": "verdaccio-google-cloud",
+          "contributions": 1
+        },
+        {
+          "name": "website",
+          "contributions": 5
+        },
+        {
           "name": "e2e-tests",
-          "contributions": 4
+          "contributions": 6
+        },
+        {
+          "name": "verdaccio-auth-ldap",
+          "contributions": 1
         }
       ]
     },
@@ -5408,7 +5444,7 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17898,
+      "stargazers_count": 17905,
       "archived": false
     },
     {
