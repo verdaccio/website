@@ -1,4 +1,9 @@
-import { dockerPulls, monthlyDownloads, yearlyDownloads } from '@verdaccio/local-scripts';
+import {
+  dockerPulls,
+  dockerPullsTotal,
+  monthlyDownloads,
+  yearlyDownloads,
+} from '@verdaccio/local-scripts';
 
 import styles from './TotalDownloadsHero.module.scss';
 
@@ -10,11 +15,17 @@ const totalNpmDownloads = Object.values(yearlyDownloads).reduce(
   0
 );
 
-// Total docker pulls (sum of all weekly pull counts)
-const totalDockerPulls = Object.values(dockerPulls).reduce(
+// The weekly proxylytics series only goes back to 2024; prefer the cumulative all-time
+// pull_count and fall back to the weekly sum when the snapshot is unavailable.
+const weeklyDockerPulls = Object.values(dockerPulls).reduce(
   (sum: number, entry) => sum + (entry as { pullCount: number }).pullCount,
   0
 );
+const dockerTotalDates = Object.keys(dockerPullsTotal).sort();
+const latestDockerTotal = dockerTotalDates.length
+  ? (dockerPullsTotal as Record<string, number>)[dockerTotalDates[dockerTotalDates.length - 1]]
+  : 0;
+const totalDockerPulls = latestDockerTotal || weeklyDockerPulls;
 
 const grandTotal = totalNpmDownloads + totalDockerPulls;
 
@@ -26,10 +37,6 @@ const latestMonthLabel = latestMonth?.start
 
 // Data collection dates
 const npmStartYear = Object.keys(yearlyDownloads).sort()[0];
-const dockerDates = Object.keys(dockerPulls).sort();
-const dockerStartLabel = dockerDates[0]
-  ? new Date(dockerDates[0]).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
-  : '';
 
 function formatNumber(n: number): string {
   if (n >= 1_000_000_000) return `${(n / 1_000_000_000).toFixed(1)}B`;
@@ -51,7 +58,7 @@ const TotalDownloadsHero: React.FC = () => {
       </div>
       <div className={styles.stat}>
         <span className={styles.statNumber}>{formatNumber(totalDockerPulls)}</span>
-        <span className={styles.statLabel}>Docker pulls · since {dockerStartLabel}</span>
+        <span className={styles.statLabel}>Docker pulls · all-time</span>
       </div>
       <div className={styles.stat}>
         <span className={styles.statNumber}>{formatNumber(latestMonth?.downloads || 0)}</span>

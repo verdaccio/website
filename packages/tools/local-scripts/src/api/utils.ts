@@ -14,6 +14,10 @@ export interface DockerPullEntry {
   ipCount: number;
 }
 
+export interface DockerTotalEntry {
+  [date: string]: number;
+}
+
 export interface NpmjsDownloadsEntry {
   [version: string]: number;
 }
@@ -287,10 +291,39 @@ export async function dockerPullWeekly() {
     console.info(
       `[docker] ${added} new entries added (${existingCount} existing, ${existingCount + added} total)`
     );
+    await dockerPullTotal();
   } catch (err: any) {
     // eslint-disable-next-line no-console
     console.error(`[docker] Error:`, err);
     process.exit(1);
+  }
+}
+
+// Cumulative all-time pull_count; the weekly proxylytics series only goes back to 2024.
+export async function dockerPullTotal() {
+  const totalFile = path.join(__dirname, '../../src/docker_pull_total.json');
+
+  let totals: DockerTotalEntry = {};
+  try {
+    totals = JSON.parse(await fs.readFile(totalFile, 'utf8'));
+  } catch {
+    // no existing data, starting fresh
+  }
+
+  try {
+    const response = await fetchWithRetry<{ pull_count: number; star_count: number }>(
+      'https://hub.docker.com/v2/repositories/verdaccio/verdaccio/'
+    );
+    const currentDate = getISODateOnly();
+    totals[currentDate] = response.pull_count;
+    await fs.writeFile(totalFile, JSON.stringify(totals));
+    // eslint-disable-next-line no-console
+    console.info(
+      `[docker-total] ${currentDate}: ${response.pull_count.toLocaleString()} cumulative pulls`
+    );
+  } catch (err: any) {
+    // eslint-disable-next-line no-console
+    console.warn(`[docker-total] skipped (kept existing totals):`, err?.message ?? err);
   }
 }
 
