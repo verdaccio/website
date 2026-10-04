@@ -22,7 +22,7 @@ module.exports = {
           ],
         },
         'who-is-using',
-        { type: 'link', label: 'Metrics', href: '/downloads' },
+        'usage-adoption',
         'best',
         'docker',
         'env',

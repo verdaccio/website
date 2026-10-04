@@ -146,7 +146,6 @@ module.exports = {
     ],
     'docusaurus-plugin-sass',
     'docusaurus-plugin-contributors',
-    'docusaurus-plugin-downloads',
     [
       'content-docs',
       {

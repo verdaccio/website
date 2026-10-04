@@ -1,7 +1,5 @@
 import { dockerPulls } from '@verdaccio/local-scripts';
 
-import DataTable from './DataTable';
-
 import {
   BarElement,
   CategoryScale,
@@ -72,14 +70,9 @@ const DockerTotalPull = () => {
     },
   };
 
-  const tableRows: [string, number][] = labels
-    .map((month, i) => [month, pullCounts[i]] as [string, number])
-    .reverse();
-
   return (
     <div>
       <Bar data={data} options={options} />
-      <DataTable headers={['Month', 'Total Pulls']} rows={tableRows} />
     </div>
   );
 };

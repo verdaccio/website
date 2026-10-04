@@ -1,6 +1,5 @@
 import { monthlyDownloads } from '@verdaccio/local-scripts';
 
-import DataTable from './DataTable';
 import TrendBadges, { computeTrend } from './TrendBadges';
 
 import {
@@ -82,16 +81,12 @@ const options = {
 };
 
 const trend = computeTrend(downloadValues);
-const tableRows: [string, number][] = monthlyDownloads
-  .map((entry) => [entry.start, entry.downloads] as [string, number])
-  .reverse();
 
 const NpmjsMonthlyDownloadsChart = () => {
   return (
     <div>
       <Line data={data} options={options} />
       <TrendBadges trends={[{ label: 'Monthly trend', percentChange: trend }]} />
-      <DataTable headers={['Month', 'Downloads']} rows={tableRows} />
     </div>
   );
 };

@@ -1,7 +1,5 @@
 import { npmjsDownloads } from '@verdaccio/local-scripts';
 
-import DataTable from './DataTable';
-
 import {
   CategoryScale,
   Chart as ChartJS,
@@ -50,7 +48,7 @@ const MigrationShareChart: React.FC = () => {
     Object.entries(downloads).forEach(([version, count]) => {
       if (isPrerelease(version)) return;
       const major = version.split('.')[0];
-      if (Number(major) < 3) return;
+      if (Number(major) < 5) return;
       majorByDate[date][major] = (majorByDate[date][major] || 0) + (count as number);
     });
   });
@@ -132,15 +130,9 @@ const MigrationShareChart: React.FC = () => {
     },
   };
 
-  const tableHeaders = ['Date', ...majors.map((m) => `v${m}.x`)];
-  const tableRows = allDates
-    .map((date, i) => [date, ...majors.map((m) => `${percentData[m][i]}%`)])
-    .reverse();
-
   return (
     <div>
       <Line data={chartData} options={options} />
-      <DataTable headers={tableHeaders} rows={tableRows} />
     </div>
   );
 };

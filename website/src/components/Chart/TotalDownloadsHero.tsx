@@ -40,26 +40,22 @@ function formatNumber(n: number): string {
 
 const TotalDownloadsHero: React.FC = () => {
   return (
-    <div className={styles.hero}>
-      <div className={styles.mainStat}>
-        <span className={styles.number}>{formatNumber(grandTotal)}</span>
-        <span className={styles.label}>Total Downloads + Pulls</span>
+    <div className={styles.summary}>
+      <div className={styles.stat}>
+        <span className={styles.statNumber}>{formatNumber(grandTotal)}</span>
+        <span className={styles.statLabel}>Total downloads + pulls · since {npmStartYear}</span>
       </div>
-      <div className={styles.breakdown}>
-        <div className={styles.stat}>
-          <span className={styles.statNumber}>{formatNumber(totalNpmDownloads)}</span>
-          <span className={styles.statLabel}>npm Downloads (since {npmStartYear})</span>
-        </div>
-        <div className={styles.divider} />
-        <div className={styles.stat}>
-          <span className={styles.statNumber}>{formatNumber(totalDockerPulls)}</span>
-          <span className={styles.statLabel}>Docker Pulls (since {dockerStartLabel})</span>
-        </div>
-        <div className={styles.divider} />
-        <div className={styles.stat}>
-          <span className={styles.statNumber}>{formatNumber(latestMonth?.downloads || 0)}</span>
-          <span className={styles.statLabel}>{latestMonthLabel}</span>
-        </div>
+      <div className={styles.stat}>
+        <span className={styles.statNumber}>{formatNumber(totalNpmDownloads)}</span>
+        <span className={styles.statLabel}>npm downloads · since {npmStartYear}</span>
+      </div>
+      <div className={styles.stat}>
+        <span className={styles.statNumber}>{formatNumber(totalDockerPulls)}</span>
+        <span className={styles.statLabel}>Docker pulls · since {dockerStartLabel}</span>
+      </div>
+      <div className={styles.stat}>
+        <span className={styles.statNumber}>{formatNumber(latestMonth?.downloads || 0)}</span>
+        <span className={styles.statLabel}>{latestMonthLabel}</span>
       </div>
     </div>
   );

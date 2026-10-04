@@ -1,6 +1,5 @@
 import { dockerPulls } from '@verdaccio/local-scripts';
 
-import DataTable from './DataTable';
 import TrendBadges, { computeTrend } from './TrendBadges';
 
 import {
@@ -114,16 +113,6 @@ const options = {
 
 const pullTrend = computeTrend(pullCounts);
 const ipTrend = computeTrend(ipCounts);
-const tableRows = entries
-  .map(
-    ([date, d]) =>
-      [new Date(date).toLocaleDateString('en-US'), d.pullCount, d.ipCount] as [
-        string,
-        number,
-        number,
-      ]
-  )
-  .reverse();
 
 const DockerPullChart = () => {
   return (
@@ -135,7 +124,6 @@ const DockerPullChart = () => {
           { label: 'Unique IPs', percentChange: ipTrend },
         ]}
       />
-      <DataTable headers={['Date', 'Pulls', 'Unique IPs']} rows={tableRows} />
     </div>
   );
 };

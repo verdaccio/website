@@ -1,7 +1,5 @@
 import { npmjsDownloads } from '@verdaccio/local-scripts';
 
-import DataTable from './DataTable';
-
 import { BarElement, CategoryScale, Chart as ChartJS, LinearScale, Title, Tooltip } from 'chart.js';
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
@@ -13,9 +11,14 @@ const dates = Object.keys(npmjsDownloads).sort((a, b) => new Date(b) - new Date(
 const lastDate = dates[0];
 const data = npmjsDownloads[lastDate];
 
+const isPrerelease = (version: string) =>
+  /(alpha|beta|next)/i.test(version) || /\d+\.\d+\.\d+-.+/.test(version);
+
 function reduceDownloads(downloads) {
   const result = {};
   Object.entries(downloads).forEach(([version, count]) => {
+    // Prereleases (7.0.0-next.x, -rc, -alpha, ...) are not counted toward a major's total.
+    if (isPrerelease(version)) return;
     const majorVersion = version.split('.')[0];
     result[majorVersion] = (result[majorVersion] || 0) + count;
   });
@@ -37,12 +40,12 @@ const defaultColor = { bg: 'rgba(158, 158, 158, 0.7)', border: 'rgba(158, 158, 1
 const VersionDownloadsChart = () => {
   const processedData = reduceDownloads(data);
 
-  // Filter out versions with less than 400 downloads (mostly very old deprecated versions),
-  // but always keep v7 so the upcoming release (including prereleases) is visible.
-  // v8 is excluded intentionally.
+  // Ignore 3.x / 4.x entirely. Keep v5/v6 above a small-noise floor, and keep any future
+  // major (v7+) as soon as it has stable (non-prerelease) downloads.
   // @ts-ignore
   const filteredData = Object.entries(processedData).filter(
-    ([version, count]) => version !== '8' && (count > 400 || Number(version) >= 7)
+    ([version, count]) =>
+      Number(version) >= 5 && (count > 400 || (Number(version) >= 7 && count > 0))
   );
 
   const labels = filteredData.map(([version]) => `v${version}`);
@@ -96,12 +99,9 @@ const VersionDownloadsChart = () => {
     },
   };
 
-  const tableRows = filteredData.map(([version, count]) => [`v${version}`, count as number]);
-
   return (
     <div>
       <Bar data={chartData} options={options} />
-      <DataTable headers={['Version', 'Downloads']} rows={tableRows} />
     </div>
   );
 };

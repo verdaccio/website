@@ -1,25 +1,7 @@
 .downloadsPage {
   width: 100%;
   margin: 0 auto;
-  padding: 2rem 2.5rem 4rem;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 2.5rem;
-
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--ifm-heading-color);
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    color: var(--ifm-color-emphasis-600);
-    font-size: 1.1rem;
-    margin: 0;
-  }
+  padding: 0.5rem 0 2rem;
 }
 
 .sectionTitle {
@@ -63,17 +45,7 @@
 
 @media only screen and (max-width: 768px) {
   .downloadsPage {
-    padding: 1rem 0.5rem 2rem;
-  }
-
-  .header {
-    h1 {
-      font-size: 1.8rem;
-    }
-
-    p {
-      font-size: 0.9rem;
-    }
+    padding: 0.5rem 0 1.5rem;
   }
 
   .sectionTitle {
