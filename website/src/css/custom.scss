@@ -36,6 +36,19 @@
   --ifm-code-font-size: 90%;
   --ifm-line-height-base: 1.65;
 
+  /* design tokens shared by every custom component (home, search, contributors, ...) */
+  --v-ink: #17181a;
+  --v-muted: #5c5f62;
+  --v-surface: #f2f2f1;
+  --v-card: #f7f7f6;
+  --v-border: #e4e4e1;
+  --v-green: #4a5e3e;
+  --v-green-soft: #e4ebdd;
+  --v-on-green: #ffffff;
+  --v-accent: #cd4001;
+  --v-warn: #b45309;
+  --v-ok: #2e7d32;
+
   /* sidebar: Inter Tight is narrow, so give the menu more air */
   --ifm-menu-link-padding-vertical: 0.55rem;
   --ifm-menu-link-padding-horizontal: 0.9rem;
@@ -50,6 +63,17 @@ html[data-theme='dark']:root {
   --ifm-color-primary-light: #e24601;
   --ifm-color-primary-lighter: #ec4a01;
   --ifm-color-primary-lightest: #fe580e;
+
+  --v-ink: #f1f3ef;
+  --v-muted: #a4aca5;
+  --v-surface: #141b17;
+  --v-card: #19221d;
+  --v-border: #26322b;
+  --v-green: #8fb07a;
+  --v-green-soft: #24311f;
+  --v-on-green: #0e1411;
+  --v-warn: #f0a030;
+  --v-ok: #6fcf7c;
 
   --ifm-background-color: #0e1411;
   --ifm-background-surface-color: #141b17;

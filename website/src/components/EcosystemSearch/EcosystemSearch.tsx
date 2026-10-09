@@ -3,29 +3,8 @@ import FilterControl from './FilterControl';
 import ToolList from './ToolList';
 import { Filters } from './types';
 
-import { ThemeProvider, createTheme } from '@mui/material/styles';
 import React from 'react';
 import { useState } from 'react';
-
-const theme = createTheme({
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 450,
-      md: 996,
-      lg: 1600,
-      xl: 1800,
-    },
-  },
-  palette: {
-    primary: {
-      main: '#4B5E40',
-    },
-    secondary: {
-      main: '#808a79',
-    },
-  },
-});
 
 const EcosystemSearch = (): React.ReactElement => {
   const { addons, categories, origin } = data as any;
@@ -47,7 +26,7 @@ const EcosystemSearch = (): React.ReactElement => {
   });
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <FilterControl
         categories={categories}
         origins={origin}
@@ -55,7 +34,7 @@ const EcosystemSearch = (): React.ReactElement => {
         onChange={setFilters}
       />
       <ToolList addons={addons} filters={filters} />
-    </ThemeProvider>
+    </>
   );
 };
 

@@ -1,30 +1,14 @@
+import UiIcon from '../ui/Icons';
+import ui from '../ui/Ui.module.scss';
 import CardLogo from './CardLogo';
+import styles from './Ecosystem.module.scss';
 import Icon from './Icon';
 import { Addon, VulnerabilitySeverity } from './types';
 
 import Translate from '@docusaurus/Translate';
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import CodeIcon from '@mui/icons-material/Code';
-import CodeOffIcon from '@mui/icons-material/CodeOff';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkOffIcon from '@mui/icons-material/LinkOff';
-import WarningAmberIcon from '@mui/icons-material/WarningAmber';
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Card from '@mui/material/Card';
-import CardActionArea from '@mui/material/CardActionArea';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardHeader from '@mui/material/CardHeader';
-import Chip from '@mui/material/Chip';
-import { green, red } from '@mui/material/colors';
-import Typography from '@mui/material/Typography';
+import clsx from 'clsx';
 import * as React from 'react';
 import { FC } from 'react';
-
-const AVATAR_SIZE = 28;
 
 const DAY_MS = 86_400_000;
 const formatRelativeTime = (iso?: string): string | null => {
@@ -41,8 +25,7 @@ const formatRelativeTime = (iso?: string): string | null => {
   return `${years}y ago`;
 };
 
-const severityColor = (s: VulnerabilitySeverity): 'warning' | 'error' =>
-  s === 'HIGH' || s === 'CRITICAL' ? 'error' : 'warning';
+const isSevere = (s: VulnerabilitySeverity): boolean => s === 'HIGH' || s === 'CRITICAL';
 
 const AddonCard: FC<Addon> = ({
   url,
@@ -58,7 +41,6 @@ const AddonCard: FC<Addon> = ({
   repository,
   license,
 }): React.ReactElement => {
-  const openPackage = () => window.open(url, '_blank', 'noopener,noreferrer');
   const updatedLabel = formatRelativeTime(modified);
   const updatedTitle = modified ? new Date(modified).toLocaleDateString() : undefined;
   const isMissing = !!missingSince;
@@ -77,107 +59,42 @@ const AddonCard: FC<Addon> = ({
   const cveAdvisoryUrl = hasCves
     ? `https://osv.dev/vulnerability/${vulnerabilities!.ids[0]}`
     : undefined;
+  const severe = hasCves && isSevere(vulnerabilities!.highest_severity);
   const hasRepository = !!repository;
   const isGithubRepo = hasRepository && /github\.com/i.test(repository!);
   const repositoryLabel = hasRepository
     ? repository!.replace(/^https?:\/\//, '').replace(/\/$/, '')
     : null;
-  const openRepository = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (repository) {
-      window.open(repository, '_blank', 'noopener,noreferrer');
-    }
-  };
+
   return (
-    <Card
-      sx={{
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        minWidth: 240,
-        opacity: isMissing ? 0.65 : 1,
-        outline: isMissing ? '1px dashed' : 'none',
-        outlineColor: 'warning.main',
-      }}
-    >
-      <CardActionArea
-        onClick={openPackage}
-        sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', alignItems: 'stretch' }}
+    <article className={clsx(styles.card, isMissing && styles.missing)}>
+      <a
+        className={styles.cardMain}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={`Show ${name} on npmjs.com`}
       >
-        <CardHeader
-          title={name}
-          slotProps={{
-            title: {
-              variant: 'subtitle2',
-              title: name,
-              sx: {
-                fontWeight: 600,
-                display: '-webkit-box',
-                WebkitLineClamp: 2,
-                WebkitBoxOrient: 'vertical',
-                overflow: 'hidden',
-                wordBreak: 'break-word',
-                lineHeight: 1.25,
-              },
-            },
-          }}
-          sx={{
-            padding: 1.25,
-            paddingBottom: 0.5,
-            '& .MuiCardHeader-content': { minWidth: 0 },
-          }}
-          avatar={
-            <Avatar
-              alt={name}
-              sx={{
-                bgcolor: origin === 'core' ? green[200] : red[200],
-                width: AVATAR_SIZE,
-                height: AVATAR_SIZE,
-              }}
-            >
-              <Icon category={category} />
-            </Avatar>
-          }
-          action={
-            <Avatar
-              alt="Verdaccio"
-              title={origin === 'core' ? 'Verdaccio Core' : 'Community'}
-              sx={{ width: AVATAR_SIZE, height: AVATAR_SIZE, bgcolor: 'transparent' }}
-            >
-              <CardLogo origin={origin} />
-            </Avatar>
-          }
-        />
-        <CardContent sx={{ padding: 1.25, paddingTop: 0.5, paddingBottom: 0.5, flexGrow: 1 }}>
-          <Typography
-            variant="body2"
-            color="text.secondary"
-            title={description}
-            sx={{
-              display: '-webkit-box',
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: 'vertical',
-              overflow: 'hidden',
-              fontSize: '0.8rem',
-              lineHeight: 1.35,
-            }}
+        <div className={styles.cardHead}>
+          <span className={clsx(styles.badge, origin !== 'core' && styles.badgeCommunity)}>
+            <Icon category={category} />
+          </span>
+          <h3 className={styles.name} title={name}>
+            {name}
+          </h3>
+          <span
+            className={styles.coreLogo}
+            title={origin === 'core' ? 'Verdaccio Core' : 'Community'}
           >
-            {description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
+            <CardLogo origin={origin} />
+          </span>
+        </div>
+        <p className={styles.desc} title={description}>
+          {description}
+        </p>
+      </a>
       {updatedLabel && (
-        <Typography
-          variant="caption"
-          title={updatedTitle}
-          sx={{
-            display: 'block',
-            paddingX: 1.25,
-            paddingBottom: 0.25,
-            color: 'text.secondary',
-            fontSize: '0.65rem',
-          }}
-        >
+        <div className={styles.updated} title={updatedTitle}>
           <Translate
             id="ecosystem.addon.updated"
             description="Relative time since the addon was last published"
@@ -185,233 +102,118 @@ const AddonCard: FC<Addon> = ({
           >
             {'Updated {when}'}
           </Translate>
-        </Typography>
+        </div>
       )}
-      <CardActions
-        sx={{
-          padding: 1,
-          gap: 0.5,
-          justifyContent: 'space-between',
-          flexWrap: 'wrap',
-        }}
-      >
-        <Chip
-          size="small"
-          title="Monthly downloads"
-          label={new Intl.NumberFormat().format(downloads)}
-          avatar={
-            <Avatar>
-              <ArrowDownwardIcon sx={{ fontSize: 12 }} />
-            </Avatar>
-          }
-          variant="outlined"
-          sx={{ fontSize: '0.7rem' }}
-        />
-        <Chip
-          size="small"
-          title="Latest version"
-          label={`v${latest}`}
-          variant="outlined"
-          sx={{ fontSize: '0.7rem' }}
-        />
+      <div className={styles.chips}>
+        <span className={ui.chip} title="Monthly downloads">
+          <UiIcon name="arrowDown" size={12} />
+          {new Intl.NumberFormat().format(downloads)}
+        </span>
+        <span className={ui.chip} title="Latest version">
+          v{latest}
+        </span>
         {isMissing && (
-          <Chip
-            size="small"
-            title={missingTitle}
-            label="UNPUBLISHED"
-            icon={<LinkOffIcon sx={{ fontSize: 14 }} />}
-            variant="filled"
-            color="warning"
-            sx={{ fontSize: '0.7rem', fontWeight: 600 }}
-          />
+          <span className={clsx(ui.chip, ui.chipWarn)} title={missingTitle}>
+            <UiIcon name="linkOff" size={12} />
+            UNPUBLISHED
+          </span>
         )}
         {hasCves && (
-          <Chip
-            size="small"
+          <a
+            className={clsx(ui.chip, ui.chipWarn)}
+            href={cveAdvisoryUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             title={cveTitle}
-            label={cveLabel}
-            icon={<WarningAmberIcon sx={{ fontSize: 14 }} />}
-            variant="filled"
-            color={severityColor(vulnerabilities!.highest_severity)}
-            clickable={!!cveAdvisoryUrl}
-            onClick={(e) => {
-              e.stopPropagation();
-              if (cveAdvisoryUrl) {
-                window.open(cveAdvisoryUrl, '_blank', 'noopener,noreferrer');
-              }
-            }}
-            sx={{ fontSize: '0.7rem', fontWeight: 600 }}
-          />
+            style={severe ? { background: 'var(--v-accent)' } : undefined}
+          >
+            <UiIcon name="warning" size={12} />
+            {cveLabel}
+          </a>
         )}
-        <Button
-          size="small"
+        <a
+          className={styles.visit}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
           title="Show package on npmjs.com"
-          variant="text"
-          onClick={openPackage}
-          sx={{ fontSize: '0.7rem', minWidth: 0, padding: '2px 8px' }}
         >
-          <Translate>Visit</Translate>
-        </Button>
-      </CardActions>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 0.25,
-          paddingX: 1.25,
-          paddingY: 0.5,
-          borderTop: '1px solid',
-          borderColor: 'divider',
-          fontSize: '0.65rem',
-          color: 'text.secondary',
-        }}
-      >
-        <Box
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 0.5,
-            minHeight: 18,
-            justifyContent: 'space-between',
-          }}
-        >
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, minWidth: 0, flex: 1 }}>
-            {hasRepository ? (
-              <>
-                {isGithubRepo ? (
-                  <GitHubIcon sx={{ fontSize: 12 }} />
-                ) : (
-                  <CodeIcon sx={{ fontSize: 12 }} />
-                )}
-                <Typography
-                  component="a"
-                  href={repository}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title={`Open source code: ${repository}`}
-                  onClick={openRepository}
-                  sx={{
-                    fontSize: 'inherit',
-                    color: 'text.secondary',
-                    textDecoration: 'none',
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                    '&:hover': { color: 'primary.main', textDecoration: 'underline' },
-                  }}
-                >
-                  {repositoryLabel}
-                </Typography>
-              </>
-            ) : (
-              <>
-                <CodeOffIcon sx={{ fontSize: 12, color: 'text.disabled' }} />
-                <Typography
-                  component="span"
-                  sx={{ fontSize: 'inherit', color: 'text.disabled', fontStyle: 'italic' }}
-                  title="No repository URL declared in package.json"
-                >
-                  <Translate>Source code unavailable</Translate>
-                </Typography>
-              </>
-            )}
-          </Box>
-          {license ? (
-            <Typography
-              component="span"
-              title={`License: ${license}`}
-              sx={{
-                fontSize: 'inherit',
-                color: 'text.secondary',
-                paddingX: 0.75,
-                paddingY: 0.125,
-                borderRadius: 0.5,
-                border: '1px solid',
-                borderColor: 'divider',
-                whiteSpace: 'nowrap',
-                flexShrink: 0,
-              }}
-            >
-              {license}
-            </Typography>
+          <Translate>Visit</Translate> →
+        </a>
+      </div>
+      <div className={styles.foot}>
+        <div className={styles.footRow}>
+          {hasRepository ? (
+            <>
+              <UiIcon name={isGithubRepo ? 'github' : 'code'} size={12} />
+              <a
+                className={styles.footLink}
+                href={repository}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`Open source code: ${repository}`}
+              >
+                {repositoryLabel}
+              </a>
+            </>
           ) : (
-            <Typography
-              component="span"
+            <>
+              <UiIcon name="codeOff" size={12} />
+              <span className={styles.muted} title="No repository URL declared in package.json">
+                <Translate>Source code unavailable</Translate>
+              </span>
+            </>
+          )}
+          {license ? (
+            <span className={styles.license} title={`License: ${license}`}>
+              {license}
+            </span>
+          ) : (
+            <span
+              className={clsx(styles.license, styles.muted)}
+              style={{ border: 0 }}
               title="No license field declared in package.json"
-              sx={{
-                fontSize: 'inherit',
-                color: 'text.disabled',
-                fontStyle: 'italic',
-                whiteSpace: 'nowrap',
-                flexShrink: 0,
-              }}
             >
               <Translate>No license provided</Translate>
-            </Typography>
+            </span>
           )}
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5, minHeight: 18 }}>
+        </div>
+        <div className={styles.footRow}>
           {hasCves ? (
             <>
-              <WarningAmberIcon
-                sx={{
-                  fontSize: 12,
-                  color:
-                    severityColor(vulnerabilities!.highest_severity) === 'error'
-                      ? 'error.main'
-                      : 'warning.main',
-                }}
-              />
-              <Typography
-                component="a"
+              <span className={severe ? styles.danger : styles.warn}>
+                <UiIcon name="warning" size={12} />
+              </span>
+              <a
+                className={styles.footLink}
                 href={cveAdvisoryUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 title={cveTitle}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (cveAdvisoryUrl) {
-                    window.open(cveAdvisoryUrl, '_blank', 'noopener,noreferrer');
-                  }
-                }}
-                sx={{
-                  fontSize: 'inherit',
-                  color: 'text.secondary',
-                  textDecoration: 'none',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  whiteSpace: 'nowrap',
-                  '&:hover': { color: 'primary.main', textDecoration: 'underline' },
-                }}
               >
                 {vulnerabilities!.ids[0]}
                 {vulnerabilities!.count > 1 ? ` +${vulnerabilities!.count - 1} more` : ''}
-              </Typography>
+              </a>
             </>
           ) : (
             <>
-              <CheckCircleIcon sx={{ fontSize: 12, color: 'success.main' }} />
-              <Typography
-                component="a"
+              <span className={styles.ok}>
+                <UiIcon name="checkCircle" size={12} />
+              </span>
+              <a
+                className={styles.footLink}
                 href={`https://osv.dev/list?ecosystem=npm&q=${encodeURIComponent(name)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 title={`Verify on OSV.dev: ${name}`}
-                onClick={(e) => e.stopPropagation()}
-                sx={{
-                  fontSize: 'inherit',
-                  color: 'text.secondary',
-                  textDecoration: 'none',
-                  '&:hover': { color: 'primary.main', textDecoration: 'underline' },
-                }}
               >
                 <Translate>No vulnerabilities found</Translate>
-              </Typography>
+              </a>
             </>
           )}
-        </Box>
-      </Box>
-    </Card>
+        </div>
+      </div>
+    </article>
   );
 };
 
