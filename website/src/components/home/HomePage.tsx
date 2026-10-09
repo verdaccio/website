@@ -1,7 +1,9 @@
 import CacheFlow from './CacheFlow';
+import CodeCard from './CodeCard';
 import CommandTabs from './CommandTabs';
 import GitHubStars from './GitHubStars';
 import styles from './Home.module.scss';
+import Plugins from './Plugins';
 
 import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
@@ -10,14 +12,17 @@ import clsx from 'clsx';
 import React from 'react';
 
 const USED_BY = [
-  { name: 'nx', url: 'https://nx.dev' },
-  { name: 'pnpm', url: 'https://pnpm.io' },
-  { name: 'Vendure', url: 'https://www.vendure.io/' },
-  { name: 'create-react-app', url: 'https://create-react-app.dev/' },
-  { name: 'Angular CLI', url: 'https://angular.io/cli' },
-  { name: 'Aurelia', url: 'https://aurelia.io/' },
-  { name: 'SheetJS', url: 'https://sheetjs.com/' },
-  { name: 'Storybook', url: 'https://storybook.js.org/' },
+  { name: 'nx', logo: '/img/users/nx.svg', url: 'https://nx.dev' },
+  { name: 'pnpm', logo: '/img/users/pnpm.svg', url: 'https://pnpm.io' },
+  { name: 'Vendure', logo: '/img/users/vendure.png', url: 'https://www.vendure.io/' },
+  {
+    name: 'create-react-app',
+    logo: '/img/users/create-react-app.svg',
+    url: 'https://create-react-app.dev/',
+  },
+  { name: 'Angular CLI', logo: '/img/users/angular.svg', url: 'https://angular.io/cli' },
+  { name: 'SheetJS', logo: '/img/sponsors/sheetjs.png', url: 'https://sheetjs.com/' },
+  { name: 'Storybook', logo: '/img/users/storybook.svg', url: 'https://storybook.js.org/' },
 ];
 
 const SPONSORS = [
@@ -54,6 +59,23 @@ const Svg = ({ d }: { d: string }) => (
     aria-hidden="true"
   >
     <path d={d} />
+  </svg>
+);
+
+const Check = () => (
+  <svg
+    className={styles.ossCheck}
+    width="18"
+    height="18"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <path d="M5 12.5l4.5 4.5L19 7.5" />
   </svg>
 );
 
@@ -99,7 +121,23 @@ const HomePage = (): React.ReactElement => (
       <div className={clsx(styles.wrap, styles.heroGrid)}>
         <div>
           <div className={styles.pills}>
-            <span className={styles.pill}>Open source · MIT</span>
+            <a
+              className={clsx(styles.pill, styles.pillOss)}
+              href="https://github.com/verdaccio/verdaccio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+              </svg>
+              Open source · MIT
+            </a>
             <span className={styles.pill}>Node.js</span>
             <span className={styles.pill}>No database required</span>
           </div>
@@ -111,8 +149,8 @@ const HomePage = (): React.ReactElement => (
           </h1>
           <p className={clsx(styles.lead, styles.heroLead)}>
             <Translate>
-              Verdaccio is a lightweight private npm proxy registry. Publish private packages, cache
-              the public ones, and chain registries behind a single endpoint.
+              Verdaccio is a lightweight private npm proxy registry. Built for local development,
+              ready to run as the hosted registry your whole team shares.
             </Translate>
           </p>
           <CommandTabs
@@ -201,6 +239,7 @@ const HomePage = (): React.ReactElement => (
             target="_blank"
             rel="noopener noreferrer"
           >
+            <img src={useBaseUrl(u.logo)} alt="" loading="lazy" className={styles.usedByLogo} />
             {u.name}
           </a>
         ))}
@@ -212,6 +251,74 @@ const HomePage = (): React.ReactElement => (
         >
           <Translate>and many more</Translate> →
         </a>
+      </div>
+    </section>
+
+    {/* local first, registry ready */}
+    <section className={styles.section} id="local-and-registry">
+      <div className={styles.wrap}>
+        <div className={styles.sectionHead}>
+          <div>
+            <div className={styles.eyebrow}>Two ways to run it</div>
+            <h2 className={styles.h2}>
+              <Translate>Built for local development. Ready to host as your registry.</Translate>
+            </h2>
+          </div>
+          <p className={styles.lead}>
+            <Translate>
+              Most people start on their own machine: test a publish, reproduce a CI run, try a
+              package manager. When you need to share it, the same configuration runs as a hosted
+              registry for your team.
+            </Translate>
+          </p>
+        </div>
+        <div className={styles.modes}>
+          <div className={clsx(styles.mode, styles.modeLocal)}>
+            <div className={styles.modeTag}>
+              <span className={clsx(styles.mono, styles.modeBadge)}>START HERE</span>
+            </div>
+            <h3>
+              <Translate>Local development</Translate>
+            </h3>
+            <ul className={styles.modeList}>
+              <li>Test publishes and installs before they reach a real registry</li>
+              <li>Run end-to-end tests against real package managers</li>
+              <li>Zero config, no database, one command to start</li>
+              <li>Cached packages install without touching the network</li>
+            </ul>
+            <div className={clsx(styles.devCode, styles.mono)}>
+              {'$ pnpm dlx verdaccio\n→ http://localhost:4873'}
+            </div>
+            <Link to="/docs/e2e" className={styles.link}>
+              Testing with Verdaccio →
+            </Link>
+          </div>
+
+          <div className={clsx(styles.modeJoin, styles.mono)} aria-hidden="true">
+            <span>same config.yaml</span>
+          </div>
+
+          <div className={clsx(styles.mode, styles.modeRegistry)}>
+            <div className={styles.modeTag}>
+              <span className={clsx(styles.mono, styles.modeBadge)}>HOSTED</span>
+            </div>
+            <h3>
+              <Translate>Hosted registry</Translate>
+            </h3>
+            <ul className={styles.modeList}>
+              <li>Host it on your own server, with one URL for your team and CI runners</li>
+              <li>Authentication with htpasswd or your own plugin</li>
+              <li>Storage on Amazon S3, Google Cloud Storage or a plugin of your own</li>
+              <li>Run it anywhere: official Docker image and Helm chart for Kubernetes</li>
+            </ul>
+            <div className={clsx(styles.devCode, styles.mono)}>
+              {'$ docker run -it -p 4873:4873 \\\n    verdaccio/verdaccio'}
+            </div>
+            <Link to="/docs/docker" className={styles.link}>
+              Run it with Docker →
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -252,8 +359,75 @@ const HomePage = (): React.ReactElement => (
       </div>
     </section>
 
+    {/* open source */}
+    <section className={clsx(styles.section, styles.surface)} id="open-source">
+      <div className={clsx(styles.wrap, styles.ossGrid)}>
+        <div>
+          <div className={styles.eyebrow}>Open source</div>
+          <h2 className={styles.h2} style={{ marginBottom: 20 }}>
+            <Translate>Free, MIT licensed and built in the open.</Translate>
+          </h2>
+          <p className={styles.lead} style={{ marginBottom: 28 }}>
+            <Translate>
+              Verdaccio is open source software. Read the code, run it anywhere, fork it, fix it.
+              Everything happens in public on GitHub: the registry, its plugins, the Docker image
+              and this website.
+            </Translate>
+          </p>
+          <div className={styles.ctas} style={{ marginTop: 0 }}>
+            <a
+              href="https://github.com/verdaccio/verdaccio"
+              className={clsx(styles.btn, styles.btnPrimary)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Translate>View the source</Translate> →
+            </a>
+            <GitHubStars />
+            <Link to="/community/contributing" className={styles.btn}>
+              <Translate>Contribute</Translate>
+            </Link>
+          </div>
+        </div>
+        <div className={styles.ossCard}>
+          <div className={clsx(styles.codeHead, styles.mono)}>
+            <span>LICENSE</span>
+            <span>MIT</span>
+          </div>
+          <ul className={styles.ossList}>
+            <li>
+              <Check />
+              <span>
+                <b>MIT licensed.</b> Use it at work and in commercial projects.
+              </span>
+            </li>
+            <li>
+              <Check />
+              <span>
+                <b>Public source.</b> Registry, plugins, Docker image and docs live on GitHub.
+              </span>
+            </li>
+            <li>
+              <Check />
+              <span>
+                <b>Built by contributors.</b> Issues, pull requests and plugins are welcome from
+                anyone. <Link to="/contributors">Meet the contributors</Link>.
+              </span>
+            </li>
+            <li>
+              <Check />
+              <span>
+                <b>Community supported.</b> Sponsors share the tools and services that keep it
+                running. <a href="https://opencollective.com/verdaccio">Become a sponsor</a>.
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     {/* clients + config */}
-    <section className={styles.section} style={{ paddingTop: 0 }}>
+    <section className={styles.section}>
       <div className={clsx(styles.wrap, styles.clientGrid)}>
         <div>
           <div className={styles.eyebrow}>Bring your own client</div>
@@ -277,38 +451,48 @@ const HomePage = (): React.ReactElement => (
           />
         </div>
         <div>
-          <div className={styles.codeCard}>
-            <div className={clsx(styles.codeHead, styles.mono)}>
-              <span>config.yaml</span>
-              <span>the whole server</span>
-            </div>
-            <pre className={clsx(styles.code, styles.mono)}>
-              <span className={styles.k}>storage:</span> ./storage{'\n'}
-              <span className={styles.k}>auth:</span>
-              {'\n  '}
-              <span className={styles.k}>htpasswd:</span>
-              {'\n    '}
-              <span className={styles.k}>file:</span> ./htpasswd{'\n'}
-              <span className={styles.k}>uplinks:</span>
-              {'\n  '}
-              <span className={styles.k}>npmjs:</span>
-              {'\n    '}
-              <span className={styles.k}>url:</span>{' '}
-              <span className={styles.v}>https://registry.npmjs.org/</span>
-              {'\n'}
-              <span className={styles.k}>packages:</span>
-              {'\n  '}
-              <span className={styles.v}>'@*/*':</span>
-              {'\n    '}
-              <span className={styles.k}>access:</span> $all{'\n    '}
-              <span className={styles.k}>publish:</span> $authenticated{'\n    '}
-              <span className={styles.k}>proxy:</span> npmjs{'\n  '}
-              <span className={styles.v}>'**':</span>
-              {'\n    '}
-              <span className={styles.k}>access:</span> $all{'\n    '}
-              <span className={styles.k}>proxy:</span> npmjs
-            </pre>
-          </div>
+          <CodeCard
+            tabs={[
+              {
+                label: 'config.yaml',
+                lang: 'yaml',
+                note: 'the whole server',
+                code: `storage: ./storage
+auth:
+  htpasswd:
+    file: ./htpasswd
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+packages:
+  '@*/*':
+    access: $all
+    publish: $authenticated
+    proxy: npmjs
+  '**':
+    access: $all
+    proxy: npmjs`,
+              },
+              {
+                label: 'ConfigBuilder',
+                lang: 'ts',
+                note: 'the same, in code',
+                code: `import { ConfigBuilder } from '@verdaccio/config';
+
+const config = ConfigBuilder.build()
+  .addStorage('./storage')
+  .addAuth({ htpasswd: { file: './htpasswd' } })
+  .addUplink('npmjs', { url: 'https://registry.npmjs.org/' })
+  .addPackageAccess('@*/*', {
+    access: '$all',
+    publish: '$authenticated',
+    proxy: 'npmjs',
+  })
+  .addPackageAccess('**', { access: '$all', proxy: 'npmjs' })
+  .getConfig(); // or .getAsYaml()`,
+              },
+            ]}
+          />
           <div className={styles.keyNotes}>
             <div>
               <b>storage</b> · where tarballs live
@@ -327,8 +511,65 @@ const HomePage = (): React.ReactElement => (
       </div>
     </section>
 
+    <Plugins />
+
+    {/* run it from code */}
+    <section className={clsx(styles.section, styles.surface)} id="node-api">
+      <div className={clsx(styles.wrap, styles.clientGrid)}>
+        <div>
+          <div className={styles.eyebrow}>Node API</div>
+          <h2 className={styles.h2} style={{ marginBottom: 20 }}>
+            <Translate>Run Verdaccio from your own code.</Translate>
+          </h2>
+          <p className={styles.lead} style={{ marginBottom: 24 }}>
+            <Translate>
+              Start a registry without the command line. runServer hands you a Node server that is
+              not listening yet, so you choose the port and when to stop it. Ideal for end-to-end
+              tests, embedded registries and tooling.
+            </Translate>
+          </p>
+          <ul className={styles.modeList}>
+            <li>Typed configuration with ConfigBuilder, no YAML to keep in sync</li>
+            <li>A fresh storage per run, so nothing leaks between tests</li>
+            <li>Works with the same config you would use in production</li>
+          </ul>
+          <div className={styles.ctas} style={{ marginTop: 8 }}>
+            <Link to="/dev/node-api" className={clsx(styles.btn, styles.btnPrimary)}>
+              <Translate>Node API docs</Translate> →
+            </Link>
+            <Link to="/docs/e2e" className={styles.btn}>
+              <Translate>Testing with Verdaccio</Translate>
+            </Link>
+          </div>
+        </div>
+        <CodeCard
+          tabs={[
+            {
+              label: 'run.mjs',
+              lang: 'ts',
+              note: 'runServer',
+              code: `import { runServer } from 'verdaccio';
+import { ConfigBuilder } from '@verdaccio/config';
+
+const config = ConfigBuilder.build()
+  .addStorage('./storage')
+  .addAuth({ htpasswd: { file: './htpasswd' } })
+  .addUplink('npmjs', { url: 'https://registry.npmjs.org/' })
+  .addPackageAccess('**', { access: '$all', proxy: 'npmjs' })
+  .getConfig();
+
+const app = await runServer(config);
+const server = app.listen(4873); // you pick the port
+// ...publish, install, assert...
+server.close(); // and when to stop`,
+            },
+          ]}
+        />
+      </div>
+    </section>
+
     {/* devops */}
-    <section className={clsx(styles.section, styles.surface)}>
+    <section className={styles.section}>
       <div className={styles.wrap}>
         <div className={styles.sectionHead}>
           <div>
@@ -385,10 +626,16 @@ const HomePage = (): React.ReactElement => (
     <section className={styles.section}>
       <div className={clsx(styles.wrap, styles.sponsorsGrid)}>
         <div>
-          <div className={clsx(styles.eyebrow, styles.eyebrowAccent)}>Community funded</div>
-          <h2 className={styles.h2} style={{ marginBottom: 24 }}>
-            <Translate>Kept alive by people and companies who depend on it.</Translate>
+          <div className={clsx(styles.eyebrow, styles.eyebrowAccent)}>Community supported</div>
+          <h2 className={styles.h2} style={{ marginBottom: 20 }}>
+            <Translate>Powered by people and companies who share what they have.</Translate>
           </h2>
+          <p className={styles.lead} style={{ marginBottom: 24 }}>
+            <Translate>
+              Our sponsors provide the tools, services and infrastructure that keep Verdaccio
+              running, and contributors give their time. Want to be part of it?
+            </Translate>
+          </p>
           <a href="https://opencollective.com/verdaccio" className={styles.btn}>
             <Translate>Become a sponsor</Translate>
           </a>
@@ -414,7 +661,7 @@ const HomePage = (): React.ReactElement => (
       <div className={styles.wrap}>
         <div className={styles.cta}>
           <h2>
-            <Translate>Your own registry, running before your coffee cools.</Translate>
+            <Translate>Your own registry is one command away.</Translate>
           </h2>
           <div>
             <div className={clsx(styles.ctaBox, styles.mono)}>

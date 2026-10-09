@@ -57,18 +57,32 @@ packages:
     proxy: uplink2
 ```
 
-The list internal groups handled by `verdaccio` are:
+#### Groups {#groups}
 
-```js
-('$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous');
-```
+Every value in `access`, `publish`, `unpublish` and `stage` is a **group**. A request is allowed when the user belongs to **at least one** of the groups listed, and you list several by separating them with a space.
 
-All users receive all those set of permissions independently of is anonymous or not plus the groups provided by the plugin, in case of `htpasswd` return the username as a group. For instance, if you are logged as `npmUser` the list of groups will be.
+| Group                         | Who belongs to it                                                                    |
+| ----------------------------- | ------------------------------------------------------------------------------------ |
+| `$all`                        | **Everyone**: visitors who are not logged in, and every logged-in user.              |
+| `$anonymous`                  | Only visitors who are **not** logged in. Logged-in users do not belong to it.        |
+| `$authenticated`              | **Any logged-in user**, whatever other groups they have.                             |
+| a group name, such as `admin` | Logged-in users the auth plugin reports as members of that group.                    |
+| a user name, such as `alice`  | With the default `htpasswd` plugin every user is also a group of their own: `alice`. |
 
-```js
-// groups without '$' are going to be deprecated eventually
-('$all', '$anonymous', '@all', '@anonymous', 'all', 'undefined', 'anonymous', 'npmUser');
-```
+Which groups a user ends up with:
+
+| User                                  | Groups                                |
+| ------------------------------------- | ------------------------------------- |
+| Not logged in                         | `$all`, `$anonymous`                  |
+| Logged in as `alice` (htpasswd)       | `$all`, `$authenticated`, `alice`     |
+| Logged in, plugin returns `dev`, `qa` | `$all`, `$authenticated`, `dev`, `qa` |
+
+A few things worth knowing:
+
+- `$all` is not "all logged-in users", it also includes visitors who are not logged in. To require a login use `$authenticated`.
+- `$anonymous` **excludes** logged-in users, so it is almost never what you want in `access` or `publish`.
+- An empty or missing `access`, `publish`, `unpublish` or `stage` list matches nobody (`unpublish` and `stage` fall back to `publish` when omitted).
+- The spellings `@all`, `@authenticated`, `@anonymous` and `all` are deprecated aliases; use the ones starting with `$`.
 
 If you want to protect specific set packages under your group, you need to do something like this. Let's use a `Regex` that covers all prefixed `npmuser-` packages. We recommend using a prefix for your packages, in that way it will be easier to protect them.
 

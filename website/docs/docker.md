@@ -4,15 +4,33 @@ title: Docker
 description: 'Run Verdaccio from the official Docker image: tags, mounting configuration and storage, building your own image, and docker-compose.'
 ---
 
-<iframe width="560" height="515" src="https://www.youtube.com/embed/zRI0skF1f8I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+import { DockerQuickstart } from '@site/src/components/terminal/Examples';
+import { Video } from '@site/src/components/terminal/Terminal';
 
-To pull the latest pre-built [docker image](https://hub.docker.com/r/verdaccio/verdaccio/):
+Verdaccio publishes an official [docker image](https://hub.docker.com/r/verdaccio/verdaccio/) on
+Docker Hub. This page covers running it, choosing a tag, configuring storage, plugins and
+ports, and building your own image.
+
+## Quick start {#quick-start}
+
+Pull the latest pre-built image and run it:
 
 ```bash
 docker pull verdaccio/verdaccio
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio
 ```
 
-![Docker pull](/img/docker_verdaccio.gif)
+<DockerQuickstart />
+
+Verdaccio is now listening on `http://localhost:4873`. The sections below cover pinning a
+[tag](#tagged-versions), keeping your [configuration and storage](#running-verdaccio-using-docker)
+outside the container, and [docker-compose](#using-docker-compose).
+
+### Watch: integration testing with Docker {#watch}
+
+<Video id="zRI0skF1f8I" title="Using Docker and Verdaccio to make Integration Testing Easy" />
+
+More videos are on the [Video Talks](/talks/using-docker-and-verdaccio-to-make-integration-testing-easy) page.
 
 ## Tagged Versions {#tagged-versions}
 
@@ -90,6 +108,32 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
 
 Verdaccio provides a new set of environment variables to modify either permissions, port or http protocol, see them at [the environment variables page](env.md#docker).
 
+### Docker and custom port configuration {#docker-and-custom-port-configuration}
+
+Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
+
+If you want to reach Verdaccio docker instance under different port, lets say `5000`
+in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
+
+```bash
+V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
+  -e "VERDACCIO_PORT=8080" -p 8080:8080 \
+  verdaccio/verdaccio
+```
+
+Of course the numbers you give to the `-p` parameter need to match.
+
+### Using HTTPS with Docker {#using-https-with-docker}
+
+You can configure the protocol verdaccio is going to listen on, similarly to the port configuration.
+You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
+
+```bash
+docker run -it --rm --name verdaccio \
+  --env "VERDACCIO_PROTOCOL=https" -p 4873:4873
+  verdaccio/verdaccio
+```
+
 ### SELinux {#selinux}
 
 If SELinux is enforced in your system, the directories to be bind-mounted in the container need to be relabeled. Otherwise verdaccio will be forbidden from reading those files.
@@ -114,7 +158,7 @@ If you want to make the directory accessible only to a specific container, use `
 
 An alternative solution is to use [z and Z flags](https://docs.docker.com/storage/bind-mounts/#configure-the-selinux-label). To add the `z` flag to the mountpoint `./conf:/verdaccio/conf` simply change it to `./conf:/verdaccio/conf:z`. The `z` flag relabels the directory and makes it accessible by every container while the `Z` flags relables the directory and makes it accessible only to that specific container. However using these flags is dangerous. A small configuration mistake, like mounting `/home/user` or `/var` can mess up the labels on those directories and make the system unbootable.
 
-### Plugins {#plugins}
+## Plugins {#plugins}
 
 Plugins can be installed in a separate directory and mounted using Docker or Kubernetes, however make sure you build plugins with native dependencies using the same base image as the Verdaccio Dockerfile.
 
@@ -155,33 +199,7 @@ V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
-### Docker and custom port configuration {#docker-and-custom-port-configuration}
-
-Any `host:port` configured in `conf/config.yaml` under `listen` **is currently ignored when using docker**.
-
-If you want to reach Verdaccio docker instance under different port, lets say `5000`
-in your `docker run` command add the environment variable `VERDACCIO_PORT=5000` and then expose the port `-p 5000:5000`.
-
-```bash
-V_PATH=/path/for/verdaccio; docker run -it --rm --name verdaccio \
-  -e "VERDACCIO_PORT=8080" -p 8080:8080 \
-  verdaccio/verdaccio
-```
-
-Of course the numbers you give to the `-p` parameter need to match.
-
-### Using HTTPS with Docker {#using-https-with-docker}
-
-You can configure the protocol verdaccio is going to listen on, similarly to the port configuration.
-You have to overwrite the default value("http") of the `PROTOCOL` environment variable to "https", after you specified the certificates in the config.yaml.
-
-```bash
-docker run -it --rm --name verdaccio \
-  --env "VERDACCIO_PROTOCOL=https" -p 4873:4873
-  verdaccio/verdaccio
-```
-
-### Using docker-compose {#using-docker-compose}
+## Using docker-compose {#using-docker-compose}
 
 1. Get the latest version of [docker-compose](https://github.com/docker/compose).
 2. Build and run the container:
