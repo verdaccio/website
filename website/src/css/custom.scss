@@ -1,14 +1,15 @@
 @use '_buttons.scss';
 @use '_headers.scss';
+@use '_brand.scss';
 
 :root {
   --ifm-color-primary: var(--verdaccio-color);
-  --ifm-color-primary-dark: #44553a;
-  --ifm-color-primary-darker: #415036;
-  --ifm-color-primary-darkest: #35422d;
-  --ifm-color-primary-light: #546746;
-  --ifm-color-primary-lighter: #576c4a;
-  --ifm-color-primary-lightest: #637a53;
+  --ifm-color-primary-dark: color-mix(in srgb, var(--brand) 92%, black);
+  --ifm-color-primary-darker: color-mix(in srgb, var(--brand) 86%, black);
+  --ifm-color-primary-darkest: color-mix(in srgb, var(--brand) 72%, black);
+  --ifm-color-primary-light: color-mix(in srgb, var(--brand) 88%, white);
+  --ifm-color-primary-lighter: color-mix(in srgb, var(--brand) 80%, white);
+  --ifm-color-primary-lightest: color-mix(in srgb, var(--brand) 66%, white);
 
   /* custom palette */
   --dark-blue: #004074;
@@ -16,9 +17,9 @@
   --grey-darker: #b7b7b7;
   --grey-light: #f7f7f7;
   --grey-lighter: #f9f9f9;
-  --verdaccio-color: #4a5e3e;
+  --verdaccio-color: var(--brand);
   --twitter-color: #1595de;
-  --red: #cd4001;
+  --red: var(--accent);
   --p-color: #5c5c5c;
   --font-size: 0.875rem;
   --font-size-big: calc(var(--font-size) * 1.2);
@@ -42,10 +43,12 @@
   --v-surface: #f2f2f1;
   --v-card: #f7f7f6;
   --v-border: #e4e4e1;
-  --v-green: #4a5e3e;
-  --v-green-soft: #e4ebdd;
-  --v-on-green: #ffffff;
-  --v-accent: #cd4001;
+  --v-green: var(--brand);
+  --v-green-soft: var(--brand-soft);
+  --v-on-green: var(--brand-on);
+  --v-deep: var(--brand-deep);
+  --v-on-deep: var(--brand-deep-on);
+  --v-accent: var(--accent);
   --v-warn: #b45309;
   --v-ok: #2e7d32;
 
@@ -56,22 +59,19 @@
 }
 
 html[data-theme='dark']:root {
-  --ifm-color-primary: var(--red);
-  --ifm-color-primary-dark: #b93a01;
-  --ifm-color-primary-darker: #ae3601;
-  --ifm-color-primary-darkest: #902d01;
-  --ifm-color-primary-light: #e24601;
-  --ifm-color-primary-lighter: #ec4a01;
-  --ifm-color-primary-lightest: #fe580e;
+  --ifm-color-primary: var(--link);
+  --ifm-color-primary-dark: color-mix(in srgb, var(--link) 92%, black);
+  --ifm-color-primary-darker: color-mix(in srgb, var(--link) 86%, black);
+  --ifm-color-primary-darkest: color-mix(in srgb, var(--link) 72%, black);
+  --ifm-color-primary-light: color-mix(in srgb, var(--link) 88%, white);
+  --ifm-color-primary-lighter: color-mix(in srgb, var(--link) 80%, white);
+  --ifm-color-primary-lightest: color-mix(in srgb, var(--link) 66%, white);
 
   --v-ink: #f1f3ef;
   --v-muted: #a4aca5;
   --v-surface: #141b17;
   --v-card: #19221d;
   --v-border: #26322b;
-  --v-green: #8fb07a;
-  --v-green-soft: #24311f;
-  --v-on-green: #0e1411;
   --v-warn: #f0a030;
   --v-ok: #6fcf7c;
 
@@ -196,7 +196,7 @@ html[data-theme='dark'] {
   background-color: #ffd700;
   color: #1595de;
 }
-.secondarySpecialButton{
+.secondarySpecialButton {
   background-color: #f3f3f3;
   color: #1a1a1a;
 }
@@ -290,5 +290,12 @@ pre {
 
   > .menu__list-item-collapsible > .menu__link {
     font-weight: 600;
+  }
+}
+
+/* Smooth scrolling for in-page links (home pills, table of contents), unless the user prefers less motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
   }
 }

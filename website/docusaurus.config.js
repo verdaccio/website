@@ -47,6 +47,7 @@ module.exports = {
   onBrokenAnchors: 'warn',
   favicon: 'img/logo/uk/verdaccio-tiny-uk-no-bg.svg',
   scripts: [GITHUB.BUTTONS],
+  clientModules: [require.resolve('./src/clientModules/brand.js')],
   stylesheets: [
     'https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap',
   ],

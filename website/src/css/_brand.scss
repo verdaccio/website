@@ -1,0 +1,71 @@
+// Brand colours, the single place to change the look of the whole site.
+//
+//   --brand        buttons, links, icons and highlights
+//   --brand-soft   tinted backgrounds (chips, icon bubbles)
+//   --brand-on     text on top of --brand
+//   --brand-deep   big filled blocks (hero panel, final call to action)
+//   --brand-fixed  filled shapes that keep the same colour in dark mode (diagram nodes)
+//   --accent       secondary colour (cache miss badge, data packets, code strings)
+//   --highlight    small signals: section labels, the open source pill, list dots
+//   --link         link and primary colour in dark mode (dark backgrounds need a lighter tone)
+//
+// The logo uses #CD4000 (red), #405236 and #4A5E3F (greens). The default is green with red
+// accents. Try the others with `?brand=red` (red everywhere) or `?brand=green` (green only);
+// `?brand=default` goes back. The choice is remembered in the browser.
+
+/* default: green is the brand colour, the red of the logo is the accent */
+:root {
+  --brand: #4a5e3e;
+  --brand-soft: #e4ebdd;
+  --brand-on: #ffffff;
+  --brand-deep: #4a5e3e;
+  --brand-deep-on: #ffffff;
+  --brand-fixed: #4a5e3e;
+  --accent: #cd4001;
+  --highlight: #cd4000;
+  --highlight-on: #ffffff;
+}
+
+html[data-theme='dark']:root {
+  --brand: #8fb07a;
+  --brand-soft: #24311f;
+  --brand-on: #0e1411;
+  --brand-deep: var(--brand);
+  --brand-deep-on: var(--brand-on);
+  --brand-fixed: #4a5e3e;
+  --accent: #e8582a;
+  --highlight: #f26a3a;
+  --highlight-on: #1a0e0a;
+  --link: var(--accent);
+}
+
+/* red: the red of the logo is the brand colour, green becomes the secondary colour */
+html[data-brand='red']:root {
+  --brand: #cd4000;
+  --brand-soft: #fbe6dc;
+  --brand-deep: #cd4000;
+  --brand-fixed: #cd4000;
+  --accent: #405236;
+}
+
+html[data-brand='red'][data-theme='dark']:root {
+  --brand: #f26a3a;
+  --brand-soft: #3a1d12;
+  --brand-on: #1a0e0a;
+  --brand-deep: var(--brand);
+  --brand-deep-on: var(--brand-on);
+  --brand-fixed: #cd4000;
+  --accent: #8fb07a;
+  --link: var(--brand);
+}
+
+/* green: only the green, no red signals */
+html[data-brand='green']:root {
+  --highlight: var(--brand);
+  --highlight-on: var(--brand-on);
+}
+
+html[data-brand='green'][data-theme='dark']:root {
+  --highlight: var(--brand);
+  --highlight-on: var(--brand-on);
+}

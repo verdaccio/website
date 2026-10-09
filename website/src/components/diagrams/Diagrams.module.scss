@@ -6,8 +6,8 @@
   --g-border: #e4e4e1;
   --g-ink: #17181a;
   --g-muted: #5c5f62;
-  --g-green: #4a5e3e;
-  --g-accent: #cd4001;
+  --g-green: var(--v-green);
+  --g-accent: var(--v-accent);
 
   border: 1px solid var(--g-border);
   background: var(--g-card);
@@ -22,7 +22,6 @@
   --g-border: #26322b;
   --g-ink: #f1f3ef;
   --g-muted: #a4aca5;
-  --g-green: #8fb07a;
 }
 
 .svg {
@@ -74,7 +73,7 @@
 }
 
 .core {
-  fill: #4a5e3e;
+  fill: var(--brand-fixed);
 }
 
 .coreTitle {
@@ -110,7 +109,7 @@
 }
 
 .pillOk {
-  fill: #4a5e3e;
+  fill: var(--brand-fixed);
 }
 
 .pillOnCore {
@@ -122,11 +121,11 @@
   font-size: 10.5px;
   font-weight: 500;
   letter-spacing: 0.05em;
-  fill: #4a5e3e;
+  fill: var(--brand-fixed);
 }
 
 .pillBad {
-  fill: #cd4001;
+  fill: var(--accent);
 }
 
 .pillText {
@@ -138,12 +137,12 @@
 }
 
 :global(html[data-theme='dark']) .pillOk {
-  fill: #24311f;
-  stroke: #8fb07a;
+  fill: var(--brand-soft);
+  stroke: var(--brand);
 }
 
 :global(html[data-theme='dark']) .pillOk + .pillText {
-  fill: #8fb07a;
+  fill: var(--brand);
 }
 
 .pktReq {
@@ -153,7 +152,7 @@
 }
 
 .pktData {
-  fill: #cd4001;
+  fill: var(--accent);
 }
 
 .pktText {

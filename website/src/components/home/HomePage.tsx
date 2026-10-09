@@ -4,6 +4,7 @@ import CommandTabs from './CommandTabs';
 import GitHubStars from './GitHubStars';
 import styles from './Home.module.scss';
 import Plugins from './Plugins';
+import WebUi from './WebUi';
 
 import Link from '@docusaurus/Link';
 import Translate, { translate } from '@docusaurus/Translate';
@@ -121,12 +122,7 @@ const HomePage = (): React.ReactElement => (
       <div className={clsx(styles.wrap, styles.heroGrid)}>
         <div>
           <div className={styles.pills}>
-            <a
-              className={clsx(styles.pill, styles.pillOss)}
-              href="https://github.com/verdaccio/verdaccio"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a className={clsx(styles.pill, styles.pillOss)} href="#open-source">
               <svg
                 width="12"
                 height="12"
@@ -138,8 +134,15 @@ const HomePage = (): React.ReactElement => (
               </svg>
               Open source · MIT
             </a>
-            <span className={styles.pill}>Node.js</span>
-            <span className={styles.pill}>No database required</span>
+            <a className={styles.pill} href="#node-api">
+              Node.js
+            </a>
+            <a className={styles.pill} href="#features">
+              No database required
+            </a>
+            <a className={styles.pill} href="#web-interface">
+              Web UI included
+            </a>
           </div>
           <h1 className={styles.title}>
             <Translate>Your private npm registry.</Translate>
@@ -323,7 +326,7 @@ const HomePage = (): React.ReactElement => (
     </section>
 
     {/* features */}
-    <section className={styles.section}>
+    <section className={styles.section} id="features">
       <div className={styles.wrap}>
         <div className={styles.sectionHead}>
           <h2 className={styles.h2}>
@@ -358,6 +361,8 @@ const HomePage = (): React.ReactElement => (
         </p>
       </div>
     </section>
+
+    <WebUi />
 
     {/* open source */}
     <section className={clsx(styles.section, styles.surface)} id="open-source">
