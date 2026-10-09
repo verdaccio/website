@@ -4,10 +4,14 @@ title: 'Notifications'
 description: 'Send a webhook when a package is published, with templated payloads for Slack, Teams and anything else that accepts JSON.'
 ---
 
+import NotifyFlow from '@site/src/components/diagrams/NotifyFlow';
+
 Notify was built primarily to use with Slack's Incoming
 webhooks, but will also deliver a simple payload to
 any endpoint. This is currently only active for the `npm publish`
 command.
+
+<NotifyFlow />
 
 ## Usage {#usage}
 

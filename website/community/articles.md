@@ -2,6 +2,8 @@
 id: articles
 title: 'Articles'
 description: 'Community articles, tutorials and talks about Verdaccio, in several languages.'
+sidebar_label: Articles
+sidebar_position: 3
 ---
 
 Articles, tutorials and talks about Verdaccio written by the community. If you have written
@@ -16,7 +18,7 @@ a supported version of Verdaccio.
 Many of these articles are several years old and were written against Verdaccio 3, 4 or 5,
 all of which are end of life. Treat them as background reading, not as instructions. When an
 article and this documentation disagree, **the documentation is the one that is kept up to
-date** — start from [configuration](config.md) and [installation](install.md).
+date** — start from [configuration](/docs/configuration) and [installation](/docs/installation).
 :::
 
 ## Remarkable Articles {#remarkable-articles}

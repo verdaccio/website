@@ -23,6 +23,23 @@
   --font-size: 0.875rem;
   --font-size-big: calc(var(--font-size) * 1.2);
   --selection-color: var(--ifm-color-white);
+
+  /* typography + surfaces, same as the home page */
+  --ifm-font-family-base: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --ifm-heading-font-family: var(--ifm-font-family-base);
+  --ifm-heading-color: #17181a;
+  --ifm-font-color-base: #17181a;
+  --ifm-background-color: #ffffff;
+  --ifm-toc-border-color: #e4e4e1;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-code-font-size: 90%;
+  --ifm-line-height-base: 1.65;
+
+  /* sidebar: Inter Tight is narrow, so give the menu more air */
+  --ifm-menu-link-padding-vertical: 0.55rem;
+  --ifm-menu-link-padding-horizontal: 0.9rem;
+  --doc-sidebar-width: 20rem !important;
 }
 
 html[data-theme='dark']:root {
@@ -34,12 +51,17 @@ html[data-theme='dark']:root {
   --ifm-color-primary-lighter: #ec4a01;
   --ifm-color-primary-lightest: #fe580e;
 
-  --ifm-navbar-background-color: #061a38;
-  --ifm-dropdown-background-color: #061a38;
+  --ifm-background-color: #0e1411;
+  --ifm-background-surface-color: #141b17;
+  --ifm-font-color-base: #f1f3ef;
+  --ifm-heading-color: #f1f3ef;
+  --ifm-toc-border-color: #26322b;
+  --ifm-navbar-background-color: #0e1411;
+  --ifm-dropdown-background-color: #141b17;
   --ifm-global-shadow-lw: 0 1px 2px 0 rgba(255, 255, 255, 0.173);
   --ifm-navbar-shadow: var(--ifm-global-shadow-lw);
 
-  --grey-lighter: #041329;
+  --grey-lighter: #0e1411;
   --p-color: #b7b7b7;
   --verdaccio-color: #fff;
   --grey: #f3f3f3;
@@ -88,11 +110,21 @@ div[role='banner'] {
 }
 
 .main-wrapper {
-  background-color: var(--grey-lighter);
+  background-color: var(--ifm-background-color);
 }
 
 a:hover {
   color: var(--ifm-color-primary);
+}
+
+/* post and card titles are links too; keep them reading as headings */
+article :is(h1, h2, h3) a {
+  color: var(--ifm-heading-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--ifm-color-primary);
+  }
 }
 
 article a {
@@ -123,10 +155,6 @@ html[data-theme='dark'] {
     filter: invert(1);
   }
 
-  .footer--dark {
-    --ifm-footer-background-color: #061a38;
-  }
-
   .docusaurus-highlight-code-line {
     background-color: rgba(0, 0, 0, 0.3);
   }
@@ -147,4 +175,96 @@ html[data-theme='dark'] {
 .secondarySpecialButton{
   background-color: #f3f3f3;
   color: #1a1a1a;
+}
+
+/* Navbar sponsor pill (all pages) */
+.navbar-sponsor-btn {
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  &:hover {
+    background: var(--ifm-hover-overlay);
+  }
+}
+
+/* Site-wide design system shared with the home page */
+.navbar {
+  box-shadow: none;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+.navbar__title {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.navbar__link {
+  font-weight: 500;
+}
+
+.footer {
+  --ifm-footer-background-color: transparent;
+  --ifm-footer-color: var(--p-color);
+  --ifm-footer-title-color: var(--p-color);
+  --ifm-footer-link-color: var(--ifm-font-color-base);
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.footer__title {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* Docs sidebar: roomier rows, visible group spacing */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-toc-border-color);
+}
+
+.menu {
+  padding: 1.25rem 1rem 1.5rem;
+  font-size: 0.95rem;
+}
+
+.menu__list {
+  .menu__list-item:not(:first-child) {
+    margin-top: 0.25rem;
+  }
+
+  /* nested items */
+  .menu__list {
+    margin: 0.25rem 0 0.5rem 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 1px solid var(--ifm-toc-border-color);
+  }
+}
+
+.menu__link {
+  border-radius: 8px;
+  line-height: 1.4;
+}
+
+.menu__link--sublist-caret:after,
+.menu__caret:before {
+  background-size: 1.5rem 1.5rem;
+}
+
+/* top-level categories read as group headings */
+.theme-doc-sidebar-menu > .menu__list-item {
+  margin-top: 0.75rem;
+
+  > .menu__list-item-collapsible > .menu__link {
+    font-weight: 600;
+  }
 }

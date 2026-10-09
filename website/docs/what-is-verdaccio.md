@@ -4,12 +4,15 @@ title: 'What is Verdaccio?'
 description: 'What Verdaccio is, what problems a private npm proxy registry solves, and when you want one.'
 ---
 
+import { InstallDemo, ServerLog } from '@site/src/components/terminal/Examples';
+import { Video } from '@site/src/components/terminal/Terminal';
+
 Verdaccio is a **lightweight private npm proxy registry** built in **Node.js**
 
 Using a private npm registry like Verdaccio is one of the [Top 10 NPM Security Best Practices](https://cheatsheetseries.owasp.org/cheatsheets/NPM_Security_Cheat_Sheet.html#6-use-a-local-npm-proxy)
 recommended by the Open Web Application Security Project ([OWASP](https://owasp.org/)).
 
-<iframe width="560" height="515" src="https://www.youtube.com/embed/qRMucS3i3kQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<Video id="qRMucS3i3kQ" title="What is Verdaccio" />
 
 ## What's a registry? {#whats-a-registry}
 
@@ -21,13 +24,13 @@ recommended by the Open Web Application Security Project ([OWASP](https://owasp.
 $> verdaccio
 ```
 
-![registry](/img/verdaccio_server.gif)
+<ServerLog />
 
 ## Using Verdaccio {#using-verdaccio}
 
 Using Verdaccio with any Node.js package manager client is quite straightforward.
 
-![registry](/img/npm_install.gif)
+<InstallDemo />
 
 You can use a custom registry either by setting it globally for all your projects
 
@@ -45,9 +48,7 @@ npm install lodash --registry http://localhost:4873
 yarn config set registry http://localhost:4873
 ```
 
-To have a more detailed explanation, I invite you to watch the full explanation **Angular Library: How To Use a Library in a poly-repo Using Verdaccio** by _Fanis Prodromou_ on his [YouTube channel](https://www.youtube.com/channel/UCgJAoZCYx1Dk3iGPHSIgV1A).
-
-<iframe width="560" height="515" src="https://www.youtube.com/embed/tSIC3wna_d0?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+For a more detailed walkthrough, watch **Angular Library: Private NPM Package in Angular Using Verdaccio** on the [Video Talks](/talks/angular-library-private-npm-package-with-verdaccio) page.
 
 ## Private {#private}
 

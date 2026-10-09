@@ -17,7 +17,6 @@ module.exports = {
             'setup-pnpm',
             'setup-npm',
             'setup-yarn',
-            'setup-deno',
             'setup-bun',
           ],
         },
@@ -34,8 +33,6 @@ module.exports = {
           label: 'Use Cases',
           items: ['caching', 'linking-remote-registry'],
         },
-        'articles',
-        'repositories',
       ],
     },
     {

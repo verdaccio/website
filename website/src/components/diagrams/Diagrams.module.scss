@@ -1,0 +1,363 @@
+// Animated SVG diagrams for docs pages. Geometry comes from CSS custom properties set per
+// packet in TSX (--ax/--ay start, --bx/--by end), timing lives in the keyframes below.
+.root {
+  --g-bg: #ffffff;
+  --g-card: #f7f7f6;
+  --g-border: #e4e4e1;
+  --g-ink: #17181a;
+  --g-muted: #5c5f62;
+  --g-green: #4a5e3e;
+  --g-accent: #cd4001;
+
+  border: 1px solid var(--g-border);
+  background: var(--g-card);
+  border-radius: 16px;
+  padding: 20px 16px 8px;
+  margin: 24px 0 32px;
+}
+
+:global(html[data-theme='dark']) .root {
+  --g-bg: #0e1411;
+  --g-card: #19221d;
+  --g-border: #26322b;
+  --g-ink: #f1f3ef;
+  --g-muted: #a4aca5;
+  --g-green: #8fb07a;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: var(--ifm-font-family-base);
+}
+
+.mobile {
+  display: none;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}
+
+.rail {
+  stroke: var(--g-border);
+  stroke-width: 2;
+  stroke-dasharray: 4 6;
+}
+
+.node {
+  fill: var(--g-bg);
+  stroke: var(--g-border);
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 700;
+  fill: var(--g-ink);
+  letter-spacing: -0.01em;
+}
+
+.mono {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 12px;
+  fill: var(--g-muted);
+}
+
+.core {
+  fill: #4a5e3e;
+}
+
+.coreTitle {
+  font-size: 21px;
+  font-weight: 800;
+  fill: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.coreMono {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 12px;
+  fill: #ffffff;
+  opacity: 0.8;
+}
+
+.tpl {
+  fill: #ffffff;
+}
+
+.tplLabel {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  fill: #6b6f72;
+}
+
+.tplText {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 14px;
+  font-weight: 500;
+  fill: #17181a;
+}
+
+.pillOk {
+  fill: #4a5e3e;
+}
+
+.pillOnCore {
+  fill: #ffffff;
+}
+
+.pillTextOnCore {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  fill: #4a5e3e;
+}
+
+.pillBad {
+  fill: #cd4001;
+}
+
+.pillText {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  fill: #ffffff;
+}
+
+:global(html[data-theme='dark']) .pillOk {
+  fill: #24311f;
+  stroke: #8fb07a;
+}
+
+:global(html[data-theme='dark']) .pillOk + .pillText {
+  fill: #8fb07a;
+}
+
+.pktReq {
+  fill: var(--g-bg);
+  stroke: var(--g-ink);
+  stroke-width: 1.5;
+}
+
+.pktData {
+  fill: #cd4001;
+}
+
+.pktText {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 11px;
+  font-weight: 500;
+  fill: var(--g-ink);
+}
+
+.pktTextOn {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 11px;
+  font-weight: 500;
+  fill: #ffffff;
+}
+
+.caption {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 13px;
+  fill: var(--g-muted);
+}
+
+.mobile {
+  .monoSm {
+    font-size: 10px;
+  }
+  .titleSm {
+    font-size: 14px;
+  }
+}
+
+/* the desktop viewBox is scaled down to the docs column, so its text needs to be larger */
+.desktop {
+  .title {
+    font-size: 21px;
+  }
+  .mono {
+    font-size: 14px;
+  }
+  .coreTitle {
+    font-size: 25px;
+  }
+  .coreMono {
+    font-size: 14px;
+  }
+  .pillText {
+    font-size: 12.5px;
+  }
+  .pktText,
+  .pktTextOn {
+    font-size: 12.5px;
+  }
+  .tplLabel {
+    font-size: 11px;
+  }
+  .tplText {
+    font-size: 17px;
+  }
+  .caption {
+    font-size: 16px;
+  }
+}
+
+/* ---------- static state (reduced motion, or before the animation starts) ---------- */
+.pkt,
+.capA,
+.capB,
+.showA,
+.showB,
+.showC,
+.showD,
+.showE,
+.showF {
+  opacity: 0;
+}
+
+.showA,
+.showB,
+.showC,
+.showE,
+.showF,
+.capC {
+  opacity: 1;
+}
+
+.dim {
+  opacity: 0.5;
+}
+
+@mixin slot($name, $t0, $t1) {
+  @keyframes #{$name} {
+    0%,
+    #{$t0}% {
+      opacity: 0;
+      transform: translate(var(--ax), var(--ay));
+    }
+    #{$t0 + 1}% {
+      opacity: 1;
+      transform: translate(var(--ax), var(--ay));
+    }
+    #{$t1}% {
+      opacity: 1;
+      transform: translate(var(--bx), var(--by));
+    }
+    #{$t1 + 1}%,
+    100% {
+      opacity: 0;
+      transform: translate(var(--bx), var(--by));
+    }
+  }
+}
+
+@mixin window($name, $on, $off, $lo: 0, $hi: 1) {
+  @keyframes #{$name} {
+    0%,
+    #{$on - 3}% {
+      opacity: $lo;
+    }
+    #{$on}%,
+    #{$off}% {
+      opacity: $hi;
+    }
+    #{$off + 3}%,
+    100% {
+      opacity: $lo;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  $loop: 11s;
+
+  @include slot(slotIn, 2, 10);
+  @include slot(slotFan, 12, 26);
+  @include slot(slotBack, 30, 42);
+  @include slot(slotOut, 56, 68);
+  @include slot(slotPublish, 2, 14);
+  @include slot(slotPost, 36, 50);
+
+  @include window(winEarly, 31, 94);
+  @include window(winLate, 43, 94);
+  @include window(winMerge, 47, 66);
+  @include window(winTplA, 13, 34);
+  @include window(winTplB, 36, 94);
+  @include window(winDeliver, 52, 94);
+  @include window(winDim, 37, 92, 1, 0.45);
+  @include window(winCapA, 4, 28);
+  @include window(winCapB, 33, 54);
+  @include window(winCapC, 59, 94);
+
+  .pktIn {
+    animation: slotIn $loop linear infinite;
+  }
+  .pktFan {
+    animation: slotFan $loop linear infinite;
+  }
+  .pktBack {
+    animation: slotBack $loop linear infinite;
+  }
+  .pktOut {
+    animation: slotOut $loop linear infinite;
+  }
+  .pktPublish {
+    animation: slotPublish $loop linear infinite;
+  }
+  .pktPost {
+    animation: slotPost $loop linear infinite;
+  }
+
+  .showA {
+    animation: winEarly $loop linear infinite;
+    opacity: 0;
+  }
+  .showB {
+    animation: winLate $loop linear infinite;
+    opacity: 0;
+  }
+  .showC {
+    animation: winMerge $loop linear infinite;
+    opacity: 0;
+  }
+  .showD {
+    animation: winTplA $loop linear infinite;
+  }
+  .showE {
+    animation: winTplB $loop linear infinite;
+    opacity: 0;
+  }
+  .showF {
+    animation: winDeliver $loop linear infinite;
+    opacity: 0;
+  }
+  .dim {
+    animation: winDim $loop linear infinite;
+    opacity: 1;
+  }
+  .capA {
+    animation: winCapA $loop linear infinite;
+  }
+  .capB {
+    animation: winCapB $loop linear infinite;
+  }
+  .capC {
+    animation: winCapC $loop linear infinite;
+    opacity: 0;
+  }
+}

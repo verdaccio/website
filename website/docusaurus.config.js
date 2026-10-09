@@ -47,6 +47,9 @@ module.exports = {
   onBrokenAnchors: 'warn',
   favicon: 'img/logo/uk/verdaccio-tiny-uk-no-bg.svg',
   scripts: [GITHUB.BUTTONS],
+  stylesheets: [
+    'https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap',
+  ],
 
   i18n: {
     defaultLocale: 'en',
@@ -190,10 +193,10 @@ module.exports = {
       },
       announcementBar: {
         id: 'announcementBar',
-        content: `<a target="_blank" rel="noopener noreferrer" href="${DONATE.UKRAINE}">OFFICIAL FUNDRAISING PLATFORM OF UKRAINE</a>!`,
+        content: `🇺🇦 Verdaccio stands with Ukraine. <a target="_blank" rel="noopener noreferrer" href="${DONATE.UKRAINE}">Support via UNITED24 →</a>`,
         isCloseable: false,
-        backgroundColor: '#1595de',
-        textColor: '#ffffff',
+        backgroundColor: '#f2f2f1',
+        textColor: '#17181a',
       },
       docs: {
         sidebar: {
@@ -218,7 +221,12 @@ module.exports = {
           },
           { to: '/blog', position: 'left', label: 'Blog' },
           { href: '/community', position: 'left', label: 'Community' },
-          { href: SOCIAL.OPEN_COLLECTIVE, position: 'right', label: 'Sponsor Us' },
+          {
+            href: SOCIAL.OPEN_COLLECTIVE,
+            position: 'right',
+            label: '♡ Sponsor',
+            className: 'navbar-sponsor-btn',
+          },
           {
             href: GITHUB.REPO,
             position: 'right',
@@ -234,7 +242,7 @@ module.exports = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
         links: [
           {
             title: 'Docs',
@@ -260,7 +268,7 @@ module.exports = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Verdaccio Community. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Verdaccio Community.`,
       },
       colorMode: {
         defaultMode: 'light',
