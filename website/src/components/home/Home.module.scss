@@ -1846,6 +1846,38 @@ a.pill:hover {
   margin: 24px 0 0;
 }
 
+/* second line under the latest release: the 7.x preview and its release notes */
+.latestPreview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--h-muted);
+  text-decoration: none;
+
+  code {
+    padding: 1px 7px;
+    border: 1px solid var(--h-border);
+    border-radius: var(--r-pill);
+    background: none;
+    color: var(--h-ink);
+    font-size: 12px;
+  }
+
+  .latestCta {
+    margin-left: 0;
+  }
+
+  &:hover {
+    color: var(--h-ink);
+    text-decoration: none;
+  }
+}
+
 /* link to the docker-examples folder under the Docker and Helm cards */
 .devExamples {
   display: flex;
