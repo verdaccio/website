@@ -46,7 +46,7 @@ const CacheFlowDesktop = (): React.ReactElement => (
         PRIVATE
       </text>
       <text x="440" y="154" className={styles.cfInnerText}>
-        @acme/*
+        @verdaccio/*
       </text>
       <text x="440" y="174" className={styles.cfTiny}>
         storage
@@ -201,7 +201,7 @@ const CacheFlowMobile = (): React.ReactElement => (
         PRIVATE
       </text>
       <text x="56" y="260" className={styles.cfInnerText}>
-        @acme/*
+        @verdaccio/*
       </text>
       <text x="56" y="280" className={styles.cfTiny}>
         storage

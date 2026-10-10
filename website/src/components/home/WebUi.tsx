@@ -6,10 +6,15 @@ import clsx from 'clsx';
 import React from 'react';
 
 const PACKAGES = [
-  { name: '@acme/ui', version: '2.4.0', text: 'Shared React components', active: true },
-  { name: '@acme/api-client', version: '1.12.3', text: 'Typed client for the internal API' },
-  { name: '@acme/config', version: '0.9.1', text: 'ESLint and TypeScript presets' },
-  { name: '@acme/logger', version: '3.0.0', text: 'Structured logging for services' },
+  {
+    name: '@verdaccio/ui',
+    version: '2.4.0',
+    text: 'Components of the web interface',
+    active: true,
+  },
+  { name: '@verdaccio/core', version: '1.12.3', text: 'Shared types and utilities' },
+  { name: '@verdaccio/config', version: '0.9.1', text: 'Configuration loader and builder' },
+  { name: '@verdaccio/logger', version: '3.0.0', text: 'Structured logging for the registry' },
 ];
 
 const VERSIONS = ['2.4.0', '2.3.1', '2.3.0', '2.2.4'];
@@ -50,7 +55,7 @@ const Mock = (): React.ReactElement => (
         </ul>
         <div className={styles.uiDetail}>
           <h3>
-            @acme/ui <span className={clsx(styles.uiVersion, styles.mono)}>v2.4.0</span>
+            @verdaccio/ui <span className={clsx(styles.uiVersion, styles.mono)}>v2.4.0</span>
           </h3>
           <div className={styles.uiInstall}>
             <div className={clsx(styles.uiTabs, styles.mono)}>
@@ -58,7 +63,7 @@ const Mock = (): React.ReactElement => (
               <span>npm</span>
               <span>yarn</span>
             </div>
-            <code className={styles.mono}>$ pnpm add @acme/ui</code>
+            <code className={styles.mono}>$ pnpm add @verdaccio/ui</code>
           </div>
           <div className={styles.uiMeta}>
             <div>

@@ -14,7 +14,7 @@ export type TermLine = {
 
 const ROW = 20;
 const TOP = 62;
-const WIDTH = 880;
+const DEFAULT_WIDTH = 880;
 
 type Props = {
   title: string;
@@ -22,19 +22,31 @@ type Props = {
   rows: number;
   lines: TermLine[];
   cursorRow?: number;
+  // drawing width; a narrower one makes the text bigger when the terminal sits in a small column
+  width?: number;
+  // no outer margin, for terminals stacked by their parent
+  flush?: boolean;
 };
 
-const Terminal = ({ title, label, rows, lines, cursorRow }: Props): React.ReactElement => {
+const Terminal = ({
+  title,
+  label,
+  rows,
+  lines,
+  cursorRow,
+  width = DEFAULT_WIDTH,
+  flush,
+}: Props): React.ReactElement => {
   const height = TOP + rows * ROW + 20;
   return (
-    <div className={styles.wrap}>
-      <svg className={styles.svg} viewBox={`0 0 ${WIDTH} ${height}`} role="img" aria-label={label}>
-        <rect width={WIDTH} height={height} className={styles.bg} />
-        <rect width={WIDTH} height="38" className={styles.bar} />
+    <div className={clsx(styles.wrap, flush && styles.flush)}>
+      <svg className={styles.svg} viewBox={`0 0 ${width} ${height}`} role="img" aria-label={label}>
+        <rect width={width} height={height} className={styles.bg} />
+        <rect width={width} height="38" className={styles.bar} />
         <circle cx="22" cy="19" r="6" className={styles.dotR} />
         <circle cx="42" cy="19" r="6" className={styles.dotY} />
         <circle cx="62" cy="19" r="6" className={styles.dotG} />
-        <text x={WIDTH / 2} y="23" textAnchor="middle" className={styles.title}>
+        <text x={width / 2} y="23" textAnchor="middle" className={styles.title}>
           {title}
         </text>
         {lines.map((line, i) => (

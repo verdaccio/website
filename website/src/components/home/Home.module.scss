@@ -15,6 +15,10 @@
   --h-highlight: var(--highlight);
   --h-highlight-on: var(--highlight-on);
   --h-code-bg: #ffffff;
+  --r-pill: 999px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 24px;
 
   font-family:
     'Inter Tight',
@@ -106,7 +110,7 @@
   gap: 8px;
   height: 44px;
   padding: 0 20px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   font-size: 14px;
   font-weight: 600;
   border: 1px solid var(--h-border);
@@ -136,13 +140,14 @@
 
 /* ---------- hero ---------- */
 .hero {
-  padding: 56px 0 88px;
+  padding: 32px 0 48px;
 }
 
+/* two columns: the text on the left, the terminals on the right, all above the fold */
 .heroGrid {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 56px;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
+  gap: 40px;
   align-items: start;
 }
 
@@ -150,7 +155,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .pill {
@@ -164,13 +169,13 @@
 }
 
 .title {
-  font-size: clamp(40px, 5.2vw, 72px);
+  font-size: clamp(36px, 4.2vw, 56px);
   line-height: 1;
   letter-spacing: -0.035em;
   word-spacing: 0.06em;
   font-weight: 800;
   color: var(--h-ink);
-  margin: 0 0 28px;
+  margin: 0 0 18px;
 
   em {
     display: block;
@@ -181,14 +186,14 @@
 
 .heroLead {
   max-width: 520px;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
+  font-size: 15px;
 }
 
 .ctas {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 24px;
 }
 
 /* ---------- command box ---------- */
@@ -196,7 +201,7 @@
   max-width: 520px;
   border: 1px solid var(--h-border);
   background: var(--h-surface);
-  border-radius: 12px;
+  border-radius: var(--r-md);
   overflow: hidden;
 }
 
@@ -258,38 +263,6 @@
   cursor: pointer;
 }
 
-/* ---------- request flow diagram ---------- */
-.flow {
-  font-size: 13px;
-}
-
-.flowLabel {
-  margin-bottom: 14px;
-}
-
-.flowTeam {
-  border: 1px solid var(--h-border);
-  background: var(--h-surface);
-  border-radius: 12px;
-  padding: 16px;
-
-  strong {
-    font-size: 16px;
-  }
-}
-
-.flowRow {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 12px;
-
-  span {
-    font-size: 11px;
-    color: var(--h-muted);
-  }
-}
-
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -302,80 +275,6 @@
   border-radius: 5px;
   background: var(--h-green-soft);
   color: var(--h-ink);
-}
-
-.flowArrow {
-  margin: 0 0 0 28px;
-  padding: 12px 0 12px 16px;
-  border-left: 1px dashed var(--h-muted);
-  font-size: 11px;
-  color: var(--h-muted);
-}
-
-.flowCore {
-  background: var(--h-deep);
-  color: var(--h-on-deep);
-  border-radius: 12px;
-  padding: 18px;
-
-  strong {
-    font-size: 20px;
-    letter-spacing: -0.02em;
-  }
-}
-
-.flowRow .port {
-  color: var(--h-on-green);
-  font-size: 11px;
-  padding: 3px 10px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-}
-
-.flowCards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-.flowCard {
-  background: #ffffff;
-  color: #17181a;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.3;
-
-  small {
-    display: block;
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    font-size: 10px;
-    letter-spacing: 0.06em;
-    color: #6b6f72;
-    margin-bottom: 4px;
-    font-weight: 400;
-  }
-}
-
-.flowUplinks {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  border: 1px solid var(--h-border);
-  background: var(--h-bg);
-  border-radius: 12px;
-  padding: 14px 16px;
-  font-size: 12px;
-
-  strong {
-    font-size: 14px;
-  }
-
-  span {
-    color: var(--h-muted);
-  }
 }
 
 /* ---------- used by ---------- */
@@ -418,7 +317,7 @@
 .feature {
   background: var(--h-card);
   border: 1px solid var(--h-border);
-  border-radius: 16px;
+  border-radius: var(--r-lg);
   padding: 24px;
 
   h3 {
@@ -466,7 +365,7 @@
 .codeCard {
   border: 1px solid var(--h-border);
   background: var(--h-surface);
-  border-radius: 12px;
+  border-radius: var(--r-md);
   overflow: hidden;
 }
 
@@ -529,7 +428,7 @@
 .devCard {
   background: var(--h-card);
   border: 1px solid var(--h-border);
-  border-radius: 16px;
+  border-radius: var(--r-lg);
   padding: 24px;
 
   h3 {
@@ -568,7 +467,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   border: 1px solid var(--h-border);
-  border-radius: 16px;
+  border-radius: var(--r-lg);
   overflow: hidden;
 
   a {
@@ -608,7 +507,7 @@
 .cta {
   background: var(--h-deep);
   color: var(--h-on-deep);
-  border-radius: 24px;
+  border-radius: var(--r-xl);
   padding: 72px 64px;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -628,7 +527,7 @@
 .ctaBox {
   background: #ffffff;
   color: #17181a;
-  border-radius: 12px;
+  border-radius: var(--r-md);
   padding: 14px 16px;
   display: flex;
   justify-content: space-between;
@@ -698,7 +597,7 @@
 .flowPanel {
   border: 1px solid var(--h-border);
   background: var(--h-card);
-  border-radius: 20px;
+  border-radius: var(--r-lg);
   padding: 28px 24px 12px;
 }
 
@@ -1332,7 +1231,7 @@
 .ossCard {
   border: 1px solid var(--h-border);
   background: var(--h-bg);
-  border-radius: 16px;
+  border-radius: var(--r-lg);
   overflow: hidden;
 }
 
@@ -1387,7 +1286,7 @@
 
 .mode {
   border: 1px solid var(--h-border);
-  border-radius: 16px;
+  border-radius: var(--r-lg);
   padding: 28px;
   background: var(--h-card);
 
@@ -1410,7 +1309,7 @@
   font-size: 10.5px;
   letter-spacing: 0.08em;
   padding: 4px 10px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--h-highlight);
   color: var(--h-highlight-on);
 }
@@ -1459,7 +1358,7 @@
   span {
     padding: 6px 10px;
     border: 1px dashed var(--h-muted);
-    border-radius: 999px;
+    border-radius: var(--r-pill);
     white-space: nowrap;
     text-align: center;
     font-size: 10px;
@@ -1554,7 +1453,7 @@
 .kind {
   background: var(--h-card);
   border: 1px solid var(--h-border);
-  border-radius: 16px;
+  border-radius: var(--r-lg);
   padding: 22px;
   display: flex;
   flex-direction: column;
@@ -1609,7 +1508,7 @@
 
 .uiWin {
   border: 1px solid var(--h-border);
-  border-radius: 14px;
+  border-radius: var(--r-md);
   background: var(--h-bg);
   overflow: hidden;
   box-shadow: 0 24px 60px -30px rgba(0, 0, 0, 0.35);
@@ -1640,7 +1539,7 @@
   flex: 1;
   max-width: 260px;
   padding: 3px 12px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--h-bg);
   font-size: 11px;
   color: var(--h-muted);
@@ -1676,7 +1575,7 @@
 
 .uiLogin {
   padding: 5px 12px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--h-green);
   color: var(--h-on-green);
   font-size: 12px;
@@ -1725,7 +1624,7 @@
 .uiVersion {
   padding: 1px 7px;
   border: 1px solid var(--h-border);
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   font-size: 10px;
   font-weight: 400;
   color: var(--h-muted);
@@ -1868,7 +1767,7 @@ a.pill:hover {
   margin-bottom: 20px;
   padding: 10px 18px 10px 14px;
   border: 1px solid color-mix(in srgb, var(--h-highlight) 35%, var(--h-border));
-  border-radius: 16px;
+  border-radius: var(--r-lg);
   background: var(--h-bg);
   color: var(--h-ink);
   text-decoration: none;
@@ -1891,7 +1790,7 @@ a.pill:hover {
   align-items: center;
   gap: 8px;
   padding: 4px 11px;
-  border-radius: 999px;
+  border-radius: var(--r-pill);
   background: var(--h-highlight);
   color: var(--h-highlight-on);
   font-family: 'JetBrains Mono', ui-monospace, monospace;
@@ -1943,25 +1842,8 @@ a.pill:hover {
   color: var(--h-highlight);
 }
 
-/* the release notice sits under the request flow on wide screens and under the buttons on narrow ones */
-.latest.latestSide {
-  width: 100%;
-  margin: 24px 0 0;
-}
-
 .latest.latestInline {
-  display: none;
-  margin: 28px 0 0;
-}
-
-@media (max-width: 996px) {
-  .latest.latestSide {
-    display: none;
-  }
-
-  .latest.latestInline {
-    display: flex;
-  }
+  margin: 24px 0 0;
 }
 
 /* link to the docker-examples folder under the Docker and Helm cards */
@@ -1972,7 +1854,7 @@ a.pill:hover {
   margin-top: 20px;
   padding: 18px 24px;
   border: 1px dashed var(--h-border);
-  border-radius: 16px;
+  border-radius: var(--r-lg);
 
   strong {
     display: block;
@@ -2007,4 +1889,178 @@ a.pill:hover {
       margin-left: 0;
     }
   }
+}
+
+/* ---------- how it works (text above the animation) ---------- */
+.how {
+  margin-bottom: 28px;
+}
+
+.howSteps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: how;
+
+  li {
+    position: relative;
+    padding: 14px 0 0 0;
+    border-top: 2px solid var(--h-ink);
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--h-muted);
+    counter-increment: how;
+
+    &::before {
+      content: counter(how, decimal-leading-zero);
+      display: block;
+      margin-bottom: 6px;
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--h-highlight);
+    }
+  }
+
+  b {
+    color: var(--h-ink);
+  }
+}
+
+@media (max-width: 700px) {
+  .howSteps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- terminal demo ---------- */
+.heroDemo {
+  min-width: 0;
+}
+
+.demoSteps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0 0 14px;
+  padding: 0;
+  list-style: none;
+  counter-reset: demo;
+
+  li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 10px;
+    border-top: 2px solid var(--h-border);
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--h-muted);
+    counter-increment: demo;
+
+    &::before {
+      content: counter(demo, decimal-leading-zero);
+      font-family: 'JetBrains Mono', ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--h-highlight);
+    }
+  }
+
+  b {
+    font-size: 16px;
+    letter-spacing: -0.02em;
+    color: var(--h-ink);
+  }
+}
+
+/* the step that the terminals are playing is highlighted; same 16s loop as the terminals */
+@media (prefers-reduced-motion: no-preference) {
+  $loop: 16s;
+
+  @keyframes demoStep1 {
+    0%,
+    18% {
+      border-top-color: var(--h-highlight);
+      opacity: 1;
+    }
+    22%,
+    94% {
+      border-top-color: var(--h-border);
+      opacity: 0.45;
+    }
+    98%,
+    100% {
+      border-top-color: var(--h-highlight);
+      opacity: 1;
+    }
+  }
+
+  @keyframes demoStep2 {
+    0%,
+    18% {
+      border-top-color: var(--h-border);
+      opacity: 0.45;
+    }
+    22%,
+    40% {
+      border-top-color: var(--h-highlight);
+      opacity: 1;
+    }
+    44%,
+    100% {
+      border-top-color: var(--h-border);
+      opacity: 0.45;
+    }
+  }
+
+  @keyframes demoStep3 {
+    0%,
+    40% {
+      border-top-color: var(--h-border);
+      opacity: 0.45;
+    }
+    44%,
+    94% {
+      border-top-color: var(--h-highlight);
+      opacity: 1;
+    }
+    98%,
+    100% {
+      border-top-color: var(--h-border);
+      opacity: 0.45;
+    }
+  }
+
+  .demoStep1 {
+    animation: demoStep1 $loop linear infinite;
+  }
+
+  .demoStep2 {
+    animation: demoStep2 $loop linear infinite;
+  }
+
+  .demoStep3 {
+    animation: demoStep3 $loop linear infinite;
+  }
+}
+
+@media (max-width: 700px) {
+  .demoSteps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* an odd last sponsor takes the whole last row */
+.sponsorCells a:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  border-right: 0;
+}
+
+/* with an odd number of sponsors the cell above the last one keeps its bottom border */
+.sponsorCells:has(a:last-child:nth-child(odd)) a:nth-last-child(2) {
+  border-bottom: 1px solid var(--h-border);
 }

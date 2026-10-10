@@ -1,3 +1,4 @@
+import { HeroDemo } from '../terminal/Examples';
 import CacheFlow from './CacheFlow';
 import CodeCard from './CodeCard';
 import CommandTabs from './CommandTabs';
@@ -34,6 +35,11 @@ const SPONSORS = [
     url: 'https://hub.docker.com/r/verdaccio/verdaccio/tags/',
   },
   { name: 'Crowdin', logo: '/img/sponsors/crowdin.svg', url: 'https://crowdin.com' },
+  {
+    name: 'BrowserStack',
+    logo: '/img/sponsors/browserstack.png',
+    url: 'https://www.browserstack.com/',
+  },
   {
     name: 'JetBrains',
     logo: '/img/sponsors/jetbrains.svg',
@@ -153,18 +159,11 @@ const HomePage = (): React.ReactElement => (
           </h1>
           <p className={clsx(styles.lead, styles.heroLead)}>
             <Translate>
-              Verdaccio is a lightweight private npm proxy registry. Built for local development,
-              ready to run as the hosted registry your whole team shares.
+              Verdaccio is a free, open source npm registry that you run yourself. Publish your
+              private packages, cache the public ones and keep using npm, pnpm or yarn. Built for
+              local development, ready to host for your whole team.
             </Translate>
           </p>
-          <CommandTabs
-            tabs={[
-              { label: 'pnpm', command: 'pnpm add --global verdaccio' },
-              { label: 'npm', command: 'npm install --global verdaccio' },
-              { label: 'Docker', command: 'docker run -it -p 4873:4873 verdaccio/verdaccio' },
-              { label: 'Helm', command: 'helm install verdaccio verdaccio/verdaccio' },
-            ]}
-          />
           <div className={styles.ctas}>
             <Link to="/docs/what-is-verdaccio" className={clsx(styles.btn, styles.btnPrimary)}>
               <Translate>Get started</Translate> →
@@ -180,44 +179,22 @@ const HomePage = (): React.ReactElement => (
           <LatestRelease className={styles.latestInline} />
         </div>
 
-        <div className={styles.flow} aria-label="How a request flows">
-          <div className={clsx(styles.eyebrow, styles.flowLabel)}>How a request flows</div>
-          <div className={styles.flowTeam}>
-            <div className={styles.flowRow}>
-              <strong>Your team</strong>
-              <span className={styles.mono}>clients · CI</span>
-            </div>
-            <div className={clsx(styles.chips, styles.mono)}>
-              {['pnpm', 'npm', 'yarn', 'CI runners'].map((c) => (
-                <span key={c} className={styles.chip}>
-                  {c}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className={clsx(styles.flowArrow, styles.mono)}>GET /@acme/ui · GET /react</div>
-          <div className={styles.flowCore}>
-            <div className={styles.flowRow}>
-              <strong>verdaccio</strong>
-              <span className={clsx(styles.port, styles.mono)}>localhost:4873</span>
-            </div>
-            <div className={styles.flowCards}>
-              <div className={styles.flowCard}>
-                <small className={styles.mono}>PRIVATE</small>
-                @acme/* served from storage
-              </div>
-              <div className={styles.flowCard}>
-                <small className={styles.mono}>CACHE</small>
-                public tarballs kept locally
-              </div>
-            </div>
-          </div>
-          <div className={clsx(styles.flowArrow, styles.mono)}>only on cache miss</div>
-          <div className={styles.flowUplinks}>
-            <strong>Uplinks</strong>
-            <span className={styles.mono}>registry.npmjs.org + any registry</span>
-          </div>
-          <LatestRelease className={styles.latestSide} />
+        <div className={styles.heroDemo}>
+          <ol className={styles.demoSteps}>
+            <li className={styles.demoStep1}>
+              <b>Start</b>
+              <span>one command, no config</span>
+            </li>
+            <li className={styles.demoStep2}>
+              <b>Publish</b>
+              <span>a private package</span>
+            </li>
+            <li className={styles.demoStep3}>
+              <b>Install</b>
+              <span>private and public ones</span>
+            </li>
+          </ol>
+          <HeroDemo />
         </div>
       </div>
     </section>
@@ -225,6 +202,26 @@ const HomePage = (): React.ReactElement => (
     {/* cache + uplinks animation */}
     <section className={styles.flowBand}>
       <div className={styles.wrap}>
+        <div className={styles.how}>
+          <div className={styles.eyebrow}>How it works</div>
+          <h2 className={styles.h2}>
+            <Translate>One registry in front of everything you install.</Translate>
+          </h2>
+          <ol className={styles.howSteps}>
+            <li>
+              <b>Private packages</b> are published to your registry and served from your own
+              storage.
+            </li>
+            <li>
+              <b>Public packages</b> are fetched once from npmjs.org, an uplink, and kept in the
+              cache.
+            </li>
+            <li>
+              <b>Every next install</b> comes from the cache: faster, and still available when the
+              public registry has a bad day.
+            </li>
+          </ol>
+        </div>
         <div className={styles.flowPanel}>
           <CacheFlow />
         </div>

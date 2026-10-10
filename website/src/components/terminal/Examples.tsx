@@ -198,3 +198,144 @@ export const ProtectedInstall = (): React.ReactElement => (
     ]}
   />
 );
+
+// The whole story in two terminals, as you would really have them open: your project on top and
+// the registry below, printing what it serves. The three steps on the home page are highlighted in
+// sync with this loop (16s). Log lines follow the format of the registry log; sizes are examples.
+const HERO_WIDTH = 780;
+const reg = 'http://localhost:4873/';
+
+const log = (row: number, at: number, dir: '<--' | '-->', rest: string): TermLine => ({
+  row,
+  at,
+  parts: [
+    ['http', 'purple'],
+    [` ${dir} `, dir === '<--' ? 'green' : 'orange'],
+    ['200', 'cyan'],
+    [rest],
+  ],
+});
+
+export const HeroDemo = (): React.ReactElement => (
+  <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+    <Terminal
+      flush
+      width={HERO_WIDTH}
+      title="my-app — your project"
+      label="Terminal animation of your project: pnpm config set registry, pnpm publish of a private package, then pnpm add of that package and of react from the local registry."
+      rows={9}
+      lines={[
+        {
+          row: 0,
+          at: 8,
+          parts: [
+            ['$ ', 'prompt'],
+            [`pnpm config set registry ${reg}`, 'bold'],
+          ],
+        },
+        { row: 1, at: 12, parts: [['# log in once with pnpm login', 'dim']] },
+        {
+          row: 2,
+          at: 22,
+          parts: [
+            ['$ ', 'prompt'],
+            ['pnpm publish', 'bold'],
+          ],
+        },
+        { row: 3, at: 28, parts: [['+ @verdaccio/ui@1.0.0', 'green']] },
+        {
+          row: 4,
+          at: 44,
+          parts: [
+            ['$ ', 'prompt'],
+            ['pnpm add @verdaccio/ui', 'bold'],
+          ],
+        },
+        {
+          row: 5,
+          at: 54,
+          parts: [
+            ['Progress: resolved 1, reused 0, downloaded 1, added 1, ', 'dim'],
+            ['done', 'green'],
+          ],
+        },
+        {
+          row: 6,
+          at: 64,
+          parts: [
+            ['$ ', 'prompt'],
+            ['pnpm add react', 'bold'],
+          ],
+        },
+        {
+          row: 7,
+          at: 80,
+          parts: [
+            ['Progress: resolved 1, reused 0, downloaded 1, added 1, ', 'dim'],
+            ['done', 'green'],
+          ],
+        },
+      ]}
+    />
+    <Terminal
+      flush
+      width={HERO_WIDTH}
+      title="verdaccio — the registry log"
+      label="Terminal animation of the registry log: verdaccio starts on port 4873 and prints a line for the publish, for the install of the private package, and for the install of react, which is fetched from npmjs.org."
+      rows={10}
+      cursorRow={9}
+      lines={[
+        {
+          row: 0,
+          at: 2,
+          parts: [
+            ['$ ', 'prompt'],
+            ['pnpm dlx verdaccio', 'bold'],
+          ],
+        },
+        {
+          row: 1,
+          at: 5,
+          parts: [
+            ['info', 'cyan'],
+            [' --- ', 'dim'],
+            ['http address ', 'dim'],
+            [reg.trim(), 'green'],
+          ],
+        },
+        {
+          row: 2,
+          at: 24,
+          parts: [
+            ['http', 'purple'],
+            [' <-- ', 'green'],
+            ['201', 'cyan'],
+            [", user: jane(127.0.0.1), req: 'PUT /@verdaccio%2fui', bytes: 4210/0"],
+          ],
+        },
+        log(3, 47, '<--', ", user: jane(127.0.0.1), req: 'GET /@verdaccio%2fui', bytes: 0/2310"),
+        log(
+          4,
+          50,
+          '<--',
+          ", user: jane(127.0.0.1), req: 'GET /@verdaccio/ui/-/ui-1.0.0.tgz', bytes: 0/18204"
+        ),
+        log(5, 66, '-->', ", req: 'GET https://registry.npmjs.org/react' (streaming)"),
+        log(6, 69, '<--', ", user: jane(127.0.0.1), req: 'GET /react', bytes: 0/52184"),
+        log(
+          7,
+          72,
+          '<--',
+          ", user: jane(127.0.0.1), req: 'GET /react/-/react-19.2.6.tgz', bytes: 0/6411"
+        ),
+        {
+          row: 8,
+          at: 78,
+          parts: [
+            ['# react now lives in the cache: the next install does not leave your network', 'dim'],
+          ],
+        },
+      ]}
+    />
+  </div>
+);
