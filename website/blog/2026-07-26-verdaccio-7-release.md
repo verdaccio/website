@@ -6,6 +6,9 @@ tags: [release, verdaccio]
 hide_table_of_contents: true
 ---
 
+import FilterFlow from '@site/src/components/diagrams/FilterFlow';
+import { StagedPublish, TwoFactor } from '@site/src/components/terminal/Examples';
+
 **Verdaccio 7 is the next major line of Verdaccio.** This release keeps the familiar private registry experience, while updating the platform underneath so Verdaccio is easier to run, easier to package, and easier to extend.
 
 For most users, Verdaccio 7 should feel like Verdaccio: a lightweight private npm-compatible registry that works with npm, pnpm, and Yarn. The important changes are in the places that matter over time: **package filtering**, **notifications**, **Web UI polish**, **Docker examples**, **pure ESM plugin support**, **async storage plugins**, **the proxy layer**, and **the way Verdaccio itself is distributed**.
@@ -22,9 +25,21 @@ This is useful for teams that need to block, quarantine, allow, or replace packa
 
 This work is also available in Verdaccio 6.x through a backport.
 
-### Staged publishing and two-factor authentication
+<FilterFlow />
 
-Verdaccio 7 adds **staged publishing** (`npm stage`) and **TOTP two-factor authentication**, each behind a feature flag that defaults to `false`, so nothing changes until you turn them on. Landed in [#6176](https://github.com/verdaccio/verdaccio/pull/6176) by [@jotadeveloper](https://github.com/jotadeveloper).
+### Staged publishing and two-factor authentication (experimental)
+
+Verdaccio 7 adds two **experiments**. Each one is behind a feature flag that defaults to `false`, so nothing changes until you turn them on, and their behavior may still change. Landed in [#6176](https://github.com/verdaccio/verdaccio/pull/6176) by [@jotadeveloper](https://github.com/jotadeveloper).
+
+**Staged publishing** uploads a version for review. It only becomes installable once somebody approves it, and a rejected version never existed. `npm stage` needs npm 11.17 or newer.
+
+<StagedPublish />
+
+**Two-factor authentication** (TOTP) makes `npm publish` ask for a one-time password from an authenticator app.
+
+<TwoFactor />
+
+The two fit together: `npm stage publish` never asks for a code, so a pipeline can prepare a release, and a maintainer approves it with their own second factor.
 
 ### Publish and unpublish notifications
 
@@ -38,7 +53,7 @@ This work is also available in Verdaccio 6.x through a backport.
 
 Verdaccio 7 includes several Web UI improvements:
 
-- **Dark mode support**, a refreshed theme foundation, the move from Rematch to React context and SWR, refreshed login/signup/change-password screens, and the new contributors/support content in the info dialog landed in [#5563](https://github.com/verdaccio/verdaccio/pull/5563) by [@juanpicado](https://github.com/juanpicado).
+- **Dark mode support**, a refreshed theme foundation, a new state management based on React context and SWR, refreshed login/signup/change-password screens, and the new contributors/support content in the info dialog landed in [#5563](https://github.com/verdaccio/verdaccio/pull/5563) by [@juanpicado](https://github.com/juanpicado).
 - Package lists can be sorted by update time through [#5659](https://github.com/verdaccio/verdaccio/pull/5659) by [@mbtools](https://github.com/mbtools).
 - **Web UI search** works better with scoped packages and path-based queries, empty search results are clearer, and package detail tabs behave better across desktop and mobile layouts thanks to [#5647](https://github.com/verdaccio/verdaccio/pull/5647) by [@juanpicado](https://github.com/juanpicado).
 - The Web UI can auto-detect the search response shape, so it no longer depends on the old `searchRemote` flag. That landed in [#5801](https://github.com/verdaccio/verdaccio/pull/5801) by [@juanpicado](https://github.com/juanpicado).
@@ -96,18 +111,6 @@ The Docker examples for Verdaccio 7 were refreshed, including local storage, rev
 
 If you deploy Verdaccio through containers, the examples should be a better starting point for modern setups.
 
-### Pure ESM plugins
-
-Verdaccio 7 can load **pure ESM plugins**. That matters for plugin authors and teams maintaining internal Verdaccio plugins, because new plugins no longer need to publish a CommonJS wrapper just to be loaded by Verdaccio.
-
-CommonJS plugins remain part of the compatibility story, including legacy callback-based storage plugins, but Verdaccio 7 moves the plugin loading path forward with async loading and CJS/ESM interop.
-
-### Async storage plugins with backward compatibility
-
-Storage plugins can now use the **promise-based async storage API**. This is an important step for plugin authors because storage backends usually talk to databases, object storage, or remote services where async code is the natural model.
-
-Verdaccio 7 keeps compatibility with existing callback/stream-based storage plugins through a thin wrapper, so current integrations should keep working while plugin authors migrate. The implementation landed in [#5933](https://github.com/verdaccio/verdaccio/pull/5933). Dedicated migration documentation is still pending.
-
 ## What changes compared with 6.x?
 
 Verdaccio 7 is mostly a platform major. The user-facing registry behavior remains familiar, but the runtime and distribution model move forward:
@@ -117,8 +120,8 @@ Verdaccio 7 is mostly a platform major. The user-facing registry behavior remain
 - The proxy layer moved to `@verdaccio/proxy`, built on `got`.
 - The 7.x release branch moved to pnpm.
 - Verdaccio packages are distributed as reusable `@verdaccio/*` packages.
-- **Pure ESM plugins are supported.**
-- **Storage plugins can use the async promise-based API**, with backward compatibility for existing callback/stream-based storage plugins.
+- **Pure ESM plugins are supported**, so new plugins no longer need to publish a CommonJS wrapper just to be loaded by Verdaccio.
+- **Storage plugins can use the async promise-based API**, with backward compatibility for existing callback/stream-based storage plugins. Async only affects storage plugins; see the [storage plugin guide](/dev/plugin-storage) and how to [migrate a callback storage plugin](/dev/plugin-storage-async).
 - Logger packages were consolidated into `@verdaccio/logger`.
 - **Deprecated registry features were removed**, including star/unstar support.
 - The deprecated npm search **`/-/all` endpoint was removed**; use `/-/v1/search`.
@@ -163,9 +166,7 @@ The relevant exports include:
 - `@verdaccio/server`: `defineAPI(config, storage)`
 - `@verdaccio/cli`: `runCli`, `configureCli`, and command classes
 
-Verdaccio 7 also supports the **async promise-based storage API** and keeps a thin storage wrapper for callback/stream-based legacy storage plugins. Existing integrations have a clearer path forward while the core packages continue to move into the shared `@verdaccio/*` model.
-
-Verdaccio 7 also supports **pure ESM plugins**, so plugin packages can follow modern Node.js packaging without requiring a CommonJS compatibility entry point just for Verdaccio.
+Storage plugin authors have a [migration guide from callbacks to promises](/dev/plugin-storage-async). Existing callback plugins keep working through a compatibility wrapper while they migrate.
 
 Some plugins were relocated from the monorepo into their own repositories:
 

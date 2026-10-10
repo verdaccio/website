@@ -339,3 +339,63 @@ export const HeroDemo = (): React.ReactElement => (
     />
   </div>
 );
+
+const cmd = (row: number, at: number, text: string): TermLine => ({
+  row,
+  at,
+  parts: [
+    ['$ ', 'prompt'],
+    [text, 'bold'],
+  ],
+});
+
+export const StagedPublish = (): React.ReactElement => (
+  <Terminal
+    title="my-package — npm 11.17 or newer"
+    label="Terminal animation: npm stage publish uploads a version that is not installable yet, npm stage list shows it waiting, and npm stage approve makes it installable."
+    rows={12}
+    cursorRow={11}
+    lines={[
+      cmd(0, 2, 'npm stage publish --registry http://localhost:4873'),
+      {
+        row: 1,
+        at: 10,
+        parts: [['+ @verdaccio/example@1.0.0 '], ['(staged with id 32334c34-…)', 'dim']],
+      },
+      cmd(3, 20, 'npm view @verdaccio/example --registry http://localhost:4873'),
+      {
+        row: 4,
+        at: 28,
+        parts: [['npm error', 'red bold'], [' 404 Not Found - not installable yet']],
+      },
+      cmd(6, 40, 'npm stage list --registry http://localhost:4873'),
+      { row: 7, at: 48, parts: [['32334c34  ', 'cyan'], ['@verdaccio/example@1.0.0']] },
+      cmd(9, 60, 'npm stage approve 32334c34 --registry http://localhost:4873'),
+      { row: 10, at: 70, parts: [['+ @verdaccio/example@1.0.0', 'green bold']] },
+    ]}
+  />
+);
+
+export const TwoFactor = (): React.ReactElement => (
+  <Terminal
+    title="my-package — two-factor authentication"
+    label="Terminal animation: npm profile enable-2fa enrols an authenticator app, and from then on npm publish asks for a one-time password."
+    rows={11}
+    cursorRow={10}
+    lines={[
+      cmd(0, 2, 'npm profile enable-2fa auth-and-writes --registry http://localhost:4873'),
+      { row: 1, at: 8, parts: [['Enter your password: ', 'dim'], ['········']] },
+      { row: 2, at: 14, parts: [['(QR code for your authenticator app)', 'dim']] },
+      { row: 3, at: 20, parts: [['Enter one-time password: ', 'dim'], ['482913']] },
+      {
+        row: 4,
+        at: 28,
+        parts: [['Save the recovery codes. They are shown once.', 'orange']],
+      },
+      cmd(6, 42, 'npm publish --registry http://localhost:4873'),
+      { row: 7, at: 50, parts: [['This operation requires a one-time password.', 'dim']] },
+      { row: 8, at: 56, parts: [['Enter OTP: ', 'dim'], ['719304']] },
+      { row: 9, at: 66, parts: [['+ @verdaccio/example@1.0.0', 'green bold']] },
+    ]}
+  />
+);
