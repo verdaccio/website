@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T21:27:13.411Z",
+  "generatedAt": "2026-10-10T15:39:47.137Z",
   "organization": "verdaccio",
   "totals": {
     "contributors": 442,
@@ -233,11 +233,11 @@
           "contributions": 1
         },
         {
-          "name": "eslint-config-verdaccio",
+          "name": "readme",
           "contributions": 1
         },
         {
-          "name": "readme",
+          "name": "eslint-config-verdaccio",
           "contributions": 1
         },
         {
@@ -1347,11 +1347,11 @@
       "contributions": 4,
       "repositories": [
         {
-          "name": "website",
+          "name": "ui",
           "contributions": 2
         },
         {
-          "name": "ui",
+          "name": "website",
           "contributions": 2
         }
       ],
@@ -1540,11 +1540,11 @@
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "ui",
           "contributions": 1
         },
         {
-          "name": "ui",
+          "name": "website",
           "contributions": 1
         }
       ],
@@ -1604,11 +1604,11 @@
       "contributions": 3,
       "repositories": [
         {
-          "name": "verdaccio",
+          "name": "local-storage",
           "contributions": 1
         },
         {
-          "name": "local-storage",
+          "name": "verdaccio",
           "contributions": 1
         },
         {
@@ -1676,11 +1676,11 @@
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "verdaccio-aws-s3-storage",
           "contributions": 1
         },
         {
-          "name": "verdaccio-aws-s3-storage",
+          "name": "website",
           "contributions": 1
         }
       ],
@@ -7514,7 +7514,7 @@
       "stargazers_count": 37,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-09T20:07:08Z"
+      "pushed_at": "2026-10-10T15:34:59Z"
     },
     {
       "name": "yarn-plugin-npm",
