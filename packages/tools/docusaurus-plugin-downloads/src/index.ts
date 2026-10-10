@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { LoadContext, Plugin } from '@docusaurus/types';
+import type { LoadContext, Plugin } from '@docusaurus/types';
 import { normalizeUrl } from '@docusaurus/utils';
 
 export interface PluginOptions {

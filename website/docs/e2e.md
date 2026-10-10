@@ -143,7 +143,7 @@ Two deliberate choices:
   to keep in a secret. This is only safe because the registry is thrown away — never do it
   on a real one, see [best practices](best-practices.md).
 - **`proxy: npmjs` on `**`.** Your package's own dependencies still install. Drop the
-`uplinks`and the`proxy` if you want a fully offline registry, but then everything you
+  `uplinks`and the`proxy` if you want a fully offline registry, but then everything you
   install must already be published locally.
 
 ## Publishing and installing {#the-loop}
