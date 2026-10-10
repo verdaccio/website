@@ -61,8 +61,8 @@
     "docusaurus-plugin-sass": "0.2.6",
     "prism-react-renderer": "2.4.1",
     "raw-loader": "4.0.2",
-    "sass": "1.99.0",
-    "sass-loader": "16.0.7",
+    "sass": "1.102.0",
+    "sass-loader": "16.0.8",
     "typescript": "5.9.3"
   }
 }
