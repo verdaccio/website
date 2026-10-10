@@ -5,6 +5,7 @@ import { EcosystemVersionDownloadsCommand } from './api/ecosystemVersionDownload
 import { FetchAllDownloadsCommand } from './api/fetchAllDownloadsCommand';
 import { NpmjsApiDownloadCommand } from './api/npmjsApiDownloadCommand';
 import { FetchMonthlyDataCommand, FetchYearlyDataCommand } from './api/npmjsApiDownloadPoints';
+import { ReleasesCommand } from './api/releasesCommand';
 
 import { Cli } from 'clipanion';
 
@@ -24,6 +25,7 @@ cli.register(FetchAllDownloadsCommand);
 cli.register(EcosystemDownloadsCommand);
 cli.register(EcosystemVersionDownloadsCommand);
 cli.register(ContributorsUpdateCommand);
+cli.register(ReleasesCommand);
 cli.runExit(args, Cli.defaultContext);
 
 process.on('uncaughtException', function (err) {

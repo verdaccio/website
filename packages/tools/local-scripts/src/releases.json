@@ -1,0 +1,26 @@
+{
+  "generatedAt": "2026-10-10T07:24:07.703Z",
+  "releases": [
+    {
+      "tag": "latest",
+      "channel": "stable",
+      "version": "6.10.5",
+      "publishedAt": "2026-10-03T19:51:22.286Z",
+      "url": "https://github.com/verdaccio/verdaccio/releases/tag/v6.10.5"
+    },
+    {
+      "tag": "next-7",
+      "channel": "next",
+      "version": "7.0.0-next-7.30",
+      "publishedAt": "2026-10-03T21:06:23.905Z",
+      "url": "https://github.com/verdaccio/verdaccio/releases/tag/v7.0.0-next-7.30"
+    },
+    {
+      "tag": "next-9",
+      "channel": "experimental",
+      "version": "9.0.0-next-9.35",
+      "publishedAt": "2026-10-08T20:22:00.044Z",
+      "url": "https://www.npmjs.com/package/verdaccio/v/9.0.0-next-9.35"
+    }
+  ]
+}

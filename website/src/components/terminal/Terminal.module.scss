@@ -1,0 +1,172 @@
+// SVG terminal replacing the old GIFs. The window is always dark (like a real terminal),
+// independent of the site theme.
+.wrap {
+  margin: 1.5rem 0 2rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 0 0 1px #26292d;
+}
+
+.flush {
+  margin: 0;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  min-width: 640px;
+  height: auto;
+  font-family: var(--ifm-font-family-monospace);
+}
+
+.bg {
+  fill: #121416;
+}
+
+.bar {
+  fill: #1c1f22;
+}
+
+.dotR {
+  fill: #ff5f57;
+}
+.dotY {
+  fill: #febc2e;
+}
+.dotG {
+  fill: #28c840;
+}
+
+.title {
+  font-family: var(--ifm-font-family-base);
+  font-size: 12px;
+  fill: #8b9096;
+}
+
+.line {
+  font-size: 12.5px;
+  fill: #d6d9d0;
+  white-space: pre;
+  opacity: 0;
+}
+
+.dim {
+  fill: #7c8289;
+}
+.green {
+  fill: #5fd068;
+}
+.cyan {
+  fill: #34b5e8;
+}
+.purple {
+  fill: #a78bfa;
+}
+.orange {
+  fill: #f0a030;
+}
+.red {
+  fill: #f2597a;
+}
+.bold {
+  font-weight: 700;
+}
+.prompt {
+  fill: #5fd068;
+  font-weight: 700;
+}
+
+.cursor {
+  fill: #d6d9d0;
+  opacity: 0;
+}
+
+/* static state: everything visible except transient lines */
+.static {
+  opacity: 1;
+}
+
+.transient {
+  opacity: 0;
+}
+
+@mixin show($name, $on, $off) {
+  @keyframes #{$name} {
+    0%,
+    #{$on}% {
+      opacity: 0;
+    }
+    #{$on + 0.4}%,
+    #{$off}% {
+      opacity: 1;
+    }
+    #{$off + 4}%,
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  $loop: 16s;
+
+  // one keyframe set per start time (percent of the loop); lines stay until 92%
+  @for $i from 1 through 80 {
+    @include show(at#{$i}, $i, 92);
+    .at#{$i} {
+      animation: at#{$i} $loop linear infinite;
+    }
+  }
+
+  // transient lines, e.g. a progress bar that is replaced by the final result
+  @include show(tmp, 28, 46);
+  .tmp {
+    animation: tmp $loop linear infinite;
+  }
+
+  @keyframes blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+  .cursor {
+    animation: blink 1s steps(1) infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line {
+    opacity: 1;
+  }
+  .tmp {
+    opacity: 0;
+  }
+  .cursor {
+    opacity: 1;
+  }
+}
+
+/* the page's own "Video" wrapper, kept here to share the file with the terminal */
+.video {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  aspect-ratio: 16 / 9;
+  margin: 1.5rem 0 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+}

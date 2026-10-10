@@ -1,29 +1,25 @@
-import AltRouteIcon from '@mui/icons-material/AltRoute';
-import ColorLensIcon from '@mui/icons-material/ColorLens';
-import FilterAltIcon from '@mui/icons-material/FilterAlt';
-import HandymanIcon from '@mui/icons-material/Handyman';
-import HubIcon from '@mui/icons-material/Hub';
-import SecurityIcon from '@mui/icons-material/Security';
-import StorageIcon from '@mui/icons-material/Storage';
+import UiIcon from '../ui/Icons';
+
 import * as React from 'react';
 import { FC } from 'react';
 
 const Icon: FC<{ category: string }> = ({ category }): React.ReactElement => {
-  if (category === 'middleware') {
-    return <AltRouteIcon titleAccess={'Middleware Plugin'} />;
-  } else if (category === 'storage') {
-    return <StorageIcon titleAccess={'Storage Plugin'} />;
-  } else if (category === 'tool') {
-    return <HandymanIcon titleAccess={'Tool'} />;
-  } else if (category === 'filter') {
-    return <FilterAltIcon titleAccess={'Filter Plugin'} />;
-  } else if (category === 'authentication') {
-    return <SecurityIcon titleAccess={'Authentication Plugin'} />;
-  } else if (category === 'ui') {
-    return <ColorLensIcon titleAccess={'UI Theme'} />;
+  switch (category) {
+    case 'middleware':
+      return <UiIcon name="route" title="Middleware Plugin" />;
+    case 'storage':
+      return <UiIcon name="database" title="Storage Plugin" />;
+    case 'tool':
+      return <UiIcon name="wrench" title="Tool" />;
+    case 'filter':
+      return <UiIcon name="filter" title="Filter Plugin" />;
+    case 'authentication':
+      return <UiIcon name="shield" title="Authentication Plugin" />;
+    case 'ui':
+      return <UiIcon name="palette" title="UI Theme" />;
+    default:
+      return <UiIcon name="hub" />;
   }
-
-  return <HubIcon />;
 };
 
 export default Icon;

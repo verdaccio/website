@@ -1,0 +1,20 @@
+{
+  "name": "@verdaccio/contributors",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Collects the Verdaccio contributors from the GitHub API for the website",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "clean": "rimraf ./build",
+    "build": "pnpm run build:js && pnpm run build:types",
+    "build:js": "babel src/ --out-dir build/ --copy-files --extensions \".ts,.tsx\" --source-maps",
+    "build:types": "tsc --emitDeclarationOnly -p tsconfig.build.json"
+  },
+  "keywords": [],
+  "author": "Juan Picado <juanpicado19@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "octokit": "5.0.5"
+  }
+}

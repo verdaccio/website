@@ -19,7 +19,7 @@ two-factor and the problems specific to that client:
   registries in a lockfile
 - **[yarn](setup-yarn.md)** — classic and modern, plus the plugins that add the registry
   commands Yarn 4 does not ship
-- **[deno](setup-deno.md)** and **[bun](setup-bun.md)**
+- **[bun](setup-bun.md)**
 
 :::warning Recent versions are hidden by default on pnpm and Yarn
 Both clients refuse versions published in the **last day**, as a supply-chain precaution.
@@ -57,7 +57,7 @@ The same settings side by side, if you already know what you are looking for:
 
 </div>
 
-Deno and bun read `.npmrc` too; see [deno](setup-deno.md) and [bun](setup-bun.md).
+Bun reads `.npmrc` too; see [bun](setup-bun.md).
 
 Yarn 4's `yarn npm login` assumes the browser-based flow, which a self-hosted registry does
 not serve unless the `webLogin` flag is on — hence `--auth-type=legacy` above. Yarn 4 also

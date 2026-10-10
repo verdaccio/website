@@ -1,0 +1,126 @@
+// Shared building blocks for the custom pages (search, contributors).
+.dialog {
+  width: min(560px, calc(100vw - 32px));
+  max-height: calc(100vh - 64px);
+  padding: 0;
+  border: 1px solid var(--v-border);
+  border-radius: 16px;
+  background: var(--ifm-background-color);
+  color: var(--v-ink);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.25);
+
+  &::backdrop {
+    background: rgba(10, 14, 12, 0.55);
+  }
+}
+
+.dialogWide {
+  width: min(720px, calc(100vw - 32px));
+}
+
+.dialogBody {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 64px);
+}
+
+.dialogHead {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--v-border);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.dialogContent {
+  padding: 8px 24px 16px;
+  overflow-y: auto;
+}
+
+.dialogActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 14px 24px;
+  border-top: 1px solid var(--v-border);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--v-border);
+  background: var(--ifm-background-color);
+  color: var(--v-ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--v-ink);
+    text-decoration: none;
+    background: var(--v-surface);
+  }
+}
+
+.btnPrimary {
+  background: var(--v-green);
+  border-color: var(--v-green);
+  color: var(--v-on-green);
+
+  &:hover {
+    background: var(--v-green);
+    color: var(--v-on-green);
+    opacity: 0.92;
+  }
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 9px;
+  border: 1px solid var(--v-border);
+  border-radius: 999px;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: var(--v-muted);
+  background: transparent;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.chipWarn {
+  border-color: transparent;
+  background: var(--v-warn);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.callout {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--v-green-soft);
+  color: var(--v-ink);
+  font-size: 14px;
+  line-height: 1.5;
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--v-green);
+  }
+}
+
+.mono {
+  font-family: var(--ifm-font-family-monospace);
+}

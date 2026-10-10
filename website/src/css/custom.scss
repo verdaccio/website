@@ -1,14 +1,15 @@
 @use '_buttons.scss';
 @use '_headers.scss';
+@use '_brand.scss';
 
 :root {
   --ifm-color-primary: var(--verdaccio-color);
-  --ifm-color-primary-dark: #44553a;
-  --ifm-color-primary-darker: #415036;
-  --ifm-color-primary-darkest: #35422d;
-  --ifm-color-primary-light: #546746;
-  --ifm-color-primary-lighter: #576c4a;
-  --ifm-color-primary-lightest: #637a53;
+  --ifm-color-primary-dark: color-mix(in srgb, var(--brand) 92%, black);
+  --ifm-color-primary-darker: color-mix(in srgb, var(--brand) 86%, black);
+  --ifm-color-primary-darkest: color-mix(in srgb, var(--brand) 72%, black);
+  --ifm-color-primary-light: color-mix(in srgb, var(--brand) 88%, white);
+  --ifm-color-primary-lighter: color-mix(in srgb, var(--brand) 80%, white);
+  --ifm-color-primary-lightest: color-mix(in srgb, var(--brand) 66%, white);
 
   /* custom palette */
   --dark-blue: #004074;
@@ -16,30 +17,75 @@
   --grey-darker: #b7b7b7;
   --grey-light: #f7f7f7;
   --grey-lighter: #f9f9f9;
-  --verdaccio-color: #4a5e3e;
+  --verdaccio-color: var(--brand);
   --twitter-color: #1595de;
-  --red: #cd4001;
+  --red: var(--accent);
   --p-color: #5c5c5c;
   --font-size: 0.875rem;
   --font-size-big: calc(var(--font-size) * 1.2);
   --selection-color: var(--ifm-color-white);
+
+  /* typography + surfaces, same as the home page */
+  --ifm-font-family-base: 'Inter Tight', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --ifm-heading-font-family: var(--ifm-font-family-base);
+  --ifm-heading-color: #17181a;
+  --ifm-font-color-base: #17181a;
+  --ifm-background-color: #ffffff;
+  --ifm-toc-border-color: #e4e4e1;
+  --ifm-navbar-background-color: #ffffff;
+  --ifm-code-font-size: 90%;
+  --ifm-line-height-base: 1.65;
+
+  /* design tokens shared by every custom component (home, search, contributors, ...) */
+  --v-ink: #17181a;
+  --v-muted: #5c5f62;
+  --v-surface: #f2f2f1;
+  --v-card: #f7f7f6;
+  --v-border: #e4e4e1;
+  --v-green: var(--brand);
+  --v-green-soft: var(--brand-soft);
+  --v-on-green: var(--brand-on);
+  --v-deep: var(--brand-deep);
+  --v-on-deep: var(--brand-deep-on);
+  --v-accent: var(--accent);
+  --v-warn: #b45309;
+  --v-ok: #2e7d32;
+
+  /* sidebar: Inter Tight is narrow, so give the menu more air */
+  --ifm-menu-link-padding-vertical: 0.55rem;
+  --ifm-menu-link-padding-horizontal: 0.9rem;
+  --doc-sidebar-width: 20rem !important;
 }
 
 html[data-theme='dark']:root {
-  --ifm-color-primary: var(--red);
-  --ifm-color-primary-dark: #b93a01;
-  --ifm-color-primary-darker: #ae3601;
-  --ifm-color-primary-darkest: #902d01;
-  --ifm-color-primary-light: #e24601;
-  --ifm-color-primary-lighter: #ec4a01;
-  --ifm-color-primary-lightest: #fe580e;
+  --ifm-color-primary: var(--link);
+  --ifm-color-primary-dark: color-mix(in srgb, var(--link) 92%, black);
+  --ifm-color-primary-darker: color-mix(in srgb, var(--link) 86%, black);
+  --ifm-color-primary-darkest: color-mix(in srgb, var(--link) 72%, black);
+  --ifm-color-primary-light: color-mix(in srgb, var(--link) 88%, white);
+  --ifm-color-primary-lighter: color-mix(in srgb, var(--link) 80%, white);
+  --ifm-color-primary-lightest: color-mix(in srgb, var(--link) 66%, white);
 
-  --ifm-navbar-background-color: #061a38;
-  --ifm-dropdown-background-color: #061a38;
+  --v-ink: #f1f3ef;
+  --v-muted: #a4aca5;
+  --v-surface: #141b17;
+  --v-card: #19221d;
+  --v-border: #26322b;
+  --v-warn: #f0a030;
+  --v-ok: #6fcf7c;
+
+  --ifm-background-color: #0e1411;
+  --ifm-background-surface-color: #141b17;
+  --ifm-font-color-base: #f1f3ef;
+  --ifm-heading-color: #f1f3ef;
+  --ifm-toc-border-color: #26322b;
+  --ifm-navbar-background-color: #0e1411;
+  --ifm-dropdown-background-color: #141b17;
   --ifm-global-shadow-lw: 0 1px 2px 0 rgba(255, 255, 255, 0.173);
   --ifm-navbar-shadow: var(--ifm-global-shadow-lw);
 
-  --grey-lighter: #041329;
+  --grey-lighter: #0e1411;
   --p-color: #b7b7b7;
   --verdaccio-color: #fff;
   --grey: #f3f3f3;
@@ -88,11 +134,21 @@ div[role='banner'] {
 }
 
 .main-wrapper {
-  background-color: var(--grey-lighter);
+  background-color: var(--ifm-background-color);
 }
 
 a:hover {
   color: var(--ifm-color-primary);
+}
+
+/* post and card titles are links too; keep them reading as headings */
+article :is(h1, h2, h3) a {
+  color: var(--ifm-heading-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--ifm-color-primary);
+  }
 }
 
 article a {
@@ -123,10 +179,6 @@ html[data-theme='dark'] {
     filter: invert(1);
   }
 
-  .footer--dark {
-    --ifm-footer-background-color: #061a38;
-  }
-
   .docusaurus-highlight-code-line {
     background-color: rgba(0, 0, 0, 0.3);
   }
@@ -144,7 +196,106 @@ html[data-theme='dark'] {
   background-color: #ffd700;
   color: #1595de;
 }
-.secondarySpecialButton{
+.secondarySpecialButton {
   background-color: #f3f3f3;
   color: #1a1a1a;
+}
+
+/* Navbar sponsor pill (all pages) */
+.navbar-sponsor-btn {
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  &:hover {
+    background: var(--ifm-hover-overlay);
+  }
+}
+
+/* Site-wide design system shared with the home page */
+.navbar {
+  box-shadow: none;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+.navbar__title {
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.navbar__link {
+  font-weight: 500;
+}
+
+.footer {
+  --ifm-footer-background-color: transparent;
+  --ifm-footer-color: var(--p-color);
+  --ifm-footer-title-color: var(--p-color);
+  --ifm-footer-link-color: var(--ifm-font-color-base);
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.footer__title {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--ifm-font-family-monospace);
+}
+
+/* Docs sidebar: roomier rows, visible group spacing */
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-toc-border-color);
+}
+
+.menu {
+  padding: 1.25rem 1rem 1.5rem;
+  font-size: 0.95rem;
+}
+
+.menu__list {
+  .menu__list-item:not(:first-child) {
+    margin-top: 0.25rem;
+  }
+
+  /* nested items */
+  .menu__list {
+    margin: 0.25rem 0 0.5rem 0.5rem;
+    padding-left: 0.5rem;
+    border-left: 1px solid var(--ifm-toc-border-color);
+  }
+}
+
+.menu__link {
+  border-radius: 8px;
+  line-height: 1.4;
+}
+
+.menu__link--sublist-caret:after,
+.menu__caret:before {
+  background-size: 1.5rem 1.5rem;
+}
+
+/* top-level categories read as group headings */
+.theme-doc-sidebar-menu > .menu__list-item {
+  margin-top: 0.75rem;
+
+  > .menu__list-item-collapsible > .menu__link {
+    font-weight: 600;
+  }
+}
+
+/* Smooth scrolling for in-page links (home pills, table of contents), unless the user prefers less motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }

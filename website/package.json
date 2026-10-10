@@ -19,42 +19,24 @@
     "lint:write": "oxlint --fix src"
   },
   "dependencies": {
-    "@docusaurus/core": "3.10.1",
-    "@docusaurus/plugin-content-docs": "3.10.1",
-    "@docusaurus/preset-classic": "3.10.1",
-    "@docusaurus/remark-plugin-npm2yarn": "3.10.1",
-    "@docusaurus/theme-common": "3.10.1",
-    "@docusaurus/theme-mermaid": "3.10.1",
-    "@docusaurus/theme-search-algolia": "3.10.1",
-    "@emotion/cache": "11.14.0",
-    "@emotion/css": "11.13.5",
-    "@emotion/react": "11.14.0",
-    "@emotion/styled": "11.14.1",
-    "@mdx-js/react": "3.1.1",
-    "@mui/icons-material": "9.0.1",
-    "@mui/material": "9.0.1",
+    "@docusaurus/core": "3.10.2",
+    "@docusaurus/plugin-content-docs": "3.10.2",
+    "@docusaurus/preset-classic": "3.10.2",
+    "@docusaurus/remark-plugin-npm2yarn": "3.10.2",
+    "@docusaurus/theme-mermaid": "3.10.2",
     "@orama/orama": "3.1.18",
-    "@verdaccio/ui-components": "latest",
     "chart.js": "4.5.1",
-    "chartjs-chart-treemap": "3.1.0",
-    "classnames": "2.5.1",
     "clsx": "2.1.1",
     "copy-text-to-clipboard": "3.2.2",
     "docusaurus-lunr-search": "3.6.0",
     "docusaurus-plugin-contributors": "workspace:*",
     "docusaurus-plugin-downloads": "workspace:*",
-    "dompurify": "3.4.13",
     "lunr": "2.3.9",
-    "p-cancelable": "4.0.1",
     "react": "19.2.6",
     "react-chartjs-2": "5.3.1",
     "react-dom": "19.2.6",
     "react-iframe": "1.8.5",
-    "react-player": "3.4.0",
-    "react-twitter-widgets": "1.11.0",
-    "semver": "7.7.4",
-    "use-is-in-viewport": "1.0.9",
-    "usehooks-ts": "3.1.1"
+    "react-player": "3.4.0"
   },
   "browserslist": {
     "production": [
@@ -69,8 +51,7 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.10.1",
-    "@tsconfig/docusaurus": "2.0.9",
+    "@docusaurus/module-type-aliases": "3.10.2",
     "@types/express": "5.0.6",
     "@verdaccio/config": "9.0.0-next-9.32",
     "@verdaccio/core": "9.0.0-next-9.32",
@@ -82,7 +63,6 @@
     "raw-loader": "4.0.2",
     "sass": "1.99.0",
     "sass-loader": "16.0.7",
-    "typescript": "5.9.3",
-    "url-loader": "4.1.1"
+    "typescript": "5.9.3"
   }
 }

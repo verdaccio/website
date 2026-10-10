@@ -1,48 +1,26 @@
+import styles from './Contributors.module.scss';
+import Dialog from './ui/Dialog';
+import UiIcon from './ui/Icons';
+import ui from './ui/Ui.module.scss';
+
 import Translate from '@docusaurus/Translate';
-import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
-import MergeTypeIcon from '@mui/icons-material/MergeType';
-import StarIcon from '@mui/icons-material/Star';
-import Badge from '@mui/material/Badge';
-import Chip from '@mui/material/Chip';
-import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
-import DialogTitle from '@mui/material/DialogTitle';
-import Grid from '@mui/material/Grid';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import { ThemeProvider, createTheme, styled } from '@mui/material/styles';
-import Tooltip from '@mui/material/Tooltip';
-import Typography from '@mui/material/Typography';
 import Layout from '@theme/Layout';
+import clsx from 'clsx';
 import React from 'react';
 
+// People who always stay in the top list, even if their last contribution was years ago.
+const KEEP_ON_TOP = [
+  'sergiohgz',
+  'ayusharma',
+  'priscilawebdev',
+  'DanielRuf',
+  'mbtools',
+  'dianmorales',
+];
+// Anyone whose last contribution is older than this goes to the "past contributors" list.
+const INACTIVE_AFTER_YEARS = 2;
+
 const generateImage = (id) => `https://avatars3.githubusercontent.com/u/${id}?s=120&v=4`;
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#4B5E40',
-    },
-    secondary: {
-      main: '#808a79',
-    },
-  },
-});
-
-const StyledBadge = styled(Badge)({
-  '& .MuiBadge-badge': {
-    right: -3,
-    top: 8,
-    padding: '0 4px',
-  },
-});
-
-function ListItemLink(props) {
-  return <ListItemButton component="a" {...props} />;
-}
 
 type ContributorsProps = {
   data: any;
@@ -54,7 +32,8 @@ function convertItemTo(item) {
     userId: item.id,
     id: `key-${item.login}`,
     contributions: item.contributions,
-    repositories: item.repositories,
+    firstContributionAt: item.firstContributionAt,
+    lastContributionAt: item.lastContributionAt,
   };
 
   return { node };
@@ -62,164 +41,153 @@ function convertItemTo(item) {
 
 const Contributors: React.FC<ContributorsProps> = ({ data }): React.ReactElement => {
   const [user, setUser] = React.useState(null);
-  const [open, setOpen] = React.useState(false);
-  const { contributors, repositories } = data;
-
-  const handleClickOpen = (item) => {
-    setUser(item);
-    setOpen(true);
+  const { contributors, totals, generatedAt } = data;
+  const totalContributions =
+    totals?.contributions ?? contributors.reduce((sum, c) => sum + (c.contributions ?? 0), 0);
+  const isRecent = (item) => {
+    if (!item.lastContributionAt) return false;
+    const limit = new Date();
+    limit.setFullYear(limit.getFullYear() - INACTIVE_AFTER_YEARS);
+    return new Date(item.lastContributionAt) >= limit;
   };
 
-  const handleClose = () => {
-    setOpen(false);
-    setUser(null);
-  };
+  // The top list is whoever contributed recently plus the people kept on top; everyone else
+  // goes to "past contributors". Both lists keep the order of the data: total commits.
+  const { current, past } = React.useMemo(() => {
+    const onTop = (c) => KEEP_ON_TOP.includes(c.login) || isRecent(c);
+    return {
+      current: contributors.filter(onTop),
+      past: contributors.filter((c) => !onTop(c)),
+    };
+  }, [contributors]);
 
-  const handleKeyDown = (event, userItem) => {
-    if (event.keyCode === 13) {
-      handleClickOpen(userItem);
+  const period = (item) => {
+    if (!item.firstContributionAt) return null;
+    const first = new Date(item.firstContributionAt).getFullYear();
+    if (isRecent(item)) {
+      return { recent: true, first, last: null };
     }
+    const last = item.lastContributionAt ? new Date(item.lastContributionAt).getFullYear() : null;
+    return { recent: false, first, last };
+  };
+
+  const renderAvatar = (item, past = false) => {
+    const userItem = convertItemTo(item);
+    return (
+      <button
+        type="button"
+        className={clsx(styles.avatar, past && styles.avatarPast)}
+        title={userItem.node.url}
+        key={userItem.node.url}
+        onClick={() => setUser(userItem)}
+      >
+        <img src={generateImage(userItem.node.userId)} alt={userItem.node.url} loading="lazy" />
+      </button>
+    );
   };
 
   return (
-    <>
-      <Layout
-        title="Contributors"
-        description="Verdaccio Contributors, thanks to the community Verdaccio keeps running"
-      >
-        <ThemeProvider theme={theme}>
-          <div style={{ display: 'flex', width: '80%', flexFlow: 'wrap', margin: '1rem auto' }}>
-            <header>
-              <h1>
-                <Translate>Contributors </Translate>
-                <span>({contributors.length}) 🎉🎉🎉</span>
-              </h1>
-              <p>
-                <Translate>
-                  Thanks to everyone involved in maintaining and improving Verdaccio, this page is a
-                  way to thank you for all the effort you have put on it.
-                </Translate>
-                <b style={{ marginLeft: '0.5rem' }}>
-                  <Translate>Thanks</Translate>!!!
-                </b>
-              </p>
-            </header>
-          </div>
+    <Layout
+      title="Contributors"
+      description="Verdaccio Contributors, thanks to the community Verdaccio keeps running"
+    >
+      <main className={styles.page}>
+        <header className={styles.head}>
+          <h1>
+            <Translate>Contributors </Translate>
+            <span className={styles.count}>({contributors.length}) 🎉</span>
+          </h1>
+          <p className={styles.summary}>
+            <b>{new Intl.NumberFormat().format(totalContributions)}</b>{' '}
+            <Translate>contributions from</Translate> <b>{contributors.length}</b>{' '}
+            <Translate>contributors</Translate>
+            {generatedAt && (
+              <span className={styles.updated}>
+                {' · '}
+                <Translate>updated</Translate> {new Date(generatedAt).toLocaleDateString()}
+              </span>
+            )}
+          </p>
+          <p>
+            <Translate>
+              Thanks to everyone involved in maintaining and improving Verdaccio, this page is a way
+              to thank you for all the effort you have put on it.
+            </Translate>{' '}
+            <b>
+              <Translate>Thanks</Translate>!
+            </b>
+          </p>
+        </header>
 
-          <div style={{ display: 'flex', width: '80%', flexFlow: 'wrap', margin: '1rem auto' }}>
-            {contributors.map((item, index) => {
-              const userItem = convertItemTo(item);
-              return (
-                <div
-                  title={userItem.node.url}
-                  role="button"
-                  tabIndex={index}
-                  style={{ flex: 'auto', cursor: 'pointer', margin: '10px' }}
-                  key={userItem.node.url}
-                  onKeyDown={(event) => handleKeyDown(event, userItem)}
-                  onClick={() => handleClickOpen(userItem)}
-                >
-                  <img
-                    src={generateImage(userItem.node.userId)}
-                    alt={userItem.node.url}
-                    width="40px"
-                    style={{ borderRadius: '10px' }}
-                  />
-                </div>
-              );
-            })}
-          </div>
+        <div className={styles.grid}>{current.map((item) => renderAvatar(item))}</div>
+
+        {past.length > 0 && (
+          <section className={styles.past}>
+            <h2>
+              <Translate>Past contributors</Translate> ({past.length})
+            </h2>
+            <p>
+              <Translate>
+                They shaped Verdaccio and moved on. The project is here thanks to them.
+              </Translate>
+            </p>
+            <div className={styles.grid}>{past.map((item) => renderAvatar(item, true))}</div>
+          </section>
+        )}
+
+        <Dialog
+          open={!!user}
+          onClose={() => setUser(null)}
+          titleId="contributor-title"
+          title={
+            user && (
+              <div className={styles.who}>
+                <a href={'https://github.com/' + user.node.url} target="_blank" rel="noreferrer">
+                  <img src={generateImage(user.node.userId)} alt={user.node.url} />
+                </a>
+                <h2>{user.node.url}</h2>
+              </div>
+            )
+          }
+        >
           {user && (
-            <Dialog onClose={handleClose} aria-labelledby="simple-dialog-title" open={open}>
-              <DialogTitle id="simple-dialog-title">
-                <Grid container spacing={2}>
-                  <Grid size={{ lg: 3, md: 3, sm: 3 }}>
-                    <a
-                      href={'https://github.com/' + user.node.url}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <img
-                        src={generateImage(user.node.userId)}
-                        alt={user.node.url}
-                        width="40px"
-                        style={{ borderRadius: '10px' }}
-                      />
-                    </a>
-                  </Grid>
-                  <Grid size={{ lg: 6, md: 6, sm: 6 }}>
-                    <Typography variant="h6">{user.node.url}</Typography>
-                  </Grid>
-                  <Grid size={{ lg: 2, md: 2, sm: 2 }}>
-                    <Chip
-                      icon={<EmojiEventsIcon />}
-                      label={user.node.contributions}
-                      color="default"
-                    />
-                  </Grid>
-                </Grid>
-              </DialogTitle>
-
-              <DialogContent>
-                <List component="nav" aria-label="main mailbox folders">
-                  {user.node.repositories.map(({ name, contributions }) => {
-                    const repo = repositories.find((repo) => repo.name === name);
-                    if (!repo) {
-                      return null;
-                    }
-
-                    return (
-                      <ListItemLink
-                        key={repo.name}
-                        href={`${repo.html_url}/pulls?q=is%3Apr+author%3A${user.node.url}+is%3Aclosed`}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        <ListItemIcon>
-                          <Badge
-                            badgeContent={contributions}
-                            color="primary"
-                            max={9999}
-                            anchorOrigin={{
-                              vertical: 'top',
-                              horizontal: 'right',
-                            }}
-                          >
-                            <MergeTypeIcon />
-                          </Badge>
-                        </ListItemIcon>
-                        <Tooltip title={repo.archived ? 'archived' : ''}>
-                          <ListItemText
-                            primary={<Typography color="primary">{repo.name}</Typography>}
-                            secondary={
-                              <Typography color="secondary" variant="body2">
-                                {repo.description}
-                              </Typography>
-                            }
-                          />
-                        </Tooltip>
-                        <a
-                          href={'https://github.com/' + repo.full_name + '/stargazers'}
-                          target="_blank"
-                          rel="noreferrer"
-                          style={{ marginLeft: 'auto' }}
-                        >
-                          <IconButton edge="end" aria-label="stargazers">
-                            <StyledBadge badgeContent={repo.staergezers} max={999}>
-                              <StarIcon />
-                            </StyledBadge>
-                          </IconButton>
-                        </a>
-                      </ListItemLink>
-                    );
-                  })}
-                </List>
-              </DialogContent>
-            </Dialog>
+            <div className={styles.total}>
+              <span className={styles.totalNumber}>
+                {new Intl.NumberFormat().format(user.node.contributions)}
+              </span>
+              <span className={styles.totalLabel}>
+                <Translate>total contributions</Translate>
+              </span>
+              {period(user.node) && (
+                <span className={styles.totalLabel}>
+                  {period(user.node).recent ? (
+                    <>
+                      <Translate>Contributing since</Translate> {period(user.node).first}
+                    </>
+                  ) : (
+                    <>
+                      <Translate>Contributed</Translate> {period(user.node).first}
+                      {period(user.node).last && period(user.node).last !== period(user.node).first
+                        ? ` – ${period(user.node).last}`
+                        : ''}
+                    </>
+                  )}
+                </span>
+              )}
+              <a
+                className={ui.btn}
+                href={'https://github.com/' + user.node.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <UiIcon name="github" size={16} />
+                <Translate>View on GitHub</Translate>
+              </a>
+            </div>
           )}
-        </ThemeProvider>
-      </Layout>
-    </>
+        </Dialog>
+      </main>
+    </Layout>
   );
 };
 

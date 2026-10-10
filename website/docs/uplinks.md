@@ -4,9 +4,11 @@ title: 'Uplinks'
 description: 'Configure upstream registries: authentication, timeouts, retries, caching and failover between several uplinks.'
 ---
 
+import UplinksFlow from '@site/src/components/diagrams/UplinksFlow';
+
 An _uplink_ is a link with an external registry that provides access to external packages.
 
-![Uplinks](https://user-images.githubusercontent.com/558752/52976233-fb0e3980-33c8-11e9-8eea-5415e6018144.png)
+<UplinksFlow />
 
 ### Usage {#usage}
 

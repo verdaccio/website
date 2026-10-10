@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   schedule:
     # once per week on Friday
-    - cron: "0 3 * * 5"
+    - cron: '0 3 * * 5'
 
 permissions:
   contents: write
@@ -37,6 +37,8 @@ jobs:
         run: pnpm --filter @verdaccio/local-scripts run build
       - name: Fetch all download stats
         run: pnpm --filter @verdaccio/local-scripts run downloads:all
+      - name: Releases update
+        run: pnpm --filter @verdaccio/local-scripts run releases:update
       - name: Contributors update
         run: pnpm --filter @verdaccio/local-scripts run contributors:update
         env:

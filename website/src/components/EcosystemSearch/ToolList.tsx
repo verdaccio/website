@@ -1,10 +1,8 @@
 import AddonCard from './AddonCard';
+import styles from './Ecosystem.module.scss';
 import { Addon, Filters } from './types';
 
 import Translate from '@docusaurus/Translate';
-import Grid from '@mui/material/Grid';
-import { useTheme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
 import { Orama, ProvidedTypes, create, insertMultiple, search } from '@orama/orama';
 import * as React from 'react';
 import { useState } from 'react';
@@ -66,7 +64,6 @@ const filterByProperty = (addsOns: Addon[], filters: Filters): Addon[] => {
 };
 
 const ToolList: FC<Props> = ({ addons = [], filters }): React.ReactElement => {
-  const theme = useTheme();
   const [db, setDb] = useState<Orama<ProvidedTypes>>();
   const [filteredAddsOn, setFilteredAddsOn] = useState(addons);
   useEffect(() => {
@@ -117,22 +114,14 @@ const ToolList: FC<Props> = ({ addons = [], filters }): React.ReactElement => {
 
   return (
     <div>
-      <Typography
-        fontSize="lg"
-        fontWeight="lg"
-        sx={{ marginTop: theme.spacing(1), marginBottom: theme.spacing(1) }}
-      >
+      <div className={styles.total}>
         <Translate>Total results:</Translate> {filteredAddsOn.length}
-      </Typography>
-      <Grid container rowSpacing={3} columnSpacing={{ xs: 2, sm: 3, md: 3, xl: 3 }}>
-        {filteredAddsOn.map((item) => {
-          return (
-            <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3, xl: 3 }} key={item.name}>
-              <AddonCard {...item} />
-            </Grid>
-          );
-        })}
-      </Grid>
+      </div>
+      <div className={styles.grid}>
+        {filteredAddsOn.map((item) => (
+          <AddonCard key={item.name} {...item} />
+        ))}
+      </div>
     </div>
   );
 };

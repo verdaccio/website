@@ -34,6 +34,8 @@ export default function contributorsPlugin(
         return {
           contributors: content.contributors,
           repositories: content.repositories,
+          totals: content.totals,
+          generatedAt: content.generatedAt,
         };
       } catch (error) {
         console.log('error', error);

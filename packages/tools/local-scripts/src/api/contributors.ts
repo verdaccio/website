@@ -1,7 +1,8 @@
 /* eslint-disable new-cap */
 
 /* eslint-disable no-console */
-import contributors from '@dianmora/contributors';
+import { collectContributors } from '@verdaccio/contributors';
+
 import { Command } from 'clipanion';
 import fs from 'fs/promises';
 import path from 'path';
@@ -18,9 +19,16 @@ export class ContributorsUpdateCommand extends Command {
 
   async execute() {
     const token = process.env.TOKEN;
+    if (!token) {
+      console.warn('[contributors] TOKEN is not set, GitHub allows only a few requests per hour');
+    }
 
     const excludedAccounts = [
       'verdacciobot',
+      'verdacciopack',
+      // second account of a maintainer who is already counted as juanpicado
+      'jotadeveloper',
+      'fossabot',
       'github-actions[bot]',
       'dependabot-preview[bot]',
       'dependabot[bot]',
@@ -34,12 +42,13 @@ export class ContributorsUpdateCommand extends Command {
     ];
 
     try {
-      const result = await contributors({
-        token: token as string,
+      const result = await collectContributors({
+        token,
         organization: 'verdaccio',
         excludedAccounts,
         allowFork: false,
         allowPrivateRepo: false,
+        log: (message) => console.log(`[contributors] ${message}`),
       });
 
       // __dirname at runtime is build/api/, go up to packages/tools/

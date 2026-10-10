@@ -1,7 +1,7 @@
 ---
 id: plugin-theme
 title: 'Theme Plugin'
-description: 'Write a theme plugin: how Verdaccio loads it, what it must export, and the asset manifest contract.'
+description: 'Write a theme plugin: how Verdaccio loads it, what it must export, the asset manifest contract and the web endpoints a theme can call.'
 ---
 
 ## What's a theme plugin? {#whats-a-theme-plugin}
@@ -206,6 +206,199 @@ Verdaccio does not document.
 Its [`index.js`](https://github.com/verdaccio/verdaccio/blob/master/packages/plugins/ui-theme/index.js)
 is worth reading next to it: rather than hardcoding a file list, it derives `manifestFiles`
 from the manifest keys, so a hash change never needs a code change.
+
+## Web endpoints {#web-endpoints}
+
+A theme runs in the browser, so everything it shows comes from a small set of **web endpoints**
+that exist for the user interface. They are separate from the npm registry API that package
+managers use, they are what the default theme calls, and they are the contract a custom theme can
+build on.
+
+:::note
+The routes below are the same on the 6.x line and on later ones. The request and response details
+were checked against the current code, and the few differences between lines are marked.
+:::
+
+Build every URL from `base` in [`__VERDACCIO_BASENAME_UI_OPTIONS`](#the-__verdaccio_basename_ui_options-object)
+instead of hardcoding `/`: it already includes the domain and the `url_prefix` when Verdaccio runs
+behind a reverse proxy, and it ends with a `/`.
+
+### What Verdaccio serves for your theme {#web-routes}
+
+| Path                      | What it returns                                                                                    |
+| ------------------------- | -------------------------------------------------------------------------------------------------- |
+| `/` and `/-/web/*`        | The HTML page that loads your theme. Every client-side route of your app can live under `/-/web/`. |
+| `/-/static/*`             | The files in your plugin's `staticPath`.                                                           |
+| `/-/static/ui-options.js` | A script that defines `window.__VERDACCIO_BASENAME_UI_OPTIONS`. It is never cached.                |
+| `/-/assets/*`             | The files in `web.assetFolder`, only when that option is set (7.x and later).                      |
+| `/-/verdaccio/data/*`     | The [data endpoints](#web-data): packages, search, package details and README.                     |
+| `/-/verdaccio/sec/*`      | The [security endpoints](#web-sec): login, sign up and change password.                            |
+
+### Authentication {#web-auth}
+
+- Requests are **anonymous** unless they carry a token. After a successful login, send
+  `Authorization: Bearer <token>` with every request, using the `token` the login endpoint returned.
+- The same access rules as the registry apply, so a user only sees the packages the `access` rules
+  allow, see [package access](/docs/packages#groups). Packages that are not allowed are left out
+  of the lists, and a direct request for one answers `403`.
+- With `web.login: false` the security endpoints are not available and the package pages are
+  evaluated as an anonymous user.
+
+### Data endpoints {#web-data}
+
+All of them are `GET` and answer JSON, except the README.
+
+| Endpoint                                    | Purpose                                  |
+| ------------------------------------------- | ---------------------------------------- |
+| `/-/verdaccio/data/packages`                | The packages the user can see.           |
+| `/-/verdaccio/data/search/:text`            | Search the packages, 20 results at most. |
+| `/-/verdaccio/data/sidebar/:package`        | The details of one package.              |
+| `/-/verdaccio/data/package/readme/:package` | The README of one package, as text.      |
+
+Scoped packages keep the `@` in the path, for example `/-/verdaccio/data/sidebar/@verdaccio/ui`.
+`sidebar` and `readme` accept `?v=` with a **version or a dist-tag**; anything else answers `404`.
+
+These endpoints are rate limited, by default to 5000 requests every 2 minutes per client. Change
+it with `web.rateLimit` (`windowMs` and `max`), see the [web configuration](/docs/webui).
+
+#### `GET /-/verdaccio/data/packages` {#web-packages}
+
+An array with one entry per package: the fields of its latest version (always `name` and `version`,
+plus whatever its `package.json` provides, such as `description` and `author`). The `author` is
+normalised to `{ name, email, avatar }`, and `dist.tarball` points to this registry. The list is
+sorted by name, in the direction set by `web.sort_packages`.
+
+```json
+[
+  {
+    "name": "@verdaccio/ui",
+    "version": "2.4.0",
+    "description": "Shared React components",
+    "author": { "name": "Jane Doe", "email": "jane@verdaccio.dev", "avatar": "https://…" },
+    "dist": { "tarball": "https://registry.example.com/@verdaccio/ui/-/ui-2.4.0.tgz" }
+  }
+]
+```
+
+#### `GET /-/verdaccio/data/search/:text` {#web-search}
+
+An array of search results, shaped like the entries of the npm search endpoint: each one has a
+`package` object with at least `name`, `version` and `description`. It returns at most 20 results
+and only the packages the user is allowed to see.
+
+#### `GET /-/verdaccio/data/sidebar/:package` {#web-sidebar}
+
+The manifest of the package, without `readme`, `_attachments`, `_rev` and `name` (the name is the
+one in the URL), plus a `latest` object with the version that was asked for. `latest` is the
+version or dist-tag in `?v=`, or else `dist-tags.latest`, or else the highest version. `author` is
+normalised as above and every `dist.tarball` points to this registry.
+
+```json
+{
+  "latest": {
+    "version": "2.4.0",
+    "description": "Shared React components",
+    "license": "MIT",
+    "author": { "name": "Jane Doe", "email": "jane@verdaccio.dev", "avatar": "https://…" },
+    "dependencies": { "react": "^19.0.0" },
+    "dist": { "tarball": "https://registry.example.com/@verdaccio/ui/-/ui-2.4.0.tgz" }
+  },
+  "dist-tags": { "latest": "2.4.0", "next": "3.0.0-beta.1" },
+  "versions": { "2.4.0": {}, "2.3.1": {} },
+  "time": { "2.4.0": "2026-09-01T10:00:00.000Z" }
+}
+```
+
+`versions` holds the full manifest of every version, and `_uplinks` is present when the package
+comes from an uplink. Treat any field that comes from `package.json` as optional.
+
+#### `GET /-/verdaccio/data/package/readme/:package` {#web-readme}
+
+The README as **Markdown**, with `Content-Type: text/plain; charset=utf-8`, not JSON. Verdaccio
+looks for it in the requested version, then in the latest version, then in the package itself.
+When there is none the answer is still `200` with the text `ERROR: No README data found!`.
+
+### Security endpoints {#web-sec}
+
+They exist only when the web login is enabled (`web.login` is not `false`).
+
+| Endpoint                              | Available when                               | Purpose                   |
+| ------------------------------------- | -------------------------------------------- | ------------------------- |
+| `POST /-/verdaccio/sec/login`         | always                                       | Log in and get a token.   |
+| `PUT /-/verdaccio/sec/signup`         | the [`createUser`][create-user] flag         | Create a user.            |
+| `PUT /-/verdaccio/sec/reset_password` | the [`changePassword`][change-password] flag | Change your own password. |
+
+[create-user]: /docs/user-registration
+[change-password]: /docs/change-password
+
+#### `POST /-/verdaccio/sec/login` {#web-login}
+
+Send the credentials as JSON, as the default theme does, or as a form.
+
+```json
+{ "username": "jane", "password": "secret" }
+```
+
+A successful login answers `200` with the token to send as a bearer token from then on. The
+response is never cached.
+
+```json
+{ "username": "jane", "token": "<web token>" }
+```
+
+Wrong credentials answer `401` with `WWW-Authenticate: Bearer`, which keeps the browser from
+opening its own basic authentication dialog, so your theme can show the error itself. The
+endpoint has its own rate limit, `userRateLimit`.
+
+#### `PUT /-/verdaccio/sec/signup` {#web-signup}
+
+Body `{ "name", "password", "email", "sessionId" }`, where `sessionId` is a 36 character string
+your theme generates. It answers `{ "username", "token" }` like the login. A missing field or an
+invalid `sessionId` is a `400`. The same call is used by the
+[web login](/docs/web-login) flow, where a `202` with `Retry-After: 5` means the user has not
+finished yet and the call should be repeated.
+
+#### `PUT /-/verdaccio/sec/reset_password` {#web-reset-password}
+
+Needs a token. The body is `{ "password": { "old": "…", "new": "…" } }` and the answer is
+`{ "ok": true }`. Without a token it answers `401`, and a new password that does not match
+`server.passwordValidationRegex` is a `400`.
+
+### Errors {#web-errors}
+
+| Status | When                                                                                         |
+| ------ | -------------------------------------------------------------------------------------------- |
+| `401`  | Wrong credentials on login, or no token on an endpoint that needs one.                       |
+| `403`  | The user is not allowed to access that package.                                              |
+| `404`  | The package name is not valid, the package does not exist, or `?v=` is not a version or tag. |
+| `429`  | The rate limit was exceeded.                                                                 |
+
+### A minimal client {#web-example}
+
+```ts
+const { base } = window.__VERDACCIO_BASENAME_UI_OPTIONS;
+const api = (path: string, token?: string) =>
+  fetch(`${base}-/verdaccio/${path}`, {
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+  });
+
+// log in, then ask for what the user can see
+const login = await fetch(`${base}-/verdaccio/sec/login`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ username: 'jane', password: 'secret' }),
+});
+const { token } = await login.json();
+
+const packages = await (await api('data/packages', token)).json();
+const detail = await (await api('data/sidebar/@verdaccio/ui?v=next', token)).json();
+const readme = await (await api('data/package/readme/@verdaccio/ui', token)).text();
+```
+
+The default theme also uses two registry endpoints that are not part of the web API: the npm login
+flow at `/-/v1/login_cli`, and `/-/npm/v1/user` to change the password.
+You do not need to write these calls yourself: [`@verdaccio/ui-components`](ui-components.md)
+already implements them as hooks and providers.
 
 ## Components UI {#components}
 
