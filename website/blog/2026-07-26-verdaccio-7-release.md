@@ -12,24 +12,6 @@ For most users, Verdaccio 7 should feel like Verdaccio: a lightweight private np
 
 <!--truncate-->
 
-## Try Verdaccio 7
-
-Verdaccio 7 has an explicit rollout. It is published under the `7` tag first, and npm `latest` moves a few days later, once the release has had time to settle. Docker follows the same rule: images are published with explicit version tags such as `7` or an exact version, and there is no Docker `latest` for this line during the initial rollout. Helm users should pin the image tag explicitly.
-
-Install it with your package manager of choice:
-
-```bash npm2yarn
-npm install -g verdaccio@7
-```
-
-Or run it with Docker:
-
-```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:7
-```
-
-Use a copy of your storage and configuration when testing a major release. Verdaccio 7 requires Node.js 24 or higher. Please report any issues at [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio/issues).
-
 ## Highlights for users
 
 ### Package filtering is built in
@@ -190,6 +172,24 @@ Some plugins were relocated from the monorepo into their own repositories:
 - `verdaccio-active-directory`
 - `verdaccio-aws-s3-storage`, now at [verdaccio/verdaccio-aws-s3-storage](https://github.com/verdaccio/verdaccio-aws-s3-storage)
 - `verdaccio-google-cloud`, now at [verdaccio/verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)
+
+## Try Verdaccio 7
+
+Verdaccio 7 has an explicit rollout. It is published under the `7` tag first, and npm `latest` moves a few days later, once the release has had time to settle. Docker follows the same rule: images are published with explicit version tags such as `7` or an exact version, and there is no Docker `latest` for this line during the initial rollout. Helm users should pin the image tag explicitly.
+
+Install it with your package manager of choice:
+
+```bash npm2yarn
+npm install -g verdaccio@7
+```
+
+Or run it with Docker:
+
+```bash
+docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:7
+```
+
+Use a copy of your storage and configuration when testing a major release. Verdaccio 7 requires Node.js 24 or higher. Please report any issues at [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio/issues).
 
 ## Thanks
 
