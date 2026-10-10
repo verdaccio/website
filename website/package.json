@@ -62,7 +62,7 @@
     "prism-react-renderer": "2.4.1",
     "raw-loader": "4.0.2",
     "sass": "1.99.0",
-    "sass-loader": "16.0.7",
+    "sass-loader": "17.0.0",
     "typescript": "5.9.3"
   }
 }
