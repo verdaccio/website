@@ -2,6 +2,7 @@ import { releases } from '@verdaccio/local-scripts';
 
 import styles from './Home.module.scss';
 
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import React from 'react';
 
@@ -16,6 +17,9 @@ const formatDate = (iso: string | null): string | null =>
       })
     : null;
 
+// the release post the card points to; switch it when the next major becomes `latest`
+const RELEASE_POST = '/blog/2026/07/26/verdaccio-7-release';
+
 const majorOf = (version: string): string => `${version.split('.')[0]}.x`;
 
 // The latest stable release, from npm. The data is refreshed by the weekly `static data` workflow.
@@ -27,13 +31,7 @@ const LatestRelease = ({ className }: { className?: string }): React.ReactElemen
   const date = formatDate(stable.publishedAt);
 
   return (
-    <a
-      className={clsx(styles.latest, className)}
-      href={stable.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      title="Release notes on GitHub"
-    >
+    <Link className={clsx(styles.latest, className)} to={RELEASE_POST}>
       <span className={styles.latestTag}>
         <span className={styles.latestDot} aria-hidden="true" />
         Latest release
@@ -43,8 +41,8 @@ const LatestRelease = ({ className }: { className?: string }): React.ReactElemen
         <strong>v{stable.version}</strong>
       </span>
       {date && <span className={styles.latestDate}>{date}</span>}
-      <span className={styles.latestCta}>Release notes →</span>
-    </a>
+      <span className={styles.latestCta}>What&apos;s new in Verdaccio 7 →</span>
+    </Link>
   );
 };
 

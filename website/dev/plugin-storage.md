@@ -28,6 +28,10 @@ going through the adapter, and the adapter is a compatibility shim that will not
 forever. A callback plugin written for 6.x keeps working on 7.x, but it is the slower path
 and it will be the first thing to break.
 
+Moving a callback plugin to promises is mostly mechanical, method by method: see
+[migrate a storage plugin from callbacks to promises](plugin-storage-async.md). Only storage
+plugins changed this way; every other plugin type was always promise-based.
+
 <Tabs groupId="storage-contract">
 <TabItem value="promise" label="Promises (7.x)" default>
 
