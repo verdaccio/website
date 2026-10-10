@@ -1,0 +1,375 @@
+// Package filter explainer: three versions leave the uplink, the filter hides one, and the
+// client only sees the others. Timing lives in the keyframes, geometry in --ax/--fx/--bx (TSX).
+.fRoot {
+  --g-bg: #ffffff;
+  --g-card: #f7f7f6;
+  --g-border: #e4e4e1;
+  --g-ink: #17181a;
+  --g-muted: #5c5f62;
+
+  border: 1px solid var(--g-border);
+  background: var(--g-card);
+  border-radius: 16px;
+  padding: 20px 16px 8px;
+  margin: 24px 0 32px;
+}
+
+:global(html[data-theme='dark']) .fRoot {
+  --g-bg: #0e1411;
+  --g-card: #19221d;
+  --g-border: #26322b;
+  --g-ink: #f1f3ef;
+  --g-muted: #a4aca5;
+}
+
+.fSvg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: var(--ifm-font-family-base);
+}
+
+// scoped under .fRoot so a CSS minifier merging equal rules cannot reorder the cascade
+.fRoot .fDesktop {
+  display: block;
+}
+
+.fRoot .fMobile {
+  display: none;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .fRoot .fDesktop {
+    display: none;
+  }
+
+  .fRoot .fMobile {
+    display: block;
+  }
+}
+
+.fRail {
+  stroke: var(--g-border);
+  stroke-width: 2;
+  stroke-dasharray: 4 6;
+}
+
+.fNode {
+  fill: var(--g-bg);
+  stroke: var(--g-border);
+}
+
+.fTitle {
+  font-size: 17px;
+  font-weight: 700;
+  fill: var(--g-ink);
+  letter-spacing: -0.01em;
+}
+
+.fMono {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 12px;
+  fill: var(--g-muted);
+}
+
+.fCore {
+  fill: var(--brand-fixed);
+}
+
+.fCoreTitle {
+  font-size: 19px;
+  font-weight: 800;
+  fill: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.fCoreMono {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 12px;
+  fill: #ffffff;
+  opacity: 0.8;
+}
+
+.fRuleBox {
+  fill: #ffffff;
+}
+
+.fRuleText {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 12px;
+  fill: #17181a;
+  white-space: pre;
+}
+
+.fChip {
+  fill: #ffffff;
+  stroke: var(--brand-fixed);
+  stroke-width: 1.5;
+}
+
+.fChipBad {
+  fill: var(--accent);
+}
+
+.fChipText {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 12px;
+  font-weight: 500;
+  fill: var(--brand-fixed);
+}
+
+.fChipBadText {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 12px;
+  font-weight: 500;
+  fill: #ffffff;
+}
+
+.fPillBad {
+  fill: var(--accent);
+}
+
+.fPillText {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  fill: #ffffff;
+}
+
+.fCaption {
+  font-size: 15px;
+  font-weight: 600;
+  fill: var(--g-ink);
+  opacity: 0;
+}
+
+$loop: 9s;
+
+.fPkt,
+.fRule,
+.fBlockedPill,
+.fBeforeFilter,
+.fAfterFilter,
+.fCaption {
+  animation-duration: $loop;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.fPkt {
+  transform: translate(var(--ax), var(--ay));
+  opacity: 0;
+}
+
+.fPktPass {
+  animation-name: pass;
+}
+
+.fPktBlocked {
+  animation-name: blocked;
+}
+
+@keyframes pass {
+  0%,
+  6% {
+    transform: translate(var(--ax), var(--ay));
+    opacity: 0;
+  }
+  12% {
+    transform: translate(var(--ax), var(--ay));
+    opacity: 1;
+  }
+  36%,
+  46% {
+    transform: translate(var(--fx), var(--fy));
+    opacity: 1;
+  }
+  70%,
+  92% {
+    transform: translate(var(--bx), var(--by));
+    opacity: 1;
+  }
+  97%,
+  100% {
+    transform: translate(var(--bx), var(--by));
+    opacity: 0;
+  }
+}
+
+@keyframes blocked {
+  0%,
+  6% {
+    transform: translate(var(--ax), var(--ay));
+    opacity: 0;
+  }
+  12% {
+    transform: translate(var(--ax), var(--ay));
+    opacity: 1;
+  }
+  36%,
+  60% {
+    transform: translate(var(--fx), var(--fy));
+    opacity: 1;
+  }
+  72%,
+  100% {
+    transform: translate(var(--fx), var(--fy));
+    opacity: 0;
+  }
+}
+
+.fBeforeFilter {
+  animation-name: beforeFilter;
+}
+
+.fAfterFilter {
+  animation-name: afterFilter;
+  opacity: 0;
+}
+
+@keyframes beforeFilter {
+  0%,
+  46% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes afterFilter {
+  0%,
+  46% {
+    opacity: 0;
+  }
+  50%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.fBlockedPill {
+  opacity: 0;
+  animation-name: blockedPill;
+}
+
+@keyframes blockedPill {
+  0%,
+  48% {
+    opacity: 0;
+  }
+  54%,
+  68% {
+    opacity: 1;
+  }
+  74%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.fRule {
+  animation-name: rule;
+}
+
+@keyframes rule {
+  0%,
+  30% {
+    opacity: 0.35;
+  }
+  38%,
+  58% {
+    opacity: 1;
+  }
+  66%,
+  100% {
+    opacity: 0.35;
+  }
+}
+
+.fCapA {
+  animation-name: capA;
+}
+
+.fCapB {
+  animation-name: capB;
+}
+
+.fCapC {
+  animation-name: capC;
+}
+
+@keyframes capA {
+  0%,
+  4% {
+    opacity: 0;
+  }
+  8%,
+  30% {
+    opacity: 1;
+  }
+  34%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes capB {
+  0%,
+  34% {
+    opacity: 0;
+  }
+  38%,
+  60% {
+    opacity: 1;
+  }
+  64%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes capC {
+  0%,
+  60% {
+    opacity: 0;
+  }
+  64%,
+  92% {
+    opacity: 1;
+  }
+  96%,
+  100% {
+    opacity: 0;
+  }
+}
+
+// without motion, show the end state: the two visible versions at the client
+@media (prefers-reduced-motion: reduce) {
+  .fPkt,
+  .fRule,
+  .fBlockedPill,
+  .fBeforeFilter,
+  .fAfterFilter,
+  .fCaption {
+    animation: none;
+  }
+
+  .fPktPass {
+    transform: translate(var(--bx), var(--by));
+    opacity: 1;
+  }
+
+  .fPktBlocked,
+  .fBlockedPill {
+    opacity: 0;
+  }
+
+  .fCapC {
+    opacity: 1;
+  }
+}
