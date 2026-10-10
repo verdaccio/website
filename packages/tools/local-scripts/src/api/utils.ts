@@ -497,3 +497,51 @@ export async function fetchAllDownloads() {
   // eslint-disable-next-line no-console
   console.info('[downloads] All done.');
 }
+
+export interface ReleaseEntry {
+  tag: string;
+  channel: 'stable' | 'next' | 'experimental';
+  version: string;
+  publishedAt: string | null;
+  url: string;
+}
+
+// npm tag -> release channel. The stable line is published as `latest`, the next major as
+// `next-7` and the experimental line as `next-9`.
+const RELEASE_TAGS: { tag: string; channel: ReleaseEntry['channel'] }[] = [
+  { tag: 'latest', channel: 'stable' },
+  { tag: 'next-7', channel: 'next' },
+  { tag: 'next-9', channel: 'experimental' },
+];
+
+export async function fetchReleases() {
+  const releasesFile = path.join(__dirname, '../../src/releases.json');
+  const doc = await fetchWithRetry<{
+    'dist-tags': Record<string, string>;
+    time: Record<string, string>;
+  }>('https://registry.npmjs.org/verdaccio');
+
+  const releases: ReleaseEntry[] = [];
+  for (const { tag, channel } of RELEASE_TAGS) {
+    const version = doc['dist-tags'][tag];
+    if (!version) {
+      // eslint-disable-next-line no-console
+      console.warn(`  [releases] no version under the npm tag "${tag}", skipped`);
+      continue;
+    }
+    // GitHub publishes release notes for the stable and next lines; the experimental one is
+    // only on npm
+    const url =
+      channel === 'experimental'
+        ? `https://www.npmjs.com/package/verdaccio/v/${version}`
+        : `https://github.com/verdaccio/verdaccio/releases/tag/v${version}`;
+    releases.push({ tag, channel, version, publishedAt: doc.time[version] ?? null, url });
+    // eslint-disable-next-line no-console
+    console.info(`  [releases] ${tag}: ${version} (${doc.time[version] ?? 'no date'})`);
+  }
+
+  await fs.writeFile(
+    releasesFile,
+    JSON.stringify({ generatedAt: new Date().toISOString(), releases }, null, 2)
+  );
+}

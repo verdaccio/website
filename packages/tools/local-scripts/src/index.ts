@@ -4,10 +4,12 @@ import ecosystemDownloads from './ecosystem_downloads.json';
 import ecosystemVersionDownloads from './ecosystem_version_downloads.json';
 import monthlyDownloads from './monthly_downloads.json';
 import npmjsDownloads from './npmjs_downloads.json';
+import releases from './releases.json';
 import yearlyDownloads from './yearly_downloads.json';
 
 export {
   npmjsDownloads,
+  releases,
   dockerPulls,
   dockerPullsTotal,
   yearlyDownloads,

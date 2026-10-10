@@ -18,6 +18,7 @@
     "downloads:monthly": "node build/run.js fetch-monthly-data",
     "downloads:yearly": "node build/run.js fetch-yearly-data",
     "contributors:update": "node build/run.js contributors-update",
+    "releases:update": "node build/run.js releases-update",
     "pull:docker": "node build/run.js docker-pull-api-download",
     "downloads:ecosystem": "node build/run.js fetch-ecosystem-downloads",
     "downloads:ecosystem-versions": "node build/run.js fetch-ecosystem-version-downloads",

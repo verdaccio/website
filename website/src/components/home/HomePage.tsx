@@ -3,6 +3,7 @@ import CodeCard from './CodeCard';
 import CommandTabs from './CommandTabs';
 import GitHubStars from './GitHubStars';
 import styles from './Home.module.scss';
+import LatestRelease from './LatestRelease';
 import Plugins from './Plugins';
 import WebUi from './WebUi';
 
@@ -176,6 +177,7 @@ const HomePage = (): React.ReactElement => (
             </a>
             <GitHubStars />
           </div>
+          <LatestRelease className={styles.latestInline} />
         </div>
 
         <div className={styles.flow} aria-label="How a request flows">
@@ -215,6 +217,7 @@ const HomePage = (): React.ReactElement => (
             <strong>Uplinks</strong>
             <span className={styles.mono}>registry.npmjs.org + any registry</span>
           </div>
+          <LatestRelease className={styles.latestSide} />
         </div>
       </div>
     </section>
@@ -624,6 +627,30 @@ server.close(); // and when to stop`,
             </Link>
           </div>
         </div>
+        <div className={styles.devExamples}>
+          <span className={styles.icon}>
+            <Svg d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+          </span>
+          <div>
+            <strong>
+              <Translate>Looking for a setup that already works?</Translate>
+            </strong>
+            <p>
+              <Translate>
+                The Verdaccio repository has runnable examples, including a local storage volume,
+                nginx and Apache reverse proxies, S3 storage and GitHub OAuth.
+              </Translate>
+            </p>
+          </div>
+          <a
+            href="https://github.com/verdaccio/verdaccio/tree/master/docker-examples"
+            className={styles.link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Browse docker-examples →
+          </a>
+        </div>
       </div>
     </section>
 
@@ -637,8 +664,8 @@ server.close(); // and when to stop`,
           </h2>
           <p className={styles.lead} style={{ marginBottom: 24 }}>
             <Translate>
-              Our sponsors provide the tools, services and infrastructure that keep Verdaccio
-              running, and contributors give their time. Want to be part of it?
+              Our sponsors provide the tools and free services that keep Verdaccio running, and
+              contributors give their time. Want to be part of it?
             </Translate>
           </p>
           <a href="https://opencollective.com/verdaccio" className={styles.btn}>
