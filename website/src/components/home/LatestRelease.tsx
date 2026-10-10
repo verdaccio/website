@@ -17,6 +17,9 @@ const formatDate = (iso: string | null): string | null =>
       })
     : null;
 
+// the release post the card points to; switch it when the next major becomes `latest`
+const RELEASE_POST = '/blog/2026/07/26/verdaccio-7-release';
+
 const majorOf = (version: string): string => `${version.split('.')[0]}.x`;
 
 // The latest stable release, from npm. The data is refreshed by the weekly `static data` workflow.
@@ -26,36 +29,20 @@ const LatestRelease = ({ className }: { className?: string }): React.ReactElemen
     return null;
   }
   const date = formatDate(stable.publishedAt);
-  const preview = releases.releases.find((r) => r.channel === 'next');
 
   return (
-    <>
-      <a
-        className={clsx(styles.latest, className)}
-        href={stable.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Release notes on GitHub"
-      >
-        <span className={styles.latestTag}>
-          <span className={styles.latestDot} aria-hidden="true" />
-          Latest release
-        </span>
-        <span className={styles.latestVersion}>
-          <span className={styles.latestMajor}>{majorOf(stable.version)}</span>
-          <strong>v{stable.version}</strong>
-        </span>
-        {date && <span className={styles.latestDate}>{date}</span>}
-        <span className={styles.latestCta}>Release notes →</span>
-      </a>
-      {preview && (
-        <Link className={styles.latestPreview} to="/blog/2026/07/26/verdaccio-7-release">
-          <span>Verdaccio {majorOf(preview.version)} preview</span>
-          <code>v{preview.version}</code>
-          <span className={styles.latestCta}>What&apos;s new →</span>
-        </Link>
-      )}
-    </>
+    <Link className={clsx(styles.latest, className)} to={RELEASE_POST}>
+      <span className={styles.latestTag}>
+        <span className={styles.latestDot} aria-hidden="true" />
+        Latest release
+      </span>
+      <span className={styles.latestVersion}>
+        <span className={styles.latestMajor}>{majorOf(stable.version)}</span>
+        <strong>v{stable.version}</strong>
+      </span>
+      {date && <span className={styles.latestDate}>{date}</span>}
+      <span className={styles.latestCta}>What&apos;s new in Verdaccio 7 →</span>
+    </Link>
   );
 };
 
