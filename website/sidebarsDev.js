@@ -14,7 +14,12 @@ module.exports = {
         'plugin-verifier',
         'plugin-auth',
         'plugin-middleware',
-        'plugin-storage',
+        {
+          type: 'category',
+          label: 'Storage Plugin',
+          link: { type: 'doc', id: 'plugin-storage' },
+          items: ['plugin-storage-async'],
+        },
         {
           type: 'category',
           label: 'Theme',
