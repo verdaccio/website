@@ -2,6 +2,7 @@ import { releases } from '@verdaccio/local-scripts';
 
 import styles from './Home.module.scss';
 
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import React from 'react';
 
@@ -25,26 +26,36 @@ const LatestRelease = ({ className }: { className?: string }): React.ReactElemen
     return null;
   }
   const date = formatDate(stable.publishedAt);
+  const preview = releases.releases.find((r) => r.channel === 'next');
 
   return (
-    <a
-      className={clsx(styles.latest, className)}
-      href={stable.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      title="Release notes on GitHub"
-    >
-      <span className={styles.latestTag}>
-        <span className={styles.latestDot} aria-hidden="true" />
-        Latest release
-      </span>
-      <span className={styles.latestVersion}>
-        <span className={styles.latestMajor}>{majorOf(stable.version)}</span>
-        <strong>v{stable.version}</strong>
-      </span>
-      {date && <span className={styles.latestDate}>{date}</span>}
-      <span className={styles.latestCta}>Release notes →</span>
-    </a>
+    <>
+      <a
+        className={clsx(styles.latest, className)}
+        href={stable.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Release notes on GitHub"
+      >
+        <span className={styles.latestTag}>
+          <span className={styles.latestDot} aria-hidden="true" />
+          Latest release
+        </span>
+        <span className={styles.latestVersion}>
+          <span className={styles.latestMajor}>{majorOf(stable.version)}</span>
+          <strong>v{stable.version}</strong>
+        </span>
+        {date && <span className={styles.latestDate}>{date}</span>}
+        <span className={styles.latestCta}>Release notes →</span>
+      </a>
+      {preview && (
+        <Link className={styles.latestPreview} to="/blog/2026/07/26/verdaccio-7-release">
+          <span>Verdaccio {majorOf(preview.version)} preview</span>
+          <code>v{preview.version}</code>
+          <span className={styles.latestCta}>What&apos;s new →</span>
+        </Link>
+      )}
+    </>
   );
 };
 
