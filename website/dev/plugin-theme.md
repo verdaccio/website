@@ -255,7 +255,7 @@ All of them are `GET` and answer JSON, except the README.
 | `/-/verdaccio/data/sidebar/:package`        | The details of one package.              |
 | `/-/verdaccio/data/package/readme/:package` | The README of one package, as text.      |
 
-Scoped packages keep the `@` in the path, for example `/-/verdaccio/data/sidebar/@acme/ui`.
+Scoped packages keep the `@` in the path, for example `/-/verdaccio/data/sidebar/@verdaccio/ui`.
 `sidebar` and `readme` accept `?v=` with a **version or a dist-tag**; anything else answers `404`.
 
 These endpoints are rate limited, by default to 5000 requests every 2 minutes per client. Change
@@ -271,11 +271,11 @@ sorted by name, in the direction set by `web.sort_packages`.
 ```json
 [
   {
-    "name": "@acme/ui",
+    "name": "@verdaccio/ui",
     "version": "2.4.0",
     "description": "Shared React components",
-    "author": { "name": "Jane Doe", "email": "jane@acme.dev", "avatar": "https://…" },
-    "dist": { "tarball": "https://registry.acme.dev/@acme/ui/-/ui-2.4.0.tgz" }
+    "author": { "name": "Jane Doe", "email": "jane@verdaccio.dev", "avatar": "https://…" },
+    "dist": { "tarball": "https://registry.example.com/@verdaccio/ui/-/ui-2.4.0.tgz" }
   }
 ]
 ```
@@ -299,9 +299,9 @@ normalised as above and every `dist.tarball` points to this registry.
     "version": "2.4.0",
     "description": "Shared React components",
     "license": "MIT",
-    "author": { "name": "Jane Doe", "email": "jane@acme.dev", "avatar": "https://…" },
+    "author": { "name": "Jane Doe", "email": "jane@verdaccio.dev", "avatar": "https://…" },
     "dependencies": { "react": "^19.0.0" },
-    "dist": { "tarball": "https://registry.acme.dev/@acme/ui/-/ui-2.4.0.tgz" }
+    "dist": { "tarball": "https://registry.example.com/@verdaccio/ui/-/ui-2.4.0.tgz" }
   },
   "dist-tags": { "latest": "2.4.0", "next": "3.0.0-beta.1" },
   "versions": { "2.4.0": {}, "2.3.1": {} },
@@ -391,8 +391,8 @@ const login = await fetch(`${base}-/verdaccio/sec/login`, {
 const { token } = await login.json();
 
 const packages = await (await api('data/packages', token)).json();
-const detail = await (await api('data/sidebar/@acme/ui?v=next', token)).json();
-const readme = await (await api('data/package/readme/@acme/ui', token)).text();
+const detail = await (await api('data/sidebar/@verdaccio/ui?v=next', token)).json();
+const readme = await (await api('data/package/readme/@verdaccio/ui', token)).text();
 ```
 
 The default theme also uses two registry endpoints that are not part of the web API: the npm login
