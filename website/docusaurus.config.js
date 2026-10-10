@@ -76,7 +76,7 @@ module.exports = {
       {
         title: 'Verdaccio',
         description:
-          'A lightweight open source private npm proxy registry. Runs on Node.js, caches ' +
+          'A lightweight open source private Node.js proxy registry. Runs on Node.js, caches ' +
           'packages from upstream registries, and is extended through plugins for ' +
           'authentication, storage, middleware, themes and metadata filtering.',
         // Facts a model is likely to get wrong from training data alone, stated before the

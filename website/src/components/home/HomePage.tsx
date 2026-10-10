@@ -93,7 +93,7 @@ const FEATURES = [
     title: translate({ message: 'Private packages' }),
     text: translate({
       message:
-        'Keep your code private and keep using npm the way you already do. Scoped, access-controlled, yours.',
+        'Keep your code private and keep using your package manager the way you already do. Scoped, access-controlled, yours.',
     }),
   },
   {
@@ -152,15 +152,15 @@ const HomePage = (): React.ReactElement => (
             </a>
           </div>
           <h1 className={styles.title}>
-            <Translate>Your private npm registry.</Translate>
+            <Translate>Your private Node.js registry.</Translate>
             <em>
               <Translate>In one command.</Translate>
             </em>
           </h1>
           <p className={clsx(styles.lead, styles.heroLead)}>
             <Translate>
-              Verdaccio is a free, open source npm registry that you run yourself. Publish your
-              private packages, cache the public ones and keep using npm, pnpm or yarn. Built for
+              Verdaccio is a free, open source Node.js registry that you run yourself. Publish your
+              private packages, cache the public ones and keep using pnpm, npm or yarn. Built for
               local development, ready to host for your whole team.
             </Translate>
           </p>
