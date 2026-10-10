@@ -1,0 +1,441 @@
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 3rem;
+  align-items: center;
+  max-width: 1100px;
+  min-height: calc(100vh - var(--ifm-navbar-height) - 12rem);
+
+  @media (max-width: 996px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    min-height: 0;
+    text-align: center;
+  }
+}
+
+.art {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: 996px) {
+    align-items: center;
+  }
+}
+
+.scene {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  overflow: hidden;
+
+  @media (max-width: 996px) {
+    max-width: 280px;
+  }
+}
+
+.ground {
+  stroke: var(--ifm-color-emphasis-300);
+  stroke-width: 2;
+  stroke-dasharray: 2 10;
+  stroke-linecap: round;
+}
+
+.tumbleweed {
+  animation: roll 7s linear infinite;
+}
+
+.spin {
+  fill: none;
+  stroke: var(--ifm-color-emphasis-500);
+  stroke-width: 2;
+  stroke-linecap: round;
+  animation: spin 0.9s linear infinite;
+}
+
+.shadow {
+  fill: var(--ifm-color-emphasis-300);
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: shadow 4s ease-in-out infinite;
+}
+
+.character {
+  animation: hop 4s ease-in-out infinite;
+}
+
+.body {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: squash 4s ease-in-out infinite;
+}
+
+.foot {
+  fill: var(--brand);
+}
+
+.face,
+.flap {
+  fill: var(--brand-soft);
+  stroke: var(--brand);
+  stroke-width: 3;
+  stroke-linejoin: round;
+}
+
+.flapLeft {
+  transform-origin: 120px 130px;
+  animation: flapLeft 4s ease-in-out infinite;
+}
+
+.flapRight {
+  transform-origin: 240px 130px;
+  animation: flapRight 4s ease-in-out infinite;
+}
+
+.tape {
+  stroke: var(--brand);
+  stroke-width: 6;
+  opacity: 0.35;
+}
+
+.eyeWhite {
+  fill: #fff;
+  stroke: var(--brand);
+  stroke-width: 2.5;
+}
+
+.eyes {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: blink 4s infinite;
+}
+
+.pupils {
+  animation: look 4s ease-in-out infinite;
+}
+
+.pupil {
+  fill: #1c1f22;
+}
+
+.glint {
+  fill: #fff;
+}
+
+.cheek {
+  fill: var(--accent);
+  opacity: 0.3;
+}
+
+.mouth {
+  fill: #1c1f22;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: gasp 4s ease-in-out infinite;
+}
+
+.mark {
+  fill: var(--accent);
+  font-family: var(--ifm-font-family-base);
+  font-size: 56px;
+  font-weight: 800;
+}
+
+.question {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: question 4s ease-in-out infinite;
+}
+
+.drop {
+  fill: #5ab4e8;
+  animation: drop 4s ease-in infinite;
+}
+
+.title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.npm {
+  max-width: 100%;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #121416;
+  box-shadow: 0 0 0 1px #26292d;
+  color: #d6d9d0;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+
+.err {
+  color: #f2597a;
+  font-weight: 700;
+}
+
+.text {
+  max-width: 34rem;
+  margin: 1rem 0 1.25rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.home {
+  background-color: var(--brand);
+  border-color: var(--brand);
+  color: var(--brand-on);
+
+  &:hover {
+    color: var(--brand-on);
+    filter: brightness(1.1);
+  }
+}
+
+.cache {
+  width: 100%;
+  max-width: 36rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--ifm-color-emphasis-300);
+  text-align: left;
+
+  .text {
+    margin: 0.25rem 0 0.5rem;
+  }
+}
+
+.cacheTitle {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.tabs {
+  margin-bottom: 0.75rem;
+}
+
+@keyframes roll {
+  0% {
+    transform: translate(20px, 228px);
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  20% {
+    transform: translate(80px, 214px);
+  }
+  35% {
+    transform: translate(140px, 228px);
+  }
+  50% {
+    transform: translate(220px, 216px);
+  }
+  62% {
+    transform: translate(290px, 228px);
+    opacity: 1;
+  }
+  70%,
+  100% {
+    transform: translate(330px, 228px);
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes hop {
+  0%,
+  8%,
+  28%,
+  100% {
+    transform: translateY(0);
+  }
+  18% {
+    transform: translateY(-34px);
+  }
+}
+
+@keyframes squash {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  6% {
+    transform: scale(1.08, 0.9);
+  }
+  12% {
+    transform: scale(0.94, 1.08);
+  }
+  28% {
+    transform: scale(1.1, 0.88);
+  }
+  34% {
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes shadow {
+  0%,
+  8%,
+  28%,
+  100% {
+    transform: scaleX(1);
+    opacity: 0.9;
+  }
+  18% {
+    transform: scaleX(0.6);
+    opacity: 0.4;
+  }
+}
+
+@keyframes flapLeft {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  18% {
+    transform: rotate(-28deg);
+  }
+  30% {
+    transform: rotate(6deg);
+  }
+  38% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes flapRight {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  18% {
+    transform: rotate(28deg);
+  }
+  30% {
+    transform: rotate(-6deg);
+  }
+  38% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes look {
+  0%,
+  36%,
+  92%,
+  100% {
+    transform: translateX(0);
+  }
+  42%,
+  56% {
+    transform: translateX(-6px);
+  }
+  62%,
+  78% {
+    transform: translateX(6px);
+  }
+}
+
+@keyframes blink {
+  0%,
+  84%,
+  90%,
+  100% {
+    transform: scaleY(1);
+  }
+  87% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes gasp {
+  0%,
+  26%,
+  100% {
+    transform: scale(0.6);
+  }
+  34%,
+  80% {
+    transform: scale(1);
+  }
+}
+
+@keyframes question {
+  0%,
+  28% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  34% {
+    transform: scale(1.25) rotate(-12deg);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1) rotate(8deg);
+  }
+  50%,
+  80% {
+    transform: scale(1) rotate(-4deg);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes drop {
+  0%,
+  50% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  56% {
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(26px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(26px);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tumbleweed,
+  .spin,
+  .shadow,
+  .character,
+  .body,
+  .flapLeft,
+  .flapRight,
+  .eyes,
+  .pupils,
+  .mouth,
+  .question,
+  .drop {
+    animation: none;
+  }
+
+  .tumbleweed {
+    transform: translate(60px, 228px);
+  }
+
+  .drop {
+    opacity: 0;
+  }
+}
