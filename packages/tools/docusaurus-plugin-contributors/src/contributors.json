@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-10T15:39:47.137Z",
+  "generatedAt": "2026-10-16T09:54:36.450Z",
   "organization": "verdaccio",
   "totals": {
     "contributors": 442,
-    "contributions": 8381,
+    "contributions": 8385,
     "repositories": 36
   },
   "contributors": [
@@ -12,7 +12,7 @@
       "login": "juanpicado",
       "avatar_url": "https://avatars.githubusercontent.com/u/558752?v=4",
       "html_url": "https://github.com/juanpicado",
-      "contributions": 5848,
+      "contributions": 5851,
       "repositories": [
         {
           "name": "verdaccio",
@@ -20,7 +20,7 @@
         },
         {
           "name": "website",
-          "contributions": 608
+          "contributions": 610
         },
         {
           "name": "monorepo",
@@ -136,7 +136,7 @@
         },
         {
           "name": "mcp-server",
-          "contributions": 4
+          "contributions": 5
         },
         {
           "name": "verdaccio-cookbook",
@@ -156,7 +156,7 @@
         }
       ],
       "firstContributionAt": "2016-08-07T00:00:00.000Z",
-      "lastContributionAt": "2026-10-04T00:00:00.000Z"
+      "lastContributionAt": "2026-10-11T00:00:00.000Z"
     },
     {
       "id": 999113,
@@ -233,11 +233,11 @@
           "contributions": 1
         },
         {
-          "name": "readme",
+          "name": "eslint-config-verdaccio",
           "contributions": 1
         },
         {
-          "name": "eslint-config-verdaccio",
+          "name": "readme",
           "contributions": 1
         },
         {
@@ -354,7 +354,7 @@
       "login": "dianmorales",
       "avatar_url": "https://avatars.githubusercontent.com/u/558740?v=4",
       "html_url": "https://github.com/dianmorales",
-      "contributions": 55,
+      "contributions": 56,
       "repositories": [
         {
           "name": "verdaccio",
@@ -362,7 +362,7 @@
         },
         {
           "name": "verdaccio-aws-s3-storage",
-          "contributions": 3
+          "contributions": 4
         },
         {
           "name": "yarn-plugin-npm",
@@ -7316,7 +7316,7 @@
       "stargazers_count": 2,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-03-15T13:48:37Z"
+      "pushed_at": "2026-10-15T19:08:10Z"
     },
     {
       "name": "monorepo",
@@ -7324,7 +7324,7 @@
       "full_name": "verdaccio/monorepo",
       "html_url": "https://github.com/verdaccio/monorepo",
       "description": "🏰 Core dependencies and plugins for verdaccio 6.x branch ⚠️ DEPRECATED",
-      "stargazers_count": 85,
+      "stargazers_count": 84,
       "archived": true,
       "language": null,
       "pushed_at": "2026-05-14T15:25:43Z"
@@ -7390,10 +7390,10 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17912,
+      "stargazers_count": 17915,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-08T20:19:51Z"
+      "pushed_at": "2026-10-15T21:05:38Z"
     },
     {
       "name": "verdaccio-audit",
@@ -7426,7 +7426,7 @@
       "stargazers_count": 9,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-04T13:25:06Z"
+      "pushed_at": "2026-10-15T18:36:03Z"
     },
     {
       "name": "verdaccio-azure",
@@ -7514,7 +7514,7 @@
       "stargazers_count": 37,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-10T15:34:59Z"
+      "pushed_at": "2026-10-16T00:37:57Z"
     },
     {
       "name": "yarn-plugin-npm",
