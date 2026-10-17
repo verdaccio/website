@@ -187,9 +187,10 @@ route and has no such option.
 :::
 
 Verdaccio 7 no longer accepts `Authorization: Basic` on the API: only Bearer tokens are valid. The one
-exception is the login route, `PUT /-/user/org.couchdb.user:<name>`. When the account already exists,
-`npm login` receives `409` from that route and retries it with the credentials in a Basic header, so
-without the exception an existing user could not obtain a token from the CLI.
+exception is the login routes, `GET` and `PUT /-/user/org.couchdb.user:<name>`. When the account
+already exists, the client receives `409` from the `PUT` and retries with the credentials in a Basic
+header (`npm login` on the second `PUT`, `yarn npm login` on the `GET` as well), so without the
+exception an existing user could not obtain a token from the CLI.
 
 `basicLogin` controls that exception. It is **enabled by default**; the password is checked behind the same
 rate limit and [two-factor](two-factor-authentication.md) challenge as any other login, and every other
