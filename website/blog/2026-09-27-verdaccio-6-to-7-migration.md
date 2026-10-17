@@ -40,10 +40,12 @@ tokens still live in `.token-db.json` keyed by user, and each package still keep
 in a `package.json` beside its tarballs.
 
 **Tokens survive too.** A login token issued by Verdaccio 6 authenticated against Verdaccio 7
-without re-logging in, and still worked on 6.x after the round trip.
+without re-logging in, and still worked on 6.x after the round trip. The same goes for API
+tokens created with `npm token create`: they stay in `.token-db.json` and Verdaccio 7 lists
+and authenticates them.
 
 You still want a backup before upgrading a real registry, but you are not converting
-anything.
+anything, with one exception: a storage folder that still uses the old database file name.
 
 ## Before you start the upgrade
 
@@ -63,6 +65,22 @@ config file must be a YAML file (.yaml or .yml)
 ```
 
 Convert the file before upgrading. This is a straightforward one, and it fails loudly.
+
+### A `.sinopia-db.json` database is no longer read
+
+Registries that began life as Sinopia can still have their database in `.sinopia-db.json`.
+Verdaccio 6 keeps using it and only prints the `VERCODE01` warning asking you to rename it.
+**Verdaccio 7 ignores that file.** It creates a new `.verdaccio-db.json` next to it, with an
+empty package list and a **new secret**, and starts without any error. Your packages are still
+served, but every token issued with the old secret stops working and the list of private
+packages is empty.
+
+Check the storage folder before upgrading. If you find `.sinopia-db.json` and no
+`.verdaccio-db.json`, rename it while still on 6.x:
+
+```bash
+mv storage/.sinopia-db.json storage/.verdaccio-db.json
+```
 
 ### A secret that is not 32 characters stops the server, and the escape hatch is gone
 
@@ -271,7 +289,8 @@ been using it.
 
 ## Tell us what is missing
 
-Everything above was checked against `verdaccio@6.10.3` and `verdaccio@7.0.0-next-7.28`, in
+Everything above was checked against `verdaccio@6.10.3` and `verdaccio@7.0.0-next-7.28` (the
+database file name check, against `6.10.5` and `7.0.0-next-7.30`), in
 most cases by running both against the same storage folder rather than by reading release
 notes. Two things were deliberately left out after checking them: the plugin interface names
 did **not** change between 6 and 7, and the YAML parser change is compensated internally, so
