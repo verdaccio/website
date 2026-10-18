@@ -56,7 +56,6 @@ If you want to test Verdaccio with Helm on a local Kubernetes cluster, use the V
 `image.tag` selects the Verdaccio image, and pinning it is what you want in production:
 
 ```bash
-helm install npm --set image.tag=7 verdaccio/verdaccio       # latest 7.x
 helm install npm --set image.tag=6 verdaccio/verdaccio       # latest 6.x
 helm install npm --set image.tag=6.10.3 verdaccio/verdaccio  # exactly this release
 helm install npm --set image.tag=7.x-next verdaccio/verdaccio # nightly of the next major

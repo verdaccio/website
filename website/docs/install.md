@@ -36,13 +36,28 @@ Learn the basics before getting started, how to install, where is the location o
 
 > Before using Verdaccio in production, please read and be [aware of the best practices](best-practices.md).
 
-`Verdaccio` must be installed globally:
+To install the current stable release globally:
 
 ```bash npm2yarn
 npm install -g verdaccio
 ```
 
 Global installs are Yarn `1.x` _classic_ only; modern Yarn has no equivalent.
+
+### Try Verdaccio 7 {#try-verdaccio-7}
+
+Verdaccio 7 is currently a prerelease and requires **Node.js 24 or newer**. Select
+`next-7` explicitly; an unqualified install still selects stable 6.x.
+
+```bash
+pnpm dlx verdaccio@next-7
+# Or with npm:
+npx --yes verdaccio@next-7
+```
+
+See [what's new in Verdaccio 7](/blog/2026/07/26/verdaccio-7-release)
+for release highlights and preview instructions. Existing users should read the
+[6-to-7 migration guide](/blog/2026/09/27/verdaccio-6-to-7-migration).
 
 ![install verdaccio](/img/install_verdaccio.gif)
 
@@ -55,7 +70,6 @@ $> verdaccio
  info -=- local storage path /Users/user/.local/share/verdaccio/storage/.verdaccio-db.json
  info --- using htpasswd file: /Users/user/.config/verdaccio/htpasswd
  info --- http address http://localhost:4873/
- info --- version: 7.0.0
  info --- server started
 ```
 

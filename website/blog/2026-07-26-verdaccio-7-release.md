@@ -1,196 +1,116 @@
 ---
 authors: juan_picado
-title: Verdaccio 7 release notes
-description: Verdaccio 7 is a new major line focused on a cleaner runtime, better distribution, package filtering, notifications, and refreshed tooling.
+title: "What's new in Verdaccio 7"
+description: 'Explore Verdaccio 7: ESM plugins, async storage, experimental staged publishing and two-factor authentication, plus what to review before upgrading from 6.x.'
 tags: [release, verdaccio]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
 import FilterFlow from '@site/src/components/diagrams/FilterFlow';
 import { StagedPublish, TwoFactor } from '@site/src/components/terminal/Examples';
 
-**Verdaccio 7 is the next major line of Verdaccio.** This release keeps the familiar private registry experience, while updating the platform underneath so Verdaccio is easier to run, easier to package, and easier to extend.
+**Verdaccio 7 brings pure ESM plugin support, a promise-based storage API, and experimental staged publishing and two-factor authentication.** It also moves to Node.js 24 and Express 5. If you already run Verdaccio, your day-to-day install and publish workflow stays familiar; the biggest changes are in how you extend the registry and control publishing.
 
-For most users, Verdaccio 7 should feel like Verdaccio: a lightweight private npm-compatible registry that works with npm, pnpm, and Yarn. The important changes are in the places that matter over time: **package filtering**, **notifications**, **Web UI polish**, **Docker examples**, **pure ESM plugin support**, **async storage plugins**, **the proxy layer**, and **the way Verdaccio itself is distributed**.
+New to Verdaccio? It is a free, open source npm-compatible registry you host yourself to share internal packages, cache public dependencies and test publishes locally. It works with npm, pnpm and Yarn. The [getting-started guide](/docs/installation) covers the basics.
 
 <!--truncate-->
 
-## Highlights for users
+:::info Release status
+Verdaccio 7 is currently a **prerelease**, available as `verdaccio@next-7`, and requires **Node.js 24 or newer**. The unqualified `verdaccio` package still installs stable 6.x. See [Try Verdaccio 7](#try-verdaccio-7) below for the preview commands.
+:::
 
-### Package filtering is built in
+## More control over publishing
 
-Verdaccio 7 includes the package filter plugin work, making it possible to **enforce package filtering rules as part of the registry flow**.
+### Review a version before it becomes installable
 
-This is useful for teams that need to block, quarantine, allow, or replace packages before they reach developers. The filtering is applied where it matters: metadata reads, tarball downloads, uplink syncs, and local package listings.
-
-This work is also available in Verdaccio 6.x through a backport.
-
-<FilterFlow />
-
-### Staged publishing and two-factor authentication (experimental)
-
-Verdaccio 7 adds two **experiments**. Each one is behind a feature flag that defaults to `false`, so nothing changes until you turn them on, and their behavior may still change. Landed in [#6176](https://github.com/verdaccio/verdaccio/pull/6176) by [@jotadeveloper](https://github.com/jotadeveloper).
-
-**Staged publishing** uploads a version for review. It only becomes installable once somebody approves it, and a rejected version never existed. `npm stage` needs npm 11.17 or newer.
+Experimental **staged publishing** lets a pipeline upload a version for a maintainer to review. The package becomes installable only after approval. This adds a review step between producing an artifact and making it available to consumers.
 
 <StagedPublish />
 
-**Two-factor authentication** (TOTP) makes `npm publish` ask for a one-time password from an authenticator app.
+The feature is off by default, behind the `stage` flag, and requires **npm 11.17 or newer**. See the [staged publishing guide](/docs/staged-publishing) for configuration, permissions and the review commands.
+
+### Add a second factor to account and publishing flows
+
+Experimental **two-factor authentication** uses time-based one-time passwords from an authenticator app. Depending on the selected mode, it protects account operations and publishing as well as login.
 
 <TwoFactor />
 
-The two fit together: `npm stage publish` never asks for a code, so a pipeline can prepare a release, and a maintainer approves it with their own second factor.
+It is also off by default, behind the `tfa` flag. Follow the [two-factor authentication guide](/docs/two-factor-authentication) to check client and storage requirements before enabling it.
 
-### Publish and unpublish notifications
+Both features are still experimental: test them with your release workflow and share feedback before relying on them in production. Neither changes the default publishing flow unless you opt in.
 
-Notifications can now cover **both publish and unpublish events**. Notification templates can include information such as the package being affected and whether the event is a publish or unpublish.
+## A new foundation for plugins
 
-For teams that wire Verdaccio into chat, audit, release, or internal automation systems, this makes registry events easier to track.
+### Load pure ESM plugins
 
-This work is also available in Verdaccio 6.x through a backport.
+Verdaccio 7 supports **pure ESM plugins**, so plugin authors no longer need a CommonJS wrapper just to load their plugin. This makes it easier to use dependencies that have moved to ESM.
 
-### Web UI improvements
+Existing plugins still need to be checked against the new runtime, especially middleware plugins affected by Express 5. The [plugin documentation](/docs/plugins) and [migration guide](/blog/2026/09/27/verdaccio-6-to-7-migration) cover those details.
 
-Verdaccio 7 includes several Web UI improvements:
+### Write storage plugins with async functions
 
-- **Dark mode support**, a refreshed theme foundation, a new state management based on React context and SWR, refreshed login/signup/change-password screens, and the new contributors/support content in the info dialog landed in [#5563](https://github.com/verdaccio/verdaccio/pull/5563) by [@juanpicado](https://github.com/juanpicado).
-- Package lists can be sorted by update time through [#5659](https://github.com/verdaccio/verdaccio/pull/5659) by [@mbtools](https://github.com/mbtools).
-- **Web UI search** works better with scoped packages and path-based queries, empty search results are clearer, and package detail tabs behave better across desktop and mobile layouts thanks to [#5647](https://github.com/verdaccio/verdaccio/pull/5647) by [@juanpicado](https://github.com/juanpicado).
-- The Web UI can auto-detect the search response shape, so it no longer depends on the old `searchRemote` flag. That landed in [#5801](https://github.com/verdaccio/verdaccio/pull/5801) by [@juanpicado](https://github.com/juanpicado).
-- The JSON viewer received fixes in [#5651](https://github.com/verdaccio/verdaccio/pull/5651) by [@mbtools](https://github.com/mbtools).
+The storage API is now **promise-based**, allowing storage plugins to use `async`/`await` instead of callbacks. Existing callback-based plugins can run through a compatibility adapter while their maintainers migrate.
 
-There is also a new `web.assetFolder` option for serving custom assets under `/-/assets/`, which is useful for Docker and volume-based deployments. That landed in [#5653](https://github.com/verdaccio/verdaccio/pull/5653) by [@mbtools](https://github.com/mbtools).
+If you maintain a storage plugin, the [callback-to-async migration guide](/dev/plugin-storage-async) walks through the changes. If you use a third-party storage plugin, check its compatibility before upgrading your registry.
 
-The Web UI is also moving through the shared **`@verdaccio/ui-theme` package**, now used by both Verdaccio 6.x and 7.x. That gives both release lines a common UI foundation. Compatible UI fixes and improvements can continue landing there regularly without waiting for another major Verdaccio release.
+## Improvements you may already know from 6.x
 
-### Search that works with legacy storage plugins
+Several improvements included in Verdaccio 7 have also reached 6.x through backports or shared packages. If you keep your 6.x registry updated, some of these will already look familiar.
 
-`/-/v1/search` now filters by the text searched for even when the storage plugin still uses the callback API. Before this fix the compatibility adapter dropped the query, so the endpoint answered with the whole catalogue, and a plugin following the documented contract could make it fail with a 500. Plugins on the promise-based API were never affected.
+### A refreshed web interface
 
-### More control over the package filter
+The Web UI includes dark mode, sorting packages by update time, improved scoped-package search, and refreshed login, signup and password screens. Package detail tabs also work better across desktop and mobile layouts.
 
-The package filter gained glob patterns for allow and block rules ([#5872](https://github.com/verdaccio/verdaccio/pull/5872) by [@koliveira15](https://github.com/koliveira15)) and an `excludeDeprecated` option that removes deprecated versions from the manifest ([#6028](https://github.com/verdaccio/verdaccio/pull/6028) by [@davidus27](https://github.com/davidus27)).
+The shared `@verdaccio/ui-theme` package lets compatible UI fixes reach both release lines.
 
-### Safer npm search endpoint
+### Package filtering and registry notifications
 
-The npm `/-/v1/search` endpoint was improved with **rate limiting**, **bounded pagination**, and **batched package access checks**. This avoids scanning the full catalog for every request and makes anonymous search requests less useful as an amplification vector.
+The package filter supports allow and block rules, glob patterns, and excluding deprecated versions. It gives teams control over the packages and versions their registry serves, alongside the existing read and publish permissions.
 
-The response metadata was also adjusted to be more compatible with npm search clients, including npm 11 on Node.js 24.
+<FilterFlow />
 
-This work is also available in Verdaccio 6.x through [#6005](https://github.com/verdaccio/verdaccio/pull/6005).
+Notifications cover both **publish and unpublish** events, so your automation can react when a version is added or removed. See [notifications](/docs/notifications) for configuration examples.
 
-### Sturdier access rules and downloads
+### More reliable search and downloads
 
-- Package access, publish and unpublish rules now **match case-insensitively**, so a rule applies to every casing of a package name ([#6091](https://github.com/verdaccio/verdaccio/pull/6091)).
-- `publish.check_owners` is enforced ([#6219](https://github.com/verdaccio/verdaccio/pull/6219) by [@mbtools](https://github.com/mbtools)).
-- Tarball downloads are more reliable: the right uplink is chosen by URL, failed downloads are cleaned up, clients no longer hang and `content-length` is correct ([#6194](https://github.com/verdaccio/verdaccio/pull/6194)).
-- Verdaccio **no longer fetches client-controlled `dist.tarball` URLs** that do not belong to an uplink ([#6225](https://github.com/verdaccio/verdaccio/pull/6225)).
-- The uplink cache is refreshed when an uplink answers `304` ([#6276](https://github.com/verdaccio/verdaccio/pull/6276)), and uplink tarball errors become Verdaccio errors instead of leaking raw `got` errors ([#6022](https://github.com/verdaccio/verdaccio/pull/6022)).
-- Search fixes from [@dianmorales](https://github.com/dianmorales): ISO timestamps, version validation before merging results, uplink errors preserved, and `400` for a missing search text.
+This release line also includes fixes around scoped-package search, search with legacy storage plugins, and tarball downloads across multiple uplinks. Search requests have rate limits, bounded pagination and batched access checks. Proxy and download fixes improve error handling and cleanup when an upstream request fails.
 
-### Better behavior behind proxies
+The [release tracker](https://github.com/verdaccio/verdaccio/issues/5680) records the individual changes and backports if you need to check a particular fix.
 
-The Web UI login flow **no longer sends a Basic auth challenge for login failures**. This avoids browser or reverse-proxy behavior where a failed Web UI login can trigger a native browser authentication popup instead of showing the error in the UI.
+## What to review before upgrading
 
-This fix is also available in Verdaccio 6.x through a backport.
+Verdaccio 7 changes the runtime and removes several deprecated interfaces. The main things to check are:
 
-### New server options
+- **Node.js 24 or newer.** Update the runtime used by your deployment.
+- **YAML configuration.** JSON and JavaScript configuration files are no longer accepted.
+- **Authentication.** Package API requests require Bearer tokens. Old `.npmrc` entries using `_auth` must move to `_authToken`; the CLI login routes retain a controlled Basic-auth exception.
+- **Storage and server secret.** Check legacy Sinopia database names and the requirement for a 32-character server secret before switching versions.
+- **Plugins and embedded servers.** Express 5 changes middleware route syntax, and the programmatic API has changed. Prefer the named `runServer` export when embedding Verdaccio.
+- **Removed endpoints.** The legacy `/-/all` search endpoint and star/unstar support are gone.
 
-- `server.cors` takes the standard `CorsOptions` and forwards them to the CORS middleware ([#6255](https://github.com/verdaccio/verdaccio/pull/6255)).
-- `server.hidePingLogs` hides successful ping logs ([#6192](https://github.com/verdaccio/verdaccio/pull/6192)).
-- `server.legacyAuthCache` caches successful legacy AES token validation ([#6133](https://github.com/verdaccio/verdaccio/pull/6133)).
-- `ConfigBuilder` has methods for web, listen, https, publish, flags, notify, middlewares, filters and more ([#5805](https://github.com/verdaccio/verdaccio/pull/5805)).
-
-### An experimental admin CLI
-
-A new `@verdaccio/admin-cli` package ships an experimental `verdaccio-admin` binary with a `storage` command group. The `verdaccio` CLI is unchanged ([#6231](https://github.com/verdaccio/verdaccio/pull/6231)).
-
-### Updated Docker examples
-
-The Docker examples for Verdaccio 7 were refreshed, including local storage, reverse proxy, plugin examples, and Kubernetes Helm examples.
-
-If you deploy Verdaccio through containers, the examples should be a better starting point for modern setups.
-
-## What changes compared with 6.x?
-
-Verdaccio 7 is mostly a platform major. The user-facing registry behavior remains familiar, but the runtime and distribution model move forward:
-
-- **Verdaccio 7 runs on Node.js 24.**
-- **Verdaccio 7 uses Express 5 internally**, so middleware plugins may need route wildcard and `sendFile` adjustments.
-- The proxy layer moved to `@verdaccio/proxy`, built on `got`.
-- The 7.x release branch moved to pnpm.
-- Verdaccio packages are distributed as reusable `@verdaccio/*` packages.
-- **Pure ESM plugins are supported**, so new plugins no longer need to publish a CommonJS wrapper just to be loaded by Verdaccio.
-- **Storage plugins can use the async promise-based API**, with backward compatibility for existing callback/stream-based storage plugins. Async only affects storage plugins; see the [storage plugin guide](/dev/plugin-storage) and how to [migrate a callback storage plugin](/dev/plugin-storage-async).
-- Logger packages were consolidated into `@verdaccio/logger`.
-- **Deprecated registry features were removed**, including star/unstar support.
-- The deprecated npm search **`/-/all` endpoint was removed**; use `/-/v1/search`.
-
-Until npm `latest` moves, Verdaccio 6.x remains the stable line (currently `6.10.5`) and keeps receiving fixes. Some improvements listed in this post have already been backported to 6.x. That means they are part of Verdaccio 7, but not exclusive to Verdaccio 7.
-
-## Upgrading from 6.x
-
-Verdaccio 7 is a major, so a few things need reviewing before you upgrade: the Node.js
-requirement, YAML-only configuration, the server secret, incoming Basic authentication,
-the removed endpoints, and the changes that affect the programmatic API and plugins.
-
-**Those are collected, with the exact errors you get and what to do about each, in the
-[migration guide from Verdaccio 6 to 7](/blog/2026/09/27/verdaccio-6-to-7-migration).**
-The short version:
-
-- Your **storage is not touched** — no data migration, and a rollback to 6.x keeps working.
-- Tokens issued by 6.x keep authenticating, but an `.npmrc` using **`_auth`** instead of
-  `_authToken` stops working, because Basic authentication is no longer accepted.
-- A server secret that is not exactly 32 characters prevents startup, and the 6.x option
-  that rewrote it for you is gone.
-
-## Backported to 6.x
-
-The following work is included in Verdaccio 7 and has also landed in Verdaccio 6.x:
-
-- **Package filter plugin**: [#5548](https://github.com/verdaccio/verdaccio/pull/5548), backported via [#5786](https://github.com/verdaccio/verdaccio/pull/5786), included since `verdaccio@6.4.0`
-- **Web UI login 401 handling without a Basic auth challenge**: [#5819](https://github.com/verdaccio/verdaccio/pull/5819), backported via [#5821](https://github.com/verdaccio/verdaccio/pull/5821), included since `verdaccio@6.5.2`
-- **Publish/unpublish notification hooks**: [#5920](https://github.com/verdaccio/verdaccio/pull/5920), backported via [#6020](https://github.com/verdaccio/verdaccio/pull/6020), included since `verdaccio@6.8.0`
-- **npm `/-/v1/search` endpoint hardening**: backported via [#6005](https://github.com/verdaccio/verdaccio/pull/6005), included since `verdaccio@6.8.0`
-- **Dual ESM/CJS package output**: [#5643](https://github.com/verdaccio/verdaccio/pull/5643), backported to the 6.x branch via [#6050](https://github.com/verdaccio/verdaccio/pull/6050), included since `verdaccio@6.9.0`, which also requires Node.js 22 or higher
-- **External e2e CLI workflow**: [#5678](https://github.com/verdaccio/verdaccio/pull/5678) and [#5679](https://github.com/verdaccio/verdaccio/pull/5679), backported via [#5675](https://github.com/verdaccio/verdaccio/pull/5675). This is a branch workflow change; the first 6.x npm release after it was `verdaccio@6.4.0`.
-- **Search validation, token store, package name validation and htpasswd fixes**, included since `verdaccio@6.10.5`: [#6306](https://github.com/verdaccio/verdaccio/pull/6306), [#6307](https://github.com/verdaccio/verdaccio/pull/6307), [#6309](https://github.com/verdaccio/verdaccio/pull/6309), [#6314](https://github.com/verdaccio/verdaccio/pull/6314) and [#6317](https://github.com/verdaccio/verdaccio/pull/6317)
-- **Shared `@verdaccio/ui-theme` updates** for compatible Web UI fixes and improvements across 6.x and 7.x, including the UI state-management refresh ([#5563](https://github.com/verdaccio/verdaccio/pull/5563)), search UI fixes ([#5647](https://github.com/verdaccio/verdaccio/pull/5647)), JSON viewer fixes ([#5651](https://github.com/verdaccio/verdaccio/pull/5651)), and search response auto-detection ([#5801](https://github.com/verdaccio/verdaccio/pull/5801)). Verdaccio 6.x receives these through `@verdaccio/ui-theme` update PRs such as [#5794](https://github.com/verdaccio/verdaccio/pull/5794) (`verdaccio@6.5.0`, `@verdaccio/ui-theme@9.0.0-next-9.10`), [#5822](https://github.com/verdaccio/verdaccio/pull/5822) (`verdaccio@6.5.2`, `@verdaccio/ui-theme@9.0.0-next-9.14`), [#5961](https://github.com/verdaccio/verdaccio/pull/5961) (`verdaccio@6.7.3`, `@verdaccio/ui-theme@9.0.0-next-9.20`), and [#6003](https://github.com/verdaccio/verdaccio/pull/6003) (`verdaccio@6.8.0`, `@verdaccio/ui-theme@9.0.0-next-9.21`).
-
-## For plugin authors and distributions
-
-Verdaccio 7 is designed to make reuse easier. **Downstream distributions can reuse the server and CLI composition** instead of forking large parts of Verdaccio.
-
-The relevant exports include:
-
-- `@verdaccio/server`: `defineAPI(config, storage)`
-- `@verdaccio/cli`: `runCli`, `configureCli`, and command classes
-
-Storage plugin authors have a [migration guide from callbacks to promises](/dev/plugin-storage-async). Existing callback plugins keep working through a compatibility wrapper while they migrate.
-
-Some plugins were relocated from the monorepo into their own repositories:
-
-- `verdaccio-active-directory`
-- `verdaccio-aws-s3-storage`, now at [verdaccio/verdaccio-aws-s3-storage](https://github.com/verdaccio/verdaccio-aws-s3-storage)
-- `verdaccio-google-cloud`, now at [verdaccio/verdaccio-google-cloud](https://github.com/verdaccio/verdaccio-google-cloud)
+The [migration guide from Verdaccio 6 to 7](/blog/2026/09/27/verdaccio-6-to-7-migration) explains the symptoms and fixes, including storage compatibility and rollback considerations. Test with a copy of your configuration and storage before changing a working registry.
 
 ## Try Verdaccio 7
 
-Verdaccio 7 has an explicit rollout. It is published under the `7` tag first, and npm `latest` moves a few days later, once the release has had time to settle. Docker follows the same rule: images are published with explicit version tags such as `7` or an exact version, and there is no Docker `latest` for this line during the initial rollout. Helm users should pin the image tag explicitly.
-
-Install it with your package manager of choice:
-
-```bash npm2yarn
-npm install -g verdaccio@7
-```
-
-Or run it with Docker:
+With Node.js 24 or newer, select the preview explicitly:
 
 ```bash
-docker run -it --rm --name verdaccio -p 4873:4873 verdaccio/verdaccio:7
+pnpm dlx verdaccio@next-7
 ```
 
-Use a copy of your storage and configuration when testing a major release. Verdaccio 7 requires Node.js 24 or higher. Please report any issues at [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio/issues).
+Or use npm:
+
+```bash
+npx --yes verdaccio@next-7
+```
+
+These commands use Verdaccio's normal configuration lookup. If you already have a local registry, pass `--config /path/to/test/config.yaml` and point that test configuration at separate storage. Once it is running, open [http://localhost:4873](http://localhost:4873).
+
+For container deployments, follow the [Docker](/docs/docker) or [Helm](/docs/kubernetes) guide and choose the 7.x preview image deliberately; the default stable image follows a different release line.
+
+If this is your first Verdaccio instance, continue with the [installation guide](/docs/installation) and your package manager's setup instructions: [npm](/docs/setup-npm), [pnpm](/docs/setup-pnpm) or [Yarn](/docs/setup-yarn).
+
+Tell us how the preview works with your plugins and publishing workflow in [GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions). Report reproducible problems in [GitHub Issues](https://github.com/verdaccio/verdaccio/issues).
 
 ## Thanks
 

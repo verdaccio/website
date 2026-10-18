@@ -179,6 +179,34 @@ security:
     legacy: true # by default is true even if this section is not defined
 ```
 
+#### Basic login {#basic-login}
+
+:::info Available from 7.x
+Ships in **7.x** and later. **Not available in 6.x**, which accepts HTTP Basic authentication on every
+route and has no such option.
+:::
+
+Verdaccio 7 no longer accepts `Authorization: Basic` on the API: only Bearer tokens are valid. The one
+exception is the login routes, `GET` and `PUT /-/user/org.couchdb.user:<name>`. When the account
+already exists, the client receives `409` from the `PUT` and retries with the credentials in a Basic
+header (`npm login` on the second `PUT`, `yarn npm login` on the `GET` as well). `pnpm login` sends it on
+a single `PUT`, also when the user does not exist yet. Without the exception none of them could obtain
+a token from the CLI.
+
+`basicLogin` controls that exception. It is **enabled by default**; the password is checked behind the same
+rate limit and [two-factor](two-factor-authentication.md) challenge as any other login, and every other
+route keeps answering `401` to a Basic header.
+
+```yaml
+security:
+  api:
+    basicLogin: false # by default is true even if this section is not defined
+```
+
+With `basicLogin: false`, `npm login` for an existing user fails with `401` and `need: Bearer`. Users
+then obtain a token through the [web login](web-login.md) flow or from the web UI, and the `.npmrc` uses
+`_authToken`.
+
 #### JWT Token Signature
 
 To enable a new [JWT (JSON Web Tokens)](https://jwt.io/) signature, the `jwt` block needs to be added to the `api` section; `jwt` is utilized by default in `web`.
