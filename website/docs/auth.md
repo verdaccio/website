@@ -85,6 +85,9 @@ auth:
     rounds: 10
     # Log a warning when password verification takes longer than this many milliseconds.
     slow_verify_ms: 200
+    # Cache successful password verifications for this many milliseconds (7.x).
+    # Disabled by default; set a positive duration to enable it.
+    verify_cache_ms: 0
 ```
 
 :::info The default is `bcrypt`
@@ -98,13 +101,14 @@ pick them for a new registry. Existing entries hashed with them keep working —
 only rehashed when the user changes their password.
 :::
 
-| Property       | Type   | Required | Example               | Support  | Description                                                                                       |
-| -------------- | ------ | -------- | --------------------- | -------- | ------------------------------------------------------------------------------------------------- |
-| file           | string | Yes      | ./htpasswd            | all      | file that host the encrypted credentials                                                          |
-| max_users      | number | No       | 1000                  | all      | set limit of users                                                                                |
-| algorithm      | string | No       | bcrypt/md5/sha1/crypt | all      | password hashing algorithm, defaults to `bcrypt`                                                  |
-| rounds         | number | No       | 10                    | all      | Rounds number for "bcrypt", will be ignored for other algorithms                                  |
-| slow_verify_ms | number | No       | 200                   | 6.x, 7.x | Log a warning when password verification exceeds this duration in milliseconds; defaults to `200` |
+| Property        | Type   | Required | Example               | Support  | Description                                                                                       |
+| --------------- | ------ | -------- | --------------------- | -------- | ------------------------------------------------------------------------------------------------- |
+| file            | string | Yes      | ./htpasswd            | all      | file that host the encrypted credentials                                                          |
+| max_users       | number | No       | 1000                  | all      | set limit of users                                                                                |
+| algorithm       | string | No       | bcrypt/md5/sha1/crypt | all      | password hashing algorithm, defaults to `bcrypt`                                                  |
+| rounds          | number | No       | 10                    | all      | Rounds number for "bcrypt", will be ignored for other algorithms                                  |
+| slow_verify_ms  | number | No       | 200                   | 6.x, 7.x | Log a warning when password verification exceeds this duration in milliseconds; defaults to `200` |
+| verify_cache_ms | number | No       | 60000                 | 7.x      | Cache successful password verifications for this many milliseconds; defaults to `0` (disabled)    |
 
 > In case you decide to prevent users from signing up themselves, you can set `max_users: -1`.
 
@@ -116,27 +120,20 @@ manifest and tarball downloads can repeat expensive bcrypt checks. Increasing
 only controls when a warning is logged; it does not impose a timeout or reduce
 the cost of verification. Setting it to `0` falls back to the default of `200` ms.
 
-### Proposed verification cache {#verification-cache}
+### Verification cache {#verification-cache}
 
-:::caution Not yet available in 7.x
-The `verify_cache_ms` option is proposed in
-[verdaccio/verdaccio#6351](https://github.com/verdaccio/verdaccio/pull/6351).
-It is not included in the plugin version used by Verdaccio `7.0.0-next-7.30`.
-Do not add it to your configuration expecting caching until a release includes it.
-:::
-
-The proposal adds `verify_cache_ms` in milliseconds, disabled by default (`0`).
-A positive value such as `60000` would cache successful password verifications
-and share identical checks already in flight. Failed results would not be cached.
-The cache would hold at most 1000 entries, keyed by an HMAC of the username,
+In 7.x, `verify_cache_ms` sets the cache duration in milliseconds, disabled by default (`0`).
+A positive value such as `60000` caches successful password verifications
+and shares identical checks already in flight. Failed results are not cached.
+The cache holds at most 1000 entries, keyed by an HMAC of the username,
 password and stored hash with a random per-instance secret. Reloading a changed
-password hash or removing a user would prevent existing entries from matching.
+password hash or removing a user prevents existing entries from matching.
 
-Expired entries would be pruned on lookup and insertion, with a timer also
-sweeping while idle. Under normal clock progression, entries would be removed
+Expired entries are pruned on lookup and insertion, with a timer also
+sweeping while idle. Under normal clock progression, entries are removed
 within about twice the configured duration. Someone with access to process memory
 could recover the secret and cached HMACs and test password guesses much faster
-than bcrypt allows, so the proposed option should use a short duration.
+than bcrypt allows, so keep the cache duration short.
 
 ## Two-factor authentication {#two-factor}
 
