@@ -18,7 +18,7 @@ const formatDate = (iso: string | null): string | null =>
 
 const majorOf = (version: string): string => `${version.split('.')[0]}.x`;
 
-// The latest stable release, from npm. The data is refreshed by the weekly `static data` workflow.
+// The latest stable release, from npm. The data is refreshed before every website build.
 const LatestRelease = ({ className }: { className?: string }): React.ReactElement | null => {
   const stable = releases.releases.find((r) => r.channel === 'stable');
   if (!stable) {

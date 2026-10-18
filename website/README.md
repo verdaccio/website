@@ -29,6 +29,11 @@ pnpm build
 
 Generates static content into the `build` directory, which can be served by any static hosting service.
 
+Every build refreshes the Verdaccio release metadata from npm and rebuilds the local data package
+before compiling the site. This also applies to the deployment scripts. The build requires access
+to npm and stops if the release refresh fails, rather than publishing stale release metadata.
+New releases appear on the live site after the next deployment.
+
 ## Translations
 
 This site supports multiple languages via [Crowdin](https://crowdin.com/project/verdaccio). To contribute a translation, click **Help Us Translate** in the language switcher on the site, or visit the Crowdin project directly.
