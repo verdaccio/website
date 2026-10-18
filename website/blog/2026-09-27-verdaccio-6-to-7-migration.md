@@ -1,57 +1,62 @@
 ---
 authors: juan_picado
 title: Migrating from Verdaccio 6 to Verdaccio 7
-description: What actually breaks when you upgrade a Verdaccio 6 registry to 7, in the order you hit it.
+description: 'Prepare a Verdaccio 6 registry for 7: runtime, configuration, authentication, storage, plugins, validation and rollback.'
 tags: [migration, verdaccio]
-hide_table_of_contents: true
+hide_table_of_contents: false
 ---
 
-:::danger Work in progress
-**This guide is being written while Verdaccio 7 is still in pre-release.** It is published
-early so people testing `verdaccio@next-7` can follow along and tell us what we missed.
+Moving from Verdaccio 6 to 7 keeps the familiar registry workflow, but changes the runtime,
+configuration and plugin interfaces. This guide covers the checks to make before switching,
+the changes that need action, and how to validate the result. For feature highlights, see
+[what's new in Verdaccio 7](/blog/2026/07/26/verdaccio-7-release).
 
-Expect it to change. Items may be added, corrected or removed as 7.x reaches its final
-release, and nothing here should be treated as a finished migration procedure yet. **Do not
-run it against a production registry without a backup.** If you hit something that is not
-covered below, that is exactly what we want to hear about — see the end of the post.
+:::info Release status and scope
+Updated on **18 October 2026** against the published `verdaccio@7.0.0-next-7.31`
+package and its `9.0.0-next-9.36` modules, with comparisons against the local 6.x and 7.x
+source trees. The current stable release is `6.10.6`; 7.x remains a **prerelease** under
+`next-7`. An unqualified install still selects 6.x.
+
+This update checks source and published package contents. Earlier runtime checks are
+identified below; they are not a full migration test of the latest release or of third-party plugins.
 :::
-
-Verdaccio 7 is mostly a platform major: the registry behaves like the one you already run,
-but the runtime underneath moved forward. This post is only about **what breaks**, in
-roughly the order you will hit it. For what is new, see the release notes.
 
 <!--truncate-->
 
-## The good news first: your storage is not touched
+## Plan the upgrade
 
-**There is no data migration**, and this was checked by running it rather than by reading the
-code. Pointing both versions at the same storage folder, in order:
+1. Record your exact Verdaccio version, Node.js version, plugin versions and container tag.
+2. Back up the YAML configuration, package storage, registry database, token database and
+   authentication data. Stop writes while taking a filesystem backup, or use a consistent
+   snapshot supported by your storage backend.
+3. Restore the backup into a test environment. Point its configuration at the copied storage
+   and authentication files, and use a separate address or port.
+4. Run the checks below against that copy before scheduling the production upgrade.
 
-1. Verdaccio 6 published a package into an empty storage folder.
-2. Verdaccio 7 started on that same folder, served the package, and `npm install` fetched and
-   unpacked it — manifest and tarball both.
-3. Verdaccio 7 published a second version into the same folder.
-4. Verdaccio 6, restarted on that folder, listed **both** versions with the right `latest`
-   tag, and installed the one Verdaccio 7 had written.
+Keep the previous binary or image and the matching backup available for rollback. Do not run
+6.x and 7.x concurrently against the same storage directory.
 
-So the format is compatible **in both directions**: a rollback to 6.x after running 7.x also
-works. The database file is still `.verdaccio-db.json` with the same `{ list, secret }` shape,
-tokens still live in `.token-db.json` keyed by user, and each package still keeps its manifest
-in a `package.json` beside its tarballs.
+## Storage and token compatibility
 
-**Tokens survive too.** A login token issued by Verdaccio 6 authenticated against Verdaccio 7
-without re-logging in, and still worked on 6.x after the round trip. The same goes for API
-tokens created with `npm token create`: they stay in `.token-db.json` and Verdaccio 7 lists
-and authenticates them.
+The bundled filesystem storage keeps package manifests and tarballs, `.verdaccio-db.json`
+for the package list and server secret, and `.token-db.json` for API tokens. A bulk package
+conversion is not part of the normal upgrade. Registries inherited from Sinopia need the
+[database filename check](#a-sinopia-dbjson-database-is-no-longer-read) below.
 
-You still want a backup before upgrading a real registry, but you are not converting
-anything, with one exception: a storage folder that still uses the old database file name.
+Earlier tests with `6.10.3` and `7.0.0-next-7.28` published and installed packages in both
+directions using the same storage, and exercised tokens issued by 6.x. Those results establish
+compatibility for that setup, not a guarantee for every plugin, token configuration or later release.
+
+Preserve the server secret and authentication settings when testing existing tokens. Rotating
+signing material can invalidate them. Verify your own storage plugin and token flows as part
+of the upgrade; use the backup as your rollback boundary rather than assuming every write by
+7.x can safely be consumed by 6.x.
 
 ## Before you start the upgrade
 
 ### Node.js 22 is not enough any more
 
-Verdaccio 6 requires **Node.js 22 or newer**. Verdaccio 7 requires **Node.js 24 or newer**.
+Current Verdaccio 6 releases (6.9.0 and later) require **Node.js 22 or newer**. Verdaccio 7 requires **Node.js 24 or newer**.
 Upgrade the runtime first — if you run from the Docker image this is already handled for you.
 
 ### Your configuration file must be YAML
@@ -76,11 +81,14 @@ served, but every token issued with the old secret stops working and the list of
 packages is empty.
 
 Check the storage folder before upgrading. If you find `.sinopia-db.json` and no
-`.verdaccio-db.json`, rename it while still on 6.x:
+`.verdaccio-db.json`, stop the registry and rename it after backing up the storage:
 
 ```bash
 mv storage/.sinopia-db.json storage/.verdaccio-db.json
 ```
+
+Use your configured storage path. If both files already exist, do not overwrite either one;
+compare them with your backup and establish which contains the original package list and secret.
 
 ### A secret that is not 32 characters stops the server, and the escape hatch is gone
 
@@ -116,29 +124,26 @@ with the old one**, so every CI job and developer has to log in again.
 
 ## After it starts
 
-### It listens on IPv6 by default
+### Docker still defaults to IPv4
 
-The Docker image changed its default address from `0.0.0.0` (IPv4) in 6.x to **`[::]`** (IPv6)
-in 7.x. On a dual-stack host `[::]` also accepts IPv4 connections, so most setups do not
-notice. **On a host without IPv6, nothing can reach the registry.** Set it back explicitly:
-
-```bash
-VERDACCIO_ADDRESS=0.0.0.0
-```
+The published 7.x Dockerfile sets **`VERDACCIO_ADDRESS=0.0.0.0`**, as the 6.x image does.
+There is no required IPv6 migration. Keep any explicit listen address your deployment needs,
+and check port mappings and reverse-proxy connectivity in the test environment.
 
 ### Graceful shutdown is no longer opt-in
 
 `VERDACCIO_HANDLE_KILL_SIGNALS` only exists in 6.x, where graceful shutdown had to be turned
-on with it. **Verdaccio 7 removed the variable** and always shuts down gracefully. Setting it
-does nothing; remove it from your deployment.
+on with it. **Verdaccio 7 removed the variable**; its normal CLI startup registers shutdown handlers.
+Remove the obsolete variable from your deployment. If you embed the server with `runServer`,
+manage the listener and shutdown lifecycle in your application.
 
-### HTTP Basic authentication is no longer accepted
+### Package API requests require Bearer tokens
 
 This is the one most likely to break a working setup, because it does not look like an
 upgrade problem — it looks like wrong credentials.
 
 Verdaccio 6 accepts an `Authorization: Basic <base64 user:password>` header for API requests.
-**Verdaccio 7 does not.** Only Bearer tokens are accepted, and `WWW-Authenticate` advertises
+**Verdaccio 7 requires Bearer tokens for package API requests**, and `WWW-Authenticate` advertises
 only `Bearer`. Verified against both: the same Basic header that authenticates on 6.x gets
 
 ```json
@@ -151,13 +156,32 @@ been sent.
 What sends Basic auth in practice:
 
 - an `.npmrc` using **`_auth`** (or `_password` plus `username`) instead of `_authToken`
-- `always-auth` configurations carried over from very old setups
 - `curl`, scripts and internal tooling that build the header by hand
 - anything that never logged in and just encodes `user:password`
 
-The fix is to use a token: log in against the registry and put `_authToken` in `.npmrc`.
-Tokens issued by 6.x keep working on 7.x, so an existing login does not need redoing — it is
-specifically the username-and-password header that stops being accepted.
+Use a token for package requests. With the registry running, verify your current login:
+
+```bash
+npm whoami --registry http://localhost:4873/
+```
+
+If a new login is needed:
+
+```bash
+npm login --registry http://localhost:4873/ --auth-type=legacy
+```
+
+The client stores a registry-scoped `_authToken` in your user `.npmrc`. Replace the local URL
+with your registry URL. An existing token may continue to work when its secret, expiry and
+authentication configuration remain valid; test it before rotating credentials.
+
+**Login is an exception.** Current 7.x prereleases accept Basic credentials on the
+`GET` and `PUT /-/user/org.couchdb.user:<name>` login routes so npm, pnpm and Yarn
+can obtain a token. This is controlled by [`security.api.basicLogin`](/docs/configuration#basic-login),
+which defaults to `true`. It does not re-enable Basic authentication for package requests. This correction shipped in
+`7.0.0-next-7.31` via the updated modules ([#6354](https://github.com/verdaccio/verdaccio/pull/6354)).
+If an older 7.x preview rejects CLI logins with `401`, update before changing your credentials.
+Setting `basicLogin: false` disables that login path; use the supported web login flow instead.
 
 As part of the same change, **Web UI session tokens are now accepted as Bearer tokens for
 package API requests**, so the same package access rules apply to browser and client traffic.
@@ -175,7 +199,7 @@ package API requests**, so the same package access rules apply to browser and cl
 before anything read it — so removing it from your config changes nothing except one startup
 warning.
 
-Two new flags are **7.x only**, both off by default and both experimental:
+Two new flags are available in **7.x and later**, both off by default and both experimental:
 [`stage`](/docs/staged-publishing) for staged publishing and
 [`tfa`](/docs/two-factor-authentication) for two-factor authentication.
 
@@ -189,8 +213,8 @@ On 6.x, `require('verdaccio').default` is `startVerdaccio`, which takes six posi
 arguments and a callback. On 7.x the default export is **`runServer`**, which takes only a
 configuration and **ignores every argument after the first**.
 
-That code therefore does not crash on 7.x. It returns a server that is not listening,
-configured with the defaults, and reports nothing:
+Calling the old callback signature on 7.x no longer invokes your callback or starts the
+listener. Await the returned value and call `listen()` explicitly:
 
 ```js
 // 6.x — the old callback API, removed in 7.x
@@ -205,8 +229,10 @@ const app = await runServer(config);
 app.listen(4873);
 ```
 
-**Import `runServer` by name.** It exists on both lines and means the same thing on both,
-which the default export does not.
+**Import `runServer` by name and await it.** It is already asynchronous in current 6.x;
+async itself is not a new 7.x breaking change. The default export and supported arguments
+are what change. Review code that depends on the concrete returned server type as well as
+code that starts the listener.
 
 ### Other programmatic changes
 
@@ -214,11 +240,13 @@ which the default export does not.
   point that also starts listening; `runServer` hands you a server that is not listening yet,
   which is usually what a test harness wants.
 - **`runServer` lost its second argument.** On 6.x it accepted `{ listenArg }` to override the
-  `listen` entry of the configuration. Pass the port to `listen()` instead.
-- **The utility re-exports are gone.** `fileUtils`, `errorUtils`, `cryptoUtils` and `pkgUtils`
+  `listen` entry of the configuration. Set listener options explicitly in the new startup path;
+  for a plain HTTP listener, pass the port to `listen()` and review HTTPS setup separately.
+- **The core utility re-exports are gone.** `fileUtils`, `errorUtils`, `cryptoUtils` and `pkgUtils`
   are no longer re-exported from `verdaccio`; import them from
   [`@verdaccio/core`](https://www.npmjs.com/package/@verdaccio/core), which works on both
-  lines.
+  lines. `Config`, `ConfigBuilder`, `getDefaultConfig` and `parseConfigFile` are still
+  exported by the current 7.x binary.
 - **`self_path` no longer exists.** The workaround of setting it manually when passing a
   configuration object is not needed, and the property is gone from the configuration type.
   Use `configPath`.
@@ -232,9 +260,9 @@ which the default export does not.
 - **`isNodeVersionGreaterThan21()` was removed** from `@verdaccio/config`.
 - **The `Config` constructor no longer takes `configOverrideOptions`**, which is what carried
   `forceMigrateToSecureLegacySignature`.
-- **Packages ship dual ESM and CJS.** Every `@verdaccio/*` package now builds with Vite and
-  emits `.mjs` alongside `.js` with generated type declarations. Importing by package name is
-  unaffected; reaching into `build/` paths directly is not.
+- **Use public package entry points.** Both current 6.x and 7.x publish ESM and CJS builds;
+  dual output reached 6.x in 6.9.0. Paths and `exports` differ by package, so replace deep
+  `build/` imports with supported package exports rather than assuming a common file layout.
 
 ## If you maintain a plugin
 
@@ -255,14 +283,15 @@ separately:
 | **7.x**          | `next-7`               | **`next-9`**                        |
 
 The `next-7` and `6-next` tags **do** exist on those packages, which is what makes this a
-trap: they do not fail, they install prereleases those lines stopped using. `verdaccio@7.0.0-next-7.28`
-depends on `@verdaccio/core@9.0.0-next-9.31`, not on anything tagged `next-7`.
+trap: they do not fail, they install prereleases those lines stopped using. `verdaccio@7.0.0-next-7.31`
+depends on `@verdaccio/core@9.0.0-next-9.36`, not on anything tagged `next-7`.
 
 ### Express 5 changes route syntax
 
 Verdaccio 6 runs **Express 4**; Verdaccio 7 runs **Express 5** with `path-to-regexp` 8. If
-your middleware plugin registers routes, review them: the wildcard syntax changed from `*` to
-`{*all}`, and `req.params` can come back as an array depending on the route shape.
+your middleware plugin registers routes, review them: wildcards must be named. For example, use `/*splat` to match non-root paths, or `/{*splat}`
+to include `/`. Wildcard parameter values are arrays. Review `sendFile` use and the
+[Express 5 migration guide](https://expressjs.com/en/guide/migrating-5.html).
 
 ### `req.body` is already parsed
 
@@ -287,21 +316,35 @@ With `_debug` enabled, Verdaccio 6 also registered `PUT /:package/:version/-tag/
 adding a single version. **That route does not exist in 7.x.** Only test harnesses should have
 been using it.
 
-## Tell us what is missing
+## Validate the upgrade and rollback plan
 
-Everything above was checked against `verdaccio@6.10.3` and `verdaccio@7.0.0-next-7.28` (the
-database file name check, against `6.10.5` and `7.0.0-next-7.30`), in
-most cases by running both against the same storage folder rather than by reading release
-notes. Two things were deliberately left out after checking them: the plugin interface names
-did **not** change between 6 and 7, and the YAML parser change is compensated internally, so
-neither is something you have to act on.
+On the isolated copy, check the paths your team actually uses:
 
-Bear in mind that 7.x is still a pre-release and assembles its internals from the development
-line, so a change can be in the source before it reaches a published 7.x build. Where that
-mattered, the behaviour described here is the one the **published** `next-7` binary actually
-has.
+- Start the registry with the copied configuration and check the startup logs.
+- Log in and run `whoami` with each package manager used by developers or CI.
+- Install an existing private package using an existing token, then publish and install a
+  disposable test package.
+- Check anonymous and authenticated access rules, scoped packages, public-package proxying
+  and search through any configured uplink subpath.
+- Check your storage and auth plugins, Web UI, reverse proxy, notifications and shutdown.
+- Test restoring the backup with the previous version before the production cutover.
 
-If your upgrade broke on something that is not here, that gap is the useful part — report it in
-[GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions), as an issue at
-[verdaccio/verdaccio](https://github.com/verdaccio/verdaccio/issues), or on
-[Discord](https://discord.gg/7qWJxBf), and it will end up in this post.
+If you roll back after accepting production writes on 7.x, account for those new packages and
+metadata changes before restoring the older snapshot. A rollback can otherwise discard them.
+
+## Verification references
+
+The 18 October update compares the local 6.x and 7.x startup code with the published
+[`7.0.0-next-7.31` source](https://github.com/verdaccio/verdaccio/tree/v7.0.0-next-7.31)
+and the distributed config, auth and local-storage modules it uses. The
+[7.x Dockerfile](https://github.com/verdaccio/verdaccio/blob/v7.0.0-next-7.31/Dockerfile)
+confirms the IPv4 default. The [6.9.0 release notes](https://github.com/verdaccio/verdaccio/releases/tag/v6.9.0)
+document the Node.js 22 requirement and dual ESM/CJS backport.
+
+Historical runtime checks covered `6.10.3` / `7.0.0-next-7.28`, and the Sinopia filename
+check covered `6.10.5` / `7.0.0-next-7.30`. They have not all been rerun against the current
+pair. Follow the validation checklist with your own configuration and plugins.
+
+Report missing migration steps in [GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions)
+or [GitHub Issues](https://github.com/verdaccio/verdaccio/issues), including the exact versions,
+relevant configuration and the failing operation.

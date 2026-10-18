@@ -11,21 +11,16 @@ mode — publishes.
 
 It works with the standard `npm profile` commands and with both npm and Yarn.
 
-:::info Available from 7.x — test it on 9.x
-This feature ships in Verdaccio **7.x** and later. It is **not** available in
-**6.x**, which does not receive new features.
-
-To try it today, use the **9.x experimental** line, which is where it lands
-first:
+:::info Available in the Verdaccio 7 preview
+This feature is available in **7.x** and later, and is not available in **6.x**.
+To try it with Node.js 24 or newer:
 
 ```bash
-npm install -g verdaccio@next-9
-# or
-docker pull verdaccio/verdaccio:nightly-master
+npx --yes verdaccio@next-7
 ```
 
-Experimental releases are **not production-ready** and are meant for testing and
-early feedback. Node.js `>= 24` is required.
+Then enable the feature flag described below in your registry configuration and restart
+Verdaccio. See [what's new in Verdaccio 7](/blog/2026/07/26/verdaccio-7-release) for an overview of the release.
 :::
 
 :::caution

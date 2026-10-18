@@ -2,6 +2,7 @@ import { releases } from '@verdaccio/local-scripts';
 
 import styles from './Home.module.scss';
 
+import Link from '@docusaurus/Link';
 import clsx from 'clsx';
 import React from 'react';
 
@@ -15,6 +16,8 @@ const formatDate = (iso: string | null): string | null =>
         timeZone: 'UTC',
       })
     : null;
+
+const RELEASE_POST = '/blog/2026/07/26/verdaccio-7-release';
 
 const majorOf = (version: string): string => `${version.split('.')[0]}.x`;
 
@@ -37,13 +40,7 @@ const LatestRelease = ({ className }: { className?: string }): React.ReactElemen
 
   return (
     <div className={clsx(styles.releaseGroup, className)}>
-      <a
-        className={styles.latest}
-        href={stable.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        title="Release notes on GitHub"
-      >
+      <Link className={styles.latest} to={stableMajor === 7 ? RELEASE_POST : stable.url}>
         <span className={styles.latestTag}>
           <span className={styles.latestDot} aria-hidden="true" />
           Latest release
@@ -53,21 +50,21 @@ const LatestRelease = ({ className }: { className?: string }): React.ReactElemen
           <strong>v{stable.version}</strong>
         </span>
         {date && <span className={styles.latestDate}>{date}</span>}
-        <span className={styles.latestCta}>Release notes →</span>
-      </a>
+        <span className={styles.latestCta}>
+          {stableMajor === 7 ? 'Discover Verdaccio 7 →' : 'Release notes →'}
+        </span>
+      </Link>
       {upcoming && (
-        <a
+        <Link
           className={styles.upcomingRelease}
-          href={upcoming.url}
-          target="_blank"
-          rel="noopener noreferrer"
+          to={majorOf(upcoming.version) === '7.x' ? RELEASE_POST : upcoming.url}
         >
           <span className={styles.upcomingTag}>Prerelease</span>
           <span>
             Try what's next: <strong>v{upcoming.version}</strong>
           </span>
           <span aria-hidden="true">→</span>
-        </a>
+        </Link>
       )}
     </div>
   );
