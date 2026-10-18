@@ -2,6 +2,7 @@ import { HeroDemo } from '../terminal/Examples';
 import CacheFlow from './CacheFlow';
 import CodeCard from './CodeCard';
 import CommandTabs from './CommandTabs';
+import CopyButton from './CopyButton';
 import GitHubStars from './GitHubStars';
 import styles from './Home.module.scss';
 import LatestRelease from './LatestRelease';
@@ -289,8 +290,9 @@ const HomePage = (): React.ReactElement => (
               <li>Zero config, no database, one command to start</li>
               <li>Cached packages install without touching the network</li>
             </ul>
-            <div className={clsx(styles.devCode, styles.mono)}>
-              {'$ pnpm dlx verdaccio\n→ http://localhost:4873'}
+            <div className={clsx(styles.devCode, styles.mono, styles.copyableCommand)}>
+              <span>{'$ pnpm dlx verdaccio\n→ http://localhost:4873'}</span>
+              <CopyButton command={'pnpm dlx verdaccio'} />
             </div>
             <Link to="/docs/e2e" className={styles.link}>
               Testing with Verdaccio →
@@ -314,8 +316,9 @@ const HomePage = (): React.ReactElement => (
               <li>Storage on Amazon S3, Google Cloud Storage or a plugin of your own</li>
               <li>Run it anywhere: official Docker image and Helm chart for Kubernetes</li>
             </ul>
-            <div className={clsx(styles.devCode, styles.mono)}>
-              {'$ docker run -it -p 4873:4873 \\\n    verdaccio/verdaccio'}
+            <div className={clsx(styles.devCode, styles.mono, styles.copyableCommand)}>
+              <span>{'$ docker run -it -p 4873:4873 \\\n    verdaccio/verdaccio'}</span>
+              <CopyButton command={'docker run -it -p 4873:4873 verdaccio/verdaccio'} />
             </div>
             <Link to="/docs/docker" className={styles.link}>
               Run it with Docker →
@@ -598,10 +601,17 @@ server.close(); // and when to stop`,
               </span>
               Docker
             </h3>
-            <div className={clsx(styles.devCode, styles.mono)}>
-              {
-                '$ docker pull verdaccio/verdaccio\n$ docker run -it -p 4873:4873 verdaccio/verdaccio'
-              }
+            <div className={clsx(styles.devCode, styles.mono, styles.copyableCommand)}>
+              <span>
+                {
+                  '$ docker pull verdaccio/verdaccio\n$ docker run -it -p 4873:4873 verdaccio/verdaccio'
+                }
+              </span>
+              <CopyButton
+                command={
+                  'docker pull verdaccio/verdaccio\ndocker run -it -p 4873:4873 verdaccio/verdaccio'
+                }
+              />
             </div>
             <Link to="/docs/docker" className={styles.link}>
               Docker guide →
@@ -614,10 +624,17 @@ server.close(); // and when to stop`,
               </span>
               Kubernetes · Helm
             </h3>
-            <div className={clsx(styles.devCode, styles.mono)}>
-              {
-                '$ helm repo add verdaccio https://charts.verdaccio.org\n$ helm install verdaccio/verdaccio'
-              }
+            <div className={clsx(styles.devCode, styles.mono, styles.copyableCommand)}>
+              <span>
+                {
+                  '$ helm repo add verdaccio https://charts.verdaccio.org\n$ helm install verdaccio/verdaccio'
+                }
+              </span>
+              <CopyButton
+                command={
+                  'helm repo add verdaccio https://charts.verdaccio.org\nhelm install verdaccio/verdaccio'
+                }
+              />
             </div>
             <Link to="/docs/kubernetes" className={styles.link}>
               Helm chart →
@@ -695,6 +712,7 @@ server.close(); // and when to stop`,
           <div>
             <div className={clsx(styles.ctaBox, styles.mono)}>
               <span>$ pnpm dlx verdaccio</span>
+              <CopyButton command="pnpm dlx verdaccio" />
             </div>
             <Link to="/docs/what-is-verdaccio" className={styles.ctaLink}>
               Read the getting-started guide →

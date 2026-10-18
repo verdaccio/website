@@ -261,6 +261,25 @@
   background: var(--h-bg);
   color: var(--h-ink);
   cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--h-highlight);
+    outline-offset: 3px;
+  }
+}
+
+.copyableCommand {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  white-space: normal;
+
+  > span {
+    flex: 1;
+    min-width: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
 }
 
 .chips {
@@ -525,6 +544,8 @@
 }
 
 .ctaBox {
+  gap: 12px;
+  flex-wrap: wrap;
   background: #ffffff;
   color: #17181a;
   border-radius: var(--r-md);
@@ -1757,6 +1778,39 @@ a.pill:hover {
 }
 
 /* ---------- latest release ---------- */
+.releaseGroup {
+  margin-bottom: 20px;
+}
+
+.upcomingRelease {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 10px;
+  color: var(--h-muted);
+  font-size: 13px;
+
+  strong {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    overflow-wrap: anywhere;
+  }
+
+  &:hover {
+    color: var(--h-ink);
+  }
+}
+
+.upcomingTag {
+  padding: 2px 8px;
+  border: 1px solid var(--h-border);
+  border-radius: var(--r-pill);
+  font-size: 11px;
+  font-weight: 600;
+}
+
 .latest {
   display: flex;
   flex-wrap: wrap;
@@ -1764,7 +1818,6 @@ a.pill:hover {
   gap: 8px 16px;
   width: fit-content;
   max-width: 100%;
-  margin-bottom: 20px;
   padding: 10px 18px 10px 14px;
   border: 1px solid color-mix(in srgb, var(--h-highlight) 35%, var(--h-border));
   border-radius: var(--r-lg);
@@ -1842,7 +1895,7 @@ a.pill:hover {
   color: var(--h-highlight);
 }
 
-.latest.latestInline {
+.releaseGroup.latestInline {
   margin: 24px 0 0;
 }
 
