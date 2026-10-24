@@ -506,6 +506,10 @@ publish:
   keep_readmes: 'tagged'
 ```
 
+From 7.x, the experimental [`tarballMetadata`](tarball-metadata.md) flag can serve the README of
+any version from its tarball instead, without storing it in the manifest. See
+[combining it with `keep_readmes`](tarball-metadata.md#keep-readmes).
+
 ### URL Prefix {#url-prefix}
 
 The prefix is intended to be used when the server runs behinds the proxy and won't work properly if is used without a reverse proxy, check the **reverse proxy setup** page for more details.
@@ -749,15 +753,16 @@ flags:
 
 The flags currently available are:
 
-| Flag             | Lines    | What it enables                                           |
-| ---------------- | -------- | --------------------------------------------------------- |
-| `changePassword` | 6.x, 7.x | [changing a password](change-password.md) from the web UI |
-| `createUser`     | 6.x, 7.x | [user registration](user-registration.md) from the web UI |
-| `webLogin`       | 6.x, 7.x | [browser-based login](web-login.md) for the CLI           |
-| `stage`          | **7.x**  | [staged publishing](staged-publishing.md) (`npm stage`)   |
-| `tfa`            | **7.x**  | [two-factor authentication](two-factor-authentication.md) |
+| Flag              | Lines    | What it enables                                                         |
+| ----------------- | -------- | ----------------------------------------------------------------------- |
+| `changePassword`  | 6.x, 7.x | [changing a password](change-password.md) from the web UI               |
+| `createUser`      | 6.x, 7.x | [user registration](user-registration.md) from the web UI               |
+| `webLogin`        | 6.x, 7.x | [browser-based login](web-login.md) for the CLI                         |
+| `stage`           | **7.x**  | [staged publishing](staged-publishing.md) (`npm stage`)                 |
+| `tfa`             | **7.x**  | [two-factor authentication](two-factor-authentication.md)               |
+| `tarballMetadata` | **7.x**  | [per-version READMEs and dist stats from tarballs](tarball-metadata.md) |
 
-`stage` and `tfa` are not available in **6.x**, which does not receive new features.
+`stage`, `tfa` and `tarballMetadata` are not available in **6.x**, which does not receive new features.
 
 :::note `searchRemote` does nothing
 You may find a `searchRemote` flag in old configuration files and in the 6.x type
