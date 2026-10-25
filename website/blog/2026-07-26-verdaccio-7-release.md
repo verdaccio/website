@@ -55,6 +55,10 @@ The storage API is now **promise-based**, allowing storage plugins to use `async
 
 If you maintain a storage plugin, the [callback-to-async migration guide](/dev/plugin-storage-async) walks through the changes. If you use a third-party storage plugin, check its compatibility before upgrading your registry.
 
+## Faster installs with password authentication
+
+Clients that send a username and password on every request made the htpasswd plugin run a bcrypt verification per tarball. Setting `verify_cache_ms` reuses a successful verification for that long, so one install no longer costs one hash check per package. It is off by default; see [authentication](/docs/authentication) for the option.
+
 ## Improvements you may already know from 6.x
 
 Several improvements included in Verdaccio 7 have also reached 6.x through backports or shared packages. If you keep your 6.x registry updated, some of these will already look familiar.
@@ -78,8 +82,6 @@ Notifications cover both **publish and unpublish** events, so your automation ca
 ### More reliable search and downloads
 
 This release line also includes fixes around scoped-package search, search with legacy storage plugins, and tarball downloads across multiple uplinks. Search requests have rate limits, bounded pagination and batched access checks, and searches forwarded to an uplink keep its configured subpath and authentication headers. Proxy and download fixes improve error handling and cleanup when an upstream request fails.
-
-Registries that authenticate with username and password on every request can set `verify_cache_ms` in the htpasswd plugin to reuse a successful verification for a short time instead of running bcrypt once per tarball. It is off by default; see [authentication](/docs/authentication).
 
 The [release tracker](https://github.com/verdaccio/verdaccio/issues/5680) records the individual changes and backports if you need to check a particular fix.
 
