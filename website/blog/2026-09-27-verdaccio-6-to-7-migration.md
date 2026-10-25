@@ -9,7 +9,7 @@ hide_table_of_contents: true
 Moving from Verdaccio 6 to 7 keeps the familiar registry workflow, but changes the runtime,
 configuration and plugin interfaces. This guide covers the checks to make before switching,
 the changes that need action, and how to validate the result. For feature highlights, see
-[what's new in Verdaccio 7](/blog/2026/07/26/verdaccio-7-release).
+[what's new in Verdaccio 7](/blog/2026/10/25/verdaccio-7-release).
 
 :::info Scope
 Updated on **25 October 2026** for the `7.0.0` release. Verdaccio 7 is now `latest` on npm

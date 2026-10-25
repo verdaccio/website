@@ -17,7 +17,7 @@ const formatDate = (iso: string | null): string | null =>
       })
     : null;
 
-const RELEASE_POST = '/blog/2026/07/26/verdaccio-7-release';
+const RELEASE_POST = '/blog/2026/10/25/verdaccio-7-release';
 
 const majorOf = (version: string): string => `${version.split('.')[0]}.x`;
 

@@ -20,7 +20,7 @@ npx --yes verdaccio@next-7
 ```
 
 Then enable the feature flag described below in your registry configuration and restart
-Verdaccio. See [what's new in Verdaccio 7](/blog/2026/07/26/verdaccio-7-release) for an overview of the release.
+Verdaccio. See [what's new in Verdaccio 7](/blog/2026/10/25/verdaccio-7-release) for an overview of the release.
 :::
 
 :::caution

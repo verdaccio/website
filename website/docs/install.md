@@ -55,7 +55,7 @@ pnpm dlx verdaccio@next-7
 npx --yes verdaccio@next-7
 ```
 
-See [what's new in Verdaccio 7](/blog/2026/07/26/verdaccio-7-release)
+See [what's new in Verdaccio 7](/blog/2026/10/25/verdaccio-7-release)
 for release highlights and preview instructions. Existing users should read the
 [6-to-7 migration guide](/blog/2026/09/27/verdaccio-6-to-7-migration).
 
