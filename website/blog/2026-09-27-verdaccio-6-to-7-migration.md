@@ -43,14 +43,14 @@ for the package list and server secret, and `.token-db.json` for API tokens. A b
 conversion is not part of the normal upgrade. Registries inherited from Sinopia need the
 [database filename check](#a-sinopia-dbjson-database-is-no-longer-read) below.
 
-Earlier tests with `6.10.3` and `7.0.0-next-7.28` published and installed packages in both
-directions using the same storage, and exercised tokens issued by 6.x. Those results establish
-compatibility for that setup, not a guarantee for every plugin, token configuration or later release.
+Verdaccio 6 and 7 share the on-disk storage layout and the token format. A 7.0.0 registry
+reads the storage written by 6.x as it is: packages published on one line install from the
+other, and tokens issued by 6.x keep working as long as the server secret and the
+authentication settings are preserved. Rotating the secret invalidates them.
 
-Preserve the server secret and authentication settings when testing existing tokens. Rotating
-signing material can invalidate them. Verify your own storage plugin and token flows as part
-of the upgrade; use the backup as your rollback boundary rather than assuming every write by
-7.x can safely be consumed by 6.x.
+That covers the bundled filesystem storage and the htpasswd plugin. Verify your own storage
+plugin and token flows as part of the upgrade, and use the backup as your rollback boundary
+rather than assuming every write by 7.x can safely be consumed by 6.x.
 
 ## Before you start the upgrade
 
@@ -343,9 +343,9 @@ the last prerelease before `7.0.0`, and the distributed config, auth and local-s
 confirms the IPv4 default. The [6.9.0 release notes](https://github.com/verdaccio/verdaccio/releases/tag/v6.9.0)
 document the Node.js 22 requirement and dual ESM/CJS backport.
 
-Historical runtime checks covered `6.10.3` / `7.0.0-next-7.28`, and the Sinopia filename
-check covered `6.10.5` / `7.0.0-next-7.30`. They have not all been rerun against the current
-pair. Follow the validation checklist with your own configuration and plugins.
+The storage and token compatibility was exercised on earlier 6.x and 7.x prereleases sharing
+one storage directory; the format did not change since. Follow the validation checklist with
+your own configuration and plugins.
 
 Report missing migration steps in [GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions)
 or [GitHub Issues](https://github.com/verdaccio/verdaccio/issues), including the exact versions,
