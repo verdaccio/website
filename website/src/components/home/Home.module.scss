@@ -1782,35 +1782,6 @@ a.pill:hover {
   margin-bottom: 20px;
 }
 
-.upcomingRelease {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 10px;
-  width: fit-content;
-  max-width: 100%;
-  margin-top: 10px;
-  color: var(--h-muted);
-  font-size: 13px;
-
-  strong {
-    font-family: 'JetBrains Mono', ui-monospace, monospace;
-    overflow-wrap: anywhere;
-  }
-
-  &:hover {
-    color: var(--h-ink);
-  }
-}
-
-.upcomingTag {
-  padding: 2px 8px;
-  border: 1px solid var(--h-border);
-  border-radius: var(--r-pill);
-  font-size: 11px;
-  font-weight: 600;
-}
-
 .latest {
   display: flex;
   flex-wrap: wrap;

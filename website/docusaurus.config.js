@@ -301,6 +301,12 @@ module.exports = {
         },
         gtag: { trackingID: ANALYTICS.GA_TRACKING_ID },
         blog: {
+          // the blog had no npm2yarn at all, so a `npm2yarn` fence in a post
+          // rendered as a plain npm-only code block instead of tabs
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), { sync: true }],
+            require('./plugins/remark-npm2yarn-default-pnpm'),
+          ],
           blogTitle: 'Verdaccio Official Blog',
           blogDescription: 'The official Verdaccio Node.js proxy registry blog',
           showReadingTime: true,

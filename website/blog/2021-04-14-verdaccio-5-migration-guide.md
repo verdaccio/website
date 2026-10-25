@@ -1,6 +1,7 @@
 ---
 authors: juan_picado
 title: Verdaccio 5 migration guidelines
+hide_table_of_contents: true
 ---
 
 **Verdaccio 5** will introduce a few breaking changes, either way the migration should be light for the most of the users, here the big details.

@@ -280,8 +280,8 @@ you run:
 
 | Set                                                                                          | Image                   |
 | -------------------------------------------------------------------------------------------- | ----------------------- |
-| [v6](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v6) — current stable | `verdaccio/verdaccio:6` |
-| [v7](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7) — next major     | `7.x-next`              |
+| [v7](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7) — current stable | `verdaccio/verdaccio:7` |
+| [v6](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v6) — previous major | `verdaccio/verdaccio:6` |
 | [v9](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v9) — experimental   | `nightly-master`        |
 
 Between them they cover a local storage volume, reverse proxies with nginx and Apache,
