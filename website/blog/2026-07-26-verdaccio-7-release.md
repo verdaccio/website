@@ -15,10 +15,6 @@ New to Verdaccio? It is a free, open source npm-compatible registry you host you
 
 <!--truncate-->
 
-:::info Release status
-Verdaccio 7 is currently a **prerelease**, available as `verdaccio@next-7`, and requires **Node.js 24 or newer**. The unqualified `verdaccio` package still installs stable 6.x. See [Try Verdaccio 7](#try-verdaccio-7) below for the preview commands.
-:::
-
 ## More control over publishing
 
 ### Review a version before it becomes installable
