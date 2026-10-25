@@ -29,21 +29,14 @@ const LatestRelease = ({ className }: { className?: string }): React.ReactElemen
   }
   const date = formatDate(stable.publishedAt);
   const stableMajor = Number(stable.version.split('.')[0]);
-  const upcoming = releases.releases
-    .filter(
-      (release) =>
-        release.channel !== 'stable' &&
-        release.version.includes('-') &&
-        Number(release.version.split('.')[0]) > stableMajor
-    )
-    .sort((a, b) => Number(a.version.split('.')[0]) - Number(b.version.split('.')[0]))[0];
+  const isNewMajor = stableMajor === 7;
 
   return (
     <div className={clsx(styles.releaseGroup, className)}>
-      <Link className={styles.latest} to={stableMajor === 7 ? RELEASE_POST : stable.url}>
+      <Link className={styles.latest} to={isNewMajor ? RELEASE_POST : stable.url}>
         <span className={styles.latestTag}>
           <span className={styles.latestDot} aria-hidden="true" />
-          Latest release
+          {isNewMajor ? 'New major release' : 'Latest release'}
         </span>
         <span className={styles.latestVersion}>
           <span className={styles.latestMajor}>{majorOf(stable.version)}</span>
@@ -51,21 +44,9 @@ const LatestRelease = ({ className }: { className?: string }): React.ReactElemen
         </span>
         {date && <span className={styles.latestDate}>{date}</span>}
         <span className={styles.latestCta}>
-          {stableMajor === 7 ? 'Discover Verdaccio 7 →' : 'Release notes →'}
+          {isNewMajor ? 'Discover Verdaccio 7 →' : 'Release notes →'}
         </span>
       </Link>
-      {upcoming && (
-        <Link
-          className={styles.upcomingRelease}
-          to={majorOf(upcoming.version) === '7.x' ? RELEASE_POST : upcoming.url}
-        >
-          <span className={styles.upcomingTag}>Prerelease</span>
-          <span>
-            Try what's next: <strong>v{upcoming.version}</strong>
-          </span>
-          <span aria-hidden="true">→</span>
-        </Link>
-      )}
     </div>
   );
 };
