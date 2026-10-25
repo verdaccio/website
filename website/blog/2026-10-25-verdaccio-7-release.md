@@ -140,3 +140,7 @@ Thanks to everyone who contributed to the Verdaccio 7 release line and the relat
 </div>
 
 You can follow the full release checklist in [Verdaccio 7 Release Notes](https://github.com/verdaccio/verdaccio/issues/5680).
+
+## Support Verdaccio
+
+Verdaccio is maintained by volunteers and funded by its users. If your team relies on it, consider [sponsoring the project on Open Collective](https://opencollective.com/verdaccio): the contributions pay for infrastructure and let maintainers spend time on releases like this one.
