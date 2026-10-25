@@ -98,25 +98,25 @@ The [migration guide from Verdaccio 6 to 7](/blog/2026/09/27/verdaccio-6-to-7-mi
 
 ## Try Verdaccio 7
 
-With Node.js 24 or newer, select the preview explicitly:
+Verdaccio 7 is the `latest` release on npm. With Node.js 24 or newer:
 
 ```bash
-pnpm dlx verdaccio@next-7
+pnpm dlx verdaccio
 ```
 
 Or use npm:
 
 ```bash
-npx --yes verdaccio@next-7
+npx --yes verdaccio
 ```
 
 These commands use Verdaccio's normal configuration lookup. If you already have a local registry, pass `--config /path/to/test/config.yaml` and point that test configuration at separate storage. Once it is running, open [http://localhost:4873](http://localhost:4873).
 
-For container deployments, follow the [Docker](/docs/docker) or [Helm](/docs/kubernetes) guide and choose the 7.x preview image deliberately; the default stable image follows a different release line.
+For container deployments, follow the [Docker](/docs/docker) or [Helm](/docs/kubernetes) guide. The `verdaccio/verdaccio:7` image is also published as `latest`; pin `verdaccio/verdaccio:6` to stay on the previous line.
 
 If this is your first Verdaccio instance, continue with the [installation guide](/docs/installation) and your package manager's setup instructions: [npm](/docs/setup-npm), [pnpm](/docs/setup-pnpm) or [Yarn](/docs/setup-yarn).
 
-Tell us how the preview works with your plugins and publishing workflow in [GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions). Report reproducible problems in [GitHub Issues](https://github.com/verdaccio/verdaccio/issues).
+Tell us how the release works with your plugins and publishing workflow in [GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions). Report reproducible problems in [GitHub Issues](https://github.com/verdaccio/verdaccio/issues).
 
 ## Thanks
 
