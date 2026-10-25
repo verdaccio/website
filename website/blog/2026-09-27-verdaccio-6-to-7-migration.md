@@ -26,6 +26,11 @@ the changes that need action, and how to validate the result. For feature highli
 Keep the previous binary or image and the matching backup available for rollback. Do not run
 6.x and 7.x concurrently against the same storage directory.
 
+The [Docker examples for Verdaccio 7](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7) are a quick way to build that test environment:
+the [local storage volume example](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7/docker-local-storage-volume) mounts a configuration
+and a storage folder from the host, so you can point it at the copied backup and start the
+7.0.0 image without installing anything else.
+
 ## Storage and token compatibility
 
 The bundled filesystem storage keeps package manifests and tarballs, `.verdaccio-db.json`
@@ -98,7 +103,9 @@ with the old one**, so every CI job and developer has to log in again.
 
 The published 7.x Dockerfile sets **`VERDACCIO_ADDRESS=0.0.0.0`**, as the 6.x image does.
 There is no required IPv6 migration. Keep any explicit listen address your deployment needs,
-and check port mappings and reverse-proxy connectivity in the test environment.
+and check port mappings and reverse-proxy connectivity in the test environment. The
+[reverse proxy examples](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7/reverse_proxy) show working nginx, Apache and HTTPS Portal
+configurations for the 7 image, at the root path and under a relative path.
 
 ### Graceful shutdown is no longer opt-in
 
@@ -239,7 +246,9 @@ code that starts the listener.
 Verdaccio 6 and 7 use the same plugin interface **names** — `Auth`, `Storage`,
 `StorageHandler`, `ExpressMiddleware` and `ManifestFilter` under `pluginUtils` in
 `@verdaccio/core` — so a plugin written for 6.x is not renaming anything. What changes is the
-runtime around it.
+runtime around it. To try a plugin against the 7 image without touching a real registry, the
+[plugin examples](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7/plugins) build an image with a plugin installed from a registry or
+copied from a local folder.
 
 ### Depend on the right dist-tag
 
@@ -300,6 +309,9 @@ On the isolated copy, check the paths your team actually uses:
   and search through any configured uplink subpath.
 - Check your storage and auth plugins, Web UI, reverse proxy, notifications and shutdown.
 - Test restoring the backup with the previous version before the production cutover.
+
+For Kubernetes deployments, the [Helm example](https://github.com/verdaccio/verdaccio/tree/master/docker-examples/v7/kubernetes/helm) deploys the 7 image
+with the official chart and is a good base for the test namespace.
 
 If you roll back after accepting production writes on 7.x, account for those new packages and
 metadata changes before restoring the older snapshot. A rollback can otherwise discard them.
