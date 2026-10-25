@@ -11,14 +11,14 @@ configuration and plugin interfaces. This guide covers the checks to make before
 the changes that need action, and how to validate the result. For feature highlights, see
 [what's new in Verdaccio 7](/blog/2026/07/26/verdaccio-7-release).
 
-:::info Release status and scope
-Updated on **18 October 2026** against the published `verdaccio@7.0.0-next-7.31`
-package and its `9.0.0-next-9.36` modules, with comparisons against the local 6.x and 7.x
-source trees. The current stable release is `6.10.6`; 7.x remains a **prerelease** under
-`next-7`. An unqualified install still selects 6.x.
+:::info Scope
+Updated on **25 October 2026** for the `7.0.0` release. Verdaccio 7 is now `latest` on npm
+and Docker Hub; the 6.x line continues under the `latest-6` npm tag and the `6` image tag,
+so an unqualified install selects 7.x from here on. The checks compare the published
+`7.0.0-next-7.31` package and its modules with the 7.x and master sources `7.0.0` is built from.
 
 This update checks source and published package contents. Earlier runtime checks are
-identified below; they are not a full migration test of the latest release or of third-party plugins.
+identified below; they are not a full migration test of the final release or of third-party plugins.
 :::
 
 <!--truncate-->
@@ -175,11 +175,11 @@ The client stores a registry-scoped `_authToken` in your user `.npmrc`. Replace 
 with your registry URL. An existing token may continue to work when its secret, expiry and
 authentication configuration remain valid; test it before rotating credentials.
 
-**Login is an exception.** Current 7.x prereleases accept Basic credentials on the
+**Login is an exception.** Verdaccio 7 accepts Basic credentials on the
 `GET` and `PUT /-/user/org.couchdb.user:<name>` login routes so npm, pnpm and Yarn
 can obtain a token. This is controlled by [`security.api.basicLogin`](/docs/configuration#basic-login),
-which defaults to `true`. It does not re-enable Basic authentication for package requests. This correction shipped in
-`7.0.0-next-7.31` via the updated modules ([#6354](https://github.com/verdaccio/verdaccio/pull/6354)).
+which defaults to `true`. It does not re-enable Basic authentication for package requests. This correction
+([#6354](https://github.com/verdaccio/verdaccio/pull/6354)) is part of `7.0.0`; it first shipped in `7.0.0-next-7.31`.
 If an older 7.x preview rejects CLI logins with `401`, update before changing your credentials.
 Setting `basicLogin: false` disables that login path; use the supported web login flow instead.
 
@@ -279,12 +279,14 @@ separately:
 
 | Building against | The `verdaccio` binary | `@verdaccio/*` packages and plugins |
 | ---------------- | ---------------------- | ----------------------------------- |
-| **6.x**          | `latest`               | **`latest`**                        |
-| **7.x**          | `next-7`               | **`next-9`**                        |
+| **6.x**          | `latest-6`             | **`latest`**                        |
+| **7.x**          | `latest`               | **`next-9`**                        |
 
 The `next-7` and `6-next` tags **do** exist on those packages, which is what makes this a
-trap: they do not fail, they install prereleases those lines stopped using. `verdaccio@7.0.0-next-7.31`
-depends on `@verdaccio/core@9.0.0-next-9.36`, not on anything tagged `next-7`.
+trap: they do not fail, they install prereleases those lines stopped using. `verdaccio@7.0.0`
+depends on the `next-9` modules (`@verdaccio/core@9.0.0-next-9.40` at the time of writing),
+not on anything tagged `next-7`. On 6.x, `latest` of the `@verdaccio/*` packages is the 8.x
+module line that binary uses.
 
 ### Express 5 changes route syntax
 
@@ -334,9 +336,9 @@ metadata changes before restoring the older snapshot. A rollback can otherwise d
 
 ## Verification references
 
-The 18 October update compares the local 6.x and 7.x startup code with the published
-[`7.0.0-next-7.31` source](https://github.com/verdaccio/verdaccio/tree/v7.0.0-next-7.31)
-and the distributed config, auth and local-storage modules it uses. The
+The 25 October update compares the local 6.x and 7.x startup code with the published
+[`7.0.0-next-7.31` source](https://github.com/verdaccio/verdaccio/tree/v7.0.0-next-7.31),
+the last prerelease before `7.0.0`, and the distributed config, auth and local-storage modules it uses. The
 [7.x Dockerfile](https://github.com/verdaccio/verdaccio/blob/v7.0.0-next-7.31/Dockerfile)
 confirms the IPv4 default. The [6.9.0 release notes](https://github.com/verdaccio/verdaccio/releases/tag/v6.9.0)
 document the Node.js 22 requirement and dual ESM/CJS backport.
