@@ -49,7 +49,7 @@ const VersionDownloadsChart = () => {
   );
 
   const labels = filteredData.map(([version]) => `v${version}`);
-  const dataPoints = filteredData.map(([_, count]) => count);
+  const dataPoints = filteredData.map(([, count]) => count);
 
   const chartData = {
     labels,
