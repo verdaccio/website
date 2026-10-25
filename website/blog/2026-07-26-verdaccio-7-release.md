@@ -92,7 +92,7 @@ Verdaccio 7 changes the runtime and removes several deprecated interfaces. The m
 - **Node.js 24 or newer.** Update the runtime used by your deployment.
 - **YAML configuration.** JSON and JavaScript configuration files are no longer accepted.
 - **Authentication.** Package API requests require Bearer tokens. Old `.npmrc` entries using `_auth` must move to `_authToken`. The login routes still accept Basic, so `npm login`, `yarn npm login` and `pnpm login` keep working for existing users.
-- **Storage and server secret.** Check legacy Sinopia database names and the requirement for a 32-character server secret before switching versions.
+- **Server secret.** The server secret must be 32 characters; check it before switching versions.
 - **Plugins and embedded servers.** Express 5 changes middleware route syntax, and the programmatic API has changed. Prefer the named `runServer` export when embedding Verdaccio.
 - **Removed endpoints.** The legacy `/-/all` search endpoint and star/unstar support are gone.
 
