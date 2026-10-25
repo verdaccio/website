@@ -141,10 +141,12 @@ Thanks to everyone who contributed to the Verdaccio 7 release line and the relat
 
 You can follow the full release checklist in [Verdaccio 7 Release Notes](https://github.com/verdaccio/verdaccio/issues/5680).
 
-Thanks as well to the sponsors that provide the tools and services the project runs on: [Docker](https://www.docker.com/community/open-source/application) for the image hosting, [Crowdin](https://crowdin.com) for the translations platform, [BrowserStack](https://www.browserstack.com/) for cross-browser testing [JetBrains](https://www.jetbrains.com) for the IDE licences and [Mend](https://www.mend.io/) for moving Verdaccio to the [Renovate Community (OSS) plan](https://github.com/renovatebot/renovate/discussions/43817), which gives the extra resources to keep the dependencies of every branch up to date, and [Socket](https://socket.dev) for the free Business plan that scans every pull request for supply-chain risks. And to [OpenAI](https://openai.com) and [Anthropic](https://www.anthropic.com) for supporting the project with subscriptions to their tools, which helped the maintainers move faster on reviews, documentation and this release.
+### Sponsors
 
-And to the donors on Open Collective who fund the project directly, among them [Kyle Smith](https://opencollective.com/knksmith57), [Third Iron](https://opencollective.com/third_iron) and [Sterfive](https://opencollective.com/sterfive).
+Thanks to the sponsors that provide the tools and services the project runs on: [Docker](https://www.docker.com/community/open-source/application) for the image hosting, [Crowdin](https://crowdin.com) for the translations platform, [BrowserStack](https://www.browserstack.com/) for cross-browser testing [JetBrains](https://www.jetbrains.com) for the IDE licences and [Mend](https://www.mend.io/) for moving Verdaccio to the [Renovate Community (OSS) plan](https://github.com/renovatebot/renovate/discussions/43817), which gives the extra resources to keep the dependencies of every branch up to date, and [Socket](https://socket.dev) for the free Business plan that scans every pull request for supply-chain risks. And to [OpenAI](https://openai.com) and [Anthropic](https://www.anthropic.com) for supporting the project with subscriptions to their tools, which helped the maintainers move faster on reviews, documentation and this release.
 
-## Support Verdaccio
+### Open Collective
+
+Thanks to the donors on [Open Collective](https://opencollective.com/verdaccio) who fund the project directly, among them [Kyle Smith](https://opencollective.com/knksmith57), [Third Iron](https://opencollective.com/third_iron), [Sterfive](https://opencollective.com/sterfive) and [LerNetz AG](https://opencollective.com/lernetz).
 
 Verdaccio is maintained by volunteers and funded by its users. If your team relies on it, consider [sponsoring the project on Open Collective](https://opencollective.com/verdaccio): the contributions pay for infrastructure and let maintainers spend time on releases like this one.
