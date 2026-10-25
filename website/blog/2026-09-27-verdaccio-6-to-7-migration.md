@@ -11,16 +11,6 @@ configuration and plugin interfaces. This guide covers the checks to make before
 the changes that need action, and how to validate the result. For feature highlights, see
 [what's new in Verdaccio 7](/blog/2026/10/25/verdaccio-7-release).
 
-:::info Scope
-Updated on **25 October 2026** for the `7.0.0` release. Verdaccio 7 is now `latest` on npm
-and Docker Hub; the 6.x line continues under the `latest-6` npm tag and the `6` image tag,
-so an unqualified install selects 7.x from here on. The checks compare the published
-`7.0.0-next-7.31` package and its modules with the 7.x and master sources `7.0.0` is built from.
-
-This update checks source and published package contents. Earlier runtime checks are
-identified below; they are not a full migration test of the final release or of third-party plugins.
-:::
-
 <!--truncate-->
 
 ## Plan the upgrade
@@ -40,8 +30,7 @@ Keep the previous binary or image and the matching backup available for rollback
 
 The bundled filesystem storage keeps package manifests and tarballs, `.verdaccio-db.json`
 for the package list and server secret, and `.token-db.json` for API tokens. A bulk package
-conversion is not part of the normal upgrade. Registries inherited from Sinopia need the
-[database filename check](#a-sinopia-dbjson-database-is-no-longer-read) below.
+conversion is not part of the normal upgrade.
 
 Verdaccio 6 and 7 share the on-disk storage layout and the token format. A 7.0.0 registry
 reads the storage written by 6.x as it is: packages published on one line install from the
@@ -70,25 +59,6 @@ config file must be a YAML file (.yaml or .yml)
 ```
 
 Convert the file before upgrading. This is a straightforward one, and it fails loudly.
-
-### A `.sinopia-db.json` database is no longer read
-
-Registries that began life as Sinopia can still have their database in `.sinopia-db.json`.
-Verdaccio 6 keeps using it and only prints the `VERCODE01` warning asking you to rename it.
-**Verdaccio 7 ignores that file.** It creates a new `.verdaccio-db.json` next to it, with an
-empty package list and a **new secret**, and starts without any error. Your packages are still
-served, but every token issued with the old secret stops working and the list of private
-packages is empty.
-
-Check the storage folder before upgrading. If you find `.sinopia-db.json` and no
-`.verdaccio-db.json`, stop the registry and rename it after backing up the storage:
-
-```bash
-mv storage/.sinopia-db.json storage/.verdaccio-db.json
-```
-
-Use your configured storage path. If both files already exist, do not overwrite either one;
-compare them with your backup and establish which contains the original package list and secret.
 
 ### A secret that is not 32 characters stops the server, and the escape hatch is gone
 
