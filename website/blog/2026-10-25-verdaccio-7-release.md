@@ -141,7 +141,7 @@ Thanks to everyone who contributed to the Verdaccio 7 release line and the relat
 
 You can follow the full release checklist in [Verdaccio 7 Release Notes](https://github.com/verdaccio/verdaccio/issues/5680).
 
-Thanks as well to [OpenAI](https://openai.com) and [Anthropic](https://www.anthropic.com) for supporting the project with subscriptions to their tools, which helped the maintainers move faster on reviews, documentation and this release.
+Thanks as well to the sponsors that provide the tools and services the project runs on: [Docker](https://www.docker.com/community/open-source/application) for the image hosting, [Crowdin](https://crowdin.com) for the translations platform, [BrowserStack](https://www.browserstack.com/) for cross-browser testing and [JetBrains](https://www.jetbrains.com) for the IDE licences. And to [OpenAI](https://openai.com) and [Anthropic](https://www.anthropic.com) for supporting the project with subscriptions to their tools, which helped the maintainers move faster on reviews, documentation and this release.
 
 ## Support Verdaccio
 
