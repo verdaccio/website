@@ -118,7 +118,7 @@ For container deployments, follow the [Docker](/docs/docker) or [Helm](/docs/kub
 
 If this is your first Verdaccio instance, continue with the [installation guide](/docs/installation) and your package manager's setup instructions: [npm](/docs/setup-npm), [pnpm](/docs/setup-pnpm) or [Yarn](/docs/setup-yarn).
 
-Tell us how the release works with your plugins and publishing workflow in [GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions). Report reproducible problems in [GitHub Issues](https://github.com/verdaccio/verdaccio/issues).
+Tell us how the release works with your plugins and publishing workflow in [GitHub Discussions](https://github.com/verdaccio/verdaccio/discussions) or on [Discord](https://discord.gg/7qWJxBf). Report reproducible problems in [GitHub Issues](https://github.com/verdaccio/verdaccio/issues).
 
 ## Thanks
 
