@@ -139,6 +139,8 @@ Thanks to everyone who contributed to the Verdaccio 7 release line and the relat
   <a href="https://github.com/vsugrob" title="@vsugrob"><img src="https://avatars.githubusercontent.com/u/1497471?v=4&s=96" width="48" height="48" alt="@vsugrob" style={{borderRadius: '50%'}} /></a>
 </div>
 
+A special mention goes to [Marc Bernard (@mbtools)](https://github.com/mbtools) for the sustained work on Verdaccio over the last years, with more than 300 merged pull requests: reviews, fixes across the registry and the plugins, and the ownership and authorization hardening that ships in this release.
+
 You can follow the full release checklist in [Verdaccio 7 Release Notes](https://github.com/verdaccio/verdaccio/issues/5680).
 
 ### Sponsors
