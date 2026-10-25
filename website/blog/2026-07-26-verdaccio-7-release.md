@@ -27,7 +27,7 @@ Experimental **staged publishing** lets a pipeline upload a version for a mainta
 
 <StagedPublish />
 
-The feature is off by default, behind the `stage` flag, and requires **npm 11.17 or newer**. See the [staged publishing guide](/docs/staged-publishing) for configuration, permissions and the review commands.
+The feature is off by default, behind the `stage` flag, and requires **npm 11.17 or newer**. See the [staged publishing guide](/docs/staged-publishing) for configuration, permissions and the review commands. A version status endpoint reports whether a given version is `published` or `staged`, so a pipeline can wait for the approval before announcing a release.
 
 ### Add a second factor to account and publishing flows
 
@@ -38,6 +38,12 @@ Experimental **two-factor authentication** uses time-based one-time passwords fr
 It is also off by default, behind the `tfa` flag. Follow the [two-factor authentication guide](/docs/two-factor-authentication) to check client and storage requirements before enabling it.
 
 Both features are still experimental: test them with your release workflow and share feedback before relying on them in production. Neither changes the default publishing flow unless you opt in.
+
+### Ownership and unpublish checks on every change
+
+With [`publish.check_owners`](/docs/configuration#check-owner) enabled, the ownership check now also covers `npm deprecate`, version unpublish and dist-tag changes, not only publish. Removing a version requires the unpublish permission on its own route; a publish request can no longer act as a removal based on the metadata it carries.
+
+Publishing is also stricter about tarballs: invalid attachment names are rejected before any metadata is saved, and an upload is only recorded once the tarball is fully written. A failed publish no longer leaves a version without a tarball that blocks a corrected publish of the same version.
 
 ## A new foundation for plugins
 
@@ -61,6 +67,8 @@ Several improvements included in Verdaccio 7 have also reached 6.x through backp
 
 The Web UI includes dark mode, sorting packages by update time, improved scoped-package search, and refreshed login, signup and password screens. Package detail tabs also work better across desktop and mobile layouts.
 
+The home page gains a toolbar to filter packages by name, description or keywords, pick a scope and sort by name or most recent publication. An empty registry shows a step-by-step welcome card with a tab for each package manager listed in `web.pkgManagers`, now including bun. The settings dialog shows how much of each language is translated, untranslated strings fall back to English, and changing a password moves to the signed-in account menu. See the [web configuration](/docs/webui#package-list) for the new options.
+
 The shared `@verdaccio/ui-theme` package lets compatible UI fixes reach both release lines.
 
 ### Package filtering and registry notifications
@@ -73,7 +81,9 @@ Notifications cover both **publish and unpublish** events, so your automation ca
 
 ### More reliable search and downloads
 
-This release line also includes fixes around scoped-package search, search with legacy storage plugins, and tarball downloads across multiple uplinks. Search requests have rate limits, bounded pagination and batched access checks. Proxy and download fixes improve error handling and cleanup when an upstream request fails.
+This release line also includes fixes around scoped-package search, search with legacy storage plugins, and tarball downloads across multiple uplinks. Search requests have rate limits, bounded pagination and batched access checks, and searches forwarded to an uplink keep its configured subpath and authentication headers. Proxy and download fixes improve error handling and cleanup when an upstream request fails.
+
+Registries that authenticate with username and password on every request can set `verify_cache_ms` in the htpasswd plugin to reuse a successful verification for a short time instead of running bcrypt once per tarball. It is off by default; see [authentication](/docs/authentication).
 
 The [release tracker](https://github.com/verdaccio/verdaccio/issues/5680) records the individual changes and backports if you need to check a particular fix.
 
@@ -83,7 +93,7 @@ Verdaccio 7 changes the runtime and removes several deprecated interfaces. The m
 
 - **Node.js 24 or newer.** Update the runtime used by your deployment.
 - **YAML configuration.** JSON and JavaScript configuration files are no longer accepted.
-- **Authentication.** Package API requests require Bearer tokens. Old `.npmrc` entries using `_auth` must move to `_authToken`; the CLI login routes retain a controlled Basic-auth exception.
+- **Authentication.** Package API requests require Bearer tokens. Old `.npmrc` entries using `_auth` must move to `_authToken`. The login routes still accept Basic, so `npm login`, `yarn npm login` and `pnpm login` keep working for existing users.
 - **Storage and server secret.** Check legacy Sinopia database names and the requirement for a 32-character server secret before switching versions.
 - **Plugins and embedded servers.** Express 5 changes middleware route syntax, and the programmatic API has changed. Prefer the named `runServer` export when embedding Verdaccio.
 - **Removed endpoints.** The legacy `/-/all` search endpoint and star/unstar support are gone.
@@ -114,6 +124,6 @@ Tell us how the preview works with your plugins and publishing workflow in [GitH
 
 ## Thanks
 
-Thanks to everyone who contributed to the Verdaccio 7 release line and the related 6.x backports, including [@davidus27](https://github.com/davidus27), [@dianmorales](https://github.com/dianmorales), [@jotadeveloper](https://github.com/jotadeveloper), [@juanpicado](https://github.com/juanpicado), [@koliveira15](https://github.com/koliveira15), [@mbtools](https://github.com/mbtools), [@moglerdev](https://github.com/moglerdev), [@pranshuchittora](https://github.com/pranshuchittora), [@tmota900](https://github.com/tmota900), and [@vsugrob](https://github.com/vsugrob).
+Thanks to everyone who contributed to the Verdaccio 7 release line and the related 6.x backports, including [@davidus27](https://github.com/davidus27), [@dianmorales](https://github.com/dianmorales), [@jotadeveloper](https://github.com/jotadeveloper), [@juanpicado](https://github.com/juanpicado), [@koliveira15](https://github.com/koliveira15), [@mbtools](https://github.com/mbtools), [@moglerdev](https://github.com/moglerdev), [@pranshuchittora](https://github.com/pranshuchittora), [@ReemX](https://github.com/ReemX), [@RuneStone0](https://github.com/RuneStone0), [@tmota900](https://github.com/tmota900), and [@vsugrob](https://github.com/vsugrob).
 
 You can follow the full release checklist in [Verdaccio 7 Release Notes](https://github.com/verdaccio/verdaccio/issues/5680).
