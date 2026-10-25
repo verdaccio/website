@@ -1,7 +1,7 @@
 ---
 authors: juan_picado
 title: "What's new in Verdaccio 7"
-description: 'Explore Verdaccio 7: ESM plugins, async storage, experimental staged publishing and two-factor authentication, plus what to review before upgrading from 6.x.'
+description: 'Verdaccio 7: staged publishing, two-factor authentication, ownership checks on every change, a new web UI home, pure ESM plugins and async storage, plus what to review before upgrading from 6.x.'
 tags: [release, verdaccio]
 hide_table_of_contents: true
 ---
@@ -9,7 +9,7 @@ hide_table_of_contents: true
 import FilterFlow from '@site/src/components/diagrams/FilterFlow';
 import { StagedPublish, TwoFactor } from '@site/src/components/terminal/Examples';
 
-**Verdaccio 7 brings pure ESM plugin support, a promise-based storage API, and experimental staged publishing and two-factor authentication.** It also moves to Node.js 24 and Express 5. If you already run Verdaccio, your day-to-day install and publish workflow stays familiar; the biggest changes are in how you extend the registry and control publishing.
+**Verdaccio 7 puts publishing under your control: a version can be staged for review before anyone can install it, accounts and publishes can require a second factor, and ownership checks now cover deprecate, unpublish and dist-tag changes as well.** The web UI gains a home toolbar, a guided first publish and bun support; plugins can be pure ESM and storage plugins can use a promise-based API; the runtime moves to Node.js 24 and Express 5. Your day-to-day install and publish commands stay the same. What changes is how much you can control, and how you extend the registry.
 
 New to Verdaccio? It is a free, open source npm-compatible registry you host yourself to share internal packages, cache public dependencies and test publishes locally. It works with npm, pnpm and Yarn. The [getting-started guide](/docs/installation) covers the basics.
 
