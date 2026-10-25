@@ -122,6 +122,21 @@ Tell us how the release works with your plugins and publishing workflow in [GitH
 
 ## Thanks
 
-Thanks to everyone who contributed to the Verdaccio 7 release line and the related 6.x backports, including [@davidus27](https://github.com/davidus27), [@dianmorales](https://github.com/dianmorales), [@jotadeveloper](https://github.com/jotadeveloper), [@juanpicado](https://github.com/juanpicado), [@koliveira15](https://github.com/koliveira15), [@mbtools](https://github.com/mbtools), [@moglerdev](https://github.com/moglerdev), [@pranshuchittora](https://github.com/pranshuchittora), [@ReemX](https://github.com/ReemX), [@RuneStone0](https://github.com/RuneStone0), [@tmota900](https://github.com/tmota900), and [@vsugrob](https://github.com/vsugrob).
+Thanks to everyone who contributed to the Verdaccio 7 release line and the related 6.x backports.
+
+<div style={{display: 'flex', flexWrap: 'wrap', gap: '8px'}}>
+  <a href="https://github.com/davidus27" title="@davidus27"><img src="https://avatars.githubusercontent.com/u/20754428?v=4&s=96" width="48" height="48" alt="@davidus27" style={{borderRadius: '50%'}} /></a>
+  <a href="https://github.com/dianmorales" title="@dianmorales"><img src="https://avatars.githubusercontent.com/u/558740?v=4&s=96" width="48" height="48" alt="@dianmorales" style={{borderRadius: '50%'}} /></a>
+  <a href="https://github.com/jotadeveloper" title="@jotadeveloper"><img src="https://avatars.githubusercontent.com/u/116422?v=4&s=96" width="48" height="48" alt="@jotadeveloper" style={{borderRadius: '50%'}} /></a>
+  <a href="https://github.com/juanpicado" title="@juanpicado"><img src="https://avatars.githubusercontent.com/u/558752?v=4&s=96" width="48" height="48" alt="@juanpicado" style={{borderRadius: '50%'}} /></a>
+  <a href="https://github.com/koliveira15" title="@koliveira15"><img src="https://avatars.githubusercontent.com/u/35852680?v=4&s=96" width="48" height="48" alt="@koliveira15" style={{borderRadius: '50%'}} /></a>
+  <a href="https://github.com/mbtools" title="@mbtools"><img src="https://avatars.githubusercontent.com/u/59966492?v=4&s=96" width="48" height="48" alt="@mbtools" style={{borderRadius: '50%'}} /></a>
+  <a href="https://github.com/moglerdev" title="@moglerdev"><img src="https://avatars.githubusercontent.com/u/39583780?v=4&s=96" width="48" height="48" alt="@moglerdev" style={{borderRadius: '50%'}} /></a>
+  <a href="https://github.com/pranshuchittora" title="@pranshuchittora"><img src="https://avatars.githubusercontent.com/u/32242596?v=4&s=96" width="48" height="48" alt="@pranshuchittora" style={{borderRadius: '50%'}} /></a>
+  <a href="https://github.com/ReemX" title="@ReemX"><img src="https://avatars.githubusercontent.com/u/35267832?v=4&s=96" width="48" height="48" alt="@ReemX" style={{borderRadius: '50%'}} /></a>
+  <a href="https://github.com/RuneStone0" title="@RuneStone0"><img src="https://avatars.githubusercontent.com/u/6630442?v=4&s=96" width="48" height="48" alt="@RuneStone0" style={{borderRadius: '50%'}} /></a>
+  <a href="https://github.com/tmota900" title="@tmota900"><img src="https://avatars.githubusercontent.com/u/48350728?v=4&s=96" width="48" height="48" alt="@tmota900" style={{borderRadius: '50%'}} /></a>
+  <a href="https://github.com/vsugrob" title="@vsugrob"><img src="https://avatars.githubusercontent.com/u/1497471?v=4&s=96" width="48" height="48" alt="@vsugrob" style={{borderRadius: '50%'}} /></a>
+</div>
 
 You can follow the full release checklist in [Verdaccio 7 Release Notes](https://github.com/verdaccio/verdaccio/issues/5680).
