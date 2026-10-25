@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-16T09:54:36.450Z",
+  "generatedAt": "2026-10-25T11:30:44.467Z",
   "organization": "verdaccio",
   "totals": {
-    "contributors": 442,
-    "contributions": 8385,
+    "contributors": 443,
+    "contributions": 8417,
     "repositories": 36
   },
   "contributors": [
@@ -12,15 +12,15 @@
       "login": "juanpicado",
       "avatar_url": "https://avatars.githubusercontent.com/u/558752?v=4",
       "html_url": "https://github.com/juanpicado",
-      "contributions": 5851,
+      "contributions": 5875,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3250
+          "contributions": 3262
         },
         {
           "name": "website",
-          "contributions": 610
+          "contributions": 620
         },
         {
           "name": "monorepo",
@@ -40,7 +40,7 @@
         },
         {
           "name": "e2e-tests",
-          "contributions": 140
+          "contributions": 142
         },
         {
           "name": "generator-verdaccio-plugin",
@@ -156,7 +156,7 @@
         }
       ],
       "firstContributionAt": "2016-08-07T00:00:00.000Z",
-      "lastContributionAt": "2026-10-11T00:00:00.000Z"
+      "lastContributionAt": "2026-10-25T00:00:00.000Z"
     },
     {
       "id": 999113,
@@ -253,11 +253,11 @@
       "login": "mbtools",
       "avatar_url": "https://avatars.githubusercontent.com/u/59966492?v=4",
       "html_url": "https://github.com/mbtools",
-      "contributions": 322,
+      "contributions": 323,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 311
+          "contributions": 312
         },
         {
           "name": "website",
@@ -269,7 +269,7 @@
         }
       ],
       "firstContributionAt": "2022-08-14T00:00:00.000Z",
-      "lastContributionAt": "2026-10-04T00:00:00.000Z"
+      "lastContributionAt": "2026-10-18T00:00:00.000Z"
     },
     {
       "id": 6918450,
@@ -354,11 +354,11 @@
       "login": "dianmorales",
       "avatar_url": "https://avatars.githubusercontent.com/u/558740?v=4",
       "html_url": "https://github.com/dianmorales",
-      "contributions": 56,
+      "contributions": 62,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 43
+          "contributions": 48
         },
         {
           "name": "verdaccio-aws-s3-storage",
@@ -373,20 +373,20 @@
           "contributions": 2
         },
         {
+          "name": "verdaccio-google-cloud",
+          "contributions": 2
+        },
+        {
           "name": "verdaccio-auth-ldap",
           "contributions": 2
         },
         {
           "name": "generator-verdaccio-plugin",
           "contributions": 1
-        },
-        {
-          "name": "verdaccio-google-cloud",
-          "contributions": 1
         }
       ],
       "firstContributionAt": "2021-01-31T00:00:00.000Z",
-      "lastContributionAt": "2026-10-04T00:00:00.000Z"
+      "lastContributionAt": "2026-10-18T00:00:00.000Z"
     },
     {
       "id": 20119184,
@@ -1347,11 +1347,11 @@
       "contributions": 4,
       "repositories": [
         {
-          "name": "ui",
+          "name": "website",
           "contributions": 2
         },
         {
-          "name": "website",
+          "name": "ui",
           "contributions": 2
         }
       ],
@@ -1540,11 +1540,11 @@
           "contributions": 1
         },
         {
-          "name": "ui",
+          "name": "website",
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "ui",
           "contributions": 1
         }
       ],
@@ -1604,11 +1604,11 @@
       "contributions": 3,
       "repositories": [
         {
-          "name": "local-storage",
+          "name": "verdaccio",
           "contributions": 1
         },
         {
-          "name": "verdaccio",
+          "name": "local-storage",
           "contributions": 1
         },
         {
@@ -1676,11 +1676,11 @@
           "contributions": 1
         },
         {
-          "name": "verdaccio-aws-s3-storage",
+          "name": "website",
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "verdaccio-aws-s3-storage",
           "contributions": 1
         }
       ],
@@ -2015,8 +2015,8 @@
           "contributions": 2
         }
       ],
-      "firstContributionAt": "2019-08-13T07:21:14Z",
-      "lastContributionAt": "2019-08-14T14:38:34Z"
+      "firstContributionAt": "2019-08-11T00:00:00.000Z",
+      "lastContributionAt": "2019-08-11T00:00:00.000Z"
     },
     {
       "id": 11387548,
@@ -2425,8 +2425,8 @@
           "contributions": 2
         }
       ],
-      "firstContributionAt": "2019-02-10T00:00:00.000Z",
-      "lastContributionAt": "2019-02-10T00:00:00.000Z"
+      "firstContributionAt": "2019-02-11T18:50:11Z",
+      "lastContributionAt": "2019-02-12T23:32:50Z"
     },
     {
       "id": 465522,
@@ -2541,11 +2541,11 @@
       "contributions": 2,
       "repositories": [
         {
-          "name": "verdaccio-google-cloud",
+          "name": "monorepo",
           "contributions": 1
         },
         {
-          "name": "monorepo",
+          "name": "verdaccio-google-cloud",
           "contributions": 1
         }
       ],
@@ -5932,6 +5932,21 @@
       "lastContributionAt": "2018-06-10T00:00:00.000Z"
     },
     {
+      "id": 35267832,
+      "login": "ReemX",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35267832?v=4",
+      "html_url": "https://github.com/ReemX",
+      "contributions": 1,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 1
+        }
+      ],
+      "firstContributionAt": "2026-10-18T14:20:25Z",
+      "lastContributionAt": "2026-10-18T14:20:25Z"
+    },
+    {
       "id": 24845478,
       "login": "reviewher",
       "avatar_url": "https://avatars.githubusercontent.com/u/24845478?v=4",
@@ -7206,7 +7221,7 @@
       "stargazers_count": 82,
       "archived": false,
       "language": "Mustache",
-      "pushed_at": "2026-10-05T23:23:04Z"
+      "pushed_at": "2026-10-25T08:06:09Z"
     },
     {
       "name": "commons-api",
@@ -7236,10 +7251,10 @@
       "full_name": "verdaccio/e2e-tests",
       "html_url": "https://github.com/verdaccio/e2e-tests",
       "description": "A standalone CLI tool that runs the full Verdaccio e2e test suite against any running registry",
-      "stargazers_count": 4,
+      "stargazers_count": 5,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-03T16:37:30Z"
+      "pushed_at": "2026-10-25T09:07:21Z"
     },
     {
       "name": "eslint-config-verdaccio",
@@ -7283,7 +7298,7 @@
       "stargazers_count": 12,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-09-28T20:51:06Z"
+      "pushed_at": "2026-10-23T17:34:42Z"
     },
     {
       "name": "github-actions",
@@ -7390,10 +7405,10 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17915,
+      "stargazers_count": 17941,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-15T21:05:38Z"
+      "pushed_at": "2026-10-25T10:59:20Z"
     },
     {
       "name": "verdaccio-audit",
@@ -7415,7 +7430,7 @@
       "stargazers_count": 3,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-08T07:30:07Z"
+      "pushed_at": "2026-10-25T04:42:39Z"
     },
     {
       "name": "verdaccio-aws-s3-storage",
@@ -7481,7 +7496,7 @@
       "stargazers_count": 18,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-04T13:21:31Z"
+      "pushed_at": "2026-10-22T06:53:33Z"
     },
     {
       "name": "verdaccio-htpasswd",
@@ -7514,7 +7529,7 @@
       "stargazers_count": 37,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-16T00:37:57Z"
+      "pushed_at": "2026-10-25T11:25:08Z"
     },
     {
       "name": "yarn-plugin-npm",
