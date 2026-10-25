@@ -3,7 +3,7 @@ authors: juan_picado
 title: Migrating from Verdaccio 6 to Verdaccio 7
 description: 'Prepare a Verdaccio 6 registry for 7: runtime, configuration, authentication, storage, plugins, validation and rollback.'
 tags: [migration, verdaccio]
-hide_table_of_contents: false
+hide_table_of_contents: true
 ---
 
 Moving from Verdaccio 6 to 7 keeps the familiar registry workflow, but changes the runtime,

@@ -3,7 +3,7 @@ authors: juan_picado
 title: "What's new in Verdaccio 7"
 description: 'Explore Verdaccio 7: ESM plugins, async storage, experimental staged publishing and two-factor authentication, plus what to review before upgrading from 6.x.'
 tags: [release, verdaccio]
-hide_table_of_contents: false
+hide_table_of_contents: true
 ---
 
 import FilterFlow from '@site/src/components/diagrams/FilterFlow';
