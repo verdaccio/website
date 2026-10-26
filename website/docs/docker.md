@@ -134,6 +134,42 @@ docker run -it --rm --name verdaccio \
   verdaccio/verdaccio
 ```
 
+### Health check {#healthcheck}
+
+The image does not declare a `HEALTHCHECK`. If your setup acts on container health (for instance `depends_on` with `condition: service_healthy` in Compose, Docker Swarm, or a reverse proxy such as Traefik that skips unhealthy containers), add one that probes the `/-/ping` endpoint.
+
+Use `127.0.0.1` rather than `localhost`: the image is based on Alpine, where `localhost` resolves to `::1` first, while Verdaccio listens on IPv4 only by default (`VERDACCIO_ADDRESS=0.0.0.0`). A probe against `localhost` would always be refused.
+
+```bash
+docker run -it --rm --name verdaccio -p 4873:4873 \
+  --health-cmd 'wget --quiet --tries=1 --spider http://127.0.0.1:4873/-/ping || exit 1' \
+  --health-interval 30s --health-timeout 5s --health-start-period 10s --health-retries 3 \
+  verdaccio/verdaccio
+```
+
+The same check in `docker-compose.yaml`:
+
+```yaml
+services:
+  verdaccio:
+    image: verdaccio/verdaccio
+    ports:
+      - '4873:4873'
+    healthcheck:
+      test: ['CMD-SHELL', 'wget --quiet --tries=1 --spider http://127.0.0.1:4873/-/ping || exit 1']
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3
+```
+
+If you changed `VERDACCIO_PORT` or set `VERDACCIO_PROTOCOL=https`, adjust the URL to match. The busybox `wget` in the image cannot skip certificate validation, so with a self-signed certificate probe through Node.js instead:
+
+```yaml
+    healthcheck:
+      test: ['CMD-SHELL', 'NODE_TLS_REJECT_UNAUTHORIZED=0 node -e "fetch(\"https://127.0.0.1:4873/-/ping\").then(r => process.exit(r.ok ? 0 : 1), () => process.exit(1))"']
+```
+
 ### SELinux {#selinux}
 
 If SELinux is enforced in your system, the directories to be bind-mounted in the container need to be relabeled. Otherwise verdaccio will be forbidden from reading those files.
