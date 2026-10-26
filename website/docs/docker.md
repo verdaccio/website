@@ -166,8 +166,12 @@ services:
 If you changed `VERDACCIO_PORT` or set `VERDACCIO_PROTOCOL=https`, adjust the URL to match. The busybox `wget` in the image cannot skip certificate validation, so with a self-signed certificate probe through Node.js instead:
 
 ```yaml
-    healthcheck:
-      test: ['CMD-SHELL', 'NODE_TLS_REJECT_UNAUTHORIZED=0 node -e "fetch(\"https://127.0.0.1:4873/-/ping\").then(r => process.exit(r.ok ? 0 : 1), () => process.exit(1))"']
+healthcheck:
+  test:
+    [
+      'CMD-SHELL',
+      'NODE_TLS_REJECT_UNAUTHORIZED=0 node -e "fetch(\"https://127.0.0.1:4873/-/ping\").then(r => process.exit(r.ok ? 0 : 1), () => process.exit(1))"',
+    ]
 ```
 
 ### SELinux {#selinux}
