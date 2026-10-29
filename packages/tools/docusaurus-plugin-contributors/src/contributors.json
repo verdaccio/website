@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-25T11:30:44.467Z",
+  "generatedAt": "2026-10-29T08:46:12.149Z",
   "organization": "verdaccio",
   "totals": {
     "contributors": 443,
-    "contributions": 8417,
+    "contributions": 8424,
     "repositories": 36
   },
   "contributors": [
@@ -12,15 +12,15 @@
       "login": "juanpicado",
       "avatar_url": "https://avatars.githubusercontent.com/u/558752?v=4",
       "html_url": "https://github.com/juanpicado",
-      "contributions": 5875,
+      "contributions": 5882,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3262
+          "contributions": 3266
         },
         {
           "name": "website",
-          "contributions": 620
+          "contributions": 622
         },
         {
           "name": "monorepo",
@@ -72,7 +72,7 @@
         },
         {
           "name": "charts",
-          "contributions": 54
+          "contributions": 55
         },
         {
           "name": "streams",
@@ -213,11 +213,11 @@
           "contributions": 1
         },
         {
-          "name": "streams",
+          "name": "verdaccio-memory",
           "contributions": 1
         },
         {
-          "name": "verdaccio-memory",
+          "name": "streams",
           "contributions": 1
         },
         {
@@ -369,11 +369,11 @@
           "contributions": 3
         },
         {
-          "name": "monorepo",
+          "name": "verdaccio-google-cloud",
           "contributions": 2
         },
         {
-          "name": "verdaccio-google-cloud",
+          "name": "monorepo",
           "contributions": 2
         },
         {
@@ -1347,11 +1347,11 @@
       "contributions": 4,
       "repositories": [
         {
-          "name": "website",
+          "name": "ui",
           "contributions": 2
         },
         {
-          "name": "ui",
+          "name": "website",
           "contributions": 2
         }
       ],
@@ -1540,11 +1540,11 @@
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "ui",
           "contributions": 1
         },
         {
-          "name": "ui",
+          "name": "website",
           "contributions": 1
         }
       ],
@@ -1676,11 +1676,11 @@
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "verdaccio-aws-s3-storage",
           "contributions": 1
         },
         {
-          "name": "verdaccio-aws-s3-storage",
+          "name": "website",
           "contributions": 1
         }
       ],
@@ -2541,11 +2541,11 @@
       "contributions": 2,
       "repositories": [
         {
-          "name": "monorepo",
+          "name": "verdaccio-google-cloud",
           "contributions": 1
         },
         {
-          "name": "verdaccio-google-cloud",
+          "name": "monorepo",
           "contributions": 1
         }
       ],
@@ -7221,7 +7221,7 @@
       "stargazers_count": 82,
       "archived": false,
       "language": "Mustache",
-      "pushed_at": "2026-10-25T08:06:09Z"
+      "pushed_at": "2026-10-26T23:23:10Z"
     },
     {
       "name": "commons-api",
@@ -7405,10 +7405,10 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17941,
+      "stargazers_count": 17956,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-25T10:59:20Z"
+      "pushed_at": "2026-10-28T15:05:14Z"
     },
     {
       "name": "verdaccio-audit",
@@ -7438,10 +7438,10 @@
       "full_name": "verdaccio/verdaccio-aws-s3-storage",
       "html_url": "https://github.com/verdaccio/verdaccio-aws-s3-storage",
       "description": "📦 Amazon Web Services S3 storage plugin",
-      "stargazers_count": 9,
+      "stargazers_count": 10,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-15T18:36:03Z"
+      "pushed_at": "2026-10-28T08:54:09Z"
     },
     {
       "name": "verdaccio-azure",
@@ -7529,7 +7529,7 @@
       "stargazers_count": 37,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-25T11:25:08Z"
+      "pushed_at": "2026-10-29T03:49:45Z"
     },
     {
       "name": "yarn-plugin-npm",
