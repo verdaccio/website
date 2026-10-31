@@ -400,8 +400,8 @@ importers:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
       react-iframe:
-        specifier: 1.8.5
-        version: 1.8.5(react@19.3.0)
+        specifier: 2.0.0
+        version: 2.0.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       react-player:
         specifier: 3.4.0
         version: 3.4.0(@svta/cml-cta@1.0.6(@svta/cml-structured-field-values@1.1.3(@svta/cml-utils@1.5.0))(@svta/cml-utils@1.5.0))(@svta/cml-structured-field-values@1.1.3(@svta/cml-utils@1.5.0))(@svta/cml-utils@1.5.0)(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
@@ -7040,10 +7040,12 @@ packages:
   react-fast-compare@3.2.2:
     resolution: {integrity: sha512-nsO+KSNgo1SbJqJEYRE9ERzo7YtYbou/OqjSQKxV7jcKox7+usiUVZOAC+XnDOABXggQTno0Y1CpVnuWEc1boQ==}
 
-  react-iframe@1.8.5:
-    resolution: {integrity: sha512-F4cQJGs3ydaG6fJWfuz9yLwOU0Trzl6kttXuUG+vYwosH8enOOFxZWEDQCSbNVO8ayjfYZeqLxEvdvcsSy4GvA==}
+  react-iframe@2.0.0:
+    resolution: {integrity: sha512-mwmKlaw3OMtlxOTs0evY76BBj1/lARXxECYCcPLDspsAK9EHtvuYCoDdhw3ghz/9uNTq7QqKR2Qzcq80Zx9b+g==}
+    engines: {node: '>=20'}
     peerDependencies:
-      react: '>=16.x.x'
+      react: '>=18'
+      react-dom: '>=18'
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -16141,10 +16143,10 @@ snapshots:
 
   react-fast-compare@3.2.2: {}
 
-  react-iframe@1.8.5(react@19.3.0):
+  react-iframe@2.0.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
     dependencies:
-      object-assign: 4.1.1
       react: 19.3.0
+      react-dom: 19.3.0(react@19.3.0)
 
   react-is@16.13.1: {}
 
