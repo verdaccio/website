@@ -9,11 +9,11 @@ authenticating you instead of asking for a username and password in the
 terminal. npm opens the Verdaccio web UI, you sign in there, and the CLI picks up
 the token once you are done.
 
-:::info Off by default, but not experimental
-This is a long-standing feature gated by the `webLogin`
-[feature flag](config.md#experiments), which is `false` unless you turn it
-on. The flag exists so operators opt into the browser flow deliberately, not
-because the feature is unfinished.
+:::caution Experimental
+This feature sits behind the `webLogin` [feature flag](config.md#experiments),
+which is `false` unless you turn it on. Like every flag, it is experimental: the
+flag, its endpoints or its behaviour may change in a future release depending on the
+feedback we receive.
 :::
 
 ## Enabling it {#enabling}

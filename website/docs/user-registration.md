@@ -8,10 +8,12 @@ With the `createUser` flag on, the web UI grows a sign-up form so people can
 create their own account from the browser instead of an administrator adding
 them by hand.
 
-:::info Off by default, but not experimental
-This is a long-standing feature gated by the `createUser`
-[feature flag](config.md#experiments), which is `false` unless you turn it
-on. Self-registration is a deliberate choice, so it is never enabled for you.
+:::caution Experimental
+This feature sits behind the `createUser` [feature flag](config.md#experiments),
+which is `false` unless you turn it on. Like every flag, it is experimental: the
+flag, its endpoint or its behaviour may change in a future release depending on the
+feedback we receive.
+Self-registration is a deliberate choice, so it is never enabled for you.
 :::
 
 ## Enabling it {#enabling}
