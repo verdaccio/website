@@ -428,8 +428,8 @@ importers:
         specifier: 0.6.0
         version: 0.6.0(@docusaurus/core@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.0))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@8.1.1)(typescript@7.0.2))
       docusaurus-plugin-sass:
-        specifier: 0.2.6
-        version: 0.2.6(@docusaurus/core@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.0))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@8.1.1)(typescript@7.0.2))(sass@1.105.1)(webpack@5.103.0(esbuild@0.28.2))
+        specifier: 0.2.7
+        version: 0.2.7(@docusaurus/core@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.0))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@8.1.1)(typescript@7.0.2))(sass@1.105.1)(webpack@5.103.0(esbuild@0.28.2))
       prism-react-renderer:
         specifier: 2.4.1
         version: 2.4.1(react@19.3.0)
@@ -4775,8 +4775,8 @@ packages:
     peerDependencies:
       '@docusaurus/core': ^3.0.0
 
-  docusaurus-plugin-sass@0.2.6:
-    resolution: {integrity: sha512-2hKQQDkrufMong9upKoG/kSHJhuwd+FA3iAe/qzS/BmWpbIpe7XKmq5wlz4J5CJaOPu4x+iDJbgAxZqcoQf0kg==}
+  docusaurus-plugin-sass@0.2.7:
+    resolution: {integrity: sha512-v+XWW2BBlKiBfqNbDr8iF/DUcWIXDTsAVAfkbG0/pzCx9yV0zK6Qu0ZVFxpZXcMihokzl0zFD1HIN/M4TnzEwA==}
     peerDependencies:
       '@docusaurus/core': ^2.0.0-beta || ^3.0.0-alpha
       sass: ^1.30.0
@@ -13409,7 +13409,7 @@ snapshots:
       minimatch: 9.0.3
       yaml: 2.8.1
 
-  docusaurus-plugin-sass@0.2.6(@docusaurus/core@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.0))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@8.1.1)(typescript@7.0.2))(sass@1.105.1)(webpack@5.103.0(esbuild@0.28.2)):
+  docusaurus-plugin-sass@0.2.7(@docusaurus/core@3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.0))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@8.1.1)(typescript@7.0.2))(sass@1.105.1)(webpack@5.103.0(esbuild@0.28.2)):
     dependencies:
       '@docusaurus/core': 3.10.2(@mdx-js/react@3.1.1(@types/react@19.3.0)(react@19.3.0))(csso@5.0.5)(debug@4.4.3(supports-color@8.1.1))(esbuild@0.28.2)(react-dom@19.3.0(react@19.3.0))(react@19.3.0)(supports-color@8.1.1)(typescript@7.0.2)
       sass: 1.105.1
