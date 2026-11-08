@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-10-29T08:46:12.149Z",
+  "generatedAt": "2026-11-07T08:37:14.994Z",
   "organization": "verdaccio",
   "totals": {
     "contributors": 443,
-    "contributions": 8424,
+    "contributions": 8432,
     "repositories": 36
   },
   "contributors": [
@@ -12,15 +12,15 @@
       "login": "juanpicado",
       "avatar_url": "https://avatars.githubusercontent.com/u/558752?v=4",
       "html_url": "https://github.com/juanpicado",
-      "contributions": 5882,
+      "contributions": 5886,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 3266
+          "contributions": 3267
         },
         {
           "name": "website",
-          "contributions": 622
+          "contributions": 623
         },
         {
           "name": "monorepo",
@@ -67,11 +67,11 @@
           "contributions": 62
         },
         {
-          "name": "file-locking",
-          "contributions": 55
+          "name": "charts",
+          "contributions": 57
         },
         {
-          "name": "charts",
+          "name": "file-locking",
           "contributions": 55
         },
         {
@@ -156,7 +156,7 @@
         }
       ],
       "firstContributionAt": "2016-08-07T00:00:00.000Z",
-      "lastContributionAt": "2026-10-25T00:00:00.000Z"
+      "lastContributionAt": "2026-11-01T00:00:00.000Z"
     },
     {
       "id": 999113,
@@ -213,11 +213,11 @@
           "contributions": 1
         },
         {
-          "name": "verdaccio-memory",
+          "name": "streams",
           "contributions": 1
         },
         {
-          "name": "streams",
+          "name": "verdaccio-memory",
           "contributions": 1
         },
         {
@@ -253,11 +253,11 @@
       "login": "mbtools",
       "avatar_url": "https://avatars.githubusercontent.com/u/59966492?v=4",
       "html_url": "https://github.com/mbtools",
-      "contributions": 323,
+      "contributions": 324,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 312
+          "contributions": 313
         },
         {
           "name": "website",
@@ -269,7 +269,7 @@
         }
       ],
       "firstContributionAt": "2022-08-14T00:00:00.000Z",
-      "lastContributionAt": "2026-10-18T00:00:00.000Z"
+      "lastContributionAt": "2026-10-25T00:00:00.000Z"
     },
     {
       "id": 6918450,
@@ -354,11 +354,11 @@
       "login": "dianmorales",
       "avatar_url": "https://avatars.githubusercontent.com/u/558740?v=4",
       "html_url": "https://github.com/dianmorales",
-      "contributions": 62,
+      "contributions": 65,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 48
+          "contributions": 49
         },
         {
           "name": "verdaccio-aws-s3-storage",
@@ -377,6 +377,10 @@
           "contributions": 2
         },
         {
+          "name": "charts",
+          "contributions": 2
+        },
+        {
           "name": "verdaccio-auth-ldap",
           "contributions": 2
         },
@@ -386,7 +390,7 @@
         }
       ],
       "firstContributionAt": "2021-01-31T00:00:00.000Z",
-      "lastContributionAt": "2026-10-18T00:00:00.000Z"
+      "lastContributionAt": "2026-11-01T00:00:00.000Z"
     },
     {
       "id": 20119184,
@@ -1347,11 +1351,11 @@
       "contributions": 4,
       "repositories": [
         {
-          "name": "ui",
+          "name": "website",
           "contributions": 2
         },
         {
-          "name": "website",
+          "name": "ui",
           "contributions": 2
         }
       ],
@@ -1438,8 +1442,8 @@
           "contributions": 1
         }
       ],
-      "firstContributionAt": "2020-06-14T00:00:00.000Z",
-      "lastContributionAt": "2020-06-28T00:00:00.000Z"
+      "firstContributionAt": "2020-06-21T00:00:00.000Z",
+      "lastContributionAt": "2020-06-21T00:00:00.000Z"
     },
     {
       "id": 12389415,
@@ -1540,11 +1544,11 @@
           "contributions": 1
         },
         {
-          "name": "ui",
+          "name": "website",
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "ui",
           "contributions": 1
         }
       ],
@@ -1676,11 +1680,11 @@
           "contributions": 1
         },
         {
-          "name": "verdaccio-aws-s3-storage",
+          "name": "website",
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "verdaccio-aws-s3-storage",
           "contributions": 1
         }
       ],
@@ -2425,8 +2429,8 @@
           "contributions": 2
         }
       ],
-      "firstContributionAt": "2019-02-11T18:50:11Z",
-      "lastContributionAt": "2019-02-12T23:32:50Z"
+      "firstContributionAt": "2019-02-10T00:00:00.000Z",
+      "lastContributionAt": "2019-02-10T00:00:00.000Z"
     },
     {
       "id": 465522,
@@ -7220,8 +7224,8 @@
       "description": "☸️🐳 Verdaccio Helm chart repository",
       "stargazers_count": 82,
       "archived": false,
-      "language": "Mustache",
-      "pushed_at": "2026-10-26T23:23:10Z"
+      "language": "Python",
+      "pushed_at": "2026-11-03T21:52:13Z"
     },
     {
       "name": "commons-api",
@@ -7328,7 +7332,7 @@
       "full_name": "verdaccio/mcp-server",
       "html_url": "https://github.com/verdaccio/mcp-server",
       "description": "An MCP (Model Context Protocol) server that connects any MCP-compatible AI client to a Verdaccio private npm registry.",
-      "stargazers_count": 2,
+      "stargazers_count": 3,
       "archived": false,
       "language": "TypeScript",
       "pushed_at": "2026-10-15T19:08:10Z"
@@ -7405,10 +7409,10 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17956,
+      "stargazers_count": 17980,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-28T15:05:14Z"
+      "pushed_at": "2026-11-06T15:26:02Z"
     },
     {
       "name": "verdaccio-audit",
@@ -7438,7 +7442,7 @@
       "full_name": "verdaccio/verdaccio-aws-s3-storage",
       "html_url": "https://github.com/verdaccio/verdaccio-aws-s3-storage",
       "description": "📦 Amazon Web Services S3 storage plugin",
-      "stargazers_count": 10,
+      "stargazers_count": 11,
       "archived": false,
       "language": "TypeScript",
       "pushed_at": "2026-10-28T08:54:09Z"
@@ -7529,7 +7533,7 @@
       "stargazers_count": 37,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-29T03:49:45Z"
+      "pushed_at": "2026-11-06T01:56:44Z"
     },
     {
       "name": "yarn-plugin-npm",

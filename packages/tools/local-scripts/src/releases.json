@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T08:45:18.157Z",
+  "generatedAt": "2026-11-07T08:36:05.232Z",
   "releases": [
     {
       "tag": "latest",
@@ -11,9 +11,9 @@
     {
       "tag": "next-9",
       "channel": "experimental",
-      "version": "9.0.0-next-9.41",
-      "publishedAt": "2026-10-25T14:18:17.894Z",
-      "url": "https://www.npmjs.com/package/verdaccio/v/9.0.0-next-9.41"
+      "version": "9.0.0-next-9.42",
+      "publishedAt": "2026-11-04T07:46:53.567Z",
+      "url": "https://www.npmjs.com/package/verdaccio/v/9.0.0-next-9.42"
     }
   ]
 }
