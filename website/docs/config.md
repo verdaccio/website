@@ -741,7 +741,14 @@ Verdaccio includes a `flags` configuration setting (formerly named `experiments`
 
 This allows shipping new things without affecting production environments. We can add new features and get feedback from the community who decides to use them.
 
-The features under this setting might not be stable and might be removed in future releases. By default, all flags are off (false).
+:::caution Every flag is experimental
+Everything under `flags` is an experiment, including the flags that have existed for
+several releases. A flag, the endpoints it registers or its behaviour may change in a
+future release, in any line, depending on the feedback we receive. Do not depend on a flag
+in production unless you are prepared to follow those changes.
+:::
+
+By default, all flags are off (false).
 
 Examples:
 

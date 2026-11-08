@@ -500,17 +500,18 @@ export async function fetchAllDownloads() {
 
 export interface ReleaseEntry {
   tag: string;
-  channel: 'stable' | 'next' | 'experimental';
+  channel: 'stable' | 'maintenance' | 'experimental';
   version: string;
   publishedAt: string | null;
   url: string;
 }
 
-// npm tag -> release channel. The stable line is published as `latest`, the next major as
-// `next-7` and the experimental line as `next-9`.
+// npm tag -> release channel. Since 7.0.0 the stable line (7.x) is published as `latest`, the
+// 6.x maintenance line as `latest-6` and the experimental line as `next-9`. The `next-7` tag is
+// frozen at the last 7.0.0 prerelease and is no longer tracked.
 const RELEASE_TAGS: { tag: string; channel: ReleaseEntry['channel'] }[] = [
   { tag: 'latest', channel: 'stable' },
-  { tag: 'next-7', channel: 'next' },
+  { tag: 'latest-6', channel: 'maintenance' },
   { tag: 'next-9', channel: 'experimental' },
 ];
 
@@ -529,8 +530,8 @@ export async function fetchReleases() {
       console.warn(`  [releases] no version under the npm tag "${tag}", skipped`);
       continue;
     }
-    // GitHub publishes release notes for the stable and next lines; the experimental one is
-    // only on npm
+    // GitHub publishes release notes for the stable and maintenance lines; the experimental one
+    // is only on npm
     const url =
       channel === 'experimental'
         ? `https://www.npmjs.com/package/verdaccio/v/${version}`

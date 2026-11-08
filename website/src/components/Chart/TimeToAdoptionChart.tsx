@@ -67,10 +67,10 @@ const TimeToAdoptionChart: React.FC = () => {
     });
   });
 
-  // Only show majors that actually reached the first threshold.
-  const majors = [...majorsSeen]
-    .filter((m) => weeksToThreshold[m][THRESHOLDS[0]] != null)
-    .sort((a, b) => Number(a) - Number(b));
+  // Every major with stable downloads is listed, so a freshly released major (v7.x) shows up
+  // from its first week with empty bars ("not reached yet") instead of being hidden until it
+  // reaches the first threshold.
+  const majors = [...majorsSeen].sort((a, b) => Number(a) - Number(b));
 
   const datasets = THRESHOLDS.map((t) => ({
     label: `${t}% share`,

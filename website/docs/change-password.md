@@ -7,10 +7,11 @@ description: 'Let users change their own password from the web UI, and the passw
 With the `changePassword` flag on, users can change their own password from the
 web UI instead of asking an administrator to rewrite the credentials file.
 
-:::info Off by default, but not experimental
-This is a long-standing feature gated by the `changePassword`
-[feature flag](config.md#experiments), which is `false` unless you turn it
-on.
+:::caution Experimental
+This feature sits behind the `changePassword` [feature flag](config.md#experiments),
+which is `false` unless you turn it on. Like every flag, it is experimental: the
+flag, its endpoints or its behaviour may change in a future release depending on the
+feedback we receive.
 :::
 
 ## Enabling it {#enabling}
