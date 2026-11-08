@@ -43,6 +43,7 @@ module.exports = {
           items: [
             'two-factor-authentication',
             'staged-publishing',
+            'tarball-metadata',
             'web-login',
             'user-registration',
             'change-password',
