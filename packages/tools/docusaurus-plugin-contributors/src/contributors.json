@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-08T17:40:02.156Z",
+  "generatedAt": "2026-11-14T22:25:37.544Z",
   "organization": "verdaccio",
   "totals": {
-    "contributors": 444,
-    "contributions": 8435,
+    "contributors": 445,
+    "contributions": 8440,
     "repositories": 36
   },
   "contributors": [
@@ -253,11 +253,11 @@
       "login": "mbtools",
       "avatar_url": "https://avatars.githubusercontent.com/u/59966492?v=4",
       "html_url": "https://github.com/mbtools",
-      "contributions": 324,
+      "contributions": 325,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 313
+          "contributions": 314
         },
         {
           "name": "website",
@@ -269,7 +269,7 @@
         }
       ],
       "firstContributionAt": "2022-08-14T00:00:00.000Z",
-      "lastContributionAt": "2026-10-25T00:00:00.000Z"
+      "lastContributionAt": "2026-11-08T00:00:00.000Z"
     },
     {
       "id": 6918450,
@@ -354,11 +354,15 @@
       "login": "dianmorales",
       "avatar_url": "https://avatars.githubusercontent.com/u/558740?v=4",
       "html_url": "https://github.com/dianmorales",
-      "contributions": 65,
+      "contributions": 68,
       "repositories": [
         {
           "name": "verdaccio",
           "contributions": 49
+        },
+        {
+          "name": "charts",
+          "contributions": 5
         },
         {
           "name": "verdaccio-aws-s3-storage",
@@ -377,10 +381,6 @@
           "contributions": 2
         },
         {
-          "name": "charts",
-          "contributions": 2
-        },
-        {
           "name": "verdaccio-auth-ldap",
           "contributions": 2
         },
@@ -390,7 +390,7 @@
         }
       ],
       "firstContributionAt": "2021-01-31T00:00:00.000Z",
-      "lastContributionAt": "2026-11-01T00:00:00.000Z"
+      "lastContributionAt": "2026-11-08T00:00:00.000Z"
     },
     {
       "id": 20119184,
@@ -1351,11 +1351,11 @@
       "contributions": 4,
       "repositories": [
         {
-          "name": "website",
+          "name": "ui",
           "contributions": 2
         },
         {
-          "name": "ui",
+          "name": "website",
           "contributions": 2
         }
       ],
@@ -1544,11 +1544,11 @@
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "ui",
           "contributions": 1
         },
         {
-          "name": "ui",
+          "name": "website",
           "contributions": 1
         }
       ],
@@ -1680,11 +1680,11 @@
           "contributions": 1
         },
         {
-          "name": "verdaccio-aws-s3-storage",
+          "name": "website",
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "verdaccio-aws-s3-storage",
           "contributions": 1
         }
       ],
@@ -1887,11 +1887,11 @@
       "contributions": 2,
       "repositories": [
         {
-          "name": "charts",
+          "name": "ui",
           "contributions": 1
         },
         {
-          "name": "ui",
+          "name": "charts",
           "contributions": 1
         }
       ],
@@ -1910,8 +1910,8 @@
           "contributions": 2
         }
       ],
-      "firstContributionAt": "2018-02-25T03:59:37Z",
-      "lastContributionAt": "2018-02-25T04:02:48Z"
+      "firstContributionAt": "2018-02-18T00:00:00.000Z",
+      "lastContributionAt": "2018-02-18T00:00:00.000Z"
     },
     {
       "id": 231804,
@@ -2098,8 +2098,8 @@
           "contributions": 2
         }
       ],
-      "firstContributionAt": "2017-06-25T00:00:00.000Z",
-      "lastContributionAt": "2018-04-29T00:00:00.000Z"
+      "firstContributionAt": "2017-06-25T21:43:31Z",
+      "lastContributionAt": "2018-04-29T18:32:48Z"
     },
     {
       "id": 795598,
@@ -6326,6 +6326,21 @@
       "lastContributionAt": "2020-05-03T00:00:00.000Z"
     },
     {
+      "id": 133293,
+      "login": "soundstep",
+      "avatar_url": "https://avatars.githubusercontent.com/u/133293?v=4",
+      "html_url": "https://github.com/soundstep",
+      "contributions": 1,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 1
+        }
+      ],
+      "firstContributionAt": "2026-11-14T20:29:19Z",
+      "lastContributionAt": "2026-11-14T20:29:19Z"
+    },
+    {
       "id": 236406,
       "login": "spangenberg",
       "avatar_url": "https://avatars.githubusercontent.com/u/236406?v=4",
@@ -7240,7 +7255,7 @@
       "stargazers_count": 82,
       "archived": false,
       "language": "Python",
-      "pushed_at": "2026-11-03T21:52:13Z"
+      "pushed_at": "2026-11-09T23:22:47Z"
     },
     {
       "name": "commons-api",
@@ -7424,10 +7439,10 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17982,
+      "stargazers_count": 17987,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-11-08T15:04:47Z"
+      "pushed_at": "2026-11-14T20:43:01Z"
     },
     {
       "name": "verdaccio-audit",
@@ -7548,7 +7563,7 @@
       "stargazers_count": 37,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-11-08T17:16:58Z"
+      "pushed_at": "2026-11-13T22:00:35Z"
     },
     {
       "name": "yarn-plugin-npm",
