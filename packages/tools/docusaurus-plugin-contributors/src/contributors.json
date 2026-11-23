@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-14T22:25:37.544Z",
+  "generatedAt": "2026-11-23T18:00:24.963Z",
   "organization": "verdaccio",
   "totals": {
-    "contributors": 445,
-    "contributions": 8440,
+    "contributors": 447,
+    "contributions": 8452,
     "repositories": 36
   },
   "contributors": [
@@ -12,7 +12,7 @@
       "login": "juanpicado",
       "avatar_url": "https://avatars.githubusercontent.com/u/558752?v=4",
       "html_url": "https://github.com/juanpicado",
-      "contributions": 5888,
+      "contributions": 5889,
       "repositories": [
         {
           "name": "verdaccio",
@@ -40,7 +40,7 @@
         },
         {
           "name": "e2e-tests",
-          "contributions": 142
+          "contributions": 143
         },
         {
           "name": "generator-verdaccio-plugin",
@@ -156,7 +156,7 @@
         }
       ],
       "firstContributionAt": "2016-08-07T00:00:00.000Z",
-      "lastContributionAt": "2026-11-08T00:00:00.000Z"
+      "lastContributionAt": "2026-11-15T00:00:00.000Z"
     },
     {
       "id": 999113,
@@ -253,11 +253,11 @@
       "login": "mbtools",
       "avatar_url": "https://avatars.githubusercontent.com/u/59966492?v=4",
       "html_url": "https://github.com/mbtools",
-      "contributions": 325,
+      "contributions": 332,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 314
+          "contributions": 321
         },
         {
           "name": "website",
@@ -269,7 +269,7 @@
         }
       ],
       "firstContributionAt": "2022-08-14T00:00:00.000Z",
-      "lastContributionAt": "2026-11-08T00:00:00.000Z"
+      "lastContributionAt": "2026-11-15T00:00:00.000Z"
     },
     {
       "id": 6918450,
@@ -354,11 +354,11 @@
       "login": "dianmorales",
       "avatar_url": "https://avatars.githubusercontent.com/u/558740?v=4",
       "html_url": "https://github.com/dianmorales",
-      "contributions": 68,
+      "contributions": 70,
       "repositories": [
         {
           "name": "verdaccio",
-          "contributions": 49
+          "contributions": 50
         },
         {
           "name": "charts",
@@ -387,10 +387,14 @@
         {
           "name": "generator-verdaccio-plugin",
           "contributions": 1
+        },
+        {
+          "name": "e2e-tests",
+          "contributions": 1
         }
       ],
       "firstContributionAt": "2021-01-31T00:00:00.000Z",
-      "lastContributionAt": "2026-11-08T00:00:00.000Z"
+      "lastContributionAt": "2026-11-15T00:00:00.000Z"
     },
     {
       "id": 20119184,
@@ -1442,8 +1446,8 @@
           "contributions": 1
         }
       ],
-      "firstContributionAt": "2020-06-14T00:00:00.000Z",
-      "lastContributionAt": "2020-06-28T00:00:00.000Z"
+      "firstContributionAt": "2020-06-21T00:00:00.000Z",
+      "lastContributionAt": "2020-06-21T00:00:00.000Z"
     },
     {
       "id": 12389415,
@@ -2098,8 +2102,8 @@
           "contributions": 2
         }
       ],
-      "firstContributionAt": "2017-06-25T21:43:31Z",
-      "lastContributionAt": "2018-04-29T18:32:48Z"
+      "firstContributionAt": "2017-06-25T00:00:00.000Z",
+      "lastContributionAt": "2018-04-29T00:00:00.000Z"
     },
     {
       "id": 795598,
@@ -2534,8 +2538,8 @@
           "contributions": 2
         }
       ],
-      "firstContributionAt": "2021-09-26T00:00:00.000Z",
-      "lastContributionAt": "2022-03-20T00:00:00.000Z"
+      "firstContributionAt": "2021-10-01T15:51:04Z",
+      "lastContributionAt": "2022-03-21T22:12:09Z"
     },
     {
       "id": 5120805,
@@ -3004,6 +3008,21 @@
       "lastContributionAt": "2018-05-10T12:33:54Z"
     },
     {
+      "id": 7670039,
+      "login": "armingjazi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7670039?v=4",
+      "html_url": "https://github.com/armingjazi",
+      "contributions": 1,
+      "repositories": [
+        {
+          "name": "monorepo",
+          "contributions": 1
+        }
+      ],
+      "firstContributionAt": "2020-01-19T00:00:00.000Z",
+      "lastContributionAt": "2020-01-19T00:00:00.000Z"
+    },
+    {
       "id": 9389109,
       "login": "arthur2308",
       "avatar_url": "https://avatars.githubusercontent.com/u/9389109?v=4",
@@ -3077,6 +3096,21 @@
       ],
       "firstContributionAt": "2017-08-15T10:21:28Z",
       "lastContributionAt": "2017-08-15T10:21:28Z"
+    },
+    {
+      "id": 1330201,
+      "login": "atai",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1330201?v=4",
+      "html_url": "https://github.com/atai",
+      "contributions": 1,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 1
+        }
+      ],
+      "firstContributionAt": "2026-11-15T12:44:59Z",
+      "lastContributionAt": "2026-11-15T12:44:59Z"
     },
     {
       "id": 16321313,
@@ -3317,6 +3351,21 @@
       ],
       "firstContributionAt": "2024-07-17T19:59:36Z",
       "lastContributionAt": "2024-07-17T19:59:36Z"
+    },
+    {
+      "id": 4999826,
+      "login": "cardamon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4999826?v=4",
+      "html_url": "https://github.com/cardamon",
+      "contributions": 1,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 1
+        }
+      ],
+      "firstContributionAt": "2026-11-18T21:05:51Z",
+      "lastContributionAt": "2026-11-18T21:05:51Z"
     },
     {
       "id": 8927157,
@@ -3808,21 +3857,6 @@
       ],
       "firstContributionAt": "2018-05-29T21:32:09Z",
       "lastContributionAt": "2018-05-29T21:32:09Z"
-    },
-    {
-      "id": 33081,
-      "login": "duboisph",
-      "avatar_url": "https://avatars.githubusercontent.com/u/33081?v=4",
-      "html_url": "https://github.com/duboisph",
-      "contributions": 1,
-      "repositories": [
-        {
-          "name": "charts",
-          "contributions": 1
-        }
-      ],
-      "firstContributionAt": "2020-06-21T00:00:00.000Z",
-      "lastContributionAt": "2020-06-21T00:00:00.000Z"
     },
     {
       "id": 61834475,
@@ -7255,7 +7289,7 @@
       "stargazers_count": 82,
       "archived": false,
       "language": "Python",
-      "pushed_at": "2026-11-09T23:22:47Z"
+      "pushed_at": "2026-11-16T23:22:54Z"
     },
     {
       "name": "commons-api",
@@ -7288,7 +7322,7 @@
       "stargazers_count": 5,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-11-07T19:16:24Z"
+      "pushed_at": "2026-11-18T13:08:01Z"
     },
     {
       "name": "eslint-config-verdaccio",
@@ -7439,10 +7473,10 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 17987,
+      "stargazers_count": 18008,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-11-14T20:43:01Z"
+      "pushed_at": "2026-11-22T03:05:38Z"
     },
     {
       "name": "verdaccio-audit",
@@ -7464,7 +7498,7 @@
       "stargazers_count": 3,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-25T04:42:39Z"
+      "pushed_at": "2026-11-22T04:42:34Z"
     },
     {
       "name": "verdaccio-aws-s3-storage",
@@ -7475,7 +7509,7 @@
       "stargazers_count": 11,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-10-28T08:54:09Z"
+      "pushed_at": "2026-11-15T16:35:02Z"
     },
     {
       "name": "verdaccio-azure",
@@ -7563,7 +7597,7 @@
       "stargazers_count": 37,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-11-13T22:00:35Z"
+      "pushed_at": "2026-11-20T20:00:07Z"
     },
     {
       "name": "yarn-plugin-npm",
