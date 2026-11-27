@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-23T18:00:24.963Z",
+  "generatedAt": "2026-11-27T21:27:45.458Z",
   "organization": "verdaccio",
   "totals": {
-    "contributors": 447,
-    "contributions": 8452,
+    "contributors": 448,
+    "contributions": 8454,
     "repositories": 36
   },
   "contributors": [
@@ -156,7 +156,7 @@
         }
       ],
       "firstContributionAt": "2016-08-07T00:00:00.000Z",
-      "lastContributionAt": "2026-11-15T00:00:00.000Z"
+      "lastContributionAt": "2026-11-22T00:00:00.000Z"
     },
     {
       "id": 999113,
@@ -477,11 +477,11 @@
           "contributions": 3
         },
         {
-          "name": "verdaccio",
+          "name": "website",
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "verdaccio",
           "contributions": 1
         }
       ],
@@ -1170,11 +1170,11 @@
       "contributions": 4,
       "repositories": [
         {
-          "name": "verdaccio",
+          "name": "website",
           "contributions": 2
         },
         {
-          "name": "website",
+          "name": "verdaccio",
           "contributions": 2
         }
       ],
@@ -1193,11 +1193,11 @@
           "contributions": 2
         },
         {
-          "name": "verdaccio",
+          "name": "monorepo",
           "contributions": 1
         },
         {
-          "name": "monorepo",
+          "name": "verdaccio",
           "contributions": 1
         }
       ],
@@ -1306,11 +1306,11 @@
       "contributions": 4,
       "repositories": [
         {
-          "name": "verdaccio",
+          "name": "ui",
           "contributions": 2
         },
         {
-          "name": "ui",
+          "name": "verdaccio",
           "contributions": 2
         }
       ],
@@ -1544,15 +1544,15 @@
       "contributions": 3,
       "repositories": [
         {
-          "name": "verdaccio",
-          "contributions": 1
-        },
-        {
           "name": "ui",
           "contributions": 1
         },
         {
           "name": "website",
+          "contributions": 1
+        },
+        {
+          "name": "verdaccio",
           "contributions": 1
         }
       ],
@@ -1612,15 +1612,15 @@
       "contributions": 3,
       "repositories": [
         {
-          "name": "verdaccio",
-          "contributions": 1
-        },
-        {
           "name": "local-storage",
           "contributions": 1
         },
         {
           "name": "monorepo",
+          "contributions": 1
+        },
+        {
+          "name": "verdaccio",
           "contributions": 1
         }
       ],
@@ -1684,11 +1684,11 @@
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "verdaccio-aws-s3-storage",
           "contributions": 1
         },
         {
-          "name": "verdaccio-aws-s3-storage",
+          "name": "website",
           "contributions": 1
         }
       ],
@@ -1857,11 +1857,11 @@
       "contributions": 2,
       "repositories": [
         {
-          "name": "verdaccio",
+          "name": "website",
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "verdaccio",
           "contributions": 1
         }
       ],
@@ -1925,11 +1925,11 @@
       "contributions": 2,
       "repositories": [
         {
-          "name": "verdaccio",
+          "name": "monorepo",
           "contributions": 1
         },
         {
-          "name": "monorepo",
+          "name": "verdaccio",
           "contributions": 1
         }
       ],
@@ -1980,6 +1980,21 @@
       ],
       "firstContributionAt": "2019-07-28T00:00:00.000Z",
       "lastContributionAt": "2019-07-28T00:00:00.000Z"
+    },
+    {
+      "id": 131572354,
+      "login": "droyti46",
+      "avatar_url": "https://avatars.githubusercontent.com/u/131572354?v=4",
+      "html_url": "https://github.com/droyti46",
+      "contributions": 2,
+      "repositories": [
+        {
+          "name": "verdaccio",
+          "contributions": 2
+        }
+      ],
+      "firstContributionAt": "2026-11-22T00:00:00.000Z",
+      "lastContributionAt": "2026-11-22T00:00:00.000Z"
     },
     {
       "id": 237513,
@@ -2079,11 +2094,11 @@
       "contributions": 2,
       "repositories": [
         {
-          "name": "verdaccio",
+          "name": "website",
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "verdaccio",
           "contributions": 1
         }
       ],
@@ -2267,11 +2282,11 @@
       "contributions": 2,
       "repositories": [
         {
-          "name": "verdaccio",
+          "name": "website",
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "verdaccio",
           "contributions": 1
         }
       ],
@@ -2331,11 +2346,11 @@
       "contributions": 2,
       "repositories": [
         {
-          "name": "verdaccio",
+          "name": "website",
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "verdaccio",
           "contributions": 1
         }
       ],
@@ -2350,11 +2365,11 @@
       "contributions": 2,
       "repositories": [
         {
-          "name": "verdaccio",
+          "name": "ui",
           "contributions": 1
         },
         {
-          "name": "ui",
+          "name": "verdaccio",
           "contributions": 1
         }
       ],
@@ -2373,8 +2388,8 @@
           "contributions": 2
         }
       ],
-      "firstContributionAt": "2018-02-11T00:00:00.000Z",
-      "lastContributionAt": "2018-02-11T00:00:00.000Z"
+      "firstContributionAt": "2018-02-17T05:57:18Z",
+      "lastContributionAt": "2018-02-17T05:57:18Z"
     },
     {
       "id": 730443,
@@ -2538,8 +2553,8 @@
           "contributions": 2
         }
       ],
-      "firstContributionAt": "2021-10-01T15:51:04Z",
-      "lastContributionAt": "2022-03-21T22:12:09Z"
+      "firstContributionAt": "2021-09-26T00:00:00.000Z",
+      "lastContributionAt": "2022-03-20T00:00:00.000Z"
     },
     {
       "id": 5120805,
@@ -2583,11 +2598,11 @@
       "contributions": 2,
       "repositories": [
         {
-          "name": "verdaccio",
+          "name": "monorepo",
           "contributions": 1
         },
         {
-          "name": "monorepo",
+          "name": "verdaccio",
           "contributions": 1
         }
       ],
@@ -2681,11 +2696,11 @@
       "contributions": 2,
       "repositories": [
         {
-          "name": "verdaccio",
+          "name": "website",
           "contributions": 1
         },
         {
-          "name": "website",
+          "name": "verdaccio",
           "contributions": 1
         }
       ],
@@ -7289,7 +7304,7 @@
       "stargazers_count": 82,
       "archived": false,
       "language": "Python",
-      "pushed_at": "2026-11-16T23:22:54Z"
+      "pushed_at": "2026-11-23T23:23:01Z"
     },
     {
       "name": "commons-api",
@@ -7407,7 +7422,7 @@
       "full_name": "verdaccio/monorepo",
       "html_url": "https://github.com/verdaccio/monorepo",
       "description": "🏰 Core dependencies and plugins for verdaccio 6.x branch ⚠️ DEPRECATED",
-      "stargazers_count": 84,
+      "stargazers_count": 85,
       "archived": true,
       "language": null,
       "pushed_at": "2026-05-14T15:25:43Z"
@@ -7473,10 +7488,10 @@
       "full_name": "verdaccio/verdaccio",
       "html_url": "https://github.com/verdaccio/verdaccio",
       "description": "A lightweight Node.js private proxy registry",
-      "stargazers_count": 18008,
+      "stargazers_count": 18020,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-11-22T03:05:38Z"
+      "pushed_at": "2026-11-27T21:12:13Z"
     },
     {
       "name": "verdaccio-audit",
@@ -7597,7 +7612,7 @@
       "stargazers_count": 37,
       "archived": false,
       "language": "TypeScript",
-      "pushed_at": "2026-11-20T20:00:07Z"
+      "pushed_at": "2026-11-25T11:51:43Z"
     },
     {
       "name": "yarn-plugin-npm",
